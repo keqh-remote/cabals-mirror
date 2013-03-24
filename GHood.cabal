@@ -1,5 +1,5 @@
 Name:            GHood
-Version:         0.0.1
+Version:         0.0.2
 License:         BSD3
 License-file:    LICENSE
 Copyright:
@@ -11,8 +11,8 @@ Author:          Claus Reinke
 Maintainer:      Hugo Pacheco <hpacheco@di.uminho.pt>
 Synopsis:        A graphical viewer for Hood
 Description:
-        GHood is a graphical back-end for Hood, the front-end (the Haskell interface) is precisely that of Hood. If you have been using Hood already you won't have to change your programs to switch to GHood. If you haven't used Hood before, you can employ all the nice definitions in Hood's Observe library, just as explained in the Hood documentation (see the Hood homepage at http://www.haskell.org/hood/).
-Homepage:        http://www.cs.kent.ac.uk/people/staff/cr3/toolbox/haskell/GHood/#Applets
+        GHood is a graphical back-end for Hood, the front-end (the Haskell interface) is precisely that of Hood. If you have been using Hood already you won't have to change your programs to switch to GHood. If you haven't used Hood before, you can employ all the nice definitions in Hood's Observe library, just as explained in the Hood documentation (see the Hood homepage at <http://www.haskell.org/hood/>).
+Homepage:        http://www.cs.kent.ac.uk/people/staff/cr3/toolbox/haskell/GHood
 
 Category: Debug
 
