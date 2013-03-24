@@ -1,15 +1,16 @@
 Name:           preprocessor-tools
-Version:        0.1
-Cabal-Version:  >= 1.2
+Version:        0.1.1
+Cabal-Version:  >= 1.2.3
 License:        BSD3
 License-File:   LICENSE
 Stability:      experimental
 Author:         Jesse A. Tov <tov@ccs.neu.edu>
 Maintainer:     tov@ccs.neu.edu
-Homepage:       http://www.ccs.neu.edu/~tov/session-types
+Homepage:       http://www.ccs.neu.edu/~tov/pubs/haskell-session-types
 Category:       Source-tools, Language, Code Generation
 Synopsis:       A framework for extending Haskell's syntax via quick-and-dirty preprocessors
 Build-type:     Simple
+Tested-with:    GHC == 6.10.1, GHC == 6.8.1
 Description:
         This library provides a quick-and-dirty (but often effective)
         method for extending Haskell's syntax using a custom
@@ -17,13 +18,19 @@ Description:
         enough knowledge of the syntax to preserve nesting, and then
         allows transformations on the AST.
         .
-        See the package ixdopp for an example of how to do this.
+        See the package ixdopp
+        (<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/ixdopp>)
+        for an example of how to do this.
 
 Extra-Source-Files:
-    TODO
+    TODO, CHANGELOG
 
 Library
-  Build-Depends:        haskell98, base, mtl, parsec
+  Build-Depends:        haskell98 >=1 && <2,
+                        mtl >=1 && <2,
+                        parsec >=2 && <3,
+                        base >=3 && <4
+
   Extensions:           DeriveDataTypeable
   Exposed-modules:
     Language.Haskell.Preprocessor,
