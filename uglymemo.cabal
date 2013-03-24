@@ -1,7 +1,9 @@
 Name:                uglymemo
-Version:             0.1.0.0
+Version:             0.1.0.1
 Synopsis:            A simple (but internally ugly) memoization function.
 Description:         A simple (but internally ugly) memoization function.
+                     .
+                     * New in 0.1.0.1: Make it exception safe.
 License:             PublicDomain
 Author:              Lennart Augustsson
 Maintainer:          lennart@augustsson.net
