@@ -1,5 +1,5 @@
 Name:            INblobs
-Version:         0.1
+Version:         0.1.1
 License:         LGPL
 License-file:    LICENCE-LGPL
 Author:          Arjan van IJzendoorn, Martijn Schrage, Malcolm Wallace, Miguel Vilaca
@@ -15,6 +15,8 @@ Homepage:        http://haskell.di.uminho.pt/jmvilaca/INblobs/
 
 Category: Compilers/Interpreters
 
+Data-files: INblobs.xsd, html/HowToUse.html
+
 Build-type: Simple
 Cabal-Version:  >=1.2
 
@@ -28,6 +30,47 @@ Executable 	 INblobs
   else
     Build-Depends: base < 3
 
-  Hs-Source-Dirs:  src
+  Hs-Source-Dirs: src
+  Other-Modules:
+        Colors
+        Common
+        CommonIO
+        CommonUI
+        Constants
+        ContextMenu
+        DisplayOptions
+        Document
+        DocumentFile
+        GUIEvents
+        INChecks
+        INChecksUI
+        INReduction
+        INReductionStrategies
+        INRule
+        INRules
+        INTextual
+        INTextualUI
+        InfoKind
+        Math
+        Network
+        NetworkControl
+        NetworkFile
+        NetworkUI
+        NetworkView
+        Operations
+        PDDefaults
+        Palette
+        PersistentDocument
+        Ports
+        SafetyNet
+        Shape
+        SpecialSymbols
+        State
+        StateUtil
+        Functional.Compiler
+        Functional.Language
+        Functional.Parser
+        Functional.UI
+
   Extensions:      ForeignFunctionInterface, MultiParamTypeClasses, FunctionalDependencies, FlexibleInstances, ParallelListComp
 
