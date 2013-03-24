@@ -1,7 +1,7 @@
 Name:	         tabloid
-Version:         0.1
+Version:         0.2
 Description:     GUI for shell commands and log analysis
-Category:	 System Administration Utility
+Category:	 System
 Synopsis:	 View the output of shell commands in a table
 License:         BSD3
 License-file:    LICENSE
