@@ -1,5 +1,5 @@
 name:                acme-missiles
-version:             0.1.1
+version:             0.2
 synopsis:            Cause serious international side effects.
 description:
     The highly effectful 'launchMissiles' action, as mentioned in /Beautiful concurrency/,
@@ -14,5 +14,5 @@ cabal-version:       >=1.8
 
 library
   exposed-modules:     Acme.Missiles
-  build-depends:       base >= 3 && < 5
+  build-depends:       base >= 3 && < 5, stm
   ghc-options:         -Wall
