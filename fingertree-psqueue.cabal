@@ -1,5 +1,5 @@
 name:                fingertree-psqueue
-version:             0.2
+version:             0.3
 cabal-version:       >= 1.2
 build-type:          Simple
 
@@ -17,4 +17,4 @@ description:         An implementation of priority search queues: a datastructur
                      by key.
 library
   exposed-modules:   Data.FingerTree.PSQueue
-  build-depends:     base<=4,fingertree 
+  build-depends:     base<6,fingertree 
