@@ -1,11 +1,11 @@
 Name:                      bindings-ppdev
-Version:                   0.0.1
+Version:                   0.0.2
 Cabal-version:             >= 1.2.3
 Synopsis:                  PPDev bindings
 License:                   BSD3
 License-file:              LICENSE
-Maintainer:                joe7mail@gmail.com
-Author:                    Joe M
+Maintainer:                sivaramreddy@hotmail.com
+Author:                    Sivaram Gowkanapalli
 Build-type:                Simple
 Category:                  FFI
 
