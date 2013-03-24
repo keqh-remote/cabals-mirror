@@ -1,5 +1,5 @@
 Name:		regexpr
-Version:	0.5
+Version:	0.5.1
 License:	LGPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -12,15 +12,16 @@ Description:
   This package has a module RegexPR.
   And RegexPR export functions matchRegexPR and gsubRegexPR.
   .
-  > getbrsRegexPR :: String -> String -> [ String ]
-  > matchRegexPR :: String -> String -> Maybe ((String, (String, String)), [(Int, String)])
-  > gmatchRegexPR :: String -> String -> [((String, (String, String)), [(Int, String)])]
+  > matchRegexPR      :: String -> String -> Maybe ((String, (String, String)), [(Int, String)])
   > multiMatchRegexPR :: String -> String -> [ ((String, (String, String)), [(Int, String)]) ]
-  > subRegexPR :: String -> String -> String -> String
-  > subRegexPRBy :: String -> (String -> String) -> String -> String
-  > gsubRegexPR :: String -> String -> String -> String
-  > gsubRegexPRBy :: String -> (String -> String) -> String -> String
-  > splitRegexPR :: String -> String -> [String]
+  > gmatchRegexPR     :: String -> String -> [ ((String, (String, String)), [(Int, String)]) ]
+  > getbrsRegexPR     :: String -> String -> [ String ]
+  > ggetbrsRegexPR    :: String -> String -> [ [ String ] ]
+  > subRegexPR        :: String -> String -> String -> String
+  > subRegexPRBy      :: String -> (String -> String) -> String -> String
+  > gsubRegexPR       :: String -> String -> String -> String
+  > gsubRegexPRBy     :: String -> (String -> String) -> String -> String
+  > splitRegexPR      :: String -> String -> [String]
   .
   Examples
   .
