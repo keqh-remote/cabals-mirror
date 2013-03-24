@@ -1,6 +1,6 @@
 name:           utf8-prelude
-version:        0.1.4
-synopsis:       Variants of Prelude and System.IO using UTF8 text I/O operations and an UTF8 testing tool
+version:        0.1.5
+synopsis:       Variants of Prelude and System.IO with UTF8 text I/O operations
 description:    
     If you want your Haskell code to have UTF8 text I/O then use libraries which have UTF8 text I/O.
     In case of Prelude with this package only three mechanical steps needed:
