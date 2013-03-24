@@ -1,5 +1,5 @@
 Name:             orchid
-Version:          0.0.6
+Version:          0.0.7
 Description:      Haskell Wiki Library
 Synopsis:         Haskell Wiki Library
 Category:         Network, Web
@@ -10,8 +10,9 @@ Maintainer:       sfvisser@cs.uu.nl
 Build-Type:       Simple
 Build-Depends:    base,
                   bytestring,
-                  salvia == 0.0.4,
+                  salvia == 0.0.5,
                   xml,
+                  extensible-exceptions,
                   containers,
                   QuickCheck,
                   parsec <= 2.1.0.1,
@@ -21,6 +22,7 @@ Build-Depends:    base,
                   process,
                   unix,
                   nano-md5,
+                  filestore,
                   hscolour,
                   encoding,
                   utf8-string,
@@ -43,9 +45,6 @@ Exposed-modules:  Text.Document.Document,
                   Text.Document.PluginRegister,
                   Text.Xhtml.Xhtml,
                   Text.Xml.Xml,
-                  Network.Orchid.Backend.CachingBackend,
-                  Network.Orchid.Backend.DarcsBackend,
-                  Network.Orchid.Core.Backend,
                   Network.Orchid.Core.Format,
                   Network.Orchid.Core.Handler,
                   Network.Orchid.Core.Liaison,
