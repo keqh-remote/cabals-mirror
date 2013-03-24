@@ -1,5 +1,5 @@
 name:                RefSerialize
-version:             0.2
+version:             0.2.1
 synopsis:            Write to and read from Strings maintaining internal memory references 
 description:         
                      Read, Show and Data.Binary do not check for pointers to the same address 
