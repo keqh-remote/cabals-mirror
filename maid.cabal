@@ -1,5 +1,5 @@
 Name:                 maid
-Version:              2009.7.24.1
+Version:              2009.7.25
 Build-type:           Simple
 Synopsis:             A simple static web server
 Description:
@@ -18,6 +18,6 @@ data-files:           readme.md, changelog.md, known-issues.md, Nemesis
 
 Executable            maid
   ghc-options:        -Wall
-  build-depends:      base >= 4 && < 5, mps, loli, hack-handler-happstack, haskell98, hack-contrib, data-default
+  build-depends:      base >= 4 && < 5, mps, loli, hack-handler-happstack, haskell98, hack-contrib, data-default, hack
   hs-source-dirs:     src/
   main-is:            maid.hs
