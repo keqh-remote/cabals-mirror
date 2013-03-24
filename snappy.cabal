@@ -1,5 +1,5 @@
 name:           snappy
-version:        0.2.0.1
+version:        0.2.0.2
 homepage:       http://github.com/bos/snappy
 bug-reports:    http://github.com/bos/snappy/issues
 synopsis:
@@ -55,13 +55,10 @@ test-suite tests
   build-depends:
     base < 5,
     bytestring,
-    cmdargs,
     QuickCheck >= 2.4,
     snappy,
     test-framework,
-    test-framework-quickcheck2,
-    time,
-    zlib
+    test-framework-quickcheck2
 
 source-repository head
   type:     git
