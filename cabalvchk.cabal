@@ -1,5 +1,5 @@
 name:          cabalvchk
-version:       0.2
+version:       0.3
 synopsis:      Verify installed package version against user-specified constraints.
 
 description:
@@ -20,13 +20,19 @@ description:
   specified) and the return value is 0 if the constraints are met or non-zero
   if the constraints are not met (including if the package is not installed).
   .
+  Changes in 0.3:
+  .
+  * Changed category to Distribution
+  .
+  * Only consider exposed packages
+  .
   Changes in 0.2:
   .
   * Handles multiple package installations by returning 0 if any of the
     installed versions satisfies the constraints.
   .
 
-category:      Text
+category:      Distribution
 license:       BSD3
 license-file:  LICENSE
 author:        Kevin Quick
