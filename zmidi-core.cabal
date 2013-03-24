@@ -1,5 +1,5 @@
 name:             zmidi-core
-version:          0.2.0
+version:          0.2.1
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -12,6 +12,12 @@ description:
   dependencies only on ByteString and Data.Binary.
   .
   Changelog:
+  .
+  v0.2.0 to v0.2.1:
+  . 
+  * Added Show class constraints to various type signatures to 
+    accommodate changes to Num superclass hierarchy in GHC 7.4.
+    Thanks to Remy Moueza for the patches.
   . 
   v0.1.0 to v0.2.0:
   .
