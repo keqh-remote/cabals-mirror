@@ -1,5 +1,5 @@
 name:          concurrent-extra
-version:       0.3.1
+version:       0.4
 cabal-version: >= 1.6
 build-type:    Custom
 stability:     experimental
@@ -16,15 +16,15 @@ description:
   The @concurrent-extra@ package offers among other things the
   following selection of synchronisation primitives:
   .
+  * @Broadcast@: Wake multiple threads by broadcasting a value.
+  .
+  * @Event@: Wake multiple threads by signalling an event.
+  .
   * @Lock@: Enforce exclusive access to a resource. Also known as a
     binary semaphore or mutex.
   .
   * @RLock@: A lock which can be acquired multiple times by the same
     thread. Also known as a reentrant mutex.
-  .
-  * @Broadcast@: Wake multiple threads by broadcasting a value.
-  .
-  * @Event@: Wake multiple threads by signalling an event.
   .
   * @ReadWriteLock@: Multiple-reader, single-writer locks. Used to
     protect shared resources which may be concurrently read, but only
@@ -32,16 +32,14 @@ description:
   .
   * @ReadWriteVar@: Concurrent read, sequential write variables.
   .
-  The package also provides @STM@ versions of @Broadcast@ and @Event@.
-  .
-  Besides these synchronisation primitives the package provides:
+  Besides these synchronisation primitives the package also provides:
   .
   * @Thread@: Threads extended with the ability to wait for their
     termination.
   .
-  * @delay@: Arbitrarily long thread delays.
+  * @Thread.Delay@: Arbitrarily long thread delays.
   .
-  * @timeout@: Wait arbitrarily long for an IO computation to finish.
+  * @Timeout@: Wait arbitrarily long for an IO computation to finish.
   .
   Please consult the API documentation of the individual modules for
   more detailed information.
@@ -72,7 +70,6 @@ flag nolib
 library
   build-depends: base                 >= 3     && < 4.3
                , base-unicode-symbols >= 0.1.1 && < 0.2
-               , stm                  >= 2.1.1 && < 2.2
   exposed-modules: Control.Concurrent.Lock
                  , Control.Concurrent.RLock
                  , Control.Concurrent.Event
@@ -81,8 +78,6 @@ library
                  , Control.Concurrent.ReadWriteVar
                  , Control.Concurrent.Thread
                  , Control.Concurrent.Thread.Delay
-                 , Control.Concurrent.STM.Event
-                 , Control.Concurrent.STM.Broadcast
                  , Control.Concurrent.Timeout
   other-modules: Utils
   ghc-options: -Wall
@@ -101,8 +96,6 @@ executable test-concurrent-extra
                , Control.Concurrent.ReadWriteLock.Test
                , Control.Concurrent.ReadWriteVar.Test
                , Control.Concurrent.Thread.Test
-               , Control.Concurrent.STM.Event.Test
-               , Control.Concurrent.STM.Broadcast.Test
                , Control.Concurrent.Timeout.Test
                , TestUtils
 
