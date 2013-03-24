@@ -1,5 +1,5 @@
 Name:               lazysmallcheck
-Version:            0.2
+Version:            0.3
 Maintainer:         Matthew Naylor <mfn@cs.york.ac.uk>
 Homepage:           http://www.cs.york.ac.uk/~mfn/lazysmallcheck/
 Build-Depends:      base, haskell98
@@ -45,6 +45,7 @@ Extra-Source-Files:
   examples/test/TestMate.hs
   examples/test/TestTurner.hs
   examples/test/TestMux1.hs
+  examples/test/make.sh
 
 Exposed-modules:
   Test.LazySmallCheck
