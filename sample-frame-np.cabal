@@ -1,5 +1,5 @@
 Name:             sample-frame-np
-Version:          0.0.2
+Version:          0.0.2.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -24,7 +24,7 @@ Flag splitBase
 
 Library
   Build-Depends:
-    sample-frame >=0.0.1 && <0.1,
+    sample-frame >=0.0.2 && <0.1,
     numeric-prelude >= 0.2 && <0.3
   If flag(splitBase)
     Build-Depends:
