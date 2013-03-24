@@ -1,5 +1,5 @@
 name: leksah
-version: 0.8.0.3
+version: 0.8.0.4
 cabal-version: >=1.6
 build-type: Simple
 license: GPL
@@ -110,7 +110,7 @@ Executable leksah
                    IDE.Pane.Breakpoints IDE.Pane.Trace IDE.Pane.Variables
                    IDE.Pane.Errors IDE.TextEditor IDE.Workspaces
                    IDE.Statusbar IDE.Pane.Workspace IDE.PaneGroups
-                   IDE.Utils.ServerConnection
+                   IDE.Utils.ServerConnection IDE.OSX
     ghc-prof-options: -auto-all -prof
     ghc-shared-options: -auto-all -prof
     ghc-options: -fwarn-unused-imports -fwarn-missing-fields -fwarn-incomplete-patterns -ferror-spans
