@@ -1,5 +1,5 @@
 Name:           idris
-Version:        0.9.6
+Version:        0.9.6.1
 License:        BSD3
 License-file:   LICENSE
 Author:         Edwin Brady
@@ -47,6 +47,9 @@ Build-type:     Custom
 Data-files:            rts/libidris_rts.a rts/idris_rts.h rts/idris_gc.h
                        rts/idris_stdfgn.h rts/idris_main.c rts/idris_gmp.h
                        rts/libtest.c
+                       js/Runtime-common.js
+                       js/Runtime-node.js
+                       js/Runtime-browser.js
 Extra-source-files:    lib/Makefile  lib/*.idr lib/Prelude/*.idr 
                        lib/Network/*.idr lib/Control/*.idr
                        lib/Control/Monad/*.idr lib/Language/*.idr
@@ -55,6 +58,7 @@ Extra-source-files:    lib/Makefile  lib/*.idr lib/Prelude/*.idr
                        tutorial/examples/*.idr lib/base.ipkg
                        config.mk
                        rts/*.c rts/*.h rts/Makefile
+                       js/*.js
 
 source-repository head
   type:     git
@@ -76,7 +80,7 @@ Executable     idris
                               Idris.Compiler, Idris.Prover, Idris.ElabTerm,
                               Idris.Coverage, Idris.IBC, Idris.Unlit,
                               Idris.DataOpts, Idris.Transforms, Idris.DSL, 
-                              Idris.UnusedArgs, Idris.Docs,
+                              Idris.UnusedArgs, Idris.Docs, Idris.Completion,
 
                               Util.Pretty, Util.System,
                               Pkg.Package, Pkg.PParser,
