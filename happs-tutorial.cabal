@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.7.1
+Version:             0.8
 Synopsis:            A Happstack Tutorial that is its own web 2.0-type demo. 
 Description:         A nice way to learn how to build web sites with Happstack
 
@@ -8,22 +8,28 @@ License-file:        LICENSE
 Author:              Thomas Hartman, Eelco Lempsink, Creighton Hogg
 
 Maintainer:          Creighton Hogg <wchogg at gmail.com>
-Copyright:           2008 Thomas Hartman
+Copyright:           2008 Thomas Hartman, 2009 Thomas Hartman & Creighton Hogg
 
 Stability:           Experimental
 Category:            Web
 Build-type:          Simple
 
--- when cabal install 1.6 comes out, hopefully can use * patterns for templates
--- see http://hackage.haskell.org/trac/hackage/ticket/213
 Extra-Source-Files:
     recompile-and-kill-head.sh
     hackInGhci.sh
     static/*.png
     static/*.css
     templates/*.st
+    src/*.hs
+    src/migrationexample/*.hs
+    src/migrationexample/*.lhs
+    src/migrationexample/StateVersions/*.hs
+    src/migrationexample/README
 
 Cabal-Version:       >= 1.6
+
+Flag base4
+    Description: Choose the even newer, even smaller, split-up base package.
 
 Executable happs-tutorial
     Main-is:             Main.hs
@@ -41,7 +47,10 @@ Executable happs-tutorial
         MiscMap
         ControllerStressTests
         View
-    Build-Depends:   base>=3.0.3.0, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
-                     happstack-server == 0.1, happstack-data == 0.1, happstack-state == 0.1,
-                     containers, pretty, pureMD5, directory, filepath, hscolour >= 1.10.1, HTTP, safe,
-                     old-time, parsec, happstack-helpers >= 0.11 && < 0.20, DebugTraceHelpers
+    ghc-options: -Wall
+    Build-Depends:   base, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
+                     happstack-server, happstack-data, happstack-state,
+                     containers, pretty, pureMD5, directory, filepath, hscolour, HTTP, safe,
+                     old-time, parsec, happstack-helpers, DebugTraceHelpers
+    if flag(base4)
+      Build-Depends: base >=4 && <5, syb
