@@ -1,5 +1,5 @@
 name:           unordered-containers
-version:        0.2.1.0
+version:        0.2.2.0
 synopsis:       Efficient hashing-based container types
 description:
   Efficient hashing-based container types.  The containers have been
@@ -32,12 +32,13 @@ library
     Data.HashMap.Array
     Data.HashMap.Base
     Data.HashMap.PopCount
+    Data.HashMap.Unsafe
     Data.HashMap.UnsafeShift
 
   build-depends:
-    base >= 4 && < 4.6,
-    deepseq >= 1.1 && < 1.4,
-    hashable >= 1.0.1.1 && < 1.2
+    base >= 4 && < 5,
+    deepseq >= 1.1,
+    hashable >= 1.0.1.1
 
   if impl(ghc < 7.4)
     c-sources: cbits/popc.c
@@ -57,11 +58,11 @@ test-suite hashmap-lazy-properties
 
   build-depends:
     base,
-    containers >= 0.4.1 && < 0.5,
-    hashable >= 1.0.1.1 && < 1.2,
+    containers >= 0.4.1,
+    hashable >= 1.0.1.1,
     QuickCheck >= 2.4.0.1,
-    test-framework >= 0.3.3 && < 0.6,
-    test-framework-quickcheck2 >= 0.2.9 && < 0.3,
+    test-framework >= 0.3.3,
+    test-framework-quickcheck2 >= 0.2.9,
     unordered-containers
 
   ghc-options: -Wall
@@ -74,11 +75,11 @@ test-suite hashmap-strict-properties
 
   build-depends:
     base,
-    containers >= 0.4.1 && < 0.5,
-    hashable >= 1.0.1.1 && < 1.2,
+    containers >= 0.4.1,
+    hashable >= 1.0.1.1,
     QuickCheck >= 2.4.0.1,
-    test-framework >= 0.3.3 && < 0.6,
-    test-framework-quickcheck2 >= 0.2.9 && < 0.3,
+    test-framework >= 0.3.3,
+    test-framework-quickcheck2 >= 0.2.9,
     unordered-containers
 
   ghc-options: -Wall
@@ -91,11 +92,11 @@ test-suite hashset-properties
 
   build-depends:
     base,
-    containers >= 0.4.2 && < 0.5,
-    hashable >= 1.0.1.1 && < 1.2,
+    containers >= 0.4.2,
+    hashable >= 1.0.1.1,
     QuickCheck >= 2.4.0.1,
-    test-framework >= 0.3.3 && < 0.6,
-    test-framework-quickcheck2 >= 0.2.9 && < 0.3,
+    test-framework >= 0.3.3,
+    test-framework-quickcheck2 >= 0.2.9,
     unordered-containers
 
   ghc-options: -Wall
@@ -108,9 +109,9 @@ test-suite regressions
 
   build-depends:
     base,
-    hashable >= 1.0.1.1 && < 1.2,
+    hashable >= 1.0.1.1,
     HUnit,
-    test-framework >= 0.3.3 && < 0.6,
+    test-framework >= 0.3.3,
     test-framework-hunit,
     unordered-containers
 
