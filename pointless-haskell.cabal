@@ -1,5 +1,5 @@
 Name:            pointless-haskell
-Version:         0.0.7
+Version:         0.0.8
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -23,7 +23,7 @@ Flag splitBase
 
 Library
   Hs-Source-Dirs: src
-  Build-Depends:        base >= 3 && < 5, GHood, haskell98, process, syb >= 0.1.0.2
+  Build-Depends:        base >= 3 && < 5, GHood, process, syb >= 0.1.0.2
   exposed-modules:
         Generics.Pointless.Combinators
         Generics.Pointless.Functors,
