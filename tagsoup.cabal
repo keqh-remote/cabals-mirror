@@ -1,6 +1,6 @@
 cabal-version:  >= 1.6
 name:           tagsoup
-version:        0.11.1
+version:        0.12
 copyright:      Neil Mitchell 2006-2010
 author:         Neil Mitchell <ndmitchell@gmail.com>
 maintainer:     Neil Mitchell <ndmitchell@gmail.com>
@@ -25,12 +25,11 @@ flag testprog
     description: Build the test program
 
 flag download
-    default: True
+    default: False
     description: Build with Download module
 
 library
-    ghc-options: -O2
-    build-depends: base == 4.*, mtl, containers, bytestring
+    build-depends: base == 4.*, containers, bytestring
 
     if flag(download)
         build-depends: network
@@ -53,10 +52,9 @@ library
         Text.HTML.TagSoup.Type
 
 executable tagsoup
-    ghc-options: -O2
     if flag(testprog)
         buildable: True
-        build-depends: QuickCheck == 2.1.*, time, deepseq == 1.1.0.0, HTTP
+        build-depends: QuickCheck == 2.4.*, time, deepseq == 1.1.*, directory, process
     else
         buildable: False
 
