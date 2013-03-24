@@ -1,5 +1,5 @@
 Name:                 hcheat
-Version:              2008.11.25
+Version:              2009.5.13
 Build-type:           Simple
 Synopsis:             A collection of code cheatsheet
 Description:          Starting with Google Analytics
@@ -15,7 +15,7 @@ data-files:           readme.markdown, changelog.markdown, Rakefile, tasks/haske
 
 library
   ghc-options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-type-defaults
-  build-depends: base, mps >= 2008.11.6
+  build-depends: base, mps >= 2009.5.13
   hs-source-dirs: src/
   exposed-modules:  
-                    HCheat
+                    Web.HCheat
