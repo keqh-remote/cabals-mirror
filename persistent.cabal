@@ -1,5 +1,5 @@
 name:            persistent
-version:         0.4.1
+version:         0.4.2
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -10,7 +10,7 @@ category:        Database, Yesod
 stability:       Stable
 cabal-version:   >= 1.6
 build-type:      Simple
-homepage:        http://docs.yesodweb.com/persistent/
+homepage:        http://docs.yesodweb.com/book/persistent
 
 library
     build-depends:   base                     >= 4         && < 5
