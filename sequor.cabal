@@ -1,5 +1,5 @@
 Name:                sequor
-Version:             0.2.2
+Version:             0.2.3
 Description:         A sequence labeler based on Collins's sequence perceptron.
 Synopsis:	     A sequence labeler based on Collins's sequence perceptron.
 Homepage:	     http://code.google.com/p/sequor/
@@ -18,8 +18,8 @@ Data-files:	     all.features, example.features, mlcomp.features,
 
 Executable sequor
   Main-is:           Main.hs
-  Other-modules:     Aux.ListZipper, Aux.Utils, Aux.Text, 
-                     Aux.Atom, Aux.Commands, CorpusReader,
+  Other-modules:     Helper.ListZipper, Helper.Utils, Helper.Text, 
+                     Helper.Atom, Helper.Commands, CorpusReader,
                      FeatureTemplate, Config, Perceptron.Vector,
                      Perceptron.Sequence, Features, Labeler, Hashable
   Build-Depends:     base >= 3 && < 5, containers >= 0.2, 
