@@ -1,9 +1,9 @@
 Name:                 panda
-Version:              2008.9.29
+Version:              2008.10.11
 Build-type:           Simple
 Synopsis:             Simple Static Blog Engine
 Description:          Simple Static Blog Engine
-License:              BSD3
+License:              GPL
 License-file:         LICENSE
 Author:               Wang, Jinjing
 Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
