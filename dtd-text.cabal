@@ -1,5 +1,5 @@
 name: dtd-text
-version: 0.1.1.1
+version: 0.1.1.2
 synopsis: Parse and render XML DTDs
 description:
   This library provides an attoparsec-text parser and blaze-builder for
@@ -26,7 +26,7 @@ library
     , text
     , dtd-types >= 0.3.0.1 && < 1
     , xml-types ==0.3.*
-    , attoparsec ==0.8.*
+    , attoparsec >=0.8.0 && < 0.10
     , attoparsec-text ==0.8.*
     , blaze-builder ==0.3.*
 
