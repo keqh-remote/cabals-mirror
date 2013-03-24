@@ -1,23 +1,48 @@
 Name:                monad-par
-Version:             0.1.0.3
+Version:             0.3
 Synopsis:            A library for parallel programming based on a monad
+
+
+-- Version history:
+--  0.1      : First release
+--  0.1.0.1  : 
+--  0.1.0.2  : 
+--  0.1.1.0  : module reorganization, moving ParClass
+
+--  0.2      : Bumped for new class-based API
+--  0.2.1    : Bumped for change AList
+--  0.2.2    : incorporation of real deque package
+--  0.2.3    : Restricted module export for 0.2 release.
+
+--  0.3      : Factored/reorganized modules and packages.  
+--             *This* package is the original, core monad-par.
+
 
 Description:         This library offers an alternative parallel programming
                      API to that provided by the @parallel@ package.
 
-                     The 'Par' monad allows the simple description of
+                     A 'Par' monad allows the simple description of
                      parallel computations, and can be used to add
                      parallelism to pure Haskell code.  The basic API
                      is straightforward: the monad supports forking
                      and simple communication in terms of 'IVar's.
 
-                     The library comes with an efficient work-stealing
+                     The library comes with a work-stealing
                      implementation, but the internals are also
                      exposed so that you can build your own scheduler
                      if necessary.
 
+
                      Examples of use can be found in the examples/ directory
                      of the source package.
+
+
+                     The modules below provide additionaly schedulers,
+                     data structures, and other added capabilities
+                     layered on top of the 'Par' monad.
+
+--                       * Finish These
+--                       * Module Descriptions
 
 Homepage:            https://github.com/simonmar/monad-par
 License:             BSD3
@@ -28,66 +53,93 @@ Copyright:           (c) Simon Marlow 2011
 Stability:           Experimental
 Category:            Control,Parallelism,Monads
 Build-type:          Simple
-Cabal-version:       >=1.2
+Cabal-version:       >=1.8
+
 
 extra-source-files:
-     examples/benchlist.txt
-     examples/benchmark.sh
-     examples/blackscholes_data.hs
-     examples/blackscholes.hs
-     examples/cholesky.hs
-     examples/cholesky_matrix6.dat
-     examples/coins.hs
-     examples/common.mk
-     examples/get_cholesky_data.sh
-     examples/Makefile
-     examples/mandel.hs
-     examples/matmult/ListAux.hs
-     examples/matmult/Makefile
-     examples/matmult/MatMult.hs
-     examples/matmult/matmult.stdout
-     examples/minimax/Board.hs
-     examples/minimax/Game.hs
-     examples/minimax/Main.hs
-     examples/minimax/Makefile
-     examples/minimax/minimax.stdout
-     examples/minimax/Prog.hs
-     examples/minimax/Tree.hs
-     examples/minimax/Wins.hs
-     examples/nbody.hs
-     examples/ntimes
-     examples/ntimes_minmedmax
-     examples/parfib.hs
-     examples/partree/Makefile
-     examples/partree/partree.hs
-     examples/partree/Tree.hs
-     examples/plot_scaling.hs
-     examples/PortablePixmap.lhs
-     examples/primes.hs
-     examples/queens.hs
-     examples/run_tests.sh
-     examples/stream/DEVLOG.txt
-     examples/stream/disjoint_working_sets_pipeline.hs
-     examples/stream/fft_pipeline.hs
-     examples/stream/Makefile
-     examples/stream/simple1_measureSrc.hs
-     examples/sumeuler/ListAux.hs
-     examples/sumeuler/Makefile
-     examples/sumeuler/SumEuler.hs
-     examples/sumeuler/SumEulerPrimes.hs
-     examples/timeout.sh
      tests/AListTest.hs
-     tests/Test.hs
-     Control/Monad/Par/Stream.hs
+     tests/AllTests.hs
+     tests/AsyncTest.hs
+     tests/Makefile
+     tests/ParTests.hs
+     tests/TestHelpers.hs
+     tests/TestParDist.hs
+     tests/Test_ContReaderT.hs
+     tests/Test_ReaderContT.hs
+     tests/hs_cassandra_microbench.hs
+     tests/hs_cassandra_microbench2.hs
 
 Library
-  Exposed-modules: Control.Monad.Par
-                 , Control.Monad.Par.OpenList
-                 , Control.Monad.Par.AList
-                 , Control.Monad.Par.IList
-                 , Control.Monad.Par.Internal
-  Build-depends: base >= 4 && < 5,
-                 deepseq >= 1.1 && < 1.4,
-                 HUnit >= 1.2
+  Exposed-modules: 
+                 -- The classic, simple monad-par interface:
+                   Control.Monad.Par
+
+                 -- This is the default scheduler:
+                 , Control.Monad.Par.Scheds.Trace
+                 , Control.Monad.Par.Scheds.TraceInternal
+
+                 -- Replacement scheduler for Trace:
+                 , Control.Monad.Par.Scheds.Direct
+
+                 -- This scheduler uses sparks rather than IO threads.
+                 -- It only supports Futures, not full IVars:
+                 , Control.Monad.Par.Scheds.Sparks
+
+  Build-depends: base >= 4 && < 5
+               -- This provides the interface which monad-par implements:
+               , abstract-par 
+               , abstract-deque >= 0.1.4
+               -- Extras such as parMap, RNG, State
+               , monad-par-extras == 0.3.*
+               , deepseq >= 1.1
+               , array >= 0.3
+               , mwc-random >= 0.11
+               , containers
+               , parallel >= 3.1
+               , mtl >= 2.0.1.0
+
   ghc-options: -O2
   Other-modules:
+               ------------------------------------------------------------
+               --                Schedulers & Infrastructure             --
+               ------------------------------------------------------------
+
+               -- Strawman scheduler that forks IO threads:
+               -- Control.Monad.Par.Scheds.ContFree,
+
+               -- Internal logging framework:
+               -- Control.Monad.Par.Logging,
+
+               -- Serial Elision is currently experimental:
+               -- Control.Monad.Par.Scheds.SerialElision
+
+               ------------------------------------------------------------
+               --                   Data Structures                      -- 
+               ------------------------------------------------------------
+
+               -- ILists are internal:
+               -- , Control.Monad.Par.IList
+
+               -- RRN: Not exposing Streams or OpenLists yet.  Need to improve performance.
+               -- We have some ideas for enabling bounded chans while preventing deadlock:
+               -- , Control.Monad.Par.OpenList
+               -- , Control.Monad.Par.Stream
+
+
+Test-Suite test-monad-par
+    type:       exitcode-stdio-1.0
+    main-is:    tests/AllTests.hs
+    ghc-options: -itests -rtsopts -threaded
+    build-depends: base >= 4 && < 5
+                 , abstract-par, monad-par-extras
+                 , array >= 0.3
+                 , deepseq >= 1.2
+                 , time
+                 , QuickCheck, HUnit
+                 , test-framework-hunit, test-framework-quickcheck2
+                 , test-framework, test-framework-th
+                 -- , binary
+
+
+
+
