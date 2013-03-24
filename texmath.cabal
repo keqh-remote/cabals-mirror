@@ -1,5 +1,5 @@
 Name:                texmath
-Version:             0.6.0.1
+Version:             0.6.0.2
 Cabal-Version:       >= 1.6
 Build-type:          Custom
 Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
@@ -44,6 +44,8 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/17.tex, tests/17.xhtml, tests/17.omml,
                      tests/18.tex, tests/18.xhtml, tests/18.omml,
                      tests/19.tex, tests/19.xhtml, tests/19.omml,
+                     tests/20.tex, tests/20.xhtml, tests/20.omml,
+                     tests/21.tex, tests/21.xhtml, tests/21.omml,
                      tests/axiom_of_power_set.tex, tests/axiom_of_power_set.xhtml, tests/axiom_of_power_set.omml,
                      tests/binomial_coefficient.tex, tests/binomial_coefficient.xhtml, tests/binomial_coefficient.omml,
                      tests/complex_number.tex, tests/complex_number.xhtml, tests/complex_number.omml,
