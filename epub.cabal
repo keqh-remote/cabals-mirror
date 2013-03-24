@@ -1,5 +1,5 @@
 Name:            epub
-Version:         0.0.4
+Version:         0.0.6
 License:         BSD3
 License-File:    LICENSE
 Synopsis:        EPUB E-Book construction support library
@@ -17,19 +17,17 @@ Cabal-Version:   >= 1.6
 
 Source-Repository head
   type:     darcs
-  location: http://patch-tag.com/r/dixiecko/epub
+  location: darcsden.com/dixie/epub
     
 Library
-  Build-Depends:   ghc,
-                   base         < 5,
+  Build-Depends:   base         < 5,
                    filepath,
                    haskell98,
                    old-time,
                    utf8-string,
                    bytestring,      
                    zip-archive,
-                   xml,
-                   Cabal        >= 1.5 && < 1.9
+                   xml
   Hs-Source-Dirs:  src
   Ghc-Options:      -Wall -fno-warn-orphans
 
