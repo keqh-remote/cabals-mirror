@@ -1,5 +1,5 @@
 Name:             board-games
-Version:          0.1
+Version:          0.1.0.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -46,12 +46,12 @@ Library
     html >=1.0 && <1.1,
     cgi >=3001.1 && <3001.2,
     utility-ht >=0.0.3 && <0.1,
-    transformers >=0.2.2 && <0.3
+    transformers >=0.2.2 && <0.4
   If flag(splitBase)
     Build-Depends:
       containers >=0.2 && <0.5,
       random >=1.0 && <1.1,
-      array >=0.1 && <0.4,
+      array >=0.1 && <0.5,
       base >= 2 && <5
   Else
     Build-Depends: base >= 1.0 && < 2
@@ -86,10 +86,10 @@ Executable board-games
       html >=1.0 && <1.1,
       cgi >=3001.1 && <3001.2,
       utility-ht >=0.0.3 && <0.1,
-      transformers >=0.2.2 && <0.3,
+      transformers >=0.2.2 && <0.4,
       containers >=0.2 && <0.5,
       random >=1.0 && <1.1,
-      array >=0.1 && <0.4,
+      array >=0.1 && <0.5,
       base >= 2 && <5
   Else
     Buildable: False
@@ -104,8 +104,8 @@ Test-Suite testsuite
   Build-Depends:
     QuickCheck >1.2 && <3.0,
     utility-ht >=0.0.3 && <0.1,
-    transformers >=0.2.2 && <0.3,
+    transformers >=0.2.2 && <0.4,
     containers >=0.2 && <0.5,
     random >=1.0 && <1.1,
-    array >=0.1 && <0.4,
+    array >=0.1 && <0.5,
     base >= 2 && <5
