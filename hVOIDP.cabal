@@ -1,5 +1,5 @@
 Name:	hVOIDP
-Version: 1.0
+Version: 1.0.1
 Synopsis: Optimal variable selection in chain graphical model.
 Description: 
    An implementation of the VOIDP algorithm that selects the optimal observations in chain graphical models.
@@ -33,3 +33,10 @@ Executable hVOIDP
   Build-Depends:   array,hmatrix,base >=3 && <5
   extra-libraries: lapack blas
   extra-lib-dirs:  /usr/lib 
+
+
+Library  
+  Hs-source-dirs:  .
+  Exposed-Modules:
+    Dynamic
+    Table
