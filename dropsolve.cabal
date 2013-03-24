@@ -1,5 +1,5 @@
 Name:          dropsolve
-Version:       0.1.2
+Version:       0.1.2.1
 License:       BSD3
 License-file:  LICENSE
 Author:        Daniel Trstenjak
@@ -7,8 +7,8 @@ Maintainer:    daniel.trstenjak@gmail.com
 Build-Type:    Simple
 Category:      Utils
 Cabal-Version: >=1.6
-Synopsis:      A command line tool for resolving dropbox conflicts.
-Description:   A command line tool for resolving dropbox conflicts.
+Synopsis:      A command line tool for resolving dropbox conflicts. Deprecated! Please use confsolve.
+Description:   A command line tool for resolving dropbox conflicts. Deprecated! Please use confsolve.
 
 source-repository head
   type:     git
