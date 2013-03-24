@@ -1,5 +1,5 @@
 Name:              hmeap-utils
-Version:           0.10
+Version:           0.11
 Synopsis:          Haskell Meapsoft Parser Utilities
 Description:       Utilities related to the hmeap parser.
 License:           GPL
@@ -9,7 +9,7 @@ Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/?t=hmeap-utils
-Tested-With:       GHC == 6.12.1
+Tested-With:       GHC == 7.2.2
 Build-Type:        Simple
 Cabal-Version:     >= 1.8
 
@@ -18,23 +18,23 @@ Data-files:        README
 
 Executable         hmeap-browse
  Main-Is:          cmd/browse.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.10,parsec
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.11.*,parsec
 
 Executable         hmeap-parser
  Main-Is:          cmd/parser.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.10,parsec
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.11.*,parsec
 
 Executable         hmeap-play
  Main-Is:          cmd/play.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.10,hosc,hsc3,parsec
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.11.*,hosc==0.11.*,hsc3==0.11.*,parsec
 
 Executable         hmeap-plot
  Main-Is:          cmd/plot.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,gnuplot,hmatrix,hmeap==0.10,parsec
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,gnuplot,hmatrix,hmeap==0.11.*,parsec
 
 Executable         hmeap-stat
  Main-Is:          cmd/stat.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmatrix,hmeap==0.10,parsec
+ Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmatrix,hmeap==0.11.*,parsec
 
 Source-Repository  head
   Type:            darcs
