@@ -1,5 +1,5 @@
 Name:              hmeap
-Version:           0.10
+Version:           0.11
 Synopsis:          Haskell Meapsoft Parser
 Description:       Parser for the anaylsis files produced by the
                    Meapsoft feature extractor.
@@ -10,7 +10,7 @@ Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/?t=hmeap
-Tested-With:       GHC == 6.12.1
+Tested-With:       GHC == 7.2.2
 Build-Type:        Simple
 Cabal-Version:     >= 1.8
 
