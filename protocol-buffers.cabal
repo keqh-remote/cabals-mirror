@@ -1,5 +1,5 @@
 name:           protocol-buffers
-version:        0.3.1
+version:        1.0.0
 cabal-version:  >= 1.2
 build-type:     Simple
 license:        BSD3
@@ -29,7 +29,6 @@ flag small_base
     description: Choose the new smaller, split-up base package.
 
 Library
--- fvia-C is needed on OS X powerPC (G4) with WireMessage.hs to prevent a GHC crash
   ghc-options:  -Wall -O2
   exposed-modules: Text.ProtocolBuffers
                    Text.ProtocolBuffers.Basic
@@ -41,6 +40,7 @@ Library
                    Text.ProtocolBuffers.Reflections
                    Text.ProtocolBuffers.Unknown
                    Text.ProtocolBuffers.WireMessage
+                   Text.ProtocolBuffers.Identifiers
 
   if flag(small_base)
         build-depends: base >= 3,
@@ -50,7 +50,8 @@ Library
                        filepath,
                        directory,
                        mtl,
-                       QuickCheck
+                       QuickCheck,
+                       syb
   else
         build-depends: base < 3
 
@@ -67,4 +68,5 @@ Library
                    ScopedTypeVariables,
                    TypeSynonymInstances,
                    MultiParamTypeClasses,
+                   FlexibleContexts,
                    FunctionalDependencies
