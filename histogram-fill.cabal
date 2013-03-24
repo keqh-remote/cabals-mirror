@@ -1,6 +1,6 @@
 Name:           histogram-fill
-Version:        0.1.0
-Cabal-Version:  >= 1.2
+Version:        0.2.0
+Cabal-Version:  >= 1.6
 License:        BSD3
 License-File:   LICENSE
 Author:         Alexey Khudyakov
@@ -15,12 +15,17 @@ Description:
   .
   This is very much work in progress so expect API breakage in future relesases.
 
+source-repository head
+  type:     hg
+  location: http://bitbucket.org/Shimuuar/histogram-fill
 
 Library
-  Build-Depends:        base >=3 && <5, uvector >=0.1 && <0.2
+  Build-Depends:        base >=3 && <5, vector
   Exposed-modules:      Data.Histogram
-                        Data.Histogram.Fill 
+                        Data.Histogram.Generic
+                        Data.Histogram.Fill
                         Data.Histogram.Bin
+                        Data.Histogram.Bin.Extra
                         Data.Histogram.ST
   Other-modules:        Data.Histogram.Parse
-  Ghc-options:          -O2 -Wall -auto-all
+  Ghc-options:          -O2 -Wall
