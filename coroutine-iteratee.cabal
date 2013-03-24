@@ -1,5 +1,5 @@
 Name:                coroutine-iteratee
-Version:             0.1
+Version:             0.1.1
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Bridge between the monad-coroutine and iteratee packages.
@@ -12,16 +12,16 @@ Description:
   
 License:             GPL
 License-file:        LICENSE.txt
-Copyright:           (c) 2010 Mario Blazevic
+Copyright:           (c) 2010-2011 Mario Blazevic
 Author:              Mario Blazevic
 Maintainer:          blamario@yahoo.com
 Homepage:            http://trac.haskell.org/SCC/wiki/coroutine-iteratee
-Extra-source-files:  TestIteratee.hs
+Extra-source-files:  Test/TestIteratee.hs
 -- Source-repository head
 --   type:              darcs
 --   location:          http://code.haskell.org/SCC/
 
 Library
   Exposed-Modules:   Control.Monad.Coroutine.Iteratee
-  Build-Depends:     base < 5, monad-coroutine >= 0.6 && < 0.7, iteratee >= 0.4 && < 0.7
+  Build-Depends:     base < 5, monad-coroutine >= 0.6 && < 0.8, iteratee >= 0.4 && < 0.9
   GHC-prof-options:  -auto-all
