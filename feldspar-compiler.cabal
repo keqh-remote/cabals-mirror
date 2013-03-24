@@ -1,6 +1,6 @@
 name:           feldspar-compiler
-version:        0.2.1
-cabal-version:  >= 1.2.3
+version:        0.3
+cabal-version:  >= 1.6
 build-type:     Simple
 license:        BSD3
 license-file:   LICENSE
@@ -9,7 +9,7 @@ author:         Feldspar group,
                 Eotvos Lorand University Faculty of Informatics
 maintainer:     deva@inf.elte.hu
 stability:      experimental
-homepage:       http://feldspar.sourceforge.net/
+homepage:       http://feldspar.inf.elte.hu/feldspar/
 synopsis:       Compiler for the Feldspar language
 description:    Feldspar (**F**unctional **E**mbedded **L**anguage for **DSP**
                 and **PAR**allelism) is an embedded DSL for describing digital
@@ -28,7 +28,6 @@ library
     Feldspar.Compiler.Imperative.Semantics
     Feldspar.Compiler.PluginArchitecture.DefaultConvert
     Feldspar.Compiler.Plugins.BackwardPropagation
-    Feldspar.Compiler.Plugins.ConstantFolding
     Feldspar.Compiler.Plugins.ForwardPropagation
     Feldspar.Compiler.Plugins.HandlePrimitives
     Feldspar.Compiler.Plugins.Precompilation
@@ -42,13 +41,14 @@ library
     Feldspar.Compiler.Compiler
     Feldspar.Compiler.Error
     Feldspar.Compiler.Options
+    Feldspar.Compiler.Platforms
     Feldspar.Compiler.PluginArchitecture
     Feldspar.Compiler
     Feldspar.Fs2dot
 
   build-depends:
-    feldspar-language == 0.2,
-    base >= 4.0 && < 4.2,
+    feldspar-language == 0.3,
+    base >= 4 && < 4.3,
     containers,
     haskell-src-exts,
     directory,
@@ -72,11 +72,21 @@ library
     ./Feldspar/C
 
   install-includes:
-    feldspar.h
-    feldspar.c
+    feldspar_c99.h
+    feldspar_c99.c
+    feldspar_tic64x.h
+    feldspar_tic64x.c
 
 executable feldspar
   main-is : ./Feldspar/Compiler/CompilerMain.hs
+
+  other-modules:
+    Feldspar.Compiler.Standalone.Constants
+    Feldspar.Compiler.Standalone.Library
+    Feldspar.Compiler.Standalone.Options
+
+  build-depends:
+    ansi-terminal
 
   extensions:
     CPP
