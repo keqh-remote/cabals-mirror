@@ -1,6 +1,6 @@
 
 Name:                Elm
-Version:             0.1.1
+Version:             0.1.1.1
 Synopsis:            The Elm compiler and server.
 Description:         Elm aims to make client-side web-development more pleasant.
                      It is a statically/strongly typed, functional reactive
@@ -31,13 +31,13 @@ Executable elm
   -- .hs or .lhs file containing the Main module.
   Main-is:             Elm.hs
   Hs-Source-Dirs:      src, src/Parse, src/Types, src/Language
-  other-modules:       Ast, CompileToJS, GenerateHtml, Initialize,
+  other-modules:       Ast, CompileToJS, GenerateHtml, Guid, Initialize,
                        Rename, Language.Elm, Binop, Combinators, Lexer,
                        ParsePatterns, Parser, ParserLib, ParseTypes, Tokens,
                        Types, Constrain, Hints, Types, Unify
   
   -- Packages needed in order to build this package.
-  ghc-options:	       -O3 -rtsopts -auto-all -caf-all
+  ghc-options:	       -O3 -rtsopts -auto-all -caf-all -fforce-recomp
   Build-depends:       base >=4.2 && <5, containers >= 0.3,
                        transformers >= 0.2, mtl >= 2, parsec >= 3.1.1,
                        blaze-html == 0.5.0.*, blaze-markup == 0.5.1.*, deepseq
@@ -52,11 +52,11 @@ Executable elm
 Executable elm-server
   Main-is:             Server.hs
   Hs-Source-Dirs:      src, src/Parse, src/Types
-  other-modules:       Ast, CompileToJS, GenerateHtml, Initialize,
+  other-modules:       Ast, CompileToJS, GenerateHtml, Guid, Initialize,
                        Rename, Language.Elm, Binop, Combinators, Lexer,
                        ParsePatterns, Parser, ParserLib, ParseTypes, Tokens,
                        Types, Constrain, Hints, Types, Unify
-  ghc-options:	       -O3 -rtsopts -auto-all -caf-all
+  ghc-options:	       -O3 -rtsopts -auto-all -caf-all -fforce-recomp
   Build-depends:       base >=4.2 && <5, containers >= 0.3, transformers >= 0.2,
                        mtl >= 2, parsec >= 3.1.1, blaze-html == 0.5.0.*,
                        HTTP >= 4000, happstack-server == 7.0.2
@@ -64,7 +64,7 @@ Executable elm-server
 Library
   exposed-modules:     Language.Elm
   Hs-Source-Dirs:      src, src/Parse, src/Types
-  other-modules:       Ast, CompileToJS, GenerateHtml, Initialize,
+  other-modules:       Ast, CompileToJS, GenerateHtml, Guid, Initialize,
                        Rename, Binop, Combinators, Lexer,
                        ParsePatterns, Parser, ParserLib, ParseTypes, Tokens,
                        Types, Constrain, Hints, Types, Unify
