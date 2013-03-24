@@ -1,5 +1,5 @@
 name:           libltdl
-version:        0.1.0.1
+version:        0.1.0.2
 cabal-version:  >= 1.8
 license:        BSD3
 license-file:   LICENSE
@@ -15,6 +15,7 @@ build-type:     Custom
 
 extra-source-files:
   configure
+  libltdl.buildinfo.in
 
 flag examples
   description: Build example programs.
