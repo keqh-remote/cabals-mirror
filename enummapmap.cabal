@@ -1,5 +1,5 @@
 name:               enummapmap
-version:            0.1.0
+version:            0.2.0
 synopsis:           Map of maps using Enum types as keys
 description:        This package provides 'maps of maps' using Enum types as
                     keys.  The code is based upon Data.IntMap in
@@ -20,7 +20,7 @@ source-repository head
 Library
    exposed-modules: Data.EnumMapMap.Lazy, Data.EnumMapMap.Strict,
                     Data.EnumMapSet
-   other-modules:   Data.EnumMapMap.Base
+   other-modules:   Data.EnumMapMap.Base, Data.EnumMapSet.Base
    build-depends:   base >= 4.0 && < 5,
                     deepseq >= 1.2 && < 1.4,
                     ghc-prim
