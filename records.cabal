@@ -1,5 +1,5 @@
 Name:          records
-Version:       0.1.1.1
+Version:       0.1.1.2
 Cabal-Version: >= 1.2.3
 Build-Type:    Simple
 License:       BSD3
@@ -10,7 +10,7 @@ Maintainer:    jeltsch@tu-cottbus.de
 Stability:     provisional
 Homepage:      http://community.haskell.org/~jeltsch/records/
 Bug-Reports:   jeltsch@tu-cottbus.de
-Package-URL:   http://hackage.haskell.org/packages/archive/records/0.0.0.0/records-0.0.0.0.tar.gz
+Package-URL:   http://hackage.haskell.org/packages/archive/records/0.1.1.2/records-0.1.1.2.tar.gz
 Synopsis:      A flexible record system
 Description:   This package provides a flexible record system which has some novel features:
                .
@@ -22,13 +22,16 @@ Description:   This package provides a flexible record system which has some nov
                .
                * Subkind polymorphism for sorts makes it possible to impose varying restrictions on
                  the structure of field types.
+               .
+               For detailed information, please refer to the paper
+               /Generic Record Combinators with Static Type Checking/.
 Category:      Data, Records
-Tested-With:   GHC == 6.10.4
+Tested-With:   GHC == 6.12.1
 
 Library
     Build-Depends:   base           >= 3.0   && < 4.1,
                      kinds          >= 0.0.1 && < 0.1,
-                     type-functions >= 0.1   && < 0.2
+                     type-functions >= 0.1   && < 0.3
     Extensions:      EmptyDataDecls
                      FlexibleContexts
                      FlexibleInstances
