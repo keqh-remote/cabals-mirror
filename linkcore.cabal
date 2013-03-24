@@ -1,5 +1,5 @@
 name:                linkcore
-version:             0.4
+version:             0.4.1
 synopsis:            Combines multiple GHC Core modules into a single module
 description:         Combines multiple GHC Core modules into a single module
 category:            Language
