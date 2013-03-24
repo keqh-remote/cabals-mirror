@@ -1,5 +1,5 @@
 name:                   HarmTrace
-version:                0.2
+version:                0.3
 synopsis:               HarmTrace: Harmony Analysis and Retrieval of Music
 description:            HarmTrace: Harmony Analysis and Retrieval of Music 
                         with Type-level Representations of Abstract
@@ -22,7 +22,7 @@ author:                 W. Bas de Haas and José Pedro Magalhães
 stability:              experimental
 maintainer:             bash@cs.uu.nl, jpm@cs.uu.nl
 category:               Music
-build-type:             Custom
+build-type:             Simple
 cabal-version:          >= 1.6
 tested-with:            GHC == 7.0.3
 
