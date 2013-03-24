@@ -1,5 +1,5 @@
 name:           heist
-version:        0.1.1
+version:        0.1.2
 synopsis:       An xhtml templating system
 license:        BSD3
 license-file:   LICENSE
@@ -108,4 +108,4 @@ Library
 
 source-repository head
   type:     git
-  location: http://git.snapframework.com/heist
+  location: http://git.snapframework.com/heist.git
