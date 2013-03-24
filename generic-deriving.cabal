@@ -1,5 +1,5 @@
 name:                   generic-deriving
-version:                1.0.2
+version:                1.0.3
 synopsis:               Generic programming library for generalized deriving.
 description:
 
@@ -22,9 +22,13 @@ author:                 José Pedro Magalhães
 maintainer:             generics@haskell.org
 stability:              experimental
 build-type:             Custom
-cabal-version:          >= 1.2.1
+cabal-version:          >= 1.6
 tested-with:            GHC == 7.0.3, GHC == 7.2.1
 extra-source-files:     examples/Examples.hs
+
+source-repository head
+  type: svn
+  location: https://subversion.cs.uu.nl/repos/project.dgp-haskell.libraries/generic-deriving/trunk/
 
 library
   hs-source-dirs:       src
@@ -40,7 +44,7 @@ library
 
                         Generics.Deriving.TH
                         
-  build-depends:        base < 4.5, template-haskell >=2.4 && <2.7
+  build-depends:        base < 4.6, template-haskell >=2.4 && <2.8
   if impl(ghc > 7.0)
     build-depends:      ghc-prim < 0.3
 
