@@ -1,5 +1,5 @@
 Name:           AERN-Real
-Version:        0.9.3.1
+Version:        0.9.4
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -47,7 +47,7 @@ Description:
     and simple numerical integration.
 
 Extra-source-files:
-    HISTORY tests/Test1.hs
+    ChangeLog tests/Test1.hs
 
 Flag containers-in-base
     Default: False
@@ -71,6 +71,7 @@ Library
     Data.Number.ER.Real.Base,
     Data.Number.ER.Real.Arithmetic.Elementary,
     Data.Number.ER.Real.Arithmetic.Integration,
+    Data.Number.ER.Real.Arithmetic.LinearSolver,
     Data.Number.ER.Real.Arithmetic.Taylor,
     Data.Number.ER.Real.Arithmetic.Newton,
     Data.Number.ER.Real.Approx.Sequence,
