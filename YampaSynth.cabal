@@ -1,5 +1,5 @@
 name: YampaSynth
-version: 0.1
+version: 0.1.1
 cabal-Version: >= 1.2
 license: BSD3
 license-file: LICENSE
@@ -53,6 +53,7 @@ executable yampasynth-openal
     build-Depends: base < 5, array, containers, OpenAL, Yampa, HCodecs
   else
     buildable: False
+  extensions: FlexibleInstances, UndecidableInstances
   hs-source-dirs:  src
   main-is: Main/OpenAL.hs
   other-modules: SynthBasics, SynthParams, MidiSynth, Player.OpenAL
@@ -63,6 +64,7 @@ executable yampasynth-gtk
     build-Depends: base < 5, array, containers, OpenAL, glade, gtk, Yampa, HCodecs  
   else
     buildable: False
+  extensions: FlexibleInstances, UndecidableInstances
   hs-source-dirs:  src
   main-is: Main/Gtk.hs
   other-modules: SynthBasics, SynthParams, MidiSynth, Player.OpenAL, Player.Gtk
