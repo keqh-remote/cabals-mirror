@@ -1,5 +1,5 @@
 name:                rss2irc
-version:             0.4.1
+version:             0.4.2
 homepage:            http://hackage.haskell.org/package/rss2irc
 license:             BSD3
 license-file:        LICENSE
@@ -45,11 +45,15 @@ description:
  .
  > rss2irc http://hackage.haskell.org/packages/archive/recent.rss mybot@irc.freenode.org/#haskell
  .
- Release notes for 0.4.1, 2009-09-25:
+ Release notes for 0.4.2, 2009-09-27:
+ .
+ * fix a bug where every --max-items-th announcement was skipped
+ .
+ Release notes for 0.4.1, 2009-09-26:
  .
  * fix release notes issues
  .
- Release notes for 0.4, 2009-09-25:
+ Release notes for 0.4, 2009-09-26:
  .
  * wait for server connection confirmation before JOIN command.
   Problem was observed on irc.quakenet.org since it refuses
