@@ -1,5 +1,5 @@
 name: GPipe
-version: 1.2.0
+version: 1.2.1
 cabal-version: >= 1.2.3
 build-type: Simple
 license: BSD3
@@ -35,8 +35,8 @@ Library
                        GLUT ==2.2.2.0,
                        OpenGL ==2.4.0.1,
                        Boolean == 0.0.1,
-                       Vec == 0.9.6, 
-                       Vec-Boolean == 1.0.2,
+                       Vec == 0.9.7, 
+                       Vec-Boolean == 1.0.3,
                        base >= 3 && < 5
     else
         build-depends: containers >= 0.2 && < 0.3,
@@ -45,8 +45,8 @@ Library
                        GLUT ==2.2.2.0,
                        OpenGL ==2.4.0.1,
                        Boolean == 0.0.1,
-                       Vec == 0.9.6, 
-                       Vec-Boolean == 1.0.2,
+                       Vec == 0.9.7, 
+                       Vec-Boolean == 1.0.3,
                        base >= 3 && < 5
                        
     exposed-modules: Graphics.GPipe
