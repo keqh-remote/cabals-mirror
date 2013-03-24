@@ -1,5 +1,5 @@
 name:           unordered-containers
-version:        0.2.0.1
+version:        0.2.1.0
 synopsis:       Efficient hashing-based container types
 description:
   Efficient hashing-based container types.  The containers have been
@@ -91,11 +91,27 @@ test-suite hashset-properties
 
   build-depends:
     base,
-    containers >= 0.4.1 && < 0.5,
+    containers >= 0.4.2 && < 0.5,
     hashable >= 1.0.1.1 && < 1.2,
     QuickCheck >= 2.4.0.1,
     test-framework >= 0.3.3 && < 0.6,
     test-framework-quickcheck2 >= 0.2.9 && < 0.3,
+    unordered-containers
+
+  ghc-options: -Wall
+  cpp-options: -DASSERTS
+
+test-suite regressions
+  hs-source-dirs: tests
+  main-is: Regressions.hs
+  type: exitcode-stdio-1.0
+
+  build-depends:
+    base,
+    hashable >= 1.0.1.1 && < 1.2,
+    HUnit,
+    test-framework >= 0.3.3 && < 0.6,
+    test-framework-hunit,
     unordered-containers
 
   ghc-options: -Wall
