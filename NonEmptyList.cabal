@@ -1,5 +1,5 @@
 Name:                NonEmptyList
-Version:             0.0.5
+Version:             0.0.6
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            A list with a length of at least one.
@@ -17,9 +17,9 @@ Flag small_base
 
 Library
   if flag(small_base)
-    Build-Depends: base < 5 && >= 3, QuickCheck >= 2
+    Build-Depends: base < 5 && >= 3, QuickCheck >= 2, Semigroup
   else
-    Build-Depends: base < 5 && >= 3, QuickCheck >= 2
+    Build-Depends: base < 5 && >= 3, QuickCheck >= 2, Semigroup
 
   GHC-Options:    -Wall
   Exposed-Modules: Data.List.NonEmpty
