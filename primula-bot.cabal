@@ -1,5 +1,5 @@
 Name:                primula-bot
-Version:             0.0.1
+Version:             0.0.2
 Synopsis:            Jabber-bot for primula-board ImageBoard
 Category:            Web
 Description:         Jabber-bot for communication with primula-board. 
@@ -21,4 +21,4 @@ Extra-Source-Files:  debug.sh, install.sh,
 Executable primula-bot
   Main-is:           Main.hs
   Build-Depends:     base >=4.0 && < 5, XMPP>0.0.1, network, utf8-string,
-                     HTTP, parsec, mtl, directory, ConfigFile
+                     HTTP, parsec >=2.0 && < 3, mtl, directory, ConfigFile
