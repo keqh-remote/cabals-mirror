@@ -1,10 +1,10 @@
 name:		polyparse
-version:	1.4.1
+version:	1.5
 license:	LGPL
 license-file:	COPYRIGHT
-author:		Malcolm Wallace <Malcolm.Wallace@cs.york.ac.uk>
+author:		Malcolm Wallace <Malcolm.Wallace@me.com>
 maintainer:	author
-homepage:	http://www.cs.york.ac.uk/fp/polyparse/
+homepage:	http://code.haskell.org/~malcolm/polyparse/
 category:	Text, Parsing
 synopsis:	A variety of alternative parser combinator libraries.
 description:
@@ -25,16 +25,23 @@ library
         Text.ParserCombinators.HuttonMeijerWallace,
         Text.ParserCombinators.Poly,
         Text.ParserCombinators.Poly.Base,
+        Text.ParserCombinators.Poly.Result,
+        Text.ParserCombinators.Poly.Parser,
         Text.ParserCombinators.Poly.Plain,
         Text.ParserCombinators.Poly.Lazy,
+        Text.ParserCombinators.Poly.StateParser,
         Text.ParserCombinators.Poly.State,
         Text.ParserCombinators.Poly.StateLazy,
+        Text.ParserCombinators.Poly.Lex,
         Text.Parse
   if impl(ghc)
     build-depends:	bytestring
+--  build-depends:	 text
     exposed-modules:
         Text.ParserCombinators.Poly.ByteString,
         Text.Parse.ByteString
-  cpp-options:		-DVERSION="1.4.1"
+--      Text.ParserCombinators.Poly.Text,
+--      Text.Parse.Text
+  cpp-options:		-DVERSION="1.5"
   nhc98-options:	-K6M
   extensions:		CPP
