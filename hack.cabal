@@ -1,10 +1,12 @@
 Name:                 hack
-Version:              2009.10.30
+Version:              2012.2.6
 Build-type:           Simple
 Synopsis:             a Haskell Webserver Interface
 Description:
-        
+
     Hack: a Haskell Webserver Interface
+    .
+    2012.02.06 added FlexibleInstances to fix an error under ghc >=7.2
 
 License:              BSD3
 License-file:         LICENSE
@@ -20,5 +22,5 @@ library
   ghc-options: -Wall
   build-depends: base >= 3 && < 5, data-default >= 0.2, bytestring
   hs-source-dirs: src/
-  exposed-modules:  
+  exposed-modules:
                     Hack
