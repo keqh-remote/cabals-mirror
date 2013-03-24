@@ -1,5 +1,5 @@
 name:               dgs
-version:            0.1
+version:            0.2
 author:             Daniel Wagner
 maintainer:         daniel@wagner-home.com
 homepage:           http://www.dmwit.com/dgs
@@ -20,15 +20,16 @@ library
     exposed-modules:    Network.DGS
 
     build-depends:  base >=3 && < 4,
+                    mtl >= 1.1,
                     HTTP,
                     network,
                     split
 
 source-repository head
     type:       git
-    location:   http://www.dmwit.com/dgs
+    location:   http://www.dmwit.com/dgs/.git
 
 source-repository this
     type:       git
-    location:   http://www.dmwit.com/dgs
-    tag:        0.1
+    location:   http://www.dmwit.com/dgs/.git
+    tag:        0.2
