@@ -1,6 +1,6 @@
 
 Name:                Elm
-Version:             0.5.0.2
+Version:             0.6
 Synopsis:            The Elm language module.
 Description:         Elm aims to make client-side web-development more pleasant.
                      It is a statically/strongly typed, functional reactive
@@ -22,7 +22,7 @@ Category:            Compiler, Language
 Build-type:          Simple
 
 Extra-source-files:  changelog.txt
-Data-files:          elm-runtime-0.5.0.2.js
+Data-files:          elm-runtime-0.6.js
 Cabal-version:       >=1.8
 
 source-repository head
@@ -32,7 +32,7 @@ source-repository head
 Library
   exposed-modules:     Language.Elm,
                        Language.Elm.Quasi
-  Hs-Source-Dirs:      src, src/Parse, src/Types, src/Gen
+  Hs-Source-Dirs:      src, src/Gen
   other-modules:       Ast,
                        CompileToJS,
                        Cases,
@@ -43,17 +43,18 @@ Library
                        Optimize,
                        Initialize,
                        Rename,
-                       Binops,
-                       Patterns,
-                       Parser,
-                       ParseLib,
-                       ParseExpr,
-                       ParseTypes,
-                       ParseModules,
-                       ParseForeign,
-                       Types,
+                       Parse.Binops,
+                       Parse.Expr,
+                       Parse.Foreign,
+                       Parse.Library,
+                       Parse.Modules,
+                       Parse.Parser,
+                       Parse.Patterns,
+                       Parse.Types,
+                       Types.Types,
                        Types.Constrain,
                        Types.Hints,
+                       Types.Solver,
                        Types.Substitutions,
                        Types.Unify,
                        Paths_Elm
@@ -69,13 +70,15 @@ Library
                        text,
                        template-haskell,
                        shakespeare >= 1,
-                       pandoc <= 1.9.4.2,
+                       pandoc,
                        bytestring,
-                       hjsmin
+                       hjsmin,
+                       indents,
+                       filepath
 
 Executable elm
   Main-is:             Compiler.hs
-  Hs-Source-Dirs:      src, src/Parse, src/Types, src/Gen
+  Hs-Source-Dirs:      src, src/Gen
   other-modules:       Ast,
                        CompileToJS,
                        Cases,
@@ -86,17 +89,18 @@ Executable elm
                        Optimize,
                        Initialize,
                        Rename,
-                       Binops,
-                       Patterns,
-                       Parser,
-                       ParseLib,
-                       ParseExpr,
-                       ParseTypes,
-                       ParseModules,
-                       ParseForeign,
-                       Types,
+                       Parse.Binops,
+                       Parse.Expr,
+                       Parse.Foreign,
+                       Parse.Library,
+                       Parse.Modules,
+                       Parse.Parser,
+                       Parse.Patterns,
+                       Parse.Types,
+                       Types.Types,
                        Types.Constrain,
                        Types.Hints,
+                       Types.Solver,
                        Types.Substitutions,
                        Types.Unify,
                        Paths_Elm
@@ -110,6 +114,8 @@ Executable elm
                        blaze-markup == 0.5.1.*,
                        deepseq,
                        cmdargs,
-                       pandoc <= 1.9.4.2,
+                       pandoc,
                        bytestring,
-                       hjsmin
+                       hjsmin,
+                       indents,
+                       filepath
