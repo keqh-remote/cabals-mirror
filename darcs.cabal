@@ -1,5 +1,5 @@
 Name:           darcs
-version:        2.2.0
+version:        2.2.1
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -299,14 +299,14 @@ Library
     build-depends: base < 3
 
   -- We need optimizations, regardless of what Hackage says
-  ghc-options:      -Wall -O2 -funbox-strict-fields -threaded
+  ghc-options:      -Wall -O2 -funbox-strict-fields
   ghc-prof-options: -prof -auto-all
 
   if flag(curl)
     extra-libraries:   curl
     cpp-options:       -DHAVE_CURL
     c-sources:         src/hscurl.c
-    cc-options:        -DHAVE_CURL -DPACKAGE_VERSION="2.2.0"
+    cc-options:        -DHAVE_CURL -DPACKAGE_VERSION="2.2.1"
 
     if flag(curl-pipelining)
       -- curl 7.19.1 has bug-free pipelining
@@ -318,14 +318,14 @@ Library
     if flag(libwww)
       build-tools:    libwww-config >= 5.0
       c-sources:      src/hslibwww.c
-      cc-options:     -DHAVE_LIBWWW -DPACKAGE_VERSION="2.2.0"
+      cc-options:     -DHAVE_LIBWWW -DPACKAGE_VERSION="2.2.1"
       cpp-options:    -DHAVE_LIBWWW
       x-have-libwww:
     else
       if flag(http)
         build-depends:    network == 2.2.*,
                           HTTP    >= 3000.0 && < 3001.1
-        cpp-options:      -DHAVE_HTTP -DPACKAGE_VERSION="2.2.0"
+        cpp-options:      -DHAVE_HTTP -DPACKAGE_VERSION="2.2.1"
         x-have-http:
 
   if flag(external-bytestring)
@@ -437,15 +437,11 @@ Executable          darcs
   else
     build-depends: base < 3
 
-  -- We need optimizations, regardless of what Hackage says
-  ghc-options:      -Wall -O2 -funbox-strict-fields -threaded
-  ghc-prof-options: -prof -auto-all
-
   if flag(curl)
     extra-libraries:   curl
     cpp-options:       -DHAVE_CURL
     c-sources:         src/hscurl.c
-    cc-options:        -DHAVE_CURL -DPACKAGE_VERSION="2.2.0"
+    cc-options:        -DHAVE_CURL -DPACKAGE_VERSION="2.2.1"
 
     if flag(curl-pipelining)
       -- curl 7.19.1 has bug-free pipelining
@@ -457,14 +453,14 @@ Executable          darcs
     if flag(libwww)
       build-tools:    libwww-config >= 5.0
       c-sources:      src/hslibwww.c
-      cc-options:     -DHAVE_LIBWWW -DPACKAGE_VERSION="2.2.0"
+      cc-options:     -DHAVE_LIBWWW -DPACKAGE_VERSION="2.2.1"
       cpp-options:    -DHAVE_LIBWWW
       x-have-libwww:
     else
       if flag(http)
         build-depends:    network == 2.2.*,
                           HTTP    >= 3000.0 && < 3001.1
-        cpp-options:      -DHAVE_HTTP -DPACKAGE_VERSION="2.2.0"
+        cpp-options:      -DHAVE_HTTP -DPACKAGE_VERSION="2.2.1"
         x-have-http:
 
   if flag(external-bytestring)
