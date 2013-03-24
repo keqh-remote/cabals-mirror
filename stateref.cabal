@@ -1,21 +1,30 @@
 name:                   stateref
-version:                0.2.1.1
+version:                0.3
 stability:              provisional
-license:                BSD3
-license-file:           LICENSE
+license:                PublicDomain
 
 cabal-version:          >= 1.2
 build-type:             Simple
 
 author:                 James Cook <mokus@deepbondi.net>
 maintainer:             James Cook <mokus@deepbondi.net>
-homepage:               http://darcs.deepbondi.net/stateref
+homepage:               http://code.haskell.org/~mokus/stateref/
 
 category:               Data
 synopsis:               Abstraction for things that work like IORef.
 description:            A collection of type-classes generalizing the
                         read\/write\/modify operations for stateful variables
-                        provided by things like IORef, TVar, &c.
+                        provided by things like IORef, TVar, &c.  
+                        
+                        Note that The interface has changed a bit from the
+                        0.2.* version.  \"*Ref\" functions are now called 
+                        \"*Reference\" and new \"*Ref\" function exist with 
+                        simpler signatures.
+                        
+                        The new 'Ref' existential type provides a convenient
+                        monad-indexed reference type, and the HasRef class
+                        indicates monads for which there is a default
+                        reference type for every referent.
 
 tested-with:            GHC
 
@@ -24,8 +33,8 @@ Flag useSTM
   Default:              True
 
 Flag useTMVar
-  Description:          Include instances for TMVar (TMVar not available
-                        in hugs' stm implementation).  I have been unable to
+  Description:          Include instances for TMVar (TMVar is not available
+                        in hugs' STM implementation).  I have been unable to
                         make this flag's value depend on whether or not
                         you're running hugs, so if you are, you'll just have
                         to change it manually.  It'd sure be nice if there
@@ -49,10 +58,10 @@ Library
   
   exposed-modules:      Data.Accessor
                         Data.StateRef
-                        Data.StateRef.Classes
+                        Data.StateRef.Types
                         Data.StateRef.Instances
                         Data.MRef
-                        Data.MRef.Classes
+                        Data.MRef.Types
                         Data.MRef.Instances
   other-modules:        Data.StateRef.Instances.Undecidable
   
@@ -67,6 +76,6 @@ Library
       if impl(hugs)
         buildable:      False
   
-  build-depends:        base, mtl
+  build-depends:        base >= 3 && <5, mtl
   if flag(useSTM)
     build-depends:      stm
