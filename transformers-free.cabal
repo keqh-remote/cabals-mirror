@@ -1,5 +1,5 @@
 Name: transformers-free
-Version: 1.0.0
+Version: 1.0.1
 Cabal-Version: >=1.14.0
 Build-Type: Simple
 License: BSD3
@@ -11,7 +11,11 @@ Stability: Experimental
 Bug-Reports:
     https://github.com/Gabriel439/Haskell-Transformers-Free-Library/issues
 Synopsis: Free monad transformers
-Description: This library generalizes free monads to free monad transformers.
+Description:
+    This package is obsolete and all functionality has been merged into the
+    @free@ package.
+    .
+    This library generalizes free monads to free monad transformers.
 Category: Control
 Tested-With: GHC ==7.0.3
 Source-Repository head
