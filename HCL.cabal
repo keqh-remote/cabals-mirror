@@ -1,11 +1,11 @@
 Name:           HCL
-Version:        1.1
+Version:        1.2
 License:        BSD3
 Author:         Justin Bailey
 Homepage:       
 Maintainer:     jgbailey _ gmail _ com
 Category:       User Interfaces
-Build-Depends:  base, QuickCheck, regex-compat, mtl
+Build-Depends:  base, QuickCheck, mtl
 Synopsis:       High-level library for building command line interfaces.
 Description:
   This module provides a set of functions for building simple command-line
@@ -15,7 +15,7 @@ Description:
   control. It is oriented towards line-based interfaces.
 Exposed-modules: HCL
 Hs-Source-Dirs: .
-Data-files: hangman\2of12.txt
+Data-files: hangman/2of12.txt
 
 Executable:     hangman
 Main-Is:        Hangman.hs
