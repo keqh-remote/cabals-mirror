@@ -1,5 +1,5 @@
 Name:                variable-precision
-Version:             0.1
+Version:             0.1.1
 Synopsis:            variable-precision floating point
 Description:
   Software floating point with type-tagged variable mantissa precision,
@@ -25,7 +25,7 @@ Build-type:          Simple
 
 Cabal-version:       >=1.6
 
-Extra-source-files:  TODO
+Extra-source-files:  CHANGES README THANKS TODO
 
 Library
   Exposed-modules:
@@ -39,7 +39,7 @@ Library
     base >= 3 && < 6,
     floatshow >= 0.2 && < 0.3,
     type-level-natural-number >= 1 && < 2
-  GHC-Options:        -Wall -fno-warn-incomplete-patterns
+  GHC-Options:        -Wall -fno-warn-incomplete-patterns -fcontext-stack=100
   GHC-Prof-Options:   -prof -auto-all -caf-all
 
 source-repository head
@@ -49,4 +49,4 @@ source-repository head
 source-repository this
   type:     git
   location: git://gitorious.org/variable-precision/variable-precision.git
-  tag:      v0.1
+  tag:      v0.1.1
