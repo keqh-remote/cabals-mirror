@@ -1,5 +1,5 @@
 name:                sodium
-version:             0.3.0.0
+version:             0.3.0.1
 synopsis:            Sodium Reactive Programming (FRP) System
 description:         
   A general purpose Reactive Programming (FRP) system.
@@ -48,4 +48,4 @@ library
   other-modules:       FRP.Sodium.Impl       
   build-depends:       base >= 4.3.0.0 && < 4.6.0.0,
                        containers >= 0.4.0.0 && < 0.5.0.0,
-                       mtl >= 2.0.0.0 && < 2.1.0.0
+                       mtl >= 2.0.0.0 && < 2.2.0.0
