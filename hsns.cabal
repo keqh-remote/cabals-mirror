@@ -1,5 +1,5 @@
 Name:                hsns
-Version:             0.5
+Version:             0.5.1
 Description:         a network sniffer written in a purely fun language
 Synopsis:            the haskell network sniffer
 Category:            Network
