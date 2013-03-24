@@ -1,12 +1,12 @@
 name: buster-network
-version: 1.1
+version: 1.2
 cabal-version: -any
 build-type: Simple
 license: BSD3
 license-file: ""
 copyright: 2009 Renaissance Computing Institute
 maintainer: Jeff Heard <jeff@renci.org>
-build-depends: network -any, HTTP >= 4000.0.0, buster >= 1.0, haxr >= 3000.2.1, binary -any, pretty -any, mtl -any, bytestring -any, base -any, containers -any, time -any, old-locale -any, dataenc -any
+build-depends: network -any, HTTP >= 4000.0.0, buster >= 2.0, haxr >= 3000.2.1, binary -any, pretty -any, mtl -any, bytestring -any, base -any, containers -any, time -any, old-locale -any, dataenc -any
 stability: Experimental
 homepage: http://vis.renci.org/jeff/buster
 package-url:
