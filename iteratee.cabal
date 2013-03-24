@@ -1,9 +1,11 @@
 name:          iteratee
-version:       0.8.3.0
+version:       0.8.4.0
 synopsis:      Iteratee-based I/O
 description:
   The Iteratee monad provides strict, safe, and functional I/O. In addition
   to pure Iteratee processors, file IO and combinator functions are provided.
+
+  See @Data.Iteratee@ for full documentation.
 category:      System, Data
 author:        Oleg Kiselyov, John W. Lato
 maintainer:    John W. Lato <jwlato@gmail.com>
@@ -81,7 +83,7 @@ library
   other-modules:
     Data.Iteratee.IO.Base
 
-  ghc-options:   -Wall
+  ghc-options:   -Wall -O2
   if impl(ghc >= 6.8)
     ghc-options: -fwarn-tabs
 
