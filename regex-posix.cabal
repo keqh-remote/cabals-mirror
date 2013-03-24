@@ -2,7 +2,7 @@
 -- To fix for cabal < 1.1.4 comment out the Extra-Source-Files line
 -- ****************************************************************
 Name:                   regex-posix
-Version:                0.72
+Version:                0.72.0.2
 -- Cabal-Version:       >=1.1.4
 License:                BSD3
 License-File:           LICENSE
@@ -16,34 +16,46 @@ Synopsis:               Replaces/Enhances Text.Regex
 Description:            The posix regex backend for regex-base
 Category:               Text
 Tested-With:            GHC
-Build-Depends:          regex-base, base >= 2.0
+Build-Type:             Configure
+Cabal-Version:          >=1.2
+
+Extra-Source-Files:     aclocal.m4 config.mk.in configure configure.ac
+                        include/HsRegexPosixConfig.h.in
+                        regex-posix.buildinfo.in
+
+Flag split-base
+
+Library
+  Build-Depends:        regex-base
+  if flag(split-base)
+    Build-Depends:      base >= 3.0, array, bytestring
+  else
+    Build-Depends:      base >= 2.0 && < 3
 -- Data-Files:
--- comment out Extra-Source-Files, this is different from repository version
--- Extra-Source-Files:     aclocal.m4 config.mk.in configure configure.ac
---                        include/HsRegexPosixConfig.h.in
 -- Extra-Tmp-Files:
 -- This is the library
-Exposed-Modules:        Text.Regex.Posix
+  Exposed-Modules:      Text.Regex.Posix
                         Text.Regex.Posix.Wrap
                         Text.Regex.Posix.String
                         Text.Regex.Posix.ByteString
 -- Futher fields
-Buildable:              True
+  Buildable:              True
 -- Other-Modules:
 -- be backward compatible until 6.4.2 is futher deployed
 -- HS-Source-Dirs:         "."
--- Extensions:
-GHC-Options:            -Wall -Werror -O2
+  Extensions:           CPP
+  GHC-Options:            -Wall -O2
+-- GHC-Options:            -Wall -Werror -O2
 -- GHC-Options:            -Wall -Werror
 -- GHC-Options:            -Wall -ddump-minimal-imports
 -- GHC-Prog-Options: 
 -- Hugs-Options:
 -- NHC-Options:
 -- Includes:
-Include-Dirs:           include
+  Include-Dirs:           include
 -- C-Sources:
 -- Extra-Libraries:
 -- Extra-Lib-Dirs:
-CC-Options:             -DHAVE_REGEX_H
+  CC-Options:             -DHAVE_REGEX_H
 -- LD-Options:
 -- Frameworks:
