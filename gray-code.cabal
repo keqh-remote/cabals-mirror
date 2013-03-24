@@ -7,7 +7,7 @@ Name:                gray-code
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.2.1
+Version:             0.2.2
 
 -- A short (one-line) description of the package.
 Synopsis:            Gray code encoder/decoder.
@@ -23,7 +23,7 @@ Description:
    @Bits@ is the default implementation.
 
 -- URL for the project homepage or repository.
-Homepage:            http://bitbucket.org/jetxee/hs-gray-code
+Homepage:            http://bitbucket.org/astanin/hs-gray-code
 
 -- The license under which the package is released.
 License:             BSD3
@@ -39,7 +39,7 @@ Author:              Sergey Astanin
 Maintainer:          s.astanin@gmail.com
 
 -- A copyright notice.
--- Copyright:           
+-- Copyright:
 
 -- Stability of the pakcage (experimental, provisional, stable...)
 Stability:           Experimental
@@ -54,7 +54,7 @@ Extra-source-files:
      Codec/Binary/Gray_props.hs
 
 -- Constraint on the version of Cabal needed to build this package.
-Cabal-version:       >=1.2
+Cabal-version:       >=1.8
 
 
 Library
@@ -67,10 +67,14 @@ Library
   -- Packages needed in order to build this package.
   Build-depends:
      base >= 3 && < 5
-  
+
   -- Modules not exported by this package.
   -- Other-modules:
-  
+
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
-  -- Build-tools:         
-  
+  -- Build-tools:
+
+Test-Suite test-qc
+    type:       exitcode-stdio-1.0
+    main-is:    test.hs
+    build-depends: base, QuickCheck >= 2
