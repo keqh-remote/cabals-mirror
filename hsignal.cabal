@@ -1,5 +1,5 @@
 Name:               hsignal
-Version:            0.1.0.1
+Version:            0.1.0.2
 License:            GPL
 License-file:       LICENSE
 Author:             Alexander Vivian Hugh McPhail
@@ -22,7 +22,7 @@ library
 
     Build-Depends:      base >= 3 && < 5,
                         storable-complex, haskell98,
-                        hmatrix
+                        hmatrix >= 0.9.3
 
     Extensions:         ForeignFunctionInterface
 
