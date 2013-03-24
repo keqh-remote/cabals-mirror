@@ -1,5 +1,5 @@
 name:           BiobaseTrainingData
-version:        0.1.0.0
+version:        0.1.1.0
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 homepage:       http://www.tbi.univie.ac.at/~choener/
@@ -24,19 +24,25 @@ description:
                 .
                 Note that several features are designed around /extended/ RNA
                 secondary structures.
+                .
+                Now with some filtering and manipulation options.
 
 library
   build-depends:
     base >3 && <5,
     bytestring,
+    either-unwrap,
     iteratee,
+    vector,
     BiobaseDotP,
     BiobaseFR3D,
     BiobaseXNA >= 0.5.0.1
 
   exposed-modules:
     Biobase.TrainingData
+    Biobase.TrainingData.Filter
     Biobase.TrainingData.Import
+    Biobase.TrainingData.Manip
 
   ghc-options:
     -O2
