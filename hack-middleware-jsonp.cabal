@@ -1,10 +1,10 @@
 name:            hack-middleware-jsonp
-version:         0.0.2
+version:         0.0.2.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Automatic wrapping of JSON responses to convert into JSONP.
+synopsis:        Automatic wrapping of JSON responses to convert into JSONP. (deprecated)
 category:        Web
 stability:       unstable
 cabal-version:   >= 1.2
