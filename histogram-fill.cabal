@@ -1,5 +1,5 @@
 Name:           histogram-fill
-Version:        0.4
+Version:        0.5
 Cabal-Version:  >= 1.6
 License:        BSD3
 License-File:   LICENSE
@@ -26,7 +26,15 @@ Library
                         Data.Histogram.Generic
                         Data.Histogram.Fill
                         Data.Histogram.Bin
+                        Data.Histogram.Bin.Classes
+                        Data.Histogram.Bin.BinI
+                        Data.Histogram.Bin.BinInt
+                        Data.Histogram.Bin.BinEnum
+                        Data.Histogram.Bin.BinF
+                        Data.Histogram.Bin.LogBinD
+                        Data.Histogram.Bin.Bin2D
                         Data.Histogram.Bin.Extra
                         Data.Histogram.ST
   Other-modules:        Data.Histogram.Parse
   Ghc-options:          -O2 -Wall
+  Ghc-prof-options:     -auto-all
