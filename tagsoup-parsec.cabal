@@ -1,5 +1,5 @@
 Name:           tagsoup-parsec 
-Version:        0.0.7
+Version:        0.0.8
 License:        BSD3 
 License-file:   LICENSE
 Author:         Johnny Morrice
@@ -11,8 +11,8 @@ Description:    Tokenizes Tag, so [ Tag ] can be used as parser input.  Provides
                 basic combinators.
 Build-type:     Simple
 Extra-source-files: LICENSE
-Cabal-version:  >=1.2.0
+Cabal-version:  >=1.6.0
 
 Library
-   Build-Depends:  base<5, tagsoup, parsec<3
+   Build-Depends:  base<5, tagsoup, parsec == 3.*
    Exposed-modules: Text.HTML.TagSoup.Parsec
