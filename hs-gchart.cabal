@@ -1,6 +1,11 @@
 name: hs-gchart
-version: 0.1.1
+version: 0.2
 synopsis: Haskell wrapper for the Google Chart API
+description:
+    This module is a wrapper around the Google Chart API. It exposes a rich
+    set of Haskell data types to specify your chart data, which can then be
+    converted into a URL that generates the PNG image of the chart.
+
 license: BSD3
 license-file: LICENSE
 author: Deepak Jois
@@ -11,8 +16,13 @@ cabal-version: >= 1.6
 category: Graphics
 stability: experimental
 homepage: http://github.com/deepakjois/hs-gchart
-data-files: README.md, examples/Examples.hs
+data-files: README.md
+extra-source-files: examples/Examples.hs
 tested-with: GHC==6.12.1
+
+source-repository head
+  type:     git
+  location: git@github.com:deepakjois/hs-gchart.git
 
 library
   build-depends: 
@@ -25,6 +35,12 @@ library
 
   other-modules:
      Graphics.GChart.ChartItems
+    ,Graphics.GChart.ChartItems.Basics
+    ,Graphics.GChart.ChartItems.Data
+    ,Graphics.GChart.ChartItems.Colors
+    ,Graphics.GChart.ChartItems.Labels
+    ,Graphics.GChart.ChartItems.Styles
+    ,Graphics.GChart.ChartItems.Util
     ,Graphics.GChart.DataEncoding
 
 
