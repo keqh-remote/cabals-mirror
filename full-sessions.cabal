@@ -1,5 +1,5 @@
 Name:                full-sessions
-Version:             0.6.2
+Version:             0.6.2.1
 Description:
   This library defines a @Session@ monad, which provides static checking of
   safe and consistent use of communication channels according to protocols.
@@ -48,6 +48,7 @@ Library
                      FullSession.FullSession
                      FullSession.NwSession
                      FullSession.Incoherent
+                     FullSession.DeferredInstances
   hs-source-dirs:    src
   extensions:        
                       MultiParamTypeClasses
