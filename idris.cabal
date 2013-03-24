@@ -1,5 +1,5 @@
 Name:           idris
-Version:        0.9.5.1
+Version:        0.9.6
 License:        BSD3
 License-file:   LICENSE
 Author:         Edwin Brady
@@ -51,6 +51,7 @@ Extra-source-files:    lib/Makefile  lib/*.idr lib/Prelude/*.idr
                        lib/Network/*.idr lib/Control/*.idr
                        lib/Control/Monad/*.idr lib/Language/*.idr
                        lib/System/Concurrency/*.idr
+                       lib/Data/*.idr lib/Debug/*.idr
                        tutorial/examples/*.idr lib/base.ipkg
                        config.mk
                        rts/*.c rts/*.h rts/Makefile
@@ -75,7 +76,7 @@ Executable     idris
                               Idris.Compiler, Idris.Prover, Idris.ElabTerm,
                               Idris.Coverage, Idris.IBC, Idris.Unlit,
                               Idris.DataOpts, Idris.Transforms, Idris.DSL, 
-                              Idris.UnusedArgs,
+                              Idris.UnusedArgs, Idris.Docs,
 
                               Util.Pretty, Util.System,
                               Pkg.Package, Pkg.PParser,
@@ -83,11 +84,13 @@ Executable     idris
                               IRTS.Lang, IRTS.LParser, IRTS.Bytecode, IRTS.Simplified,
                               IRTS.CodegenC, IRTS.Defunctionalise, IRTS.Inliner,
                               IRTS.Compiler, IRTS.CodegenJava, IRTS.BCImp,
+                              IRTS.CodegenJavaScript,
+                              IRTS.CodegenCommon, IRTS.DumpBC
 
                               Paths_idris
 
-               Build-depends:   base>=4 && <5, parsec, mtl, Cabal, 
-                                haskeline>=0.7,
+               Build-depends:   base>=4 && <5, parsec>=3, mtl, Cabal, 
+                                haskeline>=0.7, split, directory,
                                 containers, process, transformers, filepath, 
                                 directory, binary, bytestring, pretty
                                 
