@@ -1,9 +1,9 @@
 ----------------------------------------------------------------
--- wren ng thornton <wren@community.haskell.org>    ~ 2008.08.29
+-- wren ng thornton <wren@community.haskell.org>    ~ 2008.10.12
 ----------------------------------------------------------------
 
 Name:           logfloat
-Version:        0.9.1
+Version:        0.9.1.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 Stability:      provisional
@@ -21,11 +21,23 @@ Description:    This module presents a class for storing numbers
                 probabilities as is done in Hidden Markov Models.
                 It is also helpful for preventing overflow.
 
+-- Doing it this way uncovers a bug in Cabal-1.2.3.0:
+-- "Setup.hs: 'parseField' called on a non-field.  This is a bug."
+--Flag hiddenPrim
+--    Description: Use GHC 6.10's newly hidden package for GHC.Prim
+--    if impl(ghc >= 6.10)
+--        Default: true
+--    else
+--        Default: false
+
 Library
     Exposed-Modules: Data.Number.LogFloat
                    , Data.Number.Transfinite
                    , Data.Number.PartialOrd
     Build-Depends:   base
+--    if flag(hiddenPrim)
+    if impl(ghc >= 6.10)
+        Build-Depends: ghc-prim
 
 ----------------------------------------------------------------
 ----------------------------------------------------------- fin.
