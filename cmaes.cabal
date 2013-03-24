@@ -1,5 +1,5 @@
 name:                cmaes
-version:             0.2.1
+version:             0.2.1.1
 synopsis:            CMA-ES wrapper in Haskell
 description:
 
@@ -35,11 +35,13 @@ library
   build-depends:     base ==4.*
                    , mtl  
                    , process
+                   , safe >= 0.3
+                   , strict >= 0.3.2
                    , syb
                    
 Test-Suite test
-  Main-Is:           Test.hs
-  hs-source-dirs:    .
+  Main-Is:           doctest.hs
+  hs-source-dirs:    test/
   Type:              exitcode-stdio-1.0
   Build-Depends:     base == 4.*
                    , cmaes
