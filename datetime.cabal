@@ -1,5 +1,5 @@
 name:                datetime
-version:             0.2
+version:             0.2.1
 stability:           experimental
 Description:
   Provides several utilities for easily converting among the
@@ -16,7 +16,7 @@ cabal-version:       >= 1.2
 build-type:          Simple
 
 library
-  build-depends:     base >= 2 && < 4,
+  build-depends:     base < 5,
                      QuickCheck >= 2 && < 3,
                      old-locale >= 1.0.0.1,
                      old-time >= 1.0.0.1,
