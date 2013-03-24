@@ -1,5 +1,5 @@
 Name:                forml
-Version:             0.1.2
+Version:             0.1.3
 Synopsis:            A statically typed, functional programming language 
 License:             MIT
 Author:              Andrew Stein
@@ -37,9 +37,10 @@ Executable forml
     bytestring >= 0.9.1 && <0.10,
     parsec,
     indents,
-    containers,
+    containers == 0.4.2.1,
+    GraphSCC == 1.0.2,
     pandoc,
-    jmacro == 0.6.2,
+    jmacro,
     MissingH,
     interpolatedstring-perl6,
     transformers,
