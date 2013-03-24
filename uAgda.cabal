@@ -1,5 +1,5 @@
 name:           uAgda
-version:        1.0.0.2
+version:        1.1.0.0
 category:       Dependent Types
 synopsis:       A simplistic dependently-typed language with parametricity.
 description:
