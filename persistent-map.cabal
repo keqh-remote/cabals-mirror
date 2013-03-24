@@ -2,7 +2,7 @@ Name:           persistent-map
 Synopsis:       A thread-safe interface for finite map types with optional persistency support.
 Description:
 
-    /Changes in 0.1.0:/
+    /Changes in 0.1.*:/
     .
     * Added the binary serialization backend.
     .
@@ -62,7 +62,7 @@ Author:         Peter Robinson
 Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        LGPL
 License-file:   LICENSE
-Version:        0.1.0
+Version:        0.1.1
 Category:       Middleware, Concurrency
 Stability:      experimental
 Homepage:       http://darcs.monoid.at/persistent-map
@@ -70,7 +70,7 @@ Homepage:       http://darcs.monoid.at/persistent-map
 build-type:     Simple                        
 cabal-version: >= 1.2.3
 library
-    ghc-options:        -Wall -fno-ignore-asserts -fno-warn-missing-fields
+    ghc-options:        -Wall -fno-ignore-asserts -fno-warn-missing-fields -fwarn-incomplete-patterns
 
     exposed-modules:    Data.TMap
                         Data.TStorage
