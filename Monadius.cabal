@@ -1,5 +1,5 @@
 name:                Monadius
-version:             0.9
+version:             0.9.20071204
 synopsis:            2-D arcade scroller
 description:         A fast-paced 2-D scrolling vector graphics clone of the arcade game Gradius.
 category:            Game
