@@ -1,5 +1,5 @@
 Name:                hoopl
-Version:             3.7.12.1
+Version:             3.8.3.0
 Description:         Higher-order optimization library
 License:             BSD3
 License-file:        LICENSE
@@ -11,24 +11,30 @@ Cabal-Version:       >=1.6
 Stability:           alpha
 Synopsis:            A library to support dataflow analysis and optimization
 Category:            Compilers/Interpreters
-Extra-source-files:  README, hoopl.pdf, CHANGES
+Extra-source-files:  README, hoopl.pdf, CHANGES, FAQ
 
 Library
   Build-Depends:     base >= 3 && < 5, containers
   Exposed-modules:   Compiler.Hoopl,
-                       Compiler.Hoopl.Zipper,
-                       Compiler.Hoopl.ZipDataflowNoRG
+                     Compiler.Hoopl.Passes.Dominator,
+                     Compiler.Hoopl.Passes.DList,
+--                       Compiler.Hoopl.DataflowFold,
+--                       Compiler.Hoopl.OldDataflow,
+                       Compiler.Hoopl.GHC
   Other-modules:     Compiler.Hoopl.GraphUtil,
                      -- GraphUtil should *never* be seen by clients.
                      -- The remaining modules are hidden *provisionally*
+                       Compiler.Hoopl.Collections,
                        Compiler.Hoopl.Combinators,
                        Compiler.Hoopl.Dataflow,
                        Compiler.Hoopl.Debug,
                        Compiler.Hoopl.Graph, 
                        Compiler.Hoopl.MkGraph,
-                       Compiler.Hoopl.Fuel, Compiler.Hoopl.Label,
+                       Compiler.Hoopl.Fuel,
+                       Compiler.Hoopl.Pointed,
+                       Compiler.Hoopl.Unique, Compiler.Hoopl.Label,
                        Compiler.Hoopl.Show, Compiler.Hoopl.Util
-                       Compiler.Hoopl.ZipDataflow
+                       Compiler.Hoopl.XUtil
   ghc-options:       -Wall -fno-warn-name-shadowing
 
 
