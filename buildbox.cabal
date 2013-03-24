@@ -1,5 +1,5 @@
 Name:                buildbox
-Version:             1.0.0.0
+Version:             1.0.0.1
 License:             BSD3
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -10,9 +10,8 @@ Stability:           experimental
 Category:            Development, Testing
 Homepage:            http://code.haskell.org/~benl/code/buildbox-head
 Description:
-        Rehackable components for writing buildbots and test harnesses. Includes functions
-        for checking the host platform, running tests, capturing output, handling errors,
-        comparing runtimes against a baseline, sending mail, running events to a schedule etc.
+        Includes functions for checking the host platform, running tests, capturing output,
+        handling errors, comparing runtimes against a baseline, sending mail, running events to a schedule etc.
 
 	Some of these functions are just wrappers around shell commands, so be careful about passing
 	them weirdly formed arguments.
