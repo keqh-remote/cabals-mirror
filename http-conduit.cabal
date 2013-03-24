@@ -1,5 +1,5 @@
 name:            http-conduit
-version:         1.8.7
+version:         1.8.7.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -57,7 +57,7 @@ library
                  , regex-compat
                  , mtl
                  , deepseq
-                 , array                 >= 0.4
+                 , array                 >= 0.3
                  , random
                  , filepath
     if flag(network-bytestring)
