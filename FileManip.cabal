@@ -1,5 +1,5 @@
 Name:		FileManip
-Version:	0.1
+Version:	0.2
 License:	LGPL
 License-File:	COPYING.LIB
 Author:		Bryan O'Sullivan <bos@serpentine.com>
@@ -13,6 +13,7 @@ Build-Depends:	base, filepath, mtl, unix
 GHC-Options:    -Wall -O2
 Exposed-Modules:
 	System.FilePath.Find,
+	System.FilePath.Glob,
 	System.FilePath.GlobPattern,
 	System.FilePath.Manip
 Extra-Source-Files: README
