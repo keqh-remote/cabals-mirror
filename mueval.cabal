@@ -1,5 +1,5 @@
 name:                mueval
-version:             0.4
+version:             0.4.5
 
 license:             BSD3
 license-file:        LICENSE
@@ -26,12 +26,12 @@ Tested-with:         GHC==6.8.2
 Extra-source-files:  build.sh, tests.sh
 
 Library
-        exposed-modules:     Mueval.Context, Mueval.Interpreter,
+        exposed-modules:     Mueval.Concurrent, Mueval.Context, Mueval.Interpreter,
                              Mueval.ParseArgs, Mueval.Resources
         build-Depends:       base, directory, mtl, unix, hint>=0.2.3, show
         ghc-options:         -Wall -static
 
 Executable mueval
-           main-is:       mueval.hs
+           main-is:       main.hs
            build-depends: base
            ghc-options:   -Wall -threaded -static
