@@ -1,5 +1,5 @@
 name:           dedukti
-version:        1.1.3
+version:        1.1.4
 author:         Mathieu Boespflug
 maintainer:     Mathieu Boespflug <mboes@lix.polytechnique.fr>
 copyright:      © 2009 CNRS - École Polytechnique - INRIA
@@ -17,7 +17,7 @@ license:        GPL
 license-file:   COPYING
 cabal-version:  >= 1.6.0
 build-type:     Custom
-tested-with:    GHC ==6.10
+tested-with:    GHC ==6.10, GHC ==7.0.2
 data-files:     t/bug.dk
                 t/coc.dk
                 t/coq/Datatypes.dk
@@ -77,11 +77,11 @@ executable dedukti
                        parsec >= 3.1.0,
                        wl-pprint >= 1.0,
                        haskell-src-exts >= 1.1.0,
-                       haskell-src-exts-qq >= 0.1,
+                       haskell-src-exts-qq >= 0.4,
                        Stream >= 0.3 && < 0.3.2,
                        hmk >= 0.9.7,
                        stringtable-atom >= 0.0.6
-  extensions:          EmptyDataDecls, PatternGuards,
+  extensions:          CPP, EmptyDataDecls, PatternGuards,
                        GeneralizedNewtypeDeriving, DeriveDataTypeable,
                        TypeFamilies, LiberalTypeSynonyms,
                        FlexibleInstances, FlexibleContexts, OverloadedStrings,
