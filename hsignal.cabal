@@ -1,5 +1,5 @@
 Name:               hsignal
-Version:            0.1.0.3
+Version:            0.1.0.4
 License:            GPL
 License-file:       LICENSE
 Author:             Alexander Vivian Hugh McPhail
@@ -8,6 +8,8 @@ Stability:          provisional
 Homepage:           http://code.haskell.org/hsignal
 Synopsis:           Signal processing
 Description:        Purely functional interface to signal processing based on hmatrix
+                       provides data types for manipulating EEG data,
+                       including reading from BDF
 Category:           Math
 tested-with:        GHC ==6.12.1
 
@@ -21,9 +23,9 @@ extra-tmp-files:    hsignal.buildinfo
 library
 
     Build-Depends:      base >= 3 && < 5,
-                        storable-complex, haskell98,
+                        storable-complex, haskell98, mtl, bytestring,
                         hmatrix >= 0.9.3,
-                        hstatistics,
+                        hstatistics >= 0.1.0.5,
                         array
 
     Extensions:         ForeignFunctionInterface
@@ -31,7 +33,9 @@ library
     hs-source-dirs:     lib
     Exposed-modules:    Numeric.Signal
                         Numeric.Signal.Multichannel
+                        Numeric.Signal.EEG
     other-modules:      Numeric.Signal.Internal
+                        Numeric.Signal.EEG.BDF
     C-sources:          lib/Numeric/Signal/signal-aux.c
 
     ghc-prof-options:   -auto
@@ -39,7 +43,6 @@ library
     ghc-options:        -Wall -fno-warn-missing-signatures
                               -fno-warn-orphans
                               -fno-warn-unused-binds
-                        -threaded
 
     if os(OSX)
         extra-lib-dirs: /opt/local/lib/
