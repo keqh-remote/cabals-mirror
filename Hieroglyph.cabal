@@ -1,15 +1,15 @@
 name: Hieroglyph
-version: 3.5
+version: 3.8
 cabal-version: >=1.2
 build-type: Simple
 license: BSD3
 license-file: LICENSE
 copyright:
 maintainer: J.R. Heard
-build-depends: IfElse -any, OpenGL -any, array -any, base <=5,
-               buster >=2.0, bytestring -any, cairo -any, colour -any,
-               containers -any, gtk -any, gtkglext -any, mtl -any, parallel -any,
-               pretty -any, random -any, glib -any, buster-gtk -any
+build-depends: IfElse -any, OpenGL -any, array -any, base == 4.1.0.0,
+               buster >=2.0, buster-gtk -any, bytestring -any, cairo -any,
+               colour -any, containers -any, glib -any, gtk -any, gtkglext -any,
+               mtl -any, parallel -any, pretty -any, random -any
 stability:
 homepage: http://vis.renci.org/jeff/hieroglyph
 package-url:
@@ -22,18 +22,18 @@ author: J.R. Heard
 tested-with:
 data-files:
 data-dir: ""
-extra-source-files: 
+extra-source-files:
 extra-tmp-files:
-exposed-modules: Graphics.Rendering.Hieroglyph
-                 Graphics.Rendering.Hieroglyph.Cairo
+exposed-modules: App.Widgets.MouseKeyboard
+                 Graphics.Rendering.Hieroglyph Graphics.Rendering.Hieroglyph.Cairo
                  Graphics.Rendering.Hieroglyph.OpenGL
+                 Graphics.Rendering.Hieroglyph.Cache
                  Graphics.Rendering.Hieroglyph.Primitives
                  Graphics.Rendering.Hieroglyph.Visual
-                 Graphics.Rendering.Hieroglyph.OpenGL.Data
-                 Graphics.Rendering.Hieroglyph.OpenGL.Render 
-                 Graphics.Rendering.Hieroglyph.OpenGL.Compile 
-                 Graphics.Rendering.Hieroglyph.Cache
                  Graphics.Rendering.Hieroglyph.Stylesheets
+                 Graphics.Rendering.Hieroglyph.OpenGL.Render
+                 Graphics.Rendering.Hieroglyph.OpenGL.Data
+                 Graphics.Rendering.Hieroglyph.OpenGL.Compile
 exposed: True
 buildable: True
 build-tools:
