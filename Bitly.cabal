@@ -1,5 +1,5 @@
 Name:          Bitly
-Version:       0.0.8
+Version:       0.1.0
 Cabal-version: >= 1.2
 Build-type:    Simple
 
@@ -15,22 +15,18 @@ Description:
   shortening service from Haskell. Currently it supports
   shorten and expand requests.
   .
-  API key is required. Please find yours at <https://bitly.com/a/account>.
-  .
-  Configuration file (`~/.bitly`) format:
-  .
-  > login = your_bit.ly_login
-  > apikey = your_API_key
+  API key is required.
   .
   For command line utility see `bitly-cli` package.
 
 Homepage:      http://bitbucket.org/jetxee/hs-bitly/
 Bug-reports:   http://bitbucket.org/jetxee/hs-bitly/issues/
-Tested-with:   GHC == 7.2.1
+Tested-with:   GHC == 7.0.3, GHC == 7.2.1
 
 Library
   Build-depends:
                  base >= 3 && < 5
                , HTTP >= 4000
-               , HaXml >= 1.20 && < 1.23
+               , json2 >= 0.8
   Exposed-modules: Network.Bitly
+  Ghc-options:  -Wall
