@@ -1,7 +1,8 @@
 Name:            MonadCatchIO-transformers
-Version:         0.2.2.2
+Version:         0.2.2.3
 Cabal-Version:   >= 1.6
-License:         PublicDomain
+License:         BSD3
+License-file:    LICENSE
 Description:
   Provides functions to throw and catch exceptions. Unlike the functions from
   @Control.Exception@, which work in @IO@, these work in any stack of monad
