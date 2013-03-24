@@ -1,5 +1,5 @@
 name: BerkeleyDB
-version: 0.8.6
+version: 0.8.7
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
@@ -26,9 +26,11 @@ description:
     DARCS repository:
     <http://code.haskell.org/BerkeleyDB/>
     .
-    Changes: 0.8:   Support db4.7 and db4.8, removed C++ binding.
+    Changes: 0.7.2: Fix on db4.7
+             0.8:   Support db4.7 and db4.8, removed C++ binding.
              0.8.5: Add db_sync.
-             0.7.2: Fix on db4.7
+             0.8.6: Fix crash in transaction commit.
+             0.8.7: Add dbCursor_set_range.
     .
     Contributors: Michael Stone, Balázs Jávorszky
 
