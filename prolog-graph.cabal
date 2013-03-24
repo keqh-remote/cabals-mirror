@@ -1,5 +1,5 @@
 Name:                prolog-graph
-Version:             0.1.0.1
+Version:             0.1.0.2
 Synopsis:            A command line tool to visualize query resolution in Prolog.
 Description:         This package installs the command line tool `hsprolog-graph` that
                      generates images of resolution trees for given Prolog queries.
@@ -19,6 +19,7 @@ Source-repository head
 
 Executable hsprolog-graph
   Main-is: Main.hs
+  Other-Modules: ParseArgs
 
   Build-depends:
     prolog == 0.1.*,
