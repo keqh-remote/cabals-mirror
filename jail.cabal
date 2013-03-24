@@ -1,5 +1,5 @@
 Name:             jail
-Version:          0.0.1
+Version:          0.0.1.1
 Description:
 
                   Like all of us know, the IO monad from the System.IO module
@@ -54,7 +54,7 @@ Description:
                   .
                   Nonetheless, this module is one step forward in trusting your
                   own programs. Some real <http://tinyurl.com/paranoidpeople>
-                  prefer writing there software in one of the most insecure
+                  prefer writing their software in one of the most insecure
                   programming languages and perform security audits by hand,
                   I'd rather have my compiler do the job. (Anyone who wants to
                   audit this library is more than welcome!)
