@@ -1,5 +1,5 @@
 name:                 haddock
-version:              2.7.2
+version:              2.6.1
 cabal-version:        >= 1.6
 license:              BSD3
 build-type:           Simple
@@ -63,10 +63,6 @@ flag in-ghc-tree
   default: False
   manual: True
 
-flag test
-  default: False
-  manual: True
-
 executable haddock
   build-depends:
     base >= 4.0.0.0 && < 4.3.0.0,
@@ -84,10 +80,6 @@ executable haddock
   else
     build-depends: ghc-paths
 
-  if flag(test)
-    cpp-options: -DTEST
-    build-depends: QuickCheck >= 2.1 && < 3
-
   main-is:              Main.hs
   hs-source-dirs:       src
   extensions:           CPP, PatternGuards, DeriveDataTypeable,
@@ -100,11 +92,12 @@ executable haddock
     Haddock.Interface.Create
     Haddock.Interface.ExtractFnArgDocs
     Haddock.Interface.AttachInstances
+    Haddock.Interface.Lex
+    Haddock.Interface.Parse
     Haddock.Interface.Rn
     Haddock.Interface.LexParseRn
     Haddock.Interface.ParseModuleHeader
-    Haddock.Lex
-    Haddock.Parse
+    Haddock.Utils.FastMutInt2
     Haddock.Utils.BlockTable
     Haddock.Utils.Html
     Haddock.Utils
@@ -116,66 +109,44 @@ executable haddock
     Haddock.Backends.Hoogle
     Haddock.ModuleTree
     Haddock.Types
-    Haddock.Doc
+    Haddock.HsDoc
     Haddock.Version
     Haddock.InterfaceFile        
     Haddock.Options
     Haddock.GhcUtils
     Haddock.Convert
    
+  -- Cabal doesn't define __GHC_PATCHLEVEL__
+  if impl(ghc == 6.10.1)
+    cpp-options: -D__GHC_PATCHLEVEL__=1
+  if impl(ghc == 6.10.2)
+    cpp-options: -D__GHC_PATCHLEVEL__=2
+  if impl(ghc == 6.10.3)
+    cpp-options: -D__GHC_PATCHLEVEL__=3
+  if impl(ghc == 6.10.4)
+    cpp-options: -D__GHC_PATCHLEVEL__=4
+
 library
-  build-depends:
-    base >= 4.0.0.0 && < 4.3.0.0,
-    filepath,
-    directory,
-    pretty,
-    containers,
-    array,
-    Cabal >= 1.5,
-    ghc >= 6.12 && < 6.14,
-    ghc-paths
-
-  if flag(test)
-    cpp-options: -DTEST
-    build-depends: QuickCheck >= 2.1 && < 3
-
   hs-source-dirs:       src
   extensions:           CPP, PatternGuards, DeriveDataTypeable,
                         ScopedTypeVariables, MagicHash
-  ghc-options:          -funbox-strict-fields -O2 -Wall
-
-  exposed-modules:
-    Documentation.Haddock
-
+  exposed-modules:      Distribution.Haddock
   other-modules:
-    Haddock.Interface
-    Haddock.Interface.Rename
-    Haddock.Interface.Create
-    Haddock.Interface.ExtractFnArgDocs
-    Haddock.Interface.AttachInstances
-    Haddock.Interface.Rn
-    Haddock.Interface.LexParseRn
-    Haddock.Interface.ParseModuleHeader
-    Haddock.Lex
-    Haddock.Parse
-    Haddock.Utils.BlockTable
-    Haddock.Utils.Html
-    Haddock.Utils
-    Haddock.Backends.Html
-    Haddock.Backends.HaddockDB
-    Haddock.Backends.DevHelp
-    Haddock.Backends.HH
-    Haddock.Backends.HH2
-    Haddock.Backends.Hoogle
-    Haddock.ModuleTree
     Haddock.Types
-    Haddock.Doc
-    Haddock.Version
     Haddock.InterfaceFile
-    Haddock.Options
+    Haddock.Utils
     Haddock.GhcUtils
-    Haddock.Convert
-    Paths_haddock
   
+  -- Cabal doesn't define __GHC_PATCHLEVEL__
+  if impl(ghc == 6.10.1)
+    cpp-options: -D__GHC_PATCHLEVEL__=1
+  if impl(ghc == 6.10.2)
+    cpp-options: -D__GHC_PATCHLEVEL__=2
+  if impl(ghc == 6.10.3)
+    cpp-options: -D__GHC_PATCHLEVEL__=3
+  if impl(ghc == 6.10.4)
+    cpp-options: -D__GHC_PATCHLEVEL__=4
+
   if flag(in-ghc-tree)
     buildable: False
+
