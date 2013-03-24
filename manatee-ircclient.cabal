@@ -1,9 +1,9 @@
 name:			manatee-ircclient
-version:		0.0.8
+version:		0.1.0
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
-copyright:		(c) 2009 ~ 2010 Andy Stewart
+copyright:		(c) 2010 ~ 2011 Andy Stewart
 synopsis:		IRC client extension for Manatee.
 description:    manatee-ircclient is IRC client extension for Manatee (Haskell/Gtk+ Integrated Live Environment)
  .
@@ -11,7 +11,7 @@ description:    manatee-ircclient is IRC client extension for Manatee (Haskell/G
  .
  Note, you need re-install package to start the configuration file take effect the next time,
  .
- Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://www.youtube.com/watch?v=A3DgKDVkyeM> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
+ Video (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://www.youtube.com/watch?v=A3DgKDVkyeM> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
  .
  Screenshots at : <http://goo.gl/MkVw>
  .
@@ -26,26 +26,28 @@ maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
 stability:		provisional
 category:		Manatee, IRC Client, IRC
 
-tested-with:	GHC==6.12.3
+tested-with:	GHC==7.0.2
 build-type:		Custom
 
 data-dir: ""
-data-files: icons/angry.png
-            icons/confused.png
-            icons/crying.png
-            icons/embarrassed.png
-            icons/inlove.png
-            icons/kiss.png
-            icons/sleepy.png
-            icons/sad.png
-            icons/laugh.png
-            icons/smile.png
-            icons/surprised.png
-            icons/tired.png
-            icons/tongue.png
-            icons/whistling.png
-            icons/wink.png
+data-files: data/icons/angry.png
+            data/icons/confused.png
+            data/icons/crying.png
+            data/icons/embarrassed.png
+            data/icons/inlove.png
+            data/icons/kiss.png
+            data/icons/sleepy.png
+            data/icons/sad.png
+            data/icons/laugh.png
+            data/icons/smile.png
+            data/icons/surprised.png
+            data/icons/tired.png
+            data/icons/tongue.png
+            data/icons/whistling.png
+            data/icons/wink.png
             
+            data/welcome/snapshot.png
+
             Config/IrcClient.hs            
 
 Source-Repository head
@@ -53,8 +55,8 @@ Source-Repository head
   location:     http://patch-tag.com/r/AndyStewart/manatee-ircclient
   
 Library
-     build-depends: base >= 4 && < 5, manatee-core >= 0.0.8, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
-                    containers >= 0.3.0.0, gtk-serialized-event >= 0.12.0, gtk >= 0.12.0, 
+     build-depends: base >= 4 && < 5, manatee-core >= 0.1.0, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
+                    containers >= 0.3.0.0, gtk >= 0.12.0, derive, binary,
                     text >= 0.7.1.0, bytestring >= 0.9.1.5,
                     dbus-core, template-haskell, gtksourceview2 >= 0.12.0, unix >= 2.4.0.0,
                     network, groom, fastirc >= 0.2.0, split >= 0.1.2, nano-md5 >= 0.1.2, filepath,
