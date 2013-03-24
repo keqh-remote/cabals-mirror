@@ -1,5 +1,5 @@
 Name:                lrucache
-Version:             1.1.1.1
+Version:             1.1.1.2
 Synopsis:            a simple, pure LRU cache
 License:             BSD3
 License-file:        LICENSE
@@ -18,6 +18,9 @@ Description:
         an LRU cache.
         .
         Version History:
+        .
+        1.1.1.2 - Make actually compatible with containers 0.5 - fix strictness issue
+        .
         1.1.1.1 - Fix containers upper bound for GHC 7.6.
         .
         1.1.1 - Add an additional modification function for AtomicLRUCache.
@@ -63,7 +66,7 @@ Cabal-version:       >=1.6
 Source-repository this
   type:              git
   location:          https://github.com/chowells79/lrucache.git
-  tag:               1.1.1.1
+  tag:               1.1.1.2
 
 Library
   Exposed-modules:
