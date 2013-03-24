@@ -1,12 +1,14 @@
 name:          regional-pointers
-version:       0.6
+version:       0.6.0.1
 cabal-version: >=1.6
 build-type:    Custom
 license:       BSD3
 license-file:  LICENSE
-copyright:     2010 Bas van Dijk
+copyright:     2010-2011 Bas van Dijk
 author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+homepage:      https://github.com/basvandijk/regional-pointers/
+bug-reports:   https://github.com/basvandijk/regional-pointers/issues
 stability:     experimental
 category:      System, Monadic Regions
 synopsis:      Regional memory pointers
@@ -28,15 +30,17 @@ description:   The library allows you to allocate memory in a region yielding a
                This library provides wrappers around all the @Ptr@ functions
                from the @Foreign.*@ modules of the @base@ library.
 
+extra-source-files: README.markdown
+
 source-repository head
-  Type:     darcs
-  Location: http://code.haskell.org/~basvandijk/code/regional-pointers
+  Type:     git
+  Location: git://github.com/basvandijk/regional-pointers.git
 
 Library
   GHC-Options: -Wall
-  build-depends: base                 >= 4     && < 4.4
+  build-depends: base                 >= 4     && < 4.5
                , base-unicode-symbols >= 0.1.1 && < 0.3
-               , regions              >= 0.9   && < 0.10
+               , regions              >= 0.10  && < 0.11
                , transformers         >= 0.2   && < 0.3
                , monad-control        >= 0.2   && < 0.3
   exposed-modules: Foreign.Ptr.Region
