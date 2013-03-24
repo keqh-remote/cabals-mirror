@@ -3,7 +3,7 @@ Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          HipmunkPlayground
-Version:       5.0.0
+Version:       5.1.0
 Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
@@ -15,12 +15,9 @@ Description:
       This is a simple OpenGL program that allows you to see
       some of Hipmunk's functions in action.
       .
-      New in version 5.0.0:
+      New in version 5.1.0:
       .
-      * Updated for Hipmunk 5.0.0. Yay!
-      .
-      * Add a small car using @SimpleMotor@ (not the best way
-        of creating a car, but it works a demo).
+      * Updated to Hipmunk 5.1.0.
       .
       Licensed under the MIT license (like Hipmunk itself).
 Extra-Source-Files:
@@ -31,12 +28,12 @@ Flag small_base
 
 Executable HipmunkPlayground
   if flag(small_base)
-    Build-Depends: base >= 3 && < 5, containers >= 0.1 && < 0.3,
-                   Hipmunk >= 5.0 && < 5.1, OpenGL >= 2.1 && < 2.3,
+    Build-Depends: base >= 3 && < 5, containers >= 0.1 && < 0.4,
+                   Hipmunk >= 5.1 && < 5.2, OpenGL >= 2.1 && < 2.3,
                    GLFW >= 0.3 && < 0.4
   else
     Build-Depends: base >= 2 && < 3,
-                   Hipmunk >= 5.0 && < 5.1, OpenGL >= 2.1 && < 2.3,
+                   Hipmunk >= 5.1 && < 5.2, OpenGL >= 2.1 && < 2.3,
                    GLFW >= 0.3 && < 0.4
   GHC-Options:   -Wall
   Main-is: Playground.hs
