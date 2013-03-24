@@ -1,5 +1,5 @@
 Name:                 unfoldable
-Version:              0.5.0
+Version:              0.6.0
 Synopsis:             Class of data structures that can be unfolded.
 Description:          Just as there's a Foldable class, there should also be an Unfoldable class. 
                       .
@@ -30,7 +30,8 @@ Library
   
   Exposed-modules:
     Data.Unfolder
-    Data.Unfoldable  
+    Data.Unfoldable
+    Data.Biunfoldable
   
   Build-depends:
       base         >= 4   && < 5 
