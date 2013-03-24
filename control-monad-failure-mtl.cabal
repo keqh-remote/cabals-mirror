@@ -1,13 +1,13 @@
 name: control-monad-failure-mtl
-version: 0.7.0
+version: 0.7.0.1
 Cabal-Version:  >= 1.6
 build-type: Simple
 license: PublicDomain
 author: Pepe Iborra, Michael Snoyman, Nicolas Pouillard
 maintainer: pepeiborra@gmail.com
 homepage: http://github.com/pepeiborra/control-monad-failure
-description: A class for monads which can fail with an error.
-synopsis: A class for monads which can fail with an error.
+description: A class for monads which can fail with an error. Please note: this package is only applicable for the now-deprecated mtl 1. Since mtl 2 is compatible with the transformers package, users of mtl 2 should simply use the control-monad-failure package.
+synopsis: A class for monads which can fail with an error for mtl 1
 category: Control, Monads, Failure
 stability: experimental
 
