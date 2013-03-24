@@ -13,7 +13,8 @@ Description:
     * If the onCommit action throws an exception, the original values of 
     the modified TVars are restored.
     .
-    Note: Part of this library uses code from
+    Note: The package can be used as a drop-in replacement for the
+    'Control.Concurrent.STM'. Part of this library uses code from
     the Haskell Wiki (see <http://haskell.org/haskellwiki/?title=New_monads/MonadAdvSTM>).
 
 Category:       Concurrency
@@ -22,7 +23,7 @@ Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        BSD3
 License-file:   LICENSE
 Homepage:       http://darcs.monoid.at/stm-io-hooks
-Version:        0.2.0
+Version:        0.2.1
 
 Build-type:     Simple                        
 Cabal-Version:  >= 1.2.3
@@ -39,7 +40,7 @@ library
                    ,Control.Monad.AdvSTM.Class
                     -- TODO: add Sample module!
                    
-    build-depends:  base       >= 4.0.0.0 && < 4.1
+    build-depends:  base       >= 4 && < 5
                    ,stm        >= 2.1.1.2 && < 2.2
                    ,array      >= 0.2.0.0 && < 0.3
                    ,containers >= 0.2.0.0 && < 0.3
