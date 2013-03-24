@@ -1,5 +1,5 @@
 Name:                highlighting-kate
-Version:             0.3.1
+Version:             0.4
 Cabal-Version:       >= 1.6
 Build-Type:          Simple
 Category:            Text
@@ -19,7 +19,6 @@ Author:              John MacFarlane
 Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/highlighting-kate
 Extra-Source-Files:  README
-                     BUGS
                      changelog
                      Highlight.hs
                      ParseSyntaxFiles.hs
@@ -53,7 +52,7 @@ Extra-Source-Files:  README
                      xml/diff.xml
                      xml/djangotemplate.xml
                      xml/doxygen.xml
-                     xml/doxygenlua.xml
+                     xml/doxygenlua.xml.bkp
                      xml/dtd.xml
                      xml/eiffel.xml
                      xml/email.xml
@@ -65,7 +64,6 @@ Extra-Source-Files:  README
                      xml/haskell.xml
                      xml/haxe.xml
                      xml/html.xml
-                     xml/ilerpg.xml
                      xml/ini.xml
                      xml/java.xml
                      xml/javadoc.xml
@@ -78,11 +76,11 @@ Extra-Source-Files:  README
                      xml/lex.xml
                      xml/literate-haskell.xml
                      xml/lua.xml
+                     xml/lua.xml.bkp
                      xml/makefile.xml
                      xml/mandoc.xml
                      xml/matlab.xml
                      xml/maxima.xml
-                     xml/mediawiki.xml
                      xml/metafont.xml
                      xml/mips.xml
                      xml/modula-2.xml
@@ -118,7 +116,6 @@ Extra-Source-Files:  README
                      xml/texinfo.xml
                      xml/verilog.xml
                      xml/vhdl.xml
-                     xml/xharbour.xml
                      xml/xml.xml
                      xml/xorg.xml
                      xml/xslt.xml
@@ -149,11 +146,15 @@ Library
     cpp-options:     -D_PCRE_LIGHT
   else
     Build-depends:   regex-pcre-builtin
-  Build-Depends:     parsec, xhtml
+  Build-Depends:     parsec, mtl, blaze-html >= 0.4.2 && < 0.5
   Exposed-Modules:   Text.Highlighting.Kate
                      Text.Highlighting.Kate.Syntax
-                     Text.Highlighting.Kate.Definitions
-                     Text.Highlighting.Kate.Format
+                     Text.Highlighting.Kate.Types
+                     Text.Highlighting.Kate.Styles
+                     Text.Highlighting.Kate.Format.HTML
+                     Text.Highlighting.Kate.Format.LaTeX
+  Other-Modules:     Text.Highlighting.Kate.Common
+                     Paths_highlighting_kate
                      Text.Highlighting.Kate.Syntax.Actionscript
                      Text.Highlighting.Kate.Syntax.Ada
                      Text.Highlighting.Kate.Syntax.Alert
@@ -179,7 +180,6 @@ Library
                      Text.Highlighting.Kate.Syntax.Diff
                      Text.Highlighting.Kate.Syntax.Djangotemplate
                      Text.Highlighting.Kate.Syntax.Doxygen
-                     Text.Highlighting.Kate.Syntax.Doxygenlua
                      Text.Highlighting.Kate.Syntax.Dtd
                      Text.Highlighting.Kate.Syntax.Eiffel
                      Text.Highlighting.Kate.Syntax.Email
@@ -191,7 +191,6 @@ Library
                      Text.Highlighting.Kate.Syntax.Haskell
                      Text.Highlighting.Kate.Syntax.Haxe
                      Text.Highlighting.Kate.Syntax.Html
-                     Text.Highlighting.Kate.Syntax.Ilerpg
                      Text.Highlighting.Kate.Syntax.Ini
                      Text.Highlighting.Kate.Syntax.Java
                      Text.Highlighting.Kate.Syntax.Javadoc
@@ -206,7 +205,6 @@ Library
                      Text.Highlighting.Kate.Syntax.Mandoc
                      Text.Highlighting.Kate.Syntax.Matlab
                      Text.Highlighting.Kate.Syntax.Maxima
-                     Text.Highlighting.Kate.Syntax.Mediawiki
                      Text.Highlighting.Kate.Syntax.Metafont
                      Text.Highlighting.Kate.Syntax.Mips
                      Text.Highlighting.Kate.Syntax.Modula2
@@ -241,15 +239,12 @@ Library
                      Text.Highlighting.Kate.Syntax.Texinfo
                      Text.Highlighting.Kate.Syntax.Verilog
                      Text.Highlighting.Kate.Syntax.Vhdl
-                     Text.Highlighting.Kate.Syntax.Xharbour
                      Text.Highlighting.Kate.Syntax.Xml
                      Text.Highlighting.Kate.Syntax.Xorg
                      Text.Highlighting.Kate.Syntax.Xslt
                      Text.Highlighting.Kate.Syntax.Xul
                      Text.Highlighting.Kate.Syntax.Yacc
                      Text.Highlighting.Kate.Syntax.Yaml
-  Other-Modules:     Text.Highlighting.Kate.Common
-                     Paths_highlighting_kate
   -- disable optimizations; it doesn't hurt performance much and
   -- massively improves compilation speed and memory usage
   Ghc-Options:       -W -O0
@@ -260,11 +255,11 @@ Library
 
 Executable Highlight
   Main-Is:          Highlight.hs
-  Build-Depends:    base, containers, xhtml, filepath
+  Build-Depends:    base, containers, blaze-html >= 0.4.2 && < 0.5, filepath
   if flag(pcre-light)
     cpp-options:     -D_PCRE_LIGHT
-  Ghc-Options:      -W -O0
-  Ghc-Prof-Options: -auto-all -caf-all
+  Ghc-Options:      -W -O0 -rtsopts
+  Ghc-Prof-Options: -auto-all -caf-all -rtsopts
   -- the following line is needed to prevent gcc from consuming huge amounts of
   -- memory on platforms without a native code generator:
   Cc-Options:       -O0
@@ -273,4 +268,3 @@ Executable Highlight
     Buildable:      True
   else
     Buildable:      False
-
