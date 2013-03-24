@@ -1,5 +1,5 @@
 name:                generators
-version:             1.0
+version:             1.0.1
 synopsis:            Actually useful monadic random value generators.
 description:         A nice wrapping around System.Random. Full documentation is available in Literate Haskell at the homepage link.
 category:            Control
