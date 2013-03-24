@@ -1,5 +1,5 @@
 Name:                bytestring-csv
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Parse CSV formatted data efficiently
 Description:         Parse CSV formatted data efficiently
 License:             BSD3
@@ -13,6 +13,7 @@ Homepage:            http://code.haskell.org/~dons/code/bytestring-csv
 Tested-With:         GHC ==6.8.2
 Build-Type:          Simple
 Cabal-Version:       >= 1.2
+extra-source-files:  examples/Test.hs examples/data.csv
 
 flag small_base
     description: Choose the new smaller, split-up base package.
