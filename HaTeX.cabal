@@ -1,5 +1,5 @@
 Name: HaTeX
-Version: 3.1.0
+Version: 3.2
 Author: Daniel Díaz
 Category: Text
 Build-type: Simple
@@ -19,14 +19,20 @@ Cabal-version: >= 1.6
 Tested-with: GHC == 6.12.3 , GHC == 7.0.3
 Extra-source-files:
   ReleaseNotes
+  ReadMe
   -- Examples
   Examples/fibs.hs
+
+Source-repository head
+  type: git
+  location: git://github.com/Daniel-Diaz/HaTeX.git
 
 Library
   Build-depends: base ==4.*
                , bytestring
-               , mtl ==2.*
+               , transformers ==0.2.*
                , text
+               , parsec >=3.1.2 && <3.2
   GHC-Options: -fno-warn-unrecognised-pragmas
   Exposed-modules:
     Text.LaTeX
@@ -35,8 +41,8 @@ Library
         Text.LaTeX.Base.Monad
         Text.LaTeX.Base.Commands
           Text.LaTeX.Base.Commands.Monad
-        Text.LaTeX.Base.Parser
         Text.LaTeX.Base.Render
+        Text.LaTeX.Base.Parser
         Text.LaTeX.Base.Syntax
         Text.LaTeX.Base.Types
         Text.LaTeX.Base.Writer
@@ -57,5 +63,8 @@ Library
           Text.LaTeX.Packages.Inputenc.Monad
         Text.LaTeX.Packages.Color
           Text.LaTeX.Packages.Color.Monad
+        Text.LaTeX.Packages.Graphicx
+          Text.LaTeX.Packages.Graphicx.Monad
   Extensions: GeneralizedNewtypeDeriving
             , OverloadedStrings
+            , CPP
