@@ -1,6 +1,6 @@
 Name:           gio
-Version:        0.11.0
-License:        GPL
+Version:        0.11.1
+License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
 Author:         Peter Gavin, Andy Stewart
@@ -20,13 +20,15 @@ Category:       System
 Tested-With:    GHC == 6.12.1
 Extra-Source-Files: Gtk2HsSetup.hs
                     marshal.list
+					hierarchy.list
 
-x-Types-File:   System/GIO/Types.chs
-x-Types-Tag:    gio
-x-Types-ModName: System.GIO.Types
-x-Types-Import: System.Glib.GObject
-x-Types-Lib:    gio
-x-Types-Prefix: g
+x-Types-File:      System/GIO/Types.chs
+x-Types-ModName:   System.GIO.Types
+x-Types-Import:    System.Glib.GObject
+x-Types-Lib:       gio
+x-Types-Prefix:    g
+x-Types-Tag:       gio
+x-Types-Hierarchy: hierarchy.list
 
 Source-Repository head
   type:         darcs
@@ -35,7 +37,7 @@ Source-Repository head
 
 Library
         build-depends:  base >= 4 && < 5, array, containers, haskell98, mtl, bytestring,
-                        glib >= 0.11 && < 0.12
+                        glib >= 0.11.1 && < 0.12
         build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
 
         exposed-modules:
