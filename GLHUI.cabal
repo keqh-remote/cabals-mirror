@@ -1,11 +1,10 @@
 name: GLHUI
-version: 1.0.0
+version: 1.1.0
 license: BSD3
 license-file: LICENSE
 author: Hugo Gomes <mr.hugo.gomes@gmail.com>
 maintainer: Hugo Gomes <mr.hugo.gomes@gmail.com>
 copyright: Hugo Gomes
-homepage: http://www.hackological.com/projects/GLHUI
 category: Graphics
 synopsis: Open OpenGL context windows in X11 with libX11
 description:
@@ -36,11 +35,13 @@ description:
    >           Window.loop myLoop -- stops when the ESC key is pressed
    >           Window.kill -- removes the window when the loop stops
    .
-   Special thanks to Tiago Farto (aka xernobyl) for coding the C version of
-   these functions
+   Special thanks to Tiago Farto (aka xernobyl) for coding the initial C version
+   that was used as a base for these functions
 build-type: Simple
 cabal-version: >=1.6
 extra-source-files:
+   include/HsGLWindow.h
+   c/HsGLWindow.c
    README
 
 library
