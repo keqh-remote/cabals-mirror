@@ -1,5 +1,5 @@
 name:          case-insensitive
-version:       0.1
+version:       0.2
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -12,8 +12,8 @@ synopsis:      Case insensitive string comparison
 description:   The module @Data.CaseInsensitive@ provides the 'CI' type
                constructor which can be parameterised by a string-like
                type like: 'String', 'ByteString', 'Text',
-               etc.. Comparisons of values of the resulting type are
-               then insensitive to cases.
+               etc.. Comparisons of values of the resulting type will be
+               insensitive to cases.
 
 source-repository head
   Type:     darcs
