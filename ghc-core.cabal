@@ -1,5 +1,5 @@
 name:           ghc-core
-version:        0.3.0.1
+version:        0.4
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart
@@ -27,7 +27,7 @@ executable ghc-core
     build-depends:  base,
                     process,
                     pcre-light,
-                    hscolour ==1.9,
+                    hscolour >=1.10,
                     directory,
                     filepath
     main-is:        ghc-core.hs
