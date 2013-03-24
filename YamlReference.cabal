@@ -1,5 +1,5 @@
 Name:                YamlReference
-Version:             0.9.1
+Version:             0.9.2
 Cabal-Version:       >= 1.2
 License:             LGPL
 License-File:        lgpl.txt
@@ -8,7 +8,7 @@ Author:              Oren Ben-Kiki
 Maintainer:          yaml-oren@ben-kiki.org
 Stability:           alpha
 Homepage:            http://www.ben-kiki.org/oren/YamlReference
-Package-Url:         http://www.ben-kiki.org/oren/YamlReference/YamlReference-0.9.1.tar.gz
+Package-Url:         http://www.ben-kiki.org/oren/YamlReference/YamlReference-0.9.2.tar.gz
 Category:            Text
 Synopsis:            YAML reference implementation
 Build-Type:          Custom
@@ -23,17 +23,16 @@ Description:         This package contains \"the\" reference YAML syntax parser
                      the @yeast2html@ YAML syntax visualizer (contained in this
                      package), pretty printers, etc. This is a streaming parser
                      that will \"immediately\" begin to generate output. Updated
-                     to be compatible with the April 12, 2008 working draft.
+                     to be compatible with the May 11, 2008 working draft.
 Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/b-as-line-feed.input tests/b-as-line-feed.output
+                     tests/b-as-space.input tests/b-as-space.invalid.input
+                     tests/b-as-space.invalid.output tests/b-as-space.output
                      tests/b-carriage-return.input
                      tests/b-carriage-return.output tests/b-char.cr.input
                      tests/b-char.cr.output tests/b-char.invalid.input
                      tests/b-char.invalid.output tests/b-char.lf.input
-                     tests/b-char.lf.output tests/b-char.ls.input
-                     tests/b-char.ls.output tests/b-char.nl.input
-                     tests/b-char.nl.output tests/b-char.ps.input
-                     tests/b-char.ps.output tests/b-chomped-last.t=clip.input
+                     tests/b-char.lf.output tests/b-chomped-last.t=clip.input
                      tests/b-chomped-last.t=clip.invalid.input
                      tests/b-chomped-last.t=clip.invalid.output
                      tests/b-chomped-last.t=clip.output
@@ -41,65 +40,29 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/b-chomped-last.t=keep.output
                      tests/b-chomped-last.t=strip.input
                      tests/b-chomped-last.t=strip.output
-                     tests/b-generic.cr.input tests/b-generic.crlf.input
-                     tests/b-generic.crlf.output tests/b-generic.cr.output
-                     tests/b-generic.invalid.input
-                     tests/b-generic.invalid.output tests/b-generic.lf.input
-                     tests/b-generic.lf.output tests/b-generic.nl.input
-                     tests/b-generic.nl.output
-                     tests/b-l-folded-any.n=4.c=flow-in.as-space.input
-                     tests/b-l-folded-any.n=4.c=flow-in.as-space.output
-                     tests/b-l-folded-any.n=4.c=flow-in.invalid.input
-                     tests/b-l-folded-any.n=4.c=flow-in.invalid.output
-                     tests/b-l-folded-any.n=4.c=flow-in.specific.input
-                     tests/b-l-folded-any.n=4.c=flow-in.specific.output
-                     tests/b-l-folded-any.n=4.c=flow-in.trimmed.input
-                     tests/b-l-folded-any.n=4.c=flow-in.trimmed.output
-                     tests/b-l-folded-as-space.input
-                     tests/b-l-folded-as-space.invalid.input
-                     tests/b-l-folded-as-space.invalid.output
-                     tests/b-l-folded-as-space.output
-                     tests/b-l-folded-specific.n=4.c=flow-in.invalid.input
-                     tests/b-l-folded-specific.n=4.c=flow-in.invalid.output
-                     tests/b-l-folded-specific.n=4.c=flow-in.ls.input
-                     tests/b-l-folded-specific.n=4.c=flow-in.ls-lf-ls.input
-                     tests/b-l-folded-specific.n=4.c=flow-in.ls-lf-ls.output
-                     tests/b-l-folded-specific.n=4.c=flow-in.ls.output
-                     tests/b-l-folded-trimmed.n=4.c=flow-in.invalid.input
-                     tests/b-l-folded-trimmed.n=4.c=flow-in.invalid.output
-                     tests/b-l-folded-trimmed.n=4.c=flow-in.lf-ls-lf.input
-                     tests/b-l-folded-trimmed.n=4.c=flow-in.lf-ls-lf.output
+                     tests/b-l-folded.n=4.c=flow-in.as-space.input
+                     tests/b-l-folded.n=4.c=flow-in.as-space.output
+                     tests/b-l-folded.n=4.c=flow-in.invalid.input
+                     tests/b-l-folded.n=4.c=flow-in.invalid.output
+                     tests/b-l-folded.n=4.c=flow-in.trimmed.input
+                     tests/b-l-folded.n=4.c=flow-in.trimmed.output
                      tests/b-line-feed.input tests/b-line-feed.output
-                     tests/b-line-separator.input tests/b-line-separator.output
                      tests/b-l-spaced.n=4.input
                      tests/b-l-spaced.n=4.invalid.input
                      tests/b-l-spaced.n=4.invalid.output
                      tests/b-l-spaced.n=4.output
+                     tests/b-l-trimmed.n=4.c=flow-in.invalid.input
+                     tests/b-l-trimmed.n=4.c=flow-in.invalid.output
                      tests/b-nb-literal-next.n=4.input
                      tests/b-nb-literal-next.n=4.invalid.input
                      tests/b-nb-literal-next.n=4.invalid.output
-                     tests/b-nb-literal-next.n=4.output tests/b-next-line.input
-                     tests/b-next-line.output
-                     tests/b-non-content-any.invalid.input
-                     tests/b-non-content-any.invalid.output
-                     tests/b-non-content-any.lf.input
-                     tests/b-non-content-any.lf.output
-                     tests/b-non-content-any.ls.input
-                     tests/b-non-content-any.ls.output
-                     tests/b-non-content-generic.input
-                     tests/b-non-content-generic.output
-                     tests/b-normalized.invalid.input
-                     tests/b-normalized.invalid.output
-                     tests/b-normalized.lf.input tests/b-normalized.lf.output
-                     tests/b-normalized.ls.input tests/b-normalized.ls.output
-                     tests/b-paragraph-separator.input
-                     tests/b-paragraph-separator.output
-                     tests/b-specific.invalid.input
-                     tests/b-specific.invalid.output tests/b-specific.ls.input
-                     tests/b-specific.ls.output tests/b-specific.ps.input
-                     tests/b-specific.ps.output tests/c-alias.input
-                     tests/c-alias.output tests/c-anchor.input
-                     tests/c-anchor.output tests/c-b-block-header.n=2.e.input
+                     tests/b-nb-literal-next.n=4.output
+                     tests/b-non-content.invalid.input
+                     tests/b-non-content.invalid.output
+                     tests/b-non-content.lf.input tests/b-non-content.lf.output
+                     tests/c-alias.input tests/c-alias.output
+                     tests/c-anchor.input tests/c-anchor.output
+                     tests/c-b-block-header.n=2.e.input
                      tests/c-b-block-header.n=2.e.output
                      tests/c-b-block-header.n=2.im.input
                      tests/c-b-block-header.n=2.im.output
@@ -115,6 +78,10 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-byte-order-mark.utf16be.output
                      tests/c-byte-order-mark.utf16le.input
                      tests/c-byte-order-mark.utf16le.output
+                     tests/c-byte-order-mark.utf32be.input
+                     tests/c-byte-order-mark.utf32be.output
+                     tests/c-byte-order-mark.utf32le.input
+                     tests/c-byte-order-mark.utf32le.output
                      tests/c-byte-order-mark.utf8.input
                      tests/c-byte-order-mark.utf8.output
                      tests/c-chomping-indicator.empty.input
@@ -234,6 +201,20 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-indicator.single-quote.input
                      tests/c-indicator.single-quote.output
                      tests/c-indicator.tag.input tests/c-indicator.tag.output
+                     tests/c-json.10000.input tests/c-json.10000.output
+                     tests/c-json.10ffff.input tests/c-json.10ffff.output
+                     tests/c-json.cr.input tests/c-json.cr.output
+                     tests/c-json.d7ff.input tests/c-json.d7ff.output
+                     tests/c-json.e000.input tests/c-json.e000.output
+                     tests/c-json.fffd.input tests/c-json.fffd.output
+                     tests/c-json.ff.input tests/c-json.ff.output
+                     tests/c-json.invalid.input tests/c-json.invalid.output
+                     tests/c-json.lf.input tests/c-json.lf.output
+                     tests/c-json.nbsp.input tests/c-json.nbsp.output
+                     tests/c-json.nel.input tests/c-json.nel.output
+                     tests/c-json.sp.input tests/c-json.sp.output
+                     tests/c-json.tab.input tests/c-json.tab.output
+                     tests/c-json.tilde.input tests/c-json.tilde.output
                      tests/c-l-block-map-explicit-entry.n=2.input
                      tests/c-l-block-map-explicit-entry.n=2.invalid.input
                      tests/c-l-block-map-explicit-entry.n=2.invalid.output
@@ -459,7 +440,7 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/detect-scalar-indentation.n=2.input
                      tests/detect-scalar-indentation.n=2.output
                      tests/e-node.input tests/e-node.output
-                     tests/e-scalar.input tests/e-scalar.output
+                     tests/e-scalar.input tests/e-scalar.output tests/junk
                      tests/l-block-map-explicit-value.n=2.input
                      tests/l-block-map-explicit-value.n=2.invalid.input
                      tests/l-block-map-explicit-value.n=2.invalid.output
@@ -619,6 +600,8 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/nb-double-text.n=4.c=flow-key.output
                      tests/nb-double-text.n=4.c=flow-out.input
                      tests/nb-double-text.n=4.c=flow-out.output
+                     tests/nb-json.input tests/nb-json.invalid.input
+                     tests/nb-json.invalid.output tests/nb-json.output
                      tests/nb-ns-double-in-line.input
                      tests/nb-ns-double-in-line.invalid.input
                      tests/nb-ns-double-in-line.invalid.output
@@ -720,6 +703,7 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-esc-null.input tests/ns-esc-null.output
                      tests/ns-esc-paragraph-separator.input
                      tests/ns-esc-paragraph-separator.output
+                     tests/ns-esc-slash.input tests/ns-esc-slash.output
                      tests/ns-esc-space.input tests/ns-esc-space.output
                      tests/ns-esc-vertical-tab.input
                      tests/ns-esc-vertical-tab.output
@@ -1142,22 +1126,6 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-l-comments.multi.input
                      tests/s-l-comments.multi.output
                      tests/s-l-comments.sol.input tests/s-l-comments.sol.output
-                     tests/s-l-double-any.n=4.escaped.input
-                     tests/s-l-double-any.n=4.escaped.output
-                     tests/s-l-double-any.n=4.folded.input
-                     tests/s-l-double-any.n=4.folded.output
-                     tests/s-l-double-any.n=4.invalid.input
-                     tests/s-l-double-any.n=4.invalid.output
-                     tests/s-l-double-escaped.n=2.input
-                     tests/s-l-double-escaped.n=2.invalid.input
-                     tests/s-l-double-escaped.n=2.invalid.output
-                     tests/s-l-double-escaped.n=2.output
-                     tests/s-l-flow-folded.n=4.invalid.input
-                     tests/s-l-flow-folded.n=4.invalid.output
-                     tests/s-l-flow-folded.n=4.lf.input
-                     tests/s-l-flow-folded.n=4.lf.output
-                     tests/s-l-flow-folded.n=4.sp-lf-lf.input
-                     tests/s-l-flow-folded.n=4.sp-lf-lf.output
                      tests/s-l+flow-in-block.n=2.input
                      tests/s-l+flow-in-block.n=2.invalid.input
                      tests/s-l+flow-in-block.n=2.invalid.output
@@ -1190,6 +1158,16 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-ns-single-next-line.n=4.invalid.input
                      tests/s-ns-single-next-line.n=4.invalid.output
                      tests/s-ns-single-next-line.n=4.output
+                     tests/s-s-double-break.n=4.escaped.input
+                     tests/s-s-double-break.n=4.escaped.output
+                     tests/s-s-double-break.n=4.folded.input
+                     tests/s-s-double-break.n=4.folded.output
+                     tests/s-s-double-break.n=4.invalid.input
+                     tests/s-s-double-break.n=4.invalid.output
+                     tests/s-s-double-escaped.n=2.input
+                     tests/s-s-double-escaped.n=2.invalid.input
+                     tests/s-s-double-escaped.n=2.invalid.output
+                     tests/s-s-double-escaped.n=2.output
                      tests/s-separate-in-line.invalid.input
                      tests/s-separate-in-line.invalid.output
                      tests/s-separate-in-line.sol.input
@@ -1216,6 +1194,14 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-separate.n=4.c=flow-out.line.output
                      tests/s-separate.n=4.c=flow-out.sp.input
                      tests/s-separate.n=4.c=flow-out.sp.output
+                     tests/s-s-flow-folded.n=2.input
+                     tests/s-s-flow-folded.n=2.output
+                     tests/s-s-flow-folded.n=4.invalid.input
+                     tests/s-s-flow-folded.n=4.invalid.output
+                     tests/s-s-flow-folded.n=4.lf.input
+                     tests/s-s-flow-folded.n=4.lf.output
+                     tests/s-s-flow-folded.n=4.sp-lf-lf.input
+                     tests/s-s-flow-folded.n=4.sp-lf-lf.output
                      tests/s-space.input tests/s-space.invalid.input
                      tests/s-space.invalid.output tests/s-space.output
                      tests/s-tab.input tests/s-tab.invalid.input
@@ -1223,7 +1209,6 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-white.invalid.input tests/s-white.invalid.output
                      tests/s-white.sp.input tests/s-white.sp.output
                      tests/s-white.tab.input tests/s-white.tab.output
-
 Flag small_base
     Description:         Choose the new smaller, split-up base package.
 
