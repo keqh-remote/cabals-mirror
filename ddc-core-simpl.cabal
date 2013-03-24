@@ -1,5 +1,5 @@
 Name:           ddc-core-simpl
-Version:        0.2.1.2
+Version:        0.3.1.1
 License:        MIT
 License-file:   LICENSE
 Author:         The Disciplined Disciple Compiler Strike Force
@@ -10,27 +10,56 @@ Stability:      experimental
 Category:       Compilers/Interpreters
 Homepage:       http://disciple.ouroborus.net
 Bug-reports:    disciple@ouroborus.net
-Synopsis:       Disciple Core language simplifying code transformations.
-Description:    Disciple Core language simplifying code transformations.
+Synopsis:       Disciplined Disciple Compiler code transformations.
+Description:    Disciplined Disciple Compiler code transformations.
 
 Library
   Build-Depends: 
         base            == 4.6.*,
+        deepseq         == 1.3.*,
         containers      == 0.5.*,
-        array           >= 0.3   && < 0.5,
+        array           == 0.4.*,
         transformers    == 0.3.*,
         mtl             == 2.1.*,
-        ddc-base        == 0.2.1.*,
-        ddc-core        == 0.2.1.*
+        ddc-base        == 0.3.1.*,
+        ddc-core        == 0.3.1.*
 
   Exposed-modules:
+        DDC.Core.Analysis.Arity
+        DDC.Core.Analysis.Usage
+        DDC.Core.Simplifier.Recipe
+        DDC.Core.Simplifier.Parser
+        DDC.Core.Transform.Rewrite.Disjoint
+        DDC.Core.Transform.Rewrite.Env
+        DDC.Core.Transform.Rewrite.Match
+        DDC.Core.Transform.Rewrite.Parser
+        DDC.Core.Transform.Rewrite.Rule
         DDC.Core.Transform.AnonymizeX
-        DDC.Core.Transform.ANormal
         DDC.Core.Transform.Beta
+        DDC.Core.Transform.Bubble
+        DDC.Core.Transform.Prune
+        DDC.Core.Transform.Elaborate
+        DDC.Core.Transform.Flatten
+        DDC.Core.Transform.Forward
+        DDC.Core.Transform.Inline
+        DDC.Core.Transform.Namify
+        DDC.Core.Transform.Rewrite
+        DDC.Core.Transform.Snip
         DDC.Core.Transform.TransformX
+        DDC.Core.Simplifier
+
+        DDC.Type.Transform.Alpha
         DDC.Type.Transform.AnonymizeT
-        DDC.Type.Transform.Rename
-        
+
+  Other-modules:
+        DDC.Core.Simplifier.Apply
+        DDC.Core.Simplifier.Lexer
+        DDC.Core.Simplifier.Base
+
+        DDC.Core.Transform.Inline.Templates
+        DDC.Core.Transform.Rewrite.Error
+
+
   GHC-options:
         -Wall
         -fno-warn-orphans
@@ -38,10 +67,18 @@ Library
         -fno-warn-unused-do-bind
 
   Extensions:
+        BangPatterns
         NoMonomorphismRestriction
+        ParallelListComp
         ExplicitForAll
         KindSignatures
         PatternGuards
         MultiParamTypeClasses
         FlexibleContexts
         FlexibleInstances
+        RankNTypes
+        ExistentialQuantification
+        DeriveDataTypeable
+        ScopedTypeVariables
+
+        
