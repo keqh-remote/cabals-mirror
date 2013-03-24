@@ -1,12 +1,12 @@
 name:    smt-lib
-version: 0.0.0
+version: 0.0.1
 
 category: Language
 
 synopsis: Parsing and printing SMT-LIB.
 
 description:
-  SMT-LIB (http://goedel.cs.uiowa.edu/smtlib/) is a common language used by many SMT solvers.
+  SMT-LIB is a common language used by many SMT solvers.
   This library provides an SMT-LIB AST with parsing and printing utilities.
 
 author:     Tom Hawkins <tomahawkins@gmail.com>
@@ -23,16 +23,15 @@ cabal-version: >= 1.6
 library
     build-depends:
         base       >= 4.0 && < 5.0,
+        directory  >= 1.0 && < 1.1,
+        array      >= 0.3 && < 0.4,
         polyparse  >= 1.4
 
     exposed-modules:
         Language.SMTLIB
+        Language.SMTLIB.Lexer
 
---    extensions:
-
-    if impl(ghc > 6.8)
-          ghc-options: -fwarn-tabs
-    ghc-options:       -W
+    ghc-options: -W
 
 source-repository head
     type:     git
