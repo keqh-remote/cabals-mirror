@@ -1,5 +1,5 @@
 name:                   priority-queue
-version:                0.1.1
+version:                0.1.2
 stability:              provisional
 license:                BSD3
 license-file:           LICENSE
@@ -9,7 +9,7 @@ build-type:             Simple
 
 author:                 James Cook <mokus@deepbondi.net>
 maintainer:             James Cook <mokus@deepbondi.net>
-homepage:               http://darcs.deepbondi.net/priority-queue
+homepage:               http://code.haskell.org/~mokus/priority-queue
 
 category:               Data
 synopsis:               Simple implementation of a priority queue.
@@ -30,4 +30,4 @@ Library
     cpp-options:        -DNoMinViewWithKey
   
   build-depends:        reord >= 0.0.0.2, stateref >= 0.2.1.0, 
-                        queue >= 0.1.1.1
+                        queue >= 0.1.1.3
