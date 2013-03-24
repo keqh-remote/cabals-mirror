@@ -1,5 +1,5 @@
 name:           utf8-prelude
-version:        0.1.5
+version:        0.1.6
 synopsis:       Variants of Prelude and System.IO with UTF8 text I/O operations
 description:    
     If you want your Haskell code to have UTF8 text I/O then use libraries which have UTF8 text I/O.
@@ -26,7 +26,6 @@ copyright:      (c) 2008 by Péter Diviánszky
 license:        BSD3
 license-file:   LICENSE
 stability:      alpha
-tested-with:    GHC == 6.8.2 && == 6.10.0.20081007
 build-type:     Simple
 cabal-version:  >=1.2
 data-files:     readFile_test.txt,
@@ -36,7 +35,7 @@ library
     ghc-options:    -Wall
     build-depends:
         base,
-        utf8-string >= 0.3.2 && < 0.3.3
+        utf8-string >= 0.3.3 && < 0.4
 
     exposed-modules:
         UTF8Prelude,
