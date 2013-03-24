@@ -1,5 +1,5 @@
 Name:             non-negative
-Version:          0.0.2
+Version:          0.0.3
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -36,6 +36,7 @@ Library
     Numeric.NonNegative.Class
     Numeric.NonNegative.Wrapper
     Numeric.NonNegative.Chunky
+    Numeric.NonNegative.ChunkyPrivate
   Other-Modules:
     Numeric.NonNegative.Utility
 
