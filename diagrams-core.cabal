@@ -1,5 +1,5 @@
 Name:                diagrams-core
-Version:             0.5
+Version:             0.5.0.1
 Synopsis:            Core libraries for diagrams EDSL
 Description:         The core modules underlying diagrams,
                      an embedded domain-specific language
@@ -40,7 +40,7 @@ Library
                        semigroups >= 0.3.4 && < 0.9,
                        vector-space >= 0.8 && < 0.9,
                        vector-space-points >= 0.1 && < 0.2,
-                       MemoTrie >= 0.4.7 && < 0.5,
+                       MemoTrie >= 0.4.7 && < 0.6,
                        newtype >= 0.2 && < 0.3
 
   hs-source-dirs:      src
