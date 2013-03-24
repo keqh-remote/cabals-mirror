@@ -1,5 +1,5 @@
 Name:               happstack-data
-Version:            0.2.1
+Version:            0.3.1
 License:            BSD3
 License-File:       COPYING
 Author:             Happstack team, HAppS LLC
@@ -22,7 +22,12 @@ Description:
      * Marshalling Haskell values to and from HTML forms.
 Tested-With:        GHC==6.6.1, GHC==6.8.2
 Build-Type:         Simple
-Cabal-Version:      >= 1.2.3
+Cabal-Version:      >= 1.6
+
+source-repository head
+    type:     darcs
+    subdir:   happstack-data
+    location: http://patch-tag.com/publicrepos/happstack
 
 flag base4
 
@@ -39,7 +44,7 @@ Library
   Build-Depends:      binary,
                       bytestring,
                       containers,
-                      happstack-util >= 0.2.1 && < 0.3, 
+                      happstack-util >= 0.3.1 && < 0.4, 
                       HaXml >= 1.13 && < 1.14,
                       mtl,
                       pretty,
