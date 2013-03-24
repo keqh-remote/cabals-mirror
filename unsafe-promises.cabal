@@ -1,5 +1,5 @@
 Name: unsafe-promises
-Version: 0.0.1
+Version: 0.0.1.1
 Cabal-Version: >= 1.6
 License: BSD3
 License-File: LICENSE
@@ -12,11 +12,6 @@ Build-type: Simple
 Description:
         An experimental library for creating promises that can be
         evaluated in pure code.
-
-source-repository this
-  type: git
-  location: git://github.com/kallisti-dev/unsafe-promises.git
-  tag: 0.0
 
 source-repository head
   type: git
