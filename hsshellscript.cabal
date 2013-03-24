@@ -1,5 +1,5 @@
 Name:                hsshellscript
-Version:             3.1.0
+Version:             3.2.0
 Synopsis:            Haskell for Unix shell scripting tasks
 Description:         A Haskell-library for tasks which are usually done in
                      shell scripts. This includes parsing command line
@@ -15,7 +15,7 @@ Maintainer:          hsss@volker-wysk.de
 Copyright:           (c)2004-2011 by Volker Wysk
 Category:            System
 Build-type:          Simple
-Extra-source-files:  README, manual/*.html, manual/LICENSE, Makefile
+Extra-source-files:  README, manual/*.html, manual/LICENSE, Makefile, test/*.hs
 
 cabal-version:       >= 1.6
 
@@ -44,5 +44,3 @@ Library
 
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   Build-tools:       c2hs >= 0.15.1
-
-
