@@ -1,9 +1,8 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.8.33
--- license is GPL v2 only
-license:            GPL
+version:            1.8.34
+license:            BSD3
 license-file:       LICENSE
 category:           Development
 author:             Neil Mitchell <ndmitchell@gmail.com>
