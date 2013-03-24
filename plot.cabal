@@ -1,5 +1,5 @@
 Name:                plot
-Version:             0.1.2
+Version:             0.1.2.1
 License:             BSD3
 License-file:        LICENSE
 Copyright:           (c) A.V.H. McPhail 2010
@@ -39,7 +39,10 @@ Description:
      Changes in plot 0.1.2
      .
           * axis join rendering improvement
+     .
           * added annotations
+     .
+          * grid lines formattable
      .
 Category:            Graphics
 
