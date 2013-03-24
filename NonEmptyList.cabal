@@ -1,5 +1,5 @@
 Name:                NonEmptyList
-Version:             0.0.1
+Version:             0.0.2
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            A list with a length of at least one.
@@ -8,7 +8,7 @@ Homepage:            http://code.google.com/p/nonempty/
 Category:            Data
 Author:              Tony Morris, Oliver Taylor
 Maintainer:          code@tmorris.net
-Copyright:           2010 Tony Morris
+Copyright:           2010 Tony Morris, Oliver Taylor
 build-type:          Simple
 cabal-version:       >= 1.2
 
@@ -23,3 +23,4 @@ Library
 
   GHC-Options:    -Wall
   Exposed-Modules: Data.List.NonEmpty
+                   Data.List.ZipNonEmpty
