@@ -1,5 +1,5 @@
 Name:           darcs
-version:        2.4
+version:        2.4.1
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -48,7 +48,6 @@ extra-source-files:
   -- documentation files
   src/best_practices.tex, src/building_darcs.tex, src/configuring_darcs.tex,
   src/features.tex, src/formats.tex, src/gpl.tex, src/switching.tex, src/darcs.tex
-  doc/manual/images.tex, doc/manual/bigimages.tex, doc/manual/patch-theory.tex,
   doc/darcs.css
 
   README, NEWS
@@ -64,6 +63,7 @@ extra-source-files:
   tests/network/*.sh
   tests/lib
   tests/example_binary.png
+  tests/README.test_maintainers.txt
 
   GNUmakefile
 
@@ -126,6 +126,9 @@ Executable          witnesses
                     src/maybe_relink.c
                     src/umask.c
                     src/Crypt/sha2.c
+  -- this module isn't exported by libdarcs, so not included in the tarball
+  -- if not mentioned
+  other-modules:    Darcs.Test.Patch.Check
 
   extensions:
     CPP
@@ -276,7 +279,6 @@ Library
                     Darcs.SlurpDirectory
                     Darcs.SlurpDirectory.Internal
                     Darcs.Test
-                    Darcs.Test.Patch.Check
                     Darcs.TheCommands
                     Darcs.URL
                     Darcs.Utils
@@ -323,7 +325,7 @@ Library
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.4.7 && < 0.5
+                   hashed-storage == 0.4.11
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
@@ -369,7 +371,7 @@ Library
       buildable: False
 
   if flag(mmap) && !os(windows)
-    build-depends:    mmap >= 0.2
+    build-depends:    mmap >= 0.2 && < 0.5
     cpp-options:      -DHAVE_MMAP
 
   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
@@ -453,7 +455,7 @@ Executable          darcs
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.4.4 && < 0.5
+                   hashed-storage == 0.4.11
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
@@ -491,7 +493,7 @@ Executable          darcs
       buildable: False
 
   if flag(mmap) && !os(windows)
-    build-depends:    mmap >= 0.2
+    build-depends:    mmap >= 0.2 && < 0.5
     cpp-options:      -DHAVE_MMAP
 
   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
@@ -539,6 +541,13 @@ Executable          unit
                     src/maybe_relink.c
                     src/umask.c
                     src/Crypt/sha2.c
+  -- list all unit test modules not exported by libdarcs; otherwise Cabal won't
+  -- include them in the tarball
+  other-modules:    Darcs.Test.Email
+                    Darcs.Test.Patch.Check
+                    Darcs.Test.Patch.QuickCheck
+                    Darcs.Test.Patch.Test
+                    Darcs.Test.Patch.Unit
 
   -- We need optimizations, regardless of what Hackage says
   ghc-options:      -Wall -O2 -funbox-strict-fields
@@ -591,7 +600,7 @@ Executable          unit
                    random     == 1.0.*
 
   if flag(mmap) && !os(windows)
-    build-depends:    mmap >= 0.2
+    build-depends:    mmap >= 0.2 && < 0.5
     cpp-options:      -DHAVE_MMAP
 
   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
