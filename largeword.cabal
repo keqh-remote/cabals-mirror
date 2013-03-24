@@ -1,5 +1,5 @@
 name:           largeword
-version:        1.0.1
+version:        1.0.2
 license:        BSD3
 copyright:      Dominic Steinitz <dominic@steinitz.org>
 author:         Dominic Steinitz <dominic@steinitz.org>
@@ -10,15 +10,33 @@ homepage:       http://trac.haskell.org/largeword/wiki
 category:       Data
 stability:      stable
 build-type:     Simple
-cabal-version:  >= 1.6
-tested-with:    GHC == 6.12.1
+cabal-version:  >= 1.9.2
+tested-with:    GHC == 7.4.1
+-- Tests/Properties.hs shouldn't have to go here, but the source files
+-- for the test-suite stanzas don't get picked up by `cabal sdist`.
+Extra-source-files: Tests/Properties.hs
 
-Library
-  Build-Depends: base == 4.*
-  ghc-options:   -O2
-  hs-source-dirs:
-  exposed-modules: Data.LargeWord
 source-repository head
     type:     darcs
     location: http://code.haskell.org/largeword
+
+Library
+  Build-Depends:   base >= 4.0 && < 5
+  exposed-modules: Data.LargeWord
+
+Test-suite tests
+  Type: exitcode-stdio-1.0
+  Hs-source-dirs: Tests
+  Main-is: Properties.hs
+  Build-depends: base >= 4.0 && < 5,
+                 test-framework == 0.6,
+                 test-framework-quickcheck2 >= 0.2.9 && < 0.3,
+                 test-framework-hunit >= 0.2.6 && < 0.3,
+                 QuickCheck >= 2.4.0.1,
+                 HUnit >= 1.2.2.3,
+                 largeword == 1.0.2
+
+
+
+
 
