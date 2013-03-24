@@ -1,5 +1,5 @@
 Name:                para
-Version:             1.0
+Version:             1.1
 Synopsis:			 Text paragraph formatting
 Description:          A paragraph formatting utility.  Provided with input text that is
    arbitrarily split amongst several strings, this utility will
