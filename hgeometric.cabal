@@ -1,5 +1,5 @@
 name:         hgeometric
-version:      0.0.2
+version:      0.0.2.1
 license:      GPL
 license-file: LICENSE
 copyright:    Copyright (C) 2007, 2008 Marco Túlio Gontijo e Silva
@@ -40,6 +40,13 @@ exposed-modules:
     Algebra.Geometric.Polygon, Algebra.Geometric.Polygon.File,
     Algebra.Geometric.Contour, Algebra.Geometric.Area
 
-ghc-options: -Wall
-include-dirs: .
-extra-libraries: gpcl
+ghc-options:      -O2 -fvia-C -optc-O2 -Wall
+c-sources:        cbits/gpc.c
+include-dirs:     includes
+includes:         gpc.h
+install-includes: gpc.h
+
+-- In the old days, we linked against this library,
+-- but it isn't widely distributed, so we just supply our own:
+-- extra-libraries: gpcl
+
