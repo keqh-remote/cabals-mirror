@@ -1,5 +1,5 @@
 name:            binary-strict
-version:         0.2.4
+version:         0.3.0
 license:         BSD3
 license-file:    LICENSE
 author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
@@ -19,6 +19,8 @@ exposed-modules: Data.Binary.Strict.Get,
                  Data.Binary.Strict.IncrementalGet,
                  Data.Binary.Strict.BitGet,
                  Data.Binary.Strict.Util
+                 Data.Binary.Strict.ByteSet
+                 Data.Binary.Strict.Class
 extensions:      CPP, FlexibleContexts
 hs-source-dirs:  src
 extra-source-files: tests/BitGetTest.hs, src/Data/Binary/Strict/Common.h
