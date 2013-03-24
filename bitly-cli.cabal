@@ -1,5 +1,5 @@
 Name:          bitly-cli
-Version:       0.1.1
+Version:       0.1.2
 Cabal-version: >= 1.2
 Build-type:    Simple
 
@@ -15,7 +15,7 @@ Synopsis: A command line tool to access bit.ly URL shortener.
 Description:
   This package provides a command line utility to shorten
   and expand URLs using bit.ly/j.mp service. To use this tool, an API
-  key is required. Please find yours at <http://bit.ly/account/>.
+  key is required. Please find yours at <https://bitly.com/a/account>.
   .
   Configuration file (`~/.bitly`) format:
   .
