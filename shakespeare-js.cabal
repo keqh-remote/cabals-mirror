@@ -1,5 +1,5 @@
 name:            shakespeare-js
-version:         0.11.1
+version:         0.11.2
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -9,7 +9,7 @@ description:
     Shakespeare is a template family for type-safe, efficient templates with simple variable interpolation . Shakespeare templates can be used inline with a quasi-quoter or in an external file. Shakespeare interpolates variables according to the type being inserted.
     In this case, the variable type needs a ToJavascript instance.
     .
-    There is also shakespeare-coffeescript for coffeescript templates. Coffescript is a language that compiles down to javascript. It expects a coffeescript compiler in your path, and variable should be a ToCoffee instance.
+    There is also shakespeare-coffeescript for coffeescript templates. Coffescript is a language that compiles down to javascript. It expects a coffeescript compiler in your path, and variable should be a ToCoffee instance. And we even have a Roy template for the adventorous FP addicts.
     .
     Please see http://docs.yesodweb.com/book/templates for a more thorough description and examples
     .
@@ -29,7 +29,7 @@ homepage:        http://www.yesodweb.com/book/templates
 
 library
     build-depends:   base             >= 4       && < 5
-                   , shakespeare      >= 0.10.3  && < 0.11
+                   , shakespeare      >= 0.11    && < 0.12
                    , template-haskell
                    , text             >= 0.7     && < 0.12
 
@@ -62,7 +62,7 @@ test-suite test
 
     ghc-options:   -Wall
     build-depends: shakespeare-js   >= 0.11    && < 0.12
-                 , shakespeare      >= 0.10.3  && < 0.11
+                 , shakespeare      >= 0.10.3  && < 0.12
                  , base             >= 4       && < 5
                  , HUnit
                  , hspec            >= 0.8     && < 0.10
@@ -76,4 +76,4 @@ test-suite test
 
 source-repository head
   type:     git
-  location: git://github.com/yesodweb/hamlet.git
+  location: git://github.com/yesodweb/shakespeare.git
