@@ -1,39 +1,64 @@
 Name:             HTF
-Version:          0.1
+Version:          0.3
 License:          LGPL
-License-file:     LICENSE
-Author:           Stefan Wehr <wehr@informatik.uni-freiburg.de>
+License-File:     LICENSE
+Copyright:        (c) 2005-2010 Stefan Wehr
+Author:           Stefan Wehr <mail@stefanwehr.de>
+Maintainer:       Stefan Wehr <mail@stefanwehr.de>
+Bug-Reports:      mailto:mail@stefanwehr.de
 Stability:        Beta
 Category:         Testing
 Synopsis:         The Haskell Test Framework
-Description:      The HTF lets you write HUnit tests (http://hunit.sourceforge.net)
-                  and QuickCheck (http://www.cs.chalmers.se/~rjmh/QuickCheck/) properties
-                  in an easy and convenient way. Additionally, the HTF provides a facility
-                  for testing programs by running them and comparing the actual output with
-                  the expected output (so called "file-based tests").
+Description:
 
-                  The HTF uses Template Haskell to collect all tests and properties,
-                  so you do not need to write boilerplate code for that purpose.
-                  Preprocessor macros provide you with file name and line number information
-                  for tests and properties that failed.
-homepage:         http://www.informatik.uni-freiburg.de/~wehr/software/haskell/
+    The Haskell Test Framework (/HTF/ for short) lets you define unit
+    tests (<http://hunit.sourceforge.net>), QuickCheck properties
+    (<http://www.cs.chalmers.se/~rjmh/QuickCheck/>), and black box
+    tests in an easy and convenient way. The HTF uses a custom
+    preprocessor that collects test definitions automatically.
+    Furthermore, the preprocessor allows the HTF to report failing
+    test cases with exact file name and line number information.
 
-tested-with:      GHC==6.8.2
-Build-Depends:    HUnit, QuickCheck<2, template-haskell, base>3, random, containers, process, directory
+    .
+
+    The documentation of the "Test.Framework.Tutorial" module
+    provides a tutorial for the HTF.
+
+Tested-With:      GHC==6.10.4
 Build-Type:       Simple
+Cabal-Version:    >= 1.6
+Extra-Source-Files:
+  README
+  TODO
 
-Exposed-Modules:  Test.Framework
-Other-Modules:
-  Test.Framework.Location
-  Test.Framework.HUnitWrapper
-  Test.Framework.QuickCheckWrapper
-  Test.Framework.Configuration
-  Test.Framework.Process
-  Test.Framework.FileBasedTest
-  Test.Framework.Utils
+Executable htfpp
+  Main-Is:          HTFPP.hs
+  Build-Depends:    cpphs >= 1.11,
+                    haskell-src-exts >= 1.8.2,
+                    base >= 4 && < 5
+  Other-Modules:
+    Test.Framework.Preprocessor
+    Test.Framework.HaskellParser
 
-Executable:       htf-pp
-Main-Is:          HTFpp.hs
-Hs-Source-Dirs:   scripts, .
-Other-Modules:    Test.Framework.Process
-ghc-options:      -threaded -Wall
+Library
+  Build-Depends:    HUnit >= 1.2,
+                    QuickCheck >= 2,
+                    base >= 4 && < 5,
+                    random,
+                    containers,
+                    process,
+                    directory,
+                    mtl,
+                    pretty
+  Exposed-Modules:
+    Test.Framework
+    Test.Framework.HUnitWrapper
+    Test.Framework.TestManager
+    Test.Framework.QuickCheckWrapper
+    Test.Framework.BlackBoxTest
+    Test.Framework.Location
+    Test.Framework.Tutorial
+    Test.Framework.Pretty
+  Other-Modules:
+    Test.Framework.Utils
+    Test.Framework.Process
