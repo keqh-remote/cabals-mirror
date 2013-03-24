@@ -7,7 +7,7 @@ Name:                random-extras
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            Additional functions for random values.
@@ -55,8 +55,9 @@ Library
   Build-depends:
         base >=4 && <5,
         containers ==0.3.*,
-        MonadRandom ==0.1.*,
-        monad-loops ==0.3.1.*
+        array ==0.3.*,
+        random ==1.0.0.*,
+        MonadRandom ==0.1.*
   
   -- Modules not exported by this package.
   -- Other-modules:       
