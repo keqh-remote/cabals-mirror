@@ -1,5 +1,5 @@
 name:               xmonad-extras
-version:            0.10.1
+version:            0.10.1.1
 homepage:           http://projects.haskell.org/xmonad-extras
 synopsis:           Third party extensions for xmonad with wacky dependencies
 description:        Various modules for xmonad that cannot be added to xmonad-contrib
@@ -29,6 +29,7 @@ flag with_mpd
 
 flag with_hlist
   description: Build modules depending on HList.
+  default: False
 
 flag with_regex_posix
   description: Build modules depending on posix-regex.
@@ -61,9 +62,6 @@ library
         build-depends: parsec >= 2 && < 4, split >= 0.1 && < 0.2
         exposed-modules: XMonad.Actions.Volume
 
-    -- At the moment of writing, hint does not yet support
-    -- GHCs newer than 7.0.4; If that changes and no new release
-    -- of xmonad-extras has been made, please contact the maintainer.
     if flag(with_hint)
         if impl(ghc < 7.2)
                 build-depends: hint >= 0.3 && < 0.4, network
