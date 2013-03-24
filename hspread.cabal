@@ -1,14 +1,14 @@
 name:		hspread
-version: 	0.2
+version: 	0.3
 license:	BSD3
 license-file:	LICENSE
 author:		Andrea Vezzosi
 maintainer:	Andrea Vezzosi, sanzhiyan@gmail.com
 synopsis:	A client library for the spread toolkit
-description:	
+description:
     hspread is a client library for the Spread toolkit.
-    It is fully implemented in haskell and supports the most recent version 
-    of the protocol. It's intended to be used with a serialization library 
+    It is fully implemented in haskell and supports the most recent version
+    of the protocol. It's intended to be used with a serialization library
     like binary, and a separate installation of the spread deamon.
 build-type: 	Simple
 cabal-version:	>= 1.2
@@ -31,4 +31,3 @@ library
   else
         build-depends: base < 3
   build-depends: network, binary >= 0.3
-  ghc-options: -O2
