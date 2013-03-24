@@ -1,5 +1,5 @@
 Name:           hxt-cache
-Version:        9.0.0
+Version:        9.0.1
 Synopsis:       Cache for HXT XML Documents and other binary data
 Description:    Extension for caching XML documents and other binary data in cache directory
                 of the local filesystem.
@@ -25,7 +25,9 @@ library
   Control.Concurrent.ResourceTable
 
  hs-source-dirs: src
+
  ghc-options: -Wall
+ ghc-prof-options: -auto-all -caf-all
 
  build-depends: base       >= 4   && < 5,
                 bytestring >= 0.9 && < 1,
