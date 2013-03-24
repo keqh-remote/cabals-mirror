@@ -1,5 +1,5 @@
 Name:                happstack-ixset
-Version:             0.1
+Version:             0.2.1
 Synopsis:            Efficient relational queries on Haskell sets. 
 Description:         Just pick which parts of your data structures you want indexed using an easy to use template-haskell function. Spare yourself the need to write, run, and maintain code that marshalls your data to/from an external relational database just for efficient queries. happstack-ixset relies on generics and TH to spare you the boilerplate normally required for such tasks. 
 License:             BSD3
@@ -15,26 +15,31 @@ flag base4
 
 Flag tests
     Description: Build the testsuite, and include the tests in the library
-    Default: True
+    Default: False
 
 Library
   if flag(base4)
     Build-Depends:     base >=4 && < 5, syb
   else
     Build-Depends:     base < 4
-  Build-Depends:       base, mtl, happstack-util,
-                       happstack-data, template-haskell,
-                       syb-with-class, containers
+
+  Build-Depends:       containers,
+                       happstack-data >= 0.2.1 && < 0.3,
+                       happstack-util >= 0.2.1 && < 0.3,
+                       mtl,
+                       syb-with-class,
+                       template-haskell
+
   hs-source-dirs:      src
   if flag(tests)
     hs-source-dirs:    tests
   Exposed-modules:     
-                       HAppS.Data.IxSet
-                       HAppS.Data.IxSet.Ix
-                       HAppS.Data.IxSet.Usage
+                       Happstack.Data.IxSet
+                       Happstack.Data.IxSet.Ix
+                       Happstack.Data.IxSet.Usage
   if flag(tests)
     Exposed-modules:   
-                       HAppS.Data.IxSet.Tests
+                       Happstack.Data.IxSet.Tests
 
   extensions:          UndecidableInstances, OverlappingInstances,
                        FlexibleInstances, MultiParamTypeClasses,
