@@ -1,5 +1,5 @@
 Name:                tls
-Version:             1.0.3
+Version:             1.1.0
 Description:
    Native Haskell TLS and SSL protocol implementation for server and client.
    .
@@ -26,14 +26,6 @@ Cabal-Version:       >=1.8
 Homepage:            http://github.com/vincenthz/hs-tls
 extra-source-files:  Tests/*.hs
 
-Flag test
-  Description:       Build unit test
-  Default:           False
-
-Flag executable
-  Description:       Build the executable
-  Default:           False
-
 Flag compat
   Description:       Accept SSLv2 compatible handshake
   Default:           True
@@ -45,8 +37,8 @@ Library
                    , cereal >= 0.3
                    , bytestring
                    , network
-                   , crypto-api >= 0.5
-                   , cryptocipher >= 0.3.0 && < 0.4.0
+                   , crypto-random-api >= 0.2 && < 0.3
+                   , crypto-pubkey
                    , certificate >= 1.3.0 && < 1.4.0
   Exposed-modules:   Network.TLS
                      Network.TLS.Cipher
@@ -85,29 +77,24 @@ Library
   if flag(compat)
     cpp-options:     -DSSLV2_COMPATIBLE
 
-executable           Tests
+Test-Suite test-tls
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    Tests
   Main-is:           Tests.hs
-  if flag(test)
-    Buildable:       True
-    Build-Depends:   base >= 3 && < 5
+  Build-Depends:     base >= 3 && < 5
                    , mtl
                    , cereal >= 0.3
                    , QuickCheck >= 2
                    , test-framework
                    , test-framework-quickcheck2
+                   , cprng-aes
+                   , crypto-pubkey
                    , bytestring
+                   , certificate
+                   , tls
                    , time
-                   , cryptocipher >= 0.3.0 && < 0.4.0
-                   , network
-                   , cprng-aes >= 0.3.0
-                   , cryptohash >= 0.6
-                   , certificate >= 1.3.0 && < 1.4.0
-                   , crypto-api >= 0.5
-  else
-    Buildable:       False
+                   , crypto-random-api
   ghc-options:       -Wall -fno-warn-orphans -fno-warn-missing-signatures -fhpc
-  if flag(compat)
-    cpp-options:     -DSSLV2_COMPATIBLE
 
 source-repository head
   type: git
