@@ -1,75 +1,78 @@
 Name:          netwire
-Version:       1.2.7
-Category:      FRP, Network
-Synopsis:      Arrowized FRP implementation
+Version:       2.0.0
+Category:      Control, FRP
+Synopsis:      Generic automaton arrow transformer and useful tools
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
 Author:        Ertugrul Söylemez <es@ertes.de>
 Copyright:     (c) 2011 Ertugrul Söylemez
 License:       BSD3
 License-file:  LICENSE
 Build-type:    Simple
-Stability:     beta
+Stability:     experimental
 Cabal-version: >= 1.8
 Description:
-    This library provides an arrowized functional reactive programming
-    (FRP) implementation.  From the basic idea it is similar to Yampa
-    and Animas, but has a much simpler internal representation and a lot
-    of new features.
+    This library implements a powerful generic automaton arrow
+    transformer.
 
 Library
     Build-depends:
-        base >= 4 && <= 5,
+        arrows >= 0.4.4,
+        base >= 4 && < 5,
         containers >= 0.4.0,
         deepseq >= 1.1.0,
---        forkable-monad >= 0.1.1,
-        mersenne-random >= 1.0.0,
-        monad-control >= 0.2.0,
         random >= 1.0.0,
-        stm >= 2.2.0,
         time >= 1.2.0,
         transformers >= 0.2.2,
-        vector >= 0.7.1,
-        vector-space >= 0.7.3
+        vector >= 0.9,
+        vector-space >= 0.7.8
     Extensions:
         Arrows
-        DeriveDataTypeable
-        DoRec,
         FlexibleInstances
         GADTs
-        RankNTypes
+        MultiParamTypeClasses
         ScopedTypeVariables
         TupleSections
         TypeFamilies
+        TypeOperators
+        UndecidableInstances
         ViewPatterns
     GHC-Options: -W
     Exposed-modules:
-        FRP.NetWire
-        FRP.NetWire.Analyze
-        FRP.NetWire.Calculus
-        FRP.NetWire.Event
-        FRP.NetWire.IO
-        FRP.NetWire.Pure
-        FRP.NetWire.Random
-        FRP.NetWire.Request
-        FRP.NetWire.Session
-        FRP.NetWire.Switch
-        FRP.NetWire.Tools
-        FRP.NetWire.Wire
+        Control.Wire
+        Control.Wire.Classes
+        Control.Wire.Instances
+        Control.Wire.Prefab
+        Control.Wire.Prefab.Accum
+        Control.Wire.Prefab.Analyze
+        Control.Wire.Prefab.Calculus
+        Control.Wire.Prefab.Clock
+        Control.Wire.Prefab.Event
+        Control.Wire.Prefab.Queue
+        Control.Wire.Prefab.Random
+        Control.Wire.Prefab.Sample
+        Control.Wire.Prefab.Simple
+        Control.Wire.Prefab.Split
+        Control.Wire.Session
+        Control.Wire.Tools
+        Control.Wire.Trans
+        Control.Wire.Trans.Combine
+        Control.Wire.Trans.Exhibit
+        Control.Wire.Trans.Sample
+        Control.Wire.Trans.Simple
+        Control.Wire.Types
 
--- Executable netwire-test
+-- Executable netwire2-test
 --     Build-depends:
---         base >= 4 && <= 5,
+--         arrows,
+--         base >= 4 && < 5,
 --         containers,
---         instinct,
 --         netwire,
---         OpenGL,
---         SDL,
---         transformers,
---         vector
+--         transformers
 --     Extensions:
 --         Arrows
---         ScopedTypeVariables
+--         TupleSections
+--         TypeFamilies
 --         ViewPatterns
---     Hs-Source-Dirs: test
+--     Hs-source-dirs: test
 --     Main-is: Main.hs
 --     GHC-Options: -W -threaded -rtsopts
