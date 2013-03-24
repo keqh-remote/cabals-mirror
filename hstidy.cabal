@@ -1,5 +1,5 @@
 name:               hstidy
-version:            0.1
+version:            0.2
 cabal-version:      >= 1.2
 build-type:         Simple
 license:            BSD3
@@ -20,7 +20,7 @@ description:        @hstidy@ reads haskell source from stdin, then
 executable hstidy
   executable:       hstidy
   main-is:          hstidy.hs
-  build-depends:    base, haskell-src-exts, filepath
+  build-depends:    base, haskell-src-exts
   ghc-options:      -O2
   hs-source-dirs:   .
 
