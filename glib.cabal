@@ -1,14 +1,14 @@
 Name:           glib
-Version:        0.12.0
+Version:        0.12.1
 License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
 Author:         Axel Simon, Duncan Coutts
-Maintainer:     gtk2hs-users@sourceforge.net
+Maintainer:     gtk2hs-users@lists.sourceforge.net
 Build-Type:     Custom
-Cabal-Version:  >= 1.6.0
+Cabal-Version:  >= 1.8
 Stability:      stable
-homepage:       http://www.haskell.org/gtk2hs/
+homepage:       http://projects.haskell.org/gtk2hs/
 bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
 Synopsis:       Binding to the GLIB library for Gtk2Hs.
 Description:    The GNU Library is a collection of C data structures and utility
@@ -16,9 +16,9 @@ Description:    The GNU Library is a collection of C data structures and utility
                 much functionality as required to support the packages that
                 wrap libraries that are themselves based on GLib.
 Category:       System
-Tested-With:    GHC == 6.10.4
+Tested-With:    GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
 Extra-Source-Files:
-                Gtk2HsSetup.hs
+                SetupWrapper.hs SetupMain.hs Gtk2HsSetup.hs
                 System/Glib/hsgclosure.c
                 System/Glib/hsgclosure.h
 
@@ -33,9 +33,8 @@ Flag closure_signals
 
 Library
         build-depends:  base >= 4 && < 5,
-                        containers, haskell98
-        build-tools:    gtk2hsC2hs
-        cpp-options:     -DHAVE_NEW_CONTROL_EXCEPTION
+                        containers
+        build-tools:    gtk2hsC2hs >= 0.13.5
         if flag(closure_signals)
           cpp-options:  -DUSE_GCLOSURE_SIGNALS_IMPL
           c-sources: System/Glib/hsgclosure.c
@@ -57,6 +56,7 @@ Library
                           System.Glib.UTFString
                           System.Glib.Types
                           System.Glib.GList
+                          System.Glib.GString
                           System.Glib.GType
                           System.Glib.GTypeConstants
                           System.Glib.GValue
