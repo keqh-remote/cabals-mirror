@@ -1,5 +1,5 @@
 Name:                   wai-app-file-cgi
-Version:                0.1.2
+Version:                0.2.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -21,8 +21,7 @@ library
                         Network.Wai.Application.Classic.File
                         Network.Wai.Application.Classic.Types
                         Network.Wai.Application.Classic.Header
-  Other-Modules:        Network.Wai.Application.Classic.Date
-                        Network.Wai.Application.Classic.EnumLine
+  Other-Modules:        Network.Wai.Application.Classic.EnumLine
                         Network.Wai.Application.Classic.Field
                         Network.Wai.Application.Classic.FileInfo
                         Network.Wai.Application.Classic.Lang
@@ -30,12 +29,13 @@ library
                         Network.Wai.Application.Classic.Range
                         Network.Wai.Application.Classic.Utils
   Build-Depends:        base >= 4 && < 5, process, haskell98,
-                        network, transformers, time,
+                        network, transformers,
                         filepath, directory, unix,
                         containers, attoparsec,
                         wai, enumerator >= 0.4.9,
                         bytestring, blaze-builder,
-                        wai-app-static, http-types, case-insensitive
+                        wai-app-static, http-types, http-date,
+                        case-insensitive, hashmap, array
 Source-Repository head
   Type:                 git
   Location:             git://github.com/kazu-yamamoto/wai-app-file-cgi.git
