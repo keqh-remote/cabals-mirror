@@ -1,5 +1,5 @@
 Name:                   fast-logger
-Version:                0.2.0
+Version:                0.2.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -19,13 +19,14 @@ library
                       , bytestring
                       , directory
                       , filepath
-                      , old-locale
                       , text
-                      , time
   if os(windows)
-    cpp-options: -DWINDOWS
+    Cpp-Options:        -DWINDOWS
+    Build-Depends:      old-locale
+                      , time
   else
-    build-depends: unix
+    Build-Depends:      unix
+                      , unix-time
 Source-Repository head
   Type:                 git
   Location:             git://github.com/kazu-yamamoto/logger.git
