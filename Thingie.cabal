@@ -1,5 +1,5 @@
 Name:           Thingie
-Version:        0.51
+Version:        0.80
 Cabal-Version:  >= 1.2
 License:        BSD3
 License-File:   LICENSE
@@ -13,8 +13,11 @@ Synopsis:       Purely functional 2D drawing
 Build-Type:     Simple
 
 Library
-   Build-Depends: cairo, base, mtl
+   Build-Depends: cairo, base, mtl, gtk
    Exposed-Modules:
       Graphics.Rendering.Thingie.Primitives
       Graphics.Rendering.Thingie.Cairo
+      Graphics.Rendering.Thingie.BasicUIState
+      Graphics.Rendering.Thingie.UIState
+      Graphics.Rendering.Thingie.Interactive
 
