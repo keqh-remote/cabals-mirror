@@ -1,5 +1,5 @@
 name:              twitter-enumerator
-version:           0.0.1.2
+version:           0.0.2
 license:           BSD3
 license-file:      LICENSE
 author:            Takahiro HIMURA
@@ -19,14 +19,14 @@ source-repository head
 source-repository this
   type: git
   location: git://github.com/himura/twitter-enumerator.git
-  tag: 0.0.1.1
+  tag: 0.0.2
 
 library
   ghc-options: -Wall
 
   build-depends:
       base >= 4 && < 5
-    , mtl
+    , transformers >= 0.2 && < 0.3
     , authenticate >= 0.9 && < 0.11
     , enumerator >= 0.4.14 && < 0.5
     , http-types
@@ -42,7 +42,9 @@ library
     Web.Twitter.Enumerator
     Web.Twitter.Enumerator.Types
     Web.Twitter.Enumerator.Monad
+    Web.Twitter.Enumerator.Api
     Web.Twitter.Enumerator.Fetch
+    Web.Twitter.Enumerator.Post
 
   other-modules:
     Web.Twitter.Enumerator.Utils
