@@ -1,5 +1,5 @@
 Name: com
-version: 1.2.0
+version: 1.2.1
 Synopsis: Haskell COM support library
 Description: 
     COM + Automation libraries for Haskell.
@@ -19,14 +19,15 @@ Extra-Source-Files: include/PointerSrc.h
           include/safeArrayPrim.h
           include/SafeArray.h
           include/StdTypes.h
+          CHANGES
 
 flag old-base
   description: Old, monolithic base
   default: False
 
 library {
-Build-depends: haskell98, old-time
-Exposed-Modules: System.Win32.Com,
+if os(windows)
+ Exposed-Modules: System.Win32.Com,
                  System.Win32.Com.Base,
                  System.Win32.Com.Automation,
                  System.Win32.Com.Automation.Base,
@@ -48,9 +49,9 @@ Exposed-Modules: System.Win32.Com,
                  System.Win32.Com.HDirect.PointerPrim,
                  System.Win32.Com.HDirect.WideString
                  
-Include-dirs: . cbits include
+ Include-dirs: . cbits include
 
-Includes: include/PointerSrc.h
+ Includes: include/PointerSrc.h
           include/WideStringSrc.h
           include/comPrim.h
           include/autoPrim.h
@@ -59,24 +60,28 @@ Includes: include/PointerSrc.h
           include/SafeArray.h
           include/StdTypes.h
 
-C-Sources: cbits/PointerSrc.c
+ C-Sources: cbits/PointerSrc.c
            cbits/WideStringSrc.c
            cbits/ComPrimSrc.c
            cbits/AutoPrimSrc.c
            cbits/Registry.c
            cbits/SafeArrayPrim.c
 
-Extra-libraries: kernel32, user32, ole32, oleaut32, advapi32
-GHC-Options: -fglasgow-exts -fvia-C 
+ Extra-libraries: kernel32, user32, ole32, oleaut32, advapi32
+ GHC-Options: -fglasgow-exts -fvia-C 
 -- I can't seem to feed this into the 'ld' invocation that creates the
 -- relocatable object file.
-Ld-options: --enable-stdcall-fixup --disable-stdcall-fixup
-Extensions: CPP
+ Ld-options: --enable-stdcall-fixup --disable-stdcall-fixup
+ Extensions: CPP
 
-if flag(old-base)
+ Build-depends: old-time
+ if flag(old-base)
   Build-Depends: base < 4
   CPP-Options: -DBASE=3
-else
+ else
   Build-Depends: base >= 4
   CPP-Options: -DBASE=4
+else
+ Build-Depends: base
+
 }
