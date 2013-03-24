@@ -1,5 +1,5 @@
 Name:             utility-ht
-Version:          0.0.7.1
+Version:          0.0.8
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -19,7 +19,8 @@ Description:
   However, further splitting the base package might invalidate this statement.
   .
   Alternative packages: @Useful@, @MissingH@
-Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.2
+Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.3
+Tested-With:       GHC==7.0.2, GHC==7.2.2
 Cabal-Version:     >=1.10
 Build-Type:        Simple
 
@@ -39,7 +40,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/utility/
-  tag:      0.0.7.1
+  tag:      0.0.8
 
 Library
   Build-Depends:
@@ -63,6 +64,7 @@ Library
     Data.String.HT
     Data.Tuple.HT
     Control.Monad.HT
+    Control.Functor.HT
     Data.Strictness.HT
     Text.Read.HT
     Text.Show.HT
