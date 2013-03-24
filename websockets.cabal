@@ -1,5 +1,5 @@
 Name:    websockets
-Version: 0.5.1.1
+Version: 0.5.2.0
 
 Synopsis:
   A sensible and clean way to write WebSocket-capable servers in Haskell.
@@ -46,6 +46,7 @@ Library
   Exposed-modules:
     Network.WebSockets
     Network.WebSockets.Internal
+    Network.WebSockets.Util.PubSub
 
   Other-modules:
     Network.WebSockets.Handshake
