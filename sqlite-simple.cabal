@@ -1,11 +1,13 @@
 Name:                sqlite-simple
-Version:             0.3.0.0
+Version:             0.4.0.0
 Synopsis:            Mid-Level SQLite client library
 Description:
     Mid-level SQLite client library, based on postgresql-simple.
     .
-    See <http://github.com/nurpax/sqlite-simple> for usage examples &
-    more information.
+    Main documentation: "Database.SQLite.Simple"
+    .
+    For more info, browse to <http://github.com/nurpax/sqlite-simple>
+    for examples & more information.
 
 License:             BSD3
 License-file:        LICENSE
@@ -39,7 +41,7 @@ Library
     base < 5,
     bytestring >= 0.9,
     containers,
-    direct-sqlite >= 2.2 && < 2.4,
+    direct-sqlite >= 2.3.3 && < 2.4,
     text >= 0.11,
     time,
     old-locale >= 1.0.0.0,
