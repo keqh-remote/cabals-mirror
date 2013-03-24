@@ -1,6 +1,6 @@
 Name:         xcb-types
-Version:      0.5.1.1
-Cabal-Version:  >= 1.2
+Version:      0.6.0
+Cabal-Version:  >= 1.6
 Synopsis:     Parses XML files used by the XCB project
 Description:   This package provides types which mirror the structures
   used in the XCB code generation XML files.
@@ -30,7 +30,7 @@ Category: Data
 
 Library
 
- Build-depends: base, xml, pretty, mtl < 1.2
+ Build-depends: base == 4.*, xml == 1.3.*, pretty == 1.0.*, mtl == 2.0.*
  Exposed-modules: Data.XCB,
                   Data.XCB.Types,
                   Data.XCB.Pretty,
@@ -38,3 +38,4 @@ Library
 
  Other-modules:   Data.XCB.Utils
 
+ Ghc-Options:     -Wall
