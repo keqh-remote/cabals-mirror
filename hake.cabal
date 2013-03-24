@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.7
+Version:	0.8
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -69,6 +69,6 @@ Library
 Executable hake
   GHC-Options:		-Wall
 --  CPP-Options:		-DDEBUG
-  Build-Depends:	directory, process, yjtools >= 0.5, regexpr >= 0.3
+  Build-Depends:	directory, process, yjtools >= 0.6, regexpr >= 0.3
   Other-Modules:	Development.Hake.HiddenTools
   Main-Is:		Main.hs
