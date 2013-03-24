@@ -1,5 +1,5 @@
 Name:         storable-record
-Version:      0.0.2.2
+Version:      0.0.2.3
 Category:     Data, Foreign
 Synopsis:     Elegant definition of Storable instances for records
 Description:
@@ -53,7 +53,7 @@ Maintainer:          Henning Thielemann <storable@henning-thielemann.de>
 Homepage:            http://code.haskell.org/~thielema/storable-record/
 Stability:           Experimental
 Build-Type:          Simple
-Tested-With:         GHC==6.8.2 && ==6.10.4 && ==6.12.1
+Tested-With:         GHC==6.8.2, GHC==6.10.4, GHC==6.12.1
 Cabal-Version:       >=1.6
 
 Source-Repository head
@@ -63,7 +63,7 @@ Source-Repository head
 Source-Repository this
   Type:     darcs
   Location: http://code.haskell.org/~thielema/storable-record/
-  Tag:      0.0.2.2
+  Tag:      0.0.2.3
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
