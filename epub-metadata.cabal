@@ -1,5 +1,5 @@
 name:                epub-metadata
-version:             2.3.0
+version:             2.3.1
 cabal-version:       >= 1.8
 build-type:          Simple
 license:             BSD3
@@ -12,8 +12,8 @@ homepage:            http://ui3.info/d/proj/epub-metadata.html
 synopsis:            Library for parsing and manipulating ePub files and OPF package data
 description:         Library for parsing and manipulating ePub files and OPF package data. An attempt has been made here to very thoroughly implement the OPF Package Document specification.
 category:            Codec, Text
-tested-with:         GHC >= 7.0.3
-extra-source-files:  testsuite/*.hs, testsuite/*.opf
+tested-with:         GHC >= 7.6.1
+extra-source-files:  testsuite/*.epub, testsuite/*.hs, testsuite/*.opf
 
 source-repository    head
    type:             darcs
