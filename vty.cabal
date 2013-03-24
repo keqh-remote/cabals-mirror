@@ -1,5 +1,5 @@
 Name:                vty
-Version:             3.1.8.2
+Version:             3.1.8.4
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear
@@ -38,7 +38,7 @@ Library {
         Build-Depends:       base < 4
     Build-Depends:       extensible-exceptions
     Build-Depends:       bytestring, containers, unix
-    Build-Depends:       terminfo >= 0.2 && < 0.3
+    Build-Depends:       terminfo >= 0.3 && < 0.4
     Build-Depends:       utf8-string >= 0.3 && < 0.4
 
     Exposed-Modules:     Graphics.Vty
@@ -52,6 +52,6 @@ Library {
                          Graphics.Vty.Output
                          Graphics.Vty.ControlStrings
 
-    ghc-options:         -funbox-strict-fields -Wall -threaded
-    ghc-prof-options:    -funbox-strict-fields -prof -auto-all -Wall
+    ghc-options:         -funbox-strict-fields -Wall -threaded -fno-full-laziness -fspec-constr
+    ghc-prof-options:    -funbox-strict-fields -prof -auto-all -Wall -fno-full-laziness -fspec-constr
 }
