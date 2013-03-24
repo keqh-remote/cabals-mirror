@@ -1,5 +1,5 @@
 name:               shplit
-version:            0.1
+version:            0.2
 homepage:           http://personal.cis.strath.ac.uk/~conor/pub/shplit
 synopsis:           A Haskell pattern splitter with emacs attachments
 description:
