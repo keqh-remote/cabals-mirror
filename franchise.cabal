@@ -1,12 +1,12 @@
 name: franchise
-version: 0.0.5
+version: 0.0.6
 license: BSD3
-copyright: BSD3
 maintainer: David Roundy <droundy@darcs.net>
 exposed-modules: Distribution.Franchise
-
 build-type: Custom
-build-depends: base, directory, process
+build-depends: base
+copyright: Copyright 2008 David Roundy
+license-file: LICENSE
 category: Distribution
 synopsis: A package for configuring and building Haskell software
 description: 
