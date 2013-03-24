@@ -1,5 +1,5 @@
 Name: HaTeX
-Version: 3.4
+Version: 3.5
 Author: Daniel Díaz
 Category: Text
 Build-type: Simple
@@ -7,9 +7,9 @@ License: BSD3
 License-file: license
 Maintainer: Daniel Díaz (dhelta `dot` diaz `at` gmail `dot` com)
 Stability: Experimental
-Bug-reports: dhelta `dot` diaz `at` gmail `dot` com
+Bug-reports: https://github.com/Daniel-Diaz/HaTeX/issues
 Synopsis: The Haskell LaTeX library.
-Description: As it is said: \"LaTeX is a high-quality typesetting system\". This library provides
+Description: The LaTeX project site states: \"LaTeX is a high-quality typesetting system\". This library provides
              a bridge between that system and Haskell (i.e. it is a LaTeX DSL).
              .
              Write LaTeX documents with all the advantages you already have in Haskell (recursion,
@@ -18,10 +18,9 @@ Description: As it is said: \"LaTeX is a high-quality typesetting system\". This
              to pretty-printing values, ...
              .
              See the @examples@ directory in the source distribution to look some simple examples.
-             It would be good to get you started. Download the HaTeX User's Guide from
-             <https://github.com/downloads/Daniel-Diaz/HaTeX-Guide/HaTeX-Guide.pdf>.
+             It would be good to get you started. HaTeX User's Guide is available at
+             <https://github.com/Daniel-Diaz/HaTeX-Guide>.
 Cabal-version: >= 1.6
-Tested-with: GHC == 7.0.3 , GHC == 7.4.1
 Extra-source-files:
   ReleaseNotes
   README.md
@@ -30,6 +29,8 @@ Extra-source-files:
   Examples/comments.hs
   Examples/simple.hs
   Examples/tree.hs
+  Examples/beamer.hs
+  Examples/matrices.hs
 
 Source-repository head
   type: git
@@ -40,7 +41,8 @@ Library
                , bytestring
                , transformers >= 0.2.2 && < 0.4
                , text
-               , parsec >=3.1.2 && <3.2
+               , attoparsec
+               , matrix
   Exposed-modules:
     Text.LaTeX
       -- Base (Core of the library)
@@ -67,6 +69,5 @@ Library
         Text.LaTeX.Packages.Trees
           Text.LaTeX.Packages.Trees.Qtree
   Other-modules: Paths_HaTeX
-  Extensions: GeneralizedNewtypeDeriving
-            , OverloadedStrings
+  Extensions: OverloadedStrings
             , CPP
