@@ -1,11 +1,12 @@
 name:                bytestring-mmap
-version:             0.1.2
+version:             0.2.0
 synopsis:            mmap support for strict ByteStrings
 description:
     .
     This library provides a wrapper to mmap(2), allowing files or
-    devices to be lazily loaded into memory as a strict ByteString,
-    using the virtual memory subsystem to do on-demand loading.
+    devices to be lazily loaded into memory as strict or lazy
+    ByteStrings, using the virtual memory subsystem to do on-demand
+    loading.
     .
 category:            System
 homepage:            http://code.haskell.org/~dons/code/bytestring-mmap/
@@ -25,9 +26,14 @@ library
     build-depends:     base >= 3, bytestring >= 0.9
   else
     build-depends:     base < 3
-  extensions:        ForeignFunctionInterface
+  extensions:        CPP, ForeignFunctionInterface, BangPatterns
+
   exposed-modules:   System.IO.Posix.MMap
-  ghc-options:       -Wall -fglasgow-exts -O2
+                     System.IO.Posix.MMap.Lazy
+                     System.IO.Posix.MMap.Internal
+
+  ghc-options:       -Wall -O2 -fvia-C
+
   c-sources:         cbits/hs_bytestring_mmap.c
   include-dirs:      include
   includes:          hs_bytestring_mmap.h
