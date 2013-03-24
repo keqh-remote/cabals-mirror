@@ -1,11 +1,11 @@
 Name:		generic-deepseq
-Version:	2.0.1.0
+Version:	2.0.1.1
 License-File:	LICENSE
 License:	BSD3
 Author:		Maxime Henrion
 Copyright:	2012, Maxime Henrion
 Maintainer:	Maxime Henrion <mhenrion@gmail.com>
-Bug-Reports:	http://bitbucket.org/mumux/generic-deepseq/issues/
+Bug-Reports:	http://bitbucket.org/mux/generic-deepseq/issues/
 Category:	Control, Generics
 Synopsis:	Generic deep evaluation of data structures
 Build-Type:	Simple
@@ -44,10 +44,14 @@ Description:
   Changes in version 2.0.1.0:
   .
   * Fix the U1 and V1 instances.
+  .
+  Changes in version 2.0.1.1:
+  .
+  * No functional changes, updated to correct the URLs of the repository and the issue tracker.
 
 Source-Repository head
   Type:			mercurial
-  Location:		http://bitbucket.org/mumux/generic-deepseq/
+  Location:		http://bitbucket.org/mux/generic-deepseq/
 
 Library
   Build-Depends:	base >= 3 && < 5, ghc-prim >= 0.2
