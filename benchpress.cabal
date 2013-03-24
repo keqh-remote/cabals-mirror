@@ -1,5 +1,5 @@
 name:           benchpress
-version:        0.2.2.3
+version:        0.2.2.4
 synopsis:       Micro-benchmarking with detailed statistics.
 Description:    Benchmarks actions and produces statistics
                 such as min, mean, median, standard deviation,
@@ -20,8 +20,8 @@ library
 
   other-modules:  Math.Statistics
 
-  build-depends:  base >= 2.0 && < 4.1,
-                  mtl >= 1 && < 1.2,
+  build-depends:  base >= 2.0 && < 4.4,
+                  mtl >= 1 && < 2.1,
                   time >= 1 && < 1.2
 
   ghc-options:  -funbox-strict-fields -Wall
