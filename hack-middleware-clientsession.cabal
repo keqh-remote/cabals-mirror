@@ -1,10 +1,10 @@
 name:            hack-middleware-clientsession
-version:         0.0.1
+version:         0.0.1.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Middleware for easily keeping session data in client cookies.
+synopsis:        Middleware for easily keeping session data in client cookies. (deprecated)
 description:     Uses the clientsession package for automatic encryption,
                  hashing, expiring and renewing of sessions stored in
                  cookies on the client.
