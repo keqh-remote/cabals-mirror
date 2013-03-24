@@ -1,5 +1,5 @@
 name:              fb
-version:           0.12.3.4
+version:           0.12.4.1
 license:           BSD3
 license-file:      LICENSE
 author:            Felipe Lessa
@@ -26,7 +26,8 @@ description:
   (<https://github.com/meteficha/fb/issues>).
 
 extra-source-files:
-  tests/runtests.hs
+  tests/Main.hs
+  tests/tryIt.hs
   example.hs
 
 
@@ -97,7 +98,7 @@ test-suite runtests
   type: exitcode-stdio-1.0
   ghc-options:    -Wall -fno-warn-orphans
   hs-source-dirs: tests
-  main-is:        runtests.hs
+  main-is:        Main.hs
   build-depends:
       -- Library dependencies used on the tests.  No need to
       -- specify versions since they'll use the same as above.
