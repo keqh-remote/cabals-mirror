@@ -1,5 +1,5 @@
 name:               ghc-mtl
-version:            1.0.0.0
+version:            1.0.1.0
 description:        Provides an 'mtl' compatible version of the 'GhcT'
                     monad-transformer defined in the 'GHC-API' since version
                     6.10.1.
@@ -20,7 +20,7 @@ Library
   build-depends:      base >= 4,
                       ghc >= 6.10,
                       mtl,
-                      MonadCatchIO-mtl
+                      MonadCatchIO-mtl >= 0.2.0.0
   exposed-modules:    Control.Monad.Ghc
   extensions:         GeneralizedNewtypeDeriving
   ghc-options:        -Wall -O2
