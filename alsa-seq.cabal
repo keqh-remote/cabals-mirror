@@ -1,5 +1,5 @@
 Name:           alsa-seq
-Version:        0.5.1
+Version:        0.5.1.1
 Copyright:      Bjorn Bringert, Iavor S. Diatchki, Henning Thielemann
 Maintainer:     Henning Thielemann <alsa@henning-thielemann.de>
 Author:
@@ -31,7 +31,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/alsa-seq/
-  tag:      0.5.1
+  tag:      0.5.1.1
 
 Flag buildExamples
   description: Build example executables
@@ -45,7 +45,7 @@ Library
   Build-depends:
     alsa-core >=0.5 && <0.6,
     enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.4,
+    array >= 0.1 && <0.5,
     data-accessor >=0.2.1 && <0.3,
     utility-ht >= 0.0.7 && <0.1,
     extensible-exceptions >=0.1.1 && <0.2,
@@ -129,7 +129,7 @@ Executable alsa-seq-dump
   Build-Depends:
     alsa-core >=0.5 && <0.6,
     enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.4,
+    array >= 0.1 && <0.5,
     utility-ht >= 0.0.7 && <0.1,
     base >=3 && <5
 
@@ -162,7 +162,7 @@ Executable alsa-seq-send-note
   Build-Depends:
     alsa-core >=0.5 && <0.6,
     enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.4,
+    array >= 0.1 && <0.5,
     utility-ht >= 0.0.7 && <0.1,
     base >=3 && <5
 
@@ -195,7 +195,7 @@ Executable alsa-seq-broadcast
   Build-Depends:
     alsa-core >=0.5 && <0.6,
     enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.4,
+    array >= 0.1 && <0.5,
     utility-ht >= 0.0.7 && <0.1,
     base >=3 && <5
 
@@ -228,7 +228,7 @@ Executable alsa-seq-list-clients
   Build-Depends:
     alsa-core >=0.5 && <0.6,
     enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.4,
+    array >= 0.1 && <0.5,
     utility-ht >= 0.0.7 && <0.1,
     base >=3 && <5
 
@@ -261,7 +261,7 @@ Executable alsa-seq-melody
   Build-Depends:
     alsa-core >=0.5 && <0.6,
     enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.4,
+    array >= 0.1 && <0.5,
     utility-ht >= 0.0.7 && <0.1,
     base >=3 && <5
 
@@ -294,6 +294,6 @@ Executable alsa-seq-list-subscribers
   Build-Depends:
     alsa-core >=0.5 && <0.6,
     enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.4,
+    array >= 0.1 && <0.5,
     utility-ht >= 0.0.7 && <0.1,
     base >=3 && <5
