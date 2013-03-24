@@ -1,5 +1,5 @@
 Name:           dph-prim-seq
-Version:        0.6.1.1
+Version:        0.7.0.1
 License:        BSD3
 License-File:   LICENSE
 Author:         The DPH Team
@@ -48,10 +48,10 @@ Library
         -funbox-strict-fields -fcpr-off
 
   Build-Depends:  
-        base      == 4.5.*,
+        base      == 4.6.*,
         random    == 1.0.*,
-        vector    == 0.9.*,
-        primitive == 0.4.*,
-        ghc-prim  == 0.2.*,
-        dph-base  == 0.6.1.*,
-        dph-prim-interface == 0.6.1.*
+        vector    == 0.10.*,
+        primitive == 0.5.*,
+        ghc-prim  == 0.3.*,
+        dph-base  == 0.7.*,
+        dph-prim-interface == 0.7.*
