@@ -1,5 +1,5 @@
 name:           hledger
-version: 0.17
+version: 0.18
 category:       Finance
 synopsis:       The main command-line interface for the hledger accounting tool.
 description:
@@ -17,7 +17,7 @@ maintainer:     Simon Michael <simon@joyful.com>
 homepage:       http://hledger.org
 bug-reports:    http://code.google.com/p/hledger/issues
 stability:      beta
-tested-with:    GHC==7.0, GHC==7.2
+tested-with:    GHC==7.0.4, GHC==7.2.2, GHC==7.4.1
 cabal-version:  >= 1.8
 build-type:     Simple
 -- data-dir:       data
@@ -47,26 +47,26 @@ library
   exposed-modules:
                   Hledger.Cli
                   Hledger.Cli.Main
-                  Hledger.Cli.Format
                   Hledger.Cli.Options
                   Hledger.Cli.Tests
                   Hledger.Cli.Utils
                   Hledger.Cli.Version
                   Hledger.Cli.Add
                   Hledger.Cli.Balance
-                  Hledger.Cli.Convert
+                  Hledger.Cli.Balancesheet
+                  Hledger.Cli.Cashflow
                   Hledger.Cli.Histogram
+                  Hledger.Cli.Incomestatement
                   Hledger.Cli.Print
                   Hledger.Cli.Register
                   Hledger.Cli.Stats
   -- should be the same as below
   build-depends:
-                  hledger-lib == 0.17
+                  hledger-lib == 0.18
                  ,base >= 3 && < 5
                  ,cabal-file-th
                  ,containers
                  ,cmdargs >= 0.9.1   && < 0.10
-                 ,csv
                  ,directory
                  ,filepath
                  ,haskeline == 0.6.*
@@ -78,7 +78,9 @@ library
                  ,process
                  ,regexpr >= 0.5.1
                  ,safe >= 0.2
+                 ,shakespeare-text == 1.0.*
                  ,split == 0.1.*
+                 ,text == 0.11.*
                  ,time
                  ,utf8-string >= 0.3.5 && < 0.4
 
@@ -95,15 +97,16 @@ executable hledger
   other-modules:
                   Hledger.Cli
                   Hledger.Cli.Main
-                  Hledger.Cli.Format
                   Hledger.Cli.Options
                   Hledger.Cli.Tests
                   Hledger.Cli.Utils
                   Hledger.Cli.Version
                   Hledger.Cli.Add
                   Hledger.Cli.Balance
-                  Hledger.Cli.Convert
+                  Hledger.Cli.Balancesheet
+                  Hledger.Cli.Cashflow
                   Hledger.Cli.Histogram
+                  Hledger.Cli.Incomestatement
                   Hledger.Cli.Print
                   Hledger.Cli.Register
                   Hledger.Cli.Stats
@@ -114,12 +117,11 @@ executable hledger
        ghc-options:   -threaded
  -- should be the same as above
   build-depends:
-                  hledger-lib == 0.17
+                  hledger-lib == 0.18
                  ,base >= 3 && < 5
                  ,cabal-file-th
                  ,containers
                  ,cmdargs >= 0.9.1   && < 0.10
-                 ,csv
                  ,directory
                  ,filepath
                  ,haskeline == 0.6.*
@@ -131,6 +133,8 @@ executable hledger
                  ,process
                  ,regexpr >= 0.5.1
                  ,safe >= 0.2
+                 ,shakespeare-text == 1.0.*
                  ,split == 0.1.*
+                 ,text == 0.11.*
                  ,time
                  ,utf8-string >= 0.3.5 && < 0.4
