@@ -1,9 +1,10 @@
 name:            binary-strict
-version:         0.2.2
+version:         0.2.3
 license:         BSD3
 license-file:    LICENSE
 author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
 maintainer:      Adam Langley <agl@imperialviolet.org>
+homepage:        http://darcs.imperialviolet.org/binary-strict
 description:     This is a strict version of the Get monad from the binary
                  package. It's pretty much just a copy and paste job from the
                  original source code. The binary team are currently unsure
