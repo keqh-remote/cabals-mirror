@@ -1,5 +1,5 @@
 name:           crypto-api
-version:        0.5
+version:        0.5.2
 license:        BSD3
 license-file:   LICENSE
 copyright:      Thomas DuBuisson <thomas.dubuisson@gmail.com>
@@ -61,7 +61,7 @@ Library
     extra-libraries: advapi32
   if flag(tests)
     exposed-modules: Test.Crypto, Test.AES, Test.SHA, Test.HMAC, Test.ParseNistKATs, Test.TwoFish
-    build-depends: QuickCheck >= 2.3 && < 2.4, directory >= 1.0.1.0 && < 1.2
+    build-depends: QuickCheck >= 2.3 && < 2.4, directory >= 1.0.1.0 && < 1.2, filepath
     other-modules: Paths_crypto_api
   if flag(benchmarks)
     exposed-modules: Benchmark.Crypto
