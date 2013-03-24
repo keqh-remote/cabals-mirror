@@ -1,8 +1,8 @@
 name: dtd-text
-version: 0.1.0.0
+version: 0.1.1.0
 synopsis: Parse and render XML DTDs
 description:
-  This library provides an attoparse-text parser and blaze-builder for
+  This library provides an attoparsec-text parser and blaze-builder for
   XML Document Type Declaration (DTD) documents.
 license: BSD3
 license-file: license.txt
@@ -29,8 +29,8 @@ library
     , xml-types ==0.3.*
     , attoparsec ==0.8.*
     , attoparsec-text ==0.8.*
---    , blaze-builder ==0.3.*
+    , blaze-builder ==0.3.*
 
   exposed-modules:
     Data.XML.DTD.Parse
---    Data.XML.DTD.Render
+    Data.XML.DTD.Render
