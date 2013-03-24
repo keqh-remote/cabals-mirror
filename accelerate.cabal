@@ -1,5 +1,5 @@
 Name:			accelerate
-Version:		0.4.0
+Version:		0.5.0.0
 Cabal-version: 		>= 1.6
 Tested-with: 		GHC >= 6.10.1
 
@@ -38,6 +38,7 @@ Other-modules:		Data.Array.Accelerate.Array.Data
 			Data.Array.Accelerate.Type
 Extra-source-files:  	INSTALL
 			examples/simple/DotP.hs
+			examples/simple/Filter.hs
 			examples/simple/Main.hs
 			examples/simple/Makefile
 			examples/simple/SAXPY.hs
