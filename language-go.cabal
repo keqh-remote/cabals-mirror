@@ -1,5 +1,5 @@
 Cabal-Version: >= 1.8
-Version:       0.6
+Version:       0.7
 Name:          language-go
 Author:        Andrew Robbins
 Maintainer:    and_j_rob@yahoo.com
@@ -15,28 +15,8 @@ Description:
   For more information on the language specification, see golang.org.
 
 Extra-source-files:
-  docs/doc-index.html,
-  docs/frames.html,
-  docs/haddock-util.js,
-  docs/haddock.css,
-  docs/haskell_icon.gif,
-  docs/index-frames.html,
-  docs/index.html,
-  docs/Language-Go-Parser-Lexer.html,
-  docs/Language-Go-Parser-Parser.html,
-  docs/Language-Go-Parser-Tokens.html,
-  docs/Language-Go-Parser.html,
-  docs/Language-Go-Syntax-AST.html,
-  docs/Language-Go-Syntax.html,
-  docs/mini_Language-Go-Parser-Lexer.html,
-  docs/mini_Language-Go-Parser-Parser.html,
-  docs/mini_Language-Go-Parser-Tokens.html,
-  docs/mini_Language-Go-Parser.html,
-  docs/mini_Language-Go-Syntax-AST.html,
-  docs/mini_Language-Go-Syntax.html,
-  docs/minus.gif,
-  docs/plus.gif,
   docs.sh,
+  STANDARD,
   Makefile,
   tests/README,
   tests/test-lexer.hs,
@@ -64,6 +44,7 @@ Extra-source-files:
   tests/test17.go,
   tests/test18.go,
   tests/test19.go,
+  tests/test20.go,
   tests.sh
 
 Library
