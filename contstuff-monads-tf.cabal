@@ -1,7 +1,7 @@
 Name:          contstuff-monads-tf
-Version:       0.2.0
+Version:       0.2.1
 Category:      Control, Monads
-Synopsis:      ContStuff instances for monads-tf transformers
+Synopsis:      ContStuff instances for monads-tf transformers (deprecated)
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
 Author:        Ertugrul Söylemez <es@ertes.de>
 Copyright:     (c) 2010 Ertugrul Söylemez
@@ -11,6 +11,10 @@ Build-type:    Simple
 Stability:     experimental
 Cabal-version: >= 1.6
 Description:
+
+    PLEASE NOTE:  This package is deprecated in favor of
+    contstuff-transformers, which generalizes to all transformers-based
+    libraries.
 
     This package provides contstuff transformer class instances for the
     monad transformers from the monads-tf package as well as monads-tf
