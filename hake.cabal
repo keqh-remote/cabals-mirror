@@ -1,11 +1,11 @@
 Name:		hake
-Version:	0.3
+Version:	0.4
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
 Maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
 Category:	Development
-Synopsis:	ruby : rake = haskell : hake
+Synopsis:	make tool. ruby : rake = haskell : hake
 
 Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		.
@@ -45,16 +45,17 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		>  rule   ( ".o", ".cc", \_ s -> [ "g++ -c " ++ s ] )
 		>  ,
 		>  ( [ (=="foo") ], const [ "foo.gen", "Hakefile" ], \t [s] -> [ do
-		>         gen <- readFile s
-		>         writeFile t $ unlines $ [ "#!/bin/sh", "echo This is script" ] ++ lines gen ] )
+		>         gen <- liftIO $ readFile s
+		>         liftIO $ writeFile t $ unlines $
+		>           [ "#!/bin/sh", "echo This is script" ] ++ lines gen ] )
 		>
 		>  ]
 		>
-		> main = hake hake_tree
+		> main = hake hake_rules
 
 Stability:	experimental
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/hake/index.xhtml
-Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hake-0.2.tar.gz
+Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hake-0.4.tar.gz
 Cabal-Version:	>= 1.2
 Build-type:	Simple
 Tested-With:	GHC
@@ -72,6 +73,6 @@ Library
 Executable hake
   GHC-Options:		-Wall
 --  CPP-Options:		-DDEBUG
-  Build-Depends:	directory, process, yjtools
+  Build-Depends:	directory, process, yjtools > 0.1
   Other-Modules:	Development.Hake.HiddenTools
   Main-Is:		Main.hs
