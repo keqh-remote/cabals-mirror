@@ -1,5 +1,5 @@
 name:                HNM
-version:             0.1
+version:             0.1.1
 copyright:           (c) 2008 Cetin Sert
 cabal-version:       >= 1.2
 description:         A quick and dirty applet to help you connect
@@ -19,7 +19,8 @@ data-files:          settings.conf,
                      Makefile
 
 extra-source-files:  AUTHORS,
-                     README
+                     README,
+                     CHANGES
 
 Library
   buildable:         True
@@ -34,7 +35,8 @@ Library
                      regex-posix,
                      process,
                      containers,
-                     haskell98
+                     haskell98,
+                     directory
 
 Executable           HNM
   buildable:         True
