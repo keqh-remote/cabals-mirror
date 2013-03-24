@@ -1,6 +1,6 @@
 Name: caledon
 
-Version: 3.0.0.0
+Version: 3.1.0.0
 
 Description:         a dependently typed, polymorphic, higher order logic programming language based on the calculus of constructions designed for easier metaprogramming capabilities. 
 
@@ -28,21 +28,25 @@ Source-repository head
 
 executable caledon
   main-is: Main.hs
-  other-modules: HOU, Choice, Parser, AST, TopoSortAxioms, Context
+  other-modules: HOU, Choice, Parser, 
+                 AST, TopoSortAxioms, 
+                 Context, Options, Substitution
 
   Build-depends: base >= 4.0 && < 5.0,
                  mtl >= 2.0 && < 3.0,
                  parsec >= 3.0 && < 4.0, 
                  containers >= 0.4 && < 1.0, 
                  transformers >= 0.3 && < 1.0,
-                 cpphs >= 1.0 && < 2.0
+                 cpphs >= 1.0 && < 2.0,
+                 lens >= 3.0 && < 4.0
 
   Extensions: FlexibleContexts,
               FlexibleInstances,
               MultiParamTypeClasses,
               RecordWildCards,
               BangPatterns,
-              TypeSynonymInstances
+              TypeSynonymInstances,
+              TemplateHaskell
               
   ghc-options:  -O2 -optc-O3 -funfolding-use-threshold=16 -fspec-constr-count=10 -fdo-lambda-eta-expansion
   
