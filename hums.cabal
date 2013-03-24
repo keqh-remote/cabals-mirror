@@ -1,5 +1,5 @@
 Name:                hums
-Version:             0.4.0
+Version:             0.4.1
 Synopsis:            Haskell UPnP Media Server
 Description:         A simple UPnP Media Server.
   .
@@ -21,7 +21,7 @@ Executable hums
   Build-Depends: base == 4.*
                , blaze-builder >= 0.3 && <0.4
                , bytestring >= 0.9.0.1
-               , conduit >= 0.1 && <0.2
+               , conduit >= 0.2 && <0.3
                , ConfigFile >= 1.0.5
                , containers >= 0.1.0.1
                , directory >= 1.0.0.0
@@ -40,12 +40,12 @@ Executable hums
                , uuid >= 1.2.1 && < 1.3
                , unordered-containers >= 0.1 && < 0.2
                , case-insensitive >= 0.2 && < 0.3
-               , wai >= 1.0 && < 1.1
-               , warp >= 1.0 && < 1.1
+               , wai >= 1.1 && < 1.2
+               , warp >= 1.1 && < 1.2
   Extensions:          Arrows
                        GeneralizedNewtypeDeriving
                        OverloadedStrings
-  ghc-options:         -Wall -O2 -fno-warn-unused-matches -threaded
+  ghc-options:         -Wall -fno-warn-unused-matches -threaded
   hs-source-dirs:      src
   Main-is:             Main.hs
   Other-modules:       Action
