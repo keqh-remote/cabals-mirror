@@ -1,5 +1,5 @@
 name:                optparse-applicative
-version:             0.3.0
+version:             0.3.1
 synopsis:            Utilities and combinators for parsing command line options
 description:
     Here is a simple example of an applicative option parser:
@@ -70,6 +70,8 @@ category:            System
 build-type:          Simple
 cabal-version:       >= 1.8
 extra-source-files:  README.md
+homepage:            https://github.com/pcapriotti/optparse-applicative
+bug-reports:         https://github.com/pcapriotti/optparse-applicative/issues
 
 library
   exposed-modules:     Options.Applicative,
