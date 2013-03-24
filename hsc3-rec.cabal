@@ -1,16 +1,16 @@
 Name:              hsc3-rec
-Version:           0.7
+Version:           0.8
 Synopsis:          Haskell SuperCollider Record Variants
-Description:       hsc3-rsc provides record variants of the 
+Description:       hsc3-rec provides record variants of the
                    unit generator constructors at hsc3.
 License:           GPL
 Category:          Sound
-Copyright:         (c) Rohan Drape and others, 2008
+Copyright:         (c) Rohan Drape and others, 2008-2010
 Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
-Homepage:          http://slavepianos.org/rd/f/197482/
-Tested-With:       GHC == 6.8.2
+Homepage:          http://slavepianos.org/rd/?t=hsc3-rec
+Tested-With:       GHC == 6.10.3
 Build-Type:        Simple
 Cabal-Version:     >= 1.6
 
@@ -20,11 +20,12 @@ Data-files:        README
                    Help/pitch.hs
 
 Library
-  Build-Depends:   base == 3.*,
-                   hsc3 == 0.7
+  Build-Depends:   base == 4.*,
+                   hsc3 == 0.8
   GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.SC3.UGen.Record
-                   -- the lines below are generate by make module_list
+                   -- the lines below are generate by running
+                   -- make module_list
                    Sound.SC3.UGen.Record.A2K
                    Sound.SC3.UGen.Record.AbstractIn
                    Sound.SC3.UGen.Record.AbstractOut
@@ -35,10 +36,10 @@ Library
                    Sound.SC3.UGen.Record.AmpComp
                    Sound.SC3.UGen.Record.Amplitude
                    Sound.SC3.UGen.Record.APF
+                   Sound.SC3.UGen.Record.AudioControl
                    Sound.SC3.UGen.Record.Balance2
                    Sound.SC3.UGen.Record.Ball
                    Sound.SC3.UGen.Record.BAllPass
-                   Sound.SC3.UGen.Record.BasicOpUGen
                    Sound.SC3.UGen.Record.BBandPass
                    Sound.SC3.UGen.Record.BBandStop
                    Sound.SC3.UGen.Record.BeatTrack2
@@ -121,6 +122,7 @@ Library
                    Sound.SC3.UGen.Record.Dseq
                    Sound.SC3.UGen.Record.Dser
                    Sound.SC3.UGen.Record.Dseries
+                   Sound.SC3.UGen.Record.Dshuf
                    Sound.SC3.UGen.Record.Dstutter
                    Sound.SC3.UGen.Record.Dswitch1
                    Sound.SC3.UGen.Record.Dswitch
@@ -209,6 +211,7 @@ Library
                    Sound.SC3.UGen.Record.LFDNoise0
                    Sound.SC3.UGen.Record.LFDNoise1
                    Sound.SC3.UGen.Record.LFDNoise3
+                   Sound.SC3.UGen.Record.LFGauss
                    Sound.SC3.UGen.Record.LFNoise0
                    Sound.SC3.UGen.Record.LFNoise1
                    Sound.SC3.UGen.Record.LFNoise2
@@ -228,7 +231,6 @@ Library
                    Sound.SC3.UGen.Record.LinRand
                    Sound.SC3.UGen.Record.LinXFade2
                    Sound.SC3.UGen.Record.ListDUGen
-                   Sound.SC3.UGen.Record.LocalBuf
                    Sound.SC3.UGen.Record.LocalIn
                    Sound.SC3.UGen.Record.LocalOut
                    Sound.SC3.UGen.Record.Logistic
@@ -284,9 +286,11 @@ Library
                    Sound.SC3.UGen.Record.PV_BrickWall
                    Sound.SC3.UGen.Record.PV_ChainUGen
                    Sound.SC3.UGen.Record.PV_ConformalMap
+                   Sound.SC3.UGen.Record.PV_Conj
                    Sound.SC3.UGen.Record.PV_Copy
                    Sound.SC3.UGen.Record.PV_CopyPhase
                    Sound.SC3.UGen.Record.PV_Diffuser
+                   Sound.SC3.UGen.Record.PV_Div
                    Sound.SC3.UGen.Record.PV_HainsworthFoote
                    Sound.SC3.UGen.Record.PV_JensenAndersen
                    Sound.SC3.UGen.Record.PV_LocalMax
