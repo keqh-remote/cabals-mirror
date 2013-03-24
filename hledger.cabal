@@ -1,5 +1,5 @@
 name:           hledger
-version: 0.18.1
+version: 0.18.2
 category:       Finance
 synopsis:       The main command-line interface for the hledger accounting tool.
 description:
@@ -62,8 +62,8 @@ library
                   Hledger.Cli.Stats
   -- should be the same as below
   build-depends:
-                  hledger-lib == 0.18.1
-                 ,base >= 3 && < 5
+                  hledger-lib == 0.18.2
+                 ,base >= 4.3 && < 5
                  ,cabal-file-th
                  ,containers
                  ,cmdargs >= 0.9.1   && < 0.10
@@ -117,8 +117,8 @@ executable hledger
        ghc-options:   -threaded
  -- should be the same as above
   build-depends:
-                  hledger-lib == 0.18.1
-                 ,base >= 3 && < 5
+                  hledger-lib == 0.18.2
+                 ,base >= 4.3 && < 5
                  ,cabal-file-th
                  ,containers
                  ,cmdargs >= 0.9.1   && < 0.10
