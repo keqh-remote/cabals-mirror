@@ -1,5 +1,5 @@
 Name:                   mighttpd2
-Version:                2.6.0
+Version:                2.7.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -17,7 +17,7 @@ Data-Files:             example.conf example.route
 
 Executable mighty
   Main-Is:              Mighty.hs
-  GHC-Options:          -Wall -threaded
+  GHC-Options:          -Wall -threaded -eventlog
   Build-Depends:        base >= 4.0 && < 5
                       -- should be removed someday
                       , blaze-html >= 0.5
@@ -41,11 +41,11 @@ Executable mighty
                       , unix-bytestring
                       , unix-time
                       , unordered-containers
-                      , wai >= 1.1
+                      , wai >= 1.3
                       , wai-app-file-cgi
                       , wai-logger
                       , wai-logger-prefork
-                      , warp >= 1.2.1.1
+                      , warp >= 1.3
   Other-Modules:        Config
                         Config.Internal
                         FileCGIApp
