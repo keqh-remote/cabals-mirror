@@ -1,5 +1,5 @@
 name:                hsbackup
-version:             0.1
+version:             0.1.1
 synopsis:            simple utility for rolling filesystem backups
 description:         Take backups of a directory and store them in a hashed format.
                      Currently only supports plain files and directories. Very crude
@@ -24,7 +24,7 @@ cabal-version:       >=1.6
 
 Executable hsbackup
   main-is: main.hs
-  -- other-modules:
+  other-modules: Config
   build-depends: base < 5, hashed-storage, cmdargs, strict,
                  bytestring, filepath, directory,
                  time, old-locale
