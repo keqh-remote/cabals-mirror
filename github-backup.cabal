@@ -1,5 +1,5 @@
 Name: github-backup
-Version: 1.20120131
+Version: 1.20120313
 Cabal-Version: >= 1.6
 License: GPL
 Maintainer: Joey Hess <joey@kitenet.net>
@@ -26,7 +26,7 @@ Executable github-backup
   Main-Is: github-backup.hs
   Build-Depends: MissingH, hslogger, directory, filepath, containers, mtl,
    network, extensible-exceptions, unix, bytestring, base < 5,
-   IfElse, pretty-show, github
+   IfElse, pretty-show, github >= 0.2.1
 
 source-repository head
   type: git
