@@ -1,5 +1,5 @@
 Name:                vty
-Version:             3.1.6
+Version:             3.1.8
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear
@@ -33,7 +33,11 @@ C-Sources:           cbits/gwinsz.c
                      cbits/set_term_timing.c
 Include-Dirs:        cbits
 Install-Includes:    gwinsz.h
-Other-Modules:       Graphics.Vty.Types, Graphics.Vty.Cursor, Graphics.Vty.LLInput
+Other-Modules:       Graphics.Vty.Types
+                     Graphics.Vty.Cursor
+                     Graphics.Vty.LLInput
+                     Graphics.Vty.Output
+                     Graphics.Vty.ControlStrings
 
 ghc-options:         -funbox-strict-fields -Wall -threaded
 ghc-prof-options:    -funbox-strict-fields -auto-all -Wall -threaded
