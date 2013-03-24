@@ -1,5 +1,5 @@
 name:               citeproc-hs
-version:            0.3.4
+version:            0.3.5
 homepage:           http://gorgias.mine.nu/repos/citeproc-hs/
 synopsis:           A Citation Style Language implementation in Haskell
 
@@ -31,9 +31,13 @@ data-files:         locales/locales-af-ZA.xml
                     locales/locales-de-DE.xml
                     locales/locales-el-GR.xml
                     locales/locales-en-US.xml
+                    locales/locales-en-GB.xml
                     locales/locales-es-ES.xml
                     locales/locales-et-EE.xml
-                    locales/locales-fr-FR.xml
+                    locales/locales-eu.xml
+                    locales/locales-fa-IR.xml
+                    locales/locales-fi-FI.xml
+		    locales/locales-fr-FR.xml
                     locales/locales-he-IL.xml
                     locales/locales-hu-HU.xml
                     locales/locales-is-IS.xml
@@ -101,7 +105,7 @@ library
     ghc-prof-options: -prof -auto-all
     hs-source-dirs:   src
     build-depends:    containers, directory, mtl, xml, json, utf8-string,
-                      bytestring, filepath, pandoc-types >= 1.8 && < 1.10
+                      bytestring, filepath, pandoc-types >= 1.8 && < 1.11
 
     if flag(bibutils)
        build-depends:   hs-bibutils >= 0.3
