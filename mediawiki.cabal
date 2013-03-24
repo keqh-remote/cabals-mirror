@@ -1,5 +1,5 @@
 Name:               mediawiki
-Version:            0.2
+Version:            0.2.1
 License:            BSD3
 License-file:       LICENSE
 Category:           Web
@@ -9,6 +9,9 @@ Author:             Sigbjorn Finne <sof@forkIO.com>
 Maintainer:         Sigbjorn Finne <sof@forkIO.com>
 Cabal-version:   >= 1.2
 build-type: Simple
+extra-source-files: README
+                    examples/ListCat.hs
+                    examples/Util/GetOpts.hs
 
 flag new-base
   description: Build with new smaller base library
