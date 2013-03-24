@@ -1,5 +1,5 @@
 name:           cake
-version:        0.1.0
+version:        0.1.1
 category:       Development
 synopsis:       A build-system library and driver
 description:
@@ -36,6 +36,7 @@ executable cake
   build-depends: cmdargs==0.7.*
   build-depends: regex-tdfa==1.1.*
   build-depends: array==0.3.*
+  build-depends: filepath==1.1.*  
 
   main-is: Main.hs
 
