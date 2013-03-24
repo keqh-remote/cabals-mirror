@@ -1,9 +1,10 @@
 name:                hascal
-version:             1
+version:             1.1
 synopsis:            a minimal, extensible and precise calculator
 description:         Hascal is a minimal calculator with infix-operations
-                     supporting addition, subtraction, division, multiplication
-		     and exponentiation. Brackets are not supported yet.
+                     supporting addition, subtraction, division, multiplication,
+		     exponentiation and logarithming. Brackets are not supported
+		     yet.
 		     Futhermore, it's easy to add custom operators.
 stability:           provisional
 category:            Math, Console, Tools, Utility, Utils, Parsing
