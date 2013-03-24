@@ -1,5 +1,5 @@
 name:			manatee-core
-version:		0.0.4
+version:		0.0.5
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -15,7 +15,7 @@ description:    manatee-core is core package of Manatee (Haskell/Gtk+ Integrated
  .               
  IRC channel: irc.freenode.net 6667 <##manatee>
  .
- Mailing-List: manatee-user@googlegroups.com manatee-develop@googlegroups.com
+ Mailing-List: manatee-user\@googlegroups.com manatee-develop\@googlegroups.com
  .
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
