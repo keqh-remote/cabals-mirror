@@ -1,5 +1,5 @@
 Name:                   regex-tdfa
-Version:                1.1.1
+Version:                1.1.2
 -- 0.99.4 tests pnonempty' = \ p -> POr [ PEmpty, p ] instead of PNonEmpty
 -- 0.99.5 remove PNonEmpty constructor
 -- 0.99.6 change to nested nonEmpty calls for PBound
@@ -39,6 +39,7 @@ Version:                1.1.1
 -- 1.0.7 make NewDFA directory and String_NC
 -- 1.1.0 NewDFA code working
 -- 1.1.1 add gnu escapes
+-- 1.1.2 fix fatal error with wrong "d_id" passed to compressOrbits
 License:                BSD3
 License-File:           LICENSE
 Copyright:              Copyright (c) 2007, Christopher Kuklewicz
