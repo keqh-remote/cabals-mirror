@@ -2,7 +2,7 @@
 -- see
 -- http://www.haskell.org/cabal/release/cabal-latest/doc/users-guide/authors.html#pkg-descr.
 Name:                cursedcsv
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Terminal tool for viewing tabular data
 Description:         Curses-based tool for quick display, searching, sorting, etc. of
                      tabular data. Help available in the app with either '?' or 'h'.
@@ -14,7 +14,7 @@ Maintainer:          gershomb@gmail.com
 Category:            Application
 Build-type:          Simple
 -- Extra-source-files:
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
 
 Executable cursedcsv
   Main-is: CursedCSV.hs
@@ -24,5 +24,8 @@ Executable cursedcsv
   ghc-options:     -Wall
   hs-source-dirs: code
 
+source-repository head
+  type:      darcs
+  location:  http://patch-tag.com/r/gershomb/cursedcsv
   -- Other-modules:
   -- Build-tools:
