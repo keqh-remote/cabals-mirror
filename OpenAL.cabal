@@ -1,9 +1,8 @@
 name:		OpenAL
-version:	1.4.0.0
+version:	1.4.0.1
 license:	BSD3
 license-file:	LICENSE
-maintainer:	Sven Panne <sven.panne@aedion.de>
-bug-reports:	mailto:sven.panne@aedion.de
+maintainer:	Self-appointed maintainer wanted
 homepage:	http://connect.creativelabs.com/openal/
 category:	Sound
 synopsis:	A binding to the OpenAL cross-platform 3D audio API
