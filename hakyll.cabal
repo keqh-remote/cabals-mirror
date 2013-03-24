@@ -1,5 +1,5 @@
 Name:               hakyll
-Version:            3.0.2.0
+Version:            3.0.2.1
 
 Synopsis:           A simple static site generator library.
 Description:        A simple static site generator library, mainly aimed at
@@ -75,7 +75,7 @@ library
                       Hakyll.Web.Feed
                       Hakyll.Web.Tags
                       Hakyll.Web.Pandoc
-                      Hakyll.Web.FileType
+                      Hakyll.Web.Pandoc.FileType
                       Hakyll.Web.Page
                       Hakyll.Web.Template.Read
                       Hakyll.Web.RelativizeUrls
