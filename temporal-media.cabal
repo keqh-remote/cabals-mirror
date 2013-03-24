@@ -1,5 +1,5 @@
 Name:          temporal-media
-Version:       0.2.1
+Version:       0.3.0
 License-file:  LICENSE
 Cabal-Version: >= 1.2
 License:       BSD3
@@ -9,12 +9,7 @@ Synopsis:      data types for temporal media
 Description:  
       An embedded domain-specific language (EDSL) for 
       creating lists of constant time events related in time.
-      Combinators are optimized in fusion style.
-
-      Ispired by the paper /An Algebraic Theory of Polymorphic Temporal Media/, 
-      Paul Hudak 
-      <http://haskell.cs.yale.edu/yale/papers/polymedia/hudak-RR-1259.pdf>, 
-      Haskore and Hommage
+      
 
 Category:      Media, Music
 Stability:     Experimental
@@ -24,7 +19,8 @@ Build-Type:    Simple
 
 Library
   Build-Depends:
-        base >= 4, base < 5, dlist >= 0.5
+        base >= 4, base < 5
   Hs-Source-Dirs:      src/
+
   Exposed-Modules:
         Temporal.Media
