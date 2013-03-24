@@ -1,5 +1,5 @@
 name: xml-types
-version: 0.1.1
+version: 0.1.2
 synopsis: Basic types for representing XML
 license: MIT
 license-file: license.txt
@@ -12,11 +12,11 @@ stability: experimental
 bug-reports: mailto:jmillikin@gmail.com
 
 source-repository head
-  type: darcs
-  location: http://ianen.org/haskell/xml-types/
+  type: bazaar
+  location: http://john-millikin.com/software/xml-types/
 
 library
-  ghc-options: -Wall -fno-warn-unused-do-bind
+  ghc-options: -Wall
 
   build-depends:
       base >=3 && < 5
