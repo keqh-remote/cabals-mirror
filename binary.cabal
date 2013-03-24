@@ -1,8 +1,8 @@
 name:            binary
-version:         0.5.0.2
+version:         0.5.1.0
 license:         BSD3
 license-file:    LICENSE
-author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
+author:          Lennart Kolmodin <kolmodin@gmail.com>
 maintainer:      Lennart Kolmodin, Don Stewart <dons@galois.com>
 homepage:        http://code.haskell.org/binary/
 description:     Efficient, pure binary serialisation using lazy ByteStrings.
@@ -48,6 +48,9 @@ library
                    Data.Binary.Put,
                    Data.Binary.Get,
                    Data.Binary.Builder
+                   Data.Binary.Builder.Internal
+
+  other-modules:   Data.Binary.Builder.Base
 
   extensions:      CPP,
                    FlexibleContexts
