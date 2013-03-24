@@ -1,5 +1,5 @@
 Name:                scc
-Version:             0.7
+Version:             0.7.1
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Streaming component combinators
@@ -34,7 +34,7 @@ Executable shsh
   Other-Modules:     Control.Concurrent.SCC.Streams, Control.Concurrent.SCC.Types, Control.Concurrent.SCC.Coercions,
                      Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives, Control.Concurrent.SCC.XML,
                      Control.Concurrent.Configuration, Control.Concurrent.SCC.Configurable
-  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, incremental-parser >= 0.1 && < 0.2,
+  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, incremental-parser >= 0.2 && < 0.3,
                      monad-parallel, monad-coroutine >= 0.7 && < 0.8, bytestring < 1.0, text < 1.0,
                      process, readline, parsec >= 3.0 && < 4.0
   GHC-options:       -threaded
@@ -45,10 +45,10 @@ Executable test-scc
                      Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives,
                      Control.Concurrent.SCC.XML,
                      Control.Concurrent.Configuration, Control.Concurrent.SCC.Configurable
-  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, incremental-parser < 0.2,
+  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, incremental-parser >= 0.2 && < 0.3,
                      monad-parallel, monad-coroutine >= 0.7 && < 0.8, bytestring < 1.0, text < 1.0,
                      QuickCheck >= 2 && < 3
-  GHC-options:       -threaded
+  GHC-options:       -threaded -fcontext-stack=30
   if !flag(test)
     buildable:       False
 
@@ -59,6 +59,6 @@ Library
                      Control.Concurrent.SCC.Combinators.Parallel, Control.Concurrent.SCC.Combinators.Sequential,
                      Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives, Control.Concurrent.SCC.XML
                      
-  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, incremental-parser >= 0.1 && < 0.2,
+  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, incremental-parser >= 0.2 && < 0.3,
                      monad-parallel, monad-coroutine >= 0.7 && < 0.8, bytestring < 1.0, text < 1.0
   GHC-prof-options:  -auto-all
