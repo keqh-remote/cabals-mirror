@@ -1,5 +1,5 @@
 name:            binary-strict
-version:         0.2
+version:         0.2.1
 license:         BSD3
 license-file:    LICENSE
 author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
@@ -13,8 +13,12 @@ synopsis:        Binary deserialisation using strict ByteStrings
 category:        Data, Parsing
 build-depends:   base, containers, array, bytestring>=0.9
 stability:       provisional
-tested-with:     GHC == 6.8.1
-exposed-modules: Data.Binary.Strict.Get, Data.Binary.Strict.IncrementalGet
+tested-with:     GHC == 6.8.2
+exposed-modules: Data.Binary.Strict.Get,
+                 Data.Binary.Strict.IncrementalGet,
+                 Data.Binary.Strict.BitGet
 extensions:      CPP, FlexibleContexts
 hs-source-dirs:  src
+extra-source-files: tests/BitGetTest.hs
 ghc-options:     -Wall
+build-type:      Simple
