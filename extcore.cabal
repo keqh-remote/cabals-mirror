@@ -1,5 +1,5 @@
 name:                extcore
-version:             0.3
+version:             0.4
 synopsis:            Libraries for processing GHC Core
 description:         Libraries for processing GHC Core
 category:            Language
@@ -18,7 +18,7 @@ Library {
   other-modules:       Language.Core.PrimCoercions, Language.Core.PrimEnv, Language.Core.Utils, Language.Core.Environments
   extensions:          DeriveDataTypeable PatternGuards RankNTypes ScopedTypeVariables
   ghc-options:         -Wall
-  build-depends:       base >= 3 && <= 4, containers, directory, filepath, mtl, parsec, pretty
+  build-depends:       base >= 4 && < 5, containers, directory, filepath, mtl, parsec, pretty
   if impl(ghc > 6.8.2) {
      build-depends:syb
   }
