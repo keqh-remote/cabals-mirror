@@ -1,7 +1,7 @@
 Name:                happs-tutorial
-Version:             0.7
-Synopsis:            A HAppS Tutorial that is is own web 2.0-type demo. 
-Description:         A nice way to learn how to build web sites with HAppS
+Version:             0.7.1
+Synopsis:            A Happstack Tutorial that is its own web 2.0-type demo. 
+Description:         A nice way to learn how to build web sites with Happstack
 
 License:             BSD3
 License-file:        LICENSE
