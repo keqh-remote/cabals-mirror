@@ -1,5 +1,5 @@
 name: expat-enumerator
-version: 0.1.0.1
+version: 0.1.0.2
 synopsis: Enumerator-based API for Expat
 license: MIT
 license-file: license.txt
@@ -11,7 +11,12 @@ cabal-version: >=1.6
 category: Enumerator, Text, XML, Parsing
 stability: experimental
 bug-reports: mailto:jmillikin@gmail.com
+homepage: http://john-millikin.com/software/expat-enumerator/
 tested-with: GHC==6.12.1
+
+source-repository head
+  type: bazaar
+  location: http://john-millikin.com/software/expat-enumerator/
 
 library
   ghc-options: -Wall -fno-warn-unused-do-bind
@@ -19,7 +24,7 @@ library
   build-depends:
       base >= 4 && < 5
     , bytestring >= 0.9 && < 0.10
-    , text >= 0.7 && < 0.9
+    , text >= 0.7 && < 0.11
     , enumerator >= 0.4 && < 0.5
     , transformers >= 0.2 && < 0.3
     , hexpat >= 0.19 && < 0.20
