@@ -1,11 +1,11 @@
 Name:           libGenI
-Version:        0.16
+Version:        0.16.1
 License:        GPL
 License-file:   LICENSE
 Author:         Carlos Areces and Eric Kow
 Category:       Natural Language Processing
-Synopsis:       GenI, an FB-LTAG surface realiser
-Description:    GenI, a natural language generator (specifically, an FB-LTAG surface realiser)
+Synopsis:       A natural language generator (specifically, an FB-LTAG surface realiser)
+Description:    A natural language generator (specifically, an FB-LTAG surface realiser)
 Homepage:       http://trac.loria.fr/~geni
 Maintainer:     eric.kow@loria.fr
 Build-Type:     Simple
@@ -51,7 +51,12 @@ Flag splitBase
   description: Choose the new smaller, split-up base package.
 
 Library
-  Build-depends: base, binary, haskell98, mtl, containers, process, parsec, QuickCheck, HUnit
+  if flag(splitBase)
+    Build-depends: base >= 3, binary, mtl, containers, process,
+                   parsec, QuickCheck, HUnit
+  else
+    Build-Depends: base >= 3, binary, mtl,
+                   parsec, QuickCheck, HUnit
   Exposed-Modules:
                 NLP.GenI.Btypes,
                 NLP.GenI.BtypesBinary,
