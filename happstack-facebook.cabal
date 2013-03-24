@@ -1,15 +1,15 @@
 Name:             happstack-facebook
-Version:          0.9
+Version:          0.16
 License:          BSD3
 License-file:     debian/copyright
 Author:           jeremy@seereason.com
 Maintainer:       partners@seereason.com
 Synopsis:         A package for building Facebook applications using Happstack
 Description:      A package for building Facebook applications using Happstack
-Homepage:         http://src.seereason.com/ghc6103/happstack-facebook/
+Homepage:         http://src.seereason.com/happstack-facebook/
 Bug-Reports:      http://bugzilla.seereason.com/
 Build-Type:       Custom
-Cabal-version:    >= 1.4.0.0
+Cabal-version:    >= 1.6
 Category:         Web, Language
 
 Flag base4
@@ -41,6 +41,7 @@ Library
                         Happstack.Facebook.Connect
                         Happstack.Facebook.XdReceiver
                         Happstack.Facebook.Users
+                        Happstack.Facebook.Pages
   if flag(formlets)
      Exposed-Modules:   Happstack.Facebook.Formlets
      Build-Depends: happstack-extra, formlets, formlets-hsp
@@ -49,7 +50,10 @@ Library
 
 Executable demo
  Main-Is: ConnectDemo.hs
- Other-modules: FacebookConfig
  Hs-source-dirs: . examples
  GHC-options: -threaded -O2 -Wall -fwarn-missing-signatures -fno-warn-name-shadowing -fwarn-orphans -fwarn-tabs -fwarn-unused-binds -fwarn-unused-imports
  Build-Tools: trhsx
+
+source-repository head
+    type:     darcs
+    location: http://src.seereason.com/happstack-facebook/
