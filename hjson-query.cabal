@@ -1,5 +1,5 @@
 Name:                hjson-query
-Version:             1.0
+Version:             1.0.1
 Synopsis:            library for querying from JSON
 Category:            Text
 Description:         library(HXT-like) for querying from JSON
