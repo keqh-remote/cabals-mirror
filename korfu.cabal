@@ -1,6 +1,7 @@
 Name:           korfu
-Version:        0.1
+Version:        0.1.1
 License:        GPL
+Category:	Bioinformatics
 Author:         Ketil Malde
 Maintainer:	Ketil Malde <ketil@malde.org>
 Homepage:	http://blog.malde.org/
@@ -14,7 +15,7 @@ Description:	Reads nucleotide sequences in FASTA format, and generates
 Build-Type:	Simple
 
 Executable:     korfu
-Build-Depends:  base, bio >= 0.3, haskell98, simpleargs, bytestring
+Build-Depends:  base>=3&&<4.2, bio >= 0.3 && < 0.4, haskell98, simpleargs, bytestring
 Hs-Source-Dirs: src
 Main-Is:        Korfu.hs
 Ghc-Options:    -Wall -fglasgow-exts -O2 -funbox-strict-fields
