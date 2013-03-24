@@ -1,5 +1,5 @@
 name:           text
-version:        0.1
+version:        0.2
 synopsis:       An efficient packed Unicode text type
 description:    An efficient packed Unicode text type.
 license:        BSD3
@@ -8,7 +8,7 @@ author:         Tom Harper <rtharper@aftereternity.co.uk>
 maintainer:     Bryan O'Sullivan <bos@serpentine.com>
                 Tom Harper <rtharper@aftereternity.co.uk>
                 Duncan Coutts <duncan@haskell.org>
-copyright:      2008-2009 Tom Harper
+copyright:      2008-2009 Tom Harper, 2009 Bryan O'Sullivan
 category:       Data, Text
 build-type:     Simple
 cabal-version:  >= 1.2
@@ -21,9 +21,17 @@ library
     Data.Text.Encoding.Fusion
     Data.Text.Foreign
     Data.Text.Fusion
+    Data.Text.Fusion.Common
+    Data.Text.Lazy
+    Data.Text.Lazy.Encoding
+    Data.Text.Lazy.Encoding.Fusion
+    Data.Text.Lazy.Fusion
   other-modules:
     Data.Text.Array
     Data.Text.Internal
+    Data.Text.Encoding.Fusion.Common
+    Data.Text.Fusion.Internal
+    Data.Text.Lazy.Internal
     Data.Text.Unsafe
     Data.Text.UnsafeChar
     Data.Text.Encoding.Utf8
