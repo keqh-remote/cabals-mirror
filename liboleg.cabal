@@ -1,5 +1,5 @@
 name:           liboleg
-version:        2010.1.7.1
+version:        2010.1.9.0
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -38,6 +38,13 @@ library
             -- Control.Fix
             Control.Poly2
             Control.StateAlgebra
+
+            Control.CCExc
+            Control.CCCxe
+            Control.CCRef
+            Control.Mutation
+            Control.Generator1
+            Control.Generator2
 
             Codec.Image.Tiff
 
@@ -83,6 +90,7 @@ library
             Language.ToTDPE
             Language.Typ
             Language.TypeCheck
+            Language.Fibration
 
             Logic.DynEpistemology
 
