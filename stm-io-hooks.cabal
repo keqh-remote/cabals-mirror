@@ -13,7 +13,7 @@ Description:
     * If the onCommit action throws an exception, the original values of 
     the modified TVars are restored.
     .
-    Note: The package can be used as a drop-in replacement for the
+    Note: The package can be used as a drop-in replacement for 
     'Control.Concurrent.STM'. Part of this library uses code from
     the Haskell Wiki (see <http://haskell.org/haskellwiki/?title=New_monads/MonadAdvSTM>).
 
@@ -23,7 +23,7 @@ Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        BSD3
 License-file:   LICENSE
 Homepage:       http://darcs.monoid.at/stm-io-hooks
-Version:        0.2.1
+Version:        0.3.0
 
 Build-type:     Simple                        
 Cabal-Version:  >= 1.2.3
