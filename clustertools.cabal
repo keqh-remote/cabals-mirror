@@ -1,5 +1,5 @@
 Name:                clustertools
-Version:             0.1.1
+Version:             0.1.2
 License:             GPL
 License-file:        LICENSE
 Author:              Ketil Malde
@@ -72,7 +72,7 @@ Executable ace2clusters
 Executable clusterlibs
            Hs-source-dirs: src
            Main-Is:     ClusterLibs.hs
-           Build-depends: regex-compat
+           Build-depends: regex-compat, QuickCheck
 
 Executable xcerpt
            Hs-source-dirs: src
