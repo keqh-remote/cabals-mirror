@@ -1,5 +1,5 @@
 Name:                dpkg
-Version:             0.0.2
+Version:             0.0.3
 Synopsis:            libdpkg bindings
 Description:         Haskell bindings to the libdpkg API
 Copyright:           (C) 2011, 2012 Clint Adams
@@ -23,7 +23,7 @@ Library
                  , Debian.Dpkg.PkgSpec
                  , Debian.Dpkg.Types
                  , Debian.Dpkg.Enums
-                 , Debian.Dpkg.VersionRevision
+                 , Debian.Dpkg.DpkgVersion
   other-extensions: ForeignFunctionInterface
   pkgconfig-depends: libdpkg >= 1.16.2
   cpp-options: -DLIBDPKG_VOLATILE_API=1
