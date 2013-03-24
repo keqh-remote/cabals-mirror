@@ -1,5 +1,5 @@
 name:         Monatron
-version:      0.3
+version:      0.3.1
 license:      BSD3
 license-file: LICENSE
 author:       Mauro Jaskelioff
@@ -29,6 +29,6 @@ exposed-modules:
 	Control.Monatron.Zipper
 	Control.Monatron.Open
 	Control.Monatron.ZipperExamples
-build-depends: base >= 2 && < 3
+build-depends: base >= 2 && < 5
 extensions: 
 	Rank2Types
