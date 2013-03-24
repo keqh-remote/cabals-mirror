@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.3
+Version:		2.2.4
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -53,42 +53,41 @@ Extra-Source-Files:
   doc/cpsaoverview.tex doc/cpsadiagrams.mp doc/strands.mp
   doc/cmstrands.mp doc/carriers.mp doc/termtree.mp doc/cpsa.bib
   doc/SDAG.lhs doc/cpsatheory.pdf doc/cpsaspec.pdf doc/cpsadesign.pdf
-  src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg
-  src/cpsa.el src/httpd_allow_execmem.te src/cpsaops.scm src/preskel
-  src/cpsa.pl src/pp.pl src/sexpr.pl src/zoom.js src/js2hs src/ghcmemlimit
-  build.xml src/cpsaextras/Main.scala src/cpsaextras/Pretty.scala
-  src/cpsaextras/Printer.scala src/cpsaextras/SExpr.scala
-  tst/README tst/Makefile
-  tst/Make.hs tst/checktst tst/cpsagraphall tst/cpsashapesall
-  tst/blanchet.scm tst/blanchet.tst tst/completeness-test.scm
-  tst/completeness-test.tst tst/crushing.tst tst/crushing.tst
-  tst/dass.lisp tst/dass-mod.lisp tst/dass_simple.scm
-  tst/dass_simple.tst tst/denning-sacco.scm tst/denning-sacco.tst
-  tst/deorig_contract.scm tst/deorig_contract.tst tst/dhke.scm
-  tst/dhke.tst tst/deorig_simple.scm  tst/deorig_simple.tst
-  tst/ds-short.lisp tst/dy.lsp tst/dy.tst tst/encsig.scm
-  tst/encsig.tst tst/epmo_acctnum.scm tst/epmo_acctnum.tst
-  tst/epmo.scm tst/epmo.tst tst/ffgg.scm tst/ffgg.tst
-  tst/fragile_pruning.scm tst/fragile_pruning.tst tst/isoreject.scm
-  tst/isoreject.tst tst/kelly1.scm tst/kelly1.tst tst/kelly64.lisp
-  tst/kerb5.lisp tst/kerberos.scm tst/kerberos.tst
-  tst/missing_contraction.scm tst/missing_contraction.tst
-  tst/neuman-stubblebine-alt.lisp tst/neuman-stubblebine-reauth.lisp
-  tst/neuman-stubblebine-reauth.lsp tst/neuman-stubblebine-reauth.tst
-  tst/neuman-stubblebine.scm tst/neuman-stubblebine.tst
-  tst/no_contraction.scm tst/no_contraction.tst tst/nonaug-prune.scm
-  tst/nonaug-prune.tst tst/non_transforming.scm
-  tst/non_transforming.tst tst/nsl3.scm tst/nsl3.tst tst/nsl4cm1.lsp
-  tst/nsl4cm1.tst tst/nsl4.lisp tst/nsl4resp2.lisp tst/nsl5i.lisp
-  tst/nsl5.lisp tst/nslsk.scm tst/nslsk.tst tst/ns.scm tst/ns.tst
-  tst/or.scm tst/or.tst tst/pca.scm tst/pca.tst tst/pruning1.scm
-  tst/pruning1.tst tst/sigenc.scm tst/sigenc.tst
-  tst/sorted_epmo_acctnum.scm tst/sorted_epmo_acctnum.tst
-  tst/targetterms2.scm tst/targetterms2.tst tst/targetterms6.scm
-  tst/targetterms6.tst tst/targetterms8.scm
-  tst/targetterms8.tst tst/tnsl5.lisp tst/uncarried_keys.scm
-  tst/uncarried_keys.tst tst/uo.scm tst/uo.tst tst/updatetst
-  tst/weird.scm tst/weird.tst tst/wide-mouth-frog.lsp
+  src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg src/cpsa.el
+  src/httpd_allow_execmem.te src/cpsaops.scm src/preskel src/cpsa.pl
+  src/pp.pl src/sexpr.pl src/prover9.pl src/zoom.js src/js2hs
+  src/ghcmemlimit build.xml src/cpsaextras/Main.scala
+  src/cpsaextras/Pretty.scala src/cpsaextras/Printer.scala
+  src/cpsaextras/SExpr.scala tst/README tst/Makefile tst/Make.hs
+  tst/checktst tst/cpsagraphall tst/cpsashapesall tst/blanchet.scm
+  tst/blanchet.tst tst/completeness-test.scm tst/completeness-test.tst
+  tst/crushing.tst tst/crushing.tst tst/dass.lisp tst/dass-mod.lisp
+  tst/dass_simple.scm tst/dass_simple.tst tst/denning-sacco.scm
+  tst/denning-sacco.tst tst/deorig_contract.scm
+  tst/deorig_contract.tst tst/dhke.scm tst/dhke.tst
+  tst/deorig_simple.scm tst/deorig_simple.tst tst/ds-short.lisp
+  tst/dy.lsp tst/dy.tst tst/encsig.scm tst/encsig.tst
+  tst/epmo_acctnum.scm tst/epmo_acctnum.tst tst/epmo.scm tst/epmo.tst
+  tst/ffgg.scm tst/ffgg.tst tst/fragile_pruning.scm
+  tst/fragile_pruning.tst tst/isoreject.scm tst/isoreject.tst
+  tst/kelly1.scm tst/kelly1.tst tst/kelly64.lisp tst/kerb5.lisp
+  tst/kerberos.scm tst/kerberos.tst tst/missing_contraction.scm
+  tst/missing_contraction.tst tst/neuman-stubblebine-alt.lisp
+  tst/neuman-stubblebine-reauth.lisp tst/neuman-stubblebine-reauth.lsp
+  tst/neuman-stubblebine-reauth.tst tst/neuman-stubblebine.scm
+  tst/neuman-stubblebine.tst tst/no_contraction.scm
+  tst/no_contraction.tst tst/nonaug-prune.scm tst/nonaug-prune.tst
+  tst/non_transforming.scm tst/non_transforming.tst tst/nsl3.scm
+  tst/nsl3.tst tst/nsl4cm1.lsp tst/nsl4cm1.tst tst/nsl4.lisp
+  tst/nsl4resp2.lisp tst/nsl5i.lisp tst/nsl5.lisp tst/nslsk.scm
+  tst/nslsk.tst tst/ns.scm tst/ns.tst tst/or.scm tst/or.tst
+  tst/pca.scm tst/pca.tst tst/pruning1.scm tst/pruning1.tst
+  tst/sigenc.scm tst/sigenc.tst tst/sorted_epmo_acctnum.scm
+  tst/sorted_epmo_acctnum.tst tst/targetterms2.scm
+  tst/targetterms2.tst tst/targetterms6.scm tst/targetterms6.tst
+  tst/targetterms8.scm tst/targetterms8.tst tst/tnsl5.lisp
+  tst/uncarried_keys.scm tst/uncarried_keys.tst tst/uo.scm tst/uo.tst
+  tst/updatetst tst/weird.scm tst/weird.tst tst/wide-mouth-frog.lsp
   tst/wide-mouth-frog.tst tst/wonthull2.scm tst/wonthull2.tst
   tst/wonthull3.scm tst/wonthull3.tst tst/wonthull.scm
   tst/wonthull.tst tst/woolam.scm tst/woolam.tst tst/yahalom-6.3.6.scm
@@ -98,21 +97,15 @@ Extra-Source-Files:
   tst/epmo-key-hash.scm tst/epmo-key-hash.tst tst/wang.lisp
   tst/pkinit.scm tst/pkinit.tst
 
--- Disable with -f-par option during configuration.
-
-Flag Par
-  Description:		Enable use of the parallel construct par
-  Default:		True
-
 -- Algebra implementations must import CPSA.Lib.CPSA.
 -- Tools may additionally import CPSA.Lib.Entry.
 -- No other modules in CPSA.Lib should be imported by applications.
 
 Executable cpsa
   Main-Is:		CPSA/Lib/Main.hs
-  Build-Depends:	base >= 3 && < 5, containers
+  Build-Depends:	base >= 3 && < 5, containers, parallel
   GHC-Options:
-    -Wall -fno-warn-name-shadowing -fwarn-unused-imports
+    -Wall -fno-warn-name-shadowing -fwarn-unused-imports -threaded
   Hs-Source-Dirs:	src
   Other-Modules:
     Paths_cpsa CPSA.Lib.Vector CPSA.Lib.Utilities CPSA.Lib.Pretty
@@ -121,10 +114,8 @@ Executable cpsa
     CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.Expand CPSA.Lib.CPSA
     CPSA.Lib.Reduction CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
     CPSA.DiffieHellman.IntLinEq CPSA.SimpleDiffieHellman.Algebra
-  if flag(par)
-    Cpp-Options: -DHAVE_PAR
-    GHC-Options: -threaded
-    Build-Depends: parallel
+  if impl(ghc >= 7.0.0)
+    GHC-Options: -rtsopts
 
 Executable cpsagraph
   Main-Is:		CPSA/Graph/Main.hs
