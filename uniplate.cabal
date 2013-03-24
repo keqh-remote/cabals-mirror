@@ -1,7 +1,8 @@
 Cabal-Version:      >= 1.2
+Build-Type:         Simple
 Name:               uniplate
-Version:            1.0.1
-Copyright:          2006-7, Neil Mitchell
+Version:            1.2
+Copyright:          2006-8, Neil Mitchell
 Maintainer:         ndmitchell@gmail.com
 Homepage:           http://www-users.cs.york.ac.uk/~ndm/uniplate/
 License:            BSD3
@@ -28,10 +29,15 @@ Library
     Exposed-modules:
         Data.Generics.Uniplate
         Data.Generics.UniplateOn
+        Data.Generics.UniplateStr
+        Data.Generics.UniplateStrOn
         Data.Generics.Biplate
         Data.Generics.PlateDirect
         Data.Generics.PlateTypeable
         Data.Generics.PlateData
         Data.Generics.PlateInternal
+        Data.Generics.Str
+        Data.Generics.Compos
+        Data.Generics.SYB
 
     Extensions:     CPP, FlexibleInstances
