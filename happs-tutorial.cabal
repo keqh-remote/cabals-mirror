@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.4.4
+Version:             0.4.5
 Synopsis:            A HAppS Tutorial that is is own demo
 Description:         A nice way to learn how to build web sites with HAppS
 
@@ -44,6 +44,7 @@ Executable happs-tutorial
         Controller
         ControllerMisc
         ControllerPostActions
+        FromDataInstances
         Misc
         SerializeableSessions
         SerializeableUsers
