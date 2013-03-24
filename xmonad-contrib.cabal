@@ -1,5 +1,5 @@
 name:               xmonad-contrib
-version:            0.7
+version:            0.8
 homepage:           http://xmonad.org/
 synopsis:           Third party extensions for xmonad
 description:
@@ -20,7 +20,7 @@ category:           System
 license:            BSD3
 license-file:       LICENSE
 author:             Spencer Janssen
-maintainer:         sjanssen@cse.unl.edu
+maintainer:         spencerjanssen@gmail.com
 extra-source-files: README scripts/generate-configs scripts/run-xmonad.sh
                     scripts/xinitrc scripts/xmonad-acpi.c
                     scripts/xmonad-clock.c tests/test_SwapWorkspaces.hs
@@ -57,7 +57,7 @@ library
         extensions: ForeignFunctionInterface
         cpp-options: -DUTF8
 
-    build-depends:      mtl, unix, X11>=1.4.1, xmonad==0.7
+    build-depends:      mtl, unix, X11>=1.4.1, xmonad>=0.8, xmonad<0.9
     ghc-options:        -Wall
 
     if flag(testing)
@@ -70,6 +70,7 @@ library
                         XMonad.Actions.Commands
                         XMonad.Actions.ConstrainedResize
                         XMonad.Actions.CopyWindow
+                        XMonad.Actions.CycleRecentWS
                         XMonad.Actions.CycleSelectedLayouts
                         XMonad.Actions.CycleWS
                         XMonad.Actions.DeManage
@@ -84,6 +85,7 @@ library
                         XMonad.Actions.MouseResize
                         XMonad.Actions.NoBorders
                         XMonad.Actions.PerWorkspaceKeys
+                        XMonad.Actions.Plane
                         XMonad.Actions.Promote
                         XMonad.Actions.RotSlaves
                         XMonad.Actions.Search
@@ -94,22 +96,31 @@ library
                         XMonad.Actions.TagWindows
                         XMonad.Actions.UpdatePointer
                         XMonad.Actions.Warp
+                        XMonad.Actions.WindowNavigation
                         XMonad.Actions.WindowGo
                         XMonad.Actions.WindowBringer
-                        XMonad.Config.Sjanssen
-                        XMonad.Config.Dons
                         XMonad.Config.Arossato
+                        XMonad.Config.Desktop
                         XMonad.Config.Droundy
+                        XMonad.Config.Gnome
+                        XMonad.Config.Kde
+                        XMonad.Config.PlainConfig
+                        XMonad.Config.Sjanssen
+                        XMonad.Config.Xfce
+                        XMonad.Hooks.DynamicHooks
                         XMonad.Hooks.DynamicLog
                         XMonad.Hooks.EventHook
                         XMonad.Hooks.EwmhDesktops
+                        XMonad.Hooks.FadeInactive
                         XMonad.Hooks.ManageDocks
                         XMonad.Hooks.ManageHelpers
+                        XMonad.Hooks.Script
                         XMonad.Hooks.SetWMName
                         XMonad.Hooks.ServerMode
                         XMonad.Hooks.UrgencyHook
                         XMonad.Hooks.XPropManage
                         XMonad.Layout.Accordion
+                        XMonad.Layout.BoringWindows
                         XMonad.Layout.Circle
                         XMonad.Layout.Combo
                         XMonad.Layout.Decoration
@@ -117,7 +128,9 @@ library
                         XMonad.Layout.Dishes
                         XMonad.Layout.DragPane
                         XMonad.Layout.DwmStyle
+                        XMonad.Layout.Gaps
                         XMonad.Layout.Grid
+                        XMonad.Layout.HintedGrid
                         XMonad.Layout.HintedTile
                         XMonad.Layout.IM
                         XMonad.Layout.LayoutCombinators
@@ -126,9 +139,11 @@ library
                         XMonad.Layout.LayoutScreens
                         XMonad.Layout.MagicFocus
                         XMonad.Layout.Magnifier
+                        XMonad.Layout.Master
                         XMonad.Layout.Maximize
                         XMonad.Layout.MosaicAlt
                         XMonad.Layout.MultiToggle
+                        XMonad.Layout.MultiToggle.Instances
                         XMonad.Layout.Named
                         XMonad.Layout.NoBorders
                         XMonad.Layout.PerWorkspace
@@ -136,13 +151,13 @@ library
                         XMonad.Layout.ResizableTile
                         XMonad.Layout.ResizeScreen
                         XMonad.Layout.Roledex
-                        XMonad.Layout.ScratchWorkspace
                         XMonad.Layout.Simplest
                         XMonad.Layout.SimpleDecoration
                         XMonad.Layout.SimpleFloat
                         XMonad.Layout.Spiral
                         XMonad.Layout.Square
                         XMonad.Layout.ShowWName
+                        XMonad.Layout.StackTile
                         XMonad.Layout.Tabbed
                         XMonad.Layout.TabBarDecoration
                         XMonad.Layout.ThreeColumns
@@ -151,9 +166,11 @@ library
                         XMonad.Layout.WindowArranger
                         XMonad.Layout.WindowNavigation
                         XMonad.Layout.WorkspaceDir
+                        XMonad.Layout.SimplestFloat
                         XMonad.Prompt.Directory
                         XMonad.Prompt
                         XMonad.Prompt.AppendFile
+                        XMonad.Prompt.AppLauncher
                         XMonad.Prompt.Input
                         XMonad.Prompt.Email
                         XMonad.Prompt.Layout
