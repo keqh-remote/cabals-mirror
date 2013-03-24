@@ -1,5 +1,5 @@
 name:                rangemin
-version:             2.2.0
+version:             2.2.1
 Cabal-Version:       >= 1.2
 synopsis:            Linear range-min algorithms.
 description:	     
