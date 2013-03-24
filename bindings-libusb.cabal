@@ -3,13 +3,15 @@ name: bindings-libusb
 homepage: http://bitbucket.org/mauricio/bindings
 synopsis:
   Check bindings-common package for directions.
-version: 0.0.5
+version: 0.0.6
 license: BSD3
 license-file: LICENSE
-maintainer: Maurício C. Antunes
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
 author: Maurício C. Antunes
 build-type: Simple
 category: FFI
+bug-reports: http://bitbucket.org/mauricio/bindings-libusb/issues
+stability: Needs users feedback
 library
   hs-source-dirs: src
   extensions:
