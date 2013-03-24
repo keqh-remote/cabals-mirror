@@ -1,5 +1,5 @@
 Name:                first-class-patterns
-Version:             0.1.0
+Version:             0.2.0
 Author:              Reiner Pope
 Maintainer:          Reiner Pope <reiner.pope@gmail.com>
 License:             BSD3
@@ -25,7 +25,7 @@ Description:
 Cabal-Version:       >= 1.2.3        
 Category:            Data
 Build-Type:          Simple
-Build-Depends:       base >= 3 && < 5
+Build-Depends:       base >= 3 && < 5, transformers >= 0.1.0 && < 0.1.5
 Stability:           experimental
 Tested-with:         GHC==6.10.3
 Exposed-modules:     Data.Pattern
@@ -43,3 +43,10 @@ Extensions:
 		     Rank2Types, 
 		     GeneralizedNewtypeDeriving, 
 		     FlexibleInstances
+
+-- necessary to get all the patterns properly inlined. Note that putting
+-- {-# INLINE #-} pragmas every doesn't seem to work, due to some subtlety
+-- of the inliner.
+ghc-options:         
+                     -funfolding-use-threshold=1000
+                     -funfolding-creation-threshold=1000
