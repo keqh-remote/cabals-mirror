@@ -1,5 +1,5 @@
 Name:           tagsoup-parsec 
-Version:        0.0.2
+Version:        0.0.3
 License:        BSD3 
 License-file:   LICENSE
 Author:         Johnny Morrice
@@ -14,5 +14,5 @@ Extra-source-files: LICENSE
 Cabal-version:  >=1.2.0
 
 Library
-   Build-Depends:  base, tagsoup, parsec==2.1.0.1
+   Build-Depends:  base, tagsoup, parsec<3
    Exposed-modules: Text.HTML.TagSoup.Parsec
