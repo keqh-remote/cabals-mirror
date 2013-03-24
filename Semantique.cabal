@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                Semantique
-version:             0.1.0
+version:             0.2.0
 synopsis:            Command-line tool for maintaining the Semantique database.
 description:         Command-line tool for maintaining the Semantique database. See http://semantik.tv/
 license:             PublicDomain
@@ -23,5 +23,5 @@ executable semantique
   -- other-modules:
   build-depends:       base ==4.5.*, tagsoup ==0.12.*, bytestring ==0.9.*, mongoDB ==1.3.*,
                        process ==1.1.*, mtl ==2.1.*, network ==2.4.*, split ==0.2.*,
-                       text ==0.11.*, containers ==0.4.*, classify ==2012.10.*
+                       text ==0.11.*, containers ==0.4.*, classify >=2012.10.23
   hs-source-dirs:      src
