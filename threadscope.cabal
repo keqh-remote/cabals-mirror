@@ -1,5 +1,5 @@
 Name:                threadscope
-Version:             0.2.1
+Version:             0.2.2
 Category:            Development, Profiling, Trace
 Synopsis:            A graphical tool for profiling parallel Haskell programs.
 Description:         ThreadScope is a graphical viewer for thread profile
@@ -16,9 +16,9 @@ License-file:        LICENSE
 Copyright:           2009-2010 Satnam Singh,
                      2009-2011 Simon Marlow,
                      2009 Donnie Jones,
-                     2011 Duncan Coutts,
-                     2011 Mikolaj Konarski
-                     2011 Nicolas Wu
+                     2011-2012 Duncan Coutts,
+                     2011-2012 Mikolaj Konarski,
+                     2011 Nicolas Wu,
                      2011 Eric Kow
 Author:              Satnam Singh <s.singh@ieee.org>,
                      Simon Marlow <marlowsd@gmail.com>,
@@ -27,7 +27,7 @@ Author:              Satnam Singh <s.singh@ieee.org>,
                      Mikolaj Konarski <mikolaj@well-typed.com>,
                      Nicolas Wu <nick@well-typed.com>,
                      Eric Kow <eric@well-typed.com>
-Maintainer:          Satnam Singh <s.singh@ieee.org>
+Maintainer:          Simon Marlow <marlowsd@gmail.com>
 Homepage:            http://www.haskell.org/haskellwiki/ThreadScope
 Bug-reports:         http://trac.haskell.org/ThreadScope/
 Build-Type:          Simple
@@ -43,8 +43,8 @@ Executable threadscope
   Build-Depends:     base >= 4.0 && < 5,
                      gtk >= 0.12, cairo, glib, pango,
                      binary, array, mtl, filepath,
-                     ghc-events == 0.4.*,
-                     containers >= 0.2 && < 0.5,
+                     ghc-events >= 0.4.2,
+                     containers >= 0.2 && < 0.6,
                      deepseq >= 1.1,
                      time >= 1.1
   Extensions:        RecordWildCards, NamedFieldPuns, BangPatterns, PatternGuards
@@ -92,4 +92,4 @@ Executable threadscope
      ghc-options:  -fno-warn-unused-matches
 
   if !os(windows)
-     build-depends: unix >= 2.3 && < 2.6
+     build-depends: unix >= 2.3 && < 2.7
