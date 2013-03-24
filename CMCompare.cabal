@@ -1,5 +1,5 @@
 name:           CMCompare
-version:        0.0.1.1
+version:        0.0.1.2
 author:         Christian Hoener zu Siederdissen, Ivo L. Hofacker
 maintainer:     choener@tbi.univie.ac.at
 copyright:      Christian Hoener zu Siederdissen, Ivo L. Hofacker, 2010
@@ -25,11 +25,10 @@ extra-source-files:
 executable hsCMCompare
   build-depends:
     base >= 4 && < 5,
-    cmdargs == 0.3,
+    cmdargs == 0.6.4,
     array,
 
-    Biobase >= 0.0.2 && < 0.0.3,
-    BiobaseInfernal >= 0.0.2 && < 0.0.3,
+    Biobase >= 0.1.0 && < 0.2.0,
     HsTools >= 0.0.1.1 && < 0.0.2
 
   main-is:
