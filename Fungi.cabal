@@ -7,7 +7,7 @@ Name:                	Fungi
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             	1.0.3
+Version:             	1.0.4
 
 -- A short (one-line) description of the package.
 Synopsis:            	An interpreter for Funge-98 programming languages, including Befunge.
@@ -32,13 +32,10 @@ Category:            	Compilers/Interpreters
 
 Build-type:          	Simple
 
--- Extra files to be distributed with the package, such as examples or
--- a README.
--- Extra-source-files:  
-
 Cabal-version:       	>= 1.6
 
 Extra-source-files:
+	CHANGELOG
 	README
 	Tester.hs
 	runTests.bash
@@ -65,6 +62,7 @@ Build-depends:
 	, containers >= 0.3
 	, directory >= 1.0
 	, filepath >= 1.1
+	, haskell98 >= 1.0
 	, ListZipper >= 1.2
 	, mtl >= 1.1
 	, mwc-random >= 0.8
@@ -72,7 +70,6 @@ Build-depends:
 	, process >= 1.0
 	, random >= 1.0
 	, tuple >= 0.2
-	, haskell98 >= 1.0
   
 -- Modules not exported by this package.
 Other-modules:
@@ -85,6 +82,7 @@ Other-modules:
 	Data.LogicalBits
 	Data.MaybeBounded
 	Data.Stack
+	Data.StackSet
 	Data.Tuple.Map
 	Data.Vector
 	Debug.Debug
@@ -103,8 +101,10 @@ Other-modules:
 	Fingerprint.NOP
 	Fingerprint.NULL
 	Fingerprint.ORTH
+	Fingerprint.RECD
 	Fingerprint.REFC
 	Fingerprint.ROMA
+	Fingerprint.STRN
 	Fungi
 	Instruction
 	Interpreter
@@ -132,8 +132,10 @@ Other-modules:
 	Text.Help.Fingerprint.NOP
 	Text.Help.Fingerprint.NULL
 	Text.Help.Fingerprint.ORTH
+	Text.Help.Fingerprint.RECD
 	Text.Help.Fingerprint.REFC
 	Text.Help.Fingerprint.ROMA
+	Text.Help.Fingerprint.STRN
 	Text.PrettyShow
 	Text.PrintOption
 	UnknownInstruction
@@ -142,10 +144,6 @@ Other-modules:
 
 
 
-
--- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
--- Build-tools:         
-  
 
 
 
