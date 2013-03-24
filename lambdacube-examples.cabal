@@ -1,5 +1,5 @@
 Name:          lambdacube-examples
-Version:       0.2.1
+Version:       0.2.2
 Cabal-Version: >= 1.2
 Synopsis:      Examples for LambdaCube
 Category:      Graphics
@@ -38,6 +38,7 @@ Data-Files:
   media/Ground.mesh.xml
   media/knot.mesh.xml
   media/ogrehead.mesh.xml
+  media/ogrehead.vmesh
   media/Ogre.material
   media/r2skin.jpg
   media/Robot.material
