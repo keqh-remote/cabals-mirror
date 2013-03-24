@@ -1,6 +1,6 @@
 name:               CC-delcont-ref-tf
-version:            0.1.0.1
-author:             Oleg Kiselyov
+version:            0.1.0.2
+author:             Oleg Kiselyov, shelarcy
 maintainer:         shelarcy <shelarcy@gmail.com>
 license:            BSD3
 license-file:       LICENSE
