@@ -1,13 +1,13 @@
 Name:                monadfibre
-Version:             0.1
-Description:         This package defines a Monad Transformer called @Fibre@,
-                     which provides the underlying monad with Choice and Parallelism.
+Version:             0.1.1
+Description:         This package defines Monadic functions which provide Choice and Parallelism - (<||>) and (<&&>)
+                     - that work on Monads that provide a (MonadBi m ()) instance.
                      Also included is a Class called @MonadBi@ which acts as a superset
                      of @MonadTrans@, and provides @raise@ analogous to @lift@ as well
                      as @lower@, which goes the other way.
                      Natural instances are provided for many Monad Transformers.
 
-Synopsis:            Monad Transformer to provide Choice and Parallelism.
+Synopsis:            This package defines Monadic functions which provide Choice and Parallelism - (<||>) and (<&&>).
 License:             GPL
 License-file:        LICENSE
 Author:              Anupam Jain
