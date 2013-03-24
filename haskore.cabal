@@ -1,5 +1,5 @@
 Name:           haskore
-Version:        0.1.0.2
+Version:        0.1.0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Paul Hudak <paul.hudak@yale.edu>, Henning Thielemann
@@ -23,6 +23,13 @@ Extra-Source-Files:
   src/Doc/Discussion.tex
   src/Doc/Introduction.tex
   src/Doc/Tutorial.tex
+  src/Doc/Tutorial.bbl
+  src/Doc/Pics/equiv.eps
+  src/Doc/Pics/haskore.tex
+  src/Doc/Pics/midi.tex
+  src/Doc/Pics/poly.eps
+  src/Test/CSound/Makefile
+  src/Test/MIDI/Makefile
 
 Source-Repository head
   type:     darcs
