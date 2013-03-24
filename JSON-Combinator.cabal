@@ -1,11 +1,11 @@
 Name:               JSON-Combinator
-Version:            0.1.1
+Version:            0.1.2
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
 Maintainer:         Tony Morris
 Synopsis:           A combinator library on top of a generalised JSON type
-Category:           Combinator
+Category:           Combinators
 Description:
   A combinator library on top of a generalised JSON type. The highest-level module is
   @Text.JSON.Combinator@ and it is expected that no other module need to be explicitly imported.
