@@ -1,5 +1,5 @@
 name:          darcs-benchmark
-version:       0.1.8.3
+version:       0.1.9
 synopsis:      Comparative benchmark suite for darcs.
 
 description: A simple tool to compare performance of different Darcs 2.x
@@ -22,12 +22,11 @@ extra-source-files: README
 executable darcs-benchmark
     if impl(ghc >= 6.8)
       ghc-options: -fwarn-tabs
-
-    ghc-options:   -Wall -threaded -fno-warn-unused-do-bind
+    ghc-options:   -Wall -threaded
     ghc-prof-options: -prof -auto-all -threaded
 
-    build-depends: base < 5,
-                   cmdargs >= 0.1 && < 0.2,
+    build-depends: base < 5, strict,
+                   cmdargs,
                    process, mtl, tabular >= 0.2.2.1,
                    time, old-locale,
                    regex-posix, html, filepath, directory,
@@ -39,9 +38,10 @@ executable darcs-benchmark
                    split == 0.1.*,
                    utf8-string == 0.3.*,
                    hs-gchart,
-                   tar, zlib
+                   tar, zlib, SHA, datetime
 
     main-is: main.hs
+    hs-source-dirs: source
     other-modules: Shellish
                    Benchmark
                    Config
