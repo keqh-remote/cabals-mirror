@@ -1,5 +1,5 @@
 name:               haskell-src-meta
-version:            0.0.0
+version:            0.0.1
 cabal-version:      >= 1.5
 build-type:         Simple
 license:            BSD3
@@ -22,6 +22,7 @@ library
   ghc-prof-options:
   hs-source-dirs:     src
   exposed-modules:    Language.Haskell.Meta,
+                      Language.Haskell.Meta.Parse,
                       Language.Haskell.Meta.Syntax,
                       Language.Haskell.Meta.Syntax.Vars,
                       Language.Haskell.Meta.Syntax.Translate,
