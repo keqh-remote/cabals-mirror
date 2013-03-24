@@ -1,17 +1,13 @@
 Name:                HGamer3D-API
-Version:             0.1.5
+Version:             0.1.6
 Synopsis:            Library to enable 3D game development for Haskell - API
 Description:         
 	Library, to enable 3D game development for Haskell,
 	based on bindings to 3D Graphics, Audio and GUI libraries.
-	THIS MODULE: APIs
-    List of features and modules: 
-	  Data Module (Basic Data Types),
-      OGRE Binding (3D Graphics Engine), 
-      OIS Binding (Input System),
-      cAudio Binding (Audio),
-      CEGUI Binding (GUI System),
-      APIs (Haskell style APIs, different ways, to approach API)
+	
+	This is the API module, which gives the higher level API for primary
+	use.
+	
     Platform: Windows only
 	License: Apache License, Version 2.0
 	Install: see http://www.althainz.de/HGamer3D/Download-and-Installation.html
@@ -27,9 +23,9 @@ Category:            Game
 Extra-source-files:  Setup.hs 
 
 Library
-  Build-Depends:     base >= 3 && < 5, HGamer3D-Data == 0.1.5, HGamer3D-Ogre-Binding == 0.1.5, HGamer3D-OIS-Binding == 0.1.5
+  Build-Depends:     base >= 3 && < 5, HGamer3D-Data == 0.1.5, HGamer3D-Ogre-Binding == 0.1.5, HGamer3D-SFML-Binding == 0.1.6
 
-  Exposed-modules:   HGamer3D.APIs.One
+  Exposed-modules:   HGamer3D.APIs.One,HGamer3D.APIs.Two.Audio,HGamer3D.APIs.Two.InputSystem
   Other-modules:     
 
   c-sources:         
