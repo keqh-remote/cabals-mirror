@@ -1,5 +1,5 @@
 name: ffeed
-version: 0.2
+version: 0.3
 synopsis: Haskell binding to the FriendFeed API
 description:
    The hs-ffeed API binding lets you access friendfeed.com's
@@ -34,6 +34,7 @@ library
                   FriendFeed.Search,
                   FriendFeed.Service,
                   FriendFeed.Subscribe,
+                  FriendFeed.Updates,
                   FriendFeed.User,
                   Util.Codec.Percent,
                   Util.Codec.URLEncoder,
@@ -55,5 +56,11 @@ executable main {
 executable showPublic {
   build-depends:        base, pretty
   main-is:              examples/ShowPublic.hs
+  ghc-options:          -Wall -fglasgow-exts -iexamples
+}
+
+executable tweetStream {
+  build-depends:        base, pretty
+  main-is:              examples/TweetStream.hs
   ghc-options:          -Wall -fglasgow-exts -iexamples
 }
