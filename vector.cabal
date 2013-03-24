@@ -1,5 +1,5 @@
 Name:           vector
-Version:        0.6.0.2
+Version:        0.7
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
@@ -38,27 +38,25 @@ Description:
         .
         * <http://trac.haskell.org/vector>
         .
-        Changes since version 0.6.0.1
+        Changes in version 0.7
         .
-        * Workaround for GHC bug #4120
+        * New functions for freezing, copying and thawing vectors: @freeze@,
+          @thaw@, @unsafeThaw@ and @clone@
         .
-        Changes since version 0.6
+        * @newWith@ and @newUnsafeWith@ on mutable vectors replaced by
+          @replicate@
         .
-        * Improved documentation
+        * New function: @concat@
         .
-        Changes since version 0.5
+        * New function for safe indexing: @(!?)@
         .
-        * More efficient representation of @Storable@ vectors
+        * @Monoid@ instances for all vector types
         .
-        * Block copy operations used when possible
+        * Significant recycling and fusion improvements
         .
-        * @Typeable@ and @Data@ instances
+        * Bug fixes
         .
-        * Monadic combinators (@replicateM@, @mapM@ etc.)
-        .
-        * Better support for recycling (see @create@ and @modify@)
-        .
-        * Performance improvements
+        * Support for GHC 7.0
         .
 
 Cabal-Version:  >= 1.2.3
@@ -142,7 +140,7 @@ Library
   Install-Includes:
         vector.h
 
-  Build-Depends: base >= 4 && < 5, ghc >= 6.9, primitive >= 0.3 && < 0.4
+  Build-Depends: base >= 4 && < 5, ghc >= 6.9, primitive >= 0.3.1 && < 0.4
 
   if impl(ghc<6.13)
     Ghc-Options: -finline-if-enough-args -fno-method-sharing
