@@ -1,5 +1,5 @@
 Name:          netlines
-Version:       0.1.0
+Version:       0.2.0
 Category:      Network
 Synopsis:      Enumerator tools for text-based network protocols
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -14,8 +14,8 @@ Description:
 
     Enumerator tools for text-based network protocols.  This includes,
     among other things, an enumeratee to split an incoming ByteString
-    stream to a length-limited line stream in a safe manner
-    (i.e. constant space).
+    stream to a length-limited line stream in a safe manner (i.e. in
+    constant space).
 
 Library
   Build-depends:
