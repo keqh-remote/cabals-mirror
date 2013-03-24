@@ -1,5 +1,5 @@
 Name:                   apelsin
-Version:                1.0
+Version:                1.1
 Author:                 Christoffer Öjeling
 Maintainer:             christoffer@ojeling.net
 License:                GPL-3
@@ -37,10 +37,11 @@ Executable apelsin
   Other-Extensions:     CPP
   Build-Depends:        base>=4.3&&<5, array, mtl, stm, containers, transformers,
                         bytestring, directory, filepath, HTTP, network,
-                        tremulous-query, gtk, glib, process
+                        tremulous-query>=1.0.2, gtk, glib, process
   Hs-Source-Dirs:       src
   Main-is:              Apelsin.hs
   Other-Modules:        System.Environment.XDG.BaseDir
+                        GtkExts
                         About
                         ClanFetcher
                         Clanlist
