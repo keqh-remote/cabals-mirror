@@ -1,5 +1,5 @@
 Name:             non-negative
-Version:          0.0.6
+Version:          0.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -25,7 +25,9 @@ Flag buildTests
   default:     False
 
 Library
-  Build-Depends: QuickCheck >= 1.0 && <3
+  Build-Depends:
+    utility-ht >= 0.0.1 && <0.1,
+    QuickCheck >= 1.0 && <3
   If flag(splitBase)
     Build-Depends: base >= 2 && < 5
   Else
@@ -37,9 +39,8 @@ Library
     Numeric.NonNegative.Class
     Numeric.NonNegative.Wrapper
     Numeric.NonNegative.Chunky
-    Numeric.NonNegative.ChunkyPrivate
   Other-Modules:
-    Numeric.NonNegative.Utility
+    Numeric.NonNegative.ChunkyPrivate
 
 Executable test
   If !flag(buildTests)
