@@ -1,5 +1,5 @@
 name:           snap-server
-version:        0.2.6
+version:        0.2.7
 synopsis:       A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 description:
   This is the first developer prerelease of the Snap framework.  Snap is a
@@ -111,8 +111,7 @@ Library
     monads-fd,
     network == 2.2.1.*,
     old-locale,
-    sendfile >= 0.6.1 && < 0.7,
-    snap-core >= 0.2.5 && <0.3,
+    snap-core >= 0.2.7 && <0.3,
     time,
     transformers,
     unix-compat,
@@ -133,11 +132,23 @@ Library
 
     other-modules: Snap.Internal.Http.Server.SimpleBackend
 
-  if os(linux)
-    cpp-options: -DLINUX
+  if os(linux) && !flag(portable)
+    cpp-options: -DLINUX -DHAS_SENDFILE
+    other-modules:
+      System.SendFile,
+      System.SendFile.Linux
 
-  if os(darwin)
-    cpp-options: -DOSX
+  if os(darwin) && !flag(portable)
+    cpp-options: -DOSX -DHAS_SENDFILE
+    other-modules:
+      System.SendFile,
+      System.SendFile.Darwin
+
+  if os(freebsd) && !flag(portable)
+    cpp-options: -DFREEBSD -DHAS_SENDFILE
+    other-modules:
+      System.SendFile,
+      System.SendFile.FreeBSD
 
   ghc-prof-options: -prof -auto-all
 
