@@ -1,5 +1,5 @@
 name: control-monad-failure
-version: 0.7.0
+version: 0.7.0.1
 Cabal-Version:  >= 1.6
 build-type: Simple
 license: PublicDomain
@@ -7,7 +7,7 @@ author: Pepe Iborra, Michael Snoyman, Nicolas Pouillard
 maintainer: pepeiborra@gmail.com
 homepage: http://github.com/pepeiborra/control-monad-failure
 description: A class for monads which can fail with an error.
-synopsis: A class for monads which can fail with an error.
+synopsis: A class for monads which can fail with an error. (deprecated)
 category: Control, Monads, Failure
 stability: experimental
 
