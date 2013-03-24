@@ -1,5 +1,5 @@
 Name:               hsignal
-Version:            0.1.1.1
+Version:            0.1.2.1
 License:            GPL
 License-file:       LICENSE
 Author:             Vivian McPhail
@@ -10,7 +10,7 @@ Synopsis:           Signal processing
 Description:        Purely functional interface to signal processing based on hmatrix
                        provides data types for manipulating EEG data,
                        including reading from BDF
-Category:           Math
+Category:           Math, 
 tested-with:        GHC ==6.12.1
 
 cabal-version:      >=1.8
@@ -27,7 +27,8 @@ library
                         array,
                         bytestring, storable-complex, ghc-binary,
                         hmatrix >= 0.10.0,
-                        hmatrix-gsl-stats >= 0.1.1.4
+                        hmatrix-gsl-stats >= 0.1.1.5,
+                        hstatistics >= 0.2.0.5
 
     Extensions:         ForeignFunctionInterface
 
