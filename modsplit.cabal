@@ -1,5 +1,5 @@
 Name:           modsplit
-Version:        0.2
+Version:        0.2.1
 Author:         Dmitry Golubovsky
 Maintainer:     Dmitry Golubovsky <golubovsky@gmail.com>
 License:        BSD3
@@ -27,7 +27,7 @@ Description:    The "modsplit" program takes a (most likely auto-generated) sing
                 
 
 Build-Type:     Simple
-Build-Depends:  base > 3, filepath, mtl, utf8-env, utf8-string, haskell98, directory
+Build-Depends:  base >=4 && < 5 , filepath, mtl, utf8-string, haskell98, directory
 
 Exposed-modules: Data.SplitBounds
 
