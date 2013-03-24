@@ -1,5 +1,5 @@
 Name:             cabal-sort
-Version:          0.0.4
+Version:          0.0.4.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -25,6 +25,20 @@ Description:
   you may run
   .
   > for dir in `find . -name "*.cabal" | fgrep -v _darcs | xargs cabal-sort --info=dir`; do (cd $dir && rm dist/*.tar.gz && cabal sdist && cabal upload dist/*.tar.gz); done
+  .
+  Sometimes you have to inspect a number of packages manually,
+  e.g. in order to adapt your packages to a new GHC version.
+  In this case I found it useful to run
+  .
+  > for dir in `find . -name "*.cabal" | fgrep -v _darcs | xargs cabal-sort --info=dir`; do (cd $dir; bash); done@.
+  .
+  This way you start a local shell for every package.
+  Then you can easily access commands in the shell history
+  that you already run for previous packages,
+  e.g. @editor *.cabal@.
+  After you finished a package,
+  you switch to the next package
+  simply by leaving the shell by calling @exit@.
   .
   Problem 1: Given packages A, B, C,
   where C depends on B and B depends on A,
@@ -68,7 +82,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/cabal-sort/
-  tag:      0.0.4
+  tag:      0.0.4.1
 
 
 Executable cabal-sort
