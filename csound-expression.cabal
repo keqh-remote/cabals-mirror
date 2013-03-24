@@ -1,5 +1,5 @@
 Name:          csound-expression
-Version:       0.0.3
+Version:       0.1.0
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
@@ -12,16 +12,20 @@ Stability:     Experimental
 Tested-With:   GHC==6.12.1
 Build-Type:    Simple
 
+Extra-Source-Files : 
+              Changelog
 
 Library
   Build-Depends:
-        base >= 4, base < 5, containers, mtl == 2.0.1.0, pretty, filepath, directory, haskell98, temporal-media == 0.0
+        base >= 4, base < 5, containers, mtl == 2.0.1.0, pretty, 
+        filepath, directory, haskell98, Boolean, temporal-media == 0.0
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         CsoundExpr
 -- Base
         CsoundExpr.Base
         CsoundExpr.Base.Types
+        CsoundExpr.Base.Boolean
         CsoundExpr.Base.Imperative
         CsoundExpr.Base.MultiOut
         CsoundExpr.Base.SideEffect
@@ -159,6 +163,7 @@ Library
 -- Cs
         CsoundExpr.Translator.Cs.CsoundFile
         CsoundExpr.Translator.Cs.CsTree
+        CsoundExpr.Translator.Cs.CsBoolean
         CsoundExpr.Translator.Cs.IM
         CsoundExpr.Translator.Cs.Utils
 -- Translator
