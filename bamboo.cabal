@@ -1,5 +1,5 @@
 Name:                 bamboo
-Version:              2009.5.18.2
+Version:              2009.5.19
 Build-type:           Simple
 Synopsis:             A simple blog middleware on hack
 Description:          A simple blog middleware on hack
@@ -15,7 +15,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-type-defaults
-  build-depends: base, cgi, network, haskell98, old-locale, old-time, time, unix, bytestring, base64-string, zlib, directory, filepath, containers, process,parsedate >= 3000.0.0, rss >= 3000.0.1, xhtml, utf8-string >= 0.3.3, pandoc, parsec >= 2, gravatar >= 0.3, data-default >= 0.2,  mps >= 2009.5.13, hcheat >= 2009.5.13, hack >= 2009.4.52, hack-contrib >= 2009.5.13, tokyocabinet-haskell >= 0.0.5
+  build-depends: base, cgi, network, haskell98, old-locale, old-time, time, unix, bytestring, base64-string, zlib, directory, filepath, containers, process,parsedate >= 3000.0.0, rss >= 3000.0.1, xhtml, utf8-string >= 0.3.3, pandoc, parsec >= 2, gravatar >= 0.3, data-default >= 0.2,  mps >= 2009.5.13, hcheat >= 2009.5.13, hack >= 2009.5.19, hack-contrib >= 2009.5.19, tokyocabinet-haskell >= 0.0.5
   hs-source-dirs: src/
   exposed-modules:  
                     Bamboo
