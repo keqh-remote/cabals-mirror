@@ -3,7 +3,7 @@ name: bindings-gobject
 homepage: http://bitbucket.org/mauricio/bindings-gobject
 synopsis:
   Low level bindings to GObject.
-version: 0.1.1
+version: 0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -33,8 +33,9 @@ library
     Bindings.GObject.GParamSpec
     Bindings.GObject.GTypeModule
     Bindings.GObject.GTypePlugin
+    Bindings.GObject.Signals
     Bindings.GObject.TypeInformation
     Bindings.GObject.ValueArrays
     Bindings.GObject.Varargs
   c-sources: src/inlines.c
-  pkgconfig-depends: gobject-2.0 >= 2.22.2
+  pkgconfig-depends: gobject-2.0 >= 2.24.1
