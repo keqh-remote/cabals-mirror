@@ -1,5 +1,5 @@
 name:           couchdb-enumerator
-version:        0.3.6
+version:        0.3.7
 cabal-version:  >= 1.8
 license:        BSD3
 license-file:   LICENSE
@@ -46,7 +46,7 @@ library
         monad-control >= 0.3 && < 0.4,
         text >= 0.11 && < 0.12,
         transformers >= 0.2 && < 0.3,
-        unordered-containers >= 0.1 && < 0.2,
+        unordered-containers >= 0.1 && < 0.3,
         utf8-string >= 0.3 && < 0.4
   exposed-modules:  
                     Database.CouchDB.Enumerator,
@@ -72,7 +72,7 @@ test-suite test
         monad-control >= 0.3 && < 0.4,
         text >= 0.11 && < 0.12,
         transformers >= 0.2 && < 0.3,
-        unordered-containers >= 0.1 && < 0.2,
+        unordered-containers >= 0.1 && < 0.3,
         utf8-string >= 0.3 && < 0.4,
         HUnit >= 1.2 && < 2,
         QuickCheck >= 2.4,
