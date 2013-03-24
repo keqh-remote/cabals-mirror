@@ -1,5 +1,5 @@
 Name:                sequor
-Version:             0.2.3
+Version:             0.3.0
 Description:         A sequence labeler based on Collins's sequence perceptron.
 Synopsis:	     A sequence labeler based on Collins's sequence perceptron.
 Homepage:	     http://code.google.com/p/sequor/
@@ -10,11 +10,17 @@ Maintainer:          gchrupala@lsv.uni-saarland.de
 Build-Type:          Simple
 Cabal-Version:       >=1.2
 Category:            Natural Language Processing
-Extra-source-files:  README, Makefile
+Extra-source-files:  README, Makefile, lib/seminer/README,
+                     lib/seminer/seminer, lib/seminer/seminer, bin/seminer
 Data-dir:  	     data
 Data-files:	     all.features, example.features, mlcomp.features,
                      mlcomp2.features, 
-                     train.conll, devel.conll, test.conll
+                     train.conll, devel.conll, test.conll,
+                     seminer/lrec-2010.features,
+                     seminer/lrec-2010-raw.features,
+                     seminer/deu.eci.unlabeled.500+1000.classes,
+                     seminer/deu.train.lrec-2010.model,
+                     seminer/deu.train.lrec-2010-raw.model
 
 Executable sequor
   Main-is:           Main.hs
@@ -30,4 +36,11 @@ Executable sequor
   hs-source-dirs:    src,lib
   ghc-options:	     -O2 -rtsopts
   c-sources:	     src/ghc_rts_opts.c 
+
+Executable augment
+  Main-is:            augment.hs
+  Other-modules:      Helper.Utils, Helper.Text
+  Build-Depends:      base >= 3 && < 5, containers >= 0.2, text >= 0.10
+  hs-source-dirs:     lib, lib/seminer
+  ghc-options:	      -O2 -rtsopts
 
