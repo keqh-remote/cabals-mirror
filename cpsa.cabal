@@ -1,19 +1,42 @@
 Name:			cpsa
-Version:		2.0.2
+Version:		2.0.3
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.2
 License:		BSD3
 License-File:		license.txt
 Synopsis:		Symbolic cryptographic protocol analyzer
-Description:            The Cryptographic Protocol Shapes Analyzer
-                        (CPSA) attempts to enumerate all essentially
-                        different executions possible for a
-                        cryptographic protocol.  We call them the
-                        shapes of the protocol.  Naturally occurring
-                        protocols have only finitely many, indeed very
-                        few shapes.  Authentication and secrecy
-                        properties are easy to determine from them, as
-                        are attacks and anomalies.
+Description:
+  The Cryptographic Protocol Shapes Analyzer (CPSA) attempts to
+  enumerate all essentially different executions possible for a
+  cryptographic protocol.  We call them the shapes of the protocol.
+  Naturally occurring protocols have only finitely many, indeed very
+  few shapes.  Authentication and secrecy properties are easy to
+  determine from them, as are attacks and anomalies.
+  .
+  For each input problem, the CPSA program is given some initial
+  behavior, and it discovers what shapes are compatible with it.
+  Normally, the initial behavior is from the point of view of one
+  participant.  The analysis reveals what the other participants must
+  have done, given the participant's view.
+  .
+  We are working towards a version of CPSA with the property that
+  whenever it successfully terminates, every possible execution is
+  described by its output.  However, the current implementation
+  occasionally fails to find some executions.
+  .
+  The package contains a set of programs used to perform and display
+  the analysis.  Program documentation is in the doc directory in the
+  source distribution, and installed in the package's data directory.
+  You can locate the package's data directory by searching for the
+  file cpsauser.html.  New users should study the documentation and
+  the sample inputs in the data directory.  The source distribution
+  includes a test suite with an expanded set of input files and
+  program design documentation.
+  .
+  The theory and algorithm used by CPSA was developed with the help of
+  Joshua D. Guttman, John D. Ramsdell, Jon C. Herzog, Shaddin
+  F. Doghmi, F. Javier Thayer, and Paul D. Rowe.  John D. Ramsdell
+  implemented the algorithm in Haskell.
 Category:		Cryptography
 Build-Type:		Simple
 Data-Files:
@@ -26,24 +49,23 @@ Data-Files:
 --   ffgg.scm ns.scm or.scm woolam.scm yahalom.scm
 -- Data-Dir:	    	doc
 Extra-Source-Files:
-  Makefile ChangeLog README NEWS ghci cpsatst doc/README
-  doc/Makefile doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
-  doc/cpsaspec.tex doc/cpsadesign.tex doc/cpsaoverview.tex
-  doc/cpsadiagrams.mp doc/strands.mp doc/cmstrands.mp doc/carriers.mp
-  doc/termtree.mp doc/cpsa.bib doc/SDAG.lhs src/index.html
-  src/cpsacgi src/cpsacgi.py src/cpsa2svg src/cpsa.el
-  src/httpd_allow_execmem.te src/cpsaops.scm src/preskel
-  src/sexpr.pl tst/README tst/Makefile tst/Make.hs tst/checktst
-  tst/cpsagraphall tst/cpsashapesall tst/dass.lisp
-  tst/completeness-test.scm tst/completeness-test.tst
-  tst/missing-contraction.scm tst/missing-contraction.tst
-  tst/dass-mod.lisp tst/dass_simple.scm tst/dass_simple.tst
-  tst/denning-sacco.scm tst/denning-sacco.tst tst/dh.sch tst/dh.tst
-  tst/ds-short.lisp tst/dy.lsp tst/dy.tst tst/epmo_acctnum.lsp
-  tst/epmo_acctnum.tst tst/epmo.scm tst/encsig.scm tst/encsig.tst
-  tst/epmo.tst tst/ffgg.scm tst/ffgg.tst tst/isoreject.scm
-  tst/isoreject.tst tst/kelly1.scm tst/kelly1.tst tst/kelly64.lisp
-  tst/kerb5.lisp tst/kerberos.scm tst/kerberos.tst
+  Makefile ChangeLog README NEWS ghci cpsatst doc/README doc/Makefile
+  doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex doc/cpsaspec.tex
+  doc/cpsadesign.tex doc/cpsaoverview.tex doc/cpsadiagrams.mp
+  doc/strands.mp doc/cmstrands.mp doc/carriers.mp doc/termtree.mp
+  doc/cpsa.bib doc/SDAG.lhs src/index.html src/cpsacgi src/cpsacgi.py
+  src/cpsa2svg src/cpsa.el src/httpd_allow_execmem.te src/cpsaops.scm
+  src/preskel src/cpsa.pl src/pp.pl src/sexpr.pl
+  tst/README tst/Makefile tst/Make.hs tst/checktst tst/cpsagraphall
+  tst/cpsashapesall tst/dass.lisp tst/completeness-test.scm
+  tst/completeness-test.tst tst/missing-contraction.scm
+  tst/missing-contraction.tst tst/dass-mod.lisp tst/dass_simple.scm
+  tst/dass_simple.tst tst/denning-sacco.scm tst/denning-sacco.tst
+  tst/dh.sch tst/dh.tst tst/ds-short.lisp tst/dy.lsp tst/dy.tst
+  tst/epmo_acctnum.lsp tst/epmo_acctnum.tst tst/epmo.scm
+  tst/encsig.scm tst/encsig.tst tst/epmo.tst tst/ffgg.scm tst/ffgg.tst
+  tst/isoreject.scm tst/isoreject.tst tst/kelly1.scm tst/kelly1.tst
+  tst/kelly64.lisp tst/kerb5.lisp tst/kerberos.scm tst/kerberos.tst
   tst/neuman-stubblebine-alt.lisp tst/neuman-stubblebine-reauth.lisp
   tst/neuman-stubblebine-reauth.lsp tst/neuman-stubblebine-reauth.tst
   tst/neuman-stubblebine.scm tst/neuman-stubblebine.tst tst/nsl3.scm
