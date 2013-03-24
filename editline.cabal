@@ -1,5 +1,5 @@
 name:		editline
-version:	0.2.1.0
+version:	0.2.1.1
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Judah Jacobson <judah.jacobson@gmail.com>
@@ -26,7 +26,7 @@ build-type: Configure
 cabal-version: >=1.2
 
 library
-  build-depends: base
+  build-depends: base < 4.7
   exposed-modules: System.Console.Editline System.Console.Editline.Readline
   extensions: ForeignFunctionInterface, EmptyDataDecls
   include-dirs:   include
