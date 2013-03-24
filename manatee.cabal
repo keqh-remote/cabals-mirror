@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.2.1
+version:		0.2.2
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -61,9 +61,31 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  > cabal update && cabal install alex happy c2hs && cabal install gtk2hs-buildtools glib gio pango cairo gtk
  .
- 6) Install Manatee (same, don't use root permission):
+ 6) Install Manatee:
  .
- > cabal install manatee-core manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee-curl manatee-terminal manatee-welcome manatee
+ Install all Manatee packages (same, don't use root permission):
+ .
+ > cabal install manatee-all
+ .
+ If you don't want install all Manatee packages, you can install basic package like below:
+ .
+ > cabal install manatee-core manatee-welcome manatee
+ .
+ Then choose extension package list in below to install:
+ .
+ > manatee-browser
+ > manatee-editor
+ > manatee-filemanager
+ > manatee-imageviewer
+ > manatee-ircclient
+ > manatee-mplayer
+ > manatee-pdfviewer
+ > manatee-processmanager
+ > manatee-reader
+ > manatee-curl
+ > manatee-terminal
+ .
+ Note if you don't install any extension package, nothing will show in manatee, so you at least to choose one extension to install.
  .
  That's all, then type command "manatee" to play it! :)
  .
@@ -86,7 +108,7 @@ maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
 stability:		provisional
 category:       Manatee, Operating System, Desktop Environment, IDE
 
-tested-with:	GHC==6.12.3
+tested-with:	GHC==7.0.3
 build-type:		Simple
 extra-source-files: repos.sh
 
@@ -115,7 +137,7 @@ library
      other-modules: 
 	 
 executable manatee
-     build-depends: base >=4 && < 5, manatee-core >= 0.1.0, containers >= 0.3.0.0, unix >= 2.4.0.0,
+     build-depends: base >=4 && < 5, manatee-core >= 0.1.1, containers >= 0.3.0.0, unix >= 2.4.0.0,
                     mtl >= 1.1.0.2, gtk-serialized-event >= 0.12.0, text >= 0.7.1.0, utf8-string,
                     gtk >= 0.12.0, dbus-client >= 0.3 && < 0.4, derive, binary, filepath >= 1.1.0.3,
                     stm, cairo >= 0.12.0, directory, dbus-core, template-haskell
