@@ -1,5 +1,5 @@
 Name:           GenI
-Version:        0.20.1
+Version:        0.20.2
 License:        GPL
 License-file:   LICENSE
 Author:         Carlos Areces and Eric Kow
@@ -128,7 +128,7 @@ Executable     geni
  Build-Depends: directory > 1,
                 filepath >= 1.1.0 && < 1.2
  if flag(gui)
-    Build-Depends: wx >= 0.10.3 && < 0.12
+    Build-Depends: wx >= 0.10.3 && < 0.13
  else
     cpp-options:      -DDISABLE_GUI
 
