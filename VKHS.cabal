@@ -1,7 +1,7 @@
 
 name:                VKHS
-version:             0.1.0
-synopsis:            Provides access to Vkontakte (popular Russian social network) API
+version:             0.1.1
+synopsis:            Provides access to Vkontakte social network, popular in Russia
 description:
     Provides access to Vkontakte API methods. Library requires no interaction
     with user during Implicit-flow authentication.
