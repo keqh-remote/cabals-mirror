@@ -1,5 +1,5 @@
 Name:                mysnapsession
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Memory-backed sessions and continuations for Snap web apps
 Description:         This package provides two Snap extensions.  The first is
                      an in-memory session manager, which stores sessions for
@@ -30,7 +30,7 @@ Library
     snap-core == 0.3.*,
     time >= 1.1 && < 1.3,
     random == 1.0.*,
-    containers == 0.3.*,
+    containers >= 0.3 && < 0.5,
     regex-posix == 0.94.*
   Exposed-modules: Snap.Extension.Session,
                    Snap.Extension.Session.Memory,
