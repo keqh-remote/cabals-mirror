@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.0.0
+Version:		2.0.2
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.2
 License:		BSD3
@@ -26,15 +26,15 @@ Data-Files:
 --   ffgg.scm ns.scm or.scm woolam.scm yahalom.scm
 -- Data-Dir:	    	doc
 Extra-Source-Files:
-  Makefile ChangeLog README NEWS ghci cpsatst.sh doc/README
+  Makefile ChangeLog README NEWS ghci cpsatst doc/README
   doc/Makefile doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
   doc/cpsaspec.tex doc/cpsadesign.tex doc/cpsaoverview.tex
   doc/cpsadiagrams.mp doc/strands.mp doc/cmstrands.mp doc/carriers.mp
   doc/termtree.mp doc/cpsa.bib doc/SDAG.lhs src/index.html
-  src/cpsacgi.sh src/cpsacgi.py src/cpsa2svg.sh
-  src/httpd_allow_execmem.te src/cpsaops.scm src/preskel.sh
-  src/sexpr.pl tst/README tst/Makefile tst/Make.hs tst/checktst.sh
-  tst/cpsagraphall.sh tst/cpsashapesall.sh tst/dass.lisp
+  src/cpsacgi src/cpsacgi.py src/cpsa2svg src/cpsa.el
+  src/httpd_allow_execmem.te src/cpsaops.scm src/preskel
+  src/sexpr.pl tst/README tst/Makefile tst/Make.hs tst/checktst
+  tst/cpsagraphall tst/cpsashapesall tst/dass.lisp
   tst/completeness-test.scm tst/completeness-test.tst
   tst/missing-contraction.scm tst/missing-contraction.tst
   tst/dass-mod.lisp tst/dass_simple.scm tst/dass_simple.tst
@@ -49,7 +49,7 @@ Extra-Source-Files:
   tst/neuman-stubblebine.scm tst/neuman-stubblebine.tst tst/nsl3.scm
   tst/nsl3.tst tst/nsl4.lisp tst/nsl5i.lisp tst/nsl5.lisp
   tst/nslsk.scm tst/nslsk.tst tst/ns.scm tst/ns.tst tst/or.scm
-  tst/or.tst tst/pca.lsp tst/pca.tst tst/tnsl5.lisp tst/updatetst.sh
+  tst/or.tst tst/pca.lsp tst/pca.tst tst/tnsl5.lisp tst/updatetst
   tst/sigenc.scm tst/sigenc.tst tst/weird.scm tst/weird.tst
   tst/wmf.lsp tst/wmf.tst tst/woolam.scm tst/woolam.tst
   tst/yahalom.scm tst/yahalom.tst tst/sorted_epmo_acctnum.scm
@@ -61,6 +61,10 @@ Flag Par
   Description:		Enable use of the parallel construct par
   Default:		True
 
+Flag Old
+  Description:		Enable support for cabal < 1.6
+  Default:		False
+
 -- Algebra implementations must import CPSA.Lib.CPSA.
 -- Tools may additionally import CPSA.Lib.Entry.
 -- No other modules in CPSA.Lib should be imported by applications.
@@ -71,6 +75,8 @@ Executable cpsa
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
+--Hackage  if flag(old)
+--Hackage    Hs-Source-Dirs:	dist/build/autogen
   Other-Modules:
     Paths_cpsa CPSA.Lib.Vector CPSA.Lib.Utilities CPSA.Lib.Pretty
     CPSA.Lib.SExpr CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra
@@ -89,6 +95,8 @@ Executable cpsagraph
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
+--Hackage  if flag(old)
+--Hackage    Hs-Source-Dirs:	dist/build/autogen
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
     CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
@@ -104,6 +112,8 @@ Executable cpsashapes
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
+--Hackage  if flag(old)
+--Hackage    Hs-Source-Dirs:	dist/build/autogen
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
     CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
@@ -116,6 +126,8 @@ Executable cpsaannotations
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
+--Hackage  if flag(old)
+--Hackage    Hs-Source-Dirs:	dist/build/autogen
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
     CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
@@ -130,6 +142,8 @@ Executable cpsaparameters
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
+--Hackage  if flag(old)
+--Hackage    Hs-Source-Dirs:	dist/build/autogen
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
     CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
@@ -142,6 +156,8 @@ Executable cpsapp
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
+--Hackage  if flag(old)
+--Hackage    Hs-Source-Dirs:	dist/build/autogen
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
     CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
