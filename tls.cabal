@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.1.2
+Version:             0.1.3
 Description:
    Implementation of the TLS protocol, focusing on purity and more type-checking.
    .
@@ -15,6 +15,7 @@ Build-Type:          Simple
 Category:            Network
 stability:           experimental
 Cabal-Version:       >=1.6
+Homepage:            http://github.com/vincenthz/hs-tls
 data-files:          README, TODO
 
 Flag test
@@ -32,7 +33,7 @@ Library
                      binary >= 0.5,
                      bytestring,
                      vector,
-                     haskell98,
+                     random,
                      AES, RSA, spoon,
                      cryptocipher,
                      certificate >= 0.2
@@ -42,12 +43,14 @@ Library
                      Network.TLS.Cipher
                      Network.TLS.SRandom
                      Network.TLS.MAC
-  other-modules:     Network.TLS.Compression
+  other-modules:     Network.TLS.Cap
+                     Network.TLS.Compression
                      Network.TLS.Crypto
                      Network.TLS.Packet
                      Network.TLS.State
                      Network.TLS.Sending
                      Network.TLS.Receiving
+                     Network.TLS.Util
                      Network.TLS.Wire
   ghc-options:       -Wall
 
@@ -63,7 +66,7 @@ executable           Tests
   Main-is:           Tests.hs
   if flag(test)
     Buildable:       True
-    Build-Depends:   base >= 3 && < 5, HUnit, QuickCheck >= 2 && < 2.3, bytestring, haskell98
+    Build-Depends:   base >= 3 && < 5, HUnit, QuickCheck >= 2 && < 2.3, bytestring, random
   else
     Buildable:       False
 
