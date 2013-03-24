@@ -1,5 +1,5 @@
 name:                extcore
-version:             0.9.2
+version:             1.0
 synopsis:            Libraries for processing GHC Core
 description:         Libraries for processing GHC Core
 category:            Language
@@ -7,12 +7,12 @@ license:             BSD3
 license-file:        LICENSE
 author:              Andrew Tolmach, Tim Chevalier, The GHC Team
 maintainer:          Tim Chevalier <chevalier@alum.wellesley.edu>
-stability:           alpha
-tested-with:         GHC==6.10.4, GHC==6.12.2, GHC==6.10.1, GHC ==6.8.2
+stability:           beta
+tested-with:         GHC==6.10.4, GHC==6.12.2, GHC==6.10.1, GHC ==6.8.2, GHC==7.0.1
 data-files:          README, CHANGES, base-library.dpatch, integer-simple-library.dpatch, simple_io.dpatch, extcore_build.mk
 extra-source-files:  Driver.hs
 build-type:          Simple
-cabal-version:       >=1.2.3
+cabal-version:       >=1.6
 Library {
   exposed-modules:     Language.Core.Check, Language.Core.Core, Language.Core.Interp, Language.Core.ParsecParser, Language.Core.Prep, Language.Core.Prims, Language.Core.Printer, Language.Core.DebugPrinter, Language.Core.Merge, Language.Core.ElimDeadCode, Language.Core.Encoding, Language.Core.Env, Language.Core.CoreUtils, Language.Core.Parser, Language.Core.ParseGlue, Language.Core.Dependencies
   other-modules:       Language.Core.PrimCoercions, Language.Core.PrimEnv, Language.Core.Utils, Language.Core.Environments, Language.Core.Lex
@@ -36,3 +36,6 @@ Library {
   }
 
 }
+source-repository head
+  type:     darcs
+  location: http://community.haskell.org/~tim/extcore
