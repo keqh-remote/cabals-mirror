@@ -1,9 +1,9 @@
 Name:			esotericbot
-Version:		0.0.2
+Version:		0.0.3
 License:		BSD3
 License-File:		License
-Author:			John Morrice
-Maintainer:		John Morrice
+Author:			John Morrice <spoon@killersmurf.com>
+Maintainer:		John Morrice <spoon@killersmurf.com>
 Stability:		Experimental
 Category:	 	Web	
 Synopsis:		Esotericbot is a sophisticated, lightweight IRC bot.
