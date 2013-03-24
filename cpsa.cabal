@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.1.2
+Version:		2.2.0
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -25,13 +25,16 @@ Description:
   also in development.
   .
   The package contains a set of programs used to perform and display
-  the analysis.  Program documentation is in the doc directory in the
-  source distribution, and installed in the package's data directory.
-  You can locate the package's data directory by searching for the
-  file cpsauser.html.  New users should study the documentation and
-  the sample inputs in the data directory.  The source distribution
-  includes a test suite with an expanded set of input files and
-  program design documentation.
+  the analysis.  A standards complient browser, such as Firefox,
+  Safari, or Chrome, is required to display the results.  Program
+  documentation is in the doc directory in the source distribution,
+  and installed in the package's data directory.  You can locate the
+  package's data directory by typing "cpsa --help" in a command
+  prompt.  New users should study the documentation and the sample
+  inputs in the data directory.  The source distribution includes a
+  test suite with an expanded set of input files and program design
+  documentation.  Serious Windows users should install MSYS so as to
+  allow the use of make and script execution.
   .
   The theory and algorithm used by CPSA was developed with the help of
   Joshua D. Guttman, John D. Ramsdell, Jon C. Herzog, Shaddin
@@ -52,13 +55,14 @@ Extra-Source-Files:
   doc/SDAG.lhs doc/cpsatheory.pdf doc/cpsaspec.pdf doc/cpsadesign.pdf
   src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg
   src/cpsa.el src/httpd_allow_execmem.te src/cpsaops.scm src/preskel
-  src/cpsa.pl src/pp.pl src/sexpr.pl tst/README tst/Makefile
+  src/cpsa.pl src/pp.pl src/sexpr.pl src/sliders.js src/js2hs
+  tst/README tst/Makefile
   tst/Make.hs tst/checktst tst/cpsagraphall tst/cpsashapesall
   tst/blanchet.scm tst/blanchet.tst tst/completeness-test.scm
   tst/completeness-test.tst tst/crushing.tst tst/crushing.tst
   tst/dass.lisp tst/dass-mod.lisp tst/dass_simple.scm
   tst/dass_simple.tst tst/denning-sacco.scm tst/denning-sacco.tst
-  tst/deorig_contract.scm tst/deorig_contract.tst tst/dhke.sch
+  tst/deorig_contract.scm tst/deorig_contract.tst tst/dhke.scm
   tst/dhke.tst tst/deorig_simple.scm  tst/deorig_simple.tst
   tst/ds-short.lisp tst/dy.lsp tst/dy.tst tst/encsig.scm
   tst/encsig.tst tst/epmo_acctnum.lsp tst/epmo_acctnum.tst
@@ -108,7 +112,7 @@ Executable cpsa
     CPSA.Lib.SExpr CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry
     CPSA.Lib.Algebra CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
     CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.Expand CPSA.Lib.CPSA
-    CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
+    CPSA.Lib.Reduction CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
     CPSA.DiffieHellman.IntLinEq CPSA.SimpleDiffieHellman.Algebra
   if flag(par)
     Cpp-Options: -DHAVE_PAR
@@ -184,3 +188,13 @@ Executable cpsapp
     CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry CPSA.Lib.Algebra
     CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
     CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.CPSA
+
+Executable cpsadiff
+  Main-Is:		CPSA/Diff/Main.hs
+  Build-Depends:	base >= 3 && < 5, containers
+  GHC-Options:
+    -Wall -fno-warn-name-shadowing -fwarn-unused-imports
+  Hs-Source-Dirs:	src
+  Other-Modules:
+    Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
+    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.CPSA
