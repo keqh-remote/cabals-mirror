@@ -1,5 +1,5 @@
 name:             OpenVG
-version:          0.4.0
+version:          0.5.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -11,17 +11,18 @@ description:
   A Haskell binding for the OpenVG vector graphics API version 
   1.0.1, specifically the ShivaVG-0.2.1 implementation.
   .
-  This version (0.4.0) is NOT compatible with the Haskell Platform 
+  This version (0.5.0) is NOT compatible with the Haskell Platform 
   (2009.2.0.2) - it uses the split OpenGL packages (RAW, StateVar, 
   etc.).
   .
-  \*\* WARNING - the module @Graphics.Rendering.OpenVG.VG.Paths@ 
-  seems flawed in hindsight, as it ammalgamates the OpenVG 
-  @VGPathSegment@ and @VGPathCommand@ data types into one Haskell 
-  type. The binding is thus likely to change in the next major 
-  revision in what is perhaps the worst place. \*\*.
+  \*\* WARNING - major changes to previous version. Also 
+  significant changes likely in next revision. \*\*.
   .
   Changelog
+  0.4.0 to 0.5.0
+  . 
+  * Significantly reworked. Changed to use OpenVGRaw. 
+  .
   .
   0.3.0 to 0.4.0 
   .
@@ -54,8 +55,8 @@ extra-source-files:
   InstallWindows.txt,
   Changes,
   README.txt,
-  examples/TestUtils.hs,
-  examples/TestVgu.hs
+  demo/VguUtils.hs,
+  demo/TestVgu.hs
 
 library
   hs-source-dirs:     src
@@ -64,16 +65,13 @@ library
                       GLUT      >= 2.2     && < 2.3,
                       OpenGLRaw >= 1.1.0.1 && < 2, 
                       StateVar  >= 1.0.0.0 && < 2,
-                      Tensor    >= 1.0.0.1 && < 2
-
+                      Tensor    >= 1.0.0.1 && < 2,
+                      OpenVGRaw >= 0.1.0
   
   exposed-modules:
     Graphics.Rendering.OpenVG,
-    Graphics.Rendering.OpenVG.Util.Colors,
-    Graphics.Rendering.OpenVG.Util.PathCommands,
     Graphics.Rendering.OpenVG.VG,
     Graphics.Rendering.OpenVG.VGU,
-    Graphics.Rendering.OpenVG.VG.BasicTypes,
     Graphics.Rendering.OpenVG.VG.Blending,
     Graphics.Rendering.OpenVG.VG.DrawingContext,
     Graphics.Rendering.OpenVG.VG.Extending,
@@ -87,14 +85,10 @@ library
     Graphics.Rendering.OpenVG.VGU.VGU
   
   other-modules:
-    Graphics.Rendering.OpenVG.VG.Constants,
     Graphics.Rendering.OpenVG.VG.Utils,
-    Graphics.Rendering.OpenVG.VG.CFunDecls,
-    Graphics.Rendering.OpenVG.VGU.CInternals,
     Graphics.Rendering.OpenVG.VGU.ErrorsInternal    
   
   extensions:
-    ForeignFunctionInterface, TypeSynonymInstances, CPP
 
   ghc-options:  -Wall 
   
