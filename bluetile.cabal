@@ -1,15 +1,15 @@
 Name:                bluetile
-Version:             0.5.2
+Version:             0.5.3
 homepage:            http://www.bluetile.org/
 synopsis:            full-featured tiling for the GNOME desktop environment
 description:
-  Bluetile is a tiling window manager designed to integrate with the
-  GNOME desktop environment. It provides both a traditional, stacking
-  layout mode as well as tiling layouts where windows are arranged to
-  use the entire screen without overlapping. Bluetile tries to make the
-  tiling paradigm easily accessible to users coming from traditional
-  window managers by drawing on known conventions and providing both
-  mouse and keyboard access for all features.
+  Bluetile is a tiling window manager for Linux, designed to integrate
+  with the GNOME desktop environment. It provides both a traditional,
+  stacking layout mode as well as tiling layouts where windows are
+  arranged to use the entire screen without overlapping. Bluetile tries
+  to make the tiling paradigm easily accessible to users coming from
+  traditional window managers by drawing on known conventions and
+  providing both mouse and keyboard access for all features.
 category:            System
 License:             BSD3
 License-file:        LICENSE
@@ -45,7 +45,8 @@ extra-source-files:  src/Config.hs,
                      misc/bluetile.desktop,
                      misc/bluetile-session.desktop,
                      misc/gnome-bluetile-session.desktop,
-                     README
+                     README,
+		     NEWS
 data-files:          bluetiledock/bluetiledock.glade,
                      bluetiledock/floating.svg,
                      bluetiledock/tiled1.svg,
@@ -64,7 +65,7 @@ Executable bluetile
   Hs-Source-Dirs:    src
   Build-Depends:     base>=3, base<5, containers, process, filepath,
                      random, utf8-string, unix, regex-compat, mtl,
-                     ConfigFile, directory,
+                     ConfigFile, directory, X11-xft,
                      xmonad>=0.9.1, xmonad-contrib>=0.9.1
   if true
     Ghc-Options:       -Wall
@@ -86,6 +87,7 @@ Executable bluetiledock
   Hs-Source-Dirs:    bluetiledock
   Main-is:           BluetileDock.hs
   Build-Depends:     base>=3, base<5, unix, glade, gtk, X11>=1.4
+  pkgconfig-depends: gtk+-2.0
   C-sources:         bluetiledock/gdk_property_change_wrapper.c
   if true
     Ghc-Options:       -Wall
