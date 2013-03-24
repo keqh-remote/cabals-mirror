@@ -1,5 +1,5 @@
 name:           BiobaseInfernal
-version:        0.6.2.0
+version:        0.7.0.0
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 homepage:       http://www.tbi.univie.ac.at/~choener/
@@ -10,7 +10,7 @@ license:        GPL-3
 license-file:   LICENSE
 build-type:     Simple
 stability:      experimental
-cabal-version:  >= 1.4.0
+cabal-version:  >= 1.6.0
 description:
                 Provides import and export facilities for Infernal/Rfam data
                 formats. We include Stockholm, CM, verbose Infernal results,
@@ -26,68 +26,67 @@ description:
                 .
                 .
                 .
-                Changes in 0.6.2.0
+                Changes in 0.7.0.0
                 .
-                * added CM parsing (implementation and interface subject to
-                  change)
+                * work-in-progress release (some features missing)
                 .
-                Changes in 0.6.1.0
+                * working CM parsing
                 .
-                * added cmalign results parser
+                * type defns have changed. using phantom types to specify what kind of model we are working with
                 .
-                Changes in 0.6.0.1
-                .
-                * haddock should finish now
-                .
-                Changes in 0.6.0.0
-                .
-                * multiple changes to data representation (mostly newtypes) and
-                  documentation
-                .
-                * load the Rfam.fasta.gz file (and prepare lookup structures)
-                .
-                * partial biocore integration
+                * using conduit instead of iteratee
+
+
 
 extra-source-files:
 
 library
   build-depends:
     base >3 && <5,
-    attoparsec,
-    attoparsec-iteratee,
-    biocore,
-    bytestring,
+    attoparsec          == 0.10.*   ,
+    attoparsec-conduit  == 0.5.*    ,
+    biocore             == 0.2      ,
+    bytestring                      ,
+    bytestring-lexing   == 0.4.*    ,
+    conduit             == 0.5.*    ,
     containers,
-    either-unwrap,
-    iteratee,
-    iteratee-compress,
-    transformers,
-    tuple,
-    vector,
-    PrimitiveArray
+    either-unwrap       == 1.1      ,
+    lens                == 3.*      ,
+    primitive           >= 0.5      ,
+    transformers        == 0.3.*    ,
+    tuple               == 0.2.*    ,
+    vector              >= 0.10     ,
+    BiobaseXNA          == 0.6.3.*  ,
+    PrimitiveArray      == 0.4.0.0
 
   exposed-modules:
-    Biobase.Infernal
-    Biobase.Infernal.Align
-    Biobase.Infernal.Align.Import
-    Biobase.Infernal.Clan
-    Biobase.Infernal.Clan.Import
-    Biobase.Infernal.CM
-    Biobase.Infernal.CM.Export
-    Biobase.Infernal.CM.Import
-    Biobase.Infernal.Hit
-    Biobase.Infernal.RfamFasta
-    Biobase.Infernal.RfamFasta.Import
-    Biobase.Infernal.TabularHit
-    Biobase.Infernal.TabularHit.Import
-    Biobase.Infernal.Taxonomy
-    Biobase.Infernal.Taxonomy.Import
-    Biobase.Infernal.Types
-    Biobase.Infernal.VerboseHit
-    Biobase.Infernal.VerboseHit.Export
-    Biobase.Infernal.VerboseHit.Import
-    Biobase.Infernal.VerboseHit.Internal
+--    Biobase.Infernal
+--    Biobase.Infernal.Align
+--    Biobase.Infernal.Align.Import
+--    Biobase.Infernal.Clan
+--    Biobase.Infernal.Clan.Import
+    Biobase.SElab.CM
+    Biobase.SElab.CM.Import
+    Biobase.SElab.HMM
+    Biobase.SElab.HMM.Import
+--    Biobase.Infernal.Hit
+--    Biobase.Infernal.RfamFasta
+--    Biobase.Infernal.RfamFasta.Import
+    Biobase.SElab.RfamNames
+    Biobase.SElab.RfamNames.Import
+--    Biobase.Infernal.TabularHit
+--    Biobase.Infernal.TabularHit.Import
+    Biobase.SElab.Taxonomy
+    Biobase.SElab.Taxonomy.Import
+    Biobase.SElab.Types
+--    Biobase.Infernal.VerboseHit
+--    Biobase.Infernal.VerboseHit.Export
+--    Biobase.Infernal.VerboseHit.Import
+--    Biobase.Infernal.VerboseHit.Internal
 
   ghc-options:
     -O2 -funbox-strict-fields
 
+source-repository head
+  type: git
+  location: git://github.com/choener/BiobaseInfernal
