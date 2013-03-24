@@ -1,5 +1,5 @@
 Name:           parsely
-Version:        0.0
+Version:        0.1
 Description:    Typeclasses for parsing monads, and some instances
 Category:       Parsing
 License:        BSD3
