@@ -1,5 +1,5 @@
    Name:                HaskellForMaths
-   Version:             0.3.4
+   Version:             0.4.0
    Category:            Math
    Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended for educational purposes, but does have efficient implementations of several fundamental algorithms.
    Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
@@ -12,7 +12,6 @@
    Cabal-Version:       >=1.2
 
    Extra-source-files:
-        Math/Test/TCommutativeAlgebra.hs,
         Math/Test/TDesign.hs,
         Math/Test/TField.hs,
         Math/Test/TFiniteGeometry.hs,
@@ -34,13 +33,12 @@
         Math/Test/TCombinatorics/TMatroid.hs
         Math/Test/TCommutativeAlgebra/TGroebnerBasis.hs
         Math/Test/TCore/TField.hs
+        Math/Test/TProjects/TMiniquaternionGeometry.hs
 
    Library
-     Build-Depends:     base >= 2 && < 5, containers, array, random, QuickCheck
+     Build-Depends:     base >= 2 && < 5, containers, array, random
      Exposed-modules:
         Math.Algebra.LinearAlgebra,
-        Math.Algebra.Commutative.Monomial,
-        Math.Algebra.Commutative.MPoly, Math.Algebra.Commutative.GBasis,
         Math.Algebra.Field.Base, Math.Algebra.Field.Extension,
         Math.Algebra.Group.PermutationGroup, Math.Algebra.Group.SchreierSims,
         Math.Algebra.Group.RandomSchreierSims, Math.Algebra.Group.Subquotients,
