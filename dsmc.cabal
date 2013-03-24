@@ -1,31 +1,15 @@
 name:                dsmc
-description:         Direct Simulation Monte Carlo is the numerical
-                     used to model the behavior of rarefied gas flows.
-                     This implementation supports complex bodies
-                     defined using Constructive Solid Geometry, using
-                     uniform grids and ray-casting. Specular, diffuse
-                     and CLL gas-surface interaction models are
-                     provided. Macroscopic parameters of number
-                     density, absolute velocity, pressure and
-                     translational temperature are obtained as the
-                     result of the simulation. The library employs
-                     parallelism on all steps of the DSMC algorithm.
-                     See the dsmc-tools package for command-line
-                     interfaces to the library.
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            DSMC library for rarefied gas dynamics
 license:             BSD3
 license-file:        LICENSE
 author:              Dmitry Dzhus
 maintainer:          dima@dzhus.org
 category:            Physics
+
 build-type:          Simple
 cabal-version:       >=1.8
-tested-with:         GHC == 7.4.1
-
-source-repository head
-  type: git
-  location: https://github.com/dzhus/dsmc/
+tested-with:         GHC == 7.6.1
 
 library
   ghc-options: -Wall -O2 -funbox-strict-fields -Odph -rtsopts -fno-liberate-case -funfolding-use-threshold1000 -funfolding-keeness-factor1000 -fllvm -optlo-O3
@@ -52,14 +36,14 @@ library
   build-depends:
     attoparsec   == 0.10.*,
     base         == 4.*,
-    bytestring   == 0.9.*,
-    containers   == 0.4.*,
+    bytestring   == 0.10.*,
+    containers   == 0.5.*,
     entropy      == 0.2.*,
     hslogger     == 1.2.*,
-    mwc-random   >= 0.12.0.1,
+    mwc-random   == 0.12.*,
     parallel     == 3.2.*,
-    primitive    == 0.4.*,
+    primitive    == 0.5.*,
     repa         == 3.2.*,
     strict       == 0.3.*,
     transformers == 0.3.*,
-    vector       == 0.9.*
+    vector       == 0.10.*
