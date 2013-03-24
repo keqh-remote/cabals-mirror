@@ -1,13 +1,13 @@
 name:       SHA
 category:   Cryptography, Codec
-version:    1.0.2
+version:    1.0.3
 license:    BSD3
 license-file: LICENSE
 author:     Adam Wick <awick@galois.com>
 maintainer: Adam Wick <awick@galois.com>
 stability:  stable
 build-type: Simple
-cabal-version: >= 1.2
+cabal-version: >= 1.6
 tested-with: GHC ==6.8.0
 synopsis: Implementations of the SHA suite of message digest functions
 description: This library implements the SHA suite of message digest functions,
@@ -19,12 +19,12 @@ description: This library implements the SHA suite of message digest functions,
 Library
  build-depends: base >= 3, bytestring
  exposed-modules: Data.Digest.Pure.SHA
- GHC-Options: -O2 -Wall -fno-ignore-asserts
+ GHC-Options: -O2 -Wall -fno-ignore-asserts -funbox-strict-fields
  extensions: CPP, BangPatterns
 
 Executable test_sha
   build-depends: base >= 3, bytestring, QuickCheck >= 1 && < 2
-  GHC-Options: -O2 -Wall -fno-ignore-asserts -fno-warn-orphans 
+  GHC-Options: -O2 -Wall -fno-ignore-asserts -fno-warn-orphans -funbox-strict-fields
   cpp-options: -DSHA_TEST
   Main-Is: Test.hs
   Other-Modules: Data.Digest.Pure.SHA
