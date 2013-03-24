@@ -1,5 +1,5 @@
 name:		     TrieMap
-version:             0.7.1
+version:             0.7.2
 tested-with:	     GHC
 category:            Algorithms
 synopsis:	     Automatic type inference of generalized tries.
@@ -22,6 +22,7 @@ exposed-modules:
 	Data.TrieMap.Modifiers
 	-- Data.TrieMap.TrieKey
 other-modules:
+	Data.TrieMap.Key,
 	Data.TrieMap.Class.Instances,
 	Data.TrieMap.TrieKey,
 	Data.TrieMap.Applicative,
