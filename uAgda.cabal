@@ -1,5 +1,5 @@
 name:           uAgda
-version:        1.0.0.0
+version:        1.0.0.1
 category:       Dependent Types
 synopsis:       A simplistic dependently-typed language with parametricity.
 description:
@@ -12,7 +12,8 @@ description:
         program and reason in.
         .
         2. Give a simple implementation of its type-checker (ours is ~200 lines).
-        
+        .
+        See the share/tutorial directory for how to get started.
    
 license:        OtherLicense
 -- Creative Commons Attribution Share-Alike
@@ -23,7 +24,7 @@ Cabal-Version:  >= 1.8
 tested-with:    GHC==6.12.3
 build-type:     Simple
 
-extra-source-files:
+data-files:
      tutorial/00-Start-Here.ua
      tutorial/01-Module.ua
      tutorial/02-Holes.ua
