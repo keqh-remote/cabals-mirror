@@ -1,5 +1,5 @@
 name:             stringbuilder
-version:          0.1.0
+version:          0.2.0
 synopsis:         A monadic builder for multi-line string literals
 description:      <https://github.com/sol/stringbuilder#readme>
 category:         Testing
@@ -38,4 +38,5 @@ test-suite spec
   build-depends:
       base
     , transformers
-    , hspec-shouldbe
+    , hspec         >= 1.3
+    , QuickCheck
