@@ -1,5 +1,5 @@
 Name:             data-accessor-template
-Version:          0.2.1.4
+Version:          0.2.1.5
 License:          BSD3
 License-File:     LICENSE
 Author:           Luke Palmer <lrpalmer@gmail.com>, Henning Thielemann <haskell@henning-thielemann.de>
@@ -12,7 +12,7 @@ Description:
   Automate generation of @Accessor@'s of the @data-accessor@ package
   by Template Haskell functions.
 Build-Type:       Simple
-Tested-With:      GHC==6.8.2 && ==6.10.4
+Tested-With:      GHC==6.8.2, GHC==6.10.4
 Cabal-Version:    >=1.2
 
 Extra-Source-Files:
