@@ -1,11 +1,13 @@
 name:            attoparsec
-version:         0.5.1
+version:         0.6
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
 author:          Bryan O'Sullivan <bos@serpentine.com>
+maintainer:      Bryan O'Sullivan <bos@serpentine.com>
 stability:       experimental
-synopsis:        Combinator parsing with Data.ByteString.Lazy
+synopsis:        Fast combinator parsing with Data.ByteString.Lazy
+description:     Fast combinator parsing with Data.ByteString.Lazy
 cabal-version:   >= 1.2
 build-type:      Simple
 description:     Fast, flexible text-oriented parsing of lazy ByteStrings.
@@ -26,6 +28,8 @@ library
     cpp-options: -DAPPLICATIVE_IN_BASE
   else
     build-depends: base < 2.0
+
+  build-depends: bytestring-lexing >= 0.2
 
   extensions:      CPP
   exposed-modules: Data.ParserCombinators.Attoparsec
