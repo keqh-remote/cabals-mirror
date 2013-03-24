@@ -1,5 +1,5 @@
 Name:                tconfig
-Version:             0.5
+Version:             0.5.1
 Synopsis:            Simple text configuration file parser library.
 Description:         
   This Library can be used to keep track of simple information
@@ -16,4 +16,4 @@ extra-source-files:  test,README
 
 Library
   Exposed-Modules: Data.TConfig
-  Build-Depends:   base >= 2 && <= 4,haskell98,containers >= 0.2.0.1
+  Build-Depends:   base >= 2 && <= 4, containers >= 0.2.0.1
