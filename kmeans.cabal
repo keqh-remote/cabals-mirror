@@ -1,9 +1,9 @@
 Name:               kmeans
-Version:            0.1
+Version:            0.1.1
 Description:
     A simple library for k-means clustering
 Category:           algorithms, clustering, data mining
-Synopsis:           Hidden Markov Model algorithms
+Synopsis:           K-means clustering algorithm
 License:            BSD3
 License-file:       LICENSE
 Author:             Keegan Carruthers-Smith
