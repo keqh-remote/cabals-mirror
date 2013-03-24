@@ -1,5 +1,5 @@
 name:              fb
-version:           0.11.2.1
+version:           0.12
 license:           BSD3
 license-file:      LICENSE
 author:            Felipe Lessa
@@ -51,10 +51,12 @@ library
     Facebook.Base
     Facebook.Auth
     Facebook.Graph
+    Facebook.Object.Action
+    Facebook.Object.Checkin
     Facebook.Object.User
     Facebook.Object.Page
-    Facebook.OpenGraph
     Facebook.RealTime
+    Facebook.FQL
   build-depends:
       base               >= 4       && < 5
     , lifted-base        >= 0.1     && < 0.2
