@@ -1,6 +1,6 @@
 name: control-monad-free
-version: 0.5
-Cabal-Version:  >= 1.2.3
+version: 0.5.0.1
+Cabal-Version:  >= 1.6
 build-type: Simple
 license: PublicDomain
 author: Luke Palmer, Pepe Iborra
@@ -23,9 +23,9 @@ Flag transformers
 
 Library
   buildable: True
-  build-depends: base >= 2 && < 5
+  build-depends: base >= 2 && < 5, deepseq
   if flag(transformers)
-     build-depends: transformers
+     build-depends: transformers == 0.2.*
      cpp-options: -DTRANSFORMERS
   else
      build-depends: mtl
