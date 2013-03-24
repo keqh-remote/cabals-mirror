@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       3.8.5
+version:       3.8.6
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -189,7 +189,8 @@ library
     transformers              >= 0.2      && < 0.4,
     transformers-compat       >= 0.1      && < 1,
     unordered-containers      >= 0.2      && < 0.3,
-    vector                    >= 0.9      && < 0.11
+    vector                    >= 0.9      && < 0.11,
+    void                      >= 0.5      && < 1
 
   exposed-modules:
     Control.Exception.Lens
@@ -294,7 +295,7 @@ library
   if impl(ghc>=7.2)
     cpp-options: -DDEFAULT_SIGNATURES=1
 
-  ghc-options: -Wall -fwarn-tabs -O2 -fdicts-cheap -funbox-strict-fields
+  ghc-options: -Wall -fwarn-tabs -O2 -fdicts-cheap -funbox-strict-fields -fmax-simplifier-iterations=10
   hs-source-dirs: src
 
 -- Verify that Template Haskell expansion works
