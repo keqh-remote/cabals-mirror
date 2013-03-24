@@ -1,5 +1,5 @@
 name:           netlist
-version:        0.2
+version:        0.3.1
 synopsis:       Netlist AST
 description:    A very simplified and generic netlist designed to be compatible with
                 Hardware Description Languages (HDLs) like Verilog and VHDL.
@@ -8,9 +8,9 @@ category:       Language
 license:        BSD3
 license-file:   LICENSE
 copyright:      Copyright (c) 2010 Signali Corp.
-                Copyright (c) 2010 Philip Weaver
-author:         Philip Weaver
-maintainer:     philip.weaver@gmail.com
+                Copyright (c) 2010 Philip Weaver.
+author:         Philip Weaver <philip.weaver@gmail.com>
+maintainer:     andygill@ku.edu
 package-url:    git://github.com/pheaver/netlist-verilog.git
 build-type:     Simple
 cabal-version:  >=1.6
