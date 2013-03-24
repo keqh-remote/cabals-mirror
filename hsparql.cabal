@@ -1,5 +1,5 @@
 Name:          hsparql
-Version:       0.0
+Version:       0.1
 Synopsis:      A SPARQL query generator and DSL, and a client to query a SPARQL server.
 Category:      Database
 Description:
@@ -13,7 +13,6 @@ Maintainer:    jeff@jeffwheeler.name
 
 Build-type:    Simple
 Build-depends: base >= 4 && < 5
-Build-depends: containers
 Build-depends: HTTP >= 4
 Build-depends: monads-fd
 Build-depends: xml
