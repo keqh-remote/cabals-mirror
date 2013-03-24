@@ -1,13 +1,13 @@
 name:                resource-simple
-version:             0.1
+version:             0.2
 synopsis:            Allocate resources which are guaranteed to be released.
 license:             BSD3
 license-file:        LICENSE
-author:              Robin Banks
-maintainer:          anarchomorphism@seomraspraoi.org
+author:              Shane O'Brien
+maintainer:          shane@duairc.com
 stability:           Experimental
 category:            Control
-cabal-version:       >= 1.2
+cabal-version:       >= 1.6
 build-type:          Simple
 description:
   This is a simplified, standalone version of the @ResourceT@ transformer that
@@ -43,6 +43,10 @@ Library
     containers < 1,
     monad-control > 0.3 && < 0.4,
     monad-fork < 0.2,
-    mtl > 2 && < 3,
+    mtl-evil-instances < 0.2,
     transformers > 0.2 && < 0.3,
     transformers-base < 0.5
+
+source-repository head
+  type:     git
+  location: git://github.com/duairc/resource-simple.git
