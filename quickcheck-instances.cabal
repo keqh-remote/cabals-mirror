@@ -1,5 +1,5 @@
 Name:                quickcheck-instances
-Version:             0.1.0
+Version:             0.2.0
 Synopsis:            Common quickcheck instances
 Description:         QuickCheck instances.
                      .
@@ -24,7 +24,7 @@ Bug-reports:         https://github.com/aslatter/qc-instances/issues
 Copyright:           Copyright Antoine Latter, 2012
 Category:            Testing
 Build-type:          Simple
--- Extra-source-files:  
+Extra-source-files:  CHANGES
 Cabal-version:       >=1.6
 
 Source-repository head
@@ -46,6 +46,6 @@ Library
                        time >= 1.1 && < 1.5
 
   Ghc-options:         -Wall
-  -- Other-modules:       
+  Other-modules:       Test.QuickCheck.Instances.LegacyNumeric
   -- Build-tools:         
   
