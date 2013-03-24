@@ -1,12 +1,12 @@
 name:            tar
-version:         0.3.1.0
+version:         0.3.2.0
 license:         BSD3
-license-File:    LICENSE
+license-file:    LICENSE
 author:          Bjorn Bringert <bjorn@bringert.net>
-                 Duncan Coutts <duncan@haskell.org>
-maintainer:      Duncan Coutts <duncan@haskell.org>
+                 Duncan Coutts <duncan@community.haskell.org>
+maintainer:      Duncan Coutts <duncan@community.haskell.org>
 copyright:       2007 Bjorn Bringert <bjorn@bringert.net>
-                 2008-2009 Duncan Coutts <duncan@haskell.org>
+                 2008-2012 Duncan Coutts <duncan@community.haskell.org>
 category:        Codec
 synopsis:        Reading, writing and manipulating ".tar" archive files.
 description:     This library is for working with \"@.tar@\" archive files. It
@@ -17,16 +17,15 @@ description:     This library is for working with \"@.tar@\" archive files. It
                  details like file ownership and exact permissions are not
                  preserved.
 build-type:      Simple
-cabal-version:   >=1.2
+cabal-version:   >=1.8
 
-flag base3
+source-repository head
+  type: darcs
+  location: http://code.haskell.org/tar/
 
 library
-  build-depends: base >= 2 && < 5, filepath
-  if flag(base3)
-    build-depends: base >= 3, directory, old-time, bytestring
-  else
-    build-depends: base < 3
+  build-depends: base >= 3 && < 5, filepath,
+                 directory, old-time, bytestring
 
   exposed-modules:
     Codec.Archive.Tar
@@ -40,4 +39,4 @@ library
     Codec.Archive.Tar.Pack
     Codec.Archive.Tar.Unpack
 
-  ghc-options: -Wall -fno-warn-unused-imports
+  ghc-options: -Wall
