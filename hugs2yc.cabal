@@ -1,6 +1,6 @@
 Cabal-Version:      >= 1.2
 Name:               hugs2yc
-Version:            0.1
+Version:            0.1.1
 Copyright:          2008, Dmitry Golubovsky and The Yhc Team
 Maintainer:         golubovsky@gmail.com
 Homepage:           http://www.haskell.org/haskellwiki/Yhc
