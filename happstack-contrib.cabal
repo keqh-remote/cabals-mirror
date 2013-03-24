@@ -1,5 +1,5 @@
 Name:                happstack-contrib
-Version:             0.1
+Version:             0.2.1
 Synopsis:            Web related tools and services.
 Description:         Collection of standalone applications
 License:             BSD3
@@ -16,21 +16,39 @@ Flag base4
 
 Flag tests
     Description: Build the testsuite, and include the tests in the library
-    Default: True
+    Default: False
 
 Library
 
   Exposed-modules:
-                       HAppS.Server.Facebook
-                       HAppS.Store.FlashMsgs
-                       HAppS.Store.HelpReqs
+                       Happstack.Server.Facebook
+                       Happstack.Store.FlashMsgs
+                       Happstack.Store.HelpReqs
+                       Happstack.Contrib.Atom
+                       Happstack.Contrib.HList
+                       Happstack.Contrib.HListBase
   if flag(tests)
     Exposed-modules:   
-                       HAppS.Contrib.Tests
+                       Happstack.Contrib.Tests
+                       Happstack.Contrib.Tests.HList001
+                       Happstack.Contrib.Tests.HList002                   
+                       Happstack.Contrib.Tests.HasT001
 
-  Build-Depends:       base, network, old-time, bytestring, happstack-server,
-                       mtl, HTTP >= 4000.0.2, directory, happstack-util, happstack-data,
-                       happstack-state, happstack-ixset
+  build-depends:       base,
+                       bytestring,
+                       directory,
+                       happstack-server >= 0.2.1 && < 0.3,
+                       happstack-util >= 0.2.1 && < 0.3,
+                       happstack-state >= 0.2.1 && < 0.3,
+                       happstack-ixset >= 0.2.1 && < 0.3,
+                       happstack-data >= 0.2.1 && < 0.3,
+                       HTTP >= 4000.0.2,
+                       mtl,
+                       network,
+                       old-time
+  
+  if flag(tests)
+    build-depends:     template-haskell
 
   hs-source-dirs:      src
 
