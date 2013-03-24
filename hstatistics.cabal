@@ -1,5 +1,5 @@
 Name:               hstatistics
-Version:            0.2.2.4
+Version:            0.2.2.5
 License:            BSD3
 License-file:       LICENSE
 Copyright:          (c) A.V.H. McPhail 2010
@@ -30,7 +30,8 @@ library
 
     Build-Depends:      base >= 3 && < 5,
                         array, random,
-                        hmatrix >= 0.10.0, hmatrix-gsl-stats >= 0.1.2.4
+                        hmatrix >= 0.10.0.0,
+                        hmatrix-gsl-stats >= 0.1.2.6
 
     Extensions:         
 
