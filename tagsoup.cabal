@@ -1,6 +1,6 @@
 cabal-version:  >= 1.6
 name:           tagsoup
-version:        0.12.1
+version:        0.12.2
 copyright:      Neil Mitchell 2006-2011
 author:         Neil Mitchell <ndmitchell@gmail.com>
 maintainer:     Neil Mitchell <ndmitchell@gmail.com>
@@ -20,6 +20,10 @@ description:
 extra-source-files:
     tagsoup.htm
 
+source-repository head
+    type:     darcs
+    location: http://community.haskell.org/~ndm/darcs/tagsoup/
+
 flag testprog
     default: False
     description: Build the test program
@@ -29,7 +33,7 @@ flag download
     description: Build with Download module
 
 library
-    build-depends: base == 4.*, containers, bytestring
+    build-depends: base == 4.*, containers, bytestring, text
 
     if flag(download)
         build-depends: network
