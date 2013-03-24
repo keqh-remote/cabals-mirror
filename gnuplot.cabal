@@ -1,5 +1,5 @@
 Name:             gnuplot
-Version:          0.4.0.1
+Version:          0.4.0.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -22,7 +22,12 @@ Description:
    I recommend "Graphics.Gnuplot.Advanced".
    This module contains also an overview
    of the hierarchy of objects.
+   .
    Examples for using this interface can be found in the "Demo" module.
+   In order to compile this and install an example data file,
+   use the Cabal flag @buildExamples@:
+   .
+   > $ cabal install -fbuildExamples gnuplot
    .
    With the Cabal flags executePipe and executeShell
    you can switch to more convenient
@@ -61,15 +66,15 @@ Flag executeShell
 Library
   Build-Depends:
     array >= 0.1 && <0.4,
-    containers >= 0.1 && <0.4,
+    containers >= 0.1 && <0.5,
     utility-ht >= 0.0.1 && < 0.1,
     monoid-transformer >= 0.0.2 && <0.1
   If flag(splitBase)
     Build-Depends:
-      base >= 2 && <6,
       process >= 1.0 && < 1.1,
       time >= 1.1 && < 1.2,
-      old-locale >= 1.0 && < 1.1
+      old-locale >= 1.0 && < 1.1,
+      base >= 2 && <5
   Else
     Build-Depends:
       base >= 1.0 && < 2
