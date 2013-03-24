@@ -1,5 +1,5 @@
 name: control-monad-exception
-version: 0.8.0.2
+version: 0.8.0.3
 Cabal-Version:  >= 1.6
 build-type: Simple
 license: PublicDomain
@@ -65,7 +65,8 @@ description:
 synopsis: Explicitly typed, checked exceptions with stack traces
 category: Control, Monads, Failure
 stability: experimental
-tested-with: GHC ==6.10.3
+tested-with: GHC == 6.12.1
+bug-reports: http://github.com/pepeiborra/control-monad-exception/issues
 
 Flag extensibleExceptions
   description: Use extensible-exception package
@@ -75,7 +76,6 @@ Library
   buildable: True 
   build-depends: failure
                , monadloc
-               , pretty
 
   if flag(extensibleExceptions)
     build-depends:
