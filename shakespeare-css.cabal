@@ -1,5 +1,5 @@
 name:            shakespeare-css
-version:         0.10.1
+version:         0.10.2
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -18,6 +18,14 @@ stability:       Stable
 cabal-version:   >= 1.8
 build-type:      Simple
 homepage:        http://www.yesodweb.com/book/templates
+extra-source-files:
+  test/external1.cassius
+  test/external1.lucius
+  test/external2.cassius
+  test/external2.lucius
+  test/external-media.lucius
+  test/external-nested.lucius
+  test/main.hs
 
 library
     build-depends:   base             >= 4       && < 5
@@ -43,7 +51,7 @@ test-suite test
                  , shakespeare      >= 0.10    && < 0.11
                  , base             >= 4       && < 5
                  , HUnit
-                 , hspec >= 0.6.1 && < 0.7
+                 , hspec            >= 0.8     && < 0.9
                  , text             >= 0.7     && < 0.12
 
 
