@@ -1,36 +1,38 @@
 name: spelling-suggest
-version: 0.5.1
+version: 0.5.2.1
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
 license-file: COPYING
-copyright: Copyright © 2010 Greg Weber and Bart Massey
-author: Greg Weber and Bart Massey
+copyright: Copyright © 2010 Bart Massey and Greg Weber
+author: Bart Massey and Greg Weber
 maintainer: bart@cs.pdx.edu, greg@gregweber.info
-homepage: https://github.com/BartMassey/haskell-spell-suggest
+homepage: https://github.com/gregwebs/haskell-spell-suggest
 category: Console, Text
-data-files: README, README.pcdb
+data-files: README.md, README.pcdb
 synopsis: Spelling suggestion tool with library and command-line interfaces.
 description: 
 
-    "thimk" (an old joke) is a command-line spelling word
-    suggestion tool. You give it a possibly-misspelled word,
-    and it spits out one or more properly-spelled words in order
+    Given a possibly-misspelled word,
+    this tool spits out one or more properly-spelled words in order
     of likelihood of similarity.
     .
-    This functionality is also exported as a library via
-    Text.SpellingSuggest (suggest)
+    This functionality is exported as a library via
+    Text.SpellingSuggest (suggest) and as
+    a command-line program "thimk" (an old joke)
     .
-    There is an optional precompiled SQlite database of phonetic
-    codes for the entire dictionary, created with
-    "thimk-makedb".  This greatly speeds lookup, permitting
-    reasonable performance on enormous dictionaries.
+    Running the program "thimk-makedb" is an optional (but highly recommended)
+    step to speed up lookups,
+    permitting reasonable performance on enormous dictionaries
+    by creating a
+    precompiled SQlite database of phonetic
+    codes for a dictionary.
 
 flag debug
 
 library
   build-depends: base >= 4.2 && < 5,
-                 edit-distance >= 0.1 && < 0.3,
+                 edit-distance >= 0.2 && < 0.3,
                  phonetic-code >= 0.1 && < 0.2,
                  sqlite >= 0.5.1 && < 0.6
   exposed-modules: Text.SpellingSuggest, Text.SpellingSuggest.PCDB,
@@ -42,7 +44,7 @@ Executable thimk
   main-is: thimk.hs
   build-depends: base >= 4.2 && < 5,
                  parseargs >= 0.1.1 && < 0.2,
-                 edit-distance >= 0.1 && < 0.3,
+                 edit-distance >= 0.2 && < 0.3,
                  phonetic-code >= 0.1 && < 0.2,
                  sqlite >= 0.5.1 && < 0.6
   ghc-options: -Wall
@@ -59,9 +61,9 @@ Executable thimk-makedb
 
 Source-repository head
   type: git
-  location: git://github.com/BartMassey/haskell-spell-suggest.git
+  location: git://github.com/gregwebs/haskell-spell-suggest.git
 
 Source-repository this
   type: git
-  location: git://github.com/BartMassey/haskell-spell-suggest.git
-  tag: v0.5.1
+  location: git://github.com/gregwebs/haskell-spell-suggest.git
+  tag: v0.5.2.1
