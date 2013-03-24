@@ -1,5 +1,5 @@
 name:            network-dns
-version:         0.1.1
+version:         0.1.2
 license:         BSD3
 license-file:    LICENSE
 author:          Adam Langley <agl@imperialviolet.org>
@@ -14,9 +14,10 @@ build-depends:   base, containers, array, bytestring>=0.9, binary-strict>=0.2.4,
                  time>=1.1
 stability:       provisional
 tested-with:     GHC == 6.8.2
-exposed-modules: Network.DNS.Client, Network.DNS.Types
-extra-source-files: Network/DNS/ResolveConfParse.hs,
-                    Network/DNS/Common.hs
+exposed-modules:   Network.DNS.Client
+                 , Network.DNS.Types
+other-modules:     Network.DNS.ResolveConfParse
+                 , Network.DNS.Common
 extensions:      ForeignFunctionInterface
 ghc-options:     -Wall -fno-warn-name-shadowing -fwarn-tabs
 build-type:      Simple
