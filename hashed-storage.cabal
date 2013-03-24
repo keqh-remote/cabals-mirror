@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.3.9
+version:       0.4.1
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -19,7 +19,8 @@ maintainer:    Petr Rockai <me@mornfall.net>
 category:      System
 build-type:    Custom
 cabal-version: >= 1.6
-extra-source-files: Bundled/sha2.h, testdata.zip
+
+extra-source-files: Bundled/sha2.h, NEWS, testdata.zip
 
 flag test
     default: False
@@ -46,7 +47,10 @@ library
         Storage.Hashed.Index
         Storage.Hashed.Monad
         Storage.Hashed.Tree
+        Storage.Hashed.Hash
         Storage.Hashed.Packed
+
+        Storage.Hashed.Plain
         Storage.Hashed.Darcs
 
     if flag(diff)
@@ -59,8 +63,17 @@ library
         Bundled.SHA256
         Storage.Hashed.Utils
 
-    build-depends: base >= 3 && < 5, directory, filepath, bytestring, zlib,
-                   containers, mtl, extensible-exceptions, mmap >= 0.4 && < 0.5
+    build-depends: base >= 3 && < 5,
+                   containers,
+                   mtl,
+                   directory,
+                   filepath,
+                   bytestring,
+                   extensible-exceptions,
+                   dataenc,
+                   binary,
+                   zlib,
+                   mmap >= 0.4 && < 0.5
 
     c-sources: Bundled/sha2.c
 
