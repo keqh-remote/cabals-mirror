@@ -1,5 +1,5 @@
 Name:                error-location
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            error functions that show file location information
 Homepage:            https://github.com/gregwebs/ErrorLocation.hs
 License:             BSD3
@@ -10,7 +10,6 @@ Category:            Development
 Build-type:          Simple
 Cabal-version:       >=1.2
 Description: 
-
     > $(err "OH NO!")
     >
     > main:Main main.hs:16:1 OH NO!
@@ -24,8 +23,6 @@ Description:
     >
     > DEBUG: [1,2,3]
     > [1,2,3]
-
-
 Library
   Exposed-modules: ErrorLocation
   
