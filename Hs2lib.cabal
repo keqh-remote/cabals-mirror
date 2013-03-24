@@ -1,5 +1,5 @@
 Name:           Hs2lib
-Version:        0.5.2
+Version:        0.5.5
 Cabal-Version:  >= 1.10
 Build-Type:     Custom
 License:        BSD3
@@ -66,6 +66,7 @@ Extra-Source-Files: WinDll/*.hs,
                     WinDll/Structs/MShow/*.hs,
                     WinDll/Utils/*.hs,
                     Tests/*.hs,
+                    Tests/Exec/*.hs,
                     Tests/Src/*.hs,
                     Tests/Src/*.txt,
                     *.hs,
@@ -163,6 +164,38 @@ Executable Hs2lib-debug
                    
     ghc-options:    -threaded -fspec-constr-count=16 -rtsopts
     cpp-options:    -DDEBUG
+
+    Other-Modules:    Paths_Hs2lib,
+                      WinDll.Lib.NativeMapping,
+                      WinDll.Lib.NativeMapping_Debug,
+                      WinDll.Debug.Records,
+                      WinDll.Debug.Stack
+                      
+    Default-Language: Haskell98  
+    
+Executable Hs2lib-testgen
+    Main-is:         Tests\Exec\Hs2lib-testgen.hs
+                        
+    Build-Depends:   QuickCheck       >= 2.1.0.1,
+                     directory        >= 1.0.0.3,
+                     ghc-paths        >= 0.1.0.5,
+                     filepath         >= 1.1.0.2,
+                     random           >= 1.0.0.1,
+                     process          >= 1.0.1.1,
+                     ghc              >= 6.12 && < 7.0 || >= 7.0.2,
+                     mtl              >= 1.1.0.2,
+                     containers       >= 0.2.0.0,
+                     array            >= 0.2.0.0,
+                     haskell-src-exts >= 1.9.0,
+                     haddock          >= 2.7.2,
+                     base             >= 4   && < 5,
+                     syb              >= 0.1.0.2,
+                     time             >= 1.2.0.3,
+                     old-locale       >= 1.0.0.2,
+                     cereal           >= 0.3.0.0
+                   
+    ghc-options:    -threaded -fspec-constr-count=16 -rtsopts
+    cpp-options:    -UDEBUG
 
     Other-Modules:    Paths_Hs2lib,
                       WinDll.Lib.NativeMapping,
