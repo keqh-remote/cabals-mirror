@@ -19,11 +19,11 @@ Description:
 
 Category:       Concurrency
 Author:         Peter Robinson 2009, Chris Kuklewicz 2006
-Maintainer:     Peter Robinson <thaldyron@gmail.com>
+Maintainer:     Peter Robinson <robinson@ecs.tuwien.ac.at>
 License:        BSD3
 License-file:   LICENSE
 Homepage:       http://darcs.monoid.at/stm-io-hooks
-Version:        0.3.0
+Version:        0.4.2
 
 Build-type:     Simple                        
 Cabal-Version:  >= 1.2.3
@@ -54,5 +54,6 @@ library
                    ,DeriveDataTypeable
                    ,RankNTypes
                    ,ExistentialQuantification
+                   ,UndecidableInstances
                     
 
