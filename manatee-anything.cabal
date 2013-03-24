@@ -1,5 +1,5 @@
 name:			manatee-anything
-version:		0.0.1
+version:		0.0.2
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -20,7 +20,7 @@ Source-Repository head
   
 Library
      build-depends: base >= 4 && < 5, gtk >= 0.12.0, containers >= 0.3.0.0, text >= 0.7.1.0,
-                    gio >= 0.12.0, filepath >= 1.1.0.3, manatee-core >= 0.0.1, dbus-client >= 0.3 && < 0.4,
+                    gio >= 0.12.0, filepath >= 1.1.0.3, manatee-core >= 0.0.2, dbus-client >= 0.3 && < 0.4,
                     network >= 2.2.1.5, utf8-string >= 0.3.4, proc >= 0.0.8, mtl >= 1.1.0.2, stm >= 2.1.2.0,
                     unix >= 2.4.0.0, regex-tdfa >= 1.1.2, bytestring, GoogleSuggest >= 0.0.3, dataenc,
                     dbus-core, split
