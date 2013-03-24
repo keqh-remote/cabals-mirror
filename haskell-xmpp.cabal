@@ -1,10 +1,10 @@
 Name: haskell-xmpp
-Version: 1.0
+Version: 1.0.1
 License: BSD3
 License-File: LICENSE
 Author: Dmitry Astapov <dastapov@gmail.com>, pierre <k.pierre.k@gmail.com>
 Maintainer: Dmitry Astapov <dastapov@gmail.com>
-Homepage: http://adept.linux.kiev.ua/repos/xmpp
+Homepage: http://patch-tag.com/r/adept/haskell-xmpp/home
 Category: Network
 Copyright: (c) 2005-2011 Dmitry Astapov, k.pierre
 Stability: Stable
@@ -30,9 +30,13 @@ flag examples
   description: Build examples
   default: False
 
+flag debug
+  description: Enable debugging output
+  default: False
+
 library
   Hs-Source-Dirs: ./src
-  Build-Depends: base > 3 && <=5, random, pretty, array, HaXml >= 1.20.2, mtl >= 1.0, network, html, polyparse, regex-compat, stm, utf8-string
+  Build-Depends: base > 3 && <=5, random, pretty, array, HaXml >= 1.23.3, mtl >= 1.0, network, html, polyparse, regex-compat, stm, utf8-string
   Exposed-modules: Network.XMPP
                 , Network.XMPP.Sasl
                 , Network.XMPP.Core
@@ -53,12 +57,16 @@ library
           , Network.XMPP.XEP.Version
           , Network.XMPP.Concurrent
   GHC-Options: -Wall -fno-warn-name-shadowing -fno-warn-orphans
+  if flag(debug)
+     CPP-Options: -DDEBUG
 
 Executable haskell-xmpp-test
-  Hs-Source-Dirs: ./examples
+  Hs-Source-Dirs: ./src ./examples
   if flag(examples)
     build-depends: base > 3 && <=5
   else
     buildable: False
+  if flag(debug)
+     CPP-Options: -DDEBUG
   Main-Is: Test.hs
   GHC-Options: -Wall -fno-warn-name-shadowing -fno-warn-orphans
