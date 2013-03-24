@@ -1,11 +1,11 @@
 Name:                reactive-glut
-Version:             0.0.1
+Version:             0.0.2
 Cabal-Version:       >= 1.2
 Synopsis:            Connects Reactive and GLUT
 Category:            FRP, graphics
 Description:
   This package contains an adapter that connects OpenGL/GLUT to the
-  library FRP \"Reactive\".
+  FRP library \"Reactive\".
   .
   Project wiki page: <http://haskell.org/haskellwiki/reactive-glut>
   .
@@ -32,10 +32,7 @@ Library
                        FRP.Reactive.GLUT.SimpleGL
                        FRP.Reactive.GLUT.UI
                        Test
--- Relies on fieldtrip
---                     FTest
 
   ghc-options:         -Wall
-
 
 --  ghc-prof-options:    -prof -auto-all 
