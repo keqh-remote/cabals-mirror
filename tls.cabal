@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.2
+Version:             0.3
 Description:
    native TLS protocol implementation, focusing on purity and more type-checking.
    .
@@ -30,15 +30,17 @@ Flag executable
   Default:           False
 
 Library
-  Build-Depends:     base >= 3 && < 5,
+  Build-Depends:     base >= 3 && < 7,
                      mtl,
-                     cryptohash,
+                     cryptohash >= 0.6,
                      binary >= 0.5,
+                     cereal,
                      bytestring,
                      vector,
                      random,
-                     AES, RSA, spoon,
-                     cryptocipher,
+                     AES,
+                     crypto-api >= 0.2,
+                     cryptocipher >= 0.2,
                      certificate >= 0.3
   Exposed-modules:   Network.TLS.Client
                      Network.TLS.Server
@@ -60,7 +62,7 @@ Library
 Executable           stunnel
   Main-is:           Stunnel.hs
   if flag(executable)
-    Build-Depends:   network, haskell98, RSA
+    Build-Depends:   network, haskell98
     Buildable:       True
   else
     Buildable:       False
@@ -69,7 +71,7 @@ executable           Tests
   Main-is:           Tests.hs
   if flag(test)
     Buildable:       True
-    Build-Depends:   base >= 3 && < 5, HUnit, QuickCheck >= 2 && < 2.3, bytestring, random
+    Build-Depends:   base >= 3 && < 7, HUnit, QuickCheck >= 2, bytestring, random
   else
     Buildable:       False
 
