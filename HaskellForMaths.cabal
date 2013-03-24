@@ -1,5 +1,5 @@
    Name:                HaskellForMaths
-   Version:             0.2.0
+   Version:             0.2.1
    Category:            Math
    Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended for educational purposes, but does have efficient implementations of several fundamental algorithms.
    Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
@@ -19,6 +19,7 @@
         Math/Test/TGraph.hs,
         Math/Test/TNonCommutativeAlgebra.hs,
         Math/Test/TPermutationGroup.hs,
+        Math/Test/TSubquotients.hs,
         Math/Test/TestAll.hs
 
    Library
@@ -29,7 +30,8 @@
         Math.Algebra.Commutative.MPoly, Math.Algebra.Commutative.GBasis,
         Math.Algebra.Field.Base, Math.Algebra.Field.Extension,
         Math.Algebra.Group.PermutationGroup, Math.Algebra.Group.SchreierSims,
-        Math.Algebra.Group.RandomSchreierSims, Math.Algebra.Group.StringRewriting,
+        Math.Algebra.Group.RandomSchreierSims, Math.Algebra.Group.Subquotients,
+        Math.Algebra.Group.StringRewriting,
         Math.Algebra.NonCommutative.NCPoly, Math.Algebra.NonCommutative.GSBasis, Math.Algebra.NonCommutative.TensorAlgebra,
         Math.Combinatorics.Graph, Math.Combinatorics.GraphAuts, Math.Combinatorics.StronglyRegularGraph,
         Math.Combinatorics.Design, Math.Combinatorics.FiniteGeometry, Math.Combinatorics.Hypergraph,
