@@ -1,5 +1,5 @@
 name:            persistent
-version:         0.9.0.1
+version:         0.9.0.2
 license:         MIT
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -11,6 +11,8 @@ stability:       Stable
 cabal-version:   >= 1.8
 build-type:      Simple
 homepage:        http://www.yesodweb.com/book/persistent
+extra-source-files:
+  test/main.hs
 
 flag nooverlap
     default: False
