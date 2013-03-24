@@ -1,5 +1,5 @@
 Name:           modsplit
-Version:        0.1
+Version:        0.1.1
 Author:         Dmitry Golubovsky
 Maintainer:     Dmitry Golubovsky <golubovsky@gmail.com>
 License:        BSD3
@@ -27,5 +27,6 @@ Build-Depends:  base > 3, filepath, mtl, utf8-env, utf8-string, haskell98, direc
 
 Executable:     modsplit
 Main-is:        ModSplit.hs
+Other-Modules:  SplitBounds
 
 
