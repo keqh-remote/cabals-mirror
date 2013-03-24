@@ -1,36 +1,31 @@
-Name:             hosc
-Version:          0.1.1
-License:          GPL
-Copyright:        Rohan Drape, 2006-2007
-Author:           Rohan Drape
-Maintainer:       rd@slavepianos.org
-Stability:        Experimental
-Homepage:         http://slavepianos.org/rd/f/269573/
-Synopsis:         Haskell Open Sound Control
-Description:      Haskell implementation of the Open Sound Control byte protocol
-Category:         Sound
-Tested-With:      GHC==6.4.1, GHC==6.8.2
-Cabal-Version:    >=1.2
-Build-Type:       Simple
+Name:              hosc
+Version:           0.3
+Synopsis:          Haskell Open Sound Control
+Description:       hosc provides Sound.OpenSoundControl, a haskell
+                   module implementing a subset of the Open Sound
+                   Control byte protocol.
+License:           GPL
+Category:          Sound
+Copyright:         (c) Rohan Drape, 2006-2008
+Author:            Rohan Drape
+Maintainer:        rd@slavepianos.org
+Stability:         Experimental
+Homepage:          http://slavepianos.org/rd/f/269573/
+Tested-With:       GHC==6.8.2
+Build-Type:        Simple
+Cabal-Version:     >= 1.2
 
-Flag splitBase
-  description: Choose the new smaller, split-up base package.
+Data-Files:        README
 
 Library
-  Build-Depends: bytestring, binary, network, time >= 1.1
-  -- time version 1.1 provides secondsToDiffTime
-  If flag(splitBase)
-    Build-Depends: base >= 2, array
-  Else
-    Build-Depends: base >= 1.0 && < 2
-
-  GHC-Options:      -Wall
-  Exposed-modules:
-    Sound.OpenSoundControl
-    Sound.OpenSoundControl.OSC
-    Sound.OpenSoundControl.Time
-    Sound.OpenSoundControl.Cast
-    Sound.OpenSoundControl.Byte
-    Sound.OpenSoundControl.Transport
-    Sound.OpenSoundControl.Transport.TCP
-    Sound.OpenSoundControl.Transport.UDP
+  Build-Depends:   array, base, bytestring, binary, network, time
+  GHC-Options:     -Wall -fwarn-tabs -O2
+  Exposed-modules: Sound.OpenSoundControl
+                   Sound.OpenSoundControl.Byte
+                   Sound.OpenSoundControl.Cast
+                   Sound.OpenSoundControl.OSC
+                   Sound.OpenSoundControl.Time
+                   Sound.OpenSoundControl.Transport
+                   Sound.OpenSoundControl.Transport.TCP
+                   Sound.OpenSoundControl.Transport.UDP
+  Other-modules:
