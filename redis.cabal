@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.7
+Version:             0.7.1
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -21,6 +21,8 @@ Description:
 	- new commands added: watch, unwatch
 	.
 	- new batch command: run_cas
+	.
+	- fixed bug with expireAt - thanks to Alex Suraci
 	.
 
 Stability:           beta
