@@ -1,5 +1,5 @@
 Name:               libmpd
-Version:            0.2.1
+Version:            0.3.0
 License:            LGPL
 License-file:       LICENSE
 Copyright:          Ben Sinclair 2005-2008
@@ -20,11 +20,11 @@ Extra-Source-Files: TODO README ChangeLog tests/Properties.hs tests/Commands.hs
 
 Library
     Build-Depends:      base >= 2.1.1, network >= 2.0.1, mtl >= 1.0.1,
-                        filepath >= 1.0
+                        filepath >= 1.0, utf8-string >= 0.3.1
     Exposed-Modules:    Network.MPD
     Other-Modules:      Network.MPD.Core, Network.MPD.Commands,
                         Network.MPD.Parse, Network.MPD.SocketConn,
-                        Network.MPD.StringConn, Network.MPD.Utils
+                        Network.MPD.Types, Network.MPD.Utils
 
     ghc-options:        -Wall
     ghc-prof-options:   -auto-all -prof
