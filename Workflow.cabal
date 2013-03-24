@@ -1,5 +1,5 @@
 name: Workflow
-version: 0.5.8.0
+version: 0.5.8.1
 
 build-type: Simple
 license: BSD3
@@ -35,7 +35,11 @@ description: Transparent support  for interruptible computations. A workflow can
              .
              New in this release,
                   .
-                  * registerType is no longer needed
+                  * 0.5.8.1 solved a bug that caused a "casting failure"
+                  .
+                  * 0.5.8:
+                  .
+                  *registerType is no longer needed
                   .
                   * Configurable state persistence (for example, in databases) . Default in files
                   .
@@ -53,7 +57,7 @@ description: Transparent support  for interruptible computations. A workflow can
                  .
                  * Persisten communications facilities trough persistent data objects, inspection of workflow states ,  persistent  queues, persistent timeouts and, new in this release, References to internal workflow objects WFRef's
                  .
-                 * workflow management and monitoriing, view workflow history and intermediate results.
+                 * workflow management and monitoring, view workflow history and intermediate results.
 
 
 
