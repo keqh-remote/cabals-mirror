@@ -1,6 +1,6 @@
 Name:                yesod-examples
-Version:             0.9.0
-Synopsis:            Example programs using the Yesod Web Framework.
+Version:             0.9.0.1
+Synopsis:            Example programs using the Yesod Web Framework. (deprecated)
 Description:         These are the same examples and tutorials found on the documentation site.
 Homepage:            http://www.yesodweb.com/
 License:             BSD3
