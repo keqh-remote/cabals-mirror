@@ -1,5 +1,5 @@
 Name:                   iproute
-Version:                1.2.8
+Version:                1.2.9
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -47,6 +47,7 @@ Test-Suite spec
   Ghc-Options:          -Wall
   Main-Is:              Spec.hs
   Other-Modules:        RouteTableSpec
+                      , IPSpec
   Build-Depends:        base
                       , hspec
                       , QuickCheck
@@ -54,6 +55,7 @@ Test-Suite spec
                       , byteorder
                       , containers
                       , network
+                      , Safe
 
 Source-Repository head
   Type:                 git
