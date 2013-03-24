@@ -1,5 +1,5 @@
 Name:                pacman-memcache
-Version:             0.1.0.2
+Version:             0.1.0.3
 Synopsis:            Read whole Pacman database which pushes it into the memory cache
 Description:         Read whole Pacman database which pushes it into the memory cache
  .
@@ -27,10 +27,15 @@ Description:         Read whole Pacman database which pushes it into the memory 
 License:             BSD3
 License-file:        LICENSE
 Author:              Krzysztof Skrzętnicki
-Maintainer:          Krzysztof Skrzętnicki
+Maintainer:          Krzysztof Skrzętnicki <gtener@gmail.com>
 Category:            System
 Build-type:          Simple
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
+homepage:            https://github.com/Tener/archlinux-utils
+
+source-repository head
+  Type:                git
+  Location:            git://github.com/Tener/archlinux-utils.git
 
 Executable pacman-memcache
   Main-is:             pacman-memcache.hs
