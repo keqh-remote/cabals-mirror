@@ -1,5 +1,5 @@
 Name:           synthesizer-dimensional
-Version:        0.3
+Version:        0.4
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -8,18 +8,15 @@ Homepage:       http://www.haskell.org/haskellwiki/Synthesizer
 Category:       Sound
 Synopsis:       Audio signal processing with static physical dimensions
 Description:
-   High-level functions which use physical units and
+   High-level functions that use physical units and
    abstract from the sample rate in statically type safe way.
 Stability:      Experimental
-Tested-With:    GHC==6.4.1, GHC==6.8.2
+Tested-With:    GHC==6.10.4
 Cabal-Version:  >=1.6
 Build-Type:     Simple
 
 Extra-Source-Files:
   Makefile
-
-Flag splitBase
-  description: Choose the new smaller, split-up base package.
 
 Flag optimizeAdvanced
   description: Enable advanced optimizations. They slow down compilation considerably.
@@ -31,7 +28,7 @@ Flag buildExamples
 
 
 Source-Repository this
-  Tag:         0.3
+  Tag:         0.4
   Type:        darcs
   Location:    http://code.haskell.org/synthesizer/dimensional/
 
@@ -41,28 +38,23 @@ Source-Repository head
 
 Library
   Build-Depends:
-    synthesizer-core >=0.2.1 && <0.3,
+    synthesizer-core >=0.3 && <0.4,
     transformers >=0.0.1 && <0.2,
     event-list >=0.0.10 && <0.1,
     non-negative >=0.0.5 && <0.1,
     numeric-prelude >=0.1.1 && <0.2,
     utility-ht >=0.0.5 && <0.1,
     storable-record >=0.0.1 && <0.1,
-    sox >=0.0 && <0.1,
+    sox >=0.1 && <0.2,
     storablevector >=0.2.3 && <0.3,
     binary >=0.1 && <1,
     bytestring >= 0.9 && <0.10
 
-  If flag(splitBase)
-    Build-Depends:
-      base >= 3 && <5,
-      random >=1.0 && <2.0,
-      old-time >=1.0 && <2,
-      process >=1.0 && <1.1
-  Else
-    Build-Depends:
-      base >= 1.0 && < 2,
-      special-functors >= 1.0 && <1.1
+  Build-Depends:
+    base >= 4 && <5,
+    random >=1.0 && <2.0,
+    old-time >=1.0 && <2,
+    process >=1.0 && <1.1
 
   GHC-Options:    -Wall
   Hs-source-dirs: src
@@ -72,6 +64,7 @@ Library
     Synthesizer.Dimensional.Rate
     Synthesizer.Dimensional.Arrow
     Synthesizer.Dimensional.Map
+    Synthesizer.Dimensional.Map.Filter
     Synthesizer.Dimensional.Process
     Synthesizer.Dimensional.Causal.Process
 
@@ -102,12 +95,15 @@ Library
     Synthesizer.Dimensional.RateAmplitude.Noise
     Synthesizer.Dimensional.RateAmplitude.Piece
     Synthesizer.Dimensional.RateAmplitude.Play
+    Synthesizer.Dimensional.ChunkySize.Cut
+    Synthesizer.Dimensional.ChunkySize.Signal
     Synthesizer.Dimensional.Cyclic.Signal
     Synthesizer.Dimensional.Cyclic.Analysis
     Synthesizer.Dimensional.Wave
     Synthesizer.Dimensional.Wave.Controlled
 
-  Other-Modules:
+--  Other-Modules:
+-- we need this in synthesizer-alsa for implementation of low-level functions
     Synthesizer.Dimensional.Signal.Private
 --    Synthesizer.Dimensional.Utility
 
