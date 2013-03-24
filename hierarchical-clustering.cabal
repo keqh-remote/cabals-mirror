@@ -1,5 +1,5 @@
 Name:                hierarchical-clustering
-Version:             0.4.1
+Version:             0.4.2
 Synopsis:            Fast algorithms for single, average/UPGMA and complete linkage clustering.
 License:             BSD3
 License-file:        LICENSE
@@ -98,7 +98,7 @@ Test-suite runtests
   Build-depends:
       base       == 4.*
 
-    , hspec      == 0.9.*
+    , hspec      >= 0.9 && < 1.2
     , HUnit      == 1.2.*
     , QuickCheck == 2.4.*
 
