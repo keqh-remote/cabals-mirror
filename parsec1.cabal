@@ -1,6 +1,6 @@
 cabal-version: >= 1.2
 name:           parsec1
-version:        1.0.0.4
+version:        1.0.0.5
 license:        BSD3
 license-file:   LICENSE
 author:         Daan Leijen <daan@cs.uu.nl>
@@ -26,8 +26,16 @@ description:
     in order to avoid module ambiguities for users just installing your package.
     Your own module ambiguities are best avoided by hiding packages.
     .
-    This version only differs from pervious ones by a changed description.
-    (In version 1.0.0.4 only the inline pragmas have been removed #4849.)
+
+    This version only differs from the pervious one by improved error messages
+    for try (positions are not reset), tokens and thus string (longer
+    unexpected strings are now reported to match the error position).
+    The notFollowedBy-parser was generalized (as in parsec-3) so
+    characters in messages are now shown in single instead of double
+    quotes.
+    Also (as since parsec-3.1.2) lookAhead no longer consumes tokens on success
+    (so that the many-parser can detect this).
+
 build-type:     Simple
 cabal-version:      >= 1.6
 library {
