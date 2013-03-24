@@ -1,5 +1,5 @@
 name:            shakespeare-css
-version:         1.0.1.5
+version:         1.0.2
 license:         MIT
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -35,11 +35,14 @@ library
                    , text             >= 0.11.1.1 && < 0.12
                    , process          >= 1.0      && < 1.2
                    , parsec           >= 2        && < 4
+                   , transformers
 
     exposed-modules: Text.Cassius
                      Text.Lucius
     other-modules:   Text.MkSizeType
                      Text.Css
+                     Text.IndentToBrace
+                     Text.CssCommon
     ghc-options:     -Wall
     if impl(ghc >= 7.4)
        cpp-options: -DGHC_7_4
