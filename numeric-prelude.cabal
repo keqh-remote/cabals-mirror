@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.3
+Version:        0.3.0.1
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -154,7 +154,7 @@ Flag buildTests
   default:     False
 
 Source-Repository this
-  Tag:         0.2.2
+  Tag:         0.3.0.1
   Type:        darcs
   Location:    http://code.haskell.org/numeric-prelude/
 
@@ -169,11 +169,11 @@ Library
     storable-record >=0.0.1 && <0.1,
     non-negative >=0.0.5 && <0.2,
     utility-ht >=0.0.6 && <0.1,
-    deepseq >=1.1 && <1.3
+    deepseq >=1.1 && <1.4
   If flag(splitBase)
     Build-Depends:
-      base >= 2 && <6,
-      array >=0.1 && <0.4,
+      base >= 2 && <5,
+      array >=0.1 && <0.5,
       containers >=0.1 && <0.5,
       random >=1.0 && <1.1
   Else
