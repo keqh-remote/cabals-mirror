@@ -1,6 +1,6 @@
 name:          category-extras
 category:      Control, Monads, Comonads
-version:       1.0
+version:       1.0.1
 license:       BSD3
 cabal-version: >= 1.2
 license-file:  LICENSE
@@ -36,13 +36,14 @@ description:   The obsolete @category-extras@ package provided a monolithic set
                .
                * vector-instances
                .
-               A quick overview of the packages in dependency order is
-               available from
-               <http://dmwit.com/category-extras/dependencies.png>. A more
-               detailed (but very incomplete -- help me complete it!) overview
-               mapping each module in the old package into its new location in
-               the new hierarchy follows. Not all modules have exact analogs;
-               where possible, similar alternatives are listed.
+               There are two overviews below. The first is a quick,
+               dependency-order graphical overview of packages. The second is a
+               more detailed (but very incomplete -- help me complete it!)
+               overview mapping each module in the old package into its new
+               location in the new hierarchy. Not all modules have exact
+               analogs; where possible, similar alternatives are listed.
+               .
+               <<http://dmwit.com/category-extras/dependencies-latest.png>>
                .
                > Control
                >     Control.Allegory: use alternative profunctors-Data.Profunctor
@@ -70,7 +71,7 @@ description:   The obsolete @category-extras@ package provided a monolithic set
                >         Control.Comonad.Exponent: comonad-transformers-Control.Comonad.Trans.Trace
                >         Control.Comonad.Fix: comonad-Control.Comonad
                >         Control.Comonad.HigherOrder
-               >         Control.Comonad.Indexed
+               >         Control.Comonad.Indexed: indexed-Control.Comonad.Indexed
                >         Control.Comonad.Parameterized
                >         Control.Comonad.Pointer: comonad-extras-Control.Comonad.Store.Pointer
                >         Control.Comonad.Reader: comonad-transformers-Control.Comonad.Trans.Env
@@ -100,7 +101,7 @@ description:   The obsolete @category-extras@ package provided a monolithic set
                >         Control.Functor.Full
                >         Control.Functor.HigherOrder
                >             Control.Functor.HigherOrder.Composition
-               >         Control.Functor.Indexed
+               >         Control.Functor.Indexed: indexed-Data.Functor.Indexed
                >         Control.Functor.KanExtension: kan-extensions-Data.Functor.KanExtension
                >             Control.Functor.KanExtension.Interpreter
                >         Control.Functor.Lambek
@@ -120,11 +121,11 @@ description:   The obsolete @category-extras@ package provided a monolithic set
                >         Control.Monad.HigherOrder
                >         Control.Monad.Hyper
                >         Control.Monad.Ideal
-               >         Control.Monad.Indexed
-               >             Control.Monad.Indexed.Cont
-               >             Control.Monad.Indexed.Fix
-               >             Control.Monad.Indexed.State
-               >             Control.Monad.Indexed.Trans
+               >         Control.Monad.Indexed: indexed-Control.Monad.Indexed
+               >             Control.Monad.Indexed.Cont: indexed-extras-Control.Monad.Indexed.Cont
+               >             Control.Monad.Indexed.Fix: indexed-Control.Monad.Indexed.Fix
+               >             Control.Monad.Indexed.State: indexed-extras-Control.Monad.Indexed.State
+               >             Control.Monad.Indexed.Trans: indexed-Control.Monad.Indexed.Trans
                >         Control.Monad.Parameterized
                >     Morphism
                >         Control.Morphism.Ana: recursion-schemes-Data.Functor.Foldable
@@ -166,6 +167,8 @@ library
     either,
     free,
     groupoids,
+    indexed,
+    indexed-extras,
     kan-extensions,
     keys,
     monad-products,
