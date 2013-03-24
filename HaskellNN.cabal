@@ -1,5 +1,5 @@
 Name:         HaskellNN
-Version:      0.1.1
+Version:      0.1.2
 License:      GPL
 License-file: LICENSE
 Author:       Kiet Lam
@@ -51,11 +51,15 @@ Library
 
 
   ghc-prof-options: -prof -auto-all
-  Include-Dirs:     cbits
+
+
   C-sources:        src/AI/Training/Internal/lbfgs_aux.c,
                     cbits/lbfgs.c
-                    cbits/lbfgs.h
-  Includes:         lbfgs.h
+
+  Include-dirs:     cbits
+  Includes:         lbfgs.h, arithmetic_ansi.h, arithmetic_sse_double.h, arithmetic_sse_float.h
+  Install-includes: lbfgs.h, arithmetic_ansi.h, arithmetic_sse_double.h, arithmetic_sse_float.h
+
 
 
 source-repository head
