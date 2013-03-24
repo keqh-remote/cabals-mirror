@@ -9,7 +9,7 @@ description:
   level modules that can use it as foundation. They all mimic the
   exact names and functionality of the original libraries. For
   a specific library, look for package @bindings-library_name@.
-version: 0.1.3
+version: 0.1.4
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
@@ -19,15 +19,21 @@ category: FFI
 library
   hs-source-dirs: src
   c-sources:
-    src/Bindings/c.c
+    src/ctypes.c
+    src/cfunctions.c
+    src/cconstants.c
   extensions:
     ForeignFunctionInterface
     TypeSynonymInstances
     ScopedTypeVariables
     MultiParamTypeClasses
     TypeFamilies
-  build-depends: base
+  build-depends: base >=3 && <5
   exposed-modules:
     Bindings
     Bindings.Utilities
     Bindings.C
+  other-modules:
+    CFunctions
+    CConstants
+    CTypes
