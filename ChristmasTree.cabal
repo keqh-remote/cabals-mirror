@@ -1,7 +1,7 @@
-cabal-version:      >=1.2.3
+cabal-version:      >=1.2.3.1
 build-type:         Simple
 name:               ChristmasTree
-version:            0.2.1
+version:            0.2.1.1
 license:            LGPL
 license-file:       COPYRIGHT
 maintainer:         Marcos Viera <mviera@fing.edu.uy>
@@ -11,16 +11,22 @@ synopsis:           Alternative approach of 'read' that composes grammars instea
 category:           Parsing 
 stability:          Experimental
 copyright:          Universiteit Utrecht
-build-depends:      base >= 4 && < 5, haskell98, template-haskell >= 2.4, containers,
-                    fgl == 5.4.2.2, TTTAS >= 0.4 , uulib >= 0.9.11 
-exposed-modules:    Text.GRead, Text.GShow, 
-                    Text.GRead.Derive, Text.GRead.Grammar,
-                    Text.GRead.Derive.BindingGroup,
-                    Text.GRead.Transformations.GramTrafo, 
-                    Text.GRead.Transformations.Group, 
-                    Text.GRead.Transformations.LeftCorner,
-                    Text.GRead.Transformations.LeftFact     
-extensions:         Arrows, GADTs, TemplateHaskell
-hs-source-dirs:     src
 extra-source-files: README, LICENSE-LGPL, ChristmasTree.bib
-ghc-options:        -Wall
+
+library
+  exposed-modules:     Text.GRead, Text.GShow, 
+                       Text.GRead.Derive, Text.GRead.Grammar,
+                       Text.GRead.Derive.BindingGroup,
+                       Text.GRead.Transformations.GramTrafo, 
+                       Text.GRead.Transformations.Group, 
+                       Text.GRead.Transformations.LeftCorner,
+                       Text.GRead.Transformations.LeftFact 
+  build-depends:       base >= 4 && < 5, template-haskell >= 2.4, containers,
+                       fgl >= 5.4.2 && < 5.4.3, TTTAS >= 0.4 , uulib >= 0.9.11 
+  extensions:         Arrows, GADTs, TemplateHaskell
+  hs-source-dirs:     src
+
+
+    
+
+
