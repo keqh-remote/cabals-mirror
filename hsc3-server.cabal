@@ -1,5 +1,5 @@
 Name:               hsc3-server
-Version:            0.3.1
+Version:            0.3.2
 Synopsis:           SuperCollider server resource management and synchronization.
 Description:
     This library provides abstractions for managing SuperCollider server
@@ -51,7 +51,7 @@ Library
       , deepseq >= 1.1
       , failure >= 0.1
       , hosc >= 0.8
-      , hsc3 >= 0.7
+      , hsc3 >= 0.11
       , hsc3-process >= 0.6
       , strict-concurrency
       , transformers
