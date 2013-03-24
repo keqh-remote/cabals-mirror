@@ -1,8 +1,8 @@
 Name:                bindings-libzip
-Version:             0.1.0.4
+Version:             0.10
 Synopsis:            Low level bindings to libzip.
 Description:
-  This package provides low-level bindings to libzip library.
+  This package provides low-level bindings to libzip (v0.10) library.
   For higher-level interface please use LibZip package:
   <http://hackage.haskell.org/package/LibZip>
 
@@ -16,7 +16,7 @@ Category:            FFI, Foreign
 Build-type:          Simple
 
 Cabal-version:       >=1.2.3
-Tested-with:         GHC == 7.0.1, GHC == 7.2.1, GHC == 7.4.1
+Tested-with:         GHC == 7.0.3, GHC == 7.2.2, GHC == 7.4.1
 
 Flag NoPkgConfig
   Description: Do not use pkg-config to check for library dependencies.
@@ -37,8 +37,8 @@ Library
     Includes: zip.h
     Extra-Libraries: zip z
   else
-    PkgConfig-Depends: libzip >= 0.9
+    PkgConfig-Depends: libzip == 0.10
 
   GHC-Options:
-        -Wall
+        -Wall -fno-warn-unused-imports
 
