@@ -1,5 +1,5 @@
 Name:                lambdabot
-Version:             4.2.3.2
+Version:             4.2.3.3
 License:             GPL
 License-file:        LICENSE
 Author:              Don Stewart
@@ -66,6 +66,7 @@ Executable          lambdabot
 
     Main-is:             Main.hs
     -- For a faster build, use -Onot
+    extensions:          FlexibleInstances
     ghc-options:         -funbox-strict-fields -fno-warn-incomplete-patterns
                          -fno-warn-missing-methods -fno-warn-orphans
                          -- Apparently needed to work around zombie & IRC connection issues
