@@ -1,7 +1,7 @@
 
 
 Name:                dph-examples
-Version:             0.7.0.4
+Version:             0.7.0.5
 License:             BSD3
 License-file:        LICENSE
 Author:              The DPH Team
@@ -168,7 +168,7 @@ Executable dph-real-nbody
                            Solver.VectorNaive.Solver
                     Timing Points2D.Types Points2D.Generate
                     Batch.MainArgs Batch.Config
-    Build-depends:  base == 4.6.*, vector == 0.10.*, random == 1.0.*, old-time == 1.1.*, containers == 0.5.*, dph-base == 0.7.*, dph-prim-par == 0.7.*, dph-lifted-vseg == 0.7.*, HUnit == 1.2.*
+    Build-depends:  base == 4.6.*, vector == 0.10.*, random == 1.0.*, old-time == 1.1.*, containers == 0.5.*, dph-base == 0.7.*, dph-prim-par == 0.7.*, dph-lifted-vseg == 0.7.*, HUnit == 1.2.*, parseargs == 0.1.*
     hs-source-dirs: examples/real/NBody examples/real/NBody/Batch lib
     ghc-options:    -eventlog -rtsopts -threaded -fllvm -O0 -package dph-lifted-vseg -fcpr-off -fsimpl-tick-factor=1000
 
