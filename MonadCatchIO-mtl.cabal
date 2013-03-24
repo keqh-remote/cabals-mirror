@@ -1,5 +1,5 @@
 name:                MonadCatchIO-mtl
-version:             0.1.0.0
+version:             0.1.0.1
 description:
         Provides a monad-transformer version of the @Control.Exception.catch@
         function. For this, it defines the @MonadCatchIO@ class, a subset of
@@ -15,6 +15,8 @@ homepage:           http://code.haskell.org/~jcpetruzza/MonadCatchIO-mtl
 cabal-version:      >= 1.2
 build-type:         Simple
 tested-with:        GHC==6.10
+
+extra-source-files: Control/Monad/generic-code.inc
 
 Flag base3
   description: Don't expect the new Control.Exception module (prior to base-4)
