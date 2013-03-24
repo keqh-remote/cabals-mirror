@@ -1,5 +1,5 @@
 Name: zoneinfo
-Version: 0.3
+Version: 0.4
 Cabal-Version: >= 1.2
 License: BSD3
 License-File: LICENSE
@@ -20,7 +20,7 @@ Extra-Source-Files:
   zoneinfo.buildinfo.in
 
 Library
-  Build-Depends: base, time
+  Build-Depends: base <= 4.0, time
   Exposed-Modules:
     Data.Time.ZoneInfo
   Extensions: EmptyDataDecls, ForeignFunctionInterface
