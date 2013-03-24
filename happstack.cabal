@@ -1,5 +1,5 @@
 Name:                happstack
-Version:             7.0.0
+Version:             7.0.1
 Synopsis:            The haskell application server stack + code generation
 Description:         The haskell application server stack
 License:             BSD3
@@ -14,7 +14,7 @@ Cabal-Version:       >= 1.6
 source-repository head
     type:     darcs
     subdir:   happstack
-    location: http://patch-tag.com/r/mae/happstack
+    location: http://hub.darcs.net/stepcut/happstack
 
 Flag base4
     Description: Choose the even newer, even smaller, split-up base package.
@@ -29,7 +29,7 @@ Library
   other-modules:       Paths_happstack
 
   build-depends:       base >= 3 && <5,
-                       happstack-server >= 7.0 && < 7.1
+                       happstack-server >= 7.0 && < 7.2
 
   if flag(tests)
     hs-source-dirs:    tests
