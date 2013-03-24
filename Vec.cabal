@@ -1,5 +1,5 @@
 Name:                Vec
-Version:             0.9.5
+Version:             0.9.6
 License:             BSD3
 License-file:        LICENSE
 Author:              Scott E. Dillard
@@ -14,13 +14,14 @@ Description:
    provides a set of common list-like functions (map, fold, etc) for working
    with vectors. Built up from these functions are a small but useful set of
    linear algebra operations: matrix multiplication, determinants, solving
-   linear systems, inverting matrices.
-Cabal-version:       >=1.2
+   linear systems, inverting matrices. Efficient code is generated using
+   Storable and unboxed array instances or an optional packed representation.
+Cabal-version:       >=1.2.3
 Build-type:          Simple
 Category:            Data,Math
 
 library
-    Build-Depends:      base,QuickCheck<2
+    Build-Depends:      base,QuickCheck<2,array,ghc-prim
 
     Exposed-modules:    Data.Vec 
                         Data.Vec.Base,
