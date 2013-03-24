@@ -1,5 +1,5 @@
 Name:                randproc
-Version:             0.3
+Version:             0.4
 Homepage:            http://www.haskell.org/haskellwiki/Random_Processes
 Bug-reports:         http://trac.haskell.org/RandProc/
 Synopsis:            Data structures and support functions for working with random processes
@@ -19,10 +19,15 @@ Author:              David Banas
 Maintainer:          dbanas@banasfamily.net
 Build-Type:          Simple
 Cabal-Version:       >=1.2
-extra-source-files: test/Test.hs README TODO benchmarks/timed_summaries/dbanas-eeepc
+extra-source-files: test/Test.hs
+                    README
+                    TODO
+                    benchmarks/timed_summaries/dbanas-eeepc
+                    Data/RandProc/Examples/Problems/ch3p3.hs
+                    Data/RandProc/Examples/Problems/ch3p7.hs
 
 Library
   Build-Depends:     base >= 3 && < 5
   Exposed-modules:   Data.RandProc
-  ghc-options:       -Wall -O2
+  ghc-options:       -Wall
 
