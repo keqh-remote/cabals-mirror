@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hoogle
-version:            4.2.4
+version:            4.2.5
 license:            GPL
 license-file:       docs/LICENSE
 category:           Development
@@ -28,6 +28,10 @@ data-files:
     -- Cabal doesn't find files with . in them, Cabal bug #794
     resources/jquery-1.4.2.js
     resources/jquery.cookie.js
+
+source-repository head
+    type:     darcs
+    location: http://community.haskell.org/~ndm/darcs/hoogle/
 
 library
     hs-source-dirs:     src
