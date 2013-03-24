@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.8.1
+Version:             0.9
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -16,15 +16,11 @@ Description:
 	protocol. Most of the functions will work correctly with stable version
 	but not all.
 	.
-	Changes from v0.7:
+	Changes from v0.8:
 	.
-	- new commands added: strlen, persist
-	.
-	- zrangebyscore now supports LIMIT argument. Warning! Backward incompatible change!
-	.
-	- fixed behaviour of sort with multiple GET keys
-	.
-	- exceptions handled in run_multi and run_cas blocks leads to abort transaction explicitly
+	- Now it's able to connect Redis using unix sockets. To do so just
+	call /connect/ with path to socket as first argument and empty
+	second argument.
 	.
 
 Stability:           beta
