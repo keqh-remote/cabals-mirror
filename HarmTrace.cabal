@@ -1,5 +1,5 @@
 name:                   HarmTrace
-version:                0.5
+version:                0.6
 synopsis:               Harmony Analysis and Retrieval of Music
 description:            HarmTrace: Harmony Analysis and Retrieval of Music 
                         with Type-level Representations of Abstract
@@ -9,7 +9,7 @@ description:            HarmTrace: Harmony Analysis and Retrieval of Music
                         for automatically analysing the harmony of music
                         sequences. HarmTrace is described in the paper:
                         .
-                        * José Pedro Magalhães and W. Bas de Haas.
+                        * Jose Pedro Magalhaes and W. Bas de Haas.
                         /Experience Report: Functional Modelling of Musical Harmony./
                         International Conference on Functional Programming,
                         2011.
@@ -18,7 +18,7 @@ description:            HarmTrace: Harmony Analysis and Retrieval of Music
 copyright:              (c) 2010--2011 Universiteit Utrecht
 license:                OtherLicense
 license-file:           LICENSE
-author:                 W. Bas de Haas and José Pedro Magalhães
+author:                 W. Bas de Haas and Jose Pedro Magalhaes
 stability:              experimental
 maintainer:             bash@cs.uu.nl, jpm@cs.uu.nl
 homepage:               http://www.cs.uu.nl/wiki/GenericProgramming/HarmTrace
@@ -29,6 +29,37 @@ tested-with:            GHC == 7.0.3
 
 executable harmtrace
   hs-source-dirs:       src
+  other-modules:        HarmTrace.HarmTrace
+
+                        HarmTrace.Base.MusicRep
+                        HarmTrace.Base.Parsing
+                        HarmTrace.Base.TypeLevel
+
+                        HarmTrace.HAnTree.Augment
+                        HarmTrace.HAnTree.Binary
+                        HarmTrace.HAnTree.HAn
+                        HarmTrace.HAnTree.HAnParser
+                        HarmTrace.HAnTree.ToHAnTree
+                        HarmTrace.HAnTree.Tree
+
+                        HarmTrace.IO.Errors
+                        HarmTrace.IO.Main
+                        HarmTrace.IO.PrintTree
+
+                        HarmTrace.Matching.FlatMatch
+                        HarmTrace.Matching.GuptaNishimuraEditMatch
+                        HarmTrace.Matching.Matching
+                        HarmTrace.Matching.Sim
+                        HarmTrace.Matching.Standard
+
+                        HarmTrace.Model.Instances
+                        HarmTrace.Model.Main
+                        HarmTrace.Model.Model
+                        HarmTrace.Model.Parser
+
+                        HarmTrace.Tokenizer.Tokenizer
+                        HarmTrace.Tokenizer.Tokens
+
   main-is:              Main.hs
   build-depends:        base >= 4.3 && < 4.4, template-haskell >=2.5 && <2.6,
                         mtl, directory, filepath, array, parallel >= 3,
