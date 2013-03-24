@@ -1,5 +1,5 @@
 Name:                 simple-log
-Version:              0.1.5
+Version:              0.1.6
 Synopsis:             Simple log for Haskell
 Description:          Log library for Haskell with removing unnecessary traces
 License:              BSD3
@@ -10,6 +10,7 @@ Maintainer:           voidex@live.com
 Category:             Logging
 Build-type:           Simple
 Cabal-version:        >= 1.6
+Tested-with:          GHC == 7.6.1
 
 Library
   HS-Source-Dirs: src
