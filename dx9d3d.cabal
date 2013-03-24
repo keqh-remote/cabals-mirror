@@ -1,5 +1,5 @@
 name:               dx9d3d
-version:            0.1.0.2
+version:            0.1.1.1
 author:             Esa Ilari Vuokko
 maintainer:         none
 license:            BSD3
@@ -11,14 +11,16 @@ Description:        A Haskell binding for the Microsoft DirectX 9.
                     This package doesn't have any sample code. But mokehehe wrote sample code below blog article. 
                     <http://mokehehe.blogspot.com/2009/04/using-directx-from-haskell.html>
                     .
-                    This version lacks D3DX support and some functionality to build with MinGW's library.
+                    This version requires DirectX SDK that is specified in --extra-include-dirs and --extra-lib-dirs PATH.
+                    See the README file for more information.
 stability:          alpha
 build-type:         Simple
-build-depends:      base >= 3 && < 5, Win32, dx9base < 0.1.1
+build-depends:      base >= 3 && < 5, Win32, dx9base >= 0.1.1
 extra-source-files:
    gen/Parser.hs, gen/extract-dx.hs, gen/extract-d3dx.hs
    gen/d3d_h.h,   gen/d3dx_h.h,      gen/fix_decl_x.h
    gen/d3d_c.h,   gen/d3dx_c.h,      gen/fix_decl.h
+   README.txt
 exposed-modules:
     DirectX9.D3D
     DirectX9.D3D.Base
