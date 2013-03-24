@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.1.2
+version:		0.1.3
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -61,11 +61,11 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  6) Install Manatee (same, don't use root permission):
  .
- > cabal install manatee-core manatee-anything manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee-curl manatee
+ > cabal install manatee-core manatee-anything manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee-curl manatee-terminal manatee
  .
  That's all, then type command "manatee" to play it! :)
  .
- Manatee can work in Gnome or KDE
+ I have test, Manatee can works well in Gnome, KDE and XFCE
  .
  Unfortunately, Manatee can't work in XMonad, please let me know if some XMonad hacker know how to fix it. :)
  .
