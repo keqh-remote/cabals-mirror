@@ -1,5 +1,5 @@
 name:              fb
-version:           0.3
+version:           0.3.1
 license:           BSD3
 license-file:      LICENSE
 author:            Felipe Lessa
@@ -9,7 +9,7 @@ category:          Web
 stability:         Experimental
 cabal-version:     >= 1.8
 build-type:        Simple
-homepage:          https://github.com/meteficha/facebook
+homepage:          https://github.com/meteficha/fb
 
 description:
   This package exports bindings to Facebook's APIs (see
@@ -45,6 +45,7 @@ library
     Facebook.Base
     Facebook.Auth
     Facebook.Graph
+    Facebook.OpenGraph
   build-depends:
       base               >= 4       && < 5
     , lifted-base        >= 0.1     && < 0.2
