@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.9.3
+Version:         1.9.4
 Cabal-Version:   >= 1.10
 Build-Type:      Custom
 License:         GPL
@@ -15,12 +15,12 @@ Tested-With:     GHC == 6.12.1, GHC == 7.0.4, GHC == 7.4.1
 Synopsis:        Conversion between markup formats
 Description:     Pandoc is a Haskell library for converting from one markup
                  format to another, and a command-line tool that uses
-                 this library. It can read markdown and (subsets of)
-                 reStructuredText, HTML, LaTeX and Textile, and it can write
+                 this library. It can read markdown and (subsets of) HTML,
+                 reStructuredText, LaTeX, DocBook, and Textile, and it can write
                  markdown, reStructuredText, HTML, LaTeX, ConTeXt, Docbook,
                  OpenDocument, ODT, Word docx, RTF, MediaWiki, Textile,
                  groff man pages, plain text, Emacs Org-Mode, AsciiDoc, EPUB,
-                 and S5 and Slidy HTML slide shows.
+                 and S5, Slidy and Slideous HTML slide shows.
                  .
                  Pandoc extends standard markdown syntax with footnotes,
                  embedded LaTeX, definition lists, tables, and other
@@ -45,6 +45,7 @@ Data-Files:
                  templates/default.rst, templates/default.plain,
                  templates/default.mediawiki, templates/default.rtf,
                  templates/default.s5, templates/default.slidy,
+                 templates/default.slideous,
                  templates/default.dzslides, templates/default.asciidoc,
                  templates/default.textile, templates/default.org,
                  templates/epub-titlepage.html, templates/epub-page.html,
@@ -78,6 +79,9 @@ Data-Files:
                  slidy/graphics/nofold-dim.gif,
                  slidy/graphics/unfold-dim.gif,
                  slidy/graphics/fold-dim.gif,
+                 -- data for slideous writer
+                 slideous/slideous.css,
+                 slideous/slideous.js,
                  -- data for dzslides writer
                  dzslides/template.html,
                  -- data for citeproc
@@ -216,7 +220,7 @@ Library
                  tagsoup >= 0.12.5 && < 0.13,
                  base64-bytestring >= 0.1 && < 0.2,
                  zlib >= 0.5 && < 0.6,
-                 highlighting-kate >= 0.5.0.2 && < 0.6,
+                 highlighting-kate >= 0.5.1 && < 0.6,
                  temporary >= 1.1 && < 1.2
   if flag(blaze_html_0_5)
     build-depends:
@@ -321,7 +325,7 @@ Executable pandoc
                  tagsoup >= 0.12.5 && < 0.13,
                  base64-bytestring >= 0.1 && < 0.2,
                  zlib >= 0.5 && < 0.6,
-                 highlighting-kate >= 0.5.0.2 && < 0.6,
+                 highlighting-kate >= 0.5.1 && < 0.6,
                  temporary >= 1.1 && < 1.2
   if flag(blaze_html_0_5)
     build-depends:
@@ -385,7 +389,7 @@ Executable test-pandoc
                  tagsoup >= 0.12.5 && < 0.13,
                  base64-bytestring >= 0.1 && < 0.2,
                  zlib >= 0.5 && < 0.6,
-                 highlighting-kate >= 0.5.0.2 && < 0.6,
+                 highlighting-kate >= 0.5.1 && < 0.6,
                  temporary >= 1.1 && < 1.2
   if flag(blaze_html_0_5)
     build-depends:
