@@ -1,5 +1,5 @@
 Name:                hashable
-Version:             1.0.1.0
+Version:             1.0.1.1
 Synopsis:            A class for types that can be converted to a hash value
 Description:         This package defines a class, 'Hashable', for types that
                      can be converted to a hash value.  This class
@@ -16,8 +16,11 @@ Stability:           Provisional
 Category:            Data
 Build-type:          Simple
 Cabal-version:       >=1.10
-Extra-source-files:  CHANGES
-
+-- tests/Properties.hs shouldn't have to go here, but the source files
+-- for the test-suite stanzas don't get picked up by `cabal sdist`.
+Extra-source-files:
+  CHANGES, README.md, tests/Properties.hs, benchmarks/Benchmarks.hs
+  benchmarks/Makefile
 
 Library
   Default-language:  Haskell98
@@ -27,6 +30,8 @@ Library
 
   C-sources:         cbits/hashByteString.c
   Ghc-options:       -Wall
+  if impl(ghc >= 6.8)
+    Ghc-options: -fwarn-tabs
 
 Test-suite tests
   Default-language:  Haskell98
@@ -42,4 +47,4 @@ Test-suite tests
 
 source-repository head
   type:     git
-  location: http://github.com/tibbe/hashable.git
+  location: https://github.com/tibbe/hashable.git
