@@ -2,18 +2,18 @@
 -- TODO: Highlighting bug: The last line of the description.
 
 Name:               pontarius-xmpp
-Version:            0.0.3.0
+Version:            0.0.4.0
 Cabal-Version:      >= 1.6
 Build-Type:         Simple
-License:            BSD3
+License:            LGPL-3
 License-File:       LICENSE
 Copyright:          Copyright © 2011, Jon Kristensen
 Author:             Jon Kristensen, Mahdi Abdinejadi
 Maintainer:         jon.kristensen@pontarius.org
 Stability:          alpha
-Homepage:           http://www.pontarius.org/projects/pontarius-xmpp/
+Homepage:           http://www.pontarius.org/
 Bug-Reports:        mailto:info@pontarius.org
-Package-URL:        http://www.pontarius.org/releases/pontarius-xmpp-0.0.3.0.tar.gz
+Package-URL:        http://www.pontarius.org/releases/pontarius-xmpp-0.0.4.0.tar.gz
 Synopsis:           A (prototyped) secure and easy to use XMPP library
 Description:        A work in progress of an implementation of RFC 3920: XMPP
                     Core.
@@ -29,11 +29,10 @@ Library
                      Network.XMPP.Session, Network.XMPP.Stanza,
                      Network.XMPP.Utilities
   Exposed:           True
-  Build-Depends:     hlogger ==0.0.3.0, base >= 2 && < 5, enumerator,
-                     crypto-api, base64-string, regex-posix, pureMD5,
-                     utf8-string, network, xml-types, text, transformers,
-                     bytestring, binary, random, xml-enumerator, tls ==0.4.1,
-                     containers
+  Build-Depends:     base >= 2 && < 5, enumerator, crypto-api, base64-string,
+                     regex-posix, pureMD5, utf8-string, network, xml-types,
+                     text, transformers, bytestring, binary, random,
+                     xml-enumerator, tls ==0.4.1, containers
   -- Other-Modules:
   -- HS-Source-Dirs:
   -- Extensions:
@@ -91,5 +90,5 @@ Source-Repository this
   Type:     darcs
   -- Module:
   Location: https://patch-tag.com/r/jonkri/pontarius-xmpp
-  Tag:      0.0.3.0
+  Tag:      0.0.4.0
   -- Subdir:
