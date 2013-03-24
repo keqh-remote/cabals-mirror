@@ -1,11 +1,11 @@
 Name: convertible
-Version: 1.0.0
+Version: 1.0.1
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
 Copyright: Copyright (c) 2009-2009 John Goerzen
 license-file: COPYRIGHT
-extra-source-files: COPYING
+extra-source-files: COPYING, utils/genCinstances.hs
 homepage: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/convertible
 Category: Data
 synopsis: Typeclasses and instances for converting between types
@@ -25,7 +25,7 @@ Description: convertible provides a typeclass with a single function
  implemented in terms of the safer function described above.
  .
  Convertible is also used by HDBC 2.0 for handling marshalling of
- data to/from databases.
+ data to and from databases.
  .
  Convertible is backed by an extensive test suite and passes tests
  on GHC and Hugs.
@@ -53,6 +53,7 @@ library
                    Data.Convertible.Base,
                    Data.Convertible.Utils,
                    Data.Convertible.Instances,
+                   Data.Convertible.Instances.C,
                    Data.Convertible.Instances.Map,
                    Data.Convertible.Instances.Num,
                    Data.Convertible.Instances.Time
