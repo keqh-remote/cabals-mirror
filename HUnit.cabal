@@ -1,5 +1,5 @@
 Name:                   HUnit
-Version:                1.2.5.1
+Version:                1.2.5.0
 Cabal-Version:          >= 1.8
 License:                BSD3
 License-File:           LICENSE
@@ -15,11 +15,8 @@ Description:
 Tested-With:
     GHC == 7.0.4
     GHC == 7.4.1
-Build-Type:             Simple
+Build-Type:             Custom
 Extra-Source-Files:
-    HUnit.cabal.hugs
-    HUnit.cabal.tests
-    Setup.hs.hugs
     tests/HUnitTests.hs
     tests/HUnitTestBase.lhs
     tests/HUnitTestExtended.hs
