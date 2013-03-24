@@ -1,5 +1,5 @@
 Name:                forml
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            A statically typed, functional programming language 
 License:             MIT
 Author:              Andrew Stein
@@ -23,6 +23,7 @@ data-files:
                      src/forml/readme.forml, 
                      src/html/footer.html, 
                      src/html/header.html, 
+                     src/html/styles.css,
                      src/js/FormlReporter.js
 homepage:            http://texodus.github.com/forml
 
@@ -38,7 +39,7 @@ Executable forml
     indents,
     containers,
     pandoc,
-    jmacro,
+    jmacro == 0.6.2,
     MissingH,
     interpolatedstring-perl6,
     transformers,
