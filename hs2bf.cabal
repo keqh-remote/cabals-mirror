@@ -1,6 +1,6 @@
 name:            hs2bf
 cabal-version:   >=1.2
-version:         0.6
+version:         0.6.1
 author:          Daiki Handa
 maintainer:      xanxys@gmail.com
 synopsis:        Haskell to Brainfu*k compiler
@@ -9,7 +9,7 @@ license-File:    LICENSE
 category:        Compiler
 description:
     Proof of concept implementation of Haskell to Brainfu*k compiler.
-    You can find examples of compilable codes at http://www.xanxys.net/public/hs2bf-demo/
+    You can find examples of compilable codes at <http://www.xanxys.net/public/hs2bf-demo/>
 build-type:      Simple
 data-files:      Prelude.hs
 data-dir:        test
