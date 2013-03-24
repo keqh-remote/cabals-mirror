@@ -1,5 +1,5 @@
 Name: ContArrow
-Version: 0.0.1
+Version: 0.0.2
 License: LGPL
 Maintainer: Evgeny Jukov <masloed@gmail.com>
 Author: Evgeny Jukov
@@ -9,7 +9,7 @@ license-file: COPYRIGHT
 Homepage: http://macode.sourceforge.net
 Synopsis: Control.Arrow.Transformer.Cont
 description: Control.Arrow.Transformer.Cont
-Category: Data
+Category: Control
 Hs-Source-Dirs: src
 Exposed-Modules: Control.Arrow.Transformer.Cont
 Build-Depends: base, arrows
