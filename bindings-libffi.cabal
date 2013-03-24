@@ -1,34 +1,23 @@
 cabal-version: >= 1.2.3
 name: bindings-libffi
-homepage: http://bitbucket.org/mauricio/bindings
+homepage: http://bitbucket.org/mauricio/bindings-libffi
 synopsis:
-  Check bindings-common package for directions.
-version: 0.0.2
+  Low level bindings to libffi.
+version: 0.1
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
 author: Maurício C. Antunes
 build-type: Simple
 category: FFI
+bug-reports: http://bitbucket.org/mauricio/bindings-libffi/issues
 library
   hs-source-dirs: src
   extensions:
     ForeignFunctionInterface
-    TypeSynonymInstances
-    ScopedTypeVariables
-    EmptyDataDecls
-    TypeFamilies
-  build-depends: base >= 3 && <5, bindings-common
+  build-depends:
+    base >= 3 && <5,
+    bindings-common >= 1 && < 2
   exposed-modules:
     Bindings.Libffi
-  other-modules:
-    LibffiConstants
-    LibffiTypes
-    LibffiFunctions
--- This has to be commented out so that hackage
--- won't complain about a missing library.
---c-sources:
---  src/constants.c
---  src/types.c
---pkgconfig-depends:
---  libffi >= 3.0
+  pkgconfig-depends: libffi >= 3.0.7
