@@ -1,5 +1,5 @@
 Name:               hmatrix
-Version:            0.11.0.3
+Version:            0.11.0.4
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
@@ -29,7 +29,6 @@ build-type:         Custom
 
 extra-source-files: lib/Numeric/LinearAlgebra/Tests/quickCheckCompat.h
                     Config.hs THANKS INSTALL CHANGES
-extra-tmp-files:    hmatrix.buildinfo
 
 extra-source-files: examples/tests.hs
                     examples/deriv.hs
@@ -85,6 +84,14 @@ flag binary
 
 flag finit
     description:    Force FPU initialization in foreing calls
+    default:        False
+
+flag debugfpu
+    description:    Check FPU stack
+    default:        False
+
+flag debugnan
+    description:    Check NaN
     default:        False
 
 library
@@ -164,11 +171,20 @@ library
     if impl(ghc < 6.10.2)
         cpp-options: -DFINIT
 
-    if impl(ghc >= 7.0.1)
+    if impl(ghc == 7.0.1)
+        cpp-options: -DFINIT
+
+    if impl(ghc == 7.0.2)
         cpp-options: -DFINIT
 
     if flag(finit)
         cpp-options: -DFINIT
+
+    if flag(debugfpu)
+        cc-options: -DFPUDEBUG
+
+    if flag(debugnan)
+        cc-options: -DNANDEBUG
 
     if impl(ghc == 7.0.1)
         cpp-options: -DNONORMVTEST
@@ -202,4 +218,8 @@ source-repository head
     type:     darcs
     location: http://patch-tag.com/r/aruiz/hmatrix
 --    location: http://code.haskell.org/hmatrix
+
+-- Test-Suite tests
+--    type: exitcode-stdio-1.0
+--    main-is: examples/tests.hs
 
