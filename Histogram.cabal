@@ -1,6 +1,7 @@
 Name:                Histogram
-Version:             0.1
+Version:             0.1.0.1
 Description:         Easily create histograms of your data
+Category:            Charts
 License:             GPL
 License-file:        LICENSE
 Author:              Mike izbicki
