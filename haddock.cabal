@@ -1,6 +1,5 @@
 name: haddock
-cabal-version: >=1.1.4
-version: 0.8
+version: 0.9
 license: BSD3
 license-file: LICENSE
 copyright: (c) Simon Marlow
@@ -9,11 +8,12 @@ maintainer: Simon Marlow <simonmar@microsoft.com>
 stability: stable
 homepage: http://www.haskell.org/haddock/
 synopsis: Haddock is a documentation-generation tool for Haskell libraries
-build-depends: base>=1.0, haskell98>=1.0
+category: Development
+cabal-version: >= 1.2
 data-files:
 	html/haddock-DEBUG.css
 	html/haddock.css
-	html/haddock.js
+	html/haddock-util.js
 	html/haskell_icon.gif
 	html/minus.gif
 	html/plus.gif
@@ -53,35 +53,46 @@ extra-source-files:
 	haskell.vim
 	src/haddock.sh
 
-executable: haddock
-hs-source-dirs: src
-main-is: Main.hs
-extensions: CPP
-other-modules:
-	Binary
-	BlockTable
-	Digraph
-	FastMutInt
-	HaddockDB
-	HaddockDevHelp
-	HaddockHH
-	HaddockHH2
-	HaddockHoogle
-	HaddockHtml
-	HaddockLex
-	HaddockModuleTree
-	HaddockParse
-	HaddockRename
-	HaddockTypes
-	HaddockUtil
-	HaddockVersion
-	HsLexer
-	HsParseMonad
-	HsParseUtils
-	HsParser
-	HsSyn
-	Html
-	Main
-	Map
-	Set
-ghc-options: -O
+flag small_base
+  description: Choose the new smaller, split-up base package.
+
+executable haddock
+  executable: haddock
+  hs-source-dirs: src
+  main-is: Main.hs
+
+  if flag(small_base)
+    build-depends: base >= 2.1, array, containers, directory, pretty, process
+  else
+    build-depends: base >= 1.0
+
+  build-depends: haskell98 >= 1.0
+
+  extensions: CPP
+  other-modules:
+        Binary
+        BlockTable
+        Digraph
+        FastMutInt
+        HaddockDB
+        HaddockDevHelp
+        HaddockHH
+        HaddockHH2
+        HaddockHoogle
+        HaddockHtml
+        HaddockLex
+        HaddockModuleTree
+        HaddockParse
+        HaddockRename
+        HaddockTypes
+        HaddockUtil
+        HaddockVersion
+        HsLexer
+        HsParseMonad
+        HsParseUtils
+        HsParser
+        HsSyn
+        Html
+        Main
+        Map
+        Set
