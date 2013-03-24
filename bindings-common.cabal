@@ -1,12 +1,15 @@
 cabal-version: >= 1.2.3
 name: bindings-common
-homepage: http://bitbucket.org/mauricio/bindings
+homepage: http://bitbucket.org/mauricio/bindings-common
 synopsis:
-  Low-level library bindings, base package.
+  Macros and modules to facilitate writing library
+  bindings.
 description: 
-  Facilities to wrap foreign C libraries. Used as basis in
-  @bindings-*@ packages.
-version: 0.2.2
+  This package contains @hsc2hs@ macros and Haskell
+  modules that can be used to write C library
+  bindings according to a well defined standard. See
+  "Bindings" module documentation for details.
+version: 0.2.3
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
