@@ -1,5 +1,5 @@
 Name:                   wai-app-file-cgi
-Version:                0.7.1
+Version:                0.7.2
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -17,6 +17,7 @@ Library
   Exposed-Modules:      Network.Wai.Application.Classic
   Other-Modules:        Network.Wai.Application.Classic.CGI
                         Network.Wai.Application.Classic.Conduit
+                        Network.Wai.Application.Classic.EventSource
                         Network.Wai.Application.Classic.Field
                         Network.Wai.Application.Classic.File
                         Network.Wai.Application.Classic.FileInfo
