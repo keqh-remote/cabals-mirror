@@ -1,5 +1,5 @@
 name:             wumpus-core
-version:          0.13.1
+version:          0.14.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -28,7 +28,7 @@ description:
   THE DRAWBACKS...
   .
   For actually drawing pictures, diagrams, etc. Wumpus is very 
-  low level. I am working on a complementary package 
+  low level. I\'ve worked on a complementary package 
   @wumpus-extra@ with higher-level stuff (polygons, arrows etc.)
   but it is too unstable for Hackage. Preview releases can be
   found at <http://code.google.com/p/copperbox/> though.
@@ -45,13 +45,13 @@ description:
   appears okay for Latin 1 but I\'m not sure about other 
   character sets, and I may have to revise it significantly.
   .
-  /There is no documentation/ - the graphics model used by 
-  Wumpus is different to PostScript or SVG, and Wumpus really 
-  needs a manual. Unfortunately there isn\'t one yet, and I will 
-  be focusing on @wumpus-extra@ for the foreseeable future; so a
-  manual won\'t be written soon. If you want FFI-free vector
-  graphics and Wumpus seems to otherwise fit the task, please 
-  email me and I will try to help.
+  With revision 0.14.0, I've added the first draft of a user 
+  guide. Source for the guide is included as well as the PDF as 
+  there is an extra example picture. @wumpus-extra@ hasn\'t 
+  received any more attention unfortunately, so Wumpus is still 
+  really a bit too primitive for general use. However, if you 
+  want FFI-free vector graphics and Wumpus seems to otherwise 
+  fit the task, please email me and I will try to help.
   .
   \[1\] Because the output is simple, straight-line PostScript 
   code, it is possible to use GraphicsMagick or a similar tool to 
@@ -59,28 +59,38 @@ description:
   .
   Changelog:
   .
-  0.13.0 to 0.13.1:
+  0.13.1 to 0.14.0:
   .
-  * Wumpus.Core.SVG changed path_s to path_c - \'S\' was the 
-    wrongSVG command to match PostScript\'s @curveto@.
+  * Added draft user guide. 
+  .
+  * Argument order changed for @ellipse@ and @zellispe@ in
+    Wumpus.Core.Picture. 
+  .
+  * Removed dependency on Data.Aviary.
+  .
+  * Removed DList dependency.
   .
 build-type:         Simple
-stability:          highly unstable
+stability:          unstable
 cabal-version:      >= 1.2
 
 extra-source-files:
   CHANGES,
   LICENSE,
   demo/LabelPic.hs,
-  demo/Picture.hs
+  demo/Picture.hs,
+  doc/Guide.pdf,
+  doc-src/Guide.lhs,
+  doc-src/Makefile,
+  doc-src/WorldFrame.eps
+
 
 
 library
   hs-source-dirs:     src
   build-depends:      base < 5, containers, old-time,
                       wl-pprint, vector-space, 
-                      monadLib, xml, dlist, algebra, 
-                      data-aviary > 0.1.0
+                      monadLib, xml, algebra
                         
   exposed-modules:
     Wumpus.Core,
