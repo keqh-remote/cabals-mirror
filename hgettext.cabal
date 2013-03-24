@@ -1,5 +1,5 @@
 Name:                   hgettext
-Version:                0.1.10
+Version:                0.1.20
 Cabal-Version:          >= 1.6
 
 License:                BSD3
@@ -17,14 +17,14 @@ Library
                                 Distribution.Simple.I18N.GetText
         Extensions:             ForeignFunctionInterface
         Hs-Source-Dirs:         src
-        Build-Depends:          base, process,
+        Build-Depends:          base>=3.0.3.0 && <5, process,
                                 directory, filepath,
-                                containers, Cabal, setlocale
+                                containers, Cabal>=1.10, setlocale
 
 Executable hgettext
         Main-Is:                hgettext.hs
         Extensions:             TemplateHaskell
         Hs-Source-Dirs:         src        
-        Build-Depends:          base>=3.0.3.0, uniplate, haskell-src-exts
+        Build-Depends:          base>=3.0.3.0 && <5, uniplate, haskell-src-exts
         Other-Modules:          Paths_hgettext
 
