@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.9.0
+version:          0.10.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -14,66 +14,57 @@ description:
   library turns out to be much more demanding than designing a 
   low-level one (Wumpus-Core). 
   .
-  A few of the modules (SafeFonts, SVGColours, X11Colours) are
-  fairly stable others simply aren\'t and may even disappear in
-  subsequent updates.
+  Some of the modules (SafeFonts, SVGColours, X11Colours) are
+  relatively stable. The core modules of @Basic.Graphic@ (@Base@,
+  @PrimGraphic@, @DrawingContext@) are quite weather-beaten if 
+  not exactly stable, although the newer modules 
+  (@ScalingContext@, @DirectionContext@) are still quite green.
+  Other modules (Paths, Chains, Shapes) are essentially sketches 
+  and may be radically different in subsequent updates.
   .
   .
   Changelog:
   .
-  0.8.0 to 0.9.0:
+  0.9.0 to 0.10.0:
   .
-  * Re-worked @Basic.Text.LRSymbol@ changed the type name and the
-    types of the run functions. Added more symbols and a new demo 
-    @Symbols.hs@.
+  * @Basic.Graphic.BaseClasses@ and @Basic.Graphic.BaseTypes@ 
+    merged into same module so they can depend on each other 
+    without orphans instances.
   .
-  * @ScalingContext@ added to @Basic.Graphic@. Changed 
-    @monoTextWidth@ to take a character count, the old behaviour 
-    is recreated by the new function @monoTextLength@. 
+  * @DrawingF@ renamed to @DrawingR@, the related type synonyms
+    have also been changed, e.g. @LocDrawingF@ is now 
+    @LocDrawingR@.
   .
-  * @Basic.Graphic.Chain@ removed. It is now superseded by
-    @Basic.Chains@.
+  * Method names in the @DrawingCtxM@ class changed - @askCtx@ is
+    now @askDC@, @localCtx@ is now @localize@. Removed the 
+    functions @askDF@, @asksDF@, @pureDF@ that worked for 
+    @DrawingF@ (now @DrawingR@), @DrawingR@ now uses the 
+    Applicative\'s @pure@ and the @DrawingCtxM@ class for these 
+    functionalities.
   .
-  * Added new property to @DrawingContext@ for line spacing 
-    scaling factor, and added a new drawing primitive 
-    @textlineMulti@ for multi-line, left justified labels.
+  * @Basic.Graphic.DrawingContext@ - renamed @primary_colour@ to
+    @stroke_colour@ and @secondary_colour@ to @fill_colour@. The 
+    setter functions has been similarly renamed.
   .
-  * Synthezied attribute /getters/ such as @textDimensions@ moved
-    from @Basic.Graphic.DrawingContext@ to the new module
-    @Basic.Graphic.Query@. The type of all the functions has 
-    changed to DrawingF. @lowerxHeight@ is renamed 
-    @monoLowerxHeight@ emphasizing that the metrics pertain to
-    monospaced Courier font.
+  * Added the type synonym @DrawingContextF@ to 
+    @Basic.Graphic.DrawingContext@. Changed relevant function
+    signatures to use it.
   .
-  * Added Shapes modules.
+  * Re-worked the Path modules - base types entirely different,
+    connectors entirely different, monadic path construction 
+    largely the same.
+  .
+  * Initial work on round cornered paths.
   . 
-  * TurtleMonad module - the TurtleDrawing type and run functions
-    have been removed and the internals have been reworked. 
-    Turtle is now run solely as a /local effect/ within the 
-    Drawing monad. 
-  .
-  0.7.0 to 0.8.0:
-  .
-  * Re-introduced LRText and LRSymbol - they now work with 
-    Wumpus-Core\'s kerning support.
+  * Removed the type class @TextAnchor@ from @Basic.Anchors@. 
+    This was a left-over from a previous implementation of 
+    Shapes and is not relevant to the current implementation.
   . 
-  * Changes to @Graphic.Basic.BaseTypes@ - @DrawingObject@ 
-    renamed to @DrawingF@. @HPrim@ wrapped as a newtype to 
-    support a Monoid instance. Removed @appendGraphic@ and @gcat@ 
-    as they can be achieved with @mappend@ and @mconcat@. 
-    @appendAt@ renamed to @lgappend@. @PointT@ remaned to 
-    @PointF@.
+  * Added @DirectionContext@ to @Basic.Graphic@.
   .
-  * Changes to @Graphic.Basic.Drawing@ - @drawAt@, @drawAtImg@, 
-    @drawConn@, @drawConnImg@ all removed. They are replaced 
-    by @draw@ and @drawi@ together with then new @at@ and @conn@
-    combinators.
-  .
-  * Changes to @Basic.Graphic.PrimGraphic@ - @localDrawingContext@
-    renamed to @localLG@ and moved to @Basic.Graphic.BaseTypes@.
-  .
-  * Updates to @Basic.SafeFonts@ to work with changes to 
-    @Wumpus.Core@.
+  * @localLG@ removed it can be acheived with composition -
+    @localize upd . loc_graphic_function@. @lgappend@ is also 
+    removed - it can be recreated applicatively.
   .
   .
 build-type:         Simple
@@ -88,6 +79,7 @@ extra-source-files:
   demo/ColourCharts.hs,
   demo/ColourDefns.hs,
   demo/FontPic.hs,
+  demo/PetriNet.hs,
   demo/Picture.hs,
   demo/Shapes.hs,
   demo/Symbols.hs
@@ -97,7 +89,7 @@ library
   build-depends:      base            <  5, 
                       containers      >= 0.3     && <= 0.4, 
                       vector-space    >= 0.6,
-                      wumpus-core     == 0.34.0
+                      wumpus-core     == 0.35.0
 
   
   exposed-modules:
@@ -112,8 +104,8 @@ library
     Wumpus.Basic.Dots,
     Wumpus.Basic.Dots.Primitive,
     Wumpus.Basic.Graphic,
-    Wumpus.Basic.Graphic.BaseClasses,
-    Wumpus.Basic.Graphic.BaseTypes,
+    Wumpus.Basic.Graphic.Base,
+    Wumpus.Basic.Graphic.DirectionContext,
     Wumpus.Basic.Graphic.Drawing,
     Wumpus.Basic.Graphic.DrawingContext,
     Wumpus.Basic.Graphic.PrimGraphic,
@@ -125,6 +117,7 @@ library
     Wumpus.Basic.Paths.Base,
     Wumpus.Basic.Paths.Connectors,
     Wumpus.Basic.Paths.Construction,
+    Wumpus.Basic.Paths.RoundCorners,
     Wumpus.Basic.SafeFonts,
     Wumpus.Basic.Shapes.Base,
     Wumpus.Basic.Shapes.Derived,
