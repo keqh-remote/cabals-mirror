@@ -1,5 +1,5 @@
 name:          perm
-version:       0.3.0.1
+version:       0.4.0.0
 cabal-version: >= 1.10
 synopsis:      permutation Applicative and Monad with many mtl instances
 description:
@@ -27,9 +27,7 @@ library
     Control.Applicative.Perm
     Control.Monad.Perm
   other-modules:
-    Control.Monad.Perm.Base
-    Control.Monad.Perm.Dict
-    Control.Monad.Perm.Option
+    Control.Monad.Perm.Internal
   build-depends:
     base >= 4 && < 5,
     transformers >= 0.2 && < 0.4,
@@ -45,3 +43,17 @@ library
     MultiParamTypeClasses
     Rank2Types
     UndecidableInstances
+
+test-suite reddit-tests
+  default-language: Haskell98
+  hs-source-dirs: tests
+  main-is: RedditTests.hs
+  type: exitcode-stdio-1.0
+  build-depends:
+    base,
+    mtl,
+    HUnit,
+    test-framework >= 0.3.3,
+    test-framework-hunit,
+    perm
+  ghc-options: -Wall
