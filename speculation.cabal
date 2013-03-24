@@ -1,5 +1,5 @@
 name:           speculation
-version:        0.8.0
+version:        0.8.0.1
 license:        BSD3
 license-file:   LICENSE
 author:         Edward A. Kmett
@@ -45,13 +45,10 @@ description:
  >              [---- f a ----]
  .
  'specSTM' provides a similar time table for STM actions, but also rolls back side-effects.
- . 
- /Changes in 0.8.0:/
- .
- * Test suite, code coverage, and benchmark suite added
 
 extra-source-files: 
     README.markdown
+    CHANGELOG.markdown
 
 source-repository head
   type:     git
@@ -122,7 +119,7 @@ executable benchmark-speculation
   if !flag(benchmarks)
     buildable: False
   else
-    ghc-options: -Wall 
+    ghc-options: -Wall -threaded
     if flag(optimize)
       ghc-options: -O2 -fspec-constr -funbox-strict-fields -fdicts-cheap
     build-depends:
