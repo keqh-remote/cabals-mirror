@@ -2,7 +2,7 @@
 -- see http://haskell.org/cabal/users-guide/
 
 name:                VKHS
-version:             0.0.1
+version:             0.0.2
 synopsis:            Provides access to VkontakteAPI (Popular Russian social network)
 description:
     Library written in Haskell provides access to Vkontakte API methods (popular
@@ -19,6 +19,7 @@ copyright:           Copyright (c) 2012, Sergey Mironov
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.8
+homepage:            http://github.com/ierton/vkhs
 
 source-repository head
     type:     git
