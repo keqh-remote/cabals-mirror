@@ -1,5 +1,5 @@
 name:                   palindromes
-version:                0.3.2
+version:                0.4
 synopsis:               Finding palindromes in strings
 homepage:               http://www.jeuring.net/homepage/palindromes/index.html
 description:
@@ -8,7 +8,7 @@ description:
   returns information about palindromes in the file.
 
 category:               Algorithms
-copyright:              (c) 2007 - 2012 Johan Jeuring
+copyright:              (c) 2007 - 2013 Johan Jeuring
 license:                BSD3
 license-file:           LICENSE
 author:                 Johan Jeuring
@@ -19,9 +19,12 @@ extra-source-files:     README,
                         RELEASE_HISTORY
                         tests/Main.hs
 build-type:             Simple
-cabal-version:          >= 1.2.1
-tested-with:            GHC == 7.2.2
-
+cabal-version:          >= 1.6
+tested-with:            GHC == 7.4.1
+source-repository this
+  type:     svn
+  location: https://svn.science.uu.nl/repos/sci.jeuri101.palindromes
+  tag:      0.4
 --------------------------------------------------------------------------------
 
 Library
@@ -30,14 +33,15 @@ Library
 
 Executable              palindromes
   Main-is:              Data/Algorithms/Palindromes/Main.hs
-  ghc-options:          -Wall -O2
+  ghc-options:          -Wall -O2 -rtsopts -threaded
   hs-source-dirs:       src
   other-modules:        Data.Algorithms.Palindromes.Palindromes,
-                        Data.Algorithms.Palindromes.PalindromesDNA,
+                        Data.Algorithms.Palindromes.PalindromesUtils,
                         Data.Algorithms.Palindromes.Options
   build-depends:        base >= 3.0 && < 5,
                         array,
-                        bytestring
+                        bytestring,
+                        containers
 
 --------------------------------------------------------------------------------
 
