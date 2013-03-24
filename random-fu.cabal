@@ -1,5 +1,5 @@
 name:                   random-fu
-version:                0.0.2.0
+version:                0.0.2.1
 stability:              experimental
 
 cabal-version:          >= 1.2
@@ -16,9 +16,7 @@ description:            Random number generation based on orthogonal typeclasses
                         for entropy sources and random variable distributions, all
                         served up on a monadic platter.  Aspires to be useful
                         in an idiomatic way in both \"pure\" and \"impure\" styles,
-                        as well as reasonably fast.  May not yet meet the latter
-                        goal, but I think the former is starting to shape up
-                        nicely.
+                        as well as reasonably fast.
 
 Flag base4
 
@@ -51,17 +49,19 @@ Library
                         Data.Random.Source.PureMT
                         Data.Random.Source.Std
   if flag(base4)
-    build-depends:      base >= 4,
+    build-depends:      base >= 4 && <5,
                         syb
   else
     build-depends:      base >= 3 && < 4
     
   build-depends:        array,
                         containers,
+                        erf,
                         mersenne-random-pure64,
                         monad-loops >= 0.3.0.1,
                         mtl,
                         random,
+                        random-shuffle,
                         stateref,
                         storablevector,
                         template-haskell
