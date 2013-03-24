@@ -1,5 +1,5 @@
 Name:                hbro
-Version:             0.7.0.1
+Version:             0.7.1.0
 Synopsis:            A minimal KISS compliant browser
 -- Description:         
 Homepage:            http://projects.haskell.org/hbro/
@@ -14,12 +14,16 @@ Maintainer:          koral at mailoo dot org
 
 Cabal-version:       >=1.8
 Build-type:          Simple
-Extra-source-files:  examples/hbro.hs
+Extra-source-files:  README.rst examples/hbro.hs
 Data-files:          examples/ui.xml
 
 Source-repository head
     Type:     git
     Location: git@twyk.org/haskell-browser.git
+
+Source-repository head
+    Type:     git
+    Location: git@github.com:k0ral/hbro.git
 
 Library
     Build-depends:
@@ -37,9 +41,10 @@ Library
         process,
         text,
         time,
+        unix,
         url,
         webkit,
-        unix,
+        xdg-basedir,
         zeromq-haskell
     Exposed-modules:
         Hbro.Core,
@@ -51,11 +56,15 @@ Library
         Hbro.Extra.Session,
         Hbro.Extra.StatusBar,
         Hbro.Gui,
+        Hbro.Keys,
         Hbro.Socket,
         Hbro.Types,
         Hbro.Util
     Ghc-options: -Wall
 
+Flag threaded
+    Description: Build with -threaded
+    Default: True
 
 Executable hbro
     Build-depends: 
@@ -65,5 +74,7 @@ Executable hbro
         mtl
     Main-is: Main.hs
     Hs-Source-Dirs: Hbro  
-    Ghc-options: -Wall -threaded 
+    Ghc-options: -Wall
+    if flag(threaded)
+        Ghc-options: -threaded
 
