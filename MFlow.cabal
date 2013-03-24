@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.0.5.3
+version: 0.1.5.0
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -25,7 +25,7 @@ description: A Web framework with some unique features thanks to the power of th
              This release add transparent back button management, cached widgets, callbacks, modifiers, heterogeneous formatting AJAX,
              and WAI integration.
              .
-             It is designed for coding an entire application can be run with no deployment with runghc in order
+             It is designed for applications that can be run with no deployment with runghc in order
              to speed up the development process.
              .
              See "MFlow.Forms" for details
@@ -41,25 +41,24 @@ description: A Web framework with some unique features thanks to the power of th
 category: Web, Application Server
 author: Alberto Gómez Corona
 data-dir: ""
-extra-source-files: Demos/ShoppingCart.hs, Demos/ShoppingCart.Wai.hs, Demos/demos.hs
+extra-source-files: src/MFlow/Forms/HSP.hs, Demos/ShoppingCart.hs, Demos/ShoppingCart.Wai.hs, Demos/demos.hs
 
 library
     build-depends: Workflow -any, transformers -any, mtl -any,
                    extensible-exceptions -any, xhtml -any, base >4.0 && < 5,
                    hack -any, hack-handler-simpleserver -any, bytestring -any,
                    containers -any, RefSerialize -any, TCache -any, stm >2,
-                   old-time -any, vector -any, hsp -any, directory -any,
+                   old-time -any, vector -any,  directory -any,
                    utf8-string -any, wai -any, case-insensitive -any, http-types -any, conduit -any
                    ,text -any, parsec -any,warp -any
 
     exposed-modules: MFlow.Forms
-
                      MFlow.Forms.Admin MFlow MFlow.FileServer
                      MFlow.Forms.Ajax MFlow.Cookies
                      MFlow.Hack.Response, MFlow.Hack MFlow.Hack.XHtml MFlow.Hack.XHtml.All
                      MFlow.Wai.Response, MFlow.Wai, MFlow.Wai.XHtml.All
                      MFlow.Forms.XHtml
-                     MFlow.Forms.HSP
+
     exposed: True
     buildable: True
     hs-source-dirs: src .
