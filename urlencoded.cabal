@@ -1,6 +1,6 @@
 name:                urlencoded
 Cabal-Version:       >= 1.6
-version:             0.1
+version:             0.1.0.1
 synopsis:            Generate or process x-www-urlencoded data
 
 description:         Generate or process x-www-urlencoded data as it
@@ -33,3 +33,4 @@ Executable test
   GHC-Options: -Wall
   Main-is: TestDriver.hs
   HS-Source-Dirs: src, test
+  X-Test-Executable: true
