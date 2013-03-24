@@ -1,5 +1,5 @@
 Name:           flower
-Version:        0.1.2
+Version:        0.2
 License:        GPL
 
 Author:         Ketil Malde
@@ -15,13 +15,13 @@ Description:    flower - The FLOWgram ExtracteR
                 The Darcs repository is at <http://malde.org/~ketil/biohaskell/flower>.
 
 HomePage:       http://malde.org/~ketil/biohaskell/flower
-Build-Depends:  bio >= 0.3.5 && <0.4, base >= 3 && < 4, array >= 0.1, bytestring >= 0.9.1, binary
+Build-Depends:  bio >= 0.4, base >=3 && <4, array >= 0.1, bytestring >= 0.9.1, binary
 Build-Type:     Simple
 Tested-with:    GHC==6.8.3
 
  -- Data-files:     README
 Executable:     flower
 Main-Is:        Flower.hs
-Other-Modules:	Print, Statistics
+Other-Modules:  Print, Metrics
 Hs-Source-Dirs: src
 Ghc-Options:    
