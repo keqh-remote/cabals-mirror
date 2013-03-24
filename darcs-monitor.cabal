@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.2
 Name: darcs-monitor
-Version: 0.3.7
+Version: 0.3.8
 License: GPL
 License-File: GPL.txt
 Copyright:
@@ -11,7 +11,7 @@ Author: Antti-Juhani Kaijanaho
 Maintainer: Marco Túlio Gontijo e Silva <marcot@debian.org>
 Stability: experimental
 Homepage: http://wiki.darcs.net/RelatedSoftware/DarcsMonitor
-Package-Url: http://hackage.haskell.org/packages/archive/darcs-monitor/0.3.7/darcs-monitor-0.3.7.tar.gz
+Package-Url: http://hackage.haskell.org/packages/darcs-monitor/0.3.8/darcs-monitor-0.3.8.tar.gz
 Synopsis: Darcs repository monitor (sends email)
 Description: Darcs-monitor will send email to a specified recipient
  about new changes added to a specific darcs repository. It can be run
