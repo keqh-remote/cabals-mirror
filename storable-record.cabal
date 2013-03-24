@@ -1,5 +1,5 @@
 Name:         storable-record
-Version:      0.0.2.4
+Version:      0.0.2.5
 Category:     Data, Foreign
 Synopsis:     Elegant definition of Storable instances for records
 Description:
@@ -63,7 +63,7 @@ Source-Repository head
 Source-Repository this
   Type:     darcs
   Location: http://code.haskell.org/~thielema/storable-record/
-  Tag:      0.0.2.4
+  Tag:      0.0.2.5
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -74,7 +74,7 @@ Flag buildTests
 
 Library
   Build-Depends:
-    transformers >=0.2 && <0.3,
+    transformers >=0.2 && <0.4,
     utility-ht >=0.0.1 && <0.1
   If flag(splitBase)
     Build-Depends:
