@@ -1,5 +1,5 @@
 name:               epoll
-version:            0.2
+version:            0.2.1
 synopsis:           epoll bindings
 description:        Bindings to epoll, a Linux specific I/O
                     event notication facility (cf. man epoll(7)).
@@ -26,6 +26,6 @@ library
   extensions:       CPP,
                     ForeignFunctionInterface,
                     TypeSynonymInstances
-  build-depends:    base >= 3 && < 5, unix, mtl
+  build-depends:    base >= 3 && < 5, unix
   hs-source-dirs:   src
 
