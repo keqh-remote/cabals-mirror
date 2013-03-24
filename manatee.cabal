@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.0.1
+version:		0.0.2
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -16,7 +16,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  Manatee use multi-processes framework, any sub-module running in separate process to protected core won't crash.
  So it minimize your losses when some unexpected exception throw in extension. 
  .
- You can find screenshots at : http://goo.gl/MkVw
+ You can find screenshots at : <http://goo.gl/MkVw>
  .
  Below is build step for Manatee:
  .
@@ -29,13 +29,16 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  > cabal install gtk2hs-buildtools gtk
  .
- And make sure HOME/.cabal/bin/ in your PATH. 
+ And make sure `HOME/.cabal/bin/` in your PATH. 
  .
  3) Install Manatee:
  .
  > cabal install manatee-core manatee-anything manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee
  .
  That's all, then type command "manatee" to play it! :)
+ .
+ Now Manatee looks can't work in XMonad, i'm working on it.
+ It's no problem if you use Gnome.
  .               
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
