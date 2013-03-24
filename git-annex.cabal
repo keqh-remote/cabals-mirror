@@ -1,5 +1,5 @@
 Name: git-annex
-Version: 3.20121112
+Version: 3.20121126
 Cabal-Version: >= 1.8
 License: GPL
 Maintainer: Joey Hess <joey@kitenet.net>
@@ -28,6 +28,9 @@ Description:
 Flag S3
   Description: Enable S3 support
 
+Flag WebDAV
+  Description: Enable WebDAV support
+
 Flag Inotify
   Description: Enable inotify support
 
@@ -52,12 +55,12 @@ Flag DNS
 Executable git-annex
   Main-Is: git-annex.hs
   Build-Depends: MissingH, hslogger, directory, filepath,
-   unix, containers, utf8-string, network (>= 2.0), mtl,
+   unix, containers, utf8-string, network (>= 2.0), mtl (>= 2.1.1),
    bytestring, old-locale, time,
    pcre-light, extensible-exceptions, dataenc, SHA, process, json, HTTP,
    base (>= 4.5 && < 4.7), monad-control, transformers-base, lifted-base,
    IfElse, text, QuickCheck >= 2.1, bloomfilter, edit-distance, process,
-   SafeSemaphore, async
+   SafeSemaphore
   -- Need to list these because they're generated from .hsc files.
   Other-Modules: Utility.Touch Utility.Mounts
   Include-Dirs: Utility
@@ -68,6 +71,10 @@ Executable git-annex
   if flag(S3)
     Build-Depends: hS3
     CPP-Options: -DWITH_S3
+
+  if flag(WebDAV)
+    Build-Depends: DAV (>= 0.2), http-conduit, xml-conduit
+    CPP-Options: -DWITH_WEBDAV
 
   if flag(Assistant) && ! os(windows) && ! os(solaris)
     Build-Depends: stm >= 2.3
@@ -88,7 +95,7 @@ Executable git-annex
   if flag(Webapp) && flag(Assistant)
     Build-Depends: yesod, yesod-static, case-insensitive,
      http-types, transformers, wai, wai-logger, warp, blaze-builder,
-     crypto-api, hamlet, clientsession,
+     crypto-api, hamlet, clientsession, aeson,
      template-haskell, yesod-default (>= 1.1.0), data-default
     CPP-Options: -DWITH_WEBAPP
 
@@ -108,10 +115,11 @@ Test-Suite test
   Type: exitcode-stdio-1.0
   Main-Is: test.hs
   Build-Depends: testpack, HUnit, MissingH, hslogger, directory, filepath,
-   unix, containers, utf8-string, network, mtl, bytestring, old-locale, time,
-   pcre-light, extensible-exceptions, dataenc, SHA, process, json, HTTP,
-   base (>= 4.5 && < 4.7), monad-control, transformers-base, lifted-base,
-   IfElse, text, QuickCheck >= 2.1, bloomfilter, edit-distance, process
+   unix, containers, utf8-string, network, mtl (>= 2.1.1), bytestring,
+   old-locale, time, pcre-light, extensible-exceptions, dataenc, SHA,
+   process, json, HTTP, base (>= 4.5 && < 4.7), monad-control,
+   transformers-base, lifted-base, IfElse, text, QuickCheck >= 2.1,
+   bloomfilter, edit-distance, process
   Other-Modules: Utility.Touch
   Include-Dirs: Utility
   C-Sources: Utility/libdiskfree.c
