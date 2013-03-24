@@ -1,5 +1,5 @@
 Name:                tau
-Version:             6.28
+Version:             6.283
 Synopsis:            Tau, the ratio between any circle's circumference 
                      and radius.
 Description:         This module defines the constant tau, defined as the
