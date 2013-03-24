@@ -1,6 +1,6 @@
 Cabal-version:       >=1.2.3
 Name:                happstack-util
-Version:             0.1
+Version:             0.2.1
 Synopsis:            Web framework
 License:             BSD3
 License-file:        COPYING
@@ -16,12 +16,23 @@ Flag base4
 
 Flag tests
     Description: Build the testsuite, and include the tests in the library
-    Default: True
+    Default: False
 
 Library
-  Build-Depends:       mtl, hslogger >= 1.0.2, template-haskell, array,
-                       bytestring, old-time, process, directory, extensible-exceptions, 
-                       HUnit, QuickCheck, random
+  Build-Depends:       array,
+                       bytestring,
+                       directory,
+                       extensible-exceptions, 
+                       hslogger >= 1.0.2,
+                       mtl,
+                       old-locale,
+                       old-time,
+                       parsec < 3,
+                       process,
+                       time,
+                       QuickCheck < 2,
+                       random,
+                       template-haskell
   if flag(base4)
     Build-Depends:       base >= 4
   else
@@ -31,21 +42,25 @@ Library
   if flag(tests)
     hs-source-dirs:    tests
   Exposed-modules:     
-                       HAppS.Crypto.Base64,
-                       HAppS.Crypto.DES,
-                       HAppS.Crypto.HMAC,
-                       HAppS.Crypto.SHA1,
-                       HAppS.Crypto.MD5,
-                       HAppS.Crypto.W64,
-                       HAppS.Util.ByteStringCompat,
-                       HAppS.Util.Common,
-                       HAppS.Util.Concurrent,
-                       HAppS.Util.Daemonize,
-                       HAppS.Util.TimeOut,
-                       HAppS.Util.TH,
-                       HAppS.Util.Testing
+                       Happstack.Crypto.Base64,
+                       Happstack.Crypto.DES,
+                       Happstack.Crypto.HMAC,
+                       Happstack.Crypto.SHA1,
+                       Happstack.Crypto.MD5,
+                       Happstack.Crypto.W64,
+                       Happstack.Util.ByteStringCompat,
+                       Happstack.Util.Common,
+                       Happstack.Util.Concurrent,
+                       Happstack.Util.Cron,
+                       Happstack.Util.Daemonize,
+                       Happstack.Util.HostAddress,
+                       Happstack.Util.LogFormat,
+                       Happstack.Util.TimeOut,
+                       Happstack.Util.TH,
+                       Happstack.Util.Testing
   if flag(tests)
-    Exposed-modules:   HAppS.Util.Tests
+    Exposed-modules:   Happstack.Util.Tests
+    Exposed-modules:   Happstack.Util.Tests.HostAddress
 
   extensions:          CPP, UndecidableInstances, BangPatterns, StandaloneDeriving,
                        DeriveDataTypeable, TemplateHaskell, RecursiveDo
@@ -59,6 +74,7 @@ Executable happstack-util-tests
   hs-source-dirs: tests, src
   if flag(tests)
     Buildable: True
+    Build-Depends: network
   else
     Buildable: False
 
