@@ -1,5 +1,5 @@
 Name:                GuiTV
-Version:             0.3
+Version:             0.4
 Synopsis:	     GUIs for Tangible Values
 Category:            Interfaces, User Interfaces
 Description:
@@ -28,12 +28,13 @@ Package-Url:	     http://darcs.haskell.org/packages/GuiTV
 Copyright:           (c) 2007 by Conal Elliott
 License:             BSD3
 Stability:	     experimental
+Build-type:	     Simple
 Hs-Source-Dirs:      src
-Build-Depends:       base, DeepArrow, phooey>=1.0, TV
+Build-Depends:       base, DeepArrow, TypeCompose>=0.2, phooey>=2.0, TV>=0.4
 tested-with:	     GHC==6.6
-Extensions:          CPP
+Extensions:          
 Exposed-Modules:     
                      Interface.TV.UI
 Extra-Source-Files:  
                      Examples
-ghc-options:         -O -W
+ghc-options:         -Wall
