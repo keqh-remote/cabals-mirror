@@ -1,16 +1,16 @@
 -- arch-tag: Haskell XML Toolbox main description file
 name: hxt
-version: 7.1
+version: 7.3
 license: OtherLicense
 license-file: LICENCE
-category: Text
 maintainer: Uwe Schmidt <uwe@fh-wedel.de>
 stability: stable
+category: XML
 synopsis: A collection of tools for processing XML with Haskell. 
-description:  The Haskell XML Toolbox bases on the ideas of HaXml and HXML, but introduces a more general approach for processing XML with Haskell. The Haskell XML Toolbox uses a generic data model for representing XML documents, including the DTD subset and the document subset, in Haskell. This data model makes it possible to use filter functions as a uniform design of XML processing applications. The whole XML parser including the validator parts was implemented using this design. Libraries with filters and combinators are provided for processing the generic data model.
+description:  The Haskell XML Toolbox bases on the ideas of HaXml and HXML, but introduces a more general approach for processing XML with Haskell. The Haskell XML Toolbox uses a generic data model for representing XML documents, including the DTD subset and the document subset, in Haskell. It contains a validating XML parser, a HTML parser, namespace support, an XPath expression evaluator, an XSLT library, a RelaxNG schema validator and funtions for serialization and deserialization of user defined data. The libraray make extensive use of the arrow approach for processing XML.
 homepage: http://www.fh-wedel.de/~si/HXmlToolbox/index.html
 copyright: Copyright (c) 2005 Uwe Schmidt
--- tested-with: ghc-6.4.2, ghc-6.6
+-- tested-with: ghc-6.6
 -- exposed: True
 exposed-modules:
   Control.Arrow.ArrowIf,
@@ -27,6 +27,7 @@ exposed-modules:
   Control.Monad.MonadStateIO,
   Control.Strategies.DeepSeq,
   Data.AssocList,
+  Data.Char.UTF8,
   Data.NavTree,
   Data.Tree.Class,
   Data.Tree.NTree.Filter,
@@ -41,6 +42,10 @@ exposed-modules:
   Text.XML.HXT.Arrow.GeneralEntitySubstitution,
   Text.XML.HXT.Arrow.Namespace,
   Text.XML.HXT.Arrow.ParserInterface
+  Text.XML.HXT.Arrow.Pickle,
+  Text.XML.HXT.Arrow.Pickle.DTD,
+  Text.XML.HXT.Arrow.Pickle.Schema,
+  Text.XML.HXT.Arrow.Pickle.Xml,
   Text.XML.HXT.Arrow.ProcessDocument,
   Text.XML.HXT.Arrow.ReadDocument,
   Text.XML.HXT.Arrow.WriteDocument,
@@ -51,11 +56,13 @@ exposed-modules:
   Text.XML.HXT.DOM,
   Text.XML.HXT.DOM.EditFilters,
   Text.XML.HXT.DOM.FormatXmlTree,
+  Text.XML.HXT.DOM.IsoLatinTables,
   Text.XML.HXT.DOM.Namespace,
   Text.XML.HXT.DOM.NamespaceFilter,
   Text.XML.HXT.DOM.NamespacePredicates,
   Text.XML.HXT.DOM.TypeDefs,
   Text.XML.HXT.DOM.Unicode,
+  Text.XML.HXT.DOM.UTF8Decoding,
   Text.XML.HXT.DOM.Util,
   Text.XML.HXT.DOM.XmlKeywords,
   Text.XML.HXT.DOM.XmlOptions,
@@ -113,6 +120,7 @@ exposed-modules:
   Text.XML.HXT.XSLT.Names,
   Text.XML.HXT.XSLT.XsltArrows,
   Text.XML.HXT.RelaxNG,
+  Text.XML.HXT.RelaxNG.BasicArrows,
   Text.XML.HXT.RelaxNG.CreatePattern,
   Text.XML.HXT.RelaxNG.DataTypeLibMysql,
   Text.XML.HXT.RelaxNG.DataTypeLibraries,
@@ -129,7 +137,7 @@ exposed-modules:
   Text.XML.HXT.RelaxNG.Validator
 hs-source-dirs: src
 ghc-options: -Wall -O2 -fglasgow-exts
--- import-dirs: /usr/lib/ghc-6.4.2/hxt/imports
--- library-dirs: /usr/lib/ghc-6.4.2/hxt
+-- import-dirs: /usr/lib/ghc-6.6/hxt/imports
+-- library-dirs: /usr/lib/ghc-6.6/hxt
 -- hs-libraries: HShxt
 build-depends: base, haskell98, parsec, HTTP, HUnit, network
