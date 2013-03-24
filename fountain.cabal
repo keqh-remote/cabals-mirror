@@ -1,7 +1,11 @@
 name:    fountain
-version: 0.0.4
+version: 0.0.5
 
 category: Codec
+
+stability: experimental
+
+tested-with: GHC == 7.4.2
 
 synopsis: A fountain codec.
 
