@@ -1,5 +1,5 @@
 Name:                forml
-Version:             0.1.3
+Version:             0.2
 Synopsis:            A statically typed, functional programming language 
 License:             MIT
 Author:              Andrew Stein
@@ -36,17 +36,15 @@ Executable forml
     base >= 4 && <= 5, 
     bytestring >= 0.9.1 && <0.10,
     parsec,
-    indents,
+    indents == 0.3.3,
     containers == 0.4.2.1,
     GraphSCC == 1.0.2,
     pandoc,
-    jmacro,
+    jmacro == 0.6.3,
     MissingH,
     interpolatedstring-perl6,
-    transformers,
     mtl,
     text,
-    wl-pprint-text,
     ansi-terminal,
     HTTP,
     network,
@@ -54,8 +52,12 @@ Executable forml
     file-embed,
     process,
     directory,
-    utf8-string == 0.3.7
- 
+    utf8-string == 0.3.7,
+    ghc-prim,
+    cereal == 0.3.5.2,
+    zlib == 0.5.4.0,
+    hslogger == 1.2.1
+
   if impl(ghc >= 6.12.0)
     ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
                  -fno-warn-unused-do-bind -threaded
