@@ -1,5 +1,5 @@
 name:                carray
-version:             0.1.5.1
+version:             0.1.5.2
 synopsis:            A C-compatible array library.
 description:
 		     A C-compatible array library.
@@ -12,9 +12,9 @@ category:            Data
 license:             BSD3
 license-file:        LICENSE
 author:              Jed Brown
-maintainer:          Jed Brown <jed@59A2.org>
+maintainer:          Jed Brown <jed@59A2.org>, Henning Thielemann <fft@henning-thielemann.de>
 stability:	     experimental
-cabal-version:       >=1.2
+cabal-version:       >=1.6
 build-type:	     Simple
 
 extra-source-files: tests/meteor-contest-c.hs
@@ -24,6 +24,17 @@ extra-source-files: tests/meteor-contest-c.hs
                     tests/nsieve-bits-u.hs
                     tests/tests.hs
                     tests/runtests.sh
+                    Makefile
+
+source-repository this
+  tag:         0.1.5.2
+  type:        darcs
+  location:    http://code.haskell.org/carray/
+
+source-repository head
+  type:        darcs
+  location:    http://code.haskell.org/carray/
+
 
 flag splitBase
   description: array was in base < 3
@@ -33,16 +44,16 @@ flag base4
   description: syb was split from base >= 4 
 
 library
-  build-depends:   ix-shapable
+  build-depends:   ix-shapable, binary
   if flag(bytestringInBase)
-    build-depends: base >= 2.0 && < 2.2, binary
+    build-depends: base >= 2.0 && < 2.2
   else
-    build-depends: base < 2.0 || >= 3, bytestring, binary
+    build-depends: base < 2.0 || >= 3, bytestring
 
   if flag(splitBase)
-    build-depends: base >= 3, array, binary
+    build-depends: base >= 3, array
   else
-    build-depends: base < 3, binary
+    build-depends: base < 3
 
   if flag(base4)
     build-depends: base >= 4 && < 5, syb >= 0.1
