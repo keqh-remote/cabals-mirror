@@ -1,5 +1,5 @@
 Name:                time-http
-Version:             0.4
+Version:             0.5
 Synopsis:            Parse and format HTTP/1.1 Date and Time strings
 Description:
         This package provides functionalities to parse and format
@@ -13,7 +13,7 @@ License-file:        COPYING
 Author:              PHO <pho AT cielonegro DOT org>
 Maintainer:          PHO <pho AT cielonegro DOT org>
 Stability:           Experimental
-Category:            Web
+Category:            Time, Web
 Build-type:          Simple
 Tested-With:         GHC == 7.0.3
 Cabal-version:       >= 1.10
@@ -35,7 +35,6 @@ Library
 
     Other-modules:
         Data.Time.Format.HTTP.Common
-        Data.Time.Format.RFC822.Internal
 
     Build-depends:
         ascii                == 0.0.*,
@@ -47,6 +46,7 @@ Library
         blaze-textual        == 0.2.*,
         bytestring           == 0.9.*,
         convertible-text     == 0.4.*,
+        data-default         == 0.3.*,
         failure              == 0.1.*,
         tagged               == 0.2.*,
         time                 == 1.2.*
@@ -72,6 +72,7 @@ Test-Suite test-time-http
         blaze-textual        == 0.2.*,
         bytestring           == 0.9.*,
         convertible-text     == 0.4.*,
+        data-default         == 0.3.*,
         failure              == 0.1.*,
         tagged               == 0.2.*,
         time                 == 1.2.*
