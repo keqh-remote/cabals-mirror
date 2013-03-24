@@ -1,7 +1,11 @@
 Name:                mongrel2-handler
-Version:             0.1.2
+Version:             0.2.0
 Synopsis:            Mongrel2 Handler Library
 Description:         Mongrel2 Handler Library.
+
+ This handler library requires that the Mongrel2 server is set up
+ to use the 'tnetstring' protocol.
+
 License:             MIT
 License-file:        LICENSE
 Category:            Web
@@ -13,7 +17,6 @@ Stability:           Unstable
 
 Library
   Build-Depends: base             >= 4.0 && <5
-               , aeson            >= 0.3 && <0.4
                , attoparsec       >= 0.8.5.0 && < 0.9
                , blaze-builder    >= 0.3 && < 0.4
                , blaze-textual    >= 0.1 && < 0.2
@@ -27,6 +30,7 @@ Library
   Ghc-options:         -Wall -fno-warn-unused-matches
   Hs-source-dirs:      src
   Exposed-modules:     Mongrel2
-                       Mongrel2.Parser
+  Other-modules:       Mongrel2.Parser
                        Mongrel2.Response
                        Mongrel2.Types
+                       Mongrel2.Tnetstring
