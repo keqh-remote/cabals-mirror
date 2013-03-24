@@ -1,5 +1,5 @@
 Name:                happstack-server
-Version:             0.3.3
+Version:             0.4.1
 Synopsis:            Web related tools and services.
 Description:         Web framework
 License:             BSD3
@@ -14,7 +14,7 @@ Cabal-Version:       >= 1.6
 source-repository head
     type:     darcs
     subdir:   happstack-server
-    location: http://patch-tag.com/publicrepos/happstack
+    location: http://patch-tag.com/r/mae/happstack/pullrepo
 
 Flag base4
     Description: Choose the even newer, even smaller, split-up base package.
@@ -43,7 +43,6 @@ Library
     Exposed-modules:   
                        Happstack.Server.Tests
   Other-modules:       
-                       Happstack.Server.S3
                        Happstack.Server.HTTPClient.HTTP
                        Happstack.Server.HTTPClient.Stream
                        Happstack.Server.HTTPClient.TCP
@@ -63,10 +62,11 @@ Library
                        containers,
                        directory,
                        extensible-exceptions,
+                       filepath,
                        HaXml >= 1.13 && < 1.14,
                        hslogger >= 1.0.2,
-                       happstack-data >= 0.3.2 && < 0.4,
-                       happstack-util >= 0.3.2 && < 0.4,
+                       happstack-data >= 0.4.1 && < 0.5,
+                       happstack-util >= 0.4.1 && < 0.5,
                        html,
                        MaybeT,
                        mtl,
@@ -75,6 +75,7 @@ Library
                        old-time,
                        parsec < 3,
                        process,
+                       sendfile >= 0.6.1 && < 0.7,
                        template-haskell,
                        time,
                        utf8-string >= 0.3.4 && < 0.4,
