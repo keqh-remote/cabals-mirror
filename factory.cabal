@@ -1,6 +1,6 @@
 --Package-properties
 Name:			factory
-Version:		0.0.0.2
+Version:		0.1.0.0
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2011 Dr. Alistair Ward
 License:		GPL
@@ -11,7 +11,7 @@ Synopsis:		Rational arithmetic in an irrational world.
 Build-Type:		Simple
 Description:		A library of number-theory functions, for; factorials, square-roots, Pi, primality-testing, prime-factorisation ...
 Category:		Math, Number Theory
-Tested-With:		GHC == 6.12, GHC == 7.0
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
 Homepage:		http://functionalley.eu
 Maintainer:		factory <at> functionalley <dot> eu
 Bug-reports:		factory <at> functionalley <dot> eu
@@ -30,8 +30,8 @@ Library
     hs-source-dirs:	src
 
     Exposed-modules:
-        Factory.Data.Bounds
         Factory.Data.Exponential
+        Factory.Data.Interval
         Factory.Data.MonicPolynomial
         Factory.Data.Monomial
         Factory.Data.Polynomial
@@ -43,11 +43,6 @@ Library
         Factory.Math.Factorial
         Factory.Math.Fibonacci
         Factory.Math.Implementations.Factorial
-        Factory.Math.Implementations.Primality
-        Factory.Math.Implementations.PrimeFactorisation
-        Factory.Math.Implementations.SquareRoot
-        Factory.Math.MultiplicativeOrder
-        Factory.Math.Pi
         Factory.Math.Implementations.Pi.AGM.Algorithm
         Factory.Math.Implementations.Pi.AGM.BrentSalamin
         Factory.Math.Implementations.Pi.BBP.Algorithm
@@ -69,10 +64,16 @@ Library
         Factory.Math.Implementations.Pi.Spigot.RabinowitzWagon
         Factory.Math.Implementations.Pi.Spigot.Series
         Factory.Math.Implementations.Pi.Spigot.Spigot
+        Factory.Math.Implementations.Primality
+        Factory.Math.Implementations.PrimeFactorisation
+        Factory.Math.Implementations.SquareRoot
+        Factory.Math.MultiplicativeOrder
+        Factory.Math.Pi
         Factory.Math.Power
         Factory.Math.Precision
         Factory.Math.Primality
         Factory.Math.PrimeFactorisation
+        Factory.Math.Probability
         Factory.Math.Radix
         Factory.Math.SquareRoot
         Factory.Math.Statistics
@@ -84,7 +85,8 @@ Library
         deepseq >= 1.1,
         containers,
         primes >= 0.1,
-        toolshed == 0.11.*
+        random,
+        toolshed >= 0.12
 
     if flag(threaded)
         Build-depends:	parallel >= 3.0
@@ -111,16 +113,17 @@ Executable factory
         Factory.Test.Performance.SquareRoot
         Factory.Test.Performance.Statistics
         Factory.Test.QuickCheck.ArithmeticGeometricMean
-        Factory.Test.QuickCheck.Bounds
         Factory.Test.QuickCheck.Factorial
+        Factory.Test.QuickCheck.Interval
         Factory.Test.QuickCheck.MonicPolynomial
         Factory.Test.QuickCheck.Pi
         Factory.Test.QuickCheck.Polynomial
         Factory.Test.QuickCheck.Power
         Factory.Test.QuickCheck.Primality
         Factory.Test.QuickCheck.PrimeFactorisation
-        Factory.Test.QuickCheck.Radix
+        Factory.Test.QuickCheck.Probability
         Factory.Test.QuickCheck.QuickChecks
+        Factory.Test.QuickCheck.Radix
         Factory.Test.QuickCheck.SquareRoot
         Factory.Test.QuickCheck.Statistics
         Factory.Test.QuickCheck.Summation
@@ -134,7 +137,10 @@ Executable factory
     GHC-prof-options:	-prof -auto-all -caf-all
 
     if flag(threaded)
-        GHC-options:	-threaded -feager-blackholing
+        GHC-options:	-threaded
+
+        if impl(ghc >= 6.12)
+            GHC-options:	-feager-blackholing
 
     if impl(ghc >= 7.0)
         GHC-options:	-rtsopts
