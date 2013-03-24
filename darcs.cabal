@@ -1,5 +1,5 @@
 Name:           darcs
-version:        2.1.2.1
+version:        2.1.2.2
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -62,6 +62,7 @@ extra-source-files:
   release/distributed-version, release/distributed-context
 
   -- testsuite
+  Distribution/ShellHarness.hs
   tests/repos/*.tgz tests/repos/README
   tests/*.sh
   tests/network/*.sh
