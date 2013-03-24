@@ -1,5 +1,5 @@
 Name:                   TernaryTrees
-Version:                0.1.3.0
+Version:                0.1.3.1
 Category:               Data Structures
 Synopsis:               Efficient pure ternary tree Sets and Maps
 Description:            Ternary trees are an efficient structure often used for storing
@@ -19,6 +19,8 @@ Description:            Ternary trees are an efficient structure often used for 
 			also slightly smaller than the input (by over 40% in some cases).
 			.
 			New in this version:
+			.
+			* (This minor version just changes the dependency on binary >= 0.5.0.0)
 			.
 			* Moved datatype definitions into .Internal modules so that
 			  testing can be performed, without needing to export their definitions in the
@@ -44,7 +46,7 @@ Extra-Source-Files:
 
 Library
         Build-Depends:
-                base >= 4.0.0.0, base < 5.0.0.0, binary >= 0.5.0.0
+                base >= 4.0.0.0, base < 5.0.0.0, binary >= 0.4.4
         Exposed-modules:
                 Data.Set.TernarySet, Data.Set.StringSet, Data.Map.TernaryMap
 
