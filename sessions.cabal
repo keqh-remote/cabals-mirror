@@ -1,5 +1,5 @@
 Name:               sessions
-Version:            2008.2.22
+Version:            2008.2.23
 Stability:          Beta
 Copyright:          Matthew Sackman
 Category:           Control
@@ -20,7 +20,7 @@ Description:
 Library {
         Build-depends:     base, mtl
         Exposed-modules:   Control.Concurrent.Session
-        Other-modules:     Control.Concurrent.Session.Runtime
+                           Control.Concurrent.Session.Runtime
                            Control.Concurrent.Session.SessionType
                            Control.Concurrent.Session.SMonad
                            Control.Concurrent.Session.List
