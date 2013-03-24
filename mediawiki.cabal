@@ -1,5 +1,5 @@
 Name:               mediawiki
-Version:            0.2.2
+Version:            0.2.3
 License:            BSD3
 License-file:       LICENSE
 Category:           Web
@@ -13,10 +13,10 @@ extra-source-files: README
                     examples/ListCat.hs
                     examples/Util/GetOpts.hs
 
-flag new-base
-  description: Build with new smaller base library
+flag old-base
+  description: Old, monolithic base
   default: False
-
+  
 library
     Exposed-Modules: MediaWiki.API.Types,
                      MediaWiki.API.Output,
@@ -111,12 +111,20 @@ library
                      MediaWiki.Util.Codec.Percent,
                      MediaWiki.Util.Codec.URLEncoder
     Ghc-Options:     -Wall -O2 
-    Build-Depends:   base, xml, HTTP >= 3001, network, mime, utf8-string
-  if impl(ghc >= 6.10)
+    Build-Depends:   xml, HTTP >= 3001, network, mime, utf8-string
+ if flag(old-base)
+   Build-Depends: base < 3
+ else
+   Build-Depends: base >= 4
+
+ if impl(ghc >= 6.10)
     cpp-options:     -DEXTENSIBLE_EXCEPTIONS
 
 executable main {
-  build-depends:        base
+  if flag(old-base)
+   Build-Depends: base < 3
+  else
+   Build-Depends: base >= 4
   main-is:              Main.hs
   ghc-options:          -Wall -fglasgow-exts
   if impl(ghc >= 6.10)
@@ -124,7 +132,11 @@ executable main {
 }
 
 executable listCat {
-  build-depends:        base, pretty
+  build-depends:        pretty
+  if flag(old-base)
+   Build-Depends: base < 3
+  else
+   Build-Depends: base >= 4
   main-is:              examples/ListCat.hs
   ghc-options:          -Wall -fglasgow-exts -iexamples
   if impl(ghc >= 6.10)
