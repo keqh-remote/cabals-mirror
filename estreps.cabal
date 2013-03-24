@@ -1,5 +1,5 @@
 Name:                estreps
-Version:             0.3
+Version:             0.3.1
 License:             GPL
 License-file:        LICENSE
 Author:              Ketil Malde
@@ -24,7 +24,7 @@ Data-Files:          README
 Executable rselect
            Hs-source-dirs: src
            Main-Is:        RSelect.lhs
-           Build-Depends:  base>3, random, containers, bio>=0.3.3, bytestring
+           Build-Depends:  base>3 && <4, random, containers, bio>=0.4, bytestring
            ghc-options:    -Wall
            Other-Modules:  Unigene
 
