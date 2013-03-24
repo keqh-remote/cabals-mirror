@@ -1,5 +1,5 @@
 name: Workflow
-version: 0.7.0.7
+version: 0.8.0.0
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -28,7 +28,7 @@ author: Alberto Gómez Corona
 data-dir: ""
 
 extra-source-files: Demos/Fact.hs Demos/Inspect.hs
-                    Demos/docAprobal.hs Demos/pr.hs Demos/sequence.hs
+                    Demos/docAprobal.hs  Demos/sequence.hs
 
 
 
@@ -36,7 +36,7 @@ library
     build-depends: MonadCatchIO-mtl -any, RefSerialize ==0.3.0.* ,
                    TCache -any && <1.0, base >=4 && <5, binary -any, bytestring -any,
                    containers -any, directory -any, extensible-exceptions -any,
-                    mtl -any, old-time -any, stm >2
+                    mtl -any, old-time -any, stm >2, vector -any
 
     exposed-modules: Control.Workflow
                      Control.Workflow.Configuration
@@ -47,8 +47,8 @@ library
                 MultiParamTypeClasses ExistentialQuantification
                 TypeSynonymInstances RecordWildCards DeriveDataTypeable
     hs-source-dirs: .
-    other-modules: Control.Workflow.Stat Control.Workflow.Stat
-                   Control.Workflow.IDynamic
+    other-modules: Control.Workflow.Stat
+
 
 source-repository head
   type : git
