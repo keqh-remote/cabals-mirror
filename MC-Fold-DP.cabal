@@ -1,5 +1,5 @@
 name:           MC-Fold-DP
-version:        0.1.0.0
+version:        0.1.0.1
 author:         Christian Hoener zu Siederdissen, Stephan H Bernhart, Peter F Stadler, Ivo L Hofacker
 copyright:      Christian Hoener zu Siederdissen, 2010-2011
 homepage:       http://www.tbi.univie.ac.at/software/mcfolddp/
@@ -48,11 +48,17 @@ description:
                 .
                 * suboptimals: return all structures within an energy band above the ground state
                 .
+                * constraint folding (fill partial structures)
+                .
                 Todo:
                 .
                 * Boltzmann likelihood calculations
                 .
                 * pseudoknot calculations (currently aiming for a pknotsRG-like algorithm)
+
+Flag fastBuild
+  description: build using fast GHC options (developer only!)
+  default: False
 
 library
   build-depends:
@@ -60,22 +66,31 @@ library
     vector,
     tuple,
     PrimitiveArray,
-    Biobase == 0.3.1.0
+    Biobase == 0.3.1.1
   exposed-modules:
     BioInf.MCFoldDP
-  ghc-options:
-    -Odph
-  if impl(ghc > 6.13)
+  if flag(fastBuild)
     ghc-options:
-      -fllvm
+      -O0
+  else
+    ghc-options:
+      -Odph
+    if impl(ghc > 6.13)
+      ghc-options:
+        -fllvm
 
 executable MCFoldDP
   build-depends:
-    cmdargs == 0.6.8
+    cmdargs == 0.6.8,
+    split
   main-is:
     MCFoldDP.hs
-  ghc-options:
-    -Odph
-  if impl(ghc > 6.13)
+  if flag(fastBuild)
     ghc-options:
-      -fllvm
+      -O0
+  else
+    ghc-options:
+      -Odph
+    if impl(ghc > 6.13)
+      ghc-options:
+        -fllvm
