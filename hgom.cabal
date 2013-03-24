@@ -1,5 +1,5 @@
 name:           hgom
-version:        0.5.1
+version:        0.5.2
 author:         Paul Brauner and Emilie Balland
 maintainer:     Paul Brauner <paul.brauner@inria.fr>
 copyright:      (c) Paul Brauner 2009
@@ -11,7 +11,7 @@ description:
   The executable hgom takes a module consisting of several abstract datatypes
   declarations as an input and ouputs java classes. It is meant to mimic the java
   version of Gom: <http://tom.loria.fr/wiki/index.php5/Documentation:Gom>.
-category:          Compilers
+category:          Compilers/Interpreters
 license:           GPL
 license-file:      COPYING
 cabal-version:     >= 1.6.0
