@@ -1,5 +1,5 @@
 name:             syntax-trees
-version:          0.1
+version:          0.1.2
 synopsis:         Convert between different Haskell syntax trees.
 description:      Provides an instance that translates
 		  haskell-src-exts expression trees into Template Haskell expression
