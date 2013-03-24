@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.2
+Version:             0.3
 Synopsis:            A HAppS Tutorial that is is own demo
 Description:         A nice way to learn how to build web sites with HAppS
 
@@ -21,27 +21,42 @@ Copyright:           2008 Thomas Hartman
 Stability:           Experimental
 Category:            Web
 Build-type:          Simple
+
+-- when cabal install 1.6 comes out, hopefully can use * patterns for templates
+-- see http://hackage.haskell.org/trac/hackage/ticket/213
 Extra-Source-Files:
-    runServer.sh
-    templates/basic-url-handling.st templates/googleanalytics.st
-    templates/run-tutorial-locally.st
-    templates/home.st
-    templates/understanding-happs-types.st
-    templates/start-tutorial.st
-    templates/base.st
-    templates/login.st
-    templates/home_interpersonal.st
-    templates/myhomepage.st
-    templates/start-happs-on-boot.st
-    templates/moreFavoriteAnimals.st
-    templates/footer.st
-    templates/main-function.st
-    templates/header.st
-    templates/prerequisites.st
-    templates/using-templates.st
-    templates/favoriteAnimal.st
+    runServerWithCompileNLink.sh
+    hackInGhci.sh
+    -- templates/*.st
     static/tutorial.css
     static/HAppSTutorialLogo.png
+    templates/base.st
+    templates/basic-url-handling.st
+    templates/errortemplate.st
+    templates/footer.st
+    templates/googleanalytics.st
+    templates/happs-slow-linking-bug.st
+    templates/header.st
+    templates/home.st
+    templates/leastFavoriteAnimal.st
+    templates/login.st
+    templates/main-function.st
+    templates/menubar.st
+    templates/menuLoggedIn.st
+    templates/moreFavoriteAnimals.st
+    templates/my-favorite-animal.st
+    templates/newuser.st
+    templates/prerequisites.st
+    templates/register.st
+    templates/run-tutorial-locally.st
+    templates/start-happs-on-boot.st
+    templates/stringtemplate-basics.st
+    templates/tableofcontents.st
+    templates/templates-dont-repeat-yourself.st
+    templates/understanding-happs-types.st
+    templates/view-all-users.st
+
+
 
 Cabal-Version:       >= 1.2
 
@@ -51,16 +66,18 @@ Executable happs-tutorial
         src
     Other-Modules:
         ControllerBasic
-        ControllerUsingTemplates  
         Misc   
         View
         Controller          
         Model  
         Session
-         
+        UserState         
+        SessionState
+        Session
     Build-Depends:   base >= 3, HStringTemplate, mtl, bytestring,
                      HAppS-Server, HAppS-Data, HAppS-State,
-                     containers
+                     containers, pretty
+
 
 
 
