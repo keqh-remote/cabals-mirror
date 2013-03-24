@@ -1,7 +1,7 @@
 cabal-version:      >= 1.4
 build-type:         Simple
 name:               scan
-version:            0.1.0.6
+version:            0.1.0.7
 license:            BSD3
 license-file:       doc/LICENSE
 category:           Development
@@ -17,7 +17,7 @@ homepage:           http://projects.haskell.org/style-scanner
 stability:          experimental
 
 executable scan
-    build-depends:      base < 5, parsec < 3
+    build-depends:      base < 5, parsec
     hs-source-dirs:     src
     main-is:            scan.hs
     other-modules:      Language.Haskell.Scanner
