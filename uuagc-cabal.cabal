@@ -1,7 +1,7 @@
 cabal-version: >=1.6
 build-type: Simple
 name: uuagc-cabal
-version: 1.0.0.1
+version: 1.0.0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -14,6 +14,7 @@ copyright: Universiteit Utrecht
 author: Software Technology at Universiteit Utrecht
 bug-reports: hut-developers@cs.uu.nl
 tested-with: GHC >= 6.12
+extra-source-files: README
 
 library
    build-depends:   base >= 4, base < 5, Cabal >= 1.8.0.6, directory >= 1.0.1.1
