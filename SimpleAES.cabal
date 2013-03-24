@@ -1,7 +1,7 @@
 Name: SimpleAES
 Synopsis: Fast AES encryption/decryption for bytestrings
 Description: A simplified binding to Brian Gladman's AES implementation, including a copy of that implementation
-Version: 0.2
+Version: 0.3
 License: BSD3
 License-file: COPYING
 Copyright: Copyright (c) 2009 University of Tromsø, 2009 David Himmelstrup
@@ -18,7 +18,7 @@ Extra-source-files: cbits/aes.h, cbits/aesopt.h, cbits/aestab.h,
 
 Library
   Build-Depends:
-        base >= 4 && < 5 , bytestring, mwc-random >= 0.4.1.1
+        base >= 4 && < 5 , bytestring, mwc-random >= 0.4.1.1, binary
   Extensions:
         ForeignFunctionInterface,
         ViewPatterns,
