@@ -13,7 +13,7 @@ Description:
 
     See the included example.hs for some simple examples of what 
     using this module looks like.
-Version: 0.0.3
+Version: 0.0.4
 Stability: experimental
 Synopsis: An embedding of quantum computation as a Haskell arrow
 License: LGPL
@@ -22,6 +22,6 @@ Category: Control
 Author: Luke Palmer
 Maintainer: lrpalmer@gmail.com
 Build-Type: Simple
-Build-Depends: base, mtl, random, MonadRandom, QuickCheck < 2.0
+Build-Depends: base, mtl, random, MonadRandom
 Exposed-Modules: Control.Arrow.Quantum
 Extra-Source-Files: example.hs, Tests.hs
