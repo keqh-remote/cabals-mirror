@@ -2,9 +2,9 @@
 Name:		regexpr-symbolic
 Synopsis:	Regular expressions via symbolic manipulation
 Category:       Text
-Version:	0.3
+Version:	0.4
 Stability:      experimental
-Cabal-Version:  >= 1.2
+Cabal-Version:  >= 1.2.3
 License:	BSD3
 License-File:	LICENSE
 Author:		Martin Sulzmann
