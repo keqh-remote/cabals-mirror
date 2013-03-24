@@ -1,10 +1,10 @@
 name:          explicit-iomodes
-version:       0.2
+version:       0.3
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
 license-file:  LICENSE
-copyright:     2009 Bas van Dijk
+copyright:     2009-2010 Bas van Dijk
 author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
 stability:     experimental
@@ -24,7 +24,7 @@ source-repository head
 Library
   GHC-Options: -Wall
   build-depends: base                 >= 4     && < 4.3
-               , base-unicode-symbols >= 0.1.1 && < 0.2
+               , base-unicode-symbols >= 0.1.1 && < 0.3
                , bytestring           == 0.9.*
                , tagged               == 0.0.*
   exposed-modules: System.IO.ExplicitIOModes
