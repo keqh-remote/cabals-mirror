@@ -1,5 +1,5 @@
 name:           utf8-prelude
-version:        0.1.2
+version:        0.1.3
 synopsis:       Prelude and System.IO with UTF8 text I/O
 description:    
     utf8-prelude provides variants of "Prelude" and "System.IO" using UTF8 text I/O operations, making 
@@ -14,7 +14,7 @@ description:
     * In all modules replace every occurrence of "System.IO" with "System.UTF8IO".
     .
     utf8-prelude also provides a basic testing tool:
-    utf8-test tests the functions readFile, writeFile and putStrLn.
+    utf8-test tests several functions regarding UTF8 text I/O.
     Note: utf8-test creates a file named writeFile_test.txt in the current working directory.
     .
     utf8-prelude is based on utf8-string:
