@@ -1,6 +1,6 @@
 name: Combinatorrent
 category: Network
-version: 0.2.1
+version: 0.2.2
 category: Network
 description:   Combinatorrent provides a BitTorrent client, based on STM
                for concurrency. This is an early preview release which is capable of
@@ -78,7 +78,7 @@ executable Combinatorrent
     time
 
   ghc-prof-options: -auto-all -caf-all
-  ghc-options: -Wall -fno-warn-orphans -threaded -feager-blackholing -O2
+  ghc-options: -Wall -fno-warn-orphans -threaded
   if !flag(debug)
       cpp-options: "-DNDEBUG"
 
