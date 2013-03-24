@@ -1,5 +1,5 @@
 Name:                beautifHOL
-Version:             0.1
+Version:             0.10
 Cabal-Version:       >= 1.2
 License:             GPL
 License-file:        LICENSE
@@ -15,7 +15,7 @@ Description:
 Maintainer:          Lee Pike <leepike@gmail.com>
 Category:            Text
 Homepage:           http://www.cs.indiana.edu/~lepike/pub_pages/holpp.html
-extra-source-files: README
+extra-source-files: README AbsHOL.hs ConfigHOL.hs DocHOL.tex DOCHOL.pdf ErrM.hs HOL.cf LexHOL.hs ParHOL.hs PrintHOL.hs SkelHOL.hs examples.txt
 Executable beautifHOL
            Main-is: TestHOL.hs
            Build-Depends: haskell98, mtl, array, base
