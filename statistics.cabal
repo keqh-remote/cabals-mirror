@@ -1,5 +1,5 @@
 name:           statistics
-version:        0.2.2
+version:        0.3
 synopsis:       A library of statistical types, data, and functions
 description:
   This library provides a number of common functions and types useful
@@ -15,6 +15,8 @@ description:
   .
   Computing with sample data: quantile estimation, kernel density
   estimation, bootstrap methods, and autocorrelation analysis.
+  .
+  Random variate generation under several different distributions.
 license:        BSD3
 license-file:   LICENSE
 homepage:       http://darcs.serpentine.com/statistics
@@ -42,6 +44,7 @@ library
     Statistics.KernelDensity
     Statistics.Math
     Statistics.Quantile
+    Statistics.RandomVariate
     Statistics.Resampling
     Statistics.Resampling.Bootstrap
     Statistics.Sample
@@ -52,7 +55,7 @@ library
   build-depends:
     base < 5,
     erf,
-    mersenne-random,
+    time,
     uvector >= 0.1.0.4,
     uvector-algorithms >= 0.2
   if impl(ghc >= 6.10)
@@ -62,6 +65,6 @@ library
   -- gather extensive profiling data for now
   ghc-prof-options: -auto-all
 
-  ghc-options: -Wall -funbox-strict-fields -O2
+  ghc-options: -Wall -funbox-strict-fields -O2 -fvia-C
   if impl(ghc >= 6.8)
     ghc-options: -fwarn-tabs
