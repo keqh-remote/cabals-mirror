@@ -1,5 +1,5 @@
 name:               monad-ox
-version:            0.1.1
+version:            0.2.0
 synopsis:           Monad for observation extraction
 description:
     The library provides an Ox monad and accompanying functions which
@@ -20,15 +20,17 @@ build-type:         Simple
 
 library
     build-depends:
-        base >= 4 && <= 4.5
+        base >= 4 && < 5
       , containers
       , vector
-      , data-memocombinators >= 0.4.3 && < 0.4.4
+      , text
       , mtl >= 2
 
     exposed-modules:
         Control.Monad.Ox
-        Control.Monad.Ox.String
+      , Control.Monad.Ox.String
+      , Control.Monad.Ox.Text
+      , Control.Monad.Ox.Text.Lazy
 
     ghc-options: -Wall
 
