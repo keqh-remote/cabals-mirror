@@ -1,7 +1,7 @@
 Author:        Evan Klitzke
 Maintainer:    Evan Klitzke <evan@eklitzke.org>
 Name:          xattr
-Version:       0.5.1
+Version:       0.5.2
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
@@ -17,13 +17,11 @@ Build-Type: Configure
 Extra-Source-Files:
     README.md
     LICENSE
-    configure.guess
-    configure.sub
     configure.ac
     configure
  
 Library
-  Exposed-Modules: System.Xattr
+  Exposed-Modules: System.Xattr System.Xattr.Types
   Build-Depends: base, bytestring, unix 
   Extensions: ForeignFunctionInterface, CPP
   Hs-Source-Dirs: src
