@@ -1,5 +1,5 @@
 name:          darcs-benchmark
-version:       0.1.5.1
+version:       0.1.6
 synopsis:      Comparative benchmark suite for darcs.
 
 description: A simple tool to compare performance of different Darcs 2.x
@@ -12,7 +12,7 @@ license-file:  LICENSE
 copyright:     2009 Petr Rockai <me@mornfall.net>
 author:        Eric Kow <kowey@darcs.net>, Simon Michael <simon@joyful.com>
                and Petr Rockai <me@mornfall.net>
-maintainer:    Petr Rockai <me@mornfall.net>
+maintainer:    Darcs Project <darcs-users@darcs.net>
 homepage:      http://wiki.darcs.net/Development/Benchmarks
 category:      Testing
 build-type:    Custom
@@ -31,13 +31,16 @@ executable darcs-benchmark
                    regex-posix, html, filepath, directory,
                    json == 0.4.*,
                    containers, bytestring, network,
+                   statistics == 0.4.*, uvector == 0.1.*,
                    HTTP >= 4000.0.8 && < 4000.1,
+                   utf8-string == 0.3.*,
                    tar, zlib
 
     main-is: main.hs
     other-modules: Shellish
                    Benchmark
                    Config
+                   Dist
                    Standard
                    Download
                    TabularRST
