@@ -1,8 +1,8 @@
 name:          lens
 category:      Data, Lenses
-version:       1.4.1
+version:       1.5
 license:       BSD3
-cabal-version: >= 1.6
+cabal-version: >= 1.8
 license-file:  LICENSE
 author:        Edward A. Kmett
 maintainer:    Edward A. Kmett <ekmett@gmail.com>
@@ -13,115 +13,11 @@ copyright:     Copyright (C) 2012 Edward A. Kmett
 synopsis:      Lenses, Folds and Traversals
 description:
   The combinators in @Control.Lens@ provide a highly generic toolbox for composing
-  families of getters, folds, traversals, setters and lenses.
-  .
-  /Getter/
-  .
-  A @'Getter' a c@ is just any function @(a -> c)@, which we've flipped into continuation
-  passing style, @(c -> r) -> a -> r@ and decorated with 'Const' to obtain
-  .
-  > type Getting r a b c d = (c -> Const r d) -> a -> Const r b
-  .
-  If we restrict access to knowledge about the type 'r' and can work for any d and b, we get:
-  .
-  > type Getter a c = forall r b d. Getting r a b c d
-  .
-  Everything you can do with a function, you can do with a 'Getter', but note that because of the
-  continuation passing style (.) composes them in the opposite order.
-  .
-  Since it is only a function, every 'Getter' obviously only retrieves a single value for a given
-  input.
-  .
-  /Fold/
-  .
-  A @'Fold' a c@ is a generalization of something 'Foldable'. It allows you to
-  extract multiple results from a container. A 'Foldable' container can be
-  characterized by the behavior of @foldMap :: (Foldable t, Monoid m) => (c -> m) -> t c -> m@.
-  Since we want to be able to work with monomorphic containers, we generalize this signature to
-  @forall m. 'Monoid' m => (c -> m) -> a -> m@, and then decorate it with 'Const' to obtain
-  .
-  > type Fold a c = forall m b d. Monoid m => Getting m a b c d
-  .
-  Every 'Getter' is a valid 'Fold' that simply doesn't use the 'Monoid' it is passed.
-  .
-  Everything you can do with a 'Foldable' container, you can with with a 'Fold' and there are
-  combinators that generalize the usual 'Foldable' operations in @Control.Lens@.
-  .
-  /Traversal/
-  .
-  A @'Traversal' a b c d@ is a generalization of 'traverse' from 'Traversable'. It allows
-  you to traverse over a structure and change out its contents with monadic or
-  applicative side-effects. Starting from
-  @'traverse' :: ('Traversable' t, 'Applicative' f) => (c -> f d) -> t c -> f (t d)@,
-  we monomorphize the contents and result to obtain
-  .
-  > type Traversal a b c d = forall f. Applicative f => (c -> f d) -> a -> f b
-  .
-  While a 'Traversal' isn't quite a 'Fold', it _can_ be used for 'Getting' like a 'Fold', because 
-  given a 'Monoid' @m@, we have an 'Applicative' for @('Const' m)@.
-  .
-  Everything you can do with a 'Traversable' container, you can with with a 'Traversal', and there
-  are combinators that generalize the usual 'Traversable' operations in @Control.Lens@.
-  .
-  /Setter/
-  .
-  A @'Setter' a b c d@ is a generalization of 'fmap' from 'Functor'. It allows you to map into a
-  structure and change out the contents, but it isn't strong enough to allow you to
-  enumerate those contents. Starting with @fmap :: 'Functor' f => (c -> d) -> f c -> f d@
-  we monomorphize the type to obtain @(c -> d) -> a -> b@ and then decorate it with 'Identity' to obtain
-  .
-  > type Setter a b c d = (c -> Identity d) -> a -> Identity b
-  .
-  Every 'Traversal' is a valid 'Setter', since 'Identity' is 'Applicative'.
-  .
-  Everything you can do with a 'Functor', you can do with a 'Setter', and there are combinators that
-  generalize the usual 'Functor' operations in @Control.Lens@.
-  .
-  /Lens/
-  .
-  A @'Lens' a b c d@ is a purely functional reference.
-  .
-  While a 'Traversal' could be used for 'Getting' like a valid 'Fold', it wasn't a valid 'Getter'.
-  To make the 'Applicative' for 'Const' it required a 'Monoid' for the argument we passed it, which
-  a 'Getter' doesn't recieve.
-  .
-  However, the instance of 'Functor' for 'Const' requires no such thing. If we weaken the type
-  requirement from 'Applicative' to 'Functor' for 'Traversal', we obtain 
-  .
-  > type Lens a b c d = forall f. Functor f => (c -> f d) -> a -> f b
-  .
-  Every 'Lens' is a valid 'Setter', choosing @f@ = 'Identity'.
-  .
-  Every 'Lens' can be used for 'Getting' like a 'Fold' that doesn't use the 'Monoid' it is passed.
-  .
-  Every 'Lens' is a valid 'Traversal' that only uses the 'Functor' part of the 'Applicative' it is supplied.
-  .
-  Every 'Lens' can be used for 'Getting' like a valid 'Getter', choosing @f@ = 'Const' @r@ for an appropriate @r@
-  .
-  Since every 'Lens' can be used for 'Getting' like a valid 'Getter' it follows that it must view exactly one
-  element in the structure.
-  .
-  The lens laws follow from this property and the desire for it to act like a 'Functor' when used as a 'Setter'.
-  .
-  /Isomorphisms and Iso/
-  .
-  Control.Isomorphic provides easy overloading of function application for isomorphisms and @Iso a b c d@ uses it
-  to form isomorphism families that can be composed with other isomorphisms and with lenses, setters, folds,
-  traversals and getters.
-  .
-  > type Iso a b c d = forall k f. (Isomorphic k, Functor f) => k (c -> f d) (a -> f b)
-  .
-  /Composition/
-  .
-  Note that all of these types are type aliases, and you can compose these lenses with mere function compositon.
-  .
-  This is a generalization of the well-known trick for @(.).(.)@ or @fmap.fmap@, and their less well-known cousins
-  @foldMap.foldMap@ @traverse.traverse@. It follows because each one is a function between values of type @(x -> f y)@
-  and the composition takes the intersection of supplied functionality for you automatically!
+  families of getters, folds, isomorphisms, traversals, setters and lenses and their indexed variants.
   .
   /Lens Families/
   .
-  For a longer description of why you should care about lenses, and an overview of why we use 4
+  For a longer description of why you should care about lens families, and an overview of why we use 4
   parameters a, b, c, and d instead of just 2, see <http://comonad.com/reader/2012/mirrored-lenses/>.
   .
   Sometimes you won't need the flexibility those extra parameters afford you and you can use
@@ -142,13 +38,13 @@ description:
   .
   /Deriving Lenses/
   .
-  You can derive lenses automatically for many data types using 'Control.Lens.TH', and if a
-  container is fully characterized by its lenses, you can use 'Control.Lens.Representable' to
-  automatically derive 'Functor', 'Applicative', 'Monad', and 'Derivable'.
+  You can derive lenses automatically for many data types using 'makeLenses', and if a
+  container is fully characterized by its lenses, you can use 'Representable' to
+  automatically derive 'Functor', 'Applicative', 'Monad', and 'Distributive'.
 
 build-type:    Simple
 tested-with:   GHC == 7.4.1
-extra-source-files: .travis.yml examples/Pong.hs examples/Test.hs examples/Pong2.hs
+extra-source-files: .travis.yml examples/Pong.hs examples/Test.hs
 
 source-repository head
   type: git
@@ -156,36 +52,37 @@ source-repository head
 
 library
   build-depends:
-    base         >= 4.3   && < 5,
-    containers   >= 0.4.2 && < 0.6,
-    mtl          >= 2.0.1 && < 2.2,
-    transformers >= 0.2.2 && < 0.4
+    base             >= 4.3   && < 5,
+    containers       >= 0.4.2 && < 0.6,
+    mtl              >= 2.0.1 && < 2.2,
+    template-haskell >= 2.4   && < 2.8,
+    transformers     >= 0.3   && < 0.4
 
-  exposed-modules: Control.Indexed
-                   Control.Isomorphic
+  exposed-modules: Control.Exception.Lens
                    Control.Lens
                    Control.Lens.Internal
                    Control.Lens.Representable
-  -- base
-  exposed-modules: Control.Exception.Lens
+                   Control.Lens.Fold
+                   Control.Lens.Getter
+                   Control.Lens.Indexed
+                   Control.Lens.Iso
+                   Control.Lens.Setter
+                   Control.Lens.TH
+                   Control.Lens.Traversal
+                   Control.Lens.Type
                    Data.Bits.Lens
                    Data.Complex.Lens
                    Data.Dynamic.Lens
                    Data.Either.Lens
                    Data.List.Lens
                    Data.Pair.Lens
-
-  -- containers
-  exposed-modules: Data.IntMap.Lens
+                   Data.IntMap.Lens
                    Data.IntSet.Lens
                    Data.Map.Lens
                    Data.Sequence.Lens
                    Data.Set.Lens
                    Data.Tree.Lens
-
-  build-depends:   template-haskell >= 2.4 && < 2.8
-  exposed-modules: Language.Haskell.TH.Lens
-                   Control.Lens.TH
+                   Language.Haskell.TH.Lens
 
   -- platform
   build-depends:   array >= 0.3.0.2 && < 0.5
@@ -201,10 +98,12 @@ library
   exposed-modules: Control.Parallel.Strategies.Lens Control.Seq.Lens
 
   other-extensions:
+    BangPatterns
     CPP
     DeriveDataTypeable
     FlexibleContexts
     FlexibleInstances
+    FunctionalDependencies
     LiberalTypeSynonyms
     MultiParamTypeClasses
     Rank2Types
@@ -212,6 +111,7 @@ library
     TemplateHaskell
     TypeFamilies
     TypeOperators
+    UndecidableInstances
 
   if (impl(ghc>=7.4))
     other-extensions: Trustworthy
@@ -220,3 +120,13 @@ library
 
   ghc-options: -Wall -fwarn-tabs -O2 -fdicts-cheap -funbox-strict-fields
   hs-source-dirs: src
+
+test-suite doctests
+  type:            exitcode-stdio-1.0
+  main-is:         doctests.hs
+
+  build-depends:   base == 4.*,
+                   doctest >= 0.8 && <= 0.9
+
+  ghc-options:     -Wall -Werror -threaded
+  hs-source-dirs:  test
