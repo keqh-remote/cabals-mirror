@@ -1,5 +1,5 @@
 Name:               process-extras
-Version:            0.1.1
+Version:            0.1.2
 Synopsis:           Process extras
 Description:        Extra functionality for the Process library
                     <http://hackage.haskell.org/package/process>.
@@ -25,6 +25,7 @@ Library
 
   Exposed-modules:
     System.Process.ByteString
+    System.Process.ByteString.Lazy
     System.Process.Text
 
   Build-depends:
