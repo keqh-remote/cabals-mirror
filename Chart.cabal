@@ -1,6 +1,6 @@
 Name: Chart
-Version: 0.5
-License: BSD4
+Version: 0.6
+License: BSD3
 License-file: LICENSE
 Copyright: Tim Docker, 2006
 Author: Tim Docker <tim@dockerz.net>
@@ -10,6 +10,7 @@ Synopsis: A library for generating 2D Charts and Plots
 Description: A library for generating 2D Charts and Plots, based upon the cairo graphics library.
 Category: Graphics
 Cabal-Version: >= 1.2
+Build-Type: Simple
 
 Extra-Source-Files: tests/test.hs, tests/Prices.hs
 
@@ -31,4 +32,5 @@ library
         Graphics.Rendering.Chart.Axis,
         Graphics.Rendering.Chart.Layout,
         Graphics.Rendering.Chart.Plot
+        Graphics.Rendering.Chart.Simple
 
