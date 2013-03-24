@@ -1,6 +1,6 @@
 Cabal-version:  >=1.6
 Name:           classify
-Version:        2012.10.21
+Version:        2012.10.22
 Build-Type:     Simple
 License:        PublicDomain
 License-File:   LICENSE
