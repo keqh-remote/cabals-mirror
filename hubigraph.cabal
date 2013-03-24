@@ -1,13 +1,13 @@
 name:                hubigraph
-version:             0.3.1
+version:             0.3.2
 homepage:            http://ooxo.org/hubigraph/
 synopsis:            A haskell wrap for Ubigraph
 description:         Hubigraph is a Haskell wrapper for Ubigraph, which is a tool for visualizing dynamic graphs.
 category:            Graphics
 license:             BSD3
 license-file:        LICENSE
-author:              Kohei Ozaki
-maintainer:          Kohei Ozaki <eowner@gmail.com>
+author:              Kohei Ozaki <eowner@gmail.com>
+maintainer:          Matei Tene <matei.tene@cti.pub.ro>
 cabal-version:       >= 1.2
 build-type:          Simple
 stability:           experimental
