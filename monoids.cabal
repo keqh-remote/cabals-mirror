@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.5
+version:	    0.1.8
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -14,7 +14,20 @@ build-type:     Simple
 cabal-version:  >=1.2
 
 library
-  build-depends: base >= 4, text, fingertree, bytestring, category-extras, parallel, containers, mtl, stm, bitset, QuickCheck, array, parsec >= 3
+  build-depends: 
+    base >= 4 && < 4.1,
+    containers >= 0.2 && < 0.3, 
+    text >= 0.1 && < 0.2, 
+    parsec >= 3.0 && < 3.1,
+    fingertree >= 0.0 && < 0.1, 
+    bytestring >= 0.9 && < 1.0, 
+    category-extras >= 0.53 && < 0.60, 
+    parallel >= 1.1 && < 1.2, 
+    mtl >= 1.0 && < 1.2, 
+    stm >= 2.1 && < 2.2, 
+    bitset >= 1.0 && < 1.1, 
+    QuickCheck < 2.2, 
+    array >= 0.2 && < 0.3
   exposed-modules:
     Data.Group
     Data.Group.Combinators
@@ -26,8 +39,9 @@ library
     Data.Monoid.Combinators
     Data.Monoid.FromString
     Data.Monoid.Generator
+    Data.Monoid.Generator.LZ78
+    Data.Monoid.Generator.RLE
     Data.Monoid.Lexical.SourcePosition
-    Data.Monoid.Lexical.RunLengthEncoding
     Data.Monoid.Lexical.UTF8.Decoder
     Data.Monoid.Lexical.Words
     Data.Monoid.Monad
@@ -41,8 +55,11 @@ library
     Data.Ring
     Data.Ring.Boolean
     Data.Ring.Semi
+    Data.Ring.Semi.Tropical
     Data.Ring.Semi.Near
     Data.Ring.Semi.Ord
     Data.Ring.FromNum
+    Data.Ring.Module
+    Data.Ring.Module.AutomaticDifferentiation
     Data.Ring.Sugar
   ghc-options: -Wall -fno-warn-duplicate-exports
