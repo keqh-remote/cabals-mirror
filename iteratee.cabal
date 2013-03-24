@@ -1,5 +1,5 @@
 name:          iteratee
-version:       0.3.1
+version:       0.3.4
 synopsis:      Iteratee-based I/O
 description:
   The IterateeGM monad provides strict, safe, and functional I/O. In addition
@@ -28,6 +28,10 @@ flag splitBase
 
 flag buildTests
   description: Build test executables.
+  default:     False
+
+flag includeCodecs
+  description: Build Tiff and Wave codec modules
   default:     False
 
 library
@@ -68,11 +72,14 @@ library
     Data.Iteratee.Base.LooseMap
     Data.Iteratee.Binary
     Data.Iteratee.Char
-    Data.Iteratee.Codecs.Tiff
-    Data.Iteratee.Codecs.Wave
     Data.Iteratee.IO
     Data.Iteratee.IO.Handle
     Data.Iteratee.WrappedByteString
+
+  if flag(includeCodecs)
+    exposed-modules:
+      Data.Iteratee.Codecs.Tiff
+      Data.Iteratee.Codecs.Wave
 
   other-modules:
     Data.Iteratee.IO.Base
@@ -109,4 +116,4 @@ executable testIteratee
 
 source-repository head
   type:     darcs
-  location: http://inmachina.net/~jwlato/haskell/iteratee
+  location: http://tanimoto.us/~jwlato/haskell/iteratee
