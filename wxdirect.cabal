@@ -1,5 +1,5 @@
 name:         wxdirect
-version:      0.90
+version:      0.90.0.1
 license:      BSD3
 license-file: LICENSE
 author:       Daan Leijen
@@ -61,7 +61,7 @@ executable wxdirect
     directory,
     parsec     >= 2.1.0 && < 4,
     strict,
-    time       >= 1.0   && < 1.3
+    time       >= 1.0   && < 1.5
 
   if flag(splitBase)
     build-depends:
