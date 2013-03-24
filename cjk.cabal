@@ -1,5 +1,5 @@
 name:                cjk
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Data about Chinese, Japanese and Korean characters and languages
 description:         A Haskell interface to the most important information from the Unicode Unihan character
                      database and CC-CEDICT free Chinese-English dictionary.
@@ -31,6 +31,9 @@ library
                      CJK.Data.Types
   other-modules:     CJK.Data.Internal
                      CJK.Utilities
+                     -- I don't think I should have to put this here, but if I don't then any executables
+                     -- linking against the cjk library will fail to find symbols exported by this module
+                     Paths_cjk
   build-depends:       base >=4.5 && < 5
                      , containers >=0.4.2
                      , bytestring >=0.9
