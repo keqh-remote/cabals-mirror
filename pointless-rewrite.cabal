@@ -1,5 +1,5 @@
 Name:            pointless-rewrite
-Version:         0.0.2
+Version:         0.0.3
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -14,13 +14,15 @@ Category: Generics
 extra-source-files: README, Test.hs
 
 Build-type: Simple
-Cabal-Version:  >= 1.2.3
+Cabal-Version:  >= 1.4
 
 Library
   Hs-Source-Dirs: src
-  Build-Depends:        mtl >= 1, base >= 4 && < 5, pointless-haskell >= 0.0.5, pointless-lenses >= 0.0.7, haskell98, process
+  Build-Depends:        mtl >= 1, base >= 4 && < 5, pointless-haskell >= 0.0.6, pointless-lenses >= 0.0.8, process, containers
   exposed-modules:
+        Data.Default
         Data.Type
+        Data.Pf
         Data.Spine
         Data.Equal
         Data.Eval
@@ -32,6 +34,8 @@ Library
         Transform.Rules.PF.Products
         Transform.Rules.PF.Rec
         Transform.Rules.PF.Sums
+        Transform.Rules.PF.Monoids
+        Transform.Rules.PF.Lists
         Transform.Rules.Lenses
         Transform.Rules.Lenses.Combinators
         Transform.Rules.Lenses.Dists
@@ -42,8 +46,9 @@ Library
         Transform.Rules.SYB.TP
         Transform.Rules.SYB.TU
         Transform.Rules.SYB
+        Transform.Rules.XPath
         Transform.Examples.Imdb
         Transform.Examples.Company
         Transform.Examples.Women
 
-  extensions: ScopedTypeVariables, FlexibleContexts, Rank2Types, TypeOperators, TypeFamilies, GADTs
+  extensions: ScopedTypeVariables, FlexibleContexts, Rank2Types, TypeOperators, TypeFamilies, GADTs, ViewPatterns
