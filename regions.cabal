@@ -1,12 +1,14 @@
 name:          regions
-version:       0.9
+version:       0.10
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
 license-file:  LICENSE
-copyright:     2009-2010 Bas van Dijk
+copyright:     2009-2011 Bas van Dijk
 author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+homepage:      https://github.com/basvandijk/regions/
+bug-reports:   https://github.com/basvandijk/regions/issues
 stability:     experimental
 category:      Control, Monadic Regions
 synopsis:      Provides the region monad for safely opening and working with
@@ -30,13 +32,15 @@ description:
   For an example on how to use this library see the @safer-file-handles@,
   @usb-safe@ or @regional-pointers@ packages.
 
+extra-source-files: README.markdown, NEWS, CONTRIBUTORS
+
 source-repository head
-  Type:     darcs
-  Location: http://code.haskell.org/~basvandijk/code/regions
+  Type:     git
+  Location: git://github.com/basvandijk/regions.git
 
 Library
   GHC-Options: -Wall
-  build-depends: base                      >= 4     && < 4.4
+  build-depends: base                      >= 4     && < 4.5
                , base-unicode-symbols      >= 0.1.1 && < 0.3
                , transformers              >= 0.2   && < 0.3
                , monad-control             >= 0.2   && < 0.3
