@@ -1,5 +1,5 @@
 Name:                plugins-auto
-Version:             0.0.1
+Version:             0.0.2
 Synopsis:            Automatic recompilation and reloading of haskell modules.
 Description:         This library provides support for automatically recompiling and reloading
                      modules into your programs when the source code is modified. 
@@ -44,15 +44,12 @@ Author:              Happstack team, HAppS LLC
 Maintainer:          Happstack team <happs@googlegroups.com>
 Category:            System
 Build-Type:          Simple
-Cabal-Version:       >= 1.6
+Cabal-Version:       >= 1.8
 
 source-repository head
     type:     darcs
     location: http://patch-tag.com/r/facundo/plugins-auto
-
-Flag tests
-    Description: Build the testsuite, and include the tests in the library
-    Default: False
+    tag:      0.0.2
 
 Library
   exposed-modules:     System.Plugins.Auto
@@ -69,3 +66,9 @@ Library
                        template-haskell
                        
   ghc-options:      -Wall
+
+Test-Suite test-plugins-auto
+  type:          exitcode-stdio-1.0
+  main-is:       Test/Test.hs
+  build-depends: base, directory, process
+
