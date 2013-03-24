@@ -1,5 +1,5 @@
 Name:                SourceGraph
-Version:             0.1
+Version:             0.2
 Synopsis:            Use graph-theory to analyse your code
 Description:         SourceGraph uses the Graphalyze library to analyse
                      Cabalized Haskell code.
@@ -9,6 +9,7 @@ License-file:        COPYRIGHT
 Copyright:           (c) Ivan Lazar Miljenovic
 Author:              Ivan Lazar Miljenovic
 Maintainer:          Ivan.Miljenovic@gmail.com
+Extra-Source-Files:  TODO
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Tested-With:         GHC==6.8.3
@@ -31,6 +32,6 @@ Executable SourceGraph {
     else
        Build-Depends:   base < 3
 
-    Build-Depends:      fgl, Graphalyze >= 0.3, graphviz >= 2008.9.20,
-                        Cabal < 1.5, haskell-src-exts
+    Build-Depends:      fgl, Graphalyze >= 0.4, graphviz >= 2008.9.20,
+                        Cabal >= 1.4, Cabal < 1.5, haskell-src-exts >= 0.3
 }
