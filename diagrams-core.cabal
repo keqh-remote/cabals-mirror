@@ -1,5 +1,5 @@
 Name:                diagrams-core
-Version:             0.2
+Version:             0.3
 Synopsis:            Core libraries for diagrams EDSL
 Description:         The core modules underlying diagrams, 
                      an embedded domain-specific language 
@@ -8,7 +8,7 @@ Homepage:            http://projects.haskell.org/diagrams
 License:             BSD3
 License-file:        LICENSE
 Author:              Brent Yorgey
-Maintainer:          byorgey@cis.upenn.edu
+Maintainer:          diagrams-discuss@googlegroups.com
 Category:            Graphics
 Build-type:          Simple
 Cabal-version:       >=1.6
