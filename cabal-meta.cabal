@@ -1,5 +1,5 @@
 name:            cabal-meta
-version:         0.2.2
+version:         0.2.3
 license:         BSD3
 license-file:    LICENSE
 author:          Greg Weber <greg@gregweber.info>
@@ -36,7 +36,7 @@ executable cabal-meta
     else
         build-depends:   base            >= 4        && < 4.3
     build-depends: shelly >= 0.9
-                 , text, system-filepath
+                 , text, system-filepath, system-fileio
                  -- , file-location
 
     ghc-options:     -Wall
@@ -50,7 +50,7 @@ test-suite test
 
   build-depends: shelly >= 0.9
                , hspec, HUnit, unix, base, text, system-filepath
-                 -- , file-location
+               -- , file-location
   extensions: OverloadedStrings 
 
 source-repository head
