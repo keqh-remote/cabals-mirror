@@ -1,5 +1,5 @@
 Name:          KiCS
-Version:       0.8.8
+Version:       0.8.9
 Cabal-Version: >= 1.6
 Author:        Bernd Braßel
 Maintainer:    Bernd Braßel
@@ -22,6 +22,7 @@ Data-Files:    *.fcy
                *.acy
                *.uacy
                *.cy
+               
 
                
 Executable kics
@@ -38,7 +39,7 @@ Executable kics
     ghc-paths,
     process,
     curry-base >= 0.2.5,
-    curry-frontend >= 0.2.6
+    curry-frontend >= 0.2.7
   Other-Modules:
     Curry.Compiler.Config
     Curry.Compiler.CurryToHaskell
@@ -51,6 +52,12 @@ Executable kics
     Curry.Compiler.PreTrans
     Curry.Compiler.Simplification
     Curry.Compiler.Brace
+
+Executable kicsi
+  main-is:        kicsi.hs
+  hs-source-dirs: src
+  Build-Depends:
+    readline
 
 Library
   hs-source-dirs: src, src/lib
@@ -106,6 +113,21 @@ Library
     Curry.Module.Traversal
     Curry.Module.PropertyFile
     Curry.Module.Unsafe
+    Curry.Module.XML
+    Curry.Module.Distribution
+    Curry.Module.FlatCurry
+    Curry.Module.AbstractCurry
+    Curry.Module.AbstractCurryPrinter
+    Curry.Module.CompactFlatCurry
+    Curry.Module.CurryStringClassifier
+    Curry.Module.CurrySyntax
+    Curry.Module.FlatCurryGoodies
+    Curry.Module.FlatCurryRead
+    Curry.Module.FlatCurryShow
+    Curry.Module.FlatCurryTools
+    Curry.Module.FlatCurryXML
+    Curry.Module.FlexRigid
+    Curry.Module.PrettyFlat
 
   Other-Modules:
     Paths_KiCS
