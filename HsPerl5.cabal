@@ -1,5 +1,5 @@
 name:               HsPerl5
-version:            0.0.5
+version:            0.0.6
 copyright:          2008 Audrey Tang
 license:            BSD3
 license-file:       LICENSE
@@ -22,13 +22,13 @@ description:        This module provides a Haskell interface to embedded Perl 5 
                     carried into this module.
 
 stability:          experimental
-build-type:         Simple
+build-type:         Custom
 extensions:         ForeignFunctionInterface, TypeSynonymInstances,
                     ScopedTypeVariables, FlexibleInstances,
                     UndecidableInstances, OverlappingInstances, IncoherentInstances
 exposed-modules:    Language.Perl5
 build-depends:      base
-extra-source-files: README test.hs configure p5embed.h
+extra-source-files: README test.hs Configure.PL p5embed.h perlxsi.c
 hs-source-dirs:     src
 category:           Language, Pugs
 c-sources:          p5embed.c
