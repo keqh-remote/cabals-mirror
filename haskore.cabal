@@ -1,5 +1,5 @@
 Name:           haskore
-Version:        0.2
+Version:        0.2.0.1
 License:        GPL
 License-File:   LICENSE
 Author:         Paul Hudak <paul.hudak@yale.edu>, Henning Thielemann
@@ -11,7 +11,7 @@ Stability:      Experimental
 Description:
   Compose music using programming features.
   Output in MIDI, CSound, SuperCollider or as an audio signal.
-Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.1, Hugs==2006.9
+Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, Hugs==2006.9
 Cabal-Version:     >=1.6
 Build-Type:        Simple
 
@@ -39,7 +39,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/haskore/revised/core
-  tag:      0.2
+  tag:      0.2.0.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -166,12 +166,12 @@ Library
     Haskore.General.Utility
 
 Executable test
-  If !flag(buildTests)
+  If flag(buildTests)
+    Build-Depends:
+      QuickCheck >=1 && <2,
+      HUnit >=1.2 && <1.3
+  Else
     Buildable: False
---  Installable: False
-  Build-Depends:
-    QuickCheck >=1 && <2,
-    HUnit >=1.2 && <1.3
   Hs-Source-Dirs: src, src/Test
   Main-Is: Suite.lhs
   Other-Modules:
