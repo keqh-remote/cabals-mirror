@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.13
+version:	    0.1.17
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -7,8 +7,8 @@ maintainer:	    Edward A. Kmett <ekmett@gmail.com>
 stability:	    experimental
 homepage:	    http://comonad.com/reader
 category:	    Data
-synopsis:	    Lots of Monoids
-description:    Lots of Monoids
+synopsis:	    Monoids, specialized containers and a general map/reduce framework
+description:    Monoids, specialized containers and a general map/reduce framework
 copyright:      (c) 2009 Edward A. Kmett
 build-type:     Simple
 cabal-version:  >=1.2
@@ -26,8 +26,9 @@ library
     mtl >= 1.0 && < 1.2, 
     stm >= 2.1 && < 2.2, 
     bitset >= 1.0 && < 1.1, 
-    QuickCheck < 2.2, 
-    array >= 0.2 && < 0.3
+    QuickCheck >= 2.1 && < 2.2, 
+    array >= 0.2 && < 0.3,
+    reflection >= 0.0 && < 0.1
   exposed-modules:
     Data.Group
     Data.Group.Combinators
@@ -58,6 +59,7 @@ library
     Data.Ring
     Data.Ring.Boolean
     Data.Ring.FromNum
+    Data.Ring.ModularArithmetic
     Data.Ring.Module
     Data.Ring.Module.AutomaticDifferentiation
     Data.Ring.Semi
