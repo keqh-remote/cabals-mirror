@@ -1,5 +1,5 @@
 name:           ghc-core
-version:        0.4.1
+version:        0.4.2
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart
@@ -23,13 +23,15 @@ description:    A convenient command line wrapper for GHC that displays
 build-type:     Simple
 cabal-version:  >= 1.2
 
+-- Technically, hscolour-1.10.* will work too if we replace the
+-- 'NoLit' constructor with 'False' in the call to 'hscolour'.
 executable ghc-core
     build-depends:  base,
-                    process,
+                    process >=1.0.1,
                     pcre-light,
-                    hscolour >=1.10,
+                    hscolour >=1.11,
                     directory,
                     filepath
     main-is:        ghc-core.hs
     ghc-options:    -Wall
-    extensions:     PatternGuards    
+    extensions:     PatternGuards
