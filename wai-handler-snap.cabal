@@ -1,6 +1,6 @@
 Name:                wai-handler-snap
-Version:             0.1.0
-Synopsis:            Web Application Interface handler using snap-server.
+Version:             0.1.1
+Synopsis:            Web Application Interface handler using snap-server. (deprecated)
 License:             BSD3
 License-file:        LICENSE
 Author:              Michael Snoyman
