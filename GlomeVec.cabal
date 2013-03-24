@@ -1,5 +1,5 @@
 Name:                GlomeVec
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Simple 3D vector library
 Description:         A simple library for dealing with 3D vectors, suitable for graphics projects.  A small texture library with Perlin noise is included as well.
 License:             GPL
@@ -14,7 +14,7 @@ build-type:          Simple
 Cabal-Version: >= 1.2
 extra-source-files:
   README.txt
-
 library
-  exposed-modules:   Data.GlomeVec, Data.GlomeTexture
+  exposed-modules:   Data.Glome.Vec
+                     Data.Glome.Texture
   Build-Depends:     base >= 3 && < 4, array
