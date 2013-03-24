@@ -1,11 +1,13 @@
 name:            xml-enumerator
-version:         0.4.4
+version:         0.4.4.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michaels@suite-sol.com>, Aristid Breitkreuz <aristidb@googlemail.com>
 maintainer:      Michael Snoyman <michaels@suite-sol.com>
-synopsis:        Pure-Haskell utilities for dealing with XML with the enumerator package.
+synopsis:        Pure-Haskell utilities for dealing with XML with the enumerator package. (deprecated)
 description:
+    This package is deprecated in favor of xml-conduit.
+    .
     This package provides parsing and rendering functions for XML. It is based on the datatypes found in the xml-types package. This package is broken up into the following modules:
     .
     * Text.XML: DOM-based parsing and rendering. This is the most commonly used module.
