@@ -1,5 +1,5 @@
 name:			GoogleSuggest
-version:		0.0.1
+version:		0.0.2
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -9,7 +9,7 @@ description:    Interface to Google Suggest API
 author:			Andy Stewart
 maintainer:		lazycat.manatee@gmail.com
 stability:		provisional
-category:		Language
+category:		Browser
 
 tested-with:	GHC==6.12.3
 build-type:		Simple
