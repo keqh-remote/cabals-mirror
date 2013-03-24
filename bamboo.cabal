@@ -1,5 +1,5 @@
 Name:                 bamboo
-Version:              2009.5.18
+Version:              2009.5.18.1
 Build-type:           Simple
 Synopsis:             A simple blog middleware on hack
 Description:          A simple blog middleware on hack
@@ -47,6 +47,7 @@ library
                     Bamboo.Type.StaticWidget
                     Bamboo.Type.Reader
                     Bamboo.Type.Extension
+                    Bamboo.Type.Cache
                     
                     Bamboo.View.Atom.Tag
                     Bamboo.View.Atom.Post
