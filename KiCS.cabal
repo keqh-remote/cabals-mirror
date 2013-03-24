@@ -1,5 +1,5 @@
 Name:          KiCS
-Version:       0.8.4
+Version:       0.8.5
 Cabal-Version: >= 1.6
 Author:        Bernd Braßel
 Maintainer:    Bernd Braßel
@@ -12,7 +12,7 @@ Synopsis:      A compiler from Curry to Haskell
 Description:   This package builds two binaries, kics and kicsi, respectively.
                The first is the Curry to Haskell compiler, the latter a text
                based interactive environment.
-Stability:     experimental
+Stability:     *INCOMPLETE* do not download yet! (sorry...)
 
 Executable kics
   main-is:        kics.hs
@@ -68,4 +68,3 @@ Executable kicsi
     Brace
     InstallDir
     MyReadline
-
