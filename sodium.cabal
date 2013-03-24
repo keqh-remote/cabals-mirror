@@ -1,5 +1,5 @@
 name:                sodium
-version:             0.1.0.0
+version:             0.2.0.0
 synopsis:            Sodium Reactive Programming (FRP) System
 description:         
   A general purpose Reactive Programming (FRP) system intended for \'industrial strength\'
@@ -18,6 +18,10 @@ description:
      logic.
   .
    * Push-based imperative implementation.
+  .
+  See the /examples/ directory for test cases and examples.
+  .
+  Changes: 0.2.0.0 fix some value recursion deadlocks and improve docs.
 license:             BSD3
 license-file:        LICENSE
 author:              Stephen Blackheath
