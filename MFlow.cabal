@@ -1,16 +1,17 @@
 name: MFlow
-version: 0.2.0.1
+version: 0.2.0.2
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
 license-file: LICENSE
 maintainer: agocorona@gmail.com
 stability: experimental
+Bug-reports: https://github.com/agocorona/MFlow/issues
 synopsis: Web app server for stateful processes with safe, composable user interfaces.
 description: A Web framework with some unique features thanks to the power of the Haskell language.
-             MFlow run stateful server processes; All the flow of request and responses are coded by the programmer in a single function.
+             MFlow run stateful server processes; All the flow of requests and responses are coded by the programmer in a single function.
              Allthoug single request-response flows and callbacks are possible. Therefore, the code is
-             more understandable.f
+             more understandable.
              .
              These processes are stopped and restarted by the
              application server on demand, including its execution state. Therefore session management
@@ -56,7 +57,7 @@ library
                    bytestring -any, containers -any, RefSerialize -any, TCache -any,
                    stm >2, old-time -any, vector -any, directory -any,
                    utf8-string -any, wai -any, case-insensitive -any, http-types -any,
-                   conduit -any, text -any, parsec -any, warp -any, fay -any,
+                   conduit -any, text -any, parsec -any, warp -any,
                    random -any, hsp == 0.7.1, hack -any, hack-handler-simpleserver -any,
                    blaze-html -any, blaze-markup -any
     exposed-modules: MFlow.Wai.Blaze.Html.All
