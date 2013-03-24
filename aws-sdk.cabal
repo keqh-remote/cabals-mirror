@@ -1,5 +1,5 @@
 name:                aws-sdk
-version:             0.8.0.0
+version:             0.9.0.0
 synopsis:            AWS SDK for Haskell
 description: AWS (Amazon Web Services) sdk for Haskell.
              .
@@ -26,6 +26,7 @@ library
                    , AWS.EC2.Metadata
                    , AWS.RDS
                    , AWS.RDS.Types
+                   , AWS.RDS.Util
                    , AWS.ELB
                    , AWS.ELB.Types
                    , AWS.CloudWatch
@@ -39,6 +40,7 @@ library
                    , AWS.EC2.Instance
                    , AWS.EC2.Volume
                    , AWS.EC2.KeyPair
+                   , AWS.EC2.Route
                    , AWS.EC2.RouteTable
                    , AWS.EC2.Snapshot
                    , AWS.EC2.SecurityGroup
@@ -48,6 +50,7 @@ library
                    , AWS.EC2.VPC
                    , AWS.EC2.Acl
                    , AWS.EC2.NetworkInterface
+                   , AWS.EC2.NetworkInterfaceAttribute
                    , AWS.EC2.Tag
                    , AWS.EC2.Params
                    , AWS.Lib.FromText
@@ -55,6 +58,7 @@ library
                    , AWS.Lib.Query
                    , AWS.RDS.Internal
                    , AWS.RDS.DBInstance
+                   , AWS.RDS.DBSnapshot
                    , AWS.ELB.Internal
                    , AWS.ELB.LoadBalancer
                    , AWS.CloudWatch.Internal
@@ -68,7 +72,7 @@ library
                    , base64-bytestring >= 1.0.0.0
                    , bytestring
                    , http-types
-                   , conduit >= 0.5.2
+                   , conduit >= 0.5.3
                    , transformers
                    , time
                    , old-locale
