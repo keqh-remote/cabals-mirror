@@ -7,7 +7,7 @@ Name:                smartGroup
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.0
+Version:             0.2.0
 
 -- A short (one-line) description of the package.
 Synopsis:            group strings by words in common
@@ -52,7 +52,7 @@ Library
   Exposed-modules:     SmartGroup
   
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 3 && < 5, containers < 1, heap < 1.1
+  Build-depends:       base >= 3 && < 5, containers < 1, heap <= 1.1, bytestring < 1
   
   -- Modules not exported by this package.
   -- Other-modules:       
