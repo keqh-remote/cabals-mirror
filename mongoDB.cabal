@@ -1,5 +1,5 @@
 Name:                mongoDB
-Version:             0.2
+Version:             0.3
 License:             MIT
 Maintainer:          Scott Parish <srp@srparish.net>
 Author:              Scott Parish <srp@srparish.net>
@@ -21,7 +21,8 @@ Build-Depends:       base < 5,
 		     network,
 		     random,
 		     time,
-		     utf8-string
+		     utf8-string,
+                     nano-md5
 Build-Type:          Simple
 Exposed-modules:     Database.MongoDB,
 		     Database.MongoDB.BSON
