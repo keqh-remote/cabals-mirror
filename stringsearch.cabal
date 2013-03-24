@@ -1,14 +1,23 @@
-Name:            stringsearch
-Category:        Text, Data, Search
-Version:         0.1.1
-Description:     Fast search of ByteStrings
-License:         BSD3
-License-file:    LICENSE
-Author:          Daniel Fischer, Chris Kuklewicz
-Maintainer:      bos@serpentine.com
-Build-Depends:   base
-Exposed-modules: Data.ByteString.Search.BoyerMoore
-                 Data.ByteString.Search.KnuthMorrisPratt
-Extensions:      CPP
-ghc-options:     -O2 -Wall -Werror
-nhc98-options:   -K4M
+Name:              stringsearch
+Version:           0.2
+Description:       Fast search of ByteStrings
+Category:          Text, Data, Search
+License:           BSD3
+License-file:      LICENSE
+Author:            Daniel Fischer, Chris Kuklewicz
+Maintainer:        bos@serpentine.com
+Cabal-version:     >= 1.2
+
+Flag splitBase
+  Description:     Choose the new, split-up base package.
+
+Library
+  if flag(splitBase)
+    Build-depends: base, array, bytestring
+  else
+    Build-depends: base
+  Exposed-modules: Data.ByteString.Search.BoyerMoore
+                   Data.ByteString.Search.KnuthMorrisPratt
+  Extensions:      CPP
+  ghc-options:     -O2 -Wall -Werror
+  nhc98-options:   -K4M
