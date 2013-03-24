@@ -1,14 +1,14 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.8.24
+version:            1.8.25
 -- license is GPL v2 only
 license:            GPL
 license-file:       LICENSE
 category:           Development
 author:             Neil Mitchell <ndmitchell@gmail.com>
 maintainer:         Neil Mitchell <ndmitchell@gmail.com>
-copyright:          Neil Mitchell 2006-2011
+copyright:          Neil Mitchell 2006-2012
 synopsis:           Source code suggestions
 description:
     HLint gives suggestions on how to improve your source code.
@@ -39,7 +39,7 @@ flag threaded
 library
     build-depends:
         base == 4.*, process, filepath, directory, containers,
-        transformers >= 0.0 && < 0.3,
+        transformers >= 0.0 && < 0.4,
         hscolour >= 1.17 && < 1.20,
         cpphs >= 1.11 && < 1.14,
         haskell-src-exts >= 1.11 && < 1.12,
