@@ -1,5 +1,5 @@
 name: dbus-core
-version: 0.2
+version: 0.3
 synopsis: Low-level DBus protocol implementation
 license: GPL
 license-file: License.txt
@@ -7,7 +7,7 @@ author: John Millikin
 maintainer: jmillikin@gmail.com
 build-type: Simple
 cabal-version: >=1.6
-category: Data
+category: Network, Desktop
 stability: experimental
 bug-reports: mailto:jmillikin@gmail.com
 
@@ -20,15 +20,17 @@ extra-source-files:
 
 source-repository head
   type: darcs
-  location: http://patch-tag.com/r/dbus-core/pullrepo
+  location: http://patch-tag.com/r/jmillikin/dbus-core/pullrepo
 
 library
+  ghc-options: -Wall
+
   build-depends:
     base >=4 && < 5,
-    parsec >= 3,
+    parsec >= 3.0.0,
     binary,
     bytestring,
-    data-binary-ieee754,
+    data-binary-ieee754 >= 0.3,
     utf8-string,
     mtl,
     containers,
