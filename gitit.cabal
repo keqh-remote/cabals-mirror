@@ -1,5 +1,5 @@
 name:                gitit
-version:             0.3.1
+version:             0.3.2
 Cabal-version:       >= 1.2
 build-type:          Simple
 synopsis:            Wiki using HAppS, git, and pandoc.
@@ -34,6 +34,7 @@ data-files:          css/screen.css, css/print.css, css/ie.css, css/hk-pyg.css,
                      js/jquery-ui.packed.js,
                      js/preview.js, js/search.js,
                      data/post-update, data/FrontPage.page, data/Help.page,
+                     data/template.html,
                      README.markdown, data/SampleConfig.hs, BLUETRIP-LICENSE,
                      TANGOICONS
 
@@ -46,7 +47,8 @@ Executable           gitit
                      network, old-time, highlighting-kate, bytestring,
                      utf8-string, HAppS-Server >= 0.9.3 && < 0.9.4,
                      HAppS-State >= 0.9.3 && < 0.9.4,
-                     HAppS-Data >= 0.9.3 && < 0.9.4, SHA > 1, HTTP
+                     HAppS-Data >= 0.9.3 && < 0.9.4, SHA > 1, HTTP,
+                     HStringTemplate
   if impl(ghc >= 6.10)
     build-depends:   base >= 4, syb
   ghc-options:       -Wall -threaded
