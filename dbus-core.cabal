@@ -1,5 +1,5 @@
 name: dbus-core
-version: 0.9.1
+version: 0.9.2
 synopsis: Low-level D-Bus protocol implementation
 license: GPL-3
 license-file: license.txt
@@ -50,31 +50,35 @@ extra-source-files:
   benchmarks/Benchmarks.hs
   benchmarks/dbus-core-benchmarks.cabal
   --
-  tests/Tests.hs
   tests/dbus-core-tests.cabal
+  tests/DBus/Tests.hs
+  tests/DBus/Tests/Util.hs
+  tests/Main.hs
 
 source-repository head
   type: bazaar
   location: https://john-millikin.com/software/dbus-core/
 
 library
-  ghc-options: -Wall
+  ghc-options: -Wall -O2
 
   hs-source-dirs: hs
 
+  -- IMPORTANT: if you change these dependencies, also update them in
+  -- tests/
   build-depends:
       base >= 4.0 && < 5.0
-    , parsec >= 2.0 && < 3.2
     , binary >= 0.4 && < 0.6
     , bytestring >= 0.9 && < 0.10
-    , data-binary-ieee754 >= 0.3 && < 0.5
-    , text >= 0.11.1.5 && < 0.12
     , containers >= 0.1 && < 0.5
-    , unix >= 2.2 && < 2.5
-    , network >= 2.2 && < 2.4
+    , data-binary-ieee754 >= 0.3 && < 0.5
     , libxml-sax >= 0.7 && < 0.8
-    , xml-types >= 0.3 && < 0.4
+    , network >= 2.2 && < 2.4
+    , parsec >= 2.0 && < 3.2
+    , text >= 0.11.1.5 && < 0.12
+    , unix >= 2.2 && < 2.6
     , vector >= 0.7 && < 0.8
+    , xml-types >= 0.3 && < 0.4
 
   exposed-modules:
     DBus.Address
