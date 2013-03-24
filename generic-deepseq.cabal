@@ -1,5 +1,5 @@
 Name:		generic-deepseq
-Version:	2.0.0.0
+Version:	2.0.1.0
 License-File:	LICENSE
 License:	BSD3
 Author:		Maxime Henrion
@@ -40,6 +40,10 @@ Description:
   * Vastly improved performance. As a consequence of these changes, the member function of the DeepSeq class is now 'rnf', instead of 'deepseq'.
   .
   * New instances for functions, Ratio and Complex types.
+  .
+  Changes in version 2.0.1.0:
+  .
+  * Fix the U1 and V1 instances.
 
 Source-Repository head
   Type:			mercurial
@@ -47,6 +51,7 @@ Source-Repository head
 
 Library
   Build-Depends:	base >= 3 && < 5, ghc-prim >= 0.2
+  Hs-Source-Dirs:	src
   Exposed-Modules:	Control.DeepSeq
   Extensions:		FlexibleContexts, TypeOperators
   GHC-Options:		-Wall -O2
