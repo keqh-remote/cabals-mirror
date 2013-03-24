@@ -1,5 +1,5 @@
 Name:                   mighttpd2
-Version:                2.4.2
+Version:                2.5.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -22,7 +22,7 @@ Executable mighty
                         wai-app-file-cgi, wai, transformers, http-types,
                         directory, filepath,
                         http-date, hashmap, deepseq, wai-logger-prefork,
-                        http-enumerator
+                        http-conduit
   Other-Modules:	Config
                         Config.Internal
                         FileCGIApp
