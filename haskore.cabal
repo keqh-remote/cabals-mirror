@@ -1,7 +1,5 @@
--- We are going to split this package into smaller ones, which are easier to install.
--- Eventually we will also overhaul the package.
 Name:           haskore
-Version:        0.0.5
+Version:        0.0.5.1
 License:        GPL
 License-File:   LICENSE
 Author:         Paul Hudak <paul.hudak@yale.edu>, Henning Thielemann
@@ -13,7 +11,7 @@ Synopsis:       The Haskore Computer Music System
 Stability:      Experimental
 Description:
   Compose music using programming features.
-  Output in MIDI, CSound, SuperCollider or as a audio signal.
+  Output in MIDI, CSound, SuperCollider or as an audio signal.
 Tested-With:       GHC==6.4.1, GHC==6.8.2, Hugs==2005.3.8
 Cabal-Version:     >=1.2
 Build-Type:        Simple
@@ -29,6 +27,10 @@ Extra-Source-Files:
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
+
+Flag buildTests
+  description: Build test executables
+  default:     False
 
 Library
   Build-Depends:
@@ -150,6 +152,9 @@ Library
     Medium.LabeledControlled.List
 
 Executable test
+  If !flag(buildTests)
+    Buildable: False
+--  Installable: False
   Hs-Source-Dirs: src, src/Test
   Main-Is: Suite.lhs
   Other-Modules:
