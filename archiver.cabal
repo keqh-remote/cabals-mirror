@@ -1,5 +1,5 @@
 name:                archiver
-version:             0.1
+version:             0.2
 
 license:             BSD3
 license-file:        LICENSE
@@ -8,7 +8,7 @@ maintainer:          Gwern <gwern0@gmail.com>
 
 category:            Documentation, Network
 synopsis:            Archive supplied URLs in WebCite & Internet Archive
-description:         archiver is a daemon which will watch a specified text file,
+description:         archiver is a daemon which will process a specified text file,
                      each line of which is a URL, and will one by one request that
                      the URLs be archived or spidered by <http://www.webcitation.org> and
                      <http://www.archive.org> for future reference.
@@ -19,13 +19,19 @@ description:         archiver is a daemon which will watch a specified text file
                      documents.
 
 build-type:          Simple
-Cabal-Version:       >= 1.2
+Cabal-Version:       >= 1.6
+stability:           provisional
+tested-with:         GHC==6.12.1
+
+source-repository head
+  type:     darcs
+  location: http://community.haskell.org/~gwern/archiver/
 
 Library
         exposed-modules:     Network.URL.Archiver
-        build-Depends:       base>=4 && < 5, network, HTTP, curl, hinotify
+        build-Depends:       base>=4 && < 5, network, HTTP, curl
         ghc-options:         -Wall
 
 Executable archiver
            main-is:       archiver.hs
-           build-depends: base>=4 && < 5, bytestring, hinotify
+           build-depends: base>=4 && < 5, bytestring
