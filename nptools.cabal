@@ -1,6 +1,6 @@
 Name:           nptools
 Cabal-Version:  >=1.4
-Version:        0.5.0
+Version:        0.6.0
 License:        BSD3
 License-File:   LICENSE
 Copyright:      (c) Nicolas Pouillard
@@ -15,12 +15,7 @@ Build-Type:     Simple
 executable archive
     main-is: archive.hs
     Build-depends: base>=3&&<5, time, HSH
-    ghc-options: -Wall -Odph
-
-executable color-diff
-    main-is: color-diff.hs
-    Build-depends: base>=3&&<5
-    ghc-options: -Wall -Odph
+    ghc-options: -Wall
 
 executable events-to-timelog
     main-is: events-to-timelog.hs
@@ -42,11 +37,6 @@ executable label
     Build-depends: base>=3&&<5, HSH, split, process, bytestring
     ghc-options: -Wall -Odph
 
-executable bufferize
-    main-is: bufferize.hs
-    Build-depends: base>=3&&<5
-    ghc-options: -Wall -Odph
-
 executable mh-gen-message-id-mapping
     main-is: mh-gen-message-id-mapping.hs
     Build-depends: base>=3&&<5
@@ -57,19 +47,14 @@ executable mh-gen-message-id-mapping
 --     Build-depends: base>=3&&<5
 --     ghc-options: -Wall -Odph
 
-executable show-non-ascii
-    main-is: show-non-ascii.hs
+executable drop-non-ascii
+    main-is: drop-non-ascii.hs
     Build-depends: base>=3&&<5
     ghc-options: -Wall -Odph
 
-executable show-pollbox
-    main-is: show-pollbox.hs
-    Build-depends: base>=3&&<5, filepath, SHA, MissingH
-    ghc-options: -Wall -Odph
-
-executable deliver-to-pollbox
-    main-is: deliver-to-pollbox.hs
-    Build-depends: base>=3&&<5, filepath, bytestring, directory
+executable show-non-ascii
+    main-is: show-non-ascii.hs
+    Build-depends: base>=3&&<5
     ghc-options: -Wall -Odph
 
 executable summ
@@ -119,7 +104,7 @@ executable cp-rescue
 executable timer
     main-is: timer.hs
     Build-depends: unix<3
-    ghc-options: -Wall -Odph
+    ghc-options: -Wall
 
 executable nest
     main-is: nest.hs
@@ -127,14 +112,19 @@ executable nest
 
 executable getpin
     main-is: getpin.hs
-    ghc-options: -Wall -Odph
+    ghc-options: -Wall
 
 executable starecho
     main-is: starecho.hs
-    ghc-options: -Wall -Odph
+    ghc-options: -Wall
 
 executable color-list
     main-is: color-list.hs
     Build-depends: base>=3&&<5, colour, array
     Other-Modules: Data.List.NP
-    ghc-options: -Wall -Odph
+    ghc-options: -Wall
+
+executable lmaptool
+    main-is: lmaptool.hs
+    build-depends: containers
+    ghc-options: -O2 -Wall
