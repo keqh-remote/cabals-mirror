@@ -1,11 +1,11 @@
 Name: HsOpenSSL
-Synopsis: (Part of) OpenSSL binding for Haskell
+Synopsis: (Incomplete) OpenSSL binding for Haskell
 Description:
-        HsOpenSSL is a (part of) OpenSSL binding for Haskell. It can
-        generate RSA and DSA keys, read and write PEM files, generate
-        message digests, sign and verify messages, encrypt and decrypt
-        messages.
-Version: 0.5.2
+        HsOpenSSL is an (incomplete) OpenSSL binding for Haskell. It
+        can generate RSA and DSA keys, read and write PEM files,
+        generate message digests, sign and verify messages, encrypt
+        and decrypt messages.
+Version: 0.6
 License: PublicDomain
 License-File: COPYING
 Author: Adam Langley <agl at imperialviolet.org>, PHO <pho at cielonegro.org>
@@ -16,7 +16,6 @@ Category: Cryptography
 Tested-With: GHC == 6.10.1
 Cabal-Version: >= 1.6
 Build-Type: Configure
-
 Extra-Source-Files:
 	AUTHORS
 	HsOpenSSL.buildinfo.in
@@ -77,7 +76,8 @@ Library
           OpenSSL.X509.Name
   Extensions:
           ForeignFunctionInterface, EmptyDataDecls, MagicHash,
-          UnboxedTuples, UnliftedFFITypes, DeriveDataTypeable
+          UnboxedTuples, UnliftedFFITypes, DeriveDataTypeable,
+          ExistentialQuantification, RankNTypes
   ghc-options:
           -Wall
   C-Sources:
