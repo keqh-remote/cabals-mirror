@@ -1,5 +1,5 @@
 name:                type-settheory
-version:             0.1.1
+version:             0.1.2
 synopsis:            
  Type-level sets and functions expressed as types
 description:         
@@ -20,7 +20,6 @@ author:              Daniel Schüssler
 maintainer:          daniels@community.haskell.org
 build-type:          Simple
 cabal-version:       >= 1.6
-extra-source-files:  Type/defs.h.hs
 stability:           Alpha
 
 source-repository head
@@ -43,5 +42,5 @@ Library
                      Data.Category
                      Data.Typeable.Extras
                      Control.SMonad
- other-modules:       Helper
+ other-modules:       Helper, Defs
  ghc-options:         
