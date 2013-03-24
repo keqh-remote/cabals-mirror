@@ -1,5 +1,5 @@
 name:            attoparsec-text
-version:         0.8.5.0
+version:         0.8.5.1
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
@@ -59,7 +59,7 @@ source-repository head
 
 library
   build-depends: base       >= 3       && < 5,
-                 attoparsec >= 0.7     && < 0.9,
+                 attoparsec >= 0.7     && < 0.10,
                  text       >= 0.10    && < 0.12,
                  containers >= 0.1.0.1 && < 0.5,
                  array      >= 0.1     && < 0.4
