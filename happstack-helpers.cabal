@@ -1,5 +1,5 @@
 Name: happstack-helpers
-Version: 0.42
+Version: 0.43
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming Happstack based web-apps. 
@@ -12,7 +12,7 @@ Copyright: Copyright (c) 2008 Thomas Hartman
 Category: Distributed Computing
 homepage: http://patch-tag.com/r/HAppSHelpers
 Build-type: Simple
-Cabal-Version: >= 1.2
+Cabal-Version: >= 1.6
 flag base4
 
 
@@ -33,7 +33,7 @@ Library
     Build-Depends:    base >=3 && < 4
 
   Build-Depends: mtl >= 1.1.0.0 && < 2.0.0.0
-               , happstack-server >= 0.4 && < 0.5
+               , happstack-server >= 0.3 && < 0.5
                , hscolour >= 1.0 && < 2.0
                , filepath >= 1.1.0.0 && < 1.2.0.0
                , directory >= 1.0.0.0 && < 1.1.0.0
@@ -45,10 +45,10 @@ Library
                , containers >= 0.2.0.0 && < 0.3.0.0
                , parsec >= 2.1.0.0 && < 2.2.0.0
                , haskell98 >= 1.0.0.0 && < 2.0.0.0
-               , happstack-ixset >= 0.4 && < 0.5
-               , happstack-state >= 0.4 && < 0.5
+               , happstack-ixset >= 0.3 && < 0.5
+               , happstack-state >= 0.3 && < 0.5
                , random >= 1.0 && < 2
-               , happstack-data >= 0.4 && < 0.5
+               , happstack-data >= 0.3 && < 0.5
                , old-time >= 1.0.0.0 && < 1.1.0.0
                , pureMD5 >= 1.0.0.0 && < 1.1.0.0
                , PBKDF2 >= 0.3 && < 0.4
