@@ -1,5 +1,5 @@
 name:               vision
-version:            0.0.3.0
+version:            0.0.4.0
 
 author:             Oleg Belozeorov
 maintainer:         Oleg Belozeorov <upwawet@gmail.com>
@@ -30,7 +30,8 @@ extra-source-files: configure.ac,
                     src/Collection/List/Makefile.in,
                     Makefile.in,
                     ui/Makefile.in
-data-files:         ui/*.xml
+data-files:         ui/*.xml,
+                    ui/*.glade
 
 executable vision
   main-is:          Vision.hs
@@ -117,4 +118,4 @@ source-repository head
 source-repository this
   type:             git
   location:         git://github.com/upwawet/vision.git
-  tag:              v0.0.3.0
+  tag:              v0.0.4.0
