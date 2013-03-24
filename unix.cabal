@@ -1,5 +1,5 @@
 name:		unix
-version:	2.0
+version:	2.2.0.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
@@ -11,6 +11,7 @@ description:
 	IEEE Std. 1003.1).
 	.
 	The package is not supported under Windows (except under Cygwin).
+build-type: Configure
 exposed-modules:
 		System.Posix
 		System.Posix.DynamicLinker.Module
@@ -22,13 +23,17 @@ exposed-modules:
 		System.Posix.Files
 		System.Posix.IO
 		System.Posix.Process
+		System.Posix.Process.Internals
 		System.Posix.Resource
 		System.Posix.Temp
 		System.Posix.Terminal
 		System.Posix.Time
 		System.Posix.Unistd
 		System.Posix.User
+        System.Posix.Signals
 		System.Posix.Signals.Exts
+                System.Posix.Semaphore
+                System.Posix.SharedMem
 extra-source-files:
 		configure.ac configure
 		unix.buildinfo.in include/HsUnixConfig.h.in
@@ -36,9 +41,10 @@ extra-source-files:
 extra-tmp-files:
 		config.log config.status autom4te.cache
 		unix.buildinfo include/HsUnixConfig.h
-build-depends:	base
-extensions:	CPP
+build-depends:	base, directory
+extensions:	CPP, ForeignFunctionInterface
 include-dirs: 	include
+includes:       HsUnix.h execvpe.h
 install-includes:
-		HsUnix.h HsUnixConfig.h
-c-sources:	cbits/HsUnix.c
+		HsUnix.h HsUnixConfig.h execvpe.h
+c-sources:	cbits/HsUnix.c cbits/execvpe.c
