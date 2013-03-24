@@ -1,5 +1,5 @@
 Name:                mysnapsession-example
-Version:             0.3
+Version:             0.3.1
 Synopsis:            Example projects using mysnapsession
 Description:         This is a collection of simple web applications that use
                      the mysnapsession package for stateful HTTP.
@@ -34,7 +34,7 @@ Executable animalgame
     snap >= 0.3 && < 0.4,
     snap-core >= 0.3 && < 0.4,
     snap-server >= 0.3 && <0.4,
-    mysnapsession == 0.3.*,
+    mysnapsession == 0.3.1,
     clientsession == 0.4.*
 
   Ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields
