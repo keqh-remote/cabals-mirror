@@ -1,5 +1,5 @@
 Name:                monad-parallel
-Version:             0.5.2
+Version:             0.7
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Parallel execution of monadic computations
@@ -16,7 +16,7 @@ Copyright:           (c) 2010 Mario Blazevic
 Author:              Mario Blazevic
 Maintainer:          blamario@yahoo.com
 Homepage:            http://trac.haskell.org/SCC/wiki/monad-parallel
-Extra-source-files:  TestParallel.hs
+Extra-source-files:  Test/TestParallel.hs
 -- Source-repository head
 --   type:              darcs
 --   location:          http://code.haskell.org/SCC/
