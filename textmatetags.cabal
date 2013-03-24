@@ -1,11 +1,11 @@
 name:                  textmatetags
-version:               0.0.1.1
+version:               0.0.1.2
 synopsis:              A simple Haskell program to provide tags for Haskell code completion in TextMate
 description:           A simple Haskell program to provide tags for Haskell code completion in TextMate
 license:               MIT
 license-file:          LICENSE
 category:              Compilers/Interpreters
-copyright:             (c) 2008 Utrecht University
+copyright:             (c) 2011 Alessandro Vermeulen <alessandro.vermeulen@me.com>
 author:                Alessandro Vermeulen
 maintainer:            Alessandro Vermeulen <alessandro.vermeulen@me.com>
 stability:             provisional
