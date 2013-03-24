@@ -1,5 +1,5 @@
 name:                   priority-queue
-version:                0.1.2
+version:                0.2
 stability:              provisional
 license:                BSD3
 license-file:           LICENSE
@@ -24,10 +24,10 @@ Library
   extensions:           CPP
   
   if flag(splitBase)
-    build-depends:      base >= 3, containers
+    build-depends:      base >= 3 && <5, containers
   else
     build-depends:      base < 3
     cpp-options:        -DNoMinViewWithKey
   
-  build-depends:        reord >= 0.0.0.2, stateref >= 0.2.1.0, 
+  build-depends:        reord >= 0.0.0.2, stateref >= 0.3 && < 0.4,
                         queue >= 0.1.1.3
