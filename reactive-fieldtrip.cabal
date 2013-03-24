@@ -1,5 +1,5 @@
 Name:                reactive-fieldtrip
-Version:             0.0.5
+Version:             0.0.7
 Cabal-Version:       >= 1.2
 Synopsis:            Connect Reactive and FieldTrip
 Category:            Graphics, FRP
@@ -23,7 +23,7 @@ build-type:          Simple
 Library
   hs-Source-Dirs:      src
   Extensions:
-  Build-Depends:       base, reactive >= 0.9.5, reactive-glut >= 0.0.4, FieldTrip >= 0.2.1, vector-space
+  Build-Depends:       base, reactive >= 0.10.1, reactive-glut >= 0.0.4, FieldTrip >= 0.2.1, vector-space, InfixApplicative
   Exposed-Modules:     
                        FRP.Reactive.FieldTrip
                        FRP.Reactive.FieldTrip.Adapter
