@@ -2,7 +2,7 @@ cabal-version: >= 1.4
 name: bindings-glib
 synopsis:
   Low level bindings to GLib.
-version: 0.1.4
+version: 0.1.5
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -46,13 +46,22 @@ library
     Bindings.GLib.Utilities.SimpleXmlSubsetParser
     Bindings.GLib.Utilities.UnicodeManipulation
     Bindings.GLib.DataTypes
+    Bindings.GLib.DataTypes.Arrays
+    Bindings.GLib.DataTypes.BalancedBinaryTrees
     Bindings.GLib.DataTypes.Datasets
     Bindings.GLib.DataTypes.DoublyLinkedLists
+    Bindings.GLib.DataTypes.HashTables
     Bindings.GLib.DataTypes.MemorySlices
+    Bindings.GLib.DataTypes.NAryTrees
+    Bindings.GLib.DataTypes.PointerArrays
     Bindings.GLib.DataTypes.Quarks
+    Bindings.GLib.DataTypes.SinglyLinkedLists
     Bindings.GLib.DataTypes.StringChunks
     Bindings.GLib.DataTypes.Strings
     Bindings.GLib.DataTypes.TrashStacks
   c-sources:
+    src/datatypes.narytrees.c
+    src/datatypes.pointerarrays.c
+    src/datatypes.singlylinkedlists.c
     src/inlines.c
     src/utilities.unicodemanipulation.c
