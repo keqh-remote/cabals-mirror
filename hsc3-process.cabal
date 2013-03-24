@@ -1,5 +1,5 @@
 name:               hsc3-process
-version:            0.0.0
+version:            0.1.2
 synopsis:           Create and control scsynth processes
 description:        Create and control scsynth processes.
 license:            GPL
@@ -12,7 +12,7 @@ stability:          provisional
 homepage:           http://code.haskell.org/~StefanKersten/code/hsc3-process
 tested-with:        GHC == 6.10.1
 build-type:         Simple
-cabal-version:      >= 1.2
+cabal-version:      >= 1.6
 
 extra-source-files: examples/config.hs
                     examples/scsynth.cfg
@@ -27,12 +27,16 @@ library
 
   extensions:       FlexibleContexts, TemplateHaskell, TypeSynonymInstances
  
-  build-depends:    base >= 3,
-                    ConfigFile,
+  build-depends:    base >= 3 && < 5,
+                    ConfigFile == 1.0.*,
                     containers == 0.2.*,
                     data-accessor == 0.1.*,
                     data-accessor-template == 0.1.*,
-                    hosc == 0.6.*,
+                    hosc == 0.8.*,
                     mtl == 1.1.*,
                     process == 1.0.*,
                     template-haskell == 2.3.*
+
+source-repository head
+  type:             darcs
+  location:         http://code.haskell.org/~StefanKersten/code/hsc3-process/
