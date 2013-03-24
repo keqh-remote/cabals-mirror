@@ -1,8 +1,8 @@
 Name:               Lastik
-Version:            0.1
+Version:            0.2
 License:            BSD3
 License-File:       LICENSE
-Author:             Tony Morris <tmorris@tmorris.net>
+Author:             Tony Morris <code@tmorris.net>
 Maintainer:         Tony Morris
 Synopsis:           A library for compiling programs in a variety of languages
 Category:           Development
@@ -16,9 +16,9 @@ Flag small_base
 
 Library
   if flag(small_base)
-    Build-Depends: base < 4 && >= 3, bytestring, directory, filepath, process, FileManip, zip-archive
+    Build-Depends: base < 4 && >= 3, bytestring, directory, filepath, process, FileManip, zip-archive, pureMD5, SHA
   else
-    Build-Depends: base < 3, filepath, process, FileManip, zip-archive
+    Build-Depends: base < 3, filepath, process, FileManip, zip-archive, pureMD5, SHA
 
   GHC-Options:    -Wall
   Exposed-Modules:
