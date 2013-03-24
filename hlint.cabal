@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.6.19
+version:            1.6.20
 -- license is GPL v2 only
 license:            GPL
 license-file:       LICENSE
@@ -46,6 +46,7 @@ library
     exposed-modules:
         Language.Haskell.HLint
     other-modules:
+        Paths_hlint
         CmdLine
         FindHints
         Hint
@@ -58,7 +59,6 @@ library
         Parallel
         HSE.All
         HSE.Bracket
-        HSE.Eq
         HSE.Evaluate
         HSE.Match
         HSE.NameMatch
