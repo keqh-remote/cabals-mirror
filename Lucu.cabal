@@ -8,7 +8,7 @@ Description:
         messing around FastCGI. It is also intended to be run behind a
         reverse-proxy so it doesn't have some facilities like logging,
         client filtering or such like.
-Version: 0.4.2
+Version: 0.5
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
@@ -16,7 +16,7 @@ Maintainer: PHO <pho at cielonegro dot org>
 Stability: experimental
 Homepage: http://cielonegro.org/Lucu.html
 Category: Network
-Tested-With: GHC == 6.10.1
+Tested-With: GHC == 6.12.1
 Cabal-Version: >= 1.6
 Build-Type: Simple
 Extra-Source-Files:
@@ -81,9 +81,12 @@ Library
         Network.HTTP.Lucu.Preprocess
         Network.HTTP.Lucu.RequestReader
         Network.HTTP.Lucu.ResponseWriter
+        Network.HTTP.Lucu.SocketLike
 
     Extensions:
-        BangPatterns, DeriveDataTypeable, ScopedTypeVariables, UnboxedTuples
+        BangPatterns, DeriveDataTypeable, FlexibleContexts,
+        FlexibleInstances, ScopedTypeVariables, TypeFamilies,
+        UnboxedTuples
 
     ghc-options:
         -Wall
