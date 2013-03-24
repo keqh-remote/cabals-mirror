@@ -5,7 +5,7 @@ Description:
         can generate RSA and DSA keys, read and write PEM files,
         generate message digests, sign and verify messages, encrypt
         and decrypt messages.
-Version: 0.8.0.1
+Version: 0.8.0.2
 License: PublicDomain
 License-File: COPYING
 Author: Adam Langley <agl at imperialviolet dot org>,
@@ -45,7 +45,7 @@ Library
       Build-Depends:      integer
 
   if os(mingw32)
-      Extra-Libraries: eay32 ssl2
+      Extra-Libraries: eay32 ssl32
       C-Sources:          cbits/mutex-win.c
       CC-Options:         -D MINGW32
       CPP-Options:        -DCALLCONV=stdcall
