@@ -1,5 +1,5 @@
 Name:               libmpd
-Version:            0.8.0.1
+Version:            0.8.0.2
 Synopsis:           An MPD client library.
 Description:        A client library for MPD, the Music Player Daemon
                     (<http://www.musicpd.org/>).
@@ -7,7 +7,7 @@ Category:           Network, Sound
 
 License:            LGPL
 License-file:       LICENSE
-Copyright:          Ben Sinclair 2005-2009, Joachim Fasting 2012
+Copyright:          Ben Sinclair 2005-2009, Joachim Fasting 2013
 Author:             Ben Sinclair
 
 Maintainer:         Joachim Fasting <joachim.fasting@gmail.com>
@@ -22,6 +22,16 @@ Cabal-Version:      >= 1.10
 Extra-Source-Files:
     README.md
     NEWS
+    tests/Arbitrary.hs
+    tests/CommandSpec.hs
+    tests/EnvSpec.hs
+    tests/Defaults.hs
+    tests/ParserSpec.hs
+    tests/StringConn.hs
+    tests/TestUtil.hs
+    tests/Unparse.hs
+    tests/UtilSpec.hs
+    tests/Main.hs
 
 Source-Repository head
     type:       git
@@ -33,7 +43,7 @@ Library
     Build-Depends:
         base >= 4 && < 5
       , mtl >= 2.0 && < 2.2
-      , network >= 2.1 && < 2.4
+      , network >= 2.1 && < 2.5
       , filepath >= 1.0 && < 1.4
       , utf8-string >= 0.3.1 && < 0.4
       , old-locale >= 1.0 && < 2.0
