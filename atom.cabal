@@ -1,5 +1,5 @@
 name:    atom
-version: 0.1.0
+version: 0.1.1
 
 category: Language
 
@@ -17,7 +17,7 @@ maintainer: Tom Hawkins <tomahawkins@gmail.com>
 license:      BSD3
 license-file: LICENSE
 
-homepage: http://patch-tag.com/r/atom/home
+homepage: http://patch-tag.com/r/tomahawkins/atom
 
 build-type:    Simple
 cabal-version: >= 1.6
@@ -27,12 +27,13 @@ extra-source-files:
 
 library
     build-depends:
-        base    >= 4       && < 5,
-        mtl     >= 1.1.0.1 && < 1.2,
-        process >= 1.0.1.1 && < 1.2
+        base       >= 4       && < 5,
+        mtl        >= 1.1.0.1 && < 1.2,
+        process    >= 1.0.1.1 && < 1.2
 
     exposed-modules:
         Language.Atom
+        Language.Atom.Analysis
         Language.Atom.Code
         Language.Atom.Common
         Language.Atom.Compile
@@ -40,8 +41,8 @@ library
         Language.Atom.Example
         Language.Atom.Expressions
         Language.Atom.Language
-        Language.Atom.Partition
         Language.Atom.Scheduling
+        Language.Atom.Unit
 
     extensions: GADTs
 
