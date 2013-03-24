@@ -1,5 +1,5 @@
 name:                rsagl
-version:             0.6.0.0
+version:             0.6.0.1
 license:             BSD3
 license-file:        LICENSE
 author:              Christopher Lane Hinson
@@ -50,20 +50,21 @@ Library
     ghc-prof-options:    -prof -auto-all
 
     build-depends:       base>=4 && <5,
-                         rsagl-math==0.6.0.0,
-                         rsagl-frp==0.6.0.0,
+                         rsagl-math==0.6.0.1,
+                         rsagl-frp==0.6.0.1,
                          old-time>= 1.0.0.3 && < 1.1,
                          random>= 1.0.0.2 && < 1.1,
                          array>= 0.3.0.0 && < 0.4,
                          arrows>= 0.4.1.2 && < 0.5,
-                         containers>= 0.3.0.0 && < 0.4,
-                         parallel>= 2.2.0.1 && < 2.3,
-                         mtl>= 1.1.0.2 && < 1.2,
+                         containers>= 0.3.0.0,
+                         parallel>= 2.2.0.1,
+                         mtl>= 1.1.0.2 ,
                          OpenGL>= 2.4.0.1 && < 2.5,
                          OpenGLRaw>= 1.1.0.1 && < 1.2,
                          parsec>=3.1.0 && < 3.2,
                          Vec>=0.9.8 && < 0.10,
                          Vec-OpenGLRaw>=0.2.0.0 && < 0.3,
-                         stm>= 2.1.1.2 && < 2.2,
-                         data-memocombinators>= 0.4.0 && < 0.5
+                         stm>= 2.1.1.2,
+                         data-memocombinators>= 0.4.0 && < 0.5,
+                         deepseq>=1.1
 
