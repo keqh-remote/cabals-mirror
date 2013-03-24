@@ -1,5 +1,5 @@
 Name:                reactive-fieldtrip
-Version:             0.0.8
+Version:             0.0.9
 Cabal-Version:       >= 1.2
 Synopsis:            Connect Reactive and FieldTrip
 Category:            Graphics, FRP
@@ -23,7 +23,7 @@ build-type:          Simple
 Library
   hs-Source-Dirs:      src
   Extensions:
-  Build-Depends:       base, reactive >= 0.10.2, reactive-glut >= 0.0.4, FieldTrip >= 0.2.1, vector-space, InfixApplicative
+  Build-Depends:       base, unamb, reactive >= 0.10.2, reactive-glut >= 0.0.4, FieldTrip >= 0.2.1, vector-space, InfixApplicative
   Exposed-Modules:     
                        FRP.Reactive.FieldTrip
                        FRP.Reactive.FieldTrip.Adapter
@@ -35,3 +35,5 @@ Library
 --  ghc-prof-options:    -prof -auto-all 
 
 -- vector-space only used for Test
+
+-- remove unamb dep later when debugging code is removed from src/Test.hs
