@@ -1,7 +1,7 @@
 -- DOM.cabal is generated automatically: do not edit
 Name: DOM
 Build-Type: Simple
-Version: 2.0.0
+Version: 2.0.0.1
 Synopsis: DOM Level 2 bindings for the WebBits package.
 Description:
    This package provides monadic smart constructors for Javascript syntax representation
@@ -15,11 +15,15 @@ Description:
    .
    In the package version number, the version major reflects the level of DOM specification
    for which bindings are provided.
+   .
+   In the 2.0.0.1 version, the WebBits dependency version number has been corrected (== 0.11.0
+   instead of >= 0.11.0) because WebBits has incompatible changes in upcoming versions. 
+   No other changes were made.
 License: BSD3
 License-File: LICENSE
 Category: Web
 Maintainer: Dmitry Golubovsky <golubovsky@gmail.com>
-Build-depends: base >= 3, mtl >= 1.1.0.0, WebBits >= 0.11.0
+Build-depends: base >= 3, mtl >= 1.1.0.0, WebBits == 0.11.0
 Exposed-modules:
    Data.DOM.Css,
    Data.DOM.CSS2Properties,
