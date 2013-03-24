@@ -1,5 +1,5 @@
 Name:                   accelerate-examples
-Version:                0.12.0.0
+Version:                0.12.1.0
 License:                BSD3
 License-file:           LICENSE
 Author:                 The Accelerate Team
@@ -28,6 +28,11 @@ Description:            This package defines a number of example programs for ve
                         .
                         * io: Extra tests for reading and writing arrays in various formats
                         .
+
+Flag gui
+  Description:          Enable gloss-based GUIs, where applicable. If not
+                        enabled, the application always runs in benchmark mode.
+  Default:              True
 
 Flag cuda
   Description:          Enable the CUDA parallel backend for NVIDIA GPUs
@@ -161,6 +166,36 @@ Executable accelerate-crystal
   if impl(ghc >= 7.0)
     ghc-options:        -rtsopts
 
+  if flag(gui)
+    CPP-options:        -DACCELERATE_ENABLE_GUI
+
+  if flag(cuda)
+    CPP-options:        -DACCELERATE_CUDA_BACKEND
+    build-depends:      accelerate-cuda         >= 0.12
+
+  if flag(opencl)
+    CPP-options:        -DACCELERATE_OPENCL_BACKEND
+    build-depends:      accelerate-opencl       == 0.1.*
+
+  build-depends:        accelerate              >= 0.12,
+                        base                    == 4.*,
+                        criterion               >= 0.5,
+                        fclabels                >= 1.0,
+                        gloss                   >= 1.5
+
+-- A simple mandelbrot generator
+
+Executable accelerate-mandelbrot
+  hs-source-dirs:       examples/mandelbrot
+  Main-is:              Main.hs
+  other-modules:        Config
+  ghc-options:          -O2 -Wall
+  if impl(ghc >= 7.0)
+    ghc-options:        -rtsopts
+
+  if flag(gui)
+    CPP-options:        -DACCELERATE_ENABLE_GUI
+
   if flag(cuda)
     CPP-options:        -DACCELERATE_CUDA_BACKEND
     build-depends:      accelerate-cuda         >= 0.12
@@ -188,6 +223,9 @@ Executable accelerate-fluid
                         World
 
   ghc-options:          -O2 -Wall
+
+  if flag(gui)
+    CPP-options:        -DACCELERATE_ENABLE_GUI
 
   if flag(cuda)
     cpp-options:        -DACCELERATE_CUDA_BACKEND
