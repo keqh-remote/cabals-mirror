@@ -1,5 +1,5 @@
 Name:             data-accessor-template
-Version:          0.2.1.8
+Version:          0.2.1.9
 License:          BSD3
 License-File:     LICENSE
 Author:           Luke Palmer <lrpalmer@gmail.com>,
@@ -10,7 +10,8 @@ Category:         Data
 -- Default-Language: Haskell98
 Cabal-Version:    >=1.6
 Build-Type:       Simple
-Tested-With:      GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.1
+Tested-With:      GHC==6.8.2, GHC==6.10.4, GHC==6.12.3
+Tested-With:      GHC==7.0.1, GHC==7.2.2
 Synopsis:         Utilities for accessing and manipulating fields of records
 Description:
   Automate generation of @Accessor@'s of the @data-accessor@ package
@@ -37,7 +38,7 @@ Library
   If impl(ghc)
     If impl(ghc >= 6.12)
       Hs-Source-Dirs: src-5
-      Build-Depends:  template-haskell >=2.4 && <2.7
+      Build-Depends:  template-haskell >=2.4 && <2.8
     Else
       Hs-Source-Dirs: src-3
       Build-Depends:  template-haskell >=2.2 && <2.4
@@ -51,7 +52,7 @@ Library
   Else
     If flag(template_2_4)
       Hs-Source-Dirs: src-5
-      Build-Depends:  template-haskell >=2.4 && <2.6
+      Build-Depends:  template-haskell >=2.4 && <2.8
     Else
       Hs-Source-Dirs: src-3
       Build-Depends:  template-haskell >=2.2 && <2.4
