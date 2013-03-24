@@ -1,5 +1,5 @@
 Name:             utility-ht
-Version:          0.0.7
+Version:          0.0.7.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -23,6 +23,15 @@ Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.2
 Cabal-Version:     >=1.10
 Build-Type:        Simple
 
+-- workaround for Cabal-1.10
+Extra-Source-Files:
+  src/Test/Data/Maybe.hs
+  src/Test/Data/ListMatch.hs
+  src/Test/Data/Function.hs
+  src/Test/Data/List.hs
+  src/Test/Utility.hs
+  src/Test.hs
+
 Source-Repository head
   type:     darcs
   location: http://code.haskell.org/~thielema/utility/
@@ -30,7 +39,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/utility/
-  tag:      0.0.7
+  tag:      0.0.7.1
 
 Library
   Build-Depends:
