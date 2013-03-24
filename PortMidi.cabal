@@ -1,6 +1,7 @@
 name:		PortMidi
-version:	0.1.2
+version:	0.1.3
 Cabal-Version: >= 1.2
+build-type:     Simple
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Paul H. Liu <paul@thev.net>
@@ -8,7 +9,6 @@ homepage:	http://haskell.org/haskellwiki/PortMidi
 category:	Sound
 stability:      experimental
 synopsis:	A binding for PortMedia/PortMidi
-build-type:     Simple
 description:
  A Haskell binding for PortMedia/PortMidi
 extra-source-files:
@@ -40,7 +40,7 @@ Library
   else
     if os(darwin)
      include-dirs: portmidi/pm_common portmidi/pm_mac portmidi/porttime
-     cc-options:   -march=apple
+     cc-options:   -msse2
      c-sources:  
           portmidi/pm_common/pmutil.c
           portmidi/pm_common/portmidi.c
