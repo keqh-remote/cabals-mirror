@@ -1,8 +1,8 @@
 Name:                   Stream
-Version:                0.4.4
+Version:                0.4.5
 License:                BSD3
 License-file:           LICENSE
-Author:                 Wouter Swierstra <wss@cs.nott.ac.uk>,
+Author:                 Wouter Swierstra <wouter.swierstra@gmail.com>
 			Bas van Dijk <v.dijk.bas@gmail.com>
 Maintainer:             Wouter Swierstra <wss@cs.nott.ac.uk>
 Stability:		experimental
