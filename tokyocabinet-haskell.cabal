@@ -1,10 +1,11 @@
 Name:           tokyocabinet-haskell
-Version:        0.0.2
+Version:        0.0.3
 Cabal-Version:  >= 1.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Tom Tsuruhara
 Maintainer:     tom.lpsd@gmail.com
+Homepage:       http://tom-lpsd.github.com/tokyocabinet-haskell/
 Stability:      experimental
 Category:       Database
 Synopsis:       Haskell binding of Tokyo Cabinet
