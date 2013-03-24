@@ -1,5 +1,5 @@
 Name: hslogger
-Version: 1.1.1
+Version: 1.1.2
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
@@ -39,7 +39,6 @@ Library
     Exposed-Modules: 
       System.Log, System.Log.Handler, System.Log.Formatter,
         System.Log.Handler.Simple, System.Log.Handler.Syslog,
-        System.Log.Handler.Rotating,
         System.Log.Handler.Growl, System.Log.Handler.Log4jXML,
         System.Log.Logger
     Extensions: CPP, ExistentialQuantification
