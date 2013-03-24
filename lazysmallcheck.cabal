@@ -1,8 +1,8 @@
 Name:               lazysmallcheck
-Version:            0.3
+Version:            0.4
 Maintainer:         Matthew Naylor <mfn@cs.york.ac.uk>
 Homepage:           http://www.cs.york.ac.uk/~mfn/lazysmallcheck/
-Build-Depends:      base, haskell98
+Build-Depends:      base < 5, haskell98
 License:            BSD3
 License-File:       LICENSE
 Author:             Matthew Naylor and Fredrik Lindblad
@@ -49,4 +49,3 @@ Extra-Source-Files:
 
 Exposed-modules:
   Test.LazySmallCheck
-  Test.LazySmallCheck.Generic
