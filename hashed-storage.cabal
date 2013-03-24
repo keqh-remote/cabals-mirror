@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.3.5
+version:       0.3.6
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -27,11 +27,17 @@ flag test
 flag diff
     default: False
 
+flag hpc
+    default: False
+
 library
     if impl(ghc >= 6.8)
       ghc-options: -fwarn-tabs
+
     ghc-options:   -Wall -O2
     ghc-prof-options: -prof -auto-all -O2
+    if flag(hpc)
+      ghc-prof-options: -fhpc
 
 
     exposed-modules:
@@ -53,7 +59,7 @@ library
         Storage.Hashed.Utils
 
     build-depends: base >= 3 && < 5, directory, filepath, bytestring, zlib,
-                   containers, mtl, extensible-exceptions, mmap
+                   containers, mtl, extensible-exceptions, mmap >= 0.4
 
     c-sources: Bundled/sha2.c
 
@@ -63,8 +69,10 @@ executable hashed-storage-test
     if impl(ghc >= 6.8)
       ghc-options: -fwarn-tabs
     ghc-options:   -Wall -O2
-
     ghc-prof-options: -prof -auto-all -O2
+
+    if flag(hpc)
+      ghc-prof-options: -fhpc
 
     main-is: test.hs
     other-modules: Bundled.Posix
