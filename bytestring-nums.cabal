@@ -1,5 +1,5 @@
 name                          : bytestring-nums
-version                       : 0.2.1
+version                       : 0.3.0
 category                      : Text
 license                       : BSD3
 license-file                  : LICENSE
@@ -27,4 +27,18 @@ library
                                 Data.ByteString.Nums.Careless.Float
   extensions                  : MultiParamTypeClasses
                                 TypeSynonymInstances
+                                BangPatterns
+  ghc-options                 : -O2 -Wall -funbox-strict-fields
+
+
+executable                      spoj-eugene
+  main-is                     : SPOJEugeneKirpichov.hs
+  extensions                  : MultiParamTypeClasses
+                                TypeSynonymInstances
+                                BangPatterns
+  ghc-options                 : -O2 -Wall -funbox-strict-fields
+
+
+
+
 
