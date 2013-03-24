@@ -1,11 +1,11 @@
 Name:          temporal-music-notation-demo
-Version:       0.1.2
+Version:       0.1.3
 Cabal-Version: >= 1.2
 License:       BSD3
 License-file:  LICENSE
 Author:	       Anton Kholomiov
 Maintainer:    Anton Kholomiov
-Synopsis:      Library: generates midi from score notation.
+Synopsis:      generates midi from score notation.
 Description:   Library for playing scores made with 'temporal-music-notation'
                via midi. It binds 'temporal-media-notation' and 'HCodecs' 
                packages. Features composable score representation and
