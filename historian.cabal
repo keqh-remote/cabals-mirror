@@ -1,5 +1,5 @@
 Name:           historian
-Version:        0.0
+Version:        0.0.1
 Cabal-Version:  >= 1.2
 Synopsis:       Extract the interesting bits from shell history
 Description:    Extract interesting commands and add them to a text file.
@@ -26,7 +26,7 @@ Executable historian
                     process >= 1 && < 2,
                     directory >= 1 && < 2,
                     filepath >= 1 && < 2,
-                    regex-posix >= 0.94 && < 0.95,
+                    regex-posix >= 0.93 && < 0.95,
                     regex-compat >= 0.92 && < 0.93,
                     containers >= 0.1 && < 0.3
 
