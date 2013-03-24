@@ -1,6 +1,6 @@
 name:          category-extras
 category:      Control, Monads, Comonads
-version:       1.0.1
+version:       1.0.2
 license:       BSD3
 cabal-version: >= 1.2
 license-file:  LICENSE
@@ -43,7 +43,7 @@ description:   The obsolete @category-extras@ package provided a monolithic set
                location in the new hierarchy. Not all modules have exact
                analogs; where possible, similar alternatives are listed.
                .
-               <<http://dmwit.com/category-extras/dependencies-latest.png>>
+               <<http://dmwit.com/category-extras/dependencies-1.0.2.png>>
                .
                > Control
                >     Control.Allegory: use alternative profunctors-Data.Profunctor
@@ -95,7 +95,7 @@ description:   The obsolete @category-extras@ package provided a monolithic set
                >         Control.Functor.Composition: transformers-Data.Functor.Compose and comonad-transformers-Data.Functor.Composition
                >         Control.Functor.Cone
                >         Control.Functor.Contra: contravariant-Data.Functor.Contravariant
-               >         Control.Functor.Exponential
+               >         Control.Functor.Exponential: invariant-Data.Functor.Invariant
                >         Control.Functor.Extras: distributive-Data.Distributive, semigroupoids-Data.Functor.Plus, and semigroupoids-Data.Functor.Alt
                >         Control.Functor.Fix: recursion-schemes-Data.Functor.Foldable
                >         Control.Functor.Full
@@ -169,6 +169,7 @@ library
     groupoids,
     indexed,
     indexed-extras,
+    invariant,
     kan-extensions,
     keys,
     monad-products,
