@@ -1,6 +1,6 @@
 Name:          temporal-music-notation
-Version:       0.2.1
-Cabal-Version: >= 1.2
+Version:       0.2.2
+Cabal-Version: >= 1.6
 License-file:  LICENSE
 License:       BSD3
 Author:	       Anton Kholomiov
@@ -12,11 +12,18 @@ Stability:     Experimental
 Tested-With:   GHC==6.12.3
 Build-Type:    Simple
 
+Homepage:        https://github.com/anton-k/temporal-music-notation
+Bug-Reports:     https://github.com/anton-k/temporal-music-notation/issues
+
+Source-repository head
+    Type: git
+    Location: https://github.com/anton-k/temporal-music-notation
+
 Library
   Build-Depends:
         base >= 4, base < 5,
         vector >= 0.7, data-default >= 0.3,
-        temporal-media >= 0.3.0
+        temporal-media >= 0.3.1
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         Temporal.Music
