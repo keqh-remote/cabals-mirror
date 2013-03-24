@@ -1,8 +1,8 @@
 Name:               altfloat
-Version:            0.2.1
+Version:            0.2.2
 License:            OtherLicense
 License-File:       LICENSE
-Cabal-Version:      >= 1.2
+Cabal-Version:      >= 1.6
 Author:             Nick Bowler
 Maintainer:         nbowler@draconx.ca
 Homepage:           http://repo.or.cz/w/altfloat.git
@@ -10,7 +10,9 @@ Stability:          experimental
 Category:           Numerical
 Build-Type:         Simple
 Extra-Source-Files: configure.ac, configure, altfloat.buildinfo.in, cfloat.h
+                    config.h.in
 Extra-Tmp-Files:    altfloat.buildinfo, config.status config.log, config.cache
+                    config.h
 Synopsis:           Alternative floating point support for GHC.
 Description:
     A replacement for the standard Haskell floating point types and supporting
@@ -50,6 +52,10 @@ Description:
     which includes features from this library and the non-overlapping parts of
     the standard Prelude.
 
+Source-Repository head
+    Type:     git
+    Location: git://repo.or.cz/altfloat.git
+
 Flag SplitInteger
     Description: Use the new split integer packages that come with GHC 6.12.
 
@@ -67,7 +73,8 @@ Library
     else
         Build-Depends: integer
 
-    C-Sources: cfloat.c
+    Include-Dirs: .
+    C-Sources: cfloat.c c99-compat.c
     Exposed-Modules:
         Data.Floating.CMath,
         Data.Floating.Classes,
