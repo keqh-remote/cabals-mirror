@@ -1,5 +1,5 @@
 name:                rss2irc
-version:             1.0.2
+version:             1.0.3
 homepage:            http://hackage.haskell.org/package/rss2irc
 license:             BSD3
 license-file:        LICENSE
@@ -17,11 +17,23 @@ description:
  .
  > $ rss2irc http://hackage.haskell.org/packages/archive/recent.rss mybot@irc.freenode.org/#haskell
  .
+ 1.0.3 (2013\/2\/22)
+ .
+ Fixed:
+ .
+ * fix http-conduit usage so the feed poller doesn't die within hours
+ .
  1.0.2 (2013\/2\/18)
  .
  Fixed:
  .
  * `--use-actions` works again
+ .
+ 1.0.1 (2013\/2\/15)
+ .
+ Fixed:
+ .
+ * release notes formatting on hackage
  .
  1.0 (2013\/2\/15)
  .
@@ -86,7 +98,8 @@ executable rss2irc
                     ,deepseq
                     ,irc                   >= 0.5 && < 0.6
                     ,feed                  >= 0.3.8 && < 0.4
-                    ,http-conduit          >= 1.8 && < 1.9
+                    ,http-conduit          >= 1.9 && < 2.0
+                    ,resourcet             >= 0.4.4 && < 0.5
                     ,http-types            >= 0.6.4 && < 0.9
                     ,io-storage            >= 0.3 && < 0.4
                     ,network               >= 2.4 && < 2.5
