@@ -6,7 +6,7 @@ Name:                aws
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.4
+Version:             0.0.5
 
 -- A short (one-line) description of the package.
 Synopsis:            Amazon Web Services (AWS) for Haskell
@@ -59,6 +59,7 @@ Library
                        Aws.S3.Commands,
                        Aws.S3.Commands.GetBucket,
                        Aws.S3.Commands.GetService,
+                       Aws.S3.Commands.PutBucket,
                        Aws.S3.Error,
                        Aws.S3.Info,
                        Aws.S3.Metadata,
@@ -95,6 +96,7 @@ Library
                        base64-bytestring ==0.1.*,
                        blaze-builder >=0.2.1.4 && <0.4,
                        bytestring ==0.9.*,
+                       case-insensitive >=0.2 && <0.3,
                        cereal ==0.3.*,
                        containers >=0.3 && <0.5,
                        crypto-api >= 0.5 && < 0.7,
@@ -103,16 +105,16 @@ Library
                        enumerator ==0.4.*,
                        failure >=0.1.0.1 && <0.2,
                        filepath >=1.1 && <1.3,
-                       http-enumerator >=0.6 && < 0.7,
+                       http-enumerator >=0.6.5.5 && < 0.7,
                        http-types >=0.6 && <0.7,
                        mtl ==2.*,
                        old-locale ==1.*,
                        shortcircuit ==0.1.*,
                        text >=0.11 && <0.12,
                        time >=1.1.4 && <1.3,
+                       tls >=0.7.1 && <0.8,
                        transformers >=0.2.2.0 && <0.3,
-                       utf8-string ==0.3.*,
-                       xml-enumerator >=0.3.3.667 && <0.4
+                       xml-enumerator >=0.3.4 && <0.4
 
   GHC-Options: -Wall
   
