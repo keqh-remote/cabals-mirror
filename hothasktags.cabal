@@ -1,9 +1,10 @@
 name: hothasktags
-version: 0.2.2
-cabal-version: >= 1.6 && < 2
+version: 0.3.0
+cabal-version: >= 1.6
 build-type: Simple
 author: Luke Palmer <lrpalmer@gmail.com>
 license: BSD3
+license-file: LICENSE
 maintainer: Luke Palmer <lrpalmer@gmail.com>
 category: Development
 synopsis: Generates ctags for Haskell, incorporating import lists and qualified imports
@@ -25,11 +26,17 @@ description:
     > find . | egrep '\.hs$' | xargs hothasktags > tags
     .
     will index all the hs files under the current directory.
+    .
+    hothasktags does not work with the emacs tag file format.  Sorry.
 homepage: http://github.com/luqui/hothasktags
+source-repository head
+    type: git
+    location: git://github.com/luqui/hothasktags.git
 executable hothasktags
     build-depends: 
         base == 4.*,
         containers,
+        filepath,
         haskell-src-exts >= 1.11 && < 1.14,
         cpphs >= 1.11 && < 1.15
     main-is: Main.hs
