@@ -1,5 +1,5 @@
 Name:                 mps
-Version:              2010.1.24.1
+Version:              2010.1.26
 Build-type:           Simple
 Synopsis:             simply oo
 Description:          DSL that allows one to write Haskell from left to right
@@ -24,4 +24,5 @@ library
                   , MPS.Extra
                   , MPS.Env
                   , MPS.Heavy
+                  , MPS.TH
   other-modules:    MPS.UTF8
