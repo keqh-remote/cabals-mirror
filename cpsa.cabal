@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.1.0
+Version:		2.1.1
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -21,8 +21,8 @@ Description:
   .
   We are working towards a version of CPSA with the property that
   whenever it successfully terminates, every possible execution is
-  described by its output.  However, the current implementation
-  occasionally fails to find some executions.
+  described by its output.  A proof of this correctness property is
+  also in development.
   .
   The package contains a set of programs used to perform and display
   the analysis.  Program documentation is in the doc directory in the
@@ -35,8 +35,8 @@ Description:
   .
   The theory and algorithm used by CPSA was developed with the help of
   Joshua D. Guttman, John D. Ramsdell, Jon C. Herzog, Shaddin
-  F. Doghmi, F. Javier Thayer, and Paul D. Rowe.  John D. Ramsdell
-  implemented the algorithm in Haskell.
+  F. Doghmi, F. Javier Thayer, Paul D. Rowe, and Moses Liskov.
+  John D. Ramsdell implemented the algorithm in Haskell.
 Category:		Cryptography
 Build-Type:		Simple
 Data-Files:
@@ -44,8 +44,8 @@ Data-Files:
    cpsaoverview.pdf ffgg.scm ns.scm or.scm woolam.scm yahalom.scm
 Data-Dir:	    	doc
 Extra-Source-Files:
-  Makefile ChangeLog README NEWS ghci cpsatst doc/README doc/Makefile
-  doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
+  Makefile ChangeLog README NEWS ghci cpsatst setup.bat doc/README
+  doc/Makefile doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
   doc/cpsatheory.tex doc/cpsaspec.tex doc/cpsadesign.tex
   doc/cpsaoverview.tex doc/cpsadiagrams.mp doc/strands.mp
   doc/cmstrands.mp doc/carriers.mp doc/termtree.mp doc/cpsa.bib
@@ -74,13 +74,16 @@ Extra-Source-Files:
   tst/nsl4resp2.lisp tst/nsl5i.lisp tst/nsl5.lisp tst/nslsk.scm
   tst/nslsk.tst tst/ns.scm tst/ns.tst tst/or.scm tst/or.tst
   tst/pca.lsp tst/pca.tst tst/pruning1.scm tst/pruning1.tst
-  tst/sigenc.scm tst/sigenc.tst tst/sorted_epmo_acctnum.scm
+  tst/sigenc.scm tst/sigenc.tst tst/sorted_epmo_acctnum.lsp
   tst/sorted_epmo_acctnum.tst tst/targetterms2.scm
   tst/targetterms2.tst tst/targetterms6.scm tst/targetterms6.tst
   tst/tnsl5.lisp tst/uncarried_keys.scm tst/uncarried_keys.tst
   tst/uo.scm tst/uo.tst tst/updatetst tst/weird.scm tst/weird.tst
   tst/wmf.lsp tst/wmf.tst tst/woolam.scm tst/woolam.tst
-  tst/yahalom.scm tst/yahalom.tst
+  tst/yahalom.scm tst/yahalom.tst tst/crushing.tst tst/crushing.tst
+  tst/fragile_pruning.scm tst/fragile_pruning.tst tst/nonaug-prune.scm
+  tst/nonaug-prune.tst tst/wonthull.scm tst/wonthull.tst
+  tst/yahalom-6.3.6.scm tst/yahalom-6.3.6.tst
 
 -- Disable with -f-par option during configuration.
 
@@ -100,8 +103,8 @@ Executable cpsa
   Hs-Source-Dirs:	src
   Other-Modules:
     Paths_cpsa CPSA.Lib.Vector CPSA.Lib.Utilities CPSA.Lib.Pretty
-    CPSA.Lib.SExpr CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra
-    CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
+    CPSA.Lib.SExpr CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry
+    CPSA.Lib.Algebra CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
     CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.Expand CPSA.Lib.CPSA
     CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
     CPSA.DiffieHellman.IntLinEq
@@ -118,12 +121,13 @@ Executable cpsagraph
   Hs-Source-Dirs:	src
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
-    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
-    CPSA.Lib.Strand CPSA.Lib.Loader CPSA.Lib.Displayer CPSA.Lib.Cohort
-    CPSA.Lib.CPSA CPSA.Graph.XMLOutput CPSA.Graph.Config
-    CPSA.Graph.SVG CPSA.Graph.Loader CPSA.Graph.Preskeleton
-    CPSA.Graph.Layout CPSA.Graph.Tree CPSA.Graph.CompactView
-    CPSA.Graph.ExpandedView CPSA.Graph.LaTeXView
+    CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry CPSA.Lib.Algebra
+    CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
+    CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.CPSA
+    CPSA.Graph.XMLOutput CPSA.Graph.Config CPSA.Graph.SVG
+    CPSA.Graph.Loader CPSA.Graph.Preskeleton CPSA.Graph.Layout
+    CPSA.Graph.Tree CPSA.Graph.CompactView CPSA.Graph.ExpandedView
+    CPSA.Graph.LaTeXView
 
 Executable cpsashapes
   Main-Is:		CPSA/Shapes/Main.hs
@@ -133,9 +137,10 @@ Executable cpsashapes
   Hs-Source-Dirs:	src
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
-    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
-    CPSA.Lib.Strand CPSA.Lib.Loader CPSA.Lib.Displayer CPSA.Lib.Cohort
-    CPSA.Lib.CPSA CPSA.Shapes.Shapes
+    CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry CPSA.Lib.Algebra
+    CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
+    CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.CPSA
+    CPSA.Shapes.Shapes
 
 Executable cpsaannotations
   Main-Is:		CPSA/Annotations/Main.hs
@@ -145,11 +150,12 @@ Executable cpsaannotations
   Hs-Source-Dirs:	src
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
-    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
-    CPSA.Lib.Strand CPSA.Lib.Loader CPSA.Lib.Displayer CPSA.Lib.Cohort
-    CPSA.Lib.CPSA CPSA.Annotations.Formulas
-    CPSA.Annotations.Annotations CPSA.Basic.Algebra
-    CPSA.DiffieHellman.Algebra CPSA.DiffieHellman.IntLinEq
+    CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry CPSA.Lib.Algebra
+    CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
+    CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.CPSA
+    CPSA.Annotations.Formulas CPSA.Annotations.Annotations
+    CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
+    CPSA.DiffieHellman.IntLinEq
 
 Executable cpsaparameters
   Main-Is:		CPSA/Parameters/Main.hs
@@ -159,9 +165,10 @@ Executable cpsaparameters
   Hs-Source-Dirs:	src
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
-    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
-    CPSA.Lib.Strand CPSA.Lib.Loader CPSA.Lib.Displayer CPSA.Lib.Cohort
-    CPSA.Lib.CPSA CPSA.Parameters.Flow
+    CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry CPSA.Lib.Algebra
+    CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
+    CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.CPSA
+    CPSA.Parameters.Flow
 
 Executable cpsapp
   Main-Is:		CPSA/Pretty/Main.hs
@@ -171,6 +178,6 @@ Executable cpsapp
   Hs-Source-Dirs:	src
   Other-Modules:
     Paths_cpsa CPSA.Lib.Utilities CPSA.Lib.Pretty CPSA.Lib.SExpr
-    CPSA.Lib.Printer CPSA.Lib.Entry CPSA.Lib.Algebra CPSA.Lib.Protocol
-    CPSA.Lib.Strand CPSA.Lib.Loader CPSA.Lib.Displayer CPSA.Lib.Cohort
-    CPSA.Lib.CPSA
+    CPSA.Lib.Printer CPSA.Lib.Notation CPSA.Lib.Entry CPSA.Lib.Algebra
+    CPSA.Lib.Protocol CPSA.Lib.Strand CPSA.Lib.Loader
+    CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.CPSA
