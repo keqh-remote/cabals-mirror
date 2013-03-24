@@ -1,12 +1,12 @@
 name:            attoparsec-text
-version:         0.8.2.0
+version:         0.8.2.1
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
 author:          Felipe Lessa <felipe.lessa@gmail.com>, Bryan O'Sullivan <bos@serpentine.com>
 maintainer:      Felipe Lessa <felipe.lessa@gmail.com>
 stability:       experimental
-tested-with:     GHC == 6.12.1
+tested-with:     GHC == 6.12.1, GHC == 7.0.1
 synopsis:        Fast combinator parsing for texts
 cabal-version:   >= 1.6
 homepage:        http://patch-tag.com/r/felipe/attoparsec-text/home
@@ -19,6 +19,10 @@ description:
     .
     This library is basically a translation of the original
     attoparsec library to use text instead of bytestrings.
+    .
+    Changes in version 0.8.2.1:
+    .
+    * Permit newer version of containers for GHC 7.0.
     .
     Changes in version 0.8.2.0:
     .
@@ -50,7 +54,7 @@ library
   build-depends: base       >= 3       && < 5,
                  attoparsec >= 0.7     && < 0.9,
                  text       >= 0.10    && < 0.12,
-                 containers >= 0.1.0.1 && < 0.4,
+                 containers >= 0.1.0.1 && < 0.5,
                  array      >= 0.1     && < 0.4
   extensions:      CPP
   exposed-modules: Data.Attoparsec.Text
