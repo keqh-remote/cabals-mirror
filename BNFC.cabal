@@ -1,5 +1,5 @@
 Name: BNFC
-Version: 2.4.2.0
+Version: 2.4.2.1
 cabal-version: >= 1.2
 build-type: Simple
 category: Development
@@ -21,10 +21,14 @@ Description:
   a Happy, CUP, or Bison parser generator file,
   a pretty-printer as a Haskell/Java/C++/C module,
   a Latex file containing a readable specification of the language.
+  .
+  This version only works with Alex version < 3, e.g. alex-2.3.5.
+tested-with:        GHC == 7.4.1
 Extra-source-files: BNF.cf 
 
 Executable bnfc
-  Build-Depends: haskell98, base>=4 && <5, mtl, directory, array, process
+  Build-Depends:  mtl, directory, array, process, base>=4 && <5
+-- haskell98, 
   Main-is: Main.hs
   HS-source-dirs: . formats
     formats/haskell2
