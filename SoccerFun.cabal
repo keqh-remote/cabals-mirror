@@ -1,5 +1,5 @@
 Name:           SoccerFun
-Version:        0.5.1
+Version:        0.5.2
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -26,14 +26,14 @@ Library
     FlexibleInstances
     TemplateHaskell
   Build-Depends:
-    base >= 4 && < 4.3,
+    base >= 4 && < 4.4,
     base-unicode-symbols >= 0.2 && < 0.3,
     random >= 1.0 && < 1.1,
     mtl >= 1.1 && < 2.1,
     derive >= 2.4 && < 2.5,
     binary >= 0.5 && < 0.6,
     process >= 1.0 && < 1.1,
-    directory >= 1.0 && < 1.1,
+    directory >= 1.0 && < 1.2,
     zlib >= 0.5 && < 0.6
   Exposed-Modules:
     SoccerFun.Ball
