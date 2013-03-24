@@ -1,5 +1,5 @@
 name: BerkeleyDB
-version: 0.8.4
+version: 0.8.5
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
@@ -27,7 +27,10 @@ description:
     <http://code.haskell.org/BerkeleyDB/>
     .
     Changes: 0.8:   Support db4.7 and db4.8, removed C++ binding.
+             0.8.5: Add db_sync.
              0.7.2: Fix on db4.7
+    .
+    Contributors: Michael Stone
 
 category: Database
 build-type: Simple
