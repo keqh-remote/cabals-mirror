@@ -1,7 +1,7 @@
 Cabal-Version: >= 1.6
 
 Name:     applicative-quoters
-Version:  0.1.0.2
+Version:  0.1.0.3
 Category: Language
 Synopsis: Quasiquoters for idiom brackets and an applicative do-notation
 
@@ -26,7 +26,7 @@ Library
 
   Build-depends:
       base >= 4 && < 4.5,
-      haskell-src-meta >= 0.2 && < 0.5,
+      haskell-src-meta >= 0.2 && < 0.6,
       template-haskell >= 2.4 && < 2.7
 
   -- We disable the missing-fields warning because not only do quoteType
