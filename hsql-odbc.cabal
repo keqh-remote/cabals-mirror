@@ -1,5 +1,5 @@
 name:		hsql-odbc
-version:	1.8.1.1
+version:	1.8.2
 Synopsis:	A Haskell Interface to ODBC. 
 license:	BSD3
 License-file:	 LICENSE
@@ -13,7 +13,7 @@ exposed-modules:
   DB.HSQL.ODBC.Functions
   DB.HSQL.ODBC.Status
   DB.HSQL.ODBC.Core
-build-depends:	base >= 4 && < 5, hsql >= 1.8, old-time >= 1.0.0.1
+build-depends:	base >= 4 && < 5, hsql >= 1.8.2, old-time >= 1.0.0.1
 extensions:     ForeignFunctionInterface, CPP
 include-dirs:   Database/HSQL
 c-sources:      Database/HSQL/HsODBC.c
