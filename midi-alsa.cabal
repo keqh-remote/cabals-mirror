@@ -1,5 +1,5 @@
 Name:             midi-alsa
-Version:          0.1.1
+Version:          0.1.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -19,12 +19,7 @@ Cabal-Version:    >=1.6
 Build-Type:       Simple
 Source-Repository head
   type:     darcs
-  location: http://code.haskell.org/~thielema/midi-alsa/
-
-Source-Repository this
-  type:     darcs
-  location: http://code.haskell.org/~thielema/midi-alsa/
-  tag:      0.1.1
+  location: http://code.haskell.org/alsa/midi/
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -50,3 +45,4 @@ Library
   Hs-Source-Dirs:   src
   Exposed-Modules:
     Sound.MIDI.ALSA
+    Sound.MIDI.ALSA.Check
