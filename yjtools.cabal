@@ -1,5 +1,5 @@
 Name:		yjtools
-Version:	0.1
+Version:	0.2
 Cabal-Version:	>= 1.2
 Build-Type:	Simple
 License:	GPL
@@ -19,4 +19,4 @@ Extra-Tmp-Files:
 
 Library
   Build-Depends:	base
-  Exposed-Modules:	Control.Monad.Utils
+  Exposed-Modules:	Control.Monad.Utils, Control.Applicative.Utils, Data.List.Tools, Data.Tuple.Tools, Data.Function.Tools
