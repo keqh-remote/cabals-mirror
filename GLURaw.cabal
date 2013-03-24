@@ -1,5 +1,5 @@
 name: GLURaw
-version: 1.0.0.0
+version: 1.1.0.0
 license: BSD3
 license-file: LICENSE
 maintainer: Sven Panne <sven.panne@aedion.de>
@@ -46,12 +46,12 @@ library
    ghc-options: -Wall
    if os(windows) && flag(UseNativeWindowsLibraries)
       cpp-options: "-DCALLCONV=stdcall"
-      extra-libraries: glu32
       cc-options: "-DUSE_GETPROCADDRESS"
+      extra-libraries: glu32
    else
       cpp-options: "-DCALLCONV=ccall"
-      extra-libraries: GLU
+      cc-options: "-DUSE_DLSYM"
       if os(darwin)
-         cc-options: "-DUSE_NSADDRESSOFSYMBOL"
+         frameworks: OpenGL
       else
-         cc-options: "-DUSE_DLSYM"
+         extra-libraries: GLU
