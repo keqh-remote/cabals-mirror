@@ -18,7 +18,7 @@
 --
 
 Name:           Thrift
-Version:        0.1.1
+Version:        0.1.1.1
 Cabal-Version:  >= 1.2.3
 License:        OtherLicense 
 Category:       Foreign
