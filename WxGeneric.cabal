@@ -1,27 +1,37 @@
 Name:           WxGeneric
-Version:        0.5.2
+Version:        0.6.0
 Copyright:      Mads Lindstrøm <mads_lindstroem@yahoo.dk>
-license:        LGPL
+License:        LGPL
 License-file:   wxWidgetsLicense.txt
 Author:         Mads Lindstrøm <mads_lindstroem@yahoo.dk>
 Maintainer:     Mads Lindstrøm <mads_lindstroem@yahoo.dk>
+Homepage:	http://www.haskell.org/haskellwiki/WxGeneric
 Category:       GUI
-Build-Depends:  SybWidget>=0.4,base,haskell98,mtl,xtc>=1.0,wx>=0.10.3
+Build-Depends:  SybWidget>=0.5.2,base,haskell98,mtl,xtc>=1.0,wx>=0.10.3,containers>0.2
                ,wxcore>=0.10.3
-Tested-with:    GHC==6.8.2
-Synopsis:       Library which constructing generic (SYB3-based) widgets for WxHaskell
+Tested-with:    GHC==6.10.1,GHC==6.10.2
+Synopsis:       Generic (SYB3) construction of wxHaskell widgets
 Build-type:	Simple
 Stability:      experimental
 Description:
-	Constructs widgets for WxHaskell using SybWidget.
+	Using an algebraic data types structure and field names, this library constructs
+	widgets for wxHaskell. It can handle data types with single or multiple
+	constructors, as well as recursive data types.
+	.
+	The library is designed to integrate smoothly with wxHaskell. First, by making it
+	easy to integrate WxGeneric-widgets into existing wxHaskell programs. Second, by
+	letting a user extend WxGeneric using mostly wxHaskell function. 
 Ghc-options:    -Wall
 Exposed-modules:
     Graphics.UI.WxGeneric
-      , Graphics.UI.WxGeneric.GenericClass
-      , Graphics.UI.WxGeneric.Composite
       , Graphics.UI.WxGeneric.GenericWidget
-      , Graphics.UI.WxGeneric.GenericList
+      , Graphics.UI.WxGeneric.Composite
+      , Graphics.UI.WxGeneric.Layout
 other-modules:
+        Graphics.UI.WxGeneric.GenericList
+      , Graphics.UI.WxGeneric.GenericClass
+      , Graphics.UI.WxGeneric.GenericWidget.Parameters
+      , Graphics.UI.WxGeneric.GenericWidget.WidgetTree
 Extra-Source-Files:
         examples/makefile
       , examples/Alarm.hs
@@ -34,7 +44,7 @@ Extra-Source-Files:
       , examples/EventPropagation/AllEventsComposite.hs
       , examples/EventPropagation/IntEntry.hs
       , examples/EventPropagation/PropagateEvents.hs
-Extensions:     
+Extensions:
 hs-source-dirs: src
 
 
