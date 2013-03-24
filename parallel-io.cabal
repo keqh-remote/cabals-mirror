@@ -1,5 +1,5 @@
 Name:               parallel-io
-Version:            0.3.0.2
+Version:            0.3.1
 Cabal-Version:      >= 1.2
 Category:           Concurrency
 Synopsis:           Combinators for executing IO actions in parallel on a thread pool.
@@ -39,7 +39,8 @@ Library
         Control.Concurrent.ParallelIO
         Control.Concurrent.ParallelIO.Global
         Control.Concurrent.ParallelIO.Local
-    Other-Modules:
+    Other-Modules:    
+        Control.Concurrent.ParallelIO.Compat
         Control.Concurrent.ParallelIO.ConcurrentCollection
     
     Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.5, random >= 1.0 && < 1.1
@@ -50,7 +51,7 @@ Executable benchmark
     if !flag(benchmark)
         Buildable:  False
     else
-        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.4, random >= 1.0 && < 1.1,
+        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.5, random >= 1.0 && < 1.1,
                         time >= 1
     
         Ghc-Options:    -threaded
@@ -61,7 +62,7 @@ Executable tests
     if !flag(tests)
         Buildable:  False
     else
-        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.4, random >= 1.0 && < 1.1,
+        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.5, random >= 1.0 && < 1.1,
                         test-framework >= 0.1.1, test-framework-hunit >= 0.1.1, HUnit >= 1.2 && < 2
     
         Ghc-Options:    -threaded
@@ -72,7 +73,14 @@ Executable fuzz
     if !flag(fuzz)
         Buildable:  False
     else
-        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.4, random >= 1.0 && < 1.1,
-                        test-framework >= 0.1.1, test-framework-hunit >= 0.1.1, HUnit >= 1.2 && < 2
+        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.5, random >= 1.0 && < 1.1
 
         Ghc-Options:    -threaded
+
+Executable fuzz-seq
+    Main-Is:        Control/Concurrent/ParallelIO/Fuzz.hs
+
+    if !flag(fuzz)
+        Buildable:  False
+    else
+        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.5, random >= 1.0 && < 1.1
