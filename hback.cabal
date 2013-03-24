@@ -1,5 +1,5 @@
 Name:                hback
-Version:             0.0.1
+Version:             0.0.2
 Build-Depends:       base,haskell98,process,glade,gtk,cairo
 Build-type:          Simple
 License:             BSD3
