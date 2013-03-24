@@ -1,5 +1,5 @@
 Name:            fclabels
-Version:         0.9.1
+Version:         0.11.0
 Author:          Sebastiaan Visser, Erik Hesselink, Chris Eidhof, Sjoerd Visscher.
 Synopsis:        First class accessor labels implemented as lenses.
 
@@ -116,22 +116,26 @@ Description:     First class labels that act as bidirectional record fields.
                  .
                  .
                  > CHANGELOG
-                 >   0.4.2 -> 0.9.1
-                 >   - Added askM and localM for running lenses inside MonadReader.
-                 >   - Minor documentaion update.
-                 >   - Exported Point internals.
-                 >   - Renamed Label to Lens.
+                 >   0.9.1 -> 0.11.0
+                 >   - Monadic labels now build against mtl.
+                 >   - Separate module for core/non-core code.
+                 >   - Code cleanups, especially the TH code.
 
 Maintainer:      Sebastiaan Visser <haskell@fvisser.nl>
 License:         BSD3
 License-File:    LICENCE
 Category:        Data
-Build-Type:      Simple
 Cabal-Version:   >= 1.6
-HS-Source-Dirs:  src
-Exposed-Modules: Data.Record.Label
-Other-Modules:   Data.Record.Label.TH
-Build-Depends:   base >= 3 && < 5
-               , template-haskell >= 2.2 && < 2.5
-               , monads-fd >= 0.0 && < 0.2
+Build-Type:      Simple
+
+Library
+  HS-Source-Dirs:  src
+  Exposed-Modules: Data.Record.Label
+                   Data.Record.Label.Core
+                   Data.Record.Label.Monadic
+  Other-Modules:   Data.Record.Label.TH
+  Build-Depends:   base >= 3 && < 5
+                 , template-haskell >= 2.2 && < 2.5
+                 , mtl >= 1.1 && <= 2.1
+  GHC-Options:     -Wall
 
