@@ -1,5 +1,5 @@
 Name:               Javav
-Version:            0.0.3
+Version:            0.0.4
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
 Maintainer:         Tony Morris
 Copyright:          Tony Morris
@@ -19,9 +19,16 @@ Description:
 
     1.5 (49.0 0x31) ThatClass.class
   @
-
-Cabal-version:      >= 1.2
+  .
+  Java VM Specification 4.1 The @ClassFile@ Structure
+  .
+  <http://java.sun.com/docs/books/jvms/second_edition/html/ClassFile.doc.html#74353>
+Cabal-version:      >= 1.6
 Build-Type:         Simple
+
+Source-Repository   head
+  Type:             mercurial
+  Location:         ssh://hg@bitbucket.org/dibblego/javav
 
 Flag small_base
   Description:      Choose the new, split-up base package.
