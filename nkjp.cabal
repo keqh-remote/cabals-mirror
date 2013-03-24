@@ -1,5 +1,5 @@
 name:               nkjp
-version:            0.1.1
+version:            0.2.0
 synopsis:           Manipulating the National Corpus of Polish (NKJP)
 description:
     The library provides parsing and printing utilities for the
@@ -25,16 +25,22 @@ library
       , zlib
       , tar >= 0.4 && < 0.5
       , filepath
-      , data-named
+      , data-named >= 0.4 && < 0.5
 
     exposed-modules:
-        Data.NKJP.Morphosyntax
-      , Data.NKJP.Named
-      , Text.NKJP.Morphosyntax
+        Text.NKJP.Morphosyntax
       , Text.NKJP.Named
+
+    other-modules:
+        Text.NKJP.Tar
 
     ghc-options: -Wall
 
 source-repository head
     type: git
     location: git://github.com/kawu/nkjp.git
+
+executable named2enamex
+  hs-source-dirs: ., tools
+  main-is: named2enamex.hs
+  ghc-options: -Wall -O2
