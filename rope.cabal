@@ -1,5 +1,5 @@
 name:           rope
-version:        0.3
+version:        0.4
 license:        BSD3
 license-file:   LICENSE
 author:         Edward A. Kmett
@@ -24,6 +24,9 @@ library
     Data.Rope
     Data.Rope.Annotated
     Data.Rope.Annotated.Internal
+    Data.Rope.Annotation
+    Data.Rope.Annotation.Product
+    Data.Rope.Annotation.Unit
     Data.Rope.Body
     Data.Rope.Internal
     Data.Rope.Util.Comonad
