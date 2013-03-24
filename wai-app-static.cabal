@@ -1,5 +1,5 @@
 name:            wai-app-static
-version:         0.3.3
+version:         0.3.4
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -11,7 +11,11 @@ stability:       Stable
 cabal-version:   >= 1.8
 build-type:      Simple
 homepage:        http://www.yesodweb.com/book/wai
-Extra-source-files: folder.png, haskell.png
+Extra-source-files:
+  folder.png
+  haskell.png
+  tests/runtests.hs
+  tests/a/b
 
 Flag print
     Description:   print debug info
@@ -48,7 +52,7 @@ test-suite runtests
     type: exitcode-stdio-1.0
 
     build-depends:   base                      >= 4        && < 5
-                   , hspec >= 0.6.1 && < 0.7
+                   , hspec >= 0.8 && < 0.9
                    , HUnit
                    , unix-compat               >= 0.2      && < 0.3
                    , time                      >= 1.1.4    && < 1.4
