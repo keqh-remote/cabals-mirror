@@ -1,17 +1,18 @@
 Name:                asn1-data
-Version:             0.2
+Version:             0.2.1
 Description:
-    ASN1 data reader/writer in raw form with supports for high level forms of ASN1 (BER/CER/DER)
+    ASN1 data reader and writer in raw form with supports for high level forms of ASN1 (BER, CER and DER)
 License:             BSD3
 License-file:        LICENSE
 Copyright:           Vincent Hanquez <vincent@snarc.org>
 Author:              Vincent Hanquez <vincent@snarc.org>
 Maintainer:          Vincent Hanquez <vincent@snarc.org>
-Synopsis:            ASN1 data reader/writer in RAW/BER/DER/CER forms
+Synopsis:            ASN1 data reader and writer in RAW, BER, DER and CER forms
 Build-Type:          Simple
 Category:            Data
 stability:           experimental
 Cabal-Version:       >=1.6
+Homepage:            http://github.com/vincenthz/hs-asn1-data
 data-files:          README, TODO
 
 
@@ -20,10 +21,10 @@ Flag test
   Default:           False
 
 Library
-  Build-Depends:     base >= 3 && < 5,
+  Build-Depends:     base >= 3 && < 7,
                      binary >= 0.5,
                      bytestring,
-                     mtl
+                     monads-fd
   Exposed-modules:   Data.ASN1.BER
                      Data.ASN1.CER
                      Data.ASN1.DER
@@ -36,7 +37,7 @@ Executable           Tests
   Main-Is:           Tests.hs
   if flag(test)
     Buildable:       True
-    Build-depends:   base >= 3 && < 5, HUnit, QuickCheck >= 2, bytestring
+    Build-depends:   base >= 3 && < 7, HUnit, QuickCheck >= 2, bytestring
   else
     Buildable:       False
 
