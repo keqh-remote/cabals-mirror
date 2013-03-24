@@ -1,5 +1,5 @@
 name:                template-hsml
-version:             0.2.0.1
+version:             0.2.0.2
 synopsis:            Haskell's Simple Markup Language
 description:         HSML syntax is very similar to that of XML, but there are less rules.
                      The main advantage over plain XML or HTML is that it allows you to embed Haskell declarations
@@ -20,6 +20,10 @@ build-type:          Simple
 cabal-version:       >=1.8
 stability:           Experimental
 
+source-repository head
+  type:     git
+  location: git://github.com/Palmik/HSML.git 
+
 flag testing
   description: Are we building for testing?
   default: False 
@@ -28,14 +32,14 @@ library
   hs-source-dirs:      src
 
   exposed-modules:
-        Template.HSML 
+      Template.HSML 
   
   other-modules:       
-        Template.HSML.Internal.TH
-      , Template.HSML.Internal.Types
-      , Template.HSML.Internal.Types.Syntax
-      , Template.HSML.Internal.Parser
-      , Template.HSML.Internal.Parser.Syntax
+      Template.HSML.Internal.TH
+    , Template.HSML.Internal.Types
+    , Template.HSML.Internal.Types.Syntax
+    , Template.HSML.Internal.Parser
+    , Template.HSML.Internal.Parser.Syntax
 
   build-depends:
       base == 4.5.*
