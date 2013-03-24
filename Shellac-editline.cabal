@@ -1,5 +1,5 @@
 Name:           Shellac-editline
-Version:        0.9
+Version:        0.9.5
 Cabal-version:  >= 1.2
 Build-type:     Simple
 Author:         Robert Dockins
@@ -21,7 +21,7 @@ Hs-Source-Dirs:
    src
 Build-Depends:
    base, haskell98,
-   editline >= 0.2,
+   editline >= 0.2.1,
    Shellac >= 0.9
 Exposed-modules:
    System.Console.Shell.Backend.Editline
