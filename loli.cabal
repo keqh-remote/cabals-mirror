@@ -1,10 +1,10 @@
 Name:                 loli
-Version:              2009.6.27
+Version:              2009.6.29
 Build-type:           Simple
 Synopsis:             A minimum web dev DSL in Haskell
 Description:
     
-    A simple and easy to use library for fast web prototyping in Haskell.
+    A simple library for fast web prototyping in Haskell.
 
 License:              BSD3
 License-file:         LICENSE
@@ -14,7 +14,7 @@ Build-Depends:        base
 Cabal-version:        >= 1.2
 category:             Web
 homepage:             http://github.com/nfjinjing/loli
-data-files:           readme.md, changelog.md, Nemesis, known-issues.md, src/Test.hs, views/hello.html
+data-files:           readme.md, changelog.md, Nemesis, known-issues.md, src/Test/Test.hs, views/layout.html
 
 library
   ghc-options: -Wall
@@ -25,7 +25,10 @@ library
                       Network.Loli.Config
                       Network.Loli.DSL
                       Network.Loli.Engine
+                      Network.Loli.Middleware.LoliRouter
+                      Network.Loli.Middleware.UserMime
                       Network.Loli.Template
+                      Network.Loli.Template.ConstTemplate
                       Network.Loli.Template.TextTemplate
+                      Network.Loli.Type
                       Network.Loli.Utils
-
