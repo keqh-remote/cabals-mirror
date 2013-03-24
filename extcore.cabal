@@ -1,5 +1,5 @@
 name:                extcore
-version:             1.0
+version:             1.0.1
 synopsis:            Libraries for processing GHC Core
 description:         Libraries for processing GHC Core
 category:            Language
