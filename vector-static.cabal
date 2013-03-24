@@ -1,5 +1,5 @@
 Name:           vector-static
-Version:        0.2.0
+Version:        0.3.0
 License:        BSD3
 License-File:   LICENSE
 Author:         Daniel Peebles <pumpkingod@gmail.com>
@@ -23,7 +23,7 @@ Source-Repository head
 Source-Repository this
   Type:     git
   Location: git://github.com/geezusfreeek/vector-static.git
-  Tag:      v0.2.0
+  Tag:      v0.3.0
 
 Library
   Exposed-Modules:
