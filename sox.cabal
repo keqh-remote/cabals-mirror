@@ -1,5 +1,5 @@
 Name:             sox
-Version:          0.2.0.2
+Version:          0.2.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -23,7 +23,7 @@ Description:
    There is some ancient code,
    which allows interactive playback using the shell-pipe package on GHC-6.2,
    where no runInteractiveProcess was available.
-Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.1
+Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.1, GHC==7.0.4, GHC==7.2.1
 Cabal-Version:     >=1.2
 Build-Type:        Simple
 Extra-Source-Files:
@@ -49,9 +49,9 @@ Library
     transformers >=0.2 && <0.3
   If flag(splitBase)
     Build-Depends:
-      base >= 2 && <5,
-      process >= 1.0 && < 1.1,
-      containers >= 0.1 && <0.4
+      process >= 1.0 && < 1.2,
+      containers >= 0.1 && <0.5,
+      base >= 2 && <5
   Else
     Build-Depends:
       special-functors >= 1.0 && <1.1,
@@ -62,7 +62,7 @@ Library
     Hs-Source-Dirs: windows/src
   Else
     Hs-Source-Dirs: unix/src
-    Build-Depends: unix >=2.3 && <2.5
+    Build-Depends: unix >=2.3 && <2.6
 
   GHC-Options: -Wall
 
