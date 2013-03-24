@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.6.16
+version:            1.6.17
 -- license is GPL v2 only
 license:            GPL
 license-file:       LICENSE
@@ -35,9 +35,9 @@ flag threaded
 library
     build-depends:
         base == 4.*, process, filepath, directory, mtl, containers,
-        hscolour >= 1.15,
-        cpphs >= 1.9,
-        haskell-src-exts == 1.6.*,
+        hscolour == 1.15.*,
+        cpphs == 1.10.*,
+        haskell-src-exts == 1.8.*,
         uniplate == 1.5.*
 
     ghc-options:        -fno-warn-overlapping-patterns
@@ -75,6 +75,7 @@ library
         Hint.Naming
         Hint.Pragma
         Hint.Structure
+        Hint.Util
 
 
 executable hlint
