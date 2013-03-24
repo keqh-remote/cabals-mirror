@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.9.0.5
+Version:         1.9.1
 Cabal-Version:   >= 1.10
 Build-Type:      Custom
 License:         GPL
@@ -203,7 +203,7 @@ Library
                  old-locale >= 1 && < 1.1,
                  time >= 1.2 && < 1.5,
                  HTTP >= 4000.0.5 && < 4000.3,
-                 texmath >= 0.6 && < 0.7,
+                 texmath >= 0.6.0.2 && < 0.7,
                  xml >= 1.3.12 && < 1.4,
                  random >= 1 && < 1.1,
                  extensible-exceptions >= 0.1 && < 0.2,
@@ -213,7 +213,7 @@ Library
                  tagsoup >= 0.12.5 && < 0.13,
                  base64-bytestring >= 0.1 && < 0.2,
                  zlib >= 0.5 && <= 0.6,
-                 highlighting-kate >= 0.5.0.1 && < 0.6,
+                 highlighting-kate >= 0.5.0.2 && < 0.6,
                  temporary >= 1.1 && < 1.2
   if impl(ghc >= 6.10)
     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
@@ -301,7 +301,7 @@ Executable pandoc
                  old-locale >= 1 && < 1.1,
                  time >= 1.2 && < 1.5,
                  HTTP >= 4000.0.5 && < 4000.3,
-                 texmath >= 0.6 && < 0.7,
+                 texmath >= 0.6.0.2 && < 0.7,
                  xml >= 1.3.12 && < 1.4,
                  random >= 1 && < 1.1,
                  extensible-exceptions >= 0.1 && < 0.2,
@@ -311,7 +311,7 @@ Executable pandoc
                  tagsoup >= 0.12.5 && < 0.13,
                  base64-bytestring >= 0.1 && < 0.2,
                  zlib >= 0.5 && <= 0.6,
-                 highlighting-kate >= 0.5.0.1 && < 0.6,
+                 highlighting-kate >= 0.5.0.2 && < 0.6,
                  temporary >= 1.1 && < 1.2
   if impl(ghc >= 6.10)
     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
@@ -359,7 +359,7 @@ Executable test-pandoc
                  old-locale >= 1 && < 1.1,
                  time >= 1.2 && < 1.5,
                  HTTP >= 4000.0.5 && < 4000.3,
-                 texmath >= 0.6 && < 0.7,
+                 texmath >= 0.6.0.2 && < 0.7,
                  xml >= 1.3.12 && < 1.4,
                  random >= 1 && < 1.1,
                  extensible-exceptions >= 0.1 && < 0.2,
@@ -369,7 +369,7 @@ Executable test-pandoc
                  tagsoup >= 0.12.5 && < 0.13,
                  base64-bytestring >= 0.1 && < 0.2,
                  zlib >= 0.5 && <= 0.6,
-                 highlighting-kate >= 0.5.0.1 && < 0.6,
+                 highlighting-kate >= 0.5.0.2 && < 0.6,
                  temporary >= 1.1 && < 1.2
   if impl(ghc >= 6.10)
     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
