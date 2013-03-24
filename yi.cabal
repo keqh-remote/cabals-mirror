@@ -1,5 +1,5 @@
 name:           yi
-version:        0.4
+version:        0.4.1
 category:       Editor
 synopsis:       The Haskell-Scriptable Editor
 description:
@@ -11,7 +11,7 @@ author:         AUTHORS
 maintainer:     yi-devel@googlegroups.com
 homepage:       http://haskell.org/haskellwiki/Yi
 
-cabal-Version:  >= 1.4
+Cabal-Version:  >= 1.4
 tested-with:    GHC==6.8.3
 build-type:     Simple
 data-files:
@@ -32,6 +32,7 @@ data-files:
   art/license-file.png
   art/setup-script.png
   art/setup-script.png
+  examples/yi.hs
 extra-source-files: Yi/Lexer/alex.hsinc
 
 flag ghcAPI
@@ -184,7 +185,7 @@ executable yi
         build-depends: regex-base ==0.93.1
         build-depends: regex-tdfa ==0.94
         
-        build-depends: parsec >=2.1
+        build-depends: parsec >=2.1 && <2.2
 
         ghc-options:   -Wall -optl-Wl,-s -threaded
 -- ghc-options later on get appended to the original
