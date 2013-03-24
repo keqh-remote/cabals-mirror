@@ -1,5 +1,5 @@
 name:                hpaco-lib
-version:             0.16.1.0
+version:             0.16.2.0
 synopsis:            Modular template compiler library
 description:         Template compiler library, compiles template code into
                      PHP or Javascript, or interprets it directly.
@@ -30,6 +30,7 @@ library
                  , Text.HPaco.Writers.Run
                  , Text.HPaco.Writers.PHP
                  , Text.HPaco.Writers.Internal.WrapMode
+                 , Text.HPaco.Writers.Internal.CodeWriter
                  , Text.HPaco.Writers.Run.Encode
                  , Text.HPaco.Writers.Run.Library
                  , Text.HPaco.AST
