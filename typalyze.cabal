@@ -1,12 +1,12 @@
 Name:		typalyze
-Version:	0.0.1
-License:	BSD4
+Version:	0.0.2
+License:	BSD3
 License-file:   LICENSE
 Author:		Matthew Danish <mrd@debian.org>
 Maintainer:	mrd@debian.org
 Build-Depends:	base, ghc, filepath, process
 Synopsis:	Analyzes Haskell source files and dumps info in parsable format
-data-files:     README, INSTALL
+data-files:     README, INSTALL, elisp/typalyze.el
 build-type:     Simple
 Homepage:       http://www.decidable.org/haskell/typalyze
 Category:       Development
