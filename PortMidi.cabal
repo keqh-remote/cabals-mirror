@@ -1,5 +1,5 @@
 name:		PortMidi
-version:	0.1.1
+version:	0.1.2
 Cabal-Version: >= 1.2
 license:	BSD3
 license-file:	LICENSE
@@ -39,7 +39,8 @@ Library
    extra-libraries: asound
   else
     if os(darwin)
-      include-dirs: portmidi/pm_common portmidi/pm_mac portmidi/porttime
+     include-dirs: portmidi/pm_common portmidi/pm_mac portmidi/porttime
+     cc-options:   -march=apple
      c-sources:  
           portmidi/pm_common/pmutil.c
           portmidi/pm_common/portmidi.c
