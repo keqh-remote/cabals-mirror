@@ -1,5 +1,5 @@
 name:                ml-w
-version:             0.1
+version:             0.1.1
 synopsis:            Minimal ML language to to demonstrate the W type
                      infererence algorithm.
 author:              Francesco Mazzoli <f@mazzo.li>
@@ -24,11 +24,8 @@ description:
     The 'Main' module contains a program that parses and typechecks programs
     reading from standard input.
     .
-    The program in 'Main' can be compiled with @make@, and the documentation
-    with @make docs@. It should work fine with @GHC@ version 6 or 7 (and
-    maybe more). It can also be loaded and ran with Hugs turning the
-    extensions on (using the @-98@ flag) (or simply using the make target
-    @loadhugs@).
+    The library and executable is compatible with GHC and Hugs (to use Hugs
+    with cabal use the flag @--hugs@).
 
 source-repository head
     type:            git
@@ -36,11 +33,15 @@ source-repository head
 
 executable ML
     main-is:         Main.hs
-    build-depends:   base >= 3 && < 5, mtl, parsec, pretty
+    build-depends:   base < 5, mtl, parsec
+    if impl(ghc)
+       build-depends: pretty
     GHC-options:     -Wall
 
 library
-    build-depends:   base >= 3 && < 5, mtl, parsec, pretty
+    build-depends:   base < 5, mtl, parsec
+    if impl(ghc)
+       build-depends: pretty
     GHC-Options:     -Wall
     exposed-modules: Language.ML,
                      Language.ML.Syntax,
