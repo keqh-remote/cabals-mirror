@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.6.2
+version:            1.6.3
 license:            GPL
 license-file:       LICENSE
 category:           Development
@@ -19,6 +19,7 @@ data-files:
     Generalise.hs
     Dollar.hs
     HLint.hs
+    Test.hs
     report.html
     hs-lint.el
 Extra-Source-Files:
