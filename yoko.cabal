@@ -1,5 +1,5 @@
 name: yoko
-version: 0.1
+version: 0.2
 synopsis: generic programming with disbanded constructors 
 
 description: @yoko@ views a nominal datatype as a /band/ of constructors, each
@@ -29,7 +29,7 @@ description: @yoko@ views a nominal datatype as a /band/ of constructors, each
   constructor, say @John@, to be used independently of its original range type
   and sibling constructors.
   .
-  As a generic programming library, @yoko@ extends @intant-generics@ with
+  As a generic programming library, @yoko@ extends @instant-generics@ with
   support for constructor-centric generic programming. The @Examples/LL.hs@
   file distributed with the @yoko@ source demonstrates defining a
   lambda-lifting conversion between the two types @Inner@, which has lambdas,
@@ -54,6 +54,8 @@ description: @yoko@ views a nominal datatype as a /band/ of constructors, each
   .
   Existing generic libraries don't use constructor names to the degree that
   @yoko@ does, and so cannot accomodate generic /conversions/ nearly as well.
+  .
+  See the wiki at <http://code.google.com/p/yoko> for more documentation.
 
 category: Generics, Reflection
 
@@ -66,7 +68,7 @@ stability: experimental
 build-type: Simple
 cabal-version: >= 1.6
 
-extra-source-files: README, Examples/*.hs
+extra-source-files: README, CHANGES, Examples/*.hs
 
 
 
@@ -98,7 +100,7 @@ library
                    Data.Yoko.Reflect,
                    Data.Yoko.InDT,
                    Data.Yoko.Reduce,
-                   Data.Yoko.Algebra
+                   Data.Yoko.Cata
 
 --                   Examples.TermBase,
 --                   Examples.TermGeneric,
