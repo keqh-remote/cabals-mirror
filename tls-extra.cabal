@@ -1,5 +1,5 @@
 Name:                tls-extra
-Version:             0.4.1
+Version:             0.4.2
 Description:
    a set of extra definitions, default values and helpers for tls.
 License:             BSD3
@@ -28,7 +28,7 @@ Flag executable
 
 Library
   Build-Depends:     base > 3 && < 5
-                   , tls >= 0.8.2 && < 0.9
+                   , tls >= 0.8.4 && < 0.9
                    , mtl
                    , network >= 2.3
                    , cryptohash >= 0.6
@@ -73,6 +73,17 @@ Executable           checkciphers
 
 Executable           retrievecertificate
   Main-is:           Examples/RetrieveCertificate.hs
+  if flag(executable)
+    Build-Depends:   network
+                   , cmdargs
+                   , cprng-aes >= 0.2.3
+    Buildable:       True
+  else
+    Buildable:       False
+  ghc-options:       -Wall -fno-warn-missing-signatures
+
+Executable           simpleclient
+  Main-is:           Examples/SimpleClient.hs
   if flag(executable)
     Build-Depends:   network
                    , cmdargs
