@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.7.2
+Version:             0.8.0
 Description:
    Native Haskell TLS and SSL protocol implementation for server and client.
    .
@@ -7,7 +7,7 @@ Description:
    eliminating a common set of security issues through the use of the advanced
    type system, high level constructions and common Haskell features.
    .
-   Currently implement the SSL3.0, TLS1.0 and TLS1.1 protocol,
+   Currently implement the SSL3.0, TLS1.0, TLS1.1 and TLS1.2 protocol,
    with only RSA supported for Key Exchange.
    .
    Only core protocol available here, have a look at the
@@ -24,7 +24,7 @@ Category:            Network
 stability:           experimental
 Cabal-Version:       >=1.6
 Homepage:            http://github.com/vincenthz/hs-tls
-data-files:          README, TODO
+data-files:          README.md, TODO
 
 Flag test
   Description:       Build unit test
@@ -42,7 +42,7 @@ Library
                    , bytestring
                    , crypto-api >= 0.5
                    , cryptocipher >= 0.2.5
-                   , certificate >= 0.9 && < 1.0
+                   , certificate >= 0.9.3 && < 1.0
   Exposed-modules:   Network.TLS
                      Network.TLS.Cipher
                      Network.TLS.Compression
@@ -53,6 +53,7 @@ Library
                      Network.TLS.Core
                      Network.TLS.Crypto
                      Network.TLS.Packet
+                     Network.TLS.Record
                      Network.TLS.State
                      Network.TLS.Sending
                      Network.TLS.Receiving
