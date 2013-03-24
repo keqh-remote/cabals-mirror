@@ -1,5 +1,5 @@
 name:		adaptive-tuple
-version:        0.1.1
+version:        0.2.0
 synopsis:       Self-optimizing tuple types
 description:
   Self optimizing tuple types.
