@@ -1,5 +1,5 @@
 Name: happstack-helpers
-Version: 0.51
+Version: 0.52
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming Happstack based web-apps.
@@ -58,5 +58,5 @@ Library
                , network >= 2.2
                , HTTP >= 4000
                , utf8-string >= 0.3.4 && < 0.4.0
-               , text >= 0.7 && < 0.8
+               , text >= 0.7 && < 0.11
   ghc-options: -Wall
