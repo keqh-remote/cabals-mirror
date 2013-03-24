@@ -1,5 +1,5 @@
 name:         wxcore
-version:      0.13.2
+version:      0.13.2.1
 license:      OtherLicense
 license-file: LICENSE
 author:       Daan Leijen
@@ -203,12 +203,11 @@ library
     stm,
     wxdirect > 0.12.1.2,
     directory,
-    old-time,
     time
 
   if flag(splitBase)
     build-depends:
-      array >= 0.2 && < 0.4,
+      array >= 0.2 && < 0.5,
       base >= 4 && < 5,
       containers >= 0.2 && < 0.5
   else
