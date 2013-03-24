@@ -1,9 +1,10 @@
 Name:           classify
-Version:        2008.10.20
+Version:        2008.10.20.1
 Copyright:      2004-2008, Lemmih
-Build-Depends:  base, mtl, containers, time
+Build-Depends:  base, mtl, containers
 Build-Type:     Simple
 License:        BSD3
+License-File:   LICENSE
 Author:         Lemmih <lemmih@gmail.com>
 Maintainer:     Lemmih <lemmih@gmail.com>
 Synopsis:       Library for classification of media files.
