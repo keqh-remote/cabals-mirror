@@ -1,5 +1,5 @@
 Name:              hsc3-db
-Version:           0.12
+Version:           0.13
 Synopsis:          Haskell SuperCollider Unit Generator Database
 Description:       Database of SuperCollider Unit Generators
 License:           GPL
@@ -20,7 +20,7 @@ Data-files:        README
 
 Library
   Build-Depends:   base == 4.*,
-                   hsc3 == 0.12.*
+                   hsc3 == 0.13.*
   GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.SC3.UGen.DB
                    Sound.SC3.UGen.DB.Bindings
