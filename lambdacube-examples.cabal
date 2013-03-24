@@ -1,5 +1,5 @@
 Name:          lambdacube-examples
-Version:       0.1.2
+Version:       0.2.1
 Cabal-Version: >= 1.2
 Synopsis:      Examples for LambdaCube
 Category:      Graphics
@@ -55,12 +55,12 @@ Executable lambdacube-basic
   main-is:     lambdacube-basic
   HS-Source-Dirs: src
   Main-IS:        lambdacube-basic.hs
-  Build-Depends:  base >= 4 && < 5, mtl, lambdacube-engine, elerea, GLFW-b, hslogger
+  Build-Depends:  base >= 4 && < 5, mtl, lambdacube-engine, elerea, GLFW-b
   GHC-Options:    -Wall -O2 -fno-warn-unused-do-bind -fno-warn-name-shadowing
 
 Executable lambdacube-cameratrack
   main-is:     lambdacube-cameratrack
   HS-Source-Dirs: src
   Main-IS:        lambdacube-cameratrack.hs
-  Build-Depends:  base >= 4 && < 5, lambdacube-engine, elerea, GLFW-b, hslogger
+  Build-Depends:  base >= 4 && < 5, lambdacube-engine, elerea, GLFW-b
   GHC-Options:    -Wall -O2 -fno-warn-unused-do-bind -fno-warn-name-shadowing
