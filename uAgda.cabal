@@ -1,5 +1,5 @@
 name:           uAgda
-version:        1.0.0.1
+version:        1.0.0.2
 category:       Dependent Types
 synopsis:       A simplistic dependently-typed language with parametricity.
 description:
@@ -28,7 +28,9 @@ data-files:
      tutorial/00-Start-Here.ua
      tutorial/01-Module.ua
      tutorial/02-Holes.ua
+     tutorial/02.1-Relevance.ua
      tutorial/03-Parametricity.ua
+     tutorial/03.1-Parametricity-Use.ua
      tutorial/04-Data.ua
 
 
