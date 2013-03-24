@@ -1,5 +1,5 @@
 Name:               FileManipCompat
-Version:            0.17
+Version:            0.18
 License:            BSD3
 License-File:       LICENSE
 Author:             Bryan O'Sullivan <bos@serpentine.com>
@@ -18,7 +18,7 @@ Flag splitBase
 
 Library
   if flag(splitBase)
-    Build-Depends: base <5, bytestring, directory, filepath, mtl, unix-compat
+    Build-Depends: base <5, bytestring, directory, filepath, mtl > 2, unix-compat
   else
     Build-Depends: base <4, filepath, mtl, unix-compat
 
