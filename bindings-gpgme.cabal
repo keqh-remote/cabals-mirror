@@ -3,7 +3,7 @@ name: bindings-gpgme
 homepage: http://bitbucket.org/mauricio/bindings-gpgme
 synopsis:
   Low level bindings to gpgme.
-version: 0.1.2
+version: 0.1.3
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
