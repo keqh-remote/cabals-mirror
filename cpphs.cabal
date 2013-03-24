@@ -1,11 +1,11 @@
 Name: cpphs
-Version: 1.11
-Copyright: 2004-2010, Malcolm Wallace
-Build-Depends: base < 6, haskell98
+Version: 1.12
+Copyright: 2004-2011, Malcolm Wallace
+Build-Depends: base>3&&<6, old-locale, old-time, directory
 License: LGPL
 License-File: LICENCE-LGPL
-Author: Malcolm Wallace <Malcolm.Wallace@cs.york.ac.uk>
-Maintainer: Malcolm Wallace <Malcolm.Wallace@cs.york.ac.uk>
+Author: Malcolm Wallace <Malcolm.Wallace@me.com>
+Maintainer: Malcolm Wallace <Malcolm.Wallace@me.com>
 Homepage: http://haskell.org/cpphs/
 Synopsis: A liberalised re-implementation of cpp, the C pre-processor.
 Description:
