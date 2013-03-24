@@ -1,5 +1,5 @@
 name:           liboleg
-version:        0.1.0.2
+version:        0.1.0.3
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -36,6 +36,7 @@ library
             System.IterateeM
             System.LowLevelIO
             System.RandomIO
+            System.SafeHandles
 
     ghc-options:
             -funbox-strict-fields 
