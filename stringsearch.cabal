@@ -1,5 +1,6 @@
 Name:            stringsearch
-Version:         0.1
+Category:        Text, Data, Search
+Version:         0.1.1
 Description:     Fast search of ByteStrings
 License:         BSD3
 License-file:    LICENSE
