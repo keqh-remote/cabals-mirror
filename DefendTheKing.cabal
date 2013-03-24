@@ -1,16 +1,16 @@
 Name:                DefendTheKing
-Version:             0.1
+Version:             0.2
 Cabal-Version:       >= 1.2
-Synopsis:            A graphical demo. Will be a game
+Synopsis:            A simple RTS game
 Category:            game, FRP
 Description:
 
   Defend the King from the Forces of Different:
 
-  A graphical demo.
+  (work in progress)
 
-  Intended to become a simple fast-paced multiplayer RTS game
-  in the likes of Bughouse-Chess and Starcraft.
+  A simple fast-paced multiplayer RTS game
+  inspired by Bughouse-Chess and Starcraft.
 
 Author:              Yair Chuchem
 Maintainer:          Yair Chuchem (yairchu@gmail.com)
@@ -20,14 +20,23 @@ License:             GPL
 License-File:        LICENSE
 Stability:           experimental
 Build-Type:          Simple
-Extra-Source-Files:
-  src/defend.hs
-  src/Chess.hs
-  src/ChessFont.hs
+Data-Files:          data/defend.font
+
 Executable defend
   Executable:        defend
   HS-Source-Dirs:    src
   Main-IS:           defend.hs
-  Build-Depends:     base >=2 && < 5, peakachu, GLUT
+  Other-Modules:     Geometry, Networking, ParseStun, Intro, Draw
+  Build-Depends:     base >=2 && < 5, peakachu >= 0.2, GLUT, containers,
+                     random, time, utility-ht, haskell98,
+                     network, HTTP, mtl, bytestring, binary,
+                     MaybeT, zlib
+  GHC-Options:       -O2 -Wall
+Executable defendFontEdit
+  Executable:        defendFontEdit
+  HS-Source-Dirs:    src
+  Main-IS:           defendFontEdit.hs
+  Other-Modules:     Geometry
+  Build-Depends:     base >=2 && < 5, peakachu >= 0.2, GLUT, containers
   GHC-Options:       -O2 -Wall
 
