@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.7.1
+Version:             0.7.2
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -23,6 +23,8 @@ Description:
 	- new batch command: run_cas
 	.
 	- fixed bug with expireAt - thanks to Alex Suraci
+	.
+	- fixed bug with sismember - thanks to Michael Snoyman
 	.
 
 Stability:           beta
