@@ -7,7 +7,7 @@ Name:                GenericPretty
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             1.1.0
+Version:             1.1.1
 
 -- A short (one-line) description of the package.
 Synopsis:            A generic, derivable, haskell pretty printer.
@@ -52,17 +52,17 @@ Description:
   .
   0. Make sure you have a version of ghc >= 7.2 installed and that you can use the 'runhaskell' command from the command line.
   . 
-  1. Download the file "GenericPretty-1.1.0.tar.gz" from this page.
+  1. Download the file "GenericPretty-1.1.1.tar.gz" from this page.
   .
   2. Unpack the file. If using a UNIX system, run 
   .
-    tar xzf GenericPretty-1.1.0.tar.gz 
+    tar xzf GenericPretty-1.1.1.tar.gz 
   .
     If on windows use your preffered unpacking utility(for instance, 7zip : <http://www.7-zip.org/>)
   .
   3. Move to the correct directory: 
   .
-  cd GenericPretty-1.0.1
+  cd GenericPretty-1.1.1
   .
   4. Run the following haskell commands to install the library globally
   .
@@ -104,7 +104,7 @@ Description:
   by typing "deriving (Generic)" and write an instance of "Out" defining docPrec as "docPrec = genOut". 
   Then the pretty printing functions such as "pp" can be used on any data of that type.
   .
-  For more details about the above example as well as an example of custom pretty printing please
+  For more details about the above example as well as examples of customizing the pretty printing please
   check the README file included in the package. For more information about the library itself and
   what it exports check the API linked further down this page.
   
@@ -133,7 +133,7 @@ Build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
-Extra-source-files: README TestSuite\SimpleTest.hs TestSuite\Tests.hs TestSuite\CustomTest.hs
+Extra-source-files: README TestSuite\SimpleTest.hs TestSuite\Tests.hs TestSuite\CustomTest.hs TestSuite\ZigZagTest.hs
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.6
