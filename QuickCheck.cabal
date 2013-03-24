@@ -1,5 +1,5 @@
 name:		QuickCheck
-version:	1.0
+version:	1.1.0.0
 license:	BSD3
 license-file:	LICENSE
 author:		Koen Classen and John Hughes
@@ -17,14 +17,23 @@ description:
 	QuickCheck provides combinators to define properties, observe
 	the distribution of test data, and define test
 	data generators.
-exposed-modules:
-	Debug.QuickCheck.Batch,
-	Debug.QuickCheck.Poly,
-	Debug.QuickCheck.Utils,
-	Debug.QuickCheck,
-	Test.QuickCheck.Batch,
-	Test.QuickCheck.Poly,
-	Test.QuickCheck.Utils,
-	Test.QuickCheck
-build-depends:	base
-extensions:	CPP
+build-type: Simple
+cabal-version: >=1.2
+
+flag split-base
+
+library
+  exposed-modules:
+          Debug.QuickCheck.Batch,
+          Debug.QuickCheck.Poly,
+          Debug.QuickCheck.Utils,
+          Debug.QuickCheck,
+          Test.QuickCheck.Batch,
+          Test.QuickCheck.Poly,
+          Test.QuickCheck.Utils,
+          Test.QuickCheck
+  if flag(split-base)
+    build-depends:	base >= 3, random
+  else
+    build-depends:	base < 3
+  extensions:	CPP
