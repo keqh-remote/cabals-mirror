@@ -1,5 +1,5 @@
 Name:                gruff
-Version:             0.2
+Version:             0.2.1
 Synopsis:            fractal explorer GUI using the ruff library
 Description:
     Mandelbrot Set fractal explorer using the ruff library.
@@ -10,15 +10,25 @@ Description:
     with integer-simple instead of the default integer-gmp.  To install
     without MPFR support, use @cabal install gruff -f-mpfr@.
     .
+    This version is a bugfix release.  Changes since gruff-0.2:
+    .
+      * Supersampling bugs are fixed (no more undocumented quantization
+        leading to inconsistent appearance at different zoom levels).
+    .
+      * Race condition bugs in cache management are fixed (no more
+        incompletely rendered images).
+    .
+      * Internal changes/refactoring to make future additions easier.
+    .
     Features in this version include:
     .
       * Interactive fractal browser display (left click to zoom in,
         right click to zoom out, middle-click to center).
     .
-      * Session persistance (stored in @~/.gruff/state.gruff@ - states can
+      * Session persistance (stored in @~\/.gruff\/state.gruff@ - states can
         also be loaded from and saved to other files).
     .
-      * Tile cache (by default in @~/.gruff/cache@ - symlink it somewhere
+      * Tile cache (by default in @~\/.gruff\/cache@ - symlink it somewhere
         with a few GB of space if you plan on exploring a lot).
     .
       * High-level feature finding using angled internal addresses
@@ -37,7 +47,7 @@ Description:
       * Limited amount of customizable colouring (colours for interior,
         border, and exterior points).
     .
-      * Supersampling for more detailed images (useful range is 1 to 4).
+      * Supersampling for more detailed images (useful range is 1 to 16).
     .
     Future features might include image saving, external ray and feature
     information overlays, more feature finding and identification
