@@ -1,5 +1,5 @@
 name:           X11-extras
-version:        0.2
+version:        0.3
 license:        BSD3
 license-file:   LICENSE
 author:         Spencer Janssen
@@ -15,8 +15,8 @@ description:    Missing bindings to the X11 graphics library.
 exposed-modules:    Graphics.X11.Xlib.Extras, Graphics.X11.Xinerama
 extensions:         ForeignFunctionInterface
 build-depends:	    base, X11>=1.2.1
-ghc-options:        -O2 -funbox-strict-fields
-extra-libraries:    "X11" "Xext"
+ghc-options:        -O2 -fasm -funbox-strict-fields
+extra-libraries:    "X11"
 c-sources:          cbits/XUtils.c
 install-includes:   XlibExtras.h
 extra-source-files:
@@ -24,6 +24,6 @@ extra-source-files:
     configure.ac
     configure
     X11-extras.buildinfo.in
-    include/config.h.in
+    include/X11_extras_config.h.in
 include-dirs:	    include
-extra-tmp-files:    include/config.h X11-extras.buildinfo config.log config.status autom4te.cache
+extra-tmp-files:    include/X11_extras_config.h X11-extras.buildinfo config.log config.status autom4te.cache
