@@ -1,5 +1,5 @@
 Name:         HaskellNN
-Version:      0.1
+Version:      0.1.1
 License:      GPL
 License-file: LICENSE
 Author:       Kiet Lam
@@ -54,6 +54,7 @@ Library
   Include-Dirs:     cbits
   C-sources:        src/AI/Training/Internal/lbfgs_aux.c,
                     cbits/lbfgs.c
+                    cbits/lbfgs.h
   Includes:         lbfgs.h
 
 
