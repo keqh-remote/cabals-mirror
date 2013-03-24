@@ -1,5 +1,5 @@
 name:            yesod-form
-version:         0.3.4.1
+version:         0.3.4.2
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -51,4 +51,4 @@ library
 
 source-repository head
   type:     git
-  location: git://github.com/snoyberg/yesod-form.git
+  location: git://github.com/yesodweb/yesod.git
