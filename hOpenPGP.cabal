@@ -1,5 +1,5 @@
 Name:                hOpenPGP
-Version:             0.2
+Version:             0.3
 Synopsis:            native Haskell implementation of OpenPGP (RFC4880)
 Description:         native Haskell implementation of OpenPGP (RFC4880)
 Homepage:            http://floss.scru.org/hOpenPGP/
@@ -95,6 +95,8 @@ Extra-source-files: tests/suite.hs
   , tests/data/msg1.asc
   , tests/data/uncompressed-ops-rsa.gpg
   , tests/data/uncompressed-ops-dsa.gpg
+  , tests/data/uncompressed-ops-dsa-sha384.txt.gpg
+  , tests/data/encryption.gpg
 
 Cabal-version:       >= 1.10
 
@@ -102,18 +104,13 @@ Cabal-version:       >= 1.10
 Library
   Exposed-modules:     Codec.Encryption.OpenPGP.Types
                      , Codec.Encryption.OpenPGP.Serialize
-                     , Codec.Encryption.OpenPGP.ASCIIArmor
                      , Codec.Encryption.OpenPGP.Compression
                      , Codec.Encryption.OpenPGP.Fingerprint
                      , Data.Conduit.OpenPGP.Compression
                      , Data.Conduit.OpenPGP.Keyring
                      , Data.Conduit.OpenPGP.Verify
-  Other-Modules: Data.Digest.CRC24
-               , Codec.Encryption.OpenPGP.Internal
-               , Codec.Encryption.OpenPGP.ASCIIArmor.Decode
-               , Codec.Encryption.OpenPGP.ASCIIArmor.Encode
+  Other-Modules: Codec.Encryption.OpenPGP.Internal
                , Codec.Encryption.OpenPGP.SerializeForSigs
-               , Data.Conduit.Cereal.Temp
   Build-depends: asn1-data
                , attoparsec
                , base                  > 4       && < 5
@@ -121,12 +118,13 @@ Library
                , bytestring
                , bzlib
                , cereal
-               , cereal-conduit                     < 0.0.4
-               , conduit                            < 0.3.0
+               , cereal-conduit        > 0.0.6   && < 0.1
+               , conduit               > 0.4     && < 0.5
                , containers
                , cryptocipher
                , cryptohash
                , mtl
+               , openpgp-asciiarmor                 >= 0.1
                , split
                , zlib
   default-language: Haskell2010
@@ -142,17 +140,20 @@ Test-Suite tests
                , bytestring
                , bzlib
                , cereal
-               , cereal-conduit                     < 0.0.4
-               , conduit                            < 0.3.0
+               , cereal-conduit        > 0.0.6   && < 0.1
+               , conduit               > 0.4     && < 0.5
                , containers
                , cryptocipher
                , cryptohash
                , mtl
+               , openpgp-asciiarmor                 >= 0.1
                , split
                , zlib
                , HUnit
                , test-framework
                , test-framework-hunit
+               , exception-transformers > 0.3 && < 0.4
+               , resourcet > 0.3 && < 0.4
   default-language: Haskell2010
 
 source-repository head
