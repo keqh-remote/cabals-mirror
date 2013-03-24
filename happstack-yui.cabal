@@ -1,5 +1,5 @@
 Name          : happstack-yui
-Version       : 7373.5.2
+Version       : 7373.5.3
 Category      : Web, Happstack
 Synopsis      : Utilities for using YUI3 with Happstack.
 Homepage      : http://hub.darcs.net/dag/yui/browse/happstack-yui
@@ -1768,7 +1768,7 @@ Library
     bytestring               >= 0.9 && < 0.11,
     containers               >= 0.4 && < 0.6,
     happstack-jmacro         == 7.0.*,
-    happstack-server         == 7.0.*,
+    happstack-server         >= 7.0 && < 7.2,
     hsp                      == 0.7.*,
     interpolatedstring-perl6 == 0.9.*,
     jmacro                   == 0.5.*,
