@@ -1,5 +1,5 @@
 name:           np-extras
-version:        0.2.0.2
+version:        0.2.0.3
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -17,7 +17,7 @@ source-repository head
 
 Library
   build-depends: base >= 3.0 && < 5, numeric-prelude >= 0.1.1 && < 0.2,
-                 primes >= 0.1.1 && < 0.2, containers >= 0.2 && < 0.4
+                 primes >= 0.1.1 && < 0.2.1, containers >= 0.2 && < 0.4
   exposed-modules:
     MathObj.FactoredRational
     MathObj.Monomial
