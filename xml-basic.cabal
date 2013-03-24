@@ -1,5 +1,5 @@
 Name:             xml-basic
-Version:          0.0.1
+Version:          0.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -25,7 +25,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/xml-basic/
-  tag:      0.0.1
+  tag:      0.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
