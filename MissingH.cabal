@@ -1,17 +1,34 @@
 Name: MissingH
-Version: 1.1.0.2
+Version: 1.1.0.3
 License: GPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
-Copyright: Copyright (c) 2004-2009 John Goerzen
+Copyright: Copyright (c) 2004-2010 John Goerzen
 license-file: COPYRIGHT
 extra-source-files: COPYING,
+                    announcements/0.10.0.txt,
+                    announcements/0.8.0.txt,
+                    announcements/0.9.0.txt,
                     testsrc/gzfiles/empty.gz,
                     testsrc/gzfiles/t1.gz,
                     testsrc/gzfiles/t1bad.gz,
                     testsrc/gzfiles/t2.gz,
                     testsrc/gzfiles/zeros.gz,
-                    testsrc/mime.types.test
+                    testsrc/mime.types.test,
+                    3rd-party-licenses/BSD,
+                    3rd-party-licenses/LGPL-2.1,
+                    Makefile,
+                    TODO,
+                    examples/simplegrep.hs,
+                    examples/test2.hs,
+                    examples/test3.hs,
+                    pending/Gopher.hs,
+                    pending/Maildir.disabled,
+                    pending/Tar.newhs,
+                    pending/Tar/HeaderParser.newhs,
+                    tolgpl,
+                    winbuild.bat,
+                    wintest.bat
 homepage: http://software.complete.org/missingh
 Category: Unclassified
 synopsis: Large utility library
@@ -24,6 +41,9 @@ Cabal-Version: >=1.2.3
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
+Flag buildtests
+  description: Build the executable to run unit tests
+  default: False
 
 Library
  Hs-Source-Dirs: src
@@ -66,14 +86,14 @@ Library
  Extensions: ExistentialQuantification, OverlappingInstances,
    UndecidableInstances, CPP, Rank2Types,
    MultiParamTypeClasses, FlexibleInstances, FlexibleContexts,
-   PatternSignatures
+   ScopedTypeVariables
 
  Build-Depends: network, parsec, base,
                haskell98, mtl, HUnit, regex-compat,
                filepath,
                hslogger
  If flag(splitBase)
-   Build-Depends: base >= 4, base <= 5, directory, random, process, old-time,
+   Build-Depends: base >= 4, base < 5, directory, random, process, old-time,
                              containers, old-locale, array
  Else
    Build-Depends: base < 3
@@ -81,9 +101,31 @@ Library
    Build-Depends: unix
 
 Executable runtests
-  Buildable: False
+  if flag(buildtests)
+    Buildable: True
+    Build-Depends: testpack, QuickCheck >= 1.0 && <2.0, HUnit
+  else
+    Buildable: False
   Main-Is: runtests.hs
   HS-Source-Dirs: testsrc, .
-  Build-Depends: testpack, QuickCheck >= 1.0 && <2.0, HUnit
+  Other-Modules: Bitstest,
+    CRC32GZIPtest,
+    CRC32POSIXtest,
+    Eithertest,
+    GZiptest,
+    Globtest,
+    HVFStest,
+    HVIOtest,
+    IOtest,
+    Listtest,
+    MIMETypestest,
+    Maptest,
+    Pathtest,
+    ProgressTrackertest,
+    Str.CSVtest,
+    Strtest,
+    Tests,
+    Timetest,
+    WildMatchtest
   Extensions: ExistentialQuantification, OverlappingInstances,
-    UndecidableInstances, CPP, PatternSignatures
+    UndecidableInstances, CPP, ScopedTypeVariables
