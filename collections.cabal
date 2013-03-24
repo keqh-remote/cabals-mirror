@@ -1,13 +1,15 @@
 name:		collections
-version:	0.3.1
+version:	0.3.1.1
 category:       Data Structures
 description:    
+        NOTE: This package is currently NOT MAINTAINED. If you are interested in a class-framework for collections (no implementations of special instances) checkthe package collections-api. 
+        
         This package provides a suite of data structures types, with a consistent API. 
         It is intended as an evolution of the data structures in the @base@ package.
 license:	BSD3
 license-file:	LICENSE
 author:		Jean-Philippe Bernardy, Adrian Hey and others (see AUTHORS file)
-maintainer:	jeanphilippe.bernardy (google mail)
+maintainer:	NONE
 synopsis:	Useful standard collections types and related functions.
 exposed-modules:
 	Data.COrdering,
