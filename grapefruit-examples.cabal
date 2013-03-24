@@ -1,5 +1,5 @@
 Name:          grapefruit-examples
-Version:       0.1.0.2
+Version:       0.1.0.3
 Cabal-Version: >= 1.6
 Build-Type:    Simple
 License:       BSD3
@@ -33,7 +33,7 @@ Description:   Grapefruit is a library for Functional Reactive Programming (FRP)
                @Simple@, @Switching@, @Converter@, @ListView@, and @SetView@, and the only UI
                backend is @GTK@.
 Category:      FRP, Reactivity, GUI, User Interfaces
-Tested-With:   GHC == 7.4.1
+Tested-With:   GHC == 7.6.1
 
 Source-Repository this
     type:     darcs
@@ -43,7 +43,7 @@ Source-Repository this
 Library
     Build-Depends:   base               >= 3.0   && < 5,
                      colour             >= 1.0   && < 2.4,
-                     containers         >= 0.1   && < 0.5,
+                     containers         >= 0.1   && < 0.6,
                      fraction           >= 0.0.1 && < 0.2,
                      grapefruit-frp     >= 0.1   && < 0.2,
                      grapefruit-records >= 0.1   && < 0.2,
