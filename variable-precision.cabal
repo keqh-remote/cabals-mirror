@@ -1,5 +1,5 @@
 Name:                variable-precision
-Version:             0.2.1
+Version:             0.3.1
 Synopsis:            variable-precision floating point
 Description:
   Software floating point with type-tagged variable mantissa precision,
@@ -20,7 +20,7 @@ Homepage:            https://gitorious.org/variable-precision
 License:             BSD3
 License-file:        LICENSE
 Author:              Claude Heiland-Allen
-Maintainer:          claudiusmaximus@goto10.org
+Maintainer:          claude@mathr.co.uk
 Copyright:           (c) 2012 Claude Heiland-Allen
 Category:            Math
 Build-type:          Simple
@@ -54,6 +54,7 @@ Library
     Numeric.VariablePrecision.Integer.Logarithm
   Build-depends:
     base >= 3 && < 6,
+    complex-generic >= 0.1.1 && < 0.2,
     floatshow >= 0.2 && < 0.3,
     type-level-natural-number >= 1 && < 2
   if (!flag(fast))
@@ -71,4 +72,4 @@ source-repository head
 source-repository this
   type:     git
   location: git://gitorious.org/variable-precision/variable-precision.git
-  tag:      v0.2.1
+  tag:      v0.3.1
