@@ -1,11 +1,12 @@
 Name:                reactive-fieldtrip
-Version:             0.0
+Version:             0.0.1
 Cabal-Version:       >= 1.2
 Synopsis:            Connect Reactive and FieldTrip
 Category:            Graphics, FRP
 Description:
-  This library connects ''Reactive'' (a functional reactive
-  programming library) and ''FieldTrip'' (a functional 3D library).
+  This library supports functionally programming reactive, animated, 3D
+  graphics.  It connects ''Reactive'' (a functional reactive programming
+  library) and ''FieldTrip'' (a functional 3D library).
   .
   Project wiki page: <http://haskell.org/haskellwiki/project-foo>
   .
@@ -25,10 +26,14 @@ build-type:          Simple
 Library
   hs-Source-Dirs:      src
   Extensions:
-  Build-Depends:       base, reactive, reactive-glut, FieldTrip
+  Build-Depends:       base, reactive >= 0.8.7, reactive-glut >= 0.0.4, FieldTrip >= 0.2.1, vector-space
   Exposed-Modules:     
-                       FTest
+                       FRP.Reactive.FieldTrip.Adapter
+  Other-Modules:     
+                       Test
                        
   ghc-options:         -Wall
 
 --  ghc-prof-options:    -prof -auto-all 
+
+-- vector-space only used for Test
