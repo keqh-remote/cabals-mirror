@@ -1,5 +1,5 @@
 name:                 haddock
-version:              2.7.1
+version:              2.7.2
 cabal-version:        >= 1.6
 license:              BSD3
 build-type:           Simple
@@ -175,6 +175,7 @@ library
     Haddock.Options
     Haddock.GhcUtils
     Haddock.Convert
+    Paths_haddock
   
   if flag(in-ghc-tree)
     buildable: False
