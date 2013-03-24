@@ -1,5 +1,5 @@
 Name:               Lastik
-Version:            0.6.1
+Version:            0.6.2
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <code@tmorris.net>
@@ -23,6 +23,7 @@ Library
   GHC-Options:    -Wall
   Exposed-Modules:
           System.Build,
+          System.Build.Directory,
           System.Build.FilePather,
           System.Build.Args,
           System.Build.Runner,
