@@ -1,5 +1,5 @@
 name:                hint
-version:             0.3.1.0
+version:             0.3.2.0
 description:
         This library defines an @Interpreter@ monad. It allows to load Haskell
         modules, browse them, type-check and evaluate strings with Haskell
@@ -36,7 +36,8 @@ Library
                       mtl,
                       filepath,
                       utf8-string,
-                      MonadCatchIO-mtl
+                      extensible-exceptions,
+                      MonadCatchIO-mtl >= 0.2
   if impl(ghc >= 6.8) {
     build-depends:    random,
                       directory
@@ -61,7 +62,6 @@ Library
                       Hint.Base
                       Hint.InterpreterT
                       Hint.Compat
-                      Hint.Compat.Exceptions
                       Hint.Configuration
                       Hint.Extension
                       Hint.Context
@@ -72,6 +72,10 @@ Library
                       Hint.Typecheck
                       Hint.Sandbox
                       Hint.Util
+
+  if impl(ghc >= 6.11) {
+      other-modules: Hint.Annotations
+  }
 
   hs-source-dirs:     src
 
