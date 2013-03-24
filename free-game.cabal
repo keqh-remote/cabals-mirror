@@ -1,21 +1,7 @@
 name:                free-game
-version:             0.3.0.0
+version:             0.3.0.1
 synopsis:            Create graphical applications for free.
-description:
-    Create something graphical with useful free monads.
-    .
-    /Small instruction/
-    .
-    * load your image by loadBitmapFromFile, embedIO, and loadPicture.
-    .
-    * describe an application using drawPicture, askInput, tick, and so on, in Game monad.
-    .
-    * apply `runGame defaultGameParam` to run.
-    .
-    * That's all!
-    .
-    There are experimental implementation of text rendering, but it yields strange pictures.
-
+description:         closs-platform GUI library based on free monads.
 homepage:            https://github.com/fumieval/free-game
 license:             BSD3
 license-file:        LICENSE
