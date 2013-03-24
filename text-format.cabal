@@ -1,5 +1,5 @@
 name:           text-format
-version:        0.1.0.0
+version:        0.2.0.0
 license:        BSD3
 license-file:   LICENSE
 homepage:       https://github.com/mailrank/text-format
@@ -11,13 +11,14 @@ stability:      experimental
 tested-with:    GHC == 7.0.3
 synopsis:       Text formatting
 cabal-version:  >= 1.8
-build-type:      Simple
+build-type:     Simple
 description:
     A text formatting library optimized for ease of use and high
     performance.
 
 extra-source-files:
     README.markdown
+    tests/Benchmarks.hs
 
 flag developer
   description: operate in developer mode
@@ -37,6 +38,7 @@ library
     Data.Text.Format.RealFloat.Fast
     Data.Text.Format.RealFloat.Fast.Internal
     Data.Text.Format.RealFloat.Functions
+    Data.Text.Format.Types.Internal
 
   build-depends:
     array,
@@ -51,7 +53,7 @@ library
     ghc-options: -Werror
     ghc-prof-options: -auto-all
 
-  ghc-options:      -Wall
+  ghc-options: -Wall
 
   cpp-options: -DINTEGER_GMP
 
@@ -63,8 +65,8 @@ library
 
 source-repository head
   type:     git
-  location: http://github.com/mailrank/aeson
+  location: https://github.com/mailrank/text-format
 
 source-repository head
   type:     mercurial
-  location: http://bitbucket.org/bos/aeson
+  location: https://bitbucket.org/bos/text-format
