@@ -7,7 +7,7 @@ Name:                acid-state
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3.3
+Version:             0.4
 
 -- A short (one-line) description of the package.
 Synopsis:            Add ACID guarantees to any serializable Haskell data structure.
@@ -37,7 +37,7 @@ Build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
-Extra-source-files:  examples/*.hs
+Extra-source-files:  examples/*.hs, examples/errors/*.hs
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.6
@@ -54,11 +54,13 @@ Library
                        Data.Acid.TemplateHaskell
   
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4 && < 5, binary, bytestring, stm, filepath, directory,
-                       mtl, array, containers, template-haskell
+  Build-depends:       base >= 4 && < 5, cereal >= 0.3.2.0, safecopy >= 0.5, bytestring, stm,
+                       filepath, directory, mtl, array, containers, template-haskell, unix
 
-  Hs-Source-Dirs:         src/
-  
+  Hs-Source-Dirs:      src/
+
+  GHC-Options:         -fwarn-unused-imports -fwarn-unused-binds
+
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
   
