@@ -1,5 +1,5 @@
 Name:                   paragon
-Version:                0.1.16
+Version:                0.1.19
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
@@ -45,6 +45,11 @@ Library
                         Language.Java.Paragon.Pretty,
                         Language.Java.Paragon.Syntax,
                         Language.Java.Paragon.Lexer,
+                        Language.Java.Paragon.Monad.Base,
+                        Language.Java.Paragon.Monad.PiReader,
+                        Language.Java.Paragon.Monad.Uniq,
+                        Language.Java.Paragon.NameResolution,
+                        Language.Java.Paragon.NameResolution.Monad,
                         Language.Java.Paragon.TypeCheck,
                         Language.Java.Paragon.TypeCheck.Actors,
                         Language.Java.Paragon.TypeCheck.Constraints,
@@ -52,16 +57,15 @@ Library
                         Language.Java.Paragon.TypeCheck.Evaluate,
                         Language.Java.Paragon.TypeCheck.Locks,
                         Language.Java.Paragon.TypeCheck.Monad,
-                        Language.Java.Paragon.TypeCheck.Monad.TcBase,
-                        Language.Java.Paragon.TypeCheck.Monad.TcCont,
-                        Language.Java.Paragon.TypeCheck.Monad.TcMonad,
+                        Language.Java.Paragon.TypeCheck.Monad.TcCodeM,
+                        Language.Java.Paragon.TypeCheck.Monad.TcDeclM,
+                        Language.Java.Paragon.TypeCheck.Monad.CodeState,
+                        Language.Java.Paragon.TypeCheck.Monad.CodeEnv,
                         Language.Java.Paragon.TypeCheck.Policy,
-                        Language.Java.Paragon.TypeCheck.TcEnv,
                         Language.Java.Paragon.TypeCheck.TcExp,
-                        Language.Java.Paragon.TypeCheck.TcState,
                         Language.Java.Paragon.TypeCheck.TcStmt,
+                        Language.Java.Paragon.TypeCheck.TypeMap,
                         Language.Java.Paragon.TypeCheck.Types,
-                        Language.Java.Paragon.TypeCheck.Uniq,
                         Language.Java.Paragon.TypeCheck.Compile,
                         Language.Java.Paragon.QuasiQuoter,
                         Language.Java.Paragon.QuasiQuoter.Lift,
@@ -81,6 +85,11 @@ Executable parac
                         Language.Java.Paragon.Pretty,
                         Language.Java.Paragon.Syntax,
                         Language.Java.Paragon.Lexer,
+                        Language.Java.Paragon.Monad.Base,
+                        Language.Java.Paragon.Monad.PiReader,
+                        Language.Java.Paragon.Monad.Uniq,
+                        Language.Java.Paragon.NameResolution,
+                        Language.Java.Paragon.NameResolution.Monad,
                         Language.Java.Paragon.TypeCheck,
                         Language.Java.Paragon.TypeCheck.Actors,
                         Language.Java.Paragon.TypeCheck.Constraints,
@@ -88,22 +97,22 @@ Executable parac
                         Language.Java.Paragon.TypeCheck.Evaluate,
                         Language.Java.Paragon.TypeCheck.Locks,
                         Language.Java.Paragon.TypeCheck.Monad,
-                        Language.Java.Paragon.TypeCheck.Monad.TcBase,
-                        Language.Java.Paragon.TypeCheck.Monad.TcCont,
-                        Language.Java.Paragon.TypeCheck.Monad.TcMonad,
+                        Language.Java.Paragon.TypeCheck.Monad.TcCodeM,
+                        Language.Java.Paragon.TypeCheck.Monad.TcDeclM,
+                        Language.Java.Paragon.TypeCheck.Monad.CodeEnv,
+                        Language.Java.Paragon.TypeCheck.Monad.CodeState,
                         Language.Java.Paragon.TypeCheck.Policy,
-                        Language.Java.Paragon.TypeCheck.TcEnv,
                         Language.Java.Paragon.TypeCheck.TcExp,
-                        Language.Java.Paragon.TypeCheck.TcState,
                         Language.Java.Paragon.TypeCheck.TcStmt,
+                        Language.Java.Paragon.TypeCheck.TypeMap,
                         Language.Java.Paragon.TypeCheck.Types,
-                        Language.Java.Paragon.TypeCheck.Uniq,
+                        Language.Java.Paragon.TypeCheck.Compile,
                         Language.Java.Paragon.QuasiQuoter,
                         Language.Java.Paragon.QuasiQuoter.Lift,
                         Language.Java.Paragon.QuasiQuoter.Derive,
-                        Language.Java.Paragon.Compile,
                         Language.Java.Paragon.PiGeneration,
-                        Language.Java.Paragon.Interaction
+                        Language.Java.Paragon.Interaction,
+                        Language.Java.Paragon.Annotated
 
 
   Build-Tools:          alex >= 2.3
