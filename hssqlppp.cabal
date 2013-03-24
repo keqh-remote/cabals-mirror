@@ -1,5 +1,5 @@
 Name:                hssqlppp
-Version:             0.0.9
+Version:             0.0.10
 Synopsis:            Sql parser and type checker
 Description:
     Sql parser, pretty printer and type checker, targets PostGreSQL SQL
