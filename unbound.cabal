@@ -1,5 +1,5 @@
 name:           unbound
-version:        0.2
+version:        0.2.1
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -7,7 +7,6 @@ cabal-version:  >= 1.6
 tested-with:    GHC == 7.0.1
 author:         Stephanie Weirich
 maintainer:     Brent Yorgey <byorgey@cis.upenn.edu>
-		Chris Casinghino <ccasin@cis.upenn.edu>
                 Stephanie Weirich <sweirich@cis.upenn.edu>
 homepage:       http://code.google.com/p/replib/
 category:       Language, Generics, Compilers/Interpreters
@@ -22,7 +21,8 @@ description:    Specify the binding structure of your data type with an
                 expressive set of type combinators, and Unbound
                 handles the rest!  Automatically derives
                 alpha-equivalence, free variable calculation,
-                capture-avoiding substitution, and more.
+                capture-avoiding substitution, and more. See
+                "Unbound.LocallyNameless" to get started.
 Library
   build-depends: base >= 4.3 && < 5,
                  RepLib >= 0.4.0,
