@@ -1,5 +1,5 @@
 name: eurofxref
-version: 0.1.1
+version: 0.1.2
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
@@ -13,6 +13,8 @@ bug-reports:
 synopsis: Free foreign exchange/currency feed from the European Central Bank
 description:
     A Haskell API for the the European Central Bank's free daily currency reference rates.
+    .
+    ChangeLog: 0.1.2: Timestamp now has correct hour.
 category: Finance
 author: Stephen Blackheath
 data-files: example.hs
