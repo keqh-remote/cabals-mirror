@@ -1,6 +1,6 @@
 Cabal-Version:      >= 1.8
 Name:               language-spelling
-Version:            0.2
+Version:            0.3
 Author:             Francesco Mazzoli (f@mazzo.li)
 Maintainer:         Francesco Mazzoli (f@mazzo.li)
 Build-Type:         Simple
@@ -48,7 +48,10 @@ Library
                       ListLike,
                       listlike-instances,
                       text,
-                      vector >= 0.5
+                      vector >= 0.5,
+
+                      bk-tree,
+                      tst
 
     GHC-Options:      -Werror -O2
 
@@ -58,10 +61,7 @@ Library
                       Language.Distance.Search.BK,
                       Language.Distance.Search.TST,
                       Language.Phonetic,
-                      Language.Phonetic.Internal,
-                      Data.BKTree,
-                      Data.TST,
-                      Data.TSTSet
+                      Language.Phonetic.Internal
 
     Other-Modules:    Language.Distance.Search.Class,
                       Language.Phonetic.Soundex,
