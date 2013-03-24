@@ -1,11 +1,10 @@
 Name:             sox
-Version:          0.2.2
+Version:          0.2.2.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:         http://www.haskell.org/haskellwiki/Sox
-Package-URL:      http://code.haskell.org/~thielema/sox/
 Category:         Sound
 Synopsis:         Play, write, read, convert audio signals using Sox
 Description:
@@ -24,7 +23,7 @@ Description:
    which allows interactive playback using the shell-pipe package on GHC-6.2,
    where no runInteractiveProcess was available.
 Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.1, GHC==7.0.4, GHC==7.2.1
-Cabal-Version:     >=1.2
+Cabal-Version:     >=1.6
 Build-Type:        Simple
 Extra-Source-Files:
   Makefile
@@ -39,6 +38,15 @@ Flag executeShell
     Use ShellPipe package instead of process, preserved for historical reasons.
     Files are available in the darcs repository but currently not in the cabal package.
   default:     False
+
+Source-Repository this
+  Tag:         0.2.2
+  Type:        darcs
+  Location:    http://code.haskell.org/~thielema/sox/
+
+Source-Repository head
+  Type:        darcs
+  Location:    http://code.haskell.org/~thielema/sox/
 
 Library
   Build-Depends:
