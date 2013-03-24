@@ -1,6 +1,6 @@
 cabal-version             : >= 1.10
 name                      : copilot-sbv
-version                   : 0.2
+version                   : 0.3
 synopsis                  : A compiler for CoPilot targeting SBV.
 description               : Blah blah blah...
 license                   : BSD3
@@ -32,6 +32,7 @@ library
                           , containers >= 0.4
                           , copilot-core
                           , pretty >= 1                         
+                          , filepath >= 1.1
 
   exposed-modules         : Copilot.Compile.SBV
                           , Copilot.Compile.SBV.Code
