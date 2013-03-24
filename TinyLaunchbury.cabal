@@ -1,8 +1,8 @@
 Name:           TinyLaunchbury
-Version:        1.0
+Version:        1.0.1
 License:        BSD3
 License-File:   LICENSE 
-Author:         Elliot Stern, David Sankell
+Author:         Elliot Stern, David Sankel
 Maintainer:     Elliot Stern <eliyahu.ben.miney@gmail.com>
 Synopsis:       Simple implementation of call-by-need using Launchbury's semantics
 Category:       Compilers/Interpreters
