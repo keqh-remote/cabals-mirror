@@ -1,6 +1,6 @@
 Name:                simpleprelude
 
-Version:             1.0.1.0
+Version:             1.0.1.2
 
 Synopsis:            A simplified Haskell prelude for teaching
 
@@ -21,6 +21,7 @@ Description:         simpleprelude provides an alternative Prelude
                      .
                      Release History:
                      .
+		     - 1.0.1.1: Fixing missing operator precedences
                      - 1.0.1.0: Add a Haskell pre-processor to restore
                      the feel of an implicityly imported Prelude although
                      we use -XNoImplicitPrelude.
