@@ -1,5 +1,5 @@
 Name:                   ghc-mod
-Version:                1.10.2
+Version:                1.10.3
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -28,7 +28,7 @@ Executable ghc-mod
     GHC-Options:        -Wall -fno-warn-unused-do-bind
   else
     GHC-Options:        -Wall
-  Build-Depends:        base >= 4.0 && < 5, ghc, ghc-paths, transformers,
+  Build-Depends:        base >= 4.0 && < 5, ghc, ghc-paths, transformers, syb,
                         process, directory, filepath, old-time,
                         hlint >= 1.7.1, regex-posix, Cabal
 Source-Repository head
