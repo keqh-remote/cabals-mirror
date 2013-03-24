@@ -1,5 +1,5 @@
 Name: noodle
-Version: 0.0.18
+Version: 0.0.19
 Cabal-Version: >= 1.8
 License: OtherLicense
 License-File: LICENSE
@@ -72,20 +72,20 @@ Library
         Language.Noodle.Lib.Prod
         Language.Noodle.Lib.Function
 
-  Build-Depends: haskell98, base >= 3 && <= 5, filepath, directory
+  Build-Depends: base >= 3 && <= 5, filepath, directory
 
 Executable noodle
   Main-is: Old.hs
   Hs-Source-Dirs: ./src/bin
-  Build-Depends: haskell98, base >= 3 && <= 5, filepath, directory, noodle
+  Build-Depends: base >= 3 && <= 5, filepath, directory, noodle
 
 Executable noodle-repl
   Main-is: Repl.hs
   Hs-Source-Dirs: ./src/bin
-  Build-Depends: haskell98, base >= 3 && <= 5, filepath, directory, noodle
+  Build-Depends: base >= 3 && <= 5, filepath, directory, noodle
 
 Executable noodle-eval
   Main-is: Eval.hs
   Hs-Source-Dirs: ./src/bin
-  Build-Depends: haskell98, base >= 3 && <= 5, filepath, directory, noodle
+  Build-Depends: base >= 3 && <= 5, filepath, directory, noodle
 
