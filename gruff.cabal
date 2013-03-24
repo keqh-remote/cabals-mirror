@@ -1,15 +1,22 @@
 Name:                gruff
-Version:             0.3
+Version:             0.3.1
 Synopsis:            fractal explorer GUI using the ruff library
 Description:
     Mandelbrot Set fractal explorer using the ruff library.
     .
     Requires GTK, OpenGL, and GLSL fragment shader support; lots of RAM
-    and multiple CPU cores recommended.  If you want to explore very deep
-    zooms, you'll need hmpfr which currently requires GHC to be compiled
-    with integer-simple instead of the default integer-gmp.  To install
-    with MPFR support, use @cabal install gruff -fmpfr@.  (Note that the
-    default setting for this flag has changed since the previous release.)
+    and multiple CPU cores recommended.
+    .
+    If you want to explore very deep zooms, you'll need hmpfr which
+    currently requires GHC to be compiled with integer-simple instead of
+    the default integer-gmp.  To install with MPFR support, use
+    @cabal install gruff -fmpfr@.
+    Note that the default setting for this flag has changed since gruff-0.2.
+    .
+    gruff-0.3.1 is a bugfix release, fixing a performance problem wherein
+    offscreen tiles were needlessly calculated.  The performance gain
+    is much less (and in many cases is in fact a performance loss) when
+    using integer-simple.
     .
     gruff-0.3 includes a small library to allow external programs to
     create diagrams and animations with gruff.  See the gruff-examples
@@ -102,7 +109,7 @@ Executable gruff
                       Tile
                       Utils
                       View
-  Build-depends:      gruff == 0.3,
+  Build-depends:      gruff == 0.3.1,
                       base >= 4 && < 5,
                       containers >= 0 && < 1,
                       directory >= 1 && < 2,
@@ -137,4 +144,4 @@ source-repository head
 source-repository this
   type:     git
   location: git://gitorious.org/ruff/gruff.git
-  tag:      v0.3
+  tag:      v0.3.1
