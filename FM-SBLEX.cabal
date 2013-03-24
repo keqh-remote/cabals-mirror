@@ -1,5 +1,5 @@
 Name: FM-SBLEX
-Version: 3.0
+Version: 3.0.1
 cabal-version: >= 1.2
 build-type: Simple
 category: Natural Language Processing
