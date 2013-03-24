@@ -1,5 +1,5 @@
 Name:                reactive
-Version:             0.11.3
+Version:             0.11.4
 Synopsis:            Push-pull functional reactive programming
 Category:            reactivity, FRP
 Description:
@@ -22,7 +22,7 @@ Description:
   Please see the project wiki page: <http://haskell.org/haskellwiki/reactive>
   .
   &#169; 2007-2009 by Conal Elliott; GNU AGPLv3 license (see COPYING).
-  I am not thrilled with GPL.
+  I am not thrilled with GPL, and I doubt I'll stay with it for long.
   If you would like different terms, please talk to me.
   .
   With contributions from: Robin Green, Thomas Davie, Luke Palmer,
