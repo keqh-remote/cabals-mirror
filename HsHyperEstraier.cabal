@@ -5,7 +5,7 @@ Description:
     Haskell. HyperEstraier is an embeddable full text search engine
     which is supposed to be independent to any particular natural
     languages.
-Version:       0.3
+Version:       0.3.1
 License:       PublicDomain
 License-File:  COPYING
 Author:        PHO <pho at cielonegro dot org>
@@ -14,17 +14,20 @@ Stability:     experimental
 Homepage:      http://cielonegro.org/HsHyperEstraier.html
 Category:      Text
 Tested-With:   GHC == 6.8.1
-Cabal-Version: >= 1.2.3
+Cabal-Version: >= 1.6
 Build-Type:    Simple
-
 Extra-Source-Files:
     NEWS
     examples/Makefile
     examples/HelloWorld.hs
 
+Source-Repository head
+    Type: darcs
+    Location: http://darcs.cielonegro.org/HsHyperEstraier/
+
 Library
     Build-Depends:
-        base, bytestring, network, utf8-string
+        base >= 4, bytestring, network, utf8-string
     PkgConfig-Depends:
         hyperestraier >= 1.4.9, qdbm >= 1.8.74
     Exposed-Modules:
