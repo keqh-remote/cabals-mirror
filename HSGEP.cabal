@@ -1,5 +1,5 @@
 Name:          HSGEP
-Version:       0.1.1
+Version:       0.1.2
 Cabal-Version: >= 1.6
 License:       BSD3
 License-File:  LICENSE
@@ -30,7 +30,7 @@ Executable HSGEP_Regression
     GHC-Options: -Wall
     GHC-Prof-Options: -Wall -auto-all -caf-all
 
-  Build-Depends:   network, csv
+  Build-Depends:   csv
   Main-Is:         GEP/Examples/Regression/Driver.hs
 
 Executable HSGEP_CADensity
