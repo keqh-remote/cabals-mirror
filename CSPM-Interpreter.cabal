@@ -1,5 +1,5 @@
 Name:                CSPM-Interpreter
-Version:             0.4.0.2
+Version:             0.4.4.1
 
 Synopsis:            An interpreter for CSPM
 Description:
@@ -12,25 +12,29 @@ Description:
 
 License:             BSD3
 category:            Language,Formal Methods,Concurrency
-License-File:        License
-Author:              2010 Marc Fontaine
+License-File:        LICENSE
+Author:              2010 - 2011 Marc Fontaine
 Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
 Homepage:            http://www.stups.uni-duesseldorf.de/~fontaine/csp
-cabal-Version:       >= 1.6
+Stability:           experimental
+Tested-With:         GHC == 7.0.2
+
+cabal-Version:       >= 1.10
 build-type: Simple
 Extra-source-files:
 Library
   Build-Depends:
-    CSPM-Frontend >= 0.4 && < 0.5
-    ,CSPM-CoreLanguage >= 0.1 && < 0.2
+    CSPM-Frontend >= 0.6 && < 0.7
+    ,CSPM-CoreLanguage >= 0.2 && < 0.3
     ,base >= 4.0 && < 5.0
-    ,containers >= 0.3 && < 0.4
-    ,mtl >= 1.1 && < 1.2
+    ,containers >= 0.4 && < 0.5
+    ,mtl (>= 2.0 && < 2.1 ) || (>= 1.1 && < 1.2)
     ,array >= 0.3 && <0.4
-    ,syb >= 0.1 && < 0.2
- 
+    ,syb >= 0.3 && < 0.4
+
+  Default-Language: Haskell2010
   GHC-Options: -funbox-strict-fields -O2 -Wall
-  Extensions: DeriveDataTypeable, GeneralizedNewtypeDeriving
+  Other-Extensions: DeriveDataTypeable, GeneralizedNewtypeDeriving
   Hs-Source-Dirs:       src
   Exposed-modules:
     CSPM.Interpreter
@@ -44,6 +48,7 @@ Library
     CSPM.Interpreter.Renaming
     CSPM.Interpreter.PrepareAST
     CSPM.Interpreter.Bindings
+    CSPM.Interpreter.PatternCompiler
     CSPM.Interpreter.PatternMatcher
     CSPM.Interpreter.Prefix
     CSPM.Interpreter.GenericBufferPrefix
