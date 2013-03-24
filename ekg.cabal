@@ -1,5 +1,5 @@
 name:                ekg
-version:             0.2.0.0
+version:             0.3.0.0
 synopsis:            Remote monitoring of processes
 description:
   This library lets you remotely monitor a running process over HTTP.
@@ -16,14 +16,17 @@ cabal-version:       >=1.6
 data-files:          assets/index.html assets/monitor.js assets/monitor.css
                      assets/jquery.flot.min.js assets/blueprint/screen.css
                      assets/blueprint/print.css assets/blueprint/ie.css
-                     examples/Basic.hs
+                     assets/dialog_close.png assets/graph-icon.png
+                     assets/cross-16-ns.png
 
 library
   exposed-modules:     System.Remote.Counter
+                       System.Remote.Gauge
                        System.Remote.Monitoring
 
   other-modules:       Paths_ekg
                        System.Remote.Counter.Internal
+                       System.Remote.Gauge.Internal
 
   build-depends:       aeson < 0.6,
                        base >= 4.5 && < 5,
@@ -33,6 +36,7 @@ library
                        snap-core < 0.8,
                        snap-server < 0.8,
                        text < 0.12,
+                       time < 1.5,
                        transformers < 0.3,
                        unordered-containers < 0.2
   ghc-options:         -Wall
