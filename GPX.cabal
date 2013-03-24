@@ -1,5 +1,5 @@
 Name:                GPX
-Version:             0.1
+Version:             0.2
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            Parse GPX files
@@ -92,3 +92,4 @@ Library
                    Data.Geo.GPX.Accessor.Rtepts
                    Data.Geo.GPX.Accessor.Trkpts
                    Data.Geo.GPX.Accessor.Trksegs
+                   Data.Geo.GPX.Accessor.Latlon
