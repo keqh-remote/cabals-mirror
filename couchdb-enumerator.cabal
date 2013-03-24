@@ -1,10 +1,10 @@
 Name:           couchdb-enumerator
-Version:        0.3.1
+Version:        0.3.2
 Cabal-Version:  >= 1.8
 License:        BSD3
 License-File:	LICENSE
-Author:         John Lenz <jlenz2@math.uiuc.edu>
-Maintainer:     John Lenz <jlenz2@math.uiuc.edu>
+Author:         John Lenz <lenz@math.uic.edu>
+Maintainer:     John Lenz <lenz@math.uic.edu>
 Synopsis:       Couch DB client library using http-enumerator and aeson
 Category:       Database, Web
 Description:
@@ -33,18 +33,18 @@ Library
         Database.CouchDB.Enumerator
 
   Build-Depends:
-          aeson >= 0.3 && < 0.4
-        , attoparsec >= 0.8 && < 0.10
-        , attoparsec-enumerator >= 0.2 && < 0.3
+          aeson >= 0.4 && < 0.5
+        , attoparsec >= 0.8 && < 0.11
+        , attoparsec-enumerator >= 0.2 && < 0.4
         , base >= 4 && < 5
         , bytestring >= 0.9 && < 0.10
-        , containers >= 0.3 && < 0.5
         , enumerator >= 0.4 && < 0.5
         , http-types >= 0.6 && < 0.7
         , http-enumerator >= 0.7 && < 0.8
         , monad-control >= 0.2 && < 0.3
         , text >= 0.11 && < 0.12
         , transformers >= 0.2 && < 0.3
+        , unordered-containers >= 0.1 && < 0.2
         , utf8-string >= 0.3 && < 0.4
 
 Executable test-couch
@@ -53,20 +53,21 @@ Executable test-couch
   if flag(test)
       Buildable: True
       Build-Depends:
-          aeson >= 0.3 && < 0.4
-        , attoparsec >= 0.8 && < 0.10
-        , attoparsec-enumerator >= 0.2 && < 0.3
+          aeson >= 0.4 && < 0.5
+        , attoparsec >= 0.8 && < 0.11
+        , attoparsec-enumerator >= 0.2 && < 0.4
         , base >= 4 && < 5
         , bytestring >= 0.9 && < 0.10
-        , containers >= 0.3 && < 0.5
         , enumerator >= 0.4 && < 0.5
         , http-types >= 0.6 && < 0.7
         , http-enumerator >= 0.7 && < 0.8
         , monad-control >= 0.2 && < 0.3
         , text >= 0.11 && < 0.12
         , transformers >= 0.2 && < 0.3
+        , unordered-containers >= 0.1 && < 0.2
         , utf8-string >= 0.3 && < 0.4
 
+        , containers
         , QuickCheck >= 2
         , HUnit
         , test-framework
