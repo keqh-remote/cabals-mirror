@@ -1,5 +1,5 @@
 name:               citeproc-hs
-version:            0.3.2
+version:            0.3.3
 homepage:           http://gorgias.mine.nu/repos/citeproc-hs/
 synopsis:           A Citation Style Language implementation in Haskell
 
@@ -39,7 +39,7 @@ data-files:         locales/locales-af-ZA.xml
                     locales/locales-is-IS.xml
                     locales/locales-it-IT.xml
                     locales/locales-ja-JP.xml
-                    locales/locales-kh-KH.xml
+                    locales/locales-km-KH.xml
                     locales/locales-ko-KR.xml
                     locales/locales-mn-MN.xml
                     locales/locales-nb-NO.xml
@@ -72,6 +72,10 @@ flag network
   description: Use network and HTTP to retrieve csl file from URIs.
   default:     True
 
+flag embed_data_files
+  description: Embed locale files into the library (needed for windows packaging)
+  default:     False
+
 library
     exposed-modules:  Text.CSL
                       Text.CSL.Eval
@@ -91,6 +95,7 @@ library
                       Text.CSL.Input.Json
                       Text.CSL.Output.Pandoc
                       Text.CSL.Output.Plain
+                      Text.CSL.Test
     other-modules:    Paths_citeproc_hs
     ghc-options:      -funbox-strict-fields -Wall
     ghc-prof-options: -prof -auto-all
@@ -107,6 +112,11 @@ library
        build-depends: network >= 2, HTTP >= 4000.0.9
        extensions:    CPP
        cpp-options:   -DUSE_NETWORK
+
+    if flag(embed_data_files)
+       build-depends: template-haskell, file-embed
+       extensions:    CPP
+       cpp-options:   -DEMBED_DATA_FILES
 
     if impl(ghc >= 6.10)
        build-depends: base >= 4, syb, parsec, old-locale, time
