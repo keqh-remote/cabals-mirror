@@ -1,5 +1,5 @@
 name:                hint
-version:             0.3.3.4
+version:             0.3.3.5
 description:
         This library defines an @Interpreter@ monad. It allows to load Haskell
         modules, browse them, type-check and evaluate strings with Haskell
@@ -56,7 +56,7 @@ Library
   }
 
   if !os(windows) {
-      build-depends:    unix >= 2.2.0.0 && < 2.6
+      build-depends:    unix >= 2.2.0.0
   }
 
   exposed-modules:    Language.Haskell.Interpreter
