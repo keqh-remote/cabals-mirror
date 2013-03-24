@@ -1,5 +1,5 @@
 Name: webdriver
-Version: 0.2
+Version: 0.3
 Cabal-Version: >= 1.6
 License: BSD3
 License-File: LICENSE
@@ -9,7 +9,7 @@ Homepage: https://github.com/kallisti-dev/hs-webdriver
 Category: Web, Browser, Testing
 Synopsis: a Haskell client for the Selenium WebDriver protocol
 Build-type: Simple
-Extra-source-files: README.md, TODO, CHANGELOG.md
+Extra-source-files: README.md, TODO, CHANGELOG.md, .ghci
 Description:
         A Selenium WebDriver client for Haskell. 
         You can use it to automate browser sessions 
@@ -27,6 +27,7 @@ source-repository head
   location: git://github.com/kallisti-dev/hs-webdriver.git  
 
 library
+  hs-source-dirs: src
   ghc-options: -Wall    
   build-depends:   base == 4.*
                  , aeson >= 0.4 && < 0.7
@@ -52,13 +53,17 @@ library
                  , temporary
 
   exposed-modules: Test.WebDriver
+                   Test.WebDriver.Classes
+                   Test.WebDriver.Monad
+                   Test.WebDriver.Exceptions
                    Test.WebDriver.Commands
                    Test.WebDriver.Commands.Wait
-                   Test.WebDriver.Commands.Internal
                    Test.WebDriver.Firefox.Profile
+                   Test.WebDriver.Common.Profile
                    Test.WebDriver.Chrome.Extension
+                   Test.WebDriver.Capabilities
                    Test.WebDriver.Types
                    Test.WebDriver.JSON
 
   other-modules:   Test.WebDriver.Internal
-                   Test.WebDriver.Types.Internal
+
