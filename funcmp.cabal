@@ -1,5 +1,5 @@
 Name:           funcmp
-Version:        1.1
+Version:        1.0
 Author:         Meik Hellmund, Ralf Hinze, Joachim Korittky,
                 Marco Kuhlmann, Ferenc Wágner, Peter Simons
 Category:       Graphics
@@ -15,8 +15,7 @@ Description:    Functional MetaPost is a Haskell frontend
                 PostScript files and smoothly included into
                 e.g. LaTeX.
 Synopsis:       Functional MetaPost
-Build-Depends:  base, haskell98, process
-Build-Type:     Simple
+Build-Depends:  base, haskell98
 Exposed-Modules:
     FMP,
     FMP.Canvas,
