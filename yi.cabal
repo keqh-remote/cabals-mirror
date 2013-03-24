@@ -1,5 +1,5 @@
 name:           yi
-version:        0.4.6
+version:        0.4.6.2
 category:       Development, Editor
 synopsis:       The Haskell-Scriptable Editor
 description:
@@ -217,7 +217,7 @@ executable yi
         build-depends: Diff >=0.1 && <0.2
         build-depends: array,  base,  containers,  directory, mtl, process, old-locale, old-time, random
         build-depends: binary >=0.4.2 && <0.5
-        build-depends: bytestring >=0.9.0.1 && <0.9.2
+        build-depends: bytestring >=0.9.1 && <0.9.2
         -- build-depends: derive >=0.1 && <0.2 
         -- requirements on TH means bytestring version must be consistent with GHC
         -- --> can't use.
