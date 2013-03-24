@@ -1,7 +1,7 @@
 Cabal-Version:  >= 1.6
 Build-Type:     Default
 Name:           derive
-Version:        2.3.0.2
+Version:        2.4
 build-type:     Simple
 Copyright:      2006-2010, Neil Mitchell
 Maintainer:     ndmitchell@gmail.com
@@ -35,7 +35,7 @@ Executable derive
 
 Library
     Build-Depends:
-        haskell-src-exts == 1.9.*, filepath, mtl,
+        haskell-src-exts == 1.9.*, filepath, mtl == 2.0.*,
         base == 4.*, syb, template-haskell, uniplate == 1.5.*, containers,
         pretty
 
@@ -60,7 +60,6 @@ Library
         Language.Haskell.TH.FixedPpr
         Language.Haskell.TH.Helper
         Language.Haskell.TH.Peephole
-        Language.Haskell.TH.SYB
 -- GENERATED START
         Data.Derive.Arbitrary
         Data.Derive.ArbitraryOld
