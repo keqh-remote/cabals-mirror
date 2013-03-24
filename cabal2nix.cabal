@@ -1,5 +1,5 @@
 Name:                   cabal2nix
-Version:                1.9
+Version:                1.10
 Copyright:              (c) 2011 Peter Simons and Andres Loeh
 License:                BSD3
 License-File:           LICENSE
@@ -10,7 +10,7 @@ Category:               Distribution
 Synopsis:               Convert Cabal files into Nix build instructions
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
-Tested-With:            GHC == 7.0.4
+Tested-With:            GHC == 6.12.3, GHC == 7.0.4
 Description:
   The cabal2nix utility converts Cabal files into Nix build instructions. The
   commandline syntax is:
@@ -56,12 +56,13 @@ Executable cabal2nix
 Executable hackage4nix
   main-is:              Hackage4Nix.hs
   hs-source-dirs:       src
-  Build-Depends:        base >= 3 && < 5, Cabal, pretty, filepath, directory, bytestring,
+  Build-Depends:        base >= 3 && < 5, Cabal >= 1.8, pretty, filepath, directory,
                         regex-posix, mtl, containers
-  Ghc-Options:          -Wall
+  Extensions:           PatternGuards
   other-modules:        Cabal2Nix.Pretty
                         Cabal2Nix.License
                         Cabal2Nix.Name
                         Cabal2Nix.CorePackages
                         Cabal2Nix.Package
                         Cabal2Nix.Hackage
+
