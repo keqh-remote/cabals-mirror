@@ -1,5 +1,5 @@
 name: xml-types
-version: 0.3.1
+version: 0.3.2
 synopsis: Basic types for representing XML
 license: MIT
 license-file: license.txt
@@ -19,14 +19,14 @@ source-repository head
 source-repository this
   type: bazaar
   location: https://john-millikin.com/branches/xml-types/0.3/
-  tag: xml-types_0.3.1
+  tag: xml-types_0.3.2
 
 library
   ghc-options: -Wall
   hs-source-dirs: lib
 
   build-depends:
-      base >= 3 && < 5
+      base >= 3.0 && < 5.0
     , text
 
   exposed-modules:
