@@ -1,11 +1,11 @@
 name: BerkeleyDBXML
-version: 0.6.2
+version: 0.7
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.6
-copyright: (c) 2009 Stephen Blackheath
+copyright: (c) 2009 Stephen Blackheath, (c) 2010 typLAB
 author: Stephen Blackheath
-maintainer: http://blacksapphire.com/antispam/
+maintainer: http://blacksapphire.com/antispam/, typLAB <code@typlab.com>
 stability: beta
 synopsis: Berkeley DB XML binding
 description:
@@ -21,6 +21,8 @@ description:
     .
     DARCS repository:
     <http://blacksapphire.com/BerkeleyDBXML/>
+    .
+    Changes: 0.7: Compatible (only) with dbxml 2.5.
 
 category: Database
 build-type: Simple
@@ -35,8 +37,7 @@ Library
     exposed-modules: Database.Berkeley.DbXml
     c-sources: Database/Berkeley/dbxml_helper.cpp
 
-    build-depends: base == 4.*, bytestring >= 0.9, BerkeleyDB >= 0.7.1
+    build-depends: base == 4.*, bytestring >= 0.9, BerkeleyDB >= 0.8
     include-dirs: Database/Berkeley/
-    extra-libraries: db, dbxml, db_cxx, xqilla, xerces-c, xml2
-    ghc-options: -pgml c++
+    extra-libraries: db, dbxml, xqilla, xerces-c, xml2
 
