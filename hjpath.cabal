@@ -1,5 +1,5 @@
 Name: hjpath
-Version: 3.0
+Version: 3.0.1
 Synopsis: XPath-like syntax for querying JSON
 Category: Text
 Description: JPath is XPath-inspired query language to query JSON data.
