@@ -1,5 +1,5 @@
 Name:             utility-ht
-Version:          0.0.4
+Version:          0.0.5
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -27,8 +27,11 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/utility/
-  tag:      0.0.4
+  tag:      0.0.5
 
+Flag buildTests
+  description: Build test executables
+  default:     False
 
 Library
   Build-Depends: base
@@ -45,9 +48,10 @@ Library
     Data.Maybe.HT
     Data.Ord.HT
     Data.Record.HT
+    Data.String.HT
     Data.Tuple.HT
     Control.Monad.HT
-    Data.String.HT
+    Data.Strictness.HT
     Text.Read.HT
     Text.Show.HT
   Other-Modules:
@@ -57,3 +61,16 @@ Library
     Data.List.Match.Private
     Data.Function.HT.Private
     Data.Record.HT.Private
+
+
+Executable test
+  If !flag(buildTests)
+    Buildable:      False
+
+  Build-Depends: QuickCheck >=1.1 && <2
+  GHC-Options:      -Wall
+  Hs-source-dirs:   src
+  Other-Modules:
+    Test.Data.List
+    Test.Utility
+  Main-Is:          Test.hs
