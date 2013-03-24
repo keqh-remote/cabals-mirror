@@ -1,0 +1,16 @@
+Name:            monadenv
+Version:         0.0-2005-02-14
+Author:          Peter Simons <simons@cryp.to>
+License:         GPL
+License-File:    LICENSE
+Maintainer:      simons@cryp.to
+Homepage:        http://cryp.to/monadenv/
+Category:        Monads
+Description:     a generic, typesafe environment
+Build-Depends:   base, mtl, containers, bytestring
+Exposed-Modules:
+    Control.Monad.Env
+
+Build-Type:     Simple
+Tested-With:    GHC==6.8.2
+ghc-options:    -Wall -O2
