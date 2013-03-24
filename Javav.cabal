@@ -1,5 +1,5 @@
 Name:               Javav
-Version:            0.0.2
+Version:            0.0.3
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
 Maintainer:         Tony Morris
 Copyright:          Tony Morris
@@ -11,11 +11,15 @@ Description:
   Installs a javav executable to print the target version of one or more Java class files.
   .
   For example:
+  .
   @
-      > javav ThisClass.class ThatClass.class
-      1.6 (50.0 0x32) ThisClass.class
-      1.6 (49.0 0x31) ThatClass.class
+    \> javav ThisClass.class ThatClass.class
+
+    1.6 (50.0 0x32) ThisClass.class
+
+    1.5 (49.0 0x31) ThatClass.class
   @
+
 Cabal-version:      >= 1.2
 Build-Type:         Simple
 
