@@ -1,7 +1,7 @@
 cabal-version:      >=1.2
 build-type:         Simple
 name:               TTTAS
-version:            0.2
+version:            0.2.1
 license:            LGPL
 license-file:       COPYRIGHT
 maintainer:         Arthur Baars <abaars@iti.upv.es>
@@ -13,7 +13,7 @@ stability:          Stable
 copyright:          Universiteit Utrecht
 build-depends:      base, haskell98
 exposed-modules:    Language.TTTAS       
-extensions:         Arrows, GADTs
+extensions:         Arrows, GADTs, CPP
 hs-source-dirs:     src
 extra-source-files: README, LICENSE-LGPL, TTTAS.bib
 ghc-options:        -Wall
