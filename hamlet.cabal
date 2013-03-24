@@ -1,5 +1,5 @@
 name:            hamlet
-version:         0.8.2.1
+version:         0.9.0
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -25,15 +25,9 @@ category:        Web, Yesod
 stability:       Stable
 cabal-version:   >= 1.8
 build-type:      Simple
-homepage:        http://www.yesodweb.com/
-
-flag test
-  description: Build the executable to run unit tests
-  default: False
+homepage:        http://www.yesodweb.com/book/templates
 
 library
-    if flag(test)
-        Buildable: False
     build-depends:   base             >= 4       && < 5
                    , bytestring       >= 0.9     && < 0.10
                    , template-haskell
@@ -45,8 +39,6 @@ library
                    , blaze-builder    >= 0.2     && < 0.4
                    , process          >= 1.0     && < 1.1
     exposed-modules: Text.Hamlet
-                     Text.Hamlet.NonPoly
-                     Text.Hamlet.RT
                      Text.Cassius
                      Text.Lucius
                      Text.Julius
@@ -54,8 +46,6 @@ library
                      Text.Romeo
                      Text.Shakespeare
     other-modules:   Text.Hamlet.Parse
-                     Text.Hamlet.Quasi
-                     Text.Hamlet.Debug
                      Text.MkSizeType
                      Text.Css
     ghc-options:     -Wall
@@ -66,18 +56,16 @@ test-suite runtests
     type: exitcode-stdio-1.0
 
     ghc-options:   -Wall
-    build-depends: hamlet >= 0.7.2,
-                   base             >= 4       && < 5,
-                   parsec           >= 2       && < 4,
-                   containers       >= 0.2     && < 0.5,
-                   json-types       >= 0.1     && < 0.2,
-                   text             >= 0.7     && < 0.12,
-                   HUnit,
-                   QuickCheck >= 2 && < 3,
-                   test-framework-hunit,
-                   test-framework
+    build-depends: hamlet           >= 0.9     && < 0.10
+                 , base             >= 4       && < 5
+                 , parsec           >= 2       && < 4
+                 , containers       >= 0.2     && < 0.5
+                 , text             >= 0.7     && < 1
+                 , HUnit
+                 , hspec
+                 , blaze-html       >= 0.4     && < 0.5
 
 
 source-repository head
   type:     git
-  location: git://github.com/snoyberg/hamlet.git
+  location: git://github.com/yesodweb/hamlet.git
