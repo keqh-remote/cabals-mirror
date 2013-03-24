@@ -1,5 +1,5 @@
 Name:                dingo-core
-Version:             0.1.0
+Version:             0.2.0
 Synopsis:            Dingo is a Rich Internet Application platform based on the Warp web server.
 Description:         Dingo is a Rich Internet Application platform based on the Warp web server. It allows you to write code which looks very much like regular GUI code and have it work in the browser. 
 
@@ -24,7 +24,7 @@ Library
                , blaze-builder >= 0.3 && <0.4
                , blaze-html >= 0.4.1.6 && < 0.5
                , blaze-textual >= 0.2.0.5 && < 0.3
-               , conduit >= 0.1 && < 0.2
+               , conduit >= 0.2 && < 0.3
                , containers >= 0.4
                , cookie >= 0.3.0 && < 0.4
                , deepseq >= 1.1 && < 1.2
@@ -40,10 +40,10 @@ Library
                , text == 0.11.*
                , transformers >= 0.2.2 && < 0.3
                , unordered-containers >= 0.1.4 && < 0.2
-               , wai == 1.0.*
-               , wai-eventsource == 1.0.*
-               , wai-extra == 1.0.*
-               , warp == 1.0.*
+               , wai == 1.1.*
+               , wai-eventsource == 1.1.*
+               , wai-extra == 1.1.*
+               , warp == 1.1.*
                , web-css == 0.1.*
   Extensions:          CPP
                        DeriveDataTypeable
