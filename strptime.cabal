@@ -1,6 +1,6 @@
 Name: strptime
 Category: System, Data, Parsing
-Version: 0.1
+Version: 0.1.1
 Cabal-version: >= 1.2
 Build-type: Simple
 Copyright: Eugene Kirpichov
@@ -8,7 +8,7 @@ Maintainer: ekirpichov@gmail.com
 Author: Eugene Kirpichov
 License: BSD3
 License-File: LICENSE
-Synopsis: Efficient parsing of CalendarTime using a binding to C's strptime
+Synopsis: Efficient parsing of LocalTime using a binding to C's strptime
 Description:
   This library provides a binding to strptime, that allows to parse 
   dates and times from strings and strict/lazy bytestrings. The library
