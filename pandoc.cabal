@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.8.2
+Version:         1.8.2.1
 Cabal-Version:   >= 1.6
 Build-Type:      Custom
 License:         GPL
@@ -207,7 +207,7 @@ Library
                  random >= 1 && < 1.1,
                  extensible-exceptions >= 0.1 && < 0.2,
                  citeproc-hs >= 0.3.1 && < 0.4,
-                 pandoc-types == 1.8.0.2,
+                 pandoc-types == 1.8.*,
                  json >= 0.4 && < 0.5,
                  dlist >= 0.4 && < 0.6,
                  tagsoup >= 0.12 && < 0.13,
@@ -293,7 +293,7 @@ Executable pandoc
                  random >= 1 && < 1.1,
                  extensible-exceptions >= 0.1 && < 0.2,
                  citeproc-hs >= 0.3.1 && < 0.4,
-                 pandoc-types == 1.8.0.2,
+                 pandoc-types == 1.8.*,
                  json >= 0.4 && < 0.5,
                  dlist >= 0.4 && < 0.6,
                  tagsoup >= 0.12 && < 0.13,
@@ -351,7 +351,7 @@ Executable test-pandoc
     else
       Ghc-Options:    -Wall
     Extensions:       CPP
-    Build-Depends:    base >= 4 && < 5, Diff, test-framework >= 0.3 && < 0.4,
+    Build-Depends:    base >= 4 && < 5, Diff, test-framework >= 0.3 && < 0.5,
                       test-framework-hunit >= 0.2 && < 0.3,
                       test-framework-quickcheck2 >= 0.2.9 && < 0.3,
                       QuickCheck >= 2.4 && < 2.6,
