@@ -1,6 +1,6 @@
 Name:                freesect
-Version:             0.6
-Synopsis:            A Haskell syntax extension for generalised sections.
+Version:             0.7
+Synopsis:            A Haskell syntax extension for generalised sections
 Description:
     This package provides a preprocessor executable, \'freesect\', 
     which implements a generalisation of sections (\'free sections\')
@@ -10,18 +10,17 @@ Description:
 Homepage:            http://fremissant.net/freesect
 License:             BSD3
 License-file:        LICENSE
-Author:              Andrew Seniuk <rasfar@gmail.com>
+Author:              Andrew Seniuk
 Maintainer:          Andrew Seniuk <rasfar@gmail.com>
-bug-reports:         Please send email to the maintainer.
 Stability:           Provisional
 Category:            Language
 Build-type:          Custom
 Cabal-version:       >= 1.2.3
 Extra-source-files:
-  -- You may not make use of all of these ones:
-  000-readme, Makefile, cln, freesect.sh, ile, z, zpack
+  -- You might not make use of these ones:
+  000-readme, Makefile, cln, freesect.sh, ile, z, zpack,
   -- These are example modules containing free sections for testing:
-  S14.hs, S15.hs, S23.hs, S24.hs, S25.hs, S26.hs
+  S14.hs, S15.hs, S23.hs, S24.hs, S25.hs, S26.hs, S27.hs,
   -- Snapshot of documentation; visit the homepage for up-to-date versions:
   Doc/index.html, Doc/irc.html,
   -- The rest are critical for building freesect:
