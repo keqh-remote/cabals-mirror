@@ -1,5 +1,5 @@
 name: dtd-text
-version: 0.1.1.0
+version: 0.1.1.1
 synopsis: Parse and render XML DTDs
 description:
   This library provides an attoparsec-text parser and blaze-builder for
@@ -8,7 +8,6 @@ license: BSD3
 license-file: license.txt
 author: Yitzchak Gale
 maintainer: gale@sefer.org
-category: Data, Text, XML
 build-type: Simple
 cabal-version: >=1.6
 category: Data, Text, XML, Parsing
