@@ -1,5 +1,5 @@
 Name:                   wai-app-file-cgi
-Version:                0.4.3
+Version:                0.4.4
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -24,7 +24,6 @@ library
                         Network.Wai.Application.Classic.FileInfo
                         Network.Wai.Application.Classic.Header
                         Network.Wai.Application.Classic.Lang
-                        Network.Wai.Application.Classic.MaybeIter
                         Network.Wai.Application.Classic.Range
                         Network.Wai.Application.Classic.RevProxy
                         Network.Wai.Application.Classic.Status
