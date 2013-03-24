@@ -1,5 +1,5 @@
 name:                prelude-plus
-version:             0.0.0.4
+version:             0.0.0.5
 synopsis:            Prelude for rest of us
 description:
   > import Prelude ()
@@ -45,4 +45,4 @@ Executable test
 
 Source-repository head
   type:              darcs
-  location:          http://patch-tag.com/r/prelude-plus/pullrepo
+  location:          http://patch-tag.com/r/nonowarn/prelude-plus/pullrepo
