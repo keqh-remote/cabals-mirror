@@ -1,5 +1,5 @@
 Name:           WebBits
-Version:        0.9.1
+Version:        0.9.2
 Cabal-Version:	>= 1.2
 Copyright:      Copyright (c) 2007-2008 Arjun Guha and Spiridon Eliopoulos
 License:        LGPL
@@ -31,7 +31,7 @@ Library
   Hs-Source-Dirs:
     src
   Build-Depends:
-    base, mtl, parsec, pretty, containers
+    base, mtl, parsec<3.0.0, pretty, containers
   ghc-options:
     -fwarn-incomplete-patterns -fglasgow-exts
   Extensions:     
