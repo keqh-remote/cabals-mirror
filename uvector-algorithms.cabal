@@ -1,5 +1,5 @@
 Name:              uvector-algorithms
-Version:           0.1.1
+Version:           0.2
 License:           BSD3
 License-File:      LICENSE
 Author:            Dan Doel
@@ -11,13 +11,13 @@ Description:       Efficient algorithms for uvector unboxed arrays
                    be sure to compile with -O2, and -fvia-C -optc-O3 is
                    recommended.
 Build-Type:        Simple
-Cabal-Version:     >= 1.2
+Cabal-Version:     >= 1.2.3
 
 Library
-    Build-Depends: base, uvector
+    Build-Depends: base >= 3 && < 5, uvector >= 0.1.0.4
 
     Exposed-Modules:
-        Data.Array.Vector.Algorithms.Immutable
+        Data.Array.Vector.Algorithms.Combinators
         Data.Array.Vector.Algorithms.Optimal
         Data.Array.Vector.Algorithms.Insertion
         Data.Array.Vector.Algorithms.Intro
@@ -36,5 +36,4 @@ Library
 
     GHC-Options:
         -O2
-        -fvia-C -optc-O3
         -funbox-strict-fields
