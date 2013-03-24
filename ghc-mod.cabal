@@ -1,5 +1,5 @@
 Name:                   ghc-mod
-Version:                1.11.1
+Version:                1.11.2
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -28,6 +28,7 @@ Data-Files:             Makefile ghc.el ghc-func.el ghc-doc.el ghc-comp.el
 Executable ghc-mod
   Main-Is:              GHCMod.hs
   Other-Modules:        Browse
+                        CabalApi
                         Cabal
                         CabalDev
                         Check
@@ -44,7 +45,8 @@ Executable ghc-mod
                         Types
   GHC-Options:          -Wall
   Build-Depends:        base >= 4.0 && < 5
-                      , Cabal
+                      , Cabal >= 1.10
+                      , containers
                       , convertible
                       , directory
                       , filepath
