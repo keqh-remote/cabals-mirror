@@ -1,5 +1,5 @@
 Name:                      bindings-parport
-Version:                   0.0.1
+Version:                   0.0.2
 Cabal-version:             >= 1.2.3
 Synopsis:                  parport bindings
 License:                   BSD3
@@ -13,11 +13,6 @@ Library
   HS-Source-Dirs:          src
   GHC-Options:             -Wall
   Extensions:              ForeignFunctionInterface
-                           FunctionalDependencies,
-                           MultiParamTypeClasses,
-                           DeriveDataTypeable,
-                           StandaloneDeriving,
-                           TypeSynonymInstances
   Build-Depends:           base >= 3 && < 5,
                            bindings-DSL >= 1.0
   Exposed-Modules:         Bindings.Parport
