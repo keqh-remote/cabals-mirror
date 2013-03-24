@@ -1,5 +1,5 @@
 Name:                vty
-Version:             3.1.0
+Version:             3.1.2
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear
@@ -30,10 +30,11 @@ Extra-Source-Files:  test/Test.hs, cbits/gwinsz.h, test/Bench.hs
 
 Exposed-Modules:     Graphics.Vty
 C-Sources:           cbits/gwinsz.c
+                     cbits/set_term_timing.c
 Include-Dirs:        cbits
 Install-Includes:    gwinsz.h
 Other-Modules:       Graphics.Vty.Types, Graphics.Vty.Cursor, Graphics.Vty.LLInput
 
-ghc-options:         -funbox-strict-fields -Wall
-ghc-prof-options:    -funbox-strict-fields -auto-all -Wall
+ghc-options:         -funbox-strict-fields -Wall -threaded
+ghc-prof-options:    -funbox-strict-fields -auto-all -Wall -threaded
 
