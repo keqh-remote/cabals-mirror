@@ -1,5 +1,5 @@
 Name:           haskore-supercollider
-Version:        0.1.2
+Version:        0.1.2.1
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -26,7 +26,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/haskore/revised/supercollider/
-  tag:      0.1.2
+  tag:      0.1.2.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -40,8 +40,8 @@ Library
     haskore-realtime >= 0.1 && < 0.2,
     haskore >=0.1 && <0.3,
     -- for SuperCollider support
-    hosc >=0.6 && <0.7,
-    hsc3 >=0.6 && <0.7,
+    hosc >=0.8 && <0.9,
+    hsc3 >=0.8 && <0.9,
     opensoundcontrol-ht >=0.1 && <0.2,
     supercollider-ht >=0.1 && <0.2,
     bytestring >=0.9 && <1.0,
