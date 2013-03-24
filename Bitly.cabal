@@ -1,5 +1,5 @@
 Name:          Bitly
-Version:       0.0.7
+Version:       0.0.8
 Cabal-version: >= 1.2
 Build-type:    Simple
 
@@ -15,7 +15,7 @@ Description:
   shortening service from Haskell. Currently it supports
   shorten and expand requests.
   .
-  API key is required. Please find yours at <http://bit.ly/account/>.
+  API key is required. Please find yours at <https://bitly.com/a/account>.
   .
   Configuration file (`~/.bitly`) format:
   .
