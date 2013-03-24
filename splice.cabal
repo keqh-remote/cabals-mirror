@@ -1,5 +1,5 @@
 name:          splice
-version:       0.1
+version:       0.2
 stability:     stable on Linux, experimental on other operating systems
 synopsis:      Socket to Socket Data Splicing
 description:   A library that implements efficient socket to socket
@@ -15,8 +15,13 @@ description:   A library that implements efficient socket to socket
                lots of tiny allocations as would otherwise be caused by
                recv and sendAll functions from Network.Socket.ByteString.
                .
-               This work has been funded by Corsis Research and is used
-               in PortFusion: <http://portfusion.sf.net>
+               This work is funded by Corsis Research and used in:
+               .
+               PortFusion ]-[ayabusa – German
+               research project for building the simplest
+               high-performance distributed reverse / forward proxy.
+               .
+               <https://sourceforge.net/p/portfusion/wiki/RoadMap/>
 license:       BSD3
 license-file:  LICENSE
 author:        Cetin Sert <fusion@corsis.eu>
