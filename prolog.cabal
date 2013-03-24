@@ -1,18 +1,14 @@
 Name:                prolog
-Version:             0.1
+Version:             0.2.0.1
 Synopsis:            A Prolog interpreter written in Haskell.
 Description:         A Prolog interpreter written in Haskell.
 License:             PublicDomain
 Author:              Matthias Bartsch
-Maintainer:          bartsch@cs.uni-bonn.de
+Maintainer:          none
 Homepage:            https://github.com/Erdwolf/prolog
 Category:            Language
 Build-type:          Simple
 Cabal-version:       >=1.6
-
-Source-repository head
-   type: git
-   location: git://github.com/Erdwolf/prolog.git
 
 Library
   Exposed-modules: Language.Prolog
