@@ -1,5 +1,5 @@
 Name:                c0parser
-Version:             0.1
+Version:             0.1.0.1
 Synopsis:            Simple C0 Parser
 Description:         The package contains a parser for C0 programs.
 	             The C0-language is introduced in the basic programming course \"Algorithmisches Denken und imperative Programmierung\" (WS 2011/12 and later) at the University of Bonn.
