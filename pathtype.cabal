@@ -1,5 +1,5 @@
 Name:                pathtype
-Version:             0.5.2
+Version:             0.5.3
 Synopsis:            Type-safe replacement for System.FilePath etc
 Description:         This package provides type-safe access to filepath manipulations.
 		     .
@@ -78,7 +78,7 @@ Stability:           experimental
 License:             BSD3
 Category:            System
 License-file:        LICENSE
-Author:              Ben Moseley
+Author:              Ben Moseley, Ben Millwood
 Maintainer:          ben@moseley.name
 HomePage:            http://code.haskell.org/pathtype
 Build-Type:          Simple
@@ -89,8 +89,18 @@ source-repository head
   type:     darcs
   location: http://code.haskell.org/pathtype
 
+flag old-time
+  description: Build with directory < 1.2 and old-time
+  default:     True
+
 Library
-  Build-Depends:     base >= 4 && < 5, directory >= 1 && < 2, old-time >= 1.0 && < 2, QuickCheck >= 2.1.0.1 && < 3
+  Build-Depends:     base >= 4 && < 5, time >= 1.0 && < 2, QuickCheck >= 2.1.0.1 && < 3
+
+  if flag(old-time)
+    Build-Depends: directory >= 1 && < 1.2, old-time >= 1.0 && < 2
+  else
+    Build-Depends: directory >= 1.2 && < 2
+
   Exposed-modules:
     System.Path, System.Path.Directory, System.Path.IO, System.Path.Posix, System.Path.Windows
   Extensions:        EmptyDataDecls, PatternGuards, FlexibleInstances, Rank2Types, OverloadedStrings, CPP
