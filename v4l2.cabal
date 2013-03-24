@@ -1,5 +1,5 @@
 Name:                v4l2
-Version:             0.1
+Version:             0.1.0.2
 Synopsis:            interface to Video For Linux Two (V4L2)
 Description:
   Higher-level interface to V4L2.
@@ -9,7 +9,7 @@ Homepage:            https://gitorious.org/hsv4l2
 License:             BSD3
 License-file:        LICENSE
 Author:              Claude Heiland-Allen
-Maintainer:          claudiusmaximus@goto10.org
+Maintainer:          claude@mathr.co.uk
 Category:            Graphics
 
 Build-type:          Simple
@@ -61,4 +61,4 @@ source-repository head
 source-repository this
   type:     git
   location: git://gitorious.org/hsv4l2/v4l2.git
-  tag:      v0.1
+  tag:      v0.1.0.2
