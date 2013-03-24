@@ -1,5 +1,5 @@
 Name:                TypeCompose
-Version:             0.5.1
+Version:             0.6.0
 Synopsis: 	     Type composition classes & instances
 Category:            Composition, Control
 Description:
@@ -27,7 +27,7 @@ Exposed-Modules:
                      Data.Bijection
                      Data.CxMonoid
                      Data.RefMonad
-                     Data.Pair
+                     Data.Zip
                      Data.Lambda
                      Data.Title
 		     Data.Partial
