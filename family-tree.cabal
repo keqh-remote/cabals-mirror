@@ -1,5 +1,5 @@
 name:           family-tree
-version:        0.1.2
+version:        0.2
 cabal-version:  >= 1.2
 build-type:     Simple
 author:         Nathan "Taneb" van Doorn
