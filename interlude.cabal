@@ -1,5 +1,5 @@
 Name:         interlude
-Version:      0.1
+Version:      0.1.1
 License:      GPL
 License-File: LICENSE
 
@@ -22,3 +22,5 @@ ghc-options:      -Wall
 Include-Dirs:     .
 Install-Includes: interlude.h
 Exposed-Modules:  Interlude
+Extra-Source-Files: Example.hs
+Data-Files:         README
