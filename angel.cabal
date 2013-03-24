@@ -7,7 +7,7 @@ Name:                angel
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3.3
+Version:             0.3.4
 
 -- A short (one-line) description of the package.
 -- Synopsis:            
@@ -54,7 +54,7 @@ Build-type:          Simple
 -- Extra-source-files:  
 
 -- Constraint on the version of Cabal needed to build this package.
-Cabal-version:       >=1.6
+Cabal-version:       >=1.10
 
 
 source-repository head
@@ -75,7 +75,7 @@ Executable angel
   Build-depends: containers >= 0.3
   Build-depends: unordered-containers >= 0.1.4
   Build-depends: unix >= 2.4
-  Build-depends: old-time
+  Build-depends: time
   Build-depends: old-locale
   Build-depends: text>=0.11
 
@@ -92,6 +92,17 @@ Executable angel
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
 
-  Extensions: OverloadedStrings,ScopedTypeVariables,BangPatterns,ViewPatterns
+  Default-Extensions: OverloadedStrings,ScopedTypeVariables,BangPatterns,ViewPatterns
+  Default-Language: Haskell2010
   
   Ghc-Options: -threaded 
+
+test-suite spec
+  Type:           exitcode-stdio-1.0
+  Main-Is:        Spec.hs
+  Hs-Source-Dirs: ., test
+  Build-Depends:  base
+  Build-Depends:  hspec
+  Build-depends:  time
+  Default-Extensions: OverloadedStrings,ScopedTypeVariables,BangPatterns,ViewPatterns
+  Default-Language: Haskell2010
