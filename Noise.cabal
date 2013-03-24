@@ -1,5 +1,5 @@
 Name:          Noise
-Version:       1.0.4
+Version:       1.0.5
 Category:      Math, Graphics, Noise
 Synopsis:      A Haskell coherent noise generator based on libnoise
 Description:   
@@ -11,12 +11,14 @@ Description:
   The main objective of this packer is to provide a simple interface 
   to compose noise modules.
   .
+  > 
+  > perlinWithScale = perlin `isSourceOf` scalebias 
+  >
+  .
   This is a 3D noise package, to get a value you need to specify a
   triple:
   .
   > getValue myComposition (-0.1, -0.5, 0.76)
-  > 
-  > myPerlin = perlin `isSourceOf` scalebias 
   .
   For more information please read the documentation of each module 
   bellow.
@@ -32,6 +34,9 @@ Extra-source-files:
   Math/Noise/common.h
   Math/Noise/noisegen.h
   Math/Noise/Modules/perlin.h
+source-repository head                                                             
+  type:     git                                                                    
+  location: git://github.com/HugoDaniel/Noise.git
 
 library
   build-depends:
