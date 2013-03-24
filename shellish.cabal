@@ -3,7 +3,7 @@ Name:                shellish
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.1.1
 
 Synopsis:    shell-/perl- like (systems) programming in Haskell
 
@@ -34,7 +34,8 @@ Library
   -- Modules exported by the library.
   Exposed-modules:     Shellish
 
-  Build-depends: mtl, process, filepath, bytestring, base >= 4 && < 5, time, directory, strict
+  Build-depends: mtl, process, filepath, bytestring, base >= 4 && < 5, time, directory, strict,
+                 unix-compat
 
 source-repository head
   type:     darcs
