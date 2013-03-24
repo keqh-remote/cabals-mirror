@@ -1,5 +1,5 @@
 Name:           synthesizer-dimensional
-Version:        0.5
+Version:        0.5.1
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -28,7 +28,7 @@ Flag buildExamples
 
 
 Source-Repository this
-  Tag:         0.5
+  Tag:         0.5.1
   Type:        darcs
   Location:    http://code.haskell.org/synthesizer/dimensional/
 
@@ -43,18 +43,13 @@ Library
     event-list >=0.1 && <0.2,
     non-negative >=0.1 && <0.2,
     numeric-prelude >=0.2 && <0.3,
-    utility-ht >=0.0.5 && <0.1,
     storable-record >=0.0.1 && <0.1,
     sox >=0.2 && <0.3,
     storablevector >=0.2.3 && <0.3,
-    binary >=0.1 && <1,
-    bytestring >= 0.9 && <0.10
-
-  Build-Depends:
-    base >= 4 && <5,
+    bytestring >= 0.9 && <0.10,
     random >=1.0 && <2.0,
-    old-time >=1.0 && <2,
-    process >=1.0 && <1.1
+    utility-ht >=0.0.5 && <0.1,
+    base >= 4 && <5
 
   GHC-Options:    -Wall
   Hs-source-dirs: src
@@ -76,6 +71,7 @@ Library
     Synthesizer.Dimensional.Amplitude.Control
     Synthesizer.Dimensional.Amplitude.Displacement
     Synthesizer.Dimensional.Amplitude.Filter
+    Synthesizer.Dimensional.Causal.Analysis
     Synthesizer.Dimensional.Causal.ControlledProcess
     Synthesizer.Dimensional.Causal.Displacement
     Synthesizer.Dimensional.Causal.Filter
@@ -106,7 +102,7 @@ Library
     Synthesizer.Dimensional.Wave.Controlled
 
 --  Other-Modules:
--- we need this in synthesizer-alsa for implementation of low-level functions
+-- we need this in synthesizer-alsa and noisegenerator for implementation of low-level functions
     Synthesizer.Dimensional.Signal.Private
 --    Synthesizer.Dimensional.Utility
 
@@ -121,8 +117,13 @@ Executable rain
   Main-Is: Synthesizer/Dimensional/RateAmplitude/Rain.hs
 
 Executable demonstration
-  If !flag(buildExamples)
+  If flag(buildExamples)
+    Build-Depends:
+      explicit-exception >=0.1.6 && <0.2,
+      old-time >=1.0 && <2
+  Else
     Buildable: False
+
   GHC-Options: -Wall -fexcess-precision
   If flag(optimizeAdvanced)
     GHC-Options: -O2 -fvia-C -optc-O2
