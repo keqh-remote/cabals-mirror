@@ -1,5 +1,5 @@
 name:             wumpus-drawing
-version:          0.6.0
+version:          0.7.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -38,9 +38,24 @@ description:
   .
   Changelog:
   .
+  v0.6.0 to v0.7.0
+  .
+  * Changed paths - @RelPath@ has been removed and there are now 
+    only absolute paths. @PathBuilder@ builds absolute paths.
+    Pen updating in @PathBuilder@ now works like a State monad 
+    rather than @local@ in a Reader monad.
+  .
+  * Changed argument order of the run functions to @monadLib@ 
+    style (params * monadic action) rather than @MTL@ style 
+    (monadic action * params).
+  .
+  * Added Symbols to Drawing.Basis.
+  .
+  * Added a tube box connector.
+  .
   v0.5.0 to v0.6.0
   .
-  * Removed @LocTRace@ and @RefTrace@ from @Wumpus.Drawing.Basis@,
+  * Removed @LocTrace@ and @RefTrace@ from @Wumpus.Drawing.Basis@,
     they are superseded by @LocDrawing@ in Wumpus-Basic.
   . 
   * Remaned path building operations in @RelPathBuilder@.
@@ -75,12 +90,13 @@ library
   build-depends:      base            <  5, 
                       containers      >= 0.3     && <= 0.6,
                       vector-space    >= 0.6     && <  1.0,
-                      wumpus-core     >= 0.51.0  && <  0.52.0,
-                      wumpus-basic    == 0.21.0
+                      wumpus-core     >= 0.52.0  && <  0.53.0,
+                      wumpus-basic    == 0.22.0
 
   
   exposed-modules:
     Wumpus.Drawing.Basis.DrawingPrimitives,
+    Wumpus.Drawing.Basis.Symbols,
     Wumpus.Drawing.Colour.SVGColours,
     Wumpus.Drawing.Colour.X11Colours,
     Wumpus.Drawing.Connectors,
@@ -88,17 +104,16 @@ library
     Wumpus.Drawing.Connectors.Base,
     Wumpus.Drawing.Connectors.BoxConnectors,
     Wumpus.Drawing.Connectors.ConnectorPaths,
+    Wumpus.Drawing.Connectors.ConnectorProps,
     Wumpus.Drawing.Dots.AnchorDots,
     Wumpus.Drawing.Dots.SimpleDots,
     Wumpus.Drawing.Extras.Axes,
     Wumpus.Drawing.Extras.Clip,
     Wumpus.Drawing.Extras.Grids,
     Wumpus.Drawing.Extras.Loop,
-    Wumpus.Drawing.Paths.Absolute,
-    Wumpus.Drawing.Paths.Base.AbsPath,
-    Wumpus.Drawing.Paths.Base.PathBuilder,
-    Wumpus.Drawing.Paths.Base.RelPath,
-    Wumpus.Drawing.Paths.Relative,
+    Wumpus.Drawing.Paths,
+    Wumpus.Drawing.Paths.Base,
+    Wumpus.Drawing.Paths.PathBuilder,
     Wumpus.Drawing.Paths.Vamps,
     Wumpus.Drawing.Shapes,
     Wumpus.Drawing.Shapes.Base,
@@ -117,6 +132,7 @@ library
     Wumpus.Drawing.Text.Base.DocTextZero,
     Wumpus.Drawing.Text.Base.Label,
     Wumpus.Drawing.Text.DirectionZero,
+    Wumpus.Drawing.Text.DocSymbols,
     Wumpus.Drawing.Text.StandardFontDefs,
     Wumpus.Drawing.VersionNumber
 
