@@ -1,5 +1,5 @@
 name:           network
-version:        2.3.1.1
+version:        2.4.1.0
 license:        BSD3
 license-file:   LICENSE
 maintainer:     Johan Tibell <johan.tibell@gmail.com>
@@ -18,7 +18,7 @@ extra-source-files:
   -- C sources only used on some systems
   cbits/ancilData.c cbits/asyncAccept.c cbits/initWinSock.c
   cbits/winSockErr.c
-homepage:       http://github.com/haskell/network
+homepage:       https://github.com/haskell/network
 bug-reports:    https://github.com/haskell/network/issues
 
 library
@@ -32,6 +32,7 @@ library
     Network.URI
   other-modules:
     Network.Socket.ByteString.Internal
+    Network.Socket.Types
 
   if !os(windows)
     other-modules:
@@ -41,7 +42,7 @@ library
   build-depends:
     base >= 3 && < 5,
     bytestring,
-    parsec >= 2.0
+    parsec >= 3.0
 
   if !os(windows)
     build-depends:
