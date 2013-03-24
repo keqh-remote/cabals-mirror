@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.1.3.4
+Version:        0.2
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -71,7 +71,30 @@ Description:
   Kowalczyk, Ketil Malde, Tom Schrijvers, Ken Shan, and Henning
   Thielemann for helpful comments.
   .
+  .
+  Usage:
+  .
+  Write modules in the following style:
+  .
+  > [-# NoImplicitPrelude #-]
+  > module MyModule where
+  >
+  > ... various specific imports ...
+  >
+  > import NumericPrelude
+  .
+  Importing @NumericPrelude@ is almost the same as
+  .
+  > import NumericPrelude.Numeric
+  > import NumericPrelude.Base   .
+  .
+  Instead of the @NoImplicitPrelude@ pragma
+  you could also write @import Prelude ()@
+  but this will yield problems with numeric literals.
+  .
+  .
   Scope & Limitations\/TODO:
+  .
   * It might be desireable to split Ord up into Poset and Ord
     (a total ordering).
     This is not addressed here.
@@ -97,16 +120,13 @@ Description:
   * I stuck with the Haskell 98 names.
     In some cases I find them lacking.
     Neglecting backwards compatibility, we have renamed classes as follows:
-      Num           --> Ring,
-      Fractional    --> Field,
-      Floating      --> Algebraic + Transcendental,
-      RealFloat     --> RealTranscendental,
-  .
-  * It's slightly unfortunate that 'abs' can no longer be used for complex numbers,
-    since it is standard mathematically.
-    'magnitude' or more generally 'Algebra.NormedSpace.Euclidean.norm' can be used.
-    But it had the wrong type before,
-    and I couldn't see how to fit it in without complicating the hierarchy.
+      Num           --> Additive, Ring, Absolute
+      Integral      --> ToInteger, IntegralDomain, RealIntegral
+      Fractional    --> Field
+      Floating      --> Algebraic, Transcendental
+      Real          --> ToRational
+      RealFrac      --> RealRing, RealField
+      RealFloat     --> RealTranscendental
   .
   .
   Additional standard libraries might include Enum, IEEEFloat (including
@@ -130,7 +150,7 @@ Flag buildTests
   default:     False
 
 Source-Repository this
-  Tag:         0.1.3.4
+  Tag:         0.2
   Type:        darcs
   Location:    http://code.haskell.org/numeric-prelude/
 
@@ -143,7 +163,7 @@ Library
     parsec >=1 && <4,
     QuickCheck >=1 && <3,
     storable-record >=0.0.1 && <0.1,
-    non-negative >=0.0.2 && <0.1,
+    non-negative >=0.0.5 && <0.2,
     utility-ht >=0.0.4 && <0.1
   If flag(splitBase)
     Build-Depends:
@@ -157,6 +177,7 @@ Library
   GHC-Options:    -Wall
   Hs-source-dirs: src
   Exposed-modules:
+    Algebra.Absolute
     Algebra.Additive
     Algebra.Algebraic
     Algebra.Differential
@@ -176,9 +197,9 @@ Library
     Algebra.NormedSpace.Sum
     Algebra.OccasionallyScalar
     Algebra.PrincipalIdealDomain
-    Algebra.Real
     Algebra.RealField
     Algebra.RealIntegral
+    Algebra.RealRing
     Algebra.RealTranscendental
     Algebra.RightModule
     Algebra.Ring
@@ -200,14 +221,17 @@ Library
     MathObj.Permutation.CycleList.Check
     MathObj.Permutation.Table
     MathObj.Polynomial
+    MathObj.Polynomial.Core
     MathObj.PowerSeries
+    MathObj.PowerSeries.Core
     MathObj.PowerSeries.DifferentialEquation
     MathObj.PowerSeries.Example
     MathObj.PowerSeries.Mean
     MathObj.PowerSeries2
+    MathObj.PowerSeries2.Core
     MathObj.PowerSum
+    MathObj.RefinementMask2
     MathObj.RootSet
-    MyPrelude
     Number.Complex
     Number.DimensionTerm
     Number.DimensionTerm.SI
@@ -235,15 +259,22 @@ Library
     Number.Physical
     Number.Physical.Read
     Number.Physical.Show
+    NumericPrelude.List.Checked
+    NumericPrelude.List.Generic
     NumericPrelude.Elementwise
+    NumericPrelude.Numeric
+    NumericPrelude.Base
     NumericPrelude
-    PreludeBase
   Other-modules:
     NumericPrelude.List
     Algebra.AffineSpace
     MathObj.Gaussian.Variance
     MathObj.Gaussian.Bell
     MathObj.Gaussian.Polynomial
+    -- I think I won't add them this way.
+    -- It is certainly better to split the class into comparison and selection.
+    Algebra.EqualityDecision
+    Algebra.OrderDecision
 
 Executable test
   Hs-Source-Dirs: src, test
@@ -257,6 +288,7 @@ Executable testsuite
   Other-modules:
     Test.NumericPrelude.Utility
     Test.Number.GaloisField2p32m5
+    Test.MathObj.RefinementMask2
     Test.MathObj.PartialFraction
     Test.MathObj.Matrix
     Test.MathObj.Polynomial
@@ -277,7 +309,7 @@ Executable test-gaussian
     MathObj.Gaussian.Example
   If flag(buildTests)
     Build-Depends:
-      gnuplot >=0.3 && <0.4,
+      gnuplot >=0.3 && <0.5,
       HTam >=0.0.2 && <0.1
   Else
     Buildable: False
