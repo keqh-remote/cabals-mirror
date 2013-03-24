@@ -1,5 +1,5 @@
 Name:          LibZip
-Version:       0.2.0.3
+Version:       0.2.0.4
 License:       BSD3
 License-File:  LICENSE
 Author:        Sergey Astanin
@@ -15,7 +15,7 @@ Description:
 
 Build-Type:     Simple
 Cabal-Version:  >= 1.2.3
-Tested-With:    GHC == 6.12.1, GHC == 7.0.1, GHC == 7.2.1
+Tested-With:    GHC == 7.0.1, GHC == 7.2.1, GHC == 7.4.1
 
 Extra-Source-Files:
     examples/legacyUnzip.hs, examples/hzip.hs
@@ -30,7 +30,7 @@ Library
   Other-Modules:
       Codec.Archive.LibZip.Errors
   Build-Depends:
-      base >= 4.0 && < 4.5
+      base >= 4.0 && < 4.6
     , bindings-libzip >= 0.1 && < 0.2
     , bytestring
     , filepath
