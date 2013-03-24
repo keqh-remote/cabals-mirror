@@ -1,7 +1,9 @@
 Name:                asn1-data
-Version:             0.3.0
+Version:             0.4.0
 Description:
-    ASN1 data reader and writer in raw form with supports for high level forms of ASN1 (BER, CER and DER)
+    ASN1 data reader and writer in raw form with supports for high level forms of ASN1 (BER, CER and DER).
+    .
+    All interfaces use the enumerator interface.
 License:             BSD3
 License-file:        LICENSE
 Copyright:           Vincent Hanquez <vincent@snarc.org>
@@ -22,14 +24,18 @@ Flag test
 
 Library
   Build-Depends:     base >= 3 && < 7,
-                     binary >= 0.5,
                      bytestring,
                      text >= 0.11,
+                     enumerator >= 0.4 && < 0.5,
+                     attoparsec >= 0.8 && < 0.9,
+                     attoparsec-enumerator >= 0.2 && < 0.3,
                      mtl
   Exposed-modules:   Data.ASN1.BER
                      Data.ASN1.CER
                      Data.ASN1.DER
                      Data.ASN1.Raw
+                     Data.ASN1.Types
+                     Data.ASN1.Stream
   other-modules:     Data.ASN1.Prim
                      Data.ASN1.Internal
   ghc-options:       -Wall
