@@ -1,5 +1,5 @@
 name:          concurrent-extra
-version:       0.1.0.1
+version:       0.2
 cabal-version: >= 1.6
 build-type:    Custom
 stability:     experimental
@@ -13,30 +13,45 @@ license-file:  LICENSE
 category:      Concurrency
 synopsis:      Extra concurrency primitives
 description:
-  Offers a selection of synchronization primitives:
+  The @concurrent-extra@ package offers among other things the
+  following selection of synchronisation primitives:
   .
-  * Lock: Enforce exclusive access to a resource. Also known as a
-    binary semaphore.
+  * @Lock@: Enforce exclusive access to a resource. Also known as a
+    binary semaphore or mutex.
   .
-  * RLock: A lock which can be acquired multiple times by the same
+  * @RLock@: A lock which can be acquired multiple times by the same
     thread. Also known as a reentrant mutex.
   .
-  * Event: Wake multiple threads by signaling an event.
+  * @Broadcast@: Wake multiple threads by broadcasting a value.
   .
-  * ReadWriteLock: Multiple-reader, single-writer locks. Used to
+  * @Event@: Wake multiple threads by signalling an event.
+  .
+  * @ReadWriteLock@: Multiple-reader, single-writer locks. Used to
     protect shared resources which may be concurrently read, but only
     sequentially written.
   .
-  * ReadWriteVar: Concurrent read, sequential write variables.
+  * @ReadWriteVar@: Concurrent read, sequential write variables.
+  .
+  The package also provides @STM@ versions of @Broadcast@ and @Event@.
+  .
+  Besides these synchronisation primitives the package provides:
+  .
+  * @Thread@: Threads extended with the ability to wait for their
+    termination.
+  .
+  * @delay@: Arbitrarily long thread delays.
+  .
+  * @timeout@: Wait arbitrarily long for an IO computation to finish.
   .
   Please consult the API documentation of the individual modules for
   more detailed information.
   .
-  Inspired by the concurrency libraries of Java and Python.
+  This package was inspired by the concurrency libraries of Java and
+  Python.
 
---source-repository head
---  Type: darcs
---  Location: http://code.haskell.org/concurrent-extra
+source-repository head
+  Type: darcs
+  Location: http://code.haskell.org/concurrent-extra
 
 -------------------------------------------------------------------------------
 
@@ -61,9 +76,15 @@ library
   exposed-modules: Control.Concurrent.Lock
                  , Control.Concurrent.RLock
                  , Control.Concurrent.Event
+                 , Control.Concurrent.Broadcast
                  , Control.Concurrent.ReadWriteLock
                  , Control.Concurrent.ReadWriteVar
+                 , Control.Concurrent.Thread
+                 , Control.Concurrent.Thread.Delay
                  , Control.Concurrent.STM.Event
+                 , Control.Concurrent.STM.Broadcast
+                 , Control.Concurrent.Timeout
+  other-modules: Utils
   ghc-options: -Wall
 
   if flag(nolib)
@@ -73,6 +94,18 @@ library
 
 executable test-concurrent-extra
   main-is: test.hs
+  other-modules: Control.Concurrent.Event.Test
+               , Control.Concurrent.Lock.Test
+               , Control.Concurrent.RLock.Test
+               , Control.Concurrent.Broadcast.Test
+               , Control.Concurrent.ReadWriteLock.Test
+               , Control.Concurrent.ReadWriteVar.Test
+               , Control.Concurrent.Thread.Test
+               , Control.Concurrent.STM.Event.Test
+               , Control.Concurrent.STM.Broadcast.Test
+               , Control.Concurrent.Timeout.Test
+               , TestUtils
+
   ghc-options: -Wall
 
   if flag(test)
