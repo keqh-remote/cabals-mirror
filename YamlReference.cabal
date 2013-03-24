@@ -1,5 +1,5 @@
 Name:            YamlReference
-Version:         0.1
+Version:         0.2
 License:         LGPL
 License-File:    lgpl.txt
 Copyright:       Oren Ben-Kiki 2007
@@ -7,7 +7,8 @@ Author:          Oren Ben-Kiki
 Maintainer:      yaml-oren@ben-kiki.org
 Stability:       alpha
 Homepage:        www.ben-kiki.org/oren/YamlReference
-Package-Url:     www.ben-kiki.org/oren/YamlReference/YamlReference-0.1.tar.gz
+Package-Url:     www.ben-kiki.org/oren/YamlReference/YamlReference-0.2.tar.gz
+Category:        Text
 Synopsis:        YAML reference implementation
 Description:     This package contains \"the\" reference YAML syntax parser
                  ("Text.Yaml.Reference"), generated directly from the YAML
@@ -19,7 +20,7 @@ Description:     This package contains \"the\" reference YAML syntax parser
                  interesting tools on top of it, such as the @yeast2html@ YAML
                  syntax visualizer (contained in this package), pretty
                  printers, etc. This is a streaming parser that will
-                 \"immediately\" begin to generate output, but it has a memoy
+                 \"immediately\" begin to generate output, but it has a memory
                  leak (actually, retention) problem that prevents it from being
                  applied to \"large\" files. To debug this with minimal syntax
                  productions use @yes "#" | yaml2yeast -p debug-leak@.
