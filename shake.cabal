@@ -1,14 +1,14 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               shake
-version:            0.2.3
+version:            0.2.4
 license:            BSD3
 license-file:       LICENSE
 category:           Development
 author:             Neil Mitchell <ndmitchell@gmail.com>
 maintainer:         Neil Mitchell <ndmitchell@gmail.com>
-copyright:          Neil Mitchell 2011
-synopsis:           Build system library, like Make, but properly supports generated files.
+copyright:          Neil Mitchell 2011-2012
+synopsis:           Build system library, like Make, but more accurate dependencies.
 description:
     Shake is a Haskell library for writing build systems - designed as a
     replacement for make. To use Shake the user writes a Haskell program
@@ -23,26 +23,28 @@ description:
     build systems, including automatic parallelism and minimal rebuilds.
     Shake provides highly accurate dependency tracking, including seamless
     support for generated files, and dependencies on system information
-    (i.e. compiler version). Shake will eventually be able to produce profile reports, indicating
+    (i.e. compiler version). Shake can produce profile reports, indicating
     which files and take longest to build, and providing an analysis of the
     parallelism.
     .
     The theory behind an old version of Shake is described in a video at
     <http://vimeo.com/15465133>, and an example is given at the top of
-    "Development.Shake". Some further examples are included in the Cabal tarball,
+    "Development.Shake". Further examples are included in the Cabal tarball,
     under the @Examples@ directory.
 homepage:           http://community.haskell.org/~ndm/shake/
 stability:          Beta
 extra-source-files:
+    Examples/C/constants.c
+    Examples/C/constants.h
+    Examples/C/main.c
     Examples/Tar/list.txt
-
 
 source-repository head
     type:     darcs
     location: http://community.haskell.org/~ndm/darcs/shake/
 
 flag testprog
-    default: True
+    default: False
     description: Build the test program
 
 library
