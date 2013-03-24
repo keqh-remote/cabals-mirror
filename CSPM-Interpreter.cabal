@@ -1,5 +1,5 @@
 Name:                CSPM-Interpreter
-Version:             0.4.4.1
+Version:             0.5.1.0
 
 Synopsis:            An interpreter for CSPM
 Description:
@@ -15,17 +15,16 @@ category:            Language,Formal Methods,Concurrency
 License-File:        LICENSE
 Author:              2010 - 2011 Marc Fontaine
 Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
-Homepage:            http://www.stups.uni-duesseldorf.de/~fontaine/csp
 Stability:           experimental
-Tested-With:         GHC == 7.0.2
+Tested-With:         GHC == 7.0.3
 
 cabal-Version:       >= 1.10
 build-type: Simple
 Extra-source-files:
 Library
   Build-Depends:
-    CSPM-Frontend >= 0.6 && < 0.7
-    ,CSPM-CoreLanguage >= 0.2 && < 0.3
+    CSPM-Frontend >= 0.7 && < 0.8
+    ,CSPM-CoreLanguage >= 0.3 && < 0.4
     ,base >= 4.0 && < 5.0
     ,containers >= 0.4 && < 0.5
     ,mtl (>= 2.0 && < 2.1 ) || (>= 1.1 && < 1.2)
@@ -55,3 +54,4 @@ Library
     CSPM.Interpreter.SSet
     Data.Digest.Pure.MD5
     Data.Digest.Pure.HashMD5
+    Paths_CSPM_Interpreter
