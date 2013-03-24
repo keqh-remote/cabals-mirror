@@ -1,6 +1,6 @@
 name:           monad-param
 category:	Control
-version:        0.0.1
+version:        0.0.2
 synopsis:       Parameterized monads
 description:	Implements parameterized monads by overloading the monad sugar with more liberal types.
 stability:      alpha
