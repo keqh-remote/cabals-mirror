@@ -1,5 +1,5 @@
 Name:                 hack2-handler-mongrel2-http
-Version:              2011.6.24
+Version:              2011.6.25
 Build-type:           Simple
 Synopsis:             Hack2 Mongrel2 HTTP handler
 Description:          Hack2 Mongrel2 HTTP handler
@@ -24,8 +24,6 @@ library
                     , containers
                     , mtl
                     , enumerator < 5
-                    , blaze-builder < 0.4
-                    , case-insensitive < 0.3
                     , air
                     , zeromq-haskell
                     , directory
@@ -33,6 +31,7 @@ library
                     , text
                     , aeson
                     , blaze-textual
+                    , blaze-builder < 0.4
                     , unix
                     , attoparsec
                     , stm
@@ -41,7 +40,7 @@ library
                     Hack2.Handler.Mongrel2HTTP
   other-modules:
                     Hack2.Handler.Mongrel2.IO
-                    Hack2.Handler.Mongrel2.ResponseParser
+                    Hack2.Handler.Mongrel2.MessageParser
                     Hack2.Handler.Mongrel2.Response
                     Hack2.Handler.Mongrel2.Types
                     
