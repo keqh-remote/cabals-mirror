@@ -1,5 +1,5 @@
 name:          PortFusion
-version:       1.2.0.1
+version:       1.2.1
 stability:     stable on all operating systems
 synopsis:      high-performance distributed reverse / forward proxy & tunneling for TCP
 description:   PortFusion is a minimalistic, cross-platform, transport-layer
@@ -44,7 +44,7 @@ package-url:   http://fusion.corsis.eu
 bug-reports:   http://github.com/corsis/PortFusion/issues
 category:      System, Network,
 build-type:    Simple
-cabal-version: >=1.6
+cabal-version: >= 1.6
 
 
 
@@ -57,20 +57,25 @@ extra-source-files: res/*.svg
                     res/win/*.res
 
 
-
 source-repository head
     type:      git
     location:  git://github.com/corsis/PortFusion.git
 
 
+
+flag threaded
+    description: use threaded runtime
+    default:     False
+
+
 flag static
-    description: enable fullly static linking
-    default    : False
+    description: enable fully static linking
+    default:     False
 
 
 flag llvm
     description: compile via LLVM
-    default    : False
+    default:     False
 
 
 
@@ -80,7 +85,7 @@ executable PortFusion
     buildable:       True
     build-depends:   base       >= 4 && <= 5,
                      bytestring -any,
-                     splice     -any
+                     splice     >= 0.6.1
     if os(windows)
       build-depends: network    >= 2.3.0.13
       if arch(i386)
@@ -91,9 +96,9 @@ executable PortFusion
       build-depends: network    -any
 
 
-    ghc-options:     -W -O2
+    ghc-options:     -O2 -Wall -fno-warn-name-shadowing -fno-warn-orphans
 
-    if !os(windows) && !arch(arm)
+    if flag(threaded) && !os(windows) && !arch(arm)
       ghc-options:   -threaded -rtsopts
 
     if flag(static)
