@@ -1,9 +1,10 @@
 name:		network
-version:	2.0
+version:	2.1.0.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
 synopsis:	Networking-related facilities
+build-type:     Configure
 exposed-modules:
 		Network Network.BSD Network.Socket Network.URI
 extra-source-files:
@@ -20,6 +21,7 @@ extra-tmp-files:
 build-depends:	base, parsec
 extensions:	CPP
 include-dirs: 	include
+includes:       HsNet.h
 install-includes:
 		HsNet.h HsNetworkConfig.h
 c-sources:	cbits/HsNet.c
