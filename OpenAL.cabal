@@ -1,8 +1,8 @@
 name:		OpenAL
-version:	1.4.0.1
+version:	1.4.0.2
 license:	BSD3
 license-file:	LICENSE
-maintainer:	Self-appointed maintainer wanted
+maintainer:	None
 homepage:	http://connect.creativelabs.com/openal/
 category:	Sound
 synopsis:	A binding to the OpenAL cross-platform 3D audio API
