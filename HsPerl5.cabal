@@ -1,5 +1,5 @@
 name:               HsPerl5
-version:            0.0.2
+version:            0.0.3
 copyright:          2008 Audrey Tang
 license:            BSD3
 license-file:       LICENSE
@@ -12,14 +12,20 @@ description:        This module provides a Haskell interface to embedded Perl 5 
                     Documentation and functionality is scarce at the moment; see test.hs for
                     some basic usage examples.
 
-                    Eventually the entirety of Pugs.Embed.Perl5 and Pugs.Run.Perl5 will be
+                    Currently supported features are:
+                        * Function calls
+                        * Method calls
+                        * Module imports
+                        * Callbacks
+
+                    Eventually, the entirety of Pugs.Embed.Perl5 and Pugs.Run.Perl5 will be
                     carried into this module.
 
 stability:          experimental
 build-type:         Simple
 extensions:         ForeignFunctionInterface, TypeSynonymInstances,
                     ScopedTypeVariables, FlexibleInstances,
-                    UndecidableInstances, OverlappingInstances
+                    UndecidableInstances, OverlappingInstances, IncoherentInstances
 exposed-modules:    Language.Perl5
 build-depends:      base
 extra-source-files: README test.hs configure
