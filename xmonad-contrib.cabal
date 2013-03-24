@@ -1,5 +1,5 @@
 name:               xmonad-contrib
-version:            0.8
+version:            0.8.1
 homepage:           http://xmonad.org/
 synopsis:           Third party extensions for xmonad
 description:
@@ -43,7 +43,7 @@ flag testing
 
 library
     if flag(small_base)
-        build-depends: base >= 3, containers, directory, process, random, old-time, old-locale
+        build-depends: base >= 3 && < 4, containers, directory, process, random, old-time, old-locale
     else
         build-depends: base < 3
 
@@ -57,11 +57,14 @@ library
         extensions: ForeignFunctionInterface
         cpp-options: -DUTF8
 
-    build-depends:      mtl, unix, X11>=1.4.1, xmonad>=0.8, xmonad<0.9
+    build-depends:      mtl, unix, X11>=1.4.3, xmonad>=0.8, xmonad<0.9
     ghc-options:        -Wall
 
     if flag(testing)
         ghc-options:    -Werror
+
+    if impl (ghc >= 6.10.1) && arch (x86_64)
+        ghc-options:    -O0
 
     exposed-modules:    XMonad.Doc
                         XMonad.Doc.Configuring
