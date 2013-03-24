@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.9.4
+Version:             0.9.5
 Synopsis:            A Happstack Tutorial that is its own web 2.0-type demo. 
 Description:         A nice way to learn how to build web sites with Happstack
 
@@ -54,7 +54,7 @@ Executable happs-tutorial
                      , mtl >= 1.1.0.0 && < 2.0.0.0 
                      , bytestring 
                      , happstack >= 0.5
-                     , containers >= 0.2.0.0 && < 0.3.0.0
+                     , containers >= 0.2.0.0 && < 0.4
                      , pretty >= 1.0.1.0 && < 2 
                      , pureMD5 >= 1.0.0.0 && < 1.1.0.0
                      , directory >= 1.0.0.0 && < 1.1.0.0
