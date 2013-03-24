@@ -1,5 +1,5 @@
 Name: timeplot
-Version: 0.1.6
+Version: 0.1.7
 License: BSD3
 License-file: LICENSE
 Copyright: Eugene Kirpichov, 2009
@@ -27,7 +27,7 @@ executable tplot
   else
     Build-Depends: base < 3
 
-  Build-Depends: Chart >= 0.12, cairo, bytestring, bytestring-lexing, strptime >= 0.1.4, time, 
+  Build-Depends: Chart >= 0.12, cairo, bytestring, bytestring-lexing, strptime >= 0.1.5, time, 
                  containers, colour, data-accessor == 0.2.*, data-accessor-template >= 0.2.1.1 && < 0.3, 
                  haskell98, regex-pcre
   Main-Is: Tools/TimePlot.hs
