@@ -1,5 +1,5 @@
 name: dataenc
-version: 0.12.1.0
+version: 0.13.0.0
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.2
@@ -10,13 +10,14 @@ homepage: http://www.haskell.org/haskellwiki/Library/Data_encoding
 copyright: Magnus Therning, 2007-2009
 category: Codec
 synopsis: Data encoding library
-description: Data encoding library currently providing Uuencode, Base64,
-        Base64Url, Base32, Base32Hex, Base16, Base85, and yEncoding.
+description: Data encoding library currently providing Base16, Base32,
+        Base32Hex, Base64, Base64Url, Base85, Python string escaping,
+        Quoted-Printable, URL encoding, uuencode, xxencode, and yEncoding.
 extra-source-files: DataencUT.hs DataencQC.hs Test.hs GNUmakefile
 
 library
         hs-source-dirs: src
-        build-depends: array >= 0.2.0 && < 0.3, base >= 4.0.0 && < 4.1, containers >= 0.2.0 && < 0.3
+        build-depends: array >= 0.2.0 && < 0.3, base >= 4.0.0 && < 4.2, containers >= 0.2.0 && < 0.3
         exposed-modules:
                 Codec.Binary.Base16
                 Codec.Binary.Base32
@@ -25,7 +26,6 @@ library
                 Codec.Binary.Base64Url
                 Codec.Binary.Base85
                 Codec.Binary.DataEncoding
-                Codec.Binary.Hexadecimal
                 Codec.Binary.PythonString
                 Codec.Binary.QuotedPrintable
                 Codec.Binary.Url
