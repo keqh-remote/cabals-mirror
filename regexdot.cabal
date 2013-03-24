@@ -1,13 +1,13 @@
 --Package-properties
 Name:			regexdot
-Version:		0.10.2.1
+Version:		0.10.2.2
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2010 Dr. Alistair Ward
 License:		GPL
 License-file:		LICENSE
 Author:			Dr. Alistair Ward
 Stability:		Unstable interface, incomplete features.
-Synopsis:		A /polymorphic/, POSIX, extended regular-expression engine.
+Synopsis:		A polymorphic, POSIX, extended regex-engine.
 Build-Type:		Simple
 Description:		Provides a portable, POSIX, extended regex-engine, designed to process a list of /arbitrary/ objects.
 Category:		Search, Regex
@@ -18,11 +18,11 @@ Bug-reports:		regexdot <at> functionalley <dot> eu
 Extra-Source-Files:	changelog, copyright, makefile
 
 flag haveDeepSeq
-    Description:	Use 'Control.DeepSeq' rather than the older module 'Control.Parallel.Strategies'.
+    Description:	Import the type-class 'NFData' from module 'Control.DeepSeq' rather than 'Control.Parallel.Strategies'.
     Default:		True
 
 flag llvm
-    Description:	Whether the 'llvm' backend has been installed and is required for code-generation.
+    Description:	Whether the 'llvm' compiler-backend has been installed and is required for code-generation.
     manual:		True
     default:		False
 
@@ -58,7 +58,7 @@ Library
     Build-depends:
         base == 4.*,
         parsec == 3.*,
-        toolshed == 0.11.*
+        toolshed >= 0.12
 
     GHC-options:	-Wall -O2
     GHC-prof-options:	-prof -auto-all -caf-all
@@ -71,7 +71,9 @@ Library
 
     if flag(threaded)
         Build-depends:	parallel >= 3.0
-        GHC-options:	-feager-blackholing
+
+        if impl(ghc >= 6.12)
+            GHC-options:	-feager-blackholing
     else
         Build-depends:	parallel
 
