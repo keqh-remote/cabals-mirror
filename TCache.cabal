@@ -1,5 +1,5 @@
 name:                TCache
-version:             0.8.0
+version:             0.8.0.1
 synopsis:            Data caching and Persistent STM transactions
 description:
 
@@ -47,5 +47,7 @@ Build-Type:          Simple
 build-Depends:       base >=4 && <5,directory >= 1.0, old-time >=1.0,stm>=2, containers >= 0.1.0.1,  transformers >=0.2 && <0.3
 
 
-exposed-modules:   Data.TCache, Data.TCache.FilePersistence, Data.TCache.IndexQuery
+exposed-modules:   Data.TCache, Data.TCache.FilePersistence
+                   , Data.TCache.IndexQuery, Data.TCache.Triggers
+                   , Data.TCache.IResource, Data.TCache.Defs
 ghc-options:       -O2
