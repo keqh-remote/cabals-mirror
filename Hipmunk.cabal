@@ -3,7 +3,7 @@ Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          Hipmunk
-Version:       5.2.0.4
+Version:       5.2.0.5
 Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
@@ -20,6 +20,11 @@ Description:
       Please see <http://hackage.haskell.org/package/HipmunkPlayground>
       for a demonstration of this library.
       .
+      New in version 5.2.0.5:
+      .
+      * Always compile @wrapper.c@ and fix Haddock errors
+	while handling Unicode.  Thanks, Joachim Breitner.
+      .
       New in version 5.2.0.4:
       .
       * New system-chipmunk flag.  When activated, the package will
@@ -29,9 +34,9 @@ Description:
       New in version 5.2.0.3:
       .
       * Update to Chipmunk 5.3.5 and bump dependencies to
-        match GHC 7.2.1. (Thanks, Sönke Hahn!)
+        match GHC 7.2.1. (Thanks, S&#246;nke Hahn!)
       .
-      * Now Sönke Hahn is also a Hipmunk maintainer.  Awesome!
+      * Now S&#246;nke Hahn is also a Hipmunk maintainer.  Awesome!
       .
       New in version 5.2.0.2:
       .
@@ -39,7 +44,7 @@ Description:
         functionality available in Chipmunk 5.3.4 is here yet.  But
         the bug fixes and performance improvements are.
       .
-      * Fix linking bug present since Hipmunk 5.1.0.  Thanks, Sönke Hahn.
+      * Fix linking bug present since Hipmunk 5.1.0.  Thanks, S&#246;nke Hahn.
       .
       * Correctly destroy the space in the presence of callbacks.
       .
@@ -177,7 +182,9 @@ Library
         Chipmunk-5.3.5/src/cpSpaceHash.c,
         Chipmunk-5.3.5/src/cpSpaceQuery.c,
         Chipmunk-5.3.5/src/cpSpaceStep.c,
-        Chipmunk-5.3.5/src/cpVect.c,
+        Chipmunk-5.3.5/src/cpVect.c
+
+  C-Sources:
         Physics/Hipmunk/wrapper.c
 
   if flag(small_base)
