@@ -1,5 +1,5 @@
 Name:                 bamboo-theme-blueprint
-Version:              2010.2.25
+Version:              2010.2.25.1
 Build-type:           Simple
 Synopsis:             bamboo blueprint theme
 Description:          bamboo blueprint theme
@@ -21,7 +21,7 @@ library
     , containers
     , network
     , bytestring
-    , rss == 3000.0.1
+    , rss >= 3000.1.0
     , xhtml
     , utf8-string >= 0.3.3
     , gravatar >= 0.3
