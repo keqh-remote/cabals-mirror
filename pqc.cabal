@@ -1,5 +1,5 @@
 name:                pqc
-version:             0.7.1
+version:             0.7.1.1
 description:         Parallel batch driver for QuickCheck
 synopsis:            Parallel batch driver for QuickCheck
 category:            Testing
@@ -8,13 +8,13 @@ license-file:        LICENSE
 Author:              Don Stewart
 Copyright:           Don Stewart 2006-2007, shelarcy 2011-2012
 Maintainer:          shelarcy <shelarcy@gmail.com>
-homepage:            http://darcsden.com/shelarcy/pqc
+homepage:            http://hub.darcs.net/shelarcy/pqc
 build-type: Simple
 Cabal-Version: >= 1.10
 
 source-repository head
    type: darcs
-   location: http://darcsden.com/shelarcy/pqc
+   location: http://hub.darcs.net/shelarcy/pqc
 
 flag split-base
 
@@ -31,7 +31,7 @@ library
 Test-Suite Example
   type:       exitcode-stdio-1.0
   main-is:    Example.hs
-  buildable:       True
+  buildable:       False
   hs-source-dirs:  examples
   default-language: Haskell2010
   build-depends:    base < 5, pqc
