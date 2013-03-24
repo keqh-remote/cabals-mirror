@@ -1,17 +1,17 @@
 name:           network-data
-version:        0.4
+version:        0.5
 license:        BSD3
 license-file:   LICENSE
 author:         Thomas DuBuisson <thomas.dubuisson@gmail.com>
 maintainer:     Thomas DuBuisson
-synopsis:       Library for network data structures (ex: ethernet/ip/udp/tcp headers and helper functions)
+synopsis:       Library for network data structures and their serialization.
 description:    This library includes definitions for common headers such as
                 Ethernet, IPv4, IPv6, UDP, TCP, etc. This code is untested for any serious
                 work - use at your own risk.
 category:       Data, Network
 stability:      stable
 build-type:     Simple
-cabal-version:  >= 1.2
+cabal-version:  >= 1.6
 tested-with:    GHC == 6.10.1
 extra-source-files:
 
@@ -27,3 +27,7 @@ Library
   hs-source-dirs:
   exposed-modules: Data.Ethernet, Data.IP, Data.IPv6, Data.Header, Data.TCP, Data.UDP, Data.CSum
   ghc-options: 
+
+source-repository head
+  type:     git
+  location: https://github.com/TomMD/network-data.git
