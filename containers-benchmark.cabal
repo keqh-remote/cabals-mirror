@@ -1,5 +1,5 @@
 Name:                containers-benchmark
-Version:             1.0.0.1
+Version:             1.0.0.2
 Synopsis:            Extensive benchmark suite for containers package.
 Description:         This package evaluates performance of a containers package
                      from multiple perspectives.
@@ -19,7 +19,8 @@ Stability:           Experimental
 Category:            Benchmarking
 Build-type:          Simple
 Cabal-version:       >=1.2
-Extra-source-files:  README
+Extra-source-files:  CHANGES
+                     README
                      scripts/benchmark.sh
                      scripts/cmp.pl
                      scripts/cmp.sh
