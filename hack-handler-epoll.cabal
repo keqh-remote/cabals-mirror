@@ -1,5 +1,5 @@
 name:               hack-handler-epoll
-version:            0.1
+version:            0.1.1
 synopsis:           hack handler implementation using epoll
 description:        Hack handler implemented using System.Linux.Epoll
 category:           Web
@@ -27,6 +27,6 @@ library
                     network >= 2.2.1.2,
                     failure >= 0.0.0.1,
                     utf8-string >= 0.3.4,
-                    containers >= 0.3.0.0
+                    containers >= 0.2.0.1
   hs-source-dirs:   src
 
