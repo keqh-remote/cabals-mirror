@@ -1,5 +1,5 @@
 Name:           darcs
-version:        2.8.3
+version:        2.8.4
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-devel@darcs.net>
@@ -129,6 +129,14 @@ flag force-char8-encoding
                the behaviour of filenames that requires API calls in
                base 4.5 to workaround. So base 4.4 is not supported at all.
 
+-- Note that the Setup script checks whether -liconv is necessary.  This flag
+-- lets us override that decision.  When it is True, we use -liconv.  When it
+-- is False, we run tests to decide.
+flag libiconv
+    Description: Explicitly link against the libiconv library.
+    Default: False
+
+
 -- ----------------------------------------------------------------------
 -- darcs library
 -- ----------------------------------------------------------------------
@@ -139,7 +147,7 @@ Library
   else
     buildable: True
 
-    build-tools: ghc >= 6.10 && < 7.6
+    build-tools: ghc >= 6.10 && < 7.8
 
     hs-source-dirs:   src
     include-dirs:     src
@@ -312,6 +320,7 @@ Library
                       Darcs.Witnesses.Unsafe
                       Darcs.Witnesses.WZipper
                       DateMatcher
+                      Encoding
                       English
                       Exec
                       ByteStringUtils
@@ -342,22 +351,28 @@ Library
       hs-source-dirs: src/win32
       include-dirs:   src/win32
       other-modules:  CtrlC
+                      Encoding.Win32
                       System.Posix
                       System.Posix.Files
                       System.Posix.IO
       cpp-options:    -DWIN32
       c-sources:      src/win32/send_email.c
       build-depends:  unix-compat >= 0.1.2,
+                      Win32 >= 2.0,
                       regex-posix >= 0.95.1
+    else
+      other-modules:  Encoding.IConv
+      c-sources:      src/h_iconv.c
+      build-depends:  utf8-string >= 0.3.6 && < 0.4
 
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
 
     if os(windows)
-      build-depends:  base >= 4 && < 4.6
+      build-depends:  base >= 4 && < 4.7
     else
       if flag(force-char8-encoding)
-        build-depends:  base >= 4.5 && < 4.6
+        build-depends:  base >= 4.5 && < 4.7
         cpp-options:    -DFORCE_CHAR8_ENCODING
       else
         build-depends:  base >= 4 && < 4.4
@@ -368,20 +383,24 @@ Library
                      parsec       >= 2.0 && < 3.2,
                      html         == 1.0.*,
                      filepath     >= 1.1.0.0 && < 1.5.0.0,
-                     haskeline    >= 0.6.3 && < 0.7,
+                     haskeline    >= 0.6.3 && < 0.8,
                      hashed-storage >= 0.5.6 && < 0.6,
                      vector       >= 0.7,
-                     tar          == 0.3.*
+                     tar          >= 0.3 && < 0.5
+
+    if impl(ghc<7.0)
+      -- haskeline 0.6.4.7 doesn't build with ghc 6.12
+      build-depends: haskeline <= 0.6.4.6
 
     if !os(windows)
-      build-depends: unix >= 1.0 && < 2.6
+      build-depends: unix >= 1.0 && < 2.7
 
-    build-depends: bytestring >= 0.9.0 && < 0.10,
+    build-depends: bytestring >= 0.9.0 && < 0.11,
                    text       >= 0.11.0.6 && < 0.12.0.0,
                    old-time   >= 1.0 && < 1.2,
-                   directory  >= 1.0.0.0 && < 1.2.0.0,
+                   directory  >= 1.0.0.0 && < 1.3.0.0,
                    process    >= 1.0.0.0 && < 1.2.0.0,
-                   containers >= 0.1 && < 0.5,
+                   containers >= 0.1 && < 0.6,
                    array      >= 0.1 && < 0.5,
                    random     == 1.0.*
 
@@ -411,7 +430,7 @@ Library
       cc-options:        -DHAVE_CURL
 
     if flag(http)
-        build-depends:    network >= 2.2 && < 2.4,
+        build-depends:    network >= 2.2 && < 2.5,
                           HTTP    >= 4000.0.8 && < 4000.3
         cpp-options:      -DHAVE_HTTP
         x-have-http:
@@ -452,6 +471,12 @@ Library
       extensions:
         NoMonoLocalBinds
 
+    if impl(ghc>=7.6)
+      -- in ghc < 7.6 we need to import Prelude hiding (catch)
+      -- in ghc >= 7.6 catch isn't in Prelude
+      ghc-options:     -fno-warn-dodgy-imports
+
+
 -- ----------------------------------------------------------------------
 -- darcs itself
 -- ----------------------------------------------------------------------
@@ -461,7 +486,7 @@ Executable          darcs
     buildable: False
   else
     buildable: True
-  build-tools: ghc >= 6.10 && < 7.6
+  build-tools: ghc >= 6.10 && < 7.8
 
   main-is:          darcs.hs
   hs-source-dirs:   src
@@ -509,16 +534,23 @@ Executable          darcs
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
     build-depends:  unix-compat >= 0.1.2,
+                    Win32 >= 2.0,
                     regex-posix >= 0.95.1
+  else
+    c-sources:      src/h_iconv.c
+    build-depends:  utf8-string >= 0.3.6 && < 0.4
+    -- need to list this explicitly to get cabal to run hsc2hs
+    other-modules:  Encoding.IConv
+
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
 
   if os(windows)
-    build-depends:  base >= 4 && < 4.6
+    build-depends:  base >= 4 && < 4.7
   else
     if flag(force-char8-encoding)
-      build-depends:  base >= 4.5 && < 4.6
+      build-depends:  base >= 4.5 && < 4.7
       cpp-options:    -DFORCE_CHAR8_ENCODING
     else
       build-depends:  base >= 4 && < 4.4
@@ -529,20 +561,24 @@ Executable          darcs
                    parsec       >= 2.0 && < 3.2,
                    html         == 1.0.*,
                    filepath     >= 1.1.0.0 && < 1.5.0.0,
-                   haskeline    >= 0.6.3 && < 0.7,
+                   haskeline    >= 0.6.3 && < 0.8,
                    hashed-storage >= 0.5.6 && < 0.6,
                    vector       >= 0.7,
-                   tar          == 0.3.*
+                   tar          >= 0.3 && < 0.5
+
+  if impl(ghc<7.0)
+    -- haskeline 0.6.4.7 doesn't build with ghc 6.12
+    build-depends: haskeline <= 0.6.4.6
 
   if !os(windows)
-    build-depends: unix >= 1.0 && < 2.6
+    build-depends: unix >= 1.0 && < 2.7
 
-  build-depends:   bytestring >= 0.9.0 && < 0.10,
+  build-depends:   bytestring >= 0.9.0 && < 0.11,
                    text       >= 0.11.0.6 && < 0.12.0.0,
                    old-time   >= 1.0 && < 1.2,
-                   directory  >= 1.0.0.0 && < 1.2.0.0,
+                   directory  >= 1.0.0.0 && < 1.3.0.0,
                    process    >= 1.0.0.0 && < 1.2.0.0,
-                   containers >= 0.1 && < 0.5,
+                   containers >= 0.1 && < 0.6,
                    array      >= 0.1 && < 0.5,
                    random     == 1.0.*
 
@@ -554,7 +590,7 @@ Executable          darcs
     cc-options:        -DHAVE_CURL
 
   if flag(http)
-      build-depends:    network >= 2.2 && < 2.4,
+      build-depends:    network >= 2.2 && < 2.5,
                         HTTP    >= 4000.0.8 && < 4000.3
       cpp-options:      -DHAVE_HTTP
       x-have-http:
@@ -595,6 +631,11 @@ Executable          darcs
     extensions:
       NoMonoLocalBinds
 
+  if impl(ghc>=7.6)
+    -- in ghc < 7.6 we need to import Prelude hiding (catch)
+    -- in ghc >= 7.6 catch isn't in Prelude
+    ghc-options:     -fno-warn-dodgy-imports
+
 -- ----------------------------------------------------------------------
 -- unit test driver
 -- ----------------------------------------------------------------------
@@ -602,7 +643,7 @@ Executable          darcs
 Executable          darcs-test
   main-is:          test.hs
 
-  build-tools: ghc >= 6.10 && < 7.6
+  build-tools: ghc >= 6.10 && < 7.8
 
 
   if !flag(test)
@@ -616,6 +657,7 @@ Executable          darcs-test
                      parsec       >= 2.0 && < 3.2,
                      html         == 1.0.*,
                      filepath     >= 1.1.0.0 && < 1.5.0.0,
+                     FindBin      >= 0.0 && < 0.1,
                      QuickCheck   >= 2.3,
                      HUnit        >= 1.0,
                      cmdlib       >= 0.2.1 && < 0.4,
@@ -702,35 +744,45 @@ Executable          darcs-test
       cpp-options:    -DWIN32
       c-sources:      src/win32/send_email.c
       build-depends:  unix-compat >= 0.1.2,
+                      Win32 >= 2.0,
                       regex-posix >= 0.95.1
+    else
+      c-sources:      src/h_iconv.c
+      build-depends:  utf8-string >= 0.3.6 && < 0.4
+      -- need to list this explicitly to get cabal to run hsc2hs
+      other-modules:  Encoding.IConv
 
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
 
     if os(windows)
-      build-depends:  base >= 4 && < 4.6
+      build-depends:  base >= 4 && < 4.7
     else
       if flag(force-char8-encoding)
-        build-depends:  base >= 4.5 && < 4.6
+        build-depends:  base >= 4.5 && < 4.7
         cpp-options:    -DFORCE_CHAR8_ENCODING
       else
         build-depends:  base >= 4 && < 4.4
 
     if !os(windows)
-      build-depends: unix >= 1.0 && < 2.6
+      build-depends: unix >= 1.0 && < 2.7
 
-    build-depends: bytestring >= 0.9.0 && < 0.10,
-                   haskeline    >= 0.6.3 && < 0.7,
+    build-depends: bytestring >= 0.9.0 && < 0.11,
+                   haskeline    >= 0.6.3 && < 0.8,
                    text       >= 0.11.0.6 && < 0.12.0.0,
                    old-time   >= 1.0 && < 1.2,
-                   directory  >= 1.0.0.0 && < 1.2.0.0,
+                   directory  >= 1.0.0.0 && < 1.3.0.0,
                    process    >= 1.0.0.0 && < 1.2.0.0,
-                   containers >= 0.1 && < 0.5,
+                   containers >= 0.1 && < 0.6,
                    array      >= 0.1 && < 0.5,
                    hashed-storage >= 0.5.6 && < 0.6,
                    vector       >= 0.7,
-                   tar        == 0.3.*,
+                   tar        >= 0.3 && < 0.5,
                    random     == 1.0.*
+
+    if impl(ghc<7.0)
+      -- haskeline 0.6.4.7 doesn't build with ghc 6.12
+      build-depends: haskeline <= 0.6.4.6
 
     if flag(mmap) && !os(windows)
       build-depends:    mmap >= 0.5 && < 0.6
@@ -744,7 +796,7 @@ Executable          darcs-test
       cpp-options:      -DHAVE_TERMINFO
 
     if flag(http)
-        build-depends:    network >= 2.2 && < 2.4,
+        build-depends:    network >= 2.2 && < 2.5,
                           HTTP    >= 4000.0.8 && < 4000.3
 
     if flag(color)
@@ -768,3 +820,8 @@ Executable          darcs-test
     if impl(ghc>=7.0)
       extensions:
         NoMonoLocalBinds
+
+    if impl(ghc>=7.6)
+      -- in ghc < 7.6 we need to import Prelude hiding (catch)
+      -- in ghc >= 7.6 catch isn't in Prelude
+      ghc-options:     -fno-warn-dodgy-imports
