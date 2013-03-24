@@ -1,5 +1,5 @@
 Name:                teams
-Version:             0.0.2.1
+Version:             0.0.2.3
 Description:         Graphical modeling tools for sequential teams
 License:             GPL
 License-file:        LICENSE
@@ -11,7 +11,7 @@ Category:            Algorithms, Stochastic Control
 Stability:           experimental
 Synopsis:            Graphical modeling tools for sequential teams
 Library
-   Build-Depends:     base, fgl>=5.4, containers, graphviz>=2009.5.1
+   Build-Depends:     base<5.0, fgl>=5.4, containers, graphviz>=2909.6.0.0
    Exposed-modules:   Data.Teams.Graph
                       Data.Teams.Structure
                       Data.Teams.Examples.Wit79
