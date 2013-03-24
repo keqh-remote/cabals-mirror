@@ -1,5 +1,5 @@
 Name:                reactive-fieldtrip
-Version:             0.0.3
+Version:             0.0.4
 Cabal-Version:       >= 1.2
 Synopsis:            Connect Reactive and FieldTrip
 Category:            Graphics, FRP
@@ -9,9 +9,6 @@ Description:
   library) and ''FieldTrip'' (a functional 3D library).
   .
   Project wiki page: <http://haskell.org/haskellwiki/reactive-fieldtrip>
-  .
-  The module documentation pages have links to colorized source code and
-  to wiki pages where you can read and contribute user comments.  Enjoy!
   .
   &#169; 2008 by Conal Elliott; BSD3 license.
 Author:              Conal Elliott 
@@ -28,6 +25,7 @@ Library
   Extensions:
   Build-Depends:       base, reactive >= 0.8.7, reactive-glut >= 0.0.4, FieldTrip >= 0.2.1, vector-space
   Exposed-Modules:     
+                       FRP.Reactive.FieldTrip
                        FRP.Reactive.FieldTrip.Adapter
   Other-Modules:     
                        Test
