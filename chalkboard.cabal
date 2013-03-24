@@ -1,5 +1,5 @@
 Name:                chalkboard
-Version:             0.1
+Version:             0.2
 Synopsis:            Combinators for building and processing 2D images. 
 Description:	     Chalkboard is a Haskell hosted Domain Specific Language (DSL) for image generation and processing.
 		The basic structure is a chalk board, a two-dimensional canvas of values, typically colors. 
@@ -37,11 +37,16 @@ Library
 
   Ghc-Options:  -Wall
 
-Executable chalkboard-test
-  Build-Depends:        base, array
-  Ghc-Options:    -O2
-  Main-Is:        Test.hs
-  Hs-Source-Dirs: ., test
-  buildable: True
-
-
+--Executable chalkboard-test
+--  Build-Depends:        base, array, process
+--  Ghc-Options:    -O2
+--  Main-Is:        Test.hs
+--  Hs-Source-Dirs: ., test
+--  buildable: True
+--
+--Executable chalkboard-test2
+--  Build-Depends:        base, array, process
+--  Ghc-Options:    -O2
+--  Main-Is:        Test2.hs
+--  Hs-Source-Dirs: ., test
+--  buildable: True
