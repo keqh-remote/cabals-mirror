@@ -1,5 +1,5 @@
 name:                aws-sdk
-version:             0.6.0.0
+version:             0.7.0.0
 synopsis:            AWS SDK for Haskell
 description:         An AWS(Amazon Web Services) liblary for Haskell.
 license:             BSD3
@@ -23,6 +23,8 @@ library
                    , AWS.RDS.Types
                    , AWS.ELB
                    , AWS.ELB.Types
+                   , AWS.CloudWatch
+                   , AWS.CloudWatch.Types
   other-modules:     AWS.Util , AWS.Credential
                    , AWS.Class
                    , AWS.EC2.Internal
@@ -50,6 +52,8 @@ library
                    , AWS.RDS.DBInstance
                    , AWS.ELB.Internal
                    , AWS.ELB.LoadBalancer
+                   , AWS.CloudWatch.Internal
+                   , AWS.CloudWatch.Metric
   ghc-options:       -Wall
                      -fno-warn-unused-do-bind
   extensions: OverloadedStrings
@@ -81,13 +85,21 @@ library
 
 test-suite test
     type:              exitcode-stdio-1.0
-    main-is:           main.hs
-    hs-source-dirs:    tests
+    main-is:           Main.hs
+    hs-source-dirs:    Tests
     ghc-options:       -Wall -threaded
-
+    extensions: OverloadedStrings
     build-depends: base
+                 , aws-sdk
+                 , conduit
+                 , text
+                 , monad-control
+                 , transformers
+                 , http-conduit
                  , hspec
                  , QuickCheck
+                 , hspec
+                 , HUnit
 
 source-repository head
     type:            git
