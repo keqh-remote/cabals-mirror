@@ -1,5 +1,5 @@
 Name:                Graphalyze
-Version:             0.1
+Version:             0.2
 Synopsis:            Graph-Theoretic Analysis library.
 Description:         A library to use graph theory to analyse the relationships
                         inherent in discrete data.
@@ -18,9 +18,13 @@ flag small_base
 
 Library {
         if flag(small_base)
-            Build-Depends:   base >= 3, containers, random, fgl, graphviz >= 2008.9.20, bktrees
+            Build-Depends:   base >= 3, array, containers, directory, filepath,
+                             old-locale, process, random, time
         else
-            Build-Depends:   base < 3, fgl, graphviz >= 2008.9.20, bktrees
+            Build-Depends:   base < 3
+
+        Build-Depends: bktrees, fgl, graphviz >= 2008.9.20, pandoc
+
         Exposed-Modules:     Data.Graph.Analysis
                              Data.Graph.Analysis.Types
                              Data.Graph.Analysis.Utils
@@ -29,6 +33,10 @@ Library {
                              Data.Graph.Analysis.Algorithms.Common
                              Data.Graph.Analysis.Algorithms.Directed
                              Data.Graph.Analysis.Algorithms.Clustering
+                             Data.Graph.Analysis.Reporting
+                             Data.Graph.Analysis.Reporting.Pandoc
+
         Ghc-Options:         -Wall
         Ghc-Prof-Options:    -auto-all
+
         }
