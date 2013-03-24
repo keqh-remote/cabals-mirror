@@ -1,5 +1,5 @@
 name:         wxcore
-version:      0.12.1.4
+version:      0.12.1.5
 license:      LGPL
 license-file: LICENSE
 author:       Daan Leijen
@@ -15,6 +15,7 @@ homepage:     http://haskell.org/haskellwiki/WxHaskell
 
 cabal-version: >= 1.2
 build-type:    Custom
+
 extra-tmp-files:
   src/haskell/Graphics/UI/WXCore/WxcClassInfo.hs
   src/haskell/Graphics/UI/WXCore/WxcClassTypes.hs
@@ -56,7 +57,7 @@ library
 
   include-dirs:
     src/include
-
+  
   c-sources:
     src/cpp/apppath.cpp
     src/cpp/db.cpp
