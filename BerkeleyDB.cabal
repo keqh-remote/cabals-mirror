@@ -1,5 +1,5 @@
 name:		BerkeleyDB
-version:	0.1
+version:	0.2
 license:	BSD3
 license-file:	LICENSE
 copyright:	John McCall, 2007
@@ -8,7 +8,7 @@ maintainer:     rjmccall@gmail.com
 stability:	alpha
 homepage:	http://www.cs.pdx.edu/~rjmccall/hackage/BerkeleyDB/
 category:	Database
-build-depends:	base
+build-depends:	base, unix
 synopsis:	Bindings for Berkeley DB v1.x
 description:
 	Provides Haskell bindings for Berkeley DB v1.x, a simple file-backed
