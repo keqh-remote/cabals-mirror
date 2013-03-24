@@ -1,5 +1,5 @@
 name:                minesweeper
-version:             0.8.8.3
+version:             0.8.8.4
 category:            Game
 synopsis:            Minesweeper game which is always solvable without guessing
 description:         
