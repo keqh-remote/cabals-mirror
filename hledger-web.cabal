@@ -1,5 +1,5 @@
 name:           hledger-web
-version: 0.16.5
+version: 0.17
 category:       Finance
 synopsis:       A web interface for the hledger accounting tool.
 description:    
@@ -17,7 +17,7 @@ maintainer:     Simon Michael <simon@joyful.com>
 homepage:       http://hledger.org
 bug-reports:    http://code.google.com/p/hledger/issues
 stability:      beta
-tested-with:    GHC==6.12, GHC==7.0
+tested-with:    GHC==7.0, GHC==7.2
 cabal-version:  >= 1.6
 build-type:     Simple
 extra-tmp-files:
@@ -71,13 +71,13 @@ executable hledger-web
                      Hledger.Web.Settings.StaticFiles
                      Hledger.Web.Handlers
   build-depends:
-                  hledger == 0.16.1
-                 ,hledger-lib == 0.16.1
+                  hledger == 0.17
+                 ,hledger-lib == 0.17
                  ,HUnit
                  ,base >= 4 && < 5
                  ,bytestring
                  ,cabal-file-th
-                 ,cmdargs >= 0.8   && < 0.9
+                 ,cmdargs >= 0.9.1   && < 0.10
                  ,directory
                  ,filepath
                  ,old-locale
@@ -89,14 +89,14 @@ executable hledger-web
                  ,io-storage >= 0.3 && < 0.4
                  ,failure >= 0.1 && < 0.2
                  ,file-embed == 0.0.*
-                 ,template-haskell >= 2.4 && < 2.6
+                 ,template-haskell >= 2.4 && < 2.7
 
                  ,yesod >= 0.9.2.1 && < 0.10
-                 ,yesod-core
+                 ,yesod-core >= 0.9.4.1 && < 0.10
                  ,yesod-form
                  ,yesod-json
                  ,yesod-static >= 0.3
-                 ,aeson-native >= 0.3.3.1
+                 ,aeson >= 0.3.2.13
                  ,blaze-html
                  ,clientsession
                  ,data-object
