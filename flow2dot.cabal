@@ -1,5 +1,5 @@
 Name:    flow2dot
-Version: 0.5
+Version: 0.5.1
 License: BSD3
 License-File: LICENSE
 Author: Dmitry Astapov <dastapov@gmail.com>
@@ -21,3 +21,5 @@ Library
   Exposed-Modules: Text.FlowDiagram
   Build-Depends:      base, mtl >= 1.0, containers, haskell98, QuickCheck, parsec, utf8-string, dotgen >= 0.2
 
+Executable  flow2dot
+  Main-Is:       flow2dot.hs
