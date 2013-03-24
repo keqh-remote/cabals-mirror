@@ -1,5 +1,5 @@
 Name:                estreps
-Version:             0.1
+Version:             0.3
 License:             GPL
 License-file:        LICENSE
 Author:              Ketil Malde
@@ -7,12 +7,13 @@ Maintainer:          Ketil Malde <ketil@malde.org>
 Stability:           Beta
 Category:            Bioinformatics
 Synopsis:            Repeats from ESTs
-Description:         rselect - select a random set of sequences from a FASTA file.
-                     reps    - extract exact k-word repeats based that occur in
-                               sequences grouped in different clusters.
+Description:         * rselect - select a random set of sequences from a FASTA file, optinally
+		                 with random orientation (forward/reverse complement).
+                     * reps    - extract exact k-word repeats based that occur in
+                                 sequences grouped in different clusters.
                      .
                      The Darcs repository is at: <http://malde.org/~ketil/biohaskell/estreps>.
-Homepage:            http://malde.org/~ketil/
+Homepage:            http://blog.malde.org/
 
 Tested-With:         GHC==6.8.2
 Build-Type:          Simple
