@@ -1,5 +1,5 @@
 name:		HaXml
-version:	1.19.2
+version:	1.19.3
 license:	LGPL
 license-file:	COPYRIGHT
 author:		Malcolm Wallace <Malcolm.Wallace@cs.york.ac.uk>
@@ -14,7 +14,9 @@ build-type:     Simple
 cabal-version:  >=1.2
 
 flag splitBase
+  default: True
 flag bytestringInBase
+  default: False
 
 library
   exposed-modules:
@@ -46,7 +48,7 @@ library
         Text.XML.HaXml.Xtract.Combinators,
         Text.XML.HaXml.Xtract.Lex,
         Text.XML.HaXml.Xtract.Parse
-  hs-source-dir: src
+  hs-source-dirs: src
   build-depends: base, haskell98, polyparse
   if flag(splitBase)
     build-depends: base >= 3, pretty, random, containers
@@ -56,8 +58,8 @@ library
     build-depends: base >= 2 && < 3
   else
     build-depends: base < 2 || >= 3, bytestring
-  extensions: CPP
-  cpp-options: -DVERSION=1.19.2
+  extensions: CPP, ExistentialQuantification
+  cpp-options: -DVERSION=1.19.3
   nhc98-options: -K10M
 
 Executable Canonicalise
