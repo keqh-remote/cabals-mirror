@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.1.4
+version:		0.1.5
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -41,13 +41,15 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  3) Install C library:
  In Debian use below command:
  .
- > sudo aptitude install libgtksourceview2.0-dev libgconf2-dev libwebkit-dev libcurl4-openssl-dev libgtkimageview-dev libpoppler-glib-dev poppler-data libtagc0-dev libvte-dev libvte-common -y
+ > sudo aptitude install libgtksourceview2.0-dev libgconf2-dev libwebkit-dev libcurl4-openssl-dev libgtkimageview-dev libpoppler-glib-dev poppler-data libtagc0-dev libvte-dev -y
  .
  4) Install cabal:
  .
- If you're haskell newbie, use below command to install cabal (haskell expert ignore this):
+ Download <http://hackage.haskell.org/packages/archive/cabal-install/0.8.2/cabal-install-0.8.2.tar.gz>
  .
- > sudo aptitude install cabal-install -y
+ Decompress cabal-install-0.8.2.tar.gz and do below command:
+ .
+ > cd ./cabal-install-0.8.2 && sudo chmod +x ./bootstrap.sh && ./bootstrap.sh
  .
  5) Install dependent Haskell library:
  .
@@ -57,7 +59,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  Then do below command (NOTE: don't use root permission with cabal, otherwise Manatee can't work):
  .
- > cabal update && cabal install happy c2hs gtk2hs-buildtools glib gio pango cairo gtk
+ > cabal update && cabal install alex happy c2hs gtk2hs-buildtools glib gio pango cairo gtk
  .
  6) Install Manatee (same, don't use root permission):
  .
@@ -79,7 +81,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  Mailing-List: manatee-user\@googlegroups.com manatee-develop\@googlegroups.com
  .
- Manatee is distributed framework, it allowed you install extension don't need depend each other, but it's easy to break if some package is older core packages (manatee-core, manatee-anything, manatee). So please make sure *all* packages has update to newest version before you report bug to manatee-user\@googlegroups.com . Thanks! :)
+ Manatee is distributed framework, it allowed you install extension don't need depend each other, but it's easy to break if some package is older than core packages (manatee-core, manatee-anything, manatee). So please make sure *all* packages has update to newest version before you report bug to manatee-user\@googlegroups.com . Thanks! :)
  .
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
