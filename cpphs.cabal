@@ -1,6 +1,6 @@
 Name: cpphs
-Version: 1.5
-Copyright: 2004-7, Malcolm Wallace
+Version: 1.6
+Copyright: 2004-8, Malcolm Wallace
 Build-Depends: base, haskell98
 License: LGPL
 License-File: LICENCE-LGPL
@@ -19,6 +19,7 @@ Description:
 	an option to unlit literate code files; and an option to turn
 	off macro-expansion.
 Category: Development
+Build-type: Simple
 Exposed-Modules:
 	Language.Preprocessor.Cpphs
 	Language.Preprocessor.Unlit
