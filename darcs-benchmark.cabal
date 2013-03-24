@@ -1,5 +1,5 @@
 name:          darcs-benchmark
-version:       0.1.3
+version:       0.1.5.1
 synopsis:      Comparative benchmark suite for darcs.
 
 description: A simple tool to compare performance of different Darcs 2.x
@@ -22,11 +22,14 @@ extra-source-files: README
 executable darcs-benchmark
     if impl(ghc >= 6.8)
       ghc-options: -fwarn-tabs
-    ghc-options:   -Wall
-    ghc-prof-options: -prof -auto-all
+    ghc-options:   -Wall -threaded
+    ghc-prof-options: -prof -auto-all -threaded
 
-    build-depends: base < 5, process, mtl, tabular >= 0.2, time,
+    build-depends: base < 5,
+                   cmdargs >= 0.1 && < 0.2,
+                   process, mtl, tabular >= 0.2.2.1, time,
                    regex-posix, html, filepath, directory,
+                   json == 0.4.*,
                    containers, bytestring, network,
                    HTTP >= 4000.0.8 && < 4000.1,
                    tar, zlib
@@ -34,9 +37,11 @@ executable darcs-benchmark
     main-is: main.hs
     other-modules: Shellish
                    Benchmark
+                   Config
                    Standard
                    Download
+                   TabularRST
 
 source-repository head
   type:     darcs
-  location: http://repos.mornfall.net/darcs/benchmark
+  location: http://code.haskell.org/darcs/darcs-benchmark
