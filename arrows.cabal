@@ -1,12 +1,13 @@
 Name:           arrows
-Version:        0.3
-Build-Depends:  base >= 2.0, Stream
+Version:        0.4
+Build-Depends:  base >= 2.0 && < 3.1, Stream
 Build-Type:     Simple
 License:        BSD3
-license-file:   LICENSE
+License-file:   LICENSE
 Author:         Ross Paterson <ross@soi.city.ac.uk>
 Maintainer:     Ross Paterson <ross@soi.city.ac.uk>
 Homepage:       http://www.haskell.org/arrows/
+Category:       Control
 Synopsis:       Arrow classes and transformers
 Description:    Several classes that extend the Arrow class, and some
                 transformers that implement or lift these classes.
