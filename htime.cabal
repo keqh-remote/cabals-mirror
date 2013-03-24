@@ -1,11 +1,11 @@
 name:                   htime
-version:                0.1
+version:                0.2
 synopsis:               Timing utility for the command line
 description:            Timing utility for the command line, like the Unix
                         "time" command. Especially useful on systems which
                         do not have time, like Windows.
 category:               System
-copyright:              (c) 2010 Universiteit Utrecht
+copyright:              (c) 2011 Universiteit Utrecht
 license:                BSD3
 license-file:           LICENSE
 author:                 José Pedro Magalhães
