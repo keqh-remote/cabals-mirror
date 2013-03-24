@@ -1,10 +1,11 @@
 Name:          contstuff
-Version:       0.3.1
+Version:       0.4.0
 Category:      Control, Monads
 Synopsis:      Easy to use CPS-based monads
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
 Author:        Ertugrul Söylemez <es@ertes.de>
 Copyright:     (c) 2010 Ertugrul Söylemez
+Homepage:      http://haskell.org/haskellwiki/Contstuff
 License:       BSD3
 License-file:  LICENSE
 Build-type:    Simple
