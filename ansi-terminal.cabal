@@ -1,5 +1,5 @@
 Name:           ansi-terminal
-Version:        0.2
+Version:        0.2.1
 Cabal-Version:  >= 1.2
 Category:       User Interfaces
 Synopsis:       Simple ANSI terminal support, with Windows compatibility
@@ -11,6 +11,9 @@ Maintainer:     batterseapower@hotmail.com
 Homepage:       http://bsp.lighthouseapp.com/projects/16235-hs-ansi-terminal/overview
 Build-Type:     Simple
 
+Extra-Source-Files:     includes/Common-Include.hs
+                        includes/Exports-Include.hs
+
 Flag SplitBase
         Description:    Choose the new smaller, split-up base package
         Default:        True
@@ -18,7 +21,6 @@ Flag SplitBase
 Flag Example
         Description:    Build the example application
         Default:        False
-
 
 Library
         Exposed-Modules:        System.Console.ANSI
