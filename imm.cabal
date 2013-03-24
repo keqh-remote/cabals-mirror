@@ -1,5 +1,5 @@
 Name:                imm
-Version:             0.1.0.0
+Version:             0.1.1.0
 Synopsis:            RSS-to-maildir tool
 --Description:         
 --Homepage:
@@ -21,6 +21,7 @@ Source-repository head
 
 Library
     Exposed-modules:
+        Imm.Config,
         Imm.Core,
         Imm.Types,
         Imm.Util,
@@ -28,21 +29,23 @@ Library
         Imm.Maildir
     Build-depends:
         base == 4.*,
+        bytestring,
+        cmdargs,
         directory,
         dyre,
         feed,
         filepath,
         HTTP,
-        time,
-        xml,
+        mime-mail,
+        network,
         old-locale,
         random,
-        bytestring,
-        mime-mail,
         text,
-        cmdargs,
-        network,
-        utf8-string
+        time,
+        timerep,
+        utf8-string,
+        xdg-basedir,
+        xml
     
     -- Other-modules:       
     -- Build-tools:         
