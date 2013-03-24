@@ -1,7 +1,8 @@
 name:            fdo-trash
-version:         0.0.0.1
+version:         0.0.0.2
 copyright:       (c) 2012 Emil Karlson
 license:         BSD3
+license-file:    LICENSE
 author:          Emil Karlson <jekarlson@gmail.com>
 maintainer:      Emil Karlson <jekarlson@gmail.com>
 category:        Desktop
@@ -31,7 +32,7 @@ executable fdo-trash
   Main-is:       fdo-trash.hs
   Build-Depends: base >= 3 && < 5,
                  fdo-trash,
-                 Diff,
+                 Diff >= 0.2,
                  parsec,
                  old-locale,
                  directory,
