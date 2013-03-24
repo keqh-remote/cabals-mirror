@@ -1,27 +1,21 @@
-Name: scgi
-Version: 0.1
-Stability: provisional
-Author: Eric Sessoms
-Maintainer: esessoms@mac.com
-License: GPL
-License-File: COPYING
-Category: Network
-Synopsis: A Haskell library for writing SCGI programs.
+Name:                scgi
+Version:             0.2
+Stability:           provisional
 Description:
   This library lets you write SCGI programs. This package reuses the
   cgi package API, making it very easy to port CGI programs to SCGI.
-Cabal-version: >= 1.2.0
-
-flag split-base
-  description: Choose the new smaller, split-up base package.
+License:             GPL
+License-file:        COPYING
+Author:              Eric Sessoms <nubgames@gmail.com>
+Maintainer:          nubgames@gmail.com
+homepage:            http://github.com/esessoms/scgi
+Category:            Network
+Synopsis:            A Haskell library for writing SCGI programs.
+cabal-version:       >= 1.2
+build-type:          Simple
 
 library
-  hs-source-dirs: src/
-  build-depends: cgi >= 3000.0.0
-  if flag(split-base)
-    build-depends:  base >= 3.0.0.0, bytestring >= 0.9.0.1, network
-  else
-    build-depends: base >= 2.0
-  Exposed-Modules: 
-     Network.SCGI
-  ghc-options: -O2 -Werror -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-matches -XPatternGuards
+  build-depends:     base, bytestring, cgi, network
+  exposed-modules:   Network.SCGI
+  ghc-options:       -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-matches
+  hs-source-dirs:    src
