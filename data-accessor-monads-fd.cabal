@@ -1,5 +1,5 @@
 Name:             data-accessor-monads-fd
-Version:          0.2.0.1
+Version:          0.2.0.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -16,7 +16,7 @@ Build-Depends:
 Synopsis:         Use Accessor to access state in monads-fd State monad class
 Description:      Use Accessor to access state in monads-fd State monad class
 GHC-Options:      -Wall
-Tested-With:      GHC==6.8.2
+Tested-With:      GHC==6.8.2, GHC==6.10.4
 Hs-Source-Dirs:   src
 Exposed-Modules:
   Data.Accessor.Monad.FD.State
