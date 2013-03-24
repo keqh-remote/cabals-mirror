@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               cmdargs
-version:            0.9.4
+version:            0.9.5
 license:            BSD3
 license-file:       LICENSE
 category:           Console
@@ -55,9 +55,8 @@ library
     if flag(quotation)
         build-depends: template-haskell
         exposed-modules: System.Console.CmdArgs.Quote
-
-    -- See bug #539 for why this magic is required
-    extensions: TemplateHaskell
+        -- See bug #539 for why this magic is required
+        extensions: TemplateHaskell
 
     exposed-modules:
         System.Console.CmdArgs
