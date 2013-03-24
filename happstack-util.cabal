@@ -1,5 +1,5 @@
 Name:                happstack-util
-Version:             0.3.2
+Version:             0.4.1
 Synopsis:            Web framework
 License:             BSD3
 License-file:        COPYING
@@ -14,7 +14,7 @@ Cabal-version:       >=1.6
 source-repository head
     type:     darcs
     subdir:   happstack-util
-    location: http://patch-tag.com/publicrepos/happstack
+    location: http://patch-tag.com/r/mae/happstack/pullrepo
 
 Flag base4
     Description: Choose the even newer, even smaller, split-up base package.
@@ -36,6 +36,7 @@ Library
                        process,
                        time,
                        QuickCheck < 2,
+                       HUnit,
                        random,
                        SMTPClient >= 1.0.1 && < 1.1,
                        strict-concurrency,
