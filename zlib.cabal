@@ -1,5 +1,5 @@
 name:            zlib
-version:         0.5.0.0
+version:         0.5.2.0
 copyright:       (c) 2006-2008 Duncan Coutts
 license:         BSD3
 license-file:    LICENSE
@@ -13,7 +13,7 @@ description:     This package provides a pure interface for compressing and
                  performance. It supports the \"zlib\", \"gzip\" and \"raw\"
                  compression formats.
                  .
-                 It provides a convenient high level api suitable for most
+                 It provides a convenient high level API suitable for most
                  tasks and for the few cases where more control is needed it
                  provides access to the full zlib feature set.
 stability:       provisional
@@ -23,7 +23,7 @@ extra-source-files: cbits/crc32.h cbits/inffast.h cbits/inflate.h
                     cbits/trees.h cbits/deflate.h cbits/inffixed.h
                     cbits/inftrees.h cbits/zutil.h
                     -- demo programs:
-                    gzip.hs gunzip.hs
+                    examples/gzip.hs examples/gunzip.hs
 
 flag bytestring-in-base
   description: In the ghc-6.6 era the bytestring modules were
