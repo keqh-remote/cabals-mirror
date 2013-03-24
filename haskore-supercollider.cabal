@@ -1,5 +1,5 @@
 Name:           haskore-supercollider
-Version:        0.1.1
+Version:        0.1.2
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -21,12 +21,12 @@ Extra-Source-Files:
 
 Source-Repository head
   type:     darcs
-  location: http://darcs.haskell.org/haskore-supercollider/
+  location: http://code.haskell.org/haskore/revised/supercollider/
 
 Source-Repository this
   type:     darcs
-  location: http://darcs.haskell.org/haskore-supercollider/
-  tag:      0.1.1
+  location: http://code.haskell.org/haskore/revised/supercollider/
+  tag:      0.1.2
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -38,7 +38,7 @@ Flag buildTests
 Library
   Build-Depends:
     haskore-realtime >= 0.1 && < 0.2,
-    haskore >=0.1 && <0.2,
+    haskore >=0.1 && <0.3,
     -- for SuperCollider support
     hosc >=0.6 && <0.7,
     hsc3 >=0.6 && <0.7,
@@ -46,20 +46,20 @@ Library
     supercollider-ht >=0.1 && <0.2,
     bytestring >=0.9 && <1.0,
     -- dependency on non-negative for Haddock
-    non-negative >=0.0.1 && <0.1,
-    event-list >=0.0.6 && <0.1,
+    non-negative >=0.0.1 && <0.2,
+    event-list >=0.0.6 && <0.2,
     data-accessor >=0.2 && <0.3,
     utility-ht >=0.0.3 && <0.1,
     unix >= 2.0 && <3,
-    transformers >=0.0 && <0.2
+    transformers >=0.2 && <0.3
 
   If flag(splitBase)
     Build-Depends:
-      base >= 3,
-      array >= 0.1 && <0.3,
+      process >=1.0 && <1.1,
+      array >=0.1 && <0.3,
       containers >=0.1 && <0.3,
-      random >= 1.0 && <1.1,
-      process >= 1.0 && <1.1
+      random >=1.0 && <1.1,
+      base >=3 && <5
   Else
     Build-Depends:
       base >= 1.0 && < 2
