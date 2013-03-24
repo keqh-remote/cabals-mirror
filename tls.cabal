@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.6.3
+Version:             0.6.4
 Description:
    native TLS protocol implementation, focusing on purity and more type-checking.
    .
@@ -37,7 +37,7 @@ Library
                    , bytestring
                    , crypto-api >= 0.5
                    , cryptocipher >= 0.2.5
-                   , certificate >= 0.8.1 && < 0.9
+                   , certificate >= 0.9 && < 1.0
   Exposed-modules:   Network.TLS
                      Network.TLS.Cipher
                      Network.TLS.Compression
