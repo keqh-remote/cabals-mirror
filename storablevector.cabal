@@ -1,5 +1,5 @@
 Name:                storablevector
-Version:             0.2.3.1
+Version:             0.2.4
 Category:            Data
 Synopsis:            Fast, packed, strict storable arrays with a list interface like ByteString
 Description:
@@ -44,7 +44,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/storablevector/
-  tag:      0.2.3.1
+  tag:      0.2.4
 
 Library
   Build-Depends:
@@ -72,6 +72,7 @@ Library
     Data.StorableVector.Lazy
     Data.StorableVector.Lazy.Builder
     Data.StorableVector.Lazy.Pattern
+    Data.StorableVector.Lazy.Pointer
     Data.StorableVector.ST.Strict
     Data.StorableVector.ST.Lazy
 
@@ -80,6 +81,7 @@ Library
     Data.StorableVector.Cursor
     Data.StorableVector.Memory
     Data.StorableVector.ST.Private
+    Data.StorableVector.Lazy.PointerPrivate
 
 
 
@@ -102,6 +104,18 @@ Executable test
 Executable speedtest
   GHC-Options:         -Wall -funbox-strict-fields
   Main-Is:             SpeedTestLazy.hs
+  Extensions:          CPP, ForeignFunctionInterface
+  Hs-Source-Dirs:      ., slow-foreign-ptr, speedtest
+  If flag(splitBase)
+    Build-Depends:     base >= 3 && <5
+  Else
+    Build-Depends:     base >= 1.0 && < 2
+  If !flag(buildTests)
+    Buildable:         False
+
+Executable speedpointer
+  GHC-Options:         -Wall -funbox-strict-fields
+  Main-Is:             Pointer.hs
   Extensions:          CPP, ForeignFunctionInterface
   Hs-Source-Dirs:      ., slow-foreign-ptr, speedtest
   If flag(splitBase)
