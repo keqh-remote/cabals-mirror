@@ -1,5 +1,5 @@
 Name:                 maid
-Version:              2010.9.9.1
+Version:              2010.9.19
 Build-type:           Simple
 Synopsis:             A simple static web server
 Description:
@@ -30,5 +30,6 @@ Executable            maid
                     , unix
                     , bytestring
                     , process
+                    , directory
   hs-source-dirs:     src/
   main-is:            maid.hs
