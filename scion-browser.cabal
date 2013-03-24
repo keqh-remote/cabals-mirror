@@ -1,5 +1,5 @@
 name:           scion-browser
-version:        0.1.3.3
+version:        0.1.3.4
 cabal-version:  >= 1.8
 build-type:     Simple
 license:        BSD3
@@ -55,6 +55,7 @@ library
       containers     >= 0.2 && < 0.4,
       directory      == 1.0.*,
       filepath       == 1.1.*,
+      bytestring,
       -- For Scion.Packages (provisional)
       ghc            >= 6.10 && < 6.13
   
@@ -110,6 +111,7 @@ executable scion-browser
       containers     >= 0.2 && < 0.4,
       directory      == 1.0.*,
       filepath       == 1.1.*,
+      bytestring,
       -- For Scion.Packages (provisional)
       ghc            >= 6.10 && < 6.13
     
