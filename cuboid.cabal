@@ -16,12 +16,13 @@ Description:
     into a configuration file in the future.
 
 Synopsis:           3D Yampa/GLUT Puzzle Game 
-Version:            0.11
+Version:            0.12
 License:            MIT
 License-file:       LICENSE
 Copyright:          (C) 2010 Pedro Martins
 Author:             Pedro Martins <pedromartins.pt@gmail.com>
 Maintainer:         Pedro Martins <pedromartins.pt@gmail.com>
+Bug-Reports:        http://github.com/pedromartins/cuboid/issues
 Stability:          experimental
 Build-Type:         Simple
 Cabal-Version:      >= 1.4
