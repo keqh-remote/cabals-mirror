@@ -1,5 +1,5 @@
 name:           archlinux
-version:        0.3
+version:        0.3.1
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart <dons@galois.com>
@@ -46,6 +46,7 @@ library
                     process,
                     directory,
                     parallel,
+                    deepseq,
                     strict-concurrency,
                     old-time,
                     csv
