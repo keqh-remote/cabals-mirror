@@ -1,5 +1,5 @@
 Name:				 CV
-Version:             0.3.5
+Version:             0.3.5.1
 Description:         OpenCV Bindings
 License:             GPL
 License-file:        LICENSE
@@ -154,6 +154,7 @@ Library
                        CV.Bindings.ImgProc,
                        CV.Bindings.Tracking,
                        CV.Bindings.Drawing,
+                       CV.Bindings.Error,
                        CV.Bindings.Features,
                        CV.Bindings.Iterators
     Extensions: CPP
