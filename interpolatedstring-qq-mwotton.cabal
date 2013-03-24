@@ -1,5 +1,5 @@
 Name:          interpolatedstring-qq-mwotton
-Version:       0.1
+Version:       0.1.1
 License:       BSD3
 License-file:  LICENSE
 Category:      Data
@@ -10,8 +10,8 @@ Stability:     unstable
 Cabal-Version: >= 1.2
 Build-Depends: base >= 3 && < 4
 Build-Type:    Custom
-Synopsis:      QuasiQuoter for Ruby-style multi-line interpolated strings.
-Description:   QuasiQuoter for Ruby-style multi-line interpolated strings.
+Synopsis:      DO NOT USE THIS. interpolatedstring-qq works now.
+Description:   DO NOT USE THIS. interpolatedstring-qq works now.
 Data-Files:    tests/Test.hs
 
 library
