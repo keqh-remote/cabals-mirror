@@ -1,5 +1,5 @@
 name: dataenc
-version: 0.13.0.5
+version: 0.14
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.6
@@ -7,7 +7,7 @@ build-type: Simple
 author: Magnus Therning
 maintainer: magnus@therning.org
 homepage: http://www.haskell.org/haskellwiki/Library/Data_encoding
-copyright: Magnus Therning, 2007-2009
+copyright: Magnus Therning, 2007-2011
 category: Codec
 synopsis: Data encoding library
 description: Data encoding library currently providing Base16, Base32,
@@ -42,9 +42,10 @@ library
 executable tests
     main-is: Test.hs
     hs-source-dirs: test-src src
-    ghc-options: -fhpc
+    -- ghc-options: -fhpc
     if flag(BuildTests)
         build-depends: test-framework, test-framework-hunit, HUnit,
-            test-framework-quickcheck2, QuickCheck == 2.1.*
+            test-framework-quickcheck2, QuickCheck ==2.1.*,
+            test-framework-th
     else
         buildable: False
