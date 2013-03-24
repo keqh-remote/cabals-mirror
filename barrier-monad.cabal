@@ -1,5 +1,5 @@
 Name:                barrier-monad
-Version:             0.1
+Version:             0.1.0.1
 Synopsis:            Implementation of barrier monad, can use custom front/back type
 License:             PublicDomain
 Category:            Control
@@ -13,4 +13,4 @@ X-Printout-Require:  birdstyle.tex
 
 Library
   Exposed-modules:     Control.Monad.Barrier
-  Build-depends:       base == 4.*, mtl == 2.0.*, comonad >= 1.0 && < 1.2
+  Build-depends:       base == 4.*, mtl == 2.0.*, comonad >= 1.0 && < 1.2, transformers == 0.2.*
