@@ -1,5 +1,5 @@
 Name:          ihttp
-Version:       0.1.0
+Version:       0.2.0
 Category:      Network
 Synopsis:      Incremental HTTP iteratee
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -8,7 +8,7 @@ Copyright:     (c) 2010 Ertugrul Söylemez
 License:       BSD3
 License-file:  LICENSE
 Build-type:    Simple
-Stability:     experimental
+Stability:     beta
 Cabal-version: >= 1.6
 Description:
 
