@@ -1,5 +1,5 @@
 Name:            wikipedia4epub
-Version:         0.0.10
+Version:         0.0.12
 License:         BSD3
 License-File:    LICENSE
 Homepage:        http://rampa.sk/static/wikipedia4epub.html
@@ -20,11 +20,10 @@ Cabal-Version:   >= 1.6
 
 Source-Repository head
   type:     darcs
-  location: http://patch-tag.com/r/dixiecko/wikipedia4epub
+  location: http://darcsden.com/dixie/wikipedia4epub
     
 Library
-  Build-Depends:   ghc >= 6.12.1,
-                   base < 5,
+  Build-Depends:   base < 5,
                    filepath,
                    bytestring,
                    haskell98,
@@ -34,14 +33,11 @@ Library
                    regex-posix,
                    network,
                    regex-base,
-                   HDBC-sqlite3,
-                   HDBC >= 2.1.1,
                    tagsoup >= 0.8,
                    HTTP,      
                    zip-archive,
                    zlib,
-                   xml,
-                   Cabal        >= 1.5 && < 1.9
+                   xml
   Hs-Source-Dirs:  src
   Extensions:      CPP, PatternGuards
   Ghc-Options:      -Wall -fno-warn-orphans
@@ -54,16 +50,8 @@ Library
         Wiki4e.Commands.Fetching
         Wiki4e.Commands.EPUB
         Network.Wikipedia
-        Web.Firefox
-
-Executable wiki4e-mkepub-firefox
-  Hs-Source-Dirs:  src
-  Main-Is:         wiki4e-mkepub-firefox.hs
 
 Executable wiki4e-mkepub-subtree
   Hs-Source-Dirs:  src
   Main-Is:         wiki4e-mkepub-subtree.hs
 
-Executable wiki4e-mkepub-cache
-  Hs-Source-Dirs:  src
-  Main-Is:         wiki4e-mkepub-cache.hs
