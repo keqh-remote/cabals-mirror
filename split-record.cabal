@@ -1,5 +1,5 @@
 Name:           split-record
-Version:        0.1
+Version:        0.1.1
 License:        BSD3
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -13,7 +13,7 @@ Cabal-Version:  >=1.6
 Build-Type:     Simple
 
 Source-Repository this
-  Tag:         0.1
+  Tag:         0.1.1
   Type:        darcs
   Location:    http://code.haskell.org/~thielema/split-record/
 
@@ -28,7 +28,7 @@ Executable split-record
   Build-Depends:
     synthesizer-core >=0.5.1 && <0.6,
     soxlib >=0.0 && <0.1,
-    storablevector >=0.2 && <0.3,
+    storablevector >=0.2.8 && <0.3,
     transformers >=0.2 && <0.4,
     utility-ht >=0.0.1 && <0.1,
     numeric-prelude >=0.3 && <0.4,
