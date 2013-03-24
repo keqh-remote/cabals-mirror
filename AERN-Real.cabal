@@ -1,12 +1,12 @@
 Name:           AERN-Real
-Version:        0.9.3
+Version:        0.9.3.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
 License-File:   LICENCE
-Author:         Michal Konecny
+Author:         Michal Konecny (Aston University)
 Copyright:      (c) 2007-2008 Michal Konecny, Amin Farjudian, Jan Duracz 
-Maintainer:     Michal Konecny
+Maintainer:     mik@konecny.aow.cz
 Stability:      experimental
 Category:       Data, Math
 Synopsis:       datatypes and abstractions for approximating exact real numbers
