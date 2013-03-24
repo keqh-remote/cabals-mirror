@@ -1,5 +1,5 @@
 name:                minesweeper
-version:             0.8.8.1
+version:             0.8.8.2
 category:            Game
 synopsis:            Minesweeper game which is always solvable without guessing
 description:         
@@ -37,7 +37,6 @@ executable minesweeper
 
   build-depends:
     base >= 3.0 && < 5.0, 
-    numeric-prelude,
     containers, 
     time, 
     random, 
@@ -45,7 +44,6 @@ executable minesweeper
     filepath,
     binary, 
     derive,
-    lazysmallcheck,
     gtk >= 0.10, 
     cairo >= 0.10,
     glade
