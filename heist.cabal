@@ -1,5 +1,5 @@
 name:           heist
-version:        0.5.0.1
+version:        0.5.1.0
 synopsis:       An xhtml templating system
 description:    An xhtml templating system
 license:        BSD3
@@ -68,6 +68,8 @@ Library
     Text.Templating.Heist.Splices,
     Text.Templating.Heist.Splices.Apply,
     Text.Templating.Heist.Splices.Bind,
+    Text.Templating.Heist.Splices.Cache,
+    Text.Templating.Heist.Splices.Html,
     Text.Templating.Heist.Splices.Ignore,
     Text.Templating.Heist.Splices.Markdown,
     Text.Templating.Heist.Splices.Static,
@@ -92,6 +94,7 @@ Library
     process,
     random,
     text >= 0.10 && < 0.12,
+    time >= 1.1 && < 1.3,
     transformers,
     xmlhtml == 0.1.*
 
@@ -100,6 +103,8 @@ Library
                  -fno-warn-unused-do-bind
   else
     ghc-options: -Wall -fwarn-tabs -funbox-strict-fields -O2
+
+  Extensions: OverloadedStrings
 
 
 source-repository head
