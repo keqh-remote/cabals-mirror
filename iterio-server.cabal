@@ -1,5 +1,5 @@
 Name:           iterio-server
-Version:        0.1
+Version:        0.2
 build-type:     Simple
 License:        BSD3
 License-File:   LICENSE
@@ -35,6 +35,7 @@ Library
   ghc-options: -Wall
 
   Exposed-modules:
+    Data.IterIO.Http.Support
     Data.IterIO.Http.Support.Action
     Data.IterIO.Http.Support.Responses
     Data.IterIO.Http.Support.RestController
