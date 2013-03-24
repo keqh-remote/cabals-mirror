@@ -1,13 +1,14 @@
 Name: dropbox-sdk
-Version: 0.1.0
-Synopsis: A library to access the Dropbox HTTP API.
+Version: 0.1.1
+Synopsis: A (very preliminary) library to access the Dropbox HTTP API.
 Description:
     The Dropbox HTTP API provides ways for applications to access
     users' Dropbox accounts programmatically.
 License: MIT
 License-File: License.txt
-Author: Kannan Goundan <kannan@cakoose.com>
-Maintainer: Kannan Goundan <kannan@cakoose.com>
+Author: Kannan Goundan <kannan@dropbox.com>
+Maintainer: Kannan Goundan <kannan@dropbox.com>
+Homepage: http://github.com/cakoose/dropbox-sdk
 Category: Network APIs
 Build-Type: Simple
 Cabal-Version: >= 1.10
@@ -20,7 +21,7 @@ Library
         HTTP         == 4000.*,
         utf8-string  == 0.3.*,
         urlencoded   == 0.3.*,
-        json         == 0.4.*,
+        json         >= 0.4 && < 0.6,
         time         == 1.4.*,
         old-locale   == 1.0.*,
         network      == 2.3.*,
@@ -37,3 +38,7 @@ Library
     GHC-Options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing
     Default-Language: Haskell2010
     Default-Extensions: OverloadedStrings, ScopedTypeVariables, Rank2Types
+
+Source-Repository head
+    Type: git
+    Location: git://github.com/cakoose/dropbox-sdk-haskell.git
