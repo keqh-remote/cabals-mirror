@@ -1,5 +1,5 @@
 name:          LambdaINet
-version:       0.1.1
+version:       0.1.2
 homepage:      not available
 maintainer:    Paul H. Liu <paul@thev.net>
 cabal-version: >= 1.6
@@ -19,8 +19,11 @@ data-dir:      data
 data-files:    font.tga
 
 executable LambdaINet
-  Main-is:        Main.lhs
+  Main-is:  Main.lhs
   Other-Modules:  Diagram INet Lambda
+  if os(darwin)
+    Other-Modules:  EnableGUI
+    cpp-options:    -D_EnableGUI_
   Build-Depends:  base >= 3 && < 5, OpenGL, GLFW, containers, mtl
   Hs-Source-Dirs: src
 
