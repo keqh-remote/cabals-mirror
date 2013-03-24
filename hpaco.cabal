@@ -1,5 +1,5 @@
 name:                hpaco
-version:             0.18.0.0
+version:             0.22.0.0
 synopsis:            Modular template compiler
 description:         CLI front-end to the hpaco-lib library. Compiles Paco
                      template source code to JavaScript or PHP, or interprets
@@ -20,7 +20,7 @@ executable hpaco
   build-depends:       base == 4.*
                ,       filepath >= 1.1 && < 1.4
                ,       cmdargs >= 0.9 && < 0.10
-               , hpaco-lib == 0.18.0.0
+               , hpaco-lib == 0.22.0.0
                ,       strict == 0.3.*
                -- ,       split >= 0.1 && < 0.2
                -- ,       safe >= 0.3.3 && < 0.4
