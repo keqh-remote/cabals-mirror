@@ -1,12 +1,12 @@
 Name:                json-builder
-Version:             0.2.4
+Version:             0.2.5
 Synopsis:            Data structure agnostic JSON serialization
 License:             BSD3
 License-file:        LICENSE
 Author:              Leon P Smith
 Maintainer:          leon@melding-monads.com
 Stability:           experimental
-Copyright:           (c) 2011 Leon P Smith
+Copyright:           (c) 2011-2012 Leon P Smith
 Category:            JSON
 Build-type:          Simple
 Cabal-version:       >= 1.6
@@ -47,4 +47,4 @@ source-repository head
 source-repository this
   type:     git
   location: http://github.com/lpsmith/json-builder
-  tag:      v0.2.4
+  tag:      v0.2.5
