@@ -1,5 +1,5 @@
 name:                   regular
-version:                0.2.1
+version:                0.2.2
 synopsis:               Generic programming library for regular datatypes.
 description:
 
@@ -34,6 +34,9 @@ extra-source-files:     examples/Test.hs
                         ChangeLog
                         CREDITS
 
+flag th24
+  description:          Indicates that Template Haskell 2.4 or greater is available.
+
 library
   hs-source-dirs:       src
   exposed-modules:      Generics.Regular
@@ -54,5 +57,10 @@ library
                         Generics.Regular.Functions.Show
                         Generics.Regular.Functions.Zip
                         
-  build-depends:        base >= 4.0 && < 5, template-haskell >= 2.2 && < 2.4
+  build-depends:        base >= 4.0 && < 5
+  if flag(th24)
+    build-depends:      template-haskell >=2.4 && <2.5
+    cpp-options:          -DTH_TYVARBNDR
+  else
+    build-depends:      template-haskell >= 2.2 && < 2.4
   ghc-options:          -Wall
