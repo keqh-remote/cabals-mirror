@@ -1,13 +1,12 @@
 name:          perm
-version:       0.1.0.0
+version:       0.1.0.1
 cabal-version: >= 1.10
 synopsis:      permutation Applicative and Monad with many mtl instances
 description:
   Based on \"Parsing Permutation Phrases\", by Arthur Baars, Andres Loeh and S.
   Doaitse Swierstra, /Haskell Workshop 2001/.  The implementation given here
   does not include explicit optional actions, and instead implements
-  'Control.Applicative.Alternative' and 'Control.Monad.MonadPlus'.
-  @m 'Control.Applicative.<|>' 'Control.Applicative.pure' a@ should be used where
+  'Alternative' and 'MonadPlus'.  @m '<|>' 'pure' a@ should be used where
   @'addOpt' a m@ would be used.
 license:       BSD3
 license-file:  LICENSE
@@ -42,6 +41,7 @@ library
   if impl(ghc >= 7.2)
     cpp-options: -DLANGUAGE_DefaultSignatures
   other-extensions:
+    CPP
     FlexibleInstances
     GADTs
     MultiParamTypeClasses
