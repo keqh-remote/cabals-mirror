@@ -1,5 +1,5 @@
 name:                vacuum-graphviz
-version:             2.0.0.0
+version:             2.1.0.1
 synopsis:            A library for transforming vacuum graphs into GraphViz output
 description:
   A library for transforming @vacuum@ graphs into GraphViz output
@@ -15,8 +15,8 @@ cabal-version:       >=1.6
 library
   hs-source-dirs:    src
   build-depends:     base     > 3 && < 5,
-                     filepath > 1 && < 2,
-                     vacuum   == 2.0.0.0,
+                     filepath > 1,
+                     vacuum   >= 2.0,
                      graphviz == 2999.13.*
 
   exposed-modules:   GHC.Vacuum.GraphViz
