@@ -1,5 +1,5 @@
 Name: HAppSHelpers
-Version: 0.3
+Version: 0.4
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming HAppS based web-apps. 
@@ -15,6 +15,6 @@ Exposed-Modules: HAppS.Helpers,HAppS.Helpers.DirBrowse, HAppS.Helpers.HtmlOutput
                  
 Build-Depends: base, mtl, HAppS-Server, hscolour, filepath, directory, bytestring,
                HStringTemplate, HStringTemplateHelpers, safe, MissingH, containers, parsec
-Category: System
+Category: Distributed Computing
 Build-type: Simple
 
