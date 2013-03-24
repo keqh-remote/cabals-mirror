@@ -1,26 +1,21 @@
 name: type
-version: 0.1.0
+version: 0.2.0
 cabal-version: >= 1.6
 build-type: Simple
-copyright: Copyright (c) Topi Karvonen 2009
+copyright: Copyright (c) Topi Karvonen 2010
 author: Topi Karvonen
 maintainer: topi.karvonen@gmail.com
 bug-reports: mailto:topi.karvonen@gmail.com
 stability: experimental
 license: BSD3
 license-file: license/BSD3
-tested-with: GHC == 6.10.2
 category: Data
 
 synopsis: Dynamic casting library with support for arbitrary rank type kinds.
 description:
-  Originally written out of need to write Typeable instances for monad transformers. This is troublesome since monad transformer type constructors have by definition at least rank 2 kind.
-
-  By default only type constructors whose kind contains maximum of 8 units are supported, for example: @ * -> (* -> *) -> ((* -> *) -> *) -> * -> * @.
-  The provided generator allows one to support even more complex types.
+  By default kinds which contains maximum of 8 stars (*) are supported, for example: @* -> (* -> *) -> ((* -> *) -> *) -> * -> *@.
+  By recompiling the library one can support even more complex types.
   However be aware that the amount of code generated increases exponentially.
-
-extra-source-files: source/Data/Type/Generator.hs
 
 library
   exposed-modules:
@@ -28,16 +23,18 @@ library
     Data.Type.Kind
     Data.Type.Typeable
   other-modules:
-    Data.Type.Framework
-    Data.Type.Generated
-    Data.Type.TH
-    Data.Type.Instances
-  extensions: OverlappingInstances
+    Data.Type.Internal.Key
+    Data.Type.Internal.Framework
+    Data.Type.Internal.Body
+    Data.Type.Internal.Instances
+    Data.Type.Internal.Derive
+    Data.Type.Internal.Helpers
+    Data.Type.Internal.TH
   build-depends:
-    base >= 4.0 && < 4.2,
-    template-haskell == 2.3.*,
-    containers == 0.2.*
+    base >= 4.2 && < 4.3,
+    template-haskell >= 2.4 && < 2.5,
+    containers >= 0.3 && < 0.4
   hs-source-dirs: source
-  if impl(ghc < 6.8)
+  if impl(ghc < 6.12)
     buildable: False
 
