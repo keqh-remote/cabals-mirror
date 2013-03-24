@@ -1,30 +1,21 @@
-name: IrrHaskell
-version: 0.1.1
-cabal-version: >= 1.6
-build-type: Simple
-license: LGPL
-license-file: LICENSE
-author: Maciej Baranski
-maintainer: let at = "@" in concat ["m.baranski", at, "sms.ed.ac.uk"]
+Name:		IrrHaskell
+Version:	0.2
+Description:	A wrapper for the Irrlicht game engine allowing games to be written with functional reactive programming.
+License:	LGPL
+License-file:	LICENSE
+Author:		Ewen Cochran and Maciej Baranski
+Maintainer:	e.a.p.cochran@sms.ed.ac.uk
+Build-Type:	Simple
+Cabal-Version:	>=1.6
 stability: prototype
-homepage:
-category: Graphics, FFI, Game Engine
 tested-with: GHC == 6.10.1
-synopsis: Haskell binding to the Irrlicht game engine.
-description: 
-  Haskell binding to the Irrlicht game engine.
-
-library
-  build-depends: 
-    base >= 4.0.0.0 && < 5
-  exposed-modules:
+category: Graphics, FFI, Game Engine
+synopsis: Haskell FRP binding to the Irrlicht game engine.
+extra-source-files:	*.hs *.o *.cpp *.h *.hs *.c *.lhs *.pdf README Makefile InterfaceGenerator/*.hs InterfaceGenerator/*.cpp InterfaceGenerator/*.h InterfaceGenerator/*.py InterfaceGenerator/*.pyc 
+Library
+  Build-Depends:	base >= 4 && < 5, random >= 1, time >= 1
+  Exposed-modules:
   exposed: True
-  other-modules:
-
-  extensions: ForeignFunctionInterface
-
-
-  c-sources: irrlicht_interface.cpp
-
-
+  ghc-options:		
+  extensions:		ViewPatterns, NoMonomorphismRestriction, ForeignFunctionInterface
 
