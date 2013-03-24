@@ -2,7 +2,7 @@ cabal-version: >= 1.2.3
 name: bindings-directfb
 synopsis:
   Low level bindings to DirectFB
-version: 0.0.2
+version: 0.1
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
