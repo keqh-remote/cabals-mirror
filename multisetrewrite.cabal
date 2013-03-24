@@ -2,7 +2,7 @@
 Name:		multisetrewrite
 Synopsis:	Multi-set rewrite rules with guards and a parallel execution scheme
 Category:       Concurrency
-Version:	0.5
+Version:	0.6
 Stability:      experimental
 Cabal-Version:  >= 1.2
 License:	BSD3
@@ -14,11 +14,10 @@ homepage:       http://sulzmann.blogspot.com/2008/10/multi-set-rewrite-rules-wit
 
             
 data-files: README
-extra-source-files: Stack.hs, StackJoin.hs, MergeSort.hs, CHR.hs, CHRSolver.hs, Join.hs, GossipingGirlsinCHR.hs,
-                    GossipingGirlsinJoin.hs, BaggerProblem.hs
+extra-source-files: documentation.txt, Stack.hs, MergeSort.hs, CHRSolver.hs, GossipingGirlsinCHR.hs               
 
 Build-Type: Simple
-Build-Depends:	base, haskell98, stm
+Build-Depends:	base >= 0 && < 1000, haskell98, stm
 Exposed-modules:
                      MultiSetRewrite.Base,
                      MultiSetRewrite.RuleSyntax,
@@ -31,6 +30,4 @@ Other-modules:     MultiSetRewrite.ConcurrentList,
 Extensions: UndecidableInstances, FlexibleInstances, TypeSynonymInstances
             MultiParamTypeClasses, FunctionalDependencies
 
-GHC-Options: -threaded
-
-tested-with: GHC == 6.8.2
+tested-with: GHC == 6.10.4
