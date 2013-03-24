@@ -1,5 +1,5 @@
 name:          usb-safe
-version:       0.4.1
+version:       0.5
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -8,7 +8,7 @@ copyright:     2009 Bas van Dijk
 author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
 stability:     experimental
-category:      System
+category:      System, Monadic Regions
 synopsis:      Type-safe communication with USB devices.
 description:
   The usb library provides a standard Haskell abstraction layer over
@@ -108,7 +108,7 @@ Library
                , base-unicode-symbols      >= 0.1.1 && < 0.2
                , usb                       == 0.3.*
                , bytestring                == 0.9.*
-               , regions                   == 0.1.*
+               , regions                   == 0.2.*
                , transformers              >= 0.1.4 && < 0.2
                , MonadCatchIO-transformers == 0.0.2.*
   exposed-modules: System.USB.Safe
