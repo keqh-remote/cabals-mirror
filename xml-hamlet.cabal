@@ -1,5 +1,5 @@
 Name:                xml-hamlet
-Version:             0.0.2
+Version:             0.0.3
 Synopsis:            Hamlet-style quasiquoter for XML content
 Homepage:            http://www.yesodweb.com/
 License:             BSD3
@@ -8,6 +8,7 @@ Author:              Michael Snoyman
 Maintainer:          michael@snoyman.com
 Category:            Text
 Build-type:          Simple
+Description:         Hamlet-style quasiquoter for XML content
 
 Cabal-version:       >=1.8
 
