@@ -1,5 +1,5 @@
 name:		Win32
-version:	2.1
+version:	2.1.0.0
 license:	BSD3
 license-file:	LICENSE
 author:		Alastair Reid
@@ -7,7 +7,11 @@ copyright:	Alastair Reid, 1999-2003
 maintainer:	Esa Ilari Vuokko <ei@vuokko.info>
 category:	System, Graphics
 synopsis:	A binding to part of the Win32 library
-build-depends:	base
+build-type: Configure
+extra-source-files:
+	include/diatemp.h include/dumpBMP.h include/ellipse.h include/errors.h
+	include/gettime.h include/Win32Aux.h include/win32debug.h
+build-depends:	base, bytestring
 ghc-options:    -O -fvia-C -Wall -fno-warn-name-shadowing
 exposed-modules:
 	Graphics.Win32.GDI,
@@ -45,12 +49,14 @@ exposed-modules:
 	System.Win32.SimpleMAPI,
 	System.Win32.Time,
 	System.Win32.Console,
+	System.Win32.Security,
 	System.Win32.Types
 extensions: ForeignFunctionInterface
 extra-libraries:
 	"user32", "gdi32", "winmm", "kernel32", "advapi32"
 include-dirs: 	include
 includes:	"HsWin32.h", "HsGDI.h", "WndProc.h"
+install-includes:	"HsWin32.h", "HsGDI.h", "WndProc.h"
 c-sources:
 	cbits/HsGDI.c,
 	cbits/HsWin32.c,
