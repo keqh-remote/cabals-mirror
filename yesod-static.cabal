@@ -1,5 +1,5 @@
 name:            yesod-static
-version:         1.0.0.1
+version:         1.0.0.2
 license:         MIT
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -17,12 +17,12 @@ extra-source-files:
 
 library
     build-depends:   base                  >= 4        && < 5
-                   , containers            >= 0.2      && < 0.5
+                   , containers            >= 0.2
                    , old-time              >= 1.0
                    , yesod-core            >= 1.0      && < 1.1
                    , base64-bytestring     >= 0.1.0.1  && < 0.2
                    , cereal                >= 0.3      && < 0.4
-                   , bytestring            >= 0.9.1.4  && < 0.10
+                   , bytestring            >= 0.9.1.4
                    , template-haskell
                    , directory             >= 1.0      && < 1.2
                    , transformers          >= 0.2.2    && < 0.4
@@ -44,15 +44,15 @@ test-suite tests
     type: exitcode-stdio-1.0
     cpp-options:   -DTEST_EXPORT
     build-depends:   base
-                   , hspec >= 0.8   && < 0.10
+                   , hspec >= 1.0   && < 1.2
                    , HUnit
                    -- copy from above
-                   , containers            >= 0.2      && < 0.5
+                   , containers            >= 0.2
                    , old-time              >= 1.0
                    , yesod-core
                    , base64-bytestring     >= 0.1.0.1  && < 0.2
                    , cereal                >= 0.3      && < 0.4
-                   , bytestring            >= 0.9.1.4  && < 0.10
+                   , bytestring            >= 0.9.1.4
                    , template-haskell
                    , directory             >= 1.0      && < 1.2
                    , transformers          >= 0.2.2    && < 0.4
