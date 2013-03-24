@@ -1,16 +1,15 @@
 name:           polyseq
-version:        0.1.1
+version:        0.1.2
 license:        PublicDomain
 author:         Daniel Seidel
 maintainer:     ds@iai.uni-bonn.de
-synopsis:       Counter examples to Free Theorems
+synopsis:       Taming Selective Strictness
 description:
-	Given a term, this program calculates a set of optimal Free Theorems
-        that hold in a lambda calculus with Seq. It drops bottom-reflectingness
-        (or totality) restrictions when possible.
-	The theory behind the algorithm is described in the paper 
-	\"Taming Selective Strictness\" (ATPS'09) by Daniel Seidel and Janis
-	Voigtländer.
+	Given a term, this program calculates a set of \"optimal\" free theorems 
+        that hold in a lambda calculus with selective strictness. It omits 	
+        totality (in general, bottom-reflection) and other restrictions when 
+        possible. The underlying theory is described in the paper \"Taming 
+        Selective Strictness\" (ATPS'09) by Daniel Seidel and Janis Voigtländer.
 category:       Language
 tested-with:    GHC==6.8.2
 build-type:	Simple
