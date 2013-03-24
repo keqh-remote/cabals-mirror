@@ -1,11 +1,12 @@
 Name:             markov-chain
-Version:          0.0.1
+Version:          0.0.2
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:         http://darcs.haskell.org/markov-chain/
 Category:         Algorithms
+Build-Type:       Simple
 Build-Depends:    base>=1.0, mtl
 -- From the Monad Template Library we only need the State monad.
 -- If your compiler does not support functional dependencies,
@@ -28,8 +29,20 @@ Description:
    Then on recomposition it chooses subsequent letters randomly
    according to the frequencies found in the training data.
    This library is well suited for /bull-shit generators/.
-GHC-Options:      -Wall -O
 Tested-With:      GHC==6.4.1
-Hs-Source-Dirs:   src
-Exposed-Modules:
-  Data.MarkovChain
+Cabal-Version: >=1.2
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+  If flag(splitBase)
+    Build-Depends: base >= 2, random >= 1.0, mtl, containers
+  Else
+    Build-Depends: base >=1.0 && < 2, mtl
+
+  GHC-Options:      -Wall
+  Hs-Source-Dirs:   src
+
+  Exposed-Modules:
+    Data.MarkovChain
