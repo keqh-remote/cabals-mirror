@@ -1,5 +1,5 @@
 Name:                swift-lda
-Version:             0.4.0
+Version:             0.4.1
 Synopsis:            Online sampler for Latent Dirichlet Allocation
 Description:     Online Gibbs sampler for Latent Dirichlet Allocation. 
                  LDA is a generative admixture model frequently used 
