@@ -1,5 +1,5 @@
 Name:                happstack-server
-Version:             0.2.1
+Version:             0.3.1
 Synopsis:            Web related tools and services.
 Description:         Web framework
 License:             BSD3
@@ -9,7 +9,12 @@ Maintainer:          Happstack team <happs@googlegroups.com>
 homepage:            http://happstack.com
 Category:            Web, Distributed Computing
 Build-Type:          Simple
-Cabal-Version:       >= 1.4
+Cabal-Version:       >= 1.6
+
+source-repository head
+    type:     darcs
+    subdir:   happstack-server
+    location: http://patch-tag.com/publicrepos/happstack
 
 Flag base4
     Description: Choose the even newer, even smaller, split-up base package.
@@ -28,7 +33,6 @@ Library
                        Happstack.Server.HTTP.LowLevel
                        Happstack.Server.HTTP.FileServe
                        Happstack.Server.SimpleHTTP
-                       Happstack.Server.JSON
                        Happstack.Server.MessageWrap
                        Happstack.Server.MinHaXML
                        Happstack.Server.SURI
@@ -61,8 +65,8 @@ Library
                        extensible-exceptions,
                        HaXml >= 1.13 && < 1.14,
                        hslogger >= 1.0.2,
-                       happstack-data >= 0.2.1 && < 0.3,
-                       happstack-util >= 0.2.1 && < 0.3,
+                       happstack-data >= 0.3.1 && < 0.4,
+                       happstack-util >= 0.3.1 && < 0.4,
                        html,
                        MaybeT,
                        mtl,
@@ -73,6 +77,7 @@ Library
                        process,
                        template-haskell,
                        time,
+                       utf8-string >= 0.3.4 && < 0.4,
                        xhtml,
                        zlib
 
