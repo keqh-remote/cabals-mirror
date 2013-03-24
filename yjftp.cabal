@@ -1,5 +1,5 @@
 Name:		yjftp
-Version:	0.3.2
+Version:	0.3.3
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -19,10 +19,9 @@ Description:	Just CUI FTP client.
 		Once login, you can run command 'ls', 'cd', 'cat', 'put', 'get', 'edit', 'show'
 		and so on.
 		.
-		And you can put/get immediately by doing following.
+		And you can put or get immediately by doing following.
 		.
 		> yjftp put filepath srvr.address/directorypath [user_name] [-p password]
-		.
 		> yjftp get srvr.address/filepath [user_name] [-p password]
 Stability:	experimental
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/yjftp/index.xhtml
