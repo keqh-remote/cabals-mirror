@@ -1,5 +1,5 @@
 Name:                monad-parallel
-Version:             0.5.1
+Version:             0.5.2
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Parallel execution of monadic computations
