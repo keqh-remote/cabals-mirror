@@ -1,5 +1,5 @@
 name:           snap-core
-version:        0.2.3
+version:        0.2.4
 synopsis:       Snap: A Haskell Web Framework (Core)
 
 description:
@@ -100,6 +100,11 @@ Flag testsuite
                be evaluated but not printed.
   Default: False
 
+Flag portable
+  Description: Compile in cross-platform mode. No platform-specific code or
+               optimizations such as C routines will be used.
+  Default: False
+
 Library
   hs-source-dirs: src
 
@@ -109,8 +114,12 @@ Library
   if flag(testsuite)
     cpp-options: -DDEBUG_TEST
 
-  c-sources: cbits/timefuncs.c
-  include-dirs: cbits
+  if flag(portable) || os(windows)
+    cpp-options: -DPORTABLE
+  else
+    c-sources: cbits/timefuncs.c
+    include-dirs: cbits
+    build-depends: bytestring-mmap >= 0.2.1 && <0.3
 
   exposed-modules:
     Data.CIByteString,
@@ -130,7 +139,6 @@ Library
     attoparsec >= 0.8.0.2 && < 0.9,
     base >= 4 && < 5,
     bytestring,
-    bytestring-mmap >= 0.2.1 && <0.3,
     bytestring-nums,
     cereal >= 0.2 && < 0.3,
     containers,
@@ -145,7 +153,7 @@ Library
     text >= 0.7.1 && <0.8,
     time,
     transformers,
-    unix,
+    unix-compat,
     zlib
 
   ghc-prof-options: -prof -auto-all
@@ -168,6 +176,7 @@ Executable snap
     cereal >= 0.2 && < 0.3,
     containers,
     directory,
+    directory-tree,
     dlist >= 0.5 && < 0.6,
     filepath,
     haskell98,
@@ -175,10 +184,11 @@ Executable snap
     monads-fd,
     old-locale,
     old-time,
+    template-haskell,
     text >= 0.7.1 && <0.8,
     time,
     transformers,
-    unix,
+    unix-compat,
     zlib
 
   ghc-prof-options: -prof -auto-all
