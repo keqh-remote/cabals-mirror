@@ -1,6 +1,7 @@
 name:           text
-version:        0.9.0.1
-homepage:       http://code.haskell.org/text
+version:        0.9.1.0
+homepage:       http://bitbucket.org/bos/text
+bug-reports:    http://bitbucket.org/bos/text/issues
 synopsis:       An efficient packed Unicode text type.
 description:    
     .
@@ -27,7 +28,7 @@ description:
     .
 license:        BSD3
 license-file:   LICENSE
-author:         Tom Harper <rtomharper@googlemail.com>
+author:         Bryan O'Sullivan <bos@serpentine.com>
 maintainer:     Bryan O'Sullivan <bos@serpentine.com>
                 Tom Harper <rrtomharper@googlemail.com>
                 Duncan Coutts <duncan@haskell.org>
@@ -36,7 +37,7 @@ category:       Data, Text
 build-type:     Simple
 cabal-version:  >= 1.6
 extra-source-files:
-    README
+    README.markdown
     TODO
     -- scripts/CaseFolding.txt
     -- scripts/SpecialCasing.txt
@@ -53,12 +54,16 @@ extra-source-files:
     tests/StdioCoverage.hs
     tests/TestUtils.hs
     tests/benchmarks/Cut.hs
+    tests/benchmarks/DecodeUtf8.hs
+    tests/benchmarks/EncodeUtf8.hs
+    tests/benchmarks/Equality.hs
     tests/benchmarks/FileIndices.hs
     tests/benchmarks/FileRead.hs
     tests/benchmarks/FoldLines.hs
     tests/benchmarks/HtmlCombinator.hs
     tests/benchmarks/Makefile
     tests/benchmarks/Replace.hs
+    tests/benchmarks/ReplaceTags.hs
     tests/benchmarks/fileread.py
     tests/benchmarks/fileread_c.c
     tests/cover-stdio.sh
@@ -78,6 +83,8 @@ library
     Data.Text.Lazy.Builder
     Data.Text.Lazy.Encoding
     Data.Text.Lazy.IO
+    Data.Text.Lazy.Read
+    Data.Text.Read
   other-modules:
     Data.Text.Array
     Data.Text.Encoding.Fusion
@@ -124,5 +131,9 @@ library
     cpp-options: -DASSERTS
 
 source-repository head
-  type:     darcs
-  location: http://code.haskell.org/text/
+  type:     mercurial
+  location: http://bitbucket.org/bos/text
+
+source-repository head
+  type:     git
+  location: http://github.com/bos/text
