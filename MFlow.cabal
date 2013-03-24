@@ -2,7 +2,7 @@ name: MFlow
 synopsis:  (Web) application server. Stateful server processes. Simple, statically correct widget combinators.
 
 
-version: 0.0.0
+version: 0.0.1
 cabal-version: -any
 build-type: Simple
 license: BSD3
@@ -10,7 +10,7 @@ license-file: LICENSE
 copyright:
 maintainer: agocorona@gmail.com
 build-depends: Workflow ==0.5.8.2, transformers -any, mtl -any,
-               extensible-exceptions -any, xhtml -any, base > 4.3 && < 4.4,
+               extensible-exceptions -any, xhtml -any, base > 4.4 && < 4.6,
                hack -any, hack-handler-simpleserver -any, bytestring -any,
                containers -any, RefSerialize == 0.2.8, TCache == 0.9.0.1, stm >2,
                old-time -any,
@@ -34,7 +34,7 @@ description:  Simple application server with stateful request-response flows, pe
            .
            It includes Application Server features such is resource an process management
            and automatic recovery
-
+           .
            Resource management: The user can define process and session timeout. The
            process is automatically rerun after timeout if a new request arrive with transparent
            recovery of state, at the point of the interrupted dialog  even after server crash.
