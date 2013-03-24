@@ -1,5 +1,5 @@
 Name:		ehaskell
-Version:	0.2
+Version:	0.3
 Cabal-Version:	>= 1.2
 Build-Type:	Simple
 License:	GPL
@@ -7,7 +7,7 @@ License-File:	LICENSE
 Stability:	experimental
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
 Maintainer:	PAF01143@nifty.ne.jp
-Category:	Code Generation
+Category:	Text
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/ehaskell/index.xhtml
 Synopsis:	like eruby, ehaskell is embedded haskell.
 Description:	You can embed haskell in Text file.
@@ -44,5 +44,5 @@ Description:	You can embed haskell in Text file.
 
 Executable ehs
   Main-Is:		Main.hs
-  Build-Depends:	base, mtlparse >= 0.0.1, yjtools >= 0.7, directory, regexpr >= 0.3.3, process
+  Build-Depends:	base, mtlparse >= 0.0.1, yjtools >= 0.8, directory, regexpr >= 0.3.3, process, filepath
   GHC-Options:		-Wall
