@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       2.5
+version:       2.6
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -20,7 +20,11 @@ description:
   families of getters, folds, isomorphisms, traversals, setters and lenses and their
   indexed variants.
   .
-  More information on the care and feeding of lenses, including a tutorial and motivation
+  An overview, with a large number of examples can be found in the README.
+  .
+  <https://github.com/ekmett/lens#lens-lenses-folds-and-traversals>
+  .
+  More information on the care and feeding of lenses, including a brief tutorial and motivation
   for their types can be found on the lens wiki.
   .
   <https://github.com/ekmett/lens/wiki>
@@ -33,7 +37,7 @@ description:
   .
   The core of this hierarchy looks like:
   .
-  <<https://github.com/ekmett/lens/wiki/images/Hierarchy-2.5.png>>
+  <<https://github.com/ekmett/lens/wiki/images/Hierarchy-2.6.png>>
   .
   You can compose any two elements of the hierarchy above using (.) from the Prelude, and you can
   use any element of the hierarchy as any type it links to above it.
@@ -78,7 +82,7 @@ description:
   exotic functionality, (e.g. getters, setters, indexed folds, isomorphisms).
 
 build-type:    Simple
-tested-with:   GHC == 7.4.1
+tested-with:   GHC == 7.4.1, GHC == 7.6.0, GHC == 7.7.20120822, GHC == 7.7.20120830
 extra-source-files:
   .travis.yml
   .ghci
@@ -96,6 +100,38 @@ source-repository head
   type: git
   location: git://github.com/ekmett/lens.git
 
+-- Enable benchmarking against Neil Mitchell's uniplate library for comparative performance analysis. Defaults to being turned off to avoid
+-- the extra dependency.
+--
+-- > cabal configure --enable-benchmarks -fbenchmark-uniplate && cabal build && cabal bench
+flag benchmark-uniplate
+  default: False
+  manual: True
+
+-- Enable template haskell. Disable this at your own risk and for testing only.
+--
+-- cabal configure -f-template-haskell is an /unsuppported/ configuration.
+--
+-- Clients of this library can and should expect this to be turned on.
+flag template-haskell
+  default: True
+  manual: True
+
+-- Generate inline pragmas when using template-haskell. This defaults to enabled, but you can
+--
+-- > cabal install lens -f-inlining 
+--
+-- to shut it off to benchmark the relative performance impact, or as last ditch effort to address compile
+-- errors resulting from the myriad versions of template-haskell that all purport to be 2.8.
+flag inlining
+  manual: True
+  default: True
+
+-- Some 7.6.1-rc1 users report their TH still uses old style inline pragmas. This lets them turn on inlining.
+flag old-inline-pragmas
+  default: False
+  manual: True
+
 library
   build-depends:
     base                 >= 4.3      && < 5,
@@ -106,7 +142,6 @@ library
     containers           >= 0.4.2    && < 0.6,
     hashable             == 1.1.*,
     mtl                  >= 2.1.1    && < 2.2,
-    template-haskell     >= 2.4      && < 2.9,
     text                 >= 0.11     && < 0.12,
     transformers         >= 0.3      && < 0.4,
     unordered-containers >= 0.2      && < 0.3
@@ -129,7 +164,6 @@ library
     Control.Lens.Plated
     Control.Lens.Representable
     Control.Lens.Setter
-    Control.Lens.TH
     Control.Lens.Traversal
     Control.Lens.Tuple
     Control.Lens.Type
@@ -155,7 +189,12 @@ library
     Data.Text.Lazy.Lens
     Data.Tree.Lens
     Data.Typeable.Lens
-    Language.Haskell.TH.Lens
+
+  if flag(template-haskell)
+    build-depends: template-haskell >= 2.4 && < 2.9
+    exposed-modules: Control.Lens.TH Language.Haskell.TH.Lens
+  else
+    cpp-options: -DDISABLE_TEMPLATE_HASKELL
 
   -- platform
   build-depends:   array >= 0.3.0.2 && < 0.5
@@ -167,10 +206,14 @@ library
   build-depends:   parallel >= 3.1.0.1 && < 3.3
   exposed-modules: Control.Parallel.Strategies.Lens Control.Seq.Lens
 
-  if impl(ghc>7.6.0.20120810)
-    cpp-options: -DNEW_INLINE_PRAGMAS
+  if impl(ghc>=7.6.0.20120810)
+    if flag(old-inline-pragmas)
+      cpp-options: -DOLD_INLINE_PRAGMAS
 
-  if (impl(ghc>=7.4))
+  if !flag(inlining)
+    cpp-options: -DOMIT_INLINING
+
+  if impl(ghc>=7.4)
     other-extensions: Trustworthy
     build-depends: ghc-prim
     exposed-modules: GHC.Generics.Lens
@@ -223,7 +266,9 @@ benchmark plated
     deepseq,
     ghc-prim,
     lens,
-    transformers,
-    uniplate >= 1.6.7 && < 1.7
+    transformers
   ghc-options: -Wall -O2 -threaded
   hs-source-dirs: benchmarks
+  if flag(benchmark-uniplate)
+    build-depends: uniplate >= 1.6.7 && < 1.7
+    cpp-options: -DBENCHMARK_UNIPLATE
