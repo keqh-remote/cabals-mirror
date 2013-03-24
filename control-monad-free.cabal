@@ -1,5 +1,5 @@
 name: control-monad-free
-version: 0.4
+version: 0.5
 Cabal-Version:  >= 1.2.3
 build-type: Simple
 license: PublicDomain
@@ -18,11 +18,18 @@ synopsis: Free monads and monad transformers
 category: Control, Monads
 stability: experimental
 
+Flag transformers
+   default: True
 
 Library
   buildable: True
-  build-depends: base, mtl
-  extensions:  StandaloneDeriving, Rank2Types, MultiParamTypeClasses, FlexibleInstances, FlexibleContexts, UndecidableInstances
+  build-depends: base >= 2 && < 5
+  if flag(transformers)
+     build-depends: transformers
+     cpp-options: -DTRANSFORMERS
+  else
+     build-depends: mtl
+  extensions:  StandaloneDeriving, Rank2Types, MultiParamTypeClasses, FlexibleInstances, FlexibleContexts, UndecidableInstances, OverlappingInstances
   exposed-modules:
      Control.Monad.Free
      Control.Monad.Free.Zip
