@@ -1,5 +1,5 @@
 name:               hedis
-version:            0.5.1
+version:            0.6
 synopsis:
     Client library for the Redis datastore: supports full command set,  
     pipelining.
@@ -33,6 +33,12 @@ Description:
         TCP connection.
     .
     For detailed documentation, see the "Database.Redis" module.
+    .
+    [Changes since version 0.5.1]
+    .
+    * Changed return type of HDEL from Bool to Integer.
+    .
+    * Some documentation updates.
     .
     [Changes since version 0.5]
     .
@@ -75,14 +81,6 @@ source-repository head
   type:     git
   location: https://github.com/informatikr/hedis
 
-flag benchmark
-    description: Build the benchmark executable.
-    default: False
-
-flag test
-    description: Build the test suite.
-    default: False
-
 library
   hs-source-dirs:   src
   ghc-options:      -Wall
@@ -95,7 +93,7 @@ library
                     bytestring-lexing == 0.4.*,
                     mtl == 2.*,
                     network == 2.*,
-                    resource-pool == 0.2.1.*,
+                    resource-pool == 0.2.*,
                     time,
                     vector == 0.9.*
 
