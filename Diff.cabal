@@ -1,5 +1,5 @@
 name:                Diff
-version:             0.2.0
+version:             0.3.0
 synopsis:            O(ND) diff algorithm in haskell.
 description:         Basic implementation of the standard diff algorithm.
 category:            Algorithms
@@ -18,10 +18,13 @@ library
   if flag(small-base)
     build-depends:     base >= 3 && <= 6, array
   else
-    build-depends:     base < 3 
+    build-depends:     base < 3
   hs-source-dirs:    src
-  exposed-modules:   Data.Algorithm.Diff
+  exposed-modules:
+                     Data.Algorithm.Diff,
+                     Data.Algorithm.DiffOutput
   ghc-options:       -O2 -Wall -funbox-strict-fields
+  build-depends:     pretty
 
 -- test-suite properties
 --   hs-source-dirs: src, test
@@ -29,9 +32,7 @@ library
 --   type:           exitcode-stdio-1.0
 
 --   build-depends:
---     QuickCheck     >= 2.4,
---     test-framework >= 0.4,
---     test-framework-quickcheck2 >= 0.2
+--    QuickCheck >= 2.4, test-framework >= 0.4, test-framework-quickcheck2 >= 0.2, process, directory
 
 source-repository head
   type:      darcs
