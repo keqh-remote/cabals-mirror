@@ -1,9 +1,10 @@
 name:           srcloc
-version:        0.2.1
+version:        0.3.0
 cabal-version:  >= 1.6
 license:        BSD3
 license-file:   LICENSE
-copyright:      (c) 2006-2012 Harvard University
+copyright:      (c) 2006-2011 Harvard University
+                (c) 2011-2012 Geoffrey Mainland
 author:         Geoffrey Mainland <mainland@eecs.harvard.edu>
 maintainer:     mainland@eecs.harvard.edu
 stability:      alpha
@@ -19,8 +20,8 @@ library
     Data.Loc
 
   build-depends:
-    base >= 4 && < 5,
-    syb >= 0.1 && < 0.4
+    base >= 4   && < 5,
+    syb  >= 0.1 && < 0.4
 
 source-repository head
   type:     git
