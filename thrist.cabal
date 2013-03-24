@@ -1,9 +1,9 @@
 Name:                thrist
-Version:             0.2.2
+Version:             0.3
 Synopsis:            Type-threaded list
 
 Description:
-    Thrist is a list-like data structure (GADT)
+    @Thrist@ is a list-like data structure (GADT)
     whose elements are values of a two-parameter
     datatype. The typing constraint ensures that
     the second type parameter of a former value
@@ -21,6 +21,14 @@ Description:
     For further ideas, please consult the companion
     (draft) paper \"Thrists: Dominoes of Data\" at
     <http://omega.googlecode.com/files/Thrist-draft-2011-11-20.pdf>
+    .
+    Release history:
+    .
+    [0.3] Support for (GHC v7.6.1) @PolyKinds@ extension, this compiler is required now
+    .
+    [0.2] Several new functions introduced, some renamed
+    .
+    [0.1] Initial version
 
 Category:            Data Structures
 License:             BSD3
@@ -33,7 +41,7 @@ Homepage:            http://heisenbug.blogspot.com/search/label/thrist
 Bug-Reports:         mailto:ggreif+thrist@gmail.com
 
 Stability:           experimental
-Tested-With:         GHC == 7.0.4, GHC == 7.2.2
+Tested-With:         GHC == 7.6.1
 Cabal-Version:       >= 1.6
 Extra-Source-Files:  examples.hs
 Build-Type:          Simple
@@ -43,7 +51,7 @@ Source-Repository head
   Location: http://patch-tag.com/r/heisenbug/thrist/
 
 Library
-    Build-Depends:       base >= 4 && < 5
+    Build-Depends:       base >= 4.6 && < 5
     Exposed-Modules:     Data.Thrist Data.Thrist.List Data.Thrist.Monad
-    Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances, TypeOperators, FlexibleContexts
+    Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances, TypeOperators
     Ghc-Options:         -Wall
