@@ -1,9 +1,9 @@
 name:               epoll
-version:            0.1
+version:            0.1.1
 synopsis:           Low-level bindings to epoll.
 description:        Bindings to epoll, a Linux specific I/O
                     event notication facility (cf. man epoll(7)).
-category:           sys
+category:           System
 license:            LGPL
 license-file:       LICENSE
 author:             Toralf Wittner
