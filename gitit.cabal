@@ -1,5 +1,5 @@
 name:                gitit
-version:             0.1.0.1
+version:             0.1.1
 build-type:          Simple
 synopsis:            Wiki using HAppS, git, and pandoc.
 description:         Gitit is a wiki program. HAppS is used for the web
@@ -31,7 +31,7 @@ data-files:          stylesheets/gitit.css, stylesheets/hk-pyg.css,
 hs-source-dirs:      .
 executable:          gitit
 main-is:             Gitit.hs 
-other-modules:       Gitit.State, Gitit.Git
+other-modules:       Gitit.State, Gitit.Git, Paths_gitit
 build-depends:       base, parsec < 3, pretty, xhtml, containers, pandoc
                      >= 1.1, process, filepath, directory, mtl, cgi,
                      network, old-time, highlighting-kate, bytestring,
