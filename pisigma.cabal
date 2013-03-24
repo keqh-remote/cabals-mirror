@@ -1,6 +1,6 @@
 cabal-version: >= 1.6
 name:          pisigma
-version:       0.2
+version:       0.2.1
 license:       BSD3
 license-file:  LICENSE
 data-files:    examples/*.pi
@@ -29,17 +29,17 @@ flag debug
   default:          False
 
 library
-  build-depends:    array           >= 0.2   && < 0.4,
-                    base            >= 4.0   && < 5.0,
-                    bytestring      >= 0.9   && < 1.0,
-                    haskeline       >= 0.6   && < 0.7,
-                    haskeline-class >= 0.6.1 && < 0.7,
-                    mpppc           >= 0.1.0 && < 0.2,
-                    mtl             >= 1.1   && < 1.2,
-                    parsec          >= 3.0   && < 4.0,
-                    text            >= 0.5   && < 0.6,
-                    utf8-string     >= 0.3.5 && < 0.4,
-                    containers      >= 0.2   && < 0.4
+  build-depends:    array           >= 0.2     && < 0.4,
+                    base            >= 4.0     && < 5.0,
+                    bytestring      >= 0.9     && < 1.0,
+                    containers      >= 0.4     && < 0.5,
+                    haskeline       >= 0.6     && < 0.7,
+                    haskeline-class >= 0.6.1   && < 0.7,
+                    mpppc           >= 0.1.0   && < 0.2,
+                    mtl             >= 1.1.1.1 && < 2.0,
+                    parsec          >= 3.0     && < 4.0,
+                    text            >= 0.11    && < 0.12,
+                    utf8-string     >= 0.3.6   && < 0.4
 
   exposed-modules:  Language.PiSigma.Check
                     Language.PiSigma.Equality
