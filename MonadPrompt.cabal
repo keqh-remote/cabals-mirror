@@ -1,5 +1,5 @@
 name:                MonadPrompt
-version:             1.0.0.1
+version:             1.0.0.2
 cabal-version:       >= 1.2
 build-type:          Simple
 
@@ -13,11 +13,11 @@ synopsis:            MonadPrompt, implementation & examples
 category:            Control
 -- tested-with:         ghc-6.8.2
 extra-source-files:  PromptExamples.hs
-description:         "prompting" monad that allows splitting the description
+description:         \"Prompting\" monad that allows splitting the description
                      of a computation from the implementation of the effects
 		     used in that computation.
-		     http://www.haskell.org/pipermail/haskell-cafe/2008-January/038301.html
+		     <http://www.haskell.org/pipermail/haskell-cafe/2008-January/038301.html>
 
 library
   exposed-modules:   Control.Monad.Prompt
-  build-depends:     base, mtl
+  build-depends:     base<=4, mtl
