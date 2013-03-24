@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.8.1
+Version:             0.8.2
 Description:
    Native Haskell TLS and SSL protocol implementation for server and client.
    .
@@ -41,8 +41,8 @@ Library
                    , cereal >= 0.3
                    , bytestring
                    , crypto-api >= 0.5
-                   , cryptocipher >= 0.2.5
-                   , certificate >= 0.9.4 && < 1.0
+                   , cryptocipher >= 0.3.0
+                   , certificate >= 1.0.0 && < 1.1.0
   Exposed-modules:   Network.TLS
                      Network.TLS.Cipher
                      Network.TLS.Compression
@@ -66,11 +66,13 @@ executable           Tests
   if flag(test)
     Buildable:       True
     Build-Depends:   base >= 3 && < 5
-                   , HUnit
                    , QuickCheck >= 2
+                   , test-framework
+                   , test-framework-quickcheck2
                    , bytestring
   else
     Buildable:       False
+  ghc-options:       -Wall -fhpc
 
 source-repository head
   type: git
