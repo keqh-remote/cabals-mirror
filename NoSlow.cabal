@@ -1,5 +1,5 @@
 Name:           NoSlow
-Version:        0.1
+Version:        0.1.1
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
@@ -53,22 +53,25 @@ Executable noslow
   Build-Depends:
     base >= 3 && < 5,
     template-haskell,
-    criterion >= 0.2
+    criterion >= 0.2 && < 0.3
+
+  Extensions:
+    MultiParamTypeClasses
 
   if flag(dph-prim-seq)
     build-depends: dph-prim-seq, dph-base
     cpp-options: -DUSE_DPH_PRIM_SEQ
 
   if flag(vector)
-    build-depends: vector
+    build-depends: vector >= 0.4
     cpp-options: -DUSE_VECTOR
 
   if flag(uvector)
-    build-depends: uvector
+    build-depends: uvector >= 0.1
     cpp-options: -DUSE_UVECTOR
 
   if flag(storablevector)
-    build-depends: storablevector
+    build-depends: storablevector >= 0.2
     cpp-options: -DUSE_STORABLEVECTOR
 
   Ghc-Options:
