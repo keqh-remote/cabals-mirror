@@ -1,5 +1,5 @@
 Name:                 hack-contrib
-Version:              2009.12.20
+Version:              2010.1.24
 Build-type:           Simple
 Synopsis:             Hack contrib
 Description:          Common middlewares and utilities that helps working with Hack
@@ -29,7 +29,7 @@ library
                   , data-default >= 0.2
                   , time
                   , pureMD5
-                  , mps >= 2009.11.7
+                  , mps >= 2010.1
                   , hack >= 2009.10.30
                   , utf8-string
                   , ansi-wl-pprint
@@ -47,8 +47,6 @@ library
                     Hack.Contrib.Middleware.File
                     Hack.Contrib.Middleware.Head
                     Hack.Contrib.Middleware.Inspect
-                    Hack.Contrib.Middleware.Lambda
-                    Hack.Contrib.Middleware.Lucky
                     Hack.Contrib.Middleware.NotFound
                     Hack.Contrib.Middleware.RegexpRouter
                     Hack.Contrib.Middleware.ShowExceptions
