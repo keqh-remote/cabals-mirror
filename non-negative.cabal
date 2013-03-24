@@ -1,13 +1,11 @@
 Name:             non-negative
-Version:          0.0.1
+Version:          0.0.2
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:         http://darcs.haskell.org/non-negative/
 Category:         Math
-Build-Type:       Simple
-Build-Depends:    base>=1.0, QuickCheck
 Synopsis:         Non-negative numbers
 Description:
    Provides a class for non-negative numbers,
@@ -15,20 +13,39 @@ Description:
    and a lazy number type for non-negative numbers
    (a generalization of Peano numbers).
    This library is used by the 'event-list' package.
-GHC-Options:      -Wall
-Tested-With:      GHC==6.4.1
-Hs-Source-Dirs:   src
-Exposed-Modules:
-  Numeric.NonNegative.Class
-  Numeric.NonNegative.Wrapper
-  Numeric.NonNegative.Chunky
-Other-Modules:
-  Numeric.NonNegative.Utility
+Tested-With:      GHC==6.4.1, GHC==6.8.2
+Cabal-Version:    >=1.2
+Build-Type:       Simple
 
-Executable:       test
-Hs-source-dirs:   src, .
-GHC-Options:      -Wall
-Main-Is:          Test/Main.hs
-Other-Modules:
-  Test.Utility
-  Test.Numeric.NonNegative.Chunky
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Flag buildTests
+  description: Build test executables
+  default:     False
+
+Library
+  If flag(splitBase)
+    Build-Depends: base >= 2, QuickCheck
+  Else
+    Build-Depends: base >= 1.0 && < 2, QuickCheck
+
+  GHC-Options:      -Wall
+  Hs-Source-Dirs:   src
+  Exposed-Modules:
+    Numeric.NonNegative.Class
+    Numeric.NonNegative.Wrapper
+    Numeric.NonNegative.Chunky
+  Other-Modules:
+    Numeric.NonNegative.Utility
+
+Executable test
+  If !flag(buildTests)
+    Buildable:      False
+
+  Hs-source-dirs:   src, .
+  GHC-Options:      -Wall
+  Main-Is:          Test/Main.hs
+  Other-Modules:
+    Test.Utility
+    Test.Numeric.NonNegative.Chunky
