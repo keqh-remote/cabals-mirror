@@ -1,5 +1,5 @@
 name:           graphmod
-version:        1.1.3
+version:        1.2
 license:        BSD3
 license-file:   LICENSE
 author:         Iavor S. Diatchki
@@ -7,14 +7,15 @@ maintainer:     iavor.diatchki@gmail.com
 homepage:       http://github.com/yav/graphmod
 build-type:     Simple
 cabal-version:  >= 1.2
-synopsis:       Present the module dependecies of a program as a "dot" graph.
-description:    This package contains a program that can compute "dot" grpahs
-                from the dependecies between a number of Haskell modules.
+synopsis:       Present the module dependencies of a program as a "dot" graph.
+description:    This package contains a program that can compute "dot" graphs
+                from the dependencies between a number of Haskell modules.
 category:       Development
 
 executable graphmod
     main-is:         Main.hs
-    other-modules:   Utils
-    build-depends:   base, directory, filepath, dotgen >= 0.2 && < 0.3,
-                     haskell-lexer
+    other-modules:   Utils, Trie
+    build-depends:   base < 5, directory, filepath, dotgen >= 0.2 && < 0.5,
+                     haskell-lexer, containers
     hs-source-dirs:  src
+    ghc-options:     -Wall -O2
