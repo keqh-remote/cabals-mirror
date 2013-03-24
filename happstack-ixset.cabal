@@ -1,7 +1,13 @@
 Name:                happstack-ixset
-Version:             0.5.0.3
+Version:             6.0.0
 Synopsis:            Efficient relational queries on Haskell sets. 
-Description:         Just pick which parts of your data structures you want indexed using an easy to use template-haskell function. Spare yourself the need to write, run, and maintain code that marshalls your data to/from an external relational database just for efficient queries. happstack-ixset relies on generics and TH to spare you the boilerplate normally required for such tasks. 
+Description:         
+    Just pick which parts of your data structures you want indexed
+    using an easy to use template-haskell function. Spare yourself the
+    need to write, run, and maintain code that marshalls your data
+    to/from an external relational database just for efficient
+    queries. happstack-ixset relies on generics and TH to spare you
+    the boilerplate normally required for such tasks.
 License:             BSD3
 License-file:        COPYING
 Author:              Happstack team, HAppS LLC
@@ -14,7 +20,7 @@ Cabal-Version:       >= 1.6
 source-repository head
     type:     darcs
     subdir:   happstack-ixset
-    location: http://patch-tag.com/r/mae/happstack/pullrepo
+    location: http://patch-tag.com/r/mae/happstack
 
 flag base4
 
@@ -35,10 +41,9 @@ Library
 
 
   Build-Depends:       containers,
-                       happstack-data >= 0.5 && < 0.6,
-                       happstack-util >= 0.5 && < 0.6,
+                       happstack-data >= 6.0 && < 6.1,
+                       happstack-util >= 6.0 && < 6.1,
                        mtl >= 1.1 && < 2.1,
-                       syb-with-class,
                        template-haskell
 
   hs-source-dirs:      src
@@ -60,7 +65,10 @@ Library
 
   -- Should have ", DeriveDataTypeable", but Cabal complains
   cpp-options:         -DUNIX
-  ghc-options:         -Wall
+  if impl(ghc >= 6.12)
+     ghc-options:      -Wall -fno-warn-unused-do-bind
+  else
+     ghc-options:      -Wall
   GHC-Prof-Options:    -auto-all
 
 Executable happstack-ixset-tests
