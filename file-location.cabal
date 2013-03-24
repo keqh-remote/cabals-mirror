@@ -1,5 +1,5 @@
 Name:                file-location
-Version:             0.2.0
+Version:             0.2.1
 Synopsis:            common functions that show file location information
 Homepage:            https://github.com/gregwebs/ErrorLocation.hs
 License:             BSD3
@@ -37,7 +37,7 @@ Description:
 
 Source-Repository head
   type: git
-  location:    https://github.com/gregwebs/ErrorLocation.hs
+  location:    https://github.com/gregwebs/FileLocation.hs
 
 Library
   Exposed-modules: FileLocation, Debug.FileLocation
