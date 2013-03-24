@@ -1,5 +1,5 @@
 Name:           numbers
-Version:        3000.0.0.0
+Version:        3000.1.0.0
 License:        BSD3
 License-file:   LICENSE
 Author:         Lennart Augustsson
@@ -27,11 +27,34 @@ source-repository this
   tag:      numbers-3000.0.0.0
 
 Library
-  Build-Depends:    base >= 3 && < 5
+  Build-Depends:
+    base >= 3 && < 5
+
   Exposed-modules:
     Data.Number.Symbolic Data.Number.Dif
     Data.Number.CReal Data.Number.Fixed
     Data.Number.Interval Data.Number.BigFloat
     Data.Number.Natural
-  Other-modules:    Data.Number.Vectorspace Data.Number.FixedFunctions
+  Other-modules:
+    Data.Number.Vectorspace
+    Data.Number.FixedFunctions
 
+  Ghc-Options:
+    -Wall
+    -fno-warn-name-shadowing
+    -fno-warn-unused-binds
+    -fno-warn-unused-matches
+    -fno-warn-incomplete-patterns
+    -fno-warn-overlapping-patterns
+    -fno-warn-type-defaults
+
+test-suite testsuite
+  type: exitcode-stdio-1.0
+  hs-source-dirs: . test
+  main-is: TestSuite.hs
+  build-depends:
+    base                        >= 3 && < 5,
+    -- Additional test dependencies.
+    QuickCheck                  == 2.*,
+    test-framework              == 0.6.*,
+    test-framework-quickcheck2  == 0.2.*
