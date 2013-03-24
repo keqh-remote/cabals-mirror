@@ -1,5 +1,5 @@
 Name:                HGamer3D-Data
-Version:             0.1.9
+Version:             0.2.0
 Synopsis:            Windows Game Engine for the Haskell Programmer - Data Definitions
 Description:         
 	HGamer3D is a game engine for developing 3D games in the programming 
@@ -13,15 +13,15 @@ License-file:        LICENSE
 Author:              Peter Althainz
 Maintainer:          althainz@gmail.com
 Build-Type:          Simple
-Cabal-Version:       >=1.2
+Cabal-Version:       >=1.4
 Homepage:            http://www.hgamer3d.org
-Category:            Game
+Category:            Game Engine
 Extra-source-files:  Setup.hs 
 
 Library
   Build-Depends:     base >= 3 && < 5, vect
 
-  Exposed-modules:   HGamer3D.Data.Vector,HGamer3D.Data.Colour,HGamer3D.Data.HG3DClass,HGamer3D.Data.Angle
+  Exposed-modules:   HGamer3D.Data.Vector,HGamer3D.Data.Vector.Instances,HGamer3D.Data.Colour,HGamer3D.Data.HG3DClass,HGamer3D.Data.Angle
   Other-modules:     
 
   c-sources:         
