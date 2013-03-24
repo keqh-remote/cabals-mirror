@@ -1,17 +1,15 @@
 Name:                 hack
-Version:              2009.5.19
+Version:              2009.7.15
 Build-type:           Simple
-Synopsis:             a sexy Haskell Webserver Interface
+Synopsis:             a Haskell Webserver Interface
 Description:
         
-    Hack: a sexy Haskell Webserver Interface.
+    Hack: a Haskell Webserver Interface
 
-    Hack is a brain-dead port of the brilliant Ruby Rack <http://rack.rubyforge.org/> webserver interface.
-
-License:              GPL
+License:              BSD3
 License-file:         LICENSE
 Author:               Wang, Jinjing
-Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
+Maintainer:           Wang, Jinjing <e .nfjinjing@gmail.com>
 Build-Depends:        base
 Cabal-version:        >= 1.2
 category:             Web
@@ -20,7 +18,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall
-  build-depends: base, data-default >= 0.2, bytestring
+  build-depends: base >= 3 && < 5, data-default >= 0.2, bytestring
   hs-source-dirs: src/
   exposed-modules:  
                     Hack
