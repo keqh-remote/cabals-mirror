@@ -1,5 +1,5 @@
 Name:                type-level-natural-number
-Version:             1.1
+Version:             1.1.1
 License:             BSD3
 License-file:        LICENSE
 Author:              Gregory Crosswhite
@@ -11,7 +11,7 @@ Description:         This is a simple, Haskell 2010 compatible implementation
                      non-Haskell 2010 language extensions have been split
                      into a separate package.
 		     .
-		     The difference between this package and the many
+                     The difference between this package and the many
                      others on Hackage implementing type-level
                      naturals is its emphasis on simplicity.  It only
                      supports non-negative natural numbers, and only
@@ -28,7 +28,10 @@ Description:         This is a simple, Haskell 2010 compatible implementation
 		     .
                      Difference from 1.0:  Added instances for Typeable, and
                      word synonyms for N0...N15.
-Cabal-version:       >=1.2.3
+		     .
+                     Difference from 1.1:  Performance enhancements for
+                     naturalNumberAsInt.  Simplified Show implementation.
+Cabal-version:       >=1.6
 Build-type:          Simple
 Category:	     Type System,Data
 
@@ -36,3 +39,12 @@ Library
     Build-depends:   base >= 3 && < 5
     Exposed-modules: TypeLevel.NaturalNumber
     Extensions:	     EmptyDataDecls
+
+source-repository head
+  type:                git
+  location:            git://github.com/gcross/type-level-natural-number.git
+
+source-repository this
+  type:                git
+  location:            git://github.com/gcross/type-level-natural-number.git
+  tag:                 1.1.1
