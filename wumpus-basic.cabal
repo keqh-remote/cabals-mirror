@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.15.0
+version:          0.16.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -30,6 +30,32 @@ description:
   .
   Changelog:
   .
+  v0.15.0 to v0.16.0:
+  .
+  * Moved the Geometry modules from Wumpus-Drawing into 
+    Wumpus-Basic.
+  .
+  * Re-worked the @CtxPicture@ API, although the current naming 
+    scheme is not satisfactory.
+  .
+  * Added extra Anchor classes.
+  .
+  * Added @PosImage@ object - this is a rectangle-framed object 
+    that can be drawn from any of its corners or its center. 
+  .
+  * Added @Displacement@ module. This defines the @PointDisplace@
+    type and provides a library of @PointDisplace@ functions.
+    Note - some of the new functions have taken names previously 
+    used for anchor projection functions (@northwards@, 
+    @southwards@, etc.), anchor projections are now build with the 
+    function @projectAnchor@.
+  .
+  * Added the property @descender@ to the font metrics.
+  .
+  * Split drawing primitives from type in @Objects.Graphic@, 
+    drawing primitives are now in the module 
+    @Objects.DrawingPrimitives@.
+  .
   v0.14.0 to v0.15.0:
   . 
   * Split previous @Wumpus-Basic@ package into two packages:
@@ -59,7 +85,9 @@ cabal-version:      >= 1.2
 extra-source-files:
   CHANGES,
   LICENSE,
-  demo/FontDeltaPic.hs
+  demo/FontDeltaPic.hs,
+  demo/SimpleAdvGraphic.hs,
+  demo/SimplePosImage.hs
 
 library
   hs-source-dirs:     src
@@ -68,10 +96,14 @@ library
                       directory       >= 1.0     && <  2.0, 
                       filepath        >= 1.1     && <  2.0,
                       vector-space    >= 0.6     && <  1.0,
-                      wumpus-core     >= 0.42.0  && <  0.43.0
+                      wumpus-core     >= 0.43.0  && <  0.44.0
 
   
   exposed-modules:
+    Wumpus.Basic.Geometry.Base,
+    Wumpus.Basic.Geometry.Intersection,
+    Wumpus.Basic.Geometry.Paths,
+    Wumpus.Basic.Geometry.Quadrant,
     Wumpus.Basic.Kernel,
     Wumpus.Basic.Kernel.Base.Anchors,
     Wumpus.Basic.Kernel.Base.BaseDefs,
@@ -87,7 +119,10 @@ library
     Wumpus.Basic.Kernel.Objects.Bounded,
     Wumpus.Basic.Kernel.Objects.Connector,
     Wumpus.Basic.Kernel.Objects.CtxPicture,
+    Wumpus.Basic.Kernel.Objects.Displacement,
+    Wumpus.Basic.Kernel.Objects.DrawingPrimitives,
     Wumpus.Basic.Kernel.Objects.Graphic,
+    Wumpus.Basic.Kernel.Objects.PosImage,
     Wumpus.Basic.Kernel.Objects.TraceDrawing,
     Wumpus.Basic.System.FontLoader.Afm,
     Wumpus.Basic.System.FontLoader.GhostScript,
