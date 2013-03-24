@@ -1,5 +1,5 @@
 name:     scan-vector-machine
-version:  0.2.6
+version:  0.2.7
 Cabal-Version: >= 1.8
 build-type: Simple
 synopsis: An implementation of the Scan Vector Machine instruction set in Haskell
