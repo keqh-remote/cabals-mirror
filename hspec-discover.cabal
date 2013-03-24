@@ -1,5 +1,5 @@
 name:             hspec-discover
-version:          0.0.5
+version:          0.1.0
 license:          MIT
 license-file:     LICENSE
 copyright:        (c) 2012 Simon Hengel
@@ -24,7 +24,7 @@ library
       Test.Hspec.Discover
   build-depends:
       base >= 4 && <= 5
-    , hspec == 1.1.*
+    , hspec == 1.2.*
 
 executable hspec-discover
   ghc-options:
