@@ -1,5 +1,5 @@
 Name:           Hs2lib
-Version:        0.5.5
+Version:        0.5.6
 Cabal-Version:  >= 1.10
 Build-Type:     Custom
 License:        BSD3
@@ -46,9 +46,10 @@ Data-Files: Templates/main.template-unix.c,
             Includes/WinDllSupport.h
             
              
-Tested-With:   GHC  >= 6.12
+Tested-With:   GHC  >= 6.12 && < 7.3
 Build-Depends: base >= 4,
                syb  >= 0.1.0.2
+               
 Extra-Source-Files: WinDll/*.hs,
                     WinDll/CodeGen/*.hs,
                     WinDll/CodeGen/CSharp/*.hs,
@@ -174,7 +175,7 @@ Executable Hs2lib-debug
     Default-Language: Haskell98  
     
 Executable Hs2lib-testgen
-    Main-is:         Tests\Exec\Hs2lib-testgen.hs
+    Main-is:         Tests/Exec/Hs2lib-testgen.hs
                         
     Build-Depends:   QuickCheck       >= 2.1.0.1,
                      directory        >= 1.0.0.3,
@@ -207,18 +208,18 @@ Executable Hs2lib-testgen
     
 Test-Suite test-regression
     type:             exitcode-stdio-1.0
-    main-is:          Tests\Test-Regression.hs
+    main-is:          Tests/Test-Regression.hs
     Default-Language: Haskell98
     build-depends: base             >= 4   && < 5,
                    filepath         >= 1.1.0.2,
                    process          >= 1.0.1.1,
-                   haskell98        >= 1.1.0.1
+                   directory        >= 1.0.0.3
                    
 Test-Suite test-regression-debug
     type:             exitcode-stdio-1.0
-    main-is:          Tests\Test-Regression-Debug.hs
+    main-is:          Tests/Test-Regression-Debug.hs
     Default-Language: Haskell98
     build-depends: base             >= 4   && < 5,
                    filepath         >= 1.1.0.2,
                    process          >= 1.0.1.1,
-                   haskell98        >= 1.1.0.1
+                   directory        >= 1.0.0.3
