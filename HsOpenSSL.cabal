@@ -5,7 +5,7 @@ Description:
         generate RSA and DSA keys, read and write PEM files, generate
         message digests, sign and verify messages, encrypt and decrypt
         messages.
-Version: 0.5.1
+Version: 0.5.2
 License: PublicDomain
 License-File: COPYING
 Author: Adam Langley <agl at imperialviolet.org>, PHO <pho at cielonegro.org>
@@ -14,7 +14,7 @@ Stability: experimental
 Homepage: http://cielonegro.org/HsOpenSSL.html
 Category: Cryptography
 Tested-With: GHC == 6.10.1
-Cabal-Version: >= 1.2.3
+Cabal-Version: >= 1.6
 Build-Type: Configure
 
 Extra-Source-Files:
@@ -33,14 +33,12 @@ Extra-Source-Files:
     tests/DSA.hs
     tests/Makefile
 
-flag splitBase
-  description: Choose the new smaller, split-up base package.
+Source-Repository head
+    Type: darcs
+    Location: http://darcs.cielonegro.org/HsOpenSSL/
 
 Library
-  if flag(splitBase)
-    build-depends: base >= 3, bytestring, ghc-prim, integer, time >= 1.1.1, old-locale, network>=2.1.0.0
-  else
-    build-depends: base < 3, time >= 1.1.1
+  Build-Depends: base >= 4, bytestring, ghc-prim, integer, time >= 1.1.1, old-locale, network>=2.1.0.0
 
   --PkgConfig-Depends: openssl >= 0.9.7l
   -- We really should use this instead of the configure script but
