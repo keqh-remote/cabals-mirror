@@ -1,5 +1,5 @@
 name:             attoparsec-parsec
-version:          0.0.0
+version:          0.0.1
 license:          MIT
 license-file:     LICENSE
 copyright:        (c) 2011, 2012 Simon Hengel
@@ -17,7 +17,7 @@ description:      This package provides an implementation of
                   Attoparsec is an awesome and very fast library, but it still
                   has a weak point: It does not generate very useful error
                   messages on parse errors.  Compiling an Attoparsec parser
-                  against Parsec can be useful in at least two situations.
+                  against Parsec can be useful for at least two scenarios.
                   .
                   - Parsec can be used while developing Attoparsec parsers, so
                     that you get better error messages on failing test cases.
@@ -26,6 +26,13 @@ description:      This package provides an implementation of
                     from it's speed.  And on parse errors you can re-parse the
                     input with Parsec, so that you can display a useful error
                     message to the user.
+                  .
+                  A simple usage example is here:
+                  <https://github.com/sol/attoparsec-parsec#readme>
+
+source-repository head
+  type: git
+  location: https://github.com/sol/attoparsec-parsec
 
 library
   ghc-options:
