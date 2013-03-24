@@ -1,5 +1,5 @@
 Name:           Hieroglyph
-Version:        0.99
+Version:        1.1
 Cabal-Version:  >= 1.2
 License:        BSD3
 License-File:   LICENSE
@@ -13,7 +13,7 @@ Synopsis:       Purely functional 2D drawing
 Build-Type:     Simple
 
 Library
-   Build-Depends: cairo, base, mtl, gtk, IfElse, containers, parallel
+   Build-Depends: cairo, base, mtl, gtk, IfElse, containers, parallel, colour
    Exposed-Modules:
       Graphics.Rendering.Hieroglyph
       Graphics.Rendering.Hieroglyph.Cairo
