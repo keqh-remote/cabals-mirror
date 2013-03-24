@@ -1,8 +1,8 @@
 name:          category-extras
 category:      Control, Monads, Comonads
-version:       0.53.5
+version:       0.53.5.1
 license:       BSD3
-cabal-version: >= 1.2
+cabal-version: >= 1.2.3
 license-file:  LICENSE
 author:        Edward A. Kmett
 maintainer:    Edward A. Kmett <ekmett@gmail.com>
@@ -31,7 +31,7 @@ flag Optimize
   default:     False
 
 library
-  build-depends:  mtl >= 1.1
+  build-depends:  mtl >= 1.1 && < 2
   extensions:
     CPP,
     EmptyDataDecls,
@@ -152,10 +152,10 @@ library
   ghc-options:      -Wall 
 
   if flag(ArrowSubclassesCategory)
-    build-depends: ghc >= 6.9, base > 3, array
+    build-depends: ghc >= 6.9, base > 3 && < 5, array
     cpp-options: -D__ARROW_SUBCLASSES_CATEGORY__=1
   else
-    build-depends: ghc < 6.9, base, array 
+    build-depends: ghc < 6.9, base < 5, array 
     hs-source-dirs: pre-6.9
     exposed-modules: Control.Category
 
