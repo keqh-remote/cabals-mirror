@@ -1,5 +1,5 @@
 Name:                yices-painless
-Version:             0.1
+Version:             0.1.1
 Synopsis:            An embedded language for programming the Yices SMT solver
 Description:         
     This library defines an embedded language in Haskell for programming
@@ -26,9 +26,16 @@ Description:
     .
     * <http://yices.csl.sri.com/>
     .
-    Low and medium-level bindings to the Yices C API are also provided.
-    The medium-level bindings add significant type and resource safety
-    to that which the C API provides.
+    The primary interface is via the EDSL, "Yices.Painless.Language",
+    however, low and medium-level bindings to the Yices C API are also provided
+    ("Yices.Painless.Base.C" and "Yices.Painless.Base"). The
+    medium-level bindings add significant type and resource safety to
+    that which the C API provides.
+    .
+    Documentation for this package is available:
+    .
+    * <http://www.galois.com/~dons/yices-painless/>
+    .
 
 Homepage:            http://code.haskell.org/~dons/code/yices-painless
 License:             BSD3
