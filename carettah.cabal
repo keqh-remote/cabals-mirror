@@ -1,5 +1,5 @@
 Name:                   carettah
-Version:                0.0.7
+Version:                0.1.0
 Author:                 Kiwamu Okabe <kiwamu@debian.or.jp>
 Maintainer:             Kiwamu Okabe <kiwamu@debian.or.jp>
 License:                GPL-2
@@ -11,7 +11,7 @@ Stability:              Experimental
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
 Homepage:               http://carettah.masterq.net/
-Tested-with:            GHC == 7.0.4
+Tested-with:            GHC == 7.4.1
 
 data-files:             data/turtle.png, data/debian.png, data/notfound.png
 
@@ -27,8 +27,9 @@ Executable              carettah
                         gtk,
                         cairo,
                         pango,
-                        hcwiid
-  other-modules:        Paths_carettah Config Render WrapPaths
+                        hcwiid,
+                        highlighting-kate
+  other-modules:        Paths_carettah Config Render WrapPaths FormatPangoMarkup
   ghc-options:          -Wall
   ghc-prof-options:     -auto-all -caf-all
 
