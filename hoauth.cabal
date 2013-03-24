@@ -1,5 +1,5 @@
 name: hoauth
-version: 0.3.2
+version: 0.3.2.1
 category: Network,Protocol,OAuth
 license: BSD3
 license-file: LICENSE
@@ -33,6 +33,7 @@ library
                  , Network.OAuth.Http.Response
                  , Network.OAuth.Http.HttpClient
                  , Network.OAuth.Http.CurlHttpClient
+                 , Network.OAuth.Http.DebugHttpClient
                  , Network.OAuth.Http.PercentEncoding
                  , Network.OAuth.Http.Util
                  , Network.OAuth.Consumer
