@@ -1,5 +1,5 @@
 Name:               altfloat
-Version:            0.2.2
+Version:            0.3
 License:            OtherLicense
 License-File:       LICENSE
 Cabal-Version:      >= 1.6
@@ -8,9 +8,9 @@ Maintainer:         nbowler@draconx.ca
 Homepage:           http://repo.or.cz/w/altfloat.git
 Stability:          experimental
 Category:           Numerical
-Build-Type:         Simple
+Build-Type:         Configure
 Extra-Source-Files: configure.ac, configure, altfloat.buildinfo.in, cfloat.h
-                    config.h.in
+                    config.h.in examples/*.hs
 Extra-Tmp-Files:    altfloat.buildinfo, config.status config.log, config.cache
                     config.h
 Synopsis:           Alternative floating point support for GHC.
@@ -45,9 +45,7 @@ Description:
     .
     * There is no mechanism for handling rounding modes or exceptions.
     .
-    This package is intended to address all of the above issues, and more.  All
-    are currently addressed except for rounding modes and exceptions.
-    .
+    This package is intended to address all of the above issues, and more.
     Also provided, for convenience, is an alternative to the standard Prelude
     which includes features from this library and the non-overlapping parts of
     the standard Prelude.
@@ -79,8 +77,10 @@ Library
         Data.Floating.CMath,
         Data.Floating.Classes,
         Data.Floating.Types,
-        Data.Floating.Double,
+        Data.Floating.Types.Double,
+        Data.Floating.Types.Float,
         Data.Floating.Prelude,
+        Data.Floating.Environment,
         Data.Floating,
         Data.Poset
     Other-Modules:
