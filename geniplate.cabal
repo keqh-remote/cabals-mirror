@@ -1,6 +1,6 @@
 Name:           geniplate
 Cabal-Version:  >= 1.2
-Version:        0.2.0.0
+Version:        0.3.0.0
 License:        BSD3
 Author:         Lennart Augustsson
 Maintainer:     Lennart Augustsson
@@ -15,5 +15,5 @@ Extra-source-files:
 
 Library
   Build-Depends: base >= 4 && < 5.0, template-haskell, mtl
-  Exposed-modules:      Data.Geniplate
+  Exposed-modules:      Data.Generics.Geniplate
 
