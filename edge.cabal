@@ -7,7 +7,8 @@ Name:                edge
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.8.16
+
+Version:             0.8.18
 
 -- A short (one-line) description of the package.
 Synopsis:            Top view space combat arcade game
@@ -115,6 +116,7 @@ Executable edge
                      , Unit.Smart.Saucer
                      , Unit.Smart.Sniper
                      , Unit.Smart.Zeus
+                     , UnitUtil
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
