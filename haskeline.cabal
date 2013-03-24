@@ -1,6 +1,6 @@
 Name:           haskeline
 Cabal-Version:  >=1.2
-Version:        0.2.1
+Version:        0.3
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -20,10 +20,7 @@ Description:
 Homepage:       http://trac.haskell.org/haskeline
 Stability:      Experimental
 Build-Type:     Simple
-
-flag target-mingw
-    Description: Use native Win32 Console functionality (suitable for MinGW)
-    Default: False
+extra-source-files: examples/Test.hs
 
 flag old-base
     Description: Use the base packages from before version 6.8
@@ -32,10 +29,10 @@ Library
     if flag(old-base)
         Build-depends: base < 3
     else
-        Build-depends: base>=3.0, containers>=0.1, directory>=1.0
+        Build-depends: base>=3 && <4 , containers>=0.1, directory>=1.0
     Build-depends:  stm>=2.0, filepath>=1.1, template-haskell>=2.1, 
                     mtl>=1.1, utf8-string>=0.3.1.1, bytestring>=0.9.0.1
-    Extensions:     ForeignFunctionInterface, Rank2Types, FlexibleInstances,
+    Extensions:     ForeignFunctionInterface, RankNTypes, FlexibleInstances,
                 TypeSynonymInstances
                 FlexibleContexts, ExistentialQuantification
                 ScopedTypeVariables, GeneralizedNewtypeDeriving
@@ -62,7 +59,7 @@ Library
                 System.Console.Haskeline.Term
                 System.Console.Haskeline.Vi
     include-dirs: includes
-    if flag(target-mingw) {
+    if os(windows) {
         Build-depends: Win32>=2.0
         Other-modules: System.Console.Haskeline.Backend.Win32
         c-sources: cbits/win_console.c
@@ -70,7 +67,7 @@ Library
         install-includes: win_console.h
         cpp-options: -DMINGW
     } else {
-        Build-depends: terminfo>=0.2, unix>=2.0
+        Build-depends: terminfo>=0.2.2, unix>=2.0
         Other-modules: 
                 System.Console.Haskeline.Backend.Posix
                 System.Console.Haskeline.Backend.DumbTerm
