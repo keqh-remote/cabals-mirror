@@ -1,5 +1,5 @@
 Name:           synthesizer-alsa
-Version:        0.1
+Version:        0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -29,25 +29,34 @@ Flag buildExamples
   description: Build example executables
   default:     False
 
+Flag buildTests
+  description: Build test executables
+  default:     False
+
 Library
   Build-Depends:
-    synthesizer-dimensional >=0.4 && < 0.5,
-    synthesizer-core >=0.3 && < 0.4,
-    sox >=0.1 && <0.2,
-    alsa >=0.3 && <0.4,
+    synthesizer-dimensional >=0.5 && < 0.6,
+    synthesizer-core >=0.4 && < 0.5,
+    sox >=0.2 && <0.3,
+    midi-alsa >=0.1 && <0.2,
+    alsa-seq >=0.5 && <0.6,
+    alsa-pcm >=0.5 && <0.6,
+    alsa-core >=0.5 && <0.6,
     midi >=0.1.1 && <0.2,
     storablevector >=0.2.5 && <0.3,
-    numeric-prelude >=0.0.3 && <0.2,
-    non-negative >=0.0.5 && <0.1,
-    event-list >=0.0.8 && <0.1,
-    -- data-accessor >=0.1 && <0.2,
-    array >=0.1 && <0.3,
-    transformers >=0.1.1 && <0.2,
+    deepseq >=1.1 && <1.2,
+    numeric-prelude >=0.2 && <0.3,
+    non-negative >=0.1 && <0.2,
+    event-list >=0.1 && <0.2,
+    data-accessor >=0.2.1 && <0.3,
+    containers >=0.1 && <0.4,
+    array >=0.1 && <0.4,
+    transformers >=0.2 && <0.3,
     utility-ht >=0.0.1 && <0.1
 
   If flag(splitBase)
     Build-Depends:
-      base >= 3 && <5,
+      base >= 3 && <6,
       random >= 1.0 && < 1.1,
       old-time >= 1.0 && < 1.1
   Else
@@ -60,8 +69,15 @@ Library
     Synthesizer.EventList.ALSA.MIDI
     Synthesizer.Storable.ALSA.MIDI
     Synthesizer.Storable.ALSA.Play
+    Synthesizer.PiecewiseConstant.ALSA.MIDI
+    Synthesizer.PiecewiseConstant.ALSA.MIDIControllerSet
+    Synthesizer.Generic.ALSA.MIDI
     Synthesizer.Dimensional.ALSA.MIDI
     Synthesizer.Dimensional.ALSA.Play
+    -- these modules would be better located in midi package,
+    -- but they are based on NumericPrelude
+    Synthesizer.MIDIValue
+    Synthesizer.Dimensional.MIDIValue
 
 Executable realtimesynth
   If !flag(buildExamples)
@@ -71,7 +87,12 @@ Executable realtimesynth
   GHC-Options: -Wall -fexcess-precision -threaded
 -- -ddump-simpl-stats -ddump-asm
   Hs-Source-Dirs: src
-  Main-Is: RealTimeSynthesizer.hs
+  Other-modules:
+    Synthesizer.Storable.ALSA.Server.Common
+    Synthesizer.Storable.ALSA.Server.Instrument
+    Synthesizer.Storable.ALSA.Server.Test
+    Synthesizer.Storable.ALSA.Server.Run
+  Main-Is: Synthesizer/Storable/ALSA/Server.hs
 
 Executable synthicate
   If !flag(buildExamples)
@@ -81,4 +102,19 @@ Executable synthicate
   GHC-Options: -Wall -fexcess-precision -threaded
 -- -ddump-simpl-stats
   Hs-Source-Dirs: src
-  Main-Is: RealTimeSynthesizerDim.hs
+  Other-modules:
+    Synthesizer.Dimensional.ALSA.Server.Common
+    Synthesizer.Dimensional.ALSA.Server.Instrument
+    Synthesizer.Dimensional.ALSA.Server.Test
+    Synthesizer.Dimensional.ALSA.Server.Run
+  Main-Is: Synthesizer/Dimensional/ALSA/Server.hs
+
+Executable test
+  If !flag(buildTests)
+    Buildable: False
+  If flag(optimizeAdvanced)
+    GHC-Options: -O2 -fvia-C -optc-O2 -optc-msse3 -optc-ffast-math
+  GHC-Options: -Wall -fexcess-precision -threaded
+-- -ddump-simpl-stats -ddump-asm
+  Hs-Source-Dirs: src
+  Main-Is: Test.hs
