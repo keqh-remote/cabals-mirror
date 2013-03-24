@@ -1,13 +1,13 @@
 name: dataenc
-version: 0.14.0.4
+version: 0.14.0.5
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.6
 build-type: Simple
 author: Magnus Therning
-maintainer: magnus@therning.org
+maintainer: none
 homepage: http://www.haskell.org/haskellwiki/Library/Data_encoding
-copyright: Magnus Therning, 2007-2011
+copyright: Magnus Therning, 2007-2012
 category: Codec
 synopsis: Data encoding library
 description: Data encoding library currently providing Base16, Base32,
@@ -15,7 +15,7 @@ description: Data encoding library currently providing Base16, Base32,
         Quoted-Printable, URL encoding, uuencode, xxencode, and yEncoding.
 extra-source-files: test-src/DataencUT.hs test-src/DataencQC.hs test-src/Test.hs GNUmakefile
 
-flag BuildTests
+flag tests
     Description: Build unit and quickcheck tests.
     Default: False
 
@@ -43,9 +43,9 @@ executable tests
     main-is: Test.hs
     hs-source-dirs: test-src src
     -- ghc-options: -fhpc
-    if flag(BuildTests)
+    if flag(tests)
         build-depends: test-framework, test-framework-hunit, HUnit,
-            test-framework-quickcheck2, QuickCheck ==2.4.*,
+            test-framework-quickcheck2, QuickCheck ==2.5.*,
             test-framework-th
     else
         buildable: False
