@@ -1,7 +1,16 @@
 Name:                hit
-Version:             0.3.0
-Synopsis:            Git operations
-Description:         Provides low level git operations
+Version:             0.4.0
+Synopsis:            Git operations in haskell
+Description:
+    .
+    An haskell implementation of git storage operations, allowing users
+    to manipulate git repositories (read and write).
+    .
+    This implementation is fully interoperable with the main C implementation.
+    .
+    This is stricly only manipulating the git store (what's inside the .git directory),
+    and doesn't do anything with the index or your working directory files.
+    .
 License:             BSD3
 License-file:        LICENSE
 Copyright:           Vincent Hanquez <vincent@snarc.org>
@@ -27,16 +36,17 @@ Library
   Build-Depends:     base >= 4 && < 5
                    , mtl
                    , bytestring
+                   , blaze-builder
                    , attoparsec >= 0.10.1
                    , parsec     >= 3
-                   , filepath
-                   , directory
+                   , containers
+                   , system-filepath
+                   , system-fileio
                    , cryptohash
                    , vector
                    , random
                    , zlib
                    , zlib-bindings >= 0.1 && < 0.2
-                   , bytedump
                    , time
   Exposed-modules:   Data.Git
                      Data.Git.Types
@@ -53,6 +63,7 @@ Library
   Other-modules:     Data.Git.Internal
                      Data.Git.Storage.FileReader
                      Data.Git.Storage.FileWriter
+                     Data.Git.Storage.CacheFile
                      Data.Git.Path
   ghc-options:       -Wall -fno-warn-missing-signatures
 
@@ -73,7 +84,6 @@ Executable           Hit
                    , parsec     >= 3
                    , filepath
                    , directory
-                   , bytedump
                    , hit
     Buildable: True
   else
@@ -103,7 +113,7 @@ Test-Suite test-repository
                    , test-framework >= 0.3
                    , test-framework-quickcheck2 >= 0.2
                    , time
-                   , bytedump
+                   , bytedump >= 1.0
                    , hit
 
 source-repository head
