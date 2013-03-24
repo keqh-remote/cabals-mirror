@@ -1,9 +1,9 @@
 name:            aeson
-version:         0.6.0.2
+version:         0.6.1.0
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Web, JSON
-copyright:       (c) 2011 Bryan O'Sullivan
+copyright:       (c) 2011, 2012 Bryan O'Sullivan
                  (c) 2011 MailRank, Inc.
 author:          Bryan O'Sullivan <bos@serpentine.com>
 maintainer:      Bryan O'Sullivan <bos@serpentine.com>
@@ -23,11 +23,6 @@ description:
     .
     For release notes, see
     <https://github.com/bos/aeson/blob/master/release-notes.markdown>
-    .
-    /Note/: if you use GHCi or Template Haskell, please see the
-    @README@ file for important details about building this package,
-    and other packages that depend on it:
-    <https://github.com/bos/aeson#readme>
     .
     Parsing performance on a late 2010 MacBook Pro (2.66GHz Core i7),
     for mostly-English tweets from Twitter's JSON search API:
@@ -159,7 +154,8 @@ test-suite tests
     template-haskell,
     test-framework,
     test-framework-quickcheck2,
-    text
+    text,
+    time
 
 source-repository head
   type:     git
