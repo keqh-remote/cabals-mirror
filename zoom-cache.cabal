@@ -3,7 +3,7 @@ Name:                zoom-cache
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             1.2.1.1
+Version:             1.2.1.2
 
 Synopsis:            A streamable, seekable, zoomable cache file format
 
@@ -164,7 +164,7 @@ Test-suite tests
     base >= 3 && < 6,
     blaze-builder,
     iteratee                   >= 0.8.7.6 && < 0.9,
-    test-framework             >= 0.3.3 && < 0.5,
+    test-framework             >= 0.3.3 && < 0.5.0,
     test-framework-quickcheck2 >= 0.2.9 && < 0.3,
     QuickCheck                 >= 2.4.0.1,
     random                     == 1.0.*,
