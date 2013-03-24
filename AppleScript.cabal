@@ -1,5 +1,5 @@
 Name:			AppleScript
-Version:		0.1.4
+Version:		0.1.5
 License:		BSD3
 License-file:		LICENSE
 Author:			Wouter Swierstra
@@ -8,17 +8,17 @@ Synopsis:		Call AppleScript from Haskell.
 Description:		This package enables you to compile and 
 			execute AppleScript from Haskell applications.
 Category:		Foreign
-Build-Type:		Simple
-Cabal-Version:          >= 1.2
-Extra-source-files:     examples/HelloThere.hs
-                        , examples/OpenLocation.hs
-                        , examples/TextFields.hs
-                        , cbits/RunScript.h
+Extra-source-files:	examples/HelloThere.hs
+			, examples/OpenLocation.hs
+			, examples/TextFields.hs
+		        , cbits/RunScript.h
+Build-type:		Simple
+Cabal-Version:          >= 1.2 && < 2
 
 Library {
 if os(darwin) {
-  Build-Depends:	base
   Buildable:		True
+  Build-Depends:        base >= 2 && < 5
   Exposed-modules:	Foreign.AppleScript
   Frameworks: 		Carbon
   Extensions: 		CPP, ForeignFunctionInterface
@@ -27,5 +27,10 @@ if os(darwin) {
   }
 else {
   Buildable:		False
+  Build-Depends:        base >= 2 && < 5
   }
+if (impl(ghc >= 6.10.3 && < 6.12))
+{
+  cc-options:	        -msse2
+}
 }
