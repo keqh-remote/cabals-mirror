@@ -1,5 +1,5 @@
 Name:                 moe
-Version:              2009.8.26
+Version:              2009.8.28
 Build-type:           Simple
 Synopsis:             html with style
 Description:
@@ -24,4 +24,6 @@ library
                       Text.HTML.Moe   
                       Text.HTML.Moe.Attribute
                       Text.HTML.Moe.Element
+                      Text.HTML.Moe.DSL.Markdown
+                      Text.HTML.Moe.DSL.Kawaii
                       Text.HTML.Moe.Type
