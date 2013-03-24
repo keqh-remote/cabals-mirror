@@ -1,5 +1,5 @@
 Name:    hakyll
-Version: 4.2.1.1
+Version: 4.2.1.2
 
 Synopsis: A static website compiler library
 Description:
@@ -151,7 +151,7 @@ Library
     old-locale   >= 1.0    && < 1.1,
     old-time     >= 1.0    && < 1.2,
     cmdargs      >= 0.10   && < 0.11,
-    pandoc       >= 1.10   && < 1.11,
+    pandoc       >= 1.10   && < 1.12,
     parsec       >= 3.0    && < 3.2,
     process      >= 1.0    && < 1.2,
     random       >= 1.0    && < 1.1,
@@ -186,6 +186,7 @@ Test-suite hakyll-tests
   Other-modules:
     Hakyll.Core.Dependencies.Tests
     Hakyll.Core.Identifier.Tests
+    Hakyll.Core.Provider.Metadata.Tests
     Hakyll.Core.Provider.Tests
     Hakyll.Core.Routes.Tests
     Hakyll.Core.Rules.Tests
@@ -193,10 +194,11 @@ Test-suite hakyll-tests
     Hakyll.Core.Store.Tests
     Hakyll.Core.UnixFilter.Tests
     Hakyll.Core.Util.String.Tests
+    Hakyll.Web.Html.RelativizeUrls.Tests
+    Hakyll.Web.Html.Tests
+    Hakyll.Web.Pandoc.FileType.Tests
     Hakyll.Web.Template.Context.Tests
     Hakyll.Web.Template.Tests
-    Hakyll.Web.Html.Tests
-    Hakyll.Web.Html.RelativizeUrls.Tests
     TestSuite.Util
 
   Build-Depends:
@@ -222,7 +224,7 @@ Test-suite hakyll-tests
     old-locale   >= 1.0    && < 1.1,
     old-time     >= 1.0    && < 1.2,
     cmdargs      >= 0.10   && < 0.11,
-    pandoc       >= 1.10   && < 1.11,
+    pandoc       >= 1.10   && < 1.12,
     parsec       >= 3.0    && < 3.2,
     process      >= 1.0    && < 1.2,
     random       >= 1.0    && < 1.1,
