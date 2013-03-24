@@ -1,5 +1,5 @@
 Name:           gtksourceview2
-Version:        0.11.1
+Version:        0.12.0
 License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
@@ -37,7 +37,7 @@ x-Types-Hierarchy:  hierarchy.list
 Source-Repository head
   type:         darcs
   location:     http://code.haskell.org/gtksourceview/
-
+  
 Library
         build-depends:  base >= 4 && < 5, array, containers, haskell98, mtl,
                         glib  >= 0.11 && < 0.12, 
@@ -47,7 +47,15 @@ Library
 						
         exposed-modules:
           Graphics.UI.Gtk.SourceView
+          Graphics.UI.Gtk.SourceView.Enums
           Graphics.UI.Gtk.SourceView.SourceBuffer
+          Graphics.UI.Gtk.SourceView.SourceCompletion
+          Graphics.UI.Gtk.SourceView.SourceCompletionContext
+          Graphics.UI.Gtk.SourceView.SourceCompletionInfo
+          Graphics.UI.Gtk.SourceView.SourceCompletionItem
+          Graphics.UI.Gtk.SourceView.SourceCompletionProposal
+          Graphics.UI.Gtk.SourceView.SourceCompletionProvider
+          Graphics.UI.Gtk.SourceView.SourceGutter
           Graphics.UI.Gtk.SourceView.SourceIter
           Graphics.UI.Gtk.SourceView.SourceLanguage
           Graphics.UI.Gtk.SourceView.SourceLanguageManager
@@ -55,6 +63,7 @@ Library
           Graphics.UI.Gtk.SourceView.SourceStyle
           Graphics.UI.Gtk.SourceView.SourceStyleScheme
           Graphics.UI.Gtk.SourceView.SourceStyleSchemeManager
+          Graphics.UI.Gtk.SourceView.SourceUndoManager
           Graphics.UI.Gtk.SourceView.SourceView
         other-modules:
           Graphics.UI.Gtk.SourceView.SourceStyle.Internal
