@@ -1,5 +1,5 @@
 name:		stm
-version:        2.2.0.1
+version:        2.3
 license:	BSD3
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
@@ -7,7 +7,11 @@ synopsis:	Software Transactional Memory
 category:       Concurrency
 description:	A modular composable concurrency abstraction.
 build-type:     Simple
-cabal-version:  >=1.2
+cabal-version:  >=1.6
+
+source-repository head
+    type:     git
+    location: http://darcs.haskell.org/packages/stm.git/
 
 flag base4
 
@@ -29,4 +33,3 @@ library
     build-depends: base <4
   if impl(ghc >= 6.10)
     build-depends: base >=4
-  extensions:    CPP
