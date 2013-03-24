@@ -1,5 +1,5 @@
 name: gf
-version: 3.3
+version: 3.3.3
 
 cabal-version: >= 1.8
 build-type: Custom
@@ -10,7 +10,7 @@ synopsis: Grammatical Framework
 description: GF, Grammatical Framework, is a programming language for multilingual grammar applications
 homepage: http://www.grammaticalframework.org/
 bug-reports: http://code.google.com/p/grammatical-framework/issues/list
-tested-with: GHC==6.12.3, GHC==7.0.3
+tested-with: GHC==6.12.3, GHC==7.0.4
 
 data-dir: src
 data-files: www/index.html
@@ -23,6 +23,10 @@ data-files: www/index.html
 	    www/minibar/*.css
 	    www/minibar/*.js
 	    www/minibar/*.png
+	    www/TransQuiz/*.html
+	    www/TransQuiz/*.css
+	    www/TransQuiz/*.js
+	    www/TransQuiz/*.png
 
 source-repository head
   type:     darcs
@@ -36,10 +40,6 @@ flag interrupt
 flag server
   Description: Include --server mode
   Default:     True
-
-flag cclazy
-  Description: Use the new, lazy compute_concrete (faster than the old, strict version)
-  Default: True
 
 library
   build-depends: base >= 4.2 && <5,
@@ -136,7 +136,6 @@ executable gf
     GF.JavaScript.AbsJS
     GF.JavaScript.PrintJS
     GF.Infra.Ident
-    GF.Infra.Modules
     GF.Infra.GetOpt
     GF.Infra.Option
     GF.Infra.UseIO
@@ -205,6 +204,3 @@ executable gf
     other-modules: GF.System.UseSignal
   else
     other-modules: GF.System.NoSignal
-
-  if flag(cclazy)
-    cpp-options: -DCC_LAZY
