@@ -1,5 +1,5 @@
 name:               vacuum-cairo
-version:            0.3
+version:            0.3.1
 cabal-version:      >= 1.2
 build-type:         Simple
 license:            BSD3
@@ -26,13 +26,15 @@ description:        Visualize live Haskell data structures using vacuum, graphvi
                     <http://code.haskell.org/~dons/images/vacuum/intmap.png>
 
 library
-  build-depends:    base >= 3,
-                    vacuum >= 0.0.5,
+  build-depends:    base >= 3 && < 4,
+                    vacuum >= 0.0.5.1,
                     gtk,
-                    parallel,
-                    strict-concurrency,
                     cairo,
                     svgcairo,
                     process,
-                    pretty
+                    pretty,
+                    directory,
+                    parallel,
+                    strict-concurrency
+
   exposed-modules:  System.Vacuum.Cairo
