@@ -1,5 +1,5 @@
 Name: datapacker
-Version: 1.0.0
+Version: 1.0.0.1
 License: GPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
@@ -9,7 +9,7 @@ license-file: COPYRIGHT
 extra-source-files: COPYING, datapacker.sgml, Makefile, INSTALL
 homepage: http://software.complete.org/datapacker
 Build-type: Simple
-Category: Network
+Category: System
 Synopsis: Tool to help pack files into the minimum number of CDs/DVDs/etc
 Description: datapacker is a tool to group files by size. It is
  designed to group files such that they fill fixed-size containers
@@ -31,6 +31,7 @@ Build-Depends: unix, MissingH>=1.0.1, mtl, base, filepath, directory,
 
 Executable: datapacker
 Main-Is: datapacker.hs
+Other-Modules: Actions, Scan, Types
    
 GHC-Options: -O2 -Wall
      
