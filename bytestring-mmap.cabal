@@ -1,10 +1,11 @@
 name:                bytestring-mmap
-version:             0.1.1
+version:             0.1.2
 synopsis:            mmap support for strict ByteStrings
 description:
     .
     This library provides a wrapper to mmap(2), allowing files or
-    devices to be efficiently mapped into memory as a strict ByteString.
+    devices to be lazily loaded into memory as a strict ByteString,
+    using the virtual memory subsystem to do on-demand loading.
     .
 category:            System
 homepage:            http://code.haskell.org/~dons/code/bytestring-mmap/
