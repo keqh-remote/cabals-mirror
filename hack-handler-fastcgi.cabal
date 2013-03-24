@@ -1,10 +1,10 @@
 name:            hack-handler-fastcgi
-version:         0.2.0
+version:         0.2.0.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Hack handler direct to fastcgi
+synopsis:        Hack handler direct to fastcgi (deprecated)
 category:        Web
 stability:       stable
 cabal-version:   >= 1.2
