@@ -1,5 +1,5 @@
 Name:                bio
-Version:             0.3.3.2
+Version:             0.3.3.4
 License:             LGPL
 License-file:        LICENSE
 Author:              Ketil Malde
@@ -36,6 +36,8 @@ Exposed-modules:     Bio.Sequence,
                      Bio.Sequence.Fasta, Bio.Sequence.TwoBit, Bio.Sequence.Phd,
                      Bio.Sequence.Entropy, Bio.Sequence.HashWord,
                      Bio.Sequence.GOA,
+                     Bio.Sequence.GeneOntology,
+		     Bio.Sequence.KEGG,
                      Bio.Alignment.BlastData, Bio.Alignment.BlastFlat,
                      Bio.Alignment.Blast, Bio.Alignment.BlastXML,
                      Bio.Alignment.AlignData, Bio.Alignment.Matrices,
