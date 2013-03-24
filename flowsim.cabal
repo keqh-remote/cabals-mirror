@@ -1,5 +1,5 @@
 Name:           flowsim
-Version:        0.2.8
+Version:        0.3
 License:        GPL
 Cabal-Version:  >= 1.6
 Author:         Ketil Malde
@@ -18,8 +18,7 @@ Description:    Provides clonesim, a clone simulator that simulates shotgun
                 .
                 The Darcs repository is at <http://malde.org/~ketil/biohaskell/flowsim>.
 
-HomePage:       http://blog.malde.org/index.php/flowsim/
--- Build-Depends:  bio >= 0.4.4, base >= 4 && <= 5, array >= 0.1, bytestring >= 0.9.1, random, MonadRandom, cmdargs <= 0.1.1, containers, directory
+HomePage:       http://biohaskell.org/Applications/FlowSim
 Build-Type:     Simple
 Tested-with:    GHC==6.8.2, GHC==6.10, GHC==6.12.1
 
@@ -28,8 +27,8 @@ Executable flowsim
   Main-Is:        FlowSim.hs
   Other-Modules:  Statistics, Config, EmpFile
                   Generations.GenBase, Generations.GS20, 
-                  Generations.Titanium, Generations.Empirical
-  Build-Depends:  bio >= 0.4.4, base >= 4 && < 5, array >= 0.1, random, MonadRandom, cmdargs >= 0.5, containers, bytestring, directory
+                  Generations.Titanium, Generations.Empirical, Version
+  Build-Depends:  bio >= 0.4.9, base >= 4 && < 5, array >= 0.1, random, MonadRandom, cmdargs >= 0.5, containers, bytestring, directory
   Ghc-Options:    -Wall
   Hs-Source-Dirs: src
 
@@ -42,7 +41,36 @@ Executable hplc
 Executable clonesim
   Main-Is:	  CloneSim.hs
   Build-Depends:  bio >= 0.4.4, base >= 4 && < 5, array >= 0.1, cmdargs >= 0.5, bytestring, MonadRandom
-  Other-Modules:  Statistics
+  Other-Modules:  Statistics, Version
   Extensions: DeriveDataTypeable
   Ghc-Options: -Wall
+  Hs-Source-Dirs: src
+
+Executable kitsim
+  Main-Is:	  KitSim.hs
+  Build-Depends:  bio >= 0.4.9, base >= 4 && < 5, cmdargs >= 0.5
+  Other-Modules:  Version
+  Extensions:     DeriveDataTypeable
+  Ghc-Options:    -Wall -main-is KitSim
+  Hs-Source-Dirs: src
+
+Executable mutator
+  Main-Is:       Mutator.hs
+  Build-Depends: bio >= 0.4.9, base >= 4 && < 5, cmdargs >= 0.5
+  Other-Modules: Version, Statistics
+  Extensions:    DeriveDataTypeable
+  Ghc-Options:   -Wall -main-is Mutator
+  Hs-Source-Dirs: src
+
+Executable duplicator
+  Main-Is:       Duplicator.hs
+  Build-Depends: bio >= 0.4.9, base >= 4 && < 5
+  Other-Modules: Statistics
+  Ghc-Options:   -Wall -main-is Duplicator
+  Hs-Source-Dirs: src
+
+Executable gelfilter
+  Main-Is:       GelFilter.hs
+  Build-Depends: bio >= 0.4.9, base >= 4 && < 5
+  Ghc-Options:   -Wall -main-is GelFilter
   Hs-Source-Dirs: src
