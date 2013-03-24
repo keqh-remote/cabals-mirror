@@ -1,5 +1,5 @@
 Name:           PrimitiveArray
-Version:        0.0.3.1
+Version:        0.0.4.0
 License:        BSD3
 License-file:   LICENSE
 Author:         Christian Hoener zu Siederdissen
@@ -16,7 +16,7 @@ Synopsis:
 Description:
                 Provides unboxed multidimensional tables with a small
                 interface. Comes with an instance for Ix keys. Read and Show
-                instances are provides for serialization.
+                instances are provided for serialization.
 
 extra-source-files:
   Benchmarks/Index.hs
@@ -28,7 +28,7 @@ Library
     Data.PrimitiveArray.Internal
   Build-depends:
     base >= 4 && <5,
-    primitive >= 0.3 && < 0.4
+    primitive >= 0.4.0.1 && < 0.5
   ghc-options:
     -O2
 
