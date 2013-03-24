@@ -1,14 +1,18 @@
 Name:                   Operads
-Version:                0.3
+Version:                0.4
+Stability:              alpha
 License:                BSD3
 License-file:           LICENSE
 Category:               Math
+Copyright:              © 2009 Mikael Vejdemo Johansson
 Author:                 Mikael Vejdemo Johansson
 Maintainer:             mik@stanford.edu
 Bug-reports:            mailto:mik@stanford.edu
+Homepage:               http://math.stanford.edu/~mik/operads
+Package-URL:            http://hackage.haskell.org/packages/archive/Operads/0.4/Operads-0.4.tar.gz
 Build-Type:             Simple
 Cabal-Version:          >=1.2
-Extra-source-files:     README
+Extra-source-files:     README CHANGELOG examples/preLieBad.hs examples/example.hs examples/altDual.hs
 Synopsis:               Groebner basis computation for Operads.
 Description:            
   This is an implementation of the operadic Buchberger algorithm from Vladimir Dotsenko & 
@@ -144,28 +148,18 @@ Flag PolyBag
      Description:       Use the head bag based storage for formal linear combinations.
      Default:           False
 
-Executable preLieBad
-           Extensions:          CPP
-           Main-is:             examples/preLieBad.hs
-
-Executable altDual
-           Extensions:          CPP
-           Main-is:             examples/altDual.hs
-
 Executable OperadTest
            Main-is:             OperadTest.hs
            Extensions:          CPP
            Build-Depends:       QuickCheck
 
-Executable example
-           Main-is:             examples/example.hs
-           Extensions:          CPP
 
 Library 
         Build-Depends:          base, array, mtl, containers
         Exposed-Modules:        Math.Operad
         Other-Modules:          Math.Operad.OperadGB, Math.Operad.OrderedTree, Math.Operad.PPrint, Math.Operad.PolyBag, Math.Operad.MapOperad
         ghc-options:            -Wall
+        ghc-prof-options:       -auto-all
         Extensions:             CPP     
         if flag(mapoperad)
            CPP-Options:         -DUSE_MAPOPERAD
