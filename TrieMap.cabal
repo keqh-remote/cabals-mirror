@@ -1,5 +1,5 @@
 name:		     TrieMap
-version:             2.0.2
+version:             2.0.3
 cabal-version:       >= 1.6
 tested-with:	     GHC
 category:            Algorithms
@@ -32,6 +32,7 @@ exposed-modules:
   Data.TrieMap.Representation,
   Data.TrieMap.Modifiers
 other-modules:
+  Data.TrieMap.TrieKey,
   Data.TrieMap.Utils,
   Data.TrieMap.Sized,
   Data.TrieMap.Applicative,
