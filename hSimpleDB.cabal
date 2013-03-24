@@ -1,5 +1,5 @@
 name:                hSimpleDB
-version:             0.1
+version:             0.2
 synopsis:            Interface to Amazon's SimpleDB service.
 description:         Interface to Amazon's SimpleDB service.
 category:            Database, Web, Network
