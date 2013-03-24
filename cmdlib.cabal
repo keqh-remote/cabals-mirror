@@ -1,11 +1,29 @@
-name:                cmdlib
-version:             0.2.1
-synopsis:            a library for command line parsing & online help
+name:        cmdlib
+version:     0.3
+synopsis:    a library for command line parsing & online help
 
-description: An alternative to cmdargs, based on getopt. Comes with a powerful
-             attribute system. Supports complex interfaces with many options
-             and commands, with option & command grouping, while at the same
-             time keeping simple things simple.
+description: A commandline parsing library, based on getopt. Comes with a
+             powerful attribute system. Supports complex interfaces with many
+             options and commands, with option & command grouping, with simple
+             and convenient API. Even though quite powerful, it strives to keep
+             simple things simple. The library uses "System.Console.GetOpt" as
+             its backend.
+             .
+             In comparison to the other commandline handling libraries:
+             .
+             Compared to cmdargs, cmdlib has a pure attribute system and is
+             based on GetOpt for help formatting & argument parsing. Cmdlib may
+             also be more extendable due to typeclass design, and can use
+             user-supplied types for option arguments.
+             .
+             Cmdargs >= 0.4 can optionally use a pure attribute system,
+             although this is clearly an add-on and the API is a second-class
+             citizen in relation to the impure version.
+             .
+             GetOpt and parseargs both require explicit flag representation, so
+             they live a level below cmdlib. GetOpt is in fact used as a
+             backend by cmdlib.
+
 
 -- The license under which the package is released.
 -- copyright:
@@ -35,7 +53,7 @@ Library
                  System.Console.CmdLib.ADTs
                  System.Console.CmdLib.Record
 
-  build-depends: base < 5, syb, mtl, split
+  build-depends: base >= 4 && < 5, syb, mtl, split
 
 flag test
   default:     False
