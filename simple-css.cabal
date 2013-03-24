@@ -1,6 +1,6 @@
 Name:          simple-css
-Version:       0.0.1
-Cabal-Version: >= 1.2
+Version:       0.0.2
+Cabal-Version: >= 1.6
 License:       BSD3
 License-file:  LICENSE
 Author:	       Anton Kholomiov
@@ -24,7 +24,7 @@ Extra-Source-Files : example/Main.hs
 
 Library
   Build-Depends:
-        base >= 4, base < 5, containers, language-css, blaze-html  
+        base >= 4, base < 5, containers == 0.*, language-css == 0.0.1, blaze-html >= 0.2 && <= 0.3  
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         SimpleCss
