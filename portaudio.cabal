@@ -1,5 +1,5 @@
 name: portaudio
-version: 0.2.2
+version: 0.2.3
 synopsis: Haskell bindings for the PortAudio library.
 description: Bindings to the cross platform PortAudio library. Version 0.0.1 excludes the callback model.
 category: Sound
@@ -25,6 +25,7 @@ extra-source-files:
 library
   hs-source-dirs: src
   exposed-modules: Sound.PortAudio,
+                   Sound.PortAudio.Base,
                    Sound.PortAudio.Buffer
   ghc-options: -Wall
   build-depends:     base >= 3 && < 5
