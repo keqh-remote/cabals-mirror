@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       1.2.5
+Version:       1.2.6
 Category:      FRP, Network
 Synopsis:      Arrowized FRP implementation
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -60,8 +60,12 @@ Library
 --     Build-depends:
 --         base >= 4 && <= 5,
 --         containers,
+--         instinct,
 --         netwire,
---         transformers
+--         OpenGL,
+--         SDL,
+--         transformers,
+--         vector
 --     Extensions:
 --         Arrows
 --         ScopedTypeVariables
