@@ -1,5 +1,5 @@
 Name:                storablevector
-Version:             0.2.7
+Version:             0.2.7.1
 Category:            Data
 Synopsis:            Fast, packed, strict storable arrays with a list interface like ByteString
 Description:
@@ -51,7 +51,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/storablevector/
-  tag:      0.2.7
+  tag:      0.2.7.1
 
 Library
   Build-Depends:
@@ -71,7 +71,7 @@ Library
       If flag(separateSYB)
         Build-Depends:
           base >=4 && <5,
-          syb >=0.1 && <0.2
+          syb >=0.1 && <0.4
       Else
         Build-Depends:
           base >=3 && <4
