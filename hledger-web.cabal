@@ -1,5 +1,5 @@
 name:           hledger-web
-version: 0.16.3
+version: 0.16.4
 category:       Finance
 synopsis:       A web interface for the hledger accounting tool.
 description:    
@@ -76,6 +76,7 @@ executable hledger-web
                  ,HUnit
                  ,base >= 4 && < 5
                  ,bytestring
+                 ,cabal-file-th
                  ,cmdargs >= 0.8   && < 0.9
                  ,directory
                  ,filepath
