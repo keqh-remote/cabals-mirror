@@ -1,7 +1,7 @@
 Name:                persistent-equivalence
-Version:             0.2
+Version:             0.3
 Synopsis:            Persistent equivalence relations (aka union-find)
-Description:         This is a semi-persistent data structure for equivalence
+Description:         This is a persistent data structure for equivalence
                      relations (known in the imperative world as union-find
                      or disjoint set union).  It exhibits optimal performance
                      when used in a linear pattern, but degrades when other
@@ -13,10 +13,9 @@ Description:         This is a semi-persistent data structure for equivalence
                      paper, this version is safe with multiple threads, but
                      does not optimize for backtracking.
                      .
-                     Version 0.2 removes unnecessary atomic operations when
-                     doing updates that are never semantically meaningful,
-                     hopefully leading to better scalability in a parallel
-                     setting.
+                     Version 0.3 contains some performance improvements for
+                     concurrent applications, and removes the 'repr' function,
+                     which was poorly defined and had no good uses.
 License:             BSD3
 License-file:        LICENSE
 Author:              Chris Smith <cdsmith@gmail.com>
