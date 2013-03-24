@@ -1,15 +1,29 @@
 Name:                darcs-graph
-Version:             0.2
-License:             GPL
+Version:             0.3.1
+License:             BSD3
 License-file:        LICENSE
 Category:            Distribution
-Synopsis:            Generate pretty graphs of darcs repository activity
-Description:         Generate pretty graphs of darcs repository activity
+Synopsis:            Generate graphs of darcs repository activity
+Description:         Generate graphs of darcs repository activity
 Author:              Don Stewart
-Maintainer:          dons@cse.unsw.edu.au
-Build-Depends:       base
+Maintainer:          dons@galois.com
+build-type:          Simple
+Cabal-Version: >= 1.2
 
-Executable:          darcs-graph
-Main-is:             Graph.hs
-ghc-options:         -fglasgow-exts -Wall -Werror -O -funbox-strict-fields -optl-Wl,-s
- 
+flag small_base
+    description: Choose the new smaller, split-up base package.
+
+Executable darcs-graph
+    Main-is:             Graph.hs
+    Extensions:          CPP
+    Ghc-options:         -fglasgow-exts -Wall
+    
+    if flag(small_base)
+        build-depends: base >= 3,
+                       process,
+                       directory,
+                       old-time,
+                       bytestring,
+                       containers
+    else
+        build-depends: base <  3
