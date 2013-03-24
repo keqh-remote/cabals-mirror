@@ -1,7 +1,7 @@
 category:               Compilers/Interpreters
 copyright:              (c) 2012 Jonathan Fischoff 
 name:                   lambda-ast
-version:                0.0.1
+version:                0.0.4
 license:                BSD3
 license-file:           LICENSE
 author:                 Jonathan Fischoff
