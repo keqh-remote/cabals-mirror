@@ -1,5 +1,5 @@
 name:                   rewriting
-version:                0.1
+version:                0.2
 synopsis:               Generic rewriting library for regular datatypes.
 description:
 
@@ -18,7 +18,7 @@ description:
   <http://www.cs.uu.nl/wiki/GenericProgramming/Rewriting>.
 
 category:               Generics
-copyright:              (c) 2008 Universiteit Utrecht
+copyright:              (c) 2009 Universiteit Utrecht
 license:                BSD3
 license-file:           LICENSE
 author:                 Thomas van Noort,
@@ -30,7 +30,16 @@ maintainer:             generics@haskell.org
 stability:              experimental
 build-type:             Custom
 cabal-version:          >= 1.2.1
-tested-with:            GHC == 6.10.0.20081007
+tested-with:            GHC == 6.10.1
+extra-source-files:     examples/expr/run
+                        examples/expr/Expr.hs
+                        examples/expr/Expr.expected
+                        examples/logic/Logic.hs
+                        examples/logic/LogicGenerator.hs
+                        examples/logic/LogicRules.hs
+                        examples/logic/LogicStrategies.hs
+                        examples/logic/run
+
 
 -- Disabled the test flag for the moment since not all
 -- modules from the tests directory are properly included
@@ -50,7 +59,7 @@ library
                         Generics.Regular.Rewriting.Rules
                         Generics.Regular.Rewriting.Strategies
 
-  build-depends:        base >= 3.0, containers >= 0.1
+  build-depends:        base >= 4.0 && < 5, containers >= 0.1, regular >= 0.1
 
 -- Disabled the test flag for the moment since not all
 -- modules from the tests directory are properly included
