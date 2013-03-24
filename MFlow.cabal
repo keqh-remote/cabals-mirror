@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.0.5.2
+version: 0.0.5.3
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -8,15 +8,16 @@ maintainer: agocorona@gmail.com
 stability: experimental
 synopsis: Web app server for stateful processes with safe, composable user interfaces.
 
-description: It is a Web framework with some unique features thanks to the power of the Haskell language.
-             MFlow run stateful server processes. Because flows are stateful, not event driven, the code is more
+description: A Web framework with some unique features thanks to the power of the Haskell language.
+             MFlow run stateful server processes. Because flows are stateful, not isolated request-responses, the code is more
              understandable, because all the flow of request and responses is coded by the programmer in a single function.
              Allthoug single request-response flows and callbacks are possible.
              .
              Technically it is a Web application server for stateful processes (flows) that are optionally persistent.
              These processes interact with the user trough interfaces made of widgets that return back statically typed responses to
-             the calling process. All is coded in pure haskell (with optional XML from Haskell Server Pages).
-             It adopt and extend the formlet/applicative approach. It has bindings for HSP and Text.XHtml
+             the process that sent the interface (including links). The process is coded in pure haskell (with optional XML from Haskell Server Pages).
+             It adopt and extend the formlet/applicative approach. The interfaces and communication are abstract, but it has bindings for HSP, Text.XHtml and byteString
+             , Hack and WAI but it can be extended to non Web based architectures.
              .
              It includes Application Server features such is process and session timeouts
              and automatic recovery of flow execution state.
@@ -24,8 +25,8 @@ description: It is a Web framework with some unique features thanks to the power
              This release add transparent back button management, cached widgets, callbacks, modifiers, heterogeneous formatting AJAX,
              and WAI integration.
              .
-             It is designed for coding an entire application in a single file to be run with runghc in order
-             to speed up the prototyping process.
+             It is designed for coding an entire application can be run with no deployment with runghc in order
+             to speed up the development process.
              .
              See "MFlow.Forms" for details
              .
@@ -44,7 +45,7 @@ extra-source-files: Demos/ShoppingCart.hs, Demos/ShoppingCart.Wai.hs, Demos/demo
 
 library
     build-depends: Workflow -any, transformers -any, mtl -any,
-                   extensible-exceptions -any, xhtml -any, base >4.0 && <4.6,
+                   extensible-exceptions -any, xhtml -any, base >4.0 && < 5,
                    hack -any, hack-handler-simpleserver -any, bytestring -any,
                    containers -any, RefSerialize -any, TCache -any, stm >2,
                    old-time -any, vector -any, hsp -any, directory -any,
