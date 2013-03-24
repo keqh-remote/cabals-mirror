@@ -3,7 +3,7 @@
 ----------------------------------------------------------------
 
 Name:           bytestring-trie
-Version:        0.1.2
+Version:        0.1.3
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 Stability:      beta
@@ -28,6 +28,7 @@ Description:    An efficient finite map from (byte)strings to values.
 Library
     Hs-Source-Dirs:  src
     Exposed-Modules: Data.Trie
+                   , Data.Trie.Internal
                    , Data.Trie.Convenience
     Other-Modules:   Data.Trie.BitTwiddle
                    , Data.Trie.ByteStringInternal
