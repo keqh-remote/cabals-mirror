@@ -1,17 +1,45 @@
-name: hsSqlite3
 cabal-version: >= 1.2.3
-version: 0.0.6
-build-type: Simple
-synopsis: Database package using sqlite3.
-author: Evgeny Jukov
-maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
-stability: experimental, not usable yet
-homepage: http://bitbucket.org/mauricio/hssqlite3
-license: BSD3
-license-file: LICENSE
-category: database
-library
-  hs-source-dirs: src
-  build-depends: base, bindings-sqlite3, utf8-string
-  exposed-modules:
-    Database.HsSqlite3
+Name: hsSqlite3
+Version: 0.1
+License: LGPL
+Maintainer: Evgeny Jukov <masloed@gmail.com>
+Author: Evgeny Jukov
+Stability: Alpha
+Copyright: Copyright (c) 2007 Evgeny Jukov
+license-file: COPYRIGHT
+Synopsis: Sqlite3 bindings
+description: Bindings for Sqlite3
+Category: Database
+Build-Type: Simple
+Data-Files: src/hs_sqlite3_test.hs
+Data-Files: src/hs_sqlite3_test.sql
+Library
+  Hs-Source-Dirs: src
+  Extensions:
+    RankNTypes
+    FlexibleContexts
+    DeriveDataTypeable
+    GADTs
+    EmptyDataDecls
+    FlexibleInstances
+  Exposed-Modules: 
+    Database.Sqlite3,
+    Database.Sqlite3.Middle
+  Build-Depends:
+    base >=3 && <5,
+    utf8-string >=0.3.5 && <0.3.6,
+    mtl >=1.1 && <1.2,
+    bindings-sqlite3 >=1.0 && <1.1,
+    bytestring >=0.9 && <1.0
+-- Executable hs_sqlite3_test
+--   Main-Is: hs_sqlite3_test.hs
+--   HS-Source-Dirs: src
+--   Extensions:
+--     RankNTypes
+--     FlexibleContexts
+--     DeriveDataTypeable
+--     GADTs
+--     EmptyDataDecls
+--     FlexibleInstances
+--     PatternSignatures
+--     TypeOperators
