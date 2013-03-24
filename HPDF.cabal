@@ -1,6 +1,6 @@
 Name: HPDF
-Version: 1.4
-cabal-version: >=1.2
+Version: 1.4.1
+cabal-version: >=1.6
 License: LGPL
 License-file:LICENSE
 Copyright: Copyright (c) 2007-2008, alpheccar
@@ -8,7 +8,7 @@ category: Graphics
 synopsis: Generation of PDF documents
 maintainer: misc@NOSPAMalpheccar.org
 build-type: Simple
-tested-with: GHC==6.8.1
+tested-with: GHC==6.8.1, GHC==6.10.1
 homepage: http://www.alpheccar.org
 description: A PDF library with support for several pages, page transitions, outlines, annotations, compression, colors, shapes, patterns, jpegs, fonts, typesetting ...
 extra-source-files:
@@ -29,9 +29,9 @@ flag splitBase
 
 library
   if flag(splitBase)
-    build-depends: base >= 3, containers, random >= 1.0, bytestring >= 0.9, array >= 0.1, zlib >= 0.3, binary >= 0.3, mtl
+    build-depends: base >= 4 , containers, random >= 1.0, bytestring >= 0.9, array >= 0.1, zlib >= 0.5, binary >= 0.4, mtl
   else
-    build-depends: base, haskell98, mtl ,zlib >= 0.3, binary >= 0.3
+    build-depends: base >= 3, haskell98, mtl ,zlib >= 0.5, binary >= 0.4
   ghc-options: -Wall -funbox-strict-fields  -O2
   extensions: 
     FlexibleInstances, 
