@@ -7,7 +7,7 @@ Name:                marionetta
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.1.0.1
 
 -- A short (one-line) description of the package.
 Synopsis: A study of marionetta movements.
@@ -54,7 +54,7 @@ Executable marionetta
   Build-depends: base >=4 && <5, mtl -any, containers -any , gloss -any
   
   -- Modules not exported by this package.
-  Other-modules:  Controller Data.List.Zipper Data.Tree.Missing Data.Zip Gloss IFigura Model View
+  Other-modules:  Controller Data.List.Zipper Data.Tree.Missing Data.Zip Gloss IFigura Model View Run
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
