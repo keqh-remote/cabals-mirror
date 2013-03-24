@@ -1,5 +1,5 @@
 Name:                vty
-Version:             4.0.0.1
+Version:             4.2.1.0
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear, Corey O'Connor
@@ -30,15 +30,17 @@ Build-Depends:       base >= 4 && < 5, bytestring, containers, unix
 Build-Depends:       terminfo >= 0.3 && < 0.4
 Build-Depends:       utf8-string >= 0.3 && < 0.4
 Build-Depends:       mtl >= 1.1.0.0 && < 1.2
-Build-Depends:       ghc-prim, parallel
+Build-Depends:       ghc-prim, parallel < 2
 Build-Depends:       array
 Build-Depends:       parsec >= 2 && < 4
+Build-Depends:       vector-space >= 0.5 && < 0.6
 Build-Type:          Simple
 Data-Files:          README, TODO
 Exposed-Modules:     Graphics.Vty
                      Graphics.Vty.Terminal
                      Graphics.Vty.LLInput
                      Graphics.Vty.Attributes
+                     Graphics.Vty.Inline
                      Graphics.Vty.Picture
                      Graphics.Vty.DisplayRegion
 
@@ -46,6 +48,7 @@ other-modules:       Codec.Binary.UTF8.Width
                      Data.Marshalling
                      Data.Terminfo.Parse
                      Data.Terminfo.Eval
+                     Graphics.Vty.DisplayAttributes
                      Graphics.Vty.Image
                      Graphics.Vty.Span
                      Graphics.Vty.Terminal.Generic
@@ -95,5 +98,5 @@ Extra-Source-Files: test/Makefile
                     cbits/gwinsz.h
 
 ghc-options:         -funbox-strict-fields -Wall -fno-full-laziness -fspec-constr
-ghc-prof-options:    -funbox-strict-fields -auto-all -Wall -fno-full-laziness -fspec-constr
+ghc-prof-options:    -funbox-strict-fields -caf-all -Wall -fno-full-laziness -fspec-constr
 
