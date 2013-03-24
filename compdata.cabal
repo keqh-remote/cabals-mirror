@@ -1,18 +1,21 @@
 Name:			compdata
-Version:		0.4.1
+Version:		0.5
 Synopsis:            	Compositional Data Types
 Description:
 
   Based on Wouter Swierstra's Functional Pearl /Data types à la carte/
-  (Journal of Functional Programming, 18(4):423-436, 2008),
+  (Journal of Functional Programming, 18(4):423-436, 2008,
+  <http://dx.doi.org/10.1017/S0956796808006758>),
   this package provides a framework for defining recursive
   data types in a compositional manner. The fundamental idea of
-  compositional data types is to separate the signature of a data type
+  /compositional data types/ (Workshop on Generic Programming, 83-94, 2011,
+  <http://dx.doi.org/10.1145/2036918.2036930>) is to separate the
+  signature of a data type
   from the fixed point construction that produces its recursive
   structure. By allowing to compose and decompose signatures,
-  /compositional data types/ enable to combine data types in a flexible
+  compositional data types enable to combine data types in a flexible
   way. The key point of Wouter Swierstra's original work is to define
-  functions on /compositional data types/ in a compositional manner as
+  functions on compositional data types in a compositional manner as
   well by leveraging Haskell's type class machinery.
   .
   Building on that foundation, this library provides additional
@@ -85,8 +88,8 @@ License:		BSD3
 License-file:		LICENSE
 Author:			Patrick Bahr, Tom Hvitved
 Maintainer:		paba@diku.dk
-Build-Type:		Custom
-Cabal-Version:          >=1.8.0.6
+Build-Type:		Simple
+Cabal-Version:          >=1.9.2
 
 extra-source-files:
   -- test files
@@ -122,33 +125,21 @@ extra-source-files:
   benchmark/Functions/Standard/Inference.hs
   benchmark/Functions/Standard.hs
   -- example files
+  examples/Examples/Common.hs
   examples/Examples/Eval.hs
   examples/Examples/EvalM.hs
-  examples/Examples/DesugarEval.hs
-  examples/Examples/DesugarPos.hs
+  examples/Examples/Desugar.hs
   examples/Examples/Automata.hs,
+  examples/Examples/Multi/Common.hs
   examples/Examples/Multi/Eval.hs
   examples/Examples/Multi/EvalI.hs
   examples/Examples/Multi/EvalM.hs
-  examples/Examples/Multi/DesugarEval.hs
-  examples/Examples/Multi/DesugarPos.hs
-  examples/Examples/Param/Eval.hs
-  examples/Examples/Param/EvalM.hs
-  examples/Examples/Param/EvalAlgM.hs
-  examples/Examples/Param/DesugarEval.hs
-  examples/Examples/Param/DesugarPos.hs
-  examples/Examples/Param/Parsing.hs
-  examples/Examples/MultiParam/Eval.hs
-  examples/Examples/MultiParam/EvalI.hs
-  examples/Examples/MultiParam/EvalM.hs
-  examples/Examples/MultiParam/EvalAlgM.hs
-  examples/Examples/MultiParam/DesugarEval.hs
-  examples/Examples/MultiParam/DesugarPos.hs
+  examples/Examples/Multi/Desugar.hs
+  examples/Examples/Param/Lambda.hs
+  examples/Examples/Param/Names.hs
+  examples/Examples/Param/Graph.hs
+  examples/Examples/MultiParam/Lambda.hs
   examples/Examples/MultiParam/FOL.hs
-
-flag test
-  description: Build test executable.
-  default:     False
 
 flag benchmark
   description: Build benchmark executable.
@@ -177,17 +168,19 @@ library
                         Data.Comp.Automata,
                         Data.Comp.Automata.Product,
                         Data.Comp.Zippable,
+                        Data.Comp.Thunk,
 
                         Data.Comp.Multi,
                         Data.Comp.Multi.Term,
                         Data.Comp.Multi.Sum,
-                        Data.Comp.Multi.Functor,
-                        Data.Comp.Multi.Foldable,
-                        Data.Comp.Multi.Traversable,
+                        Data.Comp.Multi.HFunctor,
+                        Data.Comp.Multi.HFoldable,
+                        Data.Comp.Multi.HTraversable,
                         Data.Comp.Multi.Algebra,
                         Data.Comp.Multi.Annotation,
                         Data.Comp.Multi.Show,
                         Data.Comp.Multi.Equality,
+                        Data.Comp.Multi.Ordering,
                         Data.Comp.Multi.Variables,
                         Data.Comp.Multi.Ops,
                         Data.Comp.Ops,
@@ -198,7 +191,6 @@ library
                         Data.Comp.Param,
                         Data.Comp.Param.Term,
                         Data.Comp.Param.FreshM,
-                        Data.Comp.Param.Any,
                         Data.Comp.Param.Sum,
                         Data.Comp.Param.Difunctor,
                         Data.Comp.Param.Ditraversable,
@@ -210,11 +202,11 @@ library
                         Data.Comp.Param.Show
                         Data.Comp.Param.Derive,
                         Data.Comp.Param.Desugar
+                        Data.Comp.Param.Thunk
 
                         Data.Comp.MultiParam,
                         Data.Comp.MultiParam.Term,
                         Data.Comp.MultiParam.FreshM,
-                        Data.Comp.MultiParam.Any,
                         Data.Comp.MultiParam.Sum,
                         Data.Comp.MultiParam.HDifunctor,
                         Data.Comp.MultiParam.HDitraversable,
@@ -240,12 +232,14 @@ library
                         Data.Comp.Derive.Traversable,
                         Data.Comp.Derive.Injections,
                         Data.Comp.Derive.Projections,
+                        Data.Comp.Derive.HaskellStrict,
                         Data.Comp.Automata.Product.Derive,
 
-                        Data.Comp.Multi.Derive.Functor,
-                        Data.Comp.Multi.Derive.Foldable,
-                        Data.Comp.Multi.Derive.Traversable,
+                        Data.Comp.Multi.Derive.HFunctor,
+                        Data.Comp.Multi.Derive.HFoldable,
+                        Data.Comp.Multi.Derive.HTraversable,
                         Data.Comp.Multi.Derive.Equality,
+                        Data.Comp.Multi.Derive.Ordering,
                         Data.Comp.Multi.Derive.Show,
                         Data.Comp.Multi.Derive.SmartConstructors
                         Data.Comp.Multi.Derive.SmartAConstructors
@@ -280,20 +274,20 @@ library
   if flag(benchmark)
     buildable:     False
 
-Executable test
+
+Test-Suite test
+  Type:                 exitcode-stdio-1.0
   Main-is:		Data_Test.hs
-  Build-Depends:	base == 4.*, template-haskell, containers, mtl, QuickCheck >= 2, test-framework, test-framework-quickcheck2, derive, th-expand-syns, deepseq, transformers
   hs-source-dirs:	src testsuite/tests examples
-  ghc-options:          -fhpc
-  if !flag(test)
-    buildable:     False
+  Build-Depends:        base == 4.*, template-haskell, containers, mtl, QuickCheck >= 2, test-framework, test-framework-quickcheck2, derive, th-expand-syns, deepseq, transformers
 
 Executable benchmark
   Main-is:		Benchmark.hs
-  Build-Depends:	base == 4.*, template-haskell, containers, mtl, QuickCheck >= 2, derive, deepseq, criterion, random, uniplate, th-expand-syns, transformers
   hs-source-dirs:	src benchmark
   ghc-options:          -W -O2
   -- Disable short-cut fusion rules in order to compare optimised and unoptimised code.
   cpp-options:          -DNO_RULES
   if !flag(benchmark)
-    buildable:     False
+    buildable:          False
+  else
+    Build-Depends:      base == 4.*, template-haskell, containers, mtl, QuickCheck >= 2, derive, deepseq, criterion, random, uniplate, th-expand-syns, transformers
