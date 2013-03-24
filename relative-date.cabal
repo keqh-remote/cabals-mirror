@@ -1,5 +1,5 @@
 name:                relative-date
-version:             0.0.0
+version:             0.0.1
 synopsis:            Durations and generalized time parsing
 description:         Relative-date provides two modules.  Data.Duration gives
 					 functions for the creation of durations of time, represented
@@ -14,5 +14,5 @@ license-file:        LICENSE
 author:              Sam Anklesaria
 maintainer:          amsay@amsay.net
 build-type:          Simple
-Build-Depends:		 base >= 3 && < 5, mtl >=1.1 && <1.2, concatenative == 0.0, datetime == 0.2, parsec >= 3.0 && <= 3.1.0, time >= 1.1.2.2 && <1.2
+Build-Depends:		 base >= 3 && < 5, mtl >=1.1 && <1.2, concatenative == 0.0.0, datetime == 0.2, parsec >= 3.0 && <= 3.1.0, time >= 1.1.2.2 && <1.2
 Exposed-Modules:	 Data.DateTime.Parser, Data.Duration
