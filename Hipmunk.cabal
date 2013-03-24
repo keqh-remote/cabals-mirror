@@ -3,7 +3,7 @@ Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          Hipmunk
-Version:       5.0.0
+Version:       5.0.1
 Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
@@ -20,12 +20,15 @@ Description:
       <http://hackage.haskell.org/package/HipmunkPlayground>
       for a demonstration of this library.
       .
+      New in version 5.0.1:
+      * Updated dependencies for GHC 6.12.  Thanks, dons.
+      .
       New in version 5.0.0:
       .
       * Updated for a prerelease of Chipmunk 5.0 from subversion
         revision 192.  Besides bugfixes this new version brings
         the long awaited new constraints type, doubling the
-        number of different joint from four to nine.
+        number of different joints from four to nine.
       .
       * Tighter dependencies following the versioning policies.
       .
@@ -106,10 +109,10 @@ Library
       Physics/Hipmunk/wrapper.c
   if flag(small_base)
     Build-Depends: base >= 3 && < 5,
-                   array >= 0.1 && < 0.3,
-                   containers >= 0.1 && < 0.3
+                   array >= 0.1 && < 0.4,
+                   containers >= 0.1 && < 0.4
   else
-    Build-Depends: base == 2
+    Build-Depends: base >= 2 && < 3
   Extensions:    CPP, ForeignFunctionInterface
   Build-Tools:   hsc2hs
   GHC-Options:   -Wall
