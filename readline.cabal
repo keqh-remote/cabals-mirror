@@ -1,5 +1,5 @@
 name:		readline
-version:	1.0.2.0
+version:	1.0.3.0
 license:	GPL
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
@@ -13,8 +13,7 @@ extra-source-files:
 		readline.buildinfo.in include/HsReadlineConfig.h.in
 extra-tmp-files:
 		config.log config.status autom4te.cache config.mk
-		readline.buildinfo include/HsReadlineConfig.h
-                include/HsReadline.h
+		readline.buildinfo
 build-type: Configure
 cabal-version: >=1.2
 
