@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.8
+Version:	0.9
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -14,36 +14,42 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		Hakefile is just Haskell source code,
 		then you can use all Haskell features.
 		.
+		I have changed Hakefile syntax.
+		If you want to use old Hakefile,
+		put 'import Development.Hake.OldFunSet'.
+		.
 		> import Development.Hake
+		> import Development.Hake.FunSet
 		> hake_rules = [
 		>
 		>  dflt	[ "greeting" ]
 		>  ,
-		>  file	( [ "greeting", "greeting.log" ], [ "hello.o", "good-bye.o" ] ,
-		> 		[ "linker -o greeting hello.o good-bye.o" ] )
+		>  file	[ "greeting", "greeting.log" ] [ "hello.o", "good-bye.o" ]
+		> 		[ [ "linker", "-o", "greeting", "hello.o", "good-bye.o" ] ]
 		>  ,
-		>  rule	( ".o", ".sfx1",
-		> 		\t s -> [ "compiler1 " ++ s ++ " -o " ++ t ] )
+		>  rule	".o" ".sfx1" $
+		> 		\t s -> [ [ "compiler1", s, "-o", t ] ]
 		>  ,
-		>  rule	( ".o", ".sfx2",
-		> 		\t s -> [ "compiler2 " ++ s ++ " -o " ++ t ] )
+		>  rule	".o" ".sfx2" $
+		> 		\t s -> [ [ "compiler2", s, "-o", t ] ]
 		>  ,
-		>  task	( "clean" , [ "rm -f *.o greeting greeting.log" ] )
+		>  task	"clean"
+		>       [ [ "rm", "-f", "hello.o", "good-by.o", "greeting", "greeting.log" ] ]
 		>  ,
-		>  mkfl	( "script.sh", [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ] )
+		>  mkfl	"script.sh" [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ]
 		>  ,
-		>  ruleSS ( "", ".o", \t s -> [ (".c",  [ "gcc " ++ s ++ " -o " ++ t ] ) ,
-		>                               (".cc", [ "g++ " ++ s ++ " -o " ++ t ] ) ] )
+		>  ruleSS "" ".o" $ \t s -> [ (".c",  [ [ "gcc", s, "-o", t ] ] ) ,
+		>                             (".cc", [ [ "g++", s, "-o", t ] ] ) ] )
 		>  ,
-		>  rule   ( ".o", ".c",  \_ s -> [ "gcc -c " ++ s ] )
+		>  rule   ".o" ".c" $ \_ s -> [ [ "gcc", "-c", s ] ]
 		>  ,
-		>  rule   ( ".o", ".cc", \_ s -> [ "g++ -c " ++ s ] )
+		>  rule   ".o" ".cc" $ \_ s -> [ [ "g++", "-c", s ] ]
 		>  ,
-		>  base   ( [ (=="foo") ], const [ "foo.gen", "Hakefile" ], \t [s] -> [ \_ -> do
+		>  base   [ (=="foo") ] (const [ "foo.gen", "Hakefile" ]) $ \t [s] -> [ \_ -> do
 		>               gen <- readFile s
 		>               writeFile t $ unlines $
 		>                 [ "#!/bin/sh", "echo This is script" ] ++ lines gen
-		>               return ExitSuccess ] )
+		>               return ExitSuccess ]
 		>
 		>  ]
 		>
@@ -63,8 +69,8 @@ Library
   GHC-Options:		-Wall
 --  CPP-Options:		-DDEBUG
   Build-Depends:	base, old-time, mtl, filepath
-  Exposed-Modules:	Development.Hake
-  Other-Modules:	Development.Hake.HiddenTools
+  Exposed-Modules:	Development.Hake, Development.Hake.OldFunSet, Development.Hake.FunSet
+  Other-Modules:	Development.Hake.HiddenTools, Development.Hake.Types
 
 Executable hake
   GHC-Options:		-Wall
