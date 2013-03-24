@@ -1,5 +1,5 @@
 name: logic-TPTP    
-version: 0.2.0.4
+version: 0.2.0.6
 cabal-version: >= 1.6
 build-type: Simple
 license: GPL
@@ -41,7 +41,7 @@ extra-source-files: testing/compileTests.sh
                     testing/PrettyPrintFile.hs
                     testing/ParseRandom.hs
                     
-tested-with: GHC==6.12.1
+tested-with: GHC==7.0.1
 
 source-repository head
  type: darcs
@@ -56,9 +56,8 @@ Library
                    , array
                    , syb
                    , containers
-                   , haskell98
                    , ansi-wl-pprint
-                   , QuickCheck >= 2               
+                   , QuickCheck >= 2
                    , utf8-prelude
                    , mtl
  
@@ -72,6 +71,6 @@ Library
  other-modules:
                     Lexer     
                   , Parser
-                  , ParserC
+                  , Parser2
                   , Codec.TPTP.QuickCheck
 
