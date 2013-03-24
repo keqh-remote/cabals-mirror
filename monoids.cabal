@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.2.0
+version:	    0.2.0.1
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -23,8 +23,8 @@ library
     array >= 0.2 && < 0.3,
     containers >= 0.2 && < 0.3,
     bytestring >= 0.9 && < 1.0,
-    fingertree >= 0.0.1 && < 0.3,
-    text >= 0.1 && < 0.3,
+    fingertree >= 0.0.1 && < 0.2,
+    text >= 0.1 && < 0.4,
     parallel >= 1.1 && < 1.2
 
   exposed-modules:
