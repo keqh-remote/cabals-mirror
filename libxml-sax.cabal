@@ -1,5 +1,5 @@
 Name: libxml-sax
-Version: 0.1
+Version: 0.2
 Stability: Alpha
 Synopsis: Bindings for the libXML2 SAX interface
 Description: Incrementally convert text to lists of XML events
@@ -13,10 +13,10 @@ Category: XML
 
 Library
   Build-Depends: base >=3 && < 5
+  build-tools: c2hs
   Exposed-modules: Text.XML.LibXML.SAX
 
   extra-libraries: xml2
   pkgconfig-depends: libxml-2.0
-  c-sources: incremental-xml.c
 
   Extensions: ForeignFunctionInterface
