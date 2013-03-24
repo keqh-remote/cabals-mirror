@@ -1,15 +1,19 @@
 Name:                game-probability
-Version:             1.0
-Synopsis:            Simple probability library for dice rolls and similar simple games of chance
--- A longer description of the package.
+Version:             1.1
+Synopsis:            Simple probability library for dice rolls, card games and similar
 Description:         A library designed to aid in easily calculating the
-                     probability of various outcomes of dice rolls.  The
+                     probability of various outcomes of dice rolls and card draws.  The
 		     central types are held in the
 		     "Numeric.Probability.Game.Event" module, the dice are
 		     defined in the "Numeric.Probability.Game.Dice" module,
 		     and the functions for calculating probabilities are in
-		     the "Numeric.Probability.Game.Query" module.  Various
-		     examples are scattered throughout the library, but here
+		     the "Numeric.Probability.Game.Query" module.  The
+		     functions for playing cards cand be found in the
+		     "Numeric.Probability.Game.Cards" module, and more efficient
+		     calculation helpers can be found in the
+		     "Numeric.Probability.Game.Cards.Hand" module.
+                     .
+                     Various examples are scattered throughout the library, but here
 		     are some more:
                      .
                      Evalulates the chance of a coin toss turning up heads:
@@ -44,7 +48,10 @@ Description:         A library designed to aid in easily calculating the
                      .
                      If only all RPGs specified their rules in Haskell!
                      .
-                     See also the blog post on the design of the library: <http://chplib.wordpress.com/2010/08/13/nice-dice-in-haskell/>
+                     See also the blog posts on the design of the library:
+		     <http://chplib.wordpress.com/2010/08/13/nice-dice-in-haskell/>,
+		     <http://chplib.wordpress.com/2010/08/23/sharp-cards-in-haskell-drawing-cards/>
+		     and <http://chplib.wordpress.com/2010/09/08/sharp-cards-in-haskell-the-odds/>
 License:             BSD3
 License-file:        LICENSE
 Author:              Neil Brown
@@ -61,12 +68,15 @@ Library
   -- Modules exported by the library.
   Exposed-modules:     Numeric.Probability.Game.Event
                        Numeric.Probability.Game.Dice
+                       Numeric.Probability.Game.Cards
+                       Numeric.Probability.Game.Cards.Hand
+                       Numeric.Probability.Game.PlayingCards
                        Numeric.Probability.Game.Query
   
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4 && < 5, probability == 0.2.*, random == 1.0.*
+  Build-depends:       base >= 4 && < 5, probability == 0.2.*, random == 1.0.*, containers >= 0.2 && < 0.4
 
-  Extensions:          GeneralizedNewtypeDeriving FlexibleInstances
+  Extensions:          GeneralizedNewtypeDeriving FlexibleInstances ScopedTypeVariables
 
   GHC-Options:         -Wall
 
