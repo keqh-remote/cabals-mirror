@@ -1,5 +1,5 @@
 Name:                socks
-Version:             0.4.2
+Version:             0.5.0
 Description:         Socks proxy (version 5) implementation.
 License:             BSD3
 License-file:        LICENSE
@@ -20,8 +20,10 @@ Library
                    , cereal >= 0.3.1
                    , network >= 2.3
   Exposed-modules:   Network.Socks5
-  Other-modules:     Network.Socks5.Wire
+                     Network.Socks5.Lowlevel
                      Network.Socks5.Types
+  Other-modules:     Network.Socks5.Wire
+                     Network.Socks5.Conf
                      Network.Socks5.Command
   ghc-options:       -Wall -fno-warn-missing-signatures
 
