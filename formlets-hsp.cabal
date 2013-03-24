@@ -1,5 +1,5 @@
 Name:            formlets-hsp
-Version:         2.2.3
+Version:         2.3.1
 Synopsis:        HSP support for Formlets
 Description:     A modular way to build forms based on applicative functors, as
                  described in:
