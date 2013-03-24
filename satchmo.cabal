@@ -1,5 +1,5 @@
 Name:           satchmo
-Version:        1.1.1
+Version:        1.2
 License:        GPL
 License-file:	gpl-2.0.txt
 Author:         Johannes Waldmann
@@ -16,6 +16,7 @@ Exposed-modules:
 	Satchmo.Counting
 	Satchmo.Code
 	Satchmo.Binary
+	Satchmo.Binary.Op.Common
 	Satchmo.Binary.Op.Fixed
 	Satchmo.Binary.Op.Flexible
 Other-modules:
