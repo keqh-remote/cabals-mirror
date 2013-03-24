@@ -1,11 +1,11 @@
 Name:               clock
-Version:            0.1.2
+Version:            0.1.2.1
 License:            BSD3
 License-file:       COPYING
 Copyright:          (c) 2009 Cetin Sert
 Author:             Cetin Sert <cetin@sertcom.de>
 Maintainer:         Cetin Sert <cetin@sertcom.de>
-Homepage:           <http://sert.homedns.org/hs/clock/>
+Homepage:           http://sert.homedns.org/hs/clock
 Category:           System
 Synopsis:           High-resolution clock and timer functions:
                     realtime, monotonic, cputime, etc.
