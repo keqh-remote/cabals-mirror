@@ -1,5 +1,5 @@
 name:                core
-version:             0.4
+version:             0.5
 synopsis:            External core parser and pretty printer.
 description:         External core parser and pretty printer.
 category:            Language
@@ -7,7 +7,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              David Himmelstrup
 maintainer:          lemmih@gmail.com
-build-Depends:       base, parsec, bytestring, pretty, array
+build-Depends:       base, parsec, bytestring, pretty
 ghc-options:         
 ghc-prof-options:    -auto-all
 build-type:          Simple
@@ -16,4 +16,3 @@ exposed-modules:     Language.Core
                      Language.Core.Syntax
                      Language.Core.Parser
                      Language.Core.Pretty
-                     Language.Core.Happy
