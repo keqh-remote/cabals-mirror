@@ -1,10 +1,8 @@
 Name:                   halipeto
-Version:                2.1
+Version:                2.2
 Copyright:              (c) 2004-2010 Peter Simons
 License:                GPL
 License-File:           COPYING
-Copyright:              (c) 2004-2008 Andrew Cooke <andrew@acooke.org>
-                        (c) 2007-2010 Peter Simons <simons@cryp.to>
 Author:                 Andrew Cooke <andrew@acooke.org>, Peter Simons <simons@cryp.to>
 Maintainer:             Peter Simons <simons@cryp.to>
 Homepage:               http://gitorious.org/halipeto
@@ -27,6 +25,6 @@ Library
                         Halipeto.SimpleDB,
                         Halipeto.Template,
                         Halipeto.Utilities
-  Build-Depends:        base >= 2 && < 5, haskell98, HaXml == 1.13.*, directory, pandoc
+  Build-Depends:        base >= 3 && < 5, HaXml == 1.13.*, directory, pandoc
   Extensions:           MultiParamTypeClasses, FlexibleInstances, FlexibleContexts
   Ghc-Options:          -Wall
