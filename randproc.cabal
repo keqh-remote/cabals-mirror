@@ -1,6 +1,17 @@
 Name:                randproc
-Version:             0.2
-Description:         Data structures for working with random processes
+Version:             0.3
+Homepage:            http://www.haskell.org/haskellwiki/Random_Processes
+Bug-reports:         http://trac.haskell.org/RandProc/
+Synopsis:            Data structures and support functions for working with random processes
+Description:         RandProc.hs - a Haskell library for working with random processes in a mathematically rigorous way
+   
+                     (Concepts taken from /Random Processes - a Mathematical Approach for Engineers/ by:
+
+                          - Robert M. Gray
+
+                          - Lee D. Davisson
+                          
+                          Prentice-Hall Information and System Sciences Series, Thomas Kailath, Series Editor)
 Category:            Data Structures
 License:             BSD3
 License-file:        LICENSE
