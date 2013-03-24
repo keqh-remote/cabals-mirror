@@ -1,5 +1,5 @@
 Name          : happstack-yui
-Version       : 7351.4.1
+Version       : 7360.4.1
 Category      : Web, Happstack
 Synopsis      : Utilities for using YUI3 with Happstack.
 Homepage      : https://github.com/dag/happstack-yui
@@ -10,7 +10,7 @@ Cabal-Version : >= 1.10
 Build-Type    : Simple
 
 Description :
-  Bundles YUI 3.5.1 and includes a \"combo handler\" for use in
+  Bundles YUI 3.6.0 and includes a \"combo handler\" for use in
   Happstack which concatenates YUI modules server-side to send in a single
   HTTP request.  The YUI bundle can be embedded in compiled code with
   Template Haskell (install with @-fembed@) which means the files are
@@ -1473,16 +1473,16 @@ Library
 
   if !flag(embed)
     CPP-Options   :
-      -DYUI_VERSION=3.5.1
-      -DYUI_VERSION_STR="3.5.1"
+      -DYUI_VERSION=3.6.0
+      -DYUI_VERSION_STR="3.6.0"
     Other-Modules :
       Paths_happstack_yui
     Build-Depends :
       directory == 1.1.*
   else
     CPP-Options   :
-      -DYUI_VERSION=3.5.1
-      -DYUI_VERSION_STR="3.5.1"
+      -DYUI_VERSION=3.6.0
+      -DYUI_VERSION_STR="3.6.0"
       -DEMBED
     Build-Depends :
       file-embed == 0.0.*
