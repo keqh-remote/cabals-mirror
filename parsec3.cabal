@@ -1,5 +1,5 @@
 name:           parsec3
-version:        1.0.0.1
+version:        1.0.0.2
 cabal-version: >= 1.2.3
 license:        BSD3
 license-file:   LICENSE
@@ -23,12 +23,12 @@ description:
         versions, therefore I do not recommend to unconditionally use parsec3
         as dependency in cabal files of packages for hackage.  But you may
         want to develop your code using this subset of parsec3 modules and
-        finally change the dependency from parsec3 to parsec-3.1.0 in order to
+        finally change the dependency from parsec3 to parsec-3.1.1 in order to
         avoid module ambiguities for users just installing your package.  Your
         own module ambiguities are best avoided by hiding packages.
         .
-        This version only differs from the previous one by a changed
-        description.
+        This version re-exports parts of the Applicative module instead of extra
+        functions with the same name.
 library
     exposed-modules:
         Text.Parsec,
