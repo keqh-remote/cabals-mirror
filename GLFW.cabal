@@ -1,5 +1,5 @@
 name:		GLFW
-version:	0.2
+version:	0.3
 Cabal-Version: >= 1.2
 license:	BSD3
 license-file:	LICENSE
@@ -14,7 +14,6 @@ description:
  please see: <http://glfw.sourceforge.net>
 data-files:
 	README.txt
-        GL/glfw.h 
 	glfw/license.txt
         glfw/include/GL/glfw.h
         glfw/lib/internal.h
