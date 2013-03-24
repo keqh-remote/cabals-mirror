@@ -1,5 +1,5 @@
 Name:                mysnapsession
-Version:             0.3
+Version:             0.3.1
 Synopsis:            Sessions and continuations for Snap web apps
 Description:         This package provides two Snap extensions, implementing
                      sessions as either memory-backed arbitrary types, or as
