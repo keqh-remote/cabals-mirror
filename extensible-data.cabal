@@ -7,7 +7,7 @@ Name:                extensible-data
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.0.2
+Version:             0.1.0.3
 
 -- A short (one-line) description of the package.
 Synopsis:            Sums/products/lists/trees which can be extended in other modules
@@ -49,7 +49,8 @@ X-Printout-Require:  birdstyle.tex
 Library
   -- Modules exported by the library.
   Exposed-modules:     Data.Extensible.Tree, Data.Extensible.Sum, Data.Extensible.Product, Data.Extensible.List
-  
+  Other-modules:       Data.Extensible.TH__
+
   -- Packages needed in order to build this package.
   Build-depends:
     base >= 4.3 && < 5.0,
