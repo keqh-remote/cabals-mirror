@@ -1,5 +1,6 @@
 name:       packedstring
-version:    0.1.0.0
+version:    0.1.0.1
+cabal-version: >= 1.2
 license:    BSD3
 license-file:    LICENSE
 maintainer:    libraries@haskell.org
@@ -7,8 +8,9 @@ synopsis:    (Deprecated) Packed Strings.
 description:
     (Deprecated) Packed Strings.
 build-type: Simple
-build-depends: base, array
-exposed-modules:
-    Data.PackedString
-extensions: CPP
+Library
+  build-depends: base, array
+  exposed-modules:
+      Data.PackedString
+  extensions: CPP
 
