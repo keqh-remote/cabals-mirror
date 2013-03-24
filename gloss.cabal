@@ -1,9 +1,9 @@
 Name:                gloss
-Version:             1.0.0.2
+Version:             1.1.0.0
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
-Maintainer:          gloss@ouroborus.net
+Maintainer:          benl@ouroborus.net
 Build-Type:          Simple
 Cabal-Version:       >=1.6
 Stability:           provisional
@@ -32,14 +32,19 @@ Library
 
   Exposed-modules:
         Graphics.Gloss
+        Graphics.Gloss.Game
         Graphics.Gloss.Color
+        Graphics.Gloss.Picture
+        Graphics.Gloss.Shapes
+        Graphics.Gloss.ViewPort
         Graphics.Gloss.Geometry
         Graphics.Gloss.Geometry.Angle
         Graphics.Gloss.Geometry.Line
         Graphics.Gloss.Geometry.Vector
-        Graphics.Gloss.Picture
-        Graphics.Gloss.Shapes
-        Graphics.Gloss.ViewPort
+        Graphics.Gloss.Data.Quad
+        Graphics.Gloss.Data.Extent
+        Graphics.Gloss.Data.QuadTree
+        Graphics.Gloss.Algorithms.RayCast
 
   Other-modules:
         Graphics.Gloss.Internals.Color
@@ -53,6 +58,7 @@ Library
         Graphics.Gloss.Internals.Interface.Simulate
         Graphics.Gloss.Internals.Interface.Simulate.Idle
         Graphics.Gloss.Internals.Interface.Simulate.State
+        Graphics.Gloss.Internals.Interface.Game
         Graphics.Gloss.Internals.Interface.ViewPort.Command
         Graphics.Gloss.Internals.Interface.ViewPort.ControlState
         Graphics.Gloss.Internals.Interface.ViewPort.KeyMouse
