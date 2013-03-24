@@ -1,5 +1,5 @@
 name:             zmidi-core
-version:          0.5.0
+version:          0.6.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -14,9 +14,24 @@ description:
   .
   Changelog:
   .
+  v0.5.0 to v0.6.0:
+  .
+  * Extended the parser and changed the syntax tree to interpret 
+    MIDI Running Status. 
+  . 
+  * Added a module @ZMidi.Core.Canonical@ to translate MidiFiles
+    to a canonical form where any shorthand NoteOff introduced by 
+    Running Status is expanded to regular NoteOn and NoteOff 
+    events (with Running Status set, MidiFiles can signal NoteOff 
+    events as another NoteOn with 0 channel velocity).
+  .
+  * Added a hack to the pretty printer to stop printing ASCII
+    chars greater than 164 causing an error when printing to 
+    stdout.
+  .
   v0.4.0 to v0.5.0:
   .
-  * Changed order of @MidiVoiceEnvent@ constructors so the Ord 
+  * Changed order of @MidiVoiceEvent@ constructors so the Ord 
     instance follows the order of the /tag/ in the MIDI binary
     representation.
   . 
@@ -85,6 +100,7 @@ library
   
   exposed-modules:
     ZMidi.Core,
+    ZMidi.Core.Canonical,
     ZMidi.Core.Datatypes,
     ZMidi.Core.Pretty,
     ZMidi.Core.ReadFile,
