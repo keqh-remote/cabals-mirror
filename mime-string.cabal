@@ -1,16 +1,15 @@
 Name:               mime-string
-Version:            0.1
+Version:            0.2
 License:            OtherLicense
 License-File:       COPYING
 Copyright:          Ian Lynagh, 2005, 2007
 Author:             Ian Lynagh
 Maintainer:         igloo@earth.li
 Stability:          experimental
-Homepage:           http://urchin.earth.li/~ian/cabal/mime-string/
 Synopsis:           MIME implementation for String's.
 Description:
     Implementation of the MIME RFCs 2045-2049.
-    A bit rough around the edges.
+    Rather rough around the edges at the moment.
 Category:           Codec
 Tested-With:        GHC==6.6
 Build-Depends:      base, mtl, network, iconv, base64-string
