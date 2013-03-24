@@ -1,5 +1,5 @@
 name:            binary
-version:         0.6.1.0
+version:         0.6.2.0
 license:         BSD3
 license-file:    LICENSE
 author:          Lennart Kolmodin <kolmodin@gmail.com>
@@ -43,24 +43,58 @@ library
 
   ghc-options:     -O2 -Wall -fliberate-case-threshold=1000
 
--- DISABLED: older Cabal lib versions have a bug which means they fall
--- over when looking at test-suite sections that contain conditionals
---test-suite qc
---  type:  exitcode-stdio-1.0
---  hs-source-dirs: tests
---  main-is: QC.hs
---  build-depends:
---    array,
---    base >= 3.0 && < 5,
---    bytestring >= 0.9,
---    containers,
---    random>=1.0.1.0,
---    test-framework,
---    test-framework-quickcheck2,
---    QuickCheck>=2.5
---
---  if flag(development)
---    ghc-options: -Wall
---    hs-source-dirs: src
---  else
---    build-depends: binary
+test-suite qc
+  type:  exitcode-stdio-1.0
+  hs-source-dirs: tests
+  main-is: QC.hs
+  build-depends:
+    array,
+    base >= 3.0 && < 5,
+    bytestring >= 0.9,
+    containers,
+    random>=1.0.1.0,
+    test-framework,
+    test-framework-quickcheck2,
+    QuickCheck>=2.5
+
+  ghc-options: -Wall
+  hs-source-dirs: src
+
+benchmark bench
+  type: exitcode-stdio-1.0
+  hs-source-dirs: benchmarks
+  main-is: Benchmark.hs
+  build-depends:
+    base >= 3.0 && < 5,
+    binary,
+    bytestring
+  c-sources: benchmarks/CBenchmark.c
+  include-dirs: benchmarks
+  ghc-options: -O2
+
+benchmark get
+  type: exitcode-stdio-1.0
+  hs-source-dirs: benchmarks
+  main-is: Get.hs
+  build-depends:
+    base >= 3.0 && < 5,
+    binary,
+    bytestring,
+    criterion,
+    deepseq,
+    mtl
+  ghc-options: -O2
+
+benchmark builder
+  type: exitcode-stdio-1.0
+  hs-source-dirs: benchmarks
+  main-is: Builder.hs
+  build-depends:
+    base >= 3.0 && < 5,
+    binary,
+    bytestring,
+    criterion,
+    deepseq,
+    mtl
+  ghc-options: -O2
+
