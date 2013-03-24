@@ -1,9 +1,9 @@
 Name:                hOpenPGP
-Version:             0.3.1
+Version:             0.4
 Synopsis:            native Haskell implementation of OpenPGP (RFC4880)
 Description:         native Haskell implementation of OpenPGP (RFC4880)
 Homepage:            http://floss.scru.org/hOpenPGP/
-License:             MIT
+License:             OtherLicense
 License-file:        LICENSE
 Author:              Clint Adams
 Maintainer:          Clint Adams <clint@debian.org>
@@ -111,6 +111,7 @@ Library
                      , Data.Conduit.OpenPGP.Verify
   Other-Modules: Codec.Encryption.OpenPGP.Internal
                , Codec.Encryption.OpenPGP.SerializeForSigs
+               , Data.Conduit.OpenPGP.Internal
   Build-depends: asn1-data
                , attoparsec
                , base                  > 4       && < 5
