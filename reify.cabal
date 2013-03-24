@@ -1,5 +1,5 @@
 name:                reify
-version:             0.1
+version:             0.1.1
 synopsis:            Serialize data
 description:         This is a library for reifying Haskell data structures in GHC.
 
@@ -15,8 +15,8 @@ license-file:        LICENSE
 author:              Bernie Pope <bjpop@csse.unimelb.edu.au>
 maintainer:          None
 homepage:            http://www.cs.mu.oz.au/~bjpop/code.html
-
-build-depends:       base, ghc
+stability:           experimental
+build-depends:       base, ghc==6.5
 build-type:          Simple
 tested-with:         GHC==6.5
 Extensions:          CPP, ForeignFunctionInterface
@@ -30,5 +30,5 @@ executable:          reify
 main-is:             Main.hs
 
 
-ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-options:         -O2 -Wall
 ghc-prof-options:    -prof -auto-all
