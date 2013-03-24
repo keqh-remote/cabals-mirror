@@ -1,5 +1,5 @@
 Name:          Noise
-Version:       1.0.2
+Version:       1.0.3
 Category:      Math, Graphics, Noise
 Synopsis:      A Haskell coherent noise generator based on libnoise
 Description:   
@@ -15,6 +15,9 @@ Description:
   triple:
   .
   > getValue myComposition (-0.1, -0.5, 0.76)
+  >
+  > myPerlin = perlin `isSourceOf` scalebias { scale = 1.0 } 
+  >                   `isSourceOf` absolute
   .
   For more information please read the documentation of each module 
   bellow.
