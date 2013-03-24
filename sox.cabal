@@ -1,5 +1,5 @@
 Name:             sox
-Version:          0.2.2.1
+Version:          0.2.2.2
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -22,7 +22,8 @@ Description:
    There is some ancient code,
    which allows interactive playback using the shell-pipe package on GHC-6.2,
    where no runInteractiveProcess was available.
-Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.1, GHC==7.0.4, GHC==7.2.1
+Tested-With:       GHC==6.8.2, GHC==6.10.4, GHC==6.12.1
+Tested-With:       GHC==7.0.4, GHC==7.2.1, GHC==7.4.2, GHC==7.6.1
 Cabal-Version:     >=1.6
 Build-Type:        Simple
 Extra-Source-Files:
@@ -40,7 +41,7 @@ Flag executeShell
   default:     False
 
 Source-Repository this
-  Tag:         0.2.2
+  Tag:         0.2.2.2
   Type:        darcs
   Location:    http://code.haskell.org/~thielema/sox/
 
@@ -71,7 +72,7 @@ Library
     Hs-Source-Dirs: windows/src
   Else
     Hs-Source-Dirs: unix/src
-    Build-Depends: unix >=2.3 && <2.6
+    Build-Depends: unix >=2.3 && <2.7
 
   GHC-Options: -Wall
 
@@ -90,5 +91,5 @@ Library
     Sound.Sox.Private.Option
     Sound.Sox.Private.Arguments
     Sound.Sox.Private.Format
---    Sound.Sox.Private.Information
+    Sound.Sox.Private.Information
     Sound.Sox.System
