@@ -1,9 +1,9 @@
-Cabal-Version: >= 1.2
+Cabal-Version: >= 1.6
 Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          HipmunkPlayground
-Version:       5.2.0.4
+Version:       5.2.0.5
 Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
@@ -15,6 +15,10 @@ Homepage:      http://patch-tag.com/r/felipe/hipmunkplayground/home
 Description:
       This is a simple OpenGL program that allows you to see
       some of Hipmunk's functions in action.
+      .
+      New in version 5.2.0.5:
+      .
+      * Accept GLFW 0.5 as well.
       .
       New in version 5.2.0.4:
       .
@@ -36,6 +40,10 @@ Description:
 Extra-Source-Files:
       NEWS
 
+Source-repository head
+  type:     darcs
+  location: http://patch-tag.com:/r/felipe/hipmunkplayground
+
 Flag small_base
   Description: Choose the new smaller, split-up base package.
 
@@ -46,6 +54,6 @@ Executable HipmunkPlayground
     Build-Depends: base >= 2 && < 3
   Build-Depends: Hipmunk >= 5.2 && < 5.3, transformers >= 0.2 && < 0.3,
                  OpenGL >= 2.4 && < 2.5, StateVar >= 1.0 && < 1.1,
-                 GLFW >= 0.4 && < 0.5
+                 GLFW >= 0.4 && < 0.6
   GHC-Options:   -Wall
   Main-is: Playground.hs
