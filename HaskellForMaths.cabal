@@ -1,5 +1,5 @@
    Name:                HaskellForMaths
-   Version:             0.3.1
+   Version:             0.3.2
    Category:            Math
    Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended for educational purposes, but does have efficient implementations of several fundamental algorithms.
    Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
@@ -22,6 +22,8 @@
         Math/Test/TRootSystem.hs,
         Math/Test/TSubquotients.hs,
         Math/Test/TestAll.hs
+        Math/Test/TAlgebras/TVectorSpace.hs
+        Math/Test/TAlgebras/TTensorProduct.hs
         Math/Test/TAlgebras/TStructures.hs
         Math/Test/TAlgebras/TQuaternions.hs
         Math/Test/TAlgebras/TGroupAlgebra.hs
