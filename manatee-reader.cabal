@@ -1,5 +1,5 @@
 name:			manatee-reader
-version:		0.0.7
+version:		0.0.8
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -37,7 +37,7 @@ Source-Repository head
   location:     http://patch-tag.com/r/AndyStewart/manatee-reader
   
 Library
-     build-depends: base >= 4 && < 5, manatee-core >= 0.0.7, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
+     build-depends: base >= 4 && < 5, manatee-core >= 0.0.8, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
                     containers >= 0.3.0.0, gtk-serialized-event >= 0.12.0, gtk >= 0.12.0,
                     text >= 0.7.1.0, webkit >= 0.12.0, feed >= 0.3.7, download-curl >= 0.1.2,
                     utf8-string >= 0.3.4, filepath
