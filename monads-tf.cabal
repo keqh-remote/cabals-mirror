@@ -1,5 +1,5 @@
 name:         monads-tf
-version:      0.1.0.0
+version:      0.1.0.1
 license:      BSD3
 license-file: LICENSE
 author:       Andy Gill
@@ -16,7 +16,9 @@ description:
     This package is almost a compatible replacement for the @mtl-tf@ package.
 build-type: Simple
 cabal-version: >= 1.2.3
-exposed-modules:
+
+library
+  exposed-modules:
     Control.Monad.Cont
     Control.Monad.Cont.Class
     Control.Monad.Error
@@ -38,7 +40,7 @@ exposed-modules:
     Control.Monad.Writer.Class
     Control.Monad.Writer.Lazy
     Control.Monad.Writer.Strict
-build-depends: base < 6, transformers >= 0.2
-extensions:
+  build-depends: base < 6, transformers >= 0.2.0.0 && < 0.4
+  extensions:
     FlexibleContexts
     TypeFamilies
