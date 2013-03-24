@@ -1,5 +1,5 @@
 Name:                threadscope
-Version:             0.1.1
+Version:             0.1.2
 Description:         A graphical viewer for GHC eventlog traces.
 License:             BSD3
 License-file:        LICENSE
@@ -58,7 +58,7 @@ Executable threadscope
      ghc-options:  -Wall
 
   if !os(windows)
-     build-depends: unix >= 2.3.0
+     build-depends: unix >= 2.3 && < 2.5
 
   ghc-options:  -fno-warn-type-defaults -fno-warn-name-shadowing
 
