@@ -1,5 +1,5 @@
 Name:               graphviz
-Version:            2999.14.1.0
+Version:            2999.15.0.0
 Stability:          Beta
 Synopsis:           Bindings to Graphviz for graph visualisation.
 Description: {
@@ -33,22 +33,23 @@ Main features of the graphviz library include:
 Homepage:           http://projects.haskell.org/graphviz/
 Category:           Graphs, Graphics
 License:            BSD3
-License-File:       LICENSE
+License-File:       LICENSE.md
 Copyright:          Matthew Sackman, Ivan Lazar Miljenovic
 Author:             Matthew Sackman, Ivan Lazar Miljenovic
 Maintainer:         Ivan.Miljenovic+graphviz@gmail.com
+Bug-Reports:        http://hub.darcs.net/ivanm/graphviz/issues
 Build-Type:         Simple
 Cabal-Version:      >= 1.14
-Extra-Source-Files: TODO
-                    Changelog
-                    README
-                    FAQ
+Extra-Source-Files: TODO.md
+                    Changelog.md
+                    README.md
+                    FAQ.md
                     utils/AttributeGenerator.hs
                     utils/TestParsing.hs
 
 Source-Repository head
     Type:         darcs
-    Location:     http://code.haskell.org/graphviz
+    Location:     http://hub.darcs.net/ivanm/graphviz
 
 Library {
         Default-Language:  Haskell98
@@ -60,7 +61,7 @@ Library {
                            fgl == 5.4.*,
                            filepath,
                            polyparse >= 1.7 && < 1.9,
-                           bytestring == 0.9.*,
+                           bytestring >= 0.9 && < 0.11,
                            colour == 2.3.*,
                            transformers >= 0.2 && < 0.4,
                            text,
@@ -115,6 +116,7 @@ Test-Suite graphviz-testsuite {
         Build-Depends:     base,
                            containers,
                            process,
+                           directory,
                            fgl,
                            filepath,
                            polyparse,
@@ -124,7 +126,7 @@ Test-Suite graphviz-testsuite {
                            text,
                            wl-pprint-text,
                            dlist,
-                           QuickCheck >= 2.3 && < 2.5
+                           QuickCheck >= 2.3 && < 2.6
 
         hs-Source-Dirs:    . tests
 
