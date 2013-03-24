@@ -1,5 +1,5 @@
 name:		OpenAL
-version:	1.3
+version:	1.3.1.1
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Sven Panne <sven.panne@aedion.de>
@@ -10,6 +10,7 @@ description:
 	appropriate for use with gaming applications and many other
 	types of audio applications.  For more information about OpenAL,
 	please see: <http://www.openal.org/>.
+build-type:     Configure
 extra-source-files:
 	config.guess config.sub install-sh
 	configure.ac configure config.mk.in OpenAL.buildinfo.in
@@ -50,6 +51,7 @@ other-modules:
 	Sound.OpenAL.Config,
 	Sound.OpenAL.Constants
 include-dirs:	include
+includes: HsOpenAL.h
 install-includes: HsOpenAL.h
 build-depends:	base, OpenGL
 extensions:	CPP, ForeignFunctionInterface
