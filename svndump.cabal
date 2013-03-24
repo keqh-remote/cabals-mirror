@@ -1,6 +1,6 @@
 name:          svndump
 category:      Subversion
-version:       0.4.0
+version:       0.4.1
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -42,7 +42,7 @@ library
     Subversion.Dump
     Subversion.Dump.Raw
 
-  ghc-options: -Wall -fwarn-tabs -O2
+  ghc-options: -Wall -fwarn-tabs
   hs-source-dirs: src
 
 -- Verify the results of the examples
