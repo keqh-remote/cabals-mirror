@@ -1,5 +1,5 @@
 Name:          midimory
-Version:       0.0.0.1
+Version:       0.0.0.2
 Maintainer:    Henning Thielemann <alsa@henning-thielemann.de>
 Author:        Henning Thielemann <alsa@henning-thielemann.de>
 Category:      Sound, Music, Game, GUI
@@ -37,7 +37,7 @@ Source-Repository head
 
 Source-Repository this
   type:     darcs
-  tag:      0.0.0.1
+  tag:      0.0.0.2
   location: http://code.haskell.org/~thielema/midimory/
 
 Executable midimory
@@ -46,11 +46,11 @@ Executable midimory
   Hs-Source-Dirs: src
   GHC-Options: -Wall
   Build-Depends:
-    wx >=0.12.1.6 && <0.13,
-    wxcore >=0.12.1.6 && <0.13,
+    wx >=0.12.1.6 && <0.14,
+    wxcore >=0.12.1.6 && <0.14,
     alsa-seq >=0.6 && <0.7,
     alsa-core >=0.5 && <0.6,
     random >=1.0 && <1.1,
     transformers >=0.2 && <0.4,
-    containers >=0.2 && <0.5,
+    containers >=0.2 && <0.6,
     base >=3 && <5
