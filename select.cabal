@@ -1,5 +1,5 @@
 Name:                select
-Version:             0.4
+Version:             0.4.0.1
 Synopsis:            Wrap the select(2) POSIX function
 Homepage:            http://nonempty.org/software/haskell-select
 License:             BSD3
@@ -16,6 +16,12 @@ Extra-source-files:  src/System/Posix/IO/Select/cbits.c,
 Cabal-version:       >=1.2
 Description:         While tinkering on a project, I frequently found myself
 		     having to make FFI calls to @select(2)@. This package provides an interface to that system call.
+		     .
+		     Changed in version 0.4.0.1:
+		     .
+		     * Minor internal cleanups.
+		     .
+		     * TODO moved to file.
 		     .
 		     Changes in version 0.4:
 		     .
@@ -34,16 +40,6 @@ Description:         While tinkering on a project, I frequently found myself
 		       Feedback is welcome.
 		     .
 		     * This package is far from complete, and should be tested throughly before being relied upon.
-		     .
-		     TODO:
-		     .
-		     * Return the error code specified by errno if @select@ fails.
-		     .
-		     * Possibly move the select retry code from C to Haskell.
-		     .
-		     * Reorder functions to make the documentation more logical.
-		     .
-		     * Use hsc2hs's #const to get preprocessor constants (removes some of FdSet's cbits.c).
 		     .
 		     /NOTE/: I feel I'm occupying prime namespace realestate with a package name
 		     like select. I'll happily let myself be chased away if someone more qualified wants
