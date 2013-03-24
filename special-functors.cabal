@@ -1,5 +1,5 @@
 Name:                special-functors
-Version:             1.0
+Version:             1.0.0.1
 Synopsis:            Control.Applicative, Data.Foldable, Data.Traversable (compatibility package)
 Category:            Generics
 Description:
@@ -10,7 +10,7 @@ License-file:        LICENSE
 Author:              libraries@haskell.org
 Maintainer:          haskell@henning-thielemann.de
 Tested-With:         GHC==6.4.1
-Build-Depends:       base<2, mtl
+Build-Depends:       base<2, mtl >=1.0 && <1.1.1
 Build-Type:          Simple
 Extensions:          CPP
 GHC-Options:         -funbox-strict-fields -Wall
