@@ -1,5 +1,5 @@
 name: Workflow
-version: 0.7.0.2
+version: 0.7.0.3
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -33,7 +33,7 @@ extra-source-files: Demos/Fact.hs Demos/Inspect.hs
 
 
 library
-    build-depends: MonadCatchIO-mtl -any, RefSerialize >=0.2.8 && <0.3,
+    build-depends: MonadCatchIO-mtl -any, RefSerialize ==0.3.0.* ,
                    TCache -any && <1.0, base >=4 && <5, binary -any, bytestring -any,
                    containers -any, directory -any, extensible-exceptions -any,
                     mtl -any, old-time -any, stm >2
