@@ -1,5 +1,5 @@
 name:           hspec
-version:        0.9.2
+version:        0.9.2.1
 cabal-version:  >= 1.8
 build-type:     Simple
 license:        BSD3
@@ -9,13 +9,15 @@ category:       Testing
 author:         Trystan Spangler
 maintainer:     trystan.s@comcast.net
 stability:      experimental
-homepage:       https://github.com/trystan/hspec
-package-url:    https://github.com/trystan/hspec
-bug-reports:    https://github.com/trystan/hspec/issues
+bug-reports:    https://github.com/hspec/hspec/issues
 synopsis:       Behavior Driven Development for Haskell
 description: Behavior Driven Development for Haskell
              .
              Hspec is roughly based on the Ruby library RSpec. However, Hspec is just a framework for running HUnit and QuickCheck tests. Compared to other options, it provides a much nicer syntax that makes tests very easy to read.
+
+source-repository head
+  type: git
+  location: https://github.com/hspec/hspec
 
 Library
   exposed:        True
