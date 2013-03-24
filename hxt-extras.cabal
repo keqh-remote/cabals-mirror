@@ -1,5 +1,5 @@
 Name:                hxt-extras
-Version:             0.4
+Version:             0.4.1
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            Extra functions for HXT
@@ -17,7 +17,7 @@ Flag small_base
 
 Library
   Build-Depends:     base < 5 && >= 3,
-                     hxt == 8.5.4
+                     hxt >= 9.1
 
   GHC-Options:       -Wall
 
