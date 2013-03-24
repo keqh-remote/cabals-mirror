@@ -1,5 +1,5 @@
 Name:          cflp
-Version:       0.1
+Version:       0.2.0
 Cabal-Version: >= 1.2
 Synopsis:      Constraint Functional-Logic Programming in Haskell
 Description:   This package provides combinators for constraint
@@ -17,7 +17,7 @@ Homepage:      http://www-ps.informatik.uni-kiel.de/~sebf/projects/cflp.html
 Build-Type:    Custom
 Stability:     alpha
 
-Extra-Source-Files: README, INSTALL, Test.lhs
+Extra-Source-Files: README, INSTALL, Makefile, configure, Test.lhs
 
 Library
   Build-Depends:    base >= 4, ghc, mtl, syb, HUnit
@@ -25,8 +25,14 @@ Library
   Other-Modules:    Control.Monad.Constraint,
                     Control.Monad.Constraint.Choice,
                     Data.LazyNondet,
-                    Data.LazyNondet.Bool,
-                    Data.LazyNondet.List,
+                    Data.LazyNondet.Types,
+                    Data.LazyNondet.Types.Bool,
+                    Data.LazyNondet.Types.List,
+                    Data.LazyNondet.UniqueID,
+                    Data.LazyNondet.Matching,
+                    Data.LazyNondet.Narrowing,
+                    Data.LazyNondet.Primitive,
+                    Data.LazyNondet.Combinators,
                     Control.CFLP.Tests,
                     Control.CFLP.Tests.CallTimeChoice
   Hs-Source-Dirs:   src
@@ -34,9 +40,10 @@ Library
                     MultiParamTypeClasses,
                     FlexibleInstances,
                     FlexibleContexts,
+                    PatternGuards,
                     TypeFamilies,
                     RankNTypes
-  Ghc-Options:      -O2 -Wall -fno-warn-orphans
+  Ghc-Options:      -Wall -fno-warn-orphans
 
 Source-Repository head
   type:     git
