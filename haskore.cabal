@@ -1,19 +1,18 @@
 Name:           haskore
-Version:        0.0.5.1
+Version:        0.0.6
 License:        GPL
 License-File:   LICENSE
 Author:         Paul Hudak <paul.hudak@yale.edu>, Henning Thielemann
 Maintainer:     Henning Thielemann <haskore@henning-thielemann.de>
 Homepage:       http://www.haskell.org/haskellwiki/Haskore
-Package-URL:    http://darcs.haskell.org/haskore/
 Category:       Sound, Music
 Synopsis:       The Haskore Computer Music System
 Stability:      Experimental
 Description:
   Compose music using programming features.
   Output in MIDI, CSound, SuperCollider or as an audio signal.
-Tested-With:       GHC==6.4.1, GHC==6.8.2, Hugs==2005.3.8
-Cabal-Version:     >=1.2
+Tested-With:       GHC==6.4.1, GHC==6.8.2, Hugs==2006.9
+Cabal-Version:     >=1.6
 Build-Type:        Simple
 
 Extra-Source-Files:
@@ -25,6 +24,15 @@ Extra-Source-Files:
   src/Doc/Introduction.tex
   src/Doc/Tutorial.tex
 
+Source-Repository head
+  type:     darcs
+  location: http://darcs.haskell.org/haskore/
+
+Source-Repository this
+  type:     darcs
+  location: http://darcs.haskell.org/haskore/
+  tag:      0.0.6
+
 Flag splitBase
   description: Choose the new smaller, split-up base package.
 
@@ -34,12 +42,12 @@ Flag buildTests
 
 Library
   Build-Depends:
-    event-list >=0.0.5 && <0.1,
+    event-list >=0.0.8 && <0.1,
     midi >=0.1.1 && <0.2,
     markov-chain >=0.0.1 && <0.1,
     non-negative >=0.0.1 && <0.1,
     data-accessor >=0.1 && <0.2,
-    mtl >=1.1 && <1.2,
+    transformers >=0.0.1 && <0.2,
     haskell-src >=1.0 && <1.1,
     parsec >=2.1 && <2.2,
     -- for testing
@@ -49,10 +57,10 @@ Library
   If flag(splitBase)
     Build-Depends:
       base >=3,
-      array >=0.1 && <0.2,
-      random >=1.0 && <1.1,
+      array >=0.1 && <1.0,
+      random >=1.0 && <2.0,
       process >=1.0 && <1.1,
-      containers >=0.1 && <0.2
+      containers >=0.1 && <1.0
   Else
     Build-Depends:
       base >= 1.0 && < 2,
@@ -81,6 +89,7 @@ Library
     Haskore.Example.Flip,
     Haskore.Example.Fractal,
     Haskore.Example.Guitar,
+    Haskore.Example.HeilandHimmel,
     Haskore.Example.Kantate147,
     Haskore.Example.Miscellaneous,
     Haskore.Example.NewResolutions,
