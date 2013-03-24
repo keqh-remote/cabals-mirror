@@ -1,5 +1,5 @@
 Name:           AERN-RnToRm
-Version:        0.3.0.1
+Version:        0.3.0.2
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -21,22 +21,22 @@ Description:
      .
      * ERUnitFnBase: 
         generalises polynomials with floating point coefficients.
-        (Not exported here, used only internally.)
      .
      * ERFnApprox:
         generalises functions enclosures on a certain unspecified domain.
      .
      * ERUnitFnApprox (extends ERFnApprox): generalises function graph enclosures
         on the domain @[-1,1]^n@.
-        (Not exported here, used only internally.)
      .
      * ERFnDomApprox (extends ERFnApprox):
         generalises function enclosures over a specified and queriable domain box
-        (instance of class DomainBox).
+        (an instance of class DomainBox).
      .
      At all levels, all field operations are supported as well as
      some elementary operations, namely exp, sin and cos.
-     Log and sqrt are planned to be added soon. 
+     Log and sqrt are planned to be added soon.
+     
+     End users are expected to work only with implementations of ERFnDomApprox.
      .
      Implementations of ERUnitFnBase:
      .
