@@ -1,8 +1,11 @@
 Name: com
-version: 1.2.2
+version: 1.2.3
 Synopsis: Haskell COM support library
 Description: 
-    COM + Automation libraries for Haskell.
+   Supporting for writing COM\/Automation clients in Haskell, and for
+   packaging up your Haskell code behind a COM-callable veneer.
+   .
+   Some examples of how to use the package can be found at <http://haskell.forkio.com/com-examples>
 Cabal-version: >= 1.2
 build-type: Simple
 Maintainer: Sigbjorn Finne <sigbjorn.finne@gmail.com>
@@ -19,6 +22,8 @@ Extra-Source-Files: include/PointerSrc.h
           include/safeArrayPrim.h
           include/SafeArray.h
           include/StdTypes.h
+          cbits/dllStub.c
+          ComDllMain.hs
           CHANGES
 
 flag old-base
