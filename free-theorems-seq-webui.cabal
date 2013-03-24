@@ -1,5 +1,5 @@
 name:           free-theorems-seq-webui
-version:        1.0.0.1
+version:        1.0.0.2
 license:        PublicDomain
 author:         Daniel Seidel
 maintainer:     ds@iai.uni-bonn.de
@@ -26,7 +26,7 @@ executable free-theorems-seq-webui.cgi
     build-depends:
         cgi >= 3001.1.5.1
       , containers >= 0.1.0.1 
-      , free-theorems-seq == 0.1.*
+      , free-theorems-seq == 1.*
       , mtl >= 1.1.0.0
       , network >= 2.1.0.0 
       , pretty == 1.*
