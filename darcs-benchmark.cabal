@@ -1,5 +1,5 @@
 name:          darcs-benchmark
-version:       0.1.1
+version:       0.1.2
 synopsis:      Comparative benchmark suite for darcs.
 
 description: A simple tool to compare performance of different Darcs 2.x
@@ -27,7 +27,9 @@ executable darcs-benchmark
 
     build-depends: base < 5, process, mtl, tabular >= 0.2, time,
                    regex-posix, html, filepath, directory,
-                   containers, bytestring, network, HTTP >= 4000, tar, zlib
+                   containers, bytestring, network,
+                   HTTP >= 4000.0.8 && < 4000.1,
+                   tar, zlib
 
     main-is: main.hs
     other-modules: Shellish
