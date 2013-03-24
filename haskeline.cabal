@@ -1,6 +1,6 @@
 Name:           haskeline
 Cabal-Version:  >=1.6
-Version:        0.6.4.1
+Version:        0.6.4.2
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -67,8 +67,10 @@ Library
                 ScopedTypeVariables, GeneralizedNewtypeDeriving
                 MultiParamTypeClasses, OverlappingInstances
                 UndecidableInstances
-                ScopedTypeVariables, CPP, DeriveDataTypeable,
+                PatternSignatures, CPP, DeriveDataTypeable,
                 PatternGuards
+    if impl(ghc >= 7.1)
+        Extensions: NondecreasingIndentation
     Exposed-Modules:
                 System.Console.Haskeline
                 System.Console.Haskeline.Completion
