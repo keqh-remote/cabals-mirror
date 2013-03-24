@@ -1,11 +1,12 @@
 Name: hslogger
-Version: 1.0.4
+Version: 1.0.5
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
 Stability: Stable
 Copyright: Copyright (c) 2004-2008 John Goerzen
 license-file: COPYRIGHT
+build-type: Simple
 Homepage: http://software.complete.org/hslogger
 Synopsis: Versatile logging framework
 Description:  hslogger is a logging framework for Haskell, roughly similar to
@@ -29,7 +30,7 @@ Library
         System.Log.Handler.Growl, System.Log.Logger 
     Extensions: CPP, ExistentialQuantification
     Build-Depends: network, mtl
-    if !os(win32)
+    if !os(windows)
         Build-Depends: unix
     if flag(small_base)
         build-depends: base >= 3, containers, directory, process
