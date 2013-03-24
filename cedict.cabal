@@ -1,8 +1,8 @@
 name:               cedict
-version:            0.2.4
+version:            0.2.5
 category:           Text
-description:        Convenient Chinese character lookup.
-synopsis:           Convenient Chinese character lookup.
+description:        Convenient Chinese phrase & character lookup.
+synopsis:           Convenient Chinese phrase & character lookup.
 license:            GPL
 license-file:       LICENSE
 author:             Jason Dusek
@@ -12,6 +12,7 @@ build-type:         Simple
 extra-tmp-files:    c/data.h
 extra-source-files: d/cedict_readme.txt
                     d/utf8-cedict
+                    c/data.h
                     Data/Char/CEDICT/GenerateCode.hs
 
 library
