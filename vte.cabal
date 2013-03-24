@@ -1,14 +1,14 @@
 Name:           vte
-Version:        0.12.0
+Version:        0.12.1
 License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
 Author:         Andy Stewart, Axel Simon
-Maintainer:     gtk2hs-users@sourceforge.net
+Maintainer:     gtk2hs-users@lists.sourceforge.net
 Build-Type:     Custom
-Cabal-Version:  >= 1.6.0
+Cabal-Version:  >= 1.8
 Stability:      provisional
-homepage:       http://www.haskell.org/gtk2hs/
+homepage:       http://projects.haskell.org/gtk2hs/
 bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
 Synopsis:       Binding to the VTE library.
 Description:    The VTE library inserts terminal capability strings into a trie, and then
@@ -17,11 +17,11 @@ Description:    The VTE library inserts terminal capability strings into a trie,
                 more or less what the widget sees after it filters incoming data.
 
 Category:       Graphics
-Tested-With:    GHC == 6.12.1
+Tested-With:    GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
 Extra-Source-Files: Graphics/UI/Gtk/Vte/VteCharAttrFields.h
-                    Gtk2HsSetup.hs
+                    SetupWrapper.hs SetupMain.hs Gtk2HsSetup.hs
                     marshal.list
-					hierarchy.list
+                    hierarchy.list
 
 Data-Dir:		demo
 Data-Files:		Vte.hs
@@ -39,12 +39,13 @@ Source-Repository head
   location:     http://code.haskell.org/vte
 
 Library
-        build-depends:  base >= 4 && < 5, array, containers, haskell98, mtl,
+        build-depends:  base >= 4 && < 5,
                         glib  >= 0.12 && < 0.13, 
                         pango >= 0.12 && < 0.13, 
                         gtk   >= 0.12 && < 0.13
 						
-        build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
+        build-tools:    gtk2hsC2hs >= 0.13.5,
+                        gtk2hsHookGenerator, gtk2hsTypeGen
 		
         exposed-modules:
           Graphics.UI.Gtk.Vte.Vte
