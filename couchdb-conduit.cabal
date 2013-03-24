@@ -1,5 +1,5 @@
 name:           couchdb-conduit
-version:        0.10.2
+version:        0.10.3
 cabal-version:  >= 1.8
 build-type:     Simple
 stability:      Testing
@@ -34,7 +34,7 @@ library
                    conduit >= 0.5 && < 0.6,
                    containers >= 0.2,
                    data-default,
-                   http-conduit >= 1.5 && < 1.6,
+                   http-conduit >= 1.6 && < 1.7,
                    http-types >= 0.7 && < 0.8,
                    lifted-base >= 0.1 && < 0.2,
                    monad-control >= 0.3 && < 0.4,
@@ -55,7 +55,8 @@ library
                     Database.CouchDB.Conduit.Implicit,
                     Database.CouchDB.Conduit.LowLevel,
                     Database.CouchDB.Conduit.View,
-                    Database.CouchDB.Conduit.View.Query
+                    Database.CouchDB.Conduit.View.Query,
+                    Database.CouchDB.Conduit.Attachment
   other-modules:    
                     Database.CouchDB.Conduit.Internal.Doc,
                     Database.CouchDB.Conduit.Internal.Parser,
@@ -79,7 +80,7 @@ test-suite test
                    conduit >= 0.5 && < 0.6,
                    containers >= 0.2,
                    data-default,
-                   http-conduit >= 1.5 && < 1.6,
+                   http-conduit >= 1.6 && < 1.7,
                    http-types >= 0.7 && < 0.8,
                    lifted-base >= 0.1 && < 0.2,
                    monad-control >= 0.3 && < 0.4,
