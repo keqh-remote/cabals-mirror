@@ -1,17 +1,28 @@
 Name:           vector
-Version:        0.3.1
+Version:        0.4
 License:        BSD3
 License-File:   LICENSE
-Author:         Roman Leshchinskiy
+Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
 Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
-Copyright:      (c) Roman Leshchinskiy 2008
+Copyright:      (c) Roman Leshchinskiy 2008-2009
 Homepage:       http://darcs.haskell.org/vector
-Category:       Data Structures
+Category:       Data, Data Structures
 Synopsis:       Efficient Arrays
 Description:
         .
-        An efficient but highly experimental implementation of Int-indexed
-        arrays with a powerful loop fusion framework.
+        An efficient implementation of Int-indexed arrays with a powerful loop
+        fusion framework.
+        .
+        It is structured as follows:
+        .
+        [@Data.Vector@] boxed vectors of arbitrary types
+        .
+        [@Data.Vector.Primitive@] unboxed vectors of primitive types as
+                defined by the @primitive@ package
+        .
+        [@Data.Vector.Storable@] unboxed vectors of 'Storable' types
+        .
+        [@Data.Vector.Generic@] generic interface to the vector types
         .
 
 Cabal-Version:  >= 1.2
@@ -23,8 +34,9 @@ Extra-Source-Files:
       tests/Setup.hs
       tests/Main.hs
       tests/Boilerplater.hs
-      tests/Properties.hs
       tests/Utilities.hs
+      tests/Tests/Stream.hs
+      tests/Tests/Vector.hs
 
 Flag EnableAssertions
   Description: Enable assertions that check parameters to functions are reasonable.
@@ -40,17 +52,18 @@ Library
         Data.Vector.Fusion.Stream.Monadic
         Data.Vector.Fusion.Stream
 
-        Data.Vector.MVector
-        Data.Vector.MVector.New
-        Data.Vector.IVector
+        Data.Vector.Generic.Mutable
+        Data.Vector.Generic.New
+        Data.Vector.Generic
 
-        Data.Vector.Unboxed.Unbox
-        Data.Vector.Unboxed.Mutable.ST
-        Data.Vector.Unboxed.Mutable.IO
-        Data.Vector.Unboxed
+        Data.Vector.Primitive.Mutable
+        Data.Vector.Primitive
 
-        Data.Vector.Mutable.ST
-        Data.Vector.Mutable.IO
+        Data.Vector.Storable.Internal
+        Data.Vector.Storable.Mutable
+        Data.Vector.Storable
+
+        Data.Vector.Mutable
         Data.Vector
   Include-Dirs:
         include
@@ -58,14 +71,14 @@ Library
   Install-Includes:
         phases.h
 
-  Build-Depends: base >= 2 && < 4, array, ghc-prim,
-                 ghc >= 6.9
+  Build-Depends: base >= 2 && < 5, ghc >= 6.9, primitive
 
 -- -finline-if-enough-args is ESSENTIAL. If we don't have this the partial application
 -- of e.g. Stream.Monadic.++ to the monad dictionary at the use site in Stream.++ causes
 -- it to be fruitlessly inlined. This in turn leads to a huge RHS for Stream.++, so it
 -- doesn't get inlined at the final call site and fusion fails to occur.
-  Ghc-Options: -finline-if-enough-args
+  if impl(ghc<6.13)
+    Ghc-Options: -finline-if-enough-args
   
 -- It's probably a good idea to compile the library with -O2 as well. However, it's probably
 -- not as essential as you think because most of the optimisation occurs when the library
