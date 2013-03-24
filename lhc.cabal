@@ -1,6 +1,6 @@
 cabal-version:       >= 1.6
 name:                lhc
-version:             0.6.20081211.2
+version:             0.6.20081216
 synopsis:            LHC Haskell Compiler
 description:
   lhc is a haskell compiler which aims to produce the most efficient programs possible via whole
@@ -19,6 +19,7 @@ extra-source-files:  lib/base/base.cabal,
                      lib/base/src/Control/*.hs,
                      lib/base/src/Data/Array/*.hs,
                      lib/base/src/Data/*.hs,
+                     lib/base/src/Debug/*.hs,
                      lib/base/src/Foreign/C/*.hs,
                      lib/base/src/Foreign/Marshal/*.hs,
                      lib/base/src/Foreign/*.hs,
@@ -37,12 +38,10 @@ extra-source-files:  lib/base/base.cabal,
                      lib/base/src/Text/Show/*.hs,
                      lib/base/src/Unsafe/*.hs
 data-dir:            data
-data-files:          HsFFI.h names.txt operators.txt prelude.m4 primitives.txt props.txt wsize.h ViaGhc.hs
+data-files:          HsFFI.h names.txt operators.txt prelude.m4 primitives.txt props.txt wsize.h 
                      rts/lhc_rts.c rts/lhc_rts2.c rts/lhc_rts_alloc.c rts/lhc_rts_header.h 
                      
 flag base4
-flag hpc
-  default:            False
 flag threaded
   default:            False
 flag lhc-regress
@@ -60,7 +59,7 @@ Executable lhc
                       UndecidableInstances, TypeSynonymInstances, ScopedTypeVariables, ParallelListComp,
                       OverlappingInstances, RecursiveDo, GADTs, RankNTypes, PatternGuards, TemplateHaskell
  build-depends:       containers, mtl, pretty, array, bytestring, pureMD5,
-                      binary >= 0.4.4, directory, haskeline, random, regex-compat,
+                      binary >= 0.4.4, directory, random, regex-compat,
                       graphviz, fgl, unix, zlib, old-time, haskell98,
                       utf8-string, stringtable-atom, derive >= 0.1.4,
                       filepath, ansi-wl-pprint >= 0.5.0, ansi-terminal >= 0.5.0
@@ -79,7 +78,7 @@ Executable lhc
  else
   x-build-base:       False
  Other-modules:
-  CharIO, FindFixpoint, FlagOpts, Interactive, Options, PrimitiveOperators,
+  CharIO, FindFixpoint, FlagOpts, Options, PrimitiveOperators,
   DataConstructors, FlagDump, GenUtil, PackedString, RawFiles, Stats,
   C.FromGrin2 C.Arch C.FFI C.Generate C.Prims Cmm.Op
   Cmm.OpEval Cmm.Number
