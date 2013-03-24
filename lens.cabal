@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       0.4
+version:       0.5
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -13,6 +13,7 @@ copyright:     Copyright (C) 2012 Edward A. Kmett
 synopsis:      Lenses and Lens Families
 description:   Lenses and Lens Families
 build-type:    Simple
+tested-with:   GHC == 7.4.1
 extra-source-files: .travis.yml
 
 source-repository head
@@ -34,8 +35,10 @@ library
     template-haskell >= 2.4   && < 2.8,
     transformers     >= 0.2   && < 0.4
   other-extensions:
+    CPP
     Rank2Types
     RankNTypes
-    Safe
     TemplateHaskell
-    Trustworthy
+  if (impl(ghc>=7.4))
+    other-extensions:
+      Safe Trustworthy
