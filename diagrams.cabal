@@ -1,9 +1,11 @@
 Name:                diagrams
-Version:             0.2.2.2
-Stability:           experimental
+Version:             0.2.2.3
+Stability:           unsupported
 Description:         An embedded domain-specific language (EDSL) for 
                      creating simple diagrams, built on top of the Cairo
-                     rendering engine.  
+                     rendering engine.  NOTE: This package is deprecated,
+                     see the diagrams-core, diagrams-lib, and diagrams-cairo
+                     packages instead.
 Homepage:            http://code.haskell.org/diagrams
 Synopsis:            An EDSL for creating simple diagrams
 License:             BSD3
@@ -14,7 +16,7 @@ Maintainer:          byorgey@gmail.com
 Category:            Graphics
 Build-type:          Simple
 Cabal-version:       >= 1.6
-Tested-with:         GHC==7.0.1, GHC==6.12.1, GHC==6.10.4
+Tested-with:         GHC==6.12.1, GHC==6.10.4, GHC==7.0.1
 
 flag testing
   description: Testing mode
