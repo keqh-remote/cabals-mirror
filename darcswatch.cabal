@@ -1,5 +1,5 @@
 Name:            darcswatch
-version:         0.4.3
+version:         0.4.4
 Category:        Distribution
 name:            darcswatch
 author:          Joachim Breitner
@@ -60,7 +60,7 @@ Executable darcswatch-generate
                         , Darcs.Watch.UpdateRepoData
                         , Darcs.Watch.Storage
                         , Darcs.Watch.Mail
-        Build-Depends:  base > 3 && < 4
+        Build-Depends:  base == 4.*
                         , network
                         , HTTP >= 4000
                         , old-time
@@ -82,6 +82,7 @@ Executable darcswatch-generate
                         , regex-compat
                         , cgi
                         , mtl
+                        , safe
         if flag(Static)
                 ghc-options: -static -optl-static -optl-pthread                           
 
