@@ -1,5 +1,5 @@
 Name:               swish
-Version:            0.3.0.1
+Version:            0.3.0.2
 Stability:          experimental
 License:            LGPL
 License-file:       LICENSE 
@@ -45,8 +45,15 @@ Description:        Swish is a framework, written in the purely functional
                     .
                     Major Changes:
                     .
+                    [Version 0.3.0.2] Bugfix: stop losing triples with a bnode subject when
+                    using the N3Formatter; this also makes the @scripts/SwishTest.ss@ test
+                    pass again. Several commands in Swish scripts now create screen
+                    output (mainly to check what it is doing). Added the @developer@
+		    flag for building.
+                    .
                     [Version 0.3.0.1] updates the Swish script parser to work with the
-                    changes in 0.3.0.0. Several example scripts are installed in the
+                    changes in 0.3.0.0 (reported by Rick Murphy).
+                    Several example scripts are installed in the
                     @scripts/@ directory, although only @VehicleCapacity.ss@ works
                     with this release.
                     .
@@ -73,6 +80,10 @@ Data-Files:         README
 Source-repository head
   type:     mercurial
   location: https://bitbucket.org/doug_burke/swish
+
+Flag  developer
+  Description: Turn on developer flags
+  Default:     False
 
 Flag  tests
   Description: Build the test programs.
@@ -149,6 +160,10 @@ Library
    ghc-options:
       -Wall -fno-warn-orphans
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
 Executable         BuiltInMapTest
    Main-Is:        tests/BuiltInMapTest.hs
    if !flag(tests)
@@ -156,6 +171,10 @@ Executable         BuiltInMapTest
 
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -169,6 +188,10 @@ Executable         GraphPartitionTest
    if flag(hpc)
       ghc-options: -fhpc
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
    ghc-options:
       -Wall -fno-warn-orphans
 
@@ -179,6 +202,10 @@ Executable         GraphTest
 
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -191,6 +218,10 @@ Executable         NTTest
    if flag(hpc)
       ghc-options: -fhpc
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
    ghc-options:
       -Wall -fno-warn-orphans
 
@@ -201,6 +232,10 @@ Executable         N3ParserTest
 
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -213,6 +248,10 @@ Executable         N3FormatterTest
    if flag(hpc)
       ghc-options: -fhpc
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
    ghc-options:
       -Wall -fno-warn-orphans
 
@@ -223,6 +262,10 @@ Executable         RDFDatatypeXsdIntegerTest
 
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -235,6 +278,10 @@ Executable         RDFGraphTest
    if flag(hpc)
       ghc-options: -fhpc
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
    ghc-options:
       -Wall -fno-warn-orphans
 
@@ -245,6 +292,10 @@ Executable         RDFProofContextTest
                     
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -257,6 +308,10 @@ Executable         RDFProofTest
    if flag(hpc)
       ghc-options: -fhpc
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
    ghc-options:
       -Wall -fno-warn-orphans
 
@@ -267,6 +322,10 @@ Executable         RDFQueryTest
 
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -279,6 +338,10 @@ Executable         RDFRulesetTest
    if flag(hpc)
       ghc-options: -fhpc
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
    ghc-options:
       -Wall -fno-warn-orphans
 
@@ -289,6 +352,10 @@ Executable         VarBindingTest
 
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -301,6 +368,10 @@ Executable         LookupMapTest
    if flag(hpc)
       ghc-options: -fhpc
 
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
+
    ghc-options:
       -Wall -fno-warn-orphans
 
@@ -311,6 +382,10 @@ Executable         QNameTest
 
    if flag(hpc)
       ghc-options: -fhpc
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
@@ -325,4 +400,8 @@ Executable         Swish
 
    ghc-options:
       -Wall -fno-warn-orphans
+
+   if flag(developer)
+      ghc-options: -Werror
+      ghc-prof-options: -auto-all
 
