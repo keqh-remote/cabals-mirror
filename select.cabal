@@ -1,6 +1,6 @@
 Name:                select
-Version:             0.2.1
-Synopsis:            Give the select(2) POSIX function a simple STM interface
+Version:             0.3
+Synopsis:            Wrap the select(2) POSIX function
 Homepage:            http://nonempty.org/software/haskell-select
 License:             BSD3
 License-file:        LICENSE
@@ -12,48 +12,31 @@ Build-type:          Simple
 Extra-source-files:  src/System/Posix/IO/Select/select_wrapper.c src/System/Posix/IO/Select/select_wrapper.h
 Cabal-version:       >=1.2
 Description:         While tinkering on a project, I frequently found myself
-		     having to make FFI calls to @select(2)@. This package is an attempt
-		     reduce the boilerplate I needed to do that. While at it, I took the
-		     opportunity to have what @select@ returns put in a 'TMVar'.
+		     having to make FFI calls to @select(2)@. This package provides an interface to that system call.
+		     It also used to expose an STM interface for running @select(2)@ with alternative STM actions,
+		     but that functionality was split into the stm-orelse-io package from version 0.3.
 		     .
-		     The package has three parts:
+		     Changes in version 0.3:
 		     .
-		     ["System.Posix.IO.Select"] just wraps @select@.
+		     * Split all STM-related functionality into a separate package, stm-orelse-io, independent
+		       of select.
 		     .
-		     ["Control.Concurrent.STM.TMVarIO"] and "Control.Concurrent.MVarIO" put the
-		     return value of IO actions into a 'TMVar' or an 'MVar', respectively.
+		     TODO:
 		     .
-		     ["Control.Concurrent.STM.RunOrElse"] defines functions that give you
-		     the return value of whatever finishes first of an IO action and an STM
-		     operation.
-		     .
-		     ["System.Posix.IO.Select.STM"] and "System.Posix.IO.Select.MVar" do the above
-		     for the special case @select@.
+		     * Provide a type for @fd_set@ that can be passed to and from C so that we can have a version 
+		     of 'System.Posix.IO.select' that reports /which/ file descriptors are ready, instead of how many.
+ 		     Its type will be something like @[Fd] -> [Fd] -> [Fd] -> Timeout -> IO ([Fd], [Fd], [Fd])@.
 		     .
 		     /NOTE/: I feel I'm occupying prime namespace realestate with a package name
 		     like select. I'll happily let myself be chased away if anybody else wants
 		     to use this package name. Let me know.
-		     .
-		     /NOTE 2/: The vector dependency comes from me not spending time figuring out
-		     how to pass lists of data to C without first turning them into vectors. It'll
-		     probably disappear soon.
-		     .
-		     /CAVEAT/: I'm not an experienced Haskeller (as you can tell from note 2), and
-		     this is my first foray into FFI in general. Use with caution.
-
-
 
 Library
-  Exposed-modules:     Control.Concurrent.MVarIO,
-                       Control.Concurrent.STM.TMVarIO,
-                       Control.Concurrent.STM.RunOrElse,
-                       System.Posix.IO.Select,
-                       System.Posix.IO.Select.STM,
-                       System.Posix.IO.Select.Types,
-                       System.Posix.IO.Select.MVar
+  Exposed-modules:     System.Posix.IO.Select,
+                       System.Posix.IO.Select.Types
   
   hs-source-dirs:      src
-  Build-depends:       base >= 4 && <5, vector, stm
+  Build-depends:       base >= 4 && <5, vector
   
   c-sources:           src/System/Posix/IO/Select/select_wrapper.c
   cc-options:          -std=c99 -Wall -DNDEBUG 
