@@ -1,5 +1,5 @@
 Name:                hOpenPGP
-Version:             0.0.0
+Version:             0.1
 Synopsis:            native Haskell implementation of OpenPGP (RFC4880)
 Description:         native Haskell implementation of OpenPGP (RFC4880)
 Homepage:            http://floss.scru.org/hOpenPGP/
@@ -8,7 +8,7 @@ License-file:        LICENSE
 Author:              Clint Adams
 Maintainer:          Clint Adams <clint@debian.org>
 Copyright:           2012, Clint Adams
-Category:            Codec
+Category:            Codec, Data
 Build-type:          Simple
 Extra-source-files: tests/suite.hs
   , tests/data/000001-006.public_key
@@ -91,13 +91,21 @@ Extra-source-files: tests/suite.hs
   , tests/data/000078-012.ring_trust
   , tests/data/pubring.gpg
   , tests/data/secring.gpg
+  , tests/data/msg1.asc
 
 Cabal-version:       >= 1.10
 
 
 Library
-  Exposed-modules:     Codec.Encryption.OpenPGP.Types, Codec.Encryption.OpenPGP.Serialize
-  Build-depends: base             > 4       && < 5
+  Exposed-modules:     Codec.Encryption.OpenPGP.Types
+                     , Codec.Encryption.OpenPGP.Serialize
+                     , Codec.Encryption.OpenPGP.ASCIIArmor
+  Other-Modules: Data.Digest.CRC24
+               , Codec.Encryption.OpenPGP.ASCIIArmor.Decode
+               , Codec.Encryption.OpenPGP.ASCIIArmor.Encode
+  Build-depends: attoparsec
+               , base                  > 4       && < 5
+               , base64-bytestring
                , bytestring
                , cereal
                , containers
@@ -107,7 +115,9 @@ Library
 Test-Suite tests
   type:       exitcode-stdio-1.0
   main-is:    tests/suite.hs
-  Build-depends: base             > 4       && < 5
+  Build-depends: attoparsec
+               , base                  > 4       && < 5
+               , base64-bytestring
                , bytestring
                , cereal
                , containers
