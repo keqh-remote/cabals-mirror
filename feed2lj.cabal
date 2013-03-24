@@ -1,45 +1,11 @@
 name:                feed2lj
-version:             0.0.3
-synopsis:            Cross-post any RSS/Atom feed to LiveJournal
-description:         A script to cross-post any RSS/Atom Feed to LiveJournal.
-                     .
-                     All HTML tags are merely stripped from the original.
-                     Images are replaced with their ALT attributes.
-                     .
-                     CONFIGURATION
-                     .
-                     Create a file named `~/.ljpass` with your LJ login
-                     (`username`) and `password`. GUIDs of the processed
-                     message are saved to the file defined by `sentfile`.
-                     Additionally, define an HTML `template` of the cross-posted
-                     messages as they should appear in LJ.
-                     Option `nsentences`, if defined, specifies how many
-                     sentences of the original message are to be cross-posted.
-                     .
-                     For example:
-                     .
-                          > username=myljlogin
-                          > password=myljpassword
-                          > sentfile=/path/to/file/where/crossposted/GUIDs/are/saved
-                          > template=<p>%text%</p><p>( <a href="%link%" title="%title%">more</a> )</p>
-                          > nsentences=5
-                     .
-                     USAGE
-                     .
-                          > $ feed2lj [--help] [--dry-run] http://example.com/rss.xml
-                     .
-                     Use `--dry-run` option to preview results without actually
-                     posting to LJ.
+version:             0.0.3.1
+synopsis:            (unsupported)
+description:         (unsupported)
 
 stability:           experimental
-category:            Web
 license:             BSD3
 license-file:        LICENSE
-author:              Sergey Astanin
-maintainer:          s.astanin@gmail.com
-homepage:            http://bitbucket.org/jetxee/feed2ljhs/
-bug-reports:         http://bitbucket.org/jetxee/feed2ljhs/issues/
-tested-with:         GHC == 6.10
 
 cabal-version:       >= 1.2
 build-type:          Simple
