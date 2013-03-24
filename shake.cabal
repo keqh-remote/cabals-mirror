@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               shake
-version:            0.2
+version:            0.2.1
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -87,6 +87,8 @@ library
 
 executable shake
     main-is: Main.hs
+    build-depends:
+        random
     if flag(testprog)
         buildable: True
     else
@@ -94,11 +96,12 @@ executable shake
 
     other-modules:
         Examples.Util
+        Examples.C.Main
         Examples.Self.Main
+        Examples.Tar.Main
         Examples.Test.Basic1
         Examples.Test.Directory
         Examples.Test.Errors
         Examples.Test.FilePath
         Examples.Test.Files
         Examples.Test.Pool
-        Examples.Tar.Main
