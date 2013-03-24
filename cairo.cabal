@@ -1,5 +1,5 @@
 Name:           cairo
-Version:        0.12.3
+Version:        0.12.3.1
 License:        BSD3
 License-file:   COPYRIGHT
 Copyright:      (c) 2001-2010 The Gtk2Hs Team, (c) Paolo Martini 2005, (c) Abraham Egnor 2003, 2004, (c) Aetion Technologies LLC 2004
@@ -69,6 +69,7 @@ Library
                           Graphics.Rendering.Cairo.Internal.Surfaces.PS
                           Graphics.Rendering.Cairo.Internal.Surfaces.SVG
         extensions:     ForeignFunctionInterface
+        Include-dirs: .
         x-c2hs-Header:  cairo-gtk2hs.h
         pkgconfig-depends: cairo >= 1.2.0
         if flag(cairo_pdf)
