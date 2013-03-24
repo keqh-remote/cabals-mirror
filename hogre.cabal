@@ -1,5 +1,5 @@
 Name:               hogre
-Version:            0.1.2
+Version:            0.1.3
 Cabal-Version:      >= 1.6
 License:            MIT
 License-File:       LICENSE
@@ -33,4 +33,5 @@ Library
   if !os(windows)
       pkgconfig-depends: OGRE
   extra-libraries:   OgreMain
+  build-tools:       cgen, grgen, cgen-hs
 
