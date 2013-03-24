@@ -1,5 +1,5 @@
 Name:             xml-basic
-Version:          0.1
+Version:          0.1.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -25,7 +25,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/xml-basic/
-  tag:      0.1
+  tag:      0.1.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -36,14 +36,19 @@ Library
     data-accessor >=0.2 && <0.3,
     utility-ht >=0.0.4 && <0.1
   If flag(splitBase)
-    Build-Depends: base >= 2, containers >=0.1 && <0.3
+    Build-Depends:
+      containers >=0.1 && <0.3,
+      base >= 2 && <5
   Else
-    Build-Depends: base >= 1.0 && < 2, special-functors >=1.0 && <1.1
+    Build-Depends:
+      special-functors >=1.0 && <1.1,
+      base >= 1.0 && < 2
 
   GHC-Options:      -Wall
   Hs-Source-Dirs:   src
   Exposed-Modules:
     Text.HTML.Basic.Tag
+    Text.HTML.Basic.String
     Text.HTML.Basic.Character
     Text.HTML.Basic.Entity
     Text.XML.Basic.Tag
@@ -54,6 +59,7 @@ Library
     Text.XML.Basic.Name.LowerCase
     Text.XML.Basic.Name.Qualified
     Text.XML.Basic.Position
+    Text.XML.Basic.String
     Text.XML.Basic.Character
     Text.XML.Basic.Entity
     Text.XML.Basic.Format
