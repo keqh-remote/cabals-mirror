@@ -1,5 +1,5 @@
 Name:                 maid
-Version:              2011.10.13
+Version:              2012.1.19
 Build-type:           Simple
 Synopsis:             A simple static web server
 Description:
@@ -21,11 +21,11 @@ Executable            maid
   build-depends:      base >= 4 && < 100
                     , air >= 2011.6.19
                     , air-extra
-                    , hack2 >= 2011.6.20
-                    , hack2-contrib >= 2011.10.12
+                    , hack2 >= 2012.1.19
+                    , hack2-contrib >= 2012.1.19.1
                     , data-default
                     -- , hack2-handler-warp
-                    , hack2-handler-snap-server
+                    , hack2-handler-snap-server >= 2012.1.19
                     -- , hack2-handler-mongrel2-http
                     
 
