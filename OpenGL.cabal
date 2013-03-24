@@ -1,8 +1,9 @@
 name:		OpenGL
-version:	2.2.1.1
+version:	2.2.2.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Sven Panne <sven.panne@aedion.de>
+bug-reports:	mailto:hopengl@haskell.org
 homepage:	http://www.haskell.org/HOpenGL/
 category:	Graphics
 synopsis:	A binding for the OpenGL graphics system
@@ -17,12 +18,12 @@ description:
 build-type:     Configure
 extra-source-files:
 	config.guess config.sub install-sh
-	configure.ac configure config.mk.in OpenGL.buildinfo.in
+	configure.ac configure OpenGL.buildinfo.in
         include/HsOpenGLConfig.h.in include/HsOpenGL.h.in
 	include/HsOpenGLExt.h include/HsOpenGLTypes.h
 extra-tmp-files:
 	config.log config.status autom4te.cache
-	config.mk OpenGL.buildinfo include/HsOpenGLConfig.h include/HsOpenGL.h
+	OpenGL.buildinfo include/HsOpenGLConfig.h include/HsOpenGL.h
 exposed-modules:
 	Graphics.Rendering.OpenGL.GL.Antialiasing,
 	Graphics.Rendering.OpenGL.GL.BasicTypes,
