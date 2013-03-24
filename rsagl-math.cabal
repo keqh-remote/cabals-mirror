@@ -1,5 +1,5 @@
 name:                rsagl-math
-version:             0.6.0.0
+version:             0.6.0.1
 license:             BSD3
 license-file:        LICENSE
 author:              Christopher Lane Hinson
@@ -42,11 +42,12 @@ Library
     build-depends:       base>=4 && <5,
                          random>= 1.0.0.2 && < 1.1,
                          array>= 0.3.0.0 && < 0.4,
-                         containers>= 0.3.0.0 && < 0.4,
+                         containers>= 0.3.0.0,
                          OpenGL>= 2.4.0.1 && < 2.5,
                          OpenGLRaw>= 1.1.0.1 && < 1.2,
                          parsec>=3.1.0 && < 3.2,
-                         parallel>=2.2.0.1 && < 2.3,
+                         parallel>=2.2.0.1,
                          Vec>=0.9.8 && < 0.10,
-                         Vec-OpenGLRaw>=0.2.0.0 && < 0.3
+                         Vec-OpenGLRaw>=0.2.0.0 && < 0.3,
+                         deepseq>=1.1
 
