@@ -1,5 +1,5 @@
 name:             zmidi-core
-version:          0.3.0
+version:          0.4.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -13,6 +13,14 @@ description:
   dependencies only on ByteString and Data.Binary.
   .
   Changelog:
+  .
+  v0.3.0 to v0.4.0:
+  .
+  * Added new constructors to @MidiMetaEvent@ for MidiPort and 
+    MetaOther. MetaOther recognizes otherwise unrecognized events
+    improving the robustness of the parser. Similarly a new 
+    /other/ constructor has been added to @MidiScaleType@ to 
+    avoid parse errors.
   .
   v0.2.1 to v0.3.0:
   .
