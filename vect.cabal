@@ -1,5 +1,5 @@
 Name:                vect
-Version:             0.4.0
+Version:             0.4.5
 Synopsis:            A low-dimensional linear algebra library, tailored to computer graphics.
 Description:         A low-dimensional (2, 3 and 4) linear algebra library, 
                      with lots of useful functions. Intended usage is primarily 
