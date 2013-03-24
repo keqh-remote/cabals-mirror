@@ -1,5 +1,5 @@
 name:          safer-file-handles
-version:       0.6.1
+version:       0.7
 cabal-version: >=1.6
 build-type:    Custom
 license:       BSD3
@@ -10,7 +10,7 @@ maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
 stability:     experimental
 category:      System, Monadic Regions
 synopsis:      Type-safe file handling
-description:   This package adds two safety features on top of the regular
+description:   This package adds three safety features on top of the regular
                @System.IO@ file handles and operations:
                .
                * Regional file handles. Files must be opened in a /region/. When
@@ -25,6 +25,9 @@ description:   This package adds two safety features on top of the regular
                  impossible to read from a write-only handle or write to a
                  read-only handle for example.
                .
+	       * Type-safe filepath creation and manipulation
+ 	         using the @pathtype@ package.
+	       .
                The primary technique used in this package is called \"Lightweight
                monadic regions\" which was invented by Oleg Kiselyov and
                Chung-chieh Shan. See:
@@ -50,10 +53,11 @@ Library
   GHC-Options: -Wall
   build-depends: base                      >= 4     && < 4.3
                , base-unicode-symbols      >= 0.1.1 && < 0.3
-               , regions                   >= 0.6   && < 0.7
+               , regions                   >= 0.6   && < 0.8
                , transformers              >= 0.2   && < 0.3
                , MonadCatchIO-transformers >= 0.2   && < 0.3
-               , explicit-iomodes          >= 0.4.1 && < 0.5
+               , explicit-iomodes          >= 0.5   && < 0.6
+               , pathtype                  >= 0.0.1 && < 0.6
   exposed-modules: System.IO.SaferFileHandles
                    System.IO.SaferFileHandles.Unsafe
   other-modules:   System.IO.SaferFileHandles.Internal
