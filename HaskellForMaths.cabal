@@ -1,7 +1,8 @@
    Name:                HaskellForMaths
-   Version:             0.1.7
+   Version:             0.1.8
    Category:            Math
    Description:         Math library - combinatorics, group theory, commutative algebra, non-commutative algebra
+   Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
    License:             BSD3
    License-file:        license.txt
    Author:              David Amos
@@ -9,7 +10,17 @@
    Homepage:            http://www.polyomino.f2s.com/haskellformathsv2/HaskellForMathsv2.html
    Build-Type:          Simple
    Cabal-Version:       >=1.2
-   
+
+   Extra-source-files:
+        Math/Test/TCommutativeAlgebra.hs,
+        Math/Test/TDesign.hs,
+        Math/Test/TField.hs,
+        Math/Test/TFiniteGeometry.hs,
+        Math/Test/TGraph.hs,
+        Math/Test/TNonCommutativeAlgebra.hs,
+        Math/Test/TPermutationGroup.hs,
+        Math/Test/TestAll.hs
+
    Library
      Build-Depends:     base >=3 && < 4, containers
      Exposed-modules:
@@ -23,7 +34,9 @@
         Math.Combinatorics.Design, Math.Combinatorics.FiniteGeometry, Math.Combinatorics.Hypergraph,
         Math.Common.IntegerAsType, Math.Common.ListSet,
         Math.Projects.RootSystem,
+        Math.Projects.Rubik,
         Math.Projects.ChevalleyGroup.Classical, Math.Projects.ChevalleyGroup.Exceptional,
         Math.Projects.KnotTheory.Braid,
         Math.Projects.KnotTheory.LaurentMPoly, Math.Projects.KnotTheory.TemperleyLieb, Math.Projects.KnotTheory.IwahoriHecke
+
      ghc-options:       -w
