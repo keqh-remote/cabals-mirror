@@ -1,6 +1,6 @@
 --Package-properties
 Name:			regexdot
-Version:		0.11.0.1
+Version:		0.11.1.0
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2010 Dr. Alistair Ward
 License:		GPL
@@ -11,7 +11,7 @@ Synopsis:		A polymorphic, POSIX, extended regex-engine.
 Build-Type:		Simple
 Description:		Provides a portable, POSIX, extended regex-engine, designed to process a list of /arbitrary/ objects.
 Category:		Search, Regex
-Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0, GHC == 7.4
 Homepage:		http://functionalley.eu
 Maintainer:		regexdot <at> functionalley <dot> eu
 Bug-reports:		regexdot <at> functionalley <dot> eu
@@ -58,7 +58,7 @@ Library
     Build-depends:
         base == 4.*,
         parsec == 3.*,
-        toolshed == 0.13.*
+        toolshed >= 0.13
 
     GHC-options:	-Wall -O2
 
