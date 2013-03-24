@@ -1,5 +1,5 @@
 Name:                CSPM-Frontend
-Version:             0.2.8.0
+Version:             0.2.10.2
 
 Synopsis:            A CSP-M parser compatible with FDR-2.83
 
@@ -18,8 +18,10 @@ category:            Language,Formal Methods,Concurrency
 License-File:        LICENSE
 Author:              Marc Fontaine
 Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
+Homepage:            http://www.stups.uni-duesseldorf.de/~fontaine/csp
+Bug-reports:         http://asap0.cs.uni-duesseldorf.de/trac/prob/newticket
 Stability:           unstable
-Tested-With:         GHC ==6.10.3
+Tested-With:         GHC ==6.12.1
 
 cabal-Version:       >= 1.6
 build-type: Simple
