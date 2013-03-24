@@ -1,5 +1,5 @@
 name:           free-theorems
-version:        0.2
+version:        0.2.1
 license:        PublicDomain
 license-file:   LICENSE
 author:         Sascha Boehme
@@ -23,7 +23,7 @@ build-depends:
     base >= 1.0
   , mtl >= 1.0
   , haskell-src >= 1.0
-  , haskell-src-exts >= 0.2.1
+  , haskell-src-exts >= 0.3.9
   , pretty >= 1.0.0.0
   , containers >= 0.1.0.1
 exposed-modules:
@@ -49,3 +49,15 @@ other-modules:
     Language.Haskell.FreeTheorems.PrettyTheorems
 hs-source-dirs: src
 extensions:     Generics, DeriveDataTypeable, Rank2Types, PatternSignatures
+extra-source-files:
+    src/Arbitraries.hs
+    src/FrontendCheckGlobalTests.hs
+    src/FrontendCheckLocalTests.hs
+    src/FrontendOtherTests.hs
+    src/FrontendTypeExpressionsTests.hs
+    src/InterpretationTests.hs
+    src/ParserPrettyPrinterTests.hs
+    src/Runtests.hs
+    src/Tests.hs
+    README
+    runtests
