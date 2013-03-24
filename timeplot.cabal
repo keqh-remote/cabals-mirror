@@ -1,5 +1,5 @@
 Name: timeplot
-Version: 0.2.1
+Version: 0.2.2
 License: BSD3
 License-file: LICENSE
 Copyright: Eugene Kirpichov, 2009
@@ -21,12 +21,19 @@ Source-repository head
 flag splitbase
   description: Choose the new smaller, split-up base package.
 
+flag gtk
+  description: Include the gtk-based ability to render to a window
+  default: False
+
 executable tplot
   if flag(splitbase)
     Build-Depends: base >= 3 && < 5
   else
     Build-Depends: base < 3
 
+  if flag(gtk)
+    cpp-options: -DHAVE_GTK=1
+  
   Build-Depends: Chart >= 0.14, cairo, bytestring, bytestring-lexing, strptime >= 0.1.5, time, 
                  containers, colour, data-accessor == 0.2.*, data-accessor-template >= 0.2.1.1 && < 0.3, 
                  haskell98, regex-tdfa
