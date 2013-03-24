@@ -1,5 +1,5 @@
 name:hs-cdb
-version:0.1
+version:0.1.1
 License:BSD3
 License-File:LICENSE
 Author:Adam Smith
@@ -23,7 +23,7 @@ build-type:Simple
 
 Library
   Build-Depends:array, base >= 4 && < 5, bytestring, bytestring-mmap, directory,
-                filepath, haskell98, mtl
+                filepath, mtl
   Exposed-modules:
     Database.CDB
     Database.CDB.Packable
