@@ -1,5 +1,5 @@
 name:            web-encodings
-version:         0.2.1
+version:         0.2.2
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -21,10 +21,9 @@ library
                      time >= 1.1.2.4 && < 1.2,
                      old-locale >= 1.0.0.1 && < 1.1,
                      bytestring >= 0.9.1.4 && < 0.10,
-                     text >= 0.5 && < 0.6,
+                     text >= 0.5 && < 0.8,
                      failure >= 0.0.0 && < 0.1,
-                     safe >= 0.2 && < 0.3,
-                     split >= 0.1.2 && < 0.2
+                     safe >= 0.2 && < 0.3
     exposed-modules: Web.Encodings
                      Web.Encodings.MimeHeader,
                      Web.Encodings.StringLike,
