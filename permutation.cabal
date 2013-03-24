@@ -1,5 +1,5 @@
 name:            permutation
-version:         0.3
+version:         0.4
 homepage:        http://stat.stanford.edu/~patperry/code/permutation
 synopsis:        A library for permutations and combinations.
 description:
@@ -23,7 +23,7 @@ license-file:    LICENSE
 copyright:       (c) 2008. Patrick Perry <patperry@stanford.edu>
 author:          Patrick Perry
 maintainer:      Patrick Perry <patperry@stanford.edu>
-cabal-version: >= 1.2.0
+cabal-version: >= 1.2.3
 build-type:      Custom
 tested-with:     GHC ==6.8.2, GHC ==6.10.1
 
@@ -37,6 +37,7 @@ extra-source-files:  examples/Enumerate.hs
                      tests/Permute.hs
                      tests/STPermute.hs
                      tests/Makefile
+                     NEWS
 
 library
     hs-source-dirs:  lib
