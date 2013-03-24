@@ -1,5 +1,5 @@
 Name           : pugs-compat
-Version        : 0.0.4
+Version        : 0.0.5
 Build-type     : Simple
 Category       : Pugs
 License        : BSD3
@@ -9,7 +9,7 @@ Synopsis       : Portable Haskell/POSIX layer for Pugs
 Description    : Portable Haskell/POSIX layer for Pugs
 Cabal-Version  : >=1.2.1
 
-Library {
+Library
   Extensions      : CPP, MagicHash, ScopedTypeVariables, MultiParamTypeClasses,
                     TypeSynonymInstances, FlexibleInstances, PatternGuards,
                     UndecidableInstances, FlexibleContexts, OverlappingInstances
@@ -22,7 +22,7 @@ Library {
                     Pugs.Compat.Monads Pugs.Compat.Posix Pugs.Compat.String
                     Pugs.Compat.Regex
 
-  Ghc-Options     : -fparr
+  Ghc-Options     : -fparr -Wall
 
   Hs-source-dirs  : src
 
@@ -32,4 +32,3 @@ Library {
     Build-depends : unix
     Extensions    : ForeignFunctionInterface
     CPP-options   : -DPUGS_HAVE_POSIX
-}
