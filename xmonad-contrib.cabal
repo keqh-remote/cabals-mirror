@@ -1,5 +1,5 @@
 name:               xmonad-contrib
-version:            0.8.1
+version:            0.9
 homepage:           http://xmonad.org/
 synopsis:           Third party extensions for xmonad
 description:
@@ -34,9 +34,6 @@ flag small_base
 flag use_xft
   description: Use Xft to render text
 
-flag with_utf8
-  description: Enable Utf8 support
-
 flag testing
   description: Testing mode
   default: False
@@ -52,18 +49,14 @@ library
         extensions: ForeignFunctionInterface
         cpp-options: -DXFT
 
-    if flag(with_utf8)
-        build-depends: utf8-string
-        extensions: ForeignFunctionInterface
-        cpp-options: -DUTF8
-
-    build-depends:      mtl, unix, X11>=1.4.3, xmonad>=0.8, xmonad<0.9
-    ghc-options:        -Wall
+    build-depends:      mtl, unix, X11>=1.4.6.1, xmonad>=0.9, xmonad<1, utf8-string
+    ghc-options:        -fwarn-tabs -Wall
+    extensions:         ForeignFunctionInterface
 
     if flag(testing)
-        ghc-options:    -Werror
+        ghc-options:    -fwarn-tabs -Werror
 
-    if impl (ghc >= 6.10.1) && arch (x86_64)
+    if impl (ghc == 6.10.1) && arch (x86_64)
         ghc-options:    -O0
 
     exposed-modules:    XMonad.Doc
@@ -75,6 +68,7 @@ library
                         XMonad.Actions.CopyWindow
                         XMonad.Actions.CycleRecentWS
                         XMonad.Actions.CycleSelectedLayouts
+                        XMonad.Actions.CycleWindows
                         XMonad.Actions.CycleWS
                         XMonad.Actions.DeManage
                         XMonad.Actions.DwmPromote
@@ -83,72 +77,106 @@ library
                         XMonad.Actions.FlexibleManipulate
                         XMonad.Actions.FlexibleResize
                         XMonad.Actions.FloatKeys
+                        XMonad.Actions.FloatSnap
                         XMonad.Actions.FocusNth
+                        XMonad.Actions.GridSelect
+                        XMonad.Actions.MessageFeedback
                         XMonad.Actions.MouseGestures
                         XMonad.Actions.MouseResize
                         XMonad.Actions.NoBorders
+                        XMonad.Actions.OnScreen
                         XMonad.Actions.PerWorkspaceKeys
+                        XMonad.Actions.PhysicalScreens
                         XMonad.Actions.Plane
                         XMonad.Actions.Promote
                         XMonad.Actions.RotSlaves
+                        XMonad.Actions.RandomBackground
                         XMonad.Actions.Search
                         XMonad.Actions.SimpleDate
                         XMonad.Actions.SinkAll
+                        XMonad.Actions.SpawnOn
                         XMonad.Actions.Submap
                         XMonad.Actions.SwapWorkspaces
                         XMonad.Actions.TagWindows
+                        XMonad.Actions.TopicSpace
                         XMonad.Actions.UpdatePointer
+                        XMonad.Actions.UpdateFocus
                         XMonad.Actions.Warp
+                        XMonad.Actions.WindowMenu
                         XMonad.Actions.WindowNavigation
                         XMonad.Actions.WindowGo
                         XMonad.Actions.WindowBringer
+                        XMonad.Actions.WithAll
+                        XMonad.Actions.WorkspaceCursors
                         XMonad.Config.Arossato
+                        XMonad.Config.Azerty
                         XMonad.Config.Desktop
                         XMonad.Config.Droundy
                         XMonad.Config.Gnome
                         XMonad.Config.Kde
-                        XMonad.Config.PlainConfig
                         XMonad.Config.Sjanssen
                         XMonad.Config.Xfce
                         XMonad.Hooks.DynamicHooks
                         XMonad.Hooks.DynamicLog
-                        XMonad.Hooks.EventHook
                         XMonad.Hooks.EwmhDesktops
                         XMonad.Hooks.FadeInactive
+                        XMonad.Hooks.FloatNext
+                        XMonad.Hooks.InsertPosition
                         XMonad.Hooks.ManageDocks
                         XMonad.Hooks.ManageHelpers
+                        XMonad.Hooks.Place
+                        XMonad.Hooks.RestoreMinimized
                         XMonad.Hooks.Script
                         XMonad.Hooks.SetWMName
                         XMonad.Hooks.ServerMode
                         XMonad.Hooks.UrgencyHook
+                        XMonad.Hooks.WorkspaceByPos
                         XMonad.Hooks.XPropManage
                         XMonad.Layout.Accordion
+                        XMonad.Layout.AutoMaster
+                        XMonad.Layout.BorderResize
                         XMonad.Layout.BoringWindows
+                        XMonad.Layout.CenteredMaster
                         XMonad.Layout.Circle
+                        XMonad.Layout.Cross
+                        XMonad.Layout.Column
                         XMonad.Layout.Combo
+                        XMonad.Layout.ComboP
                         XMonad.Layout.Decoration
                         XMonad.Layout.DecorationMadness
                         XMonad.Layout.Dishes
                         XMonad.Layout.DragPane
                         XMonad.Layout.DwmStyle
+                        XMonad.Layout.FixedColumn
                         XMonad.Layout.Gaps
                         XMonad.Layout.Grid
+                        XMonad.Layout.GridVariants
                         XMonad.Layout.HintedGrid
                         XMonad.Layout.HintedTile
                         XMonad.Layout.IM
+                        XMonad.Layout.IndependentScreens
+                        XMonad.Layout.LayoutBuilder
                         XMonad.Layout.LayoutCombinators
                         XMonad.Layout.LayoutHints
                         XMonad.Layout.LayoutModifier
                         XMonad.Layout.LayoutScreens
+                        XMonad.Layout.LimitWindows
                         XMonad.Layout.MagicFocus
                         XMonad.Layout.Magnifier
                         XMonad.Layout.Master
                         XMonad.Layout.Maximize
+                        XMonad.Layout.MessageControl
+                        XMonad.Layout.Minimize
+                        XMonad.Layout.Monitor
+                        XMonad.Layout.Mosaic
                         XMonad.Layout.MosaicAlt
+                        XMonad.Layout.MouseResizableTile
                         XMonad.Layout.MultiToggle
                         XMonad.Layout.MultiToggle.Instances
                         XMonad.Layout.Named
                         XMonad.Layout.NoBorders
+                        XMonad.Layout.NoFrillsDecoration
+                        XMonad.Layout.OneBig
                         XMonad.Layout.PerWorkspace
                         XMonad.Layout.Reflect
                         XMonad.Layout.ResizableTile
@@ -157,10 +185,12 @@ library
                         XMonad.Layout.Simplest
                         XMonad.Layout.SimpleDecoration
                         XMonad.Layout.SimpleFloat
+                        XMonad.Layout.Spacing
                         XMonad.Layout.Spiral
                         XMonad.Layout.Square
                         XMonad.Layout.ShowWName
                         XMonad.Layout.StackTile
+                        XMonad.Layout.SubLayouts
                         XMonad.Layout.Tabbed
                         XMonad.Layout.TabBarDecoration
                         XMonad.Layout.ThreeColumns
@@ -186,6 +216,7 @@ library
                         XMonad.Prompt.Window
                         XMonad.Prompt.Workspace
                         XMonad.Prompt.XMonad
+                        XMonad.Util.Cursor
                         XMonad.Util.CustomKeys
                         XMonad.Util.Dmenu
                         XMonad.Util.Dzen
@@ -193,12 +224,18 @@ library
                         XMonad.Util.Font
                         XMonad.Util.Invisible
                         XMonad.Util.Loggers
+                        XMonad.Util.NamedActions
+                        XMonad.Util.NamedScratchpad
                         XMonad.Util.NamedWindows
+                        XMonad.Util.StringProp
                         XMonad.Util.Run
                         XMonad.Util.Scratchpad
                         XMonad.Util.Themes
                         XMonad.Util.Timer
+                        XMonad.Util.Types
                         XMonad.Util.WindowProperties
                         XMonad.Util.WorkspaceCompare
+                        XMonad.Util.Paste
+                        XMonad.Util.Replace
                         XMonad.Util.XSelection
                         XMonad.Util.XUtils
