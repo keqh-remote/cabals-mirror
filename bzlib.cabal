@@ -1,6 +1,6 @@
 name:            bzlib
-version:         0.5.0.1
-copyright:       (c) 2006-2008 Duncan Coutts
+version:         0.5.0.2
+copyright:       (c) 2006-2011 Duncan Coutts
 license:         BSD3
 license-file:    LICENSE
 author:          Duncan Coutts <duncan@community.haskell.org>
@@ -19,7 +19,7 @@ build-type:      Simple
 cabal-version:   >= 1.6
 extra-source-files: cbits/bzlib_private.h cbits/LICENSE
                     -- demo programs:
-                    bzip2.hs bunzip2.hs
+                    examples/bzip2.hs examples/bunzip2.hs
 
 source-repository head
   type: darcs
@@ -39,7 +39,7 @@ library
     extra-libraries: bz2
   else
     -- However for the benefit of users of Windows (which does not have zlib
-    -- by default) we bundle a complete copy of the C sources of bzip2-1.0.5
+    -- by default) we bundle a complete copy of the C sources of bzip2-1.0.6
     c-sources:     cbits/blocksort.c cbits/bzlib.c cbits/compress.c
                    cbits/crctable.c cbits/decompress.c cbits/huffman.c
                    cbits/randtable.c
