@@ -1,7 +1,15 @@
 name:                not-gloss
-version:             0.1.0
+version:             0.2.0
+stability:           Experimental
 synopsis:            Painless 3D graphics, no affiliation with gloss
--- description:         
+description:{
+This package intends to make it relatively easy to do simple 3d graphics using high-level primitives.
+It is inspired by gloss and attempts to emulate it.
+This is an early release and the api will certainly change.
+Note that transparency can be controlled by the alpha value: "makeColor r g b alpha" but that you must draw objects from back to front for transparency to properly work (just put clear things last).
+Also, transparent ellipsoids and cylinders have ugly artifacts, sorry.
+Look at the example `Example.hs` to get started.
+}
 license:             BSD3
 license-file:        LICENSE
 author:              Greg Horn
@@ -13,14 +21,18 @@ cabal-version:       >=1.8
 
 library
   exposed-modules:     Vis
+                       Vis.Camera
+                       Vis.Interface
+                       Vis.VisObject
 
-  other-modules:       Vis.Camera
+  other-modules:       
 
   build-depends:       base == 4.5.*,
                        GLUT == 2.3.*,
                        time == 1.4.*,
                        OpenGLRaw == 1.2.*,
-                       spatial-math >= 0.1.2 && < 0.2
+                       spatial-math >= 0.1.2 && < 0.2,
+                       gloss >= 1.7.4 && < 1.7.5
 
   ghc-options:
 
@@ -31,6 +43,7 @@ executable not-gloss-example
                        spatial-math >= 0.1.2 && < 0.2,
                        OpenGLRaw == 1.2.*,
                        time == 1.4.*,
+                       gloss >= 1.7.4 && < 1.7.5,
                        not-gloss
   ghc-options:         -threaded
 
