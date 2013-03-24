@@ -1,7 +1,7 @@
 name:    improve
-version: 0.0.12
+version: 0.1.0
 
-category: Language
+category: Language, Formal Methods, Embedded
 
 synopsis: An imperative, verifiable programming language for high assurance applications.
 
@@ -24,9 +24,9 @@ cabal-version: >= 1.6
 
 library
     build-depends:
-        base  >= 4.2     && < 5,
-        mtl   >= 1.1.0.1 && < 1.2,
-        yices >= 0.0.0.7 && < 0.0.1
+        base      >= 4.0     && < 5,
+        mtl       >= 1.1.0.1 && < 1.2,
+        yices     >= 0.0.0.7 && < 0.0.1
 
     exposed-modules:
         Language.ImProve
