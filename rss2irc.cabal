@@ -1,5 +1,5 @@
 name:                rss2irc
-version:             1.0.1
+version:             1.0.2
 homepage:            http://hackage.haskell.org/package/rss2irc
 license:             BSD3
 license-file:        LICENSE
@@ -17,6 +17,12 @@ description:
  .
  > $ rss2irc http://hackage.haskell.org/packages/archive/recent.rss mybot@irc.freenode.org/#haskell
  .
+ 1.0.2 (2013\/2\/18)
+ .
+ Fixed:
+ .
+ * `--use-actions` works again
+ .
  1.0 (2013\/2\/15)
  .
  New:
@@ -25,15 +31,11 @@ description:
  .
  * easier irc address syntax, drop -p/--port option
  .
- * can poll urls with semicolon parameter separator (eg darcsweb's)
- .
  * can poll https feeds
  .
  * can poll from stdin (-)
  .
  * can poll a file containing multiple copies of a feed (eg for testing)
- .
- * can announce item urls containing percent
  .
  * `--cache-control` option sets a HTTP Cache-Control header
  .
@@ -48,6 +50,10 @@ description:
  * builds threaded and optimised by default
  .
  * thread and error handling is more robust, eg don't ignore exceptions in the irc writer thread
+ .
+ * can poll urls with semicolon parameter separator (eg darcsweb's)
+ .
+ * can announce item urls containing percent
  .
  * no longer adds stray "upload:" to IRC messages
  .
@@ -70,7 +76,7 @@ build-type:          Simple
 executable rss2irc
     main-is:         rss2irc.hs
     other-modules:   Base, Utils, Feed, Irc
-    ghc-options:     -O2 -threaded -Wall -fno-warn-orphans -fno-warn-unused-do-bind
+    ghc-options:     -threaded -Wall -fno-warn-orphans -fno-warn-unused-do-bind
     build-depends:
                      base                  >= 4 && < 5
                     ,bytestring
@@ -96,4 +102,4 @@ executable rss2irc
 
 source-repository head
   type:     darcs
-  location: http://joyful.com/repos/rss2irc
+  location: http://hub.darcs.net/simon/rss2irc
