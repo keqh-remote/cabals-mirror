@@ -1,5 +1,5 @@
 name: sifflet
-version: 0.1.5
+version: 0.1.6
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -26,7 +26,8 @@ tested-with: GHC == 6.10, GHC == 6.12
 -- extra-tmp-files: filename list
 
 extra-source-files: CBMgr.hs Examples.hs Expr.hs Geometry.hs GtkForeign.hs 
-  GtkUtil.hs RPanel.hs SiffML.hs Tree.hs TreeGraph.hs  TreeLayout.hs
+  GtkUtil.hs LittleGtk.hs 
+  RPanel.hs SiffML.hs Tree.hs TreeGraph.hs  TreeLayout.hs
   UITypes.hs Util.hs WindowManagement.hs Workspace.hs
   Workspace/Canvas.hs Workspace/Frame.hs
   Workspace/Functoid.hs Workspace/Tools.hs Workspace/WGraph.hs
@@ -37,11 +38,13 @@ executable sifflet
   main-is: sifflet.hs
   build-depends: 
     base >= 4.0.0.0 && < 5,
-    cairo >= 0.10,
+-- begin GTK stuff, should have same version numbers
+    cairo >= 0.10.0,
+    glib >= 0.10.0,
+    gtk >= 0.10.0,
+-- end
     containers >= 0.2,
     fgl >= 5.4,
-    glib >= 0.10,
-    gtk >= 0.10,
     haskell98,
     haskell-src >= 1.0,
     hxt >= 8.3 && < 9,
