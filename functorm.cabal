@@ -1,5 +1,5 @@
 Name:                functorm
-Version:             1.0
+Version:             1.0.1
 Synopsis:            Data.FunctorM (compatibility package)
 Category:            Generics
 Description:
@@ -8,7 +8,7 @@ Description:
 License:             BSD3
 License-file:        LICENSE
 Maintainer:          libraries@haskell.org
-Build-Depends:       base, unix
+Build-Depends:       base
 ghc-options:         -O2 -funbox-strict-fields -Wall -Werror
 ghc-prof-options:    -O2 -funbox-strict-fields -auto-all -Wall -Werror
 Exposed-Modules:     Data.FunctorM
