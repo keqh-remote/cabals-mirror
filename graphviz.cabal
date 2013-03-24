@@ -1,5 +1,5 @@
 Name:               graphviz
-Version:            2999.12.0.4
+Version:            2999.13.0.0
 Stability:          Beta
 Synopsis:           Bindings to Graphviz for graph visualisation.
 Description: {
@@ -38,7 +38,7 @@ Copyright:          Matthew Sackman, Ivan Lazar Miljenovic
 Author:             Matthew Sackman, Ivan Lazar Miljenovic
 Maintainer:         Ivan.Miljenovic+graphviz@gmail.com
 Build-Type:         Simple
-Cabal-Version:      >= 1.6
+Cabal-Version:      >= 1.14
 Extra-Source-Files: TODO
                     Changelog
                     README
@@ -50,18 +50,15 @@ Source-Repository head
     Type:         darcs
     Location:     http://code.haskell.org/graphviz
 
-Flag test
-     Description: Build the test suite, including an executable to run it.
-     Default: False
-
 Library {
-        Build-Depends:     base >= 3 && < 5,
-                           extensible-exceptions,
+        Default-Language:  Haskell98
+
+        Build-Depends:     base == 4.*,
                            containers,
                            process,
                            fgl == 5.4.*,
                            filepath,
-                           polyparse == 1.7.*,
+                           polyparse >= 1.7 && < 1.9,
                            bytestring == 0.9.*,
                            colour == 2.3.*,
                            transformers == 0.2.*,
@@ -77,12 +74,14 @@ Library {
                            Data.GraphViz.Types.Monadic
                            Data.GraphViz.Parsing
                            Data.GraphViz.Printing
-                           Data.GraphViz.State
                            Data.GraphViz.Commands
                            Data.GraphViz.Commands.IO
                            Data.GraphViz.Attributes
                            Data.GraphViz.Attributes.Complete
                            Data.GraphViz.Attributes.Colors
+                           Data.GraphViz.Attributes.Colors.X11
+                           Data.GraphViz.Attributes.Colors.Brewer
+                           Data.GraphViz.Attributes.Colors.SVG
                            Data.GraphViz.Attributes.HTML
                            Data.GraphViz.PreProcessing
                            Data.GraphViz.Exception
@@ -95,20 +94,7 @@ Library {
                            Data.GraphViz.Types.Common
                            Data.GraphViz.Types.State
                            Data.GraphViz.Util
-        if flag(test)
-           Build-Depends:       QuickCheck >= 2.3 && < 2.5
-
-           Exposed-Modules:     Data.GraphViz.Testing
-                                Data.GraphViz.Testing.Instances
-                                Data.GraphViz.Testing.Properties
-
-           Other-Modules:       Data.GraphViz.Testing.Instances.FGL
-                                Data.GraphViz.Testing.Instances.Helpers
-                                Data.GraphViz.Testing.Instances.Attributes
-                                Data.GraphViz.Testing.Instances.Common
-                                Data.GraphViz.Testing.Instances.Canonical
-                                Data.GraphViz.Testing.Instances.Generalised
-                                Data.GraphViz.Testing.Instances.Graph
+                           Data.GraphViz.State
 
         if True
            Ghc-Options: -Wall
@@ -119,14 +105,65 @@ Library {
         Ghc-Prof-Options:  -prof -auto-all
 }
 
-Executable graphviz-testsuite {
+Test-Suite graphviz-testsuite {
+        Default-Language:  Haskell98
 
-        if flag(test)
-           Buildable: True
-        else
-           Buildable: False
+        Type:              exitcode-stdio-1.0
+
+        -- Versions controlled by library section
+        Build-Depends:     base,
+                           containers,
+                           process,
+                           fgl,
+                           filepath,
+                           polyparse,
+                           bytestring,
+                           colour,
+                           transformers,
+                           text,
+                           wl-pprint-text,
+                           dlist,
+                           QuickCheck >= 2.3 && < 2.5
+
+        hs-Source-Dirs:    . tests
 
         Main-Is:           RunTests.hs
+
+
+        Other-Modules:       Data.GraphViz.Testing
+                             Data.GraphViz.Testing.Instances
+                             Data.GraphViz.Testing.Properties
+                             Data.GraphViz.Testing.Instances.FGL
+                             Data.GraphViz.Testing.Instances.Helpers
+                             Data.GraphViz.Testing.Instances.Attributes
+                             Data.GraphViz.Testing.Instances.Common
+                             Data.GraphViz.Testing.Instances.Canonical
+                             Data.GraphViz.Testing.Instances.Generalised
+                             Data.GraphViz.Testing.Instances.Graph
+
+        if True
+           Ghc-Options: -O -Wall
+
+        if impl(ghc >= 6.12.1)
+           Ghc-Options: -fno-warn-unused-do-bind
+
+        GHC-Prof-Options: -auto-all -caf-all -rtsopts
+}
+
+Benchmark graphviz-printparse {
+        Default-Language: Haskell98
+
+        Type:             exitcode-stdio-1.0
+
+        Build-Depends:    base,
+                          deepseq,
+                          text,
+                          graphviz,
+                          criterion >= 0.5 && < 0.7
+
+        hs-Source-Dirs:   utils
+
+        Main-Is:          Benchmark.hs
 
         if True
            Ghc-Options: -O -Wall
