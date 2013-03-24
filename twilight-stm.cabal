@@ -1,7 +1,7 @@
 cabal-version: >= 1.2
 build-type: Simple
 name: twilight-stm
-version: 1.1
+version: 1.2
 license: LGPL
 license-file: LICENSE
 maintainer: Annette Bieniusa <bieniusa@informatik.uni-freiburg.de>
