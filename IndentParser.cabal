@@ -1,8 +1,8 @@
 Name:	IndentParser
-Version: 0.1
+Version: 0.2
 License: GPL
 License-File: gplv3
-Maintainer:login id is ppk and host is cse dot iitk dot ac dot in
+Maintainer:login:ppk host:cse dot iitk dot ac dot in
 Author: Piyush P Kurur
 Homepage: http://www.cse.iitk.ac.in/~ppk
 Category: Parsing
@@ -18,5 +18,6 @@ Description: This package exposes two modules,
 	for programming languages.
 Exposed-modules: 
 	Text.ParserCombinators.Parsec.IndentParser
-	Text.ParserCombinators.Parsec.IndentToken
-Extra-Source-Files: TODO
+	Text.ParserCombinators.Parsec.IndentParser.Token
+Other-modules:	Text.ParserCombinators.Parsec.IndentParser.Prim
+Extra-Source-Files: TODO ACK CHANGES
