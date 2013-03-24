@@ -1,5 +1,5 @@
 Name:                bytestring
-Version:             0.10.0.1
+Version:             0.10.2.0
 Synopsis:            Fast, compact, strict and lazy byte strings with a list interface
 Description:
     An efficient compact, immutable byte string type (both strict and lazy)
@@ -16,13 +16,17 @@ Description:
       * Strict 'ByteString's keep the string as a single large array. This
         makes them convenient for passing data between C and Haskell.
     .
-      * Lazy 'ByteStrings' use a lazy list of strict chunks which makes it
+      * Lazy 'ByteString's use a lazy list of strict chunks which makes it
         suitable for I\/O streaming tasks.
     .
     The @Char8@ modules provide a character-based view of the same
     underlying 'ByteString' types. This makes it convenient to handle mixed
     binary and 8-bit character content (which is common in many file formats
     and network protocols).
+    .
+    The 'Builder' module provides an efficient way to build up 'ByteString's
+    in an ad-hoc way by repeated concatenation. This is ideal for fast
+    serialisation or pretty printing.
     .
     'ByteString's are not designed for Unicode. For Unicode strings you should
     use the 'Text' type from the @text@ package.
@@ -67,23 +71,26 @@ library
                      Data.ByteString.Lazy.Char8
                      Data.ByteString.Lazy.Internal
 
+                     Data.ByteString.Builder
+                     Data.ByteString.Builder.Extra
+                     Data.ByteString.Builder.Prim
+
+                     -- perhaps only exposed temporarily
+                     Data.ByteString.Builder.Internal
+                     Data.ByteString.Builder.Prim.Internal
+
+                     -- sigh, we decided to rename shortly after making
+                     -- an initial release, so these are here for compat
                      Data.ByteString.Lazy.Builder
                      Data.ByteString.Lazy.Builder.Extras
                      Data.ByteString.Lazy.Builder.ASCII
-
   other-modules:
-                     -- these three modules should be exposed in a future
-                     -- release once we're confident the API is stable.
-                     Data.ByteString.Lazy.Builder.Internal
-                     Data.ByteString.Lazy.Builder.BasicEncoding
-                     Data.ByteString.Lazy.Builder.BasicEncoding.Extras
-                     Data.ByteString.Lazy.Builder.BasicEncoding.Internal
-
-                     Data.ByteString.Lazy.Builder.BasicEncoding.Binary
-                     Data.ByteString.Lazy.Builder.BasicEncoding.ASCII
-                     Data.ByteString.Lazy.Builder.BasicEncoding.Internal.Floating
-                     Data.ByteString.Lazy.Builder.BasicEncoding.Internal.UncheckedShifts
-                     Data.ByteString.Lazy.Builder.BasicEncoding.Internal.Base16
+                     Data.ByteString.Builder.ASCII
+                     Data.ByteString.Builder.Prim.Binary
+                     Data.ByteString.Builder.Prim.ASCII
+                     Data.ByteString.Builder.Prim.Internal.Floating
+                     Data.ByteString.Builder.Prim.Internal.UncheckedShifts
+                     Data.ByteString.Builder.Prim.Internal.Base16
 
   extensions:        CPP,
                      ForeignFunctionInterface,
@@ -135,10 +142,10 @@ test-suite test-builder
   type:             exitcode-stdio-1.0
   hs-source-dirs:   . tests tests/builder
   main-is:          TestSuite.hs
-  other-modules:    Data.ByteString.Lazy.Builder.Tests
-                    Data.ByteString.Lazy.Builder.BasicEncoding.Tests
-                    Data.ByteString.Lazy.Builder.BasicEncoding.TestUtils
-                    Data.ByteString.Lazy.Builder.BasicEncoding.Extras
+  other-modules:    Data.ByteString.Builder.Tests
+                    Data.ByteString.Builder.Prim.Tests
+                    Data.ByteString.Builder.Prim.TestUtils
+                    Data.ByteString.Builder.Prim.Extra
                     TestFramework
 
   build-depends:    base, ghc-prim,
