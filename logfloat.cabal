@@ -1,19 +1,19 @@
 ----------------------------------------------------------------
--- wren ng thornton <wren@community.haskell.org>    ~ 2009.03.17
+-- wren ng thornton <wren@community.haskell.org>    ~ 2010.03.19
 ----------------------------------------------------------------
 
 Name:           logfloat
-Version:        0.12.0.1
+Version:        0.12.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 Stability:      experimental
-Copyright:      Copyright (c) 2007--2009 wren ng thornton
+Copyright:      Copyright (c) 2007--2010 wren ng thornton
 License:        BSD3
 License-File:   LICENSE
 Author:         wren ng thornton
 Maintainer:     wren@community.haskell.org
 Homepage:       http://code.haskell.org/~wren/
-Category:       Data, Math, Natural Language Processing
+Category:       Data, Math, Natural Language Processing, Statistics
 Synopsis:       Log-domain floating point numbers
 Description:    This module presents a type for storing numbers
                 in the log-domain. The main reason for doing this
