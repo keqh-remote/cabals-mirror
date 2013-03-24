@@ -1,5 +1,5 @@
 Name:          csound-expression
-Version:       0.3.1
+Version:       0.3.2
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
@@ -56,6 +56,9 @@ Library
 
 -- Opcodes
         CsoundExpr.Opcodes
+        
+        CsoundExpr.Opcodes.Other
+
         CsoundExpr.Opcodes.Siggen
         CsoundExpr.Opcodes.Sigio
         CsoundExpr.Opcodes.Sigmod
