@@ -1,5 +1,5 @@
 name:               hedis
-version:            0.3.2
+version:            0.4
 synopsis:
     Client library for the Redis datastore: supports full command set,  
     pipelining.
@@ -33,6 +33,16 @@ Description:
         TCP connection.
     .
     For detailed documentation, see the "Database.Redis" module.
+    .
+    [Changes since version 0.3.2]
+    .
+    * Some commands got a 'Maybe' added to their return type, to properly handle
+        Redis returning @nil@-replies.
+    .
+    * Updated dependencies on @bytestring-lexing@ and @stm@.
+    .
+    * Minor improvements and fixes to the documentation.
+    .
 license:            BSD3
 license-file:       LICENSE
 author:             Falko Peters
@@ -67,11 +77,11 @@ library
   build-depends:    attoparsec == 0.10.*,
                     base == 4.*,
                     bytestring == 0.9.*,
-                    bytestring-lexing == 0.3.*,
+                    bytestring-lexing == 0.4.*,
                     mtl == 2.*,
                     network == 2.*,
                     resource-pool == 0.2.1.*,
-                    stm == 2.2.*,
+                    stm == 2.3.*,
                     time
 
   other-modules:    Database.Redis.Core,
