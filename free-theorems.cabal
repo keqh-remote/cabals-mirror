@@ -1,5 +1,5 @@
 name:           free-theorems
-version:        0.3.1
+version:        0.3.1.1
 license:        PublicDomain
 license-file:   LICENSE
 author:         Sascha Boehme
@@ -17,40 +17,10 @@ description:
     In the last two sublanguages, also inequational free theorems
     may be derived in addition to classical equational results.
 category:       Language
-tested-with: 	GHC==6.8.2
+tested-with: 	GHC==6.8.2, GHC==6.10.1
 cabal-version:  >= 1.2.3
 build-type:	Simple
-build-depends:
-    base >= 1.0
-  , mtl >= 1.0
-  , haskell-src >= 1.0
-  , haskell-src-exts >= 0.3.9
-  , pretty >= 1.0.0.0
-  , containers >= 0.1.0.1
-exposed-modules:
-    Language.Haskell.FreeTheorems
-    Language.Haskell.FreeTheorems.Syntax
-    Language.Haskell.FreeTheorems.Parser.Haskell98
-    Language.Haskell.FreeTheorems.Parser.Hsx
-    Language.Haskell.FreeTheorems.Theorems
-    Language.Haskell.FreeTheorems.BasicSyntax
-    Language.Haskell.FreeTheorems.ValidSyntax
-    Language.Haskell.FreeTheorems.NameStores
-other-modules:
-    Language.Haskell.FreeTheorems.Frontend
-    Language.Haskell.FreeTheorems.Frontend.Error
-    Language.Haskell.FreeTheorems.Frontend.TypeExpressions
-    Language.Haskell.FreeTheorems.Frontend.CheckLocal
-    Language.Haskell.FreeTheorems.Frontend.CheckGlobal
-    Language.Haskell.FreeTheorems.LanguageSubsets
-    Language.Haskell.FreeTheorems.Intermediate
-    Language.Haskell.FreeTheorems.Unfold
-    Language.Haskell.FreeTheorems.PrettyBase
-    Language.Haskell.FreeTheorems.PrettyTypes
-    Language.Haskell.FreeTheorems.PrettyTheorems
-    Language.Haskell.FreeTheorems.Theorems.Simplify
-hs-source-dirs: src
-extensions:     Generics, DeriveDataTypeable, Rank2Types, PatternSignatures
+
 extra-source-files:
     src/Arbitraries.hs
     src/FrontendCheckGlobalTests.hs
@@ -63,3 +33,54 @@ extra-source-files:
     src/Tests.hs
     README
     runtests
+
+library
+  build-depends:
+      mtl >= 1.0
+    , haskell-src >= 1.0
+    , haskell-src-exts >= 0.3.9
+    , pretty >= 1.0.0.0
+    , containers >= 0.1.0.1
+  if impl(ghc >= 6.10)
+    build-depends:
+        base >= 4
+      , syb >= 0.1.0.0
+  else
+    build-depends:
+        base >= 1 && < 4
+
+  exposed-modules:
+      Language.Haskell.FreeTheorems
+      Language.Haskell.FreeTheorems.Syntax
+      Language.Haskell.FreeTheorems.Parser.Haskell98
+      Language.Haskell.FreeTheorems.Parser.Hsx
+      Language.Haskell.FreeTheorems.Theorems
+      Language.Haskell.FreeTheorems.BasicSyntax
+      Language.Haskell.FreeTheorems.ValidSyntax
+      Language.Haskell.FreeTheorems.NameStores
+
+  other-modules:
+      Language.Haskell.FreeTheorems.Frontend
+      Language.Haskell.FreeTheorems.Frontend.Error
+      Language.Haskell.FreeTheorems.Frontend.TypeExpressions
+      Language.Haskell.FreeTheorems.Frontend.CheckLocal
+      Language.Haskell.FreeTheorems.Frontend.CheckGlobal
+      Language.Haskell.FreeTheorems.LanguageSubsets
+      Language.Haskell.FreeTheorems.Intermediate
+      Language.Haskell.FreeTheorems.Unfold
+      Language.Haskell.FreeTheorems.PrettyBase
+      Language.Haskell.FreeTheorems.PrettyTypes
+      Language.Haskell.FreeTheorems.PrettyTheorems
+      Language.Haskell.FreeTheorems.Theorems.Simplify
+
+  hs-source-dirs: src
+
+  extensions:
+    Generics,
+    DeriveDataTypeable,
+    Rank2Types
+
+  if impl(ghc >= 6.10)
+    extensions: ScopedTypeVariables
+  else 
+    extensions: PatternSignatures
