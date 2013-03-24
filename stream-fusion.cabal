@@ -1,11 +1,11 @@
 Name:                stream-fusion
-Version:             0.1.2.4
+Version:             0.1.2.5
 Author:              Duncan Coutts, Don Stewart
-Maintainer:          none
+Maintainer:          duncan.coutts@worc.ox.ac.uk, dons00@gmail.com
 License:             BSD3
 License-file:        LICENSE
 Synopsis:            Faster Haskell lists using stream fusion
-Homepage:            http://www.cse.unsw.edu.au/~dons/streams.html
+Homepage:            http://hackage.haskell.org/trac/ghc/ticket/915
 Description:
         This package provides the standard Haskell list library
         reimplemented to allow stream fusion. This should in general
@@ -16,21 +16,20 @@ Description:
         and hide list functions from the Prelude.
 Category:            Data
 Build-Type:          Simple
-Cabal-Version:       >= 1.6
-Tested-with:         GHC==7.0.3
 Stability:           experimental
+Tested-with:         GHC==7.6.1
+cabal-version:       >= 1.6
 
 source-repository head
-   type: darcs
-   location: http://hub.darcs.net/shelarcy/stream-fusion
+  type: darcs
+  location: http://code.haskell.org/~dons/code/stream-fusion
 
 Library
   Build-Depends:     base >= 3 && < 5
   Exposed-modules:   Data.Stream
                      Data.List.Stream
                      Control.Monad.Stream
-  Extensions:        CPP, BangPatterns, ExistentialQuantification,
-                     MagicHash, TypeOperators
+  Extensions:        CPP, BangPatterns, ExistentialQuantification, MagicHash, TypeOperators
   cpp-options:       -DEXTERNAL_PACKAGE
   ghc-options:       -Odph
                      -fspec-constr
