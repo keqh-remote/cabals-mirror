@@ -1,5 +1,5 @@
 name:               network-metrics
-version:            0.1.6
+version:            0.1.7
 synopsis:           Send metrics to Ganglia, Graphite, and statsd.
 license:            OtherLicense
 license-file:       LICENSE
@@ -18,12 +18,8 @@ description:
     .
     Supported services are Ganglia, Graphite, and statsd.
     .
-    These modules are intended to be imported qualified, to avoid name
-    clashes with other modules, e.g.
-    .
-    > import qualified Network.Metrics.Ganglia  as A
-    > import qualified Network.Metrics.Graphite as B
-    > import qualified Network.Metrics.Statsd   as C
+    Please see <http://github.com/brendanhay/network-metrics/blob/master/README.md>
+    for further information and usage.
 
 extra-source-files: README.md
 
@@ -31,12 +27,14 @@ source-repository head
   type:     git
   location: git://github.com/brendanhay/network-metrics.git
 
+
 library
-  exposed-modules:  Network.Metrics
-                  , Network.Metrics.Ganglia
-                  , Network.Metrics.Graphite
-                  , Network.Metrics.Statsd
-  other-modules:    Network.Metrics.Internal
+  exposed-modules:  Network.Metric
+                  , Network.Metric.Sink.Ganglia
+                  , Network.Metric.Sink.Graphite
+                  , Network.Metric.Sink.Statsd
+                  , Network.Metric.Sink.Stdout
+  other-modules:    Network.Metric.Internal
 
   hs-source-dirs:   src
 
@@ -45,6 +43,8 @@ library
                     OverloadedStrings
                   , DeriveDataTypeable
                   , RecordWildCards
+                  , TypeSynonymInstances
+                  , FlexibleInstances
 
   ghc-options:      -Wall -O2 -rtsopts
   ghc-prof-options: -prof -auto-all
@@ -67,6 +67,8 @@ executable gmetric-haskell
                     OverloadedStrings
                   , DeriveDataTypeable
                   , RecordWildCards
+                  , TypeSynonymInstances
+                  , FlexibleInstances
 
   ghc-options:      -Wall -O2 -threaded -rtsopts
   ghc-prof-options: -prof -auto-all -with-rtsopts=-p
