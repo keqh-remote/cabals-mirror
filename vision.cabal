@@ -1,9 +1,9 @@
 name:               vision
-version:            0.0.4.0
+version:            0.0.5.0
 
 author:             Oleg Belozeorov
 maintainer:         Oleg Belozeorov <upwawet@gmail.com>
-copyright:          (C) 2010 Oleg Belozeorov
+copyright:          (C) 2010, 2011 Oleg Belozeorov
 license:            GPL-3
 license-file:       COPYING
 
@@ -20,14 +20,19 @@ build-type:         Simple
 extra-tmp-files:    config.status, config.log, autom4te.cache, hlint.out
 extra-source-files: configure.ac,
                     configure,
+                    src/Control/Monad/Makefile.in,
+                    src/Control/Concurrent/Makefile.in,
+                    src/Control/Concurrent/STM/Makefile.in,
+                    src/Control/Makefile.in,
+                    src/Playlist/Makefile.in,
+                    src/Playlist/Format/Makefile.in,
+                    src/Makefile.in,
                     src/Properties/Makefile.in,
                     src/Properties/Editor/Makefile.in,
-                    src/Makefile.in,
-                    src/Location/Makefile.in,
-                    src/Playlist/Format/Makefile.in,
-                    src/Playlist/Makefile.in,
-                    src/Collection/Makefile.in,
                     src/Collection/List/Makefile.in,
+                    src/Collection/Makefile.in,
+                    src/Data/Makefile.in,
+                    src/Location/Makefile.in,
                     Makefile.in,
                     ui/Makefile.in
 data-files:         ui/*.xml,
@@ -35,9 +40,9 @@ data-files:         ui/*.xml,
 
 executable vision
   main-is:          Vision.hs
-  other-modules:    Handler,
-                    Utils,
+  other-modules:    Utils,
                     Context,
+                    Registry,
                     XMMS,
                     Environment,
                     Medialib,
@@ -66,6 +71,7 @@ executable vision
                     Index,
                     Location,
                     Location.History,
+                    Location.PathComp,
                     Location.Model,
                     Location.View,
                     Location.DnD,
@@ -75,12 +81,15 @@ executable vision
                     Collection.List,
                     Collection.List.Model,
                     Collection.List.View,
+                    Collection.Actions,
+                    Collection.ScrollBox,
+                    Collection.PropFlt,
+                    Collection.Tracks,
+                    Collection.ComboModel,
+                    Collection.Combo,
+                    Collection.Select,
+                    Collection.Utils,
                     Collection.Common,
-                    Collection.Model,
-                    Collection.View,
-                    Collection.Control,
-                    Collection.DnD,
-                    Collection.UI,
                     Playlist,
                     Playlist.Model,
                     Playlist.View,
@@ -95,14 +104,21 @@ executable vision
                     Playlist.Format,
                     Playlist.Format.Format,
                     Playlist.Format.Parser,
-                    Playlist.Format.Config
+                    Playlist.Format.Config,
+                    Control.Concurrent.STM.TWatch,
+                    Control.Concurrent.STM.TGVar,
+                    Control.Concurrent.STM.Watch,
+                    Control.Monad.ToIO,
+                    Control.Monad.W,
+                    Control.Monad.EnvIO,
+                    Data.Env
   hs-source-dirs:   src
-  build-depends:    base >= 4 && < 5, xmms2-client >= 0.0.5.0,
-                    xmms2-client-glib >= 0.0.5.0,
+  build-depends:    base >= 4 && < 5, xmms2-client >= 0.0.7.0,
+                    xmms2-client-glib >= 0.0.7.0,
                     gtk, containers, mtl, utf8-string,
                     filepath, directory, glib, array,
-                    MonadCatchIO-mtl, json, parsec >= 3.0.1,
-                    url
+                    MonadCatchIO-transformers, json, parsec >= 3.0.1,
+                    url, stm, PSQueue
   extensions:       ImplicitParams, NoMonomorphismRestriction,
                     FlexibleContexts, FlexibleInstances,
                     TypeFamilies, ScopedTypeVariables,
@@ -118,4 +134,4 @@ source-repository head
 source-repository this
   type:             git
   location:         git://github.com/upwawet/vision.git
-  tag:              v0.0.4.0
+  tag:              v0.0.5.0
