@@ -1,5 +1,5 @@
 name:         wxdirect
-version:      0.12.1.1
+version:      0.12.1.2
 license:      BSD3
 license-file: LICENSE
 author:       Daan Leijen
@@ -13,18 +13,15 @@ description:
   works with wxWidgets 2.8 only.
 homepage:     http://haskell.org/haskellwiki/WxHaskell
 
-cabal-version: >= 1.2
+cabal-version: >= 1.8
 build-type:    Simple
-
-flag splitBase
-  description: Choose the new smaller, split-up base package.
 
 library
   hs-source-dirs:
     src
 
   build-depends:
-    base >= 3 && <= 5
+    base >= 4 && < 5
 
   exposed-modules:
     Application.Wxdirect
@@ -53,17 +50,11 @@ executable wxdirect
   hs-source-dirs:
     src
 
-  if flag(splitBase)
-    build-depends:
-      base       >= 3     && < 5,
-      containers >= 0.1   && < 0.3,
-      parsec     >= 2.1.0 && < 4,
-      time       >= 1.0   && < 1.2
-  else
-    build-depends:
-      base               < 3,
-      parsec >= 2.1   && < 4,
-      time   >= 1.0.0 && < 1.1
+  build-depends:
+    base       >= 4     && < 5,
+    containers >= 0.3   && < 0.4,
+    parsec     >= 2.1.0 && < 4,
+    time       >= 1.0   && < 1.2
 
 --  ghc-options: -Wall
   if impl(ghc >= 6.8)
