@@ -1,10 +1,11 @@
 Name:               altfloat
-Version:            0.2
+Version:            0.2.1
 License:            OtherLicense
 License-File:       LICENSE
 Cabal-Version:      >= 1.2
 Author:             Nick Bowler
 Maintainer:         nbowler@draconx.ca
+Homepage:           http://repo.or.cz/w/altfloat.git
 Stability:          experimental
 Category:           Numerical
 Build-Type:         Simple
@@ -49,8 +50,23 @@ Description:
     which includes features from this library and the non-overlapping parts of
     the standard Prelude.
 
+Flag SplitInteger
+    Description: Use the new split integer packages that come with GHC 6.12.
+
+Flag IntegerGmp
+    Description: Use the integer-gmp package as opposed to integer-simple.
+
 Library
-    Build-Depends: base >= 4 && < 5, ghc-prim, integer
+    Build-Depends: base >= 4 && < 5, ghc-prim
+
+    if flag(SplitInteger)
+        if flag(IntegerGmp)
+            Build-Depends: integer-gmp
+        else
+            Build-Depends: integer-simple
+    else
+        Build-Depends: integer
+
     C-Sources: cfloat.c
     Exposed-Modules:
         Data.Floating.CMath,
