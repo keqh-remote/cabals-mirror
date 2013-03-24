@@ -1,5 +1,5 @@
 name:         monads-tf
-version:      0.0.0.0
+version:      0.0.0.1
 license:      BSD3
 license-file: LICENSE
 cabal-version: >= 1.2.3
@@ -37,7 +37,7 @@ exposed-modules:
     Control.Monad.Writer.Class
     Control.Monad.Writer.Lazy
     Control.Monad.Writer.Strict
-build-depends: base, transformers
+build-depends: base, transformers >= 0.1.4.0
 extensions:
     FlexibleContexts
     TypeFamilies
