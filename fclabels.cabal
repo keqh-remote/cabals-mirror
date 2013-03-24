@@ -1,5 +1,5 @@
 name:            fclabels
-version:         0.1.2
+version:         0.2.0
 author:          Sebastiaan Visser, Erik Hesselink
 synopsis:        First class record labels
 description:     First class labels for records, with combinators, allowing
@@ -16,3 +16,4 @@ exposed-modules: Data.Record.Label
 other-modules:   Data.Record.Label.TH
 
 build-depends:   base >= 3 && < 5, template-haskell >= 2.2 && < 2.4, monads-fd ==0.0.*
+
