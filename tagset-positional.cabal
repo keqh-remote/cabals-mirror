@@ -1,5 +1,5 @@
 name:               tagset-positional
-version:            0.1.1
+version:            0.2.0
 synopsis:           Positional tags and tagsets
 description:
     The library provides printing and parsing functions for positional
@@ -21,10 +21,11 @@ library
       , containers
       , parsec
       , text
+      , binary
+      , text-binary >= 0.1 && < 0.2
 
     exposed-modules:
         Data.Tagset.Positional
-      , Text.Tagset.Positional
 
     ghc-options: -Wall
 
