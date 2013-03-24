@@ -1,5 +1,5 @@
 Name:           idris
-Version:        0.9.2.1
+Version:        0.9.3
 License:        BSD3
 License-file:   LICENSE
 Author:         Edwin Brady
@@ -40,8 +40,12 @@ Description:    Idris is a general purpose language with full dependent types.
 Cabal-Version:  >= 1.6
 Build-type:     Custom
 
+Data-files:            rts/libidris_rts.a rts/idris_rts.h rts/idris_gc.h
+                       rts/idris_stdfgn.h rts/idris_main.c rts/idris_gmp.h
 Extra-source-files:    lib/Makefile  lib/*.idr lib/prelude/*.idr lib/network/*.idr
-                       lib/control/monad/*.idr tutorial/examples/*.idr
+                       lib/control/monad/*.idr lib/language/*.idr
+                       tutorial/examples/*.idr
+                       rts/*.c rts/*.h rts/Makefile
 
 source-repository head
   type:     git
@@ -56,7 +60,8 @@ Executable     idris
                               Core.ShellParser, Core.Unify, Core.Elaborate,
                               Core.CaseTree, Core.Constraints,
 
-                              Idris.AbsSyntax, Idris.Parser, Idris.REPL,
+                              Idris.AbsSyntax, Idris.AbsSyntaxTree,
+                              Idris.Parser, Idris.REPL,
                               Idris.REPLParser, Idris.ElabDecls, Idris.Error,
                               Idris.Delaborate, Idris.Primitives, Idris.Imports,
                               Idris.Compiler, Idris.Prover, Idris.ElabTerm,
@@ -65,13 +70,16 @@ Executable     idris
 
                               Util.Pretty,
 
+                              IRTS.Lang, IRTS.LParser, IRTS.Bytecode, IRTS.Simplified,
+                              IRTS.CodegenC, IRTS.Defunctionalise, IRTS.Compiler,
+
                               Paths_idris
 
-               Build-depends:   base>=4 && <5, parsec, mtl, Cabal, haskeline,
+               Build-depends:   base>=4 && <5, parsec, mtl, Cabal, haskeline<0.7,
                                 containers, process, transformers, filepath, directory,
-                                binary, bytestring, epic>=0.9.3, pretty
+                                binary, bytestring, pretty
                                 
                Extensions:      MultiParamTypeClasses, FunctionalDependencies,
                                 FlexibleInstances, TemplateHaskell
-               ghc-prof-options: -auto-all
+               ghc-prof-options: -auto-all -caf-all
                ghc-options: -rtsopts
