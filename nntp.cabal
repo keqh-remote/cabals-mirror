@@ -1,6 +1,6 @@
 Name:               nntp
-Version:            0.0.2.1
-Cabal-Version:      >= 1.2
+Version:            0.0.3
+Cabal-Version:      >= 1.6
 Build-Type:         Simple
 License:            LGPL
 License-File:       LICENSE
@@ -12,6 +12,10 @@ Synopsis:           Library to connect to an NNTP Server
 Description:        This library allows to connect to NNTP server.
 Category:           Network
 
+Source-Repository head
+  Type:             darcs
+  Location:         http://code.haskell.org/nntp
+
 Library
   Exposed-Modules: Network.NNTP,
                    Network.NNTP.Common,
@@ -20,6 +24,7 @@ Library
                    Network.NNTP.ParserHelpers
   Build-Depends:   base < 5 && >= 4,
                    bytestring,
+                   monad-loops,
                    mtl,
                    network,
                    old-locale,
