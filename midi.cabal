@@ -1,5 +1,5 @@
 Name:             midi
-Version:          0.1.1
+Version:          0.1.2
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -29,6 +29,7 @@ Flag buildTests
 
 Library
   Build-Depends: event-list >=0.0.6 && < 0.1, non-negative>=0.0.1 && <0.1
+  Build-Depends: explicit-exception >=0.0.1 && <0.1
   Build-Depends: bytestring >=0.9.0.1 && <0.10, binary >=0.4.2 && <0.5
   Build-Depends: mtl >=1 && <2, QuickCheck >=1 && <2
   If flag(splitBase)
@@ -66,7 +67,8 @@ Library
     -- Parser class and general parser functions
     Sound.MIDI.Parser.Class
     Sound.MIDI.Parser.Restricted
-    Sound.MIDI.Parser.State
+    Sound.MIDI.Parser.Exception
+    Sound.MIDI.Parser.Warning
     Sound.MIDI.Parser.Primitive
     Sound.MIDI.Parser.Status
     -- concrete Parsers
