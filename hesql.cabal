@@ -1,5 +1,5 @@
 Name: hesql
-Version: 0.7
+Version: 0.8
 Author: Christoph Bauer <ich@christoph-bauer.net>
 Maintainer: Christoph Bauer <ich@christoph-bauer.net>
 Cabal-Version: >= 1.2
@@ -14,8 +14,8 @@ license-file: GPL
 Executable hesql
   Main-is: HESQL.hs
   Build-depends: base >= 4 && < 5, HDBC, HDBC-postgresql, haskell-src,
-                 filepath, parsec, hssqlppp >= 0.0.10
+                 filepath, parsec, hssqlppp >= 0.1.0 && < 0.2.0
   Extensions: FlexibleContexts
-  Ghc-Options: -funbox-strict-fields -Wall
+  Ghc-Options: -funbox-strict-fields -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing
   Other-Modules: HESQL.Parser, HESQL.Translator, HESQL.Syntax,
                  HESQL.Verifier, HESQL.Options
