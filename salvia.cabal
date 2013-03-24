@@ -1,5 +1,5 @@
 Name:             salvia
-Version:          0.0.4
+Version:          0.0.5
 Description:      Lightweight Haskell Web Server Framework
 Synopsis:         Lightweight Haskell Web Server Framework 
 Category:         Network, Web
@@ -14,6 +14,7 @@ Build-Depends:    base,
                   clevercss,
                   containers,
                   directory,
+                  nano-md5,
                   encoding,
                   filepath,
                   hscolour,
@@ -22,6 +23,7 @@ Build-Depends:    base,
                   old-locale,
                   parsec,
                   process,
+                  template-haskell >= 2.2,
                   random,
                   stm,
                   time,
@@ -30,8 +32,10 @@ GHC-Options:      -threaded -Wall -fno-warn-orphans
 Extensions:       CPP
 HS-Source-Dirs:   src
 Other-modules:    Misc.Misc,
-                  Misc.Terminal
-Exposed-modules:  Network.Protocol.Cookie,
+                  Misc.Terminal,
+                  Data.Record.Label.TH
+Exposed-modules:  Data.Record.Label,
+                  Network.Protocol.Cookie,
                   Network.Protocol.Http,
                   Network.Protocol.Mime,
                   Network.Protocol.Uri,
