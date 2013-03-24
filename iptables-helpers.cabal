@@ -1,5 +1,5 @@
 Name:                iptables-helpers
-Version:             0.4
+Version:             0.4.1
 Synopsis:            Static checking of iptables rules
 License:             BSD3
 License-file:        LICENSE
@@ -23,7 +23,7 @@ Library
                     parsec >= 2.1,
                     mtl >= 1.1,
                     safe >= 0.3,
-                    containers >= 0.3 && < 0.4
+                    containers >= 0.4 && < 0.6
 
   -- Other-modules:
 
