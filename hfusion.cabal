@@ -1,5 +1,5 @@
 name:       hfusion
-version:    0.0.5
+version:    0.0.5.1
 build-type: Simple
 cabal-version:  >= 1.6
 license:    BSD3
@@ -21,7 +21,8 @@ library
   exposed-modules:
     HFusion.HFusion, HFusion.CHANGELOG
   other-modules:
-    HFusion.Internal.HyloFace
+    HFusion.Internal.Compositions
+    ,HFusion.Internal.HyloFace
     ,HFusion.Internal.HyloRep
     ,HFusion.Internal.ShowHyloRep
     ,HFusion.Internal.FsDeriv
@@ -46,5 +47,5 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://www.fing.edu.uy/inco/proyectos/fusion/darcs/hfusion/
-  tag:      0.0.5
+  tag:      0.0.5.1
 
