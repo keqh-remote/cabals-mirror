@@ -1,5 +1,5 @@
 Name:          dnscache
-Version:       0.1.1
+Version:       0.1.2
 Category:      Network
 Synopsis:      Caching DNS resolver library and mass DNS resolver utility
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -19,7 +19,7 @@ Library
     Build-depends:
         base >= 4 && <= 5,
         containers >= 0.3.0.0,
-        contstuff >= 0.7.0,
+        contstuff >= 1.0.0,
         dns >= 0.1.0,
         iproute >= 1.2.0,
         time >= 1.1.4
