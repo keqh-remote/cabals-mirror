@@ -1,5 +1,5 @@
 name:            subtitleParser
-version:         0.3
+version:         0.4
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
@@ -17,6 +17,11 @@ description:
 extra-source-files:
     LICENSE
     THANKS
+    CHANGELOG
+    test/TestSUB.hs
+    test/example.srt
+    test/example.sub
+    test/TestSRT.hs
 
 Flag developer
   Description: Whether to build the library in development mode
