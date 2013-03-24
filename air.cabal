@@ -1,5 +1,5 @@
 Name:                 air
-Version:              2011.6.18
+Version:              2011.6.19
 Build-type:           Simple
 Synopsis:             air
 Description:          An alternative Haskell Prelude library.
@@ -24,10 +24,9 @@ library
                 , directory
                 , filepath
                 , template-haskell
-                , monoid-owns
-                , data-default
                 , dlist
                 , mtl
+                , time
 
   hs-source-dirs: src/
 
@@ -39,7 +38,10 @@ library
                   , Air.TH.Default
                   , Air.TH.Air
                   , Air.TH
+                  , Air.SimpleMath
                   , Air.Control.Monad.ListBuilder
                   , Air.Control.Monad.ObjectBuilder
                   , Air.Data.Record.SimpleLabel
                   , Air.Data.Record.SimpleLabel.TH
+                  , Air.Data.Default
+                  , Air.Data.Monoid
