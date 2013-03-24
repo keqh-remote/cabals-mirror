@@ -1,5 +1,5 @@
 name:           som
-version:        2.0
+version:        3.0
 synopsis:       Self-Organising Maps
 description:    A Kohonen Self-organising Map (SOM) maps input patterns 
                 onto a regular grid (usually two-dimensional) where each
@@ -11,6 +11,13 @@ description:    A Kohonen Self-organising Map (SOM) maps input patterns
                 .
                 In layman's terms, a SOM can be useful when you you want
                 to discover the underlying structure of some data.
+                .
+                The userguide is available at 
+                <https://github.com/mhwombat/som/wiki>.
+                .
+                NOTE: Version 3.0 changed the order of parameters
+                for many functions. This makes it easier for the user
+                to write mapping and folding operations.
 category:       Math
 
 cabal-version:  >=1.8
@@ -28,7 +35,7 @@ library
                    base-unicode-symbols ==0.2.*,
                    binary == 0.5.*,
                    containers ==0.4.2.* || ==0.5.*,
-                   grid ==3.*,
+                   grid ==4.*,
                    MonadRandom ==0.1.*
   ghc-options:     -Wall
   exposed-modules: Data.Datamining.Clustering.SOM,
@@ -41,7 +48,7 @@ test-suite som-tests
                    QuickCheck == 2.5.*,
                    test-framework == 0.8.*,
                    som,
-                   grid ==3.*,
+                   grid ==4.*,
                    base-unicode-symbols ==0.2.*,
                    MonadRandom ==0.1.*,
                    random ==1.0.*
