@@ -1,5 +1,5 @@
 Name:          Bitly
-Version:       0.0.3
+Version:       0.0.4
 Cabal-version: >= 1.2
 Build-type:    Simple
 
@@ -39,13 +39,13 @@ Library
   Build-depends:
                  base >= 3 && < 5
                , HTTP >= 4000
-               , HaXml
+               , HaXml < 1.14
   Exposed-modules: Network.Bitly
 
 Executable bitly
   Main-is:     bitly.hs
   Build-depends:
-                 filepath
-               , directory
-               , regexpr
+                 filepath >= 1.1
+               , directory >= 1.0 && < 1.0.1
+               , regexpr >= 0.5
 
