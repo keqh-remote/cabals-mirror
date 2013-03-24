@@ -1,5 +1,5 @@
 name:           unordered-containers
-version:        0.2.2.1
+version:        0.2.3.0
 synopsis:       Efficient hashing-based container types
 description:
   Efficient hashing-based container types.  The containers have been
@@ -59,7 +59,7 @@ test-suite hashmap-lazy-properties
 
   build-depends:
     base,
-    containers >= 0.4.1,
+    containers >= 0.4,
     hashable >= 1.0.1.1,
     QuickCheck >= 2.4.0.1,
     test-framework >= 0.3.3,
@@ -76,7 +76,7 @@ test-suite hashmap-strict-properties
 
   build-depends:
     base,
-    containers >= 0.4.1,
+    containers >= 0.4,
     hashable >= 1.0.1.1,
     QuickCheck >= 2.4.0.1,
     test-framework >= 0.3.3,
@@ -93,7 +93,7 @@ test-suite hashset-properties
 
   build-depends:
     base,
-    containers >= 0.4.2,
+    containers >= 0.4,
     hashable >= 1.0.1.1,
     QuickCheck >= 2.4.0.1,
     test-framework >= 0.3.3,
@@ -112,8 +112,28 @@ test-suite regressions
     base,
     hashable >= 1.0.1.1,
     HUnit,
+    QuickCheck >= 2.4.0.1,
     test-framework >= 0.3.3,
     test-framework-hunit,
+    test-framework-quickcheck2,
+    unordered-containers
+
+  ghc-options: -Wall
+  cpp-options: -DASSERTS
+
+test-suite strictness-properties
+  hs-source-dirs: tests
+  main-is: Strictness.hs
+  type: exitcode-stdio-1.0
+
+  build-depends:
+    base,
+    ChasingBottoms,
+    containers >= 0.4.2,
+    hashable >= 1.0.1.1,
+    QuickCheck >= 2.4.0.1,
+    test-framework >= 0.3.3,
+    test-framework-quickcheck2 >= 0.2.9,
     unordered-containers
 
   ghc-options: -Wall
