@@ -7,16 +7,16 @@ Name:                egison
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.1.1
 
 -- A short (one-line) description of the package.
-Synopsis:            Programming Language Egison
+Synopsis:            An Interpreter for the Programming Language Egison
 
 -- A longer description of the package.
-Description:         Feature of this programming language is the strong
-                     pattern match facility. This package include sample Egison programming
-                     codes "*-test.egi" in "sample/" directory. You can download ELisp file
-                     "egison-mode.el" from the home page of Egison.
+Description:         An interpreter for the programming language Egison.
+                     A eature of Egison is the strong pattern match facility.
+                     This package include sample Egison program codes "*-test.egi" in "etc/sample/" directory.
+                     This package also include Emacs Lisp file "egison-mode.el" in "etc/elisp/" directory.
 
 -- URL for the project homepage or repository.
 Homepage:            http://hagi.is.s.u-tokyo.ac.jp/~egi/egison/
@@ -41,16 +41,16 @@ Category:            Compilers/Interpreters
 
 Build-type:          Simple
 
-Data-Dir:            sample
+Data-Dir:            etc/
 
-Data-files:          nat-test.egi list-test.egi
+Data-files:          sample/nat-test.egi sample/list-test.egi elisp/egison-mode.el
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
 -- Extra-source-files:  
 
 -- Constraint on the version of Cabal needed to build this package.
-Cabal-version:       >=1.4
+Cabal-version:       >=1.6
 
 
 Executable egison
@@ -65,4 +65,7 @@ Executable egison
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
-  
+
+Source-Repository head
+  type:           git
+  location:       https://github.com/egisatoshi/egison
