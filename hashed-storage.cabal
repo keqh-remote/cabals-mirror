@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.3.3.2
+version:       0.3.4
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -57,7 +57,7 @@ library
 
     c-sources: Bundled/sha2.c
 
-    extensions: PatternSignatures
+    extensions: PatternSignatures, NoMonomorphismRestriction
 
 executable hashed-storage-test
     if impl(ghc >= 6.8)
@@ -72,7 +72,10 @@ executable hashed-storage-test
     c-sources: Bundled/sha2.c
 
     if flag(test)
-      build-depends: HUnit, process >= 1.0.1
+      build-depends: test-framework,
+                     test-framework-hunit,
+                     test-framework-quickcheck,
+                     QuickCheck, HUnit, process >= 1.0.1
     else
       buildable: False
 
