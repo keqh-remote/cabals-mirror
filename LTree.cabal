@@ -1,5 +1,5 @@
 Name:          LTree
-Version:       0.0
+Version:       0.1
 Cabal-Version: >=1.6
 Synopsis:   Tree with only leaves carrying the data.
 Description:
@@ -19,7 +19,7 @@ Stability:     experimental
 
 Library
   Build-Depends:    base >= 2 && < 5, transformers
-  Exposed-Modules:  Data.Trees.LTree
+  Exposed-Modules:  Data.Trees.LTree, Control.Trees.LTreeT
 
 Source-Repository head
   type:     darcs
