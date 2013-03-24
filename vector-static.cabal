@@ -1,5 +1,5 @@
 Name:           vector-static
-Version:        0.1.1
+Version:        0.1.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Daniel Peebles <pumpkingod@gmail.com>
@@ -13,8 +13,17 @@ Description:
         Very unstable! Many interfaces are still incomplete or even empty. 
         Nat and Fin will be moving to a separate package eventually.
 
-Cabal-Version:  >= 1.2
+Cabal-Version:  >= 1.6
 Build-Type:     Simple
+
+Source-Repository head
+  Type:     git
+  Location: git://github.com/geezusfreeek/vector-static.git
+
+Source-Repository this
+  Type:     git
+  Location: git://github.com/geezusfreeek/vector-static.git
+  Tag:      v0.1.2
 
 Library
   Exposed-Modules:
