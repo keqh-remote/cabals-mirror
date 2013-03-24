@@ -7,7 +7,7 @@ Name:                hbayes
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.2.1
+Version:             0.3
 
 -- A short (one-line) description of the package.
 Synopsis:            Inference with Discrete Bayesian Networks
@@ -15,7 +15,8 @@ Synopsis:            Inference with Discrete Bayesian Networks
 -- A longer description of the package.
 Description:  Algorithms for inference with Discrete Bayesian Networks.  
  It is a very preliminary version. It has only been tested on very simple
- examples where it worked. This 0.2.1 version is using new faster and cleaner algorithms and correcting a problem with graph triangulation.
+ examples where it worked. It should be considered as experimental and not used
+ in any production work.
 
 -- URL for the project homepage or repository.
 Homepage:            http://www.alpheccar.org
@@ -34,7 +35,9 @@ Author:              alpheccar
 Maintainer:          misc@alpheccar.org
 
 -- A copyright notice.
-Copyright: Copyright (c) 2012, alpheccar       
+Copyright: Copyright (c) 2012, alpheccar 
+
+Stability: experimental      
 
 Category:            Math
 
@@ -61,6 +64,8 @@ Library
   Exposed-modules:
     Bayes
     Bayes.Factor
+    Bayes.Factor.CPT
+    Bayes.Factor.MaxCPT
     Bayes.ImportExport.HuginNet
     Bayes.VariableElimination
     Bayes.FactorElimination
@@ -74,8 +79,10 @@ Library
     Bayes.ImportExport.HuginNet.Splitting
     Bayes.PrivateTypes
     Bayes.FactorElimination.JTree
+    Bayes.Tools
+    Bayes.Factor.PrivateCPT
 
-  GHC-Options: -O2 -funbox-strict-fields
+  GHC-Options: -funbox-strict-fields
   Extensions: CPP
   if flag(local)
     cpp-options: -DLOCAL
