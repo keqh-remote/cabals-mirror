@@ -1,5 +1,5 @@
 name:            mersenne-random
-version:         0.1.1
+version:         0.1.2
 homepage:        http://code.haskell.org/~dons/code/mersenne-random
 synopsis:        Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 description:
@@ -101,7 +101,7 @@ library
 
     ghc-options:     -Wall -O2 -fvia-C -fexcess-precision
 
-    c-sources:        cbits/SFMT.c
+    c-sources:        cbits/SFMT.c cbits/SFMT_wrap.c
     include-dirs:     include
-    includes:         SFMT.h
+    includes:         SFMT.h SFMT_wrap.h
     install-includes: SFMT.h
