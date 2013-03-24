@@ -1,5 +1,5 @@
 name:                rpc
-version:             0.0.0
+version:             0.0.1
 synopsis:            type safe rpcs provided as basic IO actions
 description:         Given an address of a server sharing a set of functions,
                      this rpc library generates functions of the same name for
@@ -15,3 +15,4 @@ maintainer:          amsay@amsay.net
 build-type:          Simple
 build-depends:       base >= 3 && < 5, network-fancy < 1, cereal < 1, th-lift < 1, derive < 3, bytestring < 1, template-haskell < 3, containers < 1
 exposed-modules:     Data.Serialize.Send, Network.RPC.Client, Network.RPC.Server
+other-modules:       Network.RPC.Types
