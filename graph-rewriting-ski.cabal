@@ -1,5 +1,5 @@
 Name:           graph-rewriting-ski
-Version:        0.4.3
+Version:        0.4.4
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -11,8 +11,10 @@ Synopsis:       Implementation of the SKI combinators as an interactive graph re
 Description:
 	This package serves as an example for how to use the graph-rewriting, graph-rewriting-layout, and graph-rewriting-gl packages to create a graph rewriting system with an interactive, graphical front-end. The sources are well documented and can used as a tutorial for implementing your own rewrite system. Start reading in Graph.hs
 Category:       Graphs, Application
-Extensions:     UnicodeSyntax
 Cabal-Version:  >= 1.6
+
+Executable:     ski
+Main-Is:        Main.hs
 Build-Depends:
 	base >= 4 && < 4.3,
 	base-unicode-symbols >= 0.2 && < 0.3,
@@ -23,9 +25,6 @@ Build-Depends:
 	GLUT >= 2.2 && < 2.3,
 	OpenGL >= 2.4 && < 2.5,
 	IndentParser >= 0.2 && < 0.3
-
-Executable:     ski
-Main-Is:        Main.hs
 Extensions:
 	UnicodeSyntax
 	FlexibleInstances
