@@ -1,9 +1,9 @@
 Name:                   hsp
-Version:                0.6.1
+Version:                0.7.0
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg, Joel Bjornson
-Maintainer:             Niklas Broberg <niklas.broberg@chalmers.se>
+Maintainer:             Niklas Broberg <niklas.broberg@gmail.com>
 
 Stability:              Experimental
 Category:               Web, Language
@@ -18,15 +18,19 @@ Description:            Haskell Server Pages (HSP) is an extension of vanilla Ha
                         * A cgi-handler utility (as a separate package, hsp-cgi)
                         .
                         For details on usage, please see the website, and the author's thesis.
-Homepage:               http://code.haskell.org/HSP/hsp
+Homepage:               http://patch-tag.com/r/nibro/hsp
 Build-Type:             Simple
-Cabal-Version:          >= 1.2.3
+Cabal-Version:          >= 1.6
 Tested-With:            GHC==6.8.3, GHC==6.10, GHC==7.0.2
+
+source-repository head
+    type:     darcs
+    location: http://patch-tag.com/r/nibro/hsp
 
 Flag base4
 
 Library
-  Build-Depends:        base >3 && < 5, mtl, harp, hsx>=0.7.0, HJScript>=0.5.0, text
+  Build-Depends:        base >3 && < 5, mtl, harp, hsx>=0.10.0 && < 0.11, HJScript>=0.6.0, text
   if flag(base4)
     Build-depends:      base >= 4 && < 5
     cpp-options:        -DBASE4
