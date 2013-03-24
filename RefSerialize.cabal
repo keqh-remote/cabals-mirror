@@ -1,5 +1,5 @@
 name:                RefSerialize
-version:             0.2.8
+version:             0.2.8.1
 synopsis:            Write to and read from Strings maintaining internal memory references
 description:
                      Read, Show and Data.Binary do not check for internal data references to the same address.
@@ -26,6 +26,8 @@ description:
                      See demo.hs and tutorial.
                      .
                      in this release:
+                            .
+                            * 0.2.8.1 fixed problem with showHex  Show constraint in the latter version of Numeric
                             .
                             * Serialization instance now includes an internal wiriter
                             .
