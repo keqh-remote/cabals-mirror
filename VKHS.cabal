@@ -1,6 +1,6 @@
 
 name:                VKHS
-version:             0.1.2
+version:             0.1.3
 synopsis:            Provides access to Vkontakte social network, popular in Russia
 description:
     Provides access to Vkontakte API methods. Library requires no interaction
