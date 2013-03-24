@@ -1,5 +1,5 @@
 name:           uAgda
-version:        1.2.0.3
+version:        1.2.0.4
 category:       Dependent Types
 synopsis:       A simplistic dependently-typed language with parametricity.
 description:
@@ -32,6 +32,7 @@ executable uAgda
   main-is: Main.hs
 
   other-modules:
+     Cubes
      Permutation
      AbsSynToTerm
      Basics
