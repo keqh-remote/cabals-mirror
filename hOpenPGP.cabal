@@ -1,5 +1,5 @@
 Name:                hOpenPGP
-Version:             0.5
+Version:             0.5.1
 Synopsis:            native Haskell implementation of OpenPGP (RFC4880)
 Description:         native Haskell implementation of OpenPGP (RFC4880)
 Homepage:            http://floss.scru.org/hOpenPGP/
@@ -126,15 +126,15 @@ Library
                      , Data.Conduit.OpenPGP.Verify
   Other-Modules: Codec.Encryption.OpenPGP.Internal
                , Codec.Encryption.OpenPGP.SerializeForSigs
-  Build-depends: asn1-data
+  Build-depends: asn1-data             > 0.7
                , attoparsec
                , base                  > 4       && < 5
                , base64-bytestring
                , bytestring
                , bzlib
                , cereal
-               , cereal-conduit        >= 0.5    && < 0.6
-               , conduit               > 0.4     && < 0.5
+               , cereal-conduit        >= 0.6    && < 0.7
+               , conduit               >= 0.5    && < 0.6
                , containers
                , cryptocipher
                , cryptohash
@@ -150,15 +150,15 @@ Test-Suite tests
   type:       exitcode-stdio-1.0
   main-is:    tests/suite.hs
   Ghc-options: -Wall
-  Build-depends: asn1-data
+  Build-depends: asn1-data             > 0.7
                , attoparsec
                , base                  > 4       && < 5
                , base64-bytestring
                , bytestring
                , bzlib
                , cereal
-               , cereal-conduit        >= 0.5    && < 0.6
-               , conduit               > 0.4     && < 0.5
+               , cereal-conduit        >= 0.6    && < 0.7
+               , conduit               >= 0.5    && < 0.6
                , containers
                , cryptocipher
                , cryptohash
@@ -171,7 +171,7 @@ Test-Suite tests
                , test-framework
                , test-framework-hunit
                , exception-transformers > 0.3 && < 0.4
-               , resourcet > 0.3 && < 0.4
+               , resourcet              > 0.4 && < 0.5
   default-language: Haskell2010
 
 source-repository head
