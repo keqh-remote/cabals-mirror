@@ -1,5 +1,5 @@
 Name:      biocore
-Version:   0.1
+Version:   0.2
 License:   LGPL
 
 Cabal-Version:       >= 1.6
@@ -16,6 +16,10 @@ Description:	     A set of core definitions and data structures
 Tested-With:         GHC==6.12.3
 Build-Type:          Simple
 -- Data-Files:
+
+Source-repository head
+  Type:     darcs
+  Location: http://malde.org/~ketil/biohaskell/biocore/
 
 Library
   Build-Depends:     base >= 3 && < 5, bytestring
