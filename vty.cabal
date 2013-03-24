@@ -1,5 +1,5 @@
 Name:                vty
-Version:             4.4.0.0
+Version:             4.4.0.0.1
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear, Corey O'Connor
@@ -12,7 +12,7 @@ Description:
   confusing corner cases, and good support for common terminal types.
   .
   Included in the source distribution is a program test/interactive_terminal_test.hs that
-  demonstrates the various features. 
+  demonstrates the various features.
   .
   If your terminal is not behaving as expected the results of the test/interactive_terminal_test.hs
   program should be sent to the Vty maintainter to aid in debugging the issue.
@@ -25,6 +25,10 @@ Description:
   &#169; 2006-2007 Stefan O'Rear; BSD3 license.
   .
   &#169; 2008-2010 Corey O'Connor; BSD3 license.
+  .
+  NOTE: This version is identical to 4.4.0.0 except that the restriction
+  on vector-space 0.5.* has been lifted; i.e. nothing has changed except
+  the Cabal file.
 
 Build-Depends:       base >= 4 && < 5, bytestring, containers, unix
 Build-Depends:       terminfo >= 0.3 && < 0.4
@@ -33,7 +37,7 @@ Build-Depends:       mtl >= 1.1.0.0 && < 1.2
 Build-Depends:       ghc-prim, parallel >= 2.2 && < 2.3, deepseq >= 1.1 && < 1.2
 Build-Depends:       array
 Build-Depends:       parsec >= 2 && < 4
-Build-Depends:       vector-space >= 0.5 && < 0.6
+Build-Depends:       vector-space >= 0.5 && < 0.8
 Build-Type:          Simple
 Data-Files:          README, TODO
 Exposed-Modules:     Graphics.Vty
