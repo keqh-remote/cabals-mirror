@@ -1,5 +1,5 @@
 name:            attoparsec
-version:         0.10.1.1
+version:         0.10.2.0
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
@@ -17,15 +17,17 @@ description:
     efficiently with network protocols and complicated text/binary
     file formats.
 extra-source-files:
+    README.markdown
+    benchmarks/Benchmarks.hs
     benchmarks/Makefile
-    benchmarks/med.txt.bz2
     benchmarks/Tiny.hs
+    benchmarks/attoparsec-benchmarks.cabal
+    benchmarks/med.txt.bz2
     examples/Makefile
     examples/Parsec_RFC2616.hs
-    examples/rfc2616.c
     examples/RFC2616.hs
     examples/TestRFC2616.hs
-    README.markdown
+    examples/rfc2616.c
     tests/Makefile
     tests/QC.hs
     tests/QC/*.hs
@@ -61,7 +63,7 @@ library
                    Data.Attoparsec.Internal.Types
                    Data.Attoparsec.Text.FastSet
                    Data.Attoparsec.Text.Internal
-  ghc-options:     -Wall
+  ghc-options: -O2 -Wall
 
   if flag(developer)
     ghc-prof-options: -auto-all
