@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.8.1.2
+Version:         1.8.2
 Cabal-Version:   >= 1.6
 Build-Type:      Custom
 License:         GPL
@@ -11,7 +11,7 @@ Bug-Reports:     https://github.com/jgm/pandoc/issues
 Stability:       alpha
 Homepage:        http://johnmacfarlane.net/pandoc
 Category:        Text
-Tested-With:     GHC == 6.10.4, GHC == 6.12.1, GHC == 6.12.3, GHC == 7.0.1
+Tested-With:     GHC == 6.12.3, GHC == 7.0.3
 Synopsis:        Conversion between markup formats
 Description:     Pandoc is a Haskell library for converting from one markup
                  format to another, and a command-line tool that uses
@@ -37,14 +37,14 @@ Description:     Pandoc is a Haskell library for converting from one markup
                  only adding a reader or writer.
 Data-Files:
                  -- templates
-                 templates/html.template, templates/docbook.template,
-                 templates/opendocument.template, templates/latex.template,
-                 templates/context.template, templates/texinfo.template,
-                 templates/man.template, templates/markdown.template,
-                 templates/rst.template, templates/plain.template,
-                 templates/mediawiki.template, templates/rtf.template,
-                 templates/s5.template, templates/slidy.template,
-                 templates/textile.template, templates/org.template
+                 templates/default.html, templates/default.docbook,
+                 templates/default.opendocument, templates/default.latex,
+                 templates/default.context, templates/default.texinfo,
+                 templates/default.man, templates/default.markdown,
+                 templates/default.rst, templates/default.plain,
+                 templates/default.mediawiki, templates/default.rtf,
+                 templates/default.s5, templates/default.slidy,
+                 templates/default.textile, templates/default.org
                  -- data for ODT writer
                  reference.odt,
                  -- stylesheet for EPUB writer
@@ -53,8 +53,7 @@ Data-Files:
                  data/LaTeXMathML.js,
                  data/MathMLinHTML.js,
                  -- data for S5 writer
-                 s5/default/slides.js.comment,
-                 s5/default/slides.js.packed,
+                 s5/default/slides.min.js,
                  s5/default/s5-core.css,
                  s5/default/framing.css,
                  s5/default/pretty.css,
@@ -62,7 +61,7 @@ Data-Files:
                  s5/default/outline.css,
                  s5/default/print.css,
                  -- data for slidy writer
-                 slidy/slidy.min.css,
+                 slidy/slidy.css,
                  slidy/slidy.min.js,
                  -- data for citeproc
                  default.csl,
@@ -208,10 +207,11 @@ Library
                  random >= 1 && < 1.1,
                  extensible-exceptions >= 0.1 && < 0.2,
                  citeproc-hs >= 0.3.1 && < 0.4,
-                 pandoc-types == 1.8.*,
+                 pandoc-types == 1.8.0.2,
                  json >= 0.4 && < 0.5,
                  dlist >= 0.4 && < 0.6,
-                 tagsoup >= 0.12 && < 0.13
+                 tagsoup >= 0.12 && < 0.13,
+                 base64-bytestring >= 0.1 && < 0.2
   if impl(ghc >= 6.10)
     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
   else
@@ -262,6 +262,7 @@ Library
                    Text.Pandoc.Biblio
   Other-Modules:   Text.Pandoc.XML,
                    Text.Pandoc.UTF8,
+                   Text.Pandoc.MIME,
                    Text.Pandoc.UUID,
                    Paths_pandoc
 
@@ -292,10 +293,11 @@ Executable pandoc
                  random >= 1 && < 1.1,
                  extensible-exceptions >= 0.1 && < 0.2,
                  citeproc-hs >= 0.3.1 && < 0.4,
-                 pandoc-types == 1.8.*,
+                 pandoc-types == 1.8.0.2,
                  json >= 0.4 && < 0.5,
                  dlist >= 0.4 && < 0.6,
-                 tagsoup >= 0.12 && < 0.13
+                 tagsoup >= 0.12 && < 0.13,
+                 base64-bytestring >= 0.1 && < 0.2
   if impl(ghc >= 6.10)
     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
   else
@@ -366,3 +368,4 @@ Executable test-pandoc
                       Tests.Writers.Native
                       Tests.Writers.ConTeXt
                       Tests.Writers.HTML
+                      Tests.Writers.Markdown
