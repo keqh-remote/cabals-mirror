@@ -1,5 +1,5 @@
 Name:           AERN-Real
-Version:        0.9.5
+Version:        0.9.6
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -45,9 +45,11 @@ Description:
     .
     There is also some support for generic Taylor series, interval Newton method
     and simple numerical integration.
-
+    .
+    Simple examples of usage can be found in tests/Demo.hs.
+    
 Extra-source-files:
-    ChangeLog tests/Test1.hs
+    ChangeLog tests/Demo.hs
 
 Flag containers-in-base
     Default: False
