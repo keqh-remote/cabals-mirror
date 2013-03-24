@@ -1,5 +1,5 @@
 name:           snappy
-version:        0.1.0.0
+version:        0.2.0.0
 homepage:       http://github.com/mailrank/snappy
 bug-reports:    http://github.com/mailrank/snappy/issues
 synopsis:
@@ -20,18 +20,26 @@ extra-source-files:
   include/hs_snappy.h
   tests/Makefile
   tests/Properties.hs
+  tests/Snappy.hs
 
 library
   c-sources:       cbits/hs_snappy.cpp
   include-dirs:    include
   extra-libraries: snappy stdc++
 
-  build-depends:     base < 5, bytestring
+  cc-options:      -Wall
+  ghc-options:     -Wall
+
+  build-depends:   base < 5, bytestring
   if impl(ghc >= 6.10)
-    build-depends:   base >= 4
+    build-depends: base >= 4
 
   exposed-modules:
     Codec.Compression.Snappy
+    Codec.Compression.Snappy.Lazy
+
+  other-modules:
+    Codec.Compression.Snappy.Internal
 
 source-repository head
   type:     git
