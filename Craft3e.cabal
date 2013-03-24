@@ -1,6 +1,6 @@
 
 name: Craft3e
-version: 0.1.0.2
+version: 0.1.0.3
 license: MIT
 license-file: LICENSE
 copyright: (c) Addison Wesley
@@ -17,7 +17,7 @@ description:
   .
   Use as follows:
   .
-  1. Download via: @cabal unpack@
+  1. Download via: @cabal unpack Craft3e@
   .
   2. Go to directory: @cd Craft3e-<version>@
   .
