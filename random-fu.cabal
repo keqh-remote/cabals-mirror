@@ -1,5 +1,5 @@
 name:                   random-fu
-version:                0.0.0.2
+version:                0.0.1.1
 stability:              experimental
 
 cabal-version:          >= 1.2
@@ -34,9 +34,11 @@ Library
                         Data.Random.Distribution.Poisson
                         Data.Random.Distribution.Triangular
                         Data.Random.Distribution.Uniform
-                        Data.Random.Internal.Classification
                         Data.Random.Internal.Words
+                        Data.Random.List
+                        Data.Random.Lift
                         Data.Random.RVar
+                        Data.Random.Sample
                         Data.Random.Source
                         Data.Random.Source.DevRandom
                         Data.Random.Source.StdGen
@@ -44,7 +46,7 @@ Library
                         Data.Random.Source.Std
                         
   build-depends:        base >= 3,
-                        bytestring,
+                        containers,
                         mersenne-random-pure64,
                         monad-loops >= 0.3.0.1,
                         mtl,
