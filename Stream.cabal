@@ -1,5 +1,5 @@
 Name:                   Stream
-Version:                0.4.5
+Version:                0.4.6
 License:                BSD3
 License-file:           LICENSE
 Author:                 Wouter Swierstra <wouter.swierstra@gmail.com>
@@ -16,7 +16,7 @@ Description:            This package implements functions, analogous
 			nothing to do with the work on /Stream Fusion/ by 
 			Duncan Coutts, Roman Leshchinskiy, and Don Stewart.
 Category:               Data
-Build-Depends:          base < 4.4, QuickCheck >= 2.0, lazysmallcheck >= 0.3
+Build-Depends:          base < 5, QuickCheck >= 2.0, lazysmallcheck >= 0.3
 Build-Type:		Simple
 Exposed-modules:        Data.Stream
 
