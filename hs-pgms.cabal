@@ -1,5 +1,5 @@
 Name:          hs-pgms
-Version:       0.1
+Version:       0.1.0.1
 Stability:     experimental
 Copyright:     (c) 2008 Bertram Felgenhauer
 Maintainer:    Bertram Felgenhauer <int-e@gmx.de>
@@ -12,21 +12,42 @@ Description:
     and run them in a graphical UI.
 
     Inspired by <http://www.ccs.neu.edu/home/ramsdell/pgms/index.html>.
-Cabal-Version: >=1.2
+Cabal-Version: >= 1.4
 Build-Type:    Simple
 
 -- Data-Dir:      data
 Data-Files:    data/icons.png
 Extra-Source-Files: README, statistics
 
+Flag split-base
+
 Library
     HS-Source-Dirs:  src
     Exposed-Modules: Mine
 
-Executable mine
+    Build-Depends:   MonadPrompt >= 1.0.0.1, mtl
+
+    if flag(split-base)
+        Build-Depends: base >= 3, array, random
+    else
+        Build-Depends: base < 3
+
+    Extensions:	     GADTs, FlexibleContexts, Rank2Types,
+                     GeneralizedNewtypeDeriving, BangPatterns
+
+Executable hs-pgms
     HS-Source-Dirs:  src
     Main-is:         Main.hs
-    Other-Modules:   Mine, SimpleStrat, Strat1, Util,
-                     GUI, GUI.Common, GUI.Config, GUI.Stats
-    Build-Depends:   base, MonadPrompt, array, mtl, random, glib, gtk, directory
+    Other-Modules:   Mine, Util, Strategies,
+                     GUI, GUI.Common, GUI.Config, GUI.Stats,
+                     SimpleStrat, Strat1
+    Build-Depends:   MonadPrompt >= 1.0.0.1, glib, gtk
+
+    if flag(split-base)
+        Build-Depends: base >= 3, array, mtl, random, directory
+    else
+        Build-Depends: base < 3, mtl
+
     GHC-Options:     -threaded
+    Extensions:	     GADTs, FlexibleContexts, Rank2Types,
+                     GeneralizedNewtypeDeriving, BangPatterns
