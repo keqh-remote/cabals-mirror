@@ -1,5 +1,5 @@
 Name: happstack-helpers
-Version: 0.22
+Version: 0.22.1
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming Happstack based web-apps. 
@@ -9,17 +9,27 @@ Maintainer: Creighton Hogg <wchogg at gmail>
 Author: Thomas Hartman, Eelco Lempsink, Jeremy Shaw, Creighton Hogg
 Stability: Beta
 Copyright: Copyright (c) 2008 Thomas Hartman
-Exposed-Modules: Happstack.Helpers,Happstack.Helpers.DirBrowse, Happstack.Helpers.HtmlOutput, 
-                 Happstack.Helpers.HtmlOutput.Common, 
-                 Happstack.Helpers.HtmlOutput.Menu, 
-                 Happstack.Helpers.ParseRequest,Happstack.Helpers.Redirect, 
-                 Happstack.Data.User.Password, 
-                 Happstack.Data.IxSet.Helpers
-                 Happstack.Server.Helpers
-                 
-Build-Depends: base, mtl, happstack-server, hscolour, filepath, directory, bytestring,
-               HStringTemplate, HStringTemplateHelpers, safe, MissingH, containers, parsec, haskell98,
-               happstack-ixset, happstack-state, random, happstack-data, old-time, pureMD5, PBKDF2
-ghc-options: -Wall
 Category: Distributed Computing
 Build-type: Simple
+Cabal-Version: >= 1.2
+
+flag base4
+
+Library
+  Exposed-Modules: Happstack.Helpers,Happstack.Helpers.DirBrowse, Happstack.Helpers.HtmlOutput, 
+                   Happstack.Helpers.HtmlOutput.Common, 
+                   Happstack.Helpers.HtmlOutput.Menu, 
+                   Happstack.Helpers.ParseRequest,Happstack.Helpers.Redirect, 
+                   Happstack.Data.User.Password, 
+                   Happstack.Data.IxSet.Helpers
+                   Happstack.Server.Helpers
+
+  if flag(base4)
+    Build-Depends:    base >=4 && < 5, syb
+  else
+    Build-Depends:    base >=3 && < 4
+
+  Build-Depends: mtl, happstack-server >= 0.2 && < 0.3, hscolour, filepath, directory, bytestring,
+                 HStringTemplate, HStringTemplateHelpers, safe, MissingH, containers, parsec, haskell98,
+                 happstack-ixset >= 0.2 && < 0.3, happstack-state >= 0.2 && < 0.3, random, happstack-data >= 0.2 && < 0.3, old-time, pureMD5, PBKDF2
+  ghc-options: -Wall
