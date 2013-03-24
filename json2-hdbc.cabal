@@ -1,5 +1,5 @@
 Name:                json2-hdbc
-Version:             0.5
+Version:             0.5.1
 Synopsis:            Support JSON for SQL Database.
 Category:            Database, JSON
 Description:         Library contains instances of ToJson(JSON2) class
@@ -23,7 +23,7 @@ library
   Build-Depends:     base         >= 4 && < 5,
                      containers   >= 0.2 && < 1,
                      time         >= 1.1,
-                     json2        >= 0.8,
+                     json2        >= 0.8.1,
                      json2-types  -any,
                      utf8-string  -any,
                      HDBC         -any
