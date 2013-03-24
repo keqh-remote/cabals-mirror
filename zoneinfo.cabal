@@ -1,5 +1,5 @@
 Name: zoneinfo
-Version: 0.2
+Version: 0.3
 Cabal-Version: >= 1.2
 License: BSD3
 License-File: LICENSE
@@ -11,9 +11,6 @@ Synopsis: ZoneInfo library.
 Build-Type: Configure
 
 Extra-Source-Files:
-  cbits/asctime.c.orig
-  cbits/difftime.c.orig
-  cbits/localtime.c.orig
   configure
   configure.ac
   include/private.h
