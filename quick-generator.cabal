@@ -1,14 +1,13 @@
 Name:                quick-generator
-Version:             0.1.2
+Version:             0.3
 Synopsis:            Generator random test data for QuickCheck
 Category:            Testing
 Description:         Generator random test data for QuickCheck
 License:             BSD3
 License-file:        LICENSE
-Author:              YuriyIskra  <iskra.yw@gmail.com>
-Maintainer:          YuriyIskra  <iskra.yw@gmail.com>
+Author:              YuriyIskra
 Stability:           Experimental
-Copyright:           Copyright (c) 2010 Yuriy Iskra
+Copyright:           Copyright (c) 2011 Yuriy Iskra
 Build-type:          Simple
 Cabal-version:       >= 1.6
 
@@ -19,4 +18,4 @@ library
   Exposed-modules:   Testing.QuickGenerator
                        
   Build-Depends:     base       >= 4   && < 5,
-                     QuickCheck >= 1   && < 2
+                     QuickCheck >= 2
