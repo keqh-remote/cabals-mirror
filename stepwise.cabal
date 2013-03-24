@@ -1,7 +1,7 @@
 cabal-version: >= 1.8
 build-type: Simple
 name: stepwise
-version: 1.0
+version: 1.0.1
 license: LGPL
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
 homepage: http://www.cs.uu.nl/wiki/HUT/WebHome
@@ -15,6 +15,7 @@ library
   exposed-modules: Control.Monad.Stepwise, Control.Monad.Stepwise.Core, Control.Monad.Stepwise.Derived
   exposed-modules: Control.Monad.Stepwise.Unsafe
   exposed-modules: Control.Monad.Stepwise.Examples, Control.Monad.Stepwise.Proofs
+  exposed-modules: Control.Monad.Stepwise.AG
   hs-source-dirs: src
 
 executable stepwise-benchmark
