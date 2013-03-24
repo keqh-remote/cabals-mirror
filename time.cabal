@@ -1,15 +1,17 @@
 Name:		time
-Version:	1.1.2.1
+Version:	1.1.2.2
 Stability:	stable
 License:	BSD3
 License-File:	LICENSE
 Author:		Ashley Yakeley
 Maintainer:	<ashley@semantic.org>
 Homepage:	http://semantic.org/TimeLib/
-Synopsis:	time library
-Category:
+Synopsis:	 A time library
+Description: A time library
+Category:   System
 Build-Type:     Custom
 Cabal-Version:  >=1.2
+x-follows-version-policy:
 
 Extra-Source-Files:
         aclocal.m4 configure.ac configure
