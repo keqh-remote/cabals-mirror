@@ -3,7 +3,7 @@ cabal-version:  >= 1.2
 build-type:     Simple
 copyright:      (c) 2008 Ganesh Sittampalam, Peter Gavin
 stability:      provisional
-version:        0.4
+version:        0.4.1
 license:        BSD3
 license-file:   LICENSE
 category:       Control
@@ -35,3 +35,4 @@ exposed-modules:
         Control.RMonad.Trans.List
         Control.RMonad.Trans.Reader
         Control.RMonad.Trans.Cont
+        Data.Suitable
