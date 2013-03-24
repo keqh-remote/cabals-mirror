@@ -1,5 +1,5 @@
 name: hspec
-version: 0.3.0
+version: 0.4.3
 cabal-version: -any
 build-type: Custom
 license: BSD3
@@ -7,11 +7,12 @@ license-file: LICENSE
 copyright: (c) 2011 Trystan Spangler
 maintainer: trystan.s@comcast.net
 build-depends: HUnit >=1 && <=2, QuickCheck >=2.4.0.1 && <=2.5,
-               base >=4 && <=5
+               base >=4 && <=5, silently == 1.1.1,
+               ansi-terminal == 0.5.5, transformers >= 0.2.0 && < 0.3.0
 stability: experimental
 homepage: https://github.com/trystan/hspec
 package-url: https://github.com/trystan/hspec
-bug-reports: mailto:trystan.s@comcast.net
+bug-reports: https://github.com/trystan/hspec/issues
 synopsis: Behavior Driven Development for Haskell
 description: Behavior Driven Development for Haskell
              .
@@ -22,10 +23,13 @@ tested-with:
 data-files:
 data-dir: ""
 extra-source-files: ./Specs.hs ./src/Test/Hspec/HUnit.hs
-                    ./src/Test/Hspec/Internal.hs ./src/Test/Hspec/QuickCheck.hs
+                    ./src/Test/Hspec/Runner.hs ./src/Test/Hspec/Monadic.hs
+                    ./src/Test/Hspec/Formatters.hs
+                    ./src/Test/Hspec/Core.hs ./src/Test/Hspec/QuickCheck.hs
 extra-tmp-files:
-exposed-modules: Test.Hspec Test.Hspec.HUnit Test.Hspec.Internal
-                 Test.Hspec.QuickCheck
+exposed-modules: Test.Hspec Test.Hspec.HUnit Test.Hspec.Core
+                 Test.Hspec.Runner Test.Hspec.Monadic
+                 Test.Hspec.Formatters Test.Hspec.QuickCheck
 exposed: True
 buildable: True
 build-tools:
