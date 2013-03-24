@@ -2,7 +2,7 @@
 -- MIT Licensed
 
 Name: cereal-derive
-Version: 0.1.0
+Version: 0.1.1
 License: GPL-3
 License-File: COPYING
 Author: Jared Hance
@@ -10,7 +10,7 @@ Maintainer: Jared Hance <jaredhance@gmail.com>
 Build-Type: Simple
 Cabal-Version: >= 1.8
 Category: Data
-Synopsis: Automatic deriving of Binary using GHC.Generics
+Synopsis: Automatic deriving of Serialize using GHC.Generics
 Description: This package provides deriveGet and derivePut which
     can be used to quickly create an instance of Serialize for any type which
     implements Generic. Naturally, this can be used with -XDeriveGeneric to not     have to write any boilerplate code.
@@ -25,5 +25,5 @@ Library
 
 Source-Repository head
     Type: git
-    Location: https://github.com/jhance/binary-derive
+    Location: https://github.com/jhance/cereal-derive
 
