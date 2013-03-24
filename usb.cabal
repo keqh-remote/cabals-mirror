@@ -1,15 +1,15 @@
 name:          usb
-version:       1.0
+version:       1.1
 cabal-version: >=1.6
 build-type:    Custom
 license:       BSD3
 license-file:  LICENSE
-copyright:     2009–2011 Bas van Dijk <v.dijk.bas@gmail.com>
+copyright:     2009–2012 Bas van Dijk <v.dijk.bas@gmail.com>
 author:        Bas van Dijk <v.dijk.bas@gmail.com>
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
-homepage:      https://github.com/basvandijk/usb/
+homepage:      https://github.com/basvandijk/usb
 bug-reports:   https://github.com/basvandijk/usb/issues
-category:      System
+category:      System, Hardware
 synopsis:      Communicate with USB devices
 description:   This library enables you to communicate with USB devices from
                userspace. It is implemented as a high-level wrapper around
@@ -78,7 +78,7 @@ source-repository head
 Library
   GHC-Options: -Wall
 
-  build-depends: base                 >= 4     && < 4.5
+  build-depends: base                 >= 4     && < 4.6
                , base-unicode-symbols >= 0.1.1 && < 0.3
                , bindings-libusb      >= 1.4.4 && < 1.5
                , bytestring           >= 0.9   && < 0.10
