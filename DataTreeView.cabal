@@ -1,5 +1,5 @@
 Name:                DataTreeView
-Version:             0.1
+Version:             0.1.1
 Synopsis:            A GTK widget for displaying arbitrary Data.Data.Data instances
 License:             BSD3
 License-file:        LICENSE
@@ -23,10 +23,20 @@ Source-Repository head
 
 
 Library
-  Build-depends:      bytestring, monad-control >= 0.2, mtl >= 2, 
-                      containers, glib >= 0.12, 
-                      base >= 4 && < 5, syb >= 0.3, MissingH >= 1.1.0.3,
-                      gtk>=0.12, deepseq 
+  Build-depends:      
+    bytestring,
+    mtl >= 2,
+    containers,
+    glib >= 0.12,
+    base >= 4 && < 5,
+    syb >= 0.3,
+    MissingH >= 1.1.0.3,
+    gtk>=0.12,
+    deepseq,
+    ListLike >= 3.0.1,
+    monad-control >= 0.3,
+    lifted-base,
+    transformers-base
 
   Exposed-modules:    DataTreeView
                       DataTreeView.CustomHandlers
