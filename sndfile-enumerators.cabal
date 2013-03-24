@@ -1,5 +1,5 @@
 Name:		sndfile-enumerators
-Version:        0.9.0
+Version:        0.9.0.1
 Cabal-Version:  >= 1.2
 Description:	encode and decode soundfiles using Iteratees.
                 Audio files may be read or written, with classes and 
@@ -9,7 +9,7 @@ License:	BSD3
 License-file:	LICENSE
 Author:		John W. Lato, jwlato@gmail.com
 Maintainer:	John W. Lato, jwlato@gmail.com
-homepage:       http://jwlato.webfactional.com/haskell/sndfile-enumerators
+homepage:       http://www.tiresiaspress.us/haskell/sndfile-enumerators
 Stability:	experimental
 synopsis:       Audio file reading/writing
 category:       Codec, Sound
@@ -43,7 +43,7 @@ Library
    MonadCatchIO-transformers >= 0.2   && < 0.3,
    transformers              >= 0.2   && < 0.3,
    vector                    >= 0.6   && < 0.8,
-   word24                    >= 0.1 && < 0.2
+   word24                    >= 0.1   && < 2.0
  exposed-modules:
    Sound.Iteratee
    Sound.Iteratee.Base
