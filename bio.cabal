@@ -1,5 +1,5 @@
 Name:                bio
-Version:             0.3.3.1
+Version:             0.3.3.2
 License:             LGPL
 License-file:        LICENSE
 Author:              Ketil Malde
@@ -19,13 +19,13 @@ Description:         This is a collection of data structures and algorithms
                      output parsing.  Partly implemented single linkage clustering, and
                      multiple alignment.
                      .
-                     The Darcs repository is at: <http://malde.org/~ketil/bio>.
+                     The Darcs repository is at: <http://malde.org/~ketil/biohaskell/biolib>.
 Homepage:            http://malde.org/~ketil/
 
 Tested-With:         GHC==6.8.2
 Build-Type:          Simple
 Build-Depends:       base>3, QuickCheck<2, binary, tagsoup>=0.4, bytestring,
-                     containers, array, interlude, parallel, parsec
+                     containers, array, parallel, parsec
 -- add fps for ghc 6.4.2; change imports in Bio/Sequence/TwoBit.hs if you want QC 2
 
 -- We omit the debian/ and Test/ files because those are for development, not installation.
