@@ -1,5 +1,5 @@
 Name:          type-functions
-Version:       0.1.0.0
+Version:       0.2.0.0
 Cabal-Version: >= 1.2.3
 Build-Type:    Simple
 License:       BSD3
@@ -10,13 +10,16 @@ Maintainer:    jeltsch@tu-cottbus.de
 Stability:     provisional
 Homepage:      http://community.haskell.org/~jeltsch/type-functions/
 Bug-Reports:   jeltsch@tu-cottbus.de
-Package-URL:   http://hackage.haskell.org/packages/archive/type-functions/0.0.0.0/type-functions-0.0.0.0.tar.gz
+Package-URL:   http://hackage.haskell.org/packages/archive/type-functions/0.2.0.0/type-functions-0.2.0.0.tar.gz
 Synopsis:      Emulation of type-level functions
 Description:   This package supports emulation of type-level functions using defunctionalization.
                All functions whose domain is a subkind of&#xA0;@*@ and whose codomain is&#xA0;@*@
                itself can be represented.
+               .
+               For detailed information, please refer to Subsection&#xA0;3.2 of the paper
+               /Generic Record Combinators with Static Type Checking/.
 Category:      Type System
-Tested-With:   GHC == 6.10.4
+Tested-With:   GHC == 6.12.1
 
 Library
     Build-Depends:   base  >= 3.0   && < 4.1,
