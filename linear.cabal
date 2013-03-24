@@ -1,6 +1,6 @@
 name:          linear
 category:      Math, Algebra
-version:       0.4.2.2
+version:       0.5
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -9,19 +9,20 @@ maintainer:    Edward A. Kmett <ekmett@gmail.com>
 stability:     provisional
 homepage:      http://github.com/ekmett/linear/
 bug-reports:   http://github.com/ekmett/linear/issues
-copyright:     Copyright (C) 2012 Edward A. Kmett
+copyright:     Copyright (C) 2012-2013 Edward A. Kmett
 synopsis:      Linear Algebra
 description:   Types and combinators for low-dimension-count linear algebra on free vector spaces
-build-type:    Simple
-tested-with:   GHC == 7.4.2, GHC == 7.6.1
+build-type:    Custom
+tested-with:   GHC == 7.4.1, GHC == 7.4.2, GHC == 7.6.1
 extra-source-files:
-  .travis.yml
   .ghci
   .gitignore
+  .travis.yml
   .vim.custom
-  config
-  README.markdown
+  travis/cabal-apt-install
+  travis/config
   CHANGELOG.markdown
+  README.markdown
 
 source-repository head
   type: git
