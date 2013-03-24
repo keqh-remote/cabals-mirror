@@ -1,20 +1,20 @@
 Name:               nimber
-Version:            0.1
+Version:            0.1.1
 Synopsis:           An implementation of (finite) nimbers
 Description:        This library provides a method to do arithmetic on
-		            nimbers, which may be considered an alternative field
-			        over the non-negative integers (the general case of
-			        transfinite ordinal nimbers is not implementented.)
+                    nimbers, which may be considered an alternative field
+                    over the non-negative integers (the general case of
+                    transfinite ordinal nimbers is not implementented.)
                     Note that division is extremely slow at this point,
                     due to the lack of a closed-form implementation.
-License:		    BSD3
+License:            BSD3
 License-file:       LICENSE
 Author:	            Patrick Hurst
-Maintainer:	        phurst@mit.edu
+Maintainer:         phurst@mit.edu
 Build-Type:         Simple
 Cabal-Version:      >=1.2
 Stability:          stable
-Category:            Math
+Category:           Math
 
 Library
    Build-Depends:   base >= 2 && < 4, data-memocombinators, containers
