@@ -1,52 +1,33 @@
 name:            data-object-yaml
-version:         0.0.0
+version:         0.2.0
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Support for serialising Haskell to and from Yaml.
-description:     Binds to the libyaml library
+synopsis:        Serialize data to and from Yaml files
+description:     Provides high level conversions based on the data-object package. Parsing and emitting is handled by the yaml package, which in turn uses the libyaml C library.
 category:        Web
 stability:       unstable
 cabal-version:   >= 1.2
 build-type:      Simple
-homepage:        http://github.com/snoyberg/yaml/tree/data-object-yaml
-extra-source-files: c/helper.h,
-                    c/yaml_private.h,
-                    c/yaml.h
+homepage:        http://github.com/snoyberg/data-object-yaml
 
 flag buildtests
   description: Build the executable to run unit tests
   default: False
-flag nolib
-  description: Skip building of the library
-  default: False
 
 library
-    if flag(nolib)
-        Buildable: False
-    else
-        Buildable: True
     build-depends:   base >= 4 && < 5,
                      data-object >= 0.2.0 && < 0.3,
                      bytestring >= 0.9.1.4 && < 0.10,
                      text >= 0.5 && < 0.6,
                      convertible-text >= 0.2.0 && < 0.3,
-                     attempt >= 0.2.0 && < 0.3
+                     attempt >= 0.2.0 && < 0.3,
+                     failure >= 0.0.0 && < 0.1,
+                     transformers >= 0.1.4.0 && < 0.2,
+                     yaml >= 0.2.0 && < 0.3
     exposed-modules: Data.Object.Yaml
-                     Data.Object.Yaml.Internal
-    other-modules:   Data.Object.Yaml.Lib
     ghc-options:     -Wall
-    c-sources:       c/helper.c,
-                     c/api.c,
-                     c/dumper.c,
-                     c/emitter.c,
-                     c/loader.c,
-                     c/parser.c,
-                     c/reader.c,
-                     c/scanner.c,
-                     c/writer.c
-    include-dirs:    c
 
 executable           runtests
     if flag(buildtests)
@@ -60,14 +41,4 @@ executable           runtests
     else
         Buildable: False
     ghc-options:     -Wall
-    c-sources:       c/helper.c,
-                     c/api.c,
-                     c/dumper.c,
-                     c/emitter.c,
-                     c/loader.c,
-                     c/parser.c,
-                     c/reader.c,
-                     c/scanner.c,
-                     c/writer.c
-    include-dirs:    c
     main-is:         runtests.hs
