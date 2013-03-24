@@ -1,5 +1,5 @@
 Name:                DSH
-Version:             0.7.8.2
+Version:             0.8.0.1
 Synopsis:            Database Supported Haskell
 Description:
   This is a Haskell library for database-supported program execution. Using
@@ -32,6 +32,9 @@ Description:
   reading. The package includes a couple of examples that demonstrate how to
   use DSH.
   .
+  This is a highly experimental realise supporting our work-in-progress paper on
+  "Algebraic Data Types for Language-Integrated Queries".
+  .
   1. <http://db.inf.uni-tuebingen.de/files/giorgidze/ifl2010.pdf>
 
 License:             BSD3
@@ -43,44 +46,45 @@ Category:            Database
 Build-type:          Simple
 
 Extra-source-files:  examples/Example01.hs
-                     examples/Example02.hs
                      examples/Makefile
                      tests/Main.hs
                      tests/Makefile
 
-Cabal-version:       >= 1.2
+Cabal-version:       >= 1.4
 
 Library
-  Build-depends:     base               >= 4.3.1.0 && < 5,
-                     containers         >= 0.4.0.0,
-                     array              >= 0.3.0.2,
-                     syb                >= 0.3,
-                     mtl                >= 2.0.1.0,
-                     bytestring         >= 0.9.1.10,
-                     text               >= 0.11.0.6,
-                     HDBC               >= 2.3.1.0,
-                     convertible        >= 1.0.11.0,
-                     template-haskell   >= 2.5.0.0,
-                     HaXml              >= 1.22.5,
-                     csv                >= 0.1.2,
-                     json               >= 0.5,
-                     xhtml              >= 3000.2.0.1,
-                     Pathfinder         >= 0.5.10,
-                     FerryCore          >= 0.4.6.4
+  Extensions:        TemplateHaskell,
+                     ScopedTypeVariables,
+                     FlexibleContexts,
+                     FlexibleInstances,
+                     MultiParamTypeClasses,
+                     TypeFamilies,
+                     GADTs
+
+  Build-depends:     base               >= 4.5 && < 5,
+                     containers         >= 0.4,
+                     array              >= 0.4,
+                     bytestring         >= 0.9,
+                     template-haskell   >= 2.7,
+                     mtl                >= 2.1,
+                     text               >= 0.11,
+                     HDBC               >= 2.3,
+                     HaXml              >= 1.23,
+                     csv                >= 0.1,
+                     Pathfinder         >= 0.5,
+                     FerryCore          >= 0.4
 
   Hs-source-dirs:    src
 
-  GHC-options:       -O3 -Wall
+  GHC-options:       -O3 -Wall -fno-warn-orphans
 
-  Exposed-modules:   Database.DSH
-                     Database.DSH.Interpreter
+  Exposed-modules:   Database.DSH.Interpreter
                      Database.DSH.Compiler
+                     Database.DSH
 
-  Other-modules:     Database.DSH.TH
-                     Database.DSH.Data
-                     Database.DSH.Combinators
+  Other-modules:     Database.DSH.Internals
+                     Database.DSH.Externals
                      Database.DSH.CSV
-                     Database.DSH.JSON
-                     Database.DSH.XHTML
                      Database.DSH.Impossible
                      Database.DSH.Compile
+                     Database.DSH.TH
