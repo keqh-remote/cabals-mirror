@@ -1,6 +1,6 @@
 Name:                scope
 
-Version:             0.5.2.0
+Version:             0.6.0.0
 
 Synopsis:            An interactive renderer for plotting time-series data
 
@@ -65,14 +65,21 @@ Library
   Build-Depends:
     cairo,
     gtk,
+    containers                >= 0.2     && < 0.5,
     iteratee                  >= 0.8.6.0 && < 0.9,
     MonadCatchIO-transformers >  0.2     && < 0.3,
     mtl                       >= 2.0.0.0 && < 3,
-    zoom-cache                >= 0.9.1.0 && < 0.10
+    mwc-random,
+    old-locale,
+    time,
+    zoom-cache                >= 1.0.0.0 && < 1.1.0.0
 
   Exposed-modules:
-    Scope.View
+    Scope.Cairo
+    Scope.Layer
+    Scope.Plot
     Scope.Types
+    Scope.View
 
 Executable scope
   if flag(splitBase)
@@ -88,15 +95,17 @@ Executable scope
   Hs-Source-Dirs:      ., src
   Build-Depends:
     cairo,
-    containers                >= 0.2     && < 0.5,
     glib,
     gtk,
+    containers                >= 0.2     && < 0.5,
     iteratee                  >= 0.8.6.0 && < 0.9,
     ListLike                  >= 1.0     && < 4,
     MonadCatchIO-transformers >  0.2     && < 0.3,
     mtl                       >= 2.0.0.0 && < 3,
     mwc-random,
-    zoom-cache                >= 0.9.1.0 && < 0.10
+    old-locale,
+    time,
+    zoom-cache                >= 1.0.0.0 && < 1.1.0.0
 
 ------------------------------------------------------------------------
 -- Git repo
