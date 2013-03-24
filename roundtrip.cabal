@@ -1,5 +1,5 @@
 Name:           roundtrip
-Version:        0.2.0.0
+Version:        0.2.0.1
 Synopsis:       Bidirectional (de-)serialization
 Description:    Roundtrip allows the definition of bidirectional
                 (de-)serialization specifications. The specification language
@@ -8,7 +8,8 @@ Description:    Roundtrip allows the definition of bidirectional
                 by Tillmann Rendel and Klaus Ostermann, Haskell Symposium 2010.
                 .
                 This package does not provide concrete instances of the
-                specification classes, see the package roundtrip-xml instead.
+                specification classes, see the packages roundtrip-string and
+                roundtrip-xml instead.
                 .
                 The package contains slightly modified code from
                 Tillmann Rendel's partial-isomorphisms and invertible-syntax
