@@ -1,5 +1,5 @@
 Name:                gloss
-Version:             1.7.8.1
+Version:             1.7.8.2
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -39,7 +39,7 @@ Library
         bytestring == 0.10.*,
         OpenGL     == 2.6.*,
         GLUT       == 2.3.*,
-        bmp        >= 1.2.3.2 && < 1.2.4
+        bmp        == 1.2.*
 
   ghc-options:
         -O2 -Wall
