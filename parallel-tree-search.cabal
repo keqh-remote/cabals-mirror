@@ -1,5 +1,5 @@
 Name:          parallel-tree-search
-Version:       0.3
+Version:       0.4
 Cabal-Version: >= 1.6
 Synopsis:      Parallel Tree Search
 Description:   
@@ -20,7 +20,7 @@ Stability:     experimental
 Extra-Source-Files: README
 
 Library
-  Build-Depends:    base, tree-monad, containers
+  Build-Depends:    base, tree-monad, parallel
   Exposed-Modules:  Control.Concurrent.ParallelTreeSearch
   Ghc-Options:      -Wall
 
