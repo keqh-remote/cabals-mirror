@@ -1,5 +1,5 @@
 name:           statistics
-version:        0.6.0.2
+version:        0.7.0.0
 synopsis:       A library of statistical types, data, and functions
 description:
   This library provides a number of common functions and types useful
@@ -7,7 +7,7 @@ description:
   robustness, and use of good algorithms.  Where possible, we provide
   references to the statistical literature.
   .
-  The library's facilities can be divided into three broad categories:
+  The library's facilities can be divided into four broad categories:
   .
   Working with widely used discrete and continuous probability
   distributions.  (There are dozens of exotic distributions in use; we
@@ -17,6 +17,8 @@ description:
   estimation, bootstrap methods, and autocorrelation analysis.
   .
   Random variate generation under several different distributions.
+  .
+  Common statistical tests for significant differences between samples.
 license:        BSD3
 license-file:   LICENSE
 homepage:       http://darcs.serpentine.com/statistics
@@ -25,7 +27,7 @@ maintainer:     Bryan O'Sullivan <bos@serpentine.com>
 copyright:      2009, 2010 Bryan O'Sullivan
 category:       Math, Statistics
 build-type:     Simple
-cabal-version:  >= 1.2
+cabal-version:  >= 1.6
 extra-source-files: README
 
 library
@@ -34,6 +36,7 @@ library
     Statistics.Constants
     Statistics.Distribution
     Statistics.Distribution.Binomial
+    Statistics.Distribution.ChiSquared
     Statistics.Distribution.Gamma
     Statistics.Distribution.Geometric
     Statistics.Distribution.Exponential
@@ -48,6 +51,7 @@ library
     Statistics.Resampling.Bootstrap
     Statistics.Sample
     Statistics.Sample.Powers
+    Statistics.Test.NonParametric
     Statistics.Types
   other-modules:
     Statistics.Internal
@@ -69,3 +73,7 @@ library
   ghc-options: -Wall -funbox-strict-fields
   if impl(ghc >= 6.8)
     ghc-options: -fwarn-tabs
+
+source-repository head
+  type:     mercurial
+  location: http://bitbucket.org/bos/statistics
