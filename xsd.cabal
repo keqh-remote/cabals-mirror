@@ -1,5 +1,5 @@
 Name:                xsd
-Version:             0.3.3
+Version:             0.3.5
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            XML Schema data structures
@@ -17,9 +17,9 @@ Flag small_base
 
 Library
   if flag(small_base)
-    Build-Depends: base < 5 && >= 3, parsec, time
+    Build-Depends: base < 5 && >= 3, parsec, time >= 1.2.0.3
   else
-    Build-Depends: base < 5 && >= 3, parsec, time
+    Build-Depends: base < 5 && >= 3, parsec, time >= 1.2.0.3
 
   GHC-Options:    -Wall
   Exposed-Modules: Text.XML.XSD
