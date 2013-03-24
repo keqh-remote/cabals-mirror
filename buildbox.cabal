@@ -1,5 +1,5 @@
 Name:                buildbox
-Version:             1.0.0.1
+Version:             1.0.1.0
 License:             BSD3
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -32,12 +32,14 @@ Library
         unix                 == 2.4.*,
         pretty               == 1.0.*,
         old-locale           == 1.0.*,
-        containers           == 0.3.*
+        containers           == 0.3.*,
+        bytestring           == 0.9.*
 
   ghc-options:
         -Wall
 
   Exposed-modules:
+        BuildBox.Data.Log
         BuildBox.Benchmark.Base
         BuildBox.Benchmark.Compare
         BuildBox.Benchmark.Pretty
