@@ -1,5 +1,5 @@
 Name:    websockets
-Version: 0.4.1.0
+Version: 0.5.0.0
 
 Synopsis:
   A sensible and clean way to write WebSocket-capable servers in Haskell.
@@ -47,17 +47,16 @@ Library
     Network.WebSockets
 
   Other-modules:
-    Network.WebSockets.Demultiplex
     Network.WebSockets.Handshake
     Network.WebSockets.Handshake.Http
-    Network.WebSockets.Handshake.ShyIterParser
-    Network.WebSockets.Mask
     Network.WebSockets.Monad
     Network.WebSockets.Protocol
     Network.WebSockets.Protocol.Hybi00
     Network.WebSockets.Protocol.Hybi00.Internal
     Network.WebSockets.Protocol.Hybi10
+    Network.WebSockets.Protocol.Hybi10.Demultiplex
     Network.WebSockets.Protocol.Hybi10.Internal
+    Network.WebSockets.Protocol.Hybi10.Mask
     Network.WebSockets.Protocol.Unsafe
     Network.WebSockets.Socket
     Network.WebSockets.Types
