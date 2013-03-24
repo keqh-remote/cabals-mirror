@@ -1,5 +1,5 @@
 Name:                hOpenPGP
-Version:             0.5.2
+Version:             0.6
 Synopsis:            native Haskell implementation of OpenPGP (RFC4880)
 Description:         native Haskell implementation of OpenPGP (RFC4880)
 Homepage:            http://floss.scru.org/hOpenPGP/
@@ -7,7 +7,7 @@ License:             OtherLicense
 License-file:        LICENSE
 Author:              Clint Adams
 Maintainer:          Clint Adams <clint@debian.org>
-Copyright:           2012, Clint Adams
+Copyright:           2012-2013  Clint Adams
 Category:            Codec, Data
 Build-type:          Simple
 Extra-source-files: tests/suite.hs
@@ -123,11 +123,11 @@ Library
                      , Codec.Encryption.OpenPGP.Verify
                      , Data.Conduit.OpenPGP.Compression
                      , Data.Conduit.OpenPGP.Keyring
+                     , Data.Conduit.OpenPGP.Keyring.Instances
                      , Data.Conduit.OpenPGP.Verify
   Other-Modules: Codec.Encryption.OpenPGP.Internal
                , Codec.Encryption.OpenPGP.SerializeForSigs
-  Build-depends: asn1-data             > 0.7
-               , attoparsec
+  Build-depends: attoparsec
                , base                  > 4       && < 5
                , base64-bytestring
                , bytestring
@@ -136,8 +136,10 @@ Library
                , cereal-conduit        >= 0.6    && < 0.7
                , conduit               >= 0.5    && < 0.6
                , containers
-               , cryptocipher          >= 0.3.6
+               , crypto-pubkey         >= 0.1.1
                , cryptohash
+               , ixset                 >= 1.0
+               , lens                  >= 3.0
                , mtl
                , openpgp-asciiarmor                 >= 0.1
                , split
@@ -150,20 +152,18 @@ Test-Suite tests
   type:       exitcode-stdio-1.0
   main-is:    tests/suite.hs
   Ghc-options: -Wall
-  Build-depends: asn1-data             > 0.7
-               , attoparsec
+  Build-depends: hOpenPGP
                , base                  > 4       && < 5
-               , base64-bytestring
                , bytestring
                , bzlib
                , cereal
                , cereal-conduit        >= 0.6    && < 0.7
                , conduit               >= 0.5    && < 0.6
                , containers
-               , cryptocipher          >= 0.3.6
+               , crypto-pubkey         >= 0.1.1
                , cryptohash
-               , mtl
-               , openpgp-asciiarmor                 >= 0.1
+               , ixset                 >= 1.0
+               , lens                  >= 3.0
                , split
                , time                               >= 1.1
                , zlib
