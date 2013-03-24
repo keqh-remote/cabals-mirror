@@ -1,5 +1,5 @@
 Name:            OneTuple
-Version:         0.2.0
+Version:         0.2.1
 Synopsis:        Singleton Tuple
 Description:     Singleton Tuple
 Copyright:       (c) John Dorsey 2008
@@ -7,7 +7,6 @@ License:	 BSD3
 License-file:    LICENSE
 Author:          John Dorsey <haskell@colquitt.org>
 Maintainer:      John Dorsey <haskell@colquitt.org>
-Cabal-version:   > 1.4
 Stability:       experimental
 Build-type:      Simple
 Build-depends:   base
