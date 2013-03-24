@@ -1,5 +1,5 @@
 Name:           PrimitiveArray
-Version:        0.0.2.2
+Version:        0.0.3.0
 License:        BSD3
 License-file:   LICENSE
 Author:         Christian Hoener zu Siederdissen
@@ -15,9 +15,8 @@ Synopsis:
                 package.
 Description:
                 Provides unboxed multidimensional tables with a small
-                interface. Comes with an instance for Ix keys.
-                .
-                * haddock should work now
+                interface. Comes with an instance for Ix keys. Read and Show
+                instances are provides for serialization.
 
 extra-source-files:
   Benchmarks/Index.hs
