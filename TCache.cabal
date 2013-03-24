@@ -1,7 +1,9 @@
 name:                TCache
-version:             0.8.0.2
-synopsis:            Data caching and Persistent STM transactions
+version:             0.9
+synopsis:            A Transactional cache with user-defined persistence
 description:
+
+    This version now has full text search. Serialization is now trough byteStrings
 
     TCache is a transactional cache with configurable persitence. It allows conventional
     STM transactions for objects that syncronize  with
@@ -29,25 +31,27 @@ description:
     .
     Now the file persistence is more reliable.The IO reads are safe inside STM transactions.
     .
-    To ease the implementation of other user-defined persistence, "Data.TCache.FIlePersistence" needed
+    To ease the implementation of other user-defined persistence, "Data.TCache.DefaultPersistence" needed
     to be imported  explcitly for deriving file persistence instances.
     .
-    In this release some stuff has been supressed without losing functionality. Dynamic interfaces
-    are not needed since TCache can handle heterogeneous data.
-
-
+    The 0.9 version adds full text indexation and search, incorporated in the experimental query language
+    .
+    It also changes the default Persistence mechanism. Now ByteStrings are used for serialization and deserialization
+    . a Serializable class and a Persist structure decouple serialization to/from bytestring
+    and write-read to file. Both can be redefined separately, so default persistence can be changed with `setPersist`
+    to write to blobs in databases, for example. Default persistence has'nt to be in files.
 
 category:            Data, Database, Concurrency
 license:             BSD3
 license-file:        LICENSE
 author:              Alberto Gómez Corona
 maintainer:          agocorona@gmail.com
-Tested-With:         GHC == 7.0
+Tested-With:         GHC == 7.0.3
 Build-Type:          Simple
-build-Depends:       base >=4 && <5,directory >= 1.0, old-time >=1.0,stm>=2, containers >= 0.1.0.1,  transformers >=0.2 && <0.3
+build-Depends:       base >=4 && <5,directory >= 1.0, old-time >=1.0,stm>=2, containers >= 0.1.0.1,transformers >=0.2 && <0.3, text, bytestring
 
 
-exposed-modules:   Data.TCache, Data.TCache.FilePersistence
-                   , Data.TCache.IndexQuery, Data.TCache.Triggers
+exposed-modules:   Data.TCache, Data.TCache.DefaultPersistence
+                   , Data.TCache.IndexQuery,Data.TCache.IndexText, Data.TCache.Triggers
                    , Data.TCache.IResource, Data.TCache.Defs
 ghc-options:       -O2
