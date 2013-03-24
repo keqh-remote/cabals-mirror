@@ -1,8 +1,12 @@
 Name:                mysnapsession-example
-Version:             0.2
+Version:             0.3
 Synopsis:            Example projects using mysnapsession
 Description:         This is a collection of simple web applications that use
                      the mysnapsession package for stateful HTTP.
+                     .
+                     As of version 0.3, this uses Cabal's data file mechanism,
+                     so you'll need to install before you run to copy the
+                     data files to where they are expected.
 License:             BSD3
 License-file:        LICENSE
 Author:              Chris Smith <cdsmith@gmail.com>
@@ -12,11 +16,10 @@ Category:            Web
 Build-type:          Simple
 Cabal-version:       >=1.6
 
-Extra-source-files:  animalgame/resources/static/*.css,
-                     animalgame/resources/templates/*.tpl
-
-Extra-source-files:  clientcount/resources/static/*.css,
-                     clientcount/resources/templates/*.tpl
+Data-files:  animalgame/resources/static/*.css,
+             animalgame/resources/templates/*.tpl,
+             clientcount/resources/static/*.css,
+             clientcount/resources/templates/*.tpl
 
 Executable animalgame
   Hs-source-dirs:      animalgame/src
@@ -31,7 +34,7 @@ Executable animalgame
     snap >= 0.3 && < 0.4,
     snap-core >= 0.3 && < 0.4,
     snap-server >= 0.3 && <0.4,
-    mysnapsession == 0.2.*,
+    mysnapsession == 0.3.*,
     clientsession == 0.4.*
 
   Ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields
@@ -50,8 +53,8 @@ Executable clientcount
     snap >= 0.3 && < 0.4,
     snap-core >= 0.3 && < 0.4,
     snap-server >= 0.3 && <0.4,
-    time == 1.1.*,
-    mysnapsession == 0.2.*
+    time >= 1.1 && < 1.3,
+    mysnapsession == 0.3.*
 
   Ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields
                -fno-warn-orphans
