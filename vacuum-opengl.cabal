@@ -1,5 +1,5 @@
 Name:                vacuum-opengl
-Version:             0.0.2
+Version:             0.0.3
 Synopsis:            Visualize live Haskell data structures using vacuum, graphviz and OpenGL.
 Description:         Visualize live Haskell data structures using vacuum, graphviz and OpenGL.
                      Intended as an easier-to-build alternative (no large dependency chain)
@@ -21,14 +21,15 @@ Flag base4
 
 Executable vacuum-opengl-server
   if flag(base4)
-    Build-Depends:        base >= 4 && < 5, directory, process, network
+    Build-Depends:        base >= 4 && < 5, directory, process, network, filepath
     cpp-options:          -DBASE_MAJOR_VERSION=4
   else
-    Build-Depends:        base >= 3 && < 4, directory, process, network
+    Build-Depends:        base >= 3 && < 4, directory, process, network, filepath
     cpp-options:          -DBASE_MAJOR_VERSION=3
 
   Build-Depends:       stb-image >= 0.2 && < 0.3,
-                       bitmap < 0.1, bitmap-opengl < 0.1,
+                       bitmap        >= 0.0.1 && < 0.1, 
+                       bitmap-opengl >= 0.0.0 && < 0.1,
                        OpenGL >= 2.2, GLUT >= 2.1
     
   Main-is:             ServerMain.hs
