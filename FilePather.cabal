@@ -1,5 +1,5 @@
 Name:               FilePather
-Version:            0.1.2
+Version:            0.1.3
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
 Maintainer:         Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
 Copyright:          Tony Morris
@@ -49,6 +49,7 @@ Library
                     System.FilePath.FilePather.FilterPredicate
                     System.FilePath.FilePather.FilePathPredicate
                     System.FilePath.FilePather.Find
+                    System.FilePath.FilePather.LiftI
 
 Source-Repository  head
   type: git
