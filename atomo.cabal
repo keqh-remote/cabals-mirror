@@ -1,5 +1,5 @@
 name:                atomo
-version:             0.2.2.1
+version:             0.3
 synopsis:            A highly dynamic, extremely simple, very fun programming
                      language.
 description:
@@ -26,6 +26,7 @@ maintainer:          i.am@toogeneric.com
 category:            Language
 build-type:          Custom
 stability:           Experimental
+tested-with:         GHC >= 6 && < 7
 
 cabal-version:       >= 1.6
 
@@ -47,16 +48,13 @@ library
     filepath,
     hashable,
     hint,
-    monads-fd,
     mtl,
     parsec >= 3.0.0,
     pretty,
     template-haskell,
-    text,
+    text >= 0.11.0.0,
     time,
     vector
-
-  extensions:        PackageImports
 
   exposed-modules:
     Atomo,
@@ -83,6 +81,7 @@ library
   other-modules:
     Atomo.Debug,
     Atomo.Kernel,
+    Atomo.Kernel.Nucleus,
     Atomo.Kernel.Numeric,
     Atomo.Kernel.List,
     Atomo.Kernel.String,
@@ -110,8 +109,6 @@ executable atomo
   ghc-options:       -Wall -threaded -fno-warn-unused-do-bind
                      -funfolding-use-threshold=9999
 
-  extensions:        PackageImports
-
   build-depends:
     base >= 4 && < 5,
     containers,
@@ -120,11 +117,10 @@ executable atomo
     hashable,
     haskeline,
     hint,
-    monads-fd,
     mtl,
     parsec >= 3.0.0,
     pretty,
     template-haskell,
-    text,
+    text >= 0.11.0.0,
     time,
     vector
