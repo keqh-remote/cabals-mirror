@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.8
+version:	    0.1.9
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -48,6 +48,7 @@ library
     Data.Monoid.Multiplicative
     Data.Monoid.Multiplicative.Sugar
     Data.Monoid.Ord
+    Data.Monoid.Self
     Data.Monoid.Reducer
     Data.Monoid.Reducer.Char
     Data.Monoid.Reducer.With
