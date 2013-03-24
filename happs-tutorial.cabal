@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.8
+Version:             0.8.1
 Synopsis:            A Happstack Tutorial that is its own web 2.0-type demo. 
 Description:         A nice way to learn how to build web sites with Happstack
 
@@ -24,7 +24,6 @@ Extra-Source-Files:
     src/migrationexample/*.hs
     src/migrationexample/*.lhs
     src/migrationexample/StateVersions/*.hs
-    src/migrationexample/README
 
 Cabal-Version:       >= 1.6
 
@@ -49,8 +48,8 @@ Executable happs-tutorial
         View
     ghc-options: -Wall
     Build-Depends:   base, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
-                     happstack-server, happstack-data, happstack-state,
-                     containers, pretty, pureMD5, directory, filepath, hscolour, HTTP, safe,
-                     old-time, parsec, happstack-helpers, DebugTraceHelpers
+                     happstack, containers, pretty, pureMD5, directory, filepath, hscolour, 
+                     HTTP, safe, old-time, parsec, happstack-helpers, DebugTraceHelpers,
+                     happstack-server, happstack-data, happstack-ixset, happstack-state
     if flag(base4)
       Build-Depends: base >=4 && <5, syb
