@@ -1,5 +1,5 @@
 Name:                plot
-Version:             0.1.4.2
+Version:             0.1.5
 License:             BSD3
 License-file:        LICENSE
 Copyright:           (c) A.V.H. McPhail 2010, 2012
@@ -52,7 +52,7 @@ Tested-with:         GHC==7.0.1
 Cabal-version:       >= 1.8
 Build-type:          Simple
 
-Extra-source-files:  README, CHANGES, LICENSE,
+Extra-source-files:  README, CHANGES, LICENSE, THANKS
                      examples/perturbed-sine.hs,
                      examples/perturbed-sine.png
 
