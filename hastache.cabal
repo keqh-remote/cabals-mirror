@@ -1,5 +1,5 @@
 name:            hastache
-version:         0.2.2
+version:         0.2.4
 license:         BSD3
 license-file:    LICENSE
 category:        Text
@@ -17,13 +17,13 @@ description:
     Haskell implementation of Mustache templates (<http://mustache.github.com/>).
     .
     See homepage for examples of usage: <http://github.com/lymar/hastache>
-
+    
 extra-source-files:
     tests/partFile
     tests/RunTest.sh
     tests/test.hs
-    README.markdown
-    
+    README.md
+
 library
   exposed-modules:
     Text.Hastache
