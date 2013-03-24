@@ -1,5 +1,5 @@
 Name:                hissmetrics
-Version:             0.2.1
+Version:             0.2.2
 Synopsis:            Unofficial API bindings to KISSmetrics.
 Homepage:            https://github.com/meteficha/hissmetrics
 License:             BSD3
@@ -32,5 +32,7 @@ Library
                  , http-types
                  , http-conduit == 1.4.*
   Extensions:
+    DeriveDataTypeable,
     RecordWildCards,
     OverloadedStrings
+  GHC-options: -Wall
