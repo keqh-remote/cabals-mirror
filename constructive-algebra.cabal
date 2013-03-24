@@ -7,7 +7,7 @@ Name:                constructive-algebra
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.6
+Version:             0.2.0
 
 Synopsis:            A library of constructive algebra.
 Description:         
@@ -26,7 +26,7 @@ License-file:        LICENSE
 
 Author:              Anders Mortberg, Bassel Mannaa
 
-Maintainer:          mortberg@student.chalmers.se
+Maintainer:          mortberg@chalmers.se
 
 -- A copyright notice.
 -- Copyright:           
@@ -48,10 +48,12 @@ Cabal-version:       >=1.2
 
 Library
   -- Modules exported by the library.
-  Exposed-modules:     Algebra.Structures.Ring, 
+  Exposed-modules:     Algebra.Structures.Group, 
+                       Algebra.Structures.Ring,
                        Algebra.Structures.CommutativeRing,
                        Algebra.Structures.IntegralDomain, 
                        Algebra.Structures.Field,
+                       Algebra.Structures.Module,
                        Algebra.Structures.BezoutDomain,
                        Algebra.Structures.PruferDomain,
                        Algebra.Structures.EuclideanDomain,
