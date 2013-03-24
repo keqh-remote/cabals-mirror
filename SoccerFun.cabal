@@ -1,5 +1,5 @@
 Name:           SoccerFun
-Version:        0.1
+Version:        0.1.1
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -7,9 +7,10 @@ Author:         Jan Rochel
 Maintainer:     jan@rochel.info
 Stability:      experimental
 Build-Type:     Simple
-Synopsis:       Haskell port of a football simulation framework for teaching functional programming
+Synopsis:       Football simulation framework for teaching functional programming
 Homepage:       http://www.cs.ru.nl/~peter88/SoccerFun/SoccerFun.html
 Description:
+	This is a Haskell port of the the SoccerFun framework originally implemented in Clean.
 	From the website: Soccer-Fun is an educational project to stimulate functional programming by thinking about, designing, implementing, running, and competing with the brains of football players! It is open for participation by everybody who likes to contribute. It is not restricted to a particular functional programming language.
 Category:       Game, Education, AI
 Cabal-Version:  >= 1.6
