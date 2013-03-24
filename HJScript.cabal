@@ -1,5 +1,5 @@
 Name:             HJScript
-Version:          0.4.5
+Version:          0.4.6
 License:          BSD3
 Author:           Joel Bjornson, joel.bjornson@gmail.com,
                   Niklas Broberg, nibro@cs.chalmers.se
@@ -50,6 +50,7 @@ Build-Type:       Simple
 Category:         Web, Language
 
 Extensions:             MultiParamTypeClasses,
+                        GADTs,
                         TypeFamilies,
                         FlexibleContexts,
                         FlexibleInstances,
