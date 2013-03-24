@@ -1,5 +1,5 @@
 Name:                   ghc-parmake
-Version:                0.1
+Version:                0.1.1
 Synopsis:               A parallel wrapper for 'ghc --make'.
 
 Description:            'ghc-parmake' is a parallel wrapper for 'ghc --make': it
@@ -8,7 +8,7 @@ Description:            'ghc-parmake' is a parallel wrapper for 'ghc --make': it
                         cores.
 
 Homepage:               https://github.com/23Skidoo/ghc-parmake
-Bug-reports:            https://github.com/23Skidoo/ghc-parmake/issues/new
+Bug-reports:            https://github.com/23Skidoo/ghc-parmake/issues
 License:                BSD3
 License-file:           LICENSE
 Author:                 Mikhail Glushenkov
