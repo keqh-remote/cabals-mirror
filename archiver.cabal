@@ -1,5 +1,5 @@
 name:                archiver
-version:             0.3.1
+version:             0.4
 
 license:             BSD3
 license-file:        LICENSE
@@ -11,15 +11,16 @@ synopsis:            Archive supplied URLs in WebCite & Internet Archive
 description:         archiver is a daemon which will process a specified text file,
                      each line of which is a URL, and will (randomly) one by one request that
                      the URLs be archived or spidered by <http://www.webcitation.org> and
-                     <http://www.archive.org> for future reference.
+                     <http://www.archive.org> for future reference. (One may optionally specify
+                     an arbitrary `sh` command like "wget --page-requisites" to download URLs locally.)
                      .
                      Because the interface is a simple text file, this can be combined
                      with other scripts; for example, a script using Sqlite to extract
                      visited URLs from Firefox, or a program extracting URLs from Pandoc
-                     documents. (See <http://www.gwern.net/Archiving%20URLs.html>.)
+                     documents. (See <http://www.gwern.net/Archiving%20URLs>.)
                      .
                      For explanation of the derivation of the code in `Network.URL.Archiver`,
-                     see <http://www.gwern.net/haskell/Wikipedia%20Archive%20Bot.html>.
+                     see <http://www.gwern.net/haskell/Wikipedia%20Archive%20Bot>.
 
 build-type:          Simple
 Cabal-Version:       >= 1.6
@@ -37,4 +38,4 @@ Library
 
 Executable archiver
            main-is:       archiver.hs
-           build-depends: base>=4 && < 5, containers, bytestring, random
+           build-depends: base>=4 && < 5, containers, bytestring, random, process
