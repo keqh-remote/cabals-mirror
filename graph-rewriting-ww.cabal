@@ -1,5 +1,5 @@
 Name:           graph-rewriting-ww
-Version:        0.1
+Version:        0.2
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -9,7 +9,7 @@ Homepage:       http://rochel.info/#graph-rewriting
 Stability:      alpha
 Build-Type:     Simple
 Synopsis:       Interactive reduction of lambda-calculus with explicit sharing
-Description:    Evaluate a λ-letrec term in an interactive graph reduction system. It uses duplicators to explicitely render sharing (and unsharing) according to Wadsworth's approach.
+Description:    Evaluate a λ-letrec term in an interactive graph reduction system. It uses duplicators to explicitly render fully-lazy sharing according to Wadsworth's approach.
 Category:       Application, Compilers/Interpreters
 Cabal-Version:  >= 1.6
 Data-Files:     examples/*.l
@@ -17,7 +17,7 @@ Data-Files:     examples/*.l
 Executable ww
   Main-Is:        Main.hs
   Build-Depends:
-    base >= 4 && < 4.5,
+    base >= 4.3 && < 4.6,
     base-unicode-symbols >= 0.2 && < 0.3,
     graph-rewriting >= 0.7 && < 0.8,
     graph-rewriting-layout >= 0.5.1 && < 0.6,
