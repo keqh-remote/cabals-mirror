@@ -1,5 +1,5 @@
 Name:               swish
-Version:            0.6.1.2
+Version:            0.6.2.1
 Stability:          experimental
 License:            LGPL
 License-file:       LICENSE 
@@ -9,8 +9,8 @@ Maintainer:         dburke@cfa.harvard.edu
 Category:           Semantic Web
 Synopsis:           A semantic web toolkit. 
 
-Tested-With:        GHC==6.12.3
-Cabal-Version:      >= 1.6
+Tested-With:        GHC==7.0.4
+Cabal-Version:      >= 1.9.2
 Homepage:           https://bitbucket.org/doug_burke/swish/wiki/Home
 Bug-reports:        https://bitbucket.org/doug_burke/swish/issues
 
@@ -46,6 +46,21 @@ Description:
   .
   Changes:
   .
+  [Version 0.6.2.1] Hackage did not want to upload @0.6.2.0@, so re-try by 
+  disabling the @hpc@ and @developer@ flags for the tests to 
+  work around what appears to be <http://hackage.haskell.org/trac/hackage/ticket/811>.
+  .
+  [Version 0.6.2.0] Updated "Swish.RDF.Vocabulary" and "Swish.RDF.RDFGraph" to
+  include more common RDF terms. Added "Swish.RDF.Vocabulary.DublinCore",
+  "Swish.RDF.Vocabulary.FOAF", and "Swish.RDF.Vocabulary.Geo" modules,
+  "Swish.RDF.Vocabulary.OWL", "Swish.RDF.Vocabulary.RDF", and 
+  "Swish.RDF.Vocabulary.XSD" modules (re-exported from "Swish.RDF.Vocabulary"
+  as necessary). The test suite has been updated to take advantage of the
+  support in recent Cabal versions which means that the @tests@ flag has been
+  removed and the minimum Cabal version increased to @1.9.2@. A change was
+  made to the internal labelling of the RDFS container-property axioms in
+  "Swish.RDF.RDFProofContext".
+  .
   [Version 0.6.1.2] Corrected minimum mtl constraint from 1 to 2 and updated
   the maximum time version to 1.4 from 1.3.
   .
@@ -55,14 +70,14 @@ Description:
   provided in version 0.3.2.1).
   .
   [Version 0.6.1.0] Added support for Turtle format (added the
-  Swish.RDF.TurtleFormatter and Swish.RDF.TurtleParser modules).
+  "Swish.RDF.TurtleFormatter" and "Swish.RDF.TurtleParser" modules).
   .
   [Version 0.6.0.2] Minor internal changes.
   .
-  [Version 0.6.0.1] Moved to using hashing routine using the Data.Hashable
-  interface rather than Swish.Utils.MiscHelpers which is deprecated.
+  [Version 0.6.0.1] Moved to using hashing routine using the @Data.Hashable@
+  interface rather than "Swish.Utils.MiscHelpers", which is deprecated.
   .
-  [Version 0.6.0.0] Add Data.Interned.URI and use it to speed up the QName
+  [Version 0.6.0.0] Add "Data.Interned.URI" and use it to speed up the 'QName'
   equality check.
   .
   [Version 0.5.0.3] Didn't get all the required @FlexibleInstances@.
@@ -168,13 +183,9 @@ Flag  developer
   Description: Turn on developer flags
   Default:     False
 
-Flag  tests
-  Description: Build the test programs.
-  Default:     False
-
-Flag  hpc
-  Description: Use Hpc for the tests
-  Default:     False
+-- Flag  hpc
+--   Description: Use Hpc for the tests
+--   Default:     False
 
 Library
    Build-Depends:
@@ -194,6 +205,8 @@ Library
       filepath >= 1.1 && < 1.3,
       hashable == 1.1.*,
       intern == 0.8.*
+
+   Hs-Source-Dirs: src/
 
    Exposed-Modules:
       Swish
@@ -234,6 +247,12 @@ Library
       Swish.RDF.TurtleParser
       Swish.RDF.VarBinding
       Swish.RDF.Vocabulary
+      Swish.RDF.Vocabulary.DublinCore
+      Swish.RDF.Vocabulary.FOAF
+      Swish.RDF.Vocabulary.Geo
+      Swish.RDF.Vocabulary.OWL
+      Swish.RDF.Vocabulary.RDF
+      Swish.RDF.Vocabulary.XSD
       Swish.Utils.ListHelpers
       Swish.Utils.LookupMap
       Swish.Utils.MiscHelpers
@@ -253,298 +272,416 @@ Library
       ghc-options: -Werror
       ghc-prof-options: -auto-all
 
-Executable         BuiltInMapTest
-   Main-Is:        tests/BuiltInMapTest.hs
-   if !flag(tests)
-      buildable: False
+Test-Suite test-builtinmap
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:    BuiltInMapTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         GraphPartitionTest
-   Main-Is:        tests/GraphPartitionTest.hs
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      text == 0.11.*,
+      old-locale == 1.0.*, 
+      network >= 2.2 && < 2.4,
+      hashable == 1.1.*,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      mtl >= 2 && < 3,
+      polyparse >= 1.6 && < 1.8,
+      time >= 1.1 && < 1.5
 
-   if !flag(tests)
-      buildable: False
+Test-Suite test-graphpartition
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        GraphPartitionTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
-
-   ghc-options:
-      -Wall -fno-warn-orphans
-
-Executable         GraphTest
-   Main-Is:        tests/GraphTest.hs
-   if !flag(tests)
-      buildable: False
-
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         NTTest
-   Main-Is:        tests/NTTest.hs
-   if !flag(tests)
-      buildable: False
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
+Test-Suite test-graph
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        GraphTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
-
-   ghc-options:
-      -Wall -fno-warn-orphans
-
-Executable         N3ParserTest
-   Main-Is:        tests/N3ParserTest.hs
-   if !flag(tests)
-      buildable: False
-
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         N3FormatterTest
-   Main-Is:        tests/N3FormatterTest.hs
-   if !flag(tests)
-      buildable: False
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
+Test-Suite test-nt
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        NTTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
-
-   ghc-options:
-      -Wall -fno-warn-orphans
-
-Executable         RDFDatatypeXsdIntegerTest
-   Main-Is:        tests/RDFDatatypeXsdIntegerTest.hs
-   if !flag(tests)
-      buildable: False
-
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         RDFGraphTest
-   Main-Is:        tests/RDFGraphTest.hs
-   if !flag(tests)
-      buildable: False
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      time >= 1.1 && < 1.5,
+      polyparse >= 1.6 && < 1.8
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
+Test-Suite test-n3parser
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        N3ParserTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
-
-   ghc-options:
-      -Wall -fno-warn-orphans
-
-Executable         RDFProofContextTest
-   Main-Is:        tests/RDFProofContextTest.hs
-   if !flag(tests)
-      buildable: False
-                    
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         RDFProofTest
-   Main-Is:        tests/RDFProofTest.hs
-   if !flag(tests)
-      buildable: False
-                     
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      time >= 1.1 && < 1.5,
+      polyparse >= 1.6 && < 1.8
 
-   if flag(hpc)
-      ghc-options: -fhpc
+Test-Suite test-n3formatter
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        N3FormatterTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
-
-   ghc-options:
-      -Wall -fno-warn-orphans
-
-Executable         RDFQueryTest
-   Main-Is:        tests/RDFQueryTest.hs
-   if !flag(tests)
-      buildable: False
-
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         RDFRulesetTest
-   Main-Is:        tests/RDFRulesetTest.hs
-   if !flag(tests)
-      buildable: False
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      time >= 1.1 && < 1.5,
+      polyparse >= 1.6 && < 1.8
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
+Test-Suite test-rdfdatatypexsdinteger
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        RDFDatatypeXsdIntegerTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
-
-   ghc-options:
-      -Wall -fno-warn-orphans
-
-Executable         VarBindingTest
-   Main-Is:        tests/VarBindingTest.hs
-   if !flag(tests)
-      buildable: False
-
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
-
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         LookupMapTest
-   Main-Is:        tests/LookupMapTest.hs
-   if !flag(tests)
-      buildable: False
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      time >= 1.1 && < 1.5,
+      polyparse >= 1.6 && < 1.8
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
+Test-Suite test-rdfgraph
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        RDFGraphTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(hpc)
-      ghc-options: -fhpc
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   ghc-options:
+      -Wall -fno-warn-orphans
+
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      time >= 1.1 && < 1.5,
+      old-locale == 1.0.*,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2
+
+Test-Suite test-rdfproofcontext
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        RDFProofContextTest.hs
+   Other-Modules:  TestHelpers
+
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
 
-Executable         QNameTest
-   Main-Is:        tests/QNameTest.hs
-   if !flag(tests)
-      buildable: False
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      time >= 1.1 && < 1.5,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      polyparse >= 1.6 && < 1.8
 
-   if flag(tests)
-      Build-Depends: 
-          HUnit == 1.2.*
+Test-Suite test-rdfproof
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        RDFProofTest.hs
+   Other-Modules:  TestHelpers
 
-   if flag(hpc)
-      ghc-options: -fhpc
-
-   if flag(developer)
-      ghc-options: -Werror
-      ghc-prof-options: -auto-all
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
 
    ghc-options:
       -Wall -fno-warn-orphans
+
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      time >= 1.1 && < 1.5,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      polyparse >= 1.6 && < 1.8
+
+Test-Suite test-rdfquery
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        RDFQueryTest.hs
+   Other-Modules:  TestHelpers
+
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
+
+   ghc-options:
+      -Wall -fno-warn-orphans
+
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      time >= 1.1 && < 1.5,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      polyparse >= 1.6 && < 1.8
+
+Test-Suite test-rdfruleset
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        RDFRulesetTest.hs
+   Other-Modules:  TestHelpers
+
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
+
+   ghc-options:
+      -Wall -fno-warn-orphans
+
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      hashable == 1.1.*,
+      mtl >= 2 && < 3,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      time >= 1.1 && < 1.5,
+      intern == 0.8.*,
+      directory >= 1.0 && < 1.2,
+      old-locale == 1.0.*,
+      polyparse >= 1.6 && < 1.8
+
+Test-Suite test-varbinding
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        VarBindingTest.hs
+   Other-Modules:  TestHelpers
+
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
+
+   ghc-options:
+      -Wall -fno-warn-orphans
+
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      intern == 0.8.*,
+      hashable == 1.1.*,
+      directory >= 1.0 && < 1.2
+
+Test-Suite test-lookupmap
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        LookupMapTest.hs
+   Other-Modules:  TestHelpers
+
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
+
+   ghc-options:
+      -Wall -fno-warn-orphans
+
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5
+
+Test-Suite test-qname
+   type:       exitcode-stdio-1.0
+   Hs-Source-Dirs: tests/ src/
+   Main-Is:        QNameTest.hs
+   Other-Modules:  TestHelpers
+
+   -- if flag(hpc)
+   --    ghc-options: -fhpc
+   -- 
+   -- if flag(developer)
+   --    ghc-options: -Werror
+   --    ghc-prof-options: -auto-all
+
+   ghc-options:
+      -Wall -fno-warn-orphans
+
+   Build-Depends:
+      HUnit == 1.2.*,
+      base >=3 && < 5,
+      text == 0.11.*,
+      network >= 2.2 && < 2.4,
+      intern == 0.8.*,
+      hashable == 1.1.*,
+      directory >= 1.0 && < 1.2
 
  -- we do not have the data files to run this test
  Executable         SwishTest
    Main-Is:        tests/SwishTest.hs
 
 Executable         Swish
-   Main-Is:        src/Swish.hs
+   Main-Is:        SwishApp.hs
+   Hs-Source-Dirs: app/ src/
    Other-Modules:  Paths_swish
 
    ghc-options:
@@ -553,4 +690,20 @@ Executable         Swish
    if flag(developer)
       ghc-options: -Werror
       ghc-prof-options: -auto-all
+
+   Build-Depends:
+      base >=3 && < 5,
+      text == 0.11.*,
+      binary == 0.5.*,
+      containers >= 0.3 && < 0.5,
+      array == 0.3.*,
+      polyparse >= 1.6 && < 1.8,
+      old-locale == 1.0.*, 
+      time >= 1.1 && < 1.5,
+      mtl >= 2 && < 3,
+      network >= 2.2 && < 2.4,
+      directory >= 1.0 && < 1.2,
+      filepath >= 1.1 && < 1.3,
+      hashable == 1.1.*,
+      intern == 0.8.*
 
