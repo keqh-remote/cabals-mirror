@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.3.1
+version:       0.3.2
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -9,8 +9,7 @@ description:   Support code for reading and manipulating hashed file storage
                .
                The supported storage formats include darcs hashed pristine, a
                plain filesystem tree and an indexed plain tree (where the index
-               maintains hashes of the plain files and directories).  darcs'
-               pristine.hashed.
+               maintains hashes of the plain files and directories).
 
 license:       BSD3
 license-file:  LICENSE
@@ -19,7 +18,7 @@ author:        Petr Rockai <me@mornfall.net>
 maintainer:    Petr Rockai <me@mornfall.net>
 category:      System
 build-type:    Custom
-cabal-version: >= 1.2
+cabal-version: >= 1.6
 extra-source-files: Bundled/sha2.h
 
 flag test
@@ -43,9 +42,8 @@ library
         Bundled.Posix
         Bundled.SHA256
         Storage.Hashed.Utils
-        Storage.Hashed.Test
 
-    build-depends: base, directory, filepath,
+    build-depends: base >= 3 && < 5, directory, filepath,
                    bytestring, bytestring-mmap,
                    zlib, lcs, binary, containers,
                    mtl, extensible-exceptions,
@@ -63,6 +61,12 @@ executable hashed-storage-test
     main-is: test.hs
     other-modules: Bundled.Posix
     c-sources: Bundled/sha2.c
-    build-depends: HUnit, process >= 1.0.1
-    if !flag(test)
+
+    if flag(test)
+      build-depends: HUnit, process >= 1.0.1
+    else
       buildable: False
+
+source-repository head
+  type:     darcs
+  location: http://repos.mornfall.net/hashed-storage/
