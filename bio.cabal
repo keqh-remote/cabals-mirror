@@ -1,9 +1,9 @@
 Name:                bio
-Version:             0.4.7
+Version:             0.4.8
 License:             LGPL
 License-file:        LICENSE
 Author:              Ketil Malde
-Maintainer:          ketil@ii.uib.no
+Maintainer:          ketil@malde.org
 
 Category:            Bioinformatics
 Synopsis:            A bioinformatics library
@@ -26,8 +26,8 @@ Homepage:            http://blog.malde.org/index.php/the-haskell-bioinformatics-
 
 Tested-With:         GHC==6.12.1
 Build-Type:          Simple
-Build-Depends:       base>=4 && <5, QuickCheck>=2, binary >=0.4 && <0.5, tagsoup>=0.4 && <0.8, bytestring >= 0.9.1,
-                     containers, array, parallel, parsec, random, old-time, mtl
+Build-Depends:       base>=4 && <5, QuickCheck>=2, binary >=0.4 && <0.5, tagsoup>=0.8, bytestring >= 0.9.1,
+                     containers, array, parallel, parsec, random, old-time, mtl, directory
 
 Data-Files:          README
 
