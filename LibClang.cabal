@@ -1,6 +1,6 @@
 Name: LibClang
 Cabal-version: >= 1.6
-Version: 0.0.8
+Version: 0.0.9
 Author: Chetan Taralekar <chetant@gmail.com>
 Maintainer: Chetan Taralekar <chetant@gmail.com>
 Homepage: https://github.com/chetant/LibClang/issues
@@ -32,7 +32,7 @@ Source-Repository head
   location: git://github.com/chetant/LibClang.git
 
 Library
-  build-depends: base < 5, ffi, greencard
+  build-depends: base < 5, time, ffi, greencard
   extensions: TypeSynonymInstances, EmptyDataDecls
   hs-source-dirs: src
   c-sources: src/Clang/FFI_stub_ffi.c
