@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.32
+version:	    0.1.33
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -70,11 +70,13 @@ library
     Data.Ring.Module.AutomaticDifferentiation
     Data.Ring.Semi
     Data.Ring.Semi.BitSet
+    Data.Ring.Semi.Kleene
     Data.Ring.Semi.Near
     Data.Ring.Semi.Near.Trie
     Data.Ring.Semi.Natural
     Data.Ring.Semi.Ord
     Data.Ring.Semi.Tropical
     Data.Ring.Sugar
+    Data.Set.Unboxed
 
   ghc-options: -Wall -fno-warn-duplicate-exports
