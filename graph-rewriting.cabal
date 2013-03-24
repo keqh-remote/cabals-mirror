@@ -1,10 +1,11 @@
 Name:           graph-rewriting
-Version:        0.5
+Version:        0.5.1
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
 Author:         Jan Rochel
 Maintainer:     jan@rochel.info
+Homepage:       http://rochel.info/#graph-rewriting
 Stability:      beta
 Build-Type:     Simple
 Synopsis:       Monadic graph rewriting of hypergraphs with ports and multiedges
@@ -40,4 +41,4 @@ Library
     FlexibleInstances
     TypeSynonymInstances
     MultiParamTypeClasses
-  GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-imports
+  GHC-Options:    -fno-warn-duplicate-exports
