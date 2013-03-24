@@ -1,5 +1,5 @@
 Name:                 hack-handler-hyena
-Version:              2010.1.17
+Version:              2010.1.18
 Build-type:           Simple
 Synopsis:             Hyena hack handler
 Description:          Hyena hack handler
@@ -10,7 +10,7 @@ Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
 Build-Depends:        base
 Cabal-version:        >= 1.2
 category:             Web
-homepage:             http://github.com/nfjinjing/hack/tree/master
+homepage:             http://github.com/nfjinjing/hack-handler-hyena
 data-files:           readme.md, changelog.md, known-issues.md, Nemesis, src/Test.hs
 
 library
