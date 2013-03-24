@@ -1,13 +1,14 @@
    Name:                HaskellForMaths
-   Version:             0.4.1
+   Version:             0.4.2
    Category:            Math
-   Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended for educational purposes, but does have efficient implementations of several fundamental algorithms.
+   Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended as an educational resource, but does have efficient implementations of several fundamental algorithms.
    Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
    License:             BSD3
    License-file:        license.txt
    Author:              David Amos
    Maintainer:          haskellformaths-at-gmail-dot-com
    Homepage:            http://haskellformaths.blogspot.com/
+   Stability:           experimental
    Build-Type:          Simple
    Cabal-Version:       >=1.2
 
@@ -25,10 +26,13 @@
         Math/Test/TAlgebras/TTensorProduct.hs
         Math/Test/TAlgebras/TStructures.hs
         Math/Test/TAlgebras/TQuaternions.hs
+        Math/Test/TAlgebras/TOctonions.hs
         Math/Test/TAlgebras/TMatrix.hs
         Math/Test/TAlgebras/TGroupAlgebra.hs
         Math/Test/TCombinatorics/TPoset.hs
         Math/Test/TCombinatorics/TDigraph.hs
+        Math/Test/TCombinatorics/TFiniteGeometry.hs
+        Math/Test/TCombinatorics/TGraphAuts.hs
         Math/Test/TCombinatorics/TIncidenceAlgebra.hs
         Math/Test/TCombinatorics/TMatroid.hs
         Math/Test/TCommutativeAlgebra/TPolynomial.hs
