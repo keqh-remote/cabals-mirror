@@ -1,6 +1,6 @@
 Name:             data-accessor-template
-Version:          0.1.3
-License:          GPL
+Version:          0.1.4
+License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>, Luke Palmer <lrpalmer@gmail.com>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
