@@ -1,5 +1,5 @@
 name:           hmk
-version:        0.9.7.1
+version:        0.9.7.2
 author:         Mathieu Boespflug
 maintainer:     Mathieu Boespflug <mboes@tweag.net>
 homepage:       http://www.github.com/mboes/hmk
@@ -41,5 +41,5 @@ executable hmk
     extensions:	     PatternGuards, NamedFieldPuns, RecursiveDo
     build-depends:   base < 5, bytestring, containers,
                      directory, process, unix, filepath >= 1.1,
-                     mtl >= 1.1 && <= 2.0, parsec >= 3.0.0, pcre-light >= 0.3
+                     mtl >= 1.1 && < 2.1, parsec >= 3.0.0, pcre-light >= 0.3
                      
