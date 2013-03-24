@@ -1,10 +1,10 @@
 name:            Agda
-version:         2.2.2
-cabal-version:   >= 1.6 && < 2
+version:         2.2.4
+cabal-version:   >= 1.6.0.3 && < 2
 build-type:      Simple
 license:         OtherLicense
 license-file:    LICENSE
-author:          Ulf Norell, Catarina Coquand, Makoto Takeyama, Nils Anders Danielsson, Andreas Abel, ...
+author:          Ulf Norell, Nils Anders Danielsson, Catarina Coquand, Makoto Takeyama, Andreas Abel, ...
 maintainer:      Ulf Norell <ulfn@chalmers.se>
 homepage:        http://wiki.portal.chalmers.se/agda/
 bug-reports:     http://code.google.com/p/agda/issues/list
@@ -12,11 +12,11 @@ category:        Dependent types
 synopsis:        A dependently typed functional programming language and proof assistant
 description:
   Agda is a dependently typed functional programming language: It has
-  inductive families, which are like Haskell's GADTs, but they can be
-  indexed by values and not just types. It also has parameterised
-  modules, mixfix operators, Unicode characters, and an interactive
-  Emacs interface (the type checker can assist in the development of
-  your code).
+  inductive families, which are similar to Haskell's GADTs, but they
+  can be indexed by values and not just types. It also has
+  parameterised modules, mixfix operators, Unicode characters, and an
+  interactive Emacs interface (the type checker can assist in the
+  development of your code).
   .
   Agda is also a proof assistant: It is an interactive system for
   writing and checking proofs. Agda is based on intuitionistic type
@@ -26,12 +26,18 @@ description:
   Epigram and NuPRL.
   .
   Note that if you want to use the command-line program (agda), then
-  you should also install the Agda-executable package. This package
-  includes an Emacs mode for Agda, but you need to set up the Emacs
-  mode yourself (see the README).
-tested-with:     GHC == 6.8.3 && == 6.10.2
+  you should also install the Agda-executable package. The Agda
+  package includes an Emacs mode for Agda, but you need to set up the
+  Emacs mode yourself (for instance by running @agda-mode setup@; see
+  the README).
+  .
+  Note also that this library does not follow the package versioning
+  policy, because the library is only intended to be used by the Emacs
+  mode and the Agda-executable package.
+tested-with:     GHC == 6.10.3
 extra-source-files: src/full/Agda/undefined.h
                     README
+                    doc/release-notes/*.txt
 data-dir:           src/data
 data-files:         Agda.css
                     emacs-mode/*.el
@@ -43,11 +49,11 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://code.haskell.org/Agda/
-  tag:      2.2.2
+  tag:      2.2.4
 
 library
   hs-source-dirs:  src/full
-  build-depends:   base >= 3 && < 4,
+  build-depends:   base >= 4.1 && < 4.2,
                    mtl >= 1.1 && < 2,
                    QuickCheck == 2.1.0.1,
                    haskell98 >= 1.0.1 && < 2,
@@ -64,7 +70,8 @@ library
                    process >= 1.0.1.0 && < 2,
                    haskeline >= 0.3 && < 0.7,
                    utf8-string >= 0.3 && < 0.4,
-                   xhtml >= 3000.2 && < 3000.3
+                   xhtml >= 3000.2 && < 3000.3,
+                   syb >= 0.1 && < 0.2
   if impl(ghc >= 6.10)
     build-depends: ghc-prim >= 0.1 && < 1
   build-tools:     happy >= 1.15 && < 2,
@@ -247,7 +254,7 @@ executable agda-mode
   hs-source-dirs:  src/agda-mode
   main-is:         Main.hs
   other-modules:   Paths_Agda
-  build-depends:   base >= 3 && < 4,
+  build-depends:   base >= 4.1 && < 4.2,
                    filepath >= 1.1 && < 2,
                    process >= 1.0.1.0 && < 2,
                    utf8-string >= 0.3 && < 0.4
