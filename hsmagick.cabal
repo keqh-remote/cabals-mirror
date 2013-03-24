@@ -1,5 +1,5 @@
 name:                hsmagick
-version:             0.3
+version:             0.4
 synopsis:            FFI bindings for the GraphicsMagick library
 description:         FFI bindings for the GraphicsMagick library
 category:            Graphics
@@ -12,12 +12,12 @@ stability:           alpha
 homepage:            http://community.haskell.org/~tim
 Cabal-Version:       >= 1.2.3
 
-tested-with:         GHC ==6.8.2, GHC==6.10.1
+tested-with:         GHC==6.10.4, GHC==6.12.2
 build-type:          Simple
 data-files:          README
 
 Library {
-build-depends:       base, directory, filepath, pretty, process
+build-depends:       base < 5, directory, filepath, pretty, process
 exposed-modules:     Graphics.Transform.Magick.Images, Graphics.Transform.Magick.Types, Graphics.Transform.Magick.Test
 other-modules:       Graphics.Transform.Magick.FFIHelpers, Graphics.Transform.Magick.Util, Graphics.Transform.Magick.Errors, Graphics.Transform.Magick.Magick
 ghc-options:         -Wall
