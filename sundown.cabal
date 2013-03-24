@@ -1,6 +1,6 @@
 Cabal-version:          >= 1.6
 Name:                   sundown
-Version:                0.1
+Version:                0.1.1
 Author:                 Francesco Mazzoli (f@mazzo.li)
 Maintainer:             Francesco Mazzoli (f@mazzo.li)
 Build-Type:             Simple
@@ -10,12 +10,12 @@ Category:               Foreign binding, Text
 Synopsis:               Binding to upskirt
 Tested-With:            GHC==7.0.2
 Description:
-  Bindings to github's sundown, a nice C markdown library:
-  <https://github.com/tanoku/sundown>.
+  Bindings to the github fork of sundown, a nice C markdown library:
+  <https://github.com/tanoku/sundown>
 
 source-repository head
   type:     git
-  location: git://github.com/rostayob/sundown.git
+  location: git://github.com/rostayob/upskirt.git
 
 Library
   Hs-Source-Dirs:       src
@@ -23,7 +23,7 @@ Library
   Build-Depends:        base >= 3 && < 5
                       , bytestring
 
-  GHC-Options:          -Wall -O2
+  GHC-Options:          -Wall -O2 -fno-cse
   
   Extensions:           ForeignFunctionInterface, EmptyDataDecls
   
