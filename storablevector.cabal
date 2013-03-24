@@ -1,5 +1,5 @@
 Name:                storablevector
-Version:             0.2
+Version:             0.2.1
 Category:            Data
 Synopsis:            Fast, packed, strict storable arrays with a list interface like ByteString
 Description:
@@ -49,6 +49,9 @@ Library
     Data.StorableVector.ST.Lazy
 
   Other-Modules:
+    -- LazySize and LazyVarying have no mature interface so far
+    Data.StorableVector.LazySize
+    Data.StorableVector.LazyVarying
     -- Cursor has no mature interface so far
     Data.StorableVector.Cursor
     Data.StorableVector.Memory
