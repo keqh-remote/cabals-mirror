@@ -1,13 +1,13 @@
 Name:                idiii
 Cabal-version:       >= 1.8
-Version:             0.1.3
+Version:             0.1.3.1
 Synopsis:            ID3v2 (tagging standard for MP3 files) library
 Description:         ID3v2 (tagging standard for MP3 files) library
 Category:            Text, Sound
 License:             BSD3
 License-file:        LICENSE
 Author:              Alexey Alekhin, Chris Wagner
-Maintainer:          christopher.t.wagner@gmail.com, alekhin.alexey@gmail.com
+Maintainer:          bart.massey@gmail.com, christopher.t.wagner@gmail.com, alekhin.alexey@gmail.com
 Build-Type:          Simple
 extra-source-files:  LICENSE read-idiii.hs
 data-dir:            test/resources
@@ -60,4 +60,4 @@ Source-repository head
 Source-repository this
     type:            bazaar
     location:        lp:idiii
-    tag:             0.1.3
+    tag:             0.1.3.1
