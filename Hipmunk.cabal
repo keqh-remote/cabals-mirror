@@ -3,8 +3,8 @@ Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          Hipmunk
-Version:       0.1
-Stability:     beta
+Version:       0.2
+Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
 Copyright:     (c) 2008 Felipe A. Lessa
@@ -21,6 +21,7 @@ Description:
       .
       Licensed under the MIT license (like Chipmunk itself).
 Extra-Source-Files:
+      NEWS,
       chipmunk/chipmunk.h,
       chipmunk/cpArbiter.h,
       chipmunk/cpArray.h,
