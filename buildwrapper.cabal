@@ -1,5 +1,5 @@
 name:           buildwrapper
-version:        0.5.2
+version:        0.6.0
 cabal-version:  >= 1.8
 build-type:     Simple
 license:        BSD3
@@ -29,7 +29,7 @@ library
                    ghc,
                    ghc-paths,
                    syb,
-                   ghc-syb-utils,
+                   -- ghc-syb-utils,
                    text,
                    containers,
                    vector >= 0.8,
@@ -69,7 +69,7 @@ executable buildwrapper
                    cpphs,
                    haskell-src-exts,
                    old-time,
-                   ghc-syb-utils,
+                   -- ghc-syb-utils,
                    ghc-paths,
                    vector >= 0.8,
                    containers,
@@ -80,7 +80,7 @@ executable buildwrapper
                    aeson >=0.4,
                    bytestring,
                    transformers
-  ghc-options:     -Wall -fno-warn-unused-do-bind
+  ghc-options:     -Wall -fno-warn-unused-do-bind -optl -s
   other-modules:   Language.Haskell.BuildWrapper.CMD
   
 test-suite buildwrapper-test
@@ -102,13 +102,19 @@ test-suite buildwrapper-test
                    attoparsec,
                    test-framework,
                    test-framework-hunit,
-                   transformers
+                   transformers,
+                   vector,
+                   unordered-containers,
+                   containers
   main-is:         Main.hs
-  ghc-options:     -Wall -fno-warn-unused-do-bind
+  ghc-options:     -Wall -fno-warn-unused-do-bind -optl -s
   x-uses-tf:       true
   other-modules:   
-                   Language.Haskell.BuildWrapper.APITest, Language.Haskell.BuildWrapper.Tests, Language.Haskell.BuildWrapper.CMDTests,
-                   Language.Haskell.BuildWrapper.GHCTests
+                   Language.Haskell.BuildWrapper.APITest,
+                   Language.Haskell.BuildWrapper.Tests,
+                   Language.Haskell.BuildWrapper.CMDTests,
+                   Language.Haskell.BuildWrapper.GHCTests,
+                   Language.Haskell.BuildWrapper.UsagesTests
 
 source-repository head
   type:     git
