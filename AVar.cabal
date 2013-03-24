@@ -1,5 +1,5 @@
 Name:                   AVar
-Version:                0.0.5
+Version:                0.0.5.1
 Category:               Concurrency
 Synopsis:               Mutable variables with Exception handling and concurrency support.
 Description:            AVars emulate mutable variables, by providing a queue based
@@ -15,6 +15,7 @@ Description:            AVars emulate mutable variables, by providing a queue ba
                         
                         New in this version:
                         * Fixed a (MASSIVE) mistake where i had forgotten to export the newAVar function.
+                        * Gave in and exported Data.AVar.Internal
 License:                BSD3
 License-file:           LICENSE.txt
 Author:                 Alex Mason
@@ -28,5 +29,5 @@ Library
         Build-Depends:
                 base >= 4.0.0.0, base < 6.0.0.0
         Exposed-modules:
-                Data.AVar, Data.AVar.Unsafe
+                Data.AVar, Data.AVar.Unsafe, Data.AVar.Internal
 
