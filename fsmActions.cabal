@@ -1,5 +1,5 @@
 Name:                   fsmActions
-Version:                0.4.1
+Version:                0.4.2
 Stability:              Alpha
 Synopsis:               Finite state machines and FSM actions
 Description:
@@ -25,9 +25,10 @@ Source-Repository head
     Location:     http://code.haskell.org/fsmActions
 
 Library
-  Build-Depends:   base >= 4 && < 5, containers, filepath, fgl,
-                   graphviz >= 2999.6.0.0, MissingH, mtl, parsec,
-                   pretty
+  Build-Depends:   base >= 3 && < 5, containers, filepath,
+                   fgl == 5.4.2.2,
+                   graphviz >= 2999.6.0.0 && <= 2999.9.0.0,
+                   MissingH, mtl, parsec, pretty
   Exposed-modules: Data.FsmActions,
                    Data.FsmActions.ActionMatrix,
                    Data.FsmActions.Error,
