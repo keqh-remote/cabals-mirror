@@ -1,5 +1,5 @@
 name:                RandomDotOrg
-version:             0.1
+version:             0.2
 build-type:          Simple
 Cabal-Version:       >= 1.2
 synopsis:            Interface to random numbers on random.org
@@ -13,4 +13,4 @@ maintainer:          mad.one@gmail.com
 
 library
   build-depends:       base, HTTP-Simple >= 0.1, network
-  exposed-modules:     RandomDotOrg
+  exposed-modules:     System.Random.Atmosphere
