@@ -1,5 +1,5 @@
 Name:                monad-par
-Version:             0.3
+Version:             0.3.4
 Synopsis:            A library for parallel programming based on a monad
 
 
@@ -16,45 +16,43 @@ Synopsis:            A library for parallel programming based on a monad
 
 --  0.3      : Factored/reorganized modules and packages.  
 --             *This* package is the original, core monad-par.
+--  0.3.1    : fix for ghc 7.6.1, expose Par.IO
+--  0.3.4    : switch to direct scheduler as default (only 1-level nesting allowed)
 
-
-Description:         This library offers an alternative parallel programming
-                     API to that provided by the @parallel@ package.
-
-                     A 'Par' monad allows the simple description of
-                     parallel computations, and can be used to add
-                     parallelism to pure Haskell code.  The basic API
-                     is straightforward: the monad supports forking
-                     and simple communication in terms of 'IVar's.
-
-                     The library comes with a work-stealing
-                     implementation, but the internals are also
-                     exposed so that you can build your own scheduler
-                     if necessary.
-
-
-                     Examples of use can be found in the examples/ directory
-                     of the source package.
-
-
-                     The modules below provide additionaly schedulers,
-                     data structures, and other added capabilities
-                     layered on top of the 'Par' monad.
-
---                       * Finish These
---                       * Module Descriptions
+Description:
+  The 'Par' monad offers a simple API for parallel programming.  The
+  library works for parallelising both pure and @IO@ computations,
+  although only the pure version is deterministic.
+  .
+  For complete documentation see "Control.Monad.Par".
+  .
+  Some examples of use can be found in the @examples/@ directory of
+  the source package.
+  .
+  Other related packages:
+  .
+  * @abstract-par@ provides the type classes that abstract over different
+  implementations of the @Par@ monad.
+  .
+  * @monad-par-extras@ provides some extra combinators layered on top of
+  the @Par@ monad.
+  .
+  Changes in 0.3.4 relative to 0.3:
+  .
+  * Fix bugs that cause "thread blocked indefinitely on MVar" crashes.
+  .
+  * Added "Control.Monad.Par.IO"
 
 Homepage:            https://github.com/simonmar/monad-par
 License:             BSD3
 License-file:        LICENSE
-Author:              Simon Marlow
-Maintainer:          Simon Marlow <marlowsd@gmail.com>
+Author:              Simon Marlow, Ryan Newton
+Maintainer:          Simon Marlow <marlowsd@gmail.com>, Ryan Newton <rrnewton@gmail.com>
 Copyright:           (c) Simon Marlow 2011
 Stability:           Experimental
 Category:            Control,Parallelism,Monads
 Build-type:          Simple
 Cabal-version:       >=1.8
-
 
 extra-source-files:
      tests/AListTest.hs
@@ -70,9 +68,14 @@ extra-source-files:
      tests/hs_cassandra_microbench2.hs
 
 Library
+  Source-repository head
+    type:     git
+    location: https://github.com/simonmar/monad-par
+
   Exposed-modules: 
                  -- The classic, simple monad-par interface:
                    Control.Monad.Par
+                 , Control.Monad.Par.IO
 
                  -- This is the default scheduler:
                  , Control.Monad.Par.Scheds.Trace
@@ -82,7 +85,8 @@ Library
                  , Control.Monad.Par.Scheds.Direct
 
                  -- This scheduler uses sparks rather than IO threads.
-                 -- It only supports Futures, not full IVars:
+                 -- It only supports Futures, not full IVars.  Fork
+                 -- becomes lighter weight.
                  , Control.Monad.Par.Scheds.Sparks
 
   Build-depends: base >= 4 && < 5
@@ -110,8 +114,10 @@ Library
                -- Internal logging framework:
                -- Control.Monad.Par.Logging,
 
-               -- Serial Elision is currently experimental:
+               -- Serial Elision scheduling is currently experimental:
                -- Control.Monad.Par.Scheds.SerialElision
+
+               Control.Monad.Par.Scheds.DirectInternal
 
                ------------------------------------------------------------
                --                   Data Structures                      -- 
@@ -132,14 +138,14 @@ Test-Suite test-monad-par
     ghc-options: -itests -rtsopts -threaded
     build-depends: base >= 4 && < 5
                  , abstract-par, monad-par-extras
-                 , array >= 0.3
+                 , array   >= 0.3
                  , deepseq >= 1.2
                  , time
                  , QuickCheck, HUnit
                  , test-framework-hunit, test-framework-quickcheck2
                  , test-framework, test-framework-th
-                 -- , binary
 
-
-
-
+                 , abstract-deque >= 0.1.4
+                 , mwc-random >= 0.11
+                 , mtl >= 2.0.1.0
+                 , containers
