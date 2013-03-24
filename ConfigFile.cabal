@@ -1,5 +1,5 @@
 Name: ConfigFile
-Version: 1.0.6
+Version: 1.1.0
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
@@ -37,13 +37,14 @@ Library
   Hs-Source-Dirs: src
   Exposed-Modules: Data.ConfigFile,
     Data.ConfigFile.Types,
-    Data.ConfigFile.Parser
+    Data.ConfigFile.Parser,
+    Data.ConfigFile.Monadic
   Other-Modules: Data.ConfigFile.Lexer
   Extensions: ExistentialQuantification, OverlappingInstances,
    UndecidableInstances, TypeSynonymInstances, FlexibleContexts,
    FlexibleInstances
   Build-Depends: parsec, base < 5,
-                haskell98, mtl, MissingH>=1.0.0, containers
+                mtl, MissingH>=1.0.0, containers
   GHC-Options: -O2 -Wall
 
 Executable runtests
