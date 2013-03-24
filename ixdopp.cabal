@@ -1,6 +1,6 @@
 Name:           ixdopp
-Version:        0.1
-Copyright:      2008, Jesse A. Tov
+Version:        0.1.1
+Copyright:      2011, Jesse A. Tov
 Cabal-Version:  >= 1.2
 License:        BSD3
 License-File:   LICENSE
@@ -28,5 +28,9 @@ Description:
         for GHC to find it from a -pgmF flag.
 
 Executable ixdopp
-  Build-Depends:        haskell98, base, preprocessor-tools
+  Build-Depends:        haskell98 >=1 && <2,
+                        base >=4 && <5,
+                        syb >= 0 && <1,
+                        preprocessor-tools
+
   Main-Is:              Main.hs
