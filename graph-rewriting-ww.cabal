@@ -1,5 +1,5 @@
 Name:           graph-rewriting-ww
-Version:        0.3
+Version:        0.3.1
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -17,7 +17,7 @@ Data-Files:     examples/*.l
 Executable ww
   Main-Is:        Main.hs
   Build-Depends:
-    base >= 4.3 && < 4.6,
+    base >= 4 && < 4.6,
     base-unicode-symbols >= 0.2 && < 0.3,
     graph-rewriting >= 0.7 && < 0.8,
     graph-rewriting-layout >= 0.5.1 && < 0.6,
