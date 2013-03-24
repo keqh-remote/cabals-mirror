@@ -1,5 +1,5 @@
 Name:                   sednaDBXML
-Version:                0.1.2.3
+Version:                0.1.2.4
 License:                GPL-3
 Cabal-Version:          >= 1.10.0
 License-File:           LICENSE
@@ -16,14 +16,14 @@ Category:               Database, FFI
 
 Extra-Source-Files:     include/libsedna.h
                         include/sp_defs.h
-			LICENSE,
+                        LICENSE,
                         licenses/sedna_headers/LICENSE,
                         test/fixtures/baseballleague.xml,
                         test/runTests.sh,
                         test/sedna-testsuite.cabal,
                         test/suite/Integration/SednaBindingTests.hs,
                         test/suite/TestSuite.hs,
-			README
+                        README
 
 Library
   Hs-Source-Dirs:         src
@@ -35,17 +35,20 @@ Library
                           iteratee >= 0.8,
                           mtl
 
-  Exposed-Modules:        Database.SednaDB.SednaBindings
-                          Database.SednaDB.SednaExceptions
-                          Database.SednaDB.SednaTypes                        
-                          Database.SednaDB.Internal.SednaCBindings
-                          Database.SednaDB.Internal.SednaConnectionAttributes
-                          Database.SednaDB.Internal.SednaResponseCodes
-                          Database.SednaDB.Internal.SpDefs
+  Exposed-Modules:        Database.SednaBindings
+                          Database.SednaExceptions
+                          Database.SednaTypes
+                          Database.Sedna                        
+                          Database.Internal.SednaCBindings
+                          Database.Internal.SednaConnectionAttributes
+                          Database.Internal.SednaResponseCodes
+                          Database.Internal.SpDefs
 
   Include-Dirs:           include
   Includes:               libsedna.h,
                           sp_defs.h
+  
+  Extra-Libraries:        sedna
 
   Ghc-Options:            -Wall
 
@@ -54,4 +57,4 @@ Library
 
 Source-Repository Head
     type:                 git
-    location:             git@github.com:ExternalReality/SednaDBXML.git
+    location:             git@github.com:ExternalReality/XML.git
