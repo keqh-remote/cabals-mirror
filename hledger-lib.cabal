@@ -1,5 +1,5 @@
 name:           hledger-lib
-version: 0.10
+version: 0.11
 category:       Finance
 synopsis:       Core types and utilities for working with hledger (or c++ ledger) data.
 description:
@@ -25,6 +25,8 @@ build-type:     Simple
 --   sample.timelog
 
 library
+  -- should set patchlevel here as in Makefile
+  cpp-options:    -DPATCHLEVEL=0
   exposed-modules:
                   Hledger.Data
                   Hledger.Data.Account
@@ -32,15 +34,17 @@ library
                   Hledger.Data.Amount
                   Hledger.Data.Commodity
                   Hledger.Data.Dates
-                  Hledger.Data.IO
                   Hledger.Data.Transaction
                   Hledger.Data.Journal
                   Hledger.Data.Ledger
                   Hledger.Data.Posting
-                  Hledger.Data.Parse
                   Hledger.Data.TimeLog
                   Hledger.Data.Types
                   Hledger.Data.Utils
+                  Hledger.Read
+                  Hledger.Read.Common
+                  Hledger.Read.Journal
+                  Hledger.Read.Timelog
   Build-Depends:
                   base >= 3 && < 5
                  ,containers
@@ -55,9 +59,6 @@ library
                  ,time
                  ,utf8-string >= 0.3
                  ,HUnit
-
-  -- should set patchlevel here as in Makefile
-  cpp-options:    -DPATCHLEVEL=0
 
 -- source-repository head
 --   type:     darcs
