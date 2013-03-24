@@ -1,5 +1,5 @@
 name:                aeson-schema
-version:             0.1.1.0
+version:             0.2.0.0
 synopsis:            Haskell JSON schema validator and parser generator
 -- description:         
 homepage:            https://github.com/timjb/aeson-schema
@@ -27,7 +27,7 @@ library
   other-modules:       Data.Aeson.Schema.Choice.TH,
                        Data.Aeson.TH.Lift
   extensions:          OverloadedStrings
-  build-depends:       base == 4.5.*,
+  build-depends:       base > 4 && < 5,
                        aeson >= 0.6.0.2,
                        vector >= 0.7.1,
                        text >= 0.11.1.0,
@@ -41,20 +41,6 @@ library
                        transformers >= 0.3.0.0,
                        QuickCheck >= 2.4.2 && < 2.5,
                        syb >= 0.3.6.1,
-                       bytestring
-
-executable generate-aeson-schema
-  ghc-options:         -Wall
-  main-is:             generate-aeson-schema.hs
-  hs-source-dirs:      .
-  build-depends:       base == 4.5.*,
-                       aeson-schema,
-                       cmdargs,
-                       containers,
-                       text,
-                       aeson,
-                       template-haskell,
-                       attoparsec,
                        bytestring
 
 test-suite tests
