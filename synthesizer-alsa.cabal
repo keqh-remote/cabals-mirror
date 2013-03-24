@@ -1,5 +1,5 @@
 Name:           synthesizer-alsa
-Version:        0.0.2.1
+Version:        0.0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -42,7 +42,7 @@ Library
     sox >=0.0.1 && <0.1,
     alsa >= 0.2 && <0.3,
     -- midi >=0.1.1 && <0.1,
-    storablevector >=0.2.2 && <0.3,
+    storablevector >=0.2.4 && <0.3,
     numeric-prelude >=0.0.3 && <0.2,
     non-negative >=0.0.3 && <0.1,
     event-list >=0.0.8 && <0.1,
