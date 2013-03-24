@@ -1,7 +1,7 @@
 cabal-version:      >= 1.2
 build-type:         Simple
 name:               hoogle
-version:            4.0.0.5
+version:            4.0.6
 license:            GPL
 license-file:       docs/LICENSE
 category:           Development
@@ -39,6 +39,7 @@ data-files:
     quickcheck.hoo
     random.hoo
     stm.hoo
+    syb.hoo
     template-haskell.hoo
     time.hoo
     xhtml.hoo
@@ -49,9 +50,9 @@ flag splitBase
 executable hoogle
     build-depends: parsec, filepath, safe, uniplate, mtl, time
     if flag(splitBase)
-        build-depends: base >= 3, directory, process, containers, array, bytestring
+        build-depends: base >= 3 && < 4, directory, process, containers, array, bytestring
     else
-        build-depends: base < 3
+        build-depends: base >= 2 && < 3
 
     main-is:            Main.hs
     hs-source-dirs:     src
