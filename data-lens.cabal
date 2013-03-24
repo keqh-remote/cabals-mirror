@@ -1,21 +1,22 @@
-name:          data-lens
-category:      Control, Comonads
-version:       2.0.3
-license:       BSD3
-cabal-version: >= 1.6
-license-file:  LICENSE
-author:        Edward A. Kmett
-maintainer:    Edward A. Kmett <ekmett@gmail.com>
-stability:     provisional
-homepage:      http://github.com/ekmett/data-lens/
-copyright:     Copyright (C) 2008-2011 Edward A. Kmett
-synopsis:      Haskell 98 Lenses
-description:   Haskell 98 Lenses
-build-type:    Simple
+name:               data-lens
+category:           Control, Comonads
+version:            2.9.0
+license:            BSD3
+cabal-version:      >= 1.6
+license-file:       LICENSE
+author:             Russell O'Connor, Edward A. Kmett & Tony Morris
+maintainer:         Russell O'Connor <roconnor@theorem.ca>
+stability:          provisional
+homepage:           http://github.com/roconnor/data-lens/
+copyright:          Copyright (C) 2008-2012 Edward A. Kmett, Russell O'Connor & Tony Morris
+synopsis:           Haskell 98 Lenses
+description:        Haskell 98 Lenses
+build-type:         Simple
+extra-source-files: CHANGELOG
 
 source-repository head
   type: git
-  location: git://github.com/ekmett/data-lens.git
+  location: git://github.com/roconnor/data-lens.git
 
 flag DeriveDataTypeable
   manual: False
@@ -42,5 +43,13 @@ library
     Data.Lens.Common
     Data.Lens.Lazy
     Data.Lens.Strict
+    Data.Lens.Partial.Common
+    Data.Lens.Partial.Lazy
+    -- Data.Lens.Partial.Strict
+    Control.Category.Product
 
   ghc-options:      -Wall
+
+  hs-source-dirs:
+                    src
+
