@@ -1,14 +1,15 @@
 name:          levmar
-version:       0.1
+version:       0.2
 cabal-version: >= 1.6
 build-type:    Simple
 stability:     experimental
+tested-with:   GHC ==6.10.4
 author:        Roel van Dijk & Bas van Dijk
 maintainer:    vandijk.roel@gmail.com, v.dijk.bas@gmail.com
 copyright:     (c) 2009 Roel van Dijk & Bas van Dijk
 license:       BSD3
 license-file:  LICENSE
-category:      numerical
+category:      Numerical, Math
 synopsis:      An implementation of the Levenberg-Marquardt algorithm
 description:   The Levenberg-Marquardt algorithm is an iterative
                technique that finds a local minimum of a function that
@@ -40,11 +41,25 @@ description:   The Levenberg-Marquardt algorithm is an iterative
 	       * LevMar: A high-level layer that uses type-level
                  programming to add extra type safety.
                .
-               Each layer also has special data-fitting variants:
+               Each layer also has special curve-fitting variants:
                .
 	       * LevMar.Intermediate.Fitting
                .
                * LevMar.Fitting
+               .
+               Each layer also has special variants that automatically compute
+               the jacobian using automatic differentiation using Conal
+               Elliott's vector-space library:
+               .
+               * LevMar.Intermediate.AD
+               .
+	       * LevMar.Intermediate.Fitting.AD
+               .
+               * LevMar.AD
+               .
+	       * LevMar.Fitting.AD
+	       .
+               Note however that this feature is still very experimental!
                .
 	       All modules are self-contained; i.e. each module
 	       re-exports all the things you need to work with it.
@@ -68,12 +83,20 @@ source-repository head
 
 library
   build-depends: base >= 3 && < 4.2
-               , bindings-levmar < 0.2
+               , bindings-levmar == 0.1.*
+               , vector-space >= 0.5.7 && < 0.6
+               , MemoTrie >= 0.4.5 && < 0.5
   exposed-modules: LevMar
+                 , LevMar.AD
                  , LevMar.Fitting
+                 , LevMar.Fitting.AD
                  , LevMar.Intermediate
+                 , LevMar.Intermediate.AD
                  , LevMar.Intermediate.Fitting
+                 , LevMar.Intermediate.Fitting.AD
                  , TypeLevelNat
                  , SizedList
                  , NFunction
+  other-modules:   LevMar.Utils
+                 , LevMar.Utils.AD
   ghc-options: -Wall -O2
