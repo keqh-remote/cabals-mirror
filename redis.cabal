@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.5
+Version:             0.5.1
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -20,7 +20,9 @@ Description:
 	.
 	- new hash commands added: hmset, hmget, hincrby
 	.
-	- initial support for subscribe\/unsubscribe\/publish
+	- initial support for (p)subscribe\/(p)unsubscribe\/publish
+	.
+	- getServer and getDatabase accessors added
 
 Stability:           beta
 Build-Type:          Simple
