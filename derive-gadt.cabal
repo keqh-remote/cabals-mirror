@@ -1,5 +1,5 @@
 name:               derive-gadt
-version:            0.1.0
+version:            0.1.1
 cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
@@ -10,7 +10,8 @@ copyright:          (c) Matt Morrow 2009
 maintainer:         Matt Morrow <morrow@moonpatio.com>
 stability:          experimental
 synopsis:           Instance deriving for (a subset of) GADTs.
-description:        Very preliminary.
+description:        Very preliminary. Haddock-generated documentation in located at
+                    <http://moonpatio.com/repos/derive-gadt/haddocks>.
 
 library
   hs-source-dirs:   lib
