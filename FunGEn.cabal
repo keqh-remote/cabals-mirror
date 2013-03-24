@@ -1,29 +1,36 @@
 name:               FunGEn
-version:            0.1
-copyright:          (C) 2002 Andre Furtado <awbf@cin.ufpe.br>
+version:            0.3
+copyright:          (C) 2002 Andre Furtado <awbf@cin.ufpe.br>, (C) 2008 Miloslav Raus <666wman@gmail.com>, (C) 2008,2011 Simon Michael <simon@joyful.com>
 license:            BSD3
-license-file:       BSD3.txt
+license-file:       LICENSE
 author:             Andre Furtado <awbf@cin.ufpe.br>
-maintainer:         wman <666wman@gmail.com>
+maintainer:         Simon Michael <simon@joyful.com>
+homepage:           http://darcsden.com/simon/fungen
 category:           Game
 synopsis:           FUNctional Game ENgine
-description:        Multi-platform functional game engine built on top of OpenGL & GLUT
+description:        Multi-platform 2D game engine built on top of OpenGL & GLUT
 stability:          experimental
-cabal-version:      >= 1.2
+cabal-version:      >= 1.6
 build-type:         Simple
-tested-with:        GHC==6.8.3
-extra-source-files: readme.txt, Examples/pong/hit.wav, Examples/pong/pong.hs, Examples/pong/tex.bmp,
-                    Examples/worms/border1.bmp, Examples/worms/border2.bmp, Examples/worms/border3.bmp,
-                    Examples/worms/congratulations.bmp, Examples/worms/food.bmp, Examples/worms/free1.bmp,
-                    Examples/worms/free2.bmp, Examples/worms/free3.bmp, Examples/worms/gameover.bmp,
-                    Examples/worms/heade.bmp, Examples/worms/heads.bmp, Examples/worms/headn.bmp,
-                    Examples/worms/headw.bmp, Examples/worms/level1.bmp, Examples/worms/level2.bmp,
-                    Examples/worms/level3.bmp, Examples/worms/segment.bmp, Examples/worms/worms.hs
+tested-with:        GHC==6.12
+extra-source-files: README.md, examples/pong/hit.wav, examples/pong/pong.hs, examples/pong/tex.bmp,
+                    examples/worms/border1.bmp, examples/worms/border2.bmp, examples/worms/border3.bmp,
+                    examples/worms/congratulations.bmp, examples/worms/food.bmp, examples/worms/free1.bmp,
+                    examples/worms/free2.bmp, examples/worms/free3.bmp, examples/worms/gameover.bmp,
+                    examples/worms/heade.bmp, examples/worms/heads.bmp, examples/worms/headn.bmp,
+                    examples/worms/headw.bmp, examples/worms/level1.bmp, examples/worms/level2.bmp,
+                    examples/worms/level3.bmp, examples/worms/segment.bmp, examples/worms/worms.hs
 
 library
-  exposed-modules: Graphics.UI.FunGEn
-  other-modules: Graphics.UI.FunGEn.Fun_Types, Graphics.UI.FunGEn.Fun_Aux, Graphics.UI.FunGEn.Fun_Loader,
-                 Graphics.UI.FunGEn.Fun_Objects, Graphics.UI.FunGEn.Fun_Map, Graphics.UI.FunGEn.Fun_Game,
-                 Graphics.UI.FunGEn.Fun_Display, Graphics.UI.FunGEn.Fun_Input, Graphics.UI.FunGEn.Fun_Timer,
-                 Graphics.UI.FunGEn.Fun_Text, Graphics.UI.FunGEn.Fun_Init, Graphics.UI.FunGEn.UserInput
-  build-depends: base, OpenGL, GLUT, haskell98
+  exposed-modules: Graphics.UI.Fungen,
+                   Graphics.UI.Fungen.Types, Graphics.UI.Fungen.Util, Graphics.UI.Fungen.Loader,
+                   Graphics.UI.Fungen.Objects, Graphics.UI.Fungen.Map, Graphics.UI.Fungen.Game,
+                   Graphics.UI.Fungen.Display, Graphics.UI.Fungen.Input, Graphics.UI.Fungen.Timer,
+                   Graphics.UI.Fungen.Text, Graphics.UI.Fungen.Init, Graphics.UI.Fungen.UserInput
+
+  build-depends:
+                 base == 4.*
+                 ,OpenGL
+                 ,GLUT
+                 ,haskell98
+                 ,random
