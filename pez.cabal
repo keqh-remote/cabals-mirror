@@ -1,5 +1,5 @@
 Name:                pez
-Version:             0.0.3
+Version:             0.0.4
 Synopsis:            A Potentially-Excellent Zipper library
 Homepage:            http://coder.bsimmons.name/blog/2011/04/pez-zipper-library-released/
 
@@ -71,7 +71,7 @@ Build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
-Extra-source-files:  EXAMPLES/Examples.hs, Tests.hs
+Extra-source-files:  EXAMPLES/Examples.lhs, Tests.hs
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.2.3
