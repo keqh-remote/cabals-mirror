@@ -1,5 +1,5 @@
 name:                aws-sdk
-version:             0.9.3.0
+version:             0.9.4
 synopsis:            AWS SDK for Haskell
 description: AWS (Amazon Web Services) sdk for Haskell.
              .
@@ -10,6 +10,11 @@ description: AWS (Amazon Web Services) sdk for Haskell.
 license:             BSD3
 license-file:        LICENSE
 author:              Yusuke Nomura <yunomu@gmail.com>
+                   , Seizan Shimazaki <seizans@gmail.com>
+                   , Daisuke Matsumoto <dai@daimatz.net>
+                   , amkkun <amkkun@gmail.com>
+                   , eagletmt <eagletmt@gmail.com>
+                   , HATATANI Shinta <gamaguchi@gmail.com>
 maintainer:          Yusuke Nomura <yunomu@gmail.com>
 homepage:            http://worksap-ate.github.com/aws-sdk
 copyright:           AWS SDK for Haskell Developers
@@ -79,8 +84,17 @@ library
                    , AWS.Lib.Query
                    , AWS.RDS.Internal
                    , AWS.RDS.DBInstance
+                   , AWS.RDS.DBParameterGroup
+                   , AWS.RDS.DBSecurityGroup
                    , AWS.RDS.DBSnapshot
+                   , AWS.RDS.DBSubnetGroup
                    , AWS.RDS.Event
+                   , AWS.RDS.Types.DBInstance
+                   , AWS.RDS.Types.DBParameterGroup
+                   , AWS.RDS.Types.DBSecurityGroup
+                   , AWS.RDS.Types.DBSnapshot
+                   , AWS.RDS.Types.DBSubnetGroup
+                   , AWS.RDS.Types.Event
                    , AWS.ELB.Internal
                    , AWS.ELB.LoadBalancer
                    , AWS.CloudWatch.Internal
@@ -111,7 +125,7 @@ library
                    , lifted-base
                    , transformers-base
                    , strptime
-                   , template-haskell
+                   , template-haskell == 2.7.0.0
                    , parallel
                    , iproute >= 1.2.9
 
@@ -136,6 +150,7 @@ test-suite test
                  , HUnit
                  , lifted-base
                  , iproute
+                 , tls
 
 source-repository head
     type:            git
