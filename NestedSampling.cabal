@@ -1,5 +1,5 @@
 Name:                NestedSampling
-Version:             0.1.3
+Version:             0.1.4
 Synopsis:            A port of John Skilling's nested sampling C code to Haskell.
 
 Description:         Nested Sampling is a numerical algorithm for approximate Bayesian
