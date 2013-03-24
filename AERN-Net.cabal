@@ -1,12 +1,13 @@
 Name:           AERN-Net
-Version:        0.2.1
+Version:        0.2.1.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
 License-File:   LICENCE
 Author:         Michal Konecny (Aston University)
-Copyright:      (c) 2007-2008 Michal Konecny
-Maintainer:     mik@konecny.aow.cz
+Copyright:      (c) 2007-2009 Michal Konecny
+Maintainer:     mikkonecny@gmail.com
+Homepage:       http://www-users.aston.ac.uk/~konecnym/DISCERN
 Stability:      experimental
 Category:       Math, Distributed Computing
 Synopsis:       Compositional lazy dataflow networks for exact real number computation
@@ -35,16 +36,19 @@ Description:
     paper <http://www-users.aston.ac.uk/~konecnym/papers/ernets08-draft.html>.
     .
     Simple examples of usage can be found in modules @DemoMax@ and @DemoSqrt@ 
-    in folder @tests@.
+    in folder @examples@.
 Extra-source-files:
-    tests/DemoMax.hs tests/DemoSqrt.hs tests/ernet-trace.html src/ernet-trace.html
-Data-files:
+    examples/DemoMax.hs examples/DemoSqrt.hs examples/ernet-trace.html
+    src/ernet-trace.html
     ChangeLog
 
 Library
   hs-source-dirs:  src
   Build-Depends:
-      base >= 3, base < 4, containers, binary >= 0.4, html, time, stm, AERN-Real >= 0.9.9, AERN-RnToRm >= 0.4.9
+      base >= 3, base < 4,
+      containers, binary, html, time, stm,
+      AERN-Real >= 0.10, AERN-Real < 0.10.1,
+      AERN-RnToRm >= 0.5, AERN-RnToRm < 0.5.1
   Exposed-modules:
     Control.ERNet.Deployment.Local.Manager,
     Control.ERNet.Deployment.Local.Logger,
