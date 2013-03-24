@@ -1,5 +1,5 @@
 Name: com
-version: 1.2.1
+version: 1.2.2
 Synopsis: Haskell COM support library
 Description: 
     COM + Automation libraries for Haskell.
@@ -82,6 +82,5 @@ if os(windows)
   Build-Depends: base >= 4
   CPP-Options: -DBASE=4
 else
- Build-Depends: base
-
+ Buildable: False
 }
