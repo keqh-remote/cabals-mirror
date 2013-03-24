@@ -1,5 +1,5 @@
 name:                minesweeper
-version:             0.8.8.5
+version:             0.8.9
 category:            Game
 synopsis:            Minesweeper game which is always solvable without guessing
 description:         
@@ -46,7 +46,7 @@ executable minesweeper
     derive,
     gtk >= 0.10, 
     cairo >= 0.10,
-    glade
+    glade >= 0.10
 
   if flag(tests)
     build-depends:
@@ -61,10 +61,12 @@ executable minesweeper
   other-modules:    
     Data.ChangeMap,
     Data.ChangeSet,
-    Data.PContainer,
+    Data.SetClass,
     System.Random.Instances,
 
     Core.Square,
+    Core.SetContainer,
+    Core.Constraint,
     Core.BitField,
     Core.Constraints,
 
