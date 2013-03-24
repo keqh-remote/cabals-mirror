@@ -1,5 +1,5 @@
 Name:                ConstraintKinds
-Version:             0.0.1.1
+Version:             0.0.1.2
 Synopsis:            Repackages standard type classes with the ConstraintKinds extension
 Description:         This module provides more flexible versions of common type classes that use the ConstraintKinds extension.  This allows us to make types that require constraints instances of the popular classes.  For example, we reimplement Functor and Foldable using the ContraintKinds style.  This allows us to manipulate lists and unboxed vectors using the same functions.
                      .
