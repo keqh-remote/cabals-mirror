@@ -1,5 +1,5 @@
    Name:                HaskellForMaths
-   Version:             0.4.0
+   Version:             0.4.1
    Category:            Math
    Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended for educational purposes, but does have efficient implementations of several fundamental algorithms.
    Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
@@ -31,8 +31,10 @@
         Math/Test/TCombinatorics/TDigraph.hs
         Math/Test/TCombinatorics/TIncidenceAlgebra.hs
         Math/Test/TCombinatorics/TMatroid.hs
+        Math/Test/TCommutativeAlgebra/TPolynomial.hs
         Math/Test/TCommutativeAlgebra/TGroebnerBasis.hs
         Math/Test/TCore/TField.hs
+        Math/Test/TNumberTheory/TPrimeFactor.hs
         Math/Test/TProjects/TMiniquaternionGeometry.hs
 
    Library
@@ -46,7 +48,8 @@
         Math.Algebra.NonCommutative.NCPoly, Math.Algebra.NonCommutative.GSBasis, Math.Algebra.NonCommutative.TensorAlgebra,
         Math.Algebras.AffinePlane, Math.Algebras.Commutative, Math.Algebras.GroupAlgebra,
         Math.Algebras.LaurentPoly, Math.Algebras.Matrix, Math.Algebras.NonCommutative,
-        Math.Algebras.Quaternions, Math.Algebras.Structures, Math.Algebras.TensorAlgebra,
+        Math.Algebras.Octonions, Math.Algebras.Quaternions,
+        Math.Algebras.Structures, Math.Algebras.TensorAlgebra,
         Math.Algebras.TensorProduct, Math.Algebras.VectorSpace,
         Math.Combinatorics.Graph, Math.Combinatorics.GraphAuts, Math.Combinatorics.StronglyRegularGraph,
         Math.Combinatorics.Design, Math.Combinatorics.FiniteGeometry, Math.Combinatorics.Hypergraph,
@@ -55,6 +58,7 @@
         Math.Common.IntegerAsType, Math.Common.ListSet,
         Math.CommutativeAlgebra.Polynomial, Math.CommutativeAlgebra.GroebnerBasis,
         Math.Core.Utils, Math.Core.Field,
+        Math.NumberTheory.Prime, Math.NumberTheory.Factor,
         Math.Projects.RootSystem,
         Math.Projects.Rubik, Math.Projects.MiniquaternionGeometry,
         Math.Projects.ChevalleyGroup.Classical, Math.Projects.ChevalleyGroup.Exceptional,
