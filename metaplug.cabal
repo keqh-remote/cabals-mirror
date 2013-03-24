@@ -1,5 +1,5 @@
 Name:                metaplug
-Version:             0.1
+Version:             0.1.1
 Synopsis:            a tiny ghc api wrapper
 Description:         a ghc-api wrapper, designed
 		     to make the api more transparent
@@ -11,7 +11,7 @@ License-file:        LICENSE
 Author:              Austin Seipp
 Maintainer:          austin@youareinferior.net
 Stability:           experimental
-Build-Depends:       base, ghc>=6.6, filepath, haskell98, regex-compat, Cabal
+Build-Depends:       base, ghc>=6.6, filepath, haskell98, Cabal
 ghc-options:         -O
 hs-source-dirs:      src
 exposed-modules:     Metaplug.Initialize,
