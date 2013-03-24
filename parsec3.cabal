@@ -1,5 +1,5 @@
 name:           parsec3
-version:        1.0.0.3
+version:        1.0.0.4
 cabal-version: >= 1.2.3
 license:        BSD3
 license-file:   LICENSE
@@ -23,19 +23,19 @@ description:
         versions, therefore I do not recommend to unconditionally use parsec3
         as dependency in cabal files of packages for hackage.  But you may
         want to develop your code using this subset of parsec3 modules and
-        finally change the dependency from parsec3 to parsec-3.1.1 in order to
+        finally change the dependency from parsec3 to parsec in order to
         avoid module ambiguities for users just installing your package.  Your
         own module ambiguities are best avoided by hiding packages.
         .
-        This version has only a changed description compared to parsec3-1.0.0.2
-        that does not re-exports parts of the Applicative module to stay compatible with
-        parsec-3.1.1
+        This version reflects the changes of parsec-3.1.2
 library
     exposed-modules:
         Text.Parsec,
         Text.Parsec.String,
         Text.Parsec.ByteString,
         Text.Parsec.ByteString.Lazy,
+        Text.Parsec.Text,
+        Text.Parsec.Text.Lazy,
         Text.Parsec.Pos,
         Text.Parsec.Error,
         Text.Parsec.Prim,
@@ -45,6 +45,6 @@ library
         Text.Parsec.Expr,
         Text.Parsec.Language,
         Text.Parsec.Perm
-    build-depends: base >= 4 && < 5, mtl, bytestring
+    build-depends: base >= 4 && < 5, mtl, bytestring, text >= 0.2 && < 0.12
     extensions: DeriveDataTypeable, PolymorphicComponents, FlexibleInstances,
         MultiParamTypeClasses, FlexibleContexts
