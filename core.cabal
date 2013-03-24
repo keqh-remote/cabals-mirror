@@ -1,5 +1,5 @@
 name:                core
-version:             0.1
+version:             0.2
 synopsis:            External core parser and pretty printer.
 description:         External core parser and pretty printer.
 category:            Language
