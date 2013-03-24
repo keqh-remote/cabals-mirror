@@ -1,5 +1,5 @@
 Name:             happstack-facebook
-Version:          0.21
+Version:          0.22
 License:          BSD3
 License-file:     debian/copyright
 Author:           jeremy@seereason.com
@@ -49,8 +49,11 @@ Library
   GHC-options: -O2 -Wall -fwarn-missing-signatures -fno-warn-name-shadowing -fwarn-orphans -fwarn-tabs -fwarn-unused-binds -fwarn-unused-imports
 
 Executable demo
+ -- it only makes sense to build the executable if you have modified FacebookConfig.hs to have valid config information
+ Buildable: False
  Main-Is: ConnectDemo.hs
  Hs-source-dirs: . examples
+ Other-modules: FacebookConfig
  GHC-options: -threaded -O2 -Wall -fwarn-missing-signatures -fno-warn-name-shadowing -fwarn-orphans -fwarn-tabs -fwarn-unused-binds -fwarn-unused-imports
  Build-Tools: trhsx
 
