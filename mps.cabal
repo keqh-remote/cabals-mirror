@@ -1,9 +1,9 @@
 Name:                 mps
-Version:              2009.6.25
+Version:              2009.7.2
 Build-type:           Simple
 Synopsis:             message passing style helpers
 Description:          message passing style helpers
-License:              GPL
+License:              BSD3
 Author:               Wang, Jinjing
 Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
 Build-Depends:        base
