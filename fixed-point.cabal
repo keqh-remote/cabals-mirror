@@ -1,5 +1,5 @@
 Name:                fixed-point
-Version:             0.1.0.1
+Version:             0.2.0.0
 Synopsis:            Binary fixed-point arithmetic
 Description:         This package defines a type for binary
                      fixed-precision arithmetic. Its interface is
@@ -18,6 +18,11 @@ Cabal-version:       >=1.6
 Library
   Build-depends:       base == 4.3.*
   Exposed-modules:     Data.Fixed.Binary
+  Extensions:          DeriveDataTypeable,
+                       EmptyDataDecls,
+                       GeneralizedNewtypeDeriving,
+                       TypeFamilies,
+                       TypeOperators
   GHC-options:         -Wall -fwarn-tabs -funfolding-use-threshold=16
 
 Source-repository head
@@ -27,4 +32,4 @@ Source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/r/jmcarthur/fixed-point
-  tag:      v0.1.0.0
+  tag:      v0.2.0.0
