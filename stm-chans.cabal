@@ -1,9 +1,9 @@
 ----------------------------------------------------------------
--- wren ng thornton <wren@community.haskell.org>    ~ 2011.04.03
+-- wren ng thornton <wren@community.haskell.org>    ~ 2011.04.05
 ----------------------------------------------------------------
 
 Name:           stm-chans
-Version:        1.0.0
+Version:        1.1.0
 -- Source-Repository requires version 1.6
 Cabal-Version:  >= 1.6
 -- We need a custom build in order to define __HADDOCK__
@@ -15,7 +15,7 @@ License-File:   LICENSE
 Author:         wren ng thornton
 Maintainer:     wren@community.haskell.org
 Homepage:       http://code.haskell.org/~wren/
-Category:       System
+Category:       Concurrency
 Synopsis:       Additional types of channels for STM.
 Description:    Additional types of channels for STM.
 
