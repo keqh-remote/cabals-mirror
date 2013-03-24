@@ -1,6 +1,6 @@
 Name:           arrows
-Version:        0.4.1
-Build-Depends:  base >= 4.0 && < 4.1, Stream
+Version:        0.4.1.1
+Build-Depends:  base >= 4.0 && < 4.2, Stream
 Build-Type:     Simple
 License:        BSD3
 License-file:   LICENSE
