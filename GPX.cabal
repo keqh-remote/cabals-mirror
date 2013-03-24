@@ -1,5 +1,5 @@
 Name:                GPX
-Version:             0.4.5
+Version:             0.4.6
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            Parse GPX files
@@ -94,3 +94,5 @@ Library
                    Data.Geo.GPX.Accessor.Trkpts
                    Data.Geo.GPX.Accessor.Trksegs
                    Data.Geo.GPX.Accessor.Latlon
+                   Data.Geo.GPX.Util.Remove
+                   Data.Geo.GPX.Util.Reverse
