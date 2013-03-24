@@ -1,5 +1,5 @@
 name:                hdis86
-version:             0.1
+version:             0.2
 license:             BSD3
 license-file:        LICENSE
 synopsis:            Interface to the udis86 disassembler for x86 and x86-64 / AMD64
@@ -8,7 +8,7 @@ author:              Keegan McAllister <mcallister.keegan@gmail.com>
 maintainer:          Keegan McAllister <mcallister.keegan@gmail.com>
 homepage:            https://github.com/kmcallister/hdis86
 build-type:          Simple
-cabal-version:       >=1.2
+cabal-version:       >=1.6
 description:
   @hdis86@ is an interface to the @udis86@ disassembler, which decodes machine
   code for 16-, 32-, and 64-bit x86  and x86-64 / AMD64 processors.  @hdis86@
@@ -30,7 +30,9 @@ description:
   .
   Many users can simply import @Hdis86@.
   .
-
+  The @Incremental@ module provides disassembly of lazy @ByteString@s, and a
+  function for building other incremental operations.
+  .
   By default, @hdis86@ will statically link a built-in copy of @udis86-1.7@,
   which is provided by its author under a similar BSD license.  See inside the
   tarball for more information.  If you have @udis86@ installed on your system,
@@ -40,10 +42,21 @@ description:
   This code is available on GitHub at <https://github.com/kmcallister/hdis86>.
   .
   The @udis86@ project website is located at <http://udis86.sourceforge.net/>.
+  .
+  New in version 0.2:
+  .
+    * Disassembly of lazy @ByteString@s
+  .
+    * A function for building other incremental operations
+  .
+    * Record selectors on @Instruction@
+  .
+    * QuickCheck @Arbitrary@ instances for @Instruction@ and related types
 
 extra-source-files:
     tools/hdcli.hs
   , tools/gen_opcode.sh
+  , tools/test_lazy_bytestring.hs
   , udis86-1.7/libudis86/decode.h
   , udis86-1.7/libudis86/input.h
   , udis86-1.7/libudis86/syn.h
@@ -65,15 +78,18 @@ library
       Hdis86
     , Hdis86.Types
     , Hdis86.Pure
+    , Hdis86.Incremental
     , Hdis86.IO
     , Hdis86.C
-    , Hdis86.Internal.Opcode
     , Hdis86.Internal.Map
+  other-modules:
+      Hdis86.Internal.Opcode
   ghc-options:       -Wall
   build-depends:
       base       >= 3 && < 5
     , containers >= 0.3
     , bytestring >= 0.9
+    , QuickCheck >= 2.4
 
   if flag(external-udis86)
     extra-libraries: udis86
@@ -87,3 +103,16 @@ library
       udis86-1.7/libudis86/syn.c
       udis86-1.7/libudis86/syn-att.c
       udis86-1.7/libudis86/syn-intel.c
+
+  other-extensions:
+      DeriveDataTypeable
+    , RecordWildCards
+    , NamedFieldPuns
+    , ViewPatterns
+    , ForeignFunctionInterface
+    , EmptyDataDecls
+    , ScopedTypeVariables
+
+source-repository head
+    type:     git
+    location: git://github.com/kmcallister/hdis86.git
