@@ -1,5 +1,5 @@
 Name: happstack-helpers
-Version: 0.52
+Version: 0.53
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming Happstack based web-apps.
@@ -34,7 +34,7 @@ Library
   else
     Build-Depends:    base >=3 && < 4
 
-  Build-Depends: mtl >= 1.1.0.0 && < 2.0.0.0
+  Build-Depends: mtl 
                , happstack-server >= 0.3 && < 0.6
                , hscolour >= 1.0 && < 1.14
                , filepath >= 1.1.0.0 && < 1.2.0.0
