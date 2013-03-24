@@ -1,5 +1,5 @@
 name:            factual-api
-version:         0.4.0
+version:         0.5.0
 license:         BSD3
 license-file:    LICENSE.txt
 category:        API, Web
@@ -27,9 +27,11 @@ library
   exposed-modules:
     Network.Factual.API
     Data.Factual.Query
+    Data.Factual.Query.DiffsQuery
     Data.Factual.Query.FacetsQuery
     Data.Factual.Query.GeocodeQuery
     Data.Factual.Query.GeopulseQuery
+    Data.Factual.Query.MatchQuery
     Data.Factual.Query.ReadQuery
     Data.Factual.Query.ResolveQuery
     Data.Factual.Query.SchemaQuery
@@ -40,6 +42,7 @@ library
     Data.Factual.Shared.Filter
     Data.Factual.Shared.Geo
     Data.Factual.Shared.Search
+    Data.Factual.Shared.SortOrder
     Data.Factual.Shared.Table
 
   other-modules:
