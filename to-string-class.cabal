@@ -1,11 +1,11 @@
 Name:                   to-string-class
-Version:                0.1.1
+Version:                0.1.2
 Synopsis:               Converting string-like types to Strings.
 Description:            This library provides the class:
                         .
                         class ToString s where toString :: s -> String
                         .
-                        Instances for String and Char are provided.
+                        Instances for String, Char and ShowS are provided.
                         For other instances see the package:
                         .
                         <http://hackage.haskell.org/package/to-string-instances>
