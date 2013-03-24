@@ -1,30 +1,29 @@
 name:           exception-mtl
-version:        0.2
+version:        0.3
 cabal-version:  >= 1.6
 license:        BSD3
 license-file:   LICENSE
-copyright:      (c) 2008-2010 Harvard University
+copyright:      (c) 2008-2011 Harvard University
 author:         Geoffrey Mainland <mainland@eecs.harvard.edu>
 maintainer:     mainland@eecs.harvard.edu
 stability:      alpha
 homepage:       http://www.eecs.harvard.edu/~mainland/
 category:       Control, Monad, Error Handling, Failure
-synopsis:       Type classes and monads for unchecked extensible exceptions.
-description:    This package provides type classes, a monad and a monad
-		transformer that support unchecked extensible exceptions as
-		well as asynchronous exceptions. It also provides instances for
-		the classes defined by mtl.
+synopsis:       Exception monad transformer instances for mtl2 classes.
+description:    This package provides exception monad transformer instances for
+		the classes defined by mtl2.
 
 build-type:     Simple
 
 library
   exposed-modules:
-    Control.Monad.Exception
+    Control.Monad.Exception.Instances
 
   build-depends:
     base >=4 && <5,
-    mtl >=1.1 && <1.2,
-    stm >=2.1 && <2.2
+    exception-transformers >=0.3 && <0.4,
+    mtl >=2.0 && <2.1,
+    transformers >=0.2 && <0.3
 
   ghc-options:
     -Wall
