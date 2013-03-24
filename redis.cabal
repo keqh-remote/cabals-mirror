@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.7.2
+Version:             0.8
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -16,15 +16,13 @@ Description:
 	protocol. Most of the functions will work correctly with stable version
 	but not all.
 	.
-	Changes from v0.6:
+	Changes from v0.7:
 	.
-	- new commands added: watch, unwatch
+	- new commands added: strlen, persist
 	.
-	- new batch command: run_cas
+	- zrangebyscore now supports LIMIT argument. Warning! Backward incompatible change!
 	.
-	- fixed bug with expireAt - thanks to Alex Suraci
-	.
-	- fixed bug with sismember - thanks to Michael Snoyman
+	- fixed behaviour of sort with multiple GET keys
 	.
 
 Stability:           beta
