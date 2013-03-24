@@ -1,5 +1,5 @@
 Name:                   regex-compat-tdfa
-Version:                0.95.1
+Version:                0.95.1.1
 Cabal-Version:          >=1.2
 License:                BSD3
 License-File:           LICENSE
@@ -13,7 +13,7 @@ Package-URL:            http://darcsden.com/shelarcy/regex-compat-tdfa
 Synopsis:               Unicode Support version of Text.Regex, using regex-tdfa
 Description:            One module layer over regex-tdfa to replace Text.Regex.
                         .
-                        regex-compat can't uses Unicode characters correctly because
+                        regex-compat can't use Unicode characters correctly because
                         of using regex-posix. This is not good for Unicode users.
                         .
                         I modified regex-compat to use regex-tdfa for solving today's
@@ -29,12 +29,12 @@ flag splitBase
   default: True
 library
   if flag(newBase)
-      Build-Depends:      base >= 4 && < 5, regex-base >= 0.93, regex-tdfa >= 0.95.1, array
+      Build-Depends:      base >= 4 && < 5, regex-base >= 0.93, regex-tdfa >= 1.1.0, array
   else
     if flag(splitBase)
-      Build-Depends:      base >= 3.0, regex-base >= 0.93, regex-tdfa >= 0.95.1, array
+      Build-Depends:      base >= 3.0, regex-base >= 0.93, regex-tdfa >= 1.1.0, array
     else
-      Build-Depends:      base < 3.0,  regex-base >= 0.93, regex-tdfa >= 0.95.1
+      Build-Depends:      base < 3.0,  regex-base >= 0.93, regex-tdfa >= 1.1.0
   Exposed-Modules:        Text.Regex
   Buildable:              True
   Extensions:             MultiParamTypeClasses, FunctionalDependencies
