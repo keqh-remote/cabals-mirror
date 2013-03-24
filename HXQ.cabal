@@ -1,13 +1,13 @@
 Cabal-Version:       >= 1.2
 Name:                HXQ
-Version:             0.9.0
+Version:             0.10.0
 Synopsis:            A Compiler from XQuery to Haskell
 Description:         
         HXQ is a fast and space-efficient compiler from XQuery (the standard
         query language for XML) to embedded Haskell code. The translation is
         based on Haskell templates. It also provides an interpreter for
         evaluating XQueries from input and an optional database connectivity
-        using HDBC and SQLite3.
+        using HDBC with MySQL/ODBC or sqlite3.
 Category:            XML
 Build-type:          Simple
 License-file:        LICENSE
@@ -20,8 +20,9 @@ Homepage:            http://lambda.uta.edu/HXQ/
 Extra-Source-Files:
   src/noDB/Text/XML/HXQ/OptionalDB.hs
   src/withDB/Text/XML/HXQ/DB.hs
-  src/withDB/Text/XML/HXQ/DBConnect.hs
   src/withDB/Text/XML/HXQ/OptionalDB.hs
+  src/mysql/Connect.hs
+  src/sqlite/Connect.hs
   src/readline/System/Console/Readline.hs
   Makefile
   XQueryParser.y
@@ -29,16 +30,20 @@ Extra-Source-Files:
   Test2.hs
   TestDB.hs
   TestDB2.hs
+  TestDBPL1.hs
+  TestDBPL2.hs
   compile
   compile.bat
 data-files:
   index.html
+  db.html
   data/cs.xml
   data/a.xml
   data/c.xml
   data/q1.xq
   data/q2.xq
   data/q3.xq
+  data/q4.xq
   data/dblp.xq
   data/dblp2.xq
   data/test.xq
@@ -48,8 +53,12 @@ data-files:
   src/hxml-0.2/00-LICENSE.txt
   src/hxml-0.2/00-README.txt
 
-Flag db
-  Description: provides database connectivity using HDBC and HDBC-sqlite3.
+Flag mysql
+  Description: provides database connectivity using HDBC and HDBC-odbc.
+  Default:     False
+
+Flag sqlite
+  Description: provides database connectivity using HDBC and HDBC-sqlite.
   Default:     False
 
 Library
@@ -65,12 +74,18 @@ Library
      Other-Modules:    System.Console.Readline
   else
      Build-Depends:    readline
-  if flag(db)
-     Other-Modules:    Text.XML.HXQ.DB, Text.XML.HXQ.DBConnect
+  if flag(mysql)
+     Other-Modules:    Text.XML.HXQ.DB, Connect
+     Build-Depends:    HDBC < 1.1.5, HDBC-odbc
+     hs-source-dirs:   src/withDB, src/mysql
+  else {
+  if flag(sqlite)
+     Other-Modules:    Text.XML.HXQ.DB, Connect
      Build-Depends:    HDBC < 1.1.5, HDBC-sqlite3
-     hs-source-dirs:   src/withDB
+     hs-source-dirs:   src/withDB, src/sqlite
   else
      hs-source-dirs:   src/noDB
+}
 
 Executable xquery
   Main-is:             Main.hs
@@ -81,8 +96,13 @@ Executable xquery
      Other-Modules:    System.Console.Readline
   else
      Build-Depends:    readline
-  if flag(db)
-     Build-Depends:    HDBC < 1.1.5, HDBC-sqlite3
-     hs-source-dirs:   src/withDB
+  if flag(mysql)
+     Build-Depends:    HDBC < 1.1.5, HDBC-odbc
+     hs-source-dirs:   src/withDB, src/mysql
+  else {
+  if flag(sqlite)
+     Build-Depends:    HDBC < 1.1.5, HDBC-odbc
+     hs-source-dirs:   src/withDB, src/sqlite
   else
      hs-source-dirs:   src/noDB
+}
