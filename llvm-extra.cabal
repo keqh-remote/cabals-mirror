@@ -1,5 +1,5 @@
 Name:           llvm-extra
-Version:        0.2.0.1
+Version:        0.2.0.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -48,7 +48,7 @@ Description:
   * a Makefile and a description
     of how to run LLVM code from within GHCi.
 Stability:      Experimental
-Tested-With:    GHC==6.10.4, GHC==6.12.3
+Tested-With:    GHC==6.10.4, GHC==6.12.3, GHC==7.0.4
 Cabal-Version:  >=1.6
 Build-Type:     Simple
 Extra-Source-Files:
@@ -71,7 +71,7 @@ Library
     -- because we import implicitly and unqualified
     llvm >=0.9.1 && <0.9.2,
     type-level >=0.2.3 && <0.3,
-    containers >=0.1 && <0.4,
+    containers >=0.1 && <0.5,
     transformers >=0.1.1 && <0.3,
     utility-ht >=0.0.1 && <0.1
 
@@ -88,7 +88,9 @@ Library
     -- However in LLVM-2.6 this is only available in the C++ interface.
     Hs-Source-Dirs: x86/none
 
-  GHC-Options:    -Wall
+  -- large context stack needed for LLVM.Extra.Extension.X86 on GHC-7.0.4
+  GHC-Options: -fcontext-stack=1000
+  GHC-Options: -Wall
   Hs-source-dirs: src
   Exposed-Modules:
     LLVM.Extra.Arithmetic
@@ -107,6 +109,7 @@ Library
 Executable tone-llvm
   If !flag(buildExamples)
     Buildable: False
-  GHC-Options:    -Wall
+  GHC-Options: -fcontext-stack=1000
+  GHC-Options: -Wall
   Hs-Source-Dirs: src, x86/none
   Main-Is: Array.hs
