@@ -1,5 +1,5 @@
 name:                hmpfr
-version:             0.1
+version:             0.1.1
 synopsis:            Haskell binding to MPFR library
 description:         Haskell binding to MPFR library. Tested with MPFR 2.3.1 and 2.3.2.
 		     Some simple examples of usage can be found in test/Demo.hs.
@@ -39,7 +39,7 @@ Data-files:	     README
 
 build-type:          Simple
 build-tools:         hsc2hs
-GHC-options:         -Wall -fno-warn-orphans -O2
+GHC-options:         -Wall -fno-warn-orphans -O2 -fvia-C -optc-O2
 GHC-prof-options:    -prof -auto-all
 include-dirs:        cbits
 includes:            chsmpfr.h mpfr.h
