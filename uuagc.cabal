@@ -1,7 +1,7 @@
 cabal-version: >=1.2
 build-type: Simple
 name: uuagc
-version: 0.9.7
+version: 0.9.10
 license: GPL
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -13,10 +13,17 @@ stability: Stable
 copyright: Universiteit Utrecht
 extra-source-files: README, uuagc.cabal-for-ghc-6.6
 
-flag small_base
-  description: Choose the new smaller, split-up base package.
+flag compatibility1
+  description: compatibility flag.
+flag compatibility2
+  description: compatibility flag.
 executable uuagc
-  if flag(small_base)
+  if flag(compatibility1)
+    build-depends: base >= 4, ghc-prim
+  else
+    build-depends: base < 4
+
+  if flag(compatibility2)
     build-depends: base >= 3, containers, directory, array
   else
     build-depends: base < 3
