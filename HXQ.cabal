@@ -1,6 +1,6 @@
 Cabal-Version:       >= 1.2
 Name:                HXQ
-Version:             0.10.0
+Version:             0.11.0
 Synopsis:            A Compiler from XQuery to Haskell
 Description:         
         HXQ is a fast and space-efficient compiler from XQuery (the standard
@@ -30,8 +30,8 @@ Extra-Source-Files:
   Test2.hs
   TestDB.hs
   TestDB2.hs
-  TestDBPL1.hs
-  TestDBPL2.hs
+  TestDBLP1.hs
+  TestDBLP2.hs
   compile
   compile.bat
 data-files:
@@ -54,7 +54,7 @@ data-files:
   src/hxml-0.2/00-README.txt
 
 Flag mysql
-  Description: provides database connectivity using HDBC and HDBC-odbc.
+  Description: provides database connectivity using HDBC and MySql through HDBC-odbc.
   Default:     False
 
 Flag sqlite
@@ -68,7 +68,7 @@ Library
                        Text.XML.HXQ.OptionalDB, HXML, DTD, LLParsing, TreeBuild, XMLParse,
                        ETree, Misc, Tree, XMLScanner, AssocList, PrintXML, XML
   hs-source-dirs:      . src src/hxml-0.2
-  Build-Depends:       base, haskell98, array, template-haskell, mtl
+  Build-Depends:       base, haskell98, array, template-haskell
   if os(windows)
      hs-source-dirs:   src/readline
      Other-Modules:    System.Console.Readline
@@ -90,7 +90,6 @@ Library
 Executable xquery
   Main-is:             Main.hs
   hs-source-dirs:      . src src/hxml-0.2
-  Build-Depends:       base, haskell98, array, template-haskell, mtl
   if os(windows)
      hs-source-dirs:   src/readline
      Other-Modules:    System.Console.Readline
