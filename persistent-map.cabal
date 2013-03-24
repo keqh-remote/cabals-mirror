@@ -1,5 +1,5 @@
 Name:           persistent-map
-Synopsis:       A thread-safe (STM) interface for finite map types with persistency support.
+Synopsis:       A thread-safe (STM) persistency interface for finite map types.
 Description:
     /Changes in 0.3.*:/
     .
@@ -74,7 +74,7 @@ Author:         Peter Robinson 2009
 Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        LGPL
 License-file:   LICENSE
-Version:        0.3.4
+Version:        0.3.5
 Category:       Middleware, Concurrency
 Stability:      experimental
 Homepage:       http://darcs.monoid.at/persistent-map
