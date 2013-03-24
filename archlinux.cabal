@@ -1,5 +1,5 @@
 name:           archlinux
-version:        0.2.2
+version:        0.2.3
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart <dons@galois.com>
@@ -43,7 +43,8 @@ library
                     directory,
                     parallel,
                     strict-concurrency,
-                    old-time
+                    old-time,
+                    csv
 
     exposed-modules:
         Distribution.ArchLinux.AUR
