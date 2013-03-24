@@ -1,5 +1,5 @@
 Name:             midi
-Version:          0.2
+Version:          0.2.0.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -30,7 +30,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/midi/
-  tag:      0.2
+  tag:      0.2.0.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -44,7 +44,7 @@ Library
     event-list >=0.0.9 && < 0.2,
     non-negative>=0.0.1 && <0.2,
     explicit-exception >=0.1 && <0.2,
-    bytestring >=0.9.0.1 && <0.10,
+    bytestring >=0.9.0.1 && <0.11,
     binary >=0.4.2 && <0.6,
     transformers >=0.2 && <0.4,
     monoid-transformer >=0.0.1 && <0.1,
