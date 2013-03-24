@@ -1,5 +1,5 @@
 Name:                hecc
-Version:             0.3.2
+Version:             0.3.3
 Synopsis:	     Elliptic Curve Cryptography for Haskell
 Description:         Pure math & algorithms for Elliptic Curve Cryptography in Haskell
 License:             BSD3
@@ -19,17 +19,10 @@ Library
   src
  Build-Depends:
   base >= 4 && < 5,
---  random,
---  bytestring,
---  binary,
---  cereal,
   crypto-api,
-  repa == 3.0.*,
-  vector
+  hF2
  Exposed-modules:
   Codec.Crypto.ECC.Base
-  Codec.Crypto.ECC.F2
   Codec.Crypto.ECC.StandardCurves
  ghc-options:
---  -Wall -fllvm -feager-blackholing -O2 -rtsopts -threaded
-  -Wall -fllvm -feager-blackholing
+  -Wall -O2 -fllvm -feager-blackholing
