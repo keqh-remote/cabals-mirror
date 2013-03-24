@@ -1,5 +1,5 @@
 Name:          RJson
-Version:       0.3.4
+Version:       0.3.5
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
@@ -14,8 +14,8 @@ Build-Type:    Simple
 Description:
   See included README for some examples.
   This package uses the Scrap Your Boilerplate With Class approach
-  to generics to implement a reflective Json serializer and deserializer.
-  Nested record types can be automatically converted to corresponding
+  to generics to implement a reflective JSON serializer and deserializer.
+  Nested record types are automatically converted to corresponding
   JSON objects and vice versa. In both cases, various aspects of
   serializing and deserializing can be customized by implementing instances of
   type classes. Note that only Haskell 98 types can be
