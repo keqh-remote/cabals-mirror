@@ -1,5 +1,5 @@
 Name:            chp-plus
-Version:         1.0.1
+Version:         1.1.0
 Synopsis:        A set of high-level concurrency utilities built on Communicating Haskell Processes
 License:         BSD3
 License-file:    LICENSE
@@ -18,7 +18,7 @@ Category:        Concurrency
 
 Cabal-Version:   >= 1.2.3
 Build-Type:      Simple
-Build-Depends:   base >= 3 && < 5, chp >= 2.0 && < 2.1, containers, deepseq >= 1.1 && < 1.2, extensible-exceptions >= 0.1.1.0, HUnit, mtl, pretty, QuickCheck >= 2, stm
+Build-Depends:   base >= 3 && < 5, chp >= 2.0 && < 2.2, containers, deepseq >= 1.1 && < 1.2, extensible-exceptions >= 0.1.1.0, HUnit, mtl, pretty, QuickCheck >= 2, stm
 
 Exposed-modules: Control.Concurrent.CHP.Actions
                  Control.Concurrent.CHP.Arrow
