@@ -1,13 +1,16 @@
 Name:             iff
-Version:          0.0.1
+Version:          0.0.2
 License:          GPL
 License-File:     LICENSE
-Author:           Henning Thielemann <haskell@henning-thielemann.de>
-Maintainer:       Henning Thielemann
-Homepage:         http://darcs.haskell.org/iff/
+Author:           Henning Thielemann
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
+Homepage:         http://code.haskell.org/~thielema/iff/
 Category:         Codec
 Build-Type:       Simple
-Build-Depends:    base, bytestring >= 0.9, mtl >= 1 && < 2
+Build-Depends:
+  bytestring >=0.9 && <0.10,
+  transformers >= 0.1 && < 0.3,
+  base >= 3 && <5
 Synopsis:         Constructing and dissecting IFF files
 Description:
   The Interchange File Format of Electronic Arts is a container format used for many kinds of data.
@@ -19,7 +22,8 @@ Description:
   and does not handle any specific IFF data type.
   The intention is the same as of Amiga's @iffparse.library@.
   See <http://tbs-software.com/guide/index.php?guide=libraries.doc/lib_33.guide&node=33-11>.
+Build-Type:       Simple
 GHC-Options:      -Wall
-Hs-Source-Dir:    src
+Hs-Source-Dirs:    src
 Exposed-modules:
   Data.IFF
