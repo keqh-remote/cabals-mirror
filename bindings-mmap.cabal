@@ -1,16 +1,13 @@
 Name:                bindings-mmap
-Version:             0.1
-Synopsis:            bindings to mmap for Linux
+Version:             1.0
+Synopsis:            (deprecated) see bindings-posix instead
 
 Description:
-  Bindings to mmap for POSIX, wrapping:
-  <file:///usr/include/sys/mmap.h>
+  Deprecated.  Use bindings-posix >= 1.2.3 Bindings.Posix.Sys.Mman instead.
 
-Homepage:            https://gitorious.org/hsv4l2
 License:             BSD3
 License-file:        LICENSE
 Author:              Claude Heiland-Allen
-Maintainer:          claudiusmaximus@goto10.org
 Category:            System
 
 Build-type:          Simple
@@ -19,7 +16,4 @@ Cabal-version:       >=1.2
 
 Library
   Exposed-modules:     Bindings.MMap
-  Build-depends:
-    base >= 3 && < 5,
-    bindings-DSL >= 1.0.7 && < 1.1
-  Build-tools:         hsc2hs
+  Build-depends:       bindings-posix >= 1.2.3
