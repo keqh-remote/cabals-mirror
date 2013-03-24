@@ -1,5 +1,5 @@
 Name:                Finance-Quote-Yahoo
-Version:             0.1
+Version:             0.2
 Description:         Obtain quote data from finance.yahoo.com
 Synopsis:	     Obtain quote data from finance.yahoo.com
 Category:            Web
@@ -9,6 +9,6 @@ License:             BSD3
 License-file:        LICENSE
 Author:              brad clawsie
 Maintainer:          haskell@fastmail.fm
-Build-Depends:	     base, network, HTTP, HTTP-Simple, MissingH
+Build-Depends:	     base, network, HTTP, HTTP-Simple, MissingH, time>=1.1.1
 Exposed-modules:     Finance.Quote.Yahoo
 ghc-options:         -O
