@@ -1,5 +1,5 @@
 Name:                HGamer3D
-Version:             0.1.7
+Version:             0.1.8
 Synopsis:            Library to enable 3D game development for Haskell
 Description:         
 	Library, to enable 3D game development for Haskell,
@@ -24,7 +24,7 @@ Category:            Game
 Extra-source-files:  Setup.hs 
 
 Library
-  Build-Depends:     base >= 3 && < 5, text, directory, Win32, mtl, HGamer3D-Data == 0.1.7, HGamer3D-Ogre-Binding == 0.1.7, HGamer3D-SFML-Binding == 0.1.7
+  Build-Depends:     base >= 3 && < 5, text, directory, Win32, mtl, HGamer3D-Data == 0.1.8, HGamer3D-Ogre-Binding == 0.1.8, HGamer3D-SFML-Binding == 0.1.8
 
   Exposed-modules:   HGamer3D.APIs.Base.Common,HGamer3D.APIs.Base.Audio,HGamer3D.APIs.Base.InputSystem,HGamer3D.APIs.Base.Graphics3D.Engine3D,HGamer3D.APIs.Base.Graphics3D.Light,HGamer3D.APIs.Base.Graphics3D.Object3D,HGamer3D.BaseAPI
   Other-modules:     
@@ -35,5 +35,5 @@ Library
   cc-options:        -Wno-attributes 
   hs-source-dirs:    .
   Include-dirs:      . 
-  build-depends:     haskell98
+  build-depends:     
   extra-libraries:   stdc++.dll
