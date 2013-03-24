@@ -1,5 +1,5 @@
 Name:		djinn
-Version:	2009.2.1
+Version:	2009.2.8
 License:	BSD3
 License-file:	LICENSE
 Author:		Lennart Augustsson
@@ -10,7 +10,7 @@ Category:	source-tools
 Homepage:	http://www.augustsson.net/Darcs/Djinn/
 Synopsis:	Generate Haskell code from a type
 Build-type:	Simple
-Build-Depends:	base, mtl, editline, pretty, array, containers
+Build-Depends:	base >= 3 && < 4, mtl, editline, pretty, array, containers
 
 Executable:     djinn
 Main-Is:        Djinn.hs
