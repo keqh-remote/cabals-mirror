@@ -1,11 +1,10 @@
 name:		hpc-tracer
-version:	0.3.0
+version:	0.3.1
 license:	BSD3
 license-file:	LICENSE
 Build-depends:  base, hpc, unix, parsec, haskell98, network, process, containers, pretty, array
 author:		Andy Gill <andygill@ku.edu>
 maintainer:	Andy Gill <andygill@ku.edu>
-homepage:	http://darcs.unsafePerformIO.com/hpc-tracer
 category:	Trace, Test
 Synopsis:	Tracer with AJAX interface
 description:
@@ -20,6 +19,7 @@ Copyright:      (c) 2006 Andy Gill, Colin Runciman, (c) 2006-2007 Galois Inc.
 Stability:	builds
 build-type: Simple
 extra-source-files:
+	Makefile
 	includefile.pl	
 	     fs/code.html
 	     fs/default.css
@@ -39,5 +39,8 @@ other-modules: Main,
 	       AjaxAPI,Debug,Reactive,TracerActor
 	       BreakPoint,Flags,StreamHandle,Utils
 	       CodeRenderActor,Main,TixActor
-	       Common,MixActor,TixStreamActor
+	       Common,MixActor,TixStreamActor,
+	       Network.AjaxServer, Network.TrivialWebServer,
+	       Data.JSON
+
 
