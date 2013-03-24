@@ -1,5 +1,5 @@
 Name:           primitive
-Version:        0.3.1
+Version:        0.4
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
@@ -13,11 +13,28 @@ Description:
         This package provides wrappers for primitive array operations from
         GHC.Prim.
         .
+        Changes in version 0.4
+        .
+        * Support for GHC 7.2 array copying primitives
+        .
+        * New in "Data.Primitive.ByteArray": @copyByteArray@,
+          @copyMutableByteArray@, @moveByteArray@, @fillByteArray@
+        .
+        * Deprecated in "Data.Primitive.ByteArray": @memcpyByteArray@,
+          @memcpyByteArray'@, @memmoveByteArray@, @memsetByteArray@
+        .
+        * New in "Data.Primitive.Array": @copyArray@, @copyMutableByteArray@
+        .
+        * New in "Data.Primitive.Addr": @copyAddr@, @moveAddr@
+        .
+        * Deprecated in "Data.Primitive.Addr": @memcpyAddr@
+        .
 
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 
 Library
+  Extensions: CPP
   Exposed-Modules:
         Control.Monad.Primitive
         Data.Primitive
@@ -26,6 +43,9 @@ Library
         Data.Primitive.Array
         Data.Primitive.ByteArray
         Data.Primitive.Addr
+
+  Other-Modules:
+        Data.Primitive.Internal.Compat
 
   Build-Depends: base >= 4 && < 5, ghc-prim
 
