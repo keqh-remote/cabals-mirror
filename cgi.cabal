@@ -1,5 +1,5 @@
 Name: cgi
-Version: 3001.1.8.2
+Version: 3001.1.7.4
 Copyright: Bjorn Bringert, Andy Gill, Anders Kaseorg, Ian Lynagh, 
            Erik Meijer, Sven Panne, Jeremy Shaw
 Category: Network
@@ -35,7 +35,6 @@ Library
     network >= 2.0,
     parsec >= 2.0,
     mtl >= 1.0,
-    MonadCatchIO-mtl,
     xhtml >= 3000.0.0,
     extensible-exceptions
   If flag(split-base)
