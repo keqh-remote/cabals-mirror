@@ -1,5 +1,5 @@
 Name:                CSPM-cspm
-Version:             0.1.0.0
+Version:             0.2.0.0
 
 Synopsis:            cspm command line tool for analyzing CSPM specifications.
 Description:
@@ -28,8 +28,8 @@ Executable cspm
   Build-Depends:
     CSPM-Frontend >= 0.3.0.0
     ,CSPM-CoreLanguage >= 0.1 && < 0.2
-    ,CSPM-Interpreter >= 0.2 && < 0.3
     ,CSPM-FiringRules >= 0.1 && < 0.2
+    ,CSPM-Interpreter >= 0.3 && < 0.4
     ,cmdargs >= 0.1 && < 0.2
     ,containers >= 0.3 && < 0.4
     ,parallel >=2.2 && < 2.3
