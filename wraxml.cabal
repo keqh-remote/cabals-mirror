@@ -1,5 +1,5 @@
 Name:           wraxml
-Version:        0.4.0.1
+Version:        0.4.2
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -7,11 +7,12 @@ Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:       http://darcs.haskell.org/wraxml/
 Category:       Text
 Build-Depends:
-  polyparse >=1.1 && <1.2,
+  polyparse >=1.2 && <1.4,
   tagsoup >=0.6 && <0.7,
   tagchup >=0.3 && <0.4,
   xml-basic >=0.1 && <0.2,
-  HaXml >=1.19.4, hxt >=8.1.0 && <9,
+  HaXml >=1.19.4 && <1.20,
+  hxt >=8.1.0 && <9,
   hxt-filter >=8.1.1 && <9,
   transformers >=0.1 && <0.2,
   utility-ht >=0.0.4 && <0.1,
