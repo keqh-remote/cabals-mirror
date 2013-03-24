@@ -7,7 +7,7 @@ Name:                poker-eval
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.2.0
+Version:             0.2.1
 
 -- A short (one-line) description of the package.
 Synopsis:            Binding to libpoker-eval
@@ -17,6 +17,8 @@ Description:         Performance oriented functions for judging poker hands
                      and related tasks.
                      .
                      Haddock documentation can be found here: <http://mirror.seize.it/poker-eval/documentation/>
+                     .
+                     C library can be found here: <http://pokersource.sourceforge.net/>
 
 -- The license under which the package is released.
 License:             PublicDomain
@@ -40,7 +42,7 @@ Build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
--- Extra-source-files:  
+Extra-source-files:  Benchmark.hs, Verify.hs
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.6
