@@ -1,13 +1,16 @@
-Name: fastcgi
-Version: 3001.0.1
-Copyright: Bjorn Bringert, Lemmih
-Maintainer: lemmih@gmail.com
-License: BSD3
-Synopsis: A Haskell library for writing FastCGI programs
+Name:           fastcgi
+Version:        3001.0.2
+Copyright:      Bjorn Bringert, Lemmih
+Maintainer:     bjorn@bringert.net
+License:        BSD3
+license-file:   LICENSE
+Synopsis:       A Haskell library for writing FastCGI programs
 Description:
  This library lets you write FastCGI programs. This package reuses the
  cgi package API, making it very easy to port CGI programs to FastCGI.
 Cabal-version: >= 1.2.0
+build-type:     Configure
+extra-source-files: configure
 
 flag small_base
   description: Choose the new smaller, split-up base package.
@@ -21,5 +24,5 @@ library
   Extensions: ForeignFunctionInterface, EmptyDataDecls
   Exposed-Modules: 
      Network.FastCGI
-  ghc-options: -O2 -Werror -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-matches
+  ghc-options: -O2 -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-matches
   extra-libraries: fcgi
