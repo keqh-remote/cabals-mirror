@@ -18,12 +18,14 @@ Description:
         .
         _________
         .
-        By the base package (PCLT) the templates are provided to be stored 
+        By the base package (PCLT <http://hackage.haskell.org/package/PCLT>) 
+        the templates are provided to be stored 
         statically in module declarations using 
         'Text.PCLT.HasStaticRawPCLTs.HasStaticRawPCLTs' class instaniations. 
         .
         The PCST-DB package adds a possibility to store templates in DB 
-        (under PostgreSQL v8.4. (not less)). 
+        (under PostgreSQL v8.4. (not less)). ER diagram: 
+        <http://i1.fastpic.ru/big/2009/1212/f0/5b9845716e5a6984e9bc9d62a61928f0.png>
         .
         The following units are storable in DB:
         .
@@ -58,7 +60,7 @@ Description:
         .
         But this limitation removal is planned as a first ToDo in the next 
         version of PCLT-DB.
-Version: 0.1
+Version: 0.1.1
 Copyright: Copyright (c) 2009 Andrejs Sisojevs
 License: LGPL
 License-File: COPYRIGHT
@@ -74,6 +76,7 @@ Build-Type: Simple
 Extra-Source-Files:
     COPYRIGHT
     COPYING
+    NEWS
     doinst.sh
     db/db_inst.sh
     db/data.sql
@@ -92,7 +95,7 @@ Extra-Source-Files:
 
 Library
     Build-Depends:
-        base >= 4 && < 5, bytestring, containers, convertible, mtl, HDBC, HDBC-postgresql, PCLT
+        base >= 4 && < 5, bytestring, containers, convertible >= 1.0.6, mtl, HDBC >= 2.2.1, HDBC-postgresql >= 2.2.0.0, PCLT
     Exposed-Modules:
         Database.ReadableFromDB
         Database.ReadableFromDB__
