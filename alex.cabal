@@ -1,5 +1,5 @@
 name: alex
-version: 2.3.3
+version: 2.3.4
 license: BSD3
 license-file: LICENSE
 copyright: (c) Chis Dornan, Simon Marlow
@@ -62,7 +62,6 @@ flag small_base
   description: Choose the new smaller, split-up base package.
 
 executable alex
-  executable: alex
   hs-source-dirs: src
   main-is: Main.hs
 
