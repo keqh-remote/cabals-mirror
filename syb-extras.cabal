@@ -1,6 +1,6 @@
 name:          syb-extras
 category:      Polymorphism, Combinators, Generic
-version:       0.2.2.1
+version:       0.2.3
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -23,7 +23,7 @@ library
   build-depends:
     base           >= 4 && < 5,
     prelude-extras >= 0.1 && < 0.3,
-    eq             >= 0.3.6 && <= 0.4
+    eq             == 3.0.*
 
   extensions: CPP
 
