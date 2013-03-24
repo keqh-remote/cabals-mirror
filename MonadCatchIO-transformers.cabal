@@ -1,5 +1,5 @@
 Name:            MonadCatchIO-transformers
-Version:         0.2.1.0
+Version:         0.2.2.0
 Cabal-Version:   >= 1.6
 License:         PublicDomain
 Description:
@@ -13,6 +13,10 @@ Category:        Control
 Synopsis:        Monad-transformer compatible version of the Control.Exception module
 Build-Type:      Simple
 
+Source-repository head
+  Type:     darcs
+  Location: http://patch-tag.com/r/AriePeterson/MonadCatchIO-transformers
+
 Library
   Build-Depends:
     base == 4.*,
@@ -21,8 +25,4 @@ Library
   Exposed-Modules:
     Control.Monad.CatchIO
   Hs-Source-Dirs:  src
-  Ghc-options: -Wall
-  Extensions:
-    ExistentialQuantification,
-    ScopedTypeVariables
-
+  Ghc-options:     -Wall
