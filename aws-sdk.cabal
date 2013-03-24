@@ -1,5 +1,5 @@
 name:                aws-sdk
-version:             0.9.4
+version:             0.9.4.1
 synopsis:            AWS SDK for Haskell
 description: AWS (Amazon Web Services) sdk for Haskell.
              .
@@ -103,7 +103,7 @@ library
                      -fno-warn-unused-do-bind
   extensions: OverloadedStrings
   build-depends:     base >= 4 && < 5
-                   , containers <= 0.4.2.1
+                   , containers < 0.5.0.0
                    , SHA
                    , base64-bytestring >= 1.0.0.0
                    , bytestring
