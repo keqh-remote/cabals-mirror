@@ -1,5 +1,6 @@
 Name:                MonadRandom
-Version:             0.1.0
+Build-type:          Simple
+Version:             0.1.1
 Synopsis:            Random-number generation monad.
 Description:         Support for computations which consume random values.
 License:             OtherLicense
@@ -8,6 +9,5 @@ Category:            Control
 Author:              Cale Gibbard and others
 Maintainer:          Eric Kidd <haskell@randomhacks.net>
 Stability:           experimental
-Build-Depends:       base, mtl
+Build-Depends:       base, mtl, random
 Exposed-modules:     Control.Monad.Random.Class, Control.Monad.Random
-ghc-options:         -Wall -fno-warn-orphans -O
