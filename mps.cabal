@@ -1,8 +1,8 @@
 Name:                 mps
-Version:              2009.7.4
+Version:              2009.8.16
 Build-type:           Simple
-Synopsis:             OO duck syntax
-Description:          message passing style helpers
+Synopsis:             simply oo
+Description:          DSL that allows one to write Haskell from left to right
 License:              BSD3
 Author:               Wang, Jinjing
 Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
