@@ -1,11 +1,10 @@
 name:       hfusion
-version:    0.0.1
+version:    0.0.2
 build-type: Simple
 cabal-version:  >= 1.6
 license:    BSD3
 license-file:   LICENSE
-author:     Facundo Dominguez
-maintainer:  facundominguez @ f i n g . e d u . u y
+maintainer: Facundo Dominguez <facundominguez at gmail.com>
 stability:  experimental
 homepage:   http://www.fing.edu.uy/inco/proyectos/fusion
 category:   Program Transformation
@@ -46,5 +45,5 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://www.fing.edu.uy/inco/proyectos/fusion/darcs/hfusion/
-  tag:      0.0.1
+  tag:      0.0.2
 
