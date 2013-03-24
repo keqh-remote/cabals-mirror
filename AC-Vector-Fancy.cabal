@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Vector-Fancy
-Version:       2.1.0
+Version:       2.1.2
 Stability:     Experimental
 Synopsis:      Fancy type system stuff for AC-Vector
 
@@ -10,7 +10,7 @@ Description:
   (Requires several language extensions, including
   type families.)
 
-  Now includes bounding box classes.
+  Now includes @points_bounds@ method.
 
 Category:      Data, Math, Numerical, Graphics
 License:       BSD3
@@ -26,5 +26,5 @@ Library
     Data.Vector.Fancy,
     Data.Vector.Transform.Fancy,
     Data.BoundingBox
-  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.1
+  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.1.1
   HS-Source-Dirs:  .
