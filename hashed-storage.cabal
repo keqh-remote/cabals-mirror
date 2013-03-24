@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.3.6
+version:       0.3.7
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -46,6 +46,7 @@ library
         Storage.Hashed.Index
         Storage.Hashed.Monad
         Storage.Hashed.Tree
+        Storage.Hashed.Packed
         Storage.Hashed.Darcs
 
     if flag(diff)
