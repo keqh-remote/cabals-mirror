@@ -1,5 +1,5 @@
 Name:               graphviz
-Version:            2999.9.0.0
+Version:            2999.10.0.0
 Stability:          Beta
 Synopsis:           Graphviz bindings for Haskell.
 Description: {
@@ -43,8 +43,8 @@ Extra-Source-Files: TODO
                     Changelog
                     README
                     FAQ
-                    Data/GraphViz/AttributeGenerator.hs
-                    TestParsing.hs
+                    utils/AttributeGenerator.hs
+                    utils/TestParsing.hs
 
 Source-Repository head
     Type:         darcs
@@ -59,12 +59,13 @@ Library {
                            extensible-exceptions,
                            containers,
                            process,
-                           fgl,
+                           fgl == 5.4.*,
                            filepath,
-                           polyparse >= 1.4,
+                           polyparse == 1.4.*,
                            pretty,
                            bytestring < 0.10,
-                           colour >= 2.3 && < 2.4
+                           colour >= 2.3 && < 2.4,
+                           transformers == 0.2.*
 
         Exposed-Modules:   Data.GraphViz
                            Data.GraphViz.Types
@@ -80,6 +81,7 @@ Library {
         Other-Modules:     Data.GraphViz.Attributes.Internal
                            Data.GraphViz.Types.Clustering
                            Data.GraphViz.Types.Common
+                           Data.GraphViz.Types.State
                            Data.GraphViz.Util
         if flag(test)
            Build-Depends:       QuickCheck >= 2.1 && < 2.2
