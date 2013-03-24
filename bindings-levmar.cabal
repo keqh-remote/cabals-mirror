@@ -1,16 +1,21 @@
 name:          bindings-levmar
-version:       0.2.0.1
+version:       1.0
 cabal-version: >= 1.6
 build-type:    Simple
 stability:     experimental
 author:        Roel van Dijk & Bas van Dijk
 maintainer:    vandijk.roel@gmail.com, v.dijk.bas@gmail.com
-copyright:     (c) 2009 Roel van Dijk & Bas van Dijk
+copyright:     (c) 2009-2010 Roel van Dijk & Bas van Dijk
 license:       OtherLicense
 license-file:  LICENSE
+homepage:      https://github.com/basvandijk/bindings-levmar/
+bug-reports:   https://github.com/basvandijk/bindings-levmar/issues
 category:      Numerical, FFI
 synopsis:      Low level bindings to the C levmar (Levenberg-Marquardt) library
-description:   The Levenberg-Marquardt algorithm is an iterative
+description:   See the @levmar@ package for a high-level wrapper
+               around this package.
+               .
+               The Levenberg-Marquardt algorithm is an iterative
                technique that finds a local minimum of a function that
                is expressed as the sum of squares of nonlinear
                functions. It has become a standard technique for
@@ -43,7 +48,7 @@ description:   The Levenberg-Marquardt algorithm is an iterative
                program can only by distributed under the terms of the
                GPL.
 
-extra-source-files: LICENSE
+extra-source-files: README.markdown
                   , levmar-2.4/LICENSE
                   , levmar-2.4/*.h
                   , levmar-2.4/*.c
@@ -67,8 +72,8 @@ flag accelerate
   default:     False
 
 source-repository head
-  type: darcs
-  location: http://code.haskell.org/bindings-levmar
+  type: git
+  location: git://github.com/basvandijk/bindings-levmar.git
 
 library
   build-depends: base         >= 3     && < 4.4
@@ -92,7 +97,7 @@ library
     else
       extra-libraries: mkl_intel
   else
-    extra-libraries: lapack
+    extra-libraries: lapack blas
 
   if flag(accelerate)
     frameworks: Accelerate
