@@ -1,31 +1,31 @@
 Name: QuickCheck
-Version: 2.4.2
+Version: 2.5
 Cabal-Version: >= 1.6
 Build-type: Simple
 License: BSD3
 License-file: LICENSE
 Extra-source-files: README
-Copyright: 2000-2011 Koen Claessen, 2006-2008 Björn Bringert, 2009-2011 Nick Smallbone
+Copyright: 2000-2012 Koen Claessen, 2006-2008 Björn Bringert, 2009-2012 Nick Smallbone
 Author: Koen Claessen <koen@chalmers.se>
 Maintainer: QuickCheck developers <quickcheck@projects.haskell.org>
 Bug-reports: mailto:quickcheck@projects.haskell.org
 Tested-with: GHC >=6.8, Hugs
 Homepage: http://code.haskell.org/QuickCheck
-Category:	    Testing
-Synopsis:	    Automatic testing of Haskell programs
+Category:       Testing
+Synopsis:       Automatic testing of Haskell programs
 Description:
-        QuickCheck is a library for random testing of program properties.
-        .
-	The programmer provides a specification of the program, in
-	the form of properties which functions should satisfy, and
-	QuickCheck then tests that the properties hold in a large number
-	of randomly generated cases.  
-        .
-        Specifications are expressed in
-	Haskell, using combinators defined in the QuickCheck library.
-	QuickCheck provides combinators to define properties, observe
-	the distribution of test data, and define test
-	data generators.
+  QuickCheck is a library for random testing of program properties.
+  .
+  The programmer provides a specification of the program, in
+  the form of properties which functions should satisfy, and
+  QuickCheck then tests that the properties hold in a large number
+  of randomly generated cases.
+  .
+  Specifications are expressed in
+  Haskell, using combinators defined in the QuickCheck library.
+  QuickCheck provides combinators to define properties, observe
+  the distribution of test data, and define test
+  data generators.
 
 source-repository head
   type:     darcs
@@ -55,7 +55,7 @@ library
     else
       Build-depends: base < 3
 
-  -- On old versions of GHC use the ghc package to catch ctrl-C.  
+  -- On old versions of GHC use the ghc package to catch ctrl-C.
   if impl(ghc >= 6.7) && impl(ghc < 6.13)
       Build-depends: ghc
 
@@ -75,6 +75,8 @@ library
     Test.QuickCheck.Text,
     Test.QuickCheck.Poly,
     Test.QuickCheck.State
+
+  Extensions: CPP
 
   -- Choose which optional features to build based on which compiler
   -- we're using. It would be nice to use flags for this but Cabal's
@@ -96,4 +98,3 @@ library
       cpp-options: -DNO_ST_MONAD -DNO_MULTI_PARAM_TYPE_CLASSES
   Other-Modules:
     Test.QuickCheck.Exception
-  GHC-options:
