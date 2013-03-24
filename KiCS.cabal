@@ -1,9 +1,9 @@
 Name:          KiCS
-Version:       0.9.2
-Cabal-Version: >= 1.6.0.3
+Version:       0.9.3
+Cabal-Version: >= 1.8
 Author:        Bernd Braßel
-Maintainer:    Bernd Braßel
-Homepage:      http://curry-language.org
+Maintainer:    Björn Peemöller
+Homepage:      http://www.curry-language.org
 License:       OtherLicense
 License-File:  LICENSE
 Category:      Compiler
@@ -13,7 +13,8 @@ Description:   This package builds the Curry to Haskell compiler "kics".
                This package also includes many Curry libraries.
                Have a look at the list of modules "Curry.Module.*"
 Stability:     experimental
-extra-source-files: 
+
+extra-source-files:
    src/lib/Curry/Module/*.hs.include
 extra-tmp-files:
    src/lib/Curry/Module/*.fcy
@@ -30,22 +31,20 @@ Data-Files:    Curry/Module/*.fcy
                Curry/Module/*.uacy
                Curry/Module/*.cy
                debugOptions.hs
-               
+
 Executable kics
   main-is:        kics.hs
   hs-source-dirs: src
-  Build-Depends:  
-    base == 4.1.*,
-    haskell98,
-    mtl,
-    filepath,
-    old-time,
-    directory,
-    containers,
-    ghc-paths,
-    process,
-    curry-base     >= 0.2.6,
-    curry-frontend >= 0.2.8
+  Build-Depends:
+      base == 4.*
+    , containers
+    , directory
+    , filepath
+    , ghc-paths
+    , old-time
+    , process
+    , curry-base     >= 0.2.9  && < 0.3
+    , curry-frontend >= 0.2.12 && < 0.3
   Other-Modules:
     Curry.Compiler.Config
     Curry.Compiler.CurryToHaskell
@@ -63,20 +62,33 @@ Executable kicsi
   main-is:        kicsi.hs
   hs-source-dirs: src
   Build-Depends:
-    readline
+      base           == 4.*
+    , containers
+    , directory
+    , filepath
+    , ghc-paths
+    , old-time
+    , process
+    , readline
+    , curry-base     >= 0.2.9  && < 0.3
+    , curry-frontend >= 0.2.12 && < 0.3
 
 Library
   hs-source-dirs: src, src/lib
-  Build-Depends:  
-    base == 4.1.*,
-    haskell98,
-    directory,
-    old-time,
-    syb,
-    network,
-    process,
-    unix,
-    random
+  Build-Tools: kics
+  Build-Depends:
+      base == 4.*
+    , containers
+    , directory
+    , filepath
+    , network
+    , old-time
+    , process
+    , random
+    , syb
+    , unix
+    , curry-frontend >= 0.2.12 && < 0.3
+
   Exposed-Modules:
     Curry.Files.KiCSPath
     Curry.RunTimeSystem
@@ -140,8 +152,3 @@ Library
     Paths_KiCS
     Curry.RunTimeSystem.Store
     Curry.RunTimeSystem.BaseCurry
-
-
-
-
-
