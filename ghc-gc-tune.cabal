@@ -1,5 +1,5 @@
 name:           ghc-gc-tune
-version:        0.1
+version:        0.2
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart
@@ -23,7 +23,7 @@ description:    ghc-gc-tune runs your compiled Haskell program with
                 .
                 Example output:
                 .
-                <http://i.imgur.com/m2yKr.png>
+                <http://haskell.org/haskellwiki/Ghc-gc-tune>
                 .
                 For more information on GHC garbage collector settings,
                 see <http://haskell.org/ghc/docs/6.12.1/html/users_guide/runtime-control.html#rts-options-gc>
