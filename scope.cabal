@@ -1,6 +1,6 @@
 Name:                scope
 
-Version:             0.8.0.0
+Version:             0.8.0.1
 
 Synopsis:            An interactive renderer for plotting time-series data
 
@@ -36,10 +36,10 @@ Library
       base < 3
 
   Build-Depends:
-    bytestring                >= 0.9     && < 0.10,
-    containers                >= 0.2     && < 0.5,
+    bytestring                >= 0.9     && < 0.11,
+    containers                >= 0.2     && < 0.6,
     iteratee                  >= 0.8.6.0 && < 0.9,
-    MonadCatchIO-transformers >  0.2     && < 0.3,
+    MonadCatchIO-transformers >  0.2     && < 0.4,
     mtl                       >= 2.0.0.0 && < 3,
     mwc-random,
     time,
