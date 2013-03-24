@@ -1,5 +1,5 @@
 Name:			esotericbot
-Version:		0.0.3
+Version:		0.0.4
 License:		BSD3
 License-File:		License
 Author:			John Morrice <spoon@killersmurf.com>
@@ -24,7 +24,7 @@ Description:
 			.
 			15040 pts/5    S+     0:00      0  2171 28804  3292  0.1 ./esotericbot
                         .
-                        I'm not insinuating that lambdabot sucks in any way, ( it has cool stateful features, and is stable and excellent ) however, my hope is that esotericbot could attain equal functionality through plugins, while maintaining its small memory footprint.
+                        I'm not insinuating that lambdabot sucks in any way, ( lambdabot is most excellent ) however, my hope is that esotericbot could attain equal functionality through plugins, while maintaining its small memory footprint.
                         .
 			Esotericbot is small ( for Haskell :), designed to run on a server with limited memory - typically running at under 5mb of private memory.
 			.
