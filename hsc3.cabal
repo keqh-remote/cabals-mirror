@@ -1,19 +1,19 @@
 Name:              hsc3
-Version:           0.6
+Version:           0.7
 Synopsis:          Haskell SuperCollider
 Description:       hsc3 provides Sound.SC3, a haskell module that 
                    facilitates using haskell as a client to the 
                    SuperCollider synthesis server.  
 License:           GPL
 Category:          Sound
-Copyright:         (c) Rohan Drape and others, 2006-2008
+Copyright:         (c) Rohan Drape and others, 2006-2009
 Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/f/207949/
-Tested-With:       GHC==6.10.1
+Tested-With:       GHC == 6.8.2
 Build-Type:        Simple
-Cabal-Version:     >= 1.2
+Cabal-Version:     >= 1.6
 
 Data-files:        README
                    emacs/hsc3.el
@@ -65,6 +65,7 @@ Data-files:        README
                    Help/Graphs/lf-pulses.lhs
                    Help/Graphs/lg-timed.lhs
                    Help/Graphs/lin-sosc.lhs
+                   Help/Graphs/lucier.hs
                    Help/Graphs/modal-space.lhs
                    Help/Graphs/moto-rev.lhs
                    Help/Graphs/mouse-clatter.lhs
@@ -81,7 +82,6 @@ Data-files:        README
                    Help/Graphs/red-frik.lhs
                    Help/Graphs/reverberated-sine-percussion.lhs
                    Help/Graphs/rm-octaver.lhs
-                   Help/Graphs/rzblp.lhs
                    Help/Graphs/sample-and-hold-liquidities.lhs
                    Help/Graphs/s-chirp.lhs
                    Help/Graphs/scratchy.lhs
@@ -105,11 +105,9 @@ Data-files:        README
                    Help/Graphs/tipnso.lhs
                    Help/Graphs/train.lhs
                    Help/Graphs/trkl.lhs
-                   Help/Graphs/trmlo.lhs
                    Help/Graphs/tr-out.lhs
                    Help/Graphs/tsort.lhs
                    Help/Graphs/vlc-distrtn.lhs
-                   Help/Graphs/voscil.lhs
                    Help/Graphs/what-was-i-thinking.lhs
                    Help/Graphs/wial.lhs
                    Help/Graphs/wind-metals.lhs
@@ -309,7 +307,7 @@ Data-files:        README
                    Help/UGen/Filter/degreeToKey.help.lhs
                    Help/UGen/Filter/delay1.help.lhs
                    Help/UGen/Filter/delay2.help.lhs
-                   Help/UGen/Filter/delayA.help.lhs
+                   Help/UGen/Filter/delayC.help.lhs
                    Help/UGen/Filter/delayL.help.lhs
                    Help/UGen/Filter/delayN.help.lhs
                    Help/UGen/Filter/formlet.help.lhs
@@ -340,6 +338,7 @@ Data-files:        README
                    Help/UGen/Filter/oneZero.help.lhs
                    Help/UGen/Filter/pitchShift.help.lhs
                    Help/UGen/Filter/pluck.help.lhs
+                   Help/UGen/Filter/ramp.help.lhs
                    Help/UGen/Filter/resonz.help.lhs
                    Help/UGen/Filter/rhpf.help.lhs
                    Help/UGen/Filter/ringz.help.lhs
@@ -388,14 +387,25 @@ Data-files:        README
                    Help/UGen/MachineListening/onsets.help.lhs
                    Help/UGen/Math/absDif.help.lhs
                    Help/UGen/Math/abs.help.lhs
+                   Help/UGen/Math/add.help.lhs
                    Help/UGen/Math/amClip.help.lhs
                    Help/UGen/Math/atan2.help.lhs
                    Help/UGen/Math/clip2.help.lhs
+                   Help/UGen/Math/dbAmp.help.lhs
                    Help/UGen/Math/difSqr.help.lhs
                    Help/UGen/Math/distort.help.lhs
+                   Help/UGen/Math/eq.help.lhs
+                   Help/UGen/Math/excess.help.lhs
+                   Help/UGen/Math/fdiv.help.lhs
                    Help/UGen/Math/fold2.help.lhs
+                   Help/UGen/Math/gt.help.lhs
                    Help/UGen/Math/hypot.help.lhs
+                   Help/UGen/Math/max.help.lhs
+                   Help/UGen/Math/mod.help.lhs
+                   Help/UGen/Math/mul.help.lhs
+                   Help/UGen/Math/pow.help.lhs
                    Help/UGen/Math/ring1.help.lhs
+                   Help/UGen/Math/roundUp.help.lhs
                    Help/UGen/Math/scaleNeg.help.lhs
                    Help/UGen/Math/softClip.help.lhs
                    Help/UGen/Math/sumSqr.help.lhs
@@ -447,6 +457,7 @@ Data-files:        README
                    Help/UGen/Oscillator/tGrains.help.lhs
                    Help/UGen/Oscillator/twChoose.help.lhs
                    Help/UGen/Oscillator/twindex.help.lhs
+                   Help/UGen/Oscillator/varSaw.help.lhs
                    Help/UGen/Panner/linPan2.help.lhs
                    Help/UGen/Panner/pan2.help.lhs
                    Help/UGen/Panner/rotate2.help.lhs
@@ -472,8 +483,14 @@ Data-files:        README
                    Help/UGen/Trigger/trig.help.lhs
 
 Library
-  Build-Depends:   base, binary, bytestring, containers, hosc == 0.6,
-                   network, process, random
+  Build-Depends:   base == 3.*,
+                   binary,
+                   bytestring,
+                   containers,
+                   hosc == 0.7,
+                   network,
+                   process,
+                   random
   GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.SC3
                    Sound.SC3.Server
