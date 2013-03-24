@@ -1,5 +1,5 @@
 name: sandi
-version: 0.1.1
+version: 0.2
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.8
@@ -17,27 +17,17 @@ source-repository head
     type: git
     location: https://github.com/magthe/sandi
 
-flag tests
-    description: Build tests
-    default: False
-
 library
     hs-source-dirs: src
-    c-sources:
-        csrc/b16.c
-        csrc/b32.c
-        csrc/b32hex.c
-        csrc/b64.c
-        csrc/b64url.c
-        csrc/b85.c
-        csrc/qp.c
-        csrc/uu.c
-        csrc/xx.c
-        csrc/yenc.c
+    c-sources: csrc/codec.c
     include-dirs: csrc
+    ghc-options: -Wall
+    cc-options: -Wall -Wextra
     build-depends:
         base ==4.6.*,
-        bytestring ==0.10.*
+        bytestring ==0.10.*,
+        conduit ==1.0.*,
+        resourcet ==0.4.*
     exposed-modules:
             Codec.Binary.Base16
             Codec.Binary.Base32
@@ -49,24 +39,39 @@ library
             Codec.Binary.Uu
             Codec.Binary.Xx
             Codec.Binary.Yenc
-    if !flag(tests)
-        cc-options: "-DNDEBUG"
-    else
-        cc-options: "-DDEBUG"
+            Data.Conduit.Codec.Base16
+            Data.Conduit.Codec.Base32
+            Data.Conduit.Codec.Base32Hex
+            Data.Conduit.Codec.Base64
+            Data.Conduit.Codec.Base64Url
+            Data.Conduit.Codec.Base85
+            Data.Conduit.Codec.QuotedPrintable
+            Data.Conduit.Codec.Uu
+            Data.Conduit.Codec.Xx
+            Data.Conduit.Codec.Yenc
+    other-modules:
+        Data.Conduit.Codec.Util
 
-executable tests
+test-suite sandi-tests
+    type: exitcode-stdio-1.0
+    hs-source-dirs: src, test-src
     main-is: Main.hs
-    hs-source-dirs: test-src
-    if flag(tests)
-        buildable: True
-        build-depends:
-            sandi,
-            base ==4.6.*,
-            bytestring ==0.10.*,
-            HUnit ==1.2.*,
-            test-framework-th ==0.2.*,
-            test-framework ==0.8.*,
-            test-framework-hunit ==0.3.*,
-            test-framework-quickcheck2 ==0.3.*
-    else
-        buildable: False
+    build-depends:
+        sandi,
+        base,
+        bytestring,
+        HUnit,
+        test-framework-quickcheck2,
+        test-framework-hunit,
+        test-framework-th,
+        test-framework
+
+benchmark sandi-bench
+    type: exitcode-stdio-1.0
+    hs-source-dirs:   src, bench-src
+    main-is: Main.hs
+    build-depends:
+        sandi,
+        base,
+        bytestring,
+        criterion
