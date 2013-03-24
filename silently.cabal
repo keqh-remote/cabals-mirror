@@ -1,6 +1,6 @@
 name: silently
-version: 1.1.5
-cabal-version: >= 1.2
+version: 1.2.0.1
+cabal-version: >= 1.8
 build-type: Simple
 license: BSD3
 license-file: LICENSE
@@ -15,22 +15,24 @@ description: Prevent or capture writing to stdout and other handles.
 category:
 author: Trystan Spangler
 tested-with: GHC ==7.0
-extra-source-files:
-  src/windows/System/IO/Silently.hs
-  src/unix/System/IO/Silently.hs
-  src/other/System/IO/Silently.hs
+
+source-repository head
+  type: git
+  location: https://github.com/trystan/silently
 
 Library
-  build-depends: base >=4 && <=5, directory -any
+  build-depends:
+      base >=4 && <=5
+    , directory
+    , deepseq
   exposed-modules: System.IO.Silently
   exposed: True
   buildable: True
 
-  if os(windows)
-    hs-source-dirs: src/windows
-  else
-    if os(linux) || os(osx) || os(freebsd) || os(openbsd) || os(netbsd)
-      hs-source-dirs: src/unix
-    else
-      hs-source-dirs: src/other
+  hs-source-dirs:
+      src
 
+  if os(windows)
+    cpp-options: -DWINDOWS
+  if os(linux) || os(osx) || os(freebsd) || os(openbsd) || os(netbsd)
+    cpp-options: -DUNIX
