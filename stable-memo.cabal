@@ -1,5 +1,5 @@
 name:                stable-memo
-version:             0.1.1
+version:             0.1.2
 synopsis:            Memoization based on argument identity
 license:             MIT
 license-file:        LICENSE
@@ -57,7 +57,23 @@ description:
 
   .
 
-  This implementation is largely based on the one found in
+  Below is an implementation of map that preserves sharing of the
+  spine for cyclic lists. It should even be safe to use this on
+  arbitrarily long, acyclic lists since as long as the garbage
+  collector is chasing you, the size of the memo table should stay
+  under control, too.
+
+  .
+
+  > map :: (a -> b) -> [a] -> [b]
+  > map f = go
+  >   where go = memo map'
+  >         map' []     = []
+  >         map' (x:xs) = f x : go xs
+
+  .
+
+  This library is largely based on the implementation of memo found in
   \"Stretching the storage manager: weak pointers and stable names in
   Haskell\", from Simon Peyton Jones, Simon Marlow, and Conal Elliott
   (<http://community.haskell.org/~simonmar/papers/weak.pdf>).
@@ -76,4 +92,4 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/r/jmcarthur/stable-memo
-  tag:      v0.1.1
+  tag:      v0.1.2
