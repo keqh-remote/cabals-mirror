@@ -1,5 +1,5 @@
 Name:                composition
-Version:             0.2
+Version:             0.2.1
 Synopsis:            Combinators for unorthodox function composition
 License:             BSD3
 License-file:        LICENSE
@@ -10,7 +10,6 @@ Build-type:          Simple
 Cabal-version:       >=1.2
 
 Library
-  hs-source-dirs:  src
+  hs-source-dirs:      src
   Exposed-modules:     Data.Composition
   Build-depends:       base >= 2 && < 5
-  
