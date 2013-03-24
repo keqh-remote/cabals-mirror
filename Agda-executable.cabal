@@ -1,6 +1,6 @@
 name:            Agda-executable
-version:         2.2.10
-cabal-version:   >= 1.8 && < 2
+version:         2.3.0
+cabal-version:   >= 1.8
 build-type:      Simple
 license:         OtherLicense
 license-file:    LICENSE
@@ -14,7 +14,7 @@ description:
   This package provides a command-line program for type-checking and
   compiling Agda programs. The program can also generate hyperlinked,
   highlighted HTML files from Agda sources.
-tested-with:     GHC == 6.12.1, GHC == 6.12.3, GHC == 7.0.1
+tested-with:     GHC == 7.2.1
 
 source-repository head
   type:     darcs
@@ -23,11 +23,11 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://code.haskell.org/Agda/
-  tag:      2.2.10
+  tag:      2.3.0
 
 executable agda
   main-is:       Main.hs
-  build-depends: Agda == 2.2.10,
+  build-depends: Agda == 2.3.0,
                  -- Nothing is used from the following package, except
                  -- for the prelude.
                  base >= 3 && < 6
