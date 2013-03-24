@@ -1,11 +1,11 @@
 Name:               probability
-Version:            0.2
+Version:            0.2.1
 License:            BSD3
+License-File:       COPYRIGHT
 Author:             Martin Erwig <erwig@eecs.oregonstate.edu>, Steve Kollmansberger
 Maintainer:         Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:           http://darcs.haskell.org/probability
 Category:           Math, Monads, Graphics
-Build-Depends:      base, mtl
 Synopsis:           Probabilistic Functional Programming
 Description:
    The Library allows exact computation with discrete random variables
@@ -13,12 +13,27 @@ Description:
    The monad is similar to the List monad for non-deterministic computations,
    but extends the List monad by a measure of probability.
    Small interface to R plotting.
-Tested-With:        GHC==6.4
-Build-Type:         Simple
-License-File:       COPYRIGHT
-Hs-Source-Dirs:     src
-GHC-Options:        -Wall
-Exposed-Modules:
+Tested-With:    GHC==6.4.1, GHC==6.8.2
+Cabal-Version:  >=1.2
+Build-Type:     Simple
+
+Data-Files:
+  README
+  ToDo
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+  Build-Depends: mtl
+  If flag(splitBase)
+    Build-Depends: base >= 2, random, containers
+  Else
+    Build-Depends: base >= 1.0 && < 2
+
+  Hs-Source-Dirs:     src
+  GHC-Options:        -Wall
+  Exposed-Modules:
     Numeric.Probability.Visualize
     Numeric.Probability.Expectation
     Numeric.Probability.Percentage
@@ -42,10 +57,7 @@ Exposed-Modules:
     Numeric.Probability.Example.Predator
     Numeric.Probability.Example.Queuing
     Numeric.Probability.Example.TreeGrowth
-Other-Modules:
+  Other-Modules:
     Numeric.Probability.Monad
     Numeric.Probability.PrintList
     Numeric.Probability.Show
-Extra-Source-Files:
-    README
-    ToDo
