@@ -1,5 +1,5 @@
 name:           liboleg
-version:        0.2
+version:        2009.8.1
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -22,6 +22,8 @@ library
 
     exposed-modules:
             Data.FDList
+            Data.Class1
+            Data.Class2
 
             Control.CaughtMonadIO
 
