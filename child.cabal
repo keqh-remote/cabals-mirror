@@ -1,0 +1,17 @@
+Name:            child
+Version:         0.0-2005-02-14
+Author:          Peter Simons <simons@cryp.to>
+License:         GPL
+License-File:    LICENSE
+Maintainer:      simons@cryp.to
+Homepage:        http://cryp.to/child/
+Category:        Network
+Description:     Thread Management and Timeouts
+Build-Depends:   base
+Exposed-Modules:
+    Control.Concurrent.Child,
+    Control.Timeout
+
+Build-Type:     Simple
+Tested-With:    GHC==6.8.2
+ghc-options:    -Wall -O2
