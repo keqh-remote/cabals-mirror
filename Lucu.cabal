@@ -8,7 +8,7 @@ Description:
         without messing around FastCGI. It is also intended to be run
         behind a reverse-proxy so it doesn't have some facilities like
         logging, client filtering or such like.
-Version: 0.7.0.2
+Version: 0.7.0.3
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
