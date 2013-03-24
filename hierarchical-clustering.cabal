@@ -1,5 +1,5 @@
 Name:                hierarchical-clustering
-Version:             0.3.0.1
+Version:             0.3.1
 Synopsis:            Algorithms for single, average/UPGMA and complete linkage clustering.
 License:             BSD3
 License-file:        LICENSE
@@ -25,6 +25,12 @@ Description:
   the whole matrix on every iteration just to see what the
   minimum is).
   .
+  Changes in version 0.3.1:
+  .
+  * Works with containers 0.4 (thanks, Doug Beardsley).
+  .
+  * Removed some internal unnecessary overheads and added some strictness.
+  .
   Changes in version 0.3.0.1:
   .
   * Listed changes of unreleased version 0.2.
@@ -43,9 +49,15 @@ Description:
     useful if you want to create a dendrogram and your distance
     data type isn't an instance of @Floating@.
 
+
+Source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/felipe/hierarchical-clustering
+
+
 Library
   Exposed-modules:
     Data.Clustering.Hierarchical,
     Data.Clustering.Hierarchical.Internal.DistanceMatrix
-  Build-depends: base == 4.*, array == 0.3.*, containers == 0.3.*
+  Build-depends: base == 4.*, array == 0.3.*, containers >= 0.3 && < 0.5
   GHC-options: -Wall
