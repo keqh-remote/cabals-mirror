@@ -1,12 +1,12 @@
 name:		    monoids
-version:	    0.1.25
+version:	    0.1.28
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
 maintainer:	    Edward A. Kmett <ekmett@gmail.com>
 stability:	    experimental
 homepage:	    http://comonad.com/reader
-category:	    Data
+category:	    Data, Math, Numerical, Natural Language Processing, Parsing
 synopsis:	    Monoids, specialized containers and a general map/reduce framework
 description:    Monoids, specialized containers and a general map/reduce framework
 copyright:      (c) 2009 Edward A. Kmett
@@ -69,7 +69,9 @@ library
     Data.Ring.Module
     Data.Ring.Module.AutomaticDifferentiation
     Data.Ring.Semi
+    Data.Ring.Semi.BitSet
     Data.Ring.Semi.Near
+    Data.Ring.Semi.Near.Trie
     Data.Ring.Semi.Natural
     Data.Ring.Semi.Ord
     Data.Ring.Semi.Tropical
