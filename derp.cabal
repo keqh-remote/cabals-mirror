@@ -1,5 +1,5 @@
 Name:                derp
-Version:             0.1.4
+Version:             0.1.5
 Description:         A parser based on derivatives of parser combinators (Might
                      and Darais).  Our paper on Arxiv details the theory of
                      parsing with derivatives: <http://arxiv.org/abs/1010.5023>.
