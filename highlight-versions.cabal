@@ -1,5 +1,5 @@
 name:                highlight-versions
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:            Highlight package versions which differ from the latest
                      version on Hackage
 description:         This package provides an executable which reads from
@@ -19,6 +19,7 @@ description:         This package provides an executable which reads from
                      it can indicate that something needs to be updated.
 license:             BSD3
 license-file:        LICENSE
+extra-source-files:  CHANGES
 author:              Brent Yorgey
 maintainer:          byorgey@cis.upenn.edu
 copyright:           Copyright 2012 Brent Yorgey
