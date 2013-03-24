@@ -1,5 +1,5 @@
 name:                msgpack-idl
-version:             0.2.0
+version:             0.2.1
 synopsis:            An IDL Compiler for MessagePack
 description:         An IDL Compiler for MessagePack <http://msgpack.org/>
 homepage:            http://msgpack.org/
@@ -21,12 +21,12 @@ source-repository head
 
 library
   build-depends:       base             == 4.*
-                     , bytestring       == 0.9.*
-                     , text             == 0.11.*
+                     , bytestring       >= 0.9
+                     , text             >= 0.11
                      , shakespeare-text == 1.0.*
                      , blaze-builder    == 0.3.*
-                     , template-haskell >= 2.5 && < 2.8
-                     , containers       == 0.4.*
+                     , template-haskell >= 2.5 && < 2.9
+                     , containers       >= 0.4
                      , filepath         >= 1.1 && < 1.4
                      , directory
                      , msgpack          == 0.7.*
@@ -43,6 +43,7 @@ library
                        Language.MessagePack.IDL.CodeGen.Php
                        Language.MessagePack.IDL.CodeGen.Python
                        Language.MessagePack.IDL.CodeGen.Ruby
+                       Language.MessagePack.IDL.CodeGen.Erlang
                        Language.MessagePack.IDL.Internal
                        Language.MessagePack.IDL.Parser
                        Language.MessagePack.IDL.Syntax
@@ -52,8 +53,8 @@ executable mpidl
   main-is:             main.hs
 
   build-depends:       base      == 4.*
-                     , directory >= 1.0 && < 1.2
-                     , cmdargs   == 0.9.*
+                     , directory >= 1.0
+                     , cmdargs   == 0.10.*
                      , peggy     == 0.3.*
                      , msgpack-idl
 
