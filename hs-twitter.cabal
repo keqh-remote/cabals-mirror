@@ -1,10 +1,11 @@
 name: hs-twitter
-version: 0.2.0
+version: 0.2.1
 synopsis: Haskell binding to the Twitter API
 description:
    The hs-twitter API binding lets you access twitter.com's
-   resources and methods from Haskell. Implements the
-   full API, as specified at <http://apiwiki.twitter.com/REST+API+Documentation>
+   resources and methods from Haskell.
+   . 
+   Implements the full API, see <http://apiwiki.twitter.com/REST+API+Documentation>
    .
    For more info on use, please visit <http://haskell.forkIO.com/twitter>
 
