@@ -1,5 +1,5 @@
 Name:                pathtype
-Version:             0.5
+Version:             0.5.1
 Synopsis:            Type-safe replacement for System.FilePath etc
 Description:         This package provides type-safe access to filepath manipulations.
 		     .
@@ -83,7 +83,7 @@ Maintainer:          ben@moseley.name
 HomePage:            http://code.haskell.org/pathtype
 Build-Type:          Simple
 Cabal-Version:       >=1.6
-Extra-Source-Files: Test.hs, TestTemplate.hs
+Extra-Source-Files: Test.hs, TestTemplate.hs, System/Path/Internal.hs
 
 source-repository head
   type:     darcs
