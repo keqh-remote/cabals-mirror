@@ -1,5 +1,5 @@
 Name:			oi
-Version:		0.0.3
+Version:		0.0.4
 Category:		Data
 Synopsis:		Purely Functional Lazy Interaction with the outer world
 Description:		This package implements a data structure and operations on it 
@@ -13,7 +13,7 @@ Build-Type:		Simple
 Cabal-Version:		>= 1.6
 
 Data-dir:		sample
-Data-files:		Makefile echo.hs recdircs.hs
+Data-files:		Makefile echo.hs recdircs.hs talk.hs
 
 Library
   Hs-Source-Dirs:	    src/
