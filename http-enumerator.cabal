@@ -1,12 +1,12 @@
 name:            http-enumerator
-version:         0.7.3.2
+version:         0.7.3.3
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        HTTP client package with enumerator interface and HTTPS support.
+synopsis:        HTTP client package with enumerator interface and HTTPS support. (deprecated)
 description:
-    This package uses attoparsec for parsing the actual contents of the HTTP connection. It also provides higher-level functions which allow you to avoid direct usage of enumerators.
+    This package has been deprecated in favor of http-conduit (<http://hackage.haskell.org/package/http-conduit>), which provides a more powerful and simpler interface. The API is very similar, and migrating should not be problematic. Send concerns about this move to the maintainer (address listed above).
 category:        Web, Enumerator
 stability:       Stable
 cabal-version:   >= 1.6
