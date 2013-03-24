@@ -1,7 +1,7 @@
 Name:                statistics-fusion
-Version:             0.1
-Synopsis:            High performance statisticspackage  using stream fusion
-Description:         High performance statistics package using stream fusion
+Version:             0.2
+Synopsis:            High performance, minimal statistics package using stream fusion
+Description:         High performance, minimal statistics package using stream fusion
 
 License:             BSD3
 License-file:        LICENSE
