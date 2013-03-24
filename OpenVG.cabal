@@ -1,5 +1,5 @@
 name:             OpenVG
-version:          0.5.0
+version:          0.6.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -11,41 +11,28 @@ description:
   A Haskell binding for the OpenVG vector graphics API version 
   1.0.1, specifically the ShivaVG-0.2.1 implementation.
   .
-  This version (0.5.0) is NOT compatible with the Haskell Platform 
+  This version (0.6.0) is NOT compatible with the Haskell Platform 
   (2009.2.0.2) - it uses the split OpenGL packages (RAW, StateVar, 
   etc.).
   .
-  \*\* WARNING - major changes to previous version. Also 
-  significant changes likely in next revision. \*\*.
+  \*\* WARNING - large parts of the API (particular the Paths 
+  module) are untested and may be revised in future. \*\*.
   .
   Changelog
-  0.4.0 to 0.5.0
-  . 
-  * Significantly reworked. Changed to use OpenVGRaw. 
+  .
+  0.5.0 to 0.6.0
+  .
+  * Added an opaque matrix type to RenderingQuality. 
+    Acknowledgement - this was derived from the Matrix class
+    in HOpenGL.
+  .
+  * Revised Image module - PixelData is now an opaque type rather
+    than a raw pointer.
+  .
+  * Work on Path module - pathBounds implemented. This module is
+    entirely untested and may change again in the future.
   .
   .
-  0.3.0 to 0.4.0 
-  .
-  * LinearGradient type changed to be Vector4 VGfloat.
-  . 
-  * RadialGradient changed to (Vector4 VGfloat, VGfloat).
-  .
-  * Removed Marshal and Unmarshal type classes, marshallBool and 
-    unmarshalBool moved out of the BasicTypes module.
-  .
-  * Type change for colorRampStops.
-  .
-  * Name change - maxStops changed to maxColorRampStops.
-  .
-  * PathType(..) changed to PathAbsRel(..).
-  . 
-  * Substantial changes to Haddock docs.
-  .
-  * Error handling in VGU redone - the original code in 
-    ErrorsInternal was taken wholesale from Sven Panne\'s 
-    OpenGL binding to help me bootstrap the OpenVG binding. 
-    Regrettably I forgot to replace it or attribute it -
-    I've now replaced it. Sincere apologies to Sven Panne.
  
 build-type:         Simple
 stability:          experimental
@@ -66,7 +53,7 @@ library
                       OpenGLRaw >= 1.1.0.1 && < 2, 
                       StateVar  >= 1.0.0.0 && < 2,
                       Tensor    >= 1.0.0.1 && < 2,
-                      OpenVGRaw >= 0.1.0
+                      OpenVGRaw >= 0.2.0
   
   exposed-modules:
     Graphics.Rendering.OpenVG,
