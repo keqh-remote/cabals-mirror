@@ -1,9 +1,10 @@
 Name:           himerge
-Version:        0.17.9
+Version:        0.18
 License:        GPL
 License-File:	LICENSE
 Author:         Luis Francisco Araujo
 Maintainer:	araujo@gentoo.org
+Homepage:	http://www.haskell.org/himerge
 Stability:	Beta
 Synopsis:       Haskell Graphical User Interface for Emerge
 Description:
