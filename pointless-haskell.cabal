@@ -1,5 +1,5 @@
 Name:            pointless-haskell
-Version:         0.0.6
+Version:         0.0.7
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -27,6 +27,7 @@ Library
   exposed-modules:
         Generics.Pointless.Combinators
         Generics.Pointless.Functors,
+        Generics.Pointless.HFunctors,
         Generics.Pointless.Fctrable,
         Generics.Pointless.RecursionPatterns,
         Generics.Pointless.Observe.Functors,
@@ -37,4 +38,4 @@ Library
         Generics.Pointless.Bifunctors,
         Generics.Pointless.Bifctrable
 
-  extensions: TypeFamilies, TypeOperators, ScopedTypeVariables, UndecidableInstances, FlexibleInstances, FlexibleContexts, DeriveDataTypeable, EmptyDataDecls, GADTs
+  extensions: TypeFamilies, TypeOperators, ScopedTypeVariables, UndecidableInstances, FlexibleInstances, FlexibleContexts, DeriveDataTypeable, EmptyDataDecls, GADTs, Rank2Types
