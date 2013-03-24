@@ -1,5 +1,5 @@
 name: enumerator
-version: 0.4.14
+version: 0.4.15
 synopsis: Reliable, high-performance processing with left-fold enumerators
 license: MIT
 license-file: license.txt
@@ -63,39 +63,94 @@ extra-source-files:
   scripts/common.bash
   scripts/dist
   scripts/run-benchmarks
+  scripts/run-coverage
   scripts/run-tests
   --
   tests/enumerator-tests.cabal
-  tests/Tests.hs
+  tests/EnumeratorTests.hs
+  tests/EnumeratorTests/Binary.hs
+  tests/EnumeratorTests/Binary/Consume.hs
+  tests/EnumeratorTests/Binary/Drop.hs
+  tests/EnumeratorTests/Binary/Fold.hs
+  tests/EnumeratorTests/Binary/Handle.hs
+  tests/EnumeratorTests/Binary/Isolate.hs
+  tests/EnumeratorTests/Binary/Iterate.hs
+  tests/EnumeratorTests/Binary/Map.hs
+  tests/EnumeratorTests/Binary/Repeat.hs
+  tests/EnumeratorTests/Binary/Replicate.hs
+  tests/EnumeratorTests/Binary/Require.hs
+  tests/EnumeratorTests/Binary/Split.hs
+  tests/EnumeratorTests/Binary/Unfold.hs
+  tests/EnumeratorTests/Binary/Util.hs
+  tests/EnumeratorTests/Binary/Zip.hs
+  tests/EnumeratorTests/CatchError.hs
+  tests/EnumeratorTests/Compatibility.hs
+  tests/EnumeratorTests/Instances.hs
+  tests/EnumeratorTests/Join.hs
+  tests/EnumeratorTests/List.hs
+  tests/EnumeratorTests/List/Consume.hs
+  tests/EnumeratorTests/List/Drop.hs
+  tests/EnumeratorTests/List/Fold.hs
+  tests/EnumeratorTests/List/Isolate.hs
+  tests/EnumeratorTests/List/Iterate.hs
+  tests/EnumeratorTests/List/Map.hs
+  tests/EnumeratorTests/List/Repeat.hs
+  tests/EnumeratorTests/List/Replicate.hs
+  tests/EnumeratorTests/List/Require.hs
+  tests/EnumeratorTests/List/Split.hs
+  tests/EnumeratorTests/List/Unfold.hs
+  tests/EnumeratorTests/List/Unique.hs
+  tests/EnumeratorTests/List/Util.hs
+  tests/EnumeratorTests/List/Zip.hs
+  tests/EnumeratorTests/Misc.hs
+  tests/EnumeratorTests/Sequence.hs
+  tests/EnumeratorTests/Stream.hs
+  tests/EnumeratorTests/Text.hs
+  tests/EnumeratorTests/Text/Codecs.hs
+  tests/EnumeratorTests/Text/Consume.hs
+  tests/EnumeratorTests/Text/Drop.hs
+  tests/EnumeratorTests/Text/Fold.hs
+  tests/EnumeratorTests/Text/Handle.hs
+  tests/EnumeratorTests/Text/Isolate.hs
+  tests/EnumeratorTests/Text/Iterate.hs
+  tests/EnumeratorTests/Text/Map.hs
+  tests/EnumeratorTests/Text/Repeat.hs
+  tests/EnumeratorTests/Text/Replicate.hs
+  tests/EnumeratorTests/Text/Require.hs
+  tests/EnumeratorTests/Text/Split.hs
+  tests/EnumeratorTests/Text/Unfold.hs
+  tests/EnumeratorTests/Text/Util.hs
+  tests/EnumeratorTests/Text/Zip.hs
+  tests/EnumeratorTests/Util.hs
 
 source-repository head
   type: bazaar
-  location: http://john-millikin.com/software/enumerator/
+  location: https://john-millikin.com/software/enumerator/
+
+source-repository this
+  type: bazaar
+  location: https://john-millikin.com/branches/enumerator/0.4/
+  tag: enumerator_0.4.15
 
 library
   ghc-options: -Wall -O2
   hs-source-dirs: lib
 
   build-depends:
-      transformers >= 0.2 && < 0.3
+      base >= 4.0 && < 5.0
+    , transformers >= 0.2 && < 0.3
     , bytestring >= 0.9 && < 0.10
-    , containers
+    , containers >= 0.1 && < 0.5
     , text >= 0.7 && < 0.12
-
-  if impl(ghc >= 6.10)
-    build-depends:
-        base >= 4 && < 5
-  else
-    build-depends:
-        base >= 3 && < 4
-      , extensible-exceptions >= 0.1 && < 0.2
 
   exposed-modules:
     Data.Enumerator
     Data.Enumerator.Binary
-    Data.Enumerator.Text
-    Data.Enumerator.List
+    Data.Enumerator.Internal
     Data.Enumerator.IO
+    Data.Enumerator.List
+    Data.Enumerator.Text
 
   other-modules:
+    Data.Enumerator.Compatibility
     Data.Enumerator.Util
