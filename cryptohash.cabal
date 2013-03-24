@@ -1,5 +1,5 @@
 Name:                cryptohash
-Version:             0.7.2
+Version:             0.7.3
 Description:
     A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,
     with performance close to the fastest implementations available in others languages.
@@ -16,7 +16,7 @@ Category:            Data, Cryptography
 Build-Type:          Simple
 Cabal-Version:       >=1.6
 Homepage:            http://github.com/vincenthz/hs-cryptohash
-data-files:          README
+data-files:          README.md
 
 extra-source-files:
   cbits/bitfn.h cbits/md2.h cbits/md4.h cbits/md5.h
