@@ -1,5 +1,5 @@
 name:		Control-Engine
-version:	0.0.6
+version:	1.0.0.0
 license:	BSD3
 license-file:	LICENSE
 author:		Thomas DuBuisson <thomas.dubuisson@gmail.com>
@@ -12,8 +12,8 @@ homepage:	http://www.haskell.org/haskellwiki/Control-Engine
 category:	Control
 stability:	stable
 build-type:	Simple
-cabal-version:	>= 1.2
-tested-with:	GHC == 6.8.3
+cabal-version:	>= 1.6
+tested-with:	GHC == 6.10.3
 extra-source-files:
 
 Flag small_base
@@ -21,9 +21,9 @@ Flag small_base
 
 Library
   if flag(small_base)
-    Build-Depends: base >= 3, stm
+    Build-Depends: base == 4.*, stm, concurrent, BoundedChan >= 1.0.0.2
   else
-    Build-Depends: base >= 3, stm
+    Build-Depends: base == 4.*, stm, BoundedChan >= 1.0.0.2
   hs-source-dirs:
   exposed-modules: Control.Engine, Control.ThreadPool
   ghc-options:
