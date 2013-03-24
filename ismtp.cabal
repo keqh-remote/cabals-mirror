@@ -1,5 +1,5 @@
 Name:          ismtp
-Version:       3.0.1
+Version:       4.0.1
 Category:      Network
 Synopsis:      Advanced ESMTP library
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -8,23 +8,23 @@ Copyright:     (c) 2011 Ertugrul Söylemez
 License:       BSD3
 License-file:  LICENSE
 Build-type:    Simple
-Stability:     beta
+Stability:     stable
 Cabal-version: >= 1.6
 Description:
 
-    This library provides fast, incremental client-side ESMTP sessions
-    for mail exchangers and mail transfer agents.
+    This library provides fast, incremental, iteratee-based client-side
+    ESMTP sessions for mail exchangers and other mail transfer agents.
 
 Library
     Build-depends:
         base >= 4 && <= 5,
         bytestring >= 0.9.1.7,
         containers >= 0.3.0.0,
-        contstuff >= 1.2.4,
+        contstuff >= 1.2.6,
         dnscache >= 1.0.1,
         enumerator >= 0.4.7,
         monad-peel >= 0.1,
-        netlines >= 0.4.3,
+        netlines >= 1.0.0,
         network >= 2.2.1.7,
         vector >= 0.7.0.1
     GHC-Options: -W
@@ -41,6 +41,7 @@ Library
 -- Executable ismtp-test
 --     Build-depends:
 --         base >= 4 && <= 5,
+--         cmdargs >= 0.6.8,
 --         unix
 --     GHC-Options: -W -threaded
 --     Main-is: Test.hs
