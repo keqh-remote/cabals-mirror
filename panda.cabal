@@ -1,5 +1,5 @@
 Name:                 panda
-Version:              2008.10.14
+Version:              2008.10.15
 Build-type:           Simple
 Synopsis:             A simple static blog engine
 Description:          A simple static blog engine
@@ -49,6 +49,7 @@ library
                     Panda.View.Control.Static
                     Panda.View.Control.Tag
                     
+                    Panda.View.Widget.Helper
                     Panda.View.Widget.Body
                     Panda.View.Widget.Footer
                     Panda.View.Widget.Head
