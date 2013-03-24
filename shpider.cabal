@@ -1,5 +1,5 @@
 Name:               shpider 
-Version:            0.0.2
+Version:            0.0.3
 Synopsis:           Web automation library in Haskell.
 Description:
     Shpider is a web automation library for Haskell.   It allows you to quickly write crawlers, and for simple cases ( like following links ) even without reading the page source.
@@ -29,7 +29,7 @@ Cabal-version:      >= 1.2.0
 Extra-source-files: configure, configure.ac, curl.buildinfo.in
 
 Library
-   Build-depends:   base , regex-posix , tagsoup-parsec , url , containers , tagsoup , mtl , bytestring
+   Build-depends:   base , regex-posix , tagsoup-parsec , url==2 , containers , tagsoup , mtl , bytestring
    Exposed-modules: Network.Shpider.URL
                     Network.Shpider.Code
                     Network.Shpider.State
