@@ -1,9 +1,11 @@
 Name:           PrimitiveArray
-Version:        0.0.2.1
+Version:        0.0.2.2
 License:        BSD3
 License-file:   LICENSE
 Author:         Christian Hoener zu Siederdissen
 Maintainer:     choener@tbi.univie.ac.at
+Copyright:      Christian Hoener zu Siederdissen, 2010
+Homepage:       http://www.tbi.univie.ac.at/~choener/Haskell/
 Stability:      Experimental
 Category:       Data
 Build-type:     Simple
@@ -14,6 +16,8 @@ Synopsis:
 Description:
                 Provides unboxed multidimensional tables with a small
                 interface. Comes with an instance for Ix keys.
+                .
+                * haddock should work now
 
 extra-source-files:
   Benchmarks/Index.hs
