@@ -1,5 +1,5 @@
 name:           criterion
-version:        0.5.0.0
+version:        0.5.0.1
 synopsis:       Robust, reliable performance measurement and analysis
 license:        BSD3
 license-file:   LICENSE
@@ -61,14 +61,14 @@ library
 
   if flag(chart)
     build-depends:
-      Chart >= 0.12,
+      Chart >= 0.13 && < 0.14,
       data-accessor
     cpp-options: -DHAVE_CHART
 
   -- gather extensive profiling data for now
   ghc-prof-options: -auto-all
 
-  ghc-options: -Wall -funbox-strict-fields -O2
+  ghc-options: -Wall -funbox-strict-fields
   if impl(ghc >= 6.8)
     ghc-options: -fwarn-tabs
   if impl(ghc >= 6.12)
