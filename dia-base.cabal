@@ -1,5 +1,5 @@
 name:                dia-base
-version:             0.1
+version:             0.1.1
 category:            Graphics, Education
 synopsis:            An EDSL for teaching Haskell with diagrams - data types
 description:
@@ -9,6 +9,8 @@ description:
     See also the dia-functions package.
     .
     For exaples see <http://pnyf.inf.elte.hu/fp/Diagrams_en.xml>
+    .
+    Changes since 0.1: more documentation
 stability:           alpha
 license:             BSD3
 license-file:        LICENSE
