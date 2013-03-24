@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.6
+Version:		2.2.7
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -44,16 +44,16 @@ Category:		Cryptography
 Build-Type:		Simple
 Data-Files:
    index.html cpsauser.html cpsa.mk Make.hs cpsaprimer.pdf
-   cpsaoverview.pdf cpsaspec.pdf cpsadesign.pdf ffgg.scm ns.scm or.scm
-   woolam.scm yahalom.scm
+   cpsaoverview.pdf cpsaspec.pdf cpsadesign.pdf cpsasdha.pdf
+   ffgg.scm ns.scm or.scm woolam.scm yahalom.scm dhke.scm
 Data-Dir:	    	doc
 Extra-Source-Files:
   Makefile ChangeLog README NEWS ghci cpsatst setup.bat doc/README
   doc/Makefile doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
   doc/cpsaspec.tex doc/cpsadesign.tex doc/cpsaoverview.tex
-  doc/cpsadiagrams.mp doc/strands.mp doc/cmstrands.mp doc/carriers.mp
-  doc/termtree.mp doc/cpsa.bib doc/SDAG.lhs doc/cpsaspec.pdf
-  doc/cpsadesign.pdf
+  doc/cpsasdha.tex doc/cpsadiagrams.mp doc/strands.mp doc/cmstrands.mp
+  doc/carriers.mp doc/termtree.mp doc/cpsa.bib doc/SDAG.lhs
+  doc/SimpleDiffieHellman.hs
   src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg src/cpsa.el
   src/httpd_allow_execmem.te src/cpsaops.scm src/preskel src/cpsa.pl
   src/pp.pl src/sexpr.pl src/prover9.pl src/zoom.js src/js2hs
@@ -102,7 +102,7 @@ Extra-Source-Files:
   tst/hashtest-key-hash.tst tst/hashtest.scm tst/hashtest.tst
   tst/wang-key-hash.scm tst/wang-key-hash.tst tst/wang-hash.scm
   tst/wang-hash.tst tst/mass.lsp tst/mass.tst tst/mass2.lsp tst/mass2.tst
-  tst/DH_hack.scm tst/DH_hack.tst
+  tst/DH_hack.scm tst/DH_hack.tst tst/timestamping.scm tst/timestamping.tst
 
 -- Algebra implementations must import CPSA.Lib.CPSA.
 -- Tools may additionally import CPSA.Lib.Entry.
