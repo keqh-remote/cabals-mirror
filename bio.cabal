@@ -1,5 +1,5 @@
 Name:                bio
-Version:             0.3.5
+Version:             0.4
 License:             LGPL
 License-file:        LICENSE
 Author:              Ketil Malde
@@ -8,15 +8,16 @@ Maintainer:          ketil@ii.uib.no
 Category:            Bioinformatics
 Synopsis:            A bioinformatics library
 Description:         This is a collection of data structures and algorithms
-                     I've found useful when building various bioinformatics-related tools
+                     useful for building bioinformatics-related tools
                      and utilities.
                      .
                      Current list of features includes: a Sequence data type supporting
-                     protein and nucleotide sequences and conversion between them, quality
+                     protein and nucleotide sequences and conversion between them.  As of version
+		     0.4, different kinds of sequence have different types.  Support for quality
                      data, reading and writing Fasta formatted files, reading TwoBit and
-                     phd formats.  Rudimentary support for doing alignments - including
-                     dynamic adjustment of scores based on sequence quality - and Blast
-                     output parsing.  Partly implemented single linkage clustering, and
+                     phd formats, and Roche/454 SFF files.  Rudimentary (i.e. unoptimized) support
+		     for doing alignments - including dynamic adjustment of scores based on sequence quality. 
+		     Also Blast output parsing.  Partly implemented single linkage clustering, and
 		     multiple alignment.  Reading Gene Ontology (GO) annotations (GOA) and
 		     definitions\/hierarchy.
 		     .
@@ -25,7 +26,7 @@ Homepage:            http://blog.malde.org/index.php/the-haskell-bioinformatics-
 
 Tested-With:         GHC==6.8.2
 Build-Type:          Simple
-Build-Depends:       base>3, QuickCheck<2, binary, tagsoup>=0.4, bytestring >= 0.9.1,
+Build-Depends:       base>=3 && <4, QuickCheck<2, binary, tagsoup>=0.4, bytestring >= 0.9.1,
                      containers, array, parallel, parsec, random, old-time, mtl
 -- add fps for ghc 6.4.2; change imports in Bio/Sequence/TwoBit.hs if you want QC 2
 
@@ -40,12 +41,13 @@ Exposed-modules:     Bio.Sequence,
                      Bio.Sequence.GOA,
                      Bio.Sequence.GeneOntology,
 		     Bio.Sequence.KEGG,
-		     Bio.Sequence.SFF,
+		     Bio.Sequence.SFF, Bio.Sequence.SFF_name
                      Bio.Alignment.BlastData, Bio.Alignment.BlastFlat,
                      Bio.Alignment.Blast, Bio.Alignment.BlastXML,
                      Bio.Alignment.AlignData, Bio.Alignment.Matrices,
                      Bio.Alignment.SAlign, Bio.Alignment.AAlign, Bio.Alignment.QAlign
                      Bio.Alignment.Multiple, Bio.Alignment.ACE,
+                     Bio.Alignment.Bowtie,
                      Bio.Alignment.Soap,
                      Bio.Clustering,
                      Bio.Util, Bio.Util.Parsex, Bio.Util.TestBase
