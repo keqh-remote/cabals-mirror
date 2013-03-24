@@ -1,15 +1,18 @@
 Name:		HPlot
-Version:	0.1
-Cabal-Version:  >= 1.2
+Version:	0.2
+-- Cabal-Version:  >= 1.2
 License:	BSD3
-License-File: license
-Author:		Yakov Z <iakovz@gmail.com>
-Maintainer:     Yakov Z <iakovz@gmail.com>
+License-file:   license
+Author:		Yakov ZAYTSEV <yakov@yakov.cc>
+Maintainer:     Yakov ZAYTSEV <yakov@yakov.cc>
+Homepage:       http://yakov.cc/HPlot.html
 Category:	Graphics, Foreign
 Synopsis:	A minimal monadic PLplot interface for Haskell
 Description:
   This package provides simple monadic interface to the PLplot cross-platform software 
   package for creating scientific plots. 
+  .
+  Haddock documentation (hyperlinked with source code) is available from homepage
   .
   PlplotCanvas widget is implemented to be compatible with gtk2hs. PLplot type class allows
   addition of other display drivers without need to adopt application code
@@ -17,25 +20,36 @@ Description:
   The idea was that with the help of PLplotM monad it should be easy to make 
   more abstract interfaces and combinators to do plots
   .
-build-type: Simple
+  You are welcome to send your changes to be included in future release
+  .
+  It will be great if you will do 'git format-patch' to prepare email with changes against particular version
+  .
+  Changes since 0.1:
+  .
+  * Roman Salmin contributed 'ssub' and 'bin' functions
+  .
+  * 'Flt' type has been added which mirrors PLFLT
+  .
+build-type:     Simple
 extra-source-files: example.glade, license
-
-Library
-  Build-Depends:	base, gtk, glade, glib
-  Exposed-modules:
-    Graphics.PLplot
+Build-Depends:	base >= 4.0 && < 4.2
+Build-Depends:  gtk, glade, glib
+Exposed-modules:
+                Graphics.PLplot
 --  ghc-options: -Wall -fglasgow-exts
-  ghc-options: -Wall 
-  extensions: ForeignFunctionInterface, FlexibleContexts, FlexibleInstances
-  build-tools: c2hs
-  pkgconfig-depends: plplotd-gnome2
+ghc-options:    -Wall 
+extensions:     ForeignFunctionInterface, FlexibleContexts, FlexibleInstances
+build-tools:    c2hs
+pkgconfig-depends: plplotd-gnome2
 
-Executable           Example
-  build-depends:     base, gtk, glade, glib
-  Main-Is:           Example.hs
-  hs-source-dirs:    .
-  Other-Modules:     Graphics.PLplot
+Executable:     Example
+Build-Depends:  base >= 4.0 && < 4.2
+Build-Depends:  gtk, glade, glib
+Main-Is:        Example.hs
+hs-source-dirs: .
+Other-Modules:
+                Graphics.PLplot
 --  ghc-options: -Wall -fglasgow-exts
-  ghc-options: -Wall
-  extensions: ForeignFunctionInterface, FlexibleContexts, FlexibleInstances
-  pkgconfig-depends: plplotd-gnome2
+ghc-options:    -Wall
+extensions:     ForeignFunctionInterface, FlexibleContexts, FlexibleInstances
+pkgconfig-depends: plplotd-gnome2
