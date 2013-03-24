@@ -1,10 +1,11 @@
 Name:				 CV
-Version:             0.3.1.2
+Version:             0.3.4
 Description:         OpenCV Bindings
 License:             GPL
 License-file:        LICENSE
 Category:            AI, Graphics, Machine Vision
 Synopsis:            OpenCV based machine vision library
+Homepage:            http://aleator.github.com/CV/
 Description:         This is a machine vision package that wraps some functionality
                      of OpenCV library. This package has been developed for personal use and
                      is not meant to be a complete wrapper. It also includes some things not
@@ -14,7 +15,16 @@ Description:         This is a machine vision package that wraps some functional
                      and code clean-up, but is somewhat tested.
                      .
                      (The scarce) Documentation is available at 
-                      <http://users.jyu.fi/~aleator/CV-0.3.0.2/html/index.html>
+                      <http://http://aleator.github.com/CV/>
+                     .
+                     Changelog.
+                     0.3.4 - Pixelwise operations, bug fixes and additional documentation
+                     .
+                     0.3.3.0 - Improvements, including compatablity with opencv 2.3.1 and removal of
+                     dependency with deprecated JYU.Utils
+                     .
+                     Changelog.
+                     0.3.2.0 - Improvements, including fancier pixel-wise manipulations 
                      .
                      Changelog.
                      0.3.0.2 - Workaround for compiling with OS X 10.6 & fixed errors about M_PI
@@ -23,37 +33,51 @@ Description:         This is a machine vision package that wraps some functional
 Author:              Ville Tirronen
 Maintainer:          ville.tirronen@jyu.fi
 Build-Type:          Simple
-Cabal-Version:       >=1.6
+Cabal-Version:       >=1.8
 Extra-Source-Files:
                      examples/*.hs
                      examples/shapes/*.png
                      examples/shapePhoto.jpg
+                     examples/chess.png
                      examples/fuse1.png
                      examples/fuse2.png
                      examples/smallLena.jpg
                      examples/elaine.jpg
+Flag opencv23
+  Description: Compatability for opencv 2.3.1
+  Default:     False
+
 
 Library
     Build-Tools:       c2hs >= 0.16.0
-    Include-dirs:      CV/  
-    Includes:          opencv/cv.h, opencv/cxcore.h, opencv/highgui.h, CV/cvWrapLEO.h
-    c-sources:         CV/cvWrapLEO.c
-    install-includes:  CV/cvWrapLEO.h
+    Include-dirs:      cbits/  
+    Includes:          opencv/cv.h, opencv/cxcore.h, opencv/highgui.h, cbits/cvWrapLEO.h
+    c-sources:         cbits/cvWrapLEO.c
+    install-includes:  cbits/cvWrapLEO.h
+    if flag(opencv23)
+         cpp-options: -DOpenCV23
+         cc-options: -DOpenCV23
     cc-options:        --std=c99 -U__BLOCKS__
     extra-libraries:   opencv_calib3d,opencv_contrib,opencv_core,opencv_features2d,opencv_highgui,opencv_imgproc,opencv_legacy,opencv_ml,opencv_objdetect,opencv_video
      
-    Build-Depends:     haskell98, base >= 3 && < 5, parallel > 1.1, unix > 2.3, array >= 0.2.0.0,
+    Build-Depends:     haskell98, base >= 3 && < 5, parallel > 3.1, unix > 2.3, array >= 0.2.0.0,
                        mtl >= 1.1.0, random >= 1.0.0, carray >= 0.1.5, QuickCheck >= 2.1, 
-                       containers >= 0.2, JYU-Utils >= 0.1 && < 0.2,
-                       storable-complex, binary >= 0.5, deepseq >= 1.1
+                       containers >= 0.2, 
+                       storable-complex, binary >= 0.5, deepseq >= 1.1,
+                       bindings-DSL >= 1.0.14 && < 1.1, vector >= 0.7.0.1 && < 1.1,
+                       lazysmallcheck >= 0.5 && < 1
     Exposed-modules:   CV.Image, CV.ImageOp, CV.ImageMath CV.Sampling, CV.Edges, CV.Filters, 
                        CV.Morphology, CV.ColourUtils, CV.ImageMathOp, CV.Video,
                        CV.Textures,CV.Drawing, CV.Thresholding, CV.Histogram,  CV.LightBalance,
                        CV.TemplateMatching, CV.Transforms, CV.Conversions,
                        CV.Binary, CV.Marking, CV.FunnyStatistics,
                        CV.MultiresolutionSpline,  CV.Gabor,
-                       CV.ConnectedComponents, CV.HighGUI
-    Other-modules:     C2HSTools, C2HS
+                       CV.ConnectedComponents, CV.HighGUI, CV.Calibration
+                       CV.Pixelwise, CV.Matrix, CV.Arbitrary
+                       Utils.List, Utils.Point, Utils.Rectangle, Utils.Stream, Utils.Function
+    Other-modules:     C2HSTools, C2HS, CV.Bindings.Matrix, CV.Bindings.Calibrate
+    Extensions: CPP
+
 
 source-repository head
   type:     git
