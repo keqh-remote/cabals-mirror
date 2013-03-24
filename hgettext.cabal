@@ -1,5 +1,5 @@
 Name:                   hgettext
-Version:                0.1.3
+Version:                0.1.5
 Cabal-Version:          >= 1.6
 
 License:                BSD3
@@ -13,10 +13,13 @@ Synopsis:               Bindings to libintl.h (gettext, bindtextdomain)
 Build-Type:             Simple
 
 Library
-        Exposed-Modules:        Text.I18N.GetText
+        Exposed-Modules:        Text.I18N.GetText,
+                                Distribution.Simple.I18N.GetText
         Extensions:             ForeignFunctionInterface
         Hs-Source-Dirs:         src
-        Build-Depends:          base
+        Build-Depends:          base, process,
+                                directory, filepath,
+                                containers, Cabal
 
 Executable hgettext
         Main-Is:                hgettext.hs
