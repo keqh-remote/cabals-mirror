@@ -7,7 +7,7 @@ Name:                	Fungi
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             	1.0.2
+Version:             	1.0.3
 
 -- A short (one-line) description of the package.
 Synopsis:            	An interpreter for Funge-98 programming languages, including Befunge.
@@ -36,8 +36,22 @@ Build-type:          	Simple
 -- a README.
 -- Extra-source-files:  
 
-Cabal-version:       	>=1.2
+Cabal-version:       	>= 1.6
 
+Extra-source-files:
+	README
+	Tester.hs
+	runTests.bash
+	tests/*.bf
+	tests/bad/*.bf
+	tests/bad/fingers/bzro/*.bf
+	tests/good/*.bf
+	tests/good/*.dat
+	tests/good/fingers/bzro/*.bf
+	tests/good/fingers/mode/*.bf
+	tests/mycology/*.bf
+	tests/mycology/*.b98
+	tests/mycology/*.txt
 
 Executable: 		fungi
 
@@ -57,6 +71,8 @@ Build-depends:
 	, old-time >= 1.0
 	, process >= 1.0
 	, random >= 1.0
+	, tuple >= 0.2
+	, haskell98 >= 1.0
   
 -- Modules not exported by this package.
 Other-modules:
@@ -69,18 +85,22 @@ Other-modules:
 	Data.LogicalBits
 	Data.MaybeBounded
 	Data.Stack
+	Data.Tuple.Map
 	Data.Vector
 	Debug.Debug
 	Debug.Debugger
 	Env
 	Fingerprint
 	Fingerprint.BASE
+	Fingerprint.BF93
 	Fingerprint.BOOL
+	Fingerprint.BZRO
 	Fingerprint.CPLI
 	Fingerprint.FIXP
 	Fingerprint.HRTI
 	Fingerprint.MODE
 	Fingerprint.MODU
+	Fingerprint.NOP
 	Fingerprint.NULL
 	Fingerprint.ORTH
 	Fingerprint.REFC
@@ -98,12 +118,35 @@ Other-modules:
 	Space.Space
 	System.IO.Buffering
 	Text.Help.Debug
+	Text.Help.Fingerprint
 	Text.Help.Fungi
+	Text.Help.Fingerprint.BASE
+	Text.Help.Fingerprint.BF93
+	Text.Help.Fingerprint.BOOL
+	Text.Help.Fingerprint.BZRO
+	Text.Help.Fingerprint.CPLI
+	Text.Help.Fingerprint.FIXP
+	Text.Help.Fingerprint.HRTI
+	Text.Help.Fingerprint.MODE
+	Text.Help.Fingerprint.MODU
+	Text.Help.Fingerprint.NOP
+	Text.Help.Fingerprint.NULL
+	Text.Help.Fingerprint.ORTH
+	Text.Help.Fingerprint.REFC
+	Text.Help.Fingerprint.ROMA
 	Text.PrettyShow
 	Text.PrintOption
 	UnknownInstruction
 	Version
-  
+
+
+
+
+
 -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
 -- Build-tools:         
   
+
+
+
+
