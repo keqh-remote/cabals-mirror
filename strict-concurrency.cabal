@@ -1,5 +1,5 @@
 Name:           strict-concurrency
-Version:        0.2
+Version:        0.2.1
 Synopsis:       Strict concurrency abstractions
 Category:       Control
 Description:
@@ -15,7 +15,7 @@ Author:         Don Stewart <dons@galois.com>
 Maintainer:     Don Stewart <dons@galois.com>
 Copyright:      (c) 2007-8 Don Stewart
 Homepage:       http://code.haskell.org/~dons/code/strict-concurrency
-build-depends:  base, parallel
+build-depends:  base >= 3 && < 4, parallel
 ghc-options:    -Wall -fglasgow-exts
 extensions:     CPP, BangPatterns
 build-type:     Simple
