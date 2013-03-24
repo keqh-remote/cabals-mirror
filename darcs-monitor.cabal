@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.2
 Name: darcs-monitor
-Version: 0.3.4
+Version: 0.3.5
 License: GPL
 License-File: GPL.txt
 Author: Antti-Juhani Kaijanaho
@@ -21,9 +21,10 @@ flag splitBase
   description: Choose the new smaller, split-up base package.
 
 Executable darcs-monitor
+  Build-Depends: mtl, HaXml < 1.14
   if flag(splitBase)
-    Build-Depends: base >=3, containers, directory, mtl, process, HaXml
+    Build-Depends: base >=3, containers, directory, process
   else
-    Build-Depends: base < 3, mtl, HaXml
+    Build-Depends: base < 3
   Main-Is: darcs-monitor.hs
   Other-Modules: Config Darcs EmailPatch PatchData
