@@ -1,5 +1,5 @@
 Name            : Pugs
-Version         : 6.2.13.9
+Version         : 6.2.13.10
 license         : BSD3
 license-file    : LICENSE
 cabal-version   : >= 1.2
@@ -144,6 +144,12 @@ extra-source-files:
     src/Pugs/Val/Capture.hs
     src/Pugs/Val/Code.hs
     src/Pugs/Version.hs
+    Configure.PL
+    perl5/p5embed.c
+    perl5/p5embed.h
+    perl5/perlxsi.c
+    perl5/pugsembed.c
+    perl5/pugsembed.h
 
 flag Perl5
     description: Enable Perl 5 Embedding
