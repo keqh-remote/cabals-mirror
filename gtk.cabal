@@ -1,26 +1,26 @@
 Name:           gtk
-Version:        0.12.0
+Version:        0.12.1
 License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
 Author:         Axel Simon, Duncan Coutts and many others
-Maintainer:     gtk2hs-users@sourceforge.net
+Maintainer:     gtk2hs-users@lists.sourceforge.net
 Build-Type:     Custom
-Cabal-Version:  >= 1.6.0
+Cabal-Version:  >= 1.8
 Stability:      provisional
-homepage:       http://www.haskell.org/gtk2hs/
+homepage:       http://projects.haskell.org/gtk2hs/
 bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
 Synopsis:       Binding to the Gtk+ graphical user interface library.
 Description: This is the core library of the Gtk2Hs suite of libraries for Haskell
              based on Gtk+. Gtk+ is an extensive and mature multi-platform toolkit
              for creating graphical user interfaces.
 Category:       Graphics
-Tested-With:    GHC == 6.10.4
+Tested-With:    GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
 Extra-Source-Files: wingtk.h
                     Graphics/UI/Gtk/ModelView/Gtk2HsStore.h
                     Graphics/UI/Gtk/General/hsgthread.h
                     template-hsc-gtk2hs.h
-                    Gtk2HsSetup.hs
+                    SetupWrapper.hs SetupMain.hs Gtk2HsSetup.hs
                     marshal.list
                     hierarchy.list
                     
@@ -124,17 +124,24 @@ Flag have-gio
   Description: Depend on GIO package, thereby enabling certain features.
   Default:  True
 
+Flag have-quartz-gtk
+  Description: Assume that the installed GTK is the version for OS X backend by Quartz, and hence does not provide gdk_x11_drawable_get_xid
+  Default:  False
+
 Library
         build-depends:  base >= 4 && < 5,
-                        array, containers, haskell98, mtl, bytestring,
+                        array, containers, mtl, bytestring,
                         glib  >= 0.12.0 && < 0.13,
                         pango >= 0.12.0 && < 0.13,
                         cairo >= 0.12.0 && < 0.13
         if flag(have-gio)
           build-depends: gio >= 0.12.0 && < 0.13
           cpp-options:    -DHAVE_GIO
+        if flag(have-quartz-gtk)
+          cpp-options:    -DHAVE_QUARTZ_GTK
 
-        build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
+        build-tools:    gtk2hsC2hs >= 0.13.5,
+                        gtk2hsHookGenerator, gtk2hsTypeGen
 
         exposed-modules:
           Graphics.UI.Gtk
@@ -363,7 +370,6 @@ Library
         -- needs to be imported from this module:
         x-Signals-Import: Graphics.UI.Gtk.General.Threading
         include-dirs:   .
-        cpp-options:    -DHAVE_NEW_CONTROL_EXCEPTION
         if !flag(deprecated)
           cpp-options:  -DDISABLE_DEPRECATED
         else
