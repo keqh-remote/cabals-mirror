@@ -1,5 +1,5 @@
 name:                urldecode
-version:             1.0.0.0
+version:             1.0.0.1
 synopsis:            Decode percent-encoded strings.
 description:         Pass a list of percent-encoded strings to the executable as
                      arguments and it will print the decoded versions, separated
@@ -13,7 +13,7 @@ copyright:           (c) 2012 Benedict Eastaugh
 category:            Text
 build-type:          Simple
 extra-source-files:  README.md
-cabal-version:       >=1.8
+cabal-version:       >= 1.8
 
 source-repository head
     type:                git
@@ -21,5 +21,6 @@ source-repository head
 
 executable urldecode
     main-is:             src/urldecode.hs
+    ghc-options:         -Wall
     build-depends:       base    >= 4 && < 5,
                          network >= 2 && < 3
