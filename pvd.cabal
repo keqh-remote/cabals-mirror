@@ -1,5 +1,5 @@
 Name:                pvd
-Version:             1.0.1
+Version:             1.1.0
 
 Synopsis:            A photo viewer daemon application with remote controlling abilities.
 
@@ -31,4 +31,4 @@ Executable pvd
 
 Executable pvc
   Main-Is:         Pvc.hs
-  Build-Depends:   base >= 4 && < 5, haskell98, network, containers
+  Build-Depends:   base >= 4 && < 5, haskell98, network, containers, stm
