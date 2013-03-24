@@ -1,5 +1,5 @@
 Name:           graph-rewriting-trs
-Version:        0.1.2
+Version:        0.1.3
 Copyright:      (c) 2011, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -17,21 +17,22 @@ Data-Files:     examples/*.trs
 Executable trs
   Main-Is:        Main.hs
   Build-Depends:
-    base >= 4 && < 4.4,
+    base >= 4 && < 4.5,
     base-unicode-symbols >= 0.2 && < 0.3,
     graph-rewriting >= 0.5.2 && < 0.6,
     graph-rewriting-layout >= 0.4.1 && < 0.5,
     graph-rewriting-gl >= 0.6 && < 0.7,
-    uu-parsinglib >= 2.5 && < 2.6,
+    uu-parsinglib >= 2.7 && < 2.8,
     containers >= 0.4 && < 0.5,
     GLUT >= 2.2 && < 2.3,
     OpenGL >= 2.4 && < 2.5,
-    filepath >= 1.1 && < 1.2,
-    directory >= 1.0 && < 1.1
+    filepath >= 1.1 && < 1.3,
+    directory >= 1.0 && < 1.2
   Extensions:
     UnicodeSyntax
     FlexibleInstances
     FlexibleContexts
     MultiParamTypeClasses
+    Rank2Types
   GHC-Options:    -fno-warn-duplicate-exports
   Other-Modules:  GL Graph Rules Term TermRewriting
