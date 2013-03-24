@@ -1,5 +1,5 @@
 name:                TCache
-version:             0.9.0.2
+version:             0.9.0.3
 synopsis:            A Transactional cache with user-defined persistence
 description:
     TCache is a transactional cache with configurable persitence. It allows conventional
@@ -7,7 +7,7 @@ description:
     their user defined storages. Default persistence in files is provided for testing purposes
     State in memory and into permanent storage is transactionally coherent.
 
-
+    0.9.0.3 : Solved a "lost registers" bug.
     0.9.0.1 : Solves a bug when object keys generate invalid filenames.
               changes in defaultPersistence to further separate serialization from input-output
     .
