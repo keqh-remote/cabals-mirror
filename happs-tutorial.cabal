@@ -1,22 +1,14 @@
 Name:                happs-tutorial
-Version:             0.4.5
+Version:             0.5.0
 Synopsis:            A HAppS Tutorial that is is own demo
 Description:         A nice way to learn how to build web sites with HAppS
 
-
-
 License:             BSD3
 License-file:        LICENSE
-Author:              Thomas Hartman
-
-
-
+Author:              Thomas Hartman, Eelco Lempsink
 
 Maintainer:          thomashartman1 at gmail dot com
 Copyright:           2008 Thomas Hartman
-
-
-
 
 Stability:           Experimental
 Category:            Web
@@ -38,7 +30,7 @@ Executable happs-tutorial
     hs-source-dirs:
         src
     Other-Modules:
-        AppStateSetBased
+        StateVersions.AppState1
         ControllerBasic
         ControllerGetActions
         Controller
@@ -46,13 +38,8 @@ Executable happs-tutorial
         ControllerPostActions
         FromDataInstances
         Misc
-        SerializeableSessions
-        SerializeableUsers
-        SerializeableJobs
-        SerializeableUserInfos
         MiscMap
         ControllerStressTests
-        StateStuff
         View
     Build-Depends:   base>=3.0.3.0, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
                      HAppS-Server, HAppS-Data, HAppS-State,
