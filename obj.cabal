@@ -1,6 +1,6 @@
 Name:                obj
 Cabal-Version:       >= 1.2
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Reads and writes obj models.
 Description:         Reads and writes obj models.
 License:             BSD3
@@ -34,7 +34,6 @@ Library
                         Codec-Image-DevIL >= 0.1,
                         InfixApplicative  >= 1.0
   Hs-Source-Dirs:       src
-  Ghc-Options:          -O2
   Exposed-Modules:      Graphics.Formats.Obj
   Other-Modules:        Graphics.Formats.Obj.Parse
                         Graphics.Formats.Obj.ParserBits
