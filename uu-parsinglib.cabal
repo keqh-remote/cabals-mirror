@@ -1,5 +1,5 @@
 Name:                uu-parsinglib
-Version:             2.2.0
+Version:             2.2.1
 Build-Type:          Simple
 License:             LGPL
 Author:              Doaitse Swierstra
@@ -35,7 +35,8 @@ Description:         New version of the Utrecht University parser combinator lib
                      .   
                      *  contain a module with many list-based derived combinators
                      .
-                     
+                     * Version 2.2.1: bug fix: pattern matching too strict; ~ added
+
 Category:            Text.ParserCombinators Parsing Text
 
 Library
