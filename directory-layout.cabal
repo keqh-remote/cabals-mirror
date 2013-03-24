@@ -1,7 +1,7 @@
 name:          directory-layout
-version:       0.1.0.0
+version:       0.2.0.0
 synopsis:      Declare, construct and verify directory layout
-description:   Friendly language to express directory layouts
+description:   Language to express directory layouts
 category:      System
 license:       MIT
 license-file:  LICENSE
@@ -22,9 +22,11 @@ library
                  filepath,
                  transformers,
                  parsec,
-                 text
+                 text,
+                 QuickCheck
   ghc-options: -Wall
                -fno-warn-unused-do-bind
+
 
 source-repository head
   type: git
