@@ -1,5 +1,5 @@
 Name:                HAppS-Util
-Version:             0.9.2
+Version:             0.9.2.1
 Synopsis:            Web framework
 License:             BSD3
 License-file:        COPYING
@@ -31,6 +31,6 @@ extensions:          CPP, ForeignFunctionInterface,
                      RecursiveDo,
                      RankNTypes, FlexibleInstances,
                      TypeSynonymInstances
-cpp-options:         -DHADDOCK -DUNIX
+cpp-options:         -DUNIX
 ghc-options:         -W -fno-warn-incomplete-patterns
 GHC-Prof-Options:    -auto-all
