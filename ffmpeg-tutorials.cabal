@@ -1,5 +1,5 @@
 name:           ffmpeg-tutorials
-version:        0.3.2
+version:        0.3.3
 cabal-version:  >= 1.6
 license:        BSD3
 author:         Vasyl Pasternak
@@ -28,7 +28,7 @@ executable tutorial03
            main-is:             tutorial03/Main.hs
            hs-source-dirs:      src
            build-depends:       base < 4, haskell98, 
-                                SDL >= 0.5.6, hs-ffmpeg >= 0.3.1,
+                                SDL >= 0.5.100, hs-ffmpeg >= 0.3.1,
                                 stm, bytestring
            ghc-options:         -threaded
 
