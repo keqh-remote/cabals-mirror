@@ -1,7 +1,7 @@
 cabal-version: >=1.2
 build-type: Simple
 name: uuagc-bootstrap
-version: 0.9.38.6.3
+version: 0.9.38.6.4
 license: GPL
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -73,3 +73,8 @@ executable uuagc-bootstrap
     , ExecutionPlan2Hs
   extensions: TypeSynonymInstances, MultiParamTypeClasses
   hs-source-dirs: src, src-derived
+
+library
+   build-depends:   base >= 4, base < 5
+   hs-source-dirs:  src
+   exposed-modules: UU.UUAGC.BootstrapVersion
