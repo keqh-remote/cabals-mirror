@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Vector
-Version:       2.0.0
+Version:       2.1.0
 Stability:     Experimental
 Synopsis:      Efficient geometric vectors and transformations.
 
@@ -10,10 +10,11 @@ Description:
   with @Double@ fields, with seperate types for each size of
   vector, and a type class for handling vectors generally.
 
-  Existing API has been rearranged. Now supports 4D vectors
-  and linear transformations.
+  Now includes \"bounding box\" types, useful for graphical work.
+  (Note that this package itself has no graphics facilities as
+  such. It just provides data structures useful for graphics.)
 
-Category:      Data, Math, Numerical
+Category:      Data, Math, Numerical, Graphics
 License:       BSD3
 License-file:  License.txt
 Author:        Andrew Coppin
@@ -33,6 +34,11 @@ Library
     Data.Vector.Transform.T1,
     Data.Vector.Transform.T2,
     Data.Vector.Transform.T3,
-    Data.Vector.Transform.T4
+    Data.Vector.Transform.T4,
+    Data.BoundingBox.Range,
+    Data.BoundingBox.B1,
+    Data.BoundingBox.B2,
+    Data.BoundingBox.B3,
+    Data.BoundingBox.B4
   Build-Depends:   base >= 4 && < 5
   HS-Source-Dirs:  .
