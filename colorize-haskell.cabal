@@ -1,14 +1,14 @@
 name:           colorize-haskell
-version:        1.0.0
+version:        1.0.1
 license:        BSD3
 license-file:   LICENSE
 author:         Iavor S. Diatchki
 maintainer:     iavor.diatchki@gmail.com
-homepage:       http://github.com/yav/hscolor
+homepage:       http://github.com/yav/colorize-haskell
 build-type:     Simple
 cabal-version:  >= 1.2
 synopsis:       Highligt Haskell source
-description:    TODO
+description:    Highligt Haskell source
 category:       Development
 
 library
