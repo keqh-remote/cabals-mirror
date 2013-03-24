@@ -1,5 +1,5 @@
 Name:           syntactic
-Version:        0.6
+Version:        0.7
 Synopsis:       Generic abstract syntax, and utilities for embedded languages
 Description:    This library provides:
                 .
@@ -21,6 +21,10 @@ Description:    This library provides:
                 object languages, such as Feldspar. Currently, it does not
                 support cyclic programs.
                 .
+                The following people have contributed to Syntactic:
+                .
+                  * Anders Persson
+                .
                 \[1\] /Data types à la carte/, by Wouter Swierstra, in
                 /Journal of Functional Programming/, 2008
                 .
@@ -41,6 +45,19 @@ Extra-source-files:
   Examples/NanoFeldspar/Extra.hs
   Examples/NanoFeldspar/Vector.hs
   Examples/NanoFeldspar/Test.hs
+  CEFP/MuFeldspar/Core.hs
+  CEFP/MuFeldspar/Frontend.hs
+  CEFP/MuFeldspar/Prelude.hs
+  CEFP/MuFeldspar/Vector.hs
+  CEFP/Imperative/Compiler.hs
+  CEFP/Imperative/Imperative.hs
+  CEFP/Examples/CodeApplication.hs
+  CEFP/Examples/Exercise10.hs
+  CEFP/Examples/Exercise12.hs
+  CEFP/Examples/Exercise14.hs
+  CEFP/Examples/ExProg.hs
+  CEFP/Examples/SolutionsSec2.hs
+  CEFP/Examples/Test.hs
 
 source-repository head
   type:     darcs
@@ -53,16 +70,19 @@ Library
     Language.Syntactic.Interpretation.Equality
     Language.Syntactic.Interpretation.Render
     Language.Syntactic.Interpretation.Evaluation
-    Language.Syntactic.Features.Annotate
-    Language.Syntactic.Features.Symbol
-    Language.Syntactic.Features.Literal
-    Language.Syntactic.Features.Condition
-    Language.Syntactic.Features.Tuple
-    Language.Syntactic.Features.TupleSyntacticPoly
-    Language.Syntactic.Features.TupleSyntacticSimple
-    Language.Syntactic.Features.Binding
-    Language.Syntactic.Features.Binding.HigherOrder
-    Language.Syntactic.Features.Binding.PartialEval
+    Language.Syntactic.Constructs.Annotate
+    Language.Syntactic.Constructs.Symbol
+    Language.Syntactic.Constructs.Literal
+    Language.Syntactic.Constructs.Condition
+    Language.Syntactic.Constructs.Tuple
+    Language.Syntactic.Constructs.TupleSyntacticPoly
+    Language.Syntactic.Constructs.TupleSyntacticSimple
+    Language.Syntactic.Constructs.Binding
+    Language.Syntactic.Constructs.Binding.HigherOrder
+    Language.Syntactic.Constructs.Binding.Optimize
+    Language.Syntactic.Constructs.Monad
+    Language.Syntactic.Frontend.Monad
+    Language.Syntactic.Sharing.SimpleCodeMotion
     Language.Syntactic.Sharing.Utils
     Language.Syntactic.Sharing.Graph
     Language.Syntactic.Sharing.StableName
@@ -83,19 +103,20 @@ Library
 
   Extensions:
     DeriveDataTypeable
+    DeriveFunctor
+    EmptyDataDecls
     FlexibleContexts
     FlexibleInstances
     FunctionalDependencies
     GADTs
     GeneralizedNewtypeDeriving
     MultiParamTypeClasses
+    PatternGuards
     Rank2Types
     ScopedTypeVariables
+    StandaloneDeriving
     TypeFamilies
     TypeOperators
     TypeSynonymInstances
     ViewPatterns
 
-    -- Required by GHC-6.12:
-    EmptyDataDecls
-    PatternGuards
