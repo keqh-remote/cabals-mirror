@@ -1,6 +1,6 @@
 Name:                time-http
-Version:             0.1
-Synopsis:            Parse and format HTTP/1.1 Date and Time string
+Version:             0.1.0.1
+Synopsis:            Parse and format HTTP/1.1 Date and Time strings
 Description:
         This package provides functionalities to parse and format
         various Date and Time formats allowed in HTTP\/1.1 (RFC 2616).
@@ -36,9 +36,9 @@ Library
         Data.Time.HTTP.Common
 
     Build-depends:
-        base   == 4.2.*,
-        parsec == 3.0.*,
-        time   == 1.1.*
+        base   == 4.3.*,
+        parsec == 3.1.*,
+        time   == 1.2.*
 
     Extensions:
         FlexibleContexts
