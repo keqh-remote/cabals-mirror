@@ -1,8 +1,8 @@
 name: MFlow
-synopsis:  (Web) application server. Stateful server processes. Simple, statically correct widget combinators.
+synopsis:  Web application server with stateful, type safe user interactions and widget combinators.
 
 
-version: 0.0.3
+version: 0.0.4
 cabal-version: -any
 build-type: Simple
 license: BSD3
@@ -30,10 +30,7 @@ description:  Simple application server with stateful request-response flows, pe
               Console and window oriented apps are possible.
               .
               MFlow (MessageFlow) was created initially as the user interface for the Workflow package
-            . Currently is an alpha version. It has
-              only basic authentication but I plan to inprove it for serious applications.
-           .
-           Examples included
+              Currently is an alpha version. It has only basic authentication but I plan to inprove it for serious applications.
            .
            It includes Application Server features such is resource an process management
            and automatic recovery
@@ -49,7 +46,7 @@ description:  Simple application server with stateful request-response flows, pe
            directly by the programmer. Persistence in files  for session and data out of the box enables
            very fast prototyping.
            .
-           All the plumbing is hidden to the programmer, There is no methods for
+           All the plumbing is hidden to the programmer, There are no methods for
            session management, database query, recovery and so on. All of this is
            transparent So the surface exposed to the programmer is minimal.
            .
