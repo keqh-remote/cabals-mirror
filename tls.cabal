@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.5.1
+Version:             0.4.1
 Description:
    native TLS protocol implementation, focusing on purity and more type-checking.
    .
@@ -36,13 +36,13 @@ Library
                    , binary >= 0.5
                    , cereal >= 0.3
                    , bytestring
+                   , vector
                    , crypto-api >= 0.5
                    , cryptocipher >= 0.2.5
                    , certificate >= 0.7 && < 0.8
   Exposed-modules:   Network.TLS
                      Network.TLS.Cipher
                      Network.TLS.Compression
-                     Network.TLS.Internal
   other-modules:     Network.TLS.Cap
                      Network.TLS.SRandom
                      Network.TLS.Struct
@@ -56,6 +56,16 @@ Library
                      Network.TLS.Util
                      Network.TLS.Wire
   ghc-options:       -Wall
+
+Executable           stunnel
+  Main-is:           Stunnel.hs
+  if flag(executable)
+    Build-Depends:   network
+                   , cmdargs
+    Buildable:       True
+  else
+    Buildable:       False
+  ghc-options:       -Wall -fno-warn-missing-signatures
 
 executable           Tests
   Main-is:           Tests.hs
