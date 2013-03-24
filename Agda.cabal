@@ -1,5 +1,5 @@
 name:            Agda
-version:         2.2.8
+version:         2.2.10
 cabal-version:   >= 1.8 && < 2
 build-type:      Simple
 license:         OtherLicense
@@ -34,13 +34,16 @@ description:
   Note also that this library does not follow the package versioning
   policy, because the library is only intended to be used by the Emacs
   mode and the Agda-executable package.
-tested-with:        GHC == 6.12.1, GHC == 6.12.3
+tested-with:        GHC == 6.12.1, GHC == 6.12.3, GHC == 7.0.1
 extra-source-files: src/full/Agda/undefined.h
                     README
                     doc/release-notes/*.txt
 data-dir:           src/data
 data-files:         Agda.css
                     emacs-mode/*.el
+                    EpicInclude/AgdaPrelude.e
+                    EpicInclude/stdagda.c
+                    EpicInclude/stdagda.h
 
 source-repository head
   type:     darcs
@@ -49,7 +52,7 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://code.haskell.org/Agda/
-  tag:      2.2.8
+  tag:      2.2.10
 
 flag use-locale
   description:
@@ -57,16 +60,24 @@ flag use-locale
     of the IO going to/from stdin and stdout. (Note that source files
     must always be encoded using UTF8.)
 
+flag epic
+  default: False
+  manual:  True
+  description:
+    Install the Epic compiler.
+
 library
   hs-source-dirs:   src/full
   if flag(use-locale)
-    build-depends:  base == 4.2.*
+    build-depends:  base >= 4.2 && < 4.4
   else
     build-depends:  base == 4.1.*,
                     utf8-string == 0.3.*
-  build-depends:    mtl >= 1.1 && < 2,
-                    QuickCheck >= 2.1.0.2 && < 2.2,
-                    haskell-src >= 1.0.1.1 && < 2,
+  if flag(epic)
+    build-depends:  epic >= 0.1.7 && < 0.2
+  build-depends:    mtl == 2.0.*,
+                    QuickCheck >= 2.3 && < 2.5,
+                    haskell-src-exts >= 1.9.6 && < 1.10,
                     containers >= 0.1.0 && < 1,
                     pretty >= 1 && < 2,
                     directory >= 1.0 && < 1.2,
@@ -77,17 +88,28 @@ library
                     zlib >= 0.4.0.1 && < 1,
                     filepath >= 1.1 && < 2,
                     process >= 1.0.1.0 && < 2,
-                    haskeline >= 0.3 && < 0.7,
+                    haskeline >= 0.6.3.2 && < 0.7,
                     xhtml == 3000.2.*,
-                    syb == 0.1.*,
-                    Cabal >= 1.8.0.2 && < 1.9
+                    syb >= 0.1 && < 0.3
   build-tools:      happy >= 1.15 && < 2,
                     alex >= 2.0.1 && < 3
   extensions:       CPP
   exposed-modules:  Agda.Main
+                    Agda.ImpossibleTest
                     Agda.Interaction.BasicOps
                     Agda.Interaction.GhciTop
                     Agda.Compiler.HaskellTypes
+                    Agda.Compiler.Epic.AuxAST
+                    Agda.Compiler.Epic.Compiler
+                    Agda.Compiler.Epic.CompileState
+                    Agda.Compiler.Epic.ConstructorIrrelevancy
+                    Agda.Compiler.Epic.Erasure
+                    Agda.Compiler.Epic.Epic
+                    Agda.Compiler.Epic.Forcing
+                    Agda.Compiler.Epic.FromAgda
+                    Agda.Compiler.Epic.LambdaLift
+                    Agda.Compiler.Epic.NatDetection
+                    Agda.Compiler.Epic.Primitive
                     Agda.Compiler.MAlonzo.Compiler
                     Agda.Compiler.MAlonzo.Encode
                     Agda.Compiler.MAlonzo.Misc
@@ -285,7 +307,7 @@ executable agda-mode
   main-is:          Main.hs
   other-modules:    Paths_Agda
   if flag(use-locale)
-    build-depends:  base == 4.2.*
+    build-depends:  base >= 4.2 && < 4.4
   else
     build-depends:  base == 4.1.*,
                     utf8-string == 0.3.*
