@@ -1,5 +1,5 @@
 Name:                graphicstools
-Version:             0.2.1
+Version:             0.2.2
 Synopsis:            Tools for creating graphical UIs, based on wxHaskell.
 Description:         This library provides interfaces for creating easily
                      graphical UIs especially for computer vision purposes,
