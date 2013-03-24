@@ -1,5 +1,5 @@
 Name:                blaze-html-contrib
-Version:             0.1.1
+Version:             0.2
 Synopsis:            Some contributions to add handy things to blaze html.
 Description:         Some contributions to add handy things to blaze html. Please
                      send your contributions as pull requests to 
@@ -16,7 +16,7 @@ Cabal-version:       >=1.2
 
 Library
   Hs-source-dirs:    src
-  Exposed-modules:   Text.Blaze.Extra, Text.Blaze.Pagination, Text.Blaze.Markdown, Data.Pagination
+  Exposed-modules:   Text.Blaze.Extra, Text.Blaze.Pagination, Data.Pagination
   Build-depends:     base > 4 && < 5,
                      network,
                      blaze-html,
