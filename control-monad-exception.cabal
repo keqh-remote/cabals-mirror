@@ -1,5 +1,5 @@
 name: control-monad-exception
-version: 0.1.1
+version: 0.1.2
 Cabal-Version:  >= 1.2.3
 build-type: Simple
 license: PublicDomain
@@ -33,6 +33,7 @@ description:
   .
   > eval :: (Throws DivideByZero l, Throws SumOverflow l) => Expr -> EM l Double
   > eval `catch` \ (e::DivideByZero) -> return (-1)  :: Throws SumOverflow l => Expr -> EM l Double
+  > runEM(eval `catch` \ (e::SomeException) -> return (-1))  :: Expr -> Double
 synopsis: Explicitly typed exceptions
 category: Control, Monads
 stability: experimental
