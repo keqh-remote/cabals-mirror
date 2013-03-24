@@ -1,5 +1,6 @@
 Name:                hoopl
-Version:             3.8.3.0
+Version:             3.8.6.0
+-- version 3.8.6.0 is the version that goes with the camera-ready Haskell'10 paper
 Description:         Higher-order optimization library
 License:             BSD3
 License-file:        LICENSE
@@ -16,6 +17,7 @@ Extra-source-files:  README, hoopl.pdf, CHANGES, FAQ
 Library
   Build-Depends:     base >= 3 && < 5, containers
   Exposed-modules:   Compiler.Hoopl,
+                     Compiler.Hoopl.Wrappers,
                      Compiler.Hoopl.Passes.Dominator,
                      Compiler.Hoopl.Passes.DList,
 --                       Compiler.Hoopl.DataflowFold,
@@ -24,16 +26,20 @@ Library
   Other-modules:     Compiler.Hoopl.GraphUtil,
                      -- GraphUtil should *never* be seen by clients.
                      -- The remaining modules are hidden *provisionally*
+                       Compiler.Hoopl.Checkpoint,
                        Compiler.Hoopl.Collections,
                        Compiler.Hoopl.Combinators,
                        Compiler.Hoopl.Dataflow,
                        Compiler.Hoopl.Debug,
                        Compiler.Hoopl.Graph, 
+                       Compiler.Hoopl.Label,
                        Compiler.Hoopl.MkGraph,
                        Compiler.Hoopl.Fuel,
                        Compiler.Hoopl.Pointed,
-                       Compiler.Hoopl.Unique, Compiler.Hoopl.Label,
-                       Compiler.Hoopl.Show, Compiler.Hoopl.Util
+                       Compiler.Hoopl.Shape,
+                       Compiler.Hoopl.Show, 
+                       Compiler.Hoopl.Unique, 
+                       Compiler.Hoopl.Util
                        Compiler.Hoopl.XUtil
   ghc-options:       -Wall -fno-warn-name-shadowing
 
