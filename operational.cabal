@@ -1,5 +1,5 @@
 Name:               operational
-Version:            0.2.0.1
+Version:            0.2.0.2
 Synopsis:           Implement monads by specifying operational semantics.
 Description:
   Tiny library for implementing monads by specifying the primitive instructions
@@ -38,11 +38,17 @@ source-repository head
     type:           darcs
     location:       http://code.haskell.org/operational
 
-
 Library
     hs-source-dirs:     src
-    build-depends:      base == 4.* , mtl >= 1.1 && < 2.0.1
+    build-depends:      base == 4.* , mtl >= 1.1 && < 2.1.0
     ghc-options:        -Wall
     extensions:         GADTs, UndecidableInstances,
                         MultiParamTypeClasses, FlexibleInstances
     exposed-modules:    Control.Monad.Operational
+
+Executable TicTacToe
+    main-is:            docs/examples/TicTacToe.hs
+    hs-source-dirs:     src, .
+    build-depends:      random == 1.*
+    other-modules:      Control.Monad.Operational
+
