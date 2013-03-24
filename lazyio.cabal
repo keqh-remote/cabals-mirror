@@ -1,5 +1,5 @@
 Name:             lazyio
-Version:          0.0.3
+Version:          0.0.3.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -23,7 +23,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/lazyio/
-  tag:      0.0.3
+  tag:      0.0.3.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -33,7 +33,7 @@ Flag buildTests
   default:     False
 
 Library
-  Build-Depends: transformers >=0.2 && <0.3
+  Build-Depends: transformers >=0.2 && <0.4
   If flag(splitBase)
     Build-Depends: base >=2 && <5
   Else
