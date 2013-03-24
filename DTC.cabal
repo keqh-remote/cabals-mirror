@@ -1,16 +1,22 @@
 Name:           DTC
-Version:        1.0.0
+Version:        1.0.1
 Author:         Daniel Diaz
 Homepage:       http://ddiaz.asofilak.es/packages/DTC
 License:        BSD3
 License-file:   license
 Maintainer:     Daniel Diaz <danieldiaz@asofilak.es>
 Category:       Language
-Synopsis:       Data To Class.
+Synopsis:       Data To Class transformation.
 Description:    Transform data declarations to class definitions.
                 .
                 The way is explained in /Data Declarations to Class Definitions/.
-                You can find these notes in the homepage of the package.
+                You can find more information in the homepage of the package.
+                .
+                Changes from last version:
+                .
+                * Modified some documentation.
+                .
+                * Fixed a non-exhaustive pattern matching error in @dataToClassWith@.
 Build-type:     Simple
 Build-depends:  base == 4.*
               , haskell-src
