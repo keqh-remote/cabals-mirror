@@ -1,5 +1,5 @@
 Name:                happstack-dlg
-Version:             0.1.1
+Version:             0.1.2
 Cabal-Version:       >= 1.2
 Synopsis:            Cross-request user interactions for Happstack
 Description:         A mechanism for user interactions that extend through
@@ -17,7 +17,9 @@ Build-Type:          Simple
 Library
     Build-Depends:   base <5, containers, mtl,
                      happstack-server, time, random,
-                     template-haskell
-    Exposed-Modules: Happstack.Server.Dialogs,
-                     Happstack.Server.Dialogs.Scaffold
+                     template-haskell, formlets, xhtml,
+                     applicative-extras, bytestring
+    Exposed-Modules: Happstack.Server.Dialogues,
+                     Happstack.Server.Dialogues.Scaffold,
+                     Happstack.Server.Dialogues.Formlets
     Hs-Source-Dirs:  src
