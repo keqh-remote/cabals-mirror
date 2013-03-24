@@ -8,7 +8,7 @@ Description:
         messing around FastCGI. It is also intended to be run behind a
         reverse-proxy so it doesn't have some facilities like logging,
         client filtering or such like.
-Version: 0.4
+Version: 0.4.1
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
@@ -44,8 +44,9 @@ Flag build-lucu-implant-file
 Library
     Build-Depends:
         HsOpenSSL, base >= 4 && < 5, bytestring, containers, dataenc,
-        directory, haskell-src, hxt, mtl, network, stm, time, unix,
-        zlib
+        filepath, directory, haskell-src, hxt, mtl, network, stm,
+        time, unix, zlib
+
     Exposed-Modules:
         Network.HTTP.Lucu
         Network.HTTP.Lucu.Abortion
@@ -66,6 +67,7 @@ Library
         Network.HTTP.Lucu.Response
         Network.HTTP.Lucu.StaticFile
         Network.HTTP.Lucu.Utils
+
     Other-Modules:
         Network.HTTP.Lucu.Chunk
         Network.HTTP.Lucu.ContentCoding
@@ -79,8 +81,10 @@ Library
         Network.HTTP.Lucu.Preprocess
         Network.HTTP.Lucu.RequestReader
         Network.HTTP.Lucu.ResponseWriter
+
     Extensions:
         BangPatterns, DeriveDataTypeable, ScopedTypeVariables, UnboxedTuples
+
     ghc-options:
         -Wall
         -funbox-strict-fields
@@ -90,9 +94,12 @@ Executable lucu-implant-file
         Buildable: True
     else
         Buildable: False
+
     Main-Is: ImplantFile.hs
+
     Extensions:
         BangPatterns, ScopedTypeVariables, UnboxedTuples
+
     ghc-options:
         -Wall
         -funbox-strict-fields
