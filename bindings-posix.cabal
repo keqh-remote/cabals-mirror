@@ -3,7 +3,7 @@ name: bindings-posix
 homepage: http://bitbucket.org/mauricio/bindings-posix
 synopsis:
   Low level bindings to posix.
-version: 1.0.1
+version: 1.1
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -19,7 +19,7 @@ library
     base >= 3 && < 5,
     bindings-common >= 1 && < 2
   exposed-modules:
-  -- Time e Signal incompletos!
+  -- Time incompleto!
     Bindings.Posix
     Bindings.Posix.Errno
     Bindings.Posix.Signal
