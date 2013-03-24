@@ -1,5 +1,5 @@
 name:                selenium
-version:             0.2.2
+version:             0.2.3
 cabal-version:       >= 1.2
 synopsis:            Test web applications through a browser.
 description:         Haskell bindings to communicate with a Selenium Remote
@@ -11,6 +11,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Aaron Tomb <atomb@galois.com>
 maintainer:          Aaron Tomb <atomb@galois.com>
+build-type:          Simple
 
 flag small_base
   description: Choose the new smaller, split-up base package.
@@ -20,11 +21,11 @@ library
         build-depends: base >= 3, pretty, HTTP, network, mtl, HUnit
     else
         build-depends: base < 3, HTTP, network, mtl, HUnit
-    extensions: GeneralizedNewtypeDeriving
-    ghc-options: -O2 -Wall -Werror
+    extensions: CPP, GeneralizedNewtypeDeriving
+    ghc-options: -Wall
     ghc-prof-options: -prof -auto-all
-    exposed-modules: Selenium.Syntax
-                     Selenium.Server
-                     Selenium.Pretty
-                     Selenium.HUnit
-                     Selenium.Interactive
+    exposed-modules: Test.Selenium.Syntax
+                     Test.Selenium.Server
+                     Test.Selenium.Pretty
+                     Test.Selenium.HUnit
+                     Test.Selenium.Interactive
