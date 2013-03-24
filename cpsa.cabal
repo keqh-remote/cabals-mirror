@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.0.4
+Version:		2.0.5
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.2
 License:		BSD3
@@ -50,32 +50,35 @@ Data-Files:
 -- Data-Dir:	    	doc
 Extra-Source-Files:
   Makefile ChangeLog README NEWS ghci cpsatst doc/README doc/Makefile
-  doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex doc/cpsaspec.tex
-  doc/cpsadesign.tex doc/cpsaoverview.tex doc/cpsadiagrams.mp
-  doc/strands.mp doc/cmstrands.mp doc/carriers.mp doc/termtree.mp
-  doc/cpsa.bib doc/SDAG.lhs src/index.html src/cpsacgi src/cpsacgi.py
-  src/cpsa2svg src/cpsa.el src/httpd_allow_execmem.te src/cpsaops.scm
-  src/preskel src/cpsa.pl src/pp.pl src/sexpr.pl
-  tst/README tst/Makefile tst/Make.hs tst/checktst tst/cpsagraphall
-  tst/cpsashapesall tst/dass.lisp tst/completeness-test.scm
-  tst/completeness-test.tst tst/missing-contraction.scm
-  tst/missing-contraction.tst tst/dass-mod.lisp tst/dass_simple.scm
-  tst/dass_simple.tst tst/denning-sacco.scm tst/denning-sacco.tst
-  tst/dh.sch tst/dh.tst tst/ds-short.lisp tst/dy.lsp tst/dy.tst
-  tst/epmo_acctnum.lsp tst/epmo_acctnum.tst tst/epmo.scm
-  tst/encsig.scm tst/encsig.tst tst/epmo.tst tst/ffgg.scm tst/ffgg.tst
-  tst/isoreject.scm tst/isoreject.tst tst/kelly1.scm tst/kelly1.tst
-  tst/kelly64.lisp tst/kerb5.lisp tst/kerberos.scm tst/kerberos.tst
-  tst/neuman-stubblebine-alt.lisp tst/neuman-stubblebine-reauth.lisp
-  tst/neuman-stubblebine-reauth.lsp tst/neuman-stubblebine-reauth.tst
-  tst/neuman-stubblebine.scm tst/neuman-stubblebine.tst tst/nsl3.scm
-  tst/nsl3.tst tst/nsl4.lisp tst/nsl5i.lisp tst/nsl5.lisp
-  tst/nslsk.scm tst/nslsk.tst tst/ns.scm tst/ns.tst tst/or.scm
-  tst/or.tst tst/pca.lsp tst/pca.tst tst/tnsl5.lisp tst/updatetst
-  tst/sigenc.scm tst/sigenc.tst tst/weird.scm tst/weird.tst
-  tst/wmf.lsp tst/wmf.tst tst/woolam.scm tst/woolam.tst
-  tst/yahalom.scm tst/yahalom.tst tst/sorted_epmo_acctnum.scm
-  tst/sorted_epmo_acctnum.tst tst/nsl4cm1.lsp tst/nsl4cm1.tst
+  doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
+  doc/cpsatheory.tex doc/cpsaspec.tex doc/cpsadesign.tex
+  doc/cpsaoverview.tex doc/cpsadiagrams.mp doc/strands.mp
+  doc/cmstrands.mp doc/carriers.mp doc/termtree.mp doc/cpsa.bib
+  doc/SDAG.lhs src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg
+  src/cpsa.el src/httpd_allow_execmem.te src/cpsaops.scm src/preskel
+  src/cpsa.pl src/pp.pl src/sexpr.pl tst/README tst/Makefile
+  tst/Make.hs tst/checktst tst/cpsagraphall tst/cpsashapesall
+  tst/dass.lisp tst/blanchet.scm tst/blanchet.tst
+  tst/completeness-test.scm tst/completeness-test.tst
+  tst/missing_contraction.scm tst/missing_contraction.tst
+  tst/no_contraction.scm tst/no_contraction.tst tst/dass-mod.lisp
+  tst/dass_simple.scm tst/dass_simple.tst tst/denning-sacco.scm
+  tst/denning-sacco.tst tst/dh.sch tst/dh.tst tst/ds-short.lisp
+  tst/dy.lsp tst/dy.tst tst/epmo_acctnum.lsp tst/epmo_acctnum.tst
+  tst/epmo.scm tst/encsig.scm tst/encsig.tst tst/epmo.tst tst/ffgg.scm
+  tst/ffgg.tst tst/isoreject.scm tst/isoreject.tst tst/kelly1.scm
+  tst/kelly1.tst tst/kelly64.lisp tst/kerb5.lisp tst/kerberos.scm
+  tst/kerberos.tst tst/neuman-stubblebine-alt.lisp
+  tst/neuman-stubblebine-reauth.lisp tst/neuman-stubblebine-reauth.lsp
+  tst/neuman-stubblebine-reauth.tst tst/neuman-stubblebine.scm
+  tst/neuman-stubblebine.tst tst/nsl3.scm tst/nsl3.tst tst/nsl4.lisp
+  tst/nsl4resp2.lisp tst/nsl5i.lisp tst/nsl5.lisp tst/nslsk.scm
+  tst/nslsk.tst tst/ns.scm tst/ns.tst tst/or.scm tst/or.tst
+  tst/pca.lsp tst/pca.tst tst/tnsl5.lisp tst/updatetst tst/sigenc.scm
+  tst/sigenc.tst tst/weird.scm tst/weird.tst tst/wmf.lsp tst/wmf.tst
+  tst/woolam.scm tst/woolam.tst tst/yahalom.scm tst/yahalom.tst
+  tst/sorted_epmo_acctnum.scm tst/sorted_epmo_acctnum.tst
+  tst/nsl4cm1.lsp tst/nsl4cm1.tst
 
 -- Disable with -f-par option during configuration.
 
