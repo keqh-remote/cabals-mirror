@@ -1,12 +1,12 @@
 name:                fuzzytime
-version:             0.7.4.1
+version:             0.7.5
 description:         A clock and timer that tell the time in a more human way (the 'ten past six' style)
 synopsis:            A 'ten past six' style clock
 category:            Utils
 license:             GPL
 license-file:        LICENSE
 author:              Kamil Stachowski
-maintainer:          kamil.stachowski@gmail.com
+maintainer:          kamil (a full stop) stachowski (an at sign) gmail (a full stop) com
 build-type:          Simple
 stability:           Experimental
 cabal-version:       >=1.8
@@ -41,4 +41,4 @@ executable fuzzytime
 source-repository this
     type:            git
     location:        https://github.com/caminoix/fuzzytime
-    tag:             0.7.4.1
+    tag:             0.7.5
