@@ -1,5 +1,5 @@
 name: hoauth
-version: 0.0.1
+version: 0.0.3
 category: Network,Protocol,OAuth
 license: LGPL
 license-file: COPYING
@@ -8,7 +8,7 @@ maintainer: Diego Souza <dsouza@bitforest.org>
 stability: experimental
 build-type: Simple
 cabal-version: >= 1.6
-tested-with: GHC == 6.8.2
+tested-with: GHC==6.8.2,GHC==6.10.4
 synopsis: A Haskell implementation of OAuth 1.0 protocol.
 description: This library implements both PLAINTEXT and HMAC-SHA1 signatures
              as defined in the specification 1.0. Currently it supports only
@@ -18,7 +18,7 @@ description: This library implements both PLAINTEXT and HMAC-SHA1 signatures
              More info at: <http://oauth.net/>
 
 library
-  build-depends: base>=3&&<4,bytestring,SHA,base64-string,utf8-string
+  build-depends: base>=3&&<=4,bytestring,SHA,base64-string,utf8-string
   exposed-modules: Network.Protocol.OAuth.Consumer,Network.Protocol.OAuth.Request,Network.Protocol.OAuth.Signature
   hs-source-dirs: src/main/haskell
   ghc-options: -Wall -fwarn-tabs
@@ -28,7 +28,7 @@ flag test
   Default: False
 
 executable test_hoauth
-  build-depends: base>=3&&<4,bytestring,SHA,base64-string,HUnit
+  build-depends: base>=3&&<=4,bytestring,SHA,base64-string,HUnit
   ghc-options: -fno-ignore-asserts -fwarn-tabs
   hs-source-dirs: src/main/haskell,src/test/haskell
   main-is: Tests.hs
