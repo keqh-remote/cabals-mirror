@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.5.1
+Version:             0.6.0
 Synopsis:            A HAppS Tutorial that is is own demo
 Description:         A nice way to learn how to build web sites with HAppS
 
@@ -44,7 +44,7 @@ Executable happs-tutorial
     Build-Depends:   base>=3.0.3.0, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
                      HAppS-Server, HAppS-Data, HAppS-State,
                      containers, pretty, pureMD5, directory, filepath, hscolour >= 1.10.1, HTTP, safe,
-                     old-time, parsec, HAppSHelpers
+                     old-time, parsec, HAppSHelpers, DebugTraceHelpers
 
 
 
