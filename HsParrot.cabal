@@ -1,5 +1,5 @@
 Name:                HsParrot
-Version:             0.0.1
+Version:             0.0.2
 Category:            Language, Pugs
 Synopsis:            Haskell integration with Parrot virtual machine
 Description:         Haskell integration with Parrot virtual machine
@@ -14,8 +14,8 @@ Copyright:           Audrey Tang, 2008
 Exposed-modules:     Language.PIR
 Other-modules:       Language.PIR.Emit
 
-Build-Depends:       pugs-DrIFT,
-                     base, haskell98, bytestring>=0.9.0.1, pretty, HsSyck
+Build-Depends:       base, haskell98, bytestring>=0.9.0.1, pretty, HsSyck,
+                     pugs-DrIFT
 Build-Type:          Simple
 Tested-With:         GHC==6.8.2, GHC==6.8.3
 
@@ -24,7 +24,7 @@ Extensions:          TypeSynonymInstances, OverlappingInstances,
                      DeriveDataTypeable, FlexibleInstances, Rank2Types,
                      PatternGuards
 
-ghc-options:         -F -pgmF pugs-DrIFT -optF-pgmF
+-- ghc-options:         -F -pgmF pugs-DrIFT -optF-pgmF
 data-files:          Changes
 hs-source-dirs:      src
 
