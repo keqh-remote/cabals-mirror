@@ -1,5 +1,5 @@
 Name:    flow2dot
-Version: 0.9
+Version: 0.9.0.1
 License: BSD3
 License-File: LICENSE
 Author: Dmitry Astapov <dastapov@gmail.com>
@@ -22,9 +22,11 @@ Library
   Extensions: CPP
   Exposed-Modules: Text.FlowDiagram
   Other-Modules:   Text.Dot
-  Build-Depends:   base >=3 && <=5, mtl >= 1.0, containers, haskell98, QuickCheck, parsec, utf8-string
+  Build-Depends:   base >=3 && <=5, mtl >= 1.0, containers, QuickCheck, parsec, utf8-string
   if impl(ghc >= 7.0)
     cpp-options: -DNATIVEUTF8
+  if impl(ghc < 7.2.1)
+    Build-Depends: haskell98
 
 Executable  flow2dot
   hs-source-dirs: .
@@ -37,4 +39,4 @@ Executable  flow2dot
 
 source-repository head
   type:     darcs
-  location: adept@patch-tag.com:/r/adept/flow2dot
+  location: http://patch-tag.com/r/adept/flow2dot
