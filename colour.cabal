@@ -1,5 +1,5 @@
 Name:                colour
-Version:             2.0.0
+Version:             2.1.0
 Cabal-Version:       >= 1.2
 License:             OtherLicense
 License-file:        LICENSE
@@ -10,7 +10,7 @@ Category:            data, graphics
 Synopsis:            A model for human colour/color perception
 Description:         This package provides a data type for colours and transparency.
                      Colours can be blended and composed.
-                     sRGB colour space is supported ("Data.Colour.SRGB").
+                     Various colour spaces are supported.
                      A module of colour names ("Data.Colour.Names") is provided.
 Tested-with:         GHC == 6.8.2
 extra-source-files:  Tests.hs README
@@ -20,6 +20,8 @@ Library
   Exposed-Modules:   Data.Colour
                      Data.Colour.SRGB
                      Data.Colour.SRGB.Linear
+                     Data.Colour.CIE
+                     Data.Colour.CIE.Illuminant
                      Data.Colour.RGBSpace
                      Data.Colour.Names
   Other-Modules:     Data.Colour.Internal
@@ -27,4 +29,3 @@ Library
                      Data.Colour.RGB
                      Data.Colour.Matrix
                      Data.Colour.CIE.Chromaticity
-                     Data.Colour.CIE.Illuminant
