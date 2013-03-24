@@ -1,6 +1,6 @@
 -- Package Stanza
 Name:           hburg
-Version:        1.1.1
+Version:        1.1.2
 License:        BSD3
 License-file:   LICENSE
 Author:         Igor Boehm <igor@bytelabs.org>
@@ -17,6 +17,7 @@ Description:
     information see "http://www.bytelabs.org/pub/papers/hburg07.pdf".
 Stability:      Experimental
 cabal-version: >=1.2
+build-type: Simple
 extra-source-files:
     TODO
     test/01-grammar.tpg
@@ -78,26 +79,23 @@ executable hburg
       Gen.Emit
       Gen.Backend
       Gen.Ident
-      Gen.Emit.Enums
-      Gen.Emit.Eval
-      Gen.Emit.NodeIface
-      Gen.Emit.Tile
-      Gen.Emit.Class
       Gen.Emit.Label
-      Gen.Emit.Java.Class
-      Gen.Emit.Java.Comment
-      Gen.Emit.Java.Constructor
+      Gen.Emit.Java.Generator
       Gen.Emit.Java.Enum
+      Gen.Emit.Java.Eval
+      Gen.Emit.Java.Tile
+      Gen.Emit.Java.Class
       Gen.Emit.Java.Method
       Gen.Emit.Java.Modifier
-      Gen.Emit.Java.Parameter
-      Gen.Emit.Java.Variable
+      Gen.Emit.Java.Param
+      Gen.Emit.Java.Var
       Parser.Lexer
       Parser.Parser
-      Parser.ParseErr
-  ghc-options: -O
+      Parser.Messages
+  Extensions:
+      GADTs
+  ghc-options:
       -funbox-strict-fields 
-      -fglasgow-exts 
       -fwarn-unused-imports 
       -fwarn-duplicate-exports 
       -fwarn-incomplete-patterns 
