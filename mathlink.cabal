@@ -1,5 +1,5 @@
 Name:                 mathlink
-Version:              0.1.0.2
+Version:              1.0.0.0
 Cabal-Version:        >= 1.6
 Build-Type:           Simple
 License:              BSD3
@@ -22,11 +22,16 @@ Extra-Source-Files:   examples/mltest.cabal
 
 Description: {
 Provides a simple way to expose Haskell functions to /Mathematica/ via the 
-/MathLink/ interface. One defines a Haskell function of type @ML ()@ (a 
-'Monad' built on top of 'IO') and provides a pair of 'String's that 
-function analogously to the @:Pattern:@ and @:Arguments:@ directives for 
-/Mathematica/'s @mprep@ utility. Data can be marshaled either as an 
-'Expression' or, more generally, as an instance of the 'Expressible' class. 
+/MathLink/ interface. 
+.
+One defines a Haskell function of type @IO ()@ and provides a pair of 
+'String's that function analogously to the @:Pattern:@ and @:Arguments:@ 
+directives for /Mathematica/'s @mprep@ utility.
+.
+Data whose types are instances of the 'Expressible' class can be marshaled
+to\/from /Mathematica/. The library already provides instances for many
+data types, including tuples, lists, and unboxed arrays.
+.
 The library does not use or require @foreign export@ declarations, so may 
 be used interactively.
 }
@@ -44,9 +49,8 @@ Library
                       array >= 0.2 && < 0.3
   Exposed-Modules:    Foreign.MathLink,
                       Foreign.MathLink.IO,
-                      Foreign.MathLink.ML,
-                      Foreign.MathLink.Types,
                       Foreign.MathLink.Expressible
+  C-Sources:          src/state.c
   if arch(i386) || flag(32bit)
     Extra-Libraries:  ML32i3
   else
