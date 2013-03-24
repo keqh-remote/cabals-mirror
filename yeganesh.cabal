@@ -1,5 +1,5 @@
 name:               yeganesh
-version:            2.2
+version:            2.2.1
 cabal-version:      >=1.2
 build-type:         Simple
 license:            BSD3
@@ -12,10 +12,11 @@ description:        I get so annoyed when I go to use dmenu, and the three
                     programs I use every day aren't at the beginning of the
                     list.  Let's make it so, and automatically!
 category:           Text
+extra-source-files: Version.hs
 
 Executable yeganesh
     main-is:        yeganesh.hs
-    build-depends:  base >= 3 && <= 4,
+    build-depends:  base >= 3 && < 5,
                     containers >= 0.1,
                     directory >= 1.0,
                     filepath >= 1.1,
