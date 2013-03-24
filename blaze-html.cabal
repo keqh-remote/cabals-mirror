@@ -1,5 +1,5 @@
 Name:         blaze-html
-Version:      0.4.2.0
+Version:      0.4.2.1
 Homepage:     http://jaspervdj.be/blaze
 Bug-Reports:  http://github.com/jaspervdj/blaze-html/issues
 License:      BSD3
@@ -8,6 +8,7 @@ Author:       Jasper Van der Jeugt, Simon Meier
 Maintainer:   Jasper Van der Jeugt <m@jaspervdj.be>
 Stability:    Experimental
 Category:     Text
+Synopsis:     A blazingly fast HTML combinator library for Haskell
 Description:
   A blazingly fast HTML combinator library for the Haskell
   programming language. The Text.Blaze module is a good
