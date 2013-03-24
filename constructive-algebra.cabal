@@ -7,7 +7,7 @@ Name:                constructive-algebra
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.2.0
+Version:             0.3.0
 
 Synopsis:            A library of constructive algebra.
 Description:         
@@ -19,7 +19,8 @@ Description:
         generated. For example, instead of principal ideal domains one gets 
         Bezout domains which are integral domains in which all finitely 
         generated ideals are principal (and not necessarily that all ideals are
-        principal).
+        principal). This give a good framework for implementing many 
+        interesting algorithms.
 
 License:             BSD3
 License-file:        LICENSE
@@ -40,7 +41,7 @@ Build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
-Extra-source-files:  README.hs, examples/Z_Examples.hs
+Extra-source-files:  examples/Z_Examples.hs
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.2
@@ -48,34 +49,36 @@ Cabal-version:       >=1.2
 
 Library
   -- Modules exported by the library.
-  Exposed-modules:     Algebra.Structures.Group, 
-                       Algebra.Structures.Ring,
+  Exposed-modules:     Algebra.Structures.BezoutDomain,
+                       Algebra.Structures.Coherent,
                        Algebra.Structures.CommutativeRing,
-                       Algebra.Structures.IntegralDomain, 
-                       Algebra.Structures.Field,
-                       Algebra.Structures.Module,
-                       Algebra.Structures.BezoutDomain,
-                       Algebra.Structures.PruferDomain,
                        Algebra.Structures.EuclideanDomain,
-                       Algebra.Structures.StronglyDiscrete,
+                       Algebra.Structures.ExplicitUnits,
+                       Algebra.Structures.Field,
                        Algebra.Structures.FieldOfFractions,
                        Algebra.Structures.GCDDomain, 
-                       Algebra.Structures.Coherent,
+                       Algebra.Structures.Group, 
+                       Algebra.Structures.IntegralDomain, 
+                       Algebra.Structures.Module,
+                       Algebra.Structures.PruferDomain,
+                       Algebra.Structures.Ring,
+                       Algebra.Structures.StronglyDiscrete,
                        Algebra.TypeChar.Char,
+                       Algebra.EllipticCurve,
                        Algebra.FieldOfRationalFunctions,
                        Algebra.Ideal,
                        Algebra.Matrix,
                        Algebra.PLM,
+                       Algebra.Q,
+--                       Algebra.SmithNormalForm,  <- Should be added to separate package
                        Algebra.UPoly,
-                       Algebra.EllipticCurve,
+                       Algebra.Z,                  
                        Algebra.ZSqrt5,
-                       Algebra.Zn,
-                       Algebra.Z,
-                       Algebra.Q
+                       Algebra.Zn
                        
 
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 3 && <= 4, QuickCheck >= 2, type-level >= 0.2
+  Build-depends:       base >= 3 && <= 4.3.1.0, QuickCheck >= 2, type-level >= 0.2
   
   -- Modules not exported by this package.
   -- Other-modules:       
