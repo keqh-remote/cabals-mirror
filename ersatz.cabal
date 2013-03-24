@@ -1,5 +1,5 @@
 name:           ersatz
-version:        0.1.0.2
+version:        0.2
 license:        BSD3
 license-file:   LICENSE
 author:         Edward A. Kmett, Johan Kiviniemi
@@ -28,7 +28,77 @@ extra-source-files:
   AUTHORS.md
   README.md
   CHANGELOG.md
+  .ghci
+  .gitignore
+  .travis.yml
+  examples/regexp-grid/COPYING
+  examples/regexp-grid/Main.hs
+  examples/regexp-grid/regexp-grid.cabal
+  examples/regexp-grid/RegexpGrid/Problem.hs
+  examples/regexp-grid/RegexpGrid/Regexp.hs
+  examples/regexp-grid/RegexpGrid/Types.hs
+  examples/regexp-grid/Setup.hs
+  notes/papers.md
+  travis/cabal-apt-install
+  travis/config
 
+data-files:
+  data/dimacs/bf/bf0432-007.cnf
+  data/dimacs/bf/bf1355-075.cnf
+  data/dimacs/bf/bf1355-638.cnf
+  data/dimacs/bf/bf2670-001.cnf
+  data/dimacs/bf/descr.html
+  data/dimacs/bf/ssa0432-003.cnf
+  data/dimacs/bf/ssa2670-130.cnf
+  data/dimacs/bf/ssa2670-141.cnf
+  data/dimacs/bf/ssa6288-047.cnf
+  data/dimacs/bf/ssa7552-038.cnf
+  data/dimacs/bf/ssa7552-158.cnf
+  data/dimacs/bf/ssa7552-159.cnf
+  data/dimacs/bf/ssa7552-160.cnf
+  data/dimacs/blocksworld/anomaly.cnf
+  data/dimacs/blocksworld/bw_large.a.cnf
+  data/dimacs/blocksworld/bw_large.b.cnf
+  data/dimacs/blocksworld/bw_large.c.cnf
+  data/dimacs/blocksworld/descr.html
+  data/dimacs/blocksworld/huge.cnf
+  data/dimacs/blocksworld/medium.cnf
+  data/dimacs/bmc/bmc-ibm-1.cnf
+  data/dimacs/bmc/bmc-ibm-2.cnf
+  data/dimacs/bmc/bmc-ibm-3.cnf
+  data/dimacs/bmc/bmc-ibm-4.cnf
+  data/dimacs/bmc/bmc-ibm-5.cnf
+  data/dimacs/bmc/bmc-ibm-7.cnf
+  data/dimacs/logistics/descr.html
+  data/dimacs/logistics/logistics.a.cnf
+  data/dimacs/logistics/logistics.b.cnf
+  data/dimacs/logistics/logistics.c.cnf
+  data/dimacs/logistics/logistics.d.cnf
+  data/dimacs/parity/descr
+  data/dimacs/parity/par16-1-c.cnf
+  data/dimacs/parity/par16-1.cnf
+  data/dimacs/parity/par16-2-c.cnf
+  data/dimacs/parity/par16-2.cnf
+  data/dimacs/parity/par16-3-c.cnf
+  data/dimacs/parity/par16-3.cnf
+  data/dimacs/parity/par16-4-c.cnf
+  data/dimacs/parity/par16-4.cnf
+  data/dimacs/parity/par16-5-c.cnf
+  data/dimacs/parity/par16-5.cnf
+  data/dimacs/parity/par8-1-c.cnf
+  data/dimacs/parity/par8-1.cnf
+  data/dimacs/parity/par8-2-c.cnf
+  data/dimacs/parity/par8-2.cnf
+  data/dimacs/parity/par8-3-c.cnf
+  data/dimacs/parity/par8-3.cnf
+  data/dimacs/parity/par8-4-c.cnf
+  data/dimacs/parity/par8-4.cnf
+  data/dimacs/parity/par8-5-c.cnf
+  data/dimacs/parity/par8-5.cnf
+  data/dimacs/phole/descr.html
+  data/dimacs/phole/hole6.cnf
+  data/dimacs/phole/hole7.cnf
+  data/dimacs/phole/hole8.cnf
 
 source-repository head
   type: git
@@ -40,15 +110,19 @@ library
   default-language: Haskell2010
 
   build-depends:
-    array >= 0.2 && < 0.5,
-    base >= 4 && < 6,
-    containers >= 0.2.0.1,
-    data-default >= 0.5 && < 0.6,
+    array                >= 0.2     && < 0.5,
+    base                 >= 4       && < 6,
+    blaze-builder        == 0.3.*,
+    blaze-textual        == 0.2.*,
+    bytestring           >= 0.9     && < 0.12,
+    containers           >= 0.2.0.1 && < 0.5,
+    data-default         >= 0.5     && < 0.6,
     ghc-prim,
-    mtl >= 1.1 && < 2.2,
-    process == 1.1.*,
-    temporary == 1.1.*,
-    transformers == 0.3.*,
+    lens                 >= 3.8     && < 4.0,
+    mtl                  >= 1.1     && < 2.2,
+    process              == 1.1.*,
+    temporary            == 1.1.*,
+    transformers         == 0.3.*,
     unordered-containers == 0.2.*
 
   exposed-modules:
@@ -61,16 +135,17 @@ library
     Ersatz.Internal.Circuit
     Ersatz.Internal.Formula
     Ersatz.Internal.Literal
-    Ersatz.Monad
     Ersatz.Problem
     Ersatz.Solution
     Ersatz.Solver
+    Ersatz.Solver.DepQBF
     Ersatz.Solver.Minisat
     Ersatz.Variable
 
   other-modules:
     Ersatz.Internal.Parser
     Ersatz.Internal.StableName
+    Ersatz.Solver.Common
 
 test-suite properties
   type: exitcode-stdio-1.0
