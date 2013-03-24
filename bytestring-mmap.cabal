@@ -1,5 +1,5 @@
 name:                bytestring-mmap
-version:             0.2.1
+version:             0.2.2
 synopsis:            mmap support for strict ByteStrings
 description:
     .
@@ -13,9 +13,8 @@ homepage:            http://code.haskell.org/~dons/code/bytestring-mmap/
 license:             BSD3
 license-file:        LICENSE
 author:              Don Stewart 
-maintainer:          Don Stewart <dons@galois.com>
+maintainer:          Don Stewart <dons00@gmail.com>
 build-type:          Simple
-extra-source-files:  README
 cabal-version:      >= 1.2
 
 flag split-base
@@ -33,7 +32,7 @@ library
                      System.IO.Posix.MMap.Lazy
                      System.IO.Posix.MMap.Internal
 
-  ghc-options:       -Wall -O2 -fvia-C
+  ghc-options:       -Wall -O2
 
   c-sources:         cbits/hs_bytestring_mmap.c
   include-dirs:      include
