@@ -1,5 +1,5 @@
 name:                hs-gizapp
-version:             0.1.0.1
+version:             0.1.0.2
 synopsis:            Haskell wrapper around the GIZA++ toolkit.
 description:         This provides a simple wrapper around the GIZA++ toolkit,
                      which is used for Statistical Machine Translation for
@@ -18,7 +18,7 @@ category:            Natural Language Processing
 license:             BSD3
 license-file:        LICENSE
 author:              Eric Kow
-maintainer:          <E.Y.Kow@brighton.ac.uk>
+maintainer:          Eric Kow <E.Y.Kow@brighton.ac.uk>
 build-Depends:       base       >= 3   && < 4,
                      containers >= 0.1 && < 0.3,
                      directory  >= 1.0 && < 1.1,
@@ -30,3 +30,4 @@ ghc-options:
 cabal-version:       >= 1.2
 
 Exposed-modules:     NLP.GizaPlusPlus
+               ,     NLP.GizaPlusPlus.Parsec
