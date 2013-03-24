@@ -1,10 +1,10 @@
 name:               gsmenu
-version:            1.0
+version:            1.1
 homepage:           http://sigkill.dk
 synopsis:           A visual generic menu
 description:
     Standalone port of XMonadContrib's GridSelect.
-category:           System
+category:           Tools
 license:            BSD3
 license-file:       LICENSE
 author:             Troels Henriksen
@@ -24,6 +24,7 @@ executable gsmenu
         cpp-options: -DXFT
     main-is:            Main.hs
     other-modules:      GSMenu.Config
+                        GSMenu.GCCache
                         GSMenu.Pick
                         GSMenu.Font
                         GSMenu.Util
