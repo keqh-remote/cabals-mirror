@@ -1,10 +1,10 @@
 Name:		quickcheck-poly
-Version:	0.1.0.0
+Version:	0.1.0.1
 License:	BSD3
 Author:		Ahn, Ki Yung
 Maintainer:	Ahn, Ki Yung <kya@pdx.edu>
-Category:	Data
-Synopsis:	Automating QuickCheck for polymorphic and overlaoded properties  in a small world of types
+Category:	Testing	
+Synopsis:	Automating QuickCheck for polymorphic and overlaoded properties
 Stability:      experimental
 Build-type:	Simple
 Description:	Automating QuickCheck for polymorphic and overlaoded properties  in a small world of types
