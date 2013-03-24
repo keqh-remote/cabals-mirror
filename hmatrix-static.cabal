@@ -1,5 +1,5 @@
 Name:          hmatrix-static
-Version:       0.3.0.1
+Version:       0.3.0.2
 Synopsis:      hmatrix with vector and matrix sizes encoded in types
 License:       GPL
 License-file:  LICENSE
@@ -54,6 +54,6 @@ Library
                  tfp==0.2.*, 
                  array >= 0.2 && < 0.4, 
                  haskell-src-meta >= 0.0.3.1 && < 0.2,
-                 parsec >= 3.0 && < 3.2,
+                 parsec >= 2 && < 3,
                  template-haskell
 
