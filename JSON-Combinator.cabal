@@ -1,5 +1,5 @@
 Name:               JSON-Combinator
-Version:            0.2.2
+Version:            0.2.3
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
@@ -26,6 +26,9 @@ Library
                     base < 5 && >= 4
                     , JSONb
                     , json
+                    , hjson
+                    , containers
+                    , parsec
                     , bytestring
                     , bytestring-trie
                     , failure
