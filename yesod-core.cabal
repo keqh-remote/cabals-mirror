@@ -1,5 +1,5 @@
 name:            yesod-core
-version:         0.9.1
+version:         0.9.1.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -40,7 +40,7 @@ library
                    , shakespeare-css           >= 0.10     && < 0.11
                    , blaze-builder             >= 0.2.1    && < 0.4
                    , transformers              >= 0.2      && < 0.3
-                   , clientsession             >= 0.7      && < 0.8
+                   , clientsession             >= 0.7.2    && < 0.8
                    , random                    >= 1.0.0.2  && < 1.1
                    , cereal                    >= 0.2      && < 0.4
                    , old-locale                >= 1.0.0.2  && < 1.1
@@ -85,11 +85,11 @@ test-suite runtests
         type: exitcode-stdio-1.0
         build-depends:   base                      >= 4.3      && < 5
         cpp-options:     -DGHC7
-        main-is:         runtests.hs
+        main-is:         main.hs
     else
         type: exitcode-stdio-1.0
         build-depends:   base                      >= 4        && < 4.3
-        main-is:         runtests.hs
+        main-is:         main.hs
     cpp-options:   -DTEST
     build-depends: hspec >= 0.6.1 && < 0.7
                   ,wai-test
