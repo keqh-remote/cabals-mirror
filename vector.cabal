@@ -1,17 +1,18 @@
 Name:           vector
-Version:        0.5
+Version:        0.6
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
 Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
 Copyright:      (c) Roman Leshchinskiy 2008-2010
 Homepage:       http://code.haskell.org/vector
+Bug-Reports:    http://trac.haskell.org/vector
 Category:       Data, Data Structures
 Synopsis:       Efficient Arrays
 Description:
         .
-        An efficient implementation of Int-indexed arrays with a powerful loop
-        fusion framework.
+        An efficient implementation of Int-indexed arrays (both mutable
+        and immutable), with a powerful loop fusion optimization framework .
         .
         It is structured as follows:
         .
@@ -28,19 +29,31 @@ Description:
         .
         [@Data.Vector.Generic@] Generic interface to the vector types.
         .
-        Changes since version 0.4.2
+        There is also a (draft) tutorial on common uses of vector.
         .
-        * Unboxed vectors of primitive types and tuples
+        * <http://haskell.org/haskellwiki/Numeric_Haskell:_A_Vector_Tutorial>
         .
-        * Redesigned interface between mutable and immutable vectors (now
-          with the popular @unsafeFreeze@ primitive)
+        Please use the project trac to submit bug reports and feature
+        requests.
         .
-        * Many new combinators
+        * <http://trac.haskell.org/vector>
         .
-        * Significant performance improvements
+        Changes since version 0.5
+        .
+        * More efficient representation of @Storable@ vectors
+        .
+        * Block copy operations used when possible
+        .
+        * @Typeable@ and @Data@ instances
+        .
+        * Monadic combinators (@replicateM@, @mapM@ etc.)
+        .
+        * Better support for recycling (see @create@ and @modify@)
+        .
+        * Performance improvements
         .
 
-Cabal-Version:  >= 1.2
+Cabal-Version:  >= 1.2.3
 Build-Type:     Simple
 
 Extra-Source-Files:
@@ -52,6 +65,21 @@ Extra-Source-Files:
       tests/Utilities.hs
       tests/Tests/Stream.hs
       tests/Tests/Vector.hs
+      benchmarks/vector-benchmarks.cabal
+      benchmarks/LICENSE
+      benchmarks/Setup.hs
+      benchmarks/Main.hs
+      benchmarks/Algo/AwShCC.hs
+      benchmarks/Algo/HybCC.hs
+      benchmarks/Algo/Leaffix.hs
+      benchmarks/Algo/ListRank.hs
+      benchmarks/Algo/Quickhull.hs
+      benchmarks/Algo/Rootfix.hs
+      benchmarks/Algo/Spectral.hs
+      benchmarks/Algo/Tridiag.hs
+      benchmarks/TestData/Graph.hs
+      benchmarks/TestData/ParenTree.hs
+      benchmarks/TestData/Random.hs
       internal/GenUnboxTuple.hs
       internal/unbox-tuple-instances
 
@@ -71,7 +99,7 @@ Flag InternalChecks
 
 
 Library
-  Extensions: CPP
+  Extensions: CPP, DeriveDataTypeable
   Exposed-Modules:
         Data.Vector.Internal.Check
 
@@ -81,6 +109,7 @@ Library
         Data.Vector.Fusion.Stream
 
         Data.Vector.Generic.Mutable
+        Data.Vector.Generic.Base
         Data.Vector.Generic.New
         Data.Vector.Generic
 
@@ -104,10 +133,10 @@ Library
   Install-Includes:
         vector.h
 
-  Build-Depends: base >= 2 && < 5, ghc >= 6.9, primitive >= 0.2 && < 0.3
+  Build-Depends: base >= 4 && < 5, ghc >= 6.9, primitive >= 0.3 && < 0.4
 
   if impl(ghc<6.13)
-    Ghc-Options: -finline-if-enough-args
+    Ghc-Options: -finline-if-enough-args -fno-method-sharing
   
   Ghc-Options: -O2
 
