@@ -1,5 +1,5 @@
 Name:          elf
-Version:       0.1
+Version:       0.2
 License:       BSD3
 License-file:  LICENSE
 Category:      Data
@@ -12,9 +12,9 @@ Build-Depends: base
 Build-Type:    Custom
 Synopsis:      Parser for ELF object format.
 Description:   Parser for ELF object format.
-Data-Files:    tests/*.elf tests/ElfTest.hs
+Data-Files:    tests/empty.elf tests/Test.hs
 
 library
-    build-depends:   base, bytestring, containers, binary
+    build-depends:   base, bytestring, binary
     hs-source-dirs:  src
     exposed-modules: Data.Elf
