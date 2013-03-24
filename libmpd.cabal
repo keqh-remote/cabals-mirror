@@ -1,13 +1,14 @@
 Name:               libmpd
-Version:            0.4.0
+Version:            0.4.1
 License:            LGPL
 License-file:       LICENSE
 Copyright:          Ben Sinclair 2005-2009, Joachim Fasting 2010
 Author:             Ben Sinclair
 Maintainer:         Joachim Fasting <joachim.fasting@gmail.com>
 Stability:          beta
-Homepage:           http://projects.haskell.org/libmpd/
-Bug-reports:        http://trac.haskell.org/libmpd/newticket
+Homepage:           http://github.com/joachifm/libmpd-haskell
+-- Full of spam
+--Bug-reports:        http://trac.haskell.org/libmpd/newticket
 Synopsis:           An MPD client library.
 Description:        A client library for MPD, the Music Player Daemon
                     (<http://www.musicpd.org/>).
@@ -61,8 +62,10 @@ Library
 Executable test
     Hs-Source-Dirs:     . tests
     Main-Is:            tests/Main.hs
-    Build-Depends:      base, network, mtl, filepath, utf8-string, QuickCheck ==2.1.*
+    Build-Depends:      base ==4.*, network, mtl, filepath, utf8-string,
+                        QuickCheck ==2.1.*
     ghc-options:        -Wall -Werror -fno-warn-warnings-deprecations
+                        -fno-warn-type-defaults
 
     if flag(coverage)
         ghc-options:    -fhpc
