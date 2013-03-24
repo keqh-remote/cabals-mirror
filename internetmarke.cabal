@@ -1,5 +1,5 @@
 Name:           internetmarke
-Version:        0.0.1
+Version:        0.0.2
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -47,7 +47,7 @@ Flag splitBase
 
 Executable internetmarke
   Build-Depends:
-    explicit-exception >= 0.0.1 && < 0.1,
+    explicit-exception >= 0.0.2 && < 0.1,
     mtl >= 1.1 && < 1.2,
     process >= 1.0 && < 1.1,
     parsec >= 2.1 && < 2.2,
