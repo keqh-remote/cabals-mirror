@@ -1,5 +1,5 @@
 Name:                hbro
-Version:             0.5.0
+Version:             0.5.1
 Synopsis:            A suckless minimal KISSy browser
 -- Description:         
 -- Homepage:
@@ -15,6 +15,7 @@ Maintainer:          koral at mailoo dot org
 Cabal-version:       >=1.8
 Build-type:          Simple
 Data-files:          examples/ui.xml
+Extra-source-files:  examples/Main.hs
 
 Source-repository head
     Type:     git
@@ -38,7 +39,8 @@ Library
     Exposed-modules:
         Hbro.Core,
         Hbro.Gui,
-        Hbro.Socket
+        Hbro.Socket,
+        Hbro.Types,
         Hbro.Util
     Ghc-options: -Wall
 
