@@ -1,5 +1,5 @@
 name: flickr
-version: 0.2.2
+version: 0.3.0
 Synopsis: Haskell binding to the Flickr API
 Description:
    The flickr API binding lets you access flickr.com's
@@ -18,6 +18,7 @@ extra-source-files: README
                     examples/Gallery.hs
                     examples/SearchPhotos.hs
                     examples/ShowPublicPhotos.hs
+                    examples/ShowTags.hs
 
 flag new-base
   Description: Build with new smaller base library
@@ -36,6 +37,7 @@ library
                   Flickr.Groups,
                   Flickr.Groups.Pools,
                   Flickr.Interestingness,
+                  Flickr.MachineTags,
                   Flickr.Prefs,
                   Flickr.People,
                   Flickr.Photos,
@@ -88,5 +90,10 @@ executable gallery {
 
 executable uploader {
   main-is:              examples/Uploader.hs
+  ghc-options:          -Wall
+}
+
+executable mtags {
+  main-is:              examples/ShowTags.hs
   ghc-options:          -Wall
 }
