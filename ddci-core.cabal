@@ -1,5 +1,5 @@
 Name:           ddci-core
-Version:        0.2.1.1
+Version:        0.2.1.2
 License:        MIT
 License-file:   LICENSE
 Author:         The Disciplined Disciple Compiler Strike Force
@@ -22,9 +22,9 @@ Description:
 
 Executable ddci-core
   Build-depends:
-        base            == 4.5.*,
-        containers      == 0.4.*,
-        haskeline       == 0.6.4.*,
+        base            == 4.6.*,
+        containers      == 0.5.*,
+        haskeline       == 0.7.*,
         haskell-src-exts== 1.*,
         ddc-base        == 0.2.1.*,
         ddc-core        == 0.2.1.*,
