@@ -1,5 +1,5 @@
 Name:                cryptohash
-Version:             0.5
+Version:             0.5.1
 Description:
     A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,
     with performance close to the fastest implementations available in others languages.
@@ -10,7 +10,7 @@ License:             BSD3
 License-file:        LICENSE
 Author:              Vincent Hanquez
 Maintainer:          vincent@snarc.org
-Synopsis:            collection of crypto hashes, fast, pure and pratical
+Synopsis:            collection of crypto hashes, fast, pure and practical
 Category:            Data, Cryptography
 Build-Type:          Simple
 Cabal-Version:       >=1.6
@@ -19,7 +19,8 @@ data-files:          README
 extra-source-files:
   cbits/bitfn.h cbits/md2.h cbits/md4.h cbits/md5.h
   cbits/ripemd.h cbits/sha1.h cbits/sha256.h cbits/sha512.h
-  cbits/tiger.h cbits/skein512.h
+  cbits/skein.h cbits/skein256.h cbits/skein512.h
+  cbits/tiger.h
 
 Flag test
   Description:       Build unit test
@@ -37,6 +38,7 @@ Library
                      Data.CryptoHash.MD4
                      Data.CryptoHash.MD5
                      Data.CryptoHash.RIPEMD160
+                     Data.CryptoHash.Skein256
                      Data.CryptoHash.Skein512
                      Data.CryptoHash.Tiger
   ghc-options:       -Wall -O2 -optc-O3 -fno-cse
@@ -47,6 +49,7 @@ Library
                      cbits/md4.c
                      cbits/md5.c
                      cbits/ripemd.c
+                     cbits/skein256.c
                      cbits/skein512.c
                      cbits/tiger.c
   Include-Dirs:      cbits
@@ -61,6 +64,7 @@ Executable           Tests
                      cbits/md4.c
                      cbits/md5.c
                      cbits/ripemd.c
+                     cbits/skein256.c
                      cbits/skein512.c
                      cbits/tiger.c
   if flag(test)
