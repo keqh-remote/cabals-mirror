@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 name:           hamusic
-version:        0.1.1
+version:        0.1.2
 author:         Samuel Silva <silva.samuel@alumni.uminho.pt>
 maintainer:     Samuel Silva <silva.samuel@alumni.uminho.pt>
 copyright:      Copyright (c) 2008 Samuel Silva
@@ -92,4 +92,10 @@ executable MusicCount
     extensions: TypeSynonymInstances, FlexibleInstances
     hs-source-dirs: src
     main-is: MusicCount.lhs
+
+executable MusicAnnotate
+    ghc-options: -Wall
+    extensions: TypeSynonymInstances, FlexibleInstances
+    hs-source-dirs: src
+    main-is: MusicAnnotate.lhs
 
