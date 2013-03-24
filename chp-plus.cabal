@@ -1,5 +1,5 @@
 Name:            chp-plus
-Version:         1.0.0
+Version:         1.0.1
 Synopsis:        A set of high-level concurrency utilities built on Communicating Haskell Processes
 License:         BSD3
 License-file:    LICENSE
