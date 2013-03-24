@@ -1,23 +1,30 @@
-Name: hsSqlite3
-Version: 0.0.4
-License: LGPL
-Maintainer: Evgeny Jukov <masloed@gmail.com>
-Author: Evgeny Jukov
-Stability: Alpha
-Copyright: Copyright (c) 2007 Evgeny Jukov
-license-file: COPYRIGHT
-Homepage: http://macode.sourceforge.net
-Synopsis: Sqlite3 bindings
-description: Bindings for Sqlite3
-Category: Database
-Hs-Source-Dirs: src
-Exposed-Modules: 
-  Database.Sqlite3,
-  Database.Sqlite3.Low
-Build-Depends: base, utf8-string, mtl, state
-GHC-Options: -O2
+cabal-version: >= 1.2
+build-type: Custom
+name: hsSqlite3
+version: 0.0.5.20081031
+author: Evgeny Jukov
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+stability: experimental
+homepage: http://code.haskell.org/hsSqlite3
+synopsis: sqlite3 bindings
+data-files: README, src/Examples/hs_sqlite3_test.sql
+license: BSD3
+license-file: LICENSE
+category: database
+extra-source-files: src/Examples/hs_sqlite3_test.hs
+flag examples
+  description: build example programs
+  default: False
+library
+  hs-source-dirs: src
+  extensions: ForeignFunctionInterface
+  build-depends: base
+  exposed-modules: Database.Sqlite3.Low
+  pkgconfig-depends: sqlite3
+executable 5minutes
+  hs-source-dirs: src/Examples
+  main-is: 5minutes.hs
+--  build-depends: base
+--  other-modules: Database.Sqlite3.Low
+  buildable: False
 
-Executable: hs_sqlite3_test
-Main-Is: hs_sqlite3_test.hs
-HS-Source-Dirs: src
-extra-libraries: sqlite3
