@@ -1,12 +1,12 @@
 name: MFlow
-version: 0.0.5
+version: 0.0.5.1
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
 license-file: LICENSE
 maintainer: agocorona@gmail.com
 stability: experimental
-synopsis: Web application serverfor processes with type safe, composable user interfaces.
+synopsis: Web app server for stateful processes with safe, composable user interfaces.
 
 description: It is a Web framework with some unique features thanks to the power of the Haskell language.
              MFlow run stateful server processes. Because flows are stateful, not event driven, the code is more
