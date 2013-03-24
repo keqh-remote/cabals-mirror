@@ -1,5 +1,5 @@
 Name:                eddie
-Version:             0.1
+Version:             0.2
 Synopsis:	     Command line file filtering with haskell
 Description:	     A tool to let you use short haskell expressions to filter
 		     files at the command line.
