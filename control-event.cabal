@@ -1,5 +1,5 @@
 name:                control-event
-version:             0.3.0
+version:             0.3.1
 synopsis:            Event scheduling system.
 description:         Allows scheduling and canceling of IO actions to be
                      executed at a specified future time.
