@@ -1,6 +1,6 @@
 Name:                   Operads
-Version:                0.7
-Stability:              alpha
+Version:                1.0
+Stability:              beta
 License:                BSD3
 License-file:           LICENSE
 Category:               Math
@@ -9,10 +9,10 @@ Author:                 Mikael Vejdemo Johansson
 Maintainer:             mik@stanford.edu
 Bug-reports:            mailto:mik@stanford.edu
 Homepage:               http://math.stanford.edu/~mik/operads
-Package-URL:            http://hackage.haskell.org/packages/archive/Operads/0.4/Operads-0.4.tar.gz
+Package-URL:            http://hackage.haskell.org/packages/archive/Operads/1.0/Operads-1.0.tar.gz
 Build-Type:             Simple
 Cabal-Version:          >=1.2
-Extra-source-files:     README CHANGELOG examples/preLieBad.hs examples/example.hs examples/altDual.hs OperadTest.hs
+Extra-source-files:     README CHANGELOG examples/preLieBad.hs examples/example.hs examples/altDual.hs examples/Alternative.hs OperadTest.hs
 Synopsis:               Groebner basis computation for Operads.
 Description:            
   This is an implementation of the operadic Buchberger algorithm from Vladimir Dotsenko & 
@@ -55,8 +55,11 @@ Description:
       buildingblocks and 'nsCompose', 'shuffleCompose' and 'symmetricCompose' to assemble 
       them into trees. The trees, subsequently, may be assembled into tree polynomials by
   .
-      * picking an ordering. We have currently 'PathLex' and 'ForestLex' implemented, and 
-        recommend using 'PathLex'. 
+      * picking an ordering. The orderings available are 
+        'PathPerm', 'RPathPerm', 'PathRPerm', 'RPathRPerm', 
+        'PermPath', 'RPermPath', 'PermRPath' and 'RPermRPath', distinguished by reversal 
+        of order for either the path comparison or the permutation comparison, as well as
+        by whether path or permutation comparison takes precedence.
   .
       * assembling trees and coefficients into an element of the free operad, using '+' for
         addition of operadic elements and '.*.' for scalar multiplication.
@@ -68,13 +71,13 @@ Description:
               'FreeOperad' that only asks for a /LabelType/ to cover most common uses:
   .
     @
-    oet tree :: OperadElement /LabelType/ /ScalarType/ /TreeOrdering 
+    oet tree :: OperadElement /LabelType/ /ScalarType/ /TreeOrdering/
     @
   .
     [@'oek'@] takes a tree, an ordering and a coefficient and gives an operad element
   .
     @
-    oek tree PathLex (3::Rational)
+    oek tree PathPerm (3::Rational)
     @
   .
   Example: 
@@ -144,10 +147,6 @@ Flag MapOperad
      Description:       Use the Data.Map based storage for formal linear combinations.
      Default:           False
 
-Flag PolyBag
-     Description:       Use the head bag based storage for formal linear combinations.
-     Default:           False
-
 Flag UseOldMap
      Description:       Don't use the Data.Map wrapper class Math.Operad.Map. This will slow down computation.
      Default:           False
@@ -155,15 +154,13 @@ Flag UseOldMap
 
 
 Library 
-        Build-Depends:          base, array, mtl, containers
+        Build-Depends:          base <= 4, array, mtl, containers
         Exposed-Modules:        Math.Operad
-        Other-Modules:          Math.Operad.OperadGB, Math.Operad.OrderedTree, Math.Operad.PPrint, Math.Operad.PolyBag, Math.Operad.MapOperad Math.Operad.Map
+        Other-Modules:          Math.Operad.OperadGB, Math.Operad.OrderedTree, Math.Operad.PPrint, Math.Operad.MapOperad Math.Operad.Map
         ghc-options:            -Wall
         ghc-prof-options:       -auto-all
         Extensions:             CPP     
         if flag(mapoperad)
            CPP-Options:         -DUSE_MAPOPERAD
-        if flag(polybag)
-           CPP-Options:         -DUSE_POLYBAG
         if flag(useoldmap)
            CPP-Options:         -DUSE_OLDMAP
