@@ -1,5 +1,5 @@
 Name:            chp
-Version:         1.1.0
+Version:         1.1.1
 Synopsis:        An implementation of concurrency ideas from Communicating Sequential Processes
 License:         BSD3
 License-file:    LICENSE
@@ -7,7 +7,7 @@ Author:          Neil Brown
 Maintainer:      neil@twistedsquare.com
 Copyright:       Copyright (c) 2008, University of Kent
 Stability:       Provisional
-Tested-with:     GHC==6.8.2
+Tested-with:     GHC==6.8.2, GHC==6.10.1
 Description:     The Communicating Haskell Processes (CHP) library is an
                  implementation of ideas from Hoare's Communicating
 		 Sequential Processes.  More details and a tutorial can be
@@ -50,6 +50,6 @@ Other-modules:   Control.Concurrent.CHP.Base
 
 Extensions:      ScopedTypeVariables MultiParamTypeClasses
                  FlexibleInstances UndecidableInstances
-                 GeneralizedNewtypeDeriving
+                 GeneralizedNewtypeDeriving CPP
 
 GHC-Options:     -Wall -threaded
