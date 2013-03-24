@@ -1,5 +1,5 @@
 name:           liboleg
-version:        0.1.0.1
+version:        0.1.0.2
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -14,12 +14,17 @@ cabal-version:  >= 1.2
 
 library
     build-depends:
-            base, containers, mtl
+            base,
+            containers,
+            mtl,
+            unix
 
     exposed-modules:
             Data.FDList
 
             Control.CaughtMonadIO
+
+            Codec.Image.Tiff
 
             Language.TypeLC
             Language.TypeFN
@@ -27,5 +32,15 @@ library
             Text.PrintScan
             Text.PrintScanF
 
+            System.SysOpen
+            System.IterateeM
+            System.LowLevelIO
+            System.RandomIO
+
     ghc-options:
             -funbox-strict-fields 
+
+    c-sources:         cbits/sys_open.c
+    include-dirs:      include
+    includes:          sys_open.h
+    install-includes:  sys_open.h
