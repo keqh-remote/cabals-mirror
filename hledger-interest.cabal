@@ -1,5 +1,5 @@
 Name:                   hledger-interest
-Version:                1.1
+Version:                1.2
 Synopsis:               computes interest for a given account
 License:                BSD3
 License-file:           LICENSE
@@ -9,17 +9,18 @@ Homepage:               http://github.com/peti/hledger-interest
 Category:               Finance
 Build-type:             Simple
 Cabal-version:          >= 1.6
-Tested-With:            GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
+Tested-with:            GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
+Data-files:             README.md
 Description:
  hledger-interest is a small command-line utility based on Simon
  Michael's hleder library. Its purpose is to compute interest for a
  given ledger account. Using command line flags, the program can be
- configured to use various schemes for day-counting, such as act/act,
- 30/360, 30E/360, and 30/360isda. Furthermore, it supports a (small)
+ configured to use various schemes for day-counting, such as act\/act,
+ 30\/360, 30E\/360, and 30\/360isda. Furthermore, it supports a (small)
  number of interest schemes, i.e. annual interest with a fixed rate and
  the scheme mandated by the German BGB288 (Basiszins für
  Verbrauchergeschäfte). Extending support for other schemes is fairly
- easy, but currently requires changing to the source code.
+ easy, but currently requires changes to the source code.
  .
  As an example, consider the following loan, stored in a file called
  @test.ledger@:
@@ -111,7 +112,7 @@ Source-Repository head
 
 Executable hledger-interest
   Main-is:              Main.hs
-  Build-depends:        base >= 3 && < 5, hledger-lib >= 0.14, time, mtl, Cabal
+  Build-depends:        base >= 3 && < 5, hledger-lib == 0.14, time, mtl, Cabal
   other-modules:        Hledger.Interest
                         Hledger.Interest.DayCountConvention
                         Hledger.Interest.Rate
