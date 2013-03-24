@@ -1,5 +1,5 @@
 Name:                sfml-audio
-Version:             0.3.1816.0
+Version:             0.4.0.1816
 Synopsis:            minimal bindings to the audio module of sfml
 Description:         Provides a very minimal interface to the audio module of sfml.
     Currently, only the playing of sounds is covered.
