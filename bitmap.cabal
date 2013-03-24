@@ -1,5 +1,5 @@
 Name:                bitmap
-Version:             0.0.0
+Version:             0.0.1
 Synopsis:            A library for handling and manipulating bitmaps.
 Description:         A library for handling and manipulating bitmaps (that is,
                      rectangular pixel arrays).
@@ -22,10 +22,10 @@ Flag base4
 
 Library
   if flag(base4)
-    Build-Depends:   base >= 4 && < 5, array, containers, bytestring >= 0.9
+    Build-Depends:   base >= 4 && < 5, bytestring >= 0.9
     cpp-options:     -DBASE_VERSION=4
   else
-    Build-Depends:   base >= 3 && < 4, array, containers, bytestring >= 0.9
+    Build-Depends:   base >= 3 && < 4, bytestring >= 0.9
     cpp-options:     -DBASE_VERSION=3
     
   Exposed-Modules:     Data.Bitmap,
