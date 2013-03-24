@@ -1,5 +1,5 @@
 Name: HTTP
-Version: 4000.0.10
+Version: 4000.1.0
 Cabal-Version: >= 1.2
 Build-type: Simple
 License: BSD3
@@ -14,7 +14,7 @@ Copyright:
   Copyright 2007 Robin Bate Boerop
   Copyright 2008- Sigbjorn Finne
 Author: Warrick Gray <warrick.gray@hotmail.com>
-Maintainer: Sigbjorn Finne <sigbjorn.finne@gmail.com>
+Maintainer: Ganesh Sittampalam <ganesh@earth.li>
 Homepage: http://projects.haskell.org/http/
 Category: Network
 Synopsis: A library for client-side HTTP
@@ -50,7 +50,7 @@ Description:
  >      fmap (take 100) (getResponseBody rsp)
  > 
  .
- Git repository available at <git://code.galois.com/HTTPbis.git>
+ Git repository available at <git://github.com/haskell/HTTP.git>
 
 Extra-Source-Files: CHANGES
 
