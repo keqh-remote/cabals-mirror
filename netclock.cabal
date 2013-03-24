@@ -7,7 +7,7 @@ Name:                netclock
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            Netclock protocol
@@ -51,7 +51,7 @@ Library
   Exposed-modules:     Network.Netclock.Client
   
   -- Packages needed in order to build this package.
-  Build-depends: base < 5, network, hosc
+  Build-depends: base < 5, network, hosc >= 0.7
   
   -- Modules not exported by this package.
   -- Other-modules:       
