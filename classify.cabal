@@ -1,13 +1,13 @@
-Name: classify
-Version: 2007.6.26
-Copyright: 2004-2007, Lemmih
-Build-Depends: base, mtl
-License: BSD3
-Author: Lemmih <lemmih@gmail.com>
-Maintainer: Lemmih <lemmih@gmail.com>
-Homepage: http://www.scannedinavian.org/~lemmih/
-Synopsis: Library for classification of files.
-Category: Tool
+Name:           classify
+Version:        2008.10.19
+Copyright:      2004-2008, Lemmih
+Build-Depends:  base, mtl, containers, old-time
+Build-Type:     Simple
+License:        BSD3
+Author:         Lemmih <lemmih@gmail.com>
+Maintainer:     Lemmih <lemmih@gmail.com>
+Synopsis:       Library for classification of media files.
+Category:       Tool
 HS-Source-Dirs: src
 Exposed-Modules:
   Data.Classify.DataTypes,
