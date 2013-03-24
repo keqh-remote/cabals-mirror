@@ -1,5 +1,5 @@
 Name:                CSPM-CoreLanguage
-Version:             0.1.0.1
+Version:             0.1.0.2
 Synopsis:            Definition of a FDR-compatible CSP core-language. 
 Description:
   This package contains an interface for a CSP core-language.
