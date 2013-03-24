@@ -1,12 +1,12 @@
 Name:           hunit-gui
-Version:        0.1
+Version:        0.1.1
 Cabal-Version:  >= 1.6
 License:        PublicDomain
 Author:         Kim Wallmark
 Homepage:       http://patch-tag.com/r/kwallmar/hunit_gui/home
 Category:       Testing
 Synopsis:       A GUI testrunner for HUnit
-Build-Type:     Simple
+Build-Type:     Custom
 Data-Files:     examples/Main.hs
 Maintainer:	kim_hunitgui@arlim.org
 Description:
