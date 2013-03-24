@@ -1,5 +1,5 @@
 name:               dom-lt
-version:            0.1.0
+version:            0.1.1
 cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
@@ -9,7 +9,7 @@ author:             Matt Morrow
 copyright:          (c) Matt Morrow, 2009
 maintainer:         Matt Morrow <morrow@moonpatio.com>
 stability:          experimental
-synopsis:           The Tarjan-Lengauer graph dominators algorithm.
+synopsis:           The Lengauer-Tarjan graph dominators algorithm.
 description:        .
 
 library
