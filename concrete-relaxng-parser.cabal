@@ -1,5 +1,5 @@
 Name:                concrete-relaxng-parser
-Version:             0.1
+Version:             0.1.1
 Cabal-Version:       >= 1.10
 Build-Type:          Simple
 Synopsis:            A parser driven by a standard RELAX NG schema with concrete syntax extensions.
@@ -11,12 +11,12 @@ Description:
   error or XML conforming to the schema.
   .
   If the input XML already conforms to the target schema, the parser acts as an ordinary RELAX NG validator. If not, it
-  attempts to insert the missing element tags and to parse the text nodes within the input XML into XML elements. The
-  target schema can be enriched by concrete syntax extensions, syntactically compatible with standard RELAX NG, to drive
-  the parsing process.
+  attempts to insert the missing element tags and to parse the input text nodes into XML elements. The target schema can
+  be enriched by concrete syntax extensions, syntactically compatible with standard RELAX NG, to drive the parsing
+  process.
   .
-  The included sample RELAX NG schema @xhtml-concrete.rng@ is an extension of the regular must be used together with
-  James Clark's modularized RELAX NG schema for XHTML, which can be downloaded from
+  The included sample RELAX NG schema @xhtml-concrete.rng@ is an extension of, and must be used together with, James
+  Clark's modularized RELAX NG schema for XHTML, which can be downloaded from
   <http://www.thaiopensource.com/relaxng/xhtml/>. Here is an example session:
   .
   > $ cat <<END >test.xhtml.short<?xml version="1.0" encoding="UTF-8"?>
@@ -60,6 +60,5 @@ Executable parse-concrete
   Main-is:           ParseShortXML.hs
   Other-Modules:     Text.XML.HXT.RelaxNG.Parser
   Build-Depends:     base < 5, containers >= 0.4 && < 0.6, hxt >= 9.2 && < 10, hxt-relaxng == 9.1.*,
-                     hxt-charproperties == 9.*, hxt-tagsoup == 9.1.*, hxt-curl == 9.1.*, cmdargs == 0.9.*
-  GHC-options:       -threaded
+                     hxt-charproperties == 9.*, hxt-tagsoup == 9.1.*, hxt-curl == 9.1.*, cmdargs >= 0.9 && < 0.11
   default-language:  Haskell2010
