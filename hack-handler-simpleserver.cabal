@@ -1,10 +1,10 @@
 name:            hack-handler-simpleserver
-version:         0.2.0.2
+version:         0.2.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        A simplistic HTTP server handler for Hack.
+synopsis:        A simplistic HTTP server handler for Hack. (deprecated)
 description:     This should not be used in a production environment.
                  However, it's useful for testing.
                  0.2.0.2 is equal to 0.2.0.1 but with extended ranges for
