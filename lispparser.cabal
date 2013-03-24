@@ -1,5 +1,5 @@
 Name:                lispparser
-Version:             0.3
+Version:             0.3.1
 Synopsis:            Simple parser for LISP S-expressions
 Description:
     .
@@ -20,7 +20,7 @@ Cabal-version: >= 1.6
 
 Source-repository head
   type:     darcs
-  location: darcs get http://patch-tag.com/r/kowey/lispparser
+  location: http://patch-tag.com/r/kowey/lispparser
 
 Library
   Build-depends:       base == 4.*, parsec < 3.2
