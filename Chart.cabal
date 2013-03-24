@@ -1,5 +1,5 @@
 Name: Chart
-Version: 0.12
+Version: 0.13
 License: BSD3
 License-file: LICENSE
 Copyright: Tim Docker, 2006-2009
@@ -12,7 +12,21 @@ Category: Graphics
 Cabal-Version: >= 1.6
 Build-Type: Simple
 
-Extra-Source-Files: tests/test.hs, tests/Prices.hs
+Extra-Source-Files:
+     tests/all_tests.hs,
+     tests/Test1.hs,
+     tests/Test2.hs,
+     tests/Test3.hs,
+     tests/Test4.hs,
+     tests/Test5.hs,
+     tests/Test6.hs,
+     tests/Test7.hs,
+     tests/Test8.hs,
+     tests/Test9.hs,
+     tests/Test14.hs,
+     tests/Test15.hs,
+     tests/TestParametric.hs,     
+     tests/Prices.hs
 
 flag splitbase
   description: Choose the new smaller, split-up base package.
@@ -37,4 +51,5 @@ library
         Graphics.Rendering.Chart.Pie,
         Graphics.Rendering.Chart.Simple,
         Graphics.Rendering.Chart.Grid
+        Graphics.Rendering.Chart.AreaSpots
 
