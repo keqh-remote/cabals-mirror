@@ -1,5 +1,5 @@
 name:		editline
-version:	0.1
+version:	0.2
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Judah Jacobson <judah.jacobson@gmail.com>
@@ -16,8 +16,9 @@ description:
                 readline package.
 homepage:       http://code.haskell.org/editline
 extra-source-files:
-		aclocal.m4 configure.ac configure
+		aclocal.m4 configure.ac
 		editline.buildinfo.in
+                configure include/HsEditlineConfig.h.in
 extra-tmp-files:
 		config.log config.status autom4te.cache
 		editline.buildinfo include/HsEditlineConfig.h
