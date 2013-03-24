@@ -1,5 +1,5 @@
 Name:                 panda
-Version:              2008.10.12
+Version:              2008.10.13
 Build-type:           Simple
 Synopsis:             A simple static blog engine
 Description:          A simple static blog engine
@@ -24,6 +24,7 @@ library
 
                     Panda.Helper.Env
                     Panda.Helper.Helper
+                    Panda.Helper.StateHelper
 
                     Panda.Model.Comment
                     Panda.Model.Post
