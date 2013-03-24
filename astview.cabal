@@ -1,5 +1,5 @@
 Name:            astview
-Version:         0.1.1
+Version:         0.1.2
 License:         BSD4
 License-File:    LICENSE
 Author:          
@@ -28,6 +28,10 @@ Data-Files:
                  data/HaskellExtParser.hs
                  data/astview.html
                  data/astview-tmpl.html
+                 data/EX1.hs
+                 data/EX2.hs
+                 data/EX3.hs
+                 data/EX4.hs
                  data/style.css
                  data/LICENSE.unwrapped
 
