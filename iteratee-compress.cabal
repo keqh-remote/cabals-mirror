@@ -1,5 +1,5 @@
 Name:                iteratee-compress
-Version:             0.3.2.0
+Version:             0.3.3.0
 Synopsis:            Enumeratees for compressing and decompressing streams
 Description:         Enumeratees for compressing and decompressing streams
 License:             BSD3
@@ -20,10 +20,10 @@ Library
   Exposed-modules:   Data.Iteratee.BZip,
                      Data.Iteratee.ZLib
   Build-depends:     base >= 4 && < 5,
-                     bytestring >= 0.9 && < 0.10,
+                     bytestring >= 0.9 && < 0.11,
                      iteratee >= 0.8.4 && < 0.9,
                      mtl >= 2.0 && < 2.2
-  Build-tools:       c2hs
+  Build-tools:       hsc2hs
   Extensions:        CPP,
                      DeriveDataTypeable,
                      ForeignFunctionInterface
