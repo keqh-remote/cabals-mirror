@@ -1,5 +1,5 @@
 name:               sindre
-version:            0.3
+version:            0.4
 homepage:           http://sigkill.dk/programs/sindre
 synopsis:           A programming language for simple GUIs
 description:
@@ -38,7 +38,7 @@ executable sindre
                         text, bytestring, unix, attoparsec>=0.10,
                         permute, utf8-string>=0.3
 
-    ghc-options:        -funbox-strict-fields -Wall
+    ghc-options:        -Wall
 
     ghc-prof-options:   -prof -auto-all -rtsopts
     pkgconfig-depends:  xft
