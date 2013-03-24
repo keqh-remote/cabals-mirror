@@ -1,5 +1,5 @@
 Name:                dingo-widgets
-Version:             0.0.3.1
+Version:             0.0.3.4
 Synopsis:            Dingo Widgets
 Description:         This package contains a set of widgets for the Dingo Rich Internet Application platform.
 License:             MIT
@@ -16,11 +16,11 @@ Extra-source-files:  bundles/jquery-dataTables/jquery.dataTables.min.js
 
 Library
   Build-Depends: base == 4.*
-               , aeson-native == 0.3.*
+               , aeson >= 0.3.2.12 && <0.4
                , bytestring >= 0.9.0.1
                , blaze-html >= 0.4.1.6 && < 0.5
                , containers >= 0.4
-               , dingo-core >= 0.0.3.1 && < 0.1
+               , dingo-core >= 0.0.3.4 && < 0.1
                , file-embed >= 0.0.4 && < 0.1
                , fclabels == 1.0.*
                , shakespeare-js >= 0.10 && < 0.11
