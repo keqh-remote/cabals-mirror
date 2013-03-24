@@ -1,5 +1,5 @@
 Name:                AttoBencode
-Version:             0.2
+Version:             0.2.0.1
 Synopsis:            Fast Bencode encoding and parsing library
 Homepage:            http://bitbucket.org/FlorianHartwig/attobencode
 License:             BSD3
@@ -45,7 +45,7 @@ Test-suite tests
                   containers,
                   test-framework,
                   test-framework-quickcheck2,
-                  QuickCheck >= 2.4 && < 2.5
+                  QuickCheck >= 2.4 && < 2.6
 
 source-repository head
   Type: mercurial
