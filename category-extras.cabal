@@ -1,6 +1,6 @@
 name:                   category-extras
 category:               Control, Monads, Comonads
-version:                0.52.0
+version:                0.52.1
 license:                BSD3
 cabal-version:          >= 1.2
 license-file:           LICENSE
@@ -46,6 +46,7 @@ library
                 ExistentialQuantification,
                 Rank2Types
 
+
         exposed-modules:
                 Control.Category.Monoidal,
                 Control.Category.Cartesian,
@@ -70,7 +71,8 @@ library
                 Control.Comonad.Parameterized,
                 Control.Comonad.Pointer,
                 Control.Comonad.Reader,
-                Control.Comonad.Supply
+                Control.Comonad.Stream,
+                Control.Comonad.Supply,
                 Control.Comonad.Trans,
                 Control.Functor,
                 Control.Functor.Adjunction,
@@ -78,6 +80,7 @@ library
                 Control.Functor.Algebra,
                 Control.Functor.Algebra.Elgot,
                 Control.Functor.Categorical,
+                Control.Functor.Cone,
                 Control.Functor.Composition,
                 Control.Functor.Combinators.Const,
                 Control.Functor.Combinators.Lift,
