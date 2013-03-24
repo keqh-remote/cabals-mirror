@@ -1,5 +1,5 @@
 Name:           numeric-quest
-Version:        0.1.1.3
+Version:        0.2
 License:        GPL
 License-File:   LICENSE
 Author:         Jan Skibinski
@@ -17,7 +17,7 @@ Data-Files:
   README
 
 Source-Repository this
-  Tag:         0.1.1.3
+  Tag:         0.2
   Type:        darcs
   Location:    http://code.haskell.org/~thielema/numeric-quest/
 
