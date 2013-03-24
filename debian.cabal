@@ -1,7 +1,7 @@
 Name:           debian
-Version:        3.18.1
+Version:        3.21
 License:        BSD3
-License-File:	COPYING
+License-File:	debian/copyright
 Author:         David Fox
 Category:	System
 Maintainer:     david@seereason.com
@@ -66,7 +66,11 @@ Exposed-modules:
 	Debian.Util.FakeChanges,
 	Text.Format
 other-modules:
-	Debian.Version.Internal
+	Debian.Version.Internal,
+	Distribution.Package.Debian.Bundled,
+	Distribution.Package.Debian.Setup,
+	Distribution.Package.Debian.Main,
+	Distribution.Package.Debian
 extra-source-files:
 	tests/Main.hs demos/Versions.hs debian/changelog  
 	debian/compat debian/control debian/copyright
@@ -87,7 +91,7 @@ ghc-options: -O2 -threaded -W
 Executable: cabal-debian
 Main-is: utils/CabalDebian.hs
 ghc-options: -O2 -threaded -W
-Build-Depends: Cabal
+Build-Depends: Cabal >= 1.6.0.1
 
 -- For more complex build options see:
 -- http://www.haskell.org/ghc/docs/latest/html/Cabal/
