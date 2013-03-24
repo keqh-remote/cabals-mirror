@@ -1,5 +1,5 @@
 name:           Biobase
-version:        0.1.0.0
+version:        0.1.0.1
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 homepage:       http://www.tbi.univie.ac.at/~choener/Haskell/
@@ -14,25 +14,49 @@ cabal-version:  >= 1.4.0
 description:
                 Base library for bioinformatics providing the following features:
                 .
-                - RNA primary and secondary structure
-                - Infernal covariance models
-                - Turner and Vienna energy files
+                * RNA primary and secondary structure
                 .
-                - efficient format for RNA sequences, based on the vector package
-                - import from strings, bytestrings, fasta files (using the bio library)
-                - secondary structure manipulation functions, im- and export of Vienna-dotbracket notation
-                - import Turner energy files
-                - cf. http://rna.urmc.rochester.edu/NNDB/index.html
-                - im- and export of Vienna 2.0 energy files
+                * Infernal covariance models
                 .
-                - import covariance models
-                - basic manipulation of covariance models
-                - Stockholm file format manipulation
+                * Turner and Vienna energy files
                 .
-                - algebraic ring class
-                - instances for Gibbs free energy, partition function probabilities, and scores
-                - conversion between different entities
-                - ready for the vector library
+                .
+                .
+                RNA sequences and energy files:
+                .
+                * efficient format for RNA sequences, based on the vector package
+                .
+                * import from strings, bytestrings, fasta files (using the bio library)
+                .
+                * secondary structure manipulation functions, im- and export of Vienna-dotbracket notation
+                .
+                * import Turner energy files
+                .
+                * cf. http://rna.urmc.rochester.edu/NNDB/index.html
+                .
+                * im- and export of Vienna 2.0 energy files
+                .
+                .
+                .
+                Covariance models:
+                .
+                * import covariance models
+                .
+                * basic manipulation of covariance models
+                .
+                * Stockholm file format manipulation
+                .
+                .
+                .
+                Utility classes:
+                .
+                * algebraic ring class
+                .
+                * instances for Gibbs free energy, partition function probabilities, and scores
+                .
+                * conversion between different entities
+                .
+                * ready for the vector library
 
 
 
