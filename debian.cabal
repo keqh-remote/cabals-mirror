@@ -1,5 +1,5 @@
 Name:           debian
-Version:        3.14
+Version:        3.17.1
 License:        BSD3
 License-File:	COPYING
 Author:         David Fox
@@ -67,6 +67,10 @@ Exposed-modules:
 	Text.Format
 other-modules:
 	Debian.Version.Internal
+	Distribution.Package.Debian
+	Distribution.Package.Debian.Main
+	Distribution.Package.Debian.Setup
+	Distribution.Package.Debian.Bundled
 extra-source-files:
 	tests/Main.hs demos/Versions.hs debian/changelog  
 	debian/compat debian/control debian/copyright
