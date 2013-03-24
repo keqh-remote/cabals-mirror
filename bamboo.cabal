@@ -1,7 +1,7 @@
 Name:                 bamboo
-Version:              2010.1.1
+Version:              2010.1.26
 Build-type:           Simple
-Synopsis:             A simple blog engine on Hack
+Synopsis:             A blog engine on Hack
 License:              GPL
 License-file:         LICENSE
 Author:               Wang, Jinjing
@@ -37,10 +37,9 @@ library
                   , parsec >= 2
                   , gravatar >= 0.3
                   , data-default >= 0.2
-                  , mps >= 2009.9.18
-                  , hcheat >= 2009.6.25
+                  , mps >= 2009.1.26
                   , hack >= 2009.10.30
-                  , hack-contrib >= 2009.11.1
+                  , hack-contrib >= 2010.1.26
   hs-source-dirs: src/
   exposed-modules:  
                     Bamboo
