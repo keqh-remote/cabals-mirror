@@ -1,11 +1,12 @@
 Name:                   postmaster
-Version:                0.2
-Copyright:              (c) 2004-2010 Peter Simons
+Version:                0.3
+Copyright:              Peter Simons
 License:                GPL
 License-File:           COPYING
 Author:                 Peter Simons <simons@cryp.to>
 Maintainer:             Peter Simons <simons@cryp.to>
-Homepage:               http://gitorious.org/postmaster
+Homepage:               http://github.com/peti/postmaster
+Bug-Reports:            http://github.com/peti/postmaster/issues
 Category:               Network
 Synopsis:               Postmaster ESMTP Server
 Description:            Postmaster implements an ESMTP server. Given a configuration,
@@ -17,7 +18,7 @@ Description:            Postmaster implements an ESMTP server. Given a configura
                         call-back functions.
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
-Tested-With:            GHC == 6.12.1
+Tested-With:            GHC >= 6.12.3 && <= 7.6.2
 
 Extra-Source-Files:     Postmaster/Base.hs
                         Postmaster/FSM/HeloName.hs
@@ -40,12 +41,12 @@ Extra-Source-Files:     Postmaster/Base.hs
 
 Source-Repository head
   Type:                 git
-  Location:             git://gitorious.org/postmaster/mainline.git
+  Location:             git://github.com/peti/postmaster.git
 
 Executable postmaster
   Main-Is:              tutorial.lhs
   GHC-Options:          -Wall -threaded
   Extra-Libraries:      adns crypto
-  Build-Depends:        base >=3 && <5, haskell98, directory, mtl, network, unix, parsec,
+  Build-Depends:        base >=3 && <5, directory, mtl, network, unix, parsec,
                         containers, bytestring, old-time, hsyslog, hsdns, hsemail,
                         hopenssl
