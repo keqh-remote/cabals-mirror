@@ -1,11 +1,11 @@
 name:                TeaHS
-version:             0.3
+version:             0.3.1
 synopsis:            TeaHS Game Creation Library
 description:         A simple library for use creating 2D games, inspired by the Ruby library Tea.
-category:            Games
+category:            Game
 license:             BSD3
 license-file:        LICENSE
-homepage:            http://liamoc.net/static/TeaHS
+homepage:            http://liamoc.net/tea
 author:              Liam O'Connor-Davis
 maintainer:          liamoc@cse.unsw.edu.au
 build-type:          Simple
