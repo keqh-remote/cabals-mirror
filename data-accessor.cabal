@@ -1,11 +1,11 @@
 Name:             data-accessor
-Version:          0.2.1.6
+Version:          0.2.1.7
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>, Luke Palmer <lrpalmer@gmail.com>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:         http://www.haskell.org/haskellwiki/Record_access
-Package-URL:      http://code.haskell.org/data-accessor/
+Package-URL:      http://code.haskell.org/data-accessor/core/
 Category:         Data
 Synopsis:         Utilities for accessing and manipulating fields of records
 Description:
@@ -64,7 +64,7 @@ Description:
   that conflicts with the two-way nature (set and get) of accessors.
 -- Portability:      Haskell98
 Cabal-Version:    >=1.2
-Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, JHC==0.7.3
+Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==7.0.1, JHC==0.7.3
 Build-Type:       Simple
 
 Extra-Source-Files:
