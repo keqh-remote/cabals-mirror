@@ -1,5 +1,5 @@
 name:           snap-server
-version:        0.2.11
+version:        0.2.12
 synopsis:       A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 description:
   This is the first developer prerelease of the Snap framework.  Snap is a
@@ -57,22 +57,24 @@ extra-source-files:
   README.SNAP.md,
   test/benchmark/Benchmark.hs,
   test/benchmark/Snap/Internal/Http/Parser/Benchmark.hs,
+  test/benchmark/Snap/Internal/Http/Parser/Data.hs,
+  test/common/Paths_snap_server.hs,
+  test/common/Snap/Test/Common.hs,
+  test/common/Test/Common/TestHandler.hs,
+  test/common/Test/Common/Rot13.hs,
   test/data/fileServe/foo.bin,
   test/data/fileServe/foo.bin.bin.bin,
   test/data/fileServe/foo.html,
   test/data/fileServe/foo.txt,
   test/pongserver/Main.hs,
-  test/pongserver/Paths_snap_server.hs,
   test/runTestsAndCoverage.sh,
   test/snap-server-testsuite.cabal,
-  test/suite/Paths_snap_server.hs,
   test/suite/Data/Concurrent/HashMap/Tests.hs,
   test/suite/Snap/Internal/Http/Parser/Tests.hs,
   test/suite/Snap/Internal/Http/Server/Tests.hs,
-  test/suite/Snap/Test/Common.hs,
+  test/suite/Test/Blackbox.hs,
   test/suite/TestSuite.hs,
   test/testserver/Main.hs,
-  test/testserver/Paths_snap_server.hs,
   test/testserver/static/hello.txt
 
 
@@ -120,7 +122,7 @@ Library
     murmur-hash >= 0.1 && < 0.2,
     network == 2.2.1.*,
     old-locale,
-    snap-core >= 0.2.11 && <0.3,
+    snap-core >= 0.2.12 && <0.3,
     template-haskell,
     time,
     transformers,
