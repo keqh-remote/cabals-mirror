@@ -1,7 +1,7 @@
 cabal-version: >=1.1
 build-type: Simple
 name: uulib
-version: 0.9.5
+version: 0.9.7
 license: LGPL
 license-file: COPYRIGHT
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -11,7 +11,7 @@ synopsis: Haskell Utrecht Tools Library
 category: Parsing
 stability: Stable
 copyright: Universiteit Utrecht
-build-depends: base, haskell98
+build-depends: base, haskell98, ghc-prim
 exposed-modules: UU.Parsing.CharParser UU.Parsing.Derived
                  UU.Parsing.Interface UU.Parsing.MachineInterface
                  UU.Parsing.Merge UU.Parsing.Offside UU.Parsing.Perms
@@ -28,4 +28,9 @@ exposed-modules: UU.Parsing.CharParser UU.Parsing.Derived
                  UU.DData.IntSet        
 extensions:  RankNTypes FunctionalDependencies TypeSynonymInstances UndecidableInstances FlexibleInstances MultiParamTypeClasses FlexibleContexts CPP ExistentialQuantification
 hs-source-dirs: src
-extra-source-files: README, LICENSE-LGPL
+extra-source-files: README, LICENSE-LGPL,
+                    examples/bibtex/Bibtex.hs,
+                    examples/parser/Example.hs,
+                    examples/parser/Makefile,
+                    examples/parser/README,
+                    examples/parser/Scanner.x
