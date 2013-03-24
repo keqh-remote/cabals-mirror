@@ -1,5 +1,5 @@
 Name:                gloss
-Version:             1.2.0.1
+Version:             1.3.0.1
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -25,6 +25,7 @@ Library
         base       == 4.*,
         ghc-prim   == 0.2.*,
         containers >= 0.3.0 && < 0.5.0,
+        bytestring == 0.9.*,
         OpenGL     == 2.4.*,
         GLUT       == 2.2.*
 
@@ -66,6 +67,7 @@ Library
         Graphics.Gloss.Internals.Interface.ViewPort.Motion
         Graphics.Gloss.Internals.Interface.ViewPort.Reshape
         Graphics.Gloss.Internals.Interface.Window
+        Graphics.Gloss.Internals.Render.Bitmap
         Graphics.Gloss.Internals.Render.Circle
         Graphics.Gloss.Internals.Render.Common
         Graphics.Gloss.Internals.Render.Options
