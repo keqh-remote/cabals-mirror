@@ -1,13 +1,29 @@
 Name:		yjftp
-Version:	0.3
+Version:	0.3.1
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
 Maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
 Category:	Network
 Synopsis:	CUI FTP client like 'ftp', 'ncftp'
-Description:	FTP client
-		Just CUI FTP client
+Description:	Just CUI FTP client.
+		.
+		If no arguments, then it ask server address, user name and password.
+		.
+		If only argument server address are given, then it try login as anonymous user.
+		.
+		If argument server address and user name, then it ask password.
+		.
+		And password can give by '-p [passwd]' from command line.
+		.
+		Once login, you can run command 'ls', 'cd', 'cat', 'put', 'get', 'edit', 'show'
+		and so on.
+		.
+		And you can put/get immediately by doing following.
+		.
+		> yjftp put filepath srvr.address/directorypath [user_name] [-p password]
+		.
+		> yjftp get srvr.address/filepath [user_name] [-p password]
 Stability:	experimental
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/yjftp/index.xhtml
 Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/yjftp-0.3.tar.gz
