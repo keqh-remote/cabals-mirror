@@ -1,5 +1,5 @@
 name:            hack-handler-fastcgi
-version:         0.0.4
+version:         0.2.0
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -14,9 +14,9 @@ homepage:        http://github.com/snoyberg/hack-handler-fastcgi/tree/master
 
 library
     build-depends:   base >= 4 && < 5,
-                     hack >= 2009.5.19,
-                     bytestring,
-                     hack-handler-cgi >= 0.0.2
+                     hack == 2009.10.30,
+                     bytestring >= 0.9.1.4 && < 0.10,
+                     hack-handler-cgi >= 0.2.0 && < 0.3
     exposed-modules: Hack.Handler.FastCGI
     ghc-options:     -Wall
     includes:        fcgiapp.h
