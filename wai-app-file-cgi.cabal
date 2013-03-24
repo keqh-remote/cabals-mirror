@@ -1,12 +1,12 @@
 Name:                   wai-app-file-cgi
-Version:                0.5.0
+Version:                0.5.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
 License-File:           LICENSE
-Synopsis:               File/CGI App of WAI
-Description:            This WAI application handles static files and
-                        executes CGI scripts.
+Synopsis:               File/CGI/Rev Proxy App of WAI
+Description:            This WAI application handles static files,
+                        executes CGI scripts, and reverse proxy.
 Homepage:               http://www.mew.org/~kazu/
 Category:               Web, Yesod
 Cabal-Version:          >= 1.6
@@ -33,7 +33,7 @@ library
                         network, transformers,
                         filepath, directory, unix,
                         containers, attoparsec >= 0.10.0.0,
-                        wai, conduit,
+                        wai >= 1.1, conduit >= 0.2,
                         bytestring, blaze-builder,
                         wai-app-static >= 0.3, http-types, http-date,
                         case-insensitive, static-hash,
