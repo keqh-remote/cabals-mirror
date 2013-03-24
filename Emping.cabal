@@ -1,8 +1,8 @@
 name:                Emping
-version:             0.5
+version:             0.5.1
 license:             GPL
 license-file:        LICENSE
-build-depends:       base, parsec, fgl
+build-depends:       base, parsec, fgl, mtl, array, gtk
 copyright:           Hans van Thiel 2006 - 2008
 author:              Hans van Thiel
 maintainer:          hthiel.char@zonnet.nl
