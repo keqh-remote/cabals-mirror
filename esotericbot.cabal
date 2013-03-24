@@ -1,5 +1,5 @@
 Name:			esotericbot
-Version:		0.0.1
+Version:		0.0.2
 License:		BSD3
 License-File:		License
 Author:			John Morrice
@@ -57,7 +57,7 @@ Description:
 
 Build-type:		Custom	
 
-Homepage:		http://www.killersmurf.com/esotericbot
+Homepage:		http://www.killersmurf.com/projects/esotericbot
 
 Build-Depends:		base , bytestring , mtl , attoparsec , network , stream-fusion , stm , containers==0.2.0.0 , time , tuple , unix , directory 
 Cabal-Version:		>= 1.6
