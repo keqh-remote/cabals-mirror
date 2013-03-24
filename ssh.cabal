@@ -1,5 +1,5 @@
 name:                ssh
-version:             0.2.8
+version:             0.2.9
 synopsis:            A pure-Haskell SSH server library.
 description:
     This package was split from darcsden into its own project; documentation
@@ -14,7 +14,7 @@ homepage:            http://darcsden.com/alex/ssh
 license:             BSD3
 license-file:        LICENSE
 author:              Alex Suraci
-maintainer:          i.am@toogeneric.com
+maintainer:          suraci.alex@gmail.com
 category:            Network
 build-type:          Simple
 cabal-version:       >= 1.6
