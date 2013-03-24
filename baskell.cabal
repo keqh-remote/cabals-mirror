@@ -1,5 +1,5 @@
 Name:         baskell
-Version:      0.1
+Version:      0.1.1
 Copyright:    2004-2005, Bernard Pope
 License:      GPL
 License-File: LICENSE
@@ -47,7 +47,9 @@ Other-Modules:
            Parser,
            Pretty,
            Reduce,
-           Type
-ghc-options:         -O2 -Wall -optl-Wl,-s
+           Type,
+           TypeCheck,
+           Utils
+ghc-options:         -O2 -Wall
 ghc-prof-options:    -prof -auto-all
 
