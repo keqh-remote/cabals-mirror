@@ -1,9 +1,11 @@
 Name:                  Interpolation
-Version:             0.2
+Version:             0.2.1
 Description:         This package adds quasiquoter for multiline 
                      strings, interpolation and simple templating.
-                     Handy for text generation.
-Category:            Text
+                     It can handle repetition templates which makes it
+                     Handy for outputting larger structures, such as
+                     latex tables or gnuplot files.
+Category:            Data,Text
 Synopsis:            Multiline strings, interpolation and templating.
 License:             OtherLicense
 License-file:        LICENSE
