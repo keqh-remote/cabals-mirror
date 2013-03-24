@@ -1,5 +1,5 @@
 name:                procrastinating-structure
-version:             1.0
+version:             1.0.1
 synopsis:            Pure structures that can be incrementally created
                      in impure code
 description:         This package provides a type class for
