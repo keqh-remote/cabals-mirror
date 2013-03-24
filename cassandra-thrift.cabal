@@ -1,14 +1,14 @@
 Name: cassandra-thrift 
-Version: 0.6.6
+Version: 0.7.0
 License: OtherLicense 
 License-File: LICENSE
 Cabal-version: >= 1.4
-Author: Thrift v.0.4.0 
+Author: Thrift v.0.5.0 
 Maintainer: kirk@glyphsoftware.com 
 Stability: alpha
 Synopsis: thrift bindings to the cassandra database 
 Description:
-  The Cassandra (v.0.6.6) database bindings, generated using the Thrift (v.0.4) compliler, Released under the Apache 2.0 license. 
+  The Cassandra (v.0.7.0) database bindings, generated using the Thrift (v.0.5) compliler, Released under the Apache 2.0 license. 
     
 Category: Database 
 Build-type: Simple
@@ -22,5 +22,5 @@ Library
 
     build-depends:   base >= 4.2.0.0 && < 4.9, 
                      containers,
-                     Thrift == 0.4.0
-
+                     Thrift == 0.5.0,
+                     bytestring
