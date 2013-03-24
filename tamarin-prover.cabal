@@ -1,7 +1,7 @@
 cabal-version:      >= 1.8
 build-type:         Simple
 name:               tamarin-prover
-version:            0.8.1.0
+version:            0.8.2.0
 license:            GPL
 license-file:       LICENSE
 category:           Theorem Provers
@@ -73,6 +73,7 @@ data-files:
   -- classic security protocols
   examples/classic/TLS_Handshake.spthy
   examples/classic/NSLPK3.spthy
+  examples/classic/NSPK3.spthy
 
   -- loops
   examples/loops/Minimal_Crypto_API.spthy
@@ -80,15 +81,21 @@ data-files:
   examples/loops/Minimal_Create_Use_Destroy.spthy
   examples/loops/Minimal_Typing_Example.spthy
   examples/loops/Minimal_Loop_Example.spthy
+  examples/loops/Minimal_HashChain.spthy
   examples/loops/Typing_and_Destructors.spthy
   examples/loops/JCS12_Typing_Example.spthy
   examples/loops/TESLA_Scheme1.spthy
+  examples/loops/TESLA_Scheme2_lossless.spthy
+  examples/loops/TESLA_Scheme2.spthy
 
   -- related work
   examples/related_work/AIF_Moedersheim_CCS10/Keyserver.spthy
-  examples/related_work/StatVerif_ARR_CSF11/StatVerif_Example1.spthy
+  examples/related_work/StatVerif_ARR_CSF11/StatVerif_Security_Device.spthy
+  examples/related_work/StatVerif_ARR_CSF11/StatVerif_GM_Contract_Signing.spthy
   examples/related_work/TPM_DKRS_CSF11/Envelope.spthy
-  examples/related_work/TPM_DKRS_CSF11/RunningExample.spthy
+  examples/related_work/TPM_DKRS_CSF11/TPM_Exclusive_Secrets.spthy
+  examples/related_work/YubiSecure_KS_STM12/Yubikey.spthy
+  examples/related_work/YubiSecure_KS_STM12/Yubikey_and_YubiHSM.spthy
 
   -- CSF'12 case studies
   examples/csf12/Artificial.spthy
@@ -157,7 +164,7 @@ flag build-tests
 
 executable tamarin-prover
     if flag(threaded)
-        ghc-options:   -threaded
+        ghc-options:   -threaded -eventlog
 
     -- Note that eager blackholing lead to segfaults: See GHC Ticket #6146
     -- Morevoer, it seems that the bug is not fully fixed on GHC 7.4.2, as we
@@ -183,23 +190,20 @@ executable tamarin-prover
       -- To help the top-down solver we put the more difficult to solve yesod
       -- dependencies up front.
       build-depends:
-        -- not direct dependencies, but wai-extra specifies its dependencies
-        -- to lax and thus breaks due to the upgrade of fast-logger
-          fast-logger       == 0.0.2
-        , wai-logger        == 0.1.*
 
-        , bytestring        == 0.9.*
-        , blaze-html        == 0.4.*
-        , http-types        == 0.6.*
+          bytestring        >= 0.9
+        , blaze-html        == 0.5.*
+        , http-types        == 0.7.*
         , blaze-builder     == 0.3.*
-        , yesod-core        == 1.0.*
-        , yesod-json        == 1.0.*
-        , yesod-static      == 1.0.*
+        , yesod-core        == 1.1.*
+        , yesod-json        == 1.1.*
+        , yesod-static      == 1.1.*
+        , conduit           == 0.5.*
         -- , yesod-form        == 0.4.*   -- required once we reactivate editing
         , text              == 0.11.*
-        , wai               == 1.2.*
-        , hamlet            == 1.0.*
-        , warp              == 1.2.*
+        , wai               == 1.3.*
+        , hamlet            == 1.1.*
+        , warp              == 1.3.*
         , aeson             == 0.6.*
         , old-locale        == 1.0.*
         , monad-control     == 0.3.*
@@ -230,8 +234,9 @@ executable tamarin-prover
       , parallel          == 3.2.*
       , HUnit             == 1.2.*
 
-      , tamarin-prover-utils >= 0.8.1 && < 0.9
-      , tamarin-prover-term  >= 0.8.1 && < 0.9
+      , tamarin-prover-utils  >= 0.8.2  && < 0.9
+      , tamarin-prover-term   >= 0.8.2  && < 0.9
+      , tamarin-prover-theory >= 0.8.2  && < 0.9
 
 
     other-modules:
@@ -249,42 +254,6 @@ executable tamarin-prover
       Main.Mode.Intruder
       Main.Mode.Test
 
-      Theory
-      Theory.Proof
-
-      Theory.Constraint.Solver
-      Theory.Constraint.Solver.CaseDistinctions
-      Theory.Constraint.Solver.Contradictions
-      Theory.Constraint.Solver.Goals
-      Theory.Constraint.Solver.Reduction
-      Theory.Constraint.Solver.Simplify
-      Theory.Constraint.Solver.ProofMethod
-      Theory.Constraint.Solver.Types
-      Theory.Constraint.System
-      Theory.Constraint.System.Dot
-      Theory.Constraint.System.Guarded
-      Theory.Constraint.System.Constraints
-
-      Theory.Model
-      Theory.Model.Atom
-      Theory.Model.Fact
-      Theory.Model.Formula
-      Theory.Model.Rule
-      Theory.Model.Signature
-
-      Theory.Text.Parser
-      Theory.Text.Parser.Token
-      Theory.Text.Parser.UnitTests
-      Theory.Text.Pretty
-
-      Theory.Tools.AbstractInterpretation
-      Theory.Tools.IntruderRules
-      Theory.Tools.LoopBreakers
-      Theory.Tools.RuleVariants
-      Theory.Tools.Wellformedness
-      Theory.Tools.EquationStore
-      Theory.Tools.InjectiveFactInstances
-
       Web.Dispatch
       Web.Hamlet
       Web.Handler
@@ -292,6 +261,9 @@ executable tamarin-prover
       Web.Settings
       Web.Theory
       Web.Types
+
+      Test.ParserTests
+
 
 source-repository head
   type:     git
