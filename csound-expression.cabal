@@ -1,5 +1,5 @@
 Name:          csound-expression
-Version:       0.0.1
+Version:       0.0.2
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
@@ -15,7 +15,7 @@ Build-Type:    Simple
 
 Library
   Build-Depends:
-        base >= 4, base < 5, containers, mtl, pretty, filepath, directory, haskell98, temporal-media == 0.0
+        base >= 4, base < 5, containers, mtl == 2.0.1.0, pretty, filepath, directory, haskell98, temporal-media == 0.0
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         CsoundExpr
