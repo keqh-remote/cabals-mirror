@@ -1,5 +1,5 @@
 name:                hpasteit
-version:             0.3.2
+version:             0.3.3
 synopsis:            A command-line client for hpaste.org
 license:             BSD3
 license-file:        LICENSE
@@ -18,6 +18,13 @@ description:
   .
   Run @hpasteit --help@ for usage information and @hpasteit COMMAND --help@ for
   detailed usage information about a particular command.
+
+  .
+
+  Changes in 0.3.3
+  .
+  * Don't try to upload an empty paste
+  * Bump dependencies
 
   .
 
@@ -66,8 +73,8 @@ executable hpasteit
   build-depends:       base                  <5.0
                      , bytestring            <0.11
                      , lifted-base          ==0.2.*
-                     , http-conduit         ==1.8.*
-                     , http-types           ==0.7.*
+                     , http-conduit         ==1.9.*
+                     , http-types           ==0.8.*
                      , optparse-applicative ==0.5.*
                      , process              ==1.1.*
                      , network              ==2.4.*
