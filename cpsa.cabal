@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.1
+Version:		2.2.2
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -56,6 +56,8 @@ Extra-Source-Files:
   src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg
   src/cpsa.el src/httpd_allow_execmem.te src/cpsaops.scm src/preskel
   src/cpsa.pl src/pp.pl src/sexpr.pl src/zoom.js src/js2hs src/ghcmemlimit
+  build.xml src/cpsaextras/Main.scala src/cpsaextras/Pretty.scala
+  src/cpsaextras/Printer.scala src/cpsaextras/SExpr.scala
   tst/README tst/Makefile
   tst/Make.hs tst/checktst tst/cpsagraphall tst/cpsashapesall
   tst/blanchet.scm tst/blanchet.tst tst/completeness-test.scm
@@ -65,7 +67,7 @@ Extra-Source-Files:
   tst/deorig_contract.scm tst/deorig_contract.tst tst/dhke.scm
   tst/dhke.tst tst/deorig_simple.scm  tst/deorig_simple.tst
   tst/ds-short.lisp tst/dy.lsp tst/dy.tst tst/encsig.scm
-  tst/encsig.tst tst/epmo_acctnum.lsp tst/epmo_acctnum.tst
+  tst/encsig.tst tst/epmo_acctnum.scm tst/epmo_acctnum.tst
   tst/epmo.scm tst/epmo.tst tst/ffgg.scm tst/ffgg.tst
   tst/fragile_pruning.scm tst/fragile_pruning.tst tst/isoreject.scm
   tst/isoreject.tst tst/kelly1.scm tst/kelly1.tst tst/kelly64.lisp
@@ -79,18 +81,21 @@ Extra-Source-Files:
   tst/non_transforming.tst tst/nsl3.scm tst/nsl3.tst tst/nsl4cm1.lsp
   tst/nsl4cm1.tst tst/nsl4.lisp tst/nsl4resp2.lisp tst/nsl5i.lisp
   tst/nsl5.lisp tst/nslsk.scm tst/nslsk.tst tst/ns.scm tst/ns.tst
-  tst/or.scm tst/or.tst tst/pca.lsp tst/pca.tst tst/pruning1.scm
+  tst/or.scm tst/or.tst tst/pca.scm tst/pca.tst tst/pruning1.scm
   tst/pruning1.tst tst/sigenc.scm tst/sigenc.tst
-  tst/sorted_epmo_acctnum.lsp tst/sorted_epmo_acctnum.tst
+  tst/sorted_epmo_acctnum.scm tst/sorted_epmo_acctnum.tst
   tst/targetterms2.scm tst/targetterms2.tst tst/targetterms6.scm
-  tst/targetterms6.tst tst/tnsl5.lisp tst/uncarried_keys.scm
+  tst/targetterms6.tst tst/targetterms8.scm
+  tst/targetterms8.tst tst/tnsl5.lisp tst/uncarried_keys.scm
   tst/uncarried_keys.tst tst/uo.scm tst/uo.tst tst/updatetst
   tst/weird.scm tst/weird.tst tst/wide-mouth-frog.lsp
   tst/wide-mouth-frog.tst tst/wonthull2.scm tst/wonthull2.tst
   tst/wonthull3.scm tst/wonthull3.tst tst/wonthull.scm
   tst/wonthull.tst tst/woolam.scm tst/woolam.tst tst/yahalom-6.3.6.scm
   tst/yahalom-6.3.6.tst tst/yahalom.scm tst/yahalom.tst tst/tor.scm
-  tst/tor.tst
+  tst/tor.tst tst/dh_cert.scm tst/dh_cert.tst
+  tst/epmo_acctnum-key-hash.scm tst/epmo_acctnum-key-hash.tst
+  tst/epmo-key-hash.scm tst/epmo-key-hash.tst tst/wang.lisp
 
 -- Disable with -f-par option during configuration.
 
