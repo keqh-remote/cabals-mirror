@@ -1,5 +1,5 @@
 Name:                   Operads
-Version:                0.6
+Version:                0.7
 Stability:              alpha
 License:                BSD3
 License-file:           LICENSE
@@ -12,7 +12,7 @@ Homepage:               http://math.stanford.edu/~mik/operads
 Package-URL:            http://hackage.haskell.org/packages/archive/Operads/0.4/Operads-0.4.tar.gz
 Build-Type:             Simple
 Cabal-Version:          >=1.2
-Extra-source-files:     README CHANGELOG examples/preLieBad.hs examples/example.hs examples/altDual.hs
+Extra-source-files:     README CHANGELOG examples/preLieBad.hs examples/example.hs examples/altDual.hs OperadTest.hs
 Synopsis:               Groebner basis computation for Operads.
 Description:            
   This is an implementation of the operadic Buchberger algorithm from Vladimir Dotsenko & 
@@ -148,10 +148,10 @@ Flag PolyBag
      Description:       Use the head bag based storage for formal linear combinations.
      Default:           False
 
-Executable OperadTest
-           Main-is:             OperadTest.hs
-           Extensions:          CPP
-           Build-Depends:       QuickCheck
+Flag UseOldMap
+     Description:       Don't use the Data.Map wrapper class Math.Operad.Map. This will slow down computation.
+     Default:           False
+
 
 
 Library 
@@ -165,3 +165,5 @@ Library
            CPP-Options:         -DUSE_MAPOPERAD
         if flag(polybag)
            CPP-Options:         -DUSE_POLYBAG
+        if flag(useoldmap)
+           CPP-Options:         -DUSE_OLDMAP
