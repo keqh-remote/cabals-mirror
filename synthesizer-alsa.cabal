@@ -1,5 +1,5 @@
 Name:           synthesizer-alsa
-Version:        0.0.2
+Version:        0.0.2.1
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -23,13 +23,22 @@ Build-Type:     Simple
 Flag splitBase
   description: Choose the new smaller, split-up base package.
 
+Flag splitSynthesizer
+  description: Use synthesizer-core instead of monolithic synthesizer
+
 Flag buildExamples
   description: Build example executables
   default:     False
 
 Library
+  If flag(splitSynthesizer)
+    Build-Depends:
+      synthesizer-core >= 0.2 && < 0.3
+  Else
+    Build-Depends:
+      synthesizer >= 0.2 && < 0.3
+
   Build-Depends:
-    synthesizer >= 0.2 && < 0.3,
     sox >=0.0.1 && <0.1,
     alsa >= 0.2 && <0.3,
     -- midi >=0.1.1 && <0.1,
