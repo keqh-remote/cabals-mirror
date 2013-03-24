@@ -1,5 +1,5 @@
 name:                data-pprint
-version:             0.1
+version:             0.2
 category:            Testing, Text
 synopsis:            Prettyprint and compare Data values
 description:
@@ -39,6 +39,8 @@ description:
     > pprint $ "hello" ++ [error "x"] ++ "world!"
     .
     See also <http://pnyf.inf.elte.hu/fp/Show_en.xml>
+    .
+    Changes since 0.1: Refactoring, proper handling of nested errors
 stability:           beta
 license:             BSD3
 license-file:        LICENSE
@@ -56,6 +58,7 @@ library
     Data.Data.GenRep,
     Data.Data.GenRep.Functions,
     Data.Data.GenRep.Doc,
+    Control.Exception.Pure,
     System.SimpleTimeout,
     System.SimpleTimeout.Limits,
     System.IO.Parallel
