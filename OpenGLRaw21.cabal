@@ -1,5 +1,5 @@
 Name:                OpenGLRaw21
-Version:             1.2.0.0
+Version:             1.2.0.1
 Synopsis:            The intersection of OpenGL 2.1 and OpenGL 3.1 Core
 Description:         This package simply reexports a subset of the
                      parts of OpenGLRaw which are compatible with
@@ -18,7 +18,7 @@ Build-type:          Simple
 Cabal-version:       >=1.6
 
 Library
-  Build-depends:     OpenGLRaw == 1.1.*
+  Build-depends:     OpenGLRaw == 1.1.* || == 1.2.*
   Extensions:        NoImplicitPrelude
   Exposed-modules:   Graphics.Rendering.OpenGL.Raw.Core21
   GHC-options:       -Wall -fwarn-tabs
