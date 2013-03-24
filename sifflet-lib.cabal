@@ -1,5 +1,5 @@
 name: sifflet-lib
-version: 1.2
+version: 1.2.1
 cabal-version: >= 1.8
 build-type: Simple
 license: BSD3
@@ -16,6 +16,7 @@ synopsis: Library of modules shared by sifflet and its
   tests and its exporters.
 description: Supporting modules for the Sifflet visual, 
   functional programming language (Hackage 'sifflet' package).
+  Version 1.2.1: updated for compatibility with gtk-0.12.
 category: 
   Language
   , Visual Programming
@@ -33,9 +34,9 @@ library
     base >= 4.0 && < 4.3,
 -- begin GTK stuff, these no longer need to have the same version
 -- numbers
-    cairo == 0.11.*,
-    glib == 0.11.*,
-    gtk == 0.11.*,
+    cairo >= 0.11 && < 0.13,
+    glib >= 0.11 && < 0.13,
+    gtk >= 0.11 && < 0.13,
 -- end
     containers >= 0.2 && < 0.4,
     directory >= 1.0 && < 1.1,
