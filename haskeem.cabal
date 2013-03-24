@@ -1,5 +1,6 @@
 Name:             haskeem
-Version:          0.7.4
+Version:          0.7.5
+Homepage:         http://www.korgwal.com/haskeem/
 Author:           Uwe Hollerbach <uh@alumni.caltech.edu>
 Maintainer:       Uwe Hollerbach <uh@alumni.caltech.edu>
 Synopsis:         A small scheme interpreter
