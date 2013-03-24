@@ -1,5 +1,5 @@
 name:           utf8-prelude
-version:        0.1
+version:        0.1.1
 synopsis:       Prelude and System.IO using UTF8 encoding
 description:    
     This package contains the "UTF8Prelude" and "System.UTF8IO" library modules and the 'utf8-test' executable.
@@ -13,9 +13,9 @@ description:
     This package will be obsolate with GHC if GHC will have porper unicode support for text I/O 
     (planned beyond GHC 6.10, see <http://hackage.haskell.org/trac/ghc/wiki/Status/Releases>).
 category:       System
-author:         Péter Diviánszky <divip@aszt.inf.elte.hu>
-maintainer:     Péter Diviánszky <divip@aszt.inf.elte.hu>
-copyright:      (c) 2008 by Péter Diviánszky
+author:         Peter Divianszky <divip@aszt.inf.elte.hu>
+maintainer:     Peter Divianszky <divip@aszt.inf.elte.hu>
+copyright:      (c) 2008 by Peter Divianszky
 license:        BSD3
 license-file:   LICENSE
 stability:      alpha
