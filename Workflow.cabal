@@ -1,5 +1,5 @@
 name: Workflow
-version: 0.5.8.1
+version: 0.5.8.2
 
 build-type: Simple
 license: BSD3
@@ -34,6 +34,8 @@ description: Transparent support  for interruptible computations. A workflow can
              Besides that, the package also provides other services associated to workflows
              .
              New in this release,
+                  .
+                  * 0.5.8.2 minor changes for the MFlow package
                   .
                   * 0.5.8.1 solved a bug that caused a "casting failure"
                   .
