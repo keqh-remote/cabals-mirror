@@ -1,7 +1,7 @@
 Author:         David Sankel
 Maintainer:     david@sankelsoftware.com
 Name:           htags
-Version:        1.0
+Version:        1.0.1
 Cabal-Version:  >= 1.2
 License:        BSD3
 Category:       Development, Source-tools, Utils
@@ -19,4 +19,5 @@ extra-source-files: readme.txt TODO
 Executable htags
   Build-Depends:  base, filepath, directory, mtl, haskell-src
   Main-Is:        htags.hs
+  other-modules: ExCommand, GenTags, Tag
   Hs-Source-Dirs: src
