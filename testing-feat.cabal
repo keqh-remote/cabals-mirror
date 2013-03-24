@@ -1,5 +1,5 @@
 Name:                testing-feat
-Version:             0.1
+Version:             0.2
 Synopsis:            Functional enumeration for systematic and random testing
 Description:         Feat (Functional Enumeration of Abstract Types) 
                      provides an enumeration as a function from natural 
@@ -12,8 +12,9 @@ Description:         Feat (Functional Enumeration of Abstract Types)
                      class instance for most types.
                      "Test.Feat" contain a subset of the other modules that 
                      should be sufficient for most test usage. There 
-                     is a large scale example in the tar ball (testing the 
-                     Template Haskell pretty printer).
+                     are two (somewhat similar) large scale example in the tar 
+                     ball: testing the Template Haskell pretty printer and 
+                     testing haskell-src-exts.
                                           
 License:             BSD3
 License-file:        LICENSE
@@ -24,7 +25,8 @@ Category:            Testing
 Build-type:          Simple
 
 Extra-source-files:  
-    examples/TestTH.hs
+    examples/template-haskell/th.hs
+    examples/haskell-src-exts/hse.hs
 
 Cabal-version:       >=1.2
 
@@ -34,6 +36,7 @@ Library
     Test.Feat, 
     Test.Feat.Access,
     Test.Feat.Class,
+    Test.Feat.Class.Override,
     Test.Feat.Enumerate,
     Test.Feat.Modifiers 
     Control.Monad.TagShare
@@ -50,5 +53,5 @@ Library
   Other-modules:
     Test.Feat.Internals.Derive
     Test.Feat.Internals.Tag
-    
+    Test.Feat.Internals.Newtypes
   
