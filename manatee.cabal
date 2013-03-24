@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.0.7
+version:		0.0.8
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -63,15 +63,15 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  That's all, then type command "manatee" to play it! :)
  .
- You can find simple manual at <http://haskell.org/haskellwiki/Manatee>
- .
  Manatee can work in Gnome or KDE
  .
  Unfortunately, Manatee can't work in XMonad, please let me know if some XMonad hacker know how to fix it. :)
- .               
- IRC channel: 
  .
- irc.freenode.net 6667 <##manatee>
+ Screenshots at : <http://goo.gl/MkVw>
+ .
+ Manual at : <http://haskell.org/haskellwiki/Manatee>
+ .               
+ IRC channel: irc.freenode.net 6667 <##manatee>
  .
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
