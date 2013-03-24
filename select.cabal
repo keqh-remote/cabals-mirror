@@ -1,5 +1,5 @@
 Name:                select
-Version:             0.2
+Version:             0.2.1
 Synopsis:            Give the select(2) POSIX function a simple STM interface
 Homepage:            http://nonempty.org/software/haskell-select
 License:             BSD3
