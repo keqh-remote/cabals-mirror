@@ -1,5 +1,5 @@
 name:               xmonad-contrib-bluetilebranch
-version:            0.8.1
+version:            0.8.1.2
 homepage:           http://xmonad.org/
 synopsis:           Third party extensions for xmonad
 description:        This is a modified version of xmonad-contrib used by Bluetile.
