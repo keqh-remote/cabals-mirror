@@ -1,5 +1,5 @@
 Name:                wai-eventsource
-Version:             1.0.0
+Version:             1.1.0
 Synopsis:            WAI support for server-sent events
 Description:         WAI support for server-sent events
 License:             BSD3
@@ -17,10 +17,10 @@ Library
       base                      >= 4.3 && < 5
     , bytestring                >= 0.9.1.4  && < 0.10
     , blaze-builder             >= 0.3 && < 0.4
-    , conduit
+    , conduit                   >= 0.2
     , http-types                >= 0.6      && < 0.7
-    , wai                       >= 1.0
-    , warp                      >= 1.0
+    , wai                       >= 1.1
+    , warp                      >= 1.1
     , transformers
 
   ghc-options:     -Wall
