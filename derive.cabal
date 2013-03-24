@@ -1,6 +1,7 @@
 Cabal-Version:  >= 1.2
 Name:           derive
-Version:        0.1.1
+Version:        0.1.2
+build-type:     Simple
 Copyright:      2006-7, Neil Mitchell
 Maintainer:     ndmitchell@gmail.com
 Homepage:       http://www-users.cs.york.ac.uk/~ndm/derive/
@@ -24,11 +25,13 @@ Flag small_base
 Library
     Extensions: CPP
     Build-Depends: template-haskell, filepath, mtl
+    if impl(ghc >= 6.10)
+        build-depends: base == 4.*, syb
     if flag(small_base)
         Build-Depends: base >= 3, containers, pretty, packedstring, random, process, directory
-        CPP-Options: "-DNO_SYB"
     else
         Build-Depends: base < 3
+        CPP-Options: "-DTH_SYB"
 
     Exposed-Modules:
         Data.DeriveGuess
@@ -67,6 +70,7 @@ Library
         Data.Derive.Uniplate
         Language.Haskell.TH.All
         Language.Haskell.TH.Data
+        Language.Haskell.TH.ExpandSynonym
         Language.Haskell.TH.FixedPpr
         Language.Haskell.TH.Helper
         Language.Haskell.TH.Peephole
