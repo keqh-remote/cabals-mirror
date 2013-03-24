@@ -1,5 +1,5 @@
 Name:           PropLogic
-Version:        0.9.0.3
+Version:        0.9.0.4
 Cabal-Version:  >= 1.9
 Build-type:     Simple
 License:        BSD3
@@ -25,6 +25,8 @@ Library
 
 Executable program
   Main-Is: Main.hs
+  build-depends:
+    base < 5, old-time, random
 
 source-repository head
   type:     darcs
