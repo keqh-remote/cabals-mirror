@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.2.0.3
+version: 0.2.0.4
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
@@ -34,9 +34,6 @@ description: A Web framework with some unique features thanks to the power of th
              .
              Altroug still it is experimental, it is being used in at least one future commercial project. So I have te commitment to
              continue its development. There are many examples in the documentation and in the package.
-             .
-             Due to compilation problems in Hackage, this release has the bindings for Hack and HSP not exposed,
-             but they can be found in the source files.
              .
              To do:
              .
