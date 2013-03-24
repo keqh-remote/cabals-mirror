@@ -1,5 +1,5 @@
 Name:           synthesizer-core
-Version:        0.4.1
+Version:        0.4.2
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -52,7 +52,7 @@ Flag buildTests
 
 
 Source-Repository this
-  Tag:         0.4.1
+  Tag:         0.4.2
   Type:        darcs
   Location:    http://code.haskell.org/synthesizer/core/
 
@@ -108,6 +108,7 @@ Library
     Synthesizer.Format
     Synthesizer.RandomKnuth
     Synthesizer.Piecewise
+    Synthesizer.Zip
     Synthesizer.Basic.Binary
     Synthesizer.Basic.Distortion
     Synthesizer.Basic.DistortionControlled
@@ -199,6 +200,7 @@ Library
     Synthesizer.Causal.Spatial
     Synthesizer.Causal.Filter.NonRecursive
     Synthesizer.Causal.Filter.Recursive.Integration
+    Synthesizer.CausalIO.Process
     Synthesizer.Generic.Analysis
     Synthesizer.Generic.Cut
     Synthesizer.Generic.Control
@@ -218,6 +220,7 @@ Library
     Synthesizer.Generic.Signal
     Synthesizer.Generic.Signal2
     Synthesizer.Generic.Wave
+    Synthesizer.PiecewiseConstant.Signal
 
     -- that's only exposed for Haddock
     Synthesizer.Plain.Tutorial
