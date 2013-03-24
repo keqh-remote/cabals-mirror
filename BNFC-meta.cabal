@@ -1,5 +1,5 @@
 Name:		BNFC-meta
-version:	0.2.1
+version:	0.2.2
 cabal-Version:  >= 1.6
 build-type:     Simple
 license:        GPL-2
@@ -27,7 +27,7 @@ Library
   Build-Depends: 
     base>=4.2&&<5
     , array==0.3.0.*
-    , template-haskell >=2.4&&<2.6
+    , template-haskell >=2.4&&<2.7
     , haskell-src-meta >= 0.3 && < 1.0
     , happy-meta >= 0.2.0.2
     , alex-meta >= 0.2.0.1
