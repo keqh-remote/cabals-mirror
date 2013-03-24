@@ -1,12 +1,12 @@
 name: buster-gtk
-version: 1.0
+version: 2.0
 cabal-version: -any
 build-type: Simple
 license: BSD3
 license-file: LICENSE
 copyright: 2009 Renaissance Computing Institute
 maintainer: Jeff Heard <jeff@renci.org>
-build-depends: buster >= 1.0, gtk -any, binary -any, parsec >=3.0.0, pretty -any, mtl -any, bytestring -any, base -any, containers -any, time -any, old-locale -any, dataenc -any
+build-depends: buster >= 2.0, gtk -any, binary -any, parsec >=3.0.0, pretty -any, mtl -any, bytestring -any, base -any, containers -any, time -any, old-locale -any, dataenc -any
 stability: Experimental
 homepage: http://vis.renci.org/jeff/buster
 package-url:
