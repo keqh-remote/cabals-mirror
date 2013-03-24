@@ -1,12 +1,12 @@
 name: Tensor
-version: 1.0.0.0
+version: 1.0.0.1
 license: BSD3
 license-file: LICENSE
 maintainer: Sven Panne <sven.panne@aedion.de>
 bug-reports: mailto:hopengl@haskell.org
 homepage: http://www.haskell.org/HOpenGL/
 category: Data
-synopsis: State variables
+synopsis: Tensor data types
 description:
    This package contains tensor data types and their instances for some basic
    type classes.
