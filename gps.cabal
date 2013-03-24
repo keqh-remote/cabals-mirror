@@ -1,5 +1,5 @@
 name:		gps
-version:	0.2.4
+version:	0.3.0
 license:	BSD3
 license-file:	LICENSE
 author:		Thomas DuBuisson <thomas.dubuisson@gmail.com>
@@ -17,13 +17,9 @@ Flag small_base
   Description: Choose the split-up base package.
 
 Library
-  if flag(small_base)
-    Build-Depends: base >= 3 && < 5, bytestring >= 0.9 && < 1.0, binary >= 0.4.0 && < 0.6.0,
+  Build-Depends: base >= 3 && < 5, bytestring >= 0.9 && < 1.0, binary >= 0.4.0 && < 0.6.0,
                    pretty >= 1.0 && < 1.1 , prettyclass >= 1.0 && < 1.1, xml >= 1.3 && < 1.4,
                    time >= 1.1.2 && < 1.2
-  else
-    Build-Depends: base >= 3 && < 5, bytestring >= 0.9 && < 1.0, binary >= 0.4.0 && < 0.6.0,
-                   pretty >= 1.0 && < 1.1 , prettyclass >= 1.0 && < 1.1, xml >= 1.3 && < 1.4
   hs-source-dirs:
-  exposed-modules: Data.GPS
+  exposed-modules: Data.GPS, Data.GPS.KML
   ghc-options:
