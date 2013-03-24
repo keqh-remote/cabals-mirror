@@ -1,5 +1,5 @@
 Name:          natural-numbers
-Version:       0.0.0.0
+Version:       0.0.1.0
 Cabal-Version: >= 1.6
 Build-Type:    Simple
 License:       BSD3
