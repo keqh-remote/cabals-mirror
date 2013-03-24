@@ -1,5 +1,5 @@
 name:                tkhs
-version:             0.1.0.5
+version:             0.1.0.6
 synopsis:            Simple Presentation Utility
 description:         If you want to give your presentation in a terminal,
                      or if PowerPoint would be overkill, you may find tkhs useful.
@@ -12,7 +12,7 @@ maintainer:          Yusaku Hashimoto <nonowarn@gmail.com>
 build-type:          Custom
 cabal-version:       >= 1.6
 stability:           experimental
-homepage:            http://patch-tag.com/r/tkhs/snapshot/current/content/pretty/README
+homepage:            http://patch-tag.com/r/nonowarn/tkhs/snapshot/current/content/pretty/README
 
 flag test
   description:       Build test program.
