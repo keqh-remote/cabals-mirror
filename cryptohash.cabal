@@ -1,5 +1,5 @@
 Name:                cryptohash
-Version:             0.6.2
+Version:             0.6.3
 Description:
     A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,
     with performance close to the fastest implementations available in others languages.
@@ -43,6 +43,7 @@ Library
                      Crypto.Hash.SHA256
                      Crypto.Hash.SHA384
                      Crypto.Hash.SHA512
+                     Crypto.Hash.SHA512t
                      Crypto.Hash.MD2
                      Crypto.Hash.MD4
                      Crypto.Hash.MD5
