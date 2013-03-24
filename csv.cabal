@@ -1,7 +1,9 @@
 Name:                csv
-Version:             0.1.1
+Version:             0.1.2
 Category:            Text
 Synopsis:            CSV loader and dumper
+cabal-version:       >= 1.4
+build-type:          Simple
 Description:         CSV loader and dumper
         .
         This library parses and dumps documents that are formatted 
@@ -10,9 +12,12 @@ Description:         CSV loader and dumper
         many other things, as a lingua franca for spreadsheets, and for
         certain web services.
 Copyright:           Jaap Weel, 2007
-License:             LGPL
+License:             MIT
 License-file:        COPYING
 Author:              Jaap Weel <weel@ugcs.caltech.edu>
 Maintainer:          Jaap Weel <weel@ugcs.caltech.edu>
-Build-Depends:       base, parsec, filepath
-Exposed-modules:     Text.CSV
+
+Library
+    Build-Depends:       base, parsec, filepath
+    build-depends:       base >= 2 && < 5
+    Exposed-modules:     Text.CSV
