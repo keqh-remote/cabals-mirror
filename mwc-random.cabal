@@ -1,5 +1,5 @@
 name:           mwc-random
-version:        0.8.0.2
+version:        0.8.0.3
 synopsis:       Fast, high quality pseudo random number generation
 description:
   This package contains code for generating high quality random
@@ -25,7 +25,7 @@ category:       Math, Statistics
 build-type:     Simple
 cabal-version:  >= 1.6
 extra-source-files:
-  README
+  README.markdown
   benchmarks/Benchmark.hs
   benchmarks/Quickie.hs
 
