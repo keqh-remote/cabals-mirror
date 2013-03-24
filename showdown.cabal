@@ -1,5 +1,5 @@
 name:                showdown
-version:             0.1
+version:             0.5
 synopsis:            A simple gtk based Russian Roulette game.
 description:         A Russian Roulette game written in Haskell
 		     Using GTK2HS and Glade.
