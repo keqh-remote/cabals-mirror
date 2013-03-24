@@ -1,5 +1,5 @@
 Name:                CSPM-CoreLanguage
-Version:             0.2.0.3
+Version:             0.3.0.0
 Synopsis:            Definition of a FDR-compatible CSP core-language. 
 Description:
   This package contains an interface for a CSP core-language.
@@ -15,9 +15,8 @@ License:             BSD3
 License-File:        LICENSE
 Author:              2010 - 2011 Marc Fontaine
 Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
-Homepage:            http://www.stups.uni-duesseldorf.de/~fontaine/csp
 Stability:           experimental
-Tested-With:         GHC == 7.0.2
+Tested-With:         GHC == 7.0.3
 Cabal-Version:       >= 1.10
 Build-Type:          Simple
 
@@ -34,3 +33,5 @@ Library
     CSPM.CoreLanguage.Process
     CSPM.CoreLanguage.ProcessWrapper
     CSPM.CoreLanguage.Field
+  Other-Modules:
+    Paths_CSPM_CoreLanguage
