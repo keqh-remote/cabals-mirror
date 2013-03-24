@@ -1,5 +1,5 @@
 Name:                multiset-comb
-Version:             0.2.1
+Version:             0.2.2
 Synopsis:            Combinatorial algorithms over multisets
 Description:         Various combinatorial algorithms over multisets,
                      including generating all permutations,
@@ -13,7 +13,7 @@ Maintainer:          byorgey@cis.upenn.edu
 Copyright:           (c) 2010 Brent Yorgey
 Stability:           Experimental
 Category:            Math
-Tested-with:         GHC ==6.10.4, GHC ==6.12.1
+Tested-with:         GHC ==6.10.4, GHC ==6.12.1, GHC ==7.0.3
 Build-type:          Simple
 Cabal-version:       >=1.6
 source-repository head
