@@ -1,5 +1,5 @@
 Name:           AERN-Real
-Version:        0.9.7.2
+Version:        0.9.8
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -42,19 +42,19 @@ Library
   if flag(containers-in-base)
     if flag(use-hmpfr)
       Build-Depends:
-        base < 3, binary >= 0.4, hmpfr == 0.1.1
+        base < 3, binary >= 0.4, html >= 1.0, regex-compat >= 0.71, stm, hmpfr == 0.1.3
       cpp-options: -DUSE_MPFR
     else
       Build-Depends:
-        base < 3, binary >= 0.4
+        base < 3, binary >= 0.4, html >= 1.0, regex-compat >= 0.71, stm
   else
     if flag(use-hmpfr)
       Build-Depends:
-        base >= 3, containers, binary >= 0.4, hmpfr == 0.1.1
+        base >= 3, containers, binary >= 0.4, html >= 1.0, regex-compat >= 0.71, stm, hmpfr == 0.1.3
       cpp-options: -DUSE_MPFR
     else
       Build-Depends:
-        base >= 3, containers, binary >= 0.4
+        base >= 3, containers, binary >= 0.4, html >= 1.0, regex-compat >= 0.71, stm
   Exposed-modules:
     Data.Number.ER,
     Data.Number.ER.Real,
@@ -76,8 +76,10 @@ Library
     Data.Number.ER.Real.Approx,
     Data.Number.ER.Real.DomainBox,
     Data.Number.ER.Real.DomainBox.IntMap,
+    Data.Number.ER.ShowHTML,
     Data.Number.ER.PlusMinus,
     Data.Number.ER.BasicTypes,
     Data.Number.ER.Misc,
+    Data.Number.ER.MiscSTM,
     Data.Number.ER.ExtendedInteger
  
