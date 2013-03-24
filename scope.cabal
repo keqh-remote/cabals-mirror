@@ -1,6 +1,6 @@
 Name:                scope
 
-Version:             0.5.1.0
+Version:             0.5.2.0
 
 Synopsis:            An interactive renderer for plotting time-series data
 
@@ -16,7 +16,7 @@ Description:
     To run it, simply:
     .
     @
-        $ cabal install scope
+        $ cabal install gtk2hs-buildtools scope
         $ scope
     @
     .
@@ -50,9 +50,6 @@ Data-Files:
   demo/demo2.zoom
   demo/demo3.zoom
   demo/demo4.zoom
-  demo/demo-2ch.zoom
-  demo/demo-offset1.zoom
-  demo/demo-short1.zoom
 
 flag splitBase
   description: Use the split-up base package.
@@ -71,7 +68,7 @@ Library
     iteratee                  >= 0.8.6.0 && < 0.9,
     MonadCatchIO-transformers >  0.2     && < 0.3,
     mtl                       >= 2.0.0.0 && < 3,
-    zoom-cache                >= 0.9.0.0 && < 0.10
+    zoom-cache                >= 0.9.1.0 && < 0.10
 
   Exposed-modules:
     Scope.View
@@ -99,7 +96,7 @@ Executable scope
     MonadCatchIO-transformers >  0.2     && < 0.3,
     mtl                       >= 2.0.0.0 && < 3,
     mwc-random,
-    zoom-cache                >= 0.9.0.0 && < 0.10
+    zoom-cache                >= 0.9.1.0 && < 0.10
 
 ------------------------------------------------------------------------
 -- Git repo
