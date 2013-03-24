@@ -1,5 +1,5 @@
 Name:		hxournal
-Version:	0.6.4.3
+Version:	0.6.5
 Synopsis:	A pen notetaking program written in haskell 
 Description: 	notetaking program written in haskell and gtk2hs
 Homepage:       http://ianwookim.org/hxournal
@@ -48,10 +48,10 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types >= 0.3.2 && < 0.4,
-                     xournal-parser >= 0.3.0.2 && < 0.4,
-                     xournal-render >= 0.5.1 && < 0.6,
-                     xournal-builder >= 0.1.0.2 && < 0.2,
+                     xournal-types == 0.4.*,
+                     xournal-parser == 0.4.*,
+                     xournal-render == 0.6.*,
+                     xournal-builder >= 0.1.1 && < 0.2,
                      containers == 0.4.*,
                      template-haskell == 2.*,
                      bytestring == 0.9.*, 
@@ -63,7 +63,6 @@ Library
                      time == 1.2.*, 
                      TypeCompose == 0.9.*, 
                      Diff == 0.1.*
-
   else 
     Build-Depends:   base == 4.*, 
                      mtl == 2.*,
@@ -74,10 +73,10 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types >= 0.3.1.999 && < 0.4,
-                     xournal-parser >= 0.3.0.2 && < 0.4,
-                     xournal-render >= 0.5.1 && < 0.6,
-                     xournal-builder >= 0.1.0.2 && < 0.2,
+                     xournal-types == 0.4.*,
+                     xournal-parser == 0.4.*,
+                     xournal-render == 0.6.*,
+                     xournal-builder >= 0.1.1 && < 0.2,
                      containers == 0.4.*,
                      template-haskell == 2.*,
                      bytestring == 0.9.*, 
