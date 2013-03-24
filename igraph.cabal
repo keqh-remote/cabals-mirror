@@ -1,8 +1,12 @@
 Name:                 igraph
-Version:              0.1
+Version:              0.1.1
+
 Synopsis:             Bindings to the igraph C library.
 Description:          Complete bindings to all functions about graph properties
                       of the igraph C library. Requires igraph 0.6.
+                      Documentation is available at:
+                      <http://giorgidze.github.com/igraph/>
+
 License:              BSD3
 License-file:         LICENSE
 Author:               Nils Schweinsberg, George Giorgidze
@@ -11,9 +15,11 @@ Category:             Data Structures, Graphs
 Build-type:           Simple
 Cabal-version:        >=1.6
 
+Homepage:             http://giorgidze.github.com/igraph/
+
 source-repository head
   type:               git
-  location:           https://github.com/giorgidze/igraph
+  location:           https://github.com/giorgidze/igraph.git
 
 Library
   GHC-options:
