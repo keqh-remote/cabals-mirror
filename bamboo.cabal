@@ -1,5 +1,5 @@
 Name:                 bamboo
-Version:              2009.5.22
+Version:              2009.5.23
 Build-type:           Simple
 Synopsis:             A simple blog middleware on hack
 Description:          A simple blog middleware on hack
@@ -30,7 +30,8 @@ library
                     Bamboo.Helper.Env
                     Bamboo.Helper.PreludeEnv
                     Bamboo.Helper.ThumbHelper
-
+                    Bamboo.Helper.ByteString
+                    
                     Bamboo.Model.Tag
                     Bamboo.Model.Post
                     Bamboo.Model.Helper
