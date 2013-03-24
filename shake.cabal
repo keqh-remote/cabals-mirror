@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               shake
-version:            0.2.7
+version:            0.2.8
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -38,6 +38,15 @@ extra-source-files:
     Examples/C/constants.h
     Examples/C/main.c
     Examples/Tar/list.txt
+
+data-files:
+  html/*.png
+  html/*.min.js
+  html/*.min.css
+  html/report.html
+  html/jquery-1.6.4.min.js
+  html/jquery.flot.min.js
+  html/shake.js
 
 source-repository head
     type:     darcs
@@ -79,8 +88,10 @@ library
         Development.Shake.Locks
         Development.Shake.Oracle
         Development.Shake.Pool
+        Development.Shake.Report
         Development.Shake.Rerun
         Development.Shake.Value
+        Paths_shake
 
 executable shake
     main-is: Main.hs
