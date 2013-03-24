@@ -1,9 +1,9 @@
 Name: HDBC
-Version: 1.1.6
+Version: 2.0.0
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
-Copyright: Copyright (c) 2005-2008 John Goerzen
+Copyright: Copyright (c) 2005-2009 John Goerzen
 license-file: COPYRIGHT
 extra-source-files: COPYING
 homepage: http://software.complete.org/hdbc
@@ -16,22 +16,42 @@ Description: HDBC provides an abstraction layer between Haskell programs and SQL
 Stability: Stable
 Build-Type: Simple
 
-Cabal-Version: >=1.2
+Cabal-Version: >=1.2.3
 
 flag splitBase
   description: Choose the new smaller, split-up base package.
+flag buildtests
+  description: Build the executable to run unit tests
+  default: False
+
 library
   if flag(splitBase)
-    Build-Depends: base>=3 && < 4, old-time, bytestring, containers
+    Build-Depends: base>=3, old-time, time, bytestring, containers, old-locale
   else
     Build-Depends: base<3
-  Build-Depends: mtl
+  Build-Depends: mtl, convertible >= 1.0.1, utf8-string
 
-  GHC-Options: -O2 -Wall -fglasgow-exts
+  GHC-Options: -O2 -Wall -fno-warn-orphans
 
   Exposed-Modules: Database.HDBC, Database.HDBC.Types, Database.HDBC.DriverUtils,
-    Database.HDBC.ColTypes, Database.HDBC.Statement
+    Database.HDBC.ColTypes, Database.HDBC.Statement, Database.HDBC.SqlValue
   Other-Modules: Database.HDBC.Utils
-  --Extensions: ExistentialQuantification, AllowOverlappingInstances,
-  --    AllowUndecidableInstances
-  Extensions: ExistentialQuantification
+  Extensions: ExistentialQuantification, CPP, MultiParamTypeClasses,
+    FlexibleContexts, TypeSynonymInstances, TypeOperators, RankNTypes,
+    FlexibleInstances
+    
+Executable runtests
+   if flag(buildtests)
+      Buildable: True
+   else
+      Buildable: False
+   Build-Depends: HUnit, QuickCheck, testpack
+   Main-Is: runtests.hs
+   Other-Modules: TestSqlValue
+                  TestInfrastructure
+   Hs-Source-Dirs: ., testsrc
+   GHC-Options: -O2
+   Extensions: ExistentialQuantification, CPP, MultiParamTypeClasses,
+     FlexibleContexts, TypeSynonymInstances, TypeOperators,
+     RankNTypes, FlexibleInstances
+   
