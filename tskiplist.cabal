@@ -13,7 +13,7 @@ Author:         Peter Robinson 2010-2012
 Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        LGPL
 License-file:   LICENSE
-Version:        0.1.0
+Version:        0.1.1
 Category:       Data, Concurrency
 Stability:      experimental
 Homepage:       http://darcs.monoid.at/tskiplist
