@@ -1,5 +1,5 @@
 name:           Bookshelf
-version:        0.1.6
+version:        0.2
 synopsis:       A simple document organizer with some wiki functionality
 description:    A simple document organizer with some wiki functionality
 category:       Text
@@ -27,6 +27,6 @@ source-repository head
   location:  http://projects.haskell.org/Bookshelf/
 
 executable bookshelf
-  build-depends:  base < 5, filepath, directory, parseargs, pandoc >= 1.8, pandoc-types >= 1.8
+  build-depends:  base < 5, filepath, directory, parseargs, pandoc >= 1.10, pandoc-types >= 1.10
   main-is:        Bookshelf.hs
 
