@@ -1,5 +1,5 @@
 name:                carray
-version:             0.1.2
+version:             0.1.3
 synopsis:            A C-compatible array library.
 description:
 		     A C-compatible array library.
@@ -18,7 +18,11 @@ cabal-version:       >=1.2
 build-type:	     Simple
 
 flag splitBase
+  description: array was in base < 3
 flag bytestringInBase
+  description: bytestring was included in base for 2.0 and 2.1
+flag base4
+  description: syb was split from base >= 4 
 
 library
   if flag(bytestringInBase)
@@ -31,6 +35,12 @@ library
   else
     build-depends: base < 3, binary
 
+  if flag(base4)
+    build-depends: base >= 4, syb >= 0.1
+  else
+    build-depends: base < 4
+
   exposed-modules:   Data.Array.CArray
                      Data.Array.IOCArray
                      Data.Array.CArray.Base
+  ghc-options: -Wall
