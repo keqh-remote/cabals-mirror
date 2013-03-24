@@ -1,5 +1,5 @@
 Name:                biostockholm
-Version:             0.2
+Version:             0.2.1
 Synopsis:            Parsing and rendering of Stockholm files (used by Pfam, Rfam and Infernal).
 License:             BSD3
 License-file:        LICENSE
@@ -40,11 +40,11 @@ Library
       , containers         >= 0.2   && < 0.5
       , bytestring         == 0.9.*
       , deepseq            >= 1.1   && < 1.3
-      , conduit            == 0.1.*
+      , conduit            == 0.2.*
       , attoparsec         == 0.10.*
-      , attoparsec-conduit == 0.0.*
+      , attoparsec-conduit == 0.2.*
       , blaze-builder      == 0.3.*
-      , blaze-builder-conduit == 0.0.*
+      , blaze-builder-conduit == 0.2.*
 
       , biocore            >= 0.1   && < 0.3
 
@@ -54,17 +54,15 @@ Test-suite runtests
   Main-is: runtests.hs
   Ghc-Options: -Wall
   Build-depends:
-        base               >= 3     && < 5
-      , containers         >= 0.2   && < 0.5
-      , bytestring         == 0.9.*
-      , conduit            == 0.1.*
+        base
+      , containers
+      , bytestring
+      , conduit
       , zlib-conduit
+      , biocore
+
       , transformers       >= 0.2
-
-      , biocore            >= 0.1   && < 0.3
-
       , hspec              == 0.9.*
       , HUnit
       , QuickCheck
-
       , biostockholm
