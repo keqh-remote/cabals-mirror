@@ -1,5 +1,5 @@
 Name:                 bamboo
-Version:              2010.1.26
+Version:              2010.2.25
 Build-type:           Simple
 Synopsis:             A blog engine on Hack
 License:              GPL
@@ -10,7 +10,11 @@ Build-Depends:        base
 Cabal-version:        >= 1.2
 category:             Web
 homepage:             http://github.com/nfjinjing/bamboo/tree/master
-data-files:           readme.md, changelog.md, Nemesis
+data-files:           readme.md
+                    , changelog.md
+                    , Nemesis
+                    , scripts/mkentry.sh
+                    , scripts/post-receive
 
 library
   ghc-options: -Wall -fno-warn-orphans 
@@ -24,7 +28,6 @@ library
                   , time
                   , unix
                   , bytestring
-                  , base64-string
                   , zlib
                   , directory
                   , filepath
