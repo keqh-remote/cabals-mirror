@@ -1,5 +1,5 @@
 name:           ftshell
-version:        0.3
+version:        0.3.0.1
 license:        PublicDomain
 license-file:   LICENSE
 author:         Sascha Boehme
@@ -14,11 +14,11 @@ category:       Language, Source-tools
 tested-with:    GHC==6.8.2
 build-type:     Simple
 build-depends:
-    base >= 1.0
+    base >= 1.0 && < 4
   , mtl >= 1.0
   , Shellac >= 0.9
   , Shellac-readline >= 0.9
-  , free-theorems >= 0.3
+  , free-theorems >= 0.3.1.3 && < 0.4
   , pretty >= 1.0.0.0
   , containers >= 0.1.0.1
 data-files:
