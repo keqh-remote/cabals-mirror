@@ -1,5 +1,5 @@
 name:		OpenGL
-version:	2.2.2.0
+version:	2.2.3.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Sven Panne <sven.panne@aedion.de>
@@ -17,10 +17,9 @@ description:
 	about OpenGL, please see: <http://www.opengl.org/>.
 build-type:     Configure
 extra-source-files:
-	config.guess config.sub install-sh
-	configure.ac configure OpenGL.buildinfo.in
-        include/HsOpenGLConfig.h.in include/HsOpenGL.h.in
-	include/HsOpenGLExt.h include/HsOpenGLTypes.h
+	OpenGL.buildinfo.in README aclocal.m4 config.guess config.sub configure
+	configure.ac include/HsOpenGL.h.in include/HsOpenGLExt.h
+	include/HsOpenGLTypes.h install-sh include/HsOpenGLConfig.h.in
 extra-tmp-files:
 	config.log config.status autom4te.cache
 	OpenGL.buildinfo include/HsOpenGLConfig.h include/HsOpenGL.h
@@ -105,10 +104,12 @@ other-modules:
 	Graphics.Rendering.OpenGL.GL.PrimitiveMode,
 	Graphics.Rendering.OpenGL.GL.QueryUtils,
 	Graphics.Rendering.OpenGL.GL.RenderMode,
+	Graphics.Rendering.OpenGL.GL.Tensor,
 	Graphics.Rendering.OpenGL.GL.Texturing.PixelInternalFormat,
 	Graphics.Rendering.OpenGL.GL.Texturing.TexParameter,
 	Graphics.Rendering.OpenGL.GL.Texturing.TextureTarget,
 	Graphics.Rendering.OpenGL.GL.Texturing.TextureUnit,
+	Graphics.Rendering.OpenGL.GL.VertexAttributes,
 	Graphics.Rendering.OpenGL.GLU.ErrorsInternal
 c-sources:	cbits/HsOpenGL.c
 include-dirs:	include
