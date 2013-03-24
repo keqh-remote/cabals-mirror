@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       4.0.2
+Version:       4.0.3
 Category:      Control, FRP
 Synopsis:      Flexible wire arrows for FRP
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -32,7 +32,6 @@ Library
         semigroups    >= 0.8 && < 1,
         tagged        >= 0.4 && < 1,
         time          >= 1.4 && < 2,
-        vector        >= 0.9 && < 1,
         vector-space  >= 0.8 && < 1
     Default-language: Haskell2010
     Default-extensions:
