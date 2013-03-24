@@ -1,5 +1,5 @@
 name:               PageIO
-version:            0.0.2
+version:            0.0.3
 copyright:          2008 Audrey Tang
 license:            BSD3
 license-file:       LICENSE
@@ -12,13 +12,25 @@ description:        Provides an interface to the PageIn export format (.dux)
                     (Extremely experimental, no documentations at the moment!)
 stability:          experimental
 build-type:         Simple
-extensions:         GeneralizedNewtypeDeriving, RecordPuns, ParallelListComp, PatternGuards
+extensions:         GeneralizedNewtypeDeriving, RecordPuns, ParallelListComp, PatternGuards, PatternSignatures
 exposed-modules:    Text.PageIO
                     Text.PageIO.Extract Text.PageIO.LabelMap
                     Text.PageIO.Parser Text.PageIO.Run
                     Text.PageIO.Transform Text.PageIO.Types 
-build-depends:      base, array, bytestring, parsec >= 3.0, containers, stringtable-atom, iconv
+                    Text.PageIO.Infer Text.PageIO.Index
+build-depends:      base, array, bytestring, attoparsec >= 0.4, containers,
+                    stringtable-atom, iconv, uuid, sqlite, utf8-string,
+                    network, base64-string, regex-compat, regex-base, regex-tdfa, old-time, directory
 extra-source-files: README
+extra-lib-dirs:     /usr/lib /usr/local/lib
+include-dirs:       /usr/include /usr/local/include
 hs-source-dirs:     src
 category:           Text
-ghc-options:        -O2
+-- ghc-options:        -O
+
+executable:         pio
+main-is:            pio.hs
+hs-source-dirs:     ., src
+extra-lib-dirs:     /usr/lib /usr/local/lib
+include-dirs:       /usr/include /usr/local/include
+-- ghc-options:        -prof -auto-all
