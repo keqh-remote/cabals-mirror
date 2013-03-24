@@ -1,5 +1,5 @@
 name:          kibro
-version:       0.0
+version:       0.1
 synopsis:      Web development framework.
 description:   Web development framework.
 category:      Web
@@ -12,8 +12,8 @@ build-type:    Simple
 cabal-Version: >= 1.2
 
 library
-   build-depends: base,HDBC,mtl,regex-compat,random,safe,xhtml,containers,fastcgi,cgi,HDBC-sqlite3
-   exposed-modules: Kibro,Kibro.DB.Sqlite3
+   build-depends: base,HDBC,mtl,regex-compat,random,safe,xhtml,containers,fastcgi,cgi,HDBC-sqlite3,data-default
+   exposed-modules: Kibro,Kibro.DB,Kibro.DB.Sqlite3
    hs-source-dirs: library/
    GHC-Prof-options: -auto-all
 
