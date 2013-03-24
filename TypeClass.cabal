@@ -1,5 +1,5 @@
 name:           TypeClass
-version:        0.1
+version:        0.1.1
 cabal-version:  >= 1.2
 build-type:     Simple
 author:         JP Moresmau
@@ -16,6 +16,6 @@ executable TypeClass
   main-is:         Main.hs
   ghc-options:     -Wall -fno-warn-unused-do-bind
   extensions:      NamedFieldPuns
-  build-depends:   SDL, SDL-ttf
+  build-depends:   base < 5, SDL, SDL-ttf, random, containers
 
   
