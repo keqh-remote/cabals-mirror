@@ -1,6 +1,7 @@
 cabal-Version: >= 1.2
 name: gtk2hs-rpn
-version: 0.1
+version: 0.2
+homepage: http://bitbucket.org/mauricio/gtk2hs-rpn
 synopsis:
   Adds a module to gtk2hs allowing layouts to be defined using
   reverse polish notation.
@@ -18,11 +19,18 @@ license: LGPL
 license-file: LICENSE
 maintainer: Maurício CA <mauricio.antunes@gmail.com>
 category: GUI
+bug-reports: http://bitbucket.org/mauricio/gtk2hs-rpn/issues
 Library
-  build-depends: base, gtk >= 0.10, cairo, mtl, glib
+  build-depends:
+    base >= 4 && < 5,
+    gtk >= 0.11 && < 0.12,
+    cairo >= 0.11 && < 0.12,
+    glib >= 0.11 && < 0.12,
+    mtl >= 1.1.0.2 && < 1.2
   hs-source-dirs: src
   extensions:
     NoMonomorphismRestriction
+    ScopedTypeVariables
   exposed-modules:
     Graphics.UI.Gtk.Layout.Rpn
   other-modules: RPN, Basic, CanBeCasted
