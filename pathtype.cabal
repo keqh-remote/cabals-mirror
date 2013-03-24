@@ -1,5 +1,5 @@
 Name:                pathtype
-Version:             0.5.1
+Version:             0.5.2
 Synopsis:            Type-safe replacement for System.FilePath etc
 Description:         This package provides type-safe access to filepath manipulations.
 		     .
