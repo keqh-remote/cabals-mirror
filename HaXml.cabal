@@ -1,8 +1,8 @@
 name:		HaXml
-version:	1.20.2
+version:	1.22
 license:	LGPL
 license-file:	COPYRIGHT
-author:		Malcolm Wallace <Malcolm.Wallace@cs.york.ac.uk>
+author:		Malcolm Wallace <Malcolm.Wallace@me.com>
 maintainer:	author
 homepage:	http://www.cs.york.ac.uk/fp/HaXml/
 category:	Text, XML
@@ -32,12 +32,20 @@ library
         Text.XML.HaXml.Html.ParseLazy,
         Text.XML.HaXml.Html.Pretty,
         Text.XML.HaXml.Lex,
+        Text.XML.HaXml.Namespaces,
         Text.XML.HaXml.OneOfN,
         Text.XML.HaXml.Parse,
         Text.XML.HaXml.ParseLazy,
         Text.XML.HaXml.Posn,
         Text.XML.HaXml.Pretty,
         Text.XML.HaXml.SAX,
+        Text.XML.HaXml.Schema.Parse,
+        Text.XML.HaXml.Schema.XSDTypeModel,
+        Text.XML.HaXml.Schema.HaskellTypeModel,
+        Text.XML.HaXml.Schema.NameConversion,
+        Text.XML.HaXml.Schema.TypeConversion,
+        Text.XML.HaXml.Schema.PrettyHaskell,
+        Text.XML.HaXml.Schema.PrimitiveTypes,
         Text.XML.HaXml.ShowXmlLazy,
         Text.XML.HaXml.Types,
         Text.XML.HaXml.TypeMapping,
@@ -51,8 +59,11 @@ library
         Text.XML.HaXml.Xtract.Combinators,
         Text.XML.HaXml.Xtract.Lex,
         Text.XML.HaXml.Xtract.Parse
+  if impl(ghc)
+    exposed-modules:
+        Text.XML.HaXml.Schema.Schema
   hs-source-dirs: src
-  build-depends: haskell98, polyparse >= 1.2, filepath
+  build-depends: polyparse >= 1.5, filepath
   if flag(splitBase)
     build-depends: base >= 3 && < 6, pretty, random, containers
   else
@@ -62,54 +73,54 @@ library
   else
     build-depends: base < 2 || >= 3, bytestring
   extensions: CPP, ExistentialQuantification
-  cpp-options: -DMYVERSION="1.20.2"
+  cpp-options: -DMYVERSION="\"1.22\""
   nhc98-options: -K10M
 
 Executable Canonicalise
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools, src
-  cpp-options: -DMYVERSION="1.20.2"
+  cpp-options: -DMYVERSION="\"1.22\""
   Main-Is: Canonicalise.hs
 
 Executable CanonicaliseLazy
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools, src
-  cpp-options: -DMYVERSION="1.20.2"
+  cpp-options: -DMYVERSION="\"1.22\""
   Main-Is: CanonicaliseLazy.hs
 
 Executable Xtract
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools, src
-  cpp-options: -DMYVERSION="1.20.2"
+  cpp-options: -DMYVERSION="\"1.22\""
   Main-Is: Xtract.hs
-
-Executable XtractLazy
-  GHC-Options: -Wall
-  Extensions:  CPP
-  Hs-Source-Dirs: src/tools, src
-  cpp-options: -DMYVERSION="1.20.2"
-  Main-Is: XtractLazy.hs
 
 Executable Validate
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools, src
-  cpp-options: -DMYVERSION="1.20.2"
+  cpp-options: -DMYVERSION="\"1.22\""
   Main-Is: Validate.hs
 
 Executable MkOneOf
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools, src
-  cpp-options: -DMYVERSION="1.20.2"
+  cpp-options: -DMYVERSION="\"1.22\""
   Main-Is: MkOneOf.hs
 
 Executable DtdToHaskell
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools, src
-  cpp-options: -DMYVERSION="1.20.2"
+  cpp-options: -DMYVERSION="\"1.22\""
   Main-Is: DtdToHaskell.hs
+
+Executable XsdToHaskell
+  GHC-Options: -Wall
+  Extensions:  CPP
+  Hs-Source-Dirs: src/tools, src
+  cpp-options: -DMYVERSION="\"1.22\""
+  Main-Is: XsdToHaskell.hs
