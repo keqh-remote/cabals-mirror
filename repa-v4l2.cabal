@@ -7,7 +7,7 @@ Name:                repa-v4l2
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.0.0
+Version:             0.2.0.0
 
 -- A short (one-line) description of the package.
 Synopsis:            Provides high-level access to webcams.
@@ -18,9 +18,6 @@ Description:         The current state is that the library provides a monad for
    image processing functions and other input devices may be added.
    If anyone wants to help, please contact me!
 
-   It has been pointed out on haskell-cafe that the v4l2 package that
-   is needed by this package is not (yet?) on hackage. Therefore
-   this library is not building on hackage.   
 
 -- The license under which the package is released.
 License:             LGPL
@@ -66,11 +63,11 @@ Library
   -- Modules exported by the library.
   Exposed-modules: Graphics.Webcam.Linux
   Other-modules: Graphics.Webcam.Linux.Internal
-  ghc-options: -fllvm  
+  ghc-options: -Odph -fno-liberate-case -funfolding-use-threshold1000 -funfolding-keeness-factor1000 -fllvm -optlo-O3
   
   -- Packages needed in order to build this package.
   Build-depends: base == 4.*,
-                 repa >= 3.0,
+                 repa >= 3.2.1.1,
                  --repa-devil >= 0.1.2,
                  transformers >= 0.2.2,
                  containers >= 0.2,
@@ -87,7 +84,7 @@ Library
   
 Executable example
         main-is: example.hs
-        ghc-options: -fllvm -threaded
+        ghc-options: -threaded -rtsopts -Odph -fno-liberate-case -funfolding-use-threshold1000 -funfolding-keeness-factor1000 -fllvm -optlo-O3
         build-depends: gloss >= 1.7.2.1,
                        repa-v4l2 >= 0.1,
                        base == 4.*,
