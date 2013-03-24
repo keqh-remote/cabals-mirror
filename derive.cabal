@@ -1,9 +1,9 @@
 Cabal-Version:  >= 1.6
 Build-Type:     Default
 Name:           derive
-Version:        2.4.1
+Version:        2.4.2
 build-type:     Simple
-Copyright:      2006-2010, Neil Mitchell
+Copyright:      2006-2011, Neil Mitchell
 Maintainer:     ndmitchell@gmail.com
 Homepage:       http://community.haskell.org/~ndm/derive/
 License:        BSD3
@@ -37,7 +37,7 @@ Library
     Build-Depends:
         base == 4.*,
         filepath, syb, template-haskell, containers, pretty,
-        haskell-src-exts == 1.9.*,
+        haskell-src-exts >= 1.9 && < 1.11,
         transformers == 0.2.*,
         uniplate >= 1.5 && < 1.7
 
