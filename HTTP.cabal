@@ -1,5 +1,5 @@
 Name:               HTTP
-Version:            3001.1.4
+Version:            3001.1.5
 Cabal-Version:      >= 1.2
 Build-type:         Simple
 License:            BSD3
@@ -37,6 +37,7 @@ Library
                  Network.HTTP.MD5,
                  Network.HTTP.MD5Aux
   GHC-options: -fwarn-missing-signatures
+  Extensions: DeriveDataTypeable
   Build-depends: network, parsec
 
   if flag(old-base)
