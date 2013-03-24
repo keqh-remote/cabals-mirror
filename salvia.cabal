@@ -1,5 +1,5 @@
 Name:             salvia
-Version:          0.1.1
+Version:          0.1.2
 Description:      Lightweight Haskell Web Server Framework with modular support
                   for serving static files, directories indices, default error
                   responses, connection counting and logging, HEAD and PUT
@@ -11,30 +11,31 @@ Description:      Lightweight Haskell Web Server Framework with modular support
                   more...
 
 Synopsis:         Lightweight Haskell Web Server Framework 
+Cabal-version:    >= 1.6
 Category:         Network, Web
 License:          BSD3
 License-file:     LICENSE
 Author:           Sebastiaan Visser
 Maintainer:       sfvisser@cs.uu.nl
 Build-Type:       Simple
-Build-Depends:    base,
-                  bimap,
-                  bytestring,
-                  containers,
-                  directory,
-                  pureMD5 == 0.2.4,
-                  fclabels ==0.1,
-                  encoding ==0.5.1,
-                  filepath,
-                  mtl ==1.1.0.2,
-                  network,
-                  old-locale,
-                  parsec ==3.0.0,
-                  process,
-                  random,
-                  stm,
-                  time,
-                  utf8-string
+Build-Depends:    base ==3.0.*,
+                  network ==2.2.*,
+                  containers ==0.2.*,
+                  parsec ==3.0.*,
+                  filepath == 1.1.*,
+                  fclabels ==0.1.*,
+                  utf8-string ==0.3.*,
+                  bytestring ==0.9.*,
+                  old-locale ==1.0.*,
+                  time ==1.1.*,
+                  encoding ==0.5.*,
+                  process ==1.0.*,
+                  stm ==2.1.*,
+                  pureMD5 ==0.2.*,
+                  directory ==1.0.*,
+                  bimap ==0.2.*,
+                  mtl ==1.1.*,
+                  random ==1.0.*
 GHC-Options:      -threaded -Wall -fno-warn-orphans
 Extensions:       CPP
 HS-Source-Dirs:   src
