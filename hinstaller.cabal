@@ -1,5 +1,5 @@
 name: hinstaller
-version: 2007.4.23
+version: 2007.4.24
 stability: Alpha
 copyright: Matthew Sackman
 category: System
@@ -8,7 +8,7 @@ author: Matthew Sackman
 homepage: http://www.wellquite.org/hinstaller/
 license: LGPL
 license-file: LICENSE
-build-depends: base, template-haskell, filepath
+build-depends: base, template-haskell, filepath, Cabal
 synopsis: Installer wrapper for Haskell applications
 description:
   This module allows you to incorporate arbitrary files into a haskell module
@@ -17,12 +17,9 @@ description:
   files when run. Thus this can be considered in the same model as Java .jar
   files or executable zip or other file archives.
   .
-  Note that the current implementation is now reasonably efficient. However,
-  either use -fvia-C which will take care of all compilation for you (but
-  will be slow) or use -fasm which will probably fail at the linking stage.
-  Compile the generated .c files and manually link together to complete the
-  installation. On any non-trivial sized file, you may need to increase GHC's
-  stack with +RTS -K32M -RTS to avoid stack overflows.
+  The current implementation is now reasonably efficient. However, it does
+  require that you have a C compiler installed which can be invoked through
+  @cc@.
 exposed-modules: System.Installer
 other-modules: System.Installer.TH, System.Installer.Foreign
 ghc-options: -O2 -Wall -fno-warn-name-shadowing
