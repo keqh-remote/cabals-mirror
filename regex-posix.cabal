@@ -1,60 +1,61 @@
+-- ****************************************************************
+-- To fix for cabal < 1.1.4 comment out the Extra-Source-Files line
+-- ****************************************************************
 Name:                   regex-posix
--- Keep the Version below in sync with ./Text/Regex/Posix.hs value getVersion_Text_Regex_Posix :: Version
-Version:                0.93.2
-Cabal-Version:          >=1.2
-Build-Type:             Custom
+Version:                0.72.0.3
+-- Cabal-Version:       >=1.1.4
 License:                BSD3
 License-File:           LICENSE
-Copyright:              Copyright (c) 2007, Christopher Kuklewicz
+Copyright:              Copyright (c) 2006, Christopher Kuklewicz
 Author:                 Christopher Kuklewicz
 Maintainer:             TextRegexLazy@personal.mightyreason.com
 Stability:              Seems to work, passes a few tests
 Homepage:               http://sourceforge.net/projects/lazy-regex
-Package-URL:            http://darcs.haskell.org/packages/regex-unstable/regex-posix/
+-- Package-URL:
 Synopsis:               Replaces/Enhances Text.Regex
 Description:            The posix regex backend for regex-base
 Category:               Text
 Tested-With:            GHC
-flag splitBase
-  description: Choose the new smaller, split-up base package.
-library
-  if flag(splitBase)
-    Build-Depends:      regex-base >= 0.93, base >= 3.0, array, containers, bytestring
-    -- Need the next symbol for using CPP to get Data.ByteString.Base|Unsafe in
-    --  ./Text/Regex/Posix/ByteString.hs and  ./Text/Regex/Posix/ByteString/Lazy.hs
-    CPP-Options: "-DSPLIT_BASE=1"
-    Extensions:         MultiParamTypeClasses, FunctionalDependencies, CPP, ForeignFunctionInterface, GeneralizedNewtypeDeriving, FlexibleContexts, TypeSynonymInstances, FlexibleInstances
+Build-Type:             Configure
+Cabal-Version:          >=1.2
 
+Extra-Source-Files:     aclocal.m4 config.mk.in configure configure.ac
+                        include/HsRegexPosixConfig.h.in
+                        regex-posix.buildinfo.in
+
+Flag split-base
+
+Library
+  Build-Depends:        regex-base
+  if flag(split-base)
+    Build-Depends:      base >= 3.0, array, bytestring
   else
-    Build-Depends:      regex-base >= 0.93, base < 3.0
-    Extensions:         MultiParamTypeClasses, FunctionalDependencies, CPP
-
-  -- Data-Files:
-  -- Extra-Source-Files:
-  -- Extra-Tmp-Files:
-  -- This is the library
-  Exposed-Modules:        Text.Regex.Posix
-                          Text.Regex.Posix.Wrap
-                          Text.Regex.Posix.String
-                          Text.Regex.Posix.Sequence
-                          Text.Regex.Posix.ByteString
-                          Text.Regex.Posix.ByteString.Lazy
-  -- Futher fields
+    Build-Depends:      base >= 2.0 && < 3
+-- Data-Files:
+-- Extra-Tmp-Files:
+-- This is the library
+  Exposed-Modules:      Text.Regex.Posix
+                        Text.Regex.Posix.Wrap
+                        Text.Regex.Posix.String
+                        Text.Regex.Posix.ByteString
+-- Futher fields
   Buildable:              True
-  -- Other-Modules:
-  -- HS-Source-Dirs:         "."
-  -- The CPP is for using -DSPLIT_BASE=1 to get Data.ByteString.Base|Unsafe
+-- Other-Modules:
+-- be backward compatible until 6.4.2 is futher deployed
+-- HS-Source-Dirs:         "."
+  Extensions:           CPP
   GHC-Options:            -Wall -O2
-  -- GHC-Options:            -Wall -Werror -O2
-  -- GHC-Options:            -Wall -ddump-minimal-imports
-  -- GHC-Prof-Options: 
-  -- Hugs-Options:
-  -- NHC-Options:
-  -- C-Sources:
-  -- LD-Options:
-  -- Frameworks:
+-- GHC-Options:            -Wall -Werror -O2
+-- GHC-Options:            -Wall -Werror
+-- GHC-Options:            -Wall -ddump-minimal-imports
+-- GHC-Prog-Options: 
+-- Hugs-Options:
+-- NHC-Options:
+-- Includes:
+  Include-Dirs:           include
+-- C-Sources:
+-- Extra-Libraries:
+-- Extra-Lib-Dirs:
   CC-Options:             -DHAVE_REGEX_H
-  -- Includes:
-  -- Include-Dirs:           include
-  -- Extra-Libraries:
-  -- Extra-Lib-Dirs:
+-- LD-Options:
+-- Frameworks:
