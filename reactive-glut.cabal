@@ -1,5 +1,5 @@
 Name:                reactive-glut
-Version:             0.1.9
+Version:             0.1.10
 Cabal-Version:       >= 1.2
 Synopsis:            Connects Reactive and GLUT
 Category:            FRP, graphics
@@ -12,7 +12,7 @@ Description:
   &#169; 2008 by Conal Elliott; BSD3 license.
   .
   With contributions from Andy Gill, David Sankel, Eyal Lotem, Claus Reinke,
-  and Achim Schneider.
+  Achim Schneider, and Alexander Göransson.
 
 Author:              Conal Elliott 
 Maintainer:          conal@conal.net
@@ -26,7 +26,7 @@ build-type:          Simple
 Library
   hs-Source-Dirs:      src
   Extensions:
-  Build-Depends:       base, old-time, OpenGL, GLUT, vector-space, reactive >= 0.10.7
+  Build-Depends:       base<5, old-time, OpenGL, GLUT, vector-space, reactive >= 0.10.7
   Exposed-Modules:     
                        FRP.Reactive.GLUT.Adapter
   Other-Modules:
