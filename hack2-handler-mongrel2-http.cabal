@@ -1,5 +1,5 @@
 Name:                 hack2-handler-mongrel2-http
-Version:              2011.6.22
+Version:              2011.6.24
 Build-type:           Simple
 Synopsis:             Hack2 Mongrel2 HTTP handler
 Description:          Hack2 Mongrel2 HTTP handler
@@ -35,12 +35,13 @@ library
                     , blaze-textual
                     , unix
                     , attoparsec
+                    , stm
   hs-source-dirs: src/
   exposed-modules:  
                     Hack2.Handler.Mongrel2HTTP
   other-modules:
-                    Hack2.Handler.Mongrel2
-                    Hack2.Handler.Mongrel2.Parser
+                    Hack2.Handler.Mongrel2.IO
+                    Hack2.Handler.Mongrel2.ResponseParser
                     Hack2.Handler.Mongrel2.Response
                     Hack2.Handler.Mongrel2.Types
                     
