@@ -1,5 +1,5 @@
 name:                Workflow
-version:              0.5.5
+version:              0.5.6
 synopsis:            library for transparent execution  of interruptible  computations
 description:
      Transparent support  for interruptable computations. A workflow can be seen as a persistent thread that executes any
