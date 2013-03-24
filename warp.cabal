@@ -1,5 +1,5 @@
 Name:                warp
-Version:             0.4.3.1
+Version:             0.4.4
 Synopsis:            A fast, light-weight web server for WAI applications.
 License:             BSD3
 License-file:        LICENSE
@@ -10,6 +10,7 @@ Category:            Web, Yesod
 Build-Type:          Simple
 Cabal-Version:       >=1.6
 Stability:           Stable
+Description:         The premier WAI handler. For more information, see <http://steve.vinoski.net/blog/2011/05/01/warp-a-haskell-web-server/>.
 
 flag network-bytestring
     Default: False
