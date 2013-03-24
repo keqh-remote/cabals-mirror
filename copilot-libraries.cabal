@@ -1,6 +1,6 @@
 cabal-version:       >=1.10
 name:                copilot-libraries
-version:             0.3
+version:             0.4
 synopsis:            A Haskell-embedded DSL for monitoring hard real-time
                      distributed systems.
 description:         
@@ -42,6 +42,7 @@ library
     mtl >= 2.0
 
   exposed-modules:
+    Copilot.Library.Libraries
     Copilot.Library.Clocks
     Copilot.Library.LTL
     Copilot.Library.PTLTL
@@ -50,8 +51,6 @@ library
     Copilot.Library.Utils
     Copilot.Library.Voting
     Copilot.Library.Stacks
-
-  other-modules:
 
   ghc-options:
     -fwarn-tabs
