@@ -1,7 +1,7 @@
 Name: SHA2
 Synopsis: Fast, incremental SHA hashing for bytestrings
 Description: A zero-copy binding to Aaron Gifford's SHA implementation, including a copy of that implementation
-Version: 0.2.2
+Version: 0.2.3
 License: BSD3
 License-file: COPYING
 Copyright: Copyright (c) 2009 University of Tromsø
