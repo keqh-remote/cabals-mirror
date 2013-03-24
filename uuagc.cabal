@@ -1,10 +1,10 @@
 cabal-version: >= 1.8
 build-type: Custom
 name: uuagc
-version: 0.9.42.1
+version: 0.9.42.2
 license: BSD3
 license-file: LICENSE
-maintainer: Arie Middelkoop <amiddelk@gmail.com>
+maintainer: Jeroen Bransen <J.Bransen@uu.nl>
 homepage: http://www.cs.uu.nl/wiki/HUT/WebHome
 description: Generates Haskell files from an attribute grammar specification
 synopsis: Attribute Grammar System of Universiteit Utrecht
@@ -29,7 +29,7 @@ executable uuagc
    build-depends: uuagc-cabal >= 1.0.2.0
    build-depends: base >= 4, base < 5
    -- Self dependency, depend on library below
-   build-depends: uuagc == 0.9.42.1
+   build-depends: uuagc == 0.9.42.2
    main-is: Main.hs
    hs-source-dirs: src-main
 
