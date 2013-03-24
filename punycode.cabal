@@ -1,11 +1,11 @@
 name:            punycode
-version:         0.5.1
+version:         1.0
 license:         BSD3
 license-file:    LICENSE
 author:          Myles C. Maxfield <myles.maxfield@gmail.com>
 maintainer:      Myles C. Maxfield <myles.maxfield@gmail.com>
 synopsis:        Encode unicode strings to ascii forms according to RFC 3492
-description:     Encode unicode strings to ascii forms according to RFC 3492. It is written in pure Haskell, as opposed to gnuidn's Data.Text.IDN.Punycode
+description:     Encode unicode strings to ascii forms according to RFC 3492. It is written in pure Haskell, as opposed to gnuidn's Data.Text.IDN.Punycode. Please note that Data.Encoding.BootString from the 'encoding' package also contains an implementation of the Punycode algorithm.
 category:        Text, Web
 stability:       Experimental
 cabal-version:   >= 1.8
@@ -17,7 +17,7 @@ library
                  , bytestring
                  , cereal
                  , mtl
-                 , utf8-string
+                 , text
     exposed-modules: Data.Text.Punycode
     other-modules:   Data.Text.Punycode.Encode
                    , Data.Text.Punycode.Decode
@@ -31,9 +31,9 @@ Test-Suite test-punycode
                  , bytestring
                  , cereal
                  , mtl
+                 , text
                  , HUnit
                  , QuickCheck
-                 , utf8-string
 
 source-repository head
   type:     git
