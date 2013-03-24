@@ -18,26 +18,27 @@
 --
 
 Name:           Thrift
-Version:        0.4.0
+Version:        0.5.0
 Cabal-Version:  >= 1.2.3
 License:        OtherLicense
 Category:       Foreign
 Build-Type:     Simple
 Synopsis:       Thrift library package
-homepage:       http://incubator.apache.org/thrift
-maintainer:     thrift-user-subscribe@incubator.apache.org 
-description:
-  The Thrift Haskell package that shipped with Thrift v.0.4.0, released under the Apache 2.0 license.
+Homepage:       http://incubator.apache.org/thrift
+Maintainer:     thrift-user-subscribe@incubator.apache.org 
+Description:
+  The Thrift Haskell package that shipped with Thrift v.0.5.0, released under the Apache 2.0 license.
 
 Library
   Hs-Source-Dirs:
     src
   Build-Depends:
     base >=4 && < 5, network, ghc-prim, binary, bytestring, HTTP
-  ghc-options:
-    -fglasgow-exts
-  Extensions:
-    DeriveDataTypeable
   Exposed-Modules:
     Thrift, Thrift.Protocol, Thrift.Transport, Thrift.Protocol.Binary
-    Thrift.Transport.Handle, Thrift.Transport.HttpClient,  Thrift.Server
+    Thrift.Transport.Handle, Thrift.Transport.HttpClient, Thrift.Server
+  Extensions:
+    DeriveDataTypeable, ExistentialQuantification, FlexibleInstances,
+    KindSignatures, MagicHash, RankNTypes,
+    ScopedTypeVariables, TypeSynonymInstances
+
