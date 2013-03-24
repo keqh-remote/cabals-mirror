@@ -1,5 +1,5 @@
 Name:                blaze-builder
-Version:             0.3.1.0
+Version:             0.3.1.1
 Synopsis:            Efficient buffered output.
 
 Description:         
@@ -48,6 +48,14 @@ Source-repository head
 
 Library
   ghc-options:       -Wall
+
+  -- Earlier versions of GHC did not split off unsafe functions in "Foreign"
+  if impl(ghc >= 7.4)
+      cpp-options:   -DHAS_FOREIGN_UNSAFE_MODULE
+
+  -- GHC 7.0.x and lower required MonoPatBinds feature
+  if impl(ghc < 7.2)
+      cpp-options:   -DUSE_MONO_PAT_BINDS
 
   exposed-modules:   Blaze.ByteString.Builder
                      Blaze.ByteString.Builder.Int
