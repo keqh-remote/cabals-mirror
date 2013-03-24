@@ -1,15 +1,16 @@
 Name:                idiii
-Version:             0.0
-Synopsis:            ID3v2 tag editing-suite
-Description:         ID3v2 tag editing-suite
+Version:             0.1
+Synopsis:            Reading and writing of ID3v2 tags
+Description:         Reading and writing of ID3v2 tags
 Category:            Text, Sound
 License:             BSD3
 License-file:        LICENSE
 Author:              laughedelic
-Maintainer:          laughedelic@gmail.com
-Build-Depends:       base < 5, polyparse, haskell98, bytestring, encoding, data-accessor, utf8-string, containers, MissingH
+Maintainer:          christopher.t.wagner@gmail.com
+Build-Depends:       base < 5, haskell98, bytestring, polyparse, text, data-accessor, utf8-string, containers, MissingH
 Build-Type:          Simple
 hs-source-dirs:      src
+extra-source-files:  LICENSE read-idiii.hs
 Exposed-modules:     ID3,
                      ID3.Simple,
 
@@ -34,4 +35,3 @@ Exposed-modules:     ID3,
                      ID3.ReadTag,
                      ID3.WriteTag
 ghc-options:         -Wall
-
