@@ -1,5 +1,5 @@
 name:               she
-version:            0.4
+version:            0.5
 homepage:           http://personal.cis.strath.ac.uk/~conor/pub/she
 synopsis:           A Haskell preprocessor adding miscellaneous features
 description:
@@ -42,6 +42,7 @@ executable she
                         HaLay
                         Parsley
                         Patsy
+                        ShesHers
                         Superclass
                         TypesToKinds
 
