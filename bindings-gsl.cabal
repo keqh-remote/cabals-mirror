@@ -1,23 +1,22 @@
 cabal-version: >= 1.2.3
 name: bindings-gsl
-homepage: http://bitbucket.org/mauricio/bindings-gsl
 synopsis:
   Low level bindings to GNU GSL.
-version: 0.1.1.6
+version: 0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
 author: Maurício C. Antunes
 build-type: Simple
 category: FFI
-bug-reports: http://bitbucket.org/mauricio/bindings-gsl/issues
+bug-reports: http://bitbucket.org/mauricio/bindings-dsl/issues
 library
   hs-source-dirs: src
   extensions:
     ForeignFunctionInterface
   build-depends:
     base >= 3 && < 5,
-    bindings-DSL >= 1.0 && < 1.1
+    bindings-DSL >= 1.0.7 && < 1.1
   exposed-modules:
     Bindings.Gsl
     Bindings.Gsl.BasisSplines
@@ -65,4 +64,5 @@ library
     Bindings.Gsl.Version
     Bindings.Gsl.WaveletTransforms
   c-sources: src/inlines.c
-  pkgconfig-depends: gsl >= 1.12
+  pkgconfig-depends: gsl >= 1.13
+
