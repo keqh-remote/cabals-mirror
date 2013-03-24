@@ -1,16 +1,33 @@
-Name:               cedict
-Version:            0.1.1
-Category:           Text
-Description:        Convenient Chinese character lookup.
-Synopsis:           Convenient Chinese character lookup.
-License:            GPL
-License-file:       LICENSE
-Author:             Jason Dusek
-Maintainer:         jason.dusek@gmail.com
-Build-Depends:      base, containers, utf8-string
+name:               cedict
+version:            0.2.1
+category:           Text
+description:        Convenient Chinese character lookup.
+synopsis:           Convenient Chinese character lookup.
+license:            GPL
+license-file:       LICENSE
+author:             Jason Dusek
+maintainer:         jason.dusek@gmail.com
+cabal-version:      >=1.2
+build-type:         Simple
+extra-tmp-files:    c/data.h
+extra-source-files: d/cedict_readme.txt
+                    d/utf8-cedict
 
-Exposed-modules:    Data.Char.CEDICT
+library
+  build-depends:    base, containers, parsec, utf8-string, bytestring, mtl
+  exposed-modules:  Data.Char.CEDICT
+                    Data.Char.CEDICT.C.Declarations
+                    Data.Char.CEDICT.C.Walker
+                    Data.Char.CEDICT.C.PtrWalker
+                    Data.Char.CEDICT.C.Data
+                    Data.Char.CEDICT.Reader.ListRebuild
+                    Data.Char.CEDICT.Reader.RoseBush
+                    Data.Char.CEDICT.Reader.Parser
+  includes:         c/data.h
+  c-sources:        c/data.c
 
-Executable:         zi4pu3
-Main-is:            Zi4Pu3.hs
+executable          zi4pu3
+  main-is:          Zi4Pu3.hs
+  includes:         c/data.h
+  c-sources:        c/data.c
 
