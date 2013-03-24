@@ -1,23 +1,24 @@
 Name:             midi
-Version:          0.1.5.2
+Version:          0.1.6
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:         http://www.haskell.org/haskellwiki/MIDI
 Category:         Sound, Music
+Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.4, GHC==7.2.1
+Cabal-Version:    >=1.6
 Build-Type:       Simple
 Synopsis:         Handling of MIDI messages and files
 Description:
    MIDI is the Musical Instrument Digital Interface.
    The package contains definition of realtime and file MIDI messages,
-   reading and writing MIDI files.
+   reading and writing MIDI files,
+   and some definitions from General MIDI standard.
    It contains no sending and receiving of MIDI messages.
-   Cf. @alsa-seq@, @PortMidi@, @alsa@, @alsa-midi@ and @hmidi@ packages.
+   Cf. @alsa-seq@, @PortMidi@, @hmidi@, @alsa@, @alsa-midi@ packages.
    For music composition with MIDI output, see @haskore@.
-Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4
-Cabal-Version:    >=1.6
-Build-Type:       Simple
+   Alternate packages are @HCodecs@, @zmidi-core@.
 Extra-Source-Files:
   Makefile
   src/Sound/MIDI/Example/Tomatosalad.hs
@@ -28,7 +29,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/midi/
-  tag:      0.1.5.2
+  tag:      0.1.6
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -73,6 +74,7 @@ Library
     Sound.MIDI.Message.System.Exclusive
     Sound.MIDI.Message.System.Common
     Sound.MIDI.Message.System.RealTime
+    Sound.MIDI.Controller
     Sound.MIDI.Manufacturer
     Sound.MIDI.General
     -- exports ByteList data type
@@ -97,6 +99,8 @@ Library
     Sound.MIDI.Monoid
     Sound.MIDI.String
     Sound.MIDI.Utility
+    -- type definition
+    Sound.MIDI.ControllerPrivate
     -- didactic example
     Sound.MIDI.Example.ControllerRamp
 
