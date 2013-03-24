@@ -1,5 +1,5 @@
 name:             doctest
-version:          0.9.4
+version:          0.9.4.1
 synopsis:         Test interactive Haskell examples
 description:      The doctest program checks examples in source code comments.
                   It is modeled after doctest for Python
@@ -46,13 +46,13 @@ library
     , Util
   build-depends:
       base          == 4.*
-    , ghc           >= 6.12 && < 7.8
-    , syb
+    , ghc           >= 7.0 && < 7.8
+    , syb           >= 0.3 && < 0.4
     , deepseq
     , directory
     , filepath
     , process
-    , ghc-paths     == 0.1.*
+    , ghc-paths     >= 0.1.0.9
     , transformers
 
 executable doctest
