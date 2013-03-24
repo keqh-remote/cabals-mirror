@@ -1,5 +1,5 @@
 name: HOpenCV
-version: 0.1.1
+version: 0.1.2
 license: BSD3
 maintainer: Noam Lewis <jones.noamle@gmail.com>
 bug-reports: mailto:jones.noamle@gmail.com
@@ -9,15 +9,17 @@ Tested-With:   GHC == 6.10.4
 description:
    Initial version with very limited bindings to OpenCV 2.0. (See: <http://opencv.willowgarage.com/wiki/Welcome>)
    .
-   For a functional interface to this library, see the package @cv-combinators@.
+   For a functional interface to this library, see the package "cv-combinators".
    .
-   Installation
+   Online module documentation, if not build below, can be found at <http://www.ee.bgu.ac.il/~noamle/>.
+   .
+   /Installation/
    .
    You must install OpenCV (development packages) prior to installing this package. Currently only tested on Ubuntu Linux, but should work on most linux distributions. For OpenCV installation on other *nix platforms, see <http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.0/>
    .
-   On ubuntu systems, the appropriate version of OpenCV can be installed by:
+   On /Ubuntu/ systems, the appropriate version of OpenCV can be installed by (the instructions are for Karmic):
    .
-   > sudo add-apt-repository ppa:gijzelaar/opencv2-karmick
+   > sudo add-apt-repository ppa:gijzelaar/opencv2-karmic
    > sudo apt-get update
    > sudo apt-get install libcv-dev libhighgui-dev
    .
