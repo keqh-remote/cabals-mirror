@@ -1,14 +1,20 @@
 Name:              minimung
-Version:           0.0
+Version:           0.1
 Cabal-Version: >= 1.2
 License:           BSD3
 License-File:      LICENSE
 Synopsis:          Shows how to run grabber on Mac OS X
 Category:          Foreign, Graphics
-Description:         
+Description:
+  This version is known to work with GHC 6.12 and Mac OS X 10.6.2.
+  .
+  Haddock generated documentation is available from my homepage
+  .         
   minimung is capable to do real time CIF??
   .
-  Only 'Mac', 'Mac.Carbon', 'Mac.QuickDraw', 'Mac.QuickTime' are stable and good. The rest is quick hack
+  Modules under 'Mac' are stable and good.
+  .
+  'Minimung.hs' is a clumsy example of usage.
   .
 Author:            Yakov Zaytsev
 Maintainer:        Yakov Zaytsev <yakov@yakov.cc>
@@ -16,7 +22,7 @@ build-type:        Simple
 extra-source-files:LICENSE
 -- if os(darwin)
 Executable         minimung
-  build-depends:   base >= 4.0 && < 4.2, haskell98, unix, GLUT
+  build-depends:   base >= 4.0 && < 5.0, haskell98, unix, GLUT
   Main-Is:         Minimung.hs
   hs-source-dirs:  .
   Other-modules:   Mac
