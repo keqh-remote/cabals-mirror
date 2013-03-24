@@ -1,5 +1,5 @@
 name:                   palindromes
-version:                0.2
+version:                0.2.1
 synopsis:               Finding palindromes in strings
 homepage:               http://www.jeuring.net/Palindromes
 description:
@@ -8,7 +8,7 @@ description:
   returns information about palindromes in the file.
 
 category:               Algorithms
-copyright:              (c) 2007 - 2010 Johan Jeuring
+copyright:              (c) 2007 - 2011 Johan Jeuring
 license:                BSD3
 license-file:           LICENSE
 author:                 Johan Jeuring
@@ -28,13 +28,13 @@ Library
   hs-source-dirs:       src
   exposed-modules:      Data.Algorithms.Palindromes.Palindromes
 
-Executable	            palindromes
-  Main-is:				Data/Algorithms/Palindromes/Main.hs
+Executable              palindromes
+  Main-is:              Data/Algorithms/Palindromes/Main.hs
   ghc-options:          -Wall
   hs-source-dirs:       src
   other-modules:        Data.Algorithms.Palindromes.Palindromes,
                         Data.Algorithms.Palindromes.Options
-  build-depends:        base >= 3.0 && < 4.0,
+  build-depends:        base >= 3.0 && < 5,
                         array
 
 --------------------------------------------------------------------------------
