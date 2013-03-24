@@ -1,5 +1,5 @@
 Name:           vector
-Version:        0.4.1
+Version:        0.4.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
@@ -71,7 +71,7 @@ Library
   Install-Includes:
         phases.h
 
-  Build-Depends: base >= 2 && < 5, ghc >= 6.9, primitive
+  Build-Depends: base >= 2 && < 5, ghc >= 6.9, primitive >= 0.1 && < 0.2
 
 -- -finline-if-enough-args is ESSENTIAL. If we don't have this the partial application
 -- of e.g. Stream.Monadic.++ to the monad dictionary at the use site in Stream.++ causes
