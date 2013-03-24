@@ -3,7 +3,7 @@ name: bindings-gobject
 homepage: http://bitbucket.org/mauricio/bindings-gobject
 synopsis:
   Low level bindings to GObject.
-version: 0.1
+version: 0.1.1
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -17,8 +17,8 @@ library
     ForeignFunctionInterface
   build-depends:
     base >= 3 && < 5,
-    bindings-DSL >= 1.0 && < 1.1,
-    bindings-glib >= 0.1 && < 0.2
+    bindings-DSL >= 1.0.6 && < 1.1,
+    bindings-glib >= 0.1.2 && < 0.2
   include-dirs: src
   install-includes:
     bindings-gobject.dsl.h
@@ -27,6 +27,7 @@ library
     Bindings.GObject
     Bindings.GObject.BaseObjectType
     Bindings.GObject.BoxedTypes
+    Bindings.GObject.Closures
     Bindings.GObject.EnumerationAndFlagTypes
     Bindings.GObject.GenericValues
     Bindings.GObject.GParamSpec
