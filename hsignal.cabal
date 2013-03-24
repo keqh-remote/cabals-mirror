@@ -1,6 +1,6 @@
 Name:               hsignal
-Version:            0.1.2.2
-License:            GPL
+Version:            0.1.2.3
+License:            BSD3
 License-file:       LICENSE
 Author:             Vivian McPhail
 Maintainer:         haskell.vivian.mcphail <at> gmail <dot> com
@@ -14,6 +14,8 @@ Description:
      .
      When hmatrix is installed with -fvector, the vector type is Data.Vector.Storable
      from the vector package.
+     .
+     Feature requests, suggestions, and bug fixes welcome.
 Category:           Math
 tested-with:        GHC ==6.12.1
 
@@ -29,10 +31,10 @@ library
     Build-Depends:      base >= 3 && < 5,
                         mtl, 
                         array,
-                        bytestring, storable-complex, ghc-binary,
+                        bytestring, storable-complex, binary,
                         hmatrix >= 0.10.0,
-                        hmatrix-gsl-stats >= 0.1.2.1,
-                        hstatistics >= 0.2.0.8
+                        hmatrix-gsl-stats >= 0.1.2.4,
+                        hstatistics >= 0.2.2.3
 
     Extensions:         ForeignFunctionInterface
 
