@@ -1,5 +1,5 @@
 Name:           graph-rewriting-lambdascope
-Version:        0.4.5
+Version:        0.4.6
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:	LICENSE
@@ -21,7 +21,7 @@ Build-Depends:
 	base-unicode-symbols >= 0.2 && < 0.3,
 	graph-rewriting >= 0.4.4 && < 0.5,
 	graph-rewriting-layout >= 0.4.1 && < 0.5,
-	graph-rewriting-gl >= 0.5 && < 0.6,
+	graph-rewriting-gl >= 0.6 && < 0.7,
 	parsec >= 2.1 && < 2.2,
 	GLUT >= 2.2 && < 2.3,
 	OpenGL >= 2.4 && < 2.5,
