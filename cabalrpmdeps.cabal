@@ -1,5 +1,5 @@
 Name: cabalrpmdeps
-Version: 0.0.3
+Version: 0.0.4
 License: GPL
 License-file: gpl.txt
 Category: Distribution
@@ -12,9 +12,10 @@ Stability: Beta
 Hs-Source-Dirs: .
 Exposed-Modules: Distribution.RpmDeps
 Extensions: CPP
-Build-Depends: haskell98, base, Cabal
+Build-Depends: haskell98, base, Cabal, filepath
 -- Cabal will automatically add unix here on non-Windows platforms
 GHC-Options: -O2
+build-type: Simple
 
 Executable: cabalrpmprov
 Main-Is: cabalrpmprov.hs
