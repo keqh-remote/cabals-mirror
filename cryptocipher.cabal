@@ -1,5 +1,5 @@
 Name:                cryptocipher
-Version:             0.2.14
+Version:             0.3.0
 Description:         Symmetrical Block, Stream and PubKey Ciphers
 License:             BSD3
 License-file:        LICENSE
@@ -27,6 +27,7 @@ Library
                    , ghc-prim
                    , primitive
                    , crypto-api >= 0.5
+                   , crypto-pubkey-types
                    , tagged
                    , cereal
   Exposed-modules:   Crypto.Cipher.RC4
