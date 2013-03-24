@@ -1,5 +1,5 @@
 name:         mtlx
-version:      0.1.1
+version:      0.1.2
 license:      BSD3
 license-file: LICENSE
 author:       Mark Snyder
@@ -17,9 +17,11 @@ description:
     (<http://web.cecs.pdx.edu/~mpj/pubs/springschool.html>), Advanced
     School of Functional Programming, 1995.
 
+extra-source-files: Examples.hs
+
 build-type: Simple
 ghc-options: -Wall
-build-depends: base,  mtl
+build-depends: base >= 3 && < 4,  mtl
 exposed-modules:
     Control.Monad.Index
     Control.Monad.IdentityX
