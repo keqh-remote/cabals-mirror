@@ -1,5 +1,5 @@
 Name:                containers-benchmark
-Version:             1.0.0.2
+Version:             1.0.0.3
 Synopsis:            Extensive benchmark suite for containers package.
 Description:         This package evaluates performance of a containers package
                      from multiple perspectives.
@@ -10,7 +10,7 @@ Description:         This package evaluates performance of a containers package
                      .
                      The containers package used can be both system-installed or
                      any darcs repository.
-Homepage:            http://fox.auryn.cz/darcs/containers-benchmark/
+Homepage:            http://git.auryn.cz/haskell/containers-benchmark/
 License:             BSD3
 License-file:        LICENSE
 Author:              Milan Straka
