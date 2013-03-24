@@ -1,5 +1,5 @@
 Name:                cqrs
-Version:             0.2.1
+Version:             0.3.0
 Synopsis:            Command-Query Responsibility Segregation
 Description:         Haskell implementation of the CQRS architectural pattern.
   An SQLite3-based backend is included.
@@ -27,13 +27,13 @@ Library
                        OverloadedStrings
                        Rank2Types
                        ScopedTypeVariables
-                       TemplateHaskell
   ghc-options:         -Wall
   hs-source-dirs:      src
   Exposed-modules:     Data.CQRS
                        Data.CQRS.Aggregate
                        Data.CQRS.AggregateRef
                        Data.CQRS.Event
+                       Data.CQRS.Eventable
                        Data.CQRS.EventStore
                        Data.CQRS.EventStore.Sqlite3
                        Data.CQRS.GUID
