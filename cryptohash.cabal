@@ -1,11 +1,33 @@
 Name:                cryptohash
-Version:             0.7.10
+Version:             0.8.0
 Description:
     A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,
     with performance close to the fastest implementations available in others languages.
     .
     The implementations are made in C with a haskell FFI wrapper that hide the C implementation.
-
+    .
+    Simple examples using the unified API:
+    .
+    > import Crypto.Hash
+    >
+    > sha1 :: ByteString -> Digest SHA1
+    > sha1 = hash
+    >
+    > hexSha3_512 :: ByteString -> String
+    > hexSha3_512 bs = show (hash bs :: Digest SHA3_512)
+    .
+    Simple examples using the module API:
+    .
+    > import qualified Crypto.Hash.SHA1 as SHA1
+    >
+    > main = putStrLn $ show $ SHA1.hash (Data.ByteString.pack [1..256])
+    .
+    > import qualified Crypto.Hash.SHA3 as SHA3
+    >
+    > main = putStrLn $ show $ digest
+    >   where digest = SHA3.finalize ctx
+    >         ctx    = foldl' SHA3.update iCtx (map Data.ByteString.pack [ [1,2,3], [4,5,6] ]
+    >         iCtx   = SHA3.init 224
 License:             BSD3
 License-file:        LICENSE
 Copyright:           Vincent Hanquez <vincent@snarc.org>
@@ -24,23 +46,21 @@ extra-source-files:
   cbits/skein.h cbits/skein256.h cbits/skein512.h
   cbits/tiger.h cbits/whirlpool.h
 
-Flag benchmark
-  Description:       Build benchmark test
-  Default:           False
-
 Flag cryptoapi
   Description:       Defines crypto-api instances
   Default:           True
 
 Library
-  Build-Depends:     base >= 4 && < 6, bytestring
+  Build-Depends:     base >= 4 && < 6, bytestring, ghc-prim
   if flag(cryptoapi)
     Build-depends:   crypto-api >= 0.5, tagged >= 0.1, cereal >= 0.2
     cpp-options:     -DHAVE_CRYPTOAPI
   if impl(ghc >= 7.2.1)
     Extensions:      Trustworthy
   Extensions:        ForeignFunctionInterface
-  Exposed-modules:   Crypto.Hash.SHA1
+  Exposed-modules:   Crypto.Hash
+                     Crypto.Hash.Types
+                     Crypto.Hash.SHA1
                      Crypto.Hash.SHA224
                      Crypto.Hash.SHA256
                      Crypto.Hash.SHA384
@@ -56,6 +76,7 @@ Library
                      Crypto.Hash.Tiger
                      Crypto.Hash.Whirlpool
                      Crypto.MAC.HMAC
+  Other-modules:     Crypto.Hash.Utils
   ghc-options:       -Wall -O2 -optc-O3 -fno-cse -fwarn-tabs
   C-sources:         cbits/sha1.c
                      cbits/sha256.c
@@ -84,14 +105,17 @@ Test-Suite test-kat
                    , test-framework-hunit
                    , cryptohash
 
-Executable           Bench
+Benchmark bench-hashes
   Main-Is:           Bench.hs
   hs-source-dirs:    Bench
-  if flag(benchmark)
-    Buildable:       True
-    Build-depends:   base >= 4, bytestring, criterion, cryptohash
-  else
-    Buildable:       False
+  type:              exitcode-stdio-1.0
+  Build-depends:     base >= 4, bytestring, criterion, cryptohash
+
+Benchmark bench-api
+  Main-Is:           BenchAPI.hs
+  hs-source-dirs:    Bench
+  type:              exitcode-stdio-1.0
+  Build-depends:     base >= 4, bytestring, criterion, cryptohash, crypto-api
 
 source-repository head
   type:     git
