@@ -1,5 +1,5 @@
 Name:               supercollider-midi
-Version:            0.1.3
+Version:            0.2
 License:            GPL
 License-File:       LICENSE
 Author:             Henning Thielemann <haskell@henning-thielemann.de>
@@ -26,6 +26,22 @@ Flag splitBase
   description: Choose the new smaller, split-up base package.
 
 Executable sc-keyboard
+  Build-Depends:
+    supercollider-ht >=0.1 && <0.2,
+    opensoundcontrol-ht >=0.1 && <0.2,
+    hsc3 >=0.8 && <0.9,
+    hosc >=0.8 && <0.9,
+    alsa-seq >=0.5 && <0.6,
+    data-accessor >=0.2.1 && <0.3,
+    midi-alsa >=0.1.1 && <0.2,
+    midi >=0.1.4 && <0.2,
+    event-list >=0.0.6 && <0.2,
+    non-negative >=0.0.1 && <0.2,
+    data-accessor-transformers >=0.2 && <0.3,
+    data-accessor >=0.2 && <0.3,
+    transformers >=0.2 && <0.3,
+    utility-ht >=0.0.5 && <0.1
+
   If flag(splitBase)
     Build-Depends:
       array >=0.1 && <0.4,
@@ -36,37 +52,28 @@ Executable sc-keyboard
     Build-Depends:
       base >=1.0 && <2
 
-  Build-Depends:
-    supercollider-ht >=0.1 && <0.2,
-    opensoundcontrol-ht >=0.1 && <0.2,
-    hsc3 >=0.8 && <0.9,
-    hosc >=0.8 && <0.9,
-    alsa-midi >=0.4 && <0.5,
-    midi >=0.1.3 && <0.2,
-    event-list >=0.0.6 && <0.2,
-    non-negative >=0.0.1 && <0.2,
-    data-accessor-transformers >=0.2 && <0.3,
-    data-accessor >=0.2 && <0.3,
-    transformers >=0.2 && <0.3
-
   Hs-source-dirs:     src
   GHC-Options:        -Wall -threaded
   Main-Is: Sound/SC3/MIDI/Keyboard.hs
+  Other-Modules: Sound.SC3.MIDI.Utility
 
 Executable sc-wind
+  Build-Depends:
+    hsc3 >=0.8 && <0.9,
+    hosc >=0.8 && <0.9,
+    alsa-seq >=0.5 && <0.6,
+    data-accessor >=0.2.1 && <0.3,
+    midi-alsa >=0.1.1 && <0.2,
+    midi >=0.1.4 && <0.2,
+    event-list >=0.0.6 && <0.2,
+    non-negative >=0.0.1 && <0.2
+
   If flag(splitBase)
     Build-Depends: base >=2
   Else
     Build-Depends: base >=1.0 && <2
 
-  Build-Depends:
-    hsc3 >=0.8 && <0.9,
-    hosc >=0.8 && <0.9,
-    alsa-midi >=0.4 && <0.5,
-    midi >=0.1.3 && <0.2,
-    event-list >=0.0.6 && <0.2,
-    non-negative >=0.0.1 && <0.2
-
   Hs-source-dirs:     src
   GHC-Options:        -Wall -threaded
   Main-Is: Sound/SC3/MIDI/Wind.hs
+  Other-Modules: Sound.SC3.MIDI.Utility
