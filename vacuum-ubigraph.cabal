@@ -1,5 +1,5 @@
 name:               vacuum-ubigraph
-version:            0.1.0.2
+version:            0.1.0.3
 cabal-version:      >= 1.2
 build-type:         Simple
 license:            BSD3
@@ -22,6 +22,6 @@ library
   build-depends:    base >= 3,
                     vacuum,
                     haxr,
-                    containers,
-                    HTTP<4000
+                    containers
   exposed-modules:  System.Vacuum.Ubigraph
+  other-modules:    Graphics.Ubigraph
