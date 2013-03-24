@@ -1,5 +1,5 @@
 Name:          HSGEP
-Version:       0.1.3
+Version:       0.1.4
 Cabal-Version: >= 1.6
 License:       BSD3
 License-File:  LICENSE
@@ -32,6 +32,8 @@ Executable HSGEP_Regression
 
   Build-Depends:   csv
   Main-Is:         GEP/Examples/Regression/Driver.hs
+  Other-Modules:   GEP.Examples.Regression.FitnessInput,
+                   GEP.Examples.Regression.ArithmeticIndividual
 
 Executable HSGEP_CADensity
     Buildable:  False
