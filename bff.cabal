@@ -1,5 +1,5 @@
 name:           bff
-version:        0.3.1
+version:        0.3.1.1
 license:        PublicDomain
 description:
         This is an implementation of the ideas presented in "Bidirectionalization
@@ -77,7 +77,7 @@ executable bff-cgi
                 MyInterpret
         if flag(binaries)
                 build-depends:
-                        base >= 2 && < 5, directory, xhtml, cgi, hint >= 0.3.2, utf8-string
+                        base >= 4 && < 5, directory, xhtml, cgi, hint >= 0.3.2, utf8-string
                 buildable: True 
         else
                 buildable: False
