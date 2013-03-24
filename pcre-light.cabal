@@ -1,5 +1,5 @@
 name:            pcre-light
-version:         0.2.1
+version:         0.3
 homepage:        http://code.haskell.org/~dons/code/pcre-light
 synopsis:        A small, efficient and portable regex library for Perl 5 compatible regular expressions
 description:
