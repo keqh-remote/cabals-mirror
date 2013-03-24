@@ -1,28 +1,25 @@
 cabal-version: >= 1.2.3
 name: bindings-sqlite3
-homepage: http://bitbucket.org/mauricio/bindings
+homepage: http://bitbucket.org/mauricio/bindings-sqlite3
 synopsis:
-  Check bindings-common package for directions.
-version: 0.0.2
+  Low level bindings to sqlite3.
+version: 1.0
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
 author: Maurício C. Antunes
 build-type: Simple
 category: FFI
+bug-reports: http://bitbucket.org/mauricio/bindings-sqlite3/issues
 library
   hs-source-dirs: src
   extensions:
     ForeignFunctionInterface
-    TypeSynonymInstances
-    ScopedTypeVariables
-    EmptyDataDecls
-  build-depends: base, bindings-common
+  build-depends:
+    base >=3 && < 5,
+    bindings-common >= 1.3 && < 1.4
   exposed-modules:
     Bindings.Sqlite3
   pkgconfig-depends:
     sqlite3 >= 3.6.10
-  other-modules:
-    Sqlite3Constants
-    Sqlite3Functions
-    Sqlite3Types
+  c-sources: src/inlines.c
