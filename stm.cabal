@@ -1,5 +1,5 @@
 name:		stm
-version:	2.1
+version:	2.1.1.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
@@ -9,11 +9,11 @@ description:	A modular composable concurrency abstraction.
 exposed-modules:
 		Control.Concurrent.STM
 		Control.Concurrent.STM.TArray
+		Control.Concurrent.STM.TVar
 		Control.Concurrent.STM.TChan
 		Control.Concurrent.STM.TMVar
-		Control.Concurrent.STM.TVar
 		Control.Monad.STM
 other-modules:
 		Control.Sequential.STM
-build-depends:	base
+build-depends:	base, array
 extensions:	CPP
