@@ -2,7 +2,7 @@ name:               tamarin-prover-utils
 
 cabal-version:      >= 1.8
 build-type:         Simple
-version:            0.6.0.0
+version:            0.8.0.0
 license:            GPL
 license-file:       LICENSE
 category:           Theorem Provers
@@ -17,7 +17,7 @@ description:        This is an internal library of the Tamarin prover for
                     security protocol verification
                     (<hackage.haskell.org/package/tamarin-prover>).
 
-homepage:           http://www.infsec.ethz.ch/research/software#TAMARIN
+homepage:           http://www.infsec.ethz.ch/research/software/tamarin
 
 source-repository head
   type:     git
@@ -29,6 +29,7 @@ source-repository head
 ----------------------
 
 library
+    ghc-options:       -Wall -fwarn-tabs
     ghc-prof-options:  -auto-all
 
     build-depends:
@@ -70,6 +71,7 @@ library
         Extension.Data.ByteString
 
         Text.Dot
+        Text.Unicode
         Text.PrettyPrint.Class
         Text.PrettyPrint.Highlight
         Text.PrettyPrint.Html
