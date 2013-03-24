@@ -1,5 +1,5 @@
 Name:                sylvia
-Version:             0.2.0.1
+Version:             0.2.1
 Synopsis:            Lambda calculus visualization
 Category:            Game
 
@@ -19,7 +19,7 @@ Maintainer:          chrisyco@gmail.com
 
 License:             GPL
 License-File:        LICENSE
-Copyright:           2011 Chris Wong
+Copyright:           2012 Chris Wong
 
 Build-Type:          Simple
 Extra-Source-Files:  README.mkd
@@ -31,6 +31,7 @@ Executable sylvia
     Build-Depends:
           base   == 4.*
         , data-default
+        , optparse-applicative == 0.4.*
         , parsec >= 3.1.2 && < 3.2
         , transformers
         , void   >= 0.5.5 && < 0.6
