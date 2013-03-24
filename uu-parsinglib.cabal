@@ -1,5 +1,5 @@
 Name:                uu-parsinglib
-Version:             2.3.3
+Version:             2.3.4
 Build-Type:          Simple
 License:             MIT 
 License-file:        LICENSE
@@ -41,6 +41,10 @@ Description:         New version of the Utrecht University parser combinator lib
                      .
                      * added the infix operator with piority 2 <?> :: P state a -> String -> P st a which replaces the list of expected symbols
                        in error message by its right argument String
+                     .
+                     Version 2.3.4
+                     .
+                     * removed dependecies on impredictaive types, preparing for next GHC version
                      .
                      Future versions above 2.3
                      .
