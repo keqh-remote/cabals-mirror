@@ -1,5 +1,5 @@
 Name:            open-pandoc
-Version:         1.4
+Version:         1.5.1.1
 Cabal-Version:   >= 1.2
 Build-Type:      Custom
 License:         GPL
@@ -10,7 +10,7 @@ Maintainer:      Peter Simons <simons@cryp.to>
 Stability:       alpha
 Homepage:        http://johnmacfarlane.net/pandoc
 Category:        Text
-Tested-With:     GHC == 6.12.1
+Tested-With:     GHC == 6.10.4, GHC == 6.12.1
 Synopsis:        Conversion between markup formats
 Description:     OpenPandoc is a variant of Pandoc that supports version 3.0
                  or later of the parser combinator library Parsec. In all
@@ -55,13 +55,13 @@ Data-Files:
                  templates/opendocument.template, templates/latex.template,
                  templates/context.template, templates/texinfo.template,
                  templates/man.template, templates/markdown.template,
-                 templates/rst.template,
+                 templates/rst.template, templates/plain.template,
                  templates/mediawiki.template, templates/rtf.template,
                  -- data for ODT writer
                  reference.odt,
                  -- data for LaTeXMathML writer
-                 data/LaTeXMathML.js.comment,
-                 data/LaTeXMathML.js.packed,
+                 data/LaTeXMathML.js,
+                 data/MathMLinHTML.js,
                  -- data for S5 writer
                  s5/default/slides.js.comment,
                  s5/default/slides.js.packed,
@@ -74,16 +74,12 @@ Data-Files:
                  -- documentation
                  README, INSTALL, COPYRIGHT, BUGS, changelog,
                  -- wrappers
-                 markdown2pdf, html2markdown, hsmarkdown
+                 markdown2pdf
 Extra-Source-Files:
                  -- sources for man pages
                  man/man1/pandoc.1.md, man/man1/markdown2pdf.1.md,
-                 man/man1/html2markdown.1.md, man/man1/hsmarkdown.1.md,
-                 -- Makefile
-                 Makefile,
                  -- tests
                  tests/bodybg.gif,
-                 tests/writer.latex,
                  tests/html-reader.html,
                  tests/html-reader.native,
                  tests/insert,
@@ -105,6 +101,7 @@ Extra-Source-Files:
                  tests/tables.html,
                  tests/tables.latex,
                  tests/tables.man,
+                 tests/tables.plain,
                  tests/tables.markdown,
                  tests/tables.mediawiki,
                  tests/tables.native,
@@ -113,13 +110,16 @@ Extra-Source-Files:
                  tests/tables.rst,
                  tests/tables.rtf,
                  tests/tables.txt,
+                 tests/tables-rstsubset.native,
                  tests/testsuite.native,
                  tests/testsuite.txt,
+                 tests/writer.latex,
                  tests/writer.context,
                  tests/writer.docbook,
                  tests/writer.html,
                  tests/writer.man,
                  tests/writer.markdown,
+                 tests/writer.plain,
                  tests/writer.mediawiki,
                  tests/writer.native,
                  tests/writer.opendocument,
@@ -137,8 +137,7 @@ Extra-Source-Files:
                  tests/lhs-test.html+lhs,
                  tests/lhs-test.fragment.html+lhs,
                  tests/RunTests.hs
-Extra-Tmp-Files: man/man1/pandoc.1, man/man1/hsmarkdown.1,
-                 man/man1/html2markdown.1, man/man1/markdown2pdf.1
+Extra-Tmp-Files: man/man1/pandoc.1, man/man1/markdown2pdf.1
 
 Flag highlighting
   Description:   Compile in support for syntax highlighting of code blocks.
@@ -147,7 +146,7 @@ Flag executable
   Description:   Build the pandoc executable.
   Default:       True
 Flag wrappers
-  Description:   Build the wrappers (hsmarkdown, markdown2pdf).
+  Description:   Build the wrappers (markdown2pdf).
   Default:       True
 Flag library
   Description:   Build the pandoc library.
@@ -160,9 +159,11 @@ Library
   Build-Depends: pretty >= 1, containers >= 0.1,
                  parsec >= 2.1, xhtml >= 3000.0,
                  mtl >= 1.1, network >= 2, filepath >= 1.1,
-                 process >= 1, directory >= 1, template-haskell >= 2.2,
+                 process >= 1, directory >= 1,
                  bytestring >= 0.9, zip-archive >= 0.1.1.4,
-                 utf8-string >= 0.3, old-time >= 1
+                 utf8-string >= 0.3, old-time >= 1,
+                 HTTP >= 4000.0.5, texmath, xml >= 1.3.5 && < 1.4,
+                 extensible-exceptions
   if impl(ghc >= 6.10)
     Build-depends: base >= 4 && < 5, syb
   else
@@ -181,7 +182,6 @@ Library
                    Text.Pandoc.CharacterReferences,
                    Text.Pandoc.Shared,
                    Text.Pandoc.ODT,
-                   Text.Pandoc.LaTeXMathML,
                    Text.Pandoc.Highlighting,
                    Text.Pandoc.Readers.HTML,
                    Text.Pandoc.Readers.LaTeX,
@@ -231,17 +231,6 @@ Executable pandoc
     Build-depends: citeproc-hs >= 0.2
     cpp-options:   -D_CITEPROC
   if flag(executable)
-    Buildable:      True
-  else
-    Buildable:      False
-
-Executable hsmarkdown
-  Hs-Source-Dirs:     src
-  Main-Is:            hsmarkdown.hs
-  Ghc-Options:        -Wall -threaded
-  Ghc-Prof-Options:   -auto-all
-  Extensions:         CPP
-  if flag(wrappers)
     Buildable:      True
   else
     Buildable:      False
