@@ -1,6 +1,8 @@
 Name:                safecopy
-Version:             0.1
-Description:         Project description
+Version:             0.2
+Synopsis:            Binary serialization with version control.
+Description:         An extension to Data.Binary with built-in version control.
+Category:            Data, Parsing
 License:             BSD3
 License-file:        LICENSE
 Author:              David Himmelstrup
