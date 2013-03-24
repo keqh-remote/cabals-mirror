@@ -2,7 +2,7 @@ build-type:	Simple
 cabal-version:	>= 1.2
 
 name:		prototype
-version:	0.2
+version:	0.3
 stability:	experimental
 author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
 maintainer:	Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -27,13 +27,16 @@ description:	prototype-based programming on Haskell
 		> main :: IO ()
 		> main = fmap fst $ flip runPT initPTEnv $ do
 		>	dog <- clone object
-		>	name <- makeMember "name"
-		>	setName <- setMethod dog "setName" $ \this [ n ] -> do
+		>	name	<- makeMember "name"
+		>	setName	<- makeMember "setName"
+		>	sit	<- makeMember "sit"
+		>	setMethod dog setName $ \this [ n ] -> do
 		>		setMember this name n
 		>		return [ ]
-		>	sit <- setMethod dog "sit" $ \this _ -> do
+		>	setMethod dog sit $ \this _ -> do
 		>		n <- member this name
 		>		liftPT $ putStrLn $ fromPrimStr n ++ " sitting."
+		>		return [ ]
 		>	myDog <- clone dog
 		>	method myDog setName [ primStr "John" ]
 		>	method myDog sit [ ]
