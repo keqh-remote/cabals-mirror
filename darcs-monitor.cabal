@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.2
 Name: darcs-monitor
-Version: 0.3.5
+Version: 0.3.6
 License: GPL
 License-File: GPL.txt
 Author: Antti-Juhani Kaijanaho
@@ -13,7 +13,7 @@ Description: Darcs-monitor will send email to a specified recipient
  emails), or periodically from Cron, or occasionally by hand, whatever
  seems most convenient.
 Category: Distribution
-Build-Type: Custom
+Build-Type: Simple
 Extra-Source-Files: README darcs-monitor.1.in
 Data-Files: default-template
 
