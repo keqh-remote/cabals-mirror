@@ -1,5 +1,5 @@
 Name:               hsignal
-Version:            0.1.0.5
+Version:            0.1.1.1
 License:            GPL
 License-file:       LICENSE
 Author:             Vivian McPhail
@@ -23,11 +23,11 @@ extra-tmp-files:    hsignal.buildinfo
 library
 
     Build-Depends:      base >= 3 && < 5,
-                        storable-complex, haskell98, mtl, bytestring,
-                        hmatrix >= 0.9.3,
-                        hstatistics >= 0.1.0.5,
+                        haskell98, mtl, 
                         array,
-                        ghc-binary
+                        bytestring, storable-complex, ghc-binary,
+                        hmatrix >= 0.10.0,
+                        hmatrix-gsl-stats >= 0.1.1.4
 
     Extensions:         ForeignFunctionInterface
 
