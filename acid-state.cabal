@@ -7,7 +7,7 @@ Name:                acid-state
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.5.2
+Version:             0.6.1
 
 -- A short (one-line) description of the package.
 Synopsis:            Add ACID guarantees to any serializable Haskell data structure.
@@ -45,18 +45,20 @@ Cabal-version:       >=1.6
 
 Library
   -- Modules exported by the library.
-  Exposed-Modules:     Data.Acid, Data.Acid.Core,
+  Exposed-Modules:     Data.Acid,
                        Data.Acid.Local, Data.Acid.Memory,
-                       Data.Acid.Memory.Pure
+                       Data.Acid.Memory.Pure, Data.Acid.Remote,
+                       Data.Acid.Advanced
 
   -- Modules not exported by this package.
   Other-modules:       Data.Acid.Log, Data.Acid.Archive,
                        Data.Acid.CRC, Paths_acid_state,
-                       Data.Acid.TemplateHaskell, Data.Acid.Common, FileIO
+                       Data.Acid.TemplateHaskell, Data.Acid.Common, FileIO,
+                       Data.Acid.Abstract, Data.Acid.Core
   
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4 && < 5, cereal >= 0.3.2.0, safecopy == 0.5.* , bytestring, stm,
-                       filepath, directory, mtl, array, containers, template-haskell
+  Build-depends:       base >= 4 && < 5, cereal >= 0.3.2.0, safecopy >= 0.6, bytestring, stm,
+                       filepath, directory, mtl, array, containers, template-haskell, network
 
   if os(windows)
      Build-depends:       Win32
