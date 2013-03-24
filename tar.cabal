@@ -1,5 +1,5 @@
 name:            tar
-version:         0.3.2.0
+version:         0.4.0.0
 license:         BSD3
 license-file:    LICENSE
 author:          Bjorn Bringert <bjorn@bringert.net>
@@ -39,4 +39,7 @@ library
     Codec.Archive.Tar.Pack
     Codec.Archive.Tar.Unpack
 
-  ghc-options: -Wall
+  extensions:
+    DeriveDataTypeable
+
+  ghc-options: -Wall -fno-warn-unused-imports
