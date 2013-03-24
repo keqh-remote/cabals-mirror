@@ -1,5 +1,5 @@
 Name:                 mathlink
-Version:              0.1.0.0
+Version:              0.1.0.1
 Cabal-Version:        >= 1.2
 Build-Type:           Simple
 License:              BSD3
@@ -9,7 +9,7 @@ Author:               Tracy Wadleigh
 Maintainer:           <tracy.wadleigh@gmail.com>
 Bug-Reports:          mailto:tracy.wadleigh@gmail.com?subject=dev-mathlink
 Stability:            experimental
-Synopsis:             A library for Mathematica's MathLink
+Synopsis:             Call Haskell from Mathematica
 Tested-With:          GHC == 6.10.1
 Category:             Foreign
 Extra-Source-Files:   examples/mltest.cabal
