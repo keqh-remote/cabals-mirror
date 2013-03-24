@@ -1,5 +1,5 @@
 Name:          KiCS
-Version:       0.8.6
+Version:       0.8.7
 Cabal-Version: >= 1.6
 Author:        Bernd Braßel
 Maintainer:    Bernd Braßel
@@ -9,7 +9,7 @@ License-File:  LICENSE
 Category:      Compiler
 build-type:    Simple
 Synopsis:      A compiler from Curry to Haskell
-Description:   This package builds the Curry to Haskell compiler.
+Description:   This package builds the Curry to Haskell compiler "kics".
                Note, that you need a functional curry module
                "Prelude.curry" to get started.
                The standard version of that file is contained
@@ -27,7 +27,8 @@ Executable kics
     old-time,
     directory,
     containers,
-    curry-base >= 0.2.4
+    curry-base >= 0.2.5,
+    curry-frontend >= 0.2.5
 
 Library
   hs-source-dirs: src
