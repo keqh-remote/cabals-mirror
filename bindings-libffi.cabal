@@ -3,7 +3,7 @@ name: bindings-libffi
 homepage: http://bitbucket.org/mauricio/bindings-libffi
 synopsis:
   Low level bindings to libffi.
-version: 0.1
+version: 0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
@@ -17,7 +17,7 @@ library
     ForeignFunctionInterface
   build-depends:
     base >= 3 && <5,
-    bindings-common >= 1 && < 2
+    bindings-common >= 1.3 && < 1.4
   exposed-modules:
     Bindings.Libffi
   pkgconfig-depends: libffi >= 3.0.7
