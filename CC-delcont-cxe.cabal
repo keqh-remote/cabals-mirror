@@ -1,5 +1,5 @@
 name:               CC-delcont-cxe
-version:            0.1.0.0
+version:            0.1.0.1
 author:             Oleg Kiselyov
 maintainer:         shelarcy <shelarcy@gmail.com>
 license:            BSD3
@@ -40,7 +40,7 @@ extra-source-files:
 library
  build-depends:      base >= 3 && < 5, mtl
  exposed-modules:
-    Control.Monad.CC.CCcxe
+    Control.Monad.CC.CCCxe
  other-modules:
  cc-options:
  ld-options:
