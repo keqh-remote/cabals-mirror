@@ -1,5 +1,5 @@
 name:           snap
-version:        0.6.0.1
+version:        0.6.0.2
 synopsis:       Snap: A Haskell Web Framework: project starter executable and glue code library
 description:    Snap Framework project starter executable and glue code library
 license:        BSD3
@@ -89,10 +89,16 @@ Library
     Snap.Snaplet.Session.SecureCookie,
     Snap.Snaplet.Session.SessionManager
 
+  if impl(ghc >= 7.0) && impl(ghc < 7.4)
+    build-depends:
+      aeson-native            >= 0.3     && < 0.4
+  else
+    build-depends:
+      aeson                   >= 0.3.2   && < 0.4
+
   build-depends:
     Crypto                    >= 4.2     && < 4.3,
     MonadCatchIO-transformers >= 0.2     && < 0.3,
-    aeson                     >= 0.3.2   && < 0.4,
     attoparsec                (>= 0.8.0.2 && < 0.9) ||
                               (>= 0.9.1.1 && < 0.10),
     base                      >= 4       && < 5,
@@ -127,6 +133,25 @@ Library
     vector                    >= 0.7.1   && < 0.10,
     vector-algorithms         >= 0.4     && < 0.6,
     xmlhtml                   >= 0.1     && < 0.2
+
+  extensions:
+    BangPatterns,
+    CPP,
+    DeriveDataTypeable,
+    ExistentialQuantification,
+    FlexibleContexts,
+    FlexibleInstances,
+    GeneralizedNewtypeDeriving,
+    MultiParamTypeClasses,
+    NoMonomorphismRestriction,
+    OverloadedStrings,
+    PackageImports,
+    Rank2Types,
+    ScopedTypeVariables,
+    TemplateHaskell,
+    TypeFamilies,
+    TypeOperators,
+    TypeSynonymInstances
 
   if flag(hint)
     build-depends:
