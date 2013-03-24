@@ -1,5 +1,5 @@
 name: gf
-version: 3.2
+version: 3.2.9
 
 cabal-version: >= 1.8
 build-type: Custom
@@ -8,16 +8,30 @@ license-file: LICENSE
 category: Natural Language Processing, Compiler
 synopsis: Grammatical Framework
 description: GF, Grammatical Framework, is a programming language for multilingual grammar applications
-homepage: http://www.grammaticalframework.org
+homepage: http://www.grammaticalframework.org/
 bug-reports: http://code.google.com/p/grammatical-framework/issues/list
+tested-with: GHC==6.12.3, GHC==7.0.3
+
+source-repository head
+  type:     darcs
+  location: http://www.grammaticalframework.org/
 
 flag interrupt
   Description: Enable Ctrl+Break in the shell
   Default:     True
 
+flag server
+  Description: Include --server mode
+  Default:     True
+
+flag cclazy
+  Description: Use the new, lazy compute_concrete (faster than the old, strict version)
+  Default: True
+
 library
   build-depends: base >= 4.2 && <5,
                  array,
+                 fst,
                  containers,
                  bytestring,
                  random,
@@ -38,6 +52,7 @@ library
     PGF.Expr
     PGF.Type
     PGF.Tree
+    PGF.Tokenizer
     PGF.Paraphrase
     PGF.TypeCheck
     PGF.Binary
@@ -68,6 +83,7 @@ executable gf
                  containers,
                  bytestring,
                  filepath,
+                 fst,
                  directory,
                  random,
                  old-time,
@@ -75,12 +91,18 @@ executable gf
                  pretty,
                  mtl,
                  haskeline
-  build-tools: happy, alex
+  if flag(server)
+    build-depends: httpd-shed, network, silently, utf8-string
+    cpp-options: -DSERVER_MODE
+    other-modules: GFServer
+  build-tools: happy, alex>=2 && <3
   if os(windows)
     build-depends: Win32
   else
     build-depends: unix
   ghc-options: -O2
+  if impl(ghc>=7.0)
+    ghc-options: -rtsopts
   hs-source-dirs: src/compiler src/runtime/haskell
   extensions:
   main-is: GF.hs
@@ -139,6 +161,7 @@ executable gf
     GF.Compile.PGFtoProlog
     GF.Compile.PGFtoJS
     GF.Compile
+    GF.Index
     GF.Quiz
     PGF
     PGF.CId
@@ -163,3 +186,6 @@ executable gf
     other-modules: GF.System.UseSignal
   else
     other-modules: GF.System.NoSignal
+
+  if flag(cclazy)
+    cpp-options: -DCC_LAZY
