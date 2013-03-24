@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-VanillaArray
-Version:       1.1.1
+Version:       1.1.2
 Stability:     Experimental
 Synopsis:      Immutable arrays with plain integer indicies.
 
@@ -17,9 +17,13 @@ Description:
   point for building a more useful array package, without
   having to learn all GHC's low-level internals for yourself.
 
+  Changes:
+
+  * Now builds with GHC 6.12.1
+
 Category:      Data
 License:       BSD3
-License-file:  Licence.txt
+License-file:  License.txt
 Author:        Andrew Coppin
 Maintainer:    Andrew Coppin <MathematicalOrchid@hotmail.com>
 Build-Type:    Simple
@@ -27,5 +31,5 @@ Tested-With:   GHC == 6.10.3
 
 Library
   Exposed-modules: Data.Array.Vanilla.Unsafe
-  Build-Depends:   base >= 4 && < 5, ghc-prim >= 0.1 && < 0.2
+  Build-Depends:   base >= 4 && < 5, ghc-prim >= 0.1 && < 0.3
   HS-Source-Dirs:  .
