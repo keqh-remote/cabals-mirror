@@ -1,5 +1,5 @@
 name:         mtlx
-version:      0.1.4
+version:      0.1.5
 license:      BSD3
 license-file: LICENSE
 author:       Mark Snyder
@@ -21,7 +21,10 @@ description:
     School of Functional Programming, 1995.  See the Examples.hs file
     for usage.
 
-extra-source-files: Examples.hs, Control/Monad/ListX.hs
+extra-source-files:   examples/Examples.hs
+		    , examples/Sneaky.hs
+		    , examples/PrivLib.hs
+		    , Control/Monad/ListX.hs
 
 build-type: Simple
 ghc-options: -Wall
