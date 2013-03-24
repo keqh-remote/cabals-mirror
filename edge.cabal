@@ -8,7 +8,7 @@ Name:                edge
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
 
-Version:             0.8.18
+Version:             0.8.20
 
 -- A short (one-line) description of the package.
 Synopsis:            Top view space combat arcade game
@@ -68,7 +68,7 @@ Executable edge
                      , containers >= 0.4.2.1 && < 0.6
                      , ALUT >= 2.2 && < 2.3
                      , random >= 1.0.1.1 && < 1.1
-  
+                     , cmdtheline >= 0.2.1.1 && < 0.3
   -- Modules not exported by this package.
   Other-modules:     Lance
                      , Asteroid
