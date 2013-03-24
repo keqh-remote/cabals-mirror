@@ -1,5 +1,5 @@
 Name:               hmatrix
-Version:            0.8.3.1
+Version:            0.9.3.0
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
@@ -10,6 +10,8 @@ Synopsis:           Linear algebra and numerical computation
 Description:        Purely functional interface to basic linear algebra
                     and other numerical computations, internally implemented using
                     GSL, BLAS and LAPACK.
+                    .
+                    See also hmatrix-special and hmatrix-glpk.
 Category:           Math
 tested-with:        GHC ==6.10.4, GHC ==6.12.1
 
@@ -18,7 +20,7 @@ cabal-version:      >=1.2
 build-type:         Custom
 
 extra-source-files: lib/Numeric/LinearAlgebra/Tests/quickCheckCompat.h
-                    configure configure.hs README INSTALL CHANGES
+                    configure configure.hs THANKS INSTALL CHANGES
 extra-tmp-files:    hmatrix.buildinfo
 
 extra-source-files: examples/tests.hs
@@ -37,16 +39,23 @@ extra-source-files: examples/tests.hs
                     examples/plot.hs
                     examples/inplace.hs
                     examples/error.hs
-                    examples/devel/wrappers.hs
-                    examples/devel/functions.c
+                    examples/devel/ej1/wrappers.hs
+                    examples/devel/ej1/functions.c
+                    examples/devel/ej2/wrappers.hs
+                    examples/devel/ej2/functions.c
                     examples/Real.hs
+                    examples/vector.hs
 
 extra-source-files: lib/Numeric/LinearAlgebra/LAPACK/lapack-aux.h,
                     lib/Numeric/LinearAlgebra/LAPACK/clapack.h
 
-extra-source-files: lib/Numeric/GSL/Special/auto.hs,
-                    lib/Numeric/GSL/Special/autoall.sh,
-                    lib/Numeric/GSL/Special/replace.hs
+flag tests
+    description:    Build tests
+    default:        True
+
+flag dd
+    description:    svd = zgesdd
+    default:        True
 
 flag mkl
     description:    Link with Intel's MKL optimized libraries.
@@ -56,12 +65,14 @@ flag unsafe
     description:    Compile the library with bound checking disabled.
     default:        False
 
+flag vector
+    description:    Use Data.Vector.Storable type from "vector" package.
+    default:        False
+
 library
 
-    Build-Depends:      base >= 3 && < 5,
+    Build-Depends:      base >= 4 && < 5,
                         array,
-                        haskell98,
-                        QuickCheck, HUnit,
                         storable-complex,
                         process
 
@@ -78,47 +89,16 @@ library
                         Numeric.GSL.Polynomials,
                         Numeric.GSL.Minimization,
                         Numeric.GSL.Root,
+                        Numeric.GSL.Fitting,
                         Numeric.GSL.ODE,
                         Numeric.GSL.Vector,
-                        Numeric.GSL.Special,
-                        Numeric.GSL.Special.Gamma,
-                        Numeric.GSL.Special.Erf,
-                        Numeric.GSL.Special.Airy,
-                        Numeric.GSL.Special.Exp,
-                        Numeric.GSL.Special.Bessel,
-                        Numeric.GSL.Special.Clausen,
-                        Numeric.GSL.Special.Coulomb,
-                        Numeric.GSL.Special.Coupling,
-                        Numeric.GSL.Special.Dawson,
-                        Numeric.GSL.Special.Debye,
-                        Numeric.GSL.Special.Dilog,
-                        Numeric.GSL.Special.Elementary,
-                        Numeric.GSL.Special.Ellint,
-                        Numeric.GSL.Special.Elljac,
-                        Numeric.GSL.Special.Expint,
-                        Numeric.GSL.Special.Fermi_dirac,
-                        Numeric.GSL.Special.Gegenbauer,
-                        Numeric.GSL.Special.Hyperg,
-                        Numeric.GSL.Special.Laguerre,
-                        Numeric.GSL.Special.Lambert,
-                        Numeric.GSL.Special.Legendre,
-                        Numeric.GSL.Special.Log,
-                        Numeric.GSL.Special.Pow_int,
-                        Numeric.GSL.Special.Psi,
-                        Numeric.GSL.Special.Synchrotron,
-                        Numeric.GSL.Special.Transport,
-                        Numeric.GSL.Special.Trig,
-                        Numeric.GSL.Special.Zeta,
                         Numeric.GSL,
                         Numeric.LinearAlgebra,
                         Numeric.LinearAlgebra.LAPACK,
-                        Numeric.LinearAlgebra.Linear,
-                        Numeric.LinearAlgebra.Instances,
                         Numeric.LinearAlgebra.Interface,
                         Numeric.LinearAlgebra.Algorithms,
                         Graphics.Plot,
-                        Numeric.LinearAlgebra.Tests,
-                        Data.Packed.Convert,
+                     -- Data.Packed.Convert,
                         Data.Packed.ST,
                         Data.Packed.Development,
                         Data.Packed.Random
@@ -127,14 +107,24 @@ library
                         Data.Packed.Internal.Signatures,
                         Data.Packed.Internal.Vector,
                         Data.Packed.Internal.Matrix,
-                        Numeric.GSL.Internal,
-                        Numeric.GSL.Special.Internal,
-                        Numeric.LinearAlgebra.Tests.Instances,
-                        Numeric.LinearAlgebra.Tests.Properties
+                        Numeric.LinearAlgebra.Linear,
+                        Numeric.LinearAlgebra.Instances,
+                        Numeric.GSL.Internal
+
     C-sources:          lib/Numeric/LinearAlgebra/LAPACK/lapack-aux.c,
                         lib/Numeric/GSL/gsl-aux.c
 
-    ghc-prof-options:   -auto
+    if flag(vector)
+       Build-Depends:   vector
+       cpp-options:     -DVECTOR
+
+    if flag(tests)
+       Build-Depends:   QuickCheck, HUnit
+       exposed-modules: Numeric.LinearAlgebra.Tests
+       other-modules:   Numeric.LinearAlgebra.Tests.Instances,
+                        Numeric.LinearAlgebra.Tests.Properties
+
+ -- ghc-prof-options:   -auto
 
     ghc-options:        -Wall -fno-warn-missing-signatures
                               -fno-warn-orphans
@@ -142,6 +132,9 @@ library
 
     if flag(unsafe)
         cpp-options: -DUNSAFE
+
+    if !flag(dd)
+        cpp-options: -DNOZGESDD
 
     if impl(ghc < 6.10.2)
         cpp-options: -DFINIT
@@ -157,6 +150,9 @@ library
         include-dirs: /opt/local/include
         extra-libraries: gsl
         frameworks: Accelerate
+
+    if os(windows)
+        extra-libraries: gsl-0 blas lapack
 
 -- The extra-libraries required for GSL and LAPACK
 -- should now be automatically detected by configure(.hs)
