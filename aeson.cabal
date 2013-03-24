@@ -1,5 +1,5 @@
 name:            aeson
-version:         0.3.2.11
+version:         0.3.2.12
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Web, JSON
@@ -96,6 +96,7 @@ extra-source-files:
     benchmarks/json-data/twitter100.json
     tests/Makefile
     tests/Properties.hs
+    examples/Demo.hs
 
 flag developer
   description: operate in developer mode
@@ -108,6 +109,7 @@ library
     Data.Aeson.Generic
     Data.Aeson.Parser
     Data.Aeson.Types
+    Data.Aeson.TH
 
   other-modules:
     Data.Aeson.Functions
@@ -119,12 +121,13 @@ library
     blaze-textual >= 0.2.0.2,
     bytestring,
     containers,
-    deepseq,
+    deepseq < 1.2,
     hashable >= 1.1.2.0,
     mtl,
     old-locale,
     syb,
     text >= 0.11.0.2,
+    template-haskell >= 2.5,
     time,
     unordered-containers >= 0.1.3.0,
     vector >= 0.7
@@ -132,6 +135,9 @@ library
   if flag(developer)
     ghc-options: -Werror
     ghc-prof-options: -auto-all
+
+  if(impl(ghc >= 7.2.1))
+    cpp-options: -DDEFAULT_SIGNATURES
 
   ghc-options:      -Wall
 
