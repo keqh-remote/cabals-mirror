@@ -1,5 +1,5 @@
 Name:           flower
-Version:        0.1.1
+Version:        0.1.2
 License:        GPL
 
 Author:         Ketil Malde
@@ -22,5 +22,6 @@ Tested-with:    GHC==6.8.3
  -- Data-files:     README
 Executable:     flower
 Main-Is:        Flower.hs
+Other-Modules:	Print, Statistics
 Hs-Source-Dirs: src
 Ghc-Options:    
