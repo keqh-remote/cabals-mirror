@@ -1,5 +1,5 @@
 name:                gameclock
-version:             1.0.2
+version:             1.0.3
 --homepage:            http://haskell.org/gtk2hs/archives/2006/01/26/cairo-eye-candy/
 license:             GPL
 license-file:        LICENSE
@@ -16,7 +16,7 @@ flag small_base
 
 executable hsclock
     if flag(small_base)
-        build-depends: base >= 3, old-time
+        build-depends: base >= 3, containers, time
     else
         build-depends: base < 3
     build-depends:     cairo, gtk, glib
