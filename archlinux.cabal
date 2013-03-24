@@ -1,5 +1,5 @@
 name:           archlinux
-version:        0.1
+version:        0.2
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart <dons@galois.com>
@@ -23,13 +23,19 @@ stability:      experimental
 cabal-version:  >= 1.2.3
 
 library
-    build-depends:  base < 6,
+    build-depends:  base >= 4 && < 6,
                     HTTP,
                     Cabal >= 1.6,
                     json,
                     pretty,
                     prettyclass,
-                    containers
+                    containers,
+                    filepath,
+                    xhtml,
+                    process,
+                    directory
 
     exposed-modules:
         Distribution.ArchLinux.AUR
+        Distribution.ArchLinux.PkgBuild
+        Distribution.ArchLinux.Report
