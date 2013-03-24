@@ -1,5 +1,5 @@
 name: gtk2hs-cast-gtk
-version: 0.10.1.0
+version: 0.10.1.1
 cabal-version: >= 1.6
 build-type: Simple
 license: OtherLicense
@@ -20,7 +20,7 @@ description:
 category: GUI
 tested-with: GHC == 6.10.1
 library
-  exposed-modules: Graphics.UI.Gtk.Cast
+  exposed-modules: Graphics.UI.Gtk.Cast, Graphics.UI.Gtk.Cast.TH
   build-depends: base, hint, gtk, gtk2hs-cast-glib, template-haskell
   extensions: ScopedTypeVariables, TemplateHaskell
 source-repository head
