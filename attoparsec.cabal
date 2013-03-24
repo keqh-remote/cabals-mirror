@@ -1,5 +1,5 @@
 name:            attoparsec
-version:         0.10.0.2
+version:         0.10.0.3
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
@@ -69,6 +69,8 @@ test-suite tests
   type:           exitcode-stdio-1.0
   hs-source-dirs: tests
   main-is:        QC.hs
+  other-modules:  QC.ByteString
+                  QC.Text
 
   ghc-options:
     -Wall -threaded -rtsopts
