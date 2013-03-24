@@ -1,5 +1,5 @@
 name:             wumpus-core
-version:          0.22.0
+version:          0.23.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -50,9 +50,6 @@ description:
   not offer distinct functionality. Some functions were removed in 
   revision 0.17.0 and some more are likely to follow. 
   .
-  The module @Extra.PictureLanguage@ is deprecated. At some point 
-  it will be superceded by @wumpus-basic@ but this will not be soon.
-  .
   .
   \[1\] Because the output is simple, straight-line PostScript 
   code, it is possible to use GraphicsMagick or a similar tool 
@@ -61,53 +58,27 @@ description:
   .
   Changelog:
   .
-  0.21.0 to 0.22.0:
-  .
-  * Moved the deprecated module @Wumpus.Extra.PictureLanguage@
-    into the package Wumpus-Basic along with the example 
-    @Picture.hs@.
-  .
-  * Added vec as a synonym for the constructor V2.
-  .
-  * Changed some of the Core.FontSize to use better terminology. 
-    Thus some of the constants have changed. Added a new example
-    @FontMetrics.hs@ to illustrate how FontSize works. 
-    Particularly, the function @capHeight@ has been replaced with
-    the function @numeralHeight@ which has better semantics.
-  .
-  * The CTM data type and ToCTM class are now hidden in the
-    top-level import module @Wumpus.Core@. They can be accessed
-    by importing @Wumpus.Core.GraphicsState@ directly.
-  .
-  * Exposed the PSUnit type class. 
-  .
-  0.20.0 to 0.21.0:
-  .
-  * Removed the Primitive instances of the Affine transformation 
-    classes. They have been replaced with special transformation 
-    functions: @rotatePrimitive@, @scalePrimitive@, 
-    @translatePrimitive@. As Primitives are not in an affine 
-    frame until they are lifted to Pictures the affine instances 
-    had ill-conceived semantics.
-  .
-  * Due to changes to accommodate the new non-affine  
-    transformations, many of the class obligations have changed 
-    on the @unit@ of Pictures, Primitives, Bounding Boxes etc. 
-    Generally many class contexts that previously required 
-    Fractional and Ord on the unit have changed to Real and 
-    Floating.
-  .
-  * Removed demo/AffineTest04.hs - there is no longer a 
-    @rotateAbout@ operation on Primitives as they do not exist 
-    in an affine frame until they they are lifted to Pictures.
-    Added - Scaled.hs, Rotated.hs, Translated,hs.
+  0.22.0 TO 0.23.0:
   . 
-  * Removed the UndecidableInstances pragma from 
-    Core.PictureInternal. It looks like Core.Geometry will always 
-    need UndecidableInstances though.
+  * @Basic.GraphicsState@ - extracted the font face fields from 
+    @FontAttr@ datatype into a separate datatype @FontFace@.
+  . 
+  * Added @PtSize@ a numeric type wrapping Double. This is 
+    specifically for text size calculations, vis the 
+    @Core.FontSize@ module.
   .
-  * Removed the Ord superclass constriant from the @Stroke@ and
-    @Fill@ classes and derived operations (e.g. @zostroke@).
+  * Changed all functions in @Core.FontSize@ to return @PtSize@
+    instead of a polymorphic type @u@ (where @u@ is an instance 
+    of Fractional). To get to another unit type rather than 
+    FontSize use an explicit conversion that scales the value 
+    accordingly.
+  .
+  * Added FromPtSize class constraints to various functions in
+    @Core.Picture@.
+  .
+  * Added @charWidth@ to @Core.FontSize@.
+  .
+  * Added @vlength@ to @Core.Geometry@
   .
   .
 build-type:         Simple
@@ -152,6 +123,7 @@ library
     Wumpus.Core.OutputPostScript,
     Wumpus.Core.OutputSVG,
     Wumpus.Core.Picture,
+    Wumpus.Core.PtSize,
     Wumpus.Core.TextEncoder,
     Wumpus.Core.TextLatin1,
     Wumpus.Core.VersionNumber,
