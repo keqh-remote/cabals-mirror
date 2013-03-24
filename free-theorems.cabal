@@ -1,5 +1,5 @@
 name:           free-theorems
-version:        0.3.1.1
+version:        0.3.1.2
 license:        PublicDomain
 license-file:   LICENSE
 author:         Sascha Boehme
@@ -38,7 +38,7 @@ library
   build-depends:
       mtl >= 1.0
     , haskell-src >= 1.0
-    , haskell-src-exts >= 0.3.9
+    , haskell-src-exts >= 0.3.9 && < 0.4
     , pretty >= 1.0.0.0
     , containers >= 0.1.0.1
   if impl(ghc >= 6.10)
