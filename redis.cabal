@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.3.1
+Version:             0.4
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -16,12 +16,11 @@ Description:
 	protocol. Most of the functions will work correctly with stable version
 	but not all.
 	.
-	Changes from v0.2:
+	Changes from v0.3:
 	.
-	- (!) A lot of data and function types changed. Now it is posible to get not only
-	  String result but also a ByteString and other.
-	.
-	- New protocol functions added: substr, zrank
+	- Updated for Redis v1.3.7
+	- new sorted sets commands added: zrevrank, zremrangebyrank, zunion, zinter
+	- new hash commands added: hset, hdel, hexists, hlen, hkeys, hvals, hgetall
 
 Stability:           beta
 Build-Type:          Simple
