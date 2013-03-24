@@ -1,5 +1,5 @@
 name:               hedis
-version:            0.2
+version:            0.3
 synopsis:
     Client library for the Redis datastore: supports full command set,  
     pipelining.
@@ -10,18 +10,27 @@ Description:
     datastore. Compared to other Haskell client libraries it has some
     advantages:
     .
-    [Complete Redis 2.4 command set:] All Redis commands 
-        (<http://redis.io/commands>) are available as haskell functions. The 
-        exceptions to the rule are the MONITOR and SYNC commands.
+    [Complete Redis 2.4 command set:] All Redis commands
+        (<http://redis.io/commands>) are available as haskell functions, except
+        for the MONITOR and SYNC commands. Additionally, a low-level API is
+        exposed that  makes it easy for the library user to implement additional
+        commands, such as new commands from an experimental Redis version.
     .
-    [Pipelining \"Just Works\":] Commands are pipelined 
+    [Automatic Optimal Pipelining:] Commands are pipelined
         (<http://redis.io/topics/pipelining>) as much as possible without any
-        work by the user.
+        work by the user. See
+        <http://informatikr.com/2012/redis-pipelining.html> for a
+        technical explanation of automatic optimal pipelining.
     .
     [Enforced Pub\/Sub semantics:] When subscribed to the Redis Pub\/Sub server
         (<http://redis.io/topics/pubsub>), clients are not allowed to issue
         commands other than subscribing to or unsubscribing from channels. This
         library uses the type system to enforce the correct behavior.
+    .
+    [Connect via TCP or Unix Domain Socket:] TCP sockets are the default way to
+        connect to a Redis server. For connections to a server on the same
+        machine, Unix domain sockets offer higher performance than the standard
+        TCP connection.
     .
     For detailed documentation, see the "Database.Redis" module.
 license:            BSD3
@@ -43,9 +52,16 @@ flag benchmark
     description: Build the benchmark executable.
     default: False
 
+flag test
+    description: Build the test suite.
+    default: False
+
 library
   hs-source-dirs:   src
-  ghc-options:      -Wall
+  if flag(test)
+      ghc-options:  -Wall
+  else
+      ghc-options:  -Wall
   ghc-prof-options: -auto-all
   exposed-modules:  Database.Redis
   build-depends:    attoparsec == 0.10.*,
@@ -54,7 +70,8 @@ library
                     bytestring-lexing == 0.2.*,
                     mtl == 2.*,
                     network == 2.*,
-                    resource-pool == 0.2.0.*
+                    resource-pool == 0.2.1.*,
+                    time
 
   other-modules:    Database.Redis.Core,
                     Database.Redis.Connection
@@ -69,11 +86,28 @@ executable hedis-benchmark
     main-is: benchmark/Benchmark.hs
     if flag(benchmark)
         build-depends:
-            base >= 4,
-            mtl == 2.0.*,
+            base == 4.*,
+            mtl == 2.*,
             hedis,
-            time >= 1.2        
+            time >= 1.2
     else
         buildable: False
     ghc-options: -Wall -rtsopts
     ghc-prof-options: -auto-all
+
+executable hedis-test
+    main-is: test/Test.hs
+    if flag(test)
+        build-depends:
+            base == 4.*,
+            bytestring == 0.9.*,
+            hedis,
+            HUnit == 1.2.*,
+            mtl == 2.*,
+            time
+    else
+        buildable: False
+    -- We use -O0 here, since GHC takes *very* long to compile so many constants
+    ghc-options: -O0 -Wall -rtsopts -fno-warn-unused-do-bind
+    ghc-prof-options: -auto-all
+    
