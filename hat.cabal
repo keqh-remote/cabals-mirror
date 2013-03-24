@@ -1,6 +1,6 @@
 
 name:                hat
-version:             2.7.0.0
+version:             2.7.0.1
 synopsis:            The Haskell tracer, generating and viewing Haskell execution traces
 description:
   hat-trans transforms Module.hs into Hat/Module.hs such that when the program is
@@ -12,13 +12,14 @@ description:
 
   It is the least possible update to make Hat work with Cabal.
   Hat 2.07 works only with ghc for Haskell 98 (plus a few extensions) and
-  the standard Haskell 98 libraries. Although it should build on any operating system,
+  the standard Haskell 98 libraries plus some Haskell 2010 libraries. 
+  Although it should build on any operating system,
   most viewing tools use ASCII console escape sequences and they open xterms;
   hence they will only work well under Unix and X11.
 
   Installation:
 
-  > cabal -v install (--user | --global)
+  > cabal -v install
 
   Flag -v allows you to see what is going on. Building takes a long time 
   (one module has 25.000 lines of code). Don't worry about numerous warning messages.
@@ -39,6 +40,7 @@ description:
   > hat-trail / hat-observe / hat-explore /...   MyProgram
 
   There is documentation in the "docs" folder, but much of it is outdated.
+  There are a few small programs for exploring tracing in the "examples" folder.
 homepage:            http://www.cs.kent.ac.uk/~oc
 license:             OtherLicense
 license-file:        docs/copyright.html
@@ -52,16 +54,16 @@ category:            Development
 build-type:          Simple
 cabal-version:       >=1.8
 
-data-dir:	     libhx
-data-files:	     *.hx
-extra-source-files:  include/*.h, tools/*.h, libraries/*.hs, docs/*.html, docs/*.hs, docs/*.ps.gz, docs/*.eps, docs/*.gif, docs/*.pdf, docs/*.tex, docs/*.dvi, docs/*.hva, docs/man/*.1, docs/man/*.1.in
+data-dir:	     libraries
+data-files:	     *.hx, *.hs, Control/*.hx, Control/*.hs, Data/*.hx, Data/*.hs
+extra-source-files:  include/*.h, tools/*.h, docs/*.html, docs/*.hs, docs/*.ps.gz, docs/*.eps, docs/*.gif, docs/*.pdf, docs/*.tex, docs/*.dvi, docs/*.hva, docs/man/*.1, docs/man/*.1.in, examples/*.hs
 
 source-repository head
   type:		     git
   location:	     git://github.com/OlafChitil/hat.git
 
 library
-  exposed-modules:     Hat.Array, Hat.Char, Hat.Complex, Hat.CPUTime, Hat.Directory, Hat.Hack, Hat.Hat, Hat.IO, Hat.Ix, Hat.List, Hat.Locale, Hat.Maybe, Hat.Monad, Hat.Numeric, Hat.Prelude, Hat.PreludeBasic, Hat.Random, Hat.Ratio, Hat.System, Hat.Time
+  exposed-modules:     Hat.Array, Hat.Char, Hat.Complex, Hat.CPUTime, Hat.Directory, Hat.Hack, Hat.Hat, Hat.IO, Hat.Ix, Hat.List, Hat.Locale, Hat.Maybe, Hat.Monad, Hat.Numeric, Hat.Prelude, Hat.PreludeBasic, Hat.Random, Hat.Ratio, Hat.System, Hat.Time, Hat.Control.Monad, Hat.Data.Char, Hat.Data.Maybe, Hat.Data.List, Hat.System.Environment, Hat.System.Exit, Hat.System.IO
   build-depends:       base ==4.5.*, directory ==1.1.*, random ==1.0.*, process ==1.1.*, old-time ==1.1.*, old-locale ==1.0.*
   other-modules:       Hat.DirectoryBuiltin, Hat.DirectoryBuiltinTypes, Hat.IOBuiltin, Hat.IOBuiltinTypes, Hat.PreludeBuiltin, Hat.PreludeBuiltinTypes, Hat.RandomBuiltin, Hat.SystemBuiltin, Hat.SystemBuiltinTypes, Hat.TimeBuiltin, Hat.TimeBuiltinTypes
   extensions:	       ForeignFunctionInterface
@@ -128,8 +130,8 @@ executable hat-detect
   -- currently just calls hat-delta; was a separate tool
   main-is:	     HatDetect.hs
   hs-source-dirs:    tools
-  other-modules:     Pretty, Slice, LowLevel, CommonUI, NodeExp, SExp, ADT, EDT, SrcRef, FDT, Detect, Explore, HighlightStyle, PrettyLibHighlight, Ident
-  build-depends:     base ==4.5.*, process ==1.1.*, containers ==0.4.*
+  other-modules:     LowLevel, SExp, TExp, HighlightStyle, CommonUI, SrcRef
+  build-depends:     base ==4.5.*, directory ==1.1.*, process ==1.1.*, haskeline ==0.6.*
   extensions:	     ForeignFunctionInterface
   includes:	     art.h, ntohl.h
   include-dirs:	     include
@@ -203,7 +205,7 @@ executable hat-anim
 executable pretty-hat
   main-is:	     PrettyHat.hs
   hs-source-dirs:    tools
-  other-modules:     Pretty, NodeExp, EDT, HighlightStyle, Detect, Slice, ADT, Explore, SExp, CommonUI, SrcRef, Ident, LowLevel, PrettyLibHighlight
+  other-modules:     Pretty, NodeExp, EDT, HighlightStyle, Delta, Slice, ADT, Explore, SExp, CommonUI, SrcRef, Ident, LowLevel, PrettyLibHighlight
   build-depends:     base ==4.5.*, process ==1.1.*, containers ==0.4.*
   extensions:	     ForeignFunctionInterface
   includes:	     art.h, ntohl.h
@@ -214,7 +216,7 @@ executable pretty-hat
 executable hat-delta
   main-is:	     HatDelta.hs
   hs-source-dirs:    tools
-  other-modules:     Pretty, Slice, LowLevel, CommonUI, NodeExp, SExp, ADT, EDT, SrcRef, FDT, Detect, Explore, HighlightStyle, PrettyLibHighlight, Ident
+  other-modules:     Pretty, Slice, LowLevel, CommonUI, NodeExp, SExp, ADT, EDT, SrcRef, FDT, Delta, Explore, HighlightStyle, PrettyLibHighlight, Ident
   build-depends:     base ==4.5.*, process ==1.1.*, containers ==0.4.*
   extensions:	     ForeignFunctionInterface
   includes:	     art.h, ntohl.h
