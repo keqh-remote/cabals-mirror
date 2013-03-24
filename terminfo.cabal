@@ -1,6 +1,6 @@
 Name:           terminfo
 Cabal-Version:  >=1.4
-Version:        0.2.2.1
+Version:        0.3
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -15,10 +15,10 @@ Description:    This library provides an interface to the terminfo database (via
 Homepage:       http://code.haskell.org/terminfo
 Stability:      Experimental
 Build-type:     Configure
-Build-depends:  base>=1.0
+Build-depends:  base>=1.0, extensible-exceptions>=0.1.1.0 && < 0.2
 extra-source-files: configure.ac configure terminfo.buildinfo.in
 extra-tmp-files: config.log config.status autom4te.cache terminfo.buildinfo
-Extensions:     ForeignFunctionInterface
+Extensions:     ForeignFunctionInterface, DeriveDataTypeable
 Exposed-Modules:
                 System.Console.Terminfo
                 System.Console.Terminfo.Base
