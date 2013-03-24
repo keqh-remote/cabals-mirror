@@ -1,5 +1,5 @@
 Name:             spreadsheet
-Version:          0.1.1.1
+Version:          0.1.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -8,30 +8,23 @@ Homepage:         http://www.haskell.org/haskellwiki/Spreadsheet
 Category:         Data, Text
 Synopsis:         Read and write spreadsheets from and to CSV files in a lazy way
 Description:
-  Read and write spreadsheets from and to CSV files in a lazy way.
-  See also the csv package on Hackage and
+  Read and write spreadsheets from and to files
+  containing comma separated values (CSV) in a lazy way.
+  See also the
+     csv package <http://hackage.haskell.org/package/csv> and
      <http://www.xoltar.org/languages/haskell.html>,
      <http://www.xoltar.org/languages/haskell/CSV.hs>.
   Both do not parse lazy.
   Reading from other source than plain 'String's could be easily added.
-Tested-With:       GHC==6.8.2
+Tested-With:       GHC==6.8.2, GHC==6.12.3
 Cabal-Version:     >=1.6
 Build-Type:        Simple
 Source-Repository head
   type:     darcs
   location: http://code.haskell.org/~thielema/spreadsheet/
 
-Source-Repository this
-  type:     darcs
-  location: http://code.haskell.org/~thielema/spreadsheet/
-  tag:      0.1.1.1
-
 Flag splitBase
   description: Choose the new smaller, split-up base package.
-
-Flag buildTests
-  description: Build test executables
-  default:     False
 
 Library
   Build-Depends:
