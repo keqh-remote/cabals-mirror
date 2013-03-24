@@ -1,5 +1,5 @@
 Name: pubsub
-Version: 0.10
+Version: 0.11
 Cabal-Version: >= 1.2
 Build-type: Simple
 License: BSD3
@@ -39,7 +39,7 @@ Library
   Other-modules: Utils.Data.List,
                  Utils.Data.String
   GHC-options: -fwarn-missing-signatures -Wall
-  Build-depends: base >= 2 && <4, network, feed, xml, mime, utf8-string, json, random, HTTP >= 4000
+  Build-depends: base >= 2 && <4, network, feed >= 0.3.7, xml, mime, utf8-string, json, random, HTTP >= 4000.0.8
   if flag(old-base)
     Build-depends: base < 3
   else
