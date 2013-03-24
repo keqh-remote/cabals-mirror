@@ -1,5 +1,5 @@
 Name:                MaybeT-transformers
-Version:             0.1
+Version:             0.2
 Cabal-version:       >= 1.6
 Synopsis:            MaybeT monad transformer using transformers instead of mtl.
 Description:         Support for computations with failures. This
@@ -15,6 +15,6 @@ Maintainer:          Erik Hesselink <hesselink@gmail.com>
 Stability:           experimental
 Build-Type:          Simple
 Build-Depends:       base >= 3 && < 5, 
-                     monads-fd == 0.0.*,
-                     transformers == 0.1.*
+                     monads-fd < 0.2,
+                     transformers < 0.3
 Exposed-modules:     Control.Monad.Maybe
