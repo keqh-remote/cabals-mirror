@@ -1,5 +1,5 @@
 Name:            sqlite
-Version:         0.4.2.1
+Version:         0.5
 Synopsis:        Haskell binding to sqlite3
 Description:
     Haskell binding to sqlite3 <http://sqlite.org/>.
@@ -28,14 +28,14 @@ extra-tmp-files:
   sqlite.buildinfo
 
 flag builtin-sqlite3
-  default: True
+  default: False
   description: Compile sqlite3 as a part of the library.
 
 library
   Build-depends:   base >= 3 && < 5, pretty, utf8-string, bytestring, time,
                    directory
   Extensions:      ForeignFunctionInterface, GeneralizedNewtypeDeriving,
-                   TypeSynonymInstances,
+                   TypeSynonymInstances, ScopedTypeVariables,
                    FlexibleInstances, UndecidableInstances, OverlappingInstances, IncoherentInstances
   Ghc-options:     -Wall
   Cc-options:      -Wall -DSQLITE_ENABLE_FTS3=1 -O3 -DNDEBUG=1
