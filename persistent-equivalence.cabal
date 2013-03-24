@@ -1,5 +1,5 @@
 Name:                persistent-equivalence
-Version:             0.1.1
+Version:             0.2
 Synopsis:            Persistent equivalence relations (aka union-find)
 Description:         This is a semi-persistent data structure for equivalence
                      relations (known in the imperative world as union-find
@@ -8,10 +8,15 @@ Description:         This is a semi-persistent data structure for equivalence
                      access patterns are used.
                      .
                      The basic idea is as given by Conchon and Filliatre in
-                     their 2007 paper "A persistent union-find data structure."
-                     Unlike the implementation given in the paper, this version
-                     is safe with multiple threads, but does not optimize
-                     for backtracking.
+                     their 2007 paper, \"A persistent union-find data
+                     structure.\"  Unlike the implementation given in the
+                     paper, this version is safe with multiple threads, but
+                     does not optimize for backtracking.
+                     .
+                     Version 0.2 removes unnecessary atomic operations when
+                     doing updates that are never semantically meaningful,
+                     hopefully leading to better scalability in a parallel
+                     setting.
 License:             BSD3
 License-file:        LICENSE
 Author:              Chris Smith <cdsmith@gmail.com>
