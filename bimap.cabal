@@ -1,6 +1,6 @@
 cabal-version:       >= 1.2.3.0
 name:                bimap
-version:             0.2.1
+version:             0.2.2
 synopsis:            Bidirectional mapping between two key types
 description:
   A data structure representing a bidirectional mapping between two
@@ -9,7 +9,7 @@ description:
 category:            Data
 license:             BSD3
 license-file:        LICENSE
-copyright:           Stuart Cook 2008
+copyright:           Stuart Cook and contributors 2008
 author:              Stuart Cook
 maintainer:          scook0@gmail.com
 homepage:            http://code.haskell.org/bimap
@@ -31,7 +31,7 @@ Library
     build-depends:       base >= 3, containers
   else
     build-depends:       base < 3
-  ghc-options:         -Wall -O2
+  ghc-options:         -Wall
   exposed-modules:
       Data.Bimap
 
