@@ -1,8 +1,8 @@
 name: hoauth
-version: 0.0.3
+version: 0.0.4
 category: Network,Protocol,OAuth
-license: LGPL
-license-file: COPYING
+license: BSD3
+license-file: LICENSE
 author: Diego Souza
 maintainer: Diego Souza <dsouza@bitforest.org>
 stability: experimental
