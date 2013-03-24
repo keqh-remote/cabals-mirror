@@ -1,5 +1,5 @@
 Name:           SoccerFun
-Version:        0.1.2
+Version:        0.2.1
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -14,7 +14,7 @@ Description:
 	From the website: Soccer-Fun is an educational project to stimulate functional programming by thinking about, designing, implementing, running, and competing with the brains of football players! It is open for participation by everybody who likes to contribute. It is not restricted to a particular functional programming language.
 Category:       Game, Education, AI
 Cabal-Version:  >= 1.6
-Extensions:     UnicodeSyntax, NamedFieldPuns, Rank2Types, ExistentialQuantification
+Extensions:     UnicodeSyntax, NamedFieldPuns, Rank2Types, ExistentialQuantification, FlexibleInstances
 Data-Files:	template/Makefile template/*.hs
 Build-Depends:
 	base >= 4 && < 4.3,
@@ -25,11 +25,9 @@ Build-Depends:
 	mtl >= 1.1 && < 1.2
 Exposed-Modules:
 	SoccerFun.UI.GL
-	SoccerFun.Prelude
 	SoccerFun.Ball
 	SoccerFun.Types
 	SoccerFun.Team
-	SoccerFun.Random
 	SoccerFun.Geometry
 	SoccerFun.Field
 	SoccerFun.Player
@@ -38,3 +36,5 @@ Other-Modules:
 	SoccerFun.MatchControl
 	SoccerFun.Referee
 	SoccerFun.Referee.Ivanov
+	SoccerFun.Random
+	SoccerFun.Prelude
