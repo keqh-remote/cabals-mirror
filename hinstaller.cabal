@@ -1,6 +1,6 @@
 name: hinstaller
-version: 2007.4.24
-stability: Alpha
+version: 2007.5.13
+stability: Beta
 copyright: Matthew Sackman
 category: System
 maintainer: matthew@wellquite.org
