@@ -1,5 +1,5 @@
 Name:                scc
-Version:             0.1
+Version:             0.2
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Streaming component combinators
@@ -10,7 +10,7 @@ Description:
   types, a number of primitive streaming components and a set of component combinators. Finally,
   there is an executable that exposes all functionality in a command-line shell.
   .
-  The library design is based on paper <http://www.idealliance.org/papers/extreme/Proceedings/html/2006/Blazevic01/EML2006Blazevic01.html>
+  The original library design is based on paper <http://www.idealliance.org/papers/extreme/Proceedings/html/2006/Blazevic01/EML2006Blazevic01.html>
   .
   Mario Bla&#382;evi&#263;, Streaming component combinators, Extreme Markup Languages, 2006.
   
@@ -25,9 +25,10 @@ Executable shsh
   Main-is:           Shell.hs
   Other-Modules:     Control.Concurrent.SCC.Foundation, Control.Concurrent.SCC.ComponentTypes,
                      Control.Concurrent.SCC.Components, Control.Concurrent.SCC.Combinators
-  Build-Depends:     base, containers, process, readline, parsec
+  Build-Depends:     base, containers, mtl, parallel, process, readline, parsec >= 3
+  GHC-options:       "-threaded"
 
 Library
   Exposed-Modules:   Control.Concurrent.SCC.Foundation, Control.Concurrent.SCC.ComponentTypes,
                      Control.Concurrent.SCC.Components, Control.Concurrent.SCC.Combinators
-  Build-Depends:     base, containers
+  Build-Depends:     base, containers, mtl, parallel
