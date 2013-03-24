@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.2
+Version:         1.2.1
 Cabal-Version:   >= 1.2
 Build-Type:      Custom
 License:         GPL
@@ -155,7 +155,7 @@ Library
                  bytestring >= 0.9, zip-archive >= 0.1.1,
                  utf8-string >= 0.3, old-time >= 1
   if impl(ghc >= 6.10)
-    Build-depends: base >= 4, syb
+    Build-depends: base >= 4 && < 5, syb
   else
     Build-depends: base >= 3 && < 4
   if flag(highlighting)
@@ -193,10 +193,11 @@ Library
                    Text.Pandoc.Writers.RTF,
                    Text.Pandoc.Writers.S5
   Other-Modules:   Text.Pandoc.XML,
-                   Text.Pandoc.TH
+                   Text.Pandoc.TH,
+                   Paths_pandoc
   Extensions:      CPP, TemplateHaskell, FlexibleInstances
   Ghc-Options:     -O2 -Wall
-  Ghc-Prof-Options: -auto-all
+  Ghc-Prof-Options: -auto-all -caf-all
 
   if flag(library)
     Buildable:      True
@@ -207,7 +208,7 @@ Executable pandoc
   Hs-Source-Dirs:     src
   Main-Is:            pandoc.hs
   Ghc-Options:        -O2 -Wall -threaded
-  Ghc-Prof-Options:   -auto-all
+  Ghc-Prof-Options:   -auto-all -caf-all
   Extensions:         CPP, TemplateHaskell
 
   if flag(highlighting)
@@ -223,6 +224,17 @@ Executable pandoc
 Executable hsmarkdown
   Hs-Source-Dirs:     src
   Main-Is:            hsmarkdown.hs
+  Ghc-Options:        -Wall -threaded
+  Ghc-Prof-Options:   -auto-all
+  Extensions:         CPP, TemplateHaskell
+  if flag(wrappers)
+    Buildable:      True
+  else
+    Buildable:      False
+
+Executable markdown2pdf
+  Hs-Source-Dirs:     src
+  Main-Is:            markdown2pdf.hs
   Ghc-Options:        -Wall -threaded
   Ghc-Prof-Options:   -auto-all
   Extensions:         CPP, TemplateHaskell
