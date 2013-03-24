@@ -1,5 +1,5 @@
 Name:                cryptocipher
-Version:             0.2.10
+Version:             0.2.11
 Description:         Symmetrical Block, Stream and PubKey Ciphers
 License:             BSD3
 License-file:        LICENSE
@@ -28,7 +28,6 @@ Library
                    , crypto-api >= 0.5
                    , tagged
                    , cereal
-                   , mtl
   Exposed-modules:   Crypto.Cipher.RC4
                      Crypto.Cipher.AES
                      Crypto.Cipher.Camellia
