@@ -1,5 +1,5 @@
 name: control-monad-exception
-version: 0.4.4
+version: 0.4.5
 Cabal-Version:  >= 1.2.3
 build-type: Simple
 license: PublicDomain
@@ -48,7 +48,7 @@ description:
   >       g () `catchWithSrcLoc` \loc MyException ->
   >              lift $ putStrLn (showExceptionWithTrace loc MyException)
   .
-  > -- Running @main@ produces the output:
+  > -- Running main produces the output:
   .
   >       *Main> main
   >       MyException
