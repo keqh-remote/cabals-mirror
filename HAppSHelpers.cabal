@@ -1,5 +1,5 @@
 Name: HAppSHelpers
-Version: 0.9
+Version: 0.10
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming HAppS based web-apps. 
@@ -15,8 +15,8 @@ Exposed-Modules: HAppS.Helpers,HAppS.Helpers.DirBrowse, HAppS.Helpers.HtmlOutput
                  HAppS.Server.Helpers
                  
 Build-Depends: base, mtl, HAppS-Server, hscolour, filepath, directory, bytestring,
-               HStringTemplate, HStringTemplateHelpers, safe, MissingH, containers, parsec, Crypto, haskell98,
-               HAppS-IxSet, HAppS-State, PBKDF2, random, HAppS-Data, old-time
+               HStringTemplate, HStringTemplateHelpers, safe, MissingH, containers, parsec, haskell98,
+               HAppS-IxSet, HAppS-State, random, HAppS-Data, old-time, pureMD5, PBKDF2
 Category: Distributed Computing
 Build-type: Simple
 
