@@ -1,5 +1,5 @@
 Name:                GuiTV
-Version:             0.2
+Version:             0.3
 Synopsis:	     GUIs for Tangible Values
 Category:            Interfaces, User Interfaces
 Description:
@@ -29,7 +29,7 @@ Copyright:           (c) 2007 by Conal Elliott
 License:             BSD3
 Stability:	     experimental
 Hs-Source-Dirs:      src
-Build-Depends:       base, DeepArrow, phooey>=0.1, TV
+Build-Depends:       base, DeepArrow, phooey>=1.0, TV
 tested-with:	     GHC==6.6
 Extensions:          CPP
 Exposed-Modules:     
