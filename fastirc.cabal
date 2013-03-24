@@ -1,5 +1,5 @@
 Name:          fastirc
-Version:       0.1.2
+Version:       0.2.0
 Category:      Network
 Synopsis:      Fast Internet Relay Chat (IRC) library
 Package-URL:   http://code.haskell.org/fastirc/
@@ -9,12 +9,12 @@ Copyright:     (c) 2010 Ertugrul Söylemez
 License:       BSD3
 License-file:  LICENSE
 Build-type:    Simple
-Stability:     experimental
+Stability:     alpha
 Cabal-version: >= 1.6
 Description:
   Fast Internet Relay Chat (IRC) library.  This library implements a
-  attoparsec-based fast parser for IRC messages as well as a (currently
-  yet nonexistent) network manager for servers and clients.
+  attoparsec-based fast parser for IRC messages as well as a network
+  manager for IRC clients (user agents and bots).
 
 Source-repository head
   Type:     darcs
@@ -28,12 +28,14 @@ Library
     bytestring >= 0.9.1.4,
     bytestring-show >= 0.3.3,
     containers >= 0.2.0.1,
-    monadLib >= 3.6.1
+    monadLib >= 3.6.1,
+    network-fancy >= 0.1.4
   GHC-Options: -W
   Extensions:
     OverloadedStrings
   Exposed-modules:
     Network.FastIRC
+    Network.FastIRC.IO
     Network.FastIRC.Messages
     Network.FastIRC.ServerSet
     Network.FastIRC.Session
@@ -43,7 +45,7 @@ Library
 
 
 -- Executable test
---   Build-depends:  base >= 4 && < 5
+--   Build-depends:  base >= 4 && < 5, network
 --   Main-is:        Test.hs
 --   GHC-Options:    -W
 --   Other-modules:
