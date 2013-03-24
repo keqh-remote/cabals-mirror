@@ -1,5 +1,5 @@
 Name: darcs-beta
-version:        2.7.99.1
+version:        2.7.99.2
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -34,7 +34,6 @@ Homepage:       http://darcs.net/
 
 Build-Type:     Custom
 Cabal-Version:  >= 1.8
-Tested-with:    GHC==6.8.2
 
 extra-source-files:
   -- C headers
