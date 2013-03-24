@@ -1,14 +1,14 @@
 Name:           pango
-Version:        0.12.0
+Version:        0.12.1
 License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
 Author:         Axel Simon, Duncan Coutts
-Maintainer:     gtk2hs-users@sourceforge.net
+Maintainer:     gtk2hs-users@lists.sourceforge.net
 Build-Type:     Custom
-Cabal-Version:  >= 1.6
+Cabal-Version:  >= 1.8
 Stability:      stable
-homepage:       http://www.haskell.org/gtk2hs/
+homepage:       http://projects.haskell.org/gtk2hs/
 bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
 Synopsis:       Binding to the Pango text rendering engine.
 Description:    This package provides a wrapper around the Pango C library that
@@ -16,10 +16,10 @@ Description:    This package provides a wrapper around the Pango C library that
                 either with Cairo to output text in PDF, PS or other
                 documents or with Gtk+ to display text on-screen.
 Category:       Graphics
-Tested-With:    GHC == 6.10.4
+Tested-With:    GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
 extra-source-files: template-hsc-gtk2hs.h
                     hspango.h
-                    Gtk2HsSetup.hs
+                    SetupWrapper.hs SetupMain.hs Gtk2HsSetup.hs
                     hierarchy.list
 
 x-Types-File:      Graphics/Rendering/Pango/Types.chs
@@ -40,8 +40,8 @@ Flag new-exception
   Description:  Enable build with a base library that contains the new exception library.
 
 Library
-        build-depends:  base >= 3 && < 5,
-                        process, directory, array, containers, pretty, mtl, haskell98,
+        build-depends:  base >= 4 && < 5,
+                        process, directory, array, containers, pretty, mtl,
                         glib  >= 0.12 && < 0.13,
                         cairo >= 0.12 && < 0.13
 
@@ -51,7 +51,7 @@ Library
         else
           build-depends:  base < 4
 
-        build-tools:    gtk2hsC2hs, gtk2hsTypeGen
+        build-tools:    gtk2hsC2hs >= 0.13.5, gtk2hsTypeGen
 
         exposed-modules: Graphics.Rendering.Pango
                          Graphics.Rendering.Pango.Font
