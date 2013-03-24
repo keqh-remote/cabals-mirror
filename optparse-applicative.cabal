@@ -1,5 +1,5 @@
 name:                optparse-applicative
-version:             0.2.0
+version:             0.3.0
 synopsis:            Utilities and combinators for parsing command line options
 description:
     Here is a simple example of an applicative option parser:
@@ -54,7 +54,7 @@ description:
  >Usage: hello --hello TARGET [--quiet]
  >  Print a greeting for TARGET
  >
- >Common options:
+ >Available options:
  >  -h,--help                Show this help text
  >  --hello TARGET           Target for the greeting
  >  --quiet                  Whether to be quiet
@@ -81,8 +81,6 @@ library
                        Options.Applicative.Extra,
                        Options.Applicative.Help
   build-depends:       base == 4.*,
-                       data-lens == 2.10.*,
-                       data-default == 0.4.*,
                        transformers >= 0.2 && < 0.4
 test-suite tests
   type:                exitcode-stdio-1.0
@@ -90,7 +88,7 @@ test-suite tests
   main-is:             Tests.hs
   build-depends:       base == 4.*,
                        HUnit == 1.2.*,
-                       optparse-applicative == 0.2.*,
+                       optparse-applicative == 0.3.*,
                        test-framework == 0.6.*,
                        test-framework-hunit == 0.2.*,
                        test-framework-th-prime == 0.0.*
