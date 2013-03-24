@@ -1,5 +1,5 @@
 Name:                phooey
-Version:             0.2.1
+Version:             0.3
 Synopsis: 	     Functional user interfaces
 Category:            User Interfaces
 Description:
@@ -16,7 +16,7 @@ Description:
   * The project wiki page <http://haskell.org/haskellwiki/phooey>
   .
   * Use of Phooey for composable interfaces in the TV library:
-    <http://haskell.org/haskellwiki/TV>
+    <http://haskell.org/haskellwiki/GuiTV>
   .
   This page and the module documentation pages have links to colorized
   source code and to wiki pages where you can read and contribute /user
@@ -35,11 +35,11 @@ Build-Depends:       base, mtl, arrows, wx, wxcore
 Exposed-Modules:     
                      Graphics.UI.Phooey
                      Graphics.UI.Phooey.Imperative
-                     Graphics.UI.Phooey.CallbackT
+                     Graphics.UI.Phooey.CallBackT
                      Graphics.UI.Phooey.TagT
                      Graphics.UI.Phooey.LayoutT
                      Graphics.UI.Phooey.MonadUI
-                     Graphics.UI.Phooey.AmA
+                     Graphics.UI.Phooey.AFA
                      Graphics.UI.Phooey.ArrowUI
 Extra-Source-Files:
                      Examples
