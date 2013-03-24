@@ -7,7 +7,7 @@ Name:                music-diatonic
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.1
+Version:             0.1.0
 
 -- A short (one-line) description of the package.
 Synopsis:            Implementation of basic western musical theory objects.
@@ -50,7 +50,7 @@ Cabal-version:       >=1.2
 
 Library
   -- Modules exported by the library.
-  Exposed-modules:     Music.Diatonic.Scale, Music.Diatonic.Harmony, Music.Diatonic.Quality, Music.Diatonic.Interval, Music.Diatonic.Degree, Music.Diatonic.Note, Music.Diatonic.Chord, Music.Diatonic.Key
+  Exposed-modules:     Music.Diatonic.Scale, Music.Diatonic.Harmony, Music.Diatonic.Quality, Music.Diatonic.Interval, Music.Diatonic.Degree, Music.Diatonic.Note, Music.Diatonic.Chord, Music.Diatonic.Key, Music.Diatonic.Equivalence, Music.Diatonic
   
   -- Packages needed in order to build this package.
   Build-depends: base >=4 && <5, haskell98 >=1 && <2
