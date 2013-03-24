@@ -1,5 +1,5 @@
 name:           liboleg
-version:        2010.1.9.0
+version:        2010.1.10.0
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -18,7 +18,7 @@ cabal-version:  >= 1.2
 
 library
     build-depends:
-            base >= 2 && < 4,
+            base >=4 && <5,
             containers,
             mtl,
             unix,
@@ -30,6 +30,11 @@ library
             Data.Class1
             Data.Class2
             Data.Numerals
+
+            Data.Symbolic.Diff
+            Data.Symbolic.DiffTest
+            Data.Symbolic.TypedCodeAux
+            Data.Symbolic.TypedCode
 
             Control.CaughtMonadIO
             Control.ShiftResetGenuine
