@@ -1,12 +1,12 @@
 Name: cgi
-Version: 3001.1.3
+Version: 3001.1.4
 Copyright: Bjorn Bringert, Andy Gill, Ian Lynagh, Erik Meijer, 
            Sven Panne, Jeremy Shaw
 Maintainer: bjorn@bringert.net
 Author: Bjorn Bringert
 License: BSD3
 License-file: LICENSE
-Build-depends: base >= 2.0, network>=2.0, parsec >= 2.0, mtl >= 1.0, xhtml >= 3000.0.0
+Build-depends: base >= 2.0, network>=2.0, parsec >= 2.0, mtl >= 1.0, xhtml >= 3000.0.0 
 Extensions: MultiParamTypeClasses
 Synopsis: A library for writing CGI programs
 Description:
