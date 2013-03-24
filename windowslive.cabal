@@ -1,6 +1,6 @@
 Name:                windowslive
 Cabal-Version:       >= 1.6
-Version:             0.1.0
+Version:             0.1.1
 Synopsis:            Implements Windows Live Web Authentication and
                      Delegated Authentication
 
@@ -30,14 +30,13 @@ Library
     split == 0.1.*,
     time == 1.1.*,
     parsec >= 3.0.0 && < 3.1,
-    HUnit == 1.2.*
+    HUnit == 1.2.*,
+    urlencoded
   HS-Source-Dirs: src
   Exposed-Modules:
     Network.WindowsLive.Token,
     Network.WindowsLive.Login,
     Network.WindowsLive.ConsentToken
-  Other-Modules:
-    Network.WindowsLive.Query
 
 -- This executable is not installed by the (custom) Setup program. It is
 -- used by the test hook (cabal test)
