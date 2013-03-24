@@ -1,6 +1,6 @@
 cabal-version:       >= 1.2.3.0
 name:                bimap
-version:             0.2
+version:             0.2.1
 synopsis:            Bidirectional mapping between two key types
 description:
   A data structure representing a bidirectional mapping between two
@@ -18,6 +18,7 @@ homepage:            http://code.haskell.org/bimap
 build-type:          Simple
 tested-with:         GHC ==6.6, GHC ==6.8.1
 extra-source-files:
+    HISTORY
     tests.sh
     Test/Tests.hs
     Test/Util.hs
@@ -27,9 +28,9 @@ flag small-base
 
 Library
   if flag(small-base)
-    build-depends:       base >= 3, mtl, containers
+    build-depends:       base >= 3, containers
   else
-    build-depends:       base < 3, mtl
+    build-depends:       base < 3
   ghc-options:         -Wall -O2
   exposed-modules:
       Data.Bimap
