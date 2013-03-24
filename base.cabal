@@ -1,34 +1,42 @@
 name:           base
-version:        4.1.0.0
+version:        3.0.3.1
 license:        BSD3
 license-file:   LICENSE
 maintainer:     libraries@haskell.org
-synopsis:       Basic libraries
+synopsis:       Basic libraries (backwards-compatibility version)
 description:
-    This package contains the Prelude and its support libraries,
-    and a large collection of useful libraries ranging from data
-    structures to parsing combinators and debugging utilities.
+    This is a backwards-compatible version of the base package.
+    It depends on a later version of base, and was probably supplied
+    with your compiler when it was installed.
+    
 cabal-version:  >=1.2
-build-type: Configure
-extra-tmp-files:
-                config.log config.status autom4te.cache
-                include/HsBaseConfig.h
-extra-source-files:
-                config.guess config.sub install-sh
-                aclocal.m4 configure.ac configure
-                include/CTypes.h
+build-type: Simple
 
 Library {
+    build-depends: base       >= 4.0 && < 4.2,
+                   syb        >= 0.1 && < 0.2
+    extensions: PackageImports
+
+    if impl(ghc < 6.9) {
+        buildable: False
+    }
+
     if impl(ghc) {
-        build-depends: rts, ghc-prim, integer
         exposed-modules:
+            Data.Generics,
+            Data.Generics.Aliases,
+            Data.Generics.Basics,
+            Data.Generics.Instances,
+            Data.Generics.Schemes,
+            Data.Generics.Text,
+            Data.Generics.Twins,
             Foreign.Concurrent,
             GHC.Arr,
             GHC.Base,
-            GHC.Classes,
             GHC.Conc,
             GHC.ConsoleHandler,
             GHC.Desugar,
+            GHC.Dotnet,
             GHC.Enum,
             GHC.Environment,
             GHC.Err,
@@ -57,16 +65,6 @@ Library {
             GHC.Weak,
             GHC.Word,
             System.Timeout
-        extensions: MagicHash, ExistentialQuantification, Rank2Types,
-                    ScopedTypeVariables, UnboxedTuples,
-                    ForeignFunctionInterface, UnliftedFFITypes,
-                    DeriveDataTypeable, GeneralizedNewtypeDeriving,
-                    FlexibleInstances, StandaloneDeriving,
-                    PatternGuards, EmptyDataDecls
-
-        if impl(ghc < 6.10) 
-           -- PatternSignatures was deprecated in 6.10
-           extensions: PatternSignatures
     }
     exposed-modules:
         Control.Applicative,
@@ -79,14 +77,12 @@ Library {
         Control.Concurrent.QSemN,
         Control.Concurrent.SampleVar,
         Control.Exception,
-        Control.Exception.Base
-        Control.OldException,
         Control.Monad,
         Control.Monad.Fix,
         Control.Monad.Instances,
-        Control.Monad.ST
-        Control.Monad.ST.Lazy
-        Control.Monad.ST.Strict
+        Control.Monad.ST,
+        Control.Monad.ST.Lazy,
+        Control.Monad.ST.Strict,
         Data.Bits,
         Data.Bool,
         Data.Char,
@@ -94,7 +90,6 @@ Library {
         Data.Dynamic,
         Data.Either,
         Data.Eq,
-        Data.Data,
         Data.Fixed,
         Data.Foldable
         Data.Function,
@@ -107,9 +102,9 @@ Library {
         Data.Monoid,
         Data.Ord,
         Data.Ratio,
-        Data.STRef
-        Data.STRef.Lazy
-        Data.STRef.Strict
+        Data.STRef,
+        Data.STRef.Lazy,
+        Data.STRef.Strict,
         Data.String,
         Data.Traversable
         Data.Tuple,
@@ -135,7 +130,7 @@ Library {
         Foreign.Storable,
         Numeric,
         Prelude,
-        System.Console.GetOpt
+        System.Console.GetOpt,
         System.CPUTime,
         System.Environment,
         System.Exit,
@@ -156,23 +151,4 @@ Library {
         Text.Show,
         Text.Show.Functions
         Unsafe.Coerce
-    c-sources:
-        cbits/PrelIOUtils.c
-        cbits/WCsubst.c
-        cbits/Win32Utils.c
-        cbits/consUtils.c
-        cbits/dirUtils.c
-        cbits/inputReady.c
-        cbits/selectUtils.c
-    include-dirs: include
-    includes:    HsBase.h
-    install-includes:    HsBase.h HsBaseConfig.h WCsubst.h dirUtils.h consUtils.h Typeable.h
-    if os(windows) {
-        extra-libraries: wsock32, msvcrt, kernel32, user32, shell32
-    }
-    extensions: CPP
-    -- We need to set the package name to base (without a version number)
-    -- as it's magic.
-    ghc-options: -package-name base
-    nhc98-options: -H4M -K3M
 }
