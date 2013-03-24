@@ -1,5 +1,5 @@
 Name:      biocore
-Version:   0.2
+Version:   0.3
 License:   LGPL
 
 Cabal-Version:       >= 1.6
@@ -22,7 +22,7 @@ Source-repository head
   Location: http://malde.org/~ketil/biohaskell/biocore/
 
 Library
-  Build-Depends:     base >= 3 && < 5, bytestring
+  Build-Depends:     base >= 3 && < 5, bytestring, stringable
   Exposed-Modules:   Bio.Core, Bio.Core.Sequence, Bio.Core.Strand
   Ghc-Options:       -Wall
   Hs-Source-Dirs:    src
