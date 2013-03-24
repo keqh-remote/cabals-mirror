@@ -1,5 +1,5 @@
 Name:                 mps
-Version:              2009.9.18
+Version:              2009.11.7
 Build-type:           Simple
 Synopsis:             simply oo
 Description:          DSL that allows one to write Haskell from left to right
