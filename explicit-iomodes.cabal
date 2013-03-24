@@ -1,5 +1,5 @@
 name:          explicit-iomodes
-version:       0.6.0.2
+version:       0.6.0.3
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -7,6 +7,8 @@ license-file:  LICENSE
 copyright:     2009-2010 Bas van Dijk
 author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+homepage:      https://github.com/basvandijk/explicit-iomodes/
+bug-reports:   https://github.com/basvandijk/explicit-iomodes/issues
 stability:     experimental
 category:      System
 synopsis:      File handles with explicit IOModes
@@ -20,14 +22,16 @@ description:   The module @System.IO.ExplicitIOModes@ exports a
 	       See the @explicit-iomodes-bytestring/text@ package for
 	       @ByteString/Text@ operations.
 
+extra-source-files: README.markdown, NEWS
+
 source-repository head
-  Type:     darcs
-  Location: http://code.haskell.org/~basvandijk/code/explicit-iomodes
+  Type:     git
+  Location: git://github.com/basvandijk/explicit-iomodes.git
 
 Library
   GHC-Options: -Wall
 
-  build-depends: base                 >= 4     && < 4.4
+  build-depends: base                 >= 4     && < 4.5
                , base-unicode-symbols >= 0.1.1 && < 0.3
                , tagged               >= 0.0   && < 0.3
   exposed-modules: System.IO.ExplicitIOModes
