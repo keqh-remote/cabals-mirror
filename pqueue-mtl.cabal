@@ -1,6 +1,6 @@
 
 name:		pqueue-mtl
-version:	1.0.6
+version:	1.0.7
 synopsis:	Fully encapsulated monad transformers with queuelike functionality.
 description:	Contains several implementations of data structures implementing a /single-in, single-out/ paradigm, 
 		and implements monad transformers for their safe use.  The monad transformer part of the library 
@@ -13,6 +13,7 @@ description:	Contains several implementations of data structures implementing a 
 
 		Work is in progress on a van Emde Boas
 		or y-fast priority queue implementation, which provides sublogarithmic functionality for all operations.
+		/This package is now deprecated.  Use queuelike instead./
 tested-with:	GHC
 category:	Monads, Algorithms
 stability:	experimental
