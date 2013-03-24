@@ -1,5 +1,5 @@
 Name: DSTM
-Version: 0.1
+Version: 0.1.1
 Copyright: (c) 2010, Frank Kupke
 License: LGPL
 License-File: LICENSE
@@ -70,11 +70,13 @@ Executable ChatClient
   Main-Is:        ChatClient.hs
   Build-Depends:  base >=4 && <5, unix, process, network, haskell98, containers
   Hs-Source-Dirs: Chat, .
+  Other-Modules:  ChatData
 
 Executable ChatServer
   Main-Is:        ChatServer.hs
   Build-Depends:  base >=4 && <5, unix, process, network, haskell98, containers
   Hs-Source-Dirs: Chat, .
+  Other-Modules:  ChatData
 
 Executable Bomberman
   Main-Is:        Bomberman.hs
