@@ -1,5 +1,5 @@
 name:                 haddock
-version:              2.2.2
+version:              2.4.0
 cabal-version:        >= 1.2
 license:              BSD3
 build-type:           Simple
@@ -56,24 +56,37 @@ data-files:
 	html/haskell_icon.gif
 	html/minus.gif
 	html/plus.gif
+	html/frames.html
 
-
+flag in-ghc-tree
+  description: Are we in a GHC tree?
+  default: False
+  manual: True
 
 executable haddock
   build-depends:
     base,
     haskell98,
-    ghc == 6.8.2 || == 6.8.3,
-    ghc-paths,
+    ghc >= 6.8.2 && < 6.13,
     filepath,
     directory,
     pretty,
     containers,
     array
+
+  if flag(in-ghc-tree)
+    cpp-options: -DIN_GHC_TREE
+    extensions: ForeignFunctionInterface
+  else
+    build-depends: ghc-paths
+
+  if impl(ghc >= 6.9)
+    build-depends: Cabal >= 1.5
+
   main-is:              Main.hs
   hs-source-dirs:       src
   extensions:           CPP, PatternGuards, DeriveDataTypeable,
-                        PatternSignatures, MagicHash
+                        ScopedTypeVariables, MagicHash
   ghc-options:          -funbox-strict-fields -O2
 
   other-modules:
@@ -113,9 +126,16 @@ executable haddock
 library
   hs-source-dirs:       src
   extensions:           CPP, PatternGuards, DeriveDataTypeable,
-                        PatternSignatures, MagicHash
+                        ScopedTypeVariables, MagicHash
   exposed-modules:      Distribution.Haddock
   other-modules:
     Haddock.Types
     Haddock.InterfaceFile
     Haddock.Exception
+    Haddock.Utils
+  
+  -- Cabal doesn't define __GHC_PATCHLEVEL__
+  if impl(ghc == 6.8.3)
+    cpp-options: -D__GHC_PATCHLEVEL__=3
+  if impl(ghc == 6.8.2)
+    cpp-options: -D__GHC_PATCHLEVEL__=2
