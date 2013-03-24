@@ -1,5 +1,5 @@
 Name:                ansi-terminal
-Version:             0.5.5
+Version:             0.5.5.1
 Cabal-Version:       >= 1.2
 Category:            User Interfaces
 Synopsis:            Simple ANSI terminal support, with Windows compatibility
@@ -29,7 +29,7 @@ Library
         
         Other-Modules:          System.Console.ANSI.Common
         
-        Cpp-Options:            -Iincludes
+        Include-Dirs:           includes
         
         if os(windows)
                 Build-Depends:          Win32 >= 2.0
