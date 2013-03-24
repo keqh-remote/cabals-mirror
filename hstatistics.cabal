@@ -1,5 +1,5 @@
 Name:               hstatistics
-Version:            0.2.0.8
+Version:            0.2.1.1
 License:            GPL
 License-file:       LICENSE
 Copyright:          (c) A.V.H. McPhail 2010
@@ -31,8 +31,10 @@ library
     Exposed-modules:    Numeric.Statistics
                         Numeric.Statistics.PCA
                         Numeric.Statistics.ICA
+                        Numeric.Statistics.PDF
                         Numeric.Statistics.Information
                         Numeric.Statistics.Histogram
+                        Numeric.Statistics.Surrogate
     other-modules:      
     C-sources:          
 
