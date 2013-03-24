@@ -1,5 +1,5 @@
 Name:               ArrayRef
-Version:            0.1.2
+Version:            0.1.3
 Category:           Data
 Synopsis:           Unboxed references, dynamic arrays and more
 Description:        This array library supports: unboxed references,
@@ -13,6 +13,7 @@ Author:             Bulat Ziganshin
 Maintainer:         Bulat Ziganshin <Bulat.Ziganshin@gmail.com>
 Homepage:           http://haskell.org/haskellwiki/Library/ArrayRef
 
+cabal-version:      >= 1.2.3
 Build-type:         Simple
 Tested-with:        GHC==6.8.2
 Build-Depends:      base
@@ -20,7 +21,7 @@ Extensions:         CPP, FlexibleContexts, FlexibleInstances, FunctionalDependen
                     KindSignatures, ForeignFunctionInterface,
                     MagicHash, RankNTypes, ScopedTypeVariables, TypeOperators,
                     TypeSynonymInstances, UnboxedTuples, UnliftedFFITypes
-ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-options:         -Wall
 ghc-prof-options:    -prof -auto-all
 
 Exposed-modules:
