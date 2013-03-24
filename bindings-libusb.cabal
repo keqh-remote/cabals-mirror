@@ -3,7 +3,7 @@ name: bindings-libusb
 homepage: http://bitbucket.org/mauricio/bindings
 synopsis:
   Check bindings-common package for directions.
-version: 0.0.3
+version: 0.0.4
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
@@ -18,7 +18,7 @@ library
     ScopedTypeVariables
     EmptyDataDecls
     TypeFamilies
-  build-depends: base, bindings-common
+  build-depends: base >= 3 && <5, bindings-common
   exposed-modules:
     Bindings.Libusb
   other-modules:
