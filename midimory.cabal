@@ -1,11 +1,11 @@
 Name:          midimory
-Version:       0.0
+Version:       0.0.0.1
 Maintainer:    Henning Thielemann <alsa@henning-thielemann.de>
 Author:        Henning Thielemann <alsa@henning-thielemann.de>
 Category:      Sound, Music, Game, GUI
 License:       BSD3
 License-file:  LICENSE
--- Homepage:      http://www.haskell.org/haskellwiki/ALSA
+Homepage:      http://www.youtube.com/watch?v=cOlR73h2uII
 Stability:     Experimental
 Build-Type:    Simple
 Cabal-Version: >= 1.8
@@ -37,7 +37,7 @@ Source-Repository head
 
 Source-Repository this
   type:     darcs
-  tag:      0.0
+  tag:      0.0.0.1
   location: http://code.haskell.org/~thielema/midimory/
 
 Executable midimory
