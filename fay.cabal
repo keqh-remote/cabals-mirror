@@ -1,5 +1,5 @@
 name:                fay
-version:             0.3.1.1
+version:             0.4.0.1
 synopsis:            A compiler for Fay, a Haskell subset that compiles to JavaScript.
 description:         Fay is a proper subset of Haskell which can be compiled (type-checked) 
                      with GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,
@@ -22,7 +22,8 @@ description:         Fay is a proper subset of Haskell which can be compiled (ty
                      .
                      /Release Notes/
                      .
-                     * Fix FFI detection.
+                     * Collapse all the FFI types by using the type signature instead using UHC
+                       approach. Check the docs and examples.
                      .
                      See full history at: <https://github.com/chrisdone/fay/commits>
 homepage:            http://fay-lang.org/
@@ -39,7 +40,7 @@ data-files:          js/runtime.js
                      src/Language/Fay/Stdlib.hs
 extra-source-files:  examples/ref.hs examples/alert.hs examples/console.hs examples/dom.hs
                      examples/tailrecursive.hs examples/data.hs examples/canvaswater.hs
-                     examples/canvas.water.html examples/haskell.png
+                     examples/canvaswater.html examples/haskell.png
                      -- Test cases
                      tests/10 tests/10.hs tests/11 tests/11.hs tests/12 tests/12.hs tests/13
                      tests/13.hs tests/14 tests/14.hs tests/15 tests/15.hs tests/16 tests/16.hs
@@ -78,6 +79,8 @@ library
                      json,
                      pretty-show,
                      data-default,
+                     safe,
+                     language-javascript,
 
                      -- Requirements for the executables which
                      -- `cabal-dev ghci' needs.
@@ -99,7 +102,9 @@ executable fay
                      haskell-src-exts,
                      json,
                      process,
-                     data-default
+                     data-default,
+                     safe,
+                     language-javascript
 
 executable fay-tests
   hs-source-dirs:    src
@@ -114,7 +119,9 @@ executable fay-tests
                      process,
                      filepath,
                      directory,
-                     data-default
+                     data-default,
+                     safe,
+                     language-javascript
 
 executable fay-docs
   hs-source-dirs:    src
@@ -133,4 +140,6 @@ executable fay-docs
                      blaze-markup,
                      bytestring,
                      time,
-                     data-default
+                     data-default,
+                     safe,
+                     language-javascript
