@@ -1,5 +1,5 @@
 Name:                Finance-Quote-Yahoo
-Version:             0.4
+Version:             0.4.1
 Description:         Obtain quote data from finance.yahoo.com
 Synopsis:	     Obtain quote data from finance.yahoo.com
 Category:            Web
@@ -14,8 +14,8 @@ Flag splitBase
   Description: Choose the new smaller, split-up base package.
 Library 
   if flag(splitBase)
-    Build-Depends: base >= 3,containers,network,HTTP,HTTP-Simple,MissingH,time>=1.1.1
+    Build-Depends: base >= 3,containers,network,HTTP,HTTP-Simple,time>=1.1.1,old-locale
   else
-    Build-Depends: base < 3,network,HTTP,HTTP-Simple,MissingH,time>=1.1.1
+    Build-Depends: base < 3,network,HTTP,HTTP-Simple,time>=1.1.1
   GHC-Options:         -O
   Exposed-modules:     Finance.Quote.Yahoo
