@@ -1,7 +1,7 @@
 Name:           unscramble
 Category:       Utils
 Synopsis:       Solve Boggle-like word games
-Version:        0.2
+Version:        0.3
 Description:    Solve Boggle-like word games
 License:        GPL
 Author:         Joel Taylor
