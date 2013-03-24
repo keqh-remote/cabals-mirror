@@ -3,7 +3,7 @@ Name:                blocking-transactions
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.0.4
+Version:             0.1.0.5
 
 Synopsis:            Composable, blocking transactions.
 
@@ -24,20 +24,9 @@ Category:            Concurrency
 Build-type:          Simple
 Cabal-version:       >=1.2
 
-Flag Tests
-  Default:           False
-
 Library
   Exposed-modules:     BlockingTransactions.BlockingTransactions
 
   Build-depends:       base >=4&&<5, containers, parallel
   ghc-options:         -O2
-
-Executable _RandomAccounts
-  main-is:          Examples/RandomAccounts.hs
-  Build-depends:    base >=4&&<5, random, array, stm
-  ghc-options:      -threaded -O2
-  ghc-prof-options: -prof -auto-all
-  if( !flag(Tests) )
-    buildable:      False
 
