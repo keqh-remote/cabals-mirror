@@ -1,5 +1,5 @@
 Name:           AERN-Real
-Version:        0.10.0.1
+Version:        0.10.0.2
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -26,13 +26,13 @@ Description:
     .
     For an architectural overview, see module "Data.Number.ER.Real".
     .
-    Simple examples of usage can be found in folder @demos@.
+    Simple examples of usage can be found in folder @examples@.
     .
     There is a built-in test suite and it can be evoked using
     the module in the folder @tests@.
 
 Extra-Source-Files:
-    demos/Demo.hs demos/Pi.hs demos/Matrix.hs
+    examples/Demo.hs examples/Pi.hs examples/Matrix.hs
     tests/RunERIntervalTests.hs
     ChangeLog
 
