@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       1.1.0
+Version:       1.2.0
 Category:      FRP, Network
 Synopsis:      Arrowized FRP implementation
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -11,10 +11,10 @@ Build-type:    Simple
 Stability:     beta
 Cabal-version: >= 1.8
 Description:
-
     This library provides an arrowized functional reactive programming
-    (FRP) implementation.  It is similar to Yampa and Animas, but has a
-    much simpler internal representation and a lot of new features.
+    (FRP) implementation.  From the basic idea it is similar to Yampa
+    and Animas, but has a much simpler internal representation and a lot
+    of new features.
 
 Library
     Build-depends:
@@ -32,6 +32,7 @@ Library
     Extensions:
         Arrows
         DeriveDataTypeable
+        FlexibleInstances
         GADTs
         RankNTypes
         ScopedTypeVariables
@@ -57,12 +58,12 @@ Library
 -- Executable netwire-test
 --     Build-depends:
 --         base >= 4 && <= 5,
---         gloss,
 --         netwire,
---         time
+--         transformers
 --     Extensions:
---         Arrows,
+--         Arrows
 --         ScopedTypeVariables
+--         ViewPatterns
 --     Hs-Source-Dirs: test
 --     Main-is: Main.hs
 --     GHC-Options: -W -threaded -rtsopts
