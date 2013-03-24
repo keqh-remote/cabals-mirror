@@ -1,5 +1,5 @@
 Name            : Pugs
-Version         : 6.2.13.6
+Version         : 6.2.13.7
 license         : BSD3
 license-file    : LICENSE
 cabal-version   : >= 1.2
@@ -22,6 +22,7 @@ extra-source-files:
     src/Pugs/AST.hs
     src/Pugs/AST.hs-boot
     src/Pugs/AST/Eval.hs
+    src/Pugs/AST/Functions.hs
     src/Pugs/AST/Internals.hs
     src/Pugs/AST/Internals.hs-boot
     src/Pugs/AST/Internals/Instances.hs
@@ -31,6 +32,7 @@ extra-source-files:
     src/Pugs/AST/SIO.hs
     src/Pugs/AST/Scope.hs
     src/Pugs/AST/Utils.hs
+    src/Pugs/AST/Types.hs
     src/Pugs/Bind.hs
     src/Pugs/Class.hs
     src/Pugs/CodeGen.hs
@@ -149,8 +151,8 @@ executable pugs
     if flag(Optimize)
         ghc-options: -O2
         
---    if flag(Debug)
---        ghc-options: -prof -auto-all
+    -- if flag(Debug)
+    --     ghc-options: -prof -auto-all
 
     c-sources:
         cbits/Prelude_pm.c cbits/Test_pm.c
