@@ -1,5 +1,5 @@
 Name:                v4l2
-Version:             0.1.0.2
+Version:             0.1.0.3
 Synopsis:            interface to Video For Linux Two (V4L2)
 Description:
   Higher-level interface to V4L2.
@@ -45,7 +45,7 @@ Library
     Graphics.V4L2.Types.Internal
   Build-depends:
     base >= 3 && < 5,
-    containers >= 0.3 && < 0.5,
+    containers >= 0.3 && < 0.6,
     bindings-DSL >= 1.0.7 && < 1.1,
     bindings-libv4l2 >= 0.1 && < 0.2,
     bindings-linux-videodev2 >= 0.1 && < 0.2,
@@ -61,4 +61,4 @@ source-repository head
 source-repository this
   type:     git
   location: git://gitorious.org/hsv4l2/v4l2.git
-  tag:      v0.1.0.2
+  tag:      v0.1.0.3
