@@ -1,5 +1,5 @@
 Name:                   ghc-mod
-Version:                1.12.1
+Version:                1.12.2
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -40,6 +40,7 @@ Executable ghc-mod
                         CabalApi
                         Check
                         Cradle
+                        Doc
                         Debug
                         ErrMsg
                         Flag
@@ -79,6 +80,7 @@ Test-Suite spec
                         BrowseSpec
                         CabalApiSpec
                         CheckSpec
+                        DebugSpec
                         FlagSpec
                         InfoSpec
                         LangSpec
