@@ -1,5 +1,5 @@
 name:                composition
-version:             1.0.0.0
+version:             1.0.0.1
 synopsis:            Combinators for unorthodox function composition
 
 license:             BSD3
@@ -24,4 +24,4 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/r/DanBurton/composition
-  tag:      composition-1.0.0.0
+  tag:      composition-1.0.0.1
