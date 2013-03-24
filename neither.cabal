@@ -1,10 +1,10 @@
 name:            neither
-version:         0.3.0
+version:         0.3.0.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Provide versions of Either with good monad and applicative instances.
+synopsis:        Provide versions of Either with good monad and applicative instances. (deprecated)
 description:
     The standard Either datatype suffers from a lack of monad and applicative instances. To make matters worse, the mtl and transformers packages provide orphan instances which conflict with each other, as well as defining a transformer version which has an usually unnecessary superclass constraint.
     .
