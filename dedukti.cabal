@@ -1,5 +1,5 @@
 name:           dedukti
-version:        1.0.0
+version:        1.0.1
 author:         Mathieu Boespflug
 maintainer:     Mathieu Boespflug <mboes@lix.polytechnique.fr>
 copyright:      © 2009 CNRS - École Polytechnique - INRIA
@@ -18,7 +18,18 @@ license-file:   COPYING
 cabal-version:  >= 1.6.0
 build-type:     Simple
 tested-with:    GHC ==6.10
-data-files:     t/*.eu
+data-files:     t/bug.dk
+                t/coc.dk
+                t/coq/Datatypes.dk
+                t/delta1.dk
+                t/delta2.dk
+                t/exemple.dk
+                t/f.dk
+                t/fold/arith.dk
+                t/logic.dk
+                t/nat.dk
+                t/peano.dk
+                t/plus.dk
 
 
 executable dedukti
