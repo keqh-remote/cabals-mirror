@@ -1,7 +1,7 @@
 cabal-version:      >= 1.8
 build-type:         Simple
 name:               shake
-version:            0.8
+version:            0.9
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -94,8 +94,10 @@ library
         Development.Shake
         Development.Shake.Classes
         Development.Shake.FilePath
+        Development.Shake.Sys
 
     other-modules:
+        Development.Shake.Args
         Development.Shake.Binary
         Development.Shake.Core
         Development.Shake.Database
@@ -113,6 +115,7 @@ library
         Development.Shake.Progress
         Development.Shake.Report
         Development.Shake.Rerun
+        Development.Shake.Shake
         Development.Shake.Storage
         Development.Shake.Types
         Development.Shake.Value
@@ -159,6 +162,7 @@ executable shake
         Examples.Test.FilePattern
         Examples.Test.Files
         Examples.Test.Journal
+        Examples.Test.Lint
         Examples.Test.Oracle
         Examples.Test.Pool
         Examples.Test.Progress
