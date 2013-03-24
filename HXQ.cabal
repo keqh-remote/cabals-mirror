@@ -1,6 +1,6 @@
 Cabal-Version:       >= 1.2
 Name:                HXQ
-Version:             0.8.4
+Version:             0.8.5
 Synopsis:            A Compiler from XQuery to Haskell
 Description:         
         HXQ is a fast and space-efficient compiler from XQuery (the standard
@@ -38,9 +38,9 @@ data-files:
   hxml-0.2/00-README.txt
 
 Library
-  Exposed-Modules:     XML.HXQ.XQuery
-  Other-Modules:       XML.HXQ.XTree, XML.HXQ.Compiler, XML.HXQ.Interpreter, XML.HXQ.Parser,
-                       XML.HXQ.Optimizer, XML.HXQ.DB, XML.HXQ.DBConnect,
+  Exposed-Modules:     Text.XML.HXQ.XQuery
+  Other-Modules:       Text.XML.HXQ.XTree, Text.XML.HXQ.Compiler, Text.XML.HXQ.Interpreter, Text.XML.HXQ.Parser,
+                       Text.XML.HXQ.Optimizer, Text.XML.HXQ.DB, Text.XML.HXQ.DBConnect,
                        HXML, DTD, LLParsing, TreeBuild, XMLParse, ETree, Misc, Tree,
                        XMLScanner, AssocList, PrintXML, XML
   hs-source-dirs:      . hxml-0.2
