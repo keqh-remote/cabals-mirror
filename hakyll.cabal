@@ -1,5 +1,5 @@
 Name:               hakyll
-Version:            3.0.1.4
+Version:            3.0.2.0
 
 Synopsis:           A simple static site generator library.
 Description:        A simple static site generator library, mainly aimed at
@@ -59,6 +59,7 @@ library
                       snap-core >= 0.4,
                       bytestring >= 0.9,
                       utf8-string >= 0.3,
+                      HTTP >= 4000,
                       tagsoup >= 0.12,
                       hopenssl >= 1.4,
                       unix >= 2.4,
