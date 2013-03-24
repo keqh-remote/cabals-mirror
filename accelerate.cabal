@@ -1,7 +1,7 @@
 Name:                   accelerate
-Version:                0.7.1.0
+Version:                0.8.0.0
 Cabal-version:          >= 1.6
-Tested-with:            GHC >= 6.12.1
+Tested-with:            GHC >= 6.12.3
 Build-type:             Simple
 
 Synopsis:               An embedded language for accelerated array processing
@@ -15,11 +15,14 @@ Description:            This library defines an embedded language for
                         CUDA-capable NVIDIA GPUs.
                         .
                         To use the CUDA backend, you need to have CUDA version 3.x
-                        installed.  The CUDA backend still misses some features of
-                        the full language; in particular, the array operations
-                        'replicate', 'slice', and 'foldSeg' are not yet supported.
+                        installed.  The CUDA backend currently doesn't support 'Char'
+                        and 'Bool' arrays.
                         .
-                        Known bugs in this version:    http://trac.haskell.org/accelerate/query?status=new&status=assigned&status=reopened&status=closed&version=0.7.1.0&order=priority
+                        Known bugs in this version:
+                        <http://trac.haskell.org/accelerate/query?status=new&status=assigned&status=reopened&status=closed&version=0.8.0.0&order=priority>
+                        .
+                        * New in 0.8.0.0: 'replicate', 'slice' and 'foldSeg' supported in the 
+                            CUDA backend; frontend and interpreter support for 'stencil'; bug fixes
                         .
                         * New in 0.7.1.0: the CUDA backend and a number of scalar functions
 License:                BSD3
@@ -42,21 +45,26 @@ Data-files:             accelerate_cuda_extras.h
                         accelerate_cuda_utils.h
                         backpermute.inl
                         fold.inl
+                        fold_segmented.inl
                         map.inl
                         permute.inl
+                        replicate.inl
+                        slice.inl
                         zipWith.inl
                         thrust/scan_safe.inl
 
 Extra-source-files:     INSTALL
-                        examples/simple/DotP.hs
-                        examples/simple/Filter.hs
-                        examples/simple/Main.hs
+                        include/accelerate.h
+                        examples/simple/src/DotP.hs
+                        examples/simple/src/Filter.hs
+                        examples/simple/src/Main.hs
                         examples/simple/Makefile
-                        examples/simple/SAXPY.hs
-                        examples/simple/SMVM.hs
-                        examples/simple/Square.hs
-                        examples/simple/Sum.hs
-                        examples/simple/Time.hs
+                        examples/simple/src/Random.hs
+                        examples/simple/src/SAXPY.hs
+                        examples/simple/src/SMVM.hs
+                        examples/simple/src/Stencil.hs
+                        examples/simple/src/Square.hs
+                        examples/simple/src/Sum.hs
                         examples/rasterize/RasterizeAcc.hs
                         examples/rasterize/rasterize-test1.txt
                         examples/rasterize/rasterize-test2.txt
@@ -65,12 +73,28 @@ Extra-source-files:     INSTALL
                         examples/rasterize/rasterize.hs
 
 Flag llvm
-  Description:          enable the LLVM backend (sequential)
+  Description:          Enable the LLVM backend (sequential)
   Default:              False
 
 Flag cuda
-  Description:          enable the CUDA parallel backend for NVIDIA GPUs
+  Description:          Enable the CUDA parallel backend for NVIDIA GPUs
   Default:              True
+
+Flag test-suite
+  Description:          Export extra test modules
+  Default:              False
+
+Flag bounds-checks
+  Description:          Enable bounds checking
+  Default:              True
+
+Flag unsafe-checks
+  Description:          Enable bounds checking in unsafe operations
+  Default:              False
+
+Flag internal-checks
+  Description:          Enable internal consistency checks
+  Default:              False
 
 Library
   Build-depends:        array, 
@@ -78,6 +102,9 @@ Library
                         ghc-prim, 
                         haskell98,
                         pretty
+
+  Include-Dirs:         include
+
   If flag(llvm)
     Build-depends:      llvm >= 0.6.8
 
@@ -87,12 +114,15 @@ Library
                         containers,
                         cuda >= 0.2 && < 0.3,
                         directory,
-                        fclabels,
+                        fclabels >= 0.9 && < 1.0,
                         filepath,
                         language-c >= 0.3 && < 0.4,
                         monads-fd,
                         transformers >= 0.2 && < 0.3,
                         unix
+
+  if flag(test-suite)
+    Build-depends:      QuickCheck == 2.*
 
   Exposed-modules:      Data.Array.Accelerate
                         Data.Array.Accelerate.Interpreter
@@ -101,8 +131,14 @@ Library
 
   If flag(cuda)
     Exposed-modules:    Data.Array.Accelerate.CUDA
-                        
-  Other-modules:        Data.Array.Accelerate.Array.Data
+
+  If flag(test-suite)
+    Exposed-modules:    Data.Array.Accelerate.Test
+                        Data.Array.Accelerate.Test.QuickCheck
+                        Data.Array.Accelerate.Test.QuickCheck.Arbitrary
+
+  Other-modules:        Data.Array.Accelerate.Internal.Check
+                        Data.Array.Accelerate.Array.Data
                         Data.Array.Accelerate.Array.Delayed
                         Data.Array.Accelerate.Array.Representation
                         Data.Array.Accelerate.Array.Sugar
@@ -131,11 +167,21 @@ Library
                         Data.Array.Accelerate.CUDA.CodeGen
                         Data.Array.Accelerate.CUDA.Compile
                         Data.Array.Accelerate.CUDA.Execute
+                        Data.Array.Accelerate.CUDA.Smart
                         Data.Array.Accelerate.CUDA.State
 
+  if flag(bounds-checks)
+    cpp-options:        -DACCELERATE_BOUNDS_CHECKS
+
+  if flag(unsafe-checks)
+    cpp-options:        -DACCELERATE_UNSAFE_CHECKS
+
+  if flag(internal-checks)
+    cpp-options:        -DACCELERATE_INTERNAL_CHECKS
+
   Ghc-options:          -O2 -Wall -fno-warn-orphans -fno-warn-name-shadowing
-  Extensions:           FlexibleContexts, FlexibleInstances, 
-                        ExistentialQuantification, GADTs, TypeFamilies, 
+  Extensions:           FlexibleContexts, FlexibleInstances, TypeSynonymInstances,
+                        ExistentialQuantification, GADTs, TypeFamilies, MultiParamTypeClasses,
                         ScopedTypeVariables, DeriveDataTypeable,
                         BangPatterns, PatternGuards, TypeOperators, RankNTypes
 
