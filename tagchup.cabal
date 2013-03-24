@@ -1,5 +1,5 @@
 Name:           tagchup
-Version:        0.4.0.1
+Version:        0.4.0.2
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <tagchup@henning-thielemann.de>
@@ -38,7 +38,7 @@ Source-Repository head
 Source-Repository this
    Type:     darcs
    Location: http://code.haskell.org/~thielema/tagchup/
-   Tag:      0.4.0.1
+   Tag:      0.4.0.2
 
 Flag buildExamples
    description: Build example executables
@@ -55,7 +55,7 @@ Library
       transformers >=0.2 && <0.3,
       explicit-exception >=0.1 && <0.2,
       bytestring >=0.9.0.1 && <0.10,
-      containers >=0.1 && <0.4,
+      containers >=0.1 && <0.5,
       data-accessor >=0.2 && <0.3,
       utility-ht >=0.0.1 && <0.1,
       base >=3 && <5
@@ -80,6 +80,8 @@ Library
 Executable tagchuptest
    If !flag(buildTests)
      Buildable: False
+   If impl(ghc >= 6.12)
+     GHC-Options: -rtsopts
    GHC-Options:    -Wall
    Hs-Source-Dirs: src, example
    Other-Modules:  Text.HTML.Tagchup.Test
