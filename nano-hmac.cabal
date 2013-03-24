@@ -1,10 +1,10 @@
 name:                nano-hmac
-version:             0.1.1
-description:         Bindings to OpenSSL HMAC.  Initially only supporting md5.
+version:             0.2.0
+description:         Bindings to OpenSSL HMAC.
 synopsis:            Bindings to OpenSSL HMAC.
 license:             BSD3
 license-file:        LICENSE
-homepage:            http://www.jasani.org/
+homepage:            http://www.jasani.org/search/label/nano-hmac
 author:              Hitesh Jasani
 category:            Codec
 maintainer:          <hitesh.jasani@gmail.com>
@@ -23,5 +23,5 @@ library
   ghc-options:         -Wall -Werror -O2 -fvia-C
   extensions:          ForeignFunctionInterface, BangPatterns, CPP
   includes:            openssl/hmac.h
-  extra-libraries:     crypto
+  extra-libraries:     crypto ssl
 
