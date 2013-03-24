@@ -1,5 +1,5 @@
 name:               vision
-version:            0.0.2.3
+version:            0.0.2.4
 
 author:             Oleg Belozeorov
 maintainer:         Oleg Belozeorov <upwawet@gmail.com>
@@ -17,7 +17,7 @@ description:
 
 cabal-version:      >= 1.6
 build-type:         Simple
-extra-tmp-files:    config.status, config.log, autom4te.cache
+extra-tmp-files:    config.status, config.log, autom4te.cache, hlint.out
 extra-source-files: configure.ac,
                     configure,
                     src/Properties/Makefile.in,
@@ -94,15 +94,16 @@ executable vision
                     Playlist.Format.Parser,
                     Playlist.Format.Config
   hs-source-dirs:   src
-  build-depends:    base >= 4 && < 5, xmms2-client >= 0.0.3.6,
-                    xmms2-client-glib >= 0.0.3.6,
+  build-depends:    base >= 4 && < 5, xmms2-client >= 0.0.4.0,
+                    xmms2-client-glib >= 0.0.4.0,
                     gtk, containers, mtl, utf8-string,
                     filepath, directory, glib, array,
                     MonadCatchIO-mtl, json, parsec >= 3.0.1
   extensions:       ImplicitParams, NoMonomorphismRestriction,
                     FlexibleContexts, FlexibleInstances,
                     TypeFamilies, ScopedTypeVariables,
-                    PatternGuards
+                    PatternGuards, StandaloneDeriving,
+                    GeneralizedNewtypeDeriving
   ghc-options:      -W
 
 
@@ -113,4 +114,4 @@ source-repository head
 source-repository head
   type:             git
   location:         git://github.com/upwawet/vision.git
-  tag:              v0.0.2.3
+  tag:              v0.0.2.4
