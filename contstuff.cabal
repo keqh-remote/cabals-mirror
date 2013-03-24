@@ -1,5 +1,5 @@
 Name:          contstuff
-Version:       1.0.0
+Version:       1.0.1
 Category:      Control, Monads
 Synopsis:      Fast, easy to use CPS-based monad transformers
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
