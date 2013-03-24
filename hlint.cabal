@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.8.11
+version:            1.8.12
 -- license is GPL v2 only
 license:            GPL
 license-file:       LICENSE
@@ -41,7 +41,7 @@ library
         base == 4.*, process, filepath, directory, containers,
         transformers >= 0.0 && < 0.3,
         hscolour >= 1.17 && < 1.20,
-        cpphs == 1.11.*,
+        cpphs >= 1.11 && < 1.13,
         haskell-src-exts >= 1.11 && < 1.12,
         uniplate >= 1.5 && < 1.7
 
