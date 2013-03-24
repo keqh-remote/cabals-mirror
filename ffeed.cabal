@@ -1,5 +1,5 @@
 name: ffeed
-version: 0.3
+version: 0.3.1
 synopsis: Haskell binding to the FriendFeed API
 description:
    The hs-ffeed API binding lets you access friendfeed.com's
@@ -11,20 +11,20 @@ license:  BSD3
 license-file: LICENSE
 author:   Sigbjorn Finne
 maintainer: sof@forkio.com
-build-depends: base, HTTP, xml
 cabal-version:  >= 1.2
 build-type: Simple
 extra-source-files: README
                     examples/ShowPublic.hs
                     examples/Util/GetOpts.hs
 
-flag new-base
-  Description: Build with new smaller base library
-  Default: False
+flag old-base
+  description: Old, monolithic base
+  default: False
   
 
 library
  Exposed-modules: FriendFeed.Types,
+                  FriendFeed.Types.Import,
                   FriendFeed.Monad,
                   FriendFeed.API,
                   FriendFeed.Entry,
@@ -40,12 +40,12 @@ library
                   Util.Codec.URLEncoder,
                   Util.Fetch
  Ghc-Options:     -Wall
- build-depends:   base, HTTP, network, utf8-string, json
+ build-depends:   HTTP, network, utf8-string, json
 
- if flag(new-base)
-   Build-Depends: base >= 3
- else
+ if flag(old-base)
    Build-Depends: base < 3
+ else
+   Build-Depends: base > 3
 
 executable main {
   build-depends:        base
