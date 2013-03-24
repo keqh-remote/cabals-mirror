@@ -1,5 +1,5 @@
 Name:                   webserver
-Version:                0.2.0
+Version:                0.3.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -14,7 +14,7 @@ library
   Exposed-Modules:      Network.Web.HTTP
                         Network.Web.Server
                         Network.Web.Server.Basic
-                        Network.Web.Utils
+                        Network.Web.URI
   Other-Modules:        Network.Web.Date
                         Network.Web.Params
                         Network.Web.Server.CGI
