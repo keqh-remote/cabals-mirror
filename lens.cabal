@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       0.1
+version:       0.2
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -22,12 +22,14 @@ source-repository head
 library
   exposed-modules:
     Control.Lens
-    Control.Lens.Multi
-  ghc-options:    -Wall -fwarn-tabs -O2 -fdicts-cheap
+    Control.Lens.Rep
+  ghc-options: -Wall -fwarn-tabs -O2 -fdicts-cheap -funbox-strict-fields
   hs-source-dirs: src
   build-depends:
     base             == 4.*,
-    containers       >= 0.3     && < 0.6,
-    mtl              >= 2.1.1   && < 2.2,
-    template-haskell >= 2.4     && < 2.8,
-    transformers     >= 0.2     && < 0.4
+    containers       >= 0.3   && < 0.6,
+    mtl              >= 2.1.1 && < 2.2,
+    template-haskell >= 2.4   && < 2.8,
+    transformers     >= 0.2   && < 0.4
+  other-extensions:
+    RankNTypes TemplateHaskell
