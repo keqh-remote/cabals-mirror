@@ -1,5 +1,5 @@
 Name:             iff
-Version:          0.0.2
+Version:          0.0.3
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann
@@ -9,7 +9,7 @@ Category:         Codec
 Build-Type:       Simple
 Build-Depends:
   bytestring >=0.9 && <0.10,
-  transformers >= 0.1 && < 0.3,
+  transformers >= 0.1 && <0.4,
   base >= 3 && <5
 Synopsis:         Constructing and dissecting IFF files
 Description:
