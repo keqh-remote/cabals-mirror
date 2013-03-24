@@ -7,7 +7,7 @@ Name:                ivy-web
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.1
+Version:             0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            A lightweight web framework
@@ -25,7 +25,9 @@ Description:         A lightweight web framework, with type safe routes, based o
     .
         *   Easy i18n
     .
-        For an example, please refer to <https://github.com/lilac/ivy-example/>
+        For an example, please refer to <https://github.com/lilac/ivy-demo/>
+    .
+        Note: Unlike 0.1 version, this version support snap-server as backend.
 
 -- URL for the project homepage or repository.
 Homepage:            https://github.com/lilac/ivy-web/
@@ -70,8 +72,10 @@ Library
     base >= 3 && < 5,
     partial-isomorphisms < 0.3,
     invertible-syntax >= 0.2,
-    wai >= 0.4.0,
-    http-types >= 0.6.5
+    --wai >= 0.4.0,
+    --http-types >= 0.6.5
+    snap >= 0.5,
+    snap-core >= 0.5
 
   
   -- Modules not exported by this package.
