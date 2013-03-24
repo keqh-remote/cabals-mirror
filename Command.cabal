@@ -1,15 +1,20 @@
 Name:               Command
-Version:            0.0.2
+Version:            0.0.4
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
 Maintainer:         Tony Morris
 Synopsis:           A replacement for System.Exit and System.Process
 Category:           System
+Homepage:           https://github.com/tonymorris/command
 Description:
   Specifically, this library replaces @System.Exit.ExitCode@ with an abstract data type.
-Cabal-version:      >= 1.2
+Cabal-Version:      >= 1.6
 Build-Type:         Simple
+
+Source-Repository   head
+  Type:             git
+  Location:         git@github.com:tonymorris/command.git
 
 Flag small_base
   Description:      Choose the new, split-up base package.
@@ -19,8 +24,13 @@ Library
                     base < 5 && >= 4
                     , process
 
-  GHC-Options:      -Wall
+  GHC-Options:      
+                    -Wall
 
-  Exposed-Modules:  System.Command
+  Hs-Source-Dirs:
+                    src
+
+  Exposed-Modules:  
+                    System.Command
 
 
