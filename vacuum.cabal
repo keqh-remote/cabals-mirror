@@ -1,5 +1,5 @@
 name:               vacuum
-version:            1.0.0.1
+version:            1.0.0.2
 cabal-version:      >= 1.6
 build-type:         Simple
 license:            LGPL
@@ -7,6 +7,7 @@ license-file:       LICENSE
 category:           Debug, GHC
 author:             Matt Morrow
 copyright:          (c) Matt Morrow 2009
+-- Maintained through https://github.com/haskell-pkg-janitors. Join us!
 maintainer:         Conrad Parker <conrad@metadecks.org>
 homepage:           http://web.archive.org/web/20100410115820/http://moonpatio.com/vacuum/
 stability:          experimental
@@ -36,4 +37,4 @@ library
 --
 source-repository head
   type: git
-  location: git://github.com/kfish/vacuum.git
+  location: git://github.com/haskell-pkg-janitors/vacuum.git
