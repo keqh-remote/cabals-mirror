@@ -1,5 +1,5 @@
 name:          proctest
-version:       0.1.0.0
+version:       0.1.0.1
 license:       MIT
 license-file:  LICENSE
 author:        Niklas Hambüchen
@@ -53,7 +53,6 @@ executable example-netcat-test
     , hspec
     , HUnit
     , QuickCheck >= 2.4.2
-    , smartcheck
   ghc-options:
     -threaded -fwarn-unused-imports
  
