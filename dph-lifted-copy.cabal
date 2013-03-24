@@ -1,5 +1,5 @@
 Name:           dph-lifted-copy
-Version:        0.6.1.1
+Version:        0.7.0.1
 License:        BSD3
 License-File:   LICENSE
 Author:         The DPH Team
@@ -64,11 +64,11 @@ Library
         -fno-warn-missing-signatures
 
   Build-Depends:  
-        base             == 4.5.*,
+        base             == 4.6.*,
         ghc              == 7.*,
         array            == 0.4.*,
         random           == 1.0.*,
-        template-haskell == 2.7.*,
-        vector           == 0.9.*,
-        dph-base         == 0.6.1.*,
-        dph-prim-par     == 0.6.1.*
+        template-haskell == 2.8.*,
+        dph-base         == 0.7.*,
+        dph-prim-par     == 0.7.*,
+        vector           == 0.10.*
