@@ -1,5 +1,5 @@
 name:                aws-sdk
-version:             0.11.3.3
+version:             0.12.0
 synopsis:            AWS SDK for Haskell
 description: AWS (Amazon Web Services) sdk for Haskell.
              .
@@ -94,12 +94,16 @@ library
                    , AWS.RDS.DBSnapshot
                    , AWS.RDS.DBSubnetGroup
                    , AWS.RDS.Event
+                   , AWS.RDS.EventSubscription
+                   , AWS.RDS.OptionGroup
                    , AWS.RDS.Types.DBInstance
                    , AWS.RDS.Types.DBParameterGroup
                    , AWS.RDS.Types.DBSecurityGroup
                    , AWS.RDS.Types.DBSnapshot
                    , AWS.RDS.Types.DBSubnetGroup
                    , AWS.RDS.Types.Event
+                   , AWS.RDS.Types.EventSubscription
+                   , AWS.RDS.Types.OptionGroup
                    , AWS.ELB.Internal
                    , AWS.ELB.LoadBalancer
                    , AWS.CloudWatch.Internal
@@ -117,11 +121,11 @@ library
                    , base64-bytestring >= 1.0.0.0
                    , bytestring
                    , http-types
-                   , conduit >= 0.5.3 && < 1.0.0
+                   , conduit >= 1.0.0
                    , transformers
                    , time
                    , old-locale
-                   , http-conduit < 1.9.0
+                   , http-conduit >= 1.9.0
                    , data-default
                    , xml-conduit >= 1.0.3.3
                    , xml-types
@@ -153,15 +157,15 @@ test-suite test
                  , text
                  , monad-control
                  , transformers
-                 , http-conduit
+                 , http-conduit >= 1.9.0
                  , hspec
                  , QuickCheck
-                 , hspec
                  , HUnit
                  , lifted-base
                  , iproute
                  , tls
                  , time
+                 , random
 
 source-repository head
     type:            git
