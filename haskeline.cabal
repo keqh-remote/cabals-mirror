@@ -1,6 +1,6 @@
 Name:           haskeline
 Cabal-Version:  >=1.6
-Version:        0.6.1.1
+Version:        0.6.1.2
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -100,6 +100,9 @@ Library
             Build-depends: terminfo==0.3.*
             Other-modules: System.Console.Haskeline.Backend.Terminfo
             cpp-options: -DTERMINFO
+        }
+        if os(solaris) {
+            cpp-options: -DUSE_TERMIOS_H
         }
     }
     ghc-options: -Wall
