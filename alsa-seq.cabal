@@ -1,12 +1,12 @@
 Name:           alsa-seq
-Version:        0.5.1.1
-Copyright:      Bjorn Bringert, Iavor S. Diatchki, Henning Thielemann
-Maintainer:     Henning Thielemann <alsa@henning-thielemann.de>
+Version:        0.6
 Author:
   Henning Thielemann <alsa@henning-thielemann.de>,
   Dylan Simon <dylan@dylex.net>,
   Bjorn Bringert <bjorn@bringert.net>,
   Iavor S. Diatchki <iavor.diatchki@gmail.com>
+Maintainer:     Henning Thielemann <alsa@henning-thielemann.de>
+Copyright:      Bjorn Bringert, Iavor S. Diatchki, Dylan Simon, Henning Thielemann
 Category:       Sound, Music
 License:        BSD3
 License-file:   LICENSE
@@ -23,15 +23,12 @@ Description:
 Extra-Source-Files:
   filter/modify/Sound/ALSA/Sequencer/Client/Info/EventFilter.hs
   filter/setget/Sound/ALSA/Sequencer/Client/Info/EventFilter.hs
+  src/Sound/ALSA/Sequencer/Marshal/Template.h
+  src/Sound/ALSA/Sequencer/Area.h
 
 Source-Repository head
   type:     darcs
-  location: http://code.haskell.org/~thielema/alsa-seq/
-
-Source-Repository this
-  type:     darcs
-  location: http://code.haskell.org/~thielema/alsa-seq/
-  tag:      0.5.1.1
+  location: http://code.haskell.org/alsa/seq/
 
 Flag buildExamples
   description: Build example executables
@@ -44,12 +41,15 @@ Flag modifyFilter
 Library
   Build-depends:
     alsa-core >=0.5 && <0.6,
-    enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.5,
-    data-accessor >=0.2.1 && <0.3,
-    utility-ht >= 0.0.7 && <0.1,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
+    poll >=0.0 && <0.1,
     extensible-exceptions >=0.1.1 && <0.2,
-    base >= 3 && <5
+    base >=3 && <5
 
   GHC-Options: -Wall
   Extensions:
@@ -58,6 +58,7 @@ Library
     EmptyDataDecls
 
   Hs-Source-Dirs: src
+  Include-Dirs: src
   If flag(modifyFilter)
     PkgConfig-Depends: alsa >= 1.0.17
     Hs-Source-Dirs: filter/modify
@@ -70,29 +71,40 @@ Library
     Sound.ALSA.Sequencer.Address
     Sound.ALSA.Sequencer.Client
     Sound.ALSA.Sequencer.Client.Info
+    Sound.ALSA.Sequencer.Client.InfoMonad
+    Sound.ALSA.Sequencer.Connect
     Sound.ALSA.Sequencer.Port
     Sound.ALSA.Sequencer.Port.Info
+    Sound.ALSA.Sequencer.Port.InfoMonad
     Sound.ALSA.Sequencer.Event
     Sound.ALSA.Sequencer.Event.Accessor
-    Sound.ALSA.Sequencer.RealTime
+    Sound.ALSA.Sequencer.Event.RemoveMonad
+    Sound.ALSA.Sequencer.Query
     Sound.ALSA.Sequencer.Queue
     Sound.ALSA.Sequencer.Queue.Info
     Sound.ALSA.Sequencer.Queue.Status
     Sound.ALSA.Sequencer.Queue.Tempo
     Sound.ALSA.Sequencer.Queue.Timer
+    Sound.ALSA.Sequencer.RealTime
+    Sound.ALSA.Sequencer.Time
+    Sound.ALSA.Sequencer.Concurrent
     Sound.ALSA.Sequencer.Subscribe
     Sound.ALSA.Sequencer.Subscribe.Query
+    Sound.ALSA.Sequencer.Poll
 
   Other-modules:
+    Sound.ALSA.Sequencer.Event.Remove
     Sound.ALSA.Sequencer.Marshal.Sequencer
     Sound.ALSA.Sequencer.Marshal.Address
     Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
     Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
     Sound.ALSA.Sequencer.Marshal.Queue
-    Sound.ALSA.Sequencer.Marshal.QueueTimer
     Sound.ALSA.Sequencer.Marshal.Event
     Sound.ALSA.Sequencer.Marshal.RealTime
-    Sound.ALSA.Sequencer.Marshal.QuerySubscribe
+    Sound.ALSA.Sequencer.Marshal.Time
     Sound.ALSA.Sequencer.Client.Info.EventFilter
     Sound.ALSA.Sequencer.Area
     Sound.ALSA.Sequencer.Sequencer
@@ -105,11 +117,12 @@ Executable alsa-seq-dump
   If !flag(buildExamples)
     Buildable: False
   Hs-Source-Dirs: src, examples
+  Include-Dirs: src
   If flag(modifyFilter)
     Hs-Source-Dirs: filter/modify
   Else
     Hs-Source-Dirs: filter/setget
-  GHC-Options: -Wall -threaded
+  GHC-Options: -Wall
   Extensions:
     ForeignFunctionInterface
     GeneralizedNewtypeDeriving
@@ -118,19 +131,24 @@ Executable alsa-seq-dump
     Sound.ALSA.Sequencer.Marshal.Sequencer
     Sound.ALSA.Sequencer.Marshal.Address
     Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
     Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
     Sound.ALSA.Sequencer.Marshal.Queue
-    Sound.ALSA.Sequencer.Marshal.QueueTimer
     Sound.ALSA.Sequencer.Marshal.Event
     Sound.ALSA.Sequencer.Marshal.RealTime
-    Sound.ALSA.Sequencer.Marshal.QuerySubscribe
+    Sound.ALSA.Sequencer.Marshal.Time
     Sound.ALSA.Sequencer.Area
     Sound.ALSA.Sequencer.Sequencer
   Build-Depends:
     alsa-core >=0.5 && <0.6,
-    enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.5,
-    utility-ht >= 0.0.7 && <0.1,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
     base >=3 && <5
 
 Executable alsa-seq-send-note
@@ -138,11 +156,12 @@ Executable alsa-seq-send-note
   If !flag(buildExamples)
     Buildable: False
   Hs-Source-Dirs: src, examples
+  Include-Dirs: src
   If flag(modifyFilter)
     Hs-Source-Dirs: filter/modify
   Else
     Hs-Source-Dirs: filter/setget
-  GHC-Options: -Wall -threaded
+  GHC-Options: -Wall
   Extensions:
     ForeignFunctionInterface
     GeneralizedNewtypeDeriving
@@ -151,19 +170,25 @@ Executable alsa-seq-send-note
     Sound.ALSA.Sequencer.Marshal.Sequencer
     Sound.ALSA.Sequencer.Marshal.Address
     Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
     Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
     Sound.ALSA.Sequencer.Marshal.Queue
-    Sound.ALSA.Sequencer.Marshal.QueueTimer
     Sound.ALSA.Sequencer.Marshal.Event
     Sound.ALSA.Sequencer.Marshal.RealTime
-    Sound.ALSA.Sequencer.Marshal.QuerySubscribe
+    Sound.ALSA.Sequencer.Marshal.Time
     Sound.ALSA.Sequencer.Area
     Sound.ALSA.Sequencer.Sequencer
+    Common
   Build-Depends:
     alsa-core >=0.5 && <0.6,
-    enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.5,
-    utility-ht >= 0.0.7 && <0.1,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
     base >=3 && <5
 
 Executable alsa-seq-broadcast
@@ -171,11 +196,12 @@ Executable alsa-seq-broadcast
   If !flag(buildExamples)
     Buildable: False
   Hs-Source-Dirs: src, examples
+  Include-Dirs: src
   If flag(modifyFilter)
     Hs-Source-Dirs: filter/modify
   Else
     Hs-Source-Dirs: filter/setget
-  GHC-Options: -Wall -threaded
+  GHC-Options: -Wall
   Extensions:
     ForeignFunctionInterface
     GeneralizedNewtypeDeriving
@@ -184,31 +210,37 @@ Executable alsa-seq-broadcast
     Sound.ALSA.Sequencer.Marshal.Sequencer
     Sound.ALSA.Sequencer.Marshal.Address
     Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
     Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
     Sound.ALSA.Sequencer.Marshal.Queue
-    Sound.ALSA.Sequencer.Marshal.QueueTimer
     Sound.ALSA.Sequencer.Marshal.Event
     Sound.ALSA.Sequencer.Marshal.RealTime
-    Sound.ALSA.Sequencer.Marshal.QuerySubscribe
+    Sound.ALSA.Sequencer.Marshal.Time
     Sound.ALSA.Sequencer.Area
     Sound.ALSA.Sequencer.Sequencer
   Build-Depends:
     alsa-core >=0.5 && <0.6,
-    enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.5,
-    utility-ht >= 0.0.7 && <0.1,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
     base >=3 && <5
 
-Executable alsa-seq-list-clients
-  Main-Is: list-clients.hs
+Executable alsa-seq-list-ports
+  Main-Is: list-ports.hs
   If !flag(buildExamples)
     Buildable: False
   Hs-Source-Dirs: src, examples
+  Include-Dirs: src
   If flag(modifyFilter)
     Hs-Source-Dirs: filter/modify
   Else
     Hs-Source-Dirs: filter/setget
-  GHC-Options: -Wall -threaded
+  GHC-Options: -Wall
   Extensions:
     ForeignFunctionInterface
     GeneralizedNewtypeDeriving
@@ -217,19 +249,24 @@ Executable alsa-seq-list-clients
     Sound.ALSA.Sequencer.Marshal.Sequencer
     Sound.ALSA.Sequencer.Marshal.Address
     Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
     Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
     Sound.ALSA.Sequencer.Marshal.Queue
-    Sound.ALSA.Sequencer.Marshal.QueueTimer
     Sound.ALSA.Sequencer.Marshal.Event
     Sound.ALSA.Sequencer.Marshal.RealTime
-    Sound.ALSA.Sequencer.Marshal.QuerySubscribe
+    Sound.ALSA.Sequencer.Marshal.Time
     Sound.ALSA.Sequencer.Area
     Sound.ALSA.Sequencer.Sequencer
   Build-Depends:
     alsa-core >=0.5 && <0.6,
-    enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.5,
-    utility-ht >= 0.0.7 && <0.1,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
     base >=3 && <5
 
 Executable alsa-seq-melody
@@ -237,11 +274,12 @@ Executable alsa-seq-melody
   If !flag(buildExamples)
     Buildable: False
   Hs-Source-Dirs: src, examples
+  Include-Dirs: src
   If flag(modifyFilter)
     Hs-Source-Dirs: filter/modify
   Else
     Hs-Source-Dirs: filter/setget
-  GHC-Options: -Wall -threaded
+  GHC-Options: -Wall
   Extensions:
     ForeignFunctionInterface
     GeneralizedNewtypeDeriving
@@ -250,19 +288,25 @@ Executable alsa-seq-melody
     Sound.ALSA.Sequencer.Marshal.Sequencer
     Sound.ALSA.Sequencer.Marshal.Address
     Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
     Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
     Sound.ALSA.Sequencer.Marshal.Queue
-    Sound.ALSA.Sequencer.Marshal.QueueTimer
     Sound.ALSA.Sequencer.Marshal.Event
     Sound.ALSA.Sequencer.Marshal.RealTime
-    Sound.ALSA.Sequencer.Marshal.QuerySubscribe
+    Sound.ALSA.Sequencer.Marshal.Time
     Sound.ALSA.Sequencer.Area
     Sound.ALSA.Sequencer.Sequencer
+    Common
   Build-Depends:
     alsa-core >=0.5 && <0.6,
-    enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.5,
-    utility-ht >= 0.0.7 && <0.1,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
     base >=3 && <5
 
 Executable alsa-seq-list-subscribers
@@ -270,11 +314,12 @@ Executable alsa-seq-list-subscribers
   If !flag(buildExamples)
     Buildable: False
   Hs-Source-Dirs: src, examples
+  Include-Dirs: src
   If flag(modifyFilter)
     Hs-Source-Dirs: filter/modify
   Else
     Hs-Source-Dirs: filter/setget
-  GHC-Options: -Wall -threaded
+  GHC-Options: -Wall
   Extensions:
     ForeignFunctionInterface
     GeneralizedNewtypeDeriving
@@ -283,17 +328,105 @@ Executable alsa-seq-list-subscribers
     Sound.ALSA.Sequencer.Marshal.Sequencer
     Sound.ALSA.Sequencer.Marshal.Address
     Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
     Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
     Sound.ALSA.Sequencer.Marshal.Queue
-    Sound.ALSA.Sequencer.Marshal.QueueTimer
     Sound.ALSA.Sequencer.Marshal.Event
     Sound.ALSA.Sequencer.Marshal.RealTime
-    Sound.ALSA.Sequencer.Marshal.QuerySubscribe
+    Sound.ALSA.Sequencer.Marshal.Time
     Sound.ALSA.Sequencer.Area
     Sound.ALSA.Sequencer.Sequencer
+    Sound.ALSA.Sequencer.Subscribe.Query
   Build-Depends:
     alsa-core >=0.5 && <0.6,
-    enumset >= 0.0.2 && <0.1,
-    array >= 0.1 && <0.5,
-    utility-ht >= 0.0.7 && <0.1,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
+    base >=3 && <5
+
+Executable alsa-seq-beat
+  Main-Is: beat.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  Include-Dirs: src
+  If flag(modifyFilter)
+    Hs-Source-Dirs: filter/modify
+  Else
+    Hs-Source-Dirs: filter/setget
+  GHC-Options: -Wall
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Marshal.Time
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+    Sound.ALSA.Sequencer.Event.Remove
+    Common
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
+    base >=3 && <5
+
+Executable alsa-seq-sysex
+  Main-Is: sysex.hs
+  If !flag(buildExamples)
+    Buildable: False
+  Hs-Source-Dirs: src, examples
+  Include-Dirs: src
+  If flag(modifyFilter)
+    Hs-Source-Dirs: filter/modify
+  Else
+    Hs-Source-Dirs: filter/setget
+  GHC-Options: -Wall
+  Extensions:
+    ForeignFunctionInterface
+    GeneralizedNewtypeDeriving
+    EmptyDataDecls
+  Other-modules:
+    Sound.ALSA.Sequencer.Marshal.Sequencer
+    Sound.ALSA.Sequencer.Marshal.Address
+    Sound.ALSA.Sequencer.Marshal.Client
+    Sound.ALSA.Sequencer.Marshal.ClientInfo
+    Sound.ALSA.Sequencer.Marshal.Connect
+    Sound.ALSA.Sequencer.Marshal.Port
+    Sound.ALSA.Sequencer.Marshal.PortInfo
+    Sound.ALSA.Sequencer.Marshal.Queue
+    Sound.ALSA.Sequencer.Marshal.Event
+    Sound.ALSA.Sequencer.Marshal.RealTime
+    Sound.ALSA.Sequencer.Marshal.Time
+    Sound.ALSA.Sequencer.Area
+    Sound.ALSA.Sequencer.Sequencer
+    Sound.ALSA.Sequencer.Subscribe.Query
+    Common
+  Build-Depends:
+    alsa-core >=0.5 && <0.6,
+    enumset >=0.0.3 && <0.1,
+    transformers >=0.2 && <0.4,
+    array >=0.1 && <0.5,
+    bytestring >=0.9 && <0.10,
+    data-accessor >=0.2.2 && <0.3,
+    utility-ht >=0.0.7 && <0.1,
     base >=3 && <5
