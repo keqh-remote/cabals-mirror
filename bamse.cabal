@@ -1,18 +1,33 @@
 name: bamse
-version: 0.9.3
+version: 0.9.4
 Synopsis: A Windows Installer (MSI) generator framework
 Description:
    Bamse is a framework for building Windows Installers for
    your Windows applications, giving you a comprehensive set
-   of features to put together Windows Installers using Haskell.
-
+   of features to put together MSIs using Haskell.
+   .
+   Bamse lets you author /installer generators/, i.e., applications
+   that will generate Windows Installers when invoked (and pointed
+   at the files and other resources to include for that particular
+   installer instance.) Bamse is also accessible as a library, letting
+   you integrate MSI creation into your codebase.
+   .
+   The package has a number of example /templates/ showing how to
+   specify a generator; /real/ examples that have been used to ship
+   software by a number of projects and companies. See the @templates/@
+   directory; one good way to get started is to modify one of these
+   to suit the needs of the installers you are looking to create.
+   .
+   For a worked example of how to build installers from your Cabal packages,
+   and possibly automatically install them when running the MSI, see @examples/Cabal.hs@
+   (and the README in that directory.)
 category      : System
 license       : BSD3
 license-file  : LICENSE
 author        : Sigbjorn Finne <sof@forkIO.com>
 maintainer    : sof@forkIO.com
 cabal-version :  >= 1.2
-build-type    : Simple
+build-type    : Custom
 extra-source-files: README 
                     license.rtf
                     icons/folder.exe
@@ -53,6 +68,8 @@ extra-source-files: README
                     tools/msiIcon.c
                     tools/README.txt
                     tools/Makefile
+                    tools/Wrapper.hs
+                    tools/custWrap.exe
                     templates/Alex.hs
                     templates/Bamse.hs
                     templates/Base.hs
@@ -64,14 +81,34 @@ extra-source-files: README
                     templates/HDirectLib.hs
                     templates/Haddock.hs
                     templates/Happy.hs
+                    templates/HsDotnet.hs
                     templates/Hugs98.hs
                     templates/Hugs98Net.hs
                     templates/PubCryptol.hs
                     templates/SOE.hs
+                    examples/Cabal.hs
+                    examples/README
+                    tests/Tests.hs
 
 flag old-base
   description: Old, monolithic base
   default: False
+
+flag build-tests
+  default: False
+
+--
+-- To use bamseGen, configure as follows, e.g.,
+--
+--  Setup configure -fbamseGen --ghc-options=-DPACKAGE=Alex
+--
+flag bamseGen
+  description: Build parameterized installer generator (via PACKAGE define)
+  default: False
+
+flag hsdotnet
+  description: Build HsDotnet installer generator
+  default: True
 
 library {
  Exposed-modules: Bamse.Builder,
@@ -89,23 +126,47 @@ library {
                   Bamse.WindowsInstaller,
                   Bamse.Writer
  
- Other-Modules:   System.Path,
-                  Util.Dir,
-                  Util.GetOpts,
-                  Util.List,
-                  Util.Path
+ Other-Modules:   Bamse.Util.Dir,
+                  Bamse.Util.GetOpts,
+                  Bamse.Util.List
 
  Ghc-Options:     -Wall
 
- build-depends: com >= 1.2.2 , haskell98, directory, pretty
+ build-depends: com >= 1.2.3 , process, directory, pretty, regex-compat, old-time, filepath
  if flag(old-base)
    Build-Depends: base < 3
  else
    Build-Depends: base >= 4
 }
 
-executable bamse {
+executable hsDotnetGen {
   main-is:              Main.hs
+  CPP-Options:          -DPACKAGE=HsDotnet
   hs-source-dirs:       . templates
   ghc-options:          -Wall
+  if flag(hsdotnet) && !flag(bamseGen)
+    Buildable: True
+  else
+    Buildable: False
+}
+
+executable bamseGen {
+  main-is:              Main.hs
+--  CPP-Options:          -DPACKAGE=flag(Package)
+  hs-source-dirs:       . templates
+  ghc-options:          -Wall -idist/build
+  if flag(bamseGen)
+    Buildable: True
+  else
+    Buildable: False
+}
+
+executable runTests {
+  if flag(build-tests)
+     buildable: True
+  else
+     buildable: False
+  Main-Is: tests/Tests.hs
+  build-depends: QuickCheck, HUnit
+  Hs-Source-Dirs: ., tests
 }
