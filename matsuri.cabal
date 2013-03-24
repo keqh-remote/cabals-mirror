@@ -1,6 +1,7 @@
 Name:                matsuri
-Version:             0.0.1
+Version:             0.0.2
 Category:            Network
+Synopsis:            ncurses XMPP client
 License:             GPL
 License-File:        LICENSE
 Author:              Kagami <newanon@yandex.ru>,
@@ -20,7 +21,7 @@ Executable matsuri
 
   Other-Modules:     Buffers, Config, Help, Jabber, UI, Utils,
                      Widgets.EditBox, Widgets.PrettyBorders,
-                     Widgets.TextBox, Widgets.Tree
+                     Widgets.TextBox, Widgets.ListBox
 
   Build-Depends:     base >= 4 && < 5, vty >= 4, vty-ui >= 0.2,
                      containers, mtl, network, split, directory,
