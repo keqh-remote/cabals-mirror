@@ -7,14 +7,14 @@ Name:                procstat
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.1.0.1
 
 -- A short (one-line) description of the package.
 Synopsis:            get information on processes in Linux
 
 -- A longer description of the package.
 Description:         procstat is a clean interface to the Linux /proc
-                     filesystem; specifically, the /proc/[0-9]+/stat files.
+                     filesystem; specifically, the \/proc\/[0-9]+\/stat files.
                      It essentially parses the process data found in those
                      files into a more semantic data structure.
 
@@ -46,7 +46,7 @@ Build-type:          Simple
 -- Extra-source-files:  
 
 -- Constraint on the version of Cabal needed to build this package.
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
 
 
 Library
@@ -64,3 +64,7 @@ Library
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
   
+
+source-repository head
+  type:     git
+  location: git://lambda.ath.cx/patrick/procstat
