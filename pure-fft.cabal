@@ -1,13 +1,13 @@
 name:               pure-fft
-version:            0.1.0
-cabal-version:      >= 1.2
+version:            0.2.0
+cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
 license-file:       LICENSE
-category:           Numeric, Math
+category:           Numerical, Math
 author:             Matt Morrow
 copyright:          Matt Morrow
-maintainer:         Matt Morrow <mjm2002@gmail.com>
+maintainer:         Matt Morrow <morrow@moonpatio.com>
 stability:          experimental
 synopsis:           Fast Fourier Transform
 description:        A pure-haskell implementation
