@@ -1,16 +1,15 @@
 Name: HDBC-postgresql
-Version: 2.3.2.0
+Version: 2.3.2.1
 License: BSD3
-Maintainer: Nicolas Wu <nick@well-typed.com>
+Maintainer: Nicolas Wu <nicolas.wu@gmail.com>
 Author: John Goerzen
 Copyright: Copyright (c) 2005-2011 John Goerzen
 license-file: LICENSE
 extra-source-files: LICENSE, hdbc-postgresql-helper.h, pgtypes.h,
                     Makefile,
                     README.txt,
-                    TODO,
                     testsrc/TestTime.hs
-homepage: http://software.complete.org/hdbc-postgresql
+homepage: http://github.com/hdbc/hdbc-postgresql
 Category: Database
 synopsis: PostgreSQL driver for HDBC
 Description: This package provides a PostgreSQL driver for HDBC
@@ -37,7 +36,7 @@ Library
     Database.HDBC.PostgreSQL.ErrorCodes
   Extensions: ExistentialQuantification, ForeignFunctionInterface
   Build-Depends: base >= 3 && < 5, mtl, HDBC>=2.2.0, parsec, utf8-string,
-                 bytestring, old-time, old-locale, time
+                 bytestring, old-time, old-locale, time, convertible
   if impl(ghc >= 6.9)
     Build-Depends: base >= 4
   Extra-Libraries: pq
@@ -77,3 +76,6 @@ Executable runtests
    Extensions: ExistentialQuantification,
                ForeignFunctionInterface
 
+source-repository head
+  type:     git
+  location: https://github.com/hdbc/hdbc-postgresql.git
