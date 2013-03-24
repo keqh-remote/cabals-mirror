@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.1
+Version:        0.1.1
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -131,9 +131,12 @@ Flag buildTests
   default:     False
 
 Library
-  Build-Depends: parsec >=1 && <3, HUnit >=1 && <2, QuickCheck >=1 && <2
-  Build-Depends: non-negative >=0.0.2 && <0.1
-  Build-Depends: utility-ht >=0.0.4 && <0.1
+  Build-Depends:
+    parsec >=1 && <3,
+    QuickCheck >=1 && <2,
+    storable-record >=0.0.1 && <0.1,
+    non-negative >=0.0.2 && <0.1,
+    utility-ht >=0.0.4 && <0.1
   If flag(splitBase)
     Build-Depends:
       base >= 2 && <5,
@@ -222,10 +225,12 @@ Library
     Number.Physical
     Number.Physical.Read
     Number.Physical.Show
+    NumericPrelude.Elementwise
     NumericPrelude
     PreludeBase
   Other-modules:
     NumericPrelude.List
+    Algebra.AffineSpace
     MathObj.Gaussian.Variance
     MathObj.Gaussian.Bell
     MathObj.Gaussian.Polynomial
@@ -247,5 +252,19 @@ Executable testsuite
     Test.MathObj.Gaussian.Variance
     Test.MathObj.Gaussian.Bell
   Main-Is: Test/Run.hs
-  If !flag(buildTests)
-    Buildable:         False
+  If flag(buildTests)
+    Build-Depends: HUnit >=1 && <2
+  Else
+    Buildable: False
+
+Executable test-gaussian
+  Hs-Source-Dirs: src, test
+  Main-Is: Gaussian.hs
+  Other-Modules:
+    MathObj.Gaussian.Example
+  If flag(buildTests)
+    Build-Depends:
+      gnuplot >=0.3 && <0.4,
+      HTam >=0.0.2 && <0.1
+  Else
+    Buildable: False
