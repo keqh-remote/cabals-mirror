@@ -1,5 +1,5 @@
 Name:          rfc3339
-Version:       1.0.3
+Version:       1.0.4
 Category:      Web, Time
 Synopsis:      Parse and display time according to RFC3339
 Description:   
@@ -12,7 +12,7 @@ Description:
     Right now there is only support for reading and showing String
     .
     For more information and usage examples please read the documentation of 
-    the module bellow.
+    the module here: <http://hackage.haskell.org/packages/archive/rfc3339/1.0.4/doc/html/Data-Time-RFC3339.html>
     .
 Build-type:    Simple
 Maintainer:    Hugo Daniel Gomes <mr.hugo.gomes@gmail.com>
