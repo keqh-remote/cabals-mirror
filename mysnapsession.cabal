@@ -1,16 +1,21 @@
 Name:                mysnapsession
-Version:             0.2
-Synopsis:            Memory-backed sessions and continuations for Snap web apps
-Description:         This package provides two Snap extensions.  The first is
-                     an in-memory session manager, which stores sessions for
-                     each client.  The session object type is user-defined.
-                     Because sessions are memory-backed, sticky session routing
-                     is needed to use this extension with load balancing.
+Version:             0.3
+Synopsis:            Sessions and continuations for Snap web apps
+Description:         This package provides two Snap extensions, implementing
+                     sessions as either memory-backed arbitrary types, or as
+                     client-side cookie-backed serializable types.  The latter
+                     uses the @clientsession@ package to encrypt the cookie for
+                     security.  In both extensions, sessions are protected from
+                     session stealing by checking the source IP address, and
+                     have a configurable timeout (optional for the cookie-
+                     backed back end).  The session type is user-defined.
                      .
-                     The second extension provides a continuation-based
-                     programming model called dialogues, which allow natural
-                     specification of stateful interactions with the client
-                     that span multiple requests.
+                     In addition, a library is provided for a continuation-
+                     based programming model called dialogues, which allows
+                     natural specification of stateful interactions with the
+                     client that span multiple requests.  Because the session
+                     type is not serializable, this requires the memory-backed
+                     implementation.
 License:             BSD3
 License-file:        LICENSE
 Author:              Chris Smith <cdsmith@gmail.com>
@@ -41,3 +46,4 @@ Library
                    Snap.Dialogues
 
   Ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
+               -fno-warn-orphans
