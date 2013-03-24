@@ -1,5 +1,5 @@
 name:                storable-complex
-version:             0.2
+version:             0.2.1
 synopsis:            Storable instance for Complex
 description:         Provides a Storable instance for Complex which is binary
 		     compatible with C99, C++ and Fortran complex data types.
@@ -12,6 +12,6 @@ license:             BSD3
 license-file:        LICENSE
 author:              Jed Brown 
 maintainer:          <jed@59A2.org>
-build-Depends:       base
+build-Depends:       base >= 3 && < 5
 exposed-modules:     Foreign.Storable.Complex
 build-type:	     Simple
