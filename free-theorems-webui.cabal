@@ -1,5 +1,5 @@
 Name:     free-theorems-webui
-Version:  0.1
+Version:  0.2
 
 Synopsis: CGI-based web interface for the free-theorems package.
 Description:
@@ -16,6 +16,7 @@ Description:
    To start it locally for offline usage, just call "free-theorems-webui" after installation. (This needs python)
 License:    PublicDomain
 Category:   Language
+Author:     Matthias Bartsch
 Maintainer: bartsch@cs.uni-bonn.de
 
 Cabal-Version: >= 1.2
@@ -24,6 +25,7 @@ Build-type: Simple
 
 Data-files:
    style.css
+   ui-tweaks.js
    lambdaTeX.tex
    runLocalServer.py
 
@@ -63,7 +65,7 @@ Executable free-theorems-webui.cgi
                 , directory     >= 1.0.0.2
                 , filepath      >= 1.1.0.1
                 , xhtml         >= 3000-2-0-1
-                , base64-string >= 0.2
+                , dataenc
                 , haskell98
    if flag(our_server)
       hs-source-dirs: . our_server_config
