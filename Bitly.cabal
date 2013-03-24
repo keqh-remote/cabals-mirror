@@ -1,5 +1,5 @@
 Name:          Bitly
-Version:       0.0.4
+Version:       0.0.5
 Cabal-version: >= 1.2
 Build-type:    Simple
 
@@ -33,7 +33,7 @@ Description:
 
 Homepage:      http://bitbucket.org/jetxee/hs-bitly/
 Bug-reports:   http://bitbucket.org/jetxee/hs-bitly/issues/
-Tested-with:   GHC == 6.10
+Tested-with:   GHC == 6.10, GHC == 6.12.1
 
 Library
   Build-depends:
@@ -46,6 +46,6 @@ Executable bitly
   Main-is:     bitly.hs
   Build-depends:
                  filepath >= 1.1
-               , directory >= 1.0 && < 1.0.1
+               , directory >= 1.0 && < 1.1
                , regexpr >= 0.5
 
