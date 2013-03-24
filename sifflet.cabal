@@ -1,5 +1,5 @@
 name: sifflet
-version: 1.0
+version: 1.1
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -33,22 +33,21 @@ flag no-link
 
 executable sifflet
   main-is: sifflet.hs
+  other-modules: Options
   build-depends: 
     base >= 4.0 && < 4.3,
-    -- begin GTK stuff, should have same version numbers
-    cairo == 0.11.0,
-    glib == 0.11.0,
-    gtk == 0.11.0,
+    -- begin GTK stuff, no longer needing exactly the same version numbers
+    cairo == 0.11.*,
+    glib == 0.11.*,
+    gtk == 0.11.*,
     -- end
     containers >= 0.2 && < 0.4,
     fgl >= 5.4 && < 5.5,
     haskell98 >= 1.0.1 && < 1.0.2,
-    haskell-src >= 1.0.1 && < 1.0.2,
     hxt >= 8.3 && < 8.6,
     mtl >= 1.1 && < 1.2,
     process >= 1.0 && < 1.1,
-    -- and of course our very own ...
-    sifflet-lib == 1.0
+    sifflet-lib >= 1.1
 
   if !os(windows)
     build-depends: unix >= 2.3 && < 2.5
