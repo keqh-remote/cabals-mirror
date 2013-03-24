@@ -1,5 +1,5 @@
 Name: darcs-beta
-version:        2.7.98.3
+version:        2.7.99.1
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -122,13 +122,13 @@ flag warn-as-error
   description: Build with warnings-as-errors
 
 -- If base >= 4.4 is used, the standard directory functions
--- do Unicode translation. Use an explicit flag so we can
+-- do Unicode translation. Use a flag so we can
 -- detect this situation and use a workaround.
-flag base44
+flag force-char8-encoding
   default:     False
-  -- once we have a workaround remove the manual: line
-  manual:      True
-  description: Allow base 4.4 or above: note, there are known problems with Unicode filenames (http://bugs.darcs.net/issue2095)
+  description: Allow base 4.5 or above on Unix. base 4.4 introduces a change in
+               the behaviour of filenames that requires API calls in
+               base 4.5 to workaround. So base 4.4 is not supported at all.
 
 -- ----------------------------------------------------------------------
 -- darcs library
@@ -191,6 +191,7 @@ Library
                       Darcs.Commands.ShowRepo
                       Darcs.Commands.ShowTags
                       Darcs.Commands.Tag
+                      Darcs.Commands.Test
                       Darcs.Commands.TrackDown
                       Darcs.Commands.TransferMode
                       Darcs.Commands.Util
@@ -323,11 +324,11 @@ Library
                       SHA1
                       URL
                       URL.Request
-                      URL.Curl
                       URL.HTTP
                       Workaround
 
     other-modules:    Version
+                      URL.Curl
 
     c-sources:        src/atomic_create.c
                       src/fpstring.c
@@ -353,10 +354,14 @@ Library
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
 
-    if flag(base44)
-      build-depends: base >= 4 && < 4.6
+    if os(windows)
+      build-depends:  base >= 4 && < 4.6
     else
-      build-depends: base >= 4 && < 4.4
+      if flag(force-char8-encoding)
+        build-depends:  base >= 4.5 && < 4.6
+        cpp-options:    -DFORCE_CHAR8_ENCODING
+      else
+        build-depends:  base >= 4 && < 4.4
 
     build-depends:   extensible-exceptions >= 0.1 && < 0.2,
                      regex-compat >= 0.95.1,
@@ -510,10 +515,14 @@ Executable          darcs
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
 
-  if flag(base44)
-    build-depends: base >= 4 && < 4.6
+  if os(windows)
+    build-depends:  base >= 4 && < 4.6
   else
-    build-depends: base >= 4 && < 4.4
+    if flag(force-char8-encoding)
+      build-depends:  base >= 4.5 && < 4.6
+      cpp-options:    -DFORCE_CHAR8_ENCODING
+    else
+      build-depends:  base >= 4 && < 4.4
 
   build-depends:   extensible-exceptions >= 0.1 && < 0.2,
                    regex-compat >= 0.95.1,
@@ -594,7 +603,7 @@ Executable          darcs
 Executable          darcs-test
   main-is:          test.hs
 
-  build-tools: ghc >= 6.10 && < 7.2
+  build-tools: ghc >= 6.10 && < 7.6
 
 
   if !flag(test)
@@ -612,7 +621,7 @@ Executable          darcs-test
                      HUnit        >= 1.0,
                      cmdlib       >= 0.2.1 && < 0.4,
                      shellish     >= 0.1.3 && < 0.2,
-                     test-framework             >= 0.2.2,
+                     test-framework             >= 0.4.0,
                      test-framework-hunit       >= 0.2.2,
                      test-framework-quickcheck2 >= 0.2.8
 
@@ -669,6 +678,14 @@ Executable          darcs-test
     if flag(threaded)
       ghc-options:    -threaded
 
+    if flag(curl)
+      extra-libraries:   curl
+      includes:          curl/curl.h
+      cpp-options:       -DHAVE_CURL
+      c-sources:         src/hscurl.c
+      cc-options:        -DHAVE_CURL
+
+
     if flag(hpc)
       ghc-prof-options: -fhpc -hpcdir dist/hpc/darcs-test
 
@@ -691,10 +708,14 @@ Executable          darcs-test
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
 
-    if flag(base44)
-      build-depends: base >= 4 && < 4.6
+    if os(windows)
+      build-depends:  base >= 4 && < 4.6
     else
-      build-depends: base >= 4 && < 4.4
+      if flag(force-char8-encoding)
+        build-depends:  base >= 4.5 && < 4.6
+        cpp-options:    -DFORCE_CHAR8_ENCODING
+      else
+        build-depends:  base >= 4 && < 4.4
 
     if !os(windows)
       build-depends: unix >= 1.0 && < 2.6
