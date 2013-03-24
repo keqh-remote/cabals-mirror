@@ -1,5 +1,5 @@
 name:            yesod
-version:         1.0.1.2
+version:         1.0.1.3
 license:         MIT
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -27,11 +27,12 @@ extra-source-files:
   scaffold/postgresqlConnPool.cg
   scaffold/Foundation.hs.cg
   scaffold/sqliteConnPool.cg
-  scaffold/cabal_test_suite.cg
   scaffold/Import.hs.cg
   scaffold/.ghci.cg
   scaffold/tests/main.hs.cg
+  scaffold/tests/HomeTest.hs.cg
   scaffold/Settings.hs.cg
+  scaffold/Settings/Development.hs.cg
   scaffold/Settings/StaticFiles.hs.cg
   scaffold/Application.hs.cg
   scaffold/deploy/Procfile.cg
