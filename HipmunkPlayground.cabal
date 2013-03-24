@@ -3,7 +3,7 @@ Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          HipmunkPlayground
-Version:       5.2.0.2
+Version:       5.2.0.3
 Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
@@ -16,6 +16,10 @@ Description:
       This is a simple OpenGL program that allows you to see
       some of Hipmunk's functions in action.
       .
+      New in version 5.2.0.3:
+      .
+      * Correctly handle window resizes.
+      .
       New in version 5.2.0.2:
       .
       * Add repo URL to cabal file.
@@ -23,14 +27,6 @@ Description:
       New in version 5.2.0.1:
       .
       * Show collision points.
-      .
-      New in version 5.2.0:
-      .
-      * Updated to Hipmunk 5.2.0 (which uses StateVar).
-      .
-      * Updated to OpenGL 2.4.0.1.
-      .
-      * Updated to GLFW 0.4.2.
       .
       Licensed under the MIT license (like Hipmunk itself).
 Extra-Source-Files:
