@@ -1,5 +1,5 @@
 Name:                bioace
-Version:             0.0
+Version:             0.0.1
 Description:         Library for reading ace assembly files
 Synopsis:            Library for reading ace assembly files
 Homepage:	     https://patch-tag.com/r/dfornika/bioace/home
@@ -13,7 +13,7 @@ Category:	     Bioinformatics
 Build-Type:          Simple
 
 Library
-  Build-depends:     base >= 2 && < 5, haskell98, biocore, bioalign, bytestring, parsec
+  Build-depends:     base >= 2 && < 5, biocore, bioalign, bytestring, parsec
   Exposed-modules:   Bio.Alignment.Ace
   Hs-source-dirs:    src
 
