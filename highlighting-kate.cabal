@@ -1,5 +1,5 @@
 Name:                highlighting-kate
-Version:             0.5.3.5
+Version:             0.5.3.6
 Cabal-Version:       >= 1.10
 Build-Type:          Simple
 Category:            Text
@@ -47,6 +47,7 @@ Extra-Source-Files:  README
                      xml/cpp.xml
                      xml/cs.xml
                      xml/css.xml
+                     xml/curry.xml
                      xml/d.xml
                      xml/diff.xml
                      xml/djangotemplate.xml
@@ -70,9 +71,11 @@ Extra-Source-Files:  README
                      xml/javascript.xml.bkp
                      xml/json.xml
                      xml/jsp.xml
+                     xml/julia.xml
                      xml/language.dtd
                      xml/latex.xml
                      xml/lex.xml
+                     xml/literate-curry.xml
                      xml/literate-haskell.xml
                      xml/lua.xml
                      xml/makefile.xml
@@ -174,6 +177,7 @@ Library
                      Text.Highlighting.Kate.Syntax.Cpp
                      Text.Highlighting.Kate.Syntax.Cs
                      Text.Highlighting.Kate.Syntax.Css
+                     Text.Highlighting.Kate.Syntax.Curry
                      Text.Highlighting.Kate.Syntax.D
                      Text.Highlighting.Kate.Syntax.Diff
                      Text.Highlighting.Kate.Syntax.Djangotemplate
@@ -196,8 +200,10 @@ Library
                      Text.Highlighting.Kate.Syntax.Javascript
                      Text.Highlighting.Kate.Syntax.Json
                      Text.Highlighting.Kate.Syntax.Jsp
+                     Text.Highlighting.Kate.Syntax.Julia
                      Text.Highlighting.Kate.Syntax.Latex
                      Text.Highlighting.Kate.Syntax.Lex
+                     Text.Highlighting.Kate.Syntax.LiterateCurry
                      Text.Highlighting.Kate.Syntax.LiterateHaskell
                      Text.Highlighting.Kate.Syntax.Lua
                      Text.Highlighting.Kate.Syntax.Makefile
