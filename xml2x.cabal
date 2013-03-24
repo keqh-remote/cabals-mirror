@@ -1,5 +1,5 @@
 Name:           xml2x
-Version:        0.4
+Version:        0.4.1
 License:        GPL
 License-File:   LICENSE
 
@@ -26,5 +26,5 @@ Executable:     xml2x
 Main-Is:        Xml2X.hs
 Extensions:     Rank2Types
 Hs-Source-Dirs: src
-Other-modules:  Html, Options, Tabulate
-Ghc-Options:    -Wall -O2 -smp
+Other-modules:  Html, Options, Tabulate, Annotate
+Ghc-Options:    -Wall -O2 -threaded
