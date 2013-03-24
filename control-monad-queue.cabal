@@ -1,5 +1,5 @@
 Name:                control-monad-queue
-Version:             0.0.9
+Version:             0.0.9.1
 Description:         Corecursive Queues
 License:             BSD3
 License-file:        LICENSE
@@ -7,7 +7,7 @@ Author:              Leon P Smith <leon@melding-monads.com>
 Maintainer:          Leon P Smith <leon@melding-monads.com>
 Build-Type:          Simple
 Category:            Control
-Synopsis:            Resuable corecursive queues, via continuations.
+Synopsis:            Reusable corecursive queues, via continuations.
 Cabal-Version:       >=1.2
 
 Library
