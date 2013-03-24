@@ -1,5 +1,5 @@
 Name: augeas
-Version: 0.2.0
+Version: 0.3.0
 Synopsis:  A Haskell FFI wrapper for the Augeas API
 Description: A Haskell FFI wrapper for the Augeas API
 Author: Jude Nagurney
@@ -16,7 +16,7 @@ HomePage: http://trac.haskell.org/augeas
 library 
         Exposed-Modules: System.Augeas
         Other-Modules: System.AugeasHsc
-        Build-Depends: base >= 2.0 && <4, directory, unix >=2.3.0.0, bytestring >= 0.9.0.1
+        Build-Depends: base >= 4.0 && <5, directory, unix >=2.3.0.0, bytestring >= 0.9.0.1
         GHC-options: -Wall -fwarn-dodgy-imports
 
 executable "test-haskell-augeas"
@@ -24,5 +24,6 @@ executable "test-haskell-augeas"
         Build-Depends: HUnit
         Other-Modules: System.Augeas, System.AugeasHsc
         extra-libraries: augeas
+        GHC-options: -Wall -fwarn-dodgy-imports 
 
 
