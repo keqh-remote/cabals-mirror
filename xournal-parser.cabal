@@ -1,5 +1,5 @@
 Name:		xournal-parser
-Version:	0.4.1
+Version:	0.5
 Synopsis:       Xournal file parser
 Description: 	Text parser for xournal xml file
 Homepage:       http://ianwookim.org/hxournal
@@ -21,25 +21,23 @@ Library
   ghc-prof-options: -caf-all -auto-all
   Build-Depends: base == 4.*, 
                  mtl == 2.*, 
-                 transformers == 0.2.*, 
+                 transformers == 0.3.*, 
                  attoparsec == 0.10.*, 
-                 attoparsec-iteratee == 0.4.*, 
-                 iteratee >= 0.7 && < 0.9, 
                  bytestring == 0.9.*, 
                  containers == 0.4.*, 
-                 xml-enumerator == 0.4.*, 
-                 enumerator >= 0.4.13 && < 0.5, 
+                 xml-conduit == 1.0.*,
+                 conduit == 0.5.*,
                  strict == 0.3.*, 
-                 iteratee-compress == 0.2.1.*, 
-                 xournal-types == 0.4.*, 
+                 attoparsec-conduit == 0.5.*,
+                 xournal-types >= 0.4.999 && < 0.6, 
                  xml-types == 0.3.*, 
                  text == 0.11.*,
-                 fclabels == 1.0.*, 
-                 zlib-enum == 0.2.*
-               
+                 lens >= 2.4 && < 2.7, 
+                 zlib-conduit == 0.5.*
+
   Exposed-Modules: 
                    Text.Xournal.Parse
-                   Text.Xournal.Parse.Enumerator
+                   Text.Xournal.Parse.Conduit
                    Text.Xournal.Parse.Zlib
 
 
