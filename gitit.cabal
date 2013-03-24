@@ -1,5 +1,5 @@
 name:                gitit
-version:             0.7.3.5
+version:             0.7.3.6
 Cabal-version:       >= 1.2
 build-type:          Simple
 synopsis:            Wiki using happstack, git or darcs, and pandoc.
@@ -111,18 +111,18 @@ Library
 Executable           gitit
   hs-source-dirs:    .
   main-is:           gitit.hs
-  build-depends:     base >=3 && < 5, parsec < 3, pretty, xhtml, containers,
-                     pandoc >= 1.5, process, filepath, directory, mtl, cgi,
+  build-depends:     base >=3 && < 5, parsec, pretty, xhtml, containers,
+                     pandoc >= 1.5.1, process, filepath, directory, mtl, cgi,
                      network, old-time, highlighting-kate >= 0.2.6, bytestring,
                      utf8-string >= 0.3 && < 0.4,
                      SHA > 1 && < 1.5, HTTP >= 4000.0 && < 4000.1,
                      HStringTemplate >= 0.6 && < 0.7, random,
                      network >= 2.1.0.0 && < 2.3,
                      recaptcha >= 0.1, filestore >= 0.3.4,
-                     datetime >= 0.1 && < 0.2, zlib >= 0.5 && < 0.6,
+                     datetime >= 0.1 && < 0.3, zlib >= 0.5 && < 0.6,
                      url >= 2.1 && < 2.2,
-                     happstack-server >= 0.3.3 && < 0.5,
-                     happstack-util >= 0.3.2 && < 0.5, xml >= 1.3.5,
+                     happstack-server >= 0.3.3 && < 0.6,
+                     happstack-util >= 0.3.2 && < 0.6, xml >= 1.3.5,
                      hslogger >= 1 && < 1.1, ConfigFile >= 1 && < 1.1,
                      feed >= 0.3.6 && < 0.4,
                      cautious-file >= 0.1.5 && < 0.2
