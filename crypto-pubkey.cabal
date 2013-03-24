@@ -1,5 +1,5 @@
 Name:                crypto-pubkey
-Version:             0.1.1
+Version:             0.1.2
 Description:
     Public Key cryptography
     .
@@ -17,6 +17,8 @@ Build-Type:          Simple
 Homepage:            http://github.com/vincenthz/hs-crypto-pubkey
 Cabal-Version:       >=1.8
 Extra-Source-Files:  Tests/*.hs
+                     Tests/KAT/*.hs
+                     Benchs/PregenKeys.hs
 
 Flag benchmark
   Description:       Build benchmarks
@@ -74,4 +76,4 @@ Benchmark bench-crypto-pubkey
 
 source-repository head
   type:     git
-  location: git://github.com/vincenthz/hs-cryptocipher
+  location: git://github.com/vincenthz/hs-crypto-pubkey
