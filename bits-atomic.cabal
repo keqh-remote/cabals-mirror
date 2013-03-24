@@ -1,5 +1,5 @@
 Name:               bits-atomic
-Version:            0.1.0
+Version:            0.1.1
 License:            BSD3
 License-File:       License.txt
 Maintainer:         Gabriel Wicke <wicke@wikidev.net>
@@ -48,17 +48,22 @@ flag test
     default:     False
 
 Executable test
-    if !flag(test)
-        buildable:     False
+    if flag(test)
+        buildable:  True
+        build-depends:   
+                    base >= 4 && < 6, 
+                    QuickCheck, 
+                    HUnit,
+                    test-framework-quickcheck2,
+                    test-framework-hunit,
+                    test-framework
+    else
+        buildable:  False
     hs-source-dirs:  ., test
     other-modules:   Data.Bits.Atomic
     main-is:         test.hs
-    GHC-Options:      -O2 -funbox-strict-fields -threaded
+    GHC-Options:      -O2 -funbox-strict-fields -threaded -fhpc
     GHC-Prof-Options: -auto-all
 
     Include-Dirs:     cbits
     C-Sources:        cbits/atomic-bitops-gcc.c
-    build-depends:   base >= 4 && < 6, QuickCheck, HUnit,
-                     test-framework-quickcheck2,
-                     test-framework-hunit,
-                     test-framework
