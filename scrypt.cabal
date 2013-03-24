@@ -1,5 +1,5 @@
 name:           scrypt
-version:        0.3.1
+version:        0.3.2
 license:        BSD3
 license-file:   LICENSE
 category:       Cryptography
@@ -36,7 +36,8 @@ library
     build-depends:
         base == 4.*,
         base64-bytestring == 0.1.*,
-        bytestring == 0.9.*
+        bytestring == 0.9.*,
+        entropy == 0.2
 
     ghc-options: -Wall
     ghc-prof-options: -auto-all
