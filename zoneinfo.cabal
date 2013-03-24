@@ -1,22 +1,26 @@
 Name: zoneinfo
-Version: 0.1.0.0
+Version: 0.2
 Cabal-Version: >= 1.2
 License: BSD3
 License-File: LICENSE
 Author:  Mark.Aylett
 Maintainer: Mark Aylett <mark.aylett@gmail.com>
 Category: System
+Description: ZoneInfo library.
 Synopsis: ZoneInfo library.
-Build-Type: Simple
+Build-Type: Configure
 
 Extra-Source-Files:
   cbits/asctime.c.orig
   cbits/difftime.c.orig
   cbits/localtime.c.orig
+  configure
+  configure.ac
   include/private.h
   include/tzfile.h
   Tests.hs
   tzinstall.sh
+  zoneinfo.buildinfo.in
 
 Library
   Build-Depends: base, time
