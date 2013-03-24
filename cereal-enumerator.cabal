@@ -1,5 +1,5 @@
 name:                cereal-enumerator
-version:             0.2.1
+version:             0.3
 synopsis:            Deserialize things with cereal and enumerator
 license:             PublicDomain
 author:              Patrick Palka
