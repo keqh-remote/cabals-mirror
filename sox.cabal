@@ -1,5 +1,5 @@
 Name:             sox
-Version:          0.2.1
+Version:          0.2.1.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -46,16 +46,16 @@ Library
     explicit-exception >= 0.1.3 && < 0.2,
     -- that's the way to get compatibility between GHC 6.10 and 6.12
     extensible-exceptions >=0.1.1 && <0.2,
-    transformers >=0.2 && <0.3
+    transformers >=0.2 && <0.4
   If flag(splitBase)
     Build-Depends:
-      process >= 1.0 && < 1.2,
-      containers >= 0.1 && <0.5,
-      base >= 2 && <5
+      process >=1.0 && <1.2,
+      containers >=0.1 && <0.5,
+      base >=2 && <5
   Else
     Build-Depends:
-      special-functors >= 1.0 && <1.1,
-      base >= 1.0 && < 2
+      special-functors >=1.0 && <1.1,
+      base >=1.0 && <2
 
   Hs-Source-Dirs: src
   If os(windows)
