@@ -1,5 +1,5 @@
 Name:		mtlparse
-Version:	0.1.0
+Version:	0.1.1
 License:	LGPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -15,7 +15,7 @@ Description:
 	The package ease implementation of look-ahead look-behind
 	and so on.
 Category:	Parsing
-Build-Depends:	base > 2 && <=4, mtl
+Build-Depends:	base > 2 && < 5, mtl
 Build-Type:     Simple
 Exposed-modules:Text.ParserCombinators.MTLParse
 Other-modules:	Text.ParserCombinators.MTLParse.MTLParseCore
