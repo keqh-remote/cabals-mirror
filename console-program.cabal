@@ -1,5 +1,5 @@
 Name:            console-program
-Version:         0.1.0.2
+Version:         0.2.0.0
 Cabal-Version:   >= 1.6
 License:         BSD3
 Author:          Arie Peterson
@@ -25,6 +25,10 @@ Description:
   - it parses a configuration file, in addition to the command line arguments.
 Category:        System
 Build-Type:      Simple
+Extra-Source-Files:
+  Examples/Simple.hs
+  Examples/Options.hs
+  Examples/Full.hs
 
 Source-repository head
   Type:     darcs
@@ -33,7 +37,6 @@ Source-repository head
 Library
   Build-Depends:
     base == 4.*,
-    transformers == 0.2.*,
     containers >= 0.1 && < 0.4,
     directory == 1.0.*,
     utf8-string >= 0.3.5 && < 0.4,
@@ -47,4 +50,6 @@ Library
     System.Console.Action,
     System.Console.Argument,
     System.Console.Options
+  Other-Modules:
+    System.Console.Action.Internal
   Hs-Source-Dirs:  src
