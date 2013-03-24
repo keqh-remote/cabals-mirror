@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.1.1
+Version:        0.1.2
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -185,6 +185,7 @@ Library
     MathObj.DiscreteMap
     MathObj.LaurentPolynomial
     MathObj.Matrix
+    MathObj.Monoid
     MathObj.PartialFraction
     MathObj.Permutation
     MathObj.Permutation.CycleList
@@ -204,6 +205,7 @@ Library
     Number.DimensionTerm.SI
     Number.FixedPoint
     Number.FixedPoint.Check
+    Number.GaloisField2p32m5
     Number.NonNegative
     Number.NonNegativeChunky
     Number.PartiallyTranscendental
@@ -246,11 +248,14 @@ Executable testsuite
   GHC-Options:    -Wall
   Other-modules:
     Test.NumericPrelude.Utility
+    Test.Number.GaloisField2p32m5
     Test.MathObj.PartialFraction
+    Test.MathObj.Matrix
     Test.MathObj.Polynomial
     Test.MathObj.PowerSeries
     Test.MathObj.Gaussian.Variance
     Test.MathObj.Gaussian.Bell
+    Test.MathObj.Gaussian.Polynomial
   Main-Is: Test/Run.hs
   If flag(buildTests)
     Build-Depends: HUnit >=1 && <2
