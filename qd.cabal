@@ -1,5 +1,5 @@
 Name:                 qd
-Version:              0.4
+Version:              0.4.1
 Synopsis:             double-double and quad-double number type via libqd
 Description:
                       This package supports both a double-double datatype (approx. 32 decimal digits)
