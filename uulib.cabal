@@ -1,7 +1,7 @@
 cabal-version: >=1.1
 build-type: Simple
 name: uulib
-version: 0.9.12
+version: 0.9.13
 license: LGPL
 license-file: COPYRIGHT
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -11,6 +11,7 @@ synopsis: Haskell Utrecht Tools Library
 category: Parsing
 stability: Stable
 copyright: Universiteit Utrecht
+cabal-version: >= 1.2
 extra-source-files: README, LICENSE-LGPL,
                     examples/bibtex/Bibtex.hs,
                     examples/parser/Example.hs,
@@ -37,6 +38,5 @@ library
                    UU.Scanner UU.Util.BinaryTrees UU.Util.PermTree UU.Util.Utils
                    UU.Pretty.Basic UU.Parsing.Machine    
   extensions:  RankNTypes FunctionalDependencies TypeSynonymInstances UndecidableInstances FlexibleInstances MultiParamTypeClasses FlexibleContexts CPP ExistentialQuantification
-  ghc-options: -fglasgow-exts
   hs-source-dirs: src
 
