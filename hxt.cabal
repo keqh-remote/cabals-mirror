@@ -1,6 +1,6 @@
 -- arch-tag: Haskell XML Toolbox main description file
 Name:           hxt
-Version:        9.0.1
+Version:        9.1.0
 Synopsis:       A collection of tools for processing XML with Haskell.
 Description:    The Haskell XML Toolbox bases on the ideas of HaXml and HXML,
                 but introduces a more general approach for processing XML with Haskell.
@@ -48,6 +48,7 @@ extra-source-files:
  examples/arrows/HelloWorld/Mini.hs
  examples/arrows/hparser/emptyElements.html
  examples/arrows/hparser/example1.xml
+ examples/arrows/hparser/example1CRLF.xml
  examples/arrows/hparser/HXmlParser.hs
  examples/arrows/hparser/invalid1.xml
  examples/arrows/hparser/invalid2.rng
@@ -63,6 +64,14 @@ extra-source-files:
  examples/arrows/performance/Makefile
  examples/arrows/pickle/Makefile
  examples/arrows/pickle/PickleTest.hs
+ examples/xhtml/tmp.xml
+ examples/xhtml/xhtml1-frameset.dtd
+ examples/xhtml/xhtml1-strict.dtd
+ examples/xhtml/xhtml1-transitional.dtd
+ examples/xhtml/xhtml-lat1.ent
+ examples/xhtml/xhtml-special.ent
+ examples/xhtml/xhtml-symbol.ent
+ examples/xhtml/xhtml.xml
 
 library
  exposed-modules:
@@ -71,18 +80,25 @@ library
   Control.Arrow.ArrowIf,
   Control.Arrow.ArrowList,
   Control.Arrow.ArrowNF,
+  Control.Arrow.ArrowNavigatableTree,
   Control.Arrow.ArrowState,
   Control.Arrow.ArrowTree,
   Control.Arrow.IOListArrow,
   Control.Arrow.IOStateListArrow,
   Control.Arrow.ListArrow,
   Control.Arrow.ListArrows,
+  Control.Arrow.NTreeEdit,
   Control.Arrow.StateListArrow,
+  Control.FlatSeq,
   Data.AssocList,
   Data.Atom,
   Data.Function.Selector,
   Data.Tree.Class,
   Data.Tree.NTree.TypeDefs,
+  Data.Tree.NTree.Edit,
+  Data.Tree.NTree.Zipper.TypeDefs,
+  Data.Tree.NavigatableTree.Class,
+  Data.Tree.NavigatableTree.XPathAxis,
   Text.XML.HXT.Arrow.Binary,
   Text.XML.HXT.Arrow.DTDProcessing,
   Text.XML.HXT.Arrow.DocumentInput,
@@ -145,6 +161,7 @@ library
  hs-source-dirs: src
 
  ghc-options: -Wall
+ ghc-prof-options: -auto-all -caf-all
 
  extensions: MultiParamTypeClasses DeriveDataTypeable FunctionalDependencies FlexibleInstances
 
@@ -159,6 +176,6 @@ library
                 deepseq    >= 1.1 && < 2,
                 bytestring >= 0.9 && < 1,
                 binary     >= 0.5 && < 1,
-                hxt-charproperties  >= 9 && < 10,
-                hxt-unicode         >= 9 && < 10,
-                hxt-regex-xmlschema >= 9 && < 10
+                hxt-charproperties  >= 9.1 && < 10,
+                hxt-unicode         >= 9   && < 10,
+                hxt-regex-xmlschema >= 9   && < 10
