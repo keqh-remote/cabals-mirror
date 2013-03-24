@@ -1,5 +1,5 @@
 Name:                glome-hs
-Version:             0.60
+Version:             0.61
 Synopsis:            ray tracer
 Description:         Ray Tracer capable of rendering a variety of primitives,
                      with support for CSG (difference and intersection of solids),
@@ -15,7 +15,7 @@ Copyright:           Copyright 2008,2010 Jim Snow
 Homepage:            http://haskell.org/haskellwiki/Glome
 Stability:           experimental
 Category:            graphics
-Build-Depends:       base >= 3 && < 4, haskell98, time, parallel, GLUT, OpenGL, random, array, GlomeVec, GlomeTrace
+Build-Depends:       base >= 3 && < 4, haskell98, time, parallel >= 2.2, GLUT, OpenGL, random, array, GlomeVec, GlomeTrace
 build-type:          Simple
 extensions:          BangPatterns 
 Cabal-Version: >= 1.2
