@@ -1,5 +1,5 @@
 Name:                Monadius
-Version:             0.94
+Version:             0.95
 
 Synopsis:            2-D arcade scroller
 Description:         A fast-paced 2-D scrolling vector graphics clone of the arcade game Gradius;
@@ -31,12 +31,15 @@ Executable monadius
   Hs-source-dirs:      Monadius
   Ghc-options:         -Wall
 
+  if os(windows)
+    Ghc-options:       -optl-mwindows
+
   Main-is:             Main.hs
   Other-modules:       Demo
-                     , Game
-                     , Monadius
-                     , Recorder
-                     , Util
+                       Game
+                       Monadius
+                       Recorder
+                       Util
 
 Source-repository head
   type:           git
