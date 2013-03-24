@@ -1,5 +1,5 @@
 name:           snap-server
-version:        0.5.3.1
+version:        0.5.4
 synopsis:       A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 description:
   Snap is a simple and fast web development framework and server written in
@@ -86,9 +86,9 @@ Library
   other-modules:
     Paths_snap_server,
     Data.Concurrent.HashMap,
-    Data.Concurrent.HashMap.Internal,
     Snap.Internal.Http.Parser,
     Snap.Internal.Http.Server,
+    Snap.Internal.Http.Server.Address,
     Snap.Internal.Http.Server.Date,
     Snap.Internal.Http.Server.Backend,
     Snap.Internal.Http.Server.ListenHelpers,
@@ -118,14 +118,14 @@ Library
     murmur-hash >= 0.1 && < 0.2,
     network >= 2.3 && <2.4,
     old-locale,
-    snap-core >= 0.5.3 && <0.6,
+    snap-core >= 0.5.4 && <0.6,
     template-haskell,
     text >= 0.11 && <0.12,
     time >= 1.0 && < 1.4,
     transformers,
-    unix-compat == 0.2.*,
-    vector >= 0.7 && <0.8,
-    vector-algorithms >= 0.4 && <0.5,
+    unix-compat >= 0.2 && <0.4,
+    vector >= 0.7 && <0.10,
+    vector-algorithms >= 0.4 && <0.6,
     PSQueue >= 1.1 && <1.2
 
   if flag(portable) || os(windows)
@@ -169,4 +169,4 @@ Library
 
 source-repository head
   type:     git
-  location: http://git.snapframework.com/snap-server.git
+  location: git://github.com/snapframework/snap-server.git
