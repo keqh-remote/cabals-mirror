@@ -1,6 +1,6 @@
 Name:                SBench
 
-Version:             0.1
+Version:             0.1.1
 
 Synopsis:            A benchmark suite for runtime and heap measurements over 
                      a series of inputs.
