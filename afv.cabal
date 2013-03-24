@@ -1,5 +1,5 @@
 name:    afv
-version: 0.1.0
+version: 0.1.1
 
 category: Formal Methods
 
@@ -50,5 +50,6 @@ executable afv
   extensions:
 
 source-repository head
-  type:     darcs
-  location: http://patch-tag.com/r/tomahawkins/afv/pullrepo
+  type:     git
+  location: git://github.com/tomahawkins/afv.git
+
