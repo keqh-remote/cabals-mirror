@@ -1,5 +1,5 @@
 name:            persistent
-version:         0.5.1
+version:         0.6.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -8,24 +8,24 @@ synopsis:        Type-safe, non-relational, multi-backend persistence.
 description:     This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.
 category:        Database, Yesod
 stability:       Stable
-cabal-version:   >= 1.6
+cabal-version:   >= 1.8
 build-type:      Simple
-homepage:        http://docs.yesodweb.com/book/persistent
+homepage:        http://www.yesodweb.com/book/persistent
 
 library
-    if flag(test)
-        Buildable: False
-    build-depends:   base                     >= 4         && < 5
-                   , bytestring               >= 0.9       && < 0.10
-                   , transformers             >= 0.2.1     && < 0.3
-                   , time                     >= 1.1.4     && < 1.3
-                   , text                     >= 0.8       && < 0.12
-                   , containers               >= 0.2       && < 0.5
-                   , parsec                   >= 2.1       && < 4
-                   , enumerator               >= 0.4.9     && < 0.5
-                   , monad-control            >= 0.2       && < 0.3
-                   , pool                     >= 0.1       && < 0.2
-                   , blaze-html               >= 0.4       && < 0.5
+    build-depends:   base                     >= 4       && < 5
+                   , bytestring               >= 0.9     && < 0.10
+                   , transformers             >= 0.2.1   && < 0.3
+                   , time                     >= 1.1.4   && < 1.3
+                   , text                     >= 0.8     && < 0.12
+                   , containers               >= 0.2     && < 0.5
+                   , parsec                   >= 2.1     && < 4
+                   , enumerator               >= 0.4.9   && < 0.5
+                   , monad-control            >= 0.2     && < 0.3
+                   , pool                     >= 0.1     && < 0.2
+                   , blaze-html               >= 0.4     && < 0.5
+                   , path-pieces              >= 0.0     && < 0.1
+                   , mtl                      >= 2.0     && < 2.1
     exposed-modules: Database.Persist
                      Database.Persist.Base
                      Database.Persist.Quasi
@@ -38,35 +38,38 @@ library
                      Database.Persist.Join.Sql
     ghc-options:     -Wall
 
-Flag test
-    Description:   Build the runtests executables.
-    Default:       False
+test-suite test
+    type:          exitcode-stdio-1.0
+    main-is:       main.hs
+    hs-source-dirs: test, persistent-template, persistent-sqlite, persistent-postgresql, persistent-mongoDB
 
-Flag test-postgresql
-    Description:   Build the runtests executable with Postgresql support.
-    Default:       True
+    build-depends:   HUnit
+                   , hspec >= 0.6.1 && < 0.7
+                   , file-location >= 0.4 && < 0.5
+                   , base >= 4 && < 5
+                   , template-haskell >= 2.4 && < 2.7
+                   , HDBC-postgresql
+                   , HDBC
+                   -- mongoDB dependencies
+                   , mongoDB       >= 1.0 && < 1.1
+                   , cereal
+                   , network
+                   , compact-string-fix
+                   , bson
+                   , persistent
+                   , path-pieces
+                   , text
+                   , transformers
+                   , monad-control
+                   , containers
+                   , bytestring
 
-executable         runtests
-    if flag(test)
-        Buildable: True
-        build-depends:   haskell98,
-                         HUnit,
-                         test-framework,
-                         test-framework-hunit,
-                         base >= 4 && < 5,
-                         template-haskell >= 2.4 && < 2.6,
-                         HDBC-postgresql,
-                         HDBC,
-                         web-routes-quasi >= 0.7 && < 0.8
-        if flag(test-postgresql)
-            cpp-options: -DWITH_POSTGRESQL
-    else
-        Buildable: False
-    hs-source-dirs: ., packages/template, backends/sqlite, backends/postgresql
-    main-is:       runtests.hs
+    -- these are mutually exclusive options
+    -- cpp-options: -DWITH_POSTGRESQL
+    -- cpp-options: -DWITH_MONGODB -DDEBUG
     ghc-options:   -Wall
     extra-libraries: sqlite3
 
 source-repository head
   type:     git
-  location: git://github.com/snoyberg/persistent.git
+  location: git://github.com/yesodweb/persistent.git
