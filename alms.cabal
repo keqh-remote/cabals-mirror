@@ -1,5 +1,5 @@
 Name:           alms
-Version:        0.6.3
+Version:        0.6.5
 Copyright:      2011, Jesse A. Tov
 Cabal-Version:  >= 1.8
 License:        BSD3
@@ -54,7 +54,6 @@ Executable alms
   GHC-Options:          -O3
   CPP-Options:          -DALMS_CABAL_BUILD
   Build-Depends:
-                        haskell98,
                         base == 4.*,
                         HUnit >= 1.2,
                         QuickCheck >= 2,
