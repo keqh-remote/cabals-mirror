@@ -1,5 +1,5 @@
 Name:           websockets
-Version:        0.2.0.1
+Version:        0.3.0.0
 
 Cabal-version:  >=1.6
 
@@ -8,9 +8,9 @@ Synopsis:       Create WebSocket servers
 Description:
  A library for creating WebSocket-capable servers, where the implemented protocol is defined here: <http://is.gd/eSdLB>.
  .
- This library is tested with Chromium >=7, Opera >=11 and Firefox >=4 and is a work in progress.
+ This library is tested with Chromium >=7, Opera >=11 and Firefox >=4 and is a work in progress. (Note: many of these newest browsers have recently stopped shipping with websockets enabled by default, due to security issues which are yet to be resolved.)
  .
- Examples of usage can be found in the Network.WebSockets module documentation.
+ An example of usage can be found in the Network.WebSockets module documentation.
 
 License:        BSD3
 License-file:   LICENCE
@@ -28,6 +28,6 @@ Build-type:     Simple
 
 Library
   Exposed-Modules: Network.WebSockets
-  Build-depends: pureMD5 >=2.1, network >=2.2.1.7, base ==4.*, 
+  Build-depends: pureMD5 >=2.1, network >=2.2.1.7, base ==4.*,
                  bytestring >=0.9, binary >=0.5, containers >=0.3
 
