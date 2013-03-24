@@ -1,5 +1,5 @@
 Name:          temporal-media
-Version:       0.0
+Version:       0.1.0
 License-file:  LICENSE
 Cabal-Version: >= 1.2
 License:       BSD3
@@ -20,7 +20,7 @@ Build-Type:    Simple
 
 Library
   Build-Depends:
-        base >= 4, base < 5
+        base >= 4, base < 5, containers >= 0.3
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         Temporal.Media
