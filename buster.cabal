@@ -1,12 +1,12 @@
 name: buster
-version: 2.21
+version: 2.5
 cabal-version: -any
 build-type: Simple
 license: BSD3
 license-file: ""
 copyright: 2009 Renaissance Computing Institute
 maintainer: Jeff Heard <jeff@renci.org>
-build-depends: base -any, binary -any, bytestring -any,
+build-depends: base <=4.0.0, binary -any, bytestring -any,
                containers -any, dataenc -any, mtl -any, old-locale -any,
                parsec >=3.0.0, pretty -any, time -any
 stability: Experimental
@@ -32,7 +32,7 @@ data-files:
 data-dir: ""
 extra-source-files:
 extra-tmp-files:
-exposed-modules: App.EventBus App.Behaviours.PrintEvents
+exposed-modules: App.EventBus App.DebugEventBus App.Behaviours.PrintEvents
                  App.Behaviours.Exception App.Behaviours.FileOps App.Widgets.Pacer
                  App.Widgets.Environment
 exposed: True
@@ -54,7 +54,7 @@ hs-source-dirs: .
 other-modules:
 ghc-prof-options:
 ghc-shared-options:
-ghc-options:
+ghc-options: -O2 -fvia-C -optc-O3
 hugs-options:
 nhc98-options:
 jhc-options:
