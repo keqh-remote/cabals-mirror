@@ -1,5 +1,5 @@
 name:            Agda-executable
-version:         2.2.8
+version:         2.2.10
 cabal-version:   >= 1.8 && < 2
 build-type:      Simple
 license:         OtherLicense
@@ -14,7 +14,7 @@ description:
   This package provides a command-line program for type-checking and
   compiling Agda programs. The program can also generate hyperlinked,
   highlighted HTML files from Agda sources.
-tested-with:     GHC >= 6.12.1 && <= 6.12.2
+tested-with:     GHC == 6.12.1, GHC == 6.12.3, GHC == 7.0.1
 
 source-repository head
   type:     darcs
@@ -23,11 +23,18 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://code.haskell.org/Agda/
-  tag:      2.2.8
+  tag:      2.2.10
 
 executable agda
   main-is:       Main.hs
-  build-depends: Agda == 2.2.8,
+  build-depends: Agda == 2.2.10,
                  -- Nothing is used from the following package, except
                  -- for the prelude.
                  base >= 3 && < 6
+  if impl(ghc >= 7)
+    -- If someone installs Agda with the setuid bit set, then the
+    -- presence of +RTS may be a security problem (see GHC bug #3910).
+    -- However, we sometimes recommend people to use +RTS to control
+    -- Agda's memory usage, so we want this functionality enabled by
+    -- default.
+    ghc-options: -rtsopts
