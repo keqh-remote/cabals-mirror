@@ -1,123 +1,101 @@
 cabal-version:       >= 1.6
 name:                lhc
-version:             0.8
+version:             0.10
 synopsis:            LHC Haskell Compiler
 description:
   lhc is a haskell compiler which aims to produce the most efficient programs possible via whole
   program analysis and other optimizations.
-Tested-With:         GHC == 6.10.1
+Tested-With:         GHC == 6.12.2
 category:            Compiler
 license:             PublicDomain
-author:              David Himmelstrup
+author:              David Himmelstrup, Austin Seipp
 maintainer:          lhc@projects.haskell.org
 homepage:            http://lhc.seize.it/
 build-type:          Custom
-data-files:
+extra-source-files:
   lib/base/base.cabal
   lib/base/includes/CTypes.h
   lib/base/includes/ieee-flpt.h
   lib/base/includes/Typeable.h
   lib/base/LICENSE
-  lib/base/Setup.lhs
-  lib/base/src/Control/Exception/Base.hs
-  lib/base/src/Control/Exception.hs
-  lib/base/src/Control/Monad.hs
-  lib/base/src/Data/Bits.hs
-  lib/base/src/Data/Char.hs
-  lib/base/src/Data/Dynamic.hs
-  lib/base/src/Data/Either.hs
-  lib/base/src/Data/HashTable.hs
-  lib/base/src/Data/Int.hs
-  lib/base/src/Data/IORef.hs
-  lib/base/src/Data/Ix.hs
-  lib/base/src/Data/List.hs
-  lib/base/src/Data/Maybe.hs
-  lib/base/src/Data/Tuple.hs
-  lib/base/src/Data/Typeable.hs
-  lib/base/src/Data/Typeable.hs-boot
-  lib/base/src/Data/Word.hs
-  lib/base/src/Foreign/C/Error.hsc
-  lib/base/src/Foreign/C/String.hs
-  lib/base/src/Foreign/C/Types.hs
-  lib/base/src/Foreign/C.hs
-  lib/base/src/Foreign/ForeignPtr.hs
-  lib/base/src/Foreign/Marshal/Alloc.hs
-  lib/base/src/Foreign/Marshal/Array.hs
-  lib/base/src/Foreign/Marshal/Error.hs
-  lib/base/src/Foreign/Marshal/Pool.hs
-  lib/base/src/Foreign/Marshal/Utils.hs
-  lib/base/src/Foreign/Marshal.hs
-  lib/base/src/Foreign/Ptr.hs
-  lib/base/src/Foreign/StablePtr.hs
-  lib/base/src/Foreign/Storable.hs
-  lib/base/src/Foreign/Storable.hs-boot
-  lib/base/src/Foreign.hs
-  lib/base/src/GHC/Arr.lhs
-  lib/base/src/GHC/Base.lhs
-  lib/base/src/GHC/Classes.hs
-  lib/base/src/GHC/Conc.lhs
-  lib/base/src/GHC/Enum.lhs
-  lib/base/src/GHC/Err.lhs
-  lib/base/src/GHC/Err.lhs-boot
-  lib/base/src/GHC/Exception.lhs
-  lib/base/src/GHC/Float.lhs
-  lib/base/src/GHC/ForeignPtr.hs
-  lib/base/src/GHC/Handle.hs
-  lib/base/src/GHC/Handle.hs-boot
-  lib/base/src/GHC/Int.hs
-  lib/base/src/GHC/IO.hs
-  lib/base/src/GHC/IOBase.lhs
-  lib/base/src/GHC/List.lhs
-  lib/base/src/GHC/Num.lhs
-  lib/base/src/GHC/Pack.lhs
-  lib/base/src/GHC/Ptr.lhs
-  lib/base/src/GHC/Read.lhs
-  lib/base/src/GHC/Real.lhs
-  lib/base/src/GHC/Show.lhs
-  lib/base/src/GHC/ST.lhs
-  lib/base/src/GHC/Stable.lhs
-  lib/base/src/GHC/Storable.lhs
-  lib/base/src/GHC/STRef.lhs
-  lib/base/src/GHC/TopHandler.lhs
-  lib/base/src/GHC/Unicode.hs
-  lib/base/src/GHC/Unicode.hs-boot
-  lib/base/src/GHC/Word.hs
-  lib/base/src/Numeric.hs
-  lib/base/src/Prelude.hs
-  lib/base/src/Prelude.hs-boot
-  lib/base/src/System/Environment.hs
-  lib/base/src/System/IO/Error.hs
-  lib/base/src/System/IO/Unsafe.hs
-  lib/base/src/System/IO.hs
-  lib/base/src/System/Posix/Internals.hs
-  lib/base/src/System/Posix/Types.hs
-  lib/base/src/Text/ParserCombinators/ReadP.hs
-  lib/base/src/Text/ParserCombinators/ReadPrec.hs
-  lib/base/src/Text/Printf.hs
-  lib/base/src/Text/Read/Lex.hs
-  lib/base/src/Text/Read.hs
-  lib/base/src/Text/Show/Functions.hs
-  lib/base/src/Text/Show.hs
-  lib/base/src/Unsafe/Coerce.hs
-  lib/ghc-prim/cbits/longlong.c
-  lib/ghc-prim/GHC/Bool.hs
-  lib/ghc-prim/GHC/Generics.hs
-  lib/ghc-prim/GHC/IntWord32.hs
-  lib/ghc-prim/GHC/IntWord64.hs
-  lib/ghc-prim/GHC/Ordering.hs
-  lib/ghc-prim/GHC/Prim.hs
-  lib/ghc-prim/GHC/PrimopWrappers.hs
-  lib/ghc-prim/GHC/Tuple.hs
-  lib/ghc-prim/GHC/Types.hs
-  lib/ghc-prim/GHC/Unit.hs
+  lib/base/Setup.hs
+  lib/base/src/Control/Exception/*.hs
+  lib/base/src/Control/*.hs
+  lib/base/src/Control/Monad/*.hs
+  lib/base/src/Control/Monad/ST/*.hs
+  lib/base/src/Data/*.hs
+  lib/base/src/Data/STRef/*.hs
+  lib/base/src/Data/*.hs-boot
+  lib/base/src/Foreign/C/*.hsc
+  lib/base/src/Foreign/C/*.hs
+  lib/base/src/Foreign/*.hs
+  lib/base/src/Foreign/Marshal/*.hs
+  lib/base/src/Debug/*.hs
+  lib/base/src/*.hs
+  lib/base/src/GHC/*.lhs
+  lib/base/src/GHC/*.lhs-boot
+  lib/base/src/GHC/*.hs
+  lib/base/src/GHC/*.hs-boot
+  lib/base/src/GHC/IO/*.hs
+  lib/base/src/GHC/IO/*.hs-boot
+  lib/base/src/GHC/IO/Encoding/*.hs
+  lib/base/src/GHC/IO/Encoding/CodePage/*.hs
+  lib/base/src/GHC/IO/Handle/*.hs
+  lib/base/src/GHC/IO/Handle/*.hs-boot
+  
+  lib/base/src/System/*.hs
+  lib/base/src/System/Console/*.hs
+  lib/base/src/System/Mem/*.hs
+  lib/base/src/System/IO/*.hs
+  lib/base/src/System/Posix/*.hs
+  lib/base/src/Text/ParserCombinators/*.hs
+  lib/base/src/Text/*.hs
+  lib/base/src/Text/Read/*.hs
+  lib/base/src/Text/Show/*.hs
+  lib/base/src/Unsafe/*.hs
+  lib/ghc-prim/GHC/*.hs
   lib/ghc-prim/ghc-prim.cabal
   lib/ghc-prim/LICENSE
   lib/ghc-prim/Setup.hs
-  lib/integer-native/integer.cabal
-  lib/integer-native/LICENSE
-  lib/integer-native/Setup.lhs
-  lib/integer-native/src/GHC/Integer/Internals.hs
-  lib/integer-native/src/GHC/Integer.hs
+  lib/integer-ltm/integer.cabal
+  lib/integer-ltm/LICENSE
+  lib/integer-ltm/Setup.hs
+  lib/integer-ltm/src/GHC/Integer.hs
+  lib/integer-ltm/src/GHC/Integer/Ltm.hs
+  lib/integer-ltm/src/GHC/Integer/Type.hs
+
+  tests/1_io/basic/*.hs
+  tests/1_io/basic/*.args
+  tests/1_io/basic/*.expected.stdout
+  tests/1_io/basic/*.stdin
+
+  tests/2_language/*.hs
+  tests/2_language/*.expected.stdout
+
+  tests/3_shootout/*.hs
+  tests/3_shootout/*.args
+  tests/3_shootout/*.expected.stdout
+  tests/3_shootout/*.mustfail
+  tests/3_shootout/*.stdin
+
+  tests/9_nofib/*.hs
+  tests/9_nofib/*.expected.stdout
+  tests/9_nofib/spectral/calendar/*.hs
+  tests/9_nofib/spectral/calendar/*.expected.stdout
+  tests/9_nofib/spectral/calendar/*.args
+  tests/9_nofib/spectral/primes/*.hs
+  tests/9_nofib/spectral/primes/*.expected.stdout
+
+  tests/bugs/*.hs
+  tests/bugs/*.expected.stdout
+  tests/bugs/*.mustfail
+  tests/bugs/*.args
+
+data-files:
+  rts/rts.ll
+  rts/rts.c
+  rts/ltm/*.c
+  rts/ltm/*.h
 
 
 flag hpc
@@ -126,6 +104,8 @@ flag threaded
   default:            False
 flag lhc-regress
   default:            False
+flag lhc-pkg
+  default:            True
 
 flag with-libs
   default:            False
@@ -136,16 +116,34 @@ Executable lhc
  ghc-prof-options:   -auto-all
  build-depends:      base >= 4 && < 5, mtl, bytestring, containers, ansi-wl-pprint, binary,
                      digest, bytestring-trie, core >=0.5, filepath, directory,
-                     derive, unix, libffi, xhtml, pretty, ghc >= 6.10
+                     derive, unix, xhtml, pretty, time,
+                     parallel
 
  other-modules:      Paths_lhc, LhcMain, CompactString, Traverse, Setup,
                      Grin.Eval.Compile, Grin.Eval.Methods, Grin.Eval.Primitives,
                      Grin.Eval.Types, Grin.FromCore, Grin.HPT.Environment,
-                     Grin.HPT.Lower, Grin.HPT.Solve, Grin.HPT,
-                     Grin.HtmlAnnotate, Grin.Lowering.Apply,
+                     Grin.HPT.Lower, Grin.HPT.Solve, Grin.HPT, Grin.HPT.Interface,
+                     Grin.HPT.FastSolve,
+                     Grin.HPT.QuickSolve,
+                     Grin.Lowering.Apply,
                      Grin.Lowering.GHCism, Grin.Optimize.Simple, Grin.Pretty,
+                     Grin.Optimize.Inline,
+                     Grin.Optimize.Case,
+                     Grin.Transform,
+                     Grin.PreciseDeadCode, Grin.DeadCode,
                      Grin.SimpleCore.DeadCode, Grin.SimpleCore.Types,
-                     Grin.SimpleCore, Grin.Types
+                     Grin.SimpleCore, Grin.Types, Manager, Grin.Stage2.Rename,
+                     Grin.Stage2.DeadCode,
+                     Grin.Stage2.Pretty,
+                     Grin.Stage2.Transform,
+                     Grin.Stage2.Types,
+                     Grin.Stage2.Optimize.Case,
+                     Grin.Stage2.Optimize.Simple,
+                     Grin.Stage2.Backend.C,
+                     Grin.Stage2.Backend.LLVM,
+                     Grin.Stage2.FromStage1,
+                     HashMap,
+                     HashSet
 
  ghc-options:        -fwarn-unused-imports -fwarn-unused-binds -fwarn-incomplete-patterns
  Extensions:         ScopedTypeVariables
@@ -153,20 +151,31 @@ Executable lhc
    x-build-libs:     True
  else
    x-build-libs:     False
+ if flag(hpc)
+  ghc-options:       -fhpc -hisuf hpc_hi -osuf hpc_o
  if flag(threaded)
   ghc-options:       -threaded
+ if impl(ghc == 6.12.*) && arch(x86_64)
+  buildable:         True
+ else
+  buildable:         False
 
 Executable lhc-regress
-  if flag(lhc-regress)
+  if flag(lhc-regress) && impl(ghc == 6.12.*) && arch(x86_64)
     Buildable:      True
   else
     Buildable:      False
   main-is:          Main.hs
-  other-modules:    TestCase, Setup
-  hs-source-dirs:   lhc-regress/
-  build-depends:    base >= 4 && < 5, process, extensible-exceptions
+  other-modules:    UnitTests, Properties
+  hs-source-dirs:   lhc-regress/ src/ tests/
+  build-depends:    base >= 4 && < 5, process, extensible-exceptions, HUnit, QuickCheck, test-framework,
+                    test-framework-hunit, test-framework-quickcheck
 
 Executable lhc-pkg
+  if flag(lhc-pkg) && impl(ghc == 6.12.*) && arch(x86_64)
+    Buildable:      True
+  else
+    Buildable:      False
   hs-source-dirs: lhc-pkg/
   main-is: Main.hs
   Extensions: CPP, ForeignFunctionInterface
