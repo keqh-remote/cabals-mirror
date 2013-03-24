@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.0.6
+version:		0.0.7
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -19,25 +19,35 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  You can find screenshots at : <http://goo.gl/MkVw>
  .
  Below is build step for Manatee:
+ .
+ 1) Install gold-linker to accelerate installation:
+ .
+ I suggest use gold-linker instead ld to accelerate installation.
+ .
+ In Debian system, you just need do below command:
+ .
+ > sudo aptitude install binutils-gold -y
+ .
+ This step is optional, it's okay use ld link program, just much slow. :)
  . 
- 1) Install GHC compiler <http://www.haskell.org/ghc/download_ghc_6_12_3.html>:
+ 2) Install GHC compiler <http://www.haskell.org/ghc/download_ghc_6_12_3.html>:
  .
  Download ghc package for your system, then do below command :
  .
  > ./configure && sudo make install
  .
- 2) Install C library:
+ 3) Install C library:
  In Debian use below command:
  .
  > sudo aptitude install libgtksourceview2.0-dev libgconf2-dev libwebkit-dev libcurl4-openssl-dev libgtkimageview-dev libpoppler-glib-dev poppler-data libtagc0-dev -y
  .
- 3) Install cabal:
+ 4) Install cabal:
  .
  If you're haskell newbie, use below command to install cabal (haskell expert ignore this):
  .
  > sudo aptitude install cabal-install -y
  .
- 4) Install dependent Haskell library:
+ 5) Install dependent Haskell library:
  .
  First make sure `HOME/.cabal/bin/` in your PATH
  .
@@ -47,9 +57,9 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  > cabal update && cabal install happy c2hs gtk2hs-buildtools glib gio pango cairo gtk
  .
- 5) Install Manatee (same, don't use root permission):
+ 6) Install Manatee (same, don't use root permission):
  .
- > cabal install manatee-core manatee-anything manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee
+ > cabal install manatee-core manatee-anything manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee-curl manatee
  .
  That's all, then type command "manatee" to play it! :)
  .
@@ -59,6 +69,10 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  Unfortunately, Manatee can't work in XMonad, please let me know if some XMonad hacker know how to fix it. :)
  .               
+ IRC channel: 
+ .
+ irc.freenode.net 6667 <##manatee>
+ .
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
 stability:		provisional
@@ -93,7 +107,7 @@ library
      other-modules: 
 	 
 executable manatee
-     build-depends: base >=4 && < 5, manatee-core >= 0.0.2, containers >= 0.3.0.0, unix >= 2.4.0.0,
+     build-depends: base >=4 && < 5, manatee-core >= 0.0.3, containers >= 0.3.0.0, unix >= 2.4.0.0,
                     mtl >= 1.1.0.2, gtk-serialized-event >= 0.12.0, text >= 0.7.1.0, utf8-string,
                     gtk >= 0.12.0, dbus-client >= 0.3 && < 0.4, 
                     stm, cairo >= 0.12.0, directory, dbus-core, template-haskell
