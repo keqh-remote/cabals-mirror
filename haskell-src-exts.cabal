@@ -1,5 +1,5 @@
 Name:                   haskell-src-exts
-Version:                1.1.4
+Version:                1.2.0
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
@@ -54,23 +54,20 @@ Library
                         Language.Haskell.Exts.Build,
                         Language.Haskell.Exts.Fixity,
                         Language.Haskell.Exts.Comments,
+                        Language.Haskell.Exts.SrcLoc,
                         
                         Language.Haskell.Exts.Annotated,
-                        Language.Haskell.Exts.Annotated.Parser,
-                        Language.Haskell.Exts.Annotated.Pretty,
                         Language.Haskell.Exts.Annotated.Syntax,
                         Language.Haskell.Exts.Annotated.Fixity,
                         Language.Haskell.Exts.Annotated.Build,
-                        Language.Haskell.Exts.Annotated.Comments,
-                        Language.Haskell.Exts.Annotated.SrcLoc,
-                        Language.Haskell.Exts.Annotated.ExactPrint
+                        Language.Haskell.Exts.Annotated.ExactPrint,
+                        Language.Haskell.Exts.Annotated.Simplify
 
-  Other-modules:        Language.Haskell.Exts.ParseMonad,
+  Other-modules:        Language.Haskell.Exts.ExtScheme,
+                        
+                        Language.Haskell.Exts.ParseMonad,
+                        Language.Haskell.Exts.ParseSyntax,
                         Language.Haskell.Exts.Lexer,
                         Language.Haskell.Exts.ParseUtils,
-                        Language.Haskell.Exts.ExtScheme,
-                        
-                        Language.Haskell.Exts.Annotated.ParseMonad,
-                        Language.Haskell.Exts.Annotated.Lexer,
-                        Language.Haskell.Exts.Annotated.ParseUtils
+                        Language.Haskell.Exts.InternalParser
   Hs-source-dirs:       src
