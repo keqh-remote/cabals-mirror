@@ -1,5 +1,5 @@
 Name:                reactive
-Version:             0.9.7
+Version:             0.9.8
 Synopsis:            Simple foundation for functional reactive programming
 Category:            reactivity, FRP
 Description:
@@ -16,9 +16,9 @@ Description:
   .
   &#169; 2007-2008 by Conal Elliott; BSD3 license.
   .
-  With contributions from: Robin Green, Thomas Davie, Luke Palmer, David
-  Sankel, Jules Bean, Creighton Hogg, and Chuan-kai Lin.  Please let me
-  know if I've forgotten to list you.
+  With contributions from: Robin Green, Thomas Davie, Luke Palmer,
+  David Sankel, Jules Bean, Creighton Hogg, Chuan-kai Lin, and Richard
+  Smith.  Please let me know if I've forgotten to list you.
 
 Author:              Conal Elliott 
 Maintainer:          conal@conal.net
