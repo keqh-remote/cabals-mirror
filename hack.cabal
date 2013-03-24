@@ -1,5 +1,5 @@
 Name:                 hack
-Version:              2009.4.25
+Version:              2009.4.26
 Build-type:           Simple
 Synopsis:             a sexy Haskell Webserver Interface
 Description:
@@ -20,7 +20,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-type-defaults
-  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, template, base64-string, zlib, ansi-wl-pprint, mps >= 2009.4.21, kibro >= 0.4.3, data-default >= 0.2, ansi-wl-pprint, bytestring, template, unix, time
+  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, template, base64-string, zlib, hyena, ansi-wl-pprint, mps >= 2009.4.21, kibro >= 0.4.3, data-default >= 0.2, ansi-wl-pprint, bytestring, template, unix, time
   hs-source-dirs: src/
   exposed-modules:  
                     Hack
@@ -30,6 +30,7 @@ library
                     Hack.Constants
                     
                     Hack.Handler.Kibro
+                    Hack.Handler.Hyena
                     
                     Hack.Contrib.ContentSize
                     Hack.Contrib.ContentType
