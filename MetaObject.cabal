@@ -1,5 +1,5 @@
 name:               MetaObject
-version:            0.0.3
+version:            0.0.4
 copyright:          2006 Caio Marcelo, 2008 Audrey Tang
 license:            BSD3
 license-file:       LICENSE
@@ -12,6 +12,7 @@ build-type:         Simple
 category:           Development, Pugs
 exposed-modules:    MO.Base MO.Compile.Attribute MO.Compile.Class
                     MO.Compile.Role MO.Compile MO.Run MO.Util MO.Capture MO.Util.C3
-build-depends:      base, haskell98, stringtable-atom, containers
+build-depends:      base, haskell98, containers,
+                    stringtable-atom >= 0.0.4
 extra-source-files: README, examples/si.hs, examples/old/mi.hs examples/old/roles.hs
 hs-source-dirs:     src
