@@ -1,5 +1,5 @@
 name: hs-twitter
-version: 0.2.7
+version: 0.2.8
 synopsis: Haskell binding to the Twitter API
 description:
    The hs-twitter API binding lets you access twitter.com's
@@ -7,7 +7,8 @@ description:
    . 
    Implements the full API, see <http://apiwiki.twitter.com/REST+API+Documentation>
    .
-   For more info on use, please visit <http://haskell.forkIO.com/twitter>
+   For more info on use, please visit <http://haskell.forkIO.com/twitter> , 
+   the @CHANGES@ file in the distribution contains change info for the package.
 
 category: Web
 license:  BSD3
