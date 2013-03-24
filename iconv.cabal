@@ -1,37 +1,34 @@
 name:            iconv
-version:         0.4.0.2
+version:         0.4.1.0
 copyright:       (c) 2006-2008 Duncan Coutts
 license:         BSD3
 license-file:    LICENSE
-author:          Duncan Coutts <duncan@haskell.org>
-maintainer:      Duncan Coutts <duncan@haskell.org>
+author:          Duncan Coutts <duncan@community.haskell.org>
+maintainer:      Duncan Coutts <duncan@community.haskell.org>
 category:        Text
 synopsis:        String encoding conversion
 description:     Provides an interface to the POSIX iconv library functions
                  for string encoding conversion.
-stability:       experimental
 build-type:      Simple
-cabal-version:   >= 1.2.1
-extra-source-files: README examples/hiconv.hs
+cabal-version:   >= 1.6
+extra-source-files: README examples/hiconv.hs cbits/hsiconv.h
 
-flag bytestring_in_base
+source-repository head
+  type: darcs
+  location: http://code.haskell.org/iconv/
 
 library
   exposed-modules: Codec.Text.IConv
   other-modules:   Codec.Text.IConv.Internal
-  if flag(bytestring_in_base)
-    -- bytestring was in base-2.0 and 2.1.1
-    build-depends: base >= 2.0 && < 2.2
-    cpp-options: -DBYTESTRING_IN_BASE
-  else
-    build-depends: base < 2.0 || >= 2.2, bytestring >= 0.9
-  extensions:      CPP, ForeignFunctionInterface
-  includes:        iconv.h
+  build-depends:   base >= 3 && < 5,
+                   bytestring == 0.9.*
+  extensions:      ForeignFunctionInterface
+  includes:        hsiconv.h
+  include-dirs:    cbits
+  c-sources:       cbits/hsiconv.c
   if os(darwin) || os(freebsd)
     -- on many systems the iconv api is part of the standard C library
     -- but on some others we have to link to an external libiconv:
     extra-libraries: iconv
 
-  -- We need to compile via C because on some platforms (notably darwin)
-  -- iconv is a macro rather than real C function. doh!
-  ghc-options:     -fvia-C -Wall
+  ghc-options: -Wall
