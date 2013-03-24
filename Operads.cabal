@@ -1,5 +1,5 @@
 Name:                   Operads
-Version:                0.5
+Version:                0.6
 Stability:              alpha
 License:                BSD3
 License-file:           LICENSE
@@ -157,7 +157,7 @@ Executable OperadTest
 Library 
         Build-Depends:          base, array, mtl, containers
         Exposed-Modules:        Math.Operad
-        Other-Modules:          Math.Operad.OperadGB, Math.Operad.OrderedTree, Math.Operad.PPrint, Math.Operad.PolyBag, Math.Operad.MapOperad
+        Other-Modules:          Math.Operad.OperadGB, Math.Operad.OrderedTree, Math.Operad.PPrint, Math.Operad.PolyBag, Math.Operad.MapOperad Math.Operad.Map
         ghc-options:            -Wall
         ghc-prof-options:       -auto-all
         Extensions:             CPP     
