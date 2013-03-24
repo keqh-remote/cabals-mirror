@@ -1,5 +1,5 @@
 Name:                vorbiscomment
-Version:             0.0.1
+Version:             0.0.2
 Synopsis:            Reading of Vorbis comments from Ogg Vorbis files
 Description:         This library supports reading of Vorbis comments from Ogg Vorbis files, and
                      will perhaps support writing of such comments in the future; as well as,
@@ -13,5 +13,5 @@ Maintainer:          christopher.t.wagner@gmail.com
 Build-Depends:       base >= 3 && < 5, bytestring, binary-strict, mtl, utf8-string
 Build-Type:          Simple
 Cabal-Version:       >= 1.4
-Exposed-modules:     Vorbis
+Exposed-modules:     Codec.Audio.Vorbis
 ghc-options:         -Wall
