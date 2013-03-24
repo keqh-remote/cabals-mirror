@@ -1,18 +1,15 @@
 name:           rmonad
-cabal-version:  >= 1.2
+cabal-version:  >= 1.6
 build-type:     Simple
 copyright:      (c) 2008-9 Ganesh Sittampalam, 2008 Peter Gavin
 stability:      provisional
-version:        0.6
+version:        0.7
 license:        BSD3
 license-file:   LICENSE
 category:       Control
 maintainer:     Ganesh Sittampalam <ganesh@earth.li>
 synopsis:       Restricted monad library
-build-depends:  base < 5, containers, transformers, suitable >=0.1 && < 0.2
-build-tools:    ghc >= 6.8
 extra-source-files: README
-hs-source-dirs: src/
 description:
         A library for restricted monads based on associated datatypes.
         This allows datatypes such as Set to be made into monads.
@@ -21,7 +18,22 @@ description:
         the embed and unEmbed combinators to use the normal Prelude
         monad operations.
 
-exposed-modules:
+source-repository head
+      type: darcs
+      location: http://code.haskell.org/rmonad/
+
+source-repository this
+      type: darcs
+      location: http://code.haskell.org/rmonad/
+      tag: "version 0.7"
+
+Library
+  build-depends:  base < 5, containers, transformers, suitable >=0.1 && < 0.2
+  build-tools:    ghc >= 6.8
+  hs-source-dirs: src/
+
+  exposed-modules:
+        Control.IfThenElse
         Control.RMonad.Prelude
         Control.RMonad
         Control.RMonad.AsMonad
