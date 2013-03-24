@@ -2,7 +2,7 @@
 Name:		actor
 Synopsis:	Actors with multi-headed receive clauses
 Category:       Concurrency
-Version:	0.1
+Version:	0.1.1
 Stability:      experimental
 Cabal-Version:  >= 1.2
 License:	BSD3
