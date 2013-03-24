@@ -1,7 +1,6 @@
 Name: bytestringreadp
-Version: 0.1
+Version: 0.2
 Stability: alpha
-Exposed-modules: Text.ParserCombinators.ReadP.ByteString
 License: BSD3
 License-File: LICENSE
 Copyright: 2007-2007, Gracjan Polak
@@ -18,9 +17,20 @@ Description:
     Adapted to use Data.ByteString by Gracjan Polak. Designed as a drop-in
     replacement for Text.ParserCombinators.ReadP.
 Category: Text
-Build-depends: base, bytestring
-Extensions: CPP
-Hs-source-dirs: src
-Ghc-options: -O2
-CC-options: -O2
-Include-dirs: src
+Cabal-Version: >=1.2
+Build-type: Simple
+Flag splitBase
+    description: Choose the new smaller, split-up base package.
+
+Library
+    Exposed-modules: Text.ParserCombinators.ReadP.ByteString
+    if flag(splitBase)
+        build-depends: base >= 3, bytestring
+    else
+        build-depends: base < 3
+        Ghc-options: -DBYTESTRING_BASE_ONLY
+    Extensions: CPP
+    Hs-source-dirs: src
+    Ghc-options: -O2
+    CC-options: -O2
+    Include-dirs: src
