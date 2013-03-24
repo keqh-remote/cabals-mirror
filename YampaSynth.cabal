@@ -1,9 +1,9 @@
 name: YampaSynth
-version: 0.0.2
+version: 0.1
 cabal-Version: >= 1.2
 license: BSD3
 license-file: LICENSE
-copyright: (c) 2007-2008 George Giorgidze and Henrik Nilsson
+copyright: (c) 2007-2010 George Giorgidze and Henrik Nilsson
 author: George Giorgidze and Henrik Nilsson
 maintainer: George Giorgidze (GGG at CS dot NOTT dot AC dot UK)
 homepage: http://www.cs.nott.ac.uk/~ggg/
@@ -26,7 +26,6 @@ description:
   This is mainly a proof of concept, but already useful to some extent.
 
 build-type: Simple
-tested-with: GHC==6.8.2
 
 data-files: gui/YampaSynth.glade, README
 
