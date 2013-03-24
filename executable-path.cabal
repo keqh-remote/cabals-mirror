@@ -1,5 +1,5 @@
 Name:                executable-path
-Version:             0.0.1
+Version:             0.0.2
 Synopsis:            Finding out the full path of the executable.
 
 Description:         The documentation of "System.Environment.getProgName" says that
@@ -26,7 +26,7 @@ Flag splitBase
 
 Library
   if flag(splitBase)
-    Build-Depends:       base >= 3 && < 5 , filepath
+    Build-Depends:       base >= 3 && < 5 , filepath 
   else
     Build-Depends:       base >= 2 && < 3
     
@@ -47,11 +47,11 @@ Library
     Other-Modules:       System.Environment.Executable.Linux
     
   if os(freebsd) 
-    Build-Depends:       unix
+    Build-Depends:       unix, directory
     Other-Modules:       System.Environment.Executable.FreeBSD
 
   if os(openbsd) || os(netbsd)
-    Build-Depends:       unix
+    Build-Depends:       unix, directory
     Other-Modules:       System.Environment.Executable.BSD
 
   if os(solaris) 
