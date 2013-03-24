@@ -1,6 +1,6 @@
 Name:                CPBrainfuck
 Cabal-Version:       >= 1.2
-Version:             1.0
+Version:             1.1
 Synopsis:            A simple Brainfuck interpretter.
 Description:         This is a very simple brainfuck interpretter, that's easy
                      to understand.
