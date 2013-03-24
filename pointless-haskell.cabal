@@ -1,5 +1,5 @@
 Name:            pointless-haskell
-Version:         0.0.5
+Version:         0.0.6
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -23,7 +23,7 @@ Flag splitBase
 
 Library
   Hs-Source-Dirs: src
-  Build-Depends:        base >= 3 && < 5, GHood, haskell98, process
+  Build-Depends:        base >= 3 && < 5, GHood, haskell98, process, syb >= 0.1.0.2
   exposed-modules:
         Generics.Pointless.Combinators
         Generics.Pointless.Functors,
@@ -37,4 +37,4 @@ Library
         Generics.Pointless.Bifunctors,
         Generics.Pointless.Bifctrable
 
-  extensions: TypeFamilies, TypeOperators, ScopedTypeVariables, UndecidableInstances, FlexibleInstances, FlexibleContexts, EmptyDataDecls, GADTs
+  extensions: TypeFamilies, TypeOperators, ScopedTypeVariables, UndecidableInstances, FlexibleInstances, FlexibleContexts, DeriveDataTypeable, EmptyDataDecls, GADTs
