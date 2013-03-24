@@ -1,8 +1,8 @@
 name:                edit-lenses
-version:             0.1
+version:             0.1.1
 synopsis:            Symmetric, stateful edit lenses
-Description:         An implementation of the ideas of the paper "Edit Lenses",
-                     available at http://dmwit.com/papers/201107EL.pdf,
+Description:         An implementation of the ideas of the paper /Edit Lenses/,
+                     available at <http://dmwit.com/papers/201107EL.pdf>,
                      together with a very simple demo program for a simple
                      string edit lens.
 -- Homepage:            http://dmwit.com/edit-lenses
