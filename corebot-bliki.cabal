@@ -1,5 +1,5 @@
 name:           corebot-bliki
-version:        0.2
+version:        0.2.2.0
 synopsis:       A bliki written using yesod. Uses pandoc to process files stored in git.
 description:    Also provides a sample use of the library that uses $HOME/bliki for data and serves
                 to port 8080.
@@ -79,6 +79,7 @@ executable corebot-bliki
                     GADTs
                     FlexibleContexts
     ghc-options:    -threaded
+    cpp-options:    -DCABAL_EXE_BUILD
     build-depends:  base             >= 4.4.0 && < 5,
                     aeson            >= 0.3.2.11,
                     blaze-builder    >= 0.3.0.1,
