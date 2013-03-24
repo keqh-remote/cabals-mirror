@@ -1,6 +1,6 @@
 Name:           nptools
 Cabal-Version:  >=1.4
-Version:        0.3.0
+Version:        0.4.0
 License:        BSD3
 License-File:   LICENSE
 Copyright:      (c) Nicolas Pouillard
@@ -37,14 +37,9 @@ executable git-prompt
     Build-depends: base>=3&&<5, ansi-terminal, HSH
     ghc-options: -Wall -Odph
 
-executable iter-lines
-    main-is: iter-lines.hs
-    Build-depends: base>=3&&<5, process, bytestring
-    ghc-options: -Wall -Odph
-
 executable label
     main-is: label.hs
-    Build-depends: base>=3&&<5, HSH, split, process
+    Build-depends: base>=3&&<5, HSH, split, process, bytestring
     ghc-options: -Wall -Odph
 
 executable bufferize
@@ -126,4 +121,9 @@ executable getpin
 
 executable starecho
     main-is: starecho.hs
+    ghc-options: -Wall -Odph
+
+executable color-list
+    main-is: color-list.hs
+    Build-depends: base>=3&&<5, colour, array
     ghc-options: -Wall -Odph
