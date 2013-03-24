@@ -1,6 +1,6 @@
 --Package-properties
 Name:			regexdot
-Version:		0.10.2.2
+Version:		0.11.0.0
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2010 Dr. Alistair Ward
 License:		GPL
@@ -58,10 +58,14 @@ Library
     Build-depends:
         base == 4.*,
         parsec == 3.*,
-        toolshed >= 0.12
+        toolshed == 0.13.*
 
     GHC-options:	-Wall -O2
-    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if impl(ghc >= 7.4.1)
+        GHC-prof-options:	-prof -fprof-auto -fprof-cafs
+    else
+        GHC-prof-options:	-prof -auto-all -caf-all
 
     if flag(haveDeepSeq)
         Build-depends:	deepseq >= 1.1
