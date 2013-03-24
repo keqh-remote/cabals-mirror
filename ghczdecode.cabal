@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                ghczdecode
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Decode Z-encoded strings from GHC
 description:         Use ghczdecode <string> to decode it
 homepage:            https://github.com/Peaker/ghczdecode
@@ -16,7 +16,7 @@ cabal-version:       >=1.8
 
 executable ghczdecode
   main-is:             zdecode.hs
-  build-depends:       base >= 4 && < 10
+  build-depends:       base >= 4 && < 10, zenc >= 0.1.1 && < 0.2
   ghc-options:         -Wall
 
 source-repository head
