@@ -1,5 +1,5 @@
 name: BerkeleyDB
-version: 0.8.3
+version: 0.8.4
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
@@ -9,9 +9,10 @@ maintainer: http://blacksapphire.com/antispam/
 stability: beta
 synopsis: Berkeley DB binding
 description:
-    Berkeley DB is a fast, scalable, fully transactional database that runs on a local file
-    system, and functions as a dictionary of arbitrary-sized binary blobs.
-    (It is NOT an SQL-based database.)  This package provides a thin Haskell binding for Berkeley DB.
+    This package provides a Haskell binding for Berkeley DB, which is a fast, scalable,
+    fully transactional database that runs on a local file system, and functions as a
+    dictionary of arbitrary-sized binary blobs.  It is NOT an SQL-based database.  It
+    is not free for commercial use.
     .
     This is a work in progress: The coverage of the Berkeley DB API is not yet complete. Tested with
     Berkeley DB versions 4.7 and 4.8, but should work with earlier versions.
