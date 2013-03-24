@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.0.0.1
+Version:         1.1
 Cabal-Version:   >= 1.2
 Build-Type:      Custom
 License:         GPL
@@ -36,7 +36,7 @@ Description:     Pandoc is a Haskell library for converting from one markup
                  only adding a reader or writer.
 Extra-Source-Files:
                  -- documentation
-                 README, INSTALL, COPYRIGHT, changelog,
+                 README, INSTALL, COPYRIGHT, BUGS, changelog,
                  -- sources for man pages
                  man/man1/pandoc.1.md, man/man1/markdown2pdf.1.md,
                  man/man1/html2markdown.1.md, man/man1/hsmarkdown.1.md,
@@ -64,12 +64,12 @@ Extra-Source-Files:
                  data/ui/default/outline.css,
                  data/ui/default/print.css,
                  -- data for ODT writer
-                 odt-styles/meta.xml,
-                 odt-styles/settings.xml,
-                 odt-styles/META-INF/manifest.xml,
-                 odt-styles/Thumbnails/thumbnail.png,
-                 odt-styles/styles.xml,
-                 odt-styles/mimetype,
+                 data/odt-styles/meta.xml,
+                 data/odt-styles/settings.xml,
+                 data/odt-styles/META-INF/manifest.xml,
+                 data/odt-styles/Thumbnails/thumbnail.png,
+                 data/odt-styles/styles.xml,
+                 data/odt-styles/mimetype,
                  -- tests
                  tests/bodybg.gif,
                  tests/writer.latex,
