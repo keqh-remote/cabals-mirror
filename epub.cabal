@@ -1,5 +1,5 @@
 Name:            epub
-Version:         0.0.3
+Version:         0.0.4
 License:         BSD3
 License-File:    LICENSE
 Synopsis:        EPUB E-Book construction support library
@@ -31,7 +31,6 @@ Library
                    xml,
                    Cabal        >= 1.5 && < 1.9
   Hs-Source-Dirs:  src
-  Extensions:      CPP, PatternGuards
   Ghc-Options:      -Wall -fno-warn-orphans
 
   Exposed-modules:
