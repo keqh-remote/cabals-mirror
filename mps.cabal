@@ -1,5 +1,5 @@
 Name:                 mps
-Version:              2008.10.25
+Version:              2008.11.6
 Build-type:           Simple
 Synopsis:             message passing style helpers
 Description:          message passing style helpers
@@ -14,5 +14,8 @@ license-file:         LICENSE
 homepage:             http://github.com/nfjinjing/mps/
 
 library
-  build-depends: base, containers, array, parallel, fgl, QuickCheck, time, bytestring >= 0.9, pandoc >= 0.46, regexpr >= 0.2.9, parsec >= 2, utf8-string >= 0.3.1, directory
-  exposed-modules: MPS, MPS.Snippets, MPS.Hack.Dot
+  ghc-options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-type-defaults
+  build-depends: base, containers, array, parallel, fgl, QuickCheck, time, bytestring >= 0.9, pandoc, regexpr >= 0.3.4, parsec >= 2, utf8-string >= 0.3.3, directory
+  hs-source-dirs: src/
+  exposed-modules:  MPS, MPSUTF8
+  other-modules:    MPS.UTF8, MPS.Snippets, MPS.Hack.Dot
