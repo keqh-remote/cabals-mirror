@@ -1,5 +1,5 @@
 name:           species
-version:        0.1
+version:        0.2
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -8,15 +8,15 @@ tested-with:    GHC == 6.10.3
 author:         Brent Yorgey
 maintainer:     Brent Yorgey <byorgey@cis.upenn.edu>
 category:       Math
-synopsis:       Combinatorial species library
+synopsis:       Computational combinatorial species
 
-description:    A DSL for describing combinatorial species, along with a number
-                of ways to interpret it, to e.g. count labelled or unlabelled 
-                species, or generate species elements.
+description:    A DSL for describing and computing with combinatorial species,
+                e.g. counting labelled or unlabelled structures, or generating
+                a list of all labeled structures for a species.
 
 Library
   build-depends: base >= 3.0 && < 4.2, numeric-prelude >= 0.1.1 && < 0.2,
-                 np-extras >= 0.1 && < 0.2, containers >= 0.2 && < 0.3,
+                 np-extras >= 0.2 && < 0.3, containers >= 0.2 && < 0.3,
                  lub >= 0.0.5 && < 0.1
   exposed-modules:
     Math.Combinatorics.Species
@@ -25,6 +25,6 @@ Library
     Math.Combinatorics.Species.Labelled
     Math.Combinatorics.Species.Unlabelled
     Math.Combinatorics.Species.CycleIndex
-    Math.Combinatorics.Species.Algebra
+    Math.Combinatorics.Species.AST
     Math.Combinatorics.Species.Generate
   extensions: NoImplicitPrelude
