@@ -1,10 +1,11 @@
 Name:           WebBits
-Version:        1.0
+Version:        2.0
 Cabal-Version:	>= 1.2.3
-Copyright:      Copyright (c) 2007-2009 Arjun Guha and Spiridon Eliopoulos
+Copyright:      Copyright (c) 2007-2009 Arjun Guha, Claudiu Saftoiu, 
+                and Spiridon Eliopoulos
 License:        BSD3
 License-file:   LICENSE
-Author:         Arjun Guha, Spiridon Eliopoulos
+Author:         Arjun Guha, Claudiu Saftoiu, and Spiridon Eliopoulos
 Maintainer:     Arjun Guha <arjun@cs.brown.edu>
 Homepage:       http://www.cs.brown.edu/research/plt/
 Stability:      provisional
@@ -31,7 +32,6 @@ Library
     Generics DeriveDataTypeable
   Exposed-Modules:
     BrownPLT.JavaScript 
-    BrownPLT.JavaScript.Instances
     BrownPLT.JavaScript.Lexer 
     BrownPLT.JavaScript.Parser
     BrownPLT.JavaScript.PrettyPrint
