@@ -1,5 +1,5 @@
 Name: testpack
-Version: 1.0.1
+Version: 1.0.2
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
@@ -30,7 +30,7 @@ Library
   Test.QuickCheck.Tools,
   Test.QuickCheck.Instances
 
- Extensions: ExistentialQuantification
+ Extensions: ExistentialQuantification, CPP
 
  -- Hack for cabal-install weirdness.  cabal-install forces base 3,
  -- though it works fine for Setup.lhs manually.  Fix.
