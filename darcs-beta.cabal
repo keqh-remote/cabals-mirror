@@ -1,5 +1,5 @@
 Name: darcs-beta
-version:        2.4.98.5
+version:        2.4.99.1
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -157,7 +157,8 @@ Executable          witnesses
                       System.Posix.IO
       cpp-options:    -DWIN32
       c-sources:      src/win32/send_email.c
-      build-depends:  unix-compat >= 0.1.2
+      build-depends:  unix-compat >= 0.1.2,
+                      regex-posix >= 0.94.4 && < 0.95
 
     build-depends:   base          < 5,
                      extensible-exceptions >= 0.1 && < 0.2,
@@ -355,7 +356,8 @@ Library
                       System.Posix.Files
                       System.Posix.IO
       cpp-options:    -DWIN32
-      build-depends:  unix-compat >= 0.1.2
+      build-depends:  unix-compat >= 0.1.2,
+                      regex-posix >= 0.94.4 && < 0.95
 
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
@@ -495,7 +497,8 @@ Executable          darcs
                     Preproc
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
-    build-depends:  unix-compat >= 0.1.2
+    build-depends:  unix-compat >= 0.1.2,
+                    regex-posix >= 0.94.4 && < 0.95
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
@@ -642,7 +645,8 @@ Executable          unit
                       System.Posix.IO
       cpp-options:    -DWIN32
       c-sources:      src/win32/send_email.c
-      build-depends:  unix-compat >= 0.1.2
+      build-depends:  unix-compat >= 0.1.2,
+                      regex-posix >= 0.94.4 && < 0.95
 
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
