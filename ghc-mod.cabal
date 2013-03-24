@@ -1,5 +1,5 @@
 Name:                   ghc-mod
-Version:                1.10.10
+Version:                1.10.11
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -16,13 +16,15 @@ Description:            This packages includes Elisp files
                         or extracts names of functions, classes,
                         and data declarations.
                         To use "ghc-mod" on Vim,
-                        see <https://github.com/eagletmt/ghcmod-vim>
+                        see <https://github.com/eagletmt/ghcmod-vim> or
+                        <https://github.com/scrooloose/syntastic>
 Category:               Development
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
 Data-Dir:               elisp
 Data-Files:             Makefile ghc.el ghc-func.el ghc-doc.el ghc-comp.el
-                        ghc-flymake.el ghc-command.el ghc-info.el ghc-ins-mod.el
+                        ghc-flymake.el ghc-command.el ghc-info.el
+                        ghc-ins-mod.el ghc-indent.el
 Executable ghc-mod
   Main-Is:              GHCMod.hs
   Other-Modules:        Browse
