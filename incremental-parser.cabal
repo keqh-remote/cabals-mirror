@@ -1,5 +1,5 @@
 Name:                incremental-parser
-Version:             0.1
+Version:             0.2
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Generic parser library capable of providing partial results from partial input.
@@ -26,6 +26,8 @@ Flag Test
 Executable test-incremental-parser
   Main-is:           Test/TestIncrementalParser.hs
   Other-Modules:     Text.ParserCombinators.Incremental,
+                     Text.ParserCombinators.Incremental.LeftBiasedLocal, Text.ParserCombinators.Incremental.Symmetric
+                     Control.Applicative.Monoid,
                      Data.Monoid.Cancellative, Data.Monoid.Factorial, Data.Monoid.Null
   Build-Depends:     base < 5, bytestring >= 0.9 && < 1.0, text >= 0.11.0.1 && < 0.12, QuickCheck >= 2 && < 3
   if !flag(test)
@@ -33,6 +35,8 @@ Executable test-incremental-parser
 
 Library
   Exposed-Modules:   Text.ParserCombinators.Incremental,
+                     Text.ParserCombinators.Incremental.LeftBiasedLocal, Text.ParserCombinators.Incremental.Symmetric
+                     Control.Applicative.Monoid,
                      Data.Monoid.Cancellative, Data.Monoid.Factorial, Data.Monoid.Null
   Build-Depends:     base < 5, bytestring >= 0.9 && < 1.0, text >= 0.11.0.1 && < 0.12
   GHC-prof-options:  -auto-all
