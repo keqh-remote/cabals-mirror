@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.1.5.1
+version: 0.1.5.2
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -9,20 +9,22 @@ stability: experimental
 synopsis: Web app server for stateful processes with safe, composable user interfaces.
 
 description: A Web framework with some unique features thanks to the power of the Haskell language.
-             MFlow run stateful server processes. Because flows are stateful, not isolated request-responses, the code is more
-             understandable, because all the flow of request and responses is coded by the programmer in a single function.
-             Allthoug single request-response flows and callbacks are possible.
+             MFlow run stateful server processes; All the flow of request and responses are coded by the programmer in a single function.
+             Allthoug single request-response flows and callbacks are possible. Therefore, the code is
+             more understandable.
              .
-             Technically it is a Web application server for stateful processes (flows) that are optionally persistent.
-             These processes interact with the user trough interfaces made of widgets that return back statically typed responses to
-             the process that sent the interface (including links). The process is coded in pure haskell (with optional XML from Haskell Server Pages).
-             It adopt and extend the formlet/applicative approach. The interfaces and communication are abstract, but it has bindings for HSP, Text.XHtml and byteString
+             These processes are stopped and restarted by the
+             application server on demand, including its execution state. Therefore session management
+             is automatic. State consistence and transactions are given by the TCache package.
+             .
+             The processes interact trough widgets, that are an extension of formlets with
+             additional combinators, formatting, link management, callbacks, modifiers, caching,
+             byteString conversion and AJAX. All is coded in pure haskell.
+             .
+             The interfaces and communications are abstract, but there are bindings for HSP, Text.XHtml and byteString
              , Hack and WAI but it can be extended to non Web based architectures.
              .
-             It includes Application Server features such is process and session timeouts
-             and automatic recovery of flow execution state.
-             .
-             This release add transparent back button management, cached widgets, callbacks, modifiers, heterogeneous formatting AJAX,
+             This release add transparent back button management, cached widgets, callbacks, modifiers, heterogeneous formatting, AJAX,
              and WAI integration.
              .
              It is designed for applications that can be run with no deployment with runghc in order
@@ -30,8 +32,11 @@ description: A Web framework with some unique features thanks to the power of th
              .
              See "MFlow.Forms" for details
              .
-             Altroug still it is experimental, it is used in at least one future commercial project. So I have te commitment to
+             Altroug still it is experimental, it is being used in at least one future commercial project. So I have te commitment to
              continue its development. There are many examples in the documentation and in the package.
+             .
+             Due to compilation problems in Hackage, this release has the bindings for Hack and HSP not exposed,
+             but they can be found in the source files.
              .
              To do:
              .
