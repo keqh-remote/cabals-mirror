@@ -1,5 +1,5 @@
 Name: gd
-Version: 3000.2.0
+Version: 3000.3.0
 Copyright: Bjorn Bringert
 Maintainer: bjorn@bringert.net
 Author: Bjorn Bringert
@@ -12,7 +12,7 @@ Description:
   the GD graphics library.
 Exposed-Modules: Graphics.GD
 ghc-options: -O2 -Wall -fffi
-extra-libraries: gd, jpeg, m, png
+extra-libraries: gd, png, z, jpeg, m, fontconfig, freetype, pthread, expat
 includes: gd.h
 include-dirs:        cbits
 install-includes: gd-extras.h
