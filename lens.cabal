@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       3.7.0.2
+version:       3.7.1
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -111,7 +111,7 @@ flag benchmark-uniplate
 
 -- Enable template haskell. Disable this at your own risk and for testing only.
 --
--- cabal configure -f-template-haskell is an /unsuppported/ configuration.
+-- cabal configure -f-template-haskell is an /unsupported/ configuration.
 --
 -- Clients of this library can and should expect this to be turned on.
 flag template-haskell
@@ -169,7 +169,7 @@ library
     comonad-transformers == 3.0.*,
     comonads-fd          == 3.0.*,
     containers           >= 0.4.0    && < 0.6,
-    hashable             >= 1.1.2.3  && < 1.2,
+    hashable             >= 1.1.2.3  && < 1.3,
     mtl                  >= 2.0.1    && < 2.2,
     semigroups           >= 0.8.4    && < 0.9,
     split                == 0.2.*,
@@ -193,6 +193,7 @@ library
     Control.Lens.Action
     Control.Lens.Classes
     Control.Lens.Combinators
+    Control.Lens.Each
     Control.Lens.Fold
     Control.Lens.Getter
     Control.Lens.Indexed
@@ -302,32 +303,37 @@ test-suite templates
 test-suite properties
   type: exitcode-stdio-1.0
   main-is: properties.hs
-  build-depends:
-    base,
-    lens,
-    QuickCheck   >= 2.4 && < 2.6,
-    transformers
-  ghc-options: -w -threaded
+  ghc-options: -w -threaded -rtsopts -with-rtsopts=-N
   hs-source-dirs: tests
   if !flag(test-properties)
     buildable: False
+  else
+    build-depends:
+      base,
+      lens,
+      QuickCheck                 >= 2.4 && < 2.6,
+      test-framework             >= 0.6 && < 0.9,
+      test-framework-quickcheck2 >= 0.2 && < 0.4,
+      test-framework-th          >= 0.2 && < 0.4,
+      transformers
 
 test-suite hunit
   type: exitcode-stdio-1.0
   main-is: hunit.hs
-  build-depends:
-    base,
-    containers,
-    HUnit == 1.2.*,
-    lens,
-    mtl,
-    test-framework       >= 0.6 && < 0.9,
-    test-framework-hunit >= 0.2 && < 0.4,
-    test-framework-th    >= 0.2 && < 0.4
-  ghc-options: -w -threaded
+  ghc-options: -w -threaded -rtsopts -with-rtsopts=-N
   hs-source-dirs: tests
   if !flag(test-hunit)
     buildable: False
+  else
+    build-depends:
+      base,
+      containers,
+      HUnit == 1.2.*,
+      lens,
+      mtl,
+      test-framework       >= 0.6 && < 0.9,
+      test-framework-hunit >= 0.2 && < 0.4,
+      test-framework-th    >= 0.2 && < 0.4
 
 -- Verify the results of the examples
 test-suite doctests
