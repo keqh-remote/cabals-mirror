@@ -1,5 +1,5 @@
 name:         monads-fd
-version:      0.1.0.2
+version:      0.1.0.3
 cabal-version: >= 1.6
 license:      BSD3
 license-file: LICENSE
@@ -8,15 +8,13 @@ maintainer:   Ross Paterson <ross@soi.city.ac.uk>
 category:     Control
 synopsis:     Monad classes, using functional dependencies
 description:
-    Monad classes using functional dependencies, with instances
-    for various monad transformers, inspired by the paper
-    /Functional Programming with Overloading and Higher-Order Polymorphism/,
-    by Mark P Jones, in /Advanced School of Functional Programming/, 1995
-    (<http://web.cecs.pdx.edu/~mpj/pubs/springschool.html>).
-    .
-    This package is almost a compatible replacement for the @mtl@ package.
+    Now that @mtl@ has been upgraded to depend on @transformers@,
+    this package is a backwards compatibility stub re-exporting the
+    @mtl@ package.
 build-type: Simple
-exposed-modules:
+
+Library
+  exposed-modules:
     Control.Monad.Cont
     Control.Monad.Cont.Class
     Control.Monad.Error
@@ -38,8 +36,6 @@ exposed-modules:
     Control.Monad.Writer.Class
     Control.Monad.Writer.Lazy
     Control.Monad.Writer.Strict
-build-depends: base < 6, transformers == 0.2.*
-extensions:
-    MultiParamTypeClasses
-    FunctionalDependencies
-    FlexibleInstances
+  build-depends: base < 6, transformers == 0.2.*, mtl == 2.*
+  extensions:
+    PackageImports
