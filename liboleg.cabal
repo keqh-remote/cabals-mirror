@@ -1,5 +1,5 @@
 name:           liboleg
-version:        0.1.1
+version:        0.2
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -17,7 +17,8 @@ library
             base < 4,
             containers,
             mtl,
-            unix
+            unix,
+            template-haskell
 
     exposed-modules:
             Data.FDList
@@ -42,6 +43,9 @@ library
 
             Text.PrintScan
             Text.PrintScanF
+            Text.GenPrintF
+            Text.TotalPrintF
+            Text.TFTest
 
             System.SysOpen
             System.IterateeM
