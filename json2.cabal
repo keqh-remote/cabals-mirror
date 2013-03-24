@@ -1,5 +1,5 @@
 Name:                json2
-Version:             0.8
+Version:             0.8.1
 Synopsis:            Library provides support for JSON. 
 Category:            Data, Text, JSON
 Description:         This library provides support for JSON.
@@ -32,7 +32,7 @@ library
                      mtl           >= 2,
                      utf8-string   >= 0.3,
                      bytestring    >= 0.9,
-                     blaze-builder >= 0.2,
+                     blaze-builder >= 0.3,
                      parsec        >= 2.0,
                      pretty        -any,
                      json2-types   -any
