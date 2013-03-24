@@ -1,5 +1,5 @@
 Name:             data-accessor
-Version:          0.2.2
+Version:          0.2.2.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>, Luke Palmer <lrpalmer@gmail.com>
@@ -9,7 +9,9 @@ Category:         Data
 -- Default-Language: Haskell98
 Cabal-Version:    >=1.6
 Build-Type:       Simple
-Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.1, JHC==0.7.3
+Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3
+Tested-With:      GHC==7.0.1, GHC==7.2.1, GHC==7.4.1
+Tested-With:      JHC==0.7.3
 Synopsis:         Utilities for accessing and manipulating fields of records
 Description:
   In Haskell 98 the name of a record field
@@ -89,7 +91,7 @@ Library
     transformers >=0.2 && <0.3
   If flag(splitBase)
     Build-Depends:
-      array >=0.1 && <0.4,
+      array >=0.1 && <0.5,
       containers >=0.1 && <0.5
     If flag(category)
       Hs-Source-Dirs: src-4
