@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.2.0.5
+version: 0.2.0.6
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
@@ -24,6 +24,9 @@ description: A Web framework with some unique features thanks to the power of th
              The interfaces and communications are abstract, but there are bindings for blaze-html, HSP, Text.XHtml and byteString
              , Hack and WAI but it can be extended to non Web based architectures.
              .
+             Bindings for hack, and hsp >= 0.8,  are not compiled by Hackage, and do not appear, but are included in the package files.
+             To use them, add then to the exported modules and execute cabal install
+             .
              The previous release add transparent back button management, cached widgets, callbacks, modifiers, heterogeneous formatting, AJAX,
              and WAI integration.
              .
@@ -36,7 +39,7 @@ description: A Web framework with some unique features thanks to the power of th
              .
              See "MFlow.Forms" for details
              .
-             Altroug still it is experimental, it is being used in at least one future commercial project. So I have te commitment to
+             Although still it is experimental, it is being used in at least one future commercial project. So I have te commitment to
              continue its development. There are many examples in the documentation and in the package.
              .
              To do:
@@ -51,6 +54,7 @@ extra-source-files: Demos/demos.blaze.hs
                   , src/MFlow/Hack/Response.hs
                   , src/MFlow/Hack/XHtml.hs
                   , src/MFlow/Hack/XHtml/All.hs
+                  , src/MFlow/Forms/HSP.hs
 
 source-repository head
     type: git
@@ -63,12 +67,12 @@ library
                    stm >2, old-time -any, vector -any, directory -any,
                    utf8-string -any, wai -any, case-insensitive -any, http-types -any,
                    conduit -any, text -any, parsec -any, warp -any,
-                   random -any, hsp >= 0.8,
+                   random -any,
                    blaze-html -any, blaze-markup -any
     exposed-modules: MFlow MFlow.Wai.Blaze.Html.All
                      MFlow.Forms MFlow.Forms.Admin
                      MFlow.Cookies  MFlow.Wai
-                     MFlow.Wai.XHtml.All MFlow.Forms.XHtml MFlow.Forms.HSP
+                     MFlow.Wai.XHtml.All MFlow.Forms.XHtml
                      MFlow.Forms.Blaze.Html MFlow.Forms.Test
                      MFlow.Forms.Widgets
     other-modules: MFlow.Forms.Internals MFlow.Wai.Response
