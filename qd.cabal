@@ -1,5 +1,5 @@
 Name:                 qd
-Version:              1.0
+Version:              1.0.2.1
 Synopsis:             double-double and quad-double number type via libqd
 Description:
     This package supports both a double-double datatype (approx. 32 decimal digits)
@@ -16,23 +16,18 @@ Description:
     use 80bit.  When using the Unsafe modules this might cause erroneous results;
     the Safe modules (used by the instances above) set and restore the FPU flags
     in foreign code to avoid race conditions from pre-emptive Haskell threading.
-    .
-    The @'RealFloat'@ instances have been removed in this release as they were
-    mostly broken: @'RealFloat'@ semantics are for fixed-precision numbers.
 
 License:              BSD3
 License-file:         LICENSE
 Author:               Claude Heiland-Allen
-Maintainer:           claudiusmaximus@goto10.org
+Maintainer:           claude@mathr.co.uk
 Category:             Math
 Build-type:           Simple
-Cabal-version:        >=1.2
+Cabal-version:        >=1.6
 
 Library
   Build-depends:      base >= 4 && < 5, floatshow >= 0.2 && < 0.3
   Extra-Libraries:    qd
-  if os(linux)
-    Extra-libraries:  stdc++
   Exposed-modules:    Numeric.QD
                       Numeric.QD.DoubleDouble
                       Numeric.QD.QuadDouble
@@ -50,3 +45,12 @@ Library
   C-sources:          cbits/safe_dd.c cbits/safe_qd.c
   GHC-options:        -Wall -fno-excess-precision
   GHC-prof-options:   -prof -auto-all -caf-all
+
+source-repository head
+  type:     git
+  location: git://gitorious.org/hsqd/hsqd.git
+
+source-repository this
+  type:     git
+  location: git://gitorious.org/hsqd/hsqd.git
+  tag:      v1.0.2.1
