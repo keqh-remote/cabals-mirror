@@ -1,5 +1,5 @@
 Name:               nntp
-Version:            0.0.3
+Version:            0.0.4
 Cabal-Version:      >= 1.6
 Build-Type:         Simple
 License:            LGPL
@@ -21,14 +21,16 @@ Library
                    Network.NNTP.Common,
                    Network.NNTP.Core,
                    Network.NNTP.Internal,
+                   Network.NNTP.Internal.Article,
+                   Network.NNTP.Internal.Group,
                    Network.NNTP.ParserHelpers
   Build-Depends:   base < 5 && >= 4,
                    bytestring,
                    monad-loops,
-                   mtl,
+                   mtl == 2.*,
                    network,
                    old-locale,
-                   parsec >= 3.0,
+                   parsec == 3.*,
                    time
   HS-Source-Dirs:  src
   GHC-Options:     -Wall
