@@ -1,10 +1,10 @@
 name:           BiobaseTypes
-version:        0.0.2.1
+version:        0.0.2.2
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 copyright:      Christian Hoener zu Siederdissen, 2010
 category:       Bioinformatics
-synopsis:       Ring class, with several instances.
+synopsis:       (deprecated) Ring class, with several instances.
 license:        GPL-3
 license-file:   LICENSE
 build-type:     Simple
