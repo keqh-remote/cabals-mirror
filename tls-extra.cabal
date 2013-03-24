@@ -1,5 +1,5 @@
 Name:                tls-extra
-Version:             0.1.7
+Version:             0.1.8
 Description:
    a set of extra definitions, default values and helpers for tls.
 License:             BSD3
@@ -41,6 +41,7 @@ Library
   other-modules:     Network.TLS.Extra.Certificate
                      Network.TLS.Extra.Cipher
                      Network.TLS.Extra.Compression
+                     Network.TLS.Extra.Connection
                      Network.TLS.Extra.Thread
   ghc-options:       -Wall -fno-warn-missing-signatures
   if os(windows) || os(osx)
@@ -58,6 +59,16 @@ Executable           stunnel
 
 Executable           checkciphers
   Main-is:           Examples/CheckCiphers.hs
+  if flag(executable)
+    Build-Depends:   network
+                   , cmdargs
+    Buildable:       True
+  else
+    Buildable:       False
+  ghc-options:       -Wall -fno-warn-missing-signatures
+
+Executable           retrievecertificate
+  Main-is:           Examples/RetrieveCertificate.hs
   if flag(executable)
     Build-Depends:   network
                    , cmdargs
