@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.20.0
+version:          0.21.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -30,7 +30,21 @@ description:
   .
   Changelog:
   .
-  v0.19.0 to v0.20.0:
+  v0.20.0 to v0.21.0:
+  .
+  * The code from the @Kernel.Base.UserState@ module has been 
+    moved to the module @Kernel.Drawing.Basis@.
+  .
+  * Moved @Image@ and @Query@ from @Objects.Basis@ to new module
+    @Objects.Image@. Moved @Chain@, @CtxPicture@ and 
+    @TraceDrawing@ into the new @Drawing@ folder.
+  .
+  * Added @Wumpus.Basic.Kernel.Drawing.LocDrawing@ module.
+  . 
+  * Rationalized the combinators exported by the drawing objects 
+    @Image@, @LocImage@, @LocThetaImage@ and @Connector@.
+  . 
+  v0.18.0 to v0.20.0:
   .
   * Added text advance-vector calculations to @QueryDC@ - 
     previously they were in Wumpus-Drawing.
@@ -94,23 +108,26 @@ library
     Wumpus.Basic.Kernel.Base.QueryDC,
     Wumpus.Basic.Kernel.Base.Units,
     Wumpus.Basic.Kernel.Base.UpdateDC,
-    Wumpus.Basic.Kernel.Base.UserState,
     Wumpus.Basic.Kernel.Base.WrappedPrimitive,
+    Wumpus.Basic.Kernel.Drawing.Basis,
+    Wumpus.Basic.Kernel.Drawing.Chain,
+    Wumpus.Basic.Kernel.Drawing.CtxPicture,
+    Wumpus.Basic.Kernel.Drawing.LocDrawing,
+    Wumpus.Basic.Kernel.Drawing.LocTrace,
+    Wumpus.Basic.Kernel.Drawing.TraceDrawing,
     Wumpus.Basic.Kernel.Objects.AdvObject,
     Wumpus.Basic.Kernel.Objects.Anchors,
     Wumpus.Basic.Kernel.Objects.Basis,
     Wumpus.Basic.Kernel.Objects.Bounded,
-    Wumpus.Basic.Kernel.Objects.Chain,
     Wumpus.Basic.Kernel.Objects.Concat,
     Wumpus.Basic.Kernel.Objects.Connector,
-    Wumpus.Basic.Kernel.Objects.CtxPicture,
     Wumpus.Basic.Kernel.Objects.Displacement,
     Wumpus.Basic.Kernel.Objects.DrawingPrimitives,
+    Wumpus.Basic.Kernel.Objects.Image,
     Wumpus.Basic.Kernel.Objects.LocImage,
     Wumpus.Basic.Kernel.Objects.LocThetaImage,
     Wumpus.Basic.Kernel.Objects.Orientation,
     Wumpus.Basic.Kernel.Objects.PosObject,
-    Wumpus.Basic.Kernel.Objects.TraceDrawing,
     Wumpus.Basic.System.FontLoader,
     Wumpus.Basic.System.FontLoader.AfmParserBase,
     Wumpus.Basic.System.FontLoader.AfmTopLevel,
