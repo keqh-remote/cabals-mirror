@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Boolean
-Version:       1.0.0
+Version:       1.1.0
 Stability:     Experimental
 Synopsis:      Handle Boolean values generatically.
 
@@ -11,6 +11,15 @@ Description:
   few useful instances. The main benefit is the ability to use
   the usual @&&@, etc. operators without having to invent new
   operator names for every kind of Bool-like thing.
+  .
+  Changes:
+  .
+  * Increase efficiency of @Boolean@ instance for @Bool@.
+  .
+  * Shorten source code.
+  .
+  * Remove function instance. (@Control.Monad.Instances@ provides
+    an equivilent @Monad@ instance.)
 
 Category:      Data, Logic, Math
 License:       BSD3
