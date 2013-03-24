@@ -1,5 +1,5 @@
 Name:                fclabels-monadlib
-Version:             0.1.1
+Version:             0.2.0
 Synopsis:            MonadLib monadic interface for the "fclabels" package.
 Description:         A MonadLib-compatible monadic interface for the "fclabels" package.
 License:             BSD3
@@ -14,7 +14,7 @@ Library
         build-depends:       base == 4.*,
                              haskell98,
                              monadLib == 3.6.*,
-                             fclabels == 1.0.*
+                             fclabels == 1.1.*
         extensions:          TypeOperators
         ghc-options:         -Wall
         hs-source-dirs:      src
