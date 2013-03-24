@@ -1,5 +1,5 @@
 Name:                iptables-helpers
-Version:             0.4.1
+Version:             0.4.2
 Synopsis:            Static checking of iptables rules
 License:             BSD3
 License-file:        LICENSE
