@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               cmdargs
-version:            0.6.8
+version:            0.6.9
 license:            BSD3
 license-file:       LICENSE
 category:           Console
@@ -61,7 +61,7 @@ library
         System.Console.CmdArgs.Implicit.Ann
         System.Console.CmdArgs.Implicit.Global
         System.Console.CmdArgs.Implicit.Local
-        System.Console.CmdArgs.Implicit.Read
+        System.Console.CmdArgs.Implicit.Reader
         System.Console.CmdArgs.Implicit.Reform
         System.Console.CmdArgs.Implicit.Type
         System.Console.CmdArgs.Implicit.UI
