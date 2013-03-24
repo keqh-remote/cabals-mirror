@@ -5,10 +5,10 @@ Description:
         generate RSA and DSA keys, read and write PEM files, generate
         message digests, sign and verify messages, encrypt and decrypt
         messages.
-Version: 0.4.1
+Version: 0.4.2
 License: PublicDomain
 License-File: COPYING
-Author: PHO <pho at cielonegro.org>
+Author: Adam Langley <agl at imperialviolet.org>, PHO <pho at cielonegro.org>
 Maintainer: PHO <pho at cielonegro.org>
 Stability: experimental
 Homepage: http://ccm.sherry.jp/HsOpenSSL/
