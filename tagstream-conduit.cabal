@@ -1,10 +1,10 @@
 Name:                tagstream-conduit
-Version:             0.2.1
+Version:             0.2.2
 Synopsis:            streamlined html tag parser
 Description:
     Tag-stream is a library for parsing HTML//XML to a token stream.
     It can parse unstructured and malformed HTML from the web.
-    It also provides an Enumeratee which can parse streamline html, which means it consumes constant memory.
+    It provides a Conduit to parse html streamlined, which consumes constant memory.
 
     You can start from the `tests/Tests.hs` module to see what it can do.
 Homepage:            http://github.com/yihuang/tagstream-conduit
@@ -32,10 +32,10 @@ Library
                      , Text.HTML.TagStream.Utils
   Build-depends:       base >= 4 && < 5
                      , bytestring
-                     , conduit >= 0.0.2
+                     , conduit >= 0.2.0
                      , attoparsec
                      , blaze-builder
-                     , blaze-builder-conduit
+                     , blaze-builder-conduit >= 0.2.0
 
 test-suite test
     hs-source-dirs: tests
@@ -43,7 +43,7 @@ test-suite test
     type: exitcode-stdio-1.0
     build-depends:     base >= 4 && < 5
                      , bytestring
-                     , conduit >= 0.0.2
+                     , conduit >= 0.2.0
                      , QuickCheck
                      , HUnit
                      , test-framework
