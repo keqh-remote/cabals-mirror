@@ -4,7 +4,7 @@ Description:
     HsSVN is a partial Subversion (SVN) binding for Haskell. Currently it
     can do most things related to the Subversion FS but others are
     left uncovered.
-Version:       0.4.3.1
+Version:       0.4.3.2
 License:       PublicDomain
 License-File:  COPYING
 Author:        PHO <pho at cielonegro dot org>
@@ -31,10 +31,10 @@ Source-Repository head
 
 Library
     Build-Depends:
-        base       == 4.2.*,
+        base       == 4.3.*,
         bytestring == 0.9.*,
-        mtl        == 1.1.*,
-        stm        == 2.1.*
+        mtl        == 2.0.*,
+        stm        == 2.2.*
     Exposed-Modules:
         Subversion
         Subversion.Config
@@ -53,9 +53,6 @@ Library
         Subversion.Stream
         Subversion.Stream.Pipe
         Subversion.String
-    Extensions:
-        EmptyDataDecls, DeriveDataTypeable, ForeignFunctionInterface,
-        TypeSynonymInstances
     GHC-Options: 
         -Wall
     C-Sources:
