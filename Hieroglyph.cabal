@@ -1,5 +1,5 @@
 Name:           Hieroglyph
-Version:        1.1
+Version:        1.2
 Cabal-Version:  >= 1.2
 License:        BSD3
 License-File:   LICENSE
@@ -17,7 +17,6 @@ Library
    Exposed-Modules:
       Graphics.Rendering.Hieroglyph
       Graphics.Rendering.Hieroglyph.Cairo
-      Graphics.Rendering.Hieroglyph.Colors
       Graphics.Rendering.Hieroglyph.ImageCache
       Graphics.Rendering.Hieroglyph.Interactive
       Graphics.Rendering.Hieroglyph.Primitives
