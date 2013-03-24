@@ -1,5 +1,5 @@
 Name: penny-bin
-Version: 0.6.2.0
+Version: 0.8.0.0
 Cabal-version: >=1.8
 Build-Type: Simple
 License: BSD3
@@ -97,14 +97,6 @@ description: Penny is a double-entry accounting system. It is inspired
 
   .
 
-  * Uses no GHC extensions. However, the code is only tested under GHC
-    and for all practical purposes it will only run under GHC at this
-    time because it uses libraries such as Data.Text that are
-    available only under GHC. Despite this I expect I will continue to
-    avoid language extensions.
-
-  .
-
   * Tested using QuickCheck. The tests are available in the Git
     repository that also contains the main library. Not everything
     is tested, but the tests that exist so far have already rooted
@@ -161,9 +153,13 @@ description: Penny is a double-entry accounting system. It is inspired
   You can install this binary simply by typing "cabal install
   penny-bin", which will install this binary along with all the
   necessary dependencies. The penny-bin package also has all
-  documentation. You will want to start by reading the README file,
-  which will point you to additional documentation and how to install
-  it if you wish.
+  documentation. Unfortunately running "cabal install" will not
+  install the documentation, so you will need to find the downloaded
+  archive (usually in
+  "$HOME/.cabal/packages/hackage.haskell.org/penny-bin") and unpack it
+  to see the documentation. You will want to start by reading the
+  README file, which will point you to additional documentation and
+  how to install it if you wish.
 
 extra-source-files:
     install-docs
@@ -182,7 +178,7 @@ source-repository head
 Executable penny
   Build-depends:
     base ==4.*,
-    penny-lib ==0.6.0.0
+    penny-lib ==0.8.*
 
   Main-is: penny-main.hs
   GHC-Options: -Wall
@@ -195,13 +191,13 @@ Executable penny
 Executable penny-selloff
   Build-depends:
     base == 4.*,
-    penny-lib ==0.6.0.0,
+    penny-lib ==0.8.*,
     explicit-exception ==0.1.*,
-    containers ==0.4.*,
-    semigroups ==0.8.*,
+    containers ==0.5.*,
+    semigroups ==0.9.*,
     text ==0.11.*,
     parsec ==3.1.*,
-    multiarg ==0.8.*,
+    multiarg ==0.10.*,
     transformers ==0.3.*
 
   Main-is: penny-selloff.hs
@@ -215,9 +211,9 @@ Executable penny-selloff
 Executable penny-diff
   Build-depends:
     base ==4.*,
-    penny-lib ==0.6.0.0,
+    penny-lib ==0.8.*,
     text ==0.11.*,
-    multiarg ==0.8.*,
+    multiarg ==0.10.*,
     explicit-exception == 0.1.*
 
   Main-is: penny-diff.hs
@@ -231,8 +227,8 @@ Executable penny-diff
 Executable penny-reprint
   Build-depends:
       base ==4.*
-    , penny-lib ==0.6.0.0
-    , pretty-show ==1.2.*
+    , penny-lib ==0.8.*
+    , pretty-show ==1.5.*
     , text ==0.11.*
 
   main-is: penny-reprint.hs
@@ -243,9 +239,9 @@ Executable penny-reprint
 Executable penny-reconcile
   Build-depends:
       base ==4.*
-    , penny-lib ==0.6.0.0
+    , penny-lib ==0.8.*
     , text ==0.11.*
-    , multiarg ==0.8.*
+    , multiarg ==0.10.*
     , explicit-exception ==0.1.*
 
   main-is: penny-reconcile.hs
