@@ -1,5 +1,5 @@
 name:			multirec
-version:		0.2
+version:		0.3
 license:		BSD3
 license-file:		LICENSE
 author:			Alexey Rodriguez,
@@ -8,7 +8,7 @@ author:			Alexey Rodriguez,
                         Johan Jeuring
 maintainer:		generics@haskell.org
 category:		Generics
-synopsis:		Generic programming with systems of recursive datatypes
+synopsis:		Generic programming for families of recursive datatypes
 homepage:		http://www.cs.uu.nl/wiki/GenericProgramming/Multirec
 description:
   Many generic programs require information about the recursive positions
@@ -16,16 +16,16 @@ description:
   the Zipper data structure. Several generic programming systems allow to
   write such functions by viewing datatypes as fixed points of a pattern
   functor. Traditionally, this view has been limited to so-called regular
-  datatypes such as lists and binary trees. In particular, systems of
+  datatypes such as lists and binary trees. In particular, families of
   mutually recursive datatypes have been excluded.
   .
   With the multirec library, we provide a mechanism to talk about fixed
-  points of systems of datatypes that may be mutually recursive. On top
+  points of families of datatypes that may be mutually recursive. On top
   of this representations, generic functions such as the fold or the Zipper
   can then be defined.
   .
   We expect that the library will be especially interesting for compiler
-  writers, because ASTs are typically systems of mutually recursive datatypes,
+  writers, because ASTs are typically families of mutually recursive datatypes,
   and with multirec it becomes easy to write generic functions on ASTs.
   .
   The library is based on ideas described in the paper:
@@ -38,7 +38,7 @@ description:
 stability:		experimental
 build-type:		Simple
 cabal-version:		>= 1.2.1
-tested-with:		GHC == 6.8.3, GHC == 6.10.1
+tested-with:		GHC == 6.8.3, GHC == 6.10.3
 hs-source-dirs:		src
 exposed-modules:	Generics.MultiRec
 
@@ -59,6 +59,9 @@ exposed-modules:	Generics.MultiRec
 			Generics.MultiRec.Eq
 			Generics.MultiRec.Show
 
+			-- Extra
+			Generics.MultiRec.TEq
+
 extra-source-files:	examples/AST.hs
                         examples/ASTUse.hs
                         examples/ASTTHUse.hs
@@ -68,5 +71,5 @@ extra-source-files:	examples/AST.hs
 			examples/SingleTHUse.hs
 			examples/SingleExamples.hs
 			CREDITS
-build-depends:		base >= 3.0 && < 4,
+build-depends:		base >= 3.0 && < 5,
                         template-haskell >= 2.2 && < 2.4
