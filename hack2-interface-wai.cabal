@@ -1,5 +1,5 @@
 Name:                 hack2-interface-wai
-Version:              2012.5.24
+Version:              2012.5.25
 Build-type:           Simple
 Synopsis:             Hack2 interface of WAI
 Description:          Hack2 interface of WAI
@@ -23,9 +23,7 @@ library
                     , hack2 >= 2011.6.20
                     , containers
                     , mtl
-                    , enumerator
                     , wai
-                    , blaze-builder
                     , http-types
                     , case-insensitive
                     , air
