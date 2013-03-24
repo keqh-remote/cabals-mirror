@@ -1,5 +1,5 @@
 name:           BiobaseInfernal
-version:        0.5.4.1
+version:        0.6.0.0
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 homepage:       http://www.tbi.univie.ac.at/~choener/
@@ -20,7 +20,20 @@ description:
                 annotations. This extension should be backward-compatible with
                 standard-compliant parsers.
                 .
+                This package uses Int's to store sequence position information.
+                Don't compile for 32bit. (And yes, this is a TODO, to change to
+                Int64).
                 .
+                .
+                .
+                Changes in 0.6.0.0
+                .
+                * multiple changes to data representation (mostly newtypes) and
+                  documentation
+                .
+                * load the Rfam.fasta.gz file (and prepare lookup structures)
+                .
+                * partial biocore integration
                 .
                 Changes in 0.5.4.1
                 .
@@ -33,12 +46,14 @@ extra-source-files:
 library
   build-depends:
     base >3 && <5,
+    biocore,
     attoparsec,
     attoparsec-iteratee,
     bytestring,
     containers,
     either-unwrap,
     iteratee,
+    iteratee-compress,
     transformers,
     tuple,
     vector,
@@ -51,15 +66,19 @@ library
     Biobase.Infernal.CM
     Biobase.Infernal.CM.Export
     Biobase.Infernal.CM.Import
+    Biobase.Infernal.Hit
+    Biobase.Infernal.RfamFasta
+    Biobase.Infernal.RfamFasta.Import
     Biobase.Infernal.TabularHit
     Biobase.Infernal.TabularHit.Import
     Biobase.Infernal.Taxonomy
     Biobase.Infernal.Taxonomy.Import
+    Biobase.Infernal.Types
     Biobase.Infernal.VerboseHit
     Biobase.Infernal.VerboseHit.Export
     Biobase.Infernal.VerboseHit.Import
     Biobase.Infernal.VerboseHit.Internal
 
   ghc-options:
-    -O2
+    -O2 -funbox-strict-fields
 
