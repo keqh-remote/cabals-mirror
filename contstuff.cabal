@@ -1,5 +1,5 @@
 Name:          contstuff
-Version:       0.4.0
+Version:       0.4.1
 Category:      Control, Monads
 Synopsis:      Easy to use CPS-based monads
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
