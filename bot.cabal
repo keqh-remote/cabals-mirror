@@ -1,5 +1,5 @@
 Name:                bot
-Version:             0.0
+Version:             0.1
 Synopsis: 	     bots for functional reactive programming
 Category:            reactivity, FRP
 Description:
@@ -31,3 +31,6 @@ Extra-Source-Files:
 		     Examples.Chatter
 		     Examples.LeadFollow
 ghc-options:         -Wall -O
+
+-- We could add TypeCompose to Build-Depends and uncomment the Pair instances
+-- in Data.Bot.LeadFollow.
