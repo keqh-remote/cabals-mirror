@@ -1,11 +1,10 @@
 Name:           synthesizer-alsa
-Version:        0.3
+Version:        0.4
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:       http://www.haskell.org/haskellwiki/Synthesizer
-Package-URL:    http://code.haskell.org/synthesizer/alsa/
 Category:       Sound, Music
 Synopsis:       Control synthesizer effects via ALSA/MIDI
 Description:
@@ -14,9 +13,18 @@ Description:
   that can be used for audio effects.
   As demonstration there is a keyboard controlled music synthesizer.
 Stability:      Experimental
-Tested-With:    GHC==6.4.1, GHC==6.8.2, GHC==6.10.4
-Cabal-Version:  >=1.2
+Tested-With:    GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.4, GHC==7.2.1
+Cabal-Version:  >=1.6
 Build-Type:     Simple
+
+Source-Repository this
+  Tag:         0.4
+  Type:        darcs
+  Location:    http://code.haskell.org/synthesizer/alsa/
+
+Source-Repository head
+  Type:        darcs
+  Location:    http://code.haskell.org/synthesizer/alsa/
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -35,33 +43,40 @@ Flag buildTests
 
 Library
   Build-Depends:
-    synthesizer-dimensional >=0.5 && < 0.6,
-    synthesizer-core >=0.4 && < 0.5,
-    sox >=0.2 && <0.3,
-    midi-alsa >=0.1 && <0.2,
-    alsa-seq >=0.5 && <0.6,
+    synthesizer-dimensional >=0.6 && <0.7,
+    synthesizer-core >=0.5 && <0.6,
+    sox >=0.2.1 && <0.3,
+    midi-alsa >=0.1.2 && <0.2,
+    alsa-seq >=0.5.1 && <0.6,
     alsa-pcm >=0.5 && <0.6,
     alsa-core >=0.5 && <0.6,
     midi >=0.1.1 && <0.2,
+    storable-record >=0.0.2 && <0.1,
     storablevector >=0.2.5 && <0.3,
     deepseq >=1.1 && <1.2,
-    numeric-prelude >=0.2 && <0.3,
+    numeric-prelude >=0.3 && <0.4,
     non-negative >=0.1 && <0.2,
     event-list >=0.1 && <0.2,
+    data-accessor-transformers >=0.2.1 && <0.3,
     data-accessor >=0.2.1 && <0.3,
-    containers >=0.1 && <0.4,
+    containers >=0.1 && <0.5,
     array >=0.1 && <0.4,
     transformers >=0.2 && <0.3,
     utility-ht >=0.0.1 && <0.1
 
   If flag(splitBase)
     Build-Depends:
-      base >= 3 && <6,
       random >= 1.0 && < 1.1,
-      old-time >= 1.0 && < 1.1
+      old-time >= 1.0 && < 1.1,
+      base >= 3 && <5
   Else
     Build-Depends:
       base >= 1.0 && < 2
+
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
 
   GHC-Options:    -Wall
   Hs-source-dirs: src
@@ -74,10 +89,16 @@ Library
     Synthesizer.Generic.ALSA.MIDI
     Synthesizer.Dimensional.ALSA.MIDI
     Synthesizer.Dimensional.ALSA.Play
+    Synthesizer.CausalIO.ALSA.Process
+    Synthesizer.CausalIO.ALSA.MIDIControllerSet
+    Synthesizer.CausalIO.ALSA.MIDIControllerSelection
     -- these modules would be better located in midi package,
     -- but they are based on NumericPrelude
     Synthesizer.MIDIValue
+    Synthesizer.MIDIValue.BendModulation
+    Synthesizer.MIDIValue.BendWheelPressure
     Synthesizer.Dimensional.MIDIValue
+    Synthesizer.Dimensional.MIDIValuePlain
 
 Executable realtimesynth
   If !flag(buildExamples)
@@ -86,6 +107,10 @@ Executable realtimesynth
     GHC-Options: -O2 -fvia-C -optc-O2 -optc-msse3 -optc-ffast-math
   GHC-Options: -Wall -fexcess-precision -threaded
 -- -ddump-simpl-stats -ddump-asm
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
   Hs-Source-Dirs: src
   Other-modules:
     Synthesizer.Storable.ALSA.Server.Common
@@ -101,6 +126,10 @@ Executable synthicate
     GHC-Options: -O2 -fvia-C -optc-O2 -optc-ffast-math
   GHC-Options: -Wall -fexcess-precision -threaded
 -- -ddump-simpl-stats
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
   Hs-Source-Dirs: src
   Other-modules:
     Synthesizer.Dimensional.ALSA.Server.Common
@@ -116,5 +145,9 @@ Executable test
     GHC-Options: -O2 -fvia-C -optc-O2 -optc-msse3 -optc-ffast-math
   GHC-Options: -Wall -fexcess-precision -threaded
 -- -ddump-simpl-stats -ddump-asm
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
   Hs-Source-Dirs: src
   Main-Is: Test.hs
