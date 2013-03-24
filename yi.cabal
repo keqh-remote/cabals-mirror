@@ -1,5 +1,5 @@
 name:           yi
-version:        0.6.3.0
+version:        0.6.4.0
 category:       Development, Editor
 synopsis:       The Haskell-Scriptable Editor
 description:
@@ -17,6 +17,7 @@ build-type:     Simple
 
 data-files:
   art/*.png
+  art/*.pdf
   example-configs/*.hs
 
 extra-source-files: src/library/Yi/Lexer/common.hsinc
@@ -62,6 +63,13 @@ flag hacking
 flag testing
   Description: bake-in the self-checks
 
+flag dochack
+  Default: False
+  Description:
+      Hack to get Haddock documentation, by disabling executables.
+         * this is a workaround for a cabal bug; see Issue #347
+         * do a 'cabal install yi -fdochack' followed by 'cabal install yi' to get yi and the documentation
+
 library
   hs-source-dirs: src/library
   default-language: Haskell2010
@@ -85,6 +93,8 @@ library
     Yi.Config
     Yi.Config.Default
     Yi.Config.Misc
+    Yi.Config.Simple
+    Yi.Config.Simple.Types
     Yi.Core
     Yi.Debug
     Yi.Dired
@@ -95,6 +105,7 @@ library
     Yi.File
     Yi.History
     Yi.Hoogle
+    Yi.Hooks
     Yi.IReader
     Yi.IncrementalParse
     Yi.Interact
@@ -107,6 +118,7 @@ library
     Yi.Keymap.Keys
     Yi.Keymap.Vim
     Yi.KillRing
+    Yi.Layout
     Yi.Lexer.Abella
     Yi.Lexer.Alex
     Yi.Lexer.Cabal
@@ -116,8 +128,10 @@ library
     Yi.Lexer.Cplusplus
     Yi.Lexer.Haskell
     Yi.Lexer.JavaScript
+    Yi.Lexer.Java
     Yi.Lexer.Latex
     Yi.Lexer.LiterateHaskell
+    Yi.Lexer.GitCommit
     Yi.Lexer.GNUMake
     Yi.Lexer.OCaml
     Yi.Lexer.Ott
@@ -161,6 +175,7 @@ library
     Yi.Syntax.Paren
     Yi.Syntax.Tree
     Yi.Syntax.Strokes.Haskell
+    Yi.Tab
     Yi.Tag
     Yi.TextCompletion,
     Yi.UI.Common
@@ -184,6 +199,8 @@ library
     base >=4 && <5,
     binary == 0.5.*,
     bytestring >=0.9.1 && <0.9.2,
+    cautious-file == 1.0.*,
+    concrete-typerep == 0.1.*,
     derive >=2.4 && <2.5,
     data-accessor >= 0.2.1.4 && < 0.3,
     data-accessor-monads-fd == 0.2.*,
@@ -193,6 +210,7 @@ library
     filepath>=1.1 && <1.3,
     fingertree >= 0 && <0.1,
     ghc-paths ==0.1.*,
+    hashable < 1.2,
     hint > 0.3.1,
     monads-fd >= 0.1.0.1,
     pointedlist >= 0.3.5 && <0.4,
@@ -206,17 +224,17 @@ library
     time >= 1.1 && < 1.3,
     utf8-string >= 0.3.1,
     uniplate,
-    unix-compat >=0.1 && <0.3
+    unix-compat >=0.1 && <0.3,
+    unordered-containers >= 0.1.3 && < 0.2
 
+  build-tools: alex
   ghc-options: -Wall -fno-warn-orphans
   if flag(hacking)
     ghc-prof-options: -prof -auto-all
 
   if !os(windows)
     build-depends:
-      cautious-file >= 0.1.5 && <0.2,
       unix
-    cpp-options: -DCAUTIOUS_WRITES
 
   include-dirs:   src/library/Yi/Lexer
 
@@ -248,6 +266,7 @@ library
       Yi.UI.Pango
       Yi.UI.Pango.Control
     other-modules:
+      Yi.UI.Pango.Layouts
       Yi.UI.Pango.Utils
     build-depends:
       gtk ==0.12.*,
@@ -277,6 +296,9 @@ library
   if flag (scion)
     cpp-options: -DSCION
     exposed-modules: Yi.Scion
+    build-depends: scion == 0.1.*,
+      ghc >= 7,
+      ghc-syb-utils
 
   if flag (ghcAPI)
     cpp-options: -DGHC_API
@@ -298,6 +320,7 @@ library
     Shim.CabalInfo
     Shim.Utils
     Shim.ProjectContent
+    System.CanonicalizePath
     System.FriendlyPath
 
     -- Broken.
@@ -315,7 +338,7 @@ executable parserTest
   hs-source-dirs: src/parsertest
   default-language: Haskell2010
 
-  if !flag(hacking)
+  if !flag(hacking) || flag(dochack)
     buildable: False
 
   main-is: ParserTest/ParserTest.hs
@@ -325,17 +348,22 @@ executable parserTest
     array,
     containers,
     directory,
-    filepath>=1.1 && <1.3,
-    yi
+    filepath>=1.1 && <1.3
+  if !flag(dochack)
+    build-depends: yi
 
 executable yi
   hs-source-dirs: src/executable
   default-language: Haskell2010
 
+  if flag(dochack)
+    buildable: False
+
   main-is: Main.hs
 
   build-depends:
-    base >=4 && <5,
-    yi
-
+    base >=4 && <5
+  if !flag(dochack)
+    build-depends: yi
+  build-tools: alex
   ghc-options: -threaded
