@@ -1,8 +1,8 @@
 Name:          isevaluated
-Version:       0.3
+Version:       0.3.0.1
 Category:      Data, GHC
 Stability:     experimental
-Copyright:     (c) 2009 Svein Ove Aas and Bertram Felgenhauer
+Copyright:     (c) 2009, 2010 Svein Ove Aas and Bertram Felgenhauer
 Maintainer:    Bertram Felgenhauer <int-e@gmx.de>
 License:       MIT
 License-File:  LICENSE
@@ -16,4 +16,4 @@ Build-Type:    Simple
 
 Library
     Exposed-Modules: Data.IsEvaluated
-    Build-Depends:   base >= 4 && < 5, vacuum >= 0.0.94 && < 0.0.95
+    Build-Depends:   base >= 4 && < 5, vacuum >= 1.0 && < 1.1
