@@ -1,5 +1,5 @@
 name:               CC-delcont-alt
-version:            0.0.0.0
+version:            0.1.0.0
 author:             Oleg Kiselyov
 maintainer:         shelarcy <shelarcy@gmail.com>
 license:            BSD3
@@ -29,12 +29,9 @@ extra-source-files:
    Generator1.hs, Generator2.hs, ProtocolRecovery.hs
 
 library
- build-depends:      base >= 3 && < 5, mtl
- --                    CC-delcont-ref, CC-delcont-exc, CC-delcont-cxe
+ build-depends:      base >= 3 && < 5, mtl,
+                     CC-delcont-ref, CC-delcont-exc, CC-delcont-cxe
  exposed-modules:
-    Control.Monad.CC.CCCxe
-    Control.Monad.CC.CCExc
-    Control.Monad.CC.CCRef
- other-modules: Mutation
+ other-modules:
  cc-options:
  ld-options:
