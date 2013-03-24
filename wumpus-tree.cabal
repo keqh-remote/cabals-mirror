@@ -1,5 +1,5 @@
 name:             wumpus-tree
-version:          0.7.0
+version:          0.8.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -15,9 +15,18 @@ description:
   output should be quite good - no overlapping edges, identical 
   subtrees should have the same shape, leaf nodes evenly spaced.
   .
+  \*\* WARNING \*\* - the API is unstable and will change. 
   .
   Changelog:
+  . 
+  0.7.0 to 0.8.0:
   .
+  * Changed drawTreePicture to use the @ScalingContext@ datatype
+    from Wumpus.Basic. The type @ScaleFactors@ is now a type
+    synonym for @SalingContext@ operation on all Doubles. 
+  . 
+  * Added an alternative drawing style /family tree/.
+  . 
   0.6.0 to 0.7.0:
   . 
   * More example trees in Demo01.hs.
@@ -39,8 +48,8 @@ library
   build-depends:      base              <  5, 
                       containers        >= 0.3.0     && < 0.4.0,
                       vector-space      >= 0.6,
-                      wumpus-core       == 0.33.0,
-                      wumpus-basic      == 0.8.0
+                      wumpus-core       == 0.34.0,
+                      wumpus-basic      == 0.9.0
 
   
   exposed-modules:
