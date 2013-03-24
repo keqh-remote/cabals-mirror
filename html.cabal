@@ -1,9 +1,10 @@
 name:		html
-version:	1.0.1.1
+version:	1.0.1.2
 license:	BSD3
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
 synopsis:	HTML combinator library
+category:       Web
 build-depends:  base>=2.0
 description:
 	This package contains a combinator library for constructing
