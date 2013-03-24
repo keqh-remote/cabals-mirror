@@ -1,5 +1,5 @@
 name:            publicsuffixlist
-version:         0.0.3
+version:         0.0.4
 license:         BSD3
 license-file:    LICENSE
 author:          Myles C. Maxfield <myles.maxfield@gmail.com>
@@ -11,6 +11,12 @@ stability:       Experimental
 cabal-version:   >= 1.8
 build-type:      Simple
 homepage:        https://github.com/litherum/publicsuffixlist
+extra-source-files: effective_tld_names.dat
+
+flag create
+  default: False
+flag runtimelist
+  default: False
 
 library
     build-depends: base       >= 4       && < 5
@@ -20,11 +26,19 @@ library
                  , text       >= 0.11
                  , utf8-string
                  , cereal
+    if flag(create)
+        build-depends: idna             >= 0.1.2 && < 1.0
+                     , conduit          >= 1.0.0 && < 2.0.0
     exposed-modules: Network.PublicSuffixList.Lookup
                    , Network.PublicSuffixList.DataStructure
-                   , Network.PublicSuffixList.Internal.Types
-                   , Network.PublicSuffixList.Internal.Internal
+    other-modules: Network.PublicSuffixList.Types
+                 , Network.PublicSuffixList.Serialize
+    if flag(create)
+        exposed-modules: Network.PublicSuffixList.Create
     ghc-options:     -Wall
+    if flag(runtimelist)
+      cpp-options: -DRUNTIMELIST="/usr/share/publicsuffix/effective_tld_names.dat"
+
 
 Test-Suite test-public-suffix-list
     type: exitcode-stdio-1.0
