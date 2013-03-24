@@ -9,7 +9,7 @@ Name:                regex-applicative
 -- standards guiding when and how versions should be incremented.
 
 -- DO NOT FORGET TO UPDATE THE GIT TAG BELOW!!!
-Version:             0.1.4
+Version:             0.1.5
 
 -- A short (one-line) description of the package.
 Synopsis:            Regex-based parsing with applicative interface
@@ -56,23 +56,21 @@ Source-repository head
 Source-repository this
   type:     git
   location: git://github.com/feuerbach/regex-applicative.git
-  tag:      v0.1.4
+  tag:      v0.1.5
 
 Library
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4.2 && < 4.4,
+  Build-depends:       base >= 4.2 && < 4.5,
                        containers >= 0.3 && < 0.5,
-                       monads-tf == 0.1.*,
-                       vector == 0.7.*
+                       monads-tf == 0.1.*
 
 
   -- Modules exported by the library.
   Exposed-modules:     Text.Regex.Applicative
-                       Text.Regex.Applicative.Reference
+                       Text.Regex.Applicative.Object
   
   -- Modules not exported by this package.
   Other-modules:       Text.Regex.Applicative.Interface
-                       Text.Regex.Applicative.Implementation
                        Text.Regex.Applicative.Types
                        Text.Regex.Applicative.Compile
                        Text.Regex.Applicative.StateQueue
