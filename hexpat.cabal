@@ -1,44 +1,45 @@
 Cabal-Version: >= 1.4
 Name: hexpat
-Version: 0.10
+Version: 0.11
 Synopsis: wrapper for expat, the fast XML parser
 Description:
-  Expat (<http://expat.sourceforge.net/>) is a stream-oriented XML parser
-  written in C.
+  This package provides a general purpose Haskell XML library using the Expat do
+  do its parsing (<http://expat.sourceforge.net/> - a fast stream-oriented XML
+  parser written in C).  It is extensible to any string type, with @String@,
+  @ByteString@ and @Text@ provided out of the box.
   .
-  This package provides a Haskell binding for Expat, with a choice of /tree/ or
-  /SAX-style/ representation, and it includes an /XML formatter/.  It is extensible
-  to any string type, with @String@, @ByteString@ and @Text@ provided out of the box.
+  Basic usage: Parsing a tree (/Tree/), formatting a tree (/Format/).
   .
-  The emphasis is on speed and simplicity. If you want more complete and powerful
-  XML libraries, consider using /HaXml/ or /HXT/ instead.
+  Other features: Helpers for processing XML trees (/Proc/), trees annotated with
+  XML source location (/Annotated/), XML cursors (/Cursor/), more intelligent
+  handling of qualified tag names (/Qualified/), tags qualified with namespaces
+  (/Namespaced/), SAX-style parse (/SAX/), and access to the low-level interface
+  in case speed is paramount (/IO/).
+  .
+  The design goals are speed, speed, speed, interface simplicity and modular design.
   .
   Examples and benchmarks: <http://haskell.org/haskellwiki/Hexpat/>
   .
   DARCS repository: <http://code.haskell.org/hexpat/>
+  .
+  Credits to the @xml@ (XML.Light) package for /Proc/ and /Cursor/.
 Category: XML
 License: BSD3
 License-File: LICENSE
-Author: Stephen Blackheath (blackh), Evan Martin, Matthew Pocock (drdozer)
+Author:
+  Doug Beardsley,
+  Stephen Blackheath (blackh),
+  Gregory Collins,
+  Evan Martin,
+  Matthew Pocock (drdozer)
 Maintainer: http://blacksapphire.com/antispam/
 Copyright:
+  (c) 2009 Doug Beardsley <mightybyte@gmail.com>,
   (c) 2009 Stephen Blackheath <http://blacksapphire.com/antispam/>,
+  (c) 2009 Gregory Collins,
   (c) 2008 Evan Martin <martine@danga.com>,
   (c) 2009 Matthew Pocock <matthew.pocock@ncl.ac.uk>
 Homepage: http://haskell.org/haskellwiki/Hexpat/
-Extra-Source-Files:
-  test/tests.hs,
-  test/test.xml,
-  test/benchmark.hs,
-  test/lazySAX.hs,
-  test/lazyTree.hs,
-  test/lazyTreeThrow.hs,
-  test/leak.hs,
-  test/errorHandlingWay1.hs,
-  test/errorHandlingWay2.hs,
-  test/helloworld.hs,
-  test/locations.hs,
-  test/Makefile
 Build-Type: Simple
 Stability: beta
 
@@ -55,10 +56,13 @@ Library
     extensible-exceptions >= 0.1 && < 0.2
   Exposed-Modules:
     Text.XML.Expat.Annotated,
-    Text.XML.Expat.Tree,
+    Text.XML.Expat.Cursor,
     Text.XML.Expat.Format,
+    Text.XML.Expat.IO,
     Text.XML.Expat.Namespaced,
+    Text.XML.Expat.Proc,
     Text.XML.Expat.Qualified,
-    Text.XML.Expat.IO
+    Text.XML.Expat.SAX,
+    Text.XML.Expat.Tree
   Extra-Libraries: expat
-
+  --ghc-options: -Wall
