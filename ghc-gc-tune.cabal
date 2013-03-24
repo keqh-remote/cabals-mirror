@@ -1,5 +1,5 @@
 name:           ghc-gc-tune
-version:        0.2.1
+version:        0.3
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart
@@ -32,7 +32,7 @@ build-type:     Simple
 cabal-version:  >= 1.6
 
 executable ghc-gc-tune
-    build-depends:  base    >= 4 && < 5,
+    build-depends:  base    >= 4 && <= 5,
                     process >= 1.0.1,
                     directory,
                     filepath
