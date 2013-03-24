@@ -1,5 +1,5 @@
 name:            aeson-native
-version:         0.3.3.1
+version:         0.3.3.2
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Web, JSON
@@ -8,7 +8,7 @@ author:          Bryan O'Sullivan <bos@mailrank.com>
 maintainer:      Bryan O'Sullivan <bos@mailrank.com>
 stability:       experimental
 tested-with:     GHC == 6.12.3
-synopsis:        Fast JSON parsing and encoding
+synopsis:        Fast JSON parsing and encoding (deprecated)
 cabal-version:   >= 1.8
 homepage:        http://github.com/mailrank/aeson
 bug-reports:     http://github.com/mailrank/aeson/issues
