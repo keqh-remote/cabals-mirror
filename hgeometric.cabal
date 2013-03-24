@@ -1,12 +1,13 @@
 name:         hgeometric
-version:      0.0.2.1
-license:      GPL
+version:      0.0.2.2
+license: MIT
+cabal-version: >= 1.4
 license-file: LICENSE
 copyright:    Copyright (C) 2007, 2008 Marco Túlio Gontijo e Silva
               Copyright (C) 2007 Rafael Cunha de Almeida
 author:       Marco Túlio Gontijo e Silva
               Rafael Cunha de Almeida
-maintainer:   malebria@riseup.net
+maintainer:   marcot@holoscopio.com
 
 stability: experimental
 category:  Math
@@ -19,7 +20,7 @@ description:
     some functions to deal with geometric types.
 homepage: ftp://ftp.cs.man.ac.uk/pub/toby/gpc/
 
-build-depends: base>3, containers
+build-depends: base > 3 && < 5, containers
 tested-with: GHC==6.8.2
 build-type:  Simple
 
