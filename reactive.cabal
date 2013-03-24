@@ -1,13 +1,20 @@
 Name:                reactive
-Version:             0.11
+Version:             0.11.2
 Synopsis:            Push-pull functional reactive programming
 Category:            reactivity, FRP
 Description:
   /Reactive/ is a simple foundation for programming reactive systems
   functionally.  Like Fran\/FRP, it has a notions of (reactive) behaviors and
   events.  Unlike most previous FRP implementations, Reactive has a hybrid
-  demand/data-driven implementation, as described in the paper \"Simply
-  efficient functional reactivity\", <http://conal.net/papers/simply-reactive/>.
+  demand/data-driven implementation, as described in the paper \"Push-pull
+  functional reactive programming\", <http://conal.net/papers/push-pull-frp/>.
+  .
+  This version of Reactive has some serious bugs that show up particularly
+  with some uses of the Event monad.  Some problems have been due to bugs
+  in the GHC run-time support for concurrency.  I do not know whether the
+  remaining problems in Reactive are still more subtle RTS issues, or
+  some subtle laziness bugs in Reactive.  Help probing the remaining
+  difficulties is most welcome.
   .
   Import "FRP.Reactive" for FRP client apps.  To make a Reactive adapter for an
   imperative library, import "FRP.Reactive.LegacyAdapters".
@@ -15,6 +22,8 @@ Description:
   Please see the project wiki page: <http://haskell.org/haskellwiki/reactive>
   .
   &#169; 2007-2008 by Conal Elliott; GNU AGPLv3 license (see COPYING).
+  I am not thrilled with GPL.
+  If you would like different terms, please talk to me.
   .
   With contributions from: Robin Green, Thomas Davie, Luke Palmer,
   David Sankel, Jules Bean, Creighton Hogg, Chuan-kai Lin, and Richard
@@ -26,7 +35,7 @@ Homepage:            http://haskell.org/haskellwiki/reactive
 Package-Url:         http://code.haskell.org/reactive
 Bug-Reports:         http://trac.haskell.org/reactive
 
-Copyright:           (c) 2007-2008 by Conal Elliott
+Copyright:           (c) 2007-2009 by Conal Elliott
 Cabal-Version:       >= 1.2
 License:             OtherLicense
 License-File:        COPYING
@@ -34,9 +43,9 @@ Stability:           provisional
 Build-Type:          Simple
 Extra-Source-Files:
 Library
-    Build-Depends:       base, old-time, random, QuickCheck >= 2,
+    Build-Depends:       base >=4 && <5, old-time, random, QuickCheck >= 2.1.0.2,
                          TypeCompose>=0.6.3, vector-space>=0.5,
-                         unamb>=0.1.5, checkers >= 0.2,
+                         unamb>=0.1.5, checkers >= 0.2.3,
                          category-extras >= 0.53.5, Stream >= 0.3.1
     -- This library uses the ImpredicativeTypes flag, and it depends
     -- on vector-space, which needs ghc >= 6.9
