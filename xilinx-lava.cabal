@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
---- $Id: xilinx-lava.cabal#13 2010/09/28 17:03:48 REDMOND\\satnams $
+--- $Id: xilinx-lava.cabal#16 2010/09/29 17:00:28 REDMOND\\satnams $
 -------------------------------------------------------------------------------
 Name:            xilinx-lava
-Version:         5.0.0.6
+Version:         5.0.0.7
 License:         BSD3
 License-file:    LICENSE
 Author:          Satnam Singh
@@ -27,12 +27,15 @@ Library
                    Lava.Virtex5,
                    Lava.Virtex6
   Other-modules:   Lava.ApplyLayout, 
+                   Lava.Col,
                    Lava.Combinators, 
                    Lava.Components,
                    Lava.ComputeNetlist, 
                    Lava.Gates, 
                    Lava.CircuitGraphToVHDL, 
+                   Lava.Instantiate,
                    Lava.LUTGates,
+                   Lava.Middle,
                    Lava.Netlist,
                    Lava.OverlayTile,
                    Lava.PortRange,
