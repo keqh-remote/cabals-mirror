@@ -1,5 +1,5 @@
 Name:                   fast-logger
-Version:                0.0.0
+Version:                0.0.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -17,5 +17,4 @@ library
                         filepath, directory, bytestring, blaze-builder
 Source-Repository head
   Type:                 git
-  Location:             git://github.com/kazu-yamamoto/fast-logger.git
-
+  Location:             git://github.com/kazu-yamamoto/logger.git
