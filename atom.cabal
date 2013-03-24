@@ -1,5 +1,5 @@
 name:    atom
-version: 0.0.5
+version: 0.1.0
 
 category: Language
 
@@ -40,6 +40,7 @@ library
         Language.Atom.Example
         Language.Atom.Expressions
         Language.Atom.Language
+        Language.Atom.Partition
         Language.Atom.Scheduling
 
     extensions: GADTs
