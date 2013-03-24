@@ -1,5 +1,5 @@
 Name:                storablevector
-Version:             0.2.3
+Version:             0.2.3.1
 Category:            Data
 Synopsis:            Fast, packed, strict storable arrays with a list interface like ByteString
 Description:
@@ -30,6 +30,9 @@ Cabal-Version:       >=1.6
 Flag splitBase
   description: Choose the new smaller, split-up base package.
 
+Flag separateSYB
+  description: Data.Generics available in separate package.
+
 Flag buildTests
   description: Build test executables
   default:     False
@@ -41,7 +44,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/storablevector/
-  tag:      0.2.3
+  tag:      0.2.3.1
 
 Library
   Build-Depends:
@@ -49,9 +52,15 @@ Library
     utility-ht >= 0.0.5 && <0.1,
     transformers >=0.0 && <0.2
   If flag(splitBase)
-    Build-Depends: base >= 3 && <5
+    If flag(separateSYB)
+      Build-Depends:
+        base >=4 && <5,
+        syb >=0.1 && <0.2
+    Else
+      Build-Depends:
+        base >=3 && <4
   Else
-    Build-Depends: base >= 1.0 && < 2
+    Build-Depends: base >=1 && <2
 
   Extensions:          CPP, ForeignFunctionInterface
   GHC-Options:         -Wall -funbox-strict-fields
