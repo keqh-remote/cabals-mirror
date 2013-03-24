@@ -1,5 +1,5 @@
 name:           snap
-version:        0.8.0
+version:        0.8.0.1
 synopsis:       Snap: A Haskell Web Framework: project starter executable and glue code library
 description:    Snap Framework project starter executable and glue code library
 license:        BSD3
@@ -122,7 +122,8 @@ Library
     cpp-options: -DHINT_ENABLED
 
     build-depends:
-      hint                    >= 0.3.3.1 && < 0.4
+      hint                    >= 0.3.3.1 && < 0.4,
+      old-time                >= 1.0     && < 1.2
 
   if !os(windows)
     build-depends:
