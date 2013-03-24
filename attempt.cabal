@@ -1,5 +1,5 @@
 name:            attempt
-version:         0.0.0
+version:         0.0.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -15,9 +15,8 @@ homepage:        http://github.com/snoyberg/attempt/tree/master
 library
     build-depends:   base >= 4 && < 5,
                      syb,
-                     transformers >= 0.1.4.0
+                     transformers >= 0.1.4.0,
+                     control-monad-failure >= 0.2
     exposed-modules: Data.Attempt
-                     Data.Attempt.Helper
                      Control.Monad.Attempt
-                     Control.Monad.Attempt.Class
     ghc-options:     -Wall
