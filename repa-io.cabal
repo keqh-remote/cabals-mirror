@@ -1,5 +1,5 @@
 Name:                repa-io
-Version:             2.2.0.1
+Version:             3.0.0.1
 License:             BSD3
 License-file:        LICENSE
 Author:              The DPH Team
@@ -18,24 +18,23 @@ Synopsis:
 
 Library
   Build-Depends: 
-        base                 == 4.*,
-        repa                 == 2.2.*,
-        repa-bytestring      == 2.2.*,
-        bmp                  == 1.1.*,
-        old-time             == 1.0.*,
+        base                 == 4.5.*,
+        repa                 == 3.0.*,
+        bmp                  == 1.2.*,
+        old-time             == 1.1.*,
         vector               == 0.9.*,
-        binary               == 0.5.*
+        binary               == 0.5.*,
+        bytestring           == 0.9.*
 
   ghc-options:
-        -Odph -Wall -fno-warn-missing-signatures
+        -O2 -Wall -fno-warn-missing-signatures
 
   Exposed-modules:
-        Data.Array.Repa.IO.ColorRamp
-        Data.Array.Repa.IO.BMP
-        Data.Array.Repa.IO.Vector
-        Data.Array.Repa.IO.Matrix
         Data.Array.Repa.IO.Binary
+        Data.Array.Repa.IO.BMP
+        Data.Array.Repa.IO.Matrix
         Data.Array.Repa.IO.Timing
+        Data.Array.Repa.IO.Vector
       
   Other-modules:
         Data.Array.Repa.IO.Internals.Text
