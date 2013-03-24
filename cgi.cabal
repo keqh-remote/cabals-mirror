@@ -1,5 +1,5 @@
 Name: cgi
-Version: 3001.1.5.2
+Version: 3001.1.6.0
 Copyright: Bjorn Bringert, Andy Gill, Ian Lynagh, Erik Meijer, 
            Sven Panne, Jeremy Shaw
 Maintainer: bjorn@bringert.net
@@ -24,7 +24,7 @@ Library
     Network.CGI.Compat
   Other-modules:
     Network.CGI.Multipart,
-    Network.CGI.RFC822Headers
+    Network.CGI.Header
   Extensions: MultiParamTypeClasses
   ghc-options: -Wall
 
