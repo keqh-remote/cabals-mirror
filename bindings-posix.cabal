@@ -3,7 +3,7 @@ name: bindings-posix
 homepage: http://bitbucket.org/mauricio/bindings-posix
 synopsis:
   Low level bindings to posix.
-version: 1.0
+version: 1.0.1
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
