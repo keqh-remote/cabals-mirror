@@ -1,5 +1,5 @@
 name:             wumpus-drawing
-version:          0.3.0
+version:          0.4.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -38,46 +38,19 @@ description:
   .
   Changelog:
   .
-  v0.2.0 to v0.3.0:
+  v0.3.0 to v0.4.0:
   .
-  * Moved Turtle and Grids into the @Wumpus.Drawing.Extras@
-    name-space. Modules here are considered sketches.
+  * Simplified Trapezium shape so it only produces isosceles
+    Trapeziums.
   .
-  * Re-implemented arrowheads and connectors.
+  * Added Basis modules. These are \"mid-level\" modules similar 
+    to ones in @Wumpus.Basic.Kernel.Objects@, however they are 
+    considered less general so there are put here where they can 
+    be imported individually (and so not pollute the namespace).
   .
-  * Re-implemented monadic path construction. This is now 
-    essentially \"turtle drawing\" with a path trace.
+  * Removed the Turtle modules. The new @LocTrace@ and @RefTrace@ 
+    modules supercede the Turtle modules.
   .
-  * Removed chains - a simplified implementation is now 
-    provided by Wumpus-Basic.
-  .
-  * Re-implemented and expanded Text.  
-  .
-  v0.1.0 to v0.2.0:
-  .
-  * Added new Shapes.
-  .
-  * Move Geometry modules to Wumpus-Basic.
-  .
-  * Re-implemented Chains.
-  .
-  * Re-implemented LR-Text. Added CatText.
-  .
-  v0.1.0:
-  .
-  * Initial release - this is a split from @Wumpus-Basic@ making 
-    the (very prototypical - read sub-alpha, unstable...) modules 
-    in the @Drawing@ hierarchy a separate package.
-  .
-  * Simplified Chains - chains are now regular lists (though often
-    infinite). Drawings are made with chains using new zip-like
-    functions.
-  .
-  * Re-worked Shapes.
-  .
-  * Re-worked Arrow and Arrow Tip types.
-  .
-  * Re-worked ConnectorPaths.
   .
 build-type:         Simple
 stability:          highly unstable
@@ -101,19 +74,22 @@ extra-source-files:
   demo/SingleChar.hs,
   demo/SingleLine.hs,
   demo/SampleShapes.hs,
-  demo/Symbols.hs,
-  demo/TableChains.hs
+  demo/Symbols.hs
 
 library
   hs-source-dirs:     src
   build-depends:      base            <  5, 
                       containers      >= 0.3     && <= 0.6,
                       vector-space    >= 0.6     && <  1.0,
-                      wumpus-core     >= 0.50.0  && <  0.51.0,
-                      wumpus-basic    == 0.17.0
+                      wumpus-core     >= 0.51.0  && <  0.52.0,
+                      wumpus-basic    == 0.18.0
 
   
   exposed-modules:
+    Wumpus.Drawing.Basis.DrawingPrimitives,
+    Wumpus.Drawing.Basis.TraceGraphic,
+    Wumpus.Drawing.Basis.LocTrace,
+    Wumpus.Drawing.Basis.RefTrace,
     Wumpus.Drawing.Colour.SVGColours,
     Wumpus.Drawing.Colour.X11Colours,
     Wumpus.Drawing.Connectors,
@@ -121,18 +97,15 @@ library
     Wumpus.Drawing.Connectors.Base,
     Wumpus.Drawing.Connectors.BoxConnectors,
     Wumpus.Drawing.Connectors.ConnectorPaths,
-    Wumpus.Drawing.Connectors.Loop,
     Wumpus.Drawing.Dots.AnchorDots,
-    Wumpus.Drawing.Dots.Marks,
+    Wumpus.Drawing.Dots.SimpleDots,
     Wumpus.Drawing.Extras.Axes,
+    Wumpus.Drawing.Extras.Clip,
     Wumpus.Drawing.Extras.Grids,
-    Wumpus.Drawing.Extras.Turtle.TurtleClass,
-    Wumpus.Drawing.Extras.Turtle.TurtleMonad,
+    Wumpus.Drawing.Extras.Loop,
     Wumpus.Drawing.Paths.Absolute,
-    Wumpus.Drawing.Paths.Base.AbsBuilder,
     Wumpus.Drawing.Paths.Base.AbsPath,
-    Wumpus.Drawing.Paths.Base.BuildCommon,
-    Wumpus.Drawing.Paths.Base.RelBuilder,
+    Wumpus.Drawing.Paths.Base.PathBuilder,
     Wumpus.Drawing.Paths.Base.RelPath,
     Wumpus.Drawing.Paths.Relative,
     Wumpus.Drawing.Paths.Vamps,
