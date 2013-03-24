@@ -1,5 +1,5 @@
 name:               hedis
-version:            0.1
+version:            0.2
 synopsis:
     Client library for the Redis datastore: supports full command set,  
     pipelining.
@@ -12,10 +12,7 @@ Description:
     .
     [Complete Redis 2.4 command set:] All Redis commands 
         (<http://redis.io/commands>) are available as haskell functions. The 
-        exceptions to the rule are a handfull of internal and debugging
-        commands: MONITOR, DEBUG OBJECT, DEBUG SEGFAULT, SYNC. If needed, these
-        commands can easily be implemented by the library user with the
-        'sendRequest' function.
+        exceptions to the rule are the MONITOR and SYNC commands.
     .
     [Pipelining \"Just Works\":] Commands are pipelined 
         (<http://redis.io/topics/pipelining>) as much as possible without any
@@ -35,8 +32,12 @@ copyright:          Copyright (c) 2011 Falko Peters
 category:           Database
 build-type:         Simple
 cabal-version:      >=1.8
+homepage:           https://github.com/informatikr/hedis
+bug-reports:        https://github.com/informatikr/hedis/issues
 
-bug-reports: https://github.com/informatikr/hedis/issues
+source-repository head
+  type:     git
+  location: https://github.com/informatikr/hedis
 
 flag benchmark
     description: Build the benchmark executable.
@@ -52,9 +53,11 @@ library
                     bytestring == 0.9.*,
                     bytestring-lexing == 0.2.*,
                     mtl == 2.*,
-                    network == 2.*
+                    network == 2.*,
+                    resource-pool == 0.2.0.*
 
-  other-modules:    Database.Redis.Internal,
+  other-modules:    Database.Redis.Core,
+                    Database.Redis.Connection
                     Database.Redis.PubSub,
                     Database.Redis.Reply,
                     Database.Redis.Request,
@@ -64,17 +67,13 @@ library
 
 executable hedis-benchmark
     main-is: benchmark/Benchmark.hs
-    ghc-options: -Wall -rtsopts
-    ghc-prof-options: -auto-all
-    if ! flag(benchmark)
-        buildable: False
-    else
+    if flag(benchmark)
         build-depends:
             base >= 4,
             mtl == 2.0.*,
             hedis,
-            time >= 1.2
-
-source-repository head
-  type:     git
-  location: https://github.com/informatikr/hedis
+            time >= 1.2        
+    else
+        buildable: False
+    ghc-options: -Wall -rtsopts
+    ghc-prof-options: -auto-all
