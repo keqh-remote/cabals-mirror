@@ -1,11 +1,13 @@
 name:			dist-upload
-version:		0.0.1
+version:		0.0.2
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
-copyright:		(c) 2009 ~ 2010 Andy Stewart
+copyright:		(c) 2010 Andy Stewart
 synopsis:		Generate/Upload cabal package to Hackage.
 description:    Generate/Upload cabal package to Hackage.
+ .
+ Best put your hackage username/password in file `HOME/.cabal/config`, then "dist-upload" can upload package fully automatic. :)
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
 stability:		provisional
