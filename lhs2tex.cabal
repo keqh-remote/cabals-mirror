@@ -1,6 +1,6 @@
 cabal-version:  >=1.10
 name:           lhs2tex
-version:        1.17
+version:        1.18
 license:        GPL
 license-file:   LICENSE
 author:         Ralf Hinze <ralf.hinze@comlab.ox.ac.uk>, Andres Loeh <lhs2tex@andres-loeh.de>
@@ -16,11 +16,34 @@ executable lhs2TeX
   main-is:              Main.lhs
   hs-source-dirs:       src
   default-language:     Haskell98
+  other-extensions:     ScopedTypeVariables
+                        NPlusKPatterns
+                        GeneralizedNewtypeDeriving
+                        TypeSynonymInstances
   build-depends:        base >= 4.2 && < 5,
                         regex-compat,
                         mtl,
                         filepath,
                         directory,
-                        process,
-                        extensible-exceptions
-
+                        process
+  other-modules:        Auxiliaries
+                        Directives
+                        Document
+                        FileNameUtils
+                        FiniteMap
+                        HsLexer
+                        LaTeX
+                        License
+                        MathCommon
+                        Math
+                        MathPoly
+                        NewCode
+                        Parser
+                        State
+                        StateT
+                        TeXCommands
+                        TeXParser
+                        Typewriter
+                        Value
+                        Verbatim
+                        Version
