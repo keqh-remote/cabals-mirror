@@ -1,5 +1,5 @@
 Name: data-flags
-Version: 0.0.1
+Version: 0.0.2
 Category: Data
 Stability: experimental
 Synopsis: A package for working with bit masks and flags in general.
@@ -17,11 +17,13 @@ Cabal-Version: >= 1.6.0
 Build-Type: Simple
 
 Library
-  Build-Depends: base == 4.*, template-haskell
+  Build-Depends: base < 5, template-haskell
   Extensions: TemplateHaskell
   Hs-Source-Dirs: src
   GHC-Options: -Wall
   Exposed-Modules:
     Data.Flags
     Data.Flags.TH
+  Other-Modules:
+    Data.Flags.Base
 
