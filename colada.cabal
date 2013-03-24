@@ -1,5 +1,5 @@
 Name:                colada
-Version:             0.4.3
+Version:             0.5.1
 Synopsis:            Colada implements incremental word class class induction 
                      using online LDA
 Description:  Colada implements incremental word class class induction using 
