@@ -1,11 +1,11 @@
 name:           email-validate
-version:        0.2.8
+version:        0.3.1
 license:        BSD3
 license-file:   LICENSE
 author:         George Pollard
 maintainer:     George Pollard <porges@porg.es>
 homepage:       http://porg.es/blog/email-address-validation-simpler-faster-more-correct
-category:       Text
+category:       Text, RFC
 synopsis:       Validating an email address string against RFC 5322
 description:    Validating an email address string against RFC 5322
 build-type:     Simple
