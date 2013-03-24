@@ -1,5 +1,5 @@
 name:           yi
-version:        0.6.2.3
+version:        0.6.2.4
 category:       Development, Editor
 synopsis:       The Haskell-Scriptable Editor
 description:
@@ -257,7 +257,7 @@ executable yi
         build-depends: ghc-paths ==0.1.*
         build-depends: hint > 0.3.1
         build-depends: monads-fd
-        build-depends: pointedlist >= 0.3.5
+        build-depends: pointedlist >= 0.3.5 && <0.4
         build-depends: pureMD5 >= 0.2.3
         build-depends: random
         build-depends: regex-base ==0.93.*
@@ -284,15 +284,15 @@ executable yi
            cpp-options: -DFRONTEND_VTY
 
         if flag (pango)
-          build-depends: gtk==0.10.*
-          build-depends: glib==0.10.*
+          build-depends: gtk==0.11.*
+          build-depends: glib==0.11.*
           cpp-options: -DFRONTEND_PANGO
           other-modules: Yi.UI.Pango.ProjectTree
                          Yi.UI.Pango.Utils
                          Yi.UI.Pango
 
           if flag(gnome)
-            build-depends: gconf==0.10.*
+            build-depends: gconf==0.11.*
             cpp-options: -DGNOME_ENABLED
             other-modules: Yi.UI.Pango.Gnome
 
