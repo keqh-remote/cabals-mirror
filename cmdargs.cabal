@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               cmdargs
-version:            0.8
+version:            0.9
 license:            BSD3
 license-file:       LICENSE
 category:           Console
@@ -41,10 +41,19 @@ flag testprog
     default: True
     description: Build the test program
 
+flag quotation
+    default: True
+    description: Build the Quote module
+
 library
     build-depends:
         base == 4.*,
-        transformers == 0.2.*
+        transformers == 0.2.*,
+        process >= 1.0 && < 1.2
+
+    if flag(quotation)
+        build-depends: template-haskell
+        exposed-modules: System.Console.CmdArgs.Quote
 
     exposed-modules:
         System.Console.CmdArgs
@@ -54,13 +63,16 @@ library
         System.Console.CmdArgs.GetOpt
         System.Console.CmdArgs.Implicit
         System.Console.CmdArgs.Text
+        System.Console.CmdArgs.Helper
         System.Console.CmdArgs.Verbosity
 
     other-modules:
         Data.Generics.Any
         Data.Generics.Any.Prelude
+        System.Console.CmdArgs.Explicit.Complete
         System.Console.CmdArgs.Explicit.Help
         System.Console.CmdArgs.Explicit.Process
+        System.Console.CmdArgs.Explicit.SplitJoin
         System.Console.CmdArgs.Explicit.Type
         System.Console.CmdArgs.Implicit.Ann
         System.Console.CmdArgs.Implicit.Global
@@ -87,4 +99,5 @@ executable cmdargs
         System.Console.CmdArgs.Test.Implicit.Maker
         System.Console.CmdArgs.Test.Implicit.Tests
         System.Console.CmdArgs.Test.Implicit.Util
+        System.Console.CmdArgs.Test.SplitJoin
         System.Console.CmdArgs.Test.Util
