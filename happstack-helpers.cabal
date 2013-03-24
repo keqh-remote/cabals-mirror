@@ -1,5 +1,5 @@
 Name: happstack-helpers
-Version: 0.21
+Version: 0.22
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming Happstack based web-apps. 
