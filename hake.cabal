@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.9.5
+Version:	0.9.9
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -19,13 +19,13 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		put 'import Development.Hake.OldFunSet'.
 		.
 		> import Development.Hake
-		> import Development.Hake.FunSet
+		> import Development.Hake.FunSetRaw
 		> hake_rules = [
 		>
 		>  dflt	[ "greeting" ]
 		>  ,
-		>  file	[ "greeting", "greeting.log" ] [ "hello.o", "good-bye.o" ]
-		> 		[ [ "linker", "-o", "greeting", "hello.o", "good-bye.o" ] ]
+		>  file	[ "greeting", "greeting.log" ] [ "hello.o", "good-bye.o" ] $
+		> 		const [ [ "linker", "-o", "greeting", "hello.o", "good-bye.o" ] ]
 		>  ,
 		>  rule	".o" ".sfx1" $
 		> 		\t (s:_) -> [ [ "compiler1", s, "-o", t ] ]
@@ -45,7 +45,7 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		>  ,
 		>  rule   ".o" ".cc" $ \_ (s:_) -> [ [ "g++", "-c", s ] ]
 		>  ,
-		>  base   (=="foo") (const [ "foo.gen", "Hakefile" ]) $ \t (s:_) _ -> do
+		>  base   (=="foo") (const [ "foo.gen", "Hakefile" ]) $ \t (s:_) _ _ -> do
 		>               gen <- readFile s
 		>               writeFile t $ unlines $
 		>                 [ "#!/bin/sh", "echo This is script" ] ++ lines gen
@@ -55,7 +55,7 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		>
 		> main = hake hake_rules
 
-Stability:	experimental
+Stability:	semi-stable
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/hake/index.xhtml
 Package-Url:	http://code.haskell.org/hake/
 Cabal-Version:	>= 1.2
@@ -67,14 +67,11 @@ Extra-Tmp-Files:
 
 Library
   GHC-Options:		-Wall
---  CPP-Options:		-DDEBUG
   Build-Depends:	base, old-time, mtl, filepath
-  Exposed-Modules:	Development.Hake, Development.Hake.OldFunSet, Development.Hake.FunSet
-  Other-Modules:	Development.Hake.HiddenTools, Development.Hake.Types
+  Exposed-Modules:	Development.Hake, Development.Hake.OldFunSet, Development.Hake.FunSet, Development.Hake.FunSetRaw, Development.Hake.FunSetIO
+  Other-Modules:	Development.Hake.Variables, Development.Hake.Types, Development.Hake.Tools, Development.Hake.RunHake, Development.Hake.Core
 
 Executable hake
   GHC-Options:		-Wall
---  CPP-Options:		-DDEBUG
-  Build-Depends:	directory, process, yjtools >= 0.6, regexpr >= 0.3
-  Other-Modules:	Development.Hake.HiddenTools
+  Build-Depends:	directory, process, yjtools >= 0.9.5, regexpr >= 0.3
   Main-Is:		Main.hs
