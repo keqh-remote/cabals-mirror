@@ -1,5 +1,5 @@
 Name:          contstuff
-Version:       0.6.0
+Version:       0.6.1
 Category:      Control, Monads, Parsing, Text
 Synopsis:      Fast, easy to use CPS-based monads
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -14,7 +14,10 @@ Cabal-version: >= 1.6
 Description:
 
   This library implements fast and easy to use CPS-based monad
-  transformers.  Most of the usual monads are implemented.
+  transformers.  Most of the usual monad transformers are implemented,
+  including ChoiceT, ContT, EitherT, MaybeT and StateT.  Because of the
+  design of this library, many other monad transformers are just special
+  cases of those, including e.g. WriterT.
 
 Library
   Build-depends:
