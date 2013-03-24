@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       1.1.1
+version:       1.2
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -10,17 +10,21 @@ stability:     provisional
 homepage:      http://github.com/ekmett/lens/
 bug-reports:   http://github.com/ekmett/lens/issues
 copyright:     Copyright (C) 2012 Edward A. Kmett
-synopsis:      Families of Lenses, Folds and Traversals
+synopsis:      Lenses, Folds and Traversals
 description:
   The combinators in @Control.Lens@ provide a highly generic toolbox for composing
   families of getters, folds, traversals, setters and lenses.
   .
   /Getter/
   .
-  A @'Getter' a b c d@ is just any function @(a -> c)@, which we've flipped into continuation
-  passing style, @forall r. (c -> r) -> a -> r@ and decorated with 'Const' to obtain
+  A @'Getter' a c@ is just any function @(a -> c)@, which we've flipped into continuation
+  passing style, @(c -> r) -> a -> r@ and decorated with 'Const' to obtain
   .
-  > type Getter a b c d = forall r. (c -> Const r d) -> a -> Const r b
+  > type Getting r a b c d = (c -> Const r d) -> a -> Const r b
+  .
+  If we restrict access to knowledge about the type 'r' and can work for any d and b, we get:
+  .
+  > type Getter a c = forall r b d. Getting r a b c d
   .
   Everything you can do with a function, you can do with a 'Getter', but note that because of the
   continuation passing style (.) composes them in the opposite order.
@@ -30,13 +34,13 @@ description:
   .
   /Fold/
   .
-  A @'Fold' a b c d@ is a generalization of something 'Foldable'. It allows you to
+  A @'Fold' a c@ is a generalization of something 'Foldable'. It allows you to
   extract multiple results from a container. A 'Foldable' container can be
   characterized by the behavior of @foldMap :: (Foldable t, Monoid m) => (c -> m) -> t c -> m@.
   Since we want to be able to work with monomorphic containers, we generalize this signature to
   @forall m. 'Monoid' m => (c -> m) -> a -> m@, and then decorate it with 'Const' to obtain
   .
-  > type Fold a b c d = forall m. Monoid m => (c -> Const m d) -> a -> Const m b
+  > type Fold a c = forall m b d. Monoid m => Getting m a b c d
   .
   Every 'Getter' is a valid 'Fold' that simply doesn't use the 'Monoid' it is passed.
   .
@@ -53,8 +57,9 @@ description:
   .
   > type Traversal a b c d = forall f. Applicative f => (c -> f d) -> a -> f b
   .
-  Every 'Traversal' can be used as a valid 'Fold', because given a 'Monoid' @m@, we have an 'Applicative' for @('Const' m)@.
-
+  While a 'Traversal' isn't quite a 'Fold', it _can_ be used for 'Getting' like a 'Fold', because 
+  given a 'Monoid' @m@, we have an 'Applicative' for @('Const' m)@.
+  .
   Everything you can do with a 'Traversable' container, you can with with a 'Traversal', and there
   are combinators that generalize the usual 'Traversable' operations in @Control.Lens@.
   .
@@ -76,8 +81,9 @@ description:
   .
   A @'Lens' a b c d@ is a purely functional reference.
   .
-  While a 'Traversal' was a valid 'Fold', it wasn't a valid 'Getter'. To make the 'Applicative'
-  for 'Const' it required a 'Monoid' for the argument we passed it, which a 'Getter' doesn't recieve.
+  While a 'Traversal' could be used for 'Getting' like a valid 'Fold', it wasn't a valid 'Getter'.
+  To make the 'Applicative' for 'Const' it required a 'Monoid' for the argument we passed it, which
+  a 'Getter' doesn't recieve.
   .
   However, the instance of 'Functor' for 'Const' requires no such thing. If we weaken the type
   requirement from 'Applicative' to 'Functor' for 'Traversal', we obtain 
@@ -86,15 +92,24 @@ description:
   .
   Every 'Lens' is a valid 'Setter', choosing @f@ = 'Identity'.
   .
-  Every 'Lens' is a valid 'Fold' that doesn't use the 'Monoid' it is passed.
+  Every 'Lens' can be used for 'Getting' like a 'Fold' that doesn't use the 'Monoid' it is passed.
   .
   Every 'Lens' is a valid 'Traversal' that only uses the 'Functor' part of the 'Applicative' it is supplied.
   .
-  Every 'Lens' is a valid 'Getter', choosing @f@ = 'Const' @r@ for an appropriate @r@
+  Every 'Lens' can be used for 'Getting' like a valid 'Getter', choosing @f@ = 'Const' @r@ for an appropriate @r@
   .
-  Since every 'Lens' is a valid 'Getter' it follows that it must view exactly one element in the structure.
+  Since every 'Lens' can be used for 'Getting' like a valid 'Getter' it follows that it must view exactly one
+  element in the structure.
   .
   The lens laws follow from this property and the desire for it to act like a 'Functor' when used as a 'Setter'.
+  .
+  /Isomorphisms and Iso/
+  .
+  Control.Isomorphic provides easy overloading of function application for isomorphisms and @Iso a b a d@ uses it
+  to form isomorphism families that can be composed with other isomorphisms and with lenses, setters, folds, 
+  traversals and getters.
+  .
+  > type Iso a b c d = forall k f. (Isomorphic k, Functor f) => k (c -> f d) (a -> f b)
   .
   /Composition/
   .
@@ -113,7 +128,7 @@ description:
   .
   > type Simple f a b = f a a b b
   .
-  to describe a 'Simple' 'Lens', 'Simple' 'Traversal' or 'Simple' 'Setter'.
+  to describe a 'Simple' 'Setter', 'Simple' 'Traversal', 'Simple' 'Lens' or 'Simple' 'Iso'.
   .
   /Avoiding Dependencies/
   .
@@ -142,14 +157,17 @@ source-repository head
 library
   exposed-modules:
     Control.Exception.Lens
+    Control.Isomorphic
     Control.Lens
     Control.Lens.Internal
     Control.Lens.Representable
     Control.Lens.TH
     Control.Parallel.Strategies.Lens
+    Control.Seq.Lens
     Data.Array.Lens
     Data.Bits.Lens
     Data.ByteString.Lens
+    Data.ByteString.Lazy.Lens
     Data.Complex.Lens
     Data.Dynamic.Lens
     Data.Map.Lens
@@ -158,8 +176,11 @@ library
     Data.Sequence.Lens
     Data.Set.Lens
     Data.Text.Lens
+    Data.Text.Lazy.Lens
+    Data.Time.Calendar.Lens
     Data.Tree.Lens
 
+  -- All dependencies are in the Haskell Platform
   build-depends:
     array            == 0.4.*,
     base             == 4.*,
@@ -169,19 +190,21 @@ library
     parallel         == 3.2.*,
     template-haskell >= 2.4   && < 2.8,
     text             == 0.11.*,
+    time             == 1.4.*,
     transformers     >= 0.2   && < 0.4
 
   other-extensions:
     CPP
+    DeriveDataTypeable
     LiberalTypeSynonyms
     MultiParamTypeClasses
     Rank2Types
     RankNTypes
     TemplateHaskell
+    TypeOperators
 
   if (impl(ghc>=7.4))
-    other-extensions:
-      Trustworthy
+    other-extensions: Trustworthy
 
   ghc-options: -Wall -fwarn-tabs -O2 -fdicts-cheap -funbox-strict-fields
   hs-source-dirs: src
