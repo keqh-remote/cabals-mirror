@@ -1,5 +1,5 @@
 name:         wxdirect
-version:      0.11.1.3
+version:      0.11.1.4
 license:      BSD3
 license-file: LICENSE
 author:       Daan Leijen
@@ -35,6 +35,20 @@ library
 
 executable wxdirect
   main-is: Main.hs
+
+  other-modules: Classes
+               , CompileClasses
+               , CompileClassInfo
+               , CompileClassTypes
+               , CompileDefs
+               , CompileHeader
+               , CompileSTC
+               , DeriveTypes
+               , HaskellNames
+               , MultiSet
+               , ParseC
+               , ParseEiffel
+               , Types
 
   hs-source-dirs:
     src
