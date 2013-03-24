@@ -1,5 +1,6 @@
 Name:                sparsebit
-Version:             0.1
+Synopsis:            Sparse bitmaps for pattern match coverage
+Version:             0.2
 Description:         Sparse bitmaps for pattern match coverage
 Category:            Development,Data Structure
 License:             BSD3
