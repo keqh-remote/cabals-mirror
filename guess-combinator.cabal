@@ -1,5 +1,5 @@
 Name:                guess-combinator
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Generate simple combinators given their type
 description:         Based on De-typechecker: converting from a type to a term
                      by <oleg at pobox.com>
