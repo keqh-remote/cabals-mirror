@@ -1,5 +1,5 @@
 name: Hieroglyph
-version: 3.85
+version: 3.88
 cabal-version: >=1.2
 build-type: Simple
 license: BSD3
@@ -7,9 +7,9 @@ license-file: LICENSE
 copyright:
 maintainer: J.R. Heard
 build-depends: IfElse -any, OpenGL <= 2.2.3.0, array -any, base == 4.1.0.0,
-               buster ==2.51, buster-gtk -any, bytestring -any, cairo -any,
+               buster ==2.51, bytestring -any, cairo -any,
                colour -any, containers -any, glib -any, gtk >= 0.10.0, gtkglext -any,
-               mtl -any, parallel -any, pretty -any, random -any
+               mtl -any, parallel -any, pretty -any, random -any, GLUT < 2.2.0.0
 stability:
 homepage: http://vis.renci.org/jeff/hieroglyph
 package-url:
@@ -25,8 +25,11 @@ data-dir: ""
 extra-source-files:
 extra-tmp-files:
 exposed-modules: App.Widgets.MouseKeyboard
-                 Graphics.Rendering.Hieroglyph Graphics.Rendering.Hieroglyph.Cairo
+                 App.Widgets.MouseKeyboardGLUT
+                 Graphics.Rendering.Hieroglyph 
+                 Graphics.Rendering.Hieroglyph.Cairo
                  Graphics.Rendering.Hieroglyph.OpenGL
+                 Graphics.Rendering.Hieroglyph.GLUT
                  Graphics.Rendering.Hieroglyph.Cache
                  Graphics.Rendering.Hieroglyph.Primitives
                  Graphics.Rendering.Hieroglyph.Visual
