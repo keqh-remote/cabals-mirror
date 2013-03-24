@@ -1,10 +1,15 @@
 Name:               mediawiki
-Version:            0.2.3
+Version:            0.2.4
 License:            BSD3
 License-file:       LICENSE
 Category:           Web
 Synopsis:           Interfacing with the MediaWiki API
-Description:        A complete Haskell binding to the MediaWiki API
+Description:        
+  A complete Haskell binding to the MediaWiki API letting you
+  programmatically access (read and write) MediaWiki content.
+  .
+  See <http://www.mediawiki.org/wiki/API> and <http://haskell.forkio.com/>
+  for more.
 Author:             Sigbjorn Finne <sof@forkIO.com>
 Maintainer:         Sigbjorn Finne <sof@forkIO.com>
 Cabal-version:   >= 1.2
