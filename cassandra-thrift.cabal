@@ -1,5 +1,5 @@
 Name: cassandra-thrift 
-Version: 0.7.2
+Version: 0.7.2.1
 License: OtherLicense 
 License-File: LICENSE
 Cabal-version: >= 1.4
@@ -22,5 +22,5 @@ Library
 
     build-depends:   base >= 4.2.0.0 && < 4.9, 
                      containers,
-                     Thrift == 0.5.0.1,
+                     Thrift == 0.5.0.2,
                      bytestring
