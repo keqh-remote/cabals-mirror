@@ -1,15 +1,27 @@
-Name:                composition
-Version:             0.2.1
-Synopsis:            Combinators for unorthodox function composition
-License:             BSD3
-License-file:        LICENSE
-Author:              Dan Burton
-Maintainer:          danburton.email@gmail.com
-Category:            Data
-Build-type:          Simple
-Cabal-version:       >=1.2
+name:                composition
+version:             1.0.0.0
+synopsis:            Combinators for unorthodox function composition
 
-Library
+license:             BSD3
+license-file:        LICENSE
+author:              Dan Burton
+maintainer:          danburton.email@gmail.com
+homepage:            http://patch-tag.com/r/DanBurton/composition/home
+
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
   hs-source-dirs:      src
-  Exposed-modules:     Data.Composition
-  Build-depends:       base >= 2 && < 5
+  exposed-modules:     Data.Composition
+  extensions:          NoImplicitPrelude
+
+source-repository head
+  type:     darcs
+  location: http://patch-tag.com/r/DanBurton/composition
+
+source-repository this
+  type:     darcs
+  location: http://patch-tag.com/r/DanBurton/composition
+  tag:      composition-1.0.0.0
