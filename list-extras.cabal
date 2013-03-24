@@ -1,9 +1,9 @@
 ----------------------------------------------------------------
--- wren ng thornton <wren@cpan.org>                 ~ 2008.07.20
+-- wren ng thornton <wren@cpan.org>                 ~ 2008.07.23
 ----------------------------------------------------------------
 
 Name:           list-extras
-Version:        0.1.0
+Version:        0.1.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 Stability:      stable
@@ -11,7 +11,8 @@ Copyright:      Copyright (c) 2007--2008 wren ng thornton
 License:        BSD3
 License-File:   LICENSE
 Author:         wren ng thornton
-Maintainer:     wren@cpan.org
+Maintainer:     wren@community.haskell.org
+Homepage:       http://code.haskell.org/~wren/
 Category:       List
 Synopsis:       Common not-so-common functions for lists
 Description:    Common not-so-common functions for lists.
