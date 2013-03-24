@@ -1,5 +1,5 @@
 name:               arff
-version:            0.0.1
+version:            0.1.0
 synopsis:           Generate Attribute-Relation File Format (ARFF) files
 description:        Generate Attribute-Relation File Format (ARFF) files.
                     .
@@ -17,6 +17,8 @@ tested-with:        GHC == 6.10.1
 build-type:         Simple
 cabal-version:      >= 1.2
 
+extra-source-files: examples/test.hs
+
 library
   exposed-modules:  Text.ARFF
 
@@ -29,5 +31,3 @@ library
                     time >= 1
 
   extensions:       ExistentialQuantification
-  
-  ghc-options:      -O2 -funbox-strict-fields 
