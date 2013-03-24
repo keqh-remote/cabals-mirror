@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.7
+Version:		2.2.8
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -90,7 +90,8 @@ Extra-Source-Files:
   tst/targetterms8.scm tst/targetterms8.tst tst/tnsl5.lisp
   tst/uncarried_keys.scm tst/uncarried_keys.tst tst/uo.scm tst/uo.tst
   tst/updatetst tst/weird.scm tst/weird.tst tst/wide-mouth-frog.lsp
-  tst/wide-mouth-frog.tst tst/wonthull2.scm tst/wonthull2.tst
+  tst/wide-mouth-frog.tst tst/wide-mouth-frog-scyther.lsp
+  tst/wide-mouth-frog-scyther.tst tst/wonthull2.scm tst/wonthull2.tst
   tst/wonthull3.scm tst/wonthull3.tst tst/wonthull.scm
   tst/wonthull.tst tst/woolam.scm tst/woolam.tst tst/yahalom-6.3.6.scm
   tst/yahalom-6.3.6.tst tst/yahalom.scm tst/yahalom.tst tst/tor.scm
