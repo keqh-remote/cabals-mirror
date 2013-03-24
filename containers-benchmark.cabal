@@ -1,5 +1,5 @@
 Name:                containers-benchmark
-Version:             1.0.0.3
+Version:             1.1.0.0
 Synopsis:            Extensive benchmark suite for containers package.
 Description:         This package evaluates performance of a containers package
                      from multiple perspectives.
@@ -18,7 +18,7 @@ Maintainer:          fox@ucw.cz
 Stability:           Experimental
 Category:            Benchmarking
 Build-type:          Simple
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
 Extra-source-files:  CHANGES
                      README
                      scripts/benchmark.sh
@@ -36,18 +36,31 @@ Extra-source-files:  CHANGES
                      src/Benchmark/Set-like.inc.hs
                      src/Variants/gen.sh
 
+source-repository head
+  type:     git
+  location: http://git.auryn.cz/haskell/containers-benchmark/
+
 Executable benchmark
   Main-is:           Main.hs
   Build-depends:     base >= 3 && < 5,
                      bytestring >= 0.9 && < 1.0,
-                     containers >= 0.3 && < 0.5,
+                     containers >= 0.5 && < 0.6,
                      criterion >= 0.5 && < 0.6,
-                     random >= 1.0 && < 1.1
+                     random >= 1.0 && < 1.1,
+                     deepseq,
+                     ghc-prim
   Hs-source-dirs:    src
   Other-modules:     Container.IntMap
+                     Container.IntMap.Base
+                     Container.IntMap.Lazy
+                     Container.IntMap.Strict
                      Container.IntSet
                      Container.Map
+                     Container.Map.Base
+                     Container.Map.Lazy
+                     Container.Map.Strict
                      Container.Set
+                     Container.StrictPair
                      InputData.ByteString
                      InputData.Int
                      InputData.IntegerBig
