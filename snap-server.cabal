@@ -1,5 +1,5 @@
 name:           snap-server
-version:        0.2.7.2
+version:        0.2.8
 synopsis:       A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 description:
   This is the first developer prerelease of the Snap framework.  Snap is a
@@ -66,6 +66,8 @@ extra-source-files:
   test/runTestsAndCoverage.sh,
   test/snap-server-testsuite.cabal,
   test/suite/Paths_snap_server.hs,
+  test/suite/Data/HashMap/Concurrent/Tests.hs,
+  test/suite/Snap/Internal/Http/Parser/Tests.hs,
   test/suite/Snap/Internal/Http/Parser/Tests.hs,
   test/suite/Snap/Internal/Http/Server/Tests.hs,
   test/suite/Snap/Test/Common.hs,
@@ -91,6 +93,7 @@ Library
     System.FastLogger
 
   other-modules:
+    Data.HashMap.Concurrent,
     Paths_snap_server,
     Snap.Internal.Http.Parser,
     Snap.Internal.Http.Server,  
@@ -111,9 +114,10 @@ Library
     filepath,
     iteratee >= 0.3.1 && <0.4,
     monads-fd,
+    murmur-hash >= 0.1 && < 0.2,
     network == 2.2.1.*,
     old-locale,
-    snap-core >= 0.2.7 && <0.3,
+    snap-core >= 0.2.8 && <0.2.9,
     time,
     transformers,
     unix-compat,
@@ -125,7 +129,7 @@ Library
     build-depends: unix
 
   if flag(libev)
-    build-depends: hlibev >= 0.2.3
+    build-depends: hlibev >= 0.2.5 && < 0.3
     other-modules: Snap.Internal.Http.Server.LibevBackend
     cpp-options: -DLIBEV
   else
