@@ -1,5 +1,5 @@
 name:                optparse-applicative
-version:             0.0.1
+version:             0.1.0
 synopsis:            Utilities and combinators for parsing command line options
 description:
     Here is a simple example of an applicative option parser:
@@ -28,7 +28,7 @@ description:
     .
     @
     greet :: Sample -> IO ()
-    greet (Sample h True) = putStrLn $ \"Hello, \" ++ h
+    greet (Sample h False) = putStrLn $ \"Hello, \" ++ h
     greet _ = return ()
     .
     main :: IO ()
@@ -81,15 +81,15 @@ library
                        Options.Applicative.Help
   build-depends:       base == 4.*,
                        data-lens == 2.10.*,
-                       data-lens-template == 2.1.*,
-                       data-default == 0.4.*
+                       data-default == 0.4.*,
+                       transformers >= 0.2 && < 0.4
 test-suite tests
   type:                exitcode-stdio-1.0
   hs-source-dirs:      tests
   main-is:             Tests.hs
   build-depends:       base == 4.*,
                        HUnit == 1.2.*,
-                       optparse-applicative == 0.0.*,
+                       optparse-applicative == 0.1.*,
                        test-framework == 0.6.*,
                        test-framework-hunit == 0.2.*,
                        test-framework-th-prime == 0.0.*
