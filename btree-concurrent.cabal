@@ -1,10 +1,11 @@
 name:               btree-concurrent
-version:            0.1.0
+version:            0.1.1
 homepage:           https://github.com/brinchj/btree-concurrent
 synopsis:           A backend agnostic, concurrent BTree
 description:        A backend agnostic, concurrent BTree
 category:           Data Structures
 license:            LGPL
+license-file:       LICENSE
 author:             Morten Brøns, Johan Brinch
 maintainer:         brinchj@gmail.com
 data-files:         README.md TODO.org
