@@ -1,15 +1,16 @@
 Name:          records
-Version:       0.1.1.5
+Version:       0.1.1.6
 Cabal-Version: >= 1.6
 Build-Type:    Simple
 License:       BSD3
 License-File:  LICENSE
-Copyright:     © 2007–2010 Brandenburgische Technische Universität Cottbus; © 2011 Wolfgang Jeltsch
+Copyright:     © 2007–2010 Brandenburgische Technische Universität Cottbus;
+               © 2011–2012 Wolfgang Jeltsch
 Author:        Wolfgang Jeltsch
 Maintainer:    wolfgang@cs.ioc.ee
 Stability:     provisional
 Homepage:      http://darcs.wolfgang.jeltsch.info/haskell/records
-Package-URL:   http://hackage.haskell.org/packages/archive/records/0.1.1.5/records-0.1.1.5.tar.gz
+Package-URL:   http://hackage.haskell.org/packages/archive/records/0.1.1.6/records-0.1.1.6.tar.gz
 Synopsis:      A flexible record system
 Description:   This package provides a flexible record system which has some novel features:
                .
@@ -34,10 +35,10 @@ Source-Repository head
 Source-Repository this
     type:     darcs
     location: http://darcs.wolfgang.jeltsch.info/haskell/records/main
-    tag:      records-0.1.1.5
+    tag:      records-0.1.1.6
 
 Library
-    Build-Depends:   base           >= 3.0   && < 4.4,
+    Build-Depends:   base           >= 3.0   && < 5,
                      kinds          >= 0.0.1 && < 0.1,
                      type-functions >= 0.1   && < 0.3
     Extensions:      EmptyDataDecls
