@@ -1,5 +1,5 @@
 Name:           lio
-Version:        0.0.2
+Version:        0.1.0
 build-type:     Simple
 License:        GPL
 License-File:   LICENSE
@@ -8,19 +8,10 @@ Maintainer:	Deian Stefan  <deian at cs dot stanford dot edu>
 Stability:      experimental
 Synopsis:       Labeled IO Information Flow Control Library
 Category:       Security
-Cabal-Version:  >= 1.6
-
-Extra-source-files:
-    Examples/LambdaChair/AliceCode.hs
-    Examples/LambdaChair/BobCode.hs
-    Examples/LambdaChair/LambdaChair.hs
-    Examples/LambdaChair/Main.hs
-    Examples/LambdaChair/Safe.hs
-
 Description:
         The /Labeled IO/ (LIO) library provides information flow
         control for incorporating untrusted code within Haskell
-        applications.  Most code should import module "LIO.LIO" and
+        applications.  Most code should import module "LIO" and
         whichever label type the application is using (e.g.,
         "LIO.DCLabel").  The core functionality of the library is
         documented in "LIO.TCB".  LIO was implemented by David
@@ -36,10 +27,28 @@ Description:
         The library depends on the @DCLabel@ module. You can read more on
         DC Labels here:
         <http://www.scs.stanford.edu/~deian/dclabels/>.
+Cabal-Version:  >= 1.6
+
+Build-Type:     Configure
+Extra-source-files:
+    examples/LambdaChair/AliceCode.hs
+    examples/LambdaChair/BobCode.hs
+    examples/LambdaChair/LambdaChair.hs
+    examples/LambdaChair/Main.hs
+    examples/LambdaChair/Safe.hs
+    examples/fsExample.hs
+    examples/maskExample.hs
+    examples/waitAndCatch.hs
+    configure.ac
+    configure
+    include/HsTmpConfig.h.in
+Extra-Tmp-Files:
+    include/HsTmpConfig.h
 
 Source-repository head
   Type:     git
   Location: http://www.scs.stanford.edu/~deian/lio.git
+
 
 Library
   Build-Depends: base >= 4 && < 5,
@@ -50,24 +59,40 @@ Library
                  filepath >= 1.1 && < 2,
                  mtl >= 1.1.0.2 && < 3,
                  old-time >= 1 && < 2,
-                 unix >= 2.3 && < 3,
+                 unix >= 2.5.0.0 && < 3,
                  SHA >= 1.4.1.1 && < 2,
                  time >= 1.1.4 && < 2,
-                 dclabel >= 0.0.1 && < 2
+                 dclabel >= 0.0.4 && < 2,
+                 cereal >= 0.3.3 && < 0.4,
+                 base64-bytestring >= 0.1.0.4
 
-  ghc-options: -Wall
+  ghc-options: -Wall -fno-warn-orphans
+
   Exposed-modules:
-    LIO.Armor,
-    LIO.Base,
+    -- Core:
+    LIO,
+    LIO.Safe,
+    LIO.TCB,
+    LIO.MonadCatch,
+    LIO.MonadLIO,
+    -- Label formats:
     LIO.DCLabel,
-    LIO.FS,
-    LIO.Handle,
-    LIO.HiStar,
-    LIO.LIO,
+    -- References:
     LIO.LIORef,
     LIO.LIORef.TCB,
     LIO.LIORef.Safe,
-    LIO.MonadCatch,
-    LIO.MonadLIO,
-    LIO.TCB,
-    LIO.TmpFile
+    -- Concurrency:
+    LIO.Concurrent,
+    LIO.Concurrent.LMVar,
+    LIO.Concurrent.LMVar.Safe,
+    LIO.Concurrent.LMVar.TCB,
+    -- Filesystem:
+    LIO.FS,
+    LIO.Handle
+  if impl(ghc < 7.6)
+    Other-Modules:
+      System.Posix.Tmp
+    Include-Dirs: include
+    Includes: HsTmp.h
+    Install-Includes: HsTmp.h HsTmpConfig.h
+    C-Sources:	cbits/HsTmp.c
