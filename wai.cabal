@@ -1,5 +1,5 @@
 Name:                wai
-Version:             0.3.2
+Version:             0.4.0
 Synopsis:            Web Application Interface.
 Description:         Provides a common protocol for communication between web aplications and web servers.
 License:             BSD3
@@ -19,8 +19,11 @@ Source-repository head
 Library
   Build-Depends:     base                   >= 3        && < 5
                    , bytestring             >= 0.9      && < 0.10
-                   , blaze-builder          >= 0.2      && < 0.3
-                   , enumerator             >= 0.4      && < 0.5
+                   , blaze-builder          >= 0.2      && < 0.4
+                   , enumerator             >= 0.4.8    && < 0.5
                    , network                >= 2.2      && < 2.4
+                   , http-types             >= 0.6      && < 0.7
+                   , text                   >= 0.5      && < 1.0
+                   , transformers           >= 0.2      && < 0.3
   Exposed-modules:   Network.Wai
   ghc-options:       -Wall
