@@ -1,12 +1,11 @@
 name:          repr
-version:       0.4
+version:       0.4.1
 cabal-version: >= 1.6
 build-type:    Simple
 stability:     experimental
-tested-with:   GHC ==6.10.4
 author:        Bas van Dijk
 maintainer:    v.dijk.bas@gmail.com
-copyright:     (c) 2009-2010 Bas van Dijk
+copyright:     (c) 2009-2011 Bas van Dijk
 license:       BSD3
 license-file:  LICENSE
 category:      Numeric, Text
@@ -15,9 +14,11 @@ description:   This library allows you to render overloaded expressions to their
                textual representation. For example:
                .
                @
-               *Repr> let rd = 1.5 + 2 + (3 + (-4) * (5 - pi / sqrt 6)) :: Repr Double
+               *Repr> let r = 1.5 + 2 + (3 + (-4) * (5 - pi / sqrt 6)) :: Repr Double
+               *Repr> extract r
+               17.281195923884734
                *Repr> show rd
-               \"fromRational (3 % 2) + 2 + (3 + negate 4 * (5 - pi / sqrt 6))\"
+               \"1.5 + 2.0 + (3.0 + negate 4.0 * (5.0 - pi / sqrt 6.0))\"
                @
 
 source-repository head
@@ -30,5 +31,5 @@ library
                , random               >= 1.0     && < 1.1
                , string-combinators   >= 0.6     && < 0.7
                , dstring              >= 0.3.0.1 && < 0.5
-  exposed-modules: Text.Repr
+  exposed-modules: Text.Repr, Prelude.Repr
   ghc-options: -Wall
