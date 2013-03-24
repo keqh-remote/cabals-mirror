@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               shake
-version:            0.2.8
+version:            0.2.9
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -65,10 +65,10 @@ library
         binary,
         filepath,
         process,
-        unordered-containers >= 0.1.4.3 && < 1.2,
+        unordered-containers >= 0.2.1 && < 0.3,
         bytestring,
         time,
-        transformers == 0.2.*,
+        transformers >= 0.2 && < 0.4,
         deepseq >= 1.1 && < 1.4
 
     exposed-modules:
@@ -107,10 +107,11 @@ executable shake
         Examples.C.Main
         Examples.Self.Main
         Examples.Tar.Main
-        Examples.Test.Basic1
+        Examples.Test.Basic
         Examples.Test.Directory
         Examples.Test.Errors
         Examples.Test.FilePath
         Examples.Test.Files
         Examples.Test.Pool
+        Examples.Test.Random
         Examples.Test.Resources
