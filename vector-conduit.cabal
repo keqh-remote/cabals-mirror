@@ -1,5 +1,5 @@
 name:                vector-conduit
-version:             0.2.1.0
+version:             0.3.0.0
 synopsis:            Conduit utilities for vectors
 description:         Provides sources and sinks for vectors.
 license:             GPL-3
@@ -13,10 +13,10 @@ cabal-version:       >=1.8
 
 library
   exposed-modules:
-    Data.Vector.Conduit
+    Data.Conduit.Vector
   build-depends:
     base >= 4.0 && < 5.0,
-    conduit >= 0.2 && < 0.3,
+    conduit >= 0.3 && < 0.4,
     primitive >= 0.4 && < 0.5,
     transformers >= 0.2 && < 0.3,
     vector >= 0.9 && < 0.10
@@ -28,7 +28,7 @@ test-suite vector-conduit-tests
   build-depends:
     vector-conduit,
     base >= 4.0 && < 5.0,
-    conduit >= 0.2 && < 0.3,
+    conduit >= 0.3 && < 0.4,
     test-framework >= 0.5 && < 0.6,
     test-framework-quickcheck2 >= 0.2 && < 0.3,
     QuickCheck >= 2.4 && < 2.5,
