@@ -1,9 +1,9 @@
 Name:                gloss
-Version:             1.1.1.0
+Version:             1.2.0.0
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
-Maintainer:          gloss@ouroborus.net
+Maintainer:          benl@ouroborus.net
 Build-Type:          Simple
 Cabal-Version:       >=1.6
 Stability:           provisional
@@ -24,27 +24,27 @@ Library
   Build-Depends: 
         base       == 4.*,
         ghc-prim   == 0.2.*,
-        containers == 0.3.*,
+        containers >= 0.3.0 && < 0.5.0,
         OpenGL     == 2.4.*,
         GLUT       == 2.2.*
 
-  ghc-options:      -O2
+  ghc-options:      -O2 -Wall
 
   Exposed-modules:
         Graphics.Gloss
-        Graphics.Gloss.Game
-        Graphics.Gloss.Color
-        Graphics.Gloss.Picture
-        Graphics.Gloss.Shapes
-        Graphics.Gloss.ViewPort
         Graphics.Gloss.Geometry
         Graphics.Gloss.Geometry.Angle
         Graphics.Gloss.Geometry.Line
-        Graphics.Gloss.Geometry.Vector
+        Graphics.Gloss.Data.Point
+        Graphics.Gloss.Data.Vector
         Graphics.Gloss.Data.Quad
         Graphics.Gloss.Data.Extent
         Graphics.Gloss.Data.QuadTree
+        Graphics.Gloss.Data.Color
+        Graphics.Gloss.Data.Picture
         Graphics.Gloss.Algorithms.RayCast
+        Graphics.Gloss.Interface.Simulate
+        Graphics.Gloss.Interface.Game
 
   Other-modules:
         Graphics.Gloss.Internals.Color
@@ -59,6 +59,7 @@ Library
         Graphics.Gloss.Internals.Interface.Simulate.Idle
         Graphics.Gloss.Internals.Interface.Simulate.State
         Graphics.Gloss.Internals.Interface.Game
+        Graphics.Gloss.Internals.Interface.ViewPort
         Graphics.Gloss.Internals.Interface.ViewPort.Command
         Graphics.Gloss.Internals.Interface.ViewPort.ControlState
         Graphics.Gloss.Internals.Interface.ViewPort.KeyMouse
