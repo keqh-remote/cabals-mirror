@@ -1,5 +1,5 @@
 Name:                vty-ui
-Version:             1.2
+Version:             1.3
 Synopsis:            An interactive terminal user interface library
                      for Vty
 Description:         An extensible library of user interface widgets
@@ -16,7 +16,7 @@ Maintainer:          Jonathan Daugherty <jtd@galois.com>
 Build-Type:          Simple
 License:             BSD3
 License-File:        LICENSE
-Cabal-Version:       >= 1.2
+Cabal-Version:       >= 1.6
 Homepage:            http://codevine.org/vty-ui/
 
 Data-Files:
@@ -49,6 +49,7 @@ Data-Files:
     doc/ch4/DirBrowser.tex
     doc/ch4/Edit.tex
     doc/ch4/Fills.tex
+    doc/ch4/Groups.tex
     doc/ch4/Fixed.tex
     doc/ch4/FormattedText.tex
     doc/ch4/main.tex
@@ -62,6 +63,11 @@ Data-Files:
     doc/vty-ui-users-manual.tex
     doc/title_page.tex
     doc/toc.tex
+    doc/minted.sty
+
+Source-Repository head
+  type:     git
+  location: git://github.com/jtdaugherty/vty-ui.git
 
 Flag testing
     Description:     Build for testing
@@ -74,13 +80,13 @@ Flag demos
 Library
   Build-Depends:
     base >= 4 && < 5,
-    vty >= 4.6 && < 4.7,
+    vty >= 4.6 && < 4.8,
     containers >= 0.2 && < 0.5,
     regex-pcre >= 0.94 && < 0.95,
     regex-base >= 0.93 && < 0.94,
     directory >= 1.0 && < 1.2,
     filepath >= 1.1 && < 1.3,
-    unix >= 2.4 && < 2.5,
+    unix >= 2.4 && < 2.6,
     mtl >= 2.0 && < 2.1,
     stm >= 2.1 && < 2.3,
     array >= 0.3 && < 0.4
@@ -111,6 +117,7 @@ Library
           Graphics.Vty.Widgets.Button
           Graphics.Vty.Widgets.ProgressBar
           Graphics.Vty.Widgets.DirBrowser
+          Graphics.Vty.Widgets.Group
           Text.Trans.Tokenize
 
 Executable vty-ui-tests
@@ -143,7 +150,7 @@ Executable vty-ui-list-demo
   Build-Depends:
     base >= 4 && < 5,
     mtl >= 2.0 && < 2.1,
-    vty >= 4.6 && < 4.7
+    vty >= 4.6 && < 4.8
   if !flag(demos)
     Buildable: False
 
@@ -160,7 +167,7 @@ Executable vty-ui-complex-demo
     time >= 1.1 && < 1.3,
     old-locale >= 1.0 && < 1.1,
     regex-pcre >= 0.94 && < 0.95,
-    vty >= 4.6 && < 4.7
+    vty >= 4.6 && < 4.8
   if !flag(demos)
     Buildable: False
 
@@ -173,7 +180,7 @@ Executable vty-ui-dirbrowser-demo
   Build-Depends:
     base >= 4 && < 5,
     mtl >= 2.0 && < 2.1,
-    vty >= 4.6 && < 4.7
+    vty >= 4.6 && < 4.8
   if !flag(demos)
     Buildable: False
 
@@ -186,7 +193,7 @@ Executable vty-ui-phoneinput-demo
   Build-Depends:
     base >= 4 && < 5,
     mtl >= 2.0 && < 2.1,
-    vty >= 4.6 && < 4.7
+    vty >= 4.6 && < 4.8
   if !flag(demos)
     Buildable: False
 
@@ -199,6 +206,6 @@ Executable vty-ui-dialog-demo
   Build-Depends:
     base >= 4 && < 5,
     mtl >= 2.0 && < 2.1,
-    vty >= 4.6 && < 4.7
+    vty >= 4.6 && < 4.8
   if !flag(demos)
     Buildable: False
