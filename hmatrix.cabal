@@ -1,19 +1,19 @@
 Name:               hmatrix
-Version:            0.3.0.0
+Version:            0.4.0.0
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
 Maintainer:         Alberto Ruiz <aruiz@um.es>
 Stability:          provisional
-Homepage:           http://alberrto.googlepages.com/gslhaskell
+Homepage:           http://www.hmatrix.googlepages.com
 Synopsis:           Linear algebra and numerical computations
 Description:        A purely functional interface to basic linear algebra computations
                     and other numerical routines, internally implemented using
                     GSL, BLAS and LAPACK.
                     .
-                    More information: <http://alberrto.googlepages.com/gslhaskell>
+                    More information: <http://www.hmatrix.googlepages.com>
 Category:           Numerical, Math
-tested-with:        GHC ==6.8.2
+tested-with:        GHC ==6.8.3
 
 cabal-version:      >=1.2
 build-type:         Simple
@@ -24,6 +24,14 @@ flag splitBase
 flag mkl
     description:    Link with Intel's MKL optimized libraries.
     default:        False
+
+flag gsl
+    description:    Link with GSL unoptimized blas.
+    default:        False
+
+flag unsafe
+    description: Compile the library with bound checking disabled.
+    default: False
 
 library
     if flag(splitBase)
@@ -36,19 +44,19 @@ library
         ghc-options:    -fvia-C
 
     Build-Depends:      haskell98
-    Extensions:         ForeignFunctionInterface
+    Extensions:         ForeignFunctionInterface,
+                        CPP
 
     hs-source-dirs:     lib
     Exposed-modules:    Data.Packed,
                         Data.Packed.Vector,
                         Data.Packed.Matrix,
-                        Numeric.GSL.Vector,
-                        Numeric.GSL.Matrix,
                         Numeric.GSL.Differentiation,
                         Numeric.GSL.Integration,
                         Numeric.GSL.Fourier,
                         Numeric.GSL.Polynomials,
                         Numeric.GSL.Minimization,
+                        Numeric.GSL.Vector,
                         Numeric.GSL.Special,
                         Numeric.GSL.Special.Gamma,
                         Numeric.GSL.Special.Erf,
@@ -85,12 +93,15 @@ library
                         Numeric.LinearAlgebra.Algorithms,
                         Graphics.Plot,
                         Numeric.LinearAlgebra.Tests
+                        Data.Packed.Convert
+                        Data.Packed.ST
     other-modules:      Data.Packed.Internal,
                         Data.Packed.Internal.Common,
                         Data.Packed.Internal.Vector,
                         Data.Packed.Internal.Matrix,
                         Numeric.GSL.Special.Internal,
-                        Numeric.LinearAlgebra.Tests.Instances
+                        Numeric.GSL.Matrix,
+                        Numeric.LinearAlgebra.Tests.Instances,
                         Numeric.LinearAlgebra.Tests.Properties
     C-sources:          lib/Data/Packed/Internal/auxi.c,
                         lib/Numeric/LinearAlgebra/LAPACK/lapack-aux.c,
@@ -101,7 +112,14 @@ library
       else
         extra-libraries:   gsl mkl_lapack mkl_intel mkl_sequential mkl_core
     else
-      extra-libraries:  gsl blas lapack
+      if flag(gsl)
+        extra-libraries:  gsl gslcblas lapack
+      else
+        extra-libraries:  gsl blas lapack
 
     cc-options:         -O4
     ghc-prof-options:   -auto-all
+
+    if flag(unsafe)
+        cpp-options: -DUNSAFE
+
