@@ -1,5 +1,5 @@
 Name:                   paragon
-Version:                0.1.20
+Version:                0.1.21
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
@@ -66,7 +66,7 @@ Library
                         Language.Java.Paragon.TypeCheck.TcStmt,
                         Language.Java.Paragon.TypeCheck.TypeMap,
                         Language.Java.Paragon.TypeCheck.Types,
-                        Language.Java.Paragon.TypeCheck.Compile,
+                        Language.Java.Paragon.Compile,
                         Language.Java.Paragon.QuasiQuoter,
                         Language.Java.Paragon.QuasiQuoter.Lift,
                         Language.Java.Paragon.QuasiQuoter.Derive,
@@ -106,7 +106,7 @@ Executable parac
                         Language.Java.Paragon.TypeCheck.TcStmt,
                         Language.Java.Paragon.TypeCheck.TypeMap,
                         Language.Java.Paragon.TypeCheck.Types,
-                        Language.Java.Paragon.TypeCheck.Compile,
+                        Language.Java.Paragon.Compile,
                         Language.Java.Paragon.QuasiQuoter,
                         Language.Java.Paragon.QuasiQuoter.Lift,
                         Language.Java.Paragon.QuasiQuoter.Derive,
