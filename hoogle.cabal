@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hoogle
-version:            4.2.1
+version:            4.2.2
 license:            GPL
 license-file:       docs/LICENSE
 category:           Development
@@ -24,6 +24,7 @@ data-files:
     resources/*.ico
     resources/*.js
     resources/*.png
+    resources/*.html
     -- Cabal doesn't find files with . in them, Cabal bug #794
     resources/jquery-1.4.2.js
     resources/jquery.cookie.js
@@ -35,7 +36,7 @@ library
         array, bytestring, containers, directory, filepath, process, random,
         safe,
         binary,
-        parsec == 2.1.*,
+        parsec >= 2.1,
         transformers == 0.2.*,
         uniplate == 1.6.*,
         haskell-src-exts >= 1.9 && < 1.11
@@ -57,12 +58,6 @@ library
         Hoogle.Language.Haskell
 
     other-modules:
-        Data.Binary.Defer
-        Data.Binary.Defer.Array
-        Data.Binary.Defer.Class
-        Data.Binary.Defer.Index
-        Data.Binary.Defer.Monad
-        Data.Binary.Raw
         Data.Heap
         Data.TypeMap
         General.Base
@@ -83,7 +78,7 @@ library
         Hoogle.DataBase.TypeSearch.Result
         Hoogle.DataBase.TypeSearch.TypeScore
         Hoogle.DataBase.TypeSearch.All
-        Hoogle.Type.Documentation
+        Hoogle.Type.Docs
         Hoogle.Type.Item
         Hoogle.Type.Language
         Hoogle.Type.TagStr
@@ -97,19 +92,25 @@ library
         Hoogle.Score.Scoring
         Hoogle.Score.Type
         Hoogle.Search.Results
+        Hoogle.Store.All
+        Hoogle.Store.ReadBuffer
+        Hoogle.Store.Type
+        Hoogle.Store.WriteBuffer
 
 executable hoogle
     main-is:            Main.hs
     hs-source-dirs:     src
 
     build-depends:
-        time, old-locale,
+        time, old-time, old-locale,
         cmdargs == 0.6.*,
         tagsoup >= 0.11 && < 0.13,
         enumerator == 0.4.*,
-        blaze-builder == 0.2.*,
-        wai == 0.3.0,
-        warp == 0.3.0,
+        blaze-builder >= 0.2 && < 0.4,
+        http-types == 0.6.*,
+        case-insensitive == 0.2.*,
+        wai == 0.4.*,
+        warp == 0.4.*,
         Cabal >= 1.8 && < 1.11
 
     other-modules:
@@ -127,9 +128,11 @@ executable hoogle
         Recipe.Download
         Recipe.General
         Recipe.Hackage
+        Recipe.Haddock
         Recipe.Keyword
         Recipe.Type
         Test.All
+        Test.Docs
         Test.General
         Test.Parse_Query
         Test.Parse_TypeSig
@@ -137,3 +140,4 @@ executable hoogle
         Web.Page
         Web.Response
         Web.Server
+        Web.Template
