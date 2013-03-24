@@ -1,5 +1,5 @@
 Name:               happstack-data
-Version:            0.1
+Version:            0.2.1
 License:            BSD3
 License-File:       COPYING
 Author:             Happstack team, HAppS LLC
@@ -28,7 +28,7 @@ flag base4
 
 Flag tests
     Description: Build the testsuite, and include the tests in the library
-    Default: True
+    Default: False
 
 Library
   if flag(base4)
@@ -36,47 +36,49 @@ Library
   else
     Build-Depends:    base < 4
 
-  Build-Depends:      mtl, template-haskell, syb-with-class >= 0.5, HaXml >= 1.13 && < 1.14,
-                      happstack-util, bytestring, pretty, binary, containers
+  Build-Depends:      binary,
+                      bytestring,
+                      containers,
+                      happstack-util >= 0.2.1 && < 0.3, 
+                      HaXml >= 1.13 && < 1.14,
+                      mtl,
+                      pretty,
+                      syb-with-class >= 0.5,
+                      template-haskell
+
   hs-source-dirs:     src
   if flag(tests)
     hs-source-dirs:    tests
   Exposed-modules:
-    HAppS.Data
-    HAppS.Data.Default
-    HAppS.Data.Default.Generic
-    HAppS.Data.DeriveAll
-    HAppS.Data.HList
-    HAppS.Data.Migrate
-    HAppS.Data.Normalize
-    HAppS.Data.Pairs
-    HAppS.Data.Xml
-    HAppS.Data.Xml.HaXml
-    HAppS.Data.Atom
-    HAppS.Data.GOps
-    HAppS.Data.Proxy
-    HAppS.Data.Serialize
-    HAppS.Data.SerializeTH
+    Happstack.Data
+    Happstack.Data.Default
+    Happstack.Data.Default.Generic
+    Happstack.Data.DeriveAll
+    Happstack.Data.Migrate
+    Happstack.Data.Normalize
+    Happstack.Data.Pairs
+    Happstack.Data.Xml
+    Happstack.Data.Xml.HaXml
+    Happstack.Data.GOps
+    Happstack.Data.Proxy
+    Happstack.Data.Serialize
+    Happstack.Data.SerializeTH
   if flag(tests)
     Exposed-modules:   
-      HAppS.Data.Tests
-      HAppS.Data.Tests.HasT001
-      HAppS.Data.Tests.Xml001
-      HAppS.Data.Tests.Xml002
-      HAppS.Data.Tests.Xml003
-      HAppS.Data.Tests.HList001
-      HAppS.Data.Tests.HList002
+      Happstack.Data.Tests
+      Happstack.Data.Tests.Xml001
+      Happstack.Data.Tests.Xml002
+      Happstack.Data.Tests.Xml003
 
   Other-modules:
-    HAppS.Data.HListBase
-    HAppS.Data.Xml.Base
-    HAppS.Data.Xml.Instances
-    HAppS.Data.Xml.PrintParse
+    Happstack.Data.Xml.Base
+    Happstack.Data.Xml.Instances
+    Happstack.Data.Xml.PrintParse
   Extensions: TemplateHaskell, FlexibleInstances, UndecidableInstances,
               OverlappingInstances, MultiParamTypeClasses, CPP,
               FunctionalDependencies, DeriveDataTypeable, FlexibleContexts,
               ScopedTypeVariables, GADTs, GeneralizedNewtypeDeriving,
-              PatternSignatures, TypeSynonymInstances, PatternGuards,
+              TypeSynonymInstances, PatternGuards,
               PolymorphicComponents
   -- Should also have ", DeriveDataTypeable" but Cabal complains
   GHC-Options: -Wall
