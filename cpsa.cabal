@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.4
+Version:		2.2.5
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -44,7 +44,8 @@ Category:		Cryptography
 Build-Type:		Simple
 Data-Files:
    index.html cpsauser.html cpsa.mk Make.hs cpsaprimer.pdf
-   cpsaoverview.pdf ffgg.scm ns.scm or.scm woolam.scm yahalom.scm
+   cpsaoverview.pdf cpsaspec.pdf cpsadesign.pdf ffgg.scm ns.scm or.scm
+   woolam.scm yahalom.scm
 Data-Dir:	    	doc
 Extra-Source-Files:
   Makefile ChangeLog README NEWS ghci cpsatst setup.bat doc/README
@@ -95,7 +96,11 @@ Extra-Source-Files:
   tst/tor.tst tst/dh_cert.scm tst/dh_cert.tst
   tst/epmo_acctnum-key-hash.scm tst/epmo_acctnum-key-hash.tst
   tst/epmo-key-hash.scm tst/epmo-key-hash.tst tst/wang.lisp
-  tst/pkinit.scm tst/pkinit.tst
+  tst/pkinit.scm tst/pkinit.tst tst/print.scm tst/print.tst
+  tst/epmo-hash.scm tst/epmo-hash.tst tst/hashtest-key-hash.scm
+  tst/hashtest-key-hash.tst tst/hashtest.scm tst/hashtest.tst
+  tst/wang-key-hash.scm tst/wang-key-hash.tst tst/wang-hash.scm
+  tst/wang-hash.tst
 
 -- Algebra implementations must import CPSA.Lib.CPSA.
 -- Tools may additionally import CPSA.Lib.Entry.
