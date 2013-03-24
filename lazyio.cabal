@@ -1,5 +1,5 @@
 Name:             lazyio
-Version:          0.0.3.1
+Version:          0.0.3.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -13,7 +13,8 @@ Description:
   which is however driven by its output.
   That is, the LazyIO action is only executed as far as necessary
   in order to provide the required data.
-Tested-With:       GHC==6.8.2
+Tested-With:       GHC==6.8.2, GHC==6.12.1
+Tested-With:       GHC==7.4.1
 Cabal-Version:     >=1.6
 Build-Type:        Simple
 Source-Repository head
@@ -23,7 +24,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/lazyio/
-  tag:      0.0.3.1
+  tag:      0.0.3.2
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
