@@ -1,17 +1,20 @@
 cabal-Version: >= 1.2
 name: gtk2hs-rpn
-version: 0.0.1
+version: 0.0.2
 synopsis:
   Adds a module to gtk2hs allowing layouts to
   be defined using reverse polish notation.
 description:
-  Adds a module 'Graphics.UI.Gtk.Layout.Rpn' to
-  gtk2hs. This module defines a type 'RPN' for
-  operators, and is an instance of Monoid class.
-  You can combine those operators to define a
-  layout, as well as buttons and other widgets.
+  Adds a module 'Graphics.UI.Gtk.Layout.Rpn' to gtk2hs. This
+  module defines a type 'RPN' for operators, and is an instance
+  of Monoid class.  You can combine those operators using reverse
+  polish notation, as made popular by, say, HP calculators. There
+  are operators for layout elements, like expanders, panes,
+  boxes and notebooks, and for a few other widgets, like buttons
+  and labels. You can include any gtk2hs widget in the stack.
 build-type: Simple
 license: LGPL
+license-file: LICENSE
 maintainer: Maurício CA <mauricio.antunes@gmail.com>
 category: GUI
 Library
@@ -21,9 +24,4 @@ Library
     NoMonomorphismRestriction
   exposed-modules:
     Graphics.UI.Gtk.Layout.Rpn
-Executable example
-  main-is: example.hs
-  build-depends: base, gtk >= 0.10, cairo
-  hs-source-dirs: src
-  extensions:
-    NoMonomorphismRestriction
+    Graphics.UI.Gtk.Layout.Rpn.CanBeCasted
