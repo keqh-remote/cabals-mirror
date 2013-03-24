@@ -1,5 +1,5 @@
 name:               nerf
-version:            0.1.0
+version:            0.2.0
 synopsis:           Nerf, the named entity recognition tool based on linear-chain CRFs
 description:
     The package provides the named entity recognition (NER) tool divided into a
@@ -32,14 +32,14 @@ library
       , vector
       , text
       , binary
-      , text-binary
+      , text-binary >= 0.1 && < 0.2
       , polysoup >= 0.1 && < 0.2
       , crf-chain1 >= 0.2 && < 0.3
       , data-named >= 0.5 && < 0.6
       , monad-ox >= 0.2 && < 0.3
       , sgd >= 0.2.1 && < 0.3
-      , polimorf >= 0.3.1 && < 0.4
-      , adict >= 0.2 && < 0.3
+      , polimorf >= 0.5.0 && < 0.6
+      , dawg >= 0.5 && < 0.6
       , cmdargs
 
     exposed-modules:
@@ -50,6 +50,7 @@ library
       , NLP.Nerf.Dict.Base
       , NLP.Nerf.Dict.PNEG
       , NLP.Nerf.Dict.NELexicon
+      , NLP.Nerf.Dict.Prolexbase
 
     ghc-options: -Wall -O2
 
@@ -57,6 +58,7 @@ source-repository head
     type: git
     location: git://github.com/kawu/nerf.git
 
-Executable nerf
-  Hs-Source-Dirs: ., tools
-  Main-is: nerf.hs
+executable nerf
+  hs-source-dirs: ., tools
+  main-is: nerf.hs
+  ghc-options: -Wall -O2 -threaded
