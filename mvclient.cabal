@@ -1,5 +1,5 @@
 Name:                mvclient
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Client library for metaverse systems like Second Life
 Description:         This implements the client side of connections to virtual world environments
                      like Linden Labs' Second Life or OpenSim (http://opesimulator.org), sometimes
@@ -20,6 +20,12 @@ Category:            Network
 Build-type:          Custom
 
 Cabal-version:       >=1.2
+
+Extra-source-files:  TODO.txt,
+                     BuildTools/Template2Hs.hs,
+                     other/LogTranslate.hs,
+                     other/lmvclient.log,
+                     other/slclient.log
 
 Library
   Hs-source-dirs:      src
