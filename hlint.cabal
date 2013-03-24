@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.6.21
+version:            1.7
 -- license is GPL v2 only
 license:            GPL
 license-file:       LICENSE
@@ -37,7 +37,7 @@ library
         base == 4.*, process, filepath, directory, mtl, containers,
         hscolour == 1.16.*,
         cpphs == 1.11.*,
-        haskell-src-exts == 1.8.* && >= 1.8.2,
+        haskell-src-exts == 1.9.*,
         uniplate == 1.5.*
 
     ghc-options:        -fno-warn-overlapping-patterns
@@ -47,13 +47,12 @@ library
         Language.Haskell.HLint
     other-modules:
         Paths_hlint
+        Apply
         CmdLine
-        FindHints
-        Hint
         HLint
+        Idea
         Settings
         Report
-        Type
         Test
         Util
         Parallel
@@ -76,6 +75,7 @@ library
         Hint.Naming
         Hint.Pragma
         Hint.Structure
+        Hint.Type
         Hint.Util
 
 
