@@ -1,5 +1,5 @@
 name:           nanoAgda
-version:        0.1.1
+version:        1.0.0
 category:       Dependent Types
 synopsis:       A toy dependently-typed language
 description:
@@ -39,7 +39,7 @@ executable nanoAgda
   build-depends: containers==0.4.*
   build-depends: pretty==1.1.*
   build-depends: parsec==2.1.*
-  build-depends: BNFC-meta==0.2.*
+  build-depends: BNFC-meta==0.3.*
   build-depends: transformers == 0.2.*
   build-depends: mtl == 2.0.*
   
