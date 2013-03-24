@@ -1,5 +1,5 @@
 Name:                stream-fusion
-Version:             0.1.1
+Version:             0.1.2
 Author:              Duncan Coutts, Don Stewart
 Maintainer:          duncan.coutts@worc.ox.ac.uk, dons@galois.com
 License:             BSD3
@@ -15,6 +15,7 @@ Description:
         To use, simply import Data.List.Stream in place of Data.List,
         and hide list functions from the Prelude.
 Category:            Data
+Build-Type:          Simple
 Build-Depends:       base
 Stability:           experimental
 Tested-with:         GHC==6.8
@@ -22,4 +23,16 @@ Exposed-modules:     Data.Stream
                      Data.List.Stream
                      Control.Monad.Stream
 Extensions:          CPP, BangPatterns, ExistentialQuantification
-ghc-options:         -fglasgow-exts -O2 -Wall -fno-warn-orphans -DEXTERNAL_PACKAGE -fliberate-case-threshold100 -fdicts-cheap -fno-method-sharing
+cpp-options:         -DEXTERNAL_PACKAGE
+ghc-options:         -fglasgow-exts
+                     -O2
+                     -fvia-C -optc-O2
+                     -fspec-constr
+                     -funbox-strict-fields 
+                     -fdicts-cheap
+                     -fno-method-sharing
+                     -fmax-simplifier-iterations10
+                     -fliberate-case-threshold100
+                     -Wall
+                     -fno-warn-orphans
+
