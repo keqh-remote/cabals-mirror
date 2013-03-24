@@ -1,10 +1,10 @@
 name: OpenGLRaw
-version: 1.1.0.1
+version: 1.1.0.2
 license: BSD3
 license-file: LICENSE
-maintainer: Sven Panne <sven.panne@aedion.de>
-bug-reports: mailto:hopengl@haskell.org
-homepage: http://www.haskell.org/HOpenGL/
+maintainer: Jason Dagit <dagitj@gmail.com>, Sven Panne <sven.panne@aedion.de>
+bug-reports: https://github.com/haskell-opengl/OpenGLRaw/issues
+homepage: http://www.haskell.org/haskellwiki/Opengl
 category: Graphics
 synopsis: A raw binding for the OpenGL graphics system
 description:
@@ -25,7 +25,7 @@ description:
    please see <http://www.opengl.org/>
    and <http://www.opengl.org/registry/>.
 build-type: Simple
-cabal-version:  >= 1.2
+cabal-version:  >= 1.6
 extra-source-files:
    include/CTypes.h
    include/HsOpenGLRaw.h
@@ -248,3 +248,7 @@ library
          frameworks: OpenGL
       else
          extra-libraries: GL
+
+source-repository head
+  type:     git
+  location: https://github.com/haskell-opengl/OpenGLRaw
