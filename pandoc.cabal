@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.8.1.1
+Version:         1.8.1.2
 Cabal-Version:   >= 1.6
 Build-Type:      Custom
 License:         GPL
@@ -7,7 +7,7 @@ License-File:    COPYING
 Copyright:       (c) 2006-2011 John MacFarlane
 Author:          John MacFarlane <jgm@berkeley.edu>
 Maintainer:      John MacFarlane <jgm@berkeley.edu>
-Bug-Reports:     http://code.google.com/p/pandoc/issues/list
+Bug-Reports:     https://github.com/jgm/pandoc/issues
 Stability:       alpha
 Homepage:        http://johnmacfarlane.net/pandoc
 Category:        Text
