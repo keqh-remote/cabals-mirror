@@ -1,5 +1,5 @@
 name:            aivika-experiment
-version:         0.1.2
+version:         0.2
 synopsis:        Simulation experiments for the Aivika library
 description:
     This package allows defining simulation experiments for the Aivika
@@ -28,7 +28,14 @@ library
                      Simulation.Aivika.Experiment.HtmlWriter
                      Simulation.Aivika.Experiment.LastValueView
                      Simulation.Aivika.Experiment.TableView
+                     Simulation.Aivika.Experiment.TimingStatsView
+                     Simulation.Aivika.Experiment.TimingStatsWriter
+                     Simulation.Aivika.Experiment.SamplingStatsWriter
+                     Simulation.Aivika.Experiment.FinalStatsView
                      Simulation.Aivika.Experiment.Histogram
+                     Simulation.Aivika.Experiment.ExperimentSpecsView
+                     Simulation.Aivika.Experiment.ExperimentSpecsWriter
+                     Simulation.Aivika.Experiment.FinalTableView
                      Simulation.Aivika.Experiment.Utils
                      
     build-depends:   base >= 3 && < 6,
@@ -37,10 +44,11 @@ library
                      containers >= 0.4.0.0,
                      directory >= 1.1.0.2,
                      filepath >= 1.3.0.0,
+                     utf8-string >= 0.3.7,
                      MissingH >= 1.2.0.0,
                      network >= 2.3.0.13,
                      parallel-io >= 0.3.2.1,
-                     aivika >= 0.4.3
+                     aivika >= 0.5.1
 
     extensions:      FlexibleInstances
                      
