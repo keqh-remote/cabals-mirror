@@ -1,5 +1,5 @@
 Name:         blaze-html
-Version:      0.4.3.4
+Version:      0.5.0.0
 Homepage:     http://jaspervdj.be/blaze
 Bug-Reports:  http://github.com/jaspervdj/blaze-html/issues
 License:      BSD3
@@ -27,7 +27,11 @@ Library
   Ghc-Options:    -Wall
 
   Exposed-modules:
-    Text.Blaze
+    Text.Blaze.Html
+    Text.Blaze.Html.Renderer.Pretty
+    Text.Blaze.Html.Renderer.String
+    Text.Blaze.Html.Renderer.Text
+    Text.Blaze.Html.Renderer.Utf8
     Text.Blaze.Html4.FrameSet
     Text.Blaze.Html4.FrameSet.Attributes
     Text.Blaze.Html4.Strict
@@ -36,11 +40,6 @@ Library
     Text.Blaze.Html4.Transitional.Attributes
     Text.Blaze.Html5
     Text.Blaze.Html5.Attributes
-    Text.Blaze.Internal
-    Text.Blaze.Renderer.Pretty
-    Text.Blaze.Renderer.String
-    Text.Blaze.Renderer.Text
-    Text.Blaze.Renderer.Utf8
     Text.Blaze.XHtml1.FrameSet
     Text.Blaze.XHtml1.FrameSet.Attributes
     Text.Blaze.XHtml1.Strict
@@ -49,10 +48,11 @@ Library
     Text.Blaze.XHtml1.Transitional.Attributes
   
   Build-depends:
-    base          >= 4    && < 5,
-    blaze-builder >= 0.2  && < 0.4,
-    text          >= 0.10 && < 0.12,
-    bytestring    >= 0.9  && < 0.10
+    base          >= 4     && < 5,
+    blaze-builder >= 0.2   && < 0.4,
+    blaze-markup  >= 0.5.1 && < 0.6,
+    bytestring    >= 0.9   && < 0.10,
+    text          >= 0.10  && < 0.12
 
 Test-suite blaze-html-tests
   Type:           exitcode-stdio-1.0
@@ -61,9 +61,8 @@ Test-suite blaze-html-tests
   Ghc-options:    -Wall
 
   Other-modules:
-    Text.Blaze.Tests
-    Text.Blaze.Tests.Cases
-    Text.Blaze.Tests.Util
+    Text.Blaze.Html.Tests
+    Text.Blaze.Html.Tests.Util
     Util.Tests
 
   Build-depends:
@@ -74,10 +73,11 @@ Test-suite blaze-html-tests
     test-framework-hunit       >= 0.2 && < 0.3,
     test-framework-quickcheck2 >= 0.2 && < 0.3,
     -- Copied from regular dependencies...
-    base          >= 4    && < 5,
-    blaze-builder >= 0.2  && < 0.4,
-    text          >= 0.10 && < 0.12,
-    bytestring    >= 0.9  && < 0.10
+    base          >= 4     && < 5,
+    blaze-builder >= 0.2   && < 0.4,
+    blaze-markup  >= 0.5.1 && < 0.6,
+    bytestring    >= 0.9   && < 0.10,
+    text          >= 0.10  && < 0.12
 
 Source-repository head
   Type:     git
