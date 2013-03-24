@@ -1,5 +1,5 @@
 Name            : Pugs
-Version         : 6.2.13.3
+Version         : 6.2.13.4
 license         : BSD3
 license-file    : LICENSE
 cabal-version   : >= 1.2
@@ -137,7 +137,7 @@ executable pugs
         HsSyck           >= 0.44
         -- HsPerl5
 
-    if flag(EnableReadLine)
+    if !os(win32) && flag(EnableReadLine)
         build-depends: readline
         cpp-options: -DPUGS_HAVE_READLINE=1
 
