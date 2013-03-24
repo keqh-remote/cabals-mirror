@@ -1,5 +1,5 @@
 name:            shakespeare-text
-version:         0.10.3
+version:         0.10.4
 license:         BSD3
 license-file:    LICENSE
 author:          Greg Weber <greg@gregweber.info>
@@ -38,6 +38,8 @@ library
 
     exposed-modules: Text.Shakespeare.Text
     ghc-options:     -Wall
+    if impl(ghc >= 7.4)
+       cpp-options: -DGHC_7_4
 
 test-suite test
     hs-source-dirs: test
