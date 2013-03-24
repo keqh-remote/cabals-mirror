@@ -1,5 +1,5 @@
 Name:           flower
-Version:        0.6.5
+Version:        0.7
 License:        GPL
 Cabal-Version:  >= 1.6
 Author:         Ketil Malde
@@ -22,10 +22,11 @@ Description:    flower - FLOWgram ExtractoR tools
                 invalid region.  This was likely a one-time bug in the 454 software, so this program
                 is probably not so useful any more.
 
-HomePage:       http://blog.malde.org/index.php/flower/
+HomePage:       http://biohaskell.org/Applications/Flower
 -- Source-Repository: http//malde.org/~ketil/biohaskell/flower
 Build-Type:     Simple
 Tested-with:    GHC==6.8.3, GHC==6.12.1
+Extra-Source-Files:  test.sh
 
 -- Data-files:     README
 Executable     flower
@@ -33,23 +34,26 @@ Executable     flower
     Other-Modules:  Print, Metrics, Options, Fork
     Hs-Source-Dirs: src
     Ghc-Options:    -Wall -threaded
-    Build-Depends:  bio >= 0.4.8, base >=3 && <5, array >= 0.1, bytestring >= 0.9.1, binary == 0.4.*, random, cmdargs >= 0.5, containers, mtl
+    Build-Depends:  bio >= 0.4.9, base >=3 && <5, array >= 0.1, bytestring >= 0.9.1, binary == 0.4.*, random, cmdargs >= 0.5, containers, mtl
 
 Executable     flowselect
     Main-Is:        FlowSelect.hs
     Other-Modules:  Metrics
     Hs-Source-Dirs: src
     Ghc-Options:    -Wall
+    Build-Depends:  bio >= 0.4.9, random, base >= 3 && < 5
     Extensions:     ExistentialQuantification
 
 Executable     frecover
     Main-Is:        FRecover.hs
     Hs-Source-Dirs: src
+    Build-Depends:  bio >= 0.4.9, base >= 3 && < 5
     Ghc-Options:    -Wall
 
 Executable     frename
     Main-Is:        FRename.hs
     Hs-Source-Dirs: src
+    Build-Depends:  bio >= 0.4.9, base >= 3 && < 5, bytestring >= 0.9.1
     Ghc-Options:    -Wall
 
 Executable     flowt
@@ -59,4 +63,5 @@ Executable     flowt
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
       Ghc-Options:     -Wall
+    Build-Depends:  bio >= 0.4.9, base >= 3 && < 5, cmdargs >= 0.5, containers, bytestring >= 0.9.1
     Extensions:     DeriveDataTypeable
