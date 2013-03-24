@@ -1,5 +1,5 @@
 name:                   event-monad
-version:                0.0.1.0
+version:                0.0.2.0
 stability:              experimental
 license:                PublicDomain
 
@@ -28,7 +28,7 @@ Library
                         Control.Monad.EventM
   other-modules:        Control.Monad.Event.Internal.Types
                         Control.Monad.Event.Internal.EventID
-  build-depends:        base >= 3, 
+  build-depends:        base >= 3 && <5, 
                         containers, 
                         event-handlers >= 0.0.0.2, 
                         haskell98,
@@ -36,5 +36,5 @@ Library
                         mtl, 
                         pretty,
                         prettyclass,
-                        priority-queue >= 0.1.2, 
-                        stateref >= 0.2.1.1
+                        priority-queue >= 0.2, 
+                        stateref >= 0.3 && <0.4
