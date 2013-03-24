@@ -1,5 +1,5 @@
 Name:                hweblib
-Version:             0.2
+Version:             0.3
 Synopsis:            Haskell Web Library
 Description:
   The library includes attoparsec based incremental parsers for
@@ -18,7 +18,9 @@ Cabal-version:       >=1.6
 Library
   -- Modules exported by the library.
   Exposed-modules: 
-    Network.Parser.RfcCommon
+      Network.Types
+    , Network.Http 
+    , Network.Parser.RfcCommon
     , Network.Parser.Rfc2234
     , Network.Parser.Rfc2822
     , Network.Parser.Rfc2045
@@ -32,7 +34,7 @@ Library
     base >= 4 && < 5
     , containers
     , bytestring
-    , monads-fd
+    , mtl 
     , transformers
     , text
     , attoparsec
