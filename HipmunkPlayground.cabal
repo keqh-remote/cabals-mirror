@@ -3,7 +3,7 @@ Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          HipmunkPlayground
-Version:       5.1.0
+Version:       5.2.0
 Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
@@ -15,9 +15,13 @@ Description:
       This is a simple OpenGL program that allows you to see
       some of Hipmunk's functions in action.
       .
-      New in version 5.1.0:
+      New in version 5.2.0:
       .
-      * Updated to Hipmunk 5.1.0.
+      * Updated to Hipmunk 5.2.0 (which uses StateVar).
+      .
+      * Updated to OpenGL 2.4.0.1.
+      .
+      * Updated to GLFW 0.4.2.
       .
       Licensed under the MIT license (like Hipmunk itself).
 Extra-Source-Files:
@@ -29,11 +33,11 @@ Flag small_base
 Executable HipmunkPlayground
   if flag(small_base)
     Build-Depends: base >= 3 && < 5, containers >= 0.1 && < 0.4,
-                   Hipmunk >= 5.1 && < 5.2, OpenGL >= 2.1 && < 2.3,
-                   GLFW >= 0.3 && < 0.4
+                   Hipmunk >= 5.2 && < 5.3, GLFW >= 0.4 && < 0.5,
+                   OpenGL >= 2.4 && < 2.5, StateVar >= 1.0 && < 1.1
   else
     Build-Depends: base >= 2 && < 3,
-                   Hipmunk >= 5.1 && < 5.2, OpenGL >= 2.1 && < 2.3,
-                   GLFW >= 0.3 && < 0.4
+                   Hipmunk >= 5.2 && < 5.3, GLFW >= 0.4 && < 0.5,
+                   OpenGL >= 2.4 && < 2.5, StateVar >= 1.0 && < 1.1
   GHC-Options:   -Wall
   Main-is: Playground.hs
