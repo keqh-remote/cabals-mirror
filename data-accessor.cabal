@@ -1,5 +1,5 @@
 Name:             data-accessor
-Version:          0.2.2.1
+Version:          0.2.2.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>, Luke Palmer <lrpalmer@gmail.com>
@@ -88,7 +88,7 @@ Flag splitBase
 
 Library
   Build-Depends:
-    transformers >=0.2 && <0.3
+    transformers >=0.2 && <0.4
   If flag(splitBase)
     Build-Depends:
       array >=0.1 && <0.5,
