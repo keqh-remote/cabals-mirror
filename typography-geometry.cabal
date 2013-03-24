@@ -1,5 +1,5 @@
 Name:		typography-geometry
-Version: 	1.0
+Version: 	1.0.0
 Synopsis:	Drawings for printed text documents
 Description: 	Drawings for printed text documents
 Category:	Typography
@@ -14,5 +14,6 @@ source-repository this
         tag: 1.0
 Library
         Build-Depends:	base<5, vector,polynomials-bernstein,containers,parallel
-        Exposed-modules: Graphics.Typography, Graphics.Typography.Bezier,
-                         Graphics.Typography.Approximation, Graphics.Typography.Outlines
+        Exposed-modules: Graphics.Typography.Geometry, Graphics.Typography.Geometry.Bezier,
+                         Graphics.Typography.Geometry.Approximation,
+                         Graphics.Typography.Geometry.Outlines
