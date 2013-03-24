@@ -2,13 +2,13 @@ Name: Lucu
 Synopsis: HTTP Daemonic Library
 Description:
         Lucu is an HTTP daemonic library. It can be embedded in any
-        Haskell program and runs in an independent thread.
-        Lucu is not a replacement for Apache. It is intended to be
-        used to create an efficient web-based application without
-        messing around FastCGI. It is also intended to be run behind a
-        reverse-proxy so it doesn't have some facilities like logging,
-        client filtering or such like.
-Version: 0.6
+        Haskell program and runs in an independent thread.  Lucu is
+        not a replacement for Apache or lighttpd. It is intended to be
+        used to create an efficient web-based RESTful application
+        without messing around FastCGI. It is also intended to be run
+        behind a reverse-proxy so it doesn't have some facilities like
+        logging, client filtering or such like.
+Version: 0.7
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
@@ -96,8 +96,12 @@ Library
         Network.HTTP.Lucu.SocketLike
 
     Extensions:
-        BangPatterns, DeriveDataTypeable, FlexibleContexts,
-        FlexibleInstances, ScopedTypeVariables, TypeFamilies,
+        BangPatterns
+        DeriveDataTypeable
+        FlexibleContexts
+        FlexibleInstances
+        ScopedTypeVariables
+        TypeFamilies
         UnboxedTuples
 
     ghc-options:
@@ -113,7 +117,9 @@ Executable lucu-implant-file
     Main-Is: ImplantFile.hs
 
     Extensions:
-        BangPatterns, ScopedTypeVariables, UnboxedTuples
+        BangPatterns
+        ScopedTypeVariables
+        UnboxedTuples
 
     ghc-options:
         -Wall
