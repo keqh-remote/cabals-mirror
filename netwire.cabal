@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       3.0.0
+Version:       3.0.1
 Category:      Control, FRP
 Synopsis:      Fast generic automaton arrow transformer for AFRP
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -32,6 +32,7 @@ Library
         vector-space >= 0.7.8
     Extensions:
         Arrows
+        DoRec
         FlexibleContexts
         FlexibleInstances
         FunctionalDependencies
