@@ -1,5 +1,5 @@
 Name:              vector-algorithms
-Version:           0.4
+Version:           0.5.0
 License:           BSD3
 License-File:      LICENSE
 Author:            Dan Doel
@@ -35,7 +35,8 @@ Library
         Data.Vector.Algorithms.Merge
         Data.Vector.Algorithms.Radix
         Data.Vector.Algorithms.Search
-        Data.Vector.Algorithms.TriHeap
+        Data.Vector.Algorithms.Heap
+        Data.Vector.Algorithms.AmericanFlag
 
     Other-Modules:
         Data.Vector.Algorithms.Common
@@ -45,6 +46,7 @@ Library
         TypeOperators,
         Rank2Types,
         ScopedTypeVariables,
+        FlexibleContexts,
         CPP
 
     GHC-Options:
