@@ -1,5 +1,5 @@
 Name:                vty-ui
-Version:             1.4
+Version:             1.5
 Synopsis:
   An interactive terminal user interface library for Vty
 
@@ -12,7 +12,7 @@ Description:
   having to worry about terminal size.
   .
   Be sure to check out the user manual for the version you're using
-  at: <http://codevine.org/vty-ui/>
+  at: <http://jtdaugherty.github.com/vty-ui/>
   .
   Build with the 'demos' flag to get a set of demonstration programs
   to see some of the things the library can do!
@@ -24,7 +24,7 @@ Build-Type:          Simple
 License:             BSD3
 License-File:        LICENSE
 Cabal-Version:       >= 1.6
-Homepage:            http://codevine.org/vty-ui/
+Homepage:            http://jtdaugherty.github.com/vty-ui/
 
 Data-Files:
     doc/ch1/api_notes.tex
@@ -90,17 +90,19 @@ Library
     containers >= 0.2 && < 0.5,
     regex-base >= 0.93 && < 0.94,
     directory >= 1.0 && < 1.2,
-    filepath >= 1.1 && < 1.3,
+    filepath >= 1.1 && < 1.4,
     unix >= 2.4 && < 2.6,
     mtl >= 2.0 && < 2.1,
     stm >= 2.1 && < 2.3,
-    array >= 0.3 && < 0.4
+    array >= 0.3.0.0 && < 0.5.0.0,
+    vector >= 0.9
 
   GHC-Options:       -Wall
 
   Hs-Source-Dirs:    src
   Exposed-Modules:
           Graphics.Vty.Widgets.All
+          Graphics.Vty.Widgets.Alignment
           Graphics.Vty.Widgets.Text
           Graphics.Vty.Widgets.Core
           Graphics.Vty.Widgets.Box
@@ -159,6 +161,19 @@ Executable vty-ui-list-demo
   if !flag(demos)
     Buildable: False
 
+Executable vty-ui-progressbar-demo
+  Hs-Source-Dirs:  src
+  GHC-Options:     -Wall
+  Main-is:         ProgressBarDemo.hs
+  if os(darwin)
+    Extra-Lib-Dirs:  /usr/lib
+  Build-Depends:
+    base >= 4 && < 5,
+    mtl >= 2.0 && < 2.1,
+    vty >= 4.6 && < 4.8
+  if !flag(demos)
+    Buildable: False
+
 Executable vty-ui-complex-demo
   Hs-Source-Dirs:  src
   GHC-Options:     -Wall
@@ -169,7 +184,7 @@ Executable vty-ui-complex-demo
     base >= 4 && < 5,
     mtl >= 2.0 && < 2.1,
     bytestring >= 0.9 && < 1.0,
-    time >= 1.1 && < 1.3,
+    time >= 1.1 && < 1.5,
     old-locale >= 1.0 && < 1.1,
     vty >= 4.6 && < 4.8
   if !flag(demos)
@@ -205,6 +220,19 @@ Executable vty-ui-dialog-demo
   Hs-Source-Dirs:  src
   GHC-Options:     -Wall
   Main-is:         DialogDemo.hs
+  if os(darwin)
+    Extra-Lib-Dirs:  /usr/lib
+  Build-Depends:
+    base >= 4 && < 5,
+    mtl >= 2.0 && < 2.1,
+    vty >= 4.6 && < 4.8
+  if !flag(demos)
+    Buildable: False
+
+Executable vty-ui-edit-demo
+  Hs-Source-Dirs:  src
+  GHC-Options:     -Wall
+  Main-is:         EditDemo.hs
   if os(darwin)
     Extra-Lib-Dirs:  /usr/lib
   Build-Depends:
