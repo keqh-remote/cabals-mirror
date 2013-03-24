@@ -1,5 +1,5 @@
 name:            uconv
-version:         0.0.2
+version:         0.0.3
 copyright:       2008 Audrey Tang
 license:         BSD3
 license-file:    LICENSE
@@ -9,10 +9,10 @@ synopsis:        String encoding conversion with ICU
 description:     Provides an interface to ICU's uconv library function
                  for string encoding conversion.
 stability:       experimental
-build-type:      Configure
+build-type:      Custom
 cabal-version:   >= 1.2.1
 category:        Codec
-extra-source-files: README examples/huconv.hs configure
+extra-source-files: README examples/huconv.hs
 
 flag bytestring_in_base
 
