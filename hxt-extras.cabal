@@ -1,5 +1,5 @@
 Name:                hxt-extras
-Version:             0.3
+Version:             0.4
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            Extra functions for HXT
@@ -7,19 +7,19 @@ Description:         Extra library functionality for HXT
 Homepage:            http://code.google.com/p/hxt-extras/
 Category:            XML
 Author:              Tony Morris
-Maintainer:          code@tmorris.net
-Copyright:           2009 Tony Morris
+Maintainer:          ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ
+Copyright:           2010 Tony Morris
 build-type:          Simple
 cabal-version:       >= 1.2
 
 Flag small_base
-  Description:     Choose the new, split-up base package.
+  Description:       Choose the new, split-up base package.
 
 Library
-  if flag(small_base)
-    Build-Depends: base < 4 && >= 3, hxt
-  else
-    Build-Depends: base < 3, hxt
+  Build-Depends:     base < 5 && >= 3,
+                     hxt == 8.5.4
 
-  GHC-Options:     -Wall
-  Exposed-Modules: Text.XML.HXT.Extras
+  GHC-Options:       -Wall
+
+  Exposed-Modules:   Text.XML.HXT.Extras
+
