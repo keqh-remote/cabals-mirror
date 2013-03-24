@@ -1,9 +1,9 @@
 cabal-version: >= 1.10
 name:          LambdaHack
-version:       0.2.1
+version:       0.2.6
 license:       BSD3
 license-file:  LICENSE
-tested-with:   GHC == 7.2.2, GHC == 7.4.1
+tested-with:   GHC == 7.2.2, GHC == 7.4.1, GHC == 7.6.1
 data-files:    LICENSE, CREDITS, PLAYING.md, README.md,
                config.default, config.bot, scores
 author:        Andres Loeh, Mikolaj Konarski
@@ -12,7 +12,7 @@ description:   This is an alpha release of LambdaHack,
                a game engine library for roguelike games
                of arbitrary theme, size and complexity,
                packaged together with a small example dungeon crawler.
-               When completed, it will let you specify content
+               When completed, the engine will let you specify content
                to be procedurally generated, define the AI behaviour
                on top of the generic content-independent rules
                and compile a ready-to-play game binary, using either
@@ -22,22 +22,29 @@ description:   This is an alpha release of LambdaHack,
                but the fundamental source of flexibility lies
                in the strict and type-safe separation of code and content.
                .
-               New in this release are missiles flying for three turns
-               (by an old kosmikus' idea), visual feedback for targeting
-               and animations of combat and individual monster moves.
-               Upcoming new features: improved squad combat, player action
-               undo/redo, completely redesigned UI. Long term goals
-               are focused around procedural content generation and include
-               in-game content creation, auto-balancing, persistent
-               content modification based on player behaviour
-               and the improvement of the AI monad EDSL, so that rules
-               for synthesising monster behaviour from game content
-               are extensible, readable and easy to debug.
+               New in this release are the Main Menu and the improved
+               and configurable mode of squad combat.
+               Upcoming new features: playable monsters faction, more than
+               two factions inhabiting the dungeon, AIvAI, PvP, improved
+               ranged combat AI, dynamic light sources, explosions
+               player action undo/redo, completely redesigned UI. Long term
+               goals are focused around procedural content generation
+               and include in-game content creation, auto-balancing
+               and persistent content modification based on player behaviour.
                .
                A larger game that depends on the LambdaHack library
                is Allure of the Stars, available from
                <http://hackage.haskell.org/package/Allure>.
-synopsis:      A roguelike game engine in early and very active development
+               .
+               Note: All modules in the library are kept visible,
+               to let games override each, but reuse as many as possible.
+               OTOH, to reflect that some modules are implementation details
+               relative to others, the source code adheres to the following
+               convention. If a module has the same name as a directory,
+               the module is the exclusive interface to the directory.
+               No references to the modules in the directory are allowed
+               except from the interface module.
+synopsis:      A roguelike game engine in early and active development
 homepage:      http://github.com/kosmikus/LambdaHack
 bug-reports:   http://github.com/kosmikus/LambdaHack/issues
 category:      Game Engine
@@ -60,26 +67,36 @@ flag std
   default:         False
 
 library
-  exposed-modules: Game.LambdaHack.Action,
+  exposed-modules: Game.LambdaHack.Ability,
+                   Game.LambdaHack.Action,
+                   Game.LambdaHack.Action.ActionLift
+                   Game.LambdaHack.Action.ConfigIO
+                   Game.LambdaHack.Action.Frontend,
+                   Game.LambdaHack.Action.Frontend.Chosen,
+                   Game.LambdaHack.Action.HighScore,
+                   Game.LambdaHack.Action.Save,
                    Game.LambdaHack.Actions,
                    Game.LambdaHack.Actor,
                    Game.LambdaHack.ActorState,
+                   Game.LambdaHack.Animation,
                    Game.LambdaHack.Area,
                    Game.LambdaHack.AreaRnd,
                    Game.LambdaHack.Binding,
                    Game.LambdaHack.BindingAction,
+                   Game.LambdaHack.CDefs,
                    Game.LambdaHack.Cave,
                    Game.LambdaHack.Color,
                    Game.LambdaHack.Command,
+                   Game.LambdaHack.CommandAction,
                    Game.LambdaHack.Config,
-                   Game.LambdaHack.Content,
                    Game.LambdaHack.Content.ActorKind,
                    Game.LambdaHack.Content.CaveKind,
+                   Game.LambdaHack.Content.FactionKind,
                    Game.LambdaHack.Content.ItemKind,
                    Game.LambdaHack.Content.PlaceKind,
                    Game.LambdaHack.Content.RuleKind,
+                   Game.LambdaHack.Content.StrategyKind,
                    Game.LambdaHack.Content.TileKind,
-                   Game.LambdaHack.Display,
                    Game.LambdaHack.Draw,
                    Game.LambdaHack.Dungeon,
                    Game.LambdaHack.DungeonState,
@@ -93,7 +110,6 @@ library
                    Game.LambdaHack.FOV.Permissive,
                    Game.LambdaHack.FOV.Shadow,
                    Game.LambdaHack.Grammar,
-                   Game.LambdaHack.HighScore,
                    Game.LambdaHack.Item,
                    Game.LambdaHack.ItemAction,
                    Game.LambdaHack.Key,
@@ -107,8 +123,6 @@ library
                    Game.LambdaHack.PointXY,
                    Game.LambdaHack.Random,
                    Game.LambdaHack.Running,
-                   Game.LambdaHack.Save,
-                   Game.LambdaHack.Start,
                    Game.LambdaHack.State,
                    Game.LambdaHack.Strategy,
                    Game.LambdaHack.StrategyAction,
@@ -144,34 +158,35 @@ library
   ghc-options:     -fno-ignore-asserts -funbox-strict-fields
 
   if flag(curses) {
-    exposed-modules: Game.LambdaHack.Display.Curses
+    other-modules: Game.LambdaHack.Action.Frontend.Curses
     build-depends: hscurses >= 1.4.1 && < 2
     cpp-options:   -DCURSES
   } else { if flag(vty) {
-    exposed-modules: Game.LambdaHack.Display.Vty
+    other-modules: Game.LambdaHack.Action.Frontend.Vty
     build-depends: vty >= 4.7.0.6
     cpp-options:   -DVTY
   } else { if flag(std) {
-    exposed-modules: Game.LambdaHack.Display.Std
+    other-modules: Game.LambdaHack.Action.Frontend.Std
     cpp-options:   -DSTD
   } else {
-    exposed-modules: Game.LambdaHack.Display.Gtk
+    other-modules: Game.LambdaHack.Action.Frontend.Gtk
     build-depends: gtk >= 0.12.1 && < 0.13
   } } }
 
 executable LambdaHack
+  hs-source-dirs:  LambdaHack
   main-is:         Main.hs
   other-modules:   Content.ActorKind,
                    Content.CaveKind,
+                   Content.FactionKind,
                    Content.ItemKind,
                    Content.PlaceKind,
                    Content.RuleKind,
+                   Content.StrategyKind,
                    Content.TileKind,
                    Multiline,
-                   ConfigDefault
-  hs-source-dirs:  LambdaHack
-  other-modules:   Paths_LambdaHack
-  build-depends:   LambdaHack >= 0.2.1   && < 0.2.2,
+                   Paths_LambdaHack
+  build-depends:   LambdaHack,
                    template-haskell >= 2.6 && < 3,
 
                    ConfigFile >= 1.1.1   && < 2,
@@ -194,10 +209,11 @@ executable LambdaHack
   ghc-options:     -fno-warn-auto-orphans -fno-warn-implicit-prelude
   ghc-options:     -fno-ignore-asserts -funbox-strict-fields
   ghc-options:     -threaded -with-rtsopts=-C0.005
+-- ghc-options:     -with-rtsopts=-N  -- eats all cores
 
 executable DumbBot
-  main-is:         Main.hs
   hs-source-dirs:  DumbBot
+  main-is:         Main.hs
   build-depends:   base       >= 4       && < 5,
                    random     >= 1.0.1   && < 2
   default-language: Haskell2010
