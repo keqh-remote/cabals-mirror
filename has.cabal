@@ -1,13 +1,7 @@
 Name:                has
-Version:             0.4.0.1
+Version:             0.5.0.0
 Synopsis:            Entity based records
-Description:         Usage: <http://github.com/nonowarn/has/blob/master/README.md>
-                     .
-                     And its examples and test would be helpful:
-                     .
-                     * <http://github.com/nonowarn/has/tree/master/examples/>
-                     .
-                     * <http://github.com/nonowarn/has/blob/master/test/Main.hs>
+Description:         Typical usage is described at <http://github.com/nonowarn/has/blob/master/examples/Announce04.lhs>.
 Homepage:            http://github.com/nonowarn/has
 License:             BSD3
 License-file:        LICENSE
@@ -23,6 +17,7 @@ Extra-source-files:  README.md
                      examples/DefaultParameter.hs
                      examples/Points.hs
                      examples/Time.hs
+                     examples/Announce04.lhs
 
 Library
   Hs-source-dirs:    src
@@ -42,6 +37,7 @@ Library
                      FlexibleInstances
                      MultiParamTypeClasses
                      UndecidableInstances
+                     DeriveDataTypeable
 
 Flag test
   Description:       Build test program.
@@ -65,6 +61,7 @@ Executable test
                      FlexibleInstances
                      MultiParamTypeClasses
                      UndecidableInstances
+                     DeriveDataTypeable
 
 Source-repository head
   type:              git
