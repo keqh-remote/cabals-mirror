@@ -1,5 +1,5 @@
 Name:           xml2x
-Version:        0.2
+Version:        0.4
 License:        GPL
 License-File:   LICENSE
 
@@ -16,7 +16,7 @@ Description:    xml2x - convert blast output in XML format, either to a (csv)
 Build-Type:     Simple
 Tested-With:    GHC==6.8.2
 
-Build-Depends:  base>3, bio >= 0.3.2, containers, bytestring, array, xhtml, directory
+Build-Depends:  base>3, bio >= 0.3.4, containers, bytestring, array, xhtml, directory
 -- Build-Depends: base, bio      - GHC 6.6
 -- Build-Depends: base, bio, fps - GHC 6.4
 
