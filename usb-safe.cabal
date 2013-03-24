@@ -1,5 +1,5 @@
 name:          usb-safe
-version:       0.12
+version:       0.13
 cabal-version: >=1.6
 build-type:    Custom
 license:       BSD3
@@ -7,6 +7,8 @@ license-file:  LICENSE
 copyright:     2009–2010 Bas van Dijk
 author:        Bas van Dijk <v.dijk.bas@gmail.com>
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
+homepage:      https://github.com/basvandijk/usb-safe/
+bug-reports:   https://github.com/basvandijk/usb-safe/issues
 stability:     experimental
 category:      System, Monadic Regions
 synopsis:      Type-safe communication with USB devices.
@@ -46,10 +48,6 @@ description:
   .
   * You can't write to an endpoint with an In transfer direction.
   .
-  * You can't read from or write to endpoints with the unsupported transfer
-    types Control and Isochronous. Only I/O with endpoints with the Bulk and
-    Interrupt transfer types is allowed.
-  .
   The primary technique used in usb-safe is called \"Lightweight monadic
   regions\" which was invented by Oleg Kiselyov and Chung-chieh Shan.
   See:
@@ -61,22 +59,27 @@ description:
   .
   See the @usb-safe-examples@ package for examples how to use this library:
   .
-  @darcs get@ <http://code.haskell.org/~basvandijk/code/usb-safe-examples>
+  @git clone <https://github.com/basvandijk/usb-safe-examples>@
+
+extra-source-files: README.markdown, NEWS
 
 source-repository head
-  Type:     darcs
-  Location: http://code.haskell.org/~basvandijk/code/usb-safe
+  Type:     git
+  Location: git://github.com/basvandijk/usb-safe.git
 
 Library
   GHC-Options: -Wall -fno-warn-orphans
-  build-depends: base                      >= 4     && < 4.4
+  build-depends: base                      >= 4     && < 4.5
                , base-unicode-symbols      >= 0.1.1 && < 0.3
-               , usb                       >= 0.8   && < 0.9
-               , usb-enumerator            >= 0.3   && < 0.4
-               , iteratee                  >= 0.3.5 && < 0.9
+               , usb                       >= 1.0   && < 1.1
+               , usb-iteratee              >= 0.4   && < 0.5
+               , iteratee                  >= 0.4   && < 0.9
                , bytestring                >= 0.9   && < 0.10
                , text                      >= 0.5   && < 0.12
-               , regions                   >= 0.9   && < 0.10
+               , regions                   >= 0.9   && < 0.11
                , transformers              >= 0.2   && < 0.3
                , monad-control             >= 0.2   && < 0.3
   exposed-modules: System.USB.Safe
+
+  if impl(ghc>7) && !os(windows)
+    cpp-options: -DHAS_EVENT_MANAGER
