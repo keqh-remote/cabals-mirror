@@ -7,7 +7,7 @@ Name:                mathgenealogy
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.2
+Version:             1.0.0
 
 Synopsis:            Discover your (academic) ancestors!
 
@@ -15,19 +15,25 @@ Synopsis:            Discover your (academic) ancestors!
 Description:         A command line program for extracting data from the
   Mathematics Genealogy Project (<http://genealogy.math.ndsu.nodak.edu/index.php>).
   .
+  Find your entry at <http://genealogy.math.ndsu.nodak.edu/index.php> and
+  then use the URL as argument to mathgenealogy.  
   For example, if Carl Gauss wanted to explore his academic ancestors, he
   would type
   .
   > mathgenealogy http://genealogy.math.ndsu.nodak.edu/id.php?id=18231 
   .
-  which will produce a directed acyclic graph in output.pdf
-  (<http://dl.dropbox.com/u/22490968/genealogy_of_gauss.pdf>). See 
+  which produces the directed acyclic graph
+  <http://dl.dropbox.com/u/22490968/genealogy_of_gauss.png>. See 
   .
   > mathgenealogy --help
   .
   for details. Requires GraphViz to run.
   . 
-  /Changes in 0.0.2:/
+  /Changes in 1.0.0:/
+  * updated for GHC 7.6.1
+  * choice between PDF and PNG output
+  * optional inclusion of PhD theses in output
+  /Changes in 0.1.0:/
   .
   * fixed bug regarding trailing commas (thanks to A. Koessler) 
 
@@ -58,14 +64,15 @@ Cabal-version:       >=1.4
 
 Executable mathgenealogy
       build-depends: base >= 4 && < 5
-                   , text >= 0.11 && <0.12
-                   , directory >= 1.1 && <1.2
-                   , haskell98 >= 1.1 && <1.2
+                   , text >= 0.11 && <0.13
+                   , directory >= 1.1 && <1.3
+--                   , haskell98 >= 1.1 && <2.1
+                   , process >= 1.1 && < 1.2
                    , bytestring >= 0.9 && <1.0
                    , graphviz >= 2999.12 && <3000.0
                    , cmdargs >= 0.9.5 && <1.0.0
                    , fgl >= 5.4 && <5.5
-                   , containers >= 0.4 && <0.5
+                   , containers >= 0.4 && <0.6
                    , tagsoup >= 0.12.6 && <0.13
                    , HTTP >= 4000.1.2 && <5000
       Main-Is: Main.hs
