@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.2.2
+Version:        0.2.2.1
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -9,7 +9,7 @@ Category:       Math
 Stability:      Experimental
 Cabal-Version:  >=1.6
 Build-Type:     Simple
-Tested-With:    GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.2
+Tested-With:    GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.2, GHC==7.2.1
 Synopsis:       An experimental alternative hierarchy of numeric type classes
 Description:
   Revisiting the Numeric Classes
