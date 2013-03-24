@@ -1,5 +1,5 @@
 name:             wumpus-core
-version:          0.21.0
+version:          0.22.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -21,8 +21,8 @@ description:
   Pictures in Wumpus are made from /paths/ and text /labels/. 
   Paths themselves are made from points. The usual affine 
   transformations (rotations, scaling, translations) can be
-  applied to geometric objects. Unlike PostScript there 
-  is no notion of a current point, Wumpus builds pictures in a
+  applied to geometric objects. Unlike PostScript there is no 
+  notion of a current point, Wumpus builds pictures in a
   coordinate-free style. 
   .
   GENERAL DRAWBACKS...
@@ -61,13 +61,34 @@ description:
   .
   Changelog:
   .
+  0.21.0 to 0.22.0:
+  .
+  * Moved the deprecated module @Wumpus.Extra.PictureLanguage@
+    into the package Wumpus-Basic along with the example 
+    @Picture.hs@.
+  .
+  * Added vec as a synonym for the constructor V2.
+  .
+  * Changed some of the Core.FontSize to use better terminology. 
+    Thus some of the constants have changed. Added a new example
+    @FontMetrics.hs@ to illustrate how FontSize works. 
+    Particularly, the function @capHeight@ has been replaced with
+    the function @numeralHeight@ which has better semantics.
+  .
+  * The CTM data type and ToCTM class are now hidden in the
+    top-level import module @Wumpus.Core@. They can be accessed
+    by importing @Wumpus.Core.GraphicsState@ directly.
+  .
+  * Exposed the PSUnit type class. 
+  .
   0.20.0 to 0.21.0:
   .
-  * Removed the instances of the Affine transformation. They have
-    been replaced with special transformation functions: 
-    @rotatePrimitive@, @scalePrimitive@, @translatePrimitive@.
-    As Primitives are not in an affine frame until they are lifted 
-    to Pictures the affine instances had ill-conceived semantics.
+  * Removed the Primitive instances of the Affine transformation 
+    classes. They have been replaced with special transformation 
+    functions: @rotatePrimitive@, @scalePrimitive@, 
+    @translatePrimitive@. As Primitives are not in an affine 
+    frame until they are lifted to Pictures the affine instances 
+    had ill-conceived semantics.
   .
   * Due to changes to accommodate the new non-affine  
     transformations, many of the class obligations have changed 
@@ -100,9 +121,9 @@ extra-source-files:
   demo/AffineTest02.hs,
   demo/AffineTest03.hs,
   demo/AffineTestBase.hs,
+  demo/FontMetrics.hs
   demo/LabelPic.hs,
   demo/MultiPic.hs
-  demo/Picture.hs,
   demo/Rotated.hs
   demo/Scaled.hs
   demo/Translated.hs
@@ -134,8 +155,7 @@ library
     Wumpus.Core.TextEncoder,
     Wumpus.Core.TextLatin1,
     Wumpus.Core.VersionNumber,
-    Wumpus.Core.WumpusTypes,
-    Wumpus.Extra.PictureLanguage
+    Wumpus.Core.WumpusTypes
 
   other-modules:
     Wumpus.Core.PictureInternal,
