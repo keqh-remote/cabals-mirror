@@ -11,7 +11,7 @@ description:
   lateral sclerosis, where cognitive functions remain intact) even
   this small program can already be used to comunicate with the
   help of an assistant.
-version: 0.0.1
+version: 0.0.2
 license: GPL
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -25,7 +25,9 @@ executable bitspeak
   extensions:
     ForeignFunctionInterface
   other-modules:
+    Corpora
     GtkGdk
+    Gui
   build-depends:
     base >= 3 && < 5,
     bindings-DSL >= 1.0.6 && < 1.1,
