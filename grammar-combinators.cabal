@@ -1,5 +1,5 @@
 Name:                grammar-combinators
-Version:             0.2.1
+Version:             0.2.2
 Description:
     The grammar-combinators library is a novel parsing library using
     an explicit representation of recursion to provide various novel
@@ -14,7 +14,7 @@ Build-Type:          Simple
 Category:	     Parsing
 Synopsis:	     A parsing library of context-free grammar combinators.
 Cabal-Version:       >=1.2.1
-Extra-Source-Files:  COPYING.GPL 
+Extra-Source-Files:  COPYING.GPL, changelog
 Stability:	     experimental
 
 Library
