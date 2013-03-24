@@ -1,5 +1,5 @@
 Name:           HaTeX
-Version:        2.1.0
+Version:        2.1.1
 Author:         Daniel Diaz
 Homepage:       http://ddiaz.asofilak.es/packages/HaTeX
 License:        BSD3
@@ -19,21 +19,9 @@ Description:
          .
          Changes from last version:
          .
-         * Fixed an error displaying LaTeX and LaTeX2e writings.
+         * Now, Text.LaTeX module re-export Data.String.
          .
-         * Added @date@ command.
-         .
-         * Fixed some documentation notes.
-         .
-         * Added new documentation.
-         .
-         * Added @Heigth@ type synonym.
-         .
-         * Added @rule@ command.
-         .
-         * Hidden @genlx@ and @ungenlx@ functions from the Text.LaTeX module.
-         .
-         * Added @fancyhdr@ package with its @fancy@ page style.
+         * Fixed some documentation.
 Extensions:     OverloadedStrings , FlexibleInstances , TypeSynonymInstances
 Build-type:     Simple
 Build-depends:  base == 4.*
