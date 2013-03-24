@@ -1,5 +1,5 @@
 Name: ranges
-Version: 0.2
+Version: 0.2.1
 Description: Ranges and some functions allowing things like fast membership
 	lookup on ranges with holes in them and so on.
 Synopsis: Ranges and various functions on them.
