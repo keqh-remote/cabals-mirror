@@ -1,10 +1,10 @@
 name:            hack-frontend-monadcgi
-version:         0.0.3
+version:         0.0.3.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Allows programs written against MonadCGI to run with any hack handler.
+synopsis:        Allows programs written against MonadCGI to run with any hack handler. (deprecated)
 category:        Web
 stability:       stable
 cabal-version:   >= 1.2
