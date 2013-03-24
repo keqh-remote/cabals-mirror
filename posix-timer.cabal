@@ -1,5 +1,5 @@
 Name: posix-timer
-Version: 0.0.2
+Version: 0.0.3
 Category: System
 Stability: experimental
 Synopsis: Bindings to POSIX clock and timer functions.
@@ -18,8 +18,7 @@ Build-Type: Simple
 Extra-Source-Files: include/posix-timer.macros.h
 
 Library
-  Build-Depends: base == 4.*, unix
-  Extensions: CPP, ForeignFunctionInterface, GeneralizedNewtypeDeriving
+  Build-Depends: base < 5, unix
   Hs-Source-Dirs: src
   Include-Dirs: include
   GHC-Options: -Wall
