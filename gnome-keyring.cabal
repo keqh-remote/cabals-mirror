@@ -1,5 +1,5 @@
 name: gnome-keyring
-version: 0.1
+version: 0.2
 synopsis: Bindings for libgnome-keyring
 license: GPL
 license-file: license.txt
@@ -15,7 +15,7 @@ description:
   binding to the libgnome-keyring C library.
   .
   API documentation is available at
-  <https://dl.dropbox.com/u/1947532/gnome-keyring_0.1/index.html>.
+  <https://dl.dropbox.com/u/1947532/gnome-keyring_0.2/index.html>.
   .
   Documentation for the original library is available at
   <http://library.gnome.org/devel/gnome-keyring/stable/>.
@@ -31,32 +31,25 @@ library
     , text
     , bytestring
     , containers
+    , time
 
   build-tools:
     c2hs >= 0.16
 
   exposed-modules:
     Gnome.Keyring
-    Gnome.Keyring.AccessControl
-    Gnome.Keyring.Attribute
-    Gnome.Keyring.Find
     Gnome.Keyring.Item
-    Gnome.Keyring.ItemInfo
     Gnome.Keyring.Keyring
-    Gnome.Keyring.KeyringInfo
     Gnome.Keyring.NetworkPassword
     Gnome.Keyring.Operation
 
   other-modules:
-    Gnome.Keyring.AccessControl.Internal
-    Gnome.Keyring.Attribute.Internal
-    Gnome.Keyring.FFI
-    Gnome.Keyring.Item.Internal
-    Gnome.Keyring.ItemInfo.Internal
-    Gnome.Keyring.KeyringInfo.Internal
+    Gnome.Keyring.Internal.FFI
+    Gnome.Keyring.Internal.Operation
+    Gnome.Keyring.Internal.Types
+    Gnome.Keyring.ItemInfo
+    Gnome.Keyring.KeyringInfo
     Gnome.Keyring.Misc
-    Gnome.Keyring.Operation.Internal
-    Gnome.Keyring.Types
 
   extra-libraries: gnome-keyring
   pkgconfig-depends: gnome-keyring-1
