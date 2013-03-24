@@ -1,5 +1,5 @@
 name:                cityhash
-version:             0.0.1
+version:             0.0.2
 synopsis:            bindings to Google CityHash
 description:
   This package implements a binding to the google CityHash family of hashing functions.
@@ -17,7 +17,7 @@ cabal-version:       >=1.10
 extra-source-files:
   cbits/city.cc, cbits/city.h,
   cbits/hs_city.cc, cbits/hs_city.h,
-  README.md
+  README.md, tests/Properties.hs
 
 source-repository head
   type: git
@@ -34,4 +34,20 @@ library
   extra-libraries: stdc++
 
   ghc-options:      -Wall -O2 -fwarn-tabs
+  default-language: Haskell98
+
+test-suite properties
+  hs-source-dirs: tests
+  main-is:        Properties.hs
+  type:           exitcode-stdio-1.0
+
+  build-depends:
+    base    >= 3 && < 5,
+    bytestring     == 0.9.*,
+    QuickCheck     == 2.4.*,
+    test-framework == 0.3.*,
+    test-framework-quickcheck2 == 0.2.*,
+    cityhash
+
+  ghc-options:      -fno-cse
   default-language: Haskell98
