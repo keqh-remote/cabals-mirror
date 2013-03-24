@@ -1,5 +1,5 @@
 Name:                husk-scheme
-Version:             3.6.3
+Version:             3.7
 Synopsis:            R5RS Scheme interpreter, compiler, and library.
 Description:         
   <<https://github.com/justinethier/husk-scheme/raw/master/docs/husk-scheme.png>>
@@ -32,6 +32,7 @@ License-file:        LICENSE
 Author:              Justin Ethier
 Maintainer:          Justin Ethier <github.com/justinethier>
 Homepage:            http://justinethier.github.com/husk-scheme
+Bug-Reports:         http://github.com/justinethier/husk-scheme/issues
 Cabal-Version:       >= 1.8
 Build-Type:          Simple
 Category:            Compilers/Interpreters, Language
@@ -41,14 +42,18 @@ Extra-Source-Files:  README.markdown
                      ChangeLog.markdown
                      LICENSE
                      AUTHORS
-Data-Files:          lib/stdlib.scm lib/srfi/*.scm
+Data-Files:          lib/*.scm lib/r5rs/*.sld lib/scheme/*.sld lib/srfi/*.scm
 
 Source-Repository head
     Type:            git
     Location:        git://github.com/justinethier/husk-scheme.git
 
 flag useffi
-    description: Turn off FFI to decrease build times and minimize executable sizes
+    description: Haskell Foreign Function Interface (FFI). Allows husk to import and call into Haskell code directly from Scheme code. Turn off FFI to decrease build times and minimize executable sizes
+    default: False
+
+flag uselibraries
+    description: R7RS-style libraries. 
     default: True
 
 flag useptrs
@@ -64,23 +69,29 @@ Library
                    Language.Scheme.Variables
                    Language.Scheme.Compiler
                    Language.Scheme.Plugins.CPUTime
--- Other-Modules:
                    Language.Scheme.Macro
                    Language.Scheme.Macro.ExplicitRenaming
                    Language.Scheme.Macro.Matches
+                   Language.Scheme.Libraries
                    Language.Scheme.Numerical
                    Language.Scheme.Parser
                    Language.Scheme.Primitives
+                   Language.Scheme.Util
+  Other-Modules:   Paths_husk_scheme
+
   if flag(useffi)
     Build-Depends: ghc, ghc-paths
     Exposed-Modules:  Language.Scheme.FFI
     cpp-options: -DUseFfi
 
+  if flag(uselibraries)
+    cpp-options: -DUseLibraries
+
   if flag(useptrs)
     cpp-options: -DUsePointers
 
 Executable         huski
-  Build-Depends:   husk-scheme, base >= 2.0 && < 5, array, containers, haskeline, transformers, mtl, parsec, directory
+  Build-Depends:   husk-scheme, base >= 2.0 && < 5, array, containers, haskeline, transformers, mtl, parsec, directory, process
   if flag(useffi)
     Build-Depends: ghc, ghc-paths
     cpp-options: -DUseFfi
