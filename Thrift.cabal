@@ -18,18 +18,16 @@
 --
 
 Name:           Thrift
-Version:        0.1.1.1
+Version:        0.4.0
 Cabal-Version:  >= 1.2.3
-License:        OtherLicense 
+License:        OtherLicense
 Category:       Foreign
 Build-Type:     Simple
 Synopsis:       Thrift library package
 homepage:       http://incubator.apache.org/thrift
 maintainer:     thrift-user-subscribe@incubator.apache.org 
 description:
-  The Thrift Haskell package that shipped with Thrift v.0.3.0, released under the Apache 2.0 license.
-
-
+  The Thrift Haskell package that shipped with Thrift v.0.4.0, released under the Apache 2.0 license.
 
 Library
   Hs-Source-Dirs:
