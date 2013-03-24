@@ -1,21 +1,21 @@
 Name:                vect
-Version:             0.4.6
+Version:             0.4.7
 Synopsis:            A low-dimensional linear algebra library, tailored to computer graphics.
 Description:         A low-dimensional (2, 3 and 4) linear algebra library, 
                      with lots of useful functions. Intended usage is primarily 
                      computer graphics (basic OpenGL support is included as a separate package).
-                     Projective 4 dimensional operations, as used in eg. 
-                     OpenGL, are also supported.
+                     Projective 4 dimensional operations, as used in eg. OpenGL, 
+                     are also supported; and so are quaternions.
                      The base field is either Float or Double.
 License:             BSD3
 License-file:        LICENSE
 Author:              Balazs Komuves
-Copyright:           (c) 2008-2010 Balazs Komuves
+Copyright:           (c) 2008-2011 Balazs Komuves
 Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
 Homepage:            http://code.haskell.org/~bkomuves/
 Stability:           Experimental
 Category:            Graphics, Math
-Tested-With:         GHC == 6.10.1
+Tested-With:         GHC == 6.12.3
 Cabal-Version:       >= 1.6
 Build-Type:          Custom
 
@@ -27,7 +27,12 @@ extra-source-files:  src/flt.hs,
                      src/flt/Util/Dim3.hs,
                      src/flt/Util/Dim4.hs,
                      src/flt/Util/Projective.hs,
+                     src/flt/Util/Quaternion.hs,
                      src/flt/Instances.hs
+              
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/~bkomuves/projects/vect/              
                      
 Flag splitBase
   Description: Choose the new smaller, split-up base package.
@@ -49,6 +54,7 @@ Library
                        Data.Vect.Float.Util.Dim3, 
                        Data.Vect.Float.Util.Dim4,
                        Data.Vect.Float.Util.Projective,
+                       Data.Vect.Float.Util.Quaternion,
                        Data.Vect.Float.Instances
 
                        Data.Vect.Double,
@@ -59,6 +65,7 @@ Library
                        Data.Vect.Double.Util.Dim3, 
                        Data.Vect.Double.Util.Dim4,
                        Data.Vect.Double.Util.Projective,
+                       Data.Vect.Double.Util.Quaternion,
                        Data.Vect.Double.Instances
 
   Hs-Source-Dirs:      .
