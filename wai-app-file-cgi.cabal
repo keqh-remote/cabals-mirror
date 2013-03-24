@@ -1,5 +1,5 @@
 Name:                   wai-app-file-cgi
-Version:                0.0.0
+Version:                0.0.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -8,7 +8,7 @@ Synopsis:               File/CGI App of WAI
 Description:            This WAI application handles static files and
                         executes CGI scripts.
 Homepage:               http://www.mew.org/~kazu/
-Category:               Network
+Category:               Web
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
 library
