@@ -1,10 +1,10 @@
 name:            control-monad-attempt
-version:         0.3.0
+version:         0.3.0.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman, Nicolas Pouillard
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Monad transformer for attempt.
+synopsis:        Monad transformer for attempt. (deprecated)
 description:     This package uses the transformers library.
 category:        Data, Failure
 stability:       stable
