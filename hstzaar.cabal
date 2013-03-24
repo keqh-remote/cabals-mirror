@@ -1,5 +1,5 @@
 name:    hstzaar
-version: 0.5
+version: 0.6
 
 category: Game
 
@@ -25,12 +25,12 @@ cabal-version: >= 1.6
 data-files:    data/hstzaar.glade
 
 extra-source-files:
-  RELEASE-NOTES README
+  RELEASE-NOTES 
 
 executable hstzaar
   hs-source-dirs:   src
   main-is:          Main.hs
-  other-modules:    GUI Board AI AI.Utils AI.Lame AI.Eval AI.Minimax Tournament Tests
+  other-modules:    GUI StateVar Board AI AI.Utils AI.Lame AI.Eval AI.Minimax Tournament Tests
   build-depends:
     base       >= 4       && < 5,
     haskell98,
@@ -42,4 +42,3 @@ executable hstzaar
     QuickCheck >= 2.1
 
  ghc-prof-options: -prof -auto-all
-
