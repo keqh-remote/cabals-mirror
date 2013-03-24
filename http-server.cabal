@@ -1,5 +1,5 @@
 name:          http-server
-version:       1.0.1
+version:       1.0.2
 category:      Network
 synopsis:      A library for writing Haskell web servers.
 description:   A library for writing Haskell web servers.
@@ -41,6 +41,9 @@ library
   if !os(windows)
     build-depends: unix >= 2 && < 3
     CPP-options:   -D_OS_UNIX
+
+  if impl(ghc >= 7.6.1)
+    CPP-options:   -DNO_PRELUDE_CATCH
 
   ghc-options: -Wall -O2
 
