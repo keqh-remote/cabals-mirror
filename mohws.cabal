@@ -1,5 +1,5 @@
 Name:         mohws
-Version:      0.2.1
+Version:      0.2.1.1
 Author:       Simon Marlow, Bjorn Bringert <bjorn@bringert.net>
 Copyright:    Simon Marlow, Bjorn Bringert
 Maintainer:   Henning Thielemann <webserver@henning-thielemann.de>
@@ -28,7 +28,7 @@ Source-Repository head
 Source-Repository this
   Type:     darcs
   Location: http://code.haskell.org/mohws/
-  Tag:      0.2.1
+  Tag:      0.2.1.1
 
 Flag dynamic
   description: Build server with dynamically loaded plugins
@@ -52,7 +52,8 @@ Library
     explicit-exception >=0.1 && <0.2,
     data-accessor >=0.2 && <0.3,
     directory >=1.0 && <1.2,
-    base >4 && <5
+    -- base-4.3 need for Exception.mask
+    base >=4.3 && <5
 
   Hs-Source-dirs: src
   GHC-Options: -Wall
