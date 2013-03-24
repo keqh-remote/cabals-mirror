@@ -1,5 +1,5 @@
 name:           hledger-web
-version: 0.16
+version: 0.16.1
 category:       Finance
 synopsis:       A web interface for the hledger accounting tool.
 description:    
@@ -22,19 +22,31 @@ cabal-version:  >= 1.6
 build-type:     Simple
 extra-tmp-files:
 extra-source-files:
--- data-dir:    
--- data-files:  
+                static/style.css
+                static/hledger.js
+                static/jquery.js
+                static/jquery.url.js
+                static/jquery.flot.js
+                static/dhtmlxcommon.js
+                static/dhtmlxcombo.js
+                static/excanvas.min.js
+                static/combo_select.gif
+                static/favicon.ico
 
 source-repository head
   type:     darcs
   location: http://joyful.com/repos/hledger
 
 Flag production
-    Description:   Build in production mode, with web files embedded. Otherwise, they will be loaded from ./static/.
+    Description:   Build fully optimised and with web files embedded (not loaded from ./static/)
+    Default:       True
+
+flag threaded
+    Description:   Build with support for multithreaded execution
     Default:       True
 
 Flag devel
-    Description:   Build for use with "yesod devel".
+    Description:   Build for auto-recompiling by "yesod devel"
     Default:       False
 
 executable hledger-web
@@ -43,9 +55,11 @@ executable hledger-web
       Buildable: False
   if flag(production)
       cpp-options:   -DPRODUCTION
-      ghc-options:   -Wall -threaded -O2
+      ghc-options:   -O2
   else
-      ghc-options:   -W -threaded
+      ghc-options:   -Wall
+  if flag(threaded)
+      ghc-options:   -threaded
   other-modules:
                      Hledger.Web
                      Hledger.Web.Foundation
@@ -55,8 +69,8 @@ executable hledger-web
                      Hledger.Web.Settings.StaticFiles
                      Hledger.Web.Handlers
   build-depends:
-                  hledger == 0.16
-                 ,hledger-lib == 0.16
+                  hledger == 0.16.1
+                 ,hledger-lib == 0.16.1
                  ,HUnit
                  ,base >= 4 && < 5
                  ,bytestring
