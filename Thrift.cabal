@@ -18,29 +18,37 @@
 --
 
 Name:           Thrift
-Version:        0.5.0.2
-Cabal-Version:  >= 1.2.3
+Version:        0.6.0
+Cabal-Version:  >= 1.4
 License:        OtherLicense
 Category:       Foreign
 Build-Type:     Simple
-Synopsis:       Thrift library package
-Homepage:       http://incubator.apache.org/thrift
-Maintainer:     thrift-user-subscribe@incubator.apache.org 
-Description:
-  The Thrift Haskell package that shipped with Thrift v.0.5.0, released under the Apache 2.0 license.
-  Thrift-0.5.0-2 adds a missing Framed Transport implementation, which Cassandra now depends on. 
-  For more information see: https://issues.apache.org/jira/browse/THRIFT-538.
-  
+Synopsis:       Haskell bindings for the Apache Thrift RPC system
+Homepage:       http://thrift.apache.org
+Bug-Reports:    https://issues.apache.org/jira/browse/THRIFT
+Maintainer:     dev@thrift.apache.org
+License-File:   LICENSE
 
+Description:
+  Haskell bindings for the Apache Thrift RPC system. Requires the use of the thrift code generator.
+  Includes backported Framed Transport implementation, which Cassandra now uses by default[1]. 
+  .
+  NOTE: this package will be eventually deprecated, replaced by Christian Lavoie's thrift package[2],
+  once Framed Transport support that is in Thrift's svn trunk (and backported here) is included there.
+  .
+  .
+  [1] <https://issues.apache.org/jira/browse/THRIFT-538>
+  .
+  [2] <http://hackage.haskell.org/package/thrift>
+  
 Library
   Hs-Source-Dirs:
     src
   Build-Depends:
-    base >=4 && < 5, network, ghc-prim, binary, bytestring, HTTP
+    base >= 4, base < 5, network, ghc-prim, binary, bytestring, HTTP
   Exposed-Modules:
     Thrift, Thrift.Protocol, Thrift.Transport, Thrift.Protocol.Binary
-    Thrift.Transport.Framed, Thrift.Transport.Handle,
-    Thrift.Transport.HttpClient, Thrift.Server
+    Thrift.Transport.Handle, Thrift.Transport.Framed, Thrift.Transport.HttpClient, Thrift.Server
   Extensions:
     DeriveDataTypeable, ExistentialQuantification, FlexibleInstances,
     KindSignatures, MagicHash, RankNTypes,
