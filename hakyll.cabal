@@ -1,5 +1,5 @@
 Name:               hakyll
-Version:            3.0.1.0
+Version:            3.0.1.1
 
 Synopsis:           A simple static site generator library.
 Description:        A simple static site generator library, mainly aimed at
@@ -65,6 +65,7 @@ library
                       strict-concurrency >= 0.2
   exposed-modules:    Hakyll
                       Hakyll.Main
+                      Hakyll.Web.Blaze
                       Hakyll.Web.Util.Url
                       Hakyll.Web.Preview.Server
                       Hakyll.Web.Preview.Poll
