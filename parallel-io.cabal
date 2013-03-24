@@ -1,5 +1,5 @@
 Name:               parallel-io
-Version:            0.3.0.1
+Version:            0.3.0.2
 Cabal-Version:      >= 1.2
 Category:           Concurrency
 Synopsis:           Combinators for executing IO actions in parallel on a thread pool.
@@ -26,6 +26,10 @@ Flag Benchmark
     Description:    Build the benchmarking tool
     Default:        False
 
+Flag Fuzz
+    Description:    Build the fuzzing tool for discovering deadlocks
+    Default:        False
+
 Flag Tests
     Description:    Build the test runner
     Default:        False
@@ -36,7 +40,7 @@ Library
         Control.Concurrent.ParallelIO.Global
         Control.Concurrent.ParallelIO.Local
     Other-Modules:
-        Control.Concurrent.ParallelIO.ConcurrentSet
+        Control.Concurrent.ParallelIO.ConcurrentCollection
     
     Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.5, random >= 1.0 && < 1.1
 
@@ -60,4 +64,15 @@ Executable tests
         Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.4, random >= 1.0 && < 1.1,
                         test-framework >= 0.1.1, test-framework-hunit >= 0.1.1, HUnit >= 1.2 && < 2
     
+        Ghc-Options:    -threaded
+
+Executable fuzz
+    Main-Is:        Control/Concurrent/ParallelIO/Fuzz.hs
+
+    if !flag(fuzz)
+        Buildable:  False
+    else
+        Build-Depends:  base >= 4 && < 5, extensible-exceptions > 0.1.0.1, containers >= 0.2 && < 0.4, random >= 1.0 && < 1.1,
+                        test-framework >= 0.1.1, test-framework-hunit >= 0.1.1, HUnit >= 1.2 && < 2
+
         Ghc-Options:    -threaded
