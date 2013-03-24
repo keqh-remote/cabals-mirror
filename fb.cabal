@@ -1,5 +1,5 @@
 name:              fb
-version:           0.9.1
+version:           0.9.3
 license:           BSD3
 license-file:      LICENSE
 author:            Felipe Lessa
@@ -33,6 +33,11 @@ extra-source-files:
 source-repository head
   type:     git
   location: git://github.com/meteficha/fb.git
+
+
+flag debug
+  default: False
+  description: Print debugging info.
 
 
 library
@@ -75,6 +80,8 @@ library
     TypeFamilies
     FlexibleInstances
     MultiParamTypeClasses
+  if flag(debug)
+    cpp-options: -DDEBUG
 
 
 test-suite runtests
