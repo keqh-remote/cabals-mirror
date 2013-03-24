@@ -1,5 +1,5 @@
 Name:                nikepub
-Version:             1.1
+Version:             1.1.1
 Category:            Web
 Synopsis:            Command line utility publishes Nike+ runs on blogs and Twitter
 Description:         Simple commandline program that given a Nike+ user id will fetch the
@@ -19,6 +19,11 @@ Extra-Source-Files:  README, templates/mt_title.st, templates/mt_body.st,
                      templates/twitter_status.st
 Executable nikepub
   Main-is:           nikepub.hs
+  Other-Modules:     Codemanic.Util,
+                     Codemanic.NumericLists,
+                     Codemanic.Blogging,
+                     Codemanic.Weather,
+                     Codemanic.NikeRuns
   Build-Depends:     haskell98,
                      base >= 4.1.0.0 && < 5,
                      containers >= 0.2.0.1,
