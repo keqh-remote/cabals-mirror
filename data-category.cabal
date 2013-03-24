@@ -1,14 +1,18 @@
 name:                data-category
-version:             0.2.0
+version:             0.3.0
 synopsis:            Restricted categories
 
 description:         Data-category is a collection of categories, and some categorical constructions on them.
                      .
                      You can restrict the types of the objects of your category by using a GADT for the arrow type.
                      To be able to proof to the compiler that a type is an object in some category, objects also need to be represented at the value level.
-                     Therefore the 'Category' class has an associated data type 'Obj'. This which will often also be a GADT.
+                     The corresponding identity arrow of the object is used for that.
                      .
                      See the 'Monoid', 'Boolean' and 'Product' categories for some examples.
+                     .
+                     Note: Strictly speaking this package defines Hask-enriched categories, not ordinary categories (which are Set-enriched.)
+                     In practice this means we are allowed to ignore 'undefined' (f.e. when talking about uniqueness of morphisms),
+                     and we can treat the categories as normal categories.
 
 category:            Data
 license:             BSD3
@@ -26,14 +30,13 @@ Library
   exposed-modules:     
     Data.Category,
     Data.Category.Functor,
+    Data.Category.Product,
     Data.Category.NaturalTransformation,
     Data.Category.Limit,
     Data.Category.Adjunction,
-    Data.Category.Void,
-    Data.Category.Unit,
-    Data.Category.Pair,
+    Data.Category.Monoidal,
+    Data.Category.CartesianClosed,
     Data.Category.Discrete,
-    Data.Category.Product,
     Data.Category.Monoid,
     Data.Category.Boolean,
     Data.Category.Omega,
