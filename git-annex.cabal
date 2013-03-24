@@ -1,5 +1,5 @@
 Name: git-annex
-Version: 3.20130124
+Version: 3.20130207
 Cabal-Version: >= 1.8
 License: GPL
 Maintainer: Joey Hess <joey@kitenet.net>
@@ -75,6 +75,9 @@ Executable git-annex
   if flag(WebDAV)
     Build-Depends: DAV (>= 0.3), http-conduit, xml-conduit, http-types
     CPP-Options: -DWITH_WEBDAV
+  
+  if flag(Assistant)
+    Build-Depends: async
 
   if flag(Assistant) && ! os(windows) && ! os(solaris)
     Build-Depends: stm >= 2.3
