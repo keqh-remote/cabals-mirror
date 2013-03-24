@@ -1,7 +1,9 @@
 name:                lojban
-version:             0.0
-synopsis:            <Project description>
-description:         <Project description>
+version:             0.0.0
+synopsis:            Useful utilities for the Lojban language
+description:         Some utilities such as querying Jbovlaste XML 
+                     exports for gismu, gloss, rafsi, etc. and 
+                     lujvo-decomposition. More stuff to come.
 category:            Language
 license:             BSD3
 license-file:        LICENSE
