@@ -1,5 +1,5 @@
 Name:                blaze-html-contrib
-Version:             0.2
+Version:             0.2.1
 Synopsis:            Some contributions to add handy things to blaze html.
 Description:         Some contributions to add handy things to blaze html. Please
                      send your contributions as pull requests to 
@@ -22,6 +22,5 @@ Library
                      blaze-html,
                      safe,
                      data-default,
-                     pandoc,
                      text,
                      cgi
