@@ -1,6 +1,6 @@
 Name:           hledger
 -- updated by build process from VERSION
-Version:        0.5
+Version:        0.5.1
 Category:       Finance
 Synopsis:       A ledger-compatible text-based accounting tool.
 Description:    hledger is a partial haskell clone of John Wiegley's "ledger" text-based
@@ -20,7 +20,7 @@ Cabal-Version:  >= 1.2
 
 Flag vty
   description: enable the curses ui
-  default:     True
+  default:     False
 
 Flag happs
   description: enable the web ui
@@ -58,6 +58,7 @@ Executable hledger
   Other-Modules:  
                   AddCommand
                   BalanceCommand
+                  ConvertCommand
                   HistogramCommand
                   Options
                   PrintCommand
