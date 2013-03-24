@@ -1,5 +1,5 @@
 name:                prelude-plus
-version:             0.0.0.3
+version:             0.0.0.4
 synopsis:            Prelude for rest of us
 description:
   > import Prelude ()
