@@ -1,12 +1,12 @@
 name:           network
-version:        2.2.1.7
+version:        2.2.1.8
 license:        BSD3
 license-file:   LICENSE
 maintainer:     Johan Tibell <johan.tibell@gmail.com>
 synopsis:       Networking-related facilities
 category:       Network
 build-type:     Configure
-cabal-version:  >=1.2
+cabal-version:  >=1.2.3
 extra-tmp-files:
                 config.log config.status autom4te.cache
                 network.buildinfo include/HsNetworkConfig.h
@@ -29,12 +29,13 @@ library
   build-depends: base < 5, parsec
 
   if flag(base4)
-      build-depends:    base>=4
+      build-depends:    base >= 4 && < 4.4
       cpp-options:      -DBASE4
   else
       build-depends:    base<4
 
-  extensions:   CPP
+  extensions:   CPP, DeriveDataTypeable, ForeignFunctionInterface,
+                TypeSynonymInstances
   include-dirs:         include
   includes:       HsNet.h
   install-includes:
