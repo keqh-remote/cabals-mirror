@@ -1,5 +1,5 @@
 Name:                mwc-random-monad
-Version:             0.4
+Version:             0.5
 License:             BSD3
 License-file:        LICENSE
 Author:              Alexey Khudyakov <alexey.skladnoy@gmail.com>
@@ -15,6 +15,7 @@ Description:
 Library
   build-depends:
     base >= 3 && < 5,
+    transformers,
     primitive,
     vector >= 0.7,
     mwc-random >= 0.11
