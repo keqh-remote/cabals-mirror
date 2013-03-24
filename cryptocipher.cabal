@@ -1,5 +1,5 @@
 Name:                cryptocipher
-Version:             0.3.5
+Version:             0.3.6
 Description:         Symmetrical Block, Stream and PubKey Ciphers
 License:             BSD3
 License-file:        LICENSE
@@ -30,7 +30,7 @@ Library
                    , ghc-prim
                    , primitive
                    , crypto-api >= 0.5
-                   , crypto-pubkey-types >= 0.1 && < 0.2
+                   , crypto-pubkey-types >= 0.2 && < 0.3
                    , tagged
                    , cereal
   Exposed-modules:   Crypto.Cipher.RC4
@@ -49,11 +49,6 @@ Library
                      Number.Prime
                      Crypto.Cipher.ElGamal
   ghc-options:       -Wall
-  if flag(aesni)
-    cpp-options:     -DHAVE_AESNI
-    Exposed-modules: Crypto.Cipher.AES.X86NI
-    C-sources:       cbits/aes/x86ni.c
-    CC-options:      -mssse3 -maes
 
 Test-Suite test-cryptocipher
   type:              exitcode-stdio-1.0
@@ -83,10 +78,6 @@ Executable           Benchmarks
                    , mtl
   else
     Buildable:       False
-  if flag(aesni)
-    cpp-options:     -DHAVE_AESNI
-    C-sources:       cbits/aes/x86ni.c
-    CC-options:      -mssse3 -maes
 
 source-repository head
   type:     git
