@@ -1,5 +1,5 @@
 Name:             HJScript
-Version:          0.4.7
+Version:          0.4.8
 License:          BSD3
 Author:           Joel Bjornson, joel.bjornson@gmail.com,
                   Niklas Broberg, nibro@cs.chalmers.se
@@ -23,6 +23,7 @@ Exposed-Modules:  HJScript,
                   HJScript.Objects.JQuery
                   HJScript.Objects.Date
                   HJScript.Objects.Math
+                  HJScript.Objects.Object
                   HJScript.Objects.RegExp
                   HJScript.Objects.String
                   HJScript.Objects.ActiveXObject
@@ -45,7 +46,7 @@ Other-Modules:    HJScript.Monad
 
                   
 Cabal-Version:    >= 1.2.3
-Build-Depends:    base < 5, HJavaScript >= 0.4.4, mtl, hsx >= 0.4.4
+Build-Depends:    base < 5, HJavaScript >= 0.4.6, mtl, hsx >= 0.4.4
 Build-Type:       Simple
 Category:         Web, Language
 
