@@ -1,5 +1,5 @@
 Name:                storablevector
-Version:             0.1
+Version:             0.1.0
 Category:            Data
 Synopsis:            Fast, packed, strict storable arrays with a list interface like ByteString
 Description:
@@ -27,5 +27,6 @@ GHC-Options:         -Wall -fglasgow-exts -funbox-strict-fields
 CPP-Options:         -DSLOW_FOREIGN_PTR
 Hs-Source-Dirs:      ., tests
 Main-Is:             tests.hs
+Other-Modules:       QuickCheckUtils
 Extensions:          CPP, ForeignFunctionInterface
 Build-Depends:       base, haskell98, bytestring, QuickCheck
