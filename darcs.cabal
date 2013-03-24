@@ -1,5 +1,5 @@
 Name:           darcs
-version:        2.3.0
+version:        2.3.1
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -40,9 +40,6 @@ extra-source-files:
   -- C headers
   src/*.h src/Crypt/sha2.h
   src/win32/send_email.h src/win32/sys/mman.h
-
-  -- TODO: factor out these standalone executables to other sections
-  src/preproc.hs, src/unit.lhs,
 
   -- The contrib directory would make a sensible 'darcs-contrib' package
   contrib/_darcs.zsh, contrib/darcs_completion,
@@ -316,7 +313,7 @@ Library
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.3.6 && < 0.4
+                   hashed-storage >= 0.3.8 && < 0.4
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.4
@@ -433,6 +430,7 @@ Executable          darcs
                     System.Posix
                     System.Posix.Files
                     System.Posix.IO
+                    Preproc
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
 
@@ -446,7 +444,7 @@ Executable          darcs
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.3.6 && < 0.4
+                   hashed-storage >= 0.3.8 && < 0.4
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.4
