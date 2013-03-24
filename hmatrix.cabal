@@ -1,5 +1,5 @@
 Name:               hmatrix
-Version:            0.5.0.1
+Version:            0.5.1.1
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
@@ -11,16 +11,22 @@ Description:        This library provides a purely functional interface to basic
                     and other numerical computations, internally implemented using
                     GSL, BLAS and LAPACK.
 Category:           Math
-tested-with:        GHC ==6.10.0
+tested-with:        GHC ==6.10.2
 
 cabal-version:      >=1.2
 build-type:         Simple
+extra-source-files: lib/Numeric/LinearAlgebra/Tests/quickCheckCompat.h
+
 
 flag splitBase
     description:    Choose the new smaller, split-up base package.
 
 flag mkl
     description:    Link with Intel's MKL optimized libraries.
+    default:        False
+
+flag accelerate
+    description:    Use the accelerate framework for LAPACK/BLAS on OS X
     default:        False
 
 flag unsafe
@@ -93,8 +99,7 @@ library
                         Numeric.GSL.Special.Internal,
                         Numeric.LinearAlgebra.Tests.Instances,
                         Numeric.LinearAlgebra.Tests.Properties
-    C-sources:          lib/Data/Packed/Internal/auxi.c,
-                        lib/Numeric/LinearAlgebra/LAPACK/lapack-aux.c,
+    C-sources:          lib/Numeric/LinearAlgebra/LAPACK/lapack-aux.c,
                         lib/Numeric/GSL/gsl-aux.c
 
     ghc-prof-options:   -auto-all
@@ -104,6 +109,8 @@ library
     if flag(unsafe)
         cpp-options: -DUNSAFE
 
+    if impl(ghc < 6.10.2)
+        cpp-options: -DFINIT
 
     if flag(mkl)
       if arch(x86_64)
@@ -111,6 +118,10 @@ library
       else
         extra-libraries:   gsl mkl_lapack mkl_intel mkl_sequential mkl_core
     else
+      if flag(accelerate)
+        frameworks: Accelerate
+        extra-libraries: gsl
+      else
 
         extra-libraries: gsl lapack
 
