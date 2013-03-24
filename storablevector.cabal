@@ -1,5 +1,5 @@
 Name:                storablevector
-Version:             0.1.1
+Version:             0.1.2
 Category:            Data
 Synopsis:            Fast, packed, strict storable arrays with a list interface like ByteString
 Description:
