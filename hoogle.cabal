@@ -1,13 +1,13 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hoogle
-version:            4.2.14
+version:            4.2.15
 license:            BSD3
 license-file:       docs/LICENSE
 category:           Development
 author:             Neil Mitchell <ndmitchell@gmail.com>
 maintainer:         Neil Mitchell <ndmitchell@gmail.com>
-copyright:          Neil Mitchell 2004-2012
+copyright:          Neil Mitchell 2004-2013
 synopsis:           Haskell API Search
 description:
     Hoogle is a Haskell API search engine, which allows you to
@@ -109,8 +109,8 @@ executable hoogle
         cmdargs >= 0.7 && < 0.11,
         tagsoup >= 0.11 && < 0.13,
         blaze-builder >= 0.2 && < 0.4,
-        http-types == 0.7.*,
-        case-insensitive >= 0.2 && < 0.5,
+        http-types >= 0.7 && < 0.9,
+        case-insensitive >= 0.2 && < 1.1,
         conduit >= 0.2 && < 0.6,
         wai >= 1.1 && < 1.4,
         warp >= 1.1 && < 1.4,
