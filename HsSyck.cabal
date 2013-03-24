@@ -1,6 +1,6 @@
 Name:                HsSyck
-Version:             0.43
-Category:            Text
+Version:             0.44
+Category:            Text, Pugs
 Synopsis:            Fast, lightweight YAML loader and dumper
 Description:         This is a simple YAML ('Yet Another Markup Language') processor,
                      used by the Pugs project for handling data serialization; this can be
@@ -21,10 +21,11 @@ Exposed-modules:     Data.Yaml.Syck
 
 Build-Depends:       base, bytestring>=0.9.0.1
 Build-Type:          Simple
-Tested-With:         GHC==6.8.2
+Tested-With:         GHC==6.8.2, GHC==6.8.3
 
 extensions:          ForeignFunctionInterface, MagicHash, RecursiveDo,
                      DeriveDataTypeable, TypeSynonymInstances, PatternGuards
+
 ghc-options:         -funbox-strict-fields
 
 data-files:          Changes
