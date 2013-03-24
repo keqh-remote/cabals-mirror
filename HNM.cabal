@@ -1,5 +1,5 @@
 name:                HNM
-version:             0.1.1
+version:             0.1.2
 copyright:           (c) 2008 Cetin Sert
 cabal-version:       >= 1.2
 description:         A quick and dirty applet to help you connect
@@ -15,12 +15,12 @@ stability:           experimental
 
 build-type:          Simple
 
-data-files:          settings.conf,
-                     Makefile
+data-files:          settings.conf
 
 extra-source-files:  AUTHORS,
                      README,
-                     CHANGES
+                     CHANGES,
+                     Makefile
 
 Library
   buildable:         True
