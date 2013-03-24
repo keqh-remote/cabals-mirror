@@ -1,5 +1,5 @@
 name:                   random-fu
-version:                0.2.1.1
+version:                0.2.2.0
 stability:              provisional
 
 cabal-version:          >= 1.6
@@ -28,6 +28,8 @@ description:            Random number generation based on modeling random
                         comparable to other Haskell libraries, but still
                         a fair bit slower than straight C implementations of 
                         the same algorithms.
+                        .
+                        Changes in 0.2.2.0: Bug fixes in Data.Random.Distribution.Categorical.
                         .
                         Changes in 0.2.1.1: Changed some one-field data types
                         to newtypes, updated types for GHC 7.4's removal of Eq 
