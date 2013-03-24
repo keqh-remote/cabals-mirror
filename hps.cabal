@@ -1,24 +1,20 @@
 Name:              hps
-Version:           0.2
+Version:           0.11
 Synopsis:          Haskell Postscript
 Description:       Haskell library partially implementing the
                    postscript drawing model.
 License:           GPL
 Category:          Graphics
-Copyright:         Rohan Drape, 2006-2010
-Author:            Rohan Drape
+Copyright:         Rohan Drape, 2006-2011
+Author:            Rohan Drape and others
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/?t=hps
-Tested-With:       GHC == 6.10.3
+Tested-With:       GHC == 7.2.2
 Build-Type:	   Simple
-Cabal-Version:     >= 1.6
+Cabal-Version:     >= 1.8
 
 Data-files:        README
-                   Help/Animation.hs
-                   Help/Fractal.hs
-                   Help/HaskellPostScript.hs
-                   Help/Screen.hs
 
 Library
   Build-Depends:   base == 4.*
@@ -28,6 +24,7 @@ Library
                    Graphics.PS.Matrix
                    Graphics.PS.Bezier
                    Graphics.PS.Path
+                   Graphics.PS.Path.Graphs
                    Graphics.PS.Glyph
                    Graphics.PS.Font
                    Graphics.PS.Image
@@ -38,6 +35,16 @@ Library
                    Graphics.PS.Paper
                    Graphics.PS.PS
                    Graphics.PS.Unit
+
+Executable hps-fractals
+  hs-source-dirs:  . Help
+  Build-Depends:   base == 4.*,
+                   directory,
+                   filepath,
+                   random
+  Main-Is:         fractals.hs
+  Ghc-Options:     -Wall -fwarn-tabs
+  Other-Modules:   Graphics.PS
 
 Source-Repository  head
   Type:            darcs
