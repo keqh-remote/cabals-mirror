@@ -1,5 +1,5 @@
 Name:                wai-router
-Version:             1.0.0.0
+Version:             1.0.0.1
 Synopsis:            Provides basic routing on URL paths for WAI.
 Description:         Simple routing based on a URL path pieces mapped to web applications.
 License:             MIT
