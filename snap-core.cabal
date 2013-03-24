@@ -1,5 +1,5 @@
 name:           snap-core
-version:        0.3.1.1
+version:        0.4.0
 synopsis:       Snap: A Haskell Web Framework (Core)
 
 description:
@@ -52,22 +52,6 @@ extra-source-files:
   test/suite/TestSuite.hs,
   cbits/timefuncs.c,
   CONTRIBUTORS,
-  extra/fonts/DroidSerif-Bold.eot,
-  extra/fonts/DroidSerif-Bold.svg,
-  extra/fonts/DroidSerif-Bold.ttf,
-  extra/fonts/DroidSerif-Bold.woff,
-  extra/fonts/DroidSerif-BoldItalic.eot,
-  extra/fonts/DroidSerif-BoldItalic.svg,
-  extra/fonts/DroidSerif-BoldItalic.ttf,
-  extra/fonts/DroidSerif-BoldItalic.woff,
-  extra/fonts/DroidSerif-Italic.eot,
-  extra/fonts/DroidSerif-Italic.svg,
-  extra/fonts/DroidSerif-Italic.ttf,
-  extra/fonts/DroidSerif-Italic.woff,
-  extra/fonts/DroidSerif-Regular.eot,
-  extra/fonts/DroidSerif-Regular.svg,
-  extra/fonts/DroidSerif-Regular.ttf,
-  extra/fonts/DroidSerif-Regular.woff,
   extra/haddock.css,
   extra/hscolour.css,
   extra/logo.gif,
@@ -80,6 +64,9 @@ extra-source-files:
   test/data/fileServe/foo.bin.bin.bin,
   test/data/fileServe/foo.html,
   test/data/fileServe/foo.txt,
+  test/data/fileServe/mydir1/index.txt,
+  test/data/fileServe/mydir2/foo.txt,
+  test/data/fileServe/mydir3/altindex.html,
   test/runTestsAndCoverage.sh,
   test/snap-core-testsuite.cabal,
   test/suite/Snap/Internal/Http/Types/Tests.hs,
@@ -88,6 +75,7 @@ extra-source-files:
   test/suite/Snap/Test/Common.hs,
   test/suite/Snap/Types/Tests.hs,
   test/suite/Snap/Util/FileServe/Tests.hs,
+  test/suite/Snap/Util/FileUploads/Tests.hs,
   test/suite/Snap/Util/GZip/Tests.hs
 
 
@@ -97,14 +85,12 @@ Flag portable
   Default: False
 
 
-Flag no-debug
-  Description: Disable any debug logging code. Without this flag, Snap will
+Flag debug
+  Description: Enable debug logging code. With this flag, Snap will
                test the DEBUG environment variable to decide whether to do
                logging, and this introduces a tiny amount of overhead
                (a call into a function pointer) because the calls to 'debug'
-               cannot be inlined. Users who want to squeeze out maximum
-               performance can set the no-debug flag to get a version of Snap
-               which has debug calls that should be inlined away.
+               cannot be inlined.
                
   Default: False
 
@@ -112,7 +98,7 @@ Flag no-debug
 Library
   hs-source-dirs: src
 
-  if flag(no-debug)
+  if !flag(debug)
     cpp-options: -DNODEBUG
 
   if flag(portable) || os(windows)
@@ -129,22 +115,25 @@ Library
     Snap.Internal.Debug,
     Snap.Internal.Http.Types,
     Snap.Internal.Iteratee.Debug,
+    Snap.Internal.Parsing,
     Snap.Util.FileServe,
+    Snap.Util.FileUploads,
     Snap.Util.GZip
 
   other-modules:
     Snap.Internal.Instances,
-    Snap.Internal.Parsing,
+    Snap.Internal.Iteratee.KnuthMorrisPratt,
     Snap.Internal.Routing,
     Snap.Internal.Types
 
+
   build-depends:
     attoparsec >= 0.8.0.2 && < 0.9,
+    attoparsec-enumerator >= 0.2.0.3,
     base >= 4 && < 5,
+    blaze-builder >= 0.2.1.4 && <0.3,
     bytestring,
     bytestring-nums,
-    bytestring-show >= 0.3.2 && < 0.4,
-    cereal >= 0.3 && < 0.4,
     containers,
     deepseq >= 1.1 && <1.2,
     directory,
@@ -159,6 +148,7 @@ Library
     time,
     transformers == 0.2.*,
     unix-compat == 0.2.*,
+    vector >= 0.6 && <0.8,
     zlib
 
   ghc-prof-options: -prof -auto-all
