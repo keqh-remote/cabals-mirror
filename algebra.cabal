@@ -1,5 +1,5 @@
 Name:          algebra
-Version:       0.0.0.0
+Version:       0.0.0.1
 Cabal-Version: >= 1.2
 Build-Type:    Simple
 License:       BSD3
@@ -8,7 +8,7 @@ Copyright:     © 2009 Wolfgang Jeltsch
 Author:        Wolfgang Jeltsch
 Maintainer:    jeltsch@informatik.tu-cottbus.de
 Stability:     provisional
-Homepage:      http://softbase.org/algebra/
+Homepage:      http://community.haskell.org/~jeltsch/algebra/
 Package-URL:   http://hackage.haskell.org/packages/archive/algebra/0.0.0.0/algebra-0.0.0.0.tar.gz
 Synopsis:      Algebraic structures
 Description:   This package provides common algebraic structures in the form of type classes. In the
