@@ -1,5 +1,5 @@
 Name:            parsec-extra
-Version:         0.1.0.2
+Version:         0.1.0.3
 Cabal-Version:   >= 1.6
 License:         BSD3
 Author:          Arie Peterson
@@ -19,7 +19,7 @@ Library
   Build-Depends:
     base == 4.*,
     parsec == 3.*,
-    transformers == 0.2.*,
+    transformers >= 0.2 && < 0.4,
     monads-tf == 0.1.*
   Exposed-Modules:
     Text.Parsec.Extra
