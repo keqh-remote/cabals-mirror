@@ -1,5 +1,5 @@
 name:                pure-priority-queue
-version:             0.12
+version:             0.13
 synopsis:            A pure priority queue.
 description:         A pure priority queue.
 category:            Data
@@ -19,4 +19,3 @@ library
   exposed-modules:
                         Data.PurePriorityQueue,
                         Data.PurePriorityQueue.Internal
-
