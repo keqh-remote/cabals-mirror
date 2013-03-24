@@ -1,5 +1,5 @@
 Name: HTTP
-Version: 4000.0.7
+Version: 4000.0.8
 Cabal-Version: >= 1.2
 Build-type: Simple
 License: BSD3
@@ -58,6 +58,9 @@ Library
                  Network.HTTP.Headers,
                  Network.HTTP.Base,
                  Network.HTTP.Stream,
+                 Network.HTTP.Auth,
+                 Network.HTTP.Cookie,
+                 Network.HTTP.Proxy,
                  Network.HTTP.HandleStream,
                  Network.Browser
   Other-modules:
@@ -66,8 +69,11 @@ Library
                  Network.HTTP.MD5Aux,
                  Network.HTTP.Utils
   GHC-options: -fwarn-missing-signatures -Wall
-  Build-depends: base >= 2, network, parsec, mtl
+  Build-depends: base >= 2 && < 4 , network, parsec, mtl
   if flag(old-base)
     Build-depends: base < 3
   else
     Build-depends: base >= 3, array, old-time, bytestring
+
+  if os(windows)
+    Build-depends: Win32
