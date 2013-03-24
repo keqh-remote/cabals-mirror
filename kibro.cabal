@@ -1,5 +1,5 @@
 name:          kibro
-version:       0.3
+version:       0.4
 synopsis:      Web development framework.
 description:   Web development framework.
 category:      Web
@@ -19,5 +19,5 @@ library
 
 executable kibro
   main-is: Main.hs
-  build-depends: base,filepath,directory,haskell98,process,strict,unix
+  build-depends: base,filepath,directory,haskell98,process,strict,unix,ConfigFile
   hs-source-dirs: executable/
