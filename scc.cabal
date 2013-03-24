@@ -1,5 +1,5 @@
 Name:                scc
-Version:             0.5
+Version:             0.5.1
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Streaming component combinators
@@ -32,7 +32,7 @@ Executable shsh
                      Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives,
                      Control.Concurrent.SCC.XML,
                      Control.Concurrent.Configuration, Control.Concurrent.SCC.Components
-  Build-Depends:     base < 5, containers, transformers, monad-parallel, monad-coroutine,
+  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, monad-parallel, monad-coroutine,
                      process, readline, parsec >= 3.0 && < 4.0
   GHC-options:       -threaded
 
@@ -41,5 +41,5 @@ Library
                      Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives,
                      Control.Concurrent.SCC.XML,
                      Control.Concurrent.Configuration, Control.Concurrent.SCC.Components
-  Build-Depends:     base < 5, containers, transformers, monad-parallel, monad-coroutine
+  Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, monad-parallel, monad-coroutine
   GHC-prof-options:  -auto-all
