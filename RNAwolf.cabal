@@ -1,5 +1,5 @@
 name:           RNAwolf
-version:        0.3.1.0
+version:        0.3.2.0
 author:         Christian Hoener zu Siederdissen, Stephan H Bernhart, Peter F Stadler, Ivo L Hofacker
 copyright:      Christian Hoener zu Siederdissen, 2010-2011
 homepage:       http://www.tbi.univie.ac.at/software/rnawolf/
@@ -48,7 +48,15 @@ description:
                 changes. Please send a mail, if you encounter strange behaviour
                 or bugs.
                 .
-                Last Changes:
+                Changes in 0.3.2.0
+                .
+                * simpler training wrapper
+                .
+                * added parallelism option for multi-core systems (reduce
+                  iteration time for the cost of a possible reduction in
+                  training efficiency; but should be worth it)
+                .
+                Changes in 0.3.1.0
                 .
                 * fixed bugs introduced by bulge/interior/multi-loops
 
@@ -95,11 +103,12 @@ library
 
 executable RNAwolfTrain
   build-depends:
+    split,
     cmdargs == 0.7.*
   main-is:
     RNAwolfTrain.hs
   ghc-options:
-    -O2 -rtsopts
+    -O2 -rtsopts -threaded
   if flag(llvm)
     ghc-options:
       -fllvm
