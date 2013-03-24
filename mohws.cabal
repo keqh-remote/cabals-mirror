@@ -1,5 +1,5 @@
 Name:         mohws
-Version:      0.2.0.1
+Version:      0.2.1
 Author:       Simon Marlow, Bjorn Bringert <bjorn@bringert.net>
 Copyright:    Simon Marlow, Bjorn Bringert
 Maintainer:   Henning Thielemann <webserver@henning-thielemann.de>
@@ -28,7 +28,7 @@ Source-Repository head
 Source-Repository this
   Type:     darcs
   Location: http://code.haskell.org/mohws/
-  Tag:      0.2.0.1
+  Tag:      0.2.1
 
 Flag dynamic
   description: Build server with dynamically loaded plugins
@@ -36,26 +36,26 @@ Flag dynamic
 
 Library
   Build-depends:
-    base >3,
-    directory >=1.0 && <1.1,
     HTTP >=4000.0.4 && <4001,
-    network >=2.1 && <2.3,
-    unix >=2.3 && <2.4,
-    parsec >=2.1 && <2.2,
+    network >=2.1 && <2.4,
+    unix >=2.3 && <2.5,
+    parsec >=2.1 && <3.2,
     html >=1.0 && <1.1,
     process >=1.0 && <1.1,
-    containers >=0.1 && <0.3,
+    containers >=0.1 && <0.5,
     old-time >=1.0 && <1.1,
     old-locale >=1.0 && <1.1,
     bytestring >=0.9 && <0.10,
-    filepath >=1.1 && <1.2,
+    filepath >=1.1 && <1.3,
     utility-ht >=0.0.3 && <0.1,
-    transformers >=0.1.3 && <0.2,
+    transformers >=0.2 && <0.3,
     explicit-exception >=0.1 && <0.2,
-    data-accessor >=0.2 && <0.3
+    data-accessor >=0.2 && <0.3,
+    directory >=1.0 && <1.2,
+    base >4 && <5
 
   Hs-Source-dirs: src
-  Ghc-Options: -threaded -Wall
+  GHC-Options: -Wall
   Exposed-Modules:
     -- server
     Network.MoHWS.Server
