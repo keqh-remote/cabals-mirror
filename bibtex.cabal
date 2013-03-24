@@ -1,5 +1,5 @@
 Name:             bibtex
-Version:          0.0.6
+Version:          0.0.6.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -71,11 +71,6 @@ Source-Repository head
   type:     darcs
   location: http://code.haskell.org/~thielema/bibtex/
 
-Source-Repository this
-  type:     darcs
-  location: http://code.haskell.org/~thielema/bibtex/
-  tag:      0.0.6
-
 Flag base2
   description: Choose the new smaller, split-up base package.
 
@@ -85,7 +80,7 @@ Flag buildExamples
 
 Library
   Build-Depends:
-    parsec >=2.1 && <3.1,
+    parsec >=2.1 && <3.2,
     containers >= 0.1 && <0.4,
     utility-ht >=0.0.5 && <0.1
   If flag(base2)
