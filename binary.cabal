@@ -1,5 +1,5 @@
 name:            binary
-version:         0.4.4
+version:         0.5
 license:         BSD3
 license-file:    LICENSE
 author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
@@ -52,14 +52,7 @@ library
   extensions:      CPP,
                    FlexibleContexts
 
-  ghc-options:     -O2
-                   -Wall
-                   -fspec-constr
-                   -funbox-strict-fields 
-                   -fdicts-cheap
-                   -fno-method-sharing
-                   -fliberate-case-threshold=1000
-                   -fmax-simplifier-iterations10
+  ghc-options:     -O2 -Wall -fliberate-case-threshold=1000
 
 --  if impl(ghc < 6.5)
 --    ghc-options:   -fallow-undecidable-instances
