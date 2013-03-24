@@ -1,5 +1,5 @@
 Name:               hsc3-process
-Version:            0.7.0
+Version:            0.8.0
 Synopsis:           Create and control scsynth processes
 Description:
     This library allows to create and control scsynth processes.
@@ -8,34 +8,65 @@ Description:
 License:            GPL
 License-File:       LICENSE
 Category:           Sound
-Copyright:          Copyright (c) Stefan Kersten 2008-2012
-Author:             Stefan Kersten
-Maintainer:         Stefan Kersten
-Stability:          experimental
-Homepage:           http://space.k-hornz.de/software/hsc3-process
-Tested-With:        GHC == 6.10, GHC == 6.12, GHC == 7.0, GHC == 7.2
+Copyright:          Copyright (c) Stefan Kersten and others 2008-2012
+Author:             Stefan Kersten, Rohan Drape
+Maintainer:         kaoskorobase@gmail.com
+Homepage:           https://github.com/kaoskorobase/hsc3-process
+Tested-With:        GHC == 7.4
 Build-Type:         Simple
-Cabal-Version:      >= 1.6
+Cabal-Version:      >= 1.8
 
-Extra-Source-Files: examples/config.hs
-                    examples/scsynth.cfg
-                    examples/sine.hs
+Flag build-examples
+    Description:    Build example programs
+    Default:        False
 
 Library
   Exposed-Modules:  Sound.SC3.Server.Process
                     Sound.SC3.Server.Process.CommandLine
+                    Sound.SC3.Server.Process.Make
                     Sound.SC3.Server.Process.Options
 
   Build-Depends:    base >= 3 && < 5
-                  , bytestring >= 0.8 && < 0.10
-                  , containers >= 0.2 && < 0.6
-                  , hosc >= 0.7 && < 0.12
-                  , hsc3 >= 0.7 && < 0.12
-                  , process >= 1.0 && < 1.2
-                  , transformers >= 0.2 && < 0.4
+                  , bytestring >= 0.8
+                  , containers >= 0.2
+                  , data-default >= 0.5
+                  , directory
+                  , filepath
+                  , hosc >= 0.13
+                  , hsc3 >= 0.13
+                  , process >= 1.0
+                  , time
+                  , time-compat
+                  , transformers >= 0.2
 
-  Ghc-Options:      -W
+  Ghc-Options:      -Wall
  
 Source-Repository head
   Type:             git
   Location:         git://github.com/kaoskorobase/hsc3-process.git
+
+Executable hsc3-sine
+    Main-Is: sine.hs
+    Hs-Source-Dirs: examples
+    if flag(build-examples)
+        Buildable: True
+    else
+        Buildable: False
+    Build-Depends:
+        base >= 4.3 && < 5
+      , hsc3-process >= 0.8
+    Ghc-Options:
+        -Wall -rtsopts -threaded
+
+Executable hsc3-nrt
+    Main-Is: nrt.hs
+    Hs-Source-Dirs: examples
+    if flag(build-examples)
+        Buildable: True
+    else
+        Buildable: False
+    Build-Depends:
+        base >= 4.3 && < 5
+      , hsc3-process >= 0.8
+    Ghc-Options:
+        -Wall -rtsopts -threaded
