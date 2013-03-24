@@ -1,5 +1,5 @@
 name:                serial
-version:             0.2.4
+version:             0.2.5
 synopsis:            POSIX serial port wrapper
 description:         Provides a clean interface to working with POSIX serial ports in Haskell
 category:            System
@@ -13,5 +13,5 @@ extra-source-files: README
 
 Library
   build-depends:       base >= 2 && < 4, unix
-  Exposed-Modules: System.Serial System.Serial.Manager System.Serial.BlockingManager
+  Exposed-Modules: System.Serial System.Serial.Manager
   ghc-options:         -Wall
