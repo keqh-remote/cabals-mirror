@@ -1,5 +1,5 @@
 Name:		hxournal
-Version:	0.6.0.1
+Version:	0.6.1
 Synopsis:	A pen notetaking program written in haskell 
 Description: 	notetaking program written in haskell and gtk2hs
 Homepage:       http://ianwookim.org/hxournal
@@ -19,11 +19,9 @@ Source-repository head
   type: git
   location: http://www.github.com/wavewave/hxournal
 
-
 Flag Poppler
-  Description: Enable poppler support 
+  Description: Enable poppler support
   Default:     True
-
 
 Executable hxournal
   Main-is: hxournal.hs
@@ -39,8 +37,8 @@ Library
   hs-source-dirs: lib
   ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind
   ghc-prof-options: -caf-all -auto-all
-  
-  if flag(poppler)
+
+  if flag(poppler) 
     Build-Depends:   base == 4.*, 
                      mtl == 2.*,
                      directory == 1.*,
@@ -50,9 +48,9 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types == 0.1.*,
+                     xournal-types == 0.2.*,
                      xournal-parser == 0.3.*,
-                     xournal-render == 0.3.0.*,
+                     xournal-render == 0.4.*,
                      xournal-builder == 0.1.*,
                      containers == 0.4.*,
                      template-haskell == 2.*,
@@ -72,9 +70,9 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types == 0.1.*,
+                     xournal-types == 0.2.*,
                      xournal-parser == 0.3.*,
-                     xournal-render == 0.3.0.*,
+                     xournal-render == 0.4.*,
                      xournal-builder == 0.1.*,
                      containers == 0.4.*,
                      template-haskell == 2.*,
@@ -96,6 +94,7 @@ Library
                    Application.HXournal.Type.Coroutine
                    Application.HXournal.Type.XournalState
                    Application.HXournal.Type.Window
+                   Application.HXournal.Type.Undo 
                    Application.HXournal.ModelAction.Adjustment
                    Application.HXournal.ModelAction.Pen 
                    Application.HXournal.ModelAction.Page
@@ -103,7 +102,6 @@ Library
                    Application.HXournal.ModelAction.Select
                    Application.HXournal.ModelAction.File
                    Application.HXournal.ModelAction.Window
-                   -- Application.HXournal.ModelAction.Common
                    Application.HXournal.Coroutine.Callback
                    Application.HXournal.GUI
                    Application.HXournal.GUI.Menu
@@ -128,7 +126,6 @@ Library
                    Application.HXournal.Accessor
                    Application.HXournal.Config
 
-
   Other-Modules: 
                    Paths_hxournal
   c-sources: 
@@ -137,6 +134,6 @@ Library
   install-includes: 
                    csrc/c_initdevice.h
                    csrc/template-hsc-gtk2hs.h
-  if flag(poppler) 
+
+  if flag(poppler)
     cpp-options: -DPOPPLER
-  
