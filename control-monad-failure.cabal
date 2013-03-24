@@ -1,5 +1,5 @@
 name: control-monad-failure
-version: 0.6.1.1
+version: 0.6.1.2
 Cabal-Version:  >= 1.6
 build-type: Simple
 license: PublicDomain
@@ -11,9 +11,6 @@ synopsis: A class for monads which can fail with an error.
 category: Control, Monads, Failure
 stability: experimental
 
-flag transformers_02
-    description: transformers = 0.2.*
-
 Library
   buildable: True
   build-depends: base >= 4 && < 5,
@@ -21,7 +18,11 @@ Library
                  transformers >= 0.1 && < 0.3
   ghc-options: -Wall
 
-  extensions:  MultiParamTypeClasses, FlexibleInstances, CPP
+  extensions: MultiParamTypeClasses,
+              UndecidableInstances,
+              FlexibleInstances,
+              PackageImports,
+              CPP
   exposed-modules:
      Control.Monad.Failure
      Control.Monad.Failure.Transformers
