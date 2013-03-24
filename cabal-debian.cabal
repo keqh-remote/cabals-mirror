@@ -1,5 +1,5 @@
 Name:           cabal-debian
-Version:        1.24
+Version:        1.25
 License:        BSD3
 License-File:   debian/copyright
 Author:         David Fox <dsf@seereason.com>
