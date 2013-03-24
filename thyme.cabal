@@ -1,5 +1,5 @@
 name:           thyme
-version:        0.1.0.0
+version:        0.1.1.0
 synopsis:       A faster time library
 description:
     A faster time library
@@ -8,10 +8,10 @@ license:        BSD3
 license-file:   LICENSE
 author:         Liyang HU
 maintainer:     thyme@liyang.hu
-copyright:      © 2013 Liyang HU
+copyright:      © 2013 Liyang HU, Ashley Yakeley
 category:       Data, System
 build-type:     Simple
-cabal-version:  >=1.8
+cabal-version:  >= 1.8
 stability:      experimental
 
 source-repository head
@@ -38,15 +38,17 @@ library
         Data.Thyme.LocalTime
     other-modules:
         Data.Micro
-        Data.Thyme.Calendar.Day
+        Data.Thyme.Calendar.Internal
         Data.Thyme.Clock.Scale
         Data.Thyme.Clock.UTC
+        Data.Thyme.Format.Internal
         Data.Thyme.TH
     build-depends:
-        base >= 4.6 && < 5,
+        base >= 4.5 && < 5,
         deepseq >= 1.2,
         vector-space >= 0.8,
         lens >= 3.7,
+        old-locale >= 1.0,
         template-haskell >= 2.6,
         time >= 1.4
     ghc-options: -Wall
