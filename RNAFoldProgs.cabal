@@ -1,5 +1,5 @@
 name:           RNAFoldProgs
-version:        0.0.0.2
+version:        0.0.0.3
 author:         Christian Hoener zu Siederdissen (Haskell), Ivo L. Hofacker et al. (ViennaRNA package)
 maintainer:     choener@tbi.univie.ac.at
 copyright:      Christian Hoener zu Siederdissen (Haskell), Ivo L. Hofacker et al. (ViennaRNA package)
@@ -31,14 +31,22 @@ description:
                 .
                 - Works well with -Odph, -fllvm (llvm is about 70% faster than
                   -fasm)
+                .
+                - 0.0.0.3 forgot a lot of depends!
 
 executable hsRNAFold
   build-depends:
     base >=4 && <5,
+    containers,
 
     cmdargs ==0.6,
+    primitive >=0.3 && <0.4,
+    vector >=0.7 && <0.8,
 
+    HsTools >=0.0.1.1,
     Biobase >=0.0.2 && <0.0.3,
+    BiobaseTypes >=0.0.2.1 && <0.0.3,
+    BiobaseTurner >=0.0.2.1 && <0.0.3,
     BiobaseVienna >=0.0.2 && <0.0.3,
     PrimitiveArray >=0.0.2 && <0.0.3,
     RNAFold >=0.0.2 && <0.0.3
