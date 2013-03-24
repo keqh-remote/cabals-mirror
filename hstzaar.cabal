@@ -1,5 +1,5 @@
 name:    hstzaar
-version: 0.4
+version: 0.5
 
 category: Game
 
@@ -42,3 +42,4 @@ executable hstzaar
     QuickCheck >= 2.1
 
  ghc-prof-options: -prof -auto-all
+
