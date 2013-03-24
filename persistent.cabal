@@ -1,5 +1,5 @@
 name:            persistent
-version:         0.6.2
+version:         0.6.3
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -25,6 +25,7 @@ library
                    , blaze-html               >= 0.4     && < 0.5
                    , path-pieces              >= 0.0     && < 0.1
                    , mtl                      >= 2.0     && < 2.1
+                   , data-object              >= 0.3.1.7 && < 0.4
     exposed-modules: Database.Persist
                      Database.Persist.Base
                      Database.Persist.Quasi
@@ -36,42 +37,6 @@ library
                      Database.Persist.Join
                      Database.Persist.Join.Sql
     ghc-options:     -Wall
-
-test-suite test
-    type:          exitcode-stdio-1.0
-    main-is:       main.hs
-    hs-source-dirs: test, persistent-template, persistent-sqlite, persistent-postgresql, persistent-mongoDB
-
-    build-depends:   HUnit
-                   , hspec >= 0.6.1 && < 0.7
-                   , file-location >= 0.4 && < 0.5
-                   , base >= 4 && < 5
-                   , template-haskell >= 2.4 && < 2.7
-                   , HDBC-postgresql
-                   , HDBC
-                   -- mongoDB dependencies
-                   , mongoDB       == 1.1.*
-                   , bson          >= 0.1.5
-                   , cereal
-                   , network
-                   , compact-string-fix
-                   , persistent
-                   , path-pieces
-                   , text
-                   , transformers
-                   , monad-control
-                   , containers
-                   , bytestring
-                   , enumerator
-                   , time >= 1.2
-                   , random == 1.*
-                   , QuickCheck == 2.4.*
-
-    -- these are mutually exclusive options
-    -- cpp-options: -DWITH_POSTGRESQL
-    -- cpp-options: -DWITH_MONGODB -DDEBUG
-    ghc-options:   -Wall
-    extra-libraries: sqlite3
 
 source-repository head
   type:     git
