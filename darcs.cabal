@@ -1,5 +1,5 @@
 Name:           darcs
-version:        2.4.1
+version:        2.4.3
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -44,6 +44,7 @@ extra-source-files:
   -- The contrib directory would make a sensible 'darcs-contrib' package
   contrib/_darcs.zsh, contrib/darcs_completion,
   contrib/cygwin-wrapper.bash, contrib/update_roundup.pl, contrib/upload.cgi,
+  contrib/darcs-errors.hlint,
 
   -- documentation files
   src/best_practices.tex, src/building_darcs.tex, src/configuring_darcs.tex,
@@ -150,6 +151,7 @@ Executable          witnesses
                     System.Posix.IO
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
+    build-depends:  unix-compat >= 0.1.2
 
 -- ----------------------------------------------------------------------
 -- darcs library
@@ -314,6 +316,7 @@ Library
                     System.Posix.Files
                     System.Posix.IO
     cpp-options:    -DWIN32
+    build-depends:  unix-compat >= 0.1.2
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
@@ -325,7 +328,7 @@ Library
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage == 0.4.11
+                   hashed-storage == 0.4.13
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
@@ -444,6 +447,7 @@ Executable          darcs
                     Preproc
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
+    build-depends:  unix-compat >= 0.1.2
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
@@ -455,7 +459,7 @@ Executable          darcs
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage == 0.4.11
+                   hashed-storage == 0.4.13
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
@@ -583,6 +587,7 @@ Executable          unit
                     System.Posix.IO
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
+    build-depends:  unix-compat >= 0.1.2
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
