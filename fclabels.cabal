@@ -1,6 +1,7 @@
 Name:          fclabels
-Version:       1.0.5
-Author:        Sebastiaan Visser, Erik Hesselink, Chris Eidhof, Sjoerd Visscher.
+Version:       1.1.4
+Author:        Sebastiaan Visser, Erik Hesselink, Chris Eidhof, Sjoerd Visscher
+               with lots of help and feedback from others.
 Synopsis:      First class accessor labels.
 Description:   This package provides first class labels that can act as
                bidirectional record fields. The labels can be derived
@@ -19,13 +20,12 @@ Description:   This package provides first class labels that can act as
                .
                See the "Data.Label.Maybe" module for the use of partial labels.
                .
-               > 1.0.4 -> 1.0.5
-               >   - Relaxed template-haskell dependency constraint for GHC 7.4
-               >   - Relaxed transformers dependency constraint
-               >   (thanks to Claude Heiland-Allen)
+               > 1.1.3 -> 1.1.4
+               >   - Added function to derive labels for a single datatype.
+
 Maintainer:    Sebastiaan Visser <code@fvisser.nl>
 License:       BSD3
-License-File:  LICENCE
+License-File:  LICENSE
 Category:      Data
 Cabal-Version: >= 1.6
 Build-Type:    Simple
