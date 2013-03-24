@@ -1,5 +1,5 @@
 Name:                hoopl
-Version:             3.7.3.4
+Version:             3.7.3.5
 Description:         Higher-order optimization library
 License:             BSD3
 License-file:        LICENSE
@@ -8,7 +8,7 @@ Maintainer:          nr@cs.tufts.edu
 Build-Type:          Simple
 Cabal-Version:       >=1.2
 Synopsis:            A library to support dataflow analysis and optimization
-Category:            Compilers/Interpeters
+Category:            Compilers/Interpreters
 Extra-source-files:  README, hoopl.pdf
 
 Library
