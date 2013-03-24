@@ -1,12 +1,13 @@
 name:               greencard
-version:            3.0.1
+version:            3.0.1.1
 synopsis:           A foreign function interface pre-processor for Haskell
 category:           Development
 license:            BSD3
 license-file:       LICENSE
 description:        Green Card is a foreign function interface preprocessor for Haskell,
                     simplifying the task of interfacing Haskell programs to external libraries
-                    (which are normally exposed via C interfaces).
+                    (which are normally exposed via C interfaces). This package is of largely
+                    historical interest only.
                     .
                     To interface to an external function using Green Card, you write
                     a small procedure specification. The specification tells Green Card
@@ -20,9 +21,9 @@ description:        Green Card is a foreign function interface preprocessor for 
                     For the Foreign.GreenCard library, you need to install this first and then you can
                     install greencard-lib (greencard-lib requires the greencard binary already installed).
 author:             Alastair Reid, Sigbjorn Finne, and Thomas Nordin
-maintainer:         Alastair Reid <alastair@reid-consulting-uk.ltd.uk>; Sigbjorn Finne <sof@galois.com>
 homepage:           http://www.haskell.org/greencard/
 
+maintainer:         None
 build-type:         Simple
 tested-with:        GHC==6.8.2
 Cabal-Version:      >= 1.2
@@ -41,6 +42,6 @@ Executable greencard
                                 GCToken, GreenCard, Lex, LexM, ListUtils, MarshallMonad,
                                 Name, NameSupply, Package, Parse, PrettyUtils, Proc,
                                 Process, Target, Type
-           build-depends:       base>3, pretty, containers, array, process
-           ghc-options:         -Wall -optl-Wl,-s
+           build-depends:       base >=3 && <4, pretty, containers, array, process
+           ghc-options:         -Wall 
            ghc-prof-options:    -prof -auto-all
