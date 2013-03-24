@@ -1,5 +1,5 @@
 name:                hgalib
-version:             0.1
+version:             0.2
 synopsis:            Haskell Genetic Algorithm Library
 description:         Haskell Genetic Algorithm Library
 category:            AI
