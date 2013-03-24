@@ -1,5 +1,5 @@
 Name:                HXQ
-Version:             0.3
+Version:             0.4
 Description:         A Compiler from XQuery to Haskell
 Synopsis:            A Compiler from XQuery to Haskell
 Category:            XML
@@ -13,10 +13,14 @@ extra-source-files:
   Makefile
   index.html
   data/cs.xml
+  data/q1.xq
   XQuery.hs
   XQueryParser.hs
   XQueryParser.y
-  Main2.hs
+  XQueryCompiler.hs
+  XQueryInterpreter.hs
+  Test1.hs
+  Test2.hs
   hxml-0.2/Arrow.hs
   hxml-0.2/LLParsing.hs
   hxml-0.2/XML.hs
