@@ -1,9 +1,10 @@
 name:		     TrieMap
-version:             1.0.0
+version:             1.5.0
 tested-with:	     GHC
 category:            Algorithms
-synopsis:	     Automatic type inference of generalized tries.
-description:	     Builds on the multirec library to create a system capable of automatic or simple generalized trie type inference.
+synopsis:	     Automatic type inference of generalized tries with Template Haskell.
+description:	     Provides a efficient and compact implementation of generalized tries, and Template Haskell tools to generate
+                     the necessary translation code.  This is meant as a drop-in replacement for Data.Map.
 license:             BSD3
 license-file:	     LICENSE
 author:              Louis Wasserman
@@ -15,11 +16,11 @@ extra-source-files:  Tests.hs
 exposed-modules:  
 	Data.TrieMap,
 	Data.TrieSet,
-	Data.TrieMap.Class,
 	Data.TrieMap.Representation,
 	Data.TrieMap.Representation.TH,
 	Data.TrieMap.Modifiers
 other-modules:
+	Data.TrieMap.Class,
 	Data.TrieMap.Class.Instances,
 	Data.TrieMap.Key,
 	Data.TrieMap.TrieKey,
