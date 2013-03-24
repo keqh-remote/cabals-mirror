@@ -1,5 +1,5 @@
 Name:                udbus-model
-Version:             0.2.0
+Version:             0.2.1
 Description:         Model API for udbus introspection and definitions
 License:             BSD3
 License-file:        LICENSE
@@ -20,7 +20,7 @@ Flag executable
 Library
   Build-Depends:     base >= 3 && < 5
                    , bytestring
-                   , HaXml
+                   , xml
                    , udbus >= 0.2.0
   Exposed-modules:   Network.DBus.Model
   Other-modules:     Network.DBus.Model.Types
