@@ -1,5 +1,5 @@
 name:                optparse-applicative
-version:             0.1.0
+version:             0.1.1
 synopsis:            Utilities and combinators for parsing command line options
 description:
     Here is a simple example of an applicative option parser:
@@ -73,6 +73,7 @@ extra-source-files:  README.md
 
 library
   exposed-modules:     Options.Applicative,
+                       Options.Applicative.Arrows,
                        Options.Applicative.Common,
                        Options.Applicative.Types,
                        Options.Applicative.Builder,
@@ -89,7 +90,7 @@ test-suite tests
   main-is:             Tests.hs
   build-depends:       base == 4.*,
                        HUnit == 1.2.*,
-                       optparse-applicative == 0.1.*,
+                       optparse-applicative == 0.2.*,
                        test-framework == 0.6.*,
                        test-framework-hunit == 0.2.*,
                        test-framework-th-prime == 0.0.*
