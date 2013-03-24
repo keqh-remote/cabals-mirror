@@ -1,5 +1,5 @@
 Name:          alsa-gui
-Version:       0.0
+Version:       0.0.1
 Maintainer:    Henning Thielemann <alsa@henning-thielemann.de>
 Author:        Henning Thielemann <alsa@henning-thielemann.de>
 Category:      Sound, Music, GUI
@@ -25,11 +25,6 @@ Source-Repository head
   type:     darcs
   location: http://code.haskell.org/alsa/gui/
 
-Source-Repository this
-  type:     darcs
-  location: http://code.haskell.org/alsa/gui/
-  tag:      0.0
-
 Executable alsa-midi-mode
   Main-Is: mode.hs
   Other-Modules: Common
@@ -37,6 +32,7 @@ Executable alsa-midi-mode
   GHC-Options: -Wall -threaded
   Build-Depends:
     wx >=0.12.1.6 && <0.13,
+    wxcore >=0.12.1.6 && <0.13,
     midi-alsa >=0.1.1 && <0.2,
     midi >=0.1.6 && <0.2,
     alsa-seq >=0.5.1 && <0.6,
