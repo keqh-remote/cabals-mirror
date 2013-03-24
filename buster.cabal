@@ -1,5 +1,5 @@
 name: buster
-version: 0.99.1
+version: 0.99.2
 cabal-version: -any
 build-type: Simple
 license: BSD3
@@ -8,7 +8,7 @@ copyright: 2009 Renaissance Computing Institute
 maintainer: Jeff Heard <jeff@renci.org>
 build-depends: old-locale -any, time -any, containers -any,
                base -any, bytestring -any, gtk -any, mtl -any,
-               pretty -any
+               pretty -any, parsec >= 3.0.0
 stability: Experimental
 homepage: http://vis.renci.org/jeff/buster
 package-url:
@@ -33,7 +33,7 @@ data-dir: ""
 extra-source-files:
 extra-tmp-files:
 exposed-modules: App.EventBus App.Behaviours.PrintEvents
-                 App.Widgets.GtkMouseKeyboard 
+                 App.Widgets.GtkMouseKeyboard App.Widgets.Environment 
 exposed: True
 buildable: True
 build-tools:
