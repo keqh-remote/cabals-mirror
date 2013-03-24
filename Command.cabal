@@ -1,5 +1,5 @@
 Name:               Command
-Version:            0.0.6
+Version:            0.0.7
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
@@ -22,7 +22,8 @@ Flag small_base
 Library
   Build-Depends:
                     base < 5 && >= 4
-                    , process
+                    , process >= 1.0
+                    , directory >= 1.1
 
   GHC-Options:      
                     -Wall
