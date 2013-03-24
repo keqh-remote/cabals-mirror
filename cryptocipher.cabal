@@ -1,5 +1,5 @@
 Name:                cryptocipher
-Version:             0.3.1
+Version:             0.3.2
 Description:         Symmetrical Block, Stream and PubKey Ciphers
 License:             BSD3
 License-file:        LICENSE
@@ -12,6 +12,7 @@ Build-Type:          Simple
 Homepage:            http://github.com/vincenthz/hs-cryptocipher
 Cabal-Version:       >=1.8
 Extra-Source-Files:  Tests/*.hs
+                     cbits/aes/aes.h
 
 Flag benchmark
   Description:       Build benchmarks
@@ -29,7 +30,7 @@ Library
                    , ghc-prim
                    , primitive
                    , crypto-api >= 0.5
-                   , crypto-pubkey-types
+                   , crypto-pubkey-types >= 0.1 && < 0.2
                    , tagged
                    , cereal
   Exposed-modules:   Crypto.Cipher.RC4
@@ -45,6 +46,7 @@ Library
                      Number.Basic
                      Number.Polynomial
                      Number.Prime
+                     Crypto.Cipher.ElGamal
   ghc-options:       -Wall
   if flag(aesni)
     cpp-options:     -DHAVE_AESNI
