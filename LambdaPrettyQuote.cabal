@@ -7,7 +7,7 @@ Name:                LambdaPrettyQuote
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.0.1
+Version:             0.0.0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            Parser, pretty printer, quasiquoter, and Arbitrary helpers for the untyped lambda calculus.
@@ -15,7 +15,8 @@ Synopsis:            Parser, pretty printer, quasiquoter, and Arbitrary helpers 
 homepage: http://github.com/jfischoff/LambdaPrettyQuote
 
 -- A longer description of the package.
--- Description:         
+Description:  
+       CHANGES -- 0.0.0.2 added \"anti\" expressions for the quasiquoter to capture variables from the environment. Also added a pattern quasiquoter. 
 
 -- The license under which the package is released.
 License:             BSD3
@@ -55,12 +56,14 @@ Library
                  test-framework-quickcheck2 >= 0.2.10,
                  test-framework-hunit >= 0.2.7,
                  test-framework >= 0.4.1.1,
-                 lambda-ast,
+                 lambda-ast >= 0.0.4,
                  HUnit >= 1.2.4.2,
                  DebugTraceHelpers >= 0.12,
                  template-haskell >= 2.6.0.0,
                  transformers >= 0.2.2.0,
-                 parsec >= 3.1.2
+                 parsec >= 3.1.2,
+                 uniplate >= 1.6.5,
+                 syb >= 0.3.5
   ghc-options:            -Wall
 
 Test-Suite tests
@@ -72,10 +75,13 @@ Test-Suite tests
                     test-framework-quickcheck2 >= 0.2.10,
                     test-framework-hunit >= 0.2.7,
                     test-framework >= 0.4.1.1,
-                    lambda-ast,
+                    lambda-ast >= 0.0.4,
                     HUnit >= 1.2.4.2,
                     DebugTraceHelpers >= 0.12,
                     template-haskell >= 2.6.0.0,
                     transformers >= 0.2.2.0,
-                    parsec >= 3.1.2     
+                    parsec >= 3.1.2,     
+                    uniplate >= 1.6.5,
+                    th-instances >= 0.1.0.2,
+                    syb >= 0.3.5
   
