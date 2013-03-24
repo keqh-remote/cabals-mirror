@@ -1,5 +1,5 @@
 Name:          natural-numbers
-Version:       0.0.1.2
+Version:       0.0.1.3
 Cabal-Version: >= 1.6
 Build-Type:    Simple
 License:       BSD3
@@ -10,7 +10,7 @@ Author:        Wolfgang Jeltsch
 Maintainer:    wolfgang@cs.ioc.ee
 Stability:     provisional
 Homepage:      http://darcs.wolfgang.jeltsch.info/haskell/natural-numbers
-Package-URL:   http://hackage.haskell.org/packages/archive/natural-numbers/0.0.1.2/natural-numbers-0.0.1.2.tar.gz
+Package-URL:   http://hackage.haskell.org/packages/archive/natural-numbers/0.0.1.3/natural-numbers-0.0.1.3.tar.gz
 Synopsis:      Natural numbers
 Description:   This package provides a type of all natural numbers, that is, non-negative integers.
                .
@@ -27,7 +27,7 @@ Source-Repository head
 Source-Repository this
     type:     darcs
     location: http://darcs.wolfgang.jeltsch.info/haskell/natural-numbers/main
-    tag:      natural-numbers-0.0.1.2
+    tag:      natural-numbers-0.0.1.3
 
 Library
     Build-Depends:   base >= 3.0 && < 5
