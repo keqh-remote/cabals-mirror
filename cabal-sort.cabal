@@ -1,5 +1,5 @@
 Name:             cabal-sort
-Version:          0.0.4.2
+Version:          0.0.5
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -87,7 +87,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/cabal-sort/
-  tag:      0.0.4.2
+  tag:      0.0.5
 
 
 Executable cabal-sort
@@ -96,9 +96,9 @@ Executable cabal-sort
     fgl >=5.4.2 && <5.5,
     directory >=1 && <1.2,
     filepath >=1.1 && <1.4,
-    containers >=0.2 && <0.5,
+    containers >=0.2 && <0.6,
     explicit-exception >=0.1.4 && <0.2,
-    transformers >=0.2 && <0.3,
+    transformers >=0.2 && <0.4,
     base >=2 && <5
 
   GHC-Options:      -Wall
@@ -109,11 +109,11 @@ Executable ghc-pkg-dep
   Build-Depends:
     Cabal >=1.6 && <1.15,
     process >=1.0 && <1.2,
-    containers >=0.2 && <0.5,
+    containers >=0.2 && <0.6,
     explicit-exception >=0.1.6 && <0.2,
     utility-ht >=0.0.5 && <0.1,
-    transformers >=0.2 && <0.3,
-    bytestring >=0.9.1 && <0.10,
+    transformers >=0.2 && <0.4,
+    bytestring >=0.9.1 && <0.11,
     base >=2 && <5
 
   GHC-Options:      -Wall
