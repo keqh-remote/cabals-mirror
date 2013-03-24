@@ -1,12 +1,13 @@
+Cabal-version:  >=1.2
 Name:           harpy
-Version:        0.2
+Version:        0.4
 License:        GPL
 License-file:   COPYING
 Author:         Dirk Kleeblatt <klee@cs.tu-berlin.de>
                 Martin Grabmueller <magr@cs.tu-berlin.de>
 Maintainer:     klee@cs.tu-berlin.de, magr@cs.tu-berlin.de
 Homepage:       http://uebb.cs.tu-berlin.de/harpy/
-Category:       Code generation
+Category:       Code Generation
 Synopsis:       Runtime code generation for x86 machine code
 Description:	The package contains the following components:
 	.
@@ -27,15 +28,35 @@ Description:	The package contains the following components:
 	.
 	* All the above modules use the code generation monad defined in module
 	  "Harpy.CodeGenMonad".
+        .
+        * The Darcs repo and two tutorials on using Harpy can be found at
+          Harpy's homepage: <http://uebb.cs.tu-berlin.de/harpy/>
 Stability:      Experimental
-Build-depends:  base, parsec, mtl, template-haskell
-Exposed-Modules:
+
+Extra-source-files: 
+    NEWS README Makefile
+    doc/Makefile doc/tutorial.lhs doc/larger-tutorial.lhs
+    examples/evaluator/ArithTypes.hs examples/evaluator/ArithParser.hs
+    examples/evaluator/Evaluator.hs
+
+Flag small_base
+  Description: Choose the new smaller, split-up base package.
+
+Library
+  if flag(small_base)
+    Build-depends:  base >= 3,parsec,mtl,template-haskell,pretty,containers,array
+  else
+    Build-Depends: base < 3,parsec,mtl,template-haskell
+  Exposed-Modules:
+    Harpy,
     Harpy.X86CodeGen,
     Harpy.X86Assembler,
     Harpy.CodeGenMonad,
     Harpy.Call,
     Harpy.X86Disassembler,
     Harpy.X86CGCombinators
-Extensions:     ForeignFunctionInterface, MultiParamTypeClasses, 
-	TemplateHaskell, CPP
-ghc-options:	-O
+  Extensions: 
+    ForeignFunctionInterface, MultiParamTypeClasses, 
+    TemplateHaskell, CPP, FlexibleContexts, FlexibleInstances,
+    RankNTypes
+  Ghc-options: -O2 
