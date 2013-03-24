@@ -9,7 +9,7 @@ description:
   level modules that can use it as foundation. They all mimic the
   exact names and functionality of the original libraries. For
   a specific library, look for package @bindings-library_name@.
-version: 0.1.1
+version: 0.1.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
