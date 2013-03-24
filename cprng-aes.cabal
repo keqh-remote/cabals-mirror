@@ -1,5 +1,5 @@
 Name:                cprng-aes
-Version:             0.2.4
+Version:             0.2.5
 Description:         
     Simple crypto pseudo-random-number-generator with really good randomness property.
     .
@@ -26,7 +26,7 @@ Synopsis:            Crypto Pseudo Random Number Generator using AES in counter 
 Build-Type:          Simple
 Category:            Cryptography
 stability:           experimental
-Cabal-Version:       >=1.6
+Cabal-Version:       >=1.8
 Homepage:            http://github.com/vincenthz/hs-cprng-aes
 data-files:          README.md
 
@@ -34,20 +34,36 @@ Flag fastaes
   Description:       Use fast AES if available
   Default:           True
 
+Flag cereal
+  Description:       Use cereal
+  Default:           False
+
 Library
   Build-Depends:     base >= 3 && < 5
                    , bytestring
                    , random
                    , crypto-api >= 0.8
                    , entropy >= 0.2
-                   , cryptocipher
-                   , cereal >= 0.3.0 && < 0.4.0
   Exposed-modules:   Crypto.Random.AESCtr
   ghc-options:       -Wall
 
-  if os(linux) && flag(fastaes) && (arch(i386) || arch(x86_64))
+  if flag(fastaes) && (arch(i386) || arch(x86_64))
     cpp-options:     -DCIPHER_AES
     Build-Depends:   cipher-aes >= 0.1 && < 0.2
+  else
+    Build-Depends:   cryptocipher
+  if flag(cereal)
+    Build-Depends:   cereal >= 0.3.0 && < 0.4.0
+
+Benchmark bench-cprng-aes
+  hs-source-dirs:    Benchmarks
+  Main-Is:           Benchmarks.hs
+  type:              exitcode-stdio-1.0
+  Build-depends:     base >= 4 && < 5
+                   , bytestring
+                   , cprng-aes
+                   , criterion
+                   , mtl
 
 source-repository head
   type: git
