@@ -4,7 +4,7 @@
 
 Name:                4Blocks
 
-Version:             0.1
+Version:             0.2
 
 Synopsis:            A tetris-like game (works with GHC 6.8.3 and Gtk2hs 0.9.13)
 
@@ -24,6 +24,8 @@ Category:            Game
 
 Build-type:          Simple
 
+Extra-Source-Files: README
+
 Cabal-version:       >=1.2
 
 Tested-with:         GHC == 6.8.3
@@ -32,3 +34,41 @@ Executable 4Blocks
   Main-is:    4Blocks.hs
           
   Build-depends:     base >= 2 && <= 4,gtk>=0.9.13,haskell98,cairo>=0.9.13,containers>=0.1.0.2,mtl>=1.1.0.1
+  
+  Other-Modules:
+    Core.Brick
+    Core.Colour
+    Core.ColouredPoint
+    Core.Commands
+    Core.Direction
+    Core.Game
+    Core.Level
+    Core.Shape
+    Core.SimplePoint
+    Core.Status
+    Core.Well
+    Interface.CommandKeys
+    Interface.KeyEvents
+    Interface.MainWindow
+    Interface.OnePlayerModeWindow
+    Interface.WindowUpdate
+    Rendering.Background
+    Rendering.Block
+    Rendering.Brick
+    Rendering.Engine
+    Rendering.Game
+    Rendering.GhostBrick
+    Rendering.Intro
+    Rendering.IntroArea
+    Rendering.IntroText
+    Rendering.Point
+    Rendering.RGB
+    Rendering.Square
+    Rendering.Status
+    Rendering.StatusArea
+    Rendering.StatusNext
+    Rendering.StatusText
+    Rendering.Text
+    Rendering.Well
+    
+    
