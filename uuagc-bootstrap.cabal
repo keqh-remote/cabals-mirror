@@ -1,7 +1,7 @@
 cabal-version: >= 1.8
 build-type: Simple
 name: uuagc-bootstrap
-version: 0.9.39.0.0
+version: 0.9.39.1.0
 license: BSD3
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -25,7 +25,6 @@ executable uuagc-bootstrap
   main-is: Ag.hs
   other-modules: Ag
     , CommonTypes
-    , DepTypes
     , GrammarInfo
     , HsTokenScanner
     , Options
@@ -35,7 +34,6 @@ executable uuagc-bootstrap
     , Scanner
     , SequentialComputation
     , SequentialTypes
-    , Streaming
     , TokenDef
     , Version
     , AbstractSyntax
@@ -81,4 +79,5 @@ executable uuagc-bootstrap
 library
    build-depends:   base >= 4, base < 5
    hs-source-dirs: src
+   other-modules: Paths_uuagc_bootstrap
    exposed-modules: UU.UUAGC.BootstrapVersion
