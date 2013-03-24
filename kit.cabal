@@ -1,6 +1,6 @@
 name:           kit
-version:        0.7.4
-cabal-version:  >=1.2
+version:        0.7.5
+cabal-version:  >=1.6
 build-type:     Simple
 license:        BSD3
 license-file:   LICENSE
@@ -25,4 +25,9 @@ Executable kit
                   Kit.Xcode.Common Kit.Xcode.ProjectFileTemplate Kit.Xcode.XCConfig Text.PList
                   Kit.Contents Kit.Commands Kit.CmdArgs Kit.Util.IsObject Kit.Util.FSAction Kit.WorkingCopy
                   Kit.Dependency
-  Ghc-options:    -Wall -fno-warn-unused-do-bind
+  Ghc-options:    -Wall
+
+source-repository head
+  type: git
+  location: git://github.com/nkpart/kit.git
+  
