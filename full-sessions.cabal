@@ -1,5 +1,5 @@
 Name:                full-sessions
-Version:             0.6.1.2
+Version:             0.6.2
 Description:
   This library defines a @Session@ monad, which provides static checking of
   safe and consistent use of communication channels according to protocols.
@@ -30,7 +30,7 @@ extra-source-files: README
                     examples/smtp-client.hs
 
 Library
-  build-depends:     ghc > 6.8, network
+  build-depends:     ghc > 6.10, network
   if impl(ghc >= 6.10) {
       build-depends:  base >= 4, base < 5
   } else {
@@ -47,6 +47,7 @@ Library
                      FullSession.Recursion
                      FullSession.FullSession
                      FullSession.NwSession
+                     FullSession.Incoherent
   hs-source-dirs:    src
   extensions:        
                       MultiParamTypeClasses
