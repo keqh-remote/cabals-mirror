@@ -1,5 +1,5 @@
 name:           hyena
-version:        0.1
+version:        0.1.0.1
 synopsis:       Simple web application server
 description:
   A simple web application server using iteratees.
@@ -25,12 +25,12 @@ library
 
   build-depends:
     base               == 4.*,
-    bytestring,
-    containers,
+    bytestring         < 1.0,
+    containers         >= 0.3 && < 0.4,
     directory,
     extensible-exceptions,
     filepath,
-    mtl                >= 1 && < 1.2,
+    mtl                >= 1 && < 2.0.2,
     network            >= 2.1 && < 2.3,
     network-bytestring >= 0.1.1.2 && < 0.2
 
@@ -42,3 +42,7 @@ library
   ghc-options: -funbox-strict-fields -Wall
   if impl(ghc >= 6.8)
     ghc-options: -fwarn-tabs
+
+source-repository head
+  type:     git
+  location: git://github.com/tibbe/hyena.git
