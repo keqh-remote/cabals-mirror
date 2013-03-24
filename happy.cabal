@@ -1,5 +1,5 @@
 name: happy
-version: 1.18.8
+version: 1.18.9
 license: BSD3
 license-file: LICENSE
 copyright: (c) Andy Gill, Simon Marlow
@@ -130,7 +130,6 @@ executable happy
     build-depends: base >= 1.0 && < 2.1
 
   build-depends: base < 5, mtl >= 1.0
-  build-tools: perl
 
   extensions: CPP, MagicHash
   other-modules:
