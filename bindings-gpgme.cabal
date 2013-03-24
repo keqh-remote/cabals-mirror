@@ -3,7 +3,7 @@ name: bindings-gpgme
 homepage: http://bitbucket.org/mauricio/bindings-gpgme
 synopsis:
   Low level bindings to gpgme.
-version: 0.1.3
+version: 0.1.4
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -27,3 +27,5 @@ library
     gpg-error.h
   extra-libraries:
     gpgme
+  cc-options: -D_FILE_OFFSET_BITS=64
+
