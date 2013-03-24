@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       4.0.6
+Version:       4.0.7
 Category:      Control, FRP
 Synopsis:      Flexible wire arrows for FRP
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -53,6 +53,7 @@ Library
         Control.Wire.Prefab.Analyze
         Control.Wire.Prefab.Effect
         Control.Wire.Prefab.Event
+        Control.Wire.Prefab.List
         Control.Wire.Prefab.Move
         Control.Wire.Prefab.Noise
         Control.Wire.Prefab.Queue
