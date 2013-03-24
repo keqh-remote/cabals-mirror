@@ -1,9 +1,9 @@
 name:                explore
-version:             0.0.6.2
+version:             0.0.7.0
 cabal-version:       >= 1.4
 license:             BSD3
 license-file:        LICENSE
-copyright:           (c) 2009, Cetin Sert
+copyright:           Copyright 2009, 2010, Cetin Sert
 author:              Cetin Sert
 maintainer:          Cetin Sert <cetin.sert@gmail.com>
 bug-reports:         Cetin Sert <cetin.sert@gmail.com>
@@ -37,6 +37,7 @@ Executable           explore
   main-is:           Main.hs
   ghc-options:       -O2 -fglasgow-exts -funbox-strict-fields
   build-depends:     base <= 5,
+                     directory -any,
                      array -any,
                      pngload -any
   extensions:        ViewPatterns
