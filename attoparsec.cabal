@@ -1,16 +1,20 @@
 name:            attoparsec
-version:         0.6
+version:         0.7.1
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
 author:          Bryan O'Sullivan <bos@serpentine.com>
 maintainer:      Bryan O'Sullivan <bos@serpentine.com>
 stability:       experimental
+tested-with:     GHC == 6.8.3, GHC == 6.10.1
 synopsis:        Fast combinator parsing with Data.ByteString.Lazy
 description:     Fast combinator parsing with Data.ByteString.Lazy
 cabal-version:   >= 1.2
 build-type:      Simple
 description:     Fast, flexible text-oriented parsing of lazy ByteStrings.
+extra-source-files:
+                 Data/Attoparsec/Char8Boilerplate.h
+                 Data/Attoparsec/Word8Boilerplate.h
 
 flag split-base
 flag applicative-in-base
@@ -32,10 +36,12 @@ library
   build-depends: bytestring-lexing >= 0.2
 
   extensions:      CPP
-  exposed-modules: Data.ParserCombinators.Attoparsec
-                   Data.ParserCombinators.Attoparsec.Char8
-                   Data.ParserCombinators.Attoparsec.FastSet
-                   Data.ParserCombinators.Attoparsec.Internal
-  hs-source-dirs:  src
+  exposed-modules: Data.Attoparsec
+                   Data.Attoparsec.Char8
+                   Data.Attoparsec.Combinator
+                   Data.Attoparsec.Incremental
+                   Data.Attoparsec.Incremental.Char8
+                   Data.Attoparsec.FastSet
+  other-modules:   Data.Attoparsec.Internal
   ghc-options:     -O2 -Wall -funbox-strict-fields
                    -fliberate-case-threshold=1000
