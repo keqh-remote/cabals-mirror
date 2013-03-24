@@ -1,5 +1,5 @@
 Name:               hmatrix
-Version:            0.10.0.2
+Version:            0.11.0.0
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
@@ -54,6 +54,7 @@ extra-source-files: examples/tests.hs
                     examples/Real.hs
                     examples/vector.hs
                     examples/monadic.hs
+                    examples/bool.hs
 
 extra-source-files: lib/Numeric/LinearAlgebra/LAPACK/lapack-aux.h,
                     lib/Numeric/LinearAlgebra/LAPACK/clapack.h
@@ -76,11 +77,15 @@ flag unsafe
 
 flag vector
     description:    Use Data.Vector.Storable type from "vector" package.
-    default:        False
+    default:        True
 
 flag binary
     description:    Define Binary instances
     default:        True
+
+flag finit
+    description:    Force FPU initialization in foreing calls
+    default:        False
 
 library
 
@@ -159,6 +164,13 @@ library
     if impl(ghc < 6.10.2)
         cpp-options: -DFINIT
 
+    if flag(finit)
+        cpp-options: -DFINIT
+
+    if impl(ghc == 7.0.1)
+        cpp-options: -DNONORMVTEST
+        cpp-options: -DFINIT
+
     if flag(mkl)
       if arch(x86_64)
         extra-libraries:   gsl mkl_lapack mkl_intel_lp64 mkl_sequential mkl_core
@@ -169,6 +181,7 @@ library
         extra-lib-dirs: /opt/local/lib/
         include-dirs: /opt/local/include
         extra-libraries: gsl
+        cc-options: -arch i386
         frameworks: Accelerate
 
     if os(windows)
