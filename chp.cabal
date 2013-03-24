@@ -1,5 +1,5 @@
 Name:            chp
-Version:         1.7.0
+Version:         1.7.1
 Synopsis:        An implementation of concurrency ideas from Communicating Sequential Processes
 License:         BSD3
 License-file:    LICENSE
@@ -21,7 +21,7 @@ Category:        Concurrency
 
 Cabal-Version:   >= 1.2.3
 Build-Type:      Simple
-Build-Depends:   base >= 3 && < 5, extensible-exceptions >= 0.1.1.0, containers, HUnit, mtl, parallel, pretty, QuickCheck >= 2, stm
+Build-Depends:   base >= 3 && < 5, extensible-exceptions >= 0.1.1.0, containers, HUnit, mtl, parallel >= 1 && < 2, pretty, QuickCheck >= 2, stm
 
 Exposed-modules: Control.Concurrent.CHP
                  Control.Concurrent.CHP.Actions
