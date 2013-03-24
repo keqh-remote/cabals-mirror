@@ -1,5 +1,5 @@
 Name:           fixpoint
-Version:        0.1
+Version:        0.1.1
 Synopsis:       Data types as fixpoints
 Category:       Data
 Description:
@@ -15,6 +15,7 @@ Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
 Copyright:      (c) 2007 Roman Leshchinskiy
 Homepage:       http://www.cse.unsw.edu.au/~rl/code/fixpoint.html
 Cabal-Version:  >= 1.2
+Build-Type:     Simple
 
 Library
         Build-Depends:  base
@@ -24,6 +25,5 @@ Library
         Other-Modules:
                 Data.Fixpoint.Base
                 Data.Fixpoint.Instances
-        Ghc-Options:    -Wall -Werror -O2
-        Extensions:     TypeFamilies, FlexibleContexts, FlexibleInstances, CPP
+        Ghc-Options: -Wall
 
