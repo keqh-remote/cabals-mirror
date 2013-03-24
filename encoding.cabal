@@ -1,5 +1,5 @@
 Name:		encoding
-Version:	0.6.2
+Version:	0.6.3
 Author:		Henning Günther
 Maintainer:	h.guenther@tu-bs.de
 License:	BSD3
@@ -27,11 +27,11 @@ Flag newGHC
 Library
   if flag(splitBase)
     if flag(newGHC)
-      Build-Depends:	bytestring, base >= 3 && < 5, binary, mtl, containers, extensible-exceptions, array, template-haskell, regex-compat, ghc-prim, ghc >= 6.10
+      Build-Depends:	bytestring, base >= 3 && < 5, binary, mtl, containers, extensible-exceptions, array, regex-compat, ghc-prim, ghc >= 6.10, HaXml >= 1.19
     else
-      Build-Depends:	bytestring, base >= 3 && < 5, binary, mtl, containers, extensible-exceptions, array, template-haskell, regex-compat, ghc < 6.10
+      Build-Depends:	bytestring, base >= 3 && < 5, binary, mtl, containers, extensible-exceptions, array, regex-compat, ghc < 6.10, HaXml >= 1.19
   else
-    Build-Depends:	base < 3, binary, extensible-exceptions, template-haskell
+    Build-Depends:	base < 3, binary, extensible-exceptions, HaXml >= 1.19
 
   Exposed-Modules:
     Data.Encoding
