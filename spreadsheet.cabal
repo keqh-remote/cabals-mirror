@@ -1,5 +1,5 @@
 Name:             spreadsheet
-Version:          0.1.3
+Version:          0.1.3.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -37,7 +37,7 @@ Description:
   .
   the call
   .
-  > csvreplace --template=template.txt <names.csv
+  > csvreplace template.txt <names.csv
   .
   produces the output
   .
@@ -48,6 +48,10 @@ Description:
   > Name: Ada Lovelace
   > Born: 1815
   .
+  You may also generate one file per CSV row in the following manner:
+  .
+  > csvreplace --multifile=FIRSTNAME-SURNAME.txt template.txt <names.csv
+  .
   For similar (non-Haskell) programs see @cut@, @csvfix@, @csvtool@.
 Tested-With:       GHC==6.8.2, GHC==6.12.3
 Cabal-Version:     >=1.6
@@ -57,7 +61,7 @@ Source-Repository head
   Location: http://code.haskell.org/~thielema/spreadsheet/
 
 Source-Repository this
-  Tag:      0.1.3
+  Tag:      0.1.3.1
   Type:     darcs
   Location: http://code.haskell.org/~thielema/spreadsheet/
 
