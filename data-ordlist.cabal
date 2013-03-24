@@ -1,12 +1,12 @@
 Name:                data-ordlist
-Version:             0.0
+Version:             0.0.1
 Description:         Ordered Lists
 License:             BSD3
 License-file:        LICENSE
 Author:              Leon P Smith <leon@melding-monads.com>
 Maintainer:          Leon P Smith <leon@melding-monads.com>
 Build-Type:          Simple
-Category:            Control
+Category:            Data
 Synopsis:            Set and bag operations on ordered lists
 Cabal-Version:       >=1.2
 
