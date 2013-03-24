@@ -1,9 +1,9 @@
 Name:                 bamboo-theme-blueprint
-Version:              2010.2.22.1
+Version:              2010.2.25
 Build-type:           Simple
 Synopsis:             bamboo blueprint theme
 Description:          bamboo blueprint theme
-License:              GPL
+License:              BSD3
 License-file:         LICENSE
 Author:               Wang, Jinjing <nfjinjing@gmail.com>
                     , Григорий Холомьёв <omever@gmail.com>
@@ -11,20 +11,27 @@ Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
 Build-Depends:        base
 Cabal-version:        >= 1.2
 category:             Web
-homepage:             http://github.com/nfjinjing/bamboo/tree/master
+homepage:             http://github.com/nfjinjing/bamboo-theme-blueprint
 data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall -fno-warn-orphans 
   build-depends: 
-      base >= 4 && < 5, cgi, network, mtl, haskell98, old-locale, old-time
-    , time, unix, bytestring, base64-string, zlib, directory, filepath
-    , containers, process, parsedate >= 3000.0.0, rss == 3000.0.1
-    , xhtml, utf8-string >= 0.3.3, parsec >= 2, gravatar >= 0.3
+      base >= 4 && < 5
+    , containers
+    , network
+    , bytestring
+    , rss == 3000.0.1
+    , xhtml
+    , utf8-string >= 0.3.3
+    , gravatar >= 0.3
     , data-default >= 0.2
-    , mps >= 2009.6.25, hcheat >= 2009.6.25
-    , hack >= 2009.5.19, hack-contrib >= 2009.6.25
+    , mps >= 2009.6.25
+    , hcheat >= 2009.6.25
+    , hack >= 2009.5.19
+    , hack-contrib >= 2009.6.25
     , bamboo >= 2009.6.25
+    
   hs-source-dirs: src/
   exposed-modules:  
                     Bamboo.Theme.Blueprint
