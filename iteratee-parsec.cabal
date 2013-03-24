@@ -1,5 +1,5 @@
 Name:                     iteratee-parsec
-Version:                  0.0.5
+Version:                  0.0.6
 Synopsis:                 Package allowing parsec parser initeratee
 Description:              Package providing instances of Stream in
                           Iteratee monad.
@@ -17,6 +17,7 @@ Library
                           iteratee >= 0.4 && < 0.7,
                           ListLike >= 1.0 && < 2,
                           parsec >= 3.1 && < 3.2,
+                          reference == 0.1,
                           transformers >= 0.2.0.0 && < 0.3
   Exposed-Modules:        Text.Parsec.Iteratee,
                           Text.Parsec.Iteratee.Chunk,
