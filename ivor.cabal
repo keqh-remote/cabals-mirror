@@ -1,5 +1,5 @@
 Name:		ivor
-Version:	0.1.12
+Version:	0.1.14
 Author:		Edwin Brady
 License:	BSD3
 License-file:	LICENSE
@@ -69,16 +69,18 @@ Extensions:     MultiParamTypeClasses, FunctionalDependencies,
 -- GHC-options:    -Wall
 
 Exposed-modules:
-		Ivor.TT, Ivor.Shell, Ivor.Primitives,
+		Ivor.TT, Ivor.CtxtTT, Ivor.EvalTT,
+                Ivor.Shell, Ivor.Primitives,
 		Ivor.TermParser, Ivor.ViewTerm, Ivor.Equality,
 		Ivor.Plugin, Ivor.Construction
 Other-modules:	Ivor.Nobby, Ivor.TTCore, Ivor.State,
 		Ivor.Tactics, Ivor.Typecheck, Ivor.Evaluator
-		Ivor.Gadgets, Ivor.SC, Ivor.Bytecode, Ivor.Values,
-		Ivor.CodegenC, Ivor.Datatype, Ivor.Display,
-		Ivor.ICompile, Ivor.MakeData, Ivor.Unify,
-		Ivor.Grouper, Ivor.ShellParser, Ivor.Constant,
-		Ivor.RunTT, Ivor.Compiler, Ivor.Errors,
+		Ivor.Gadgets, Ivor.Values,
+		Ivor.Datatype, Ivor.Display,
+		Ivor.MakeData, Ivor.Unify,
+		Ivor.ShellParser, Ivor.Constant,
+		Ivor.Errors,
 		Ivor.PatternDefs,  Ivor.ShellState, Ivor.Scopecheck,
-		Ivor.Overloading,
+		Ivor.Overloading, Ivor.PMComp,
                 Paths_ivor
+ghc-prof-options: -auto-all
