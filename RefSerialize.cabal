@@ -1,5 +1,5 @@
 name:                RefSerialize
-version:             0.2.2
+version:             0.2.3
 synopsis:            Write to and read from Strings maintaining internal memory references 
 description:         
                      Read, Show and Data.Binary do not check for pointers to the same address 
@@ -36,5 +36,5 @@ Build-Type:          Simple
 build-Depends:       base,containers
 Cabal-Version:       >= 1.2
 
-exposed-modules:     Data.RefSerialize, Data.Parser
+exposed-modules:     Data.RefSerialize, Data.Parser, Data.Serialize
 ghc-options:         
