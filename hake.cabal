@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.1
+Version:	0.2
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -15,7 +15,7 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		then you can use all Haskell features.
 		.
 		> import Development.Hake
-		> hake_tree = [
+		> hake_rules = [
 		>
 		>  dflt	[ "greeting" ]
 		>  ,
@@ -29,6 +29,8 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		> 		\t s -> [ "compiler2 " ++ s ++ " -o " ++ t ] )
 		>  ,
 		>  task	( "clean" , [ "rm -f *.o greeting greeting.log" ] )
+		>  ,
+		>  mkfl ( "script.sh", [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ] )
 		>
 		>  ]
 		>
@@ -36,7 +38,7 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 
 Stability:	experimental
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/hake/index.xhtml
-Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hake-0.0.tar.gz
+Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hake-0.2.tar.gz
 Cabal-Version:	>= 1.2
 Build-type:	Simple
 Tested-With:	GHC
