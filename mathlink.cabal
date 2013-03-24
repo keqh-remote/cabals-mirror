@@ -1,5 +1,5 @@
 Name:                 mathlink
-Version:              2.0.0.5
+Version:              2.0.0.7
 Cabal-Version:        >= 1.6
 Build-Type:           Custom
 License:              BSD3
@@ -14,7 +14,14 @@ Stability:            experimental
 Synopsis:             Write Mathematica packages in Haskell
 Tested-With:          GHC >= 6.10.1
 Category:             Foreign
-Extra-Source-Files:   INSTALL, cbits/ml.h example/Test.hs
+Extra-Source-Files:   INSTALL
+                      cbits/ml.h 
+                      example/README
+                      example/Test.hs
+                      example/test.sh
+Extra-Tmp-Files:      cbits/arch.h
+                      mathlink.buildinfo
+
 
 Description: {
 Makes it easy to write /Mathematica/ packages in Haskell. Just write some
@@ -83,7 +90,7 @@ Library
   Includes:           ml.h mathlink.h
   C-Sources:          cbits/ml.c
 
-  Build-Tools:        c2hs
+  Build-Tools:        c2hs >= 0.16
   Ghc-Options:        -fexcess-precision -funbox-strict-fields -Wall
 
 Source-Repository     head
