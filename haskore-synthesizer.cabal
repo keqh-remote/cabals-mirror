@@ -1,15 +1,15 @@
 Name:           haskore-synthesizer
-Version:        0.0.2
+Version:        0.0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:       http://www.haskell.org/haskellwiki/Synthesizer
 Package-URL:    http://darcs.haskell.org/haskore-synthesizer/
-Category:       Sound
-Synopsis:       Audio signal processing coded in Haskell
+Category:       Sound, Music
+Synopsis:       Music rendering coded in Haskell
 Description:
-  Use native Haskell Audio Signal Processing for Music rendering with Haskore
+  Use native Haskell Audio Signal Processing for Music rendering with Haskore.
   Contains several example songs.
 Stability:      Experimental
 Tested-With:    GHC==6.4.1, GHC==6.8.2
@@ -25,18 +25,20 @@ Flag buildExamples
 
 Library
   Build-Depends:
-    synthesizer >= 0.0.3 && < 0.1,
-    haskore >=0.0.5 && <0.1,
+    synthesizer >= 0.2 && < 0.3,
+    haskore >=0.1 && <0.2,
     -- midi >=0.1.1 && <0.1,
-    numeric-prelude >=0.0.3 && <0.1,
+    numeric-prelude >=0.1 && <0.2,
     -- dependency on non-negative for Haddock
     non-negative >=0.0.1 && <0.1,
     event-list >=0.0.6 && <0.1,
-    data-accessor >=0.1 && <0.2
+    data-accessor >=0.2 && <0.3,
+    utility-ht >=0.0.1 && <0.1
 
   If flag(splitBase)
     Build-Depends:
-      base >= 3, random >= 1.0 && < 1.1
+      base >= 3 && <5,
+      random >= 1.0 && < 1.1
   Else
     Build-Depends:
       base >= 1.0 && < 2
@@ -47,7 +49,7 @@ Library
     Haskore.Interface.Signal.InstrumentMap
     Haskore.Interface.Signal.Note
     Haskore.Interface.Signal.Write
-    Haskore.Interface.Signal.Example.ChildSong6ToSignal
+    Haskore.Interface.Signal.Example.ChildSong6
     Haskore.Interface.Signal.Example.FMBassLine
     Haskore.Interface.Signal.Example.FilterSaw
     Haskore.Interface.Signal.Example.Guitar
