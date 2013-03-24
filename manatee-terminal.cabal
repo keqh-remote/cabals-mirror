@@ -1,5 +1,5 @@
 name:			manatee-terminal
-version:		0.0.6
+version:		0.0.7
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -11,7 +11,7 @@ description:    manatee-terminal is terminal emulator extension for Manatee (Has
  .
  VTE widget will replace by MVC design terminal emulator widget in the future, as temporary solution, please make sure command have finish before you close terminal buffer, i warning you. :)
  .
- Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
+ Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://www.youtube.com/watch?v=A3DgKDVkyeM> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
  .
  Screenshots at : <http://goo.gl/MkVw>
  .
@@ -34,15 +34,16 @@ Source-Repository head
   location:     http://patch-tag.com/r/AndyStewart/manatee-terminal
   
 Library
-     build-depends: base >= 4 && < 5, manatee-core >= 0.0.6, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
+     build-depends: base >= 4 && < 5, manatee-core >= 0.0.7, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
                     containers >= 0.3.0.0, gtk-serialized-event >= 0.12.0, gtk >= 0.12.0, vte >= 0.12.0,
-                    text >= 0.7.1.0                                  
+                    text >= 0.7.1.0, filepath
      exposed-modules:
          Manatee.Extension.Terminal
          Manatee.Extension.Terminal.PageMode
          Manatee.Extension.Terminal.TerminalBuffer
          Manatee.Extension.Terminal.TerminalView	 
      other-modules:							
+       Paths_manatee_terminal
      extensions:  
      ghc-options: -fwarn-unused-matches -fwarn-unused-binds -fwarn-unused-imports -fwarn-overlapping-patterns -fwarn-duplicate-exports -fwarn-unrecognised-pragmas -fwarn-hi-shadowing 
      
