@@ -1,5 +1,5 @@
 name:                carray
-version:             0.1.5
+version:             0.1.5.1
 synopsis:            A C-compatible array library.
 description:
 		     A C-compatible array library.
@@ -16,6 +16,14 @@ maintainer:          Jed Brown <jed@59A2.org>
 stability:	     experimental
 cabal-version:       >=1.2
 build-type:	     Simple
+
+extra-source-files: tests/meteor-contest-c.hs
+                    tests/meteor-contest-u.hs
+                    tests/nsieve-bits-c.hs
+                    tests/nsieve-bits-s.hs
+                    tests/nsieve-bits-u.hs
+                    tests/tests.hs
+                    tests/runtests.sh
 
 flag splitBase
   description: array was in base < 3
