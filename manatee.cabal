@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.0.2
+version:		0.0.3
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -25,13 +25,23 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  > sudo aptitude install libgtksourceview2.0-dev libgconf2-dev libwebkit-dev libcurl4-openssl-dev libgtkimageview-dev libpoppler-glib-dev poppler-data libtagc0-dev -y
  .
- 2) Install Gtk2hs:
+ 2) Install cabal:
  .
- > cabal install gtk2hs-buildtools gtk
+ If you're haskell newbie, use below command to install cabal (haskell expert ignore this):
  .
- And make sure `HOME/.cabal/bin/` in your PATH. 
+ > sudo aptitude install cabal-install -y
  .
- 3) Install Manatee:
+ 3) Install dependent Haskell library:
+ .
+ First make sure `HOME/.cabal/bin/` in your PATH
+ .
+ Generic way is add `PATH=$PATH:~\/.cabal\/bin` in your `~/.bashrc` 
+ .
+ Then do below command (NOTE: don't use root permission with cabal, otherwise Manatee can't work):
+ .
+ > cabal update && cabal install happy c2hs gtk2hs-buildtools glib gio pango cairo gtk
+ .
+ 4) Install Manatee (same, don't use root permission):
  .
  > cabal install manatee-core manatee-anything manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee
  .
