@@ -1,5 +1,5 @@
 name:                HStringTemplate
-version:             0.5.1
+version:             0.5.1.1
 synopsis:            StringTemplate implementation in Haskell.
 description:         A port of the Java library by Terrence Parr.
 category:            Text
@@ -23,10 +23,11 @@ library
     exposed-modules: Text.StringTemplate.GenericWithClass
 
   if flag(simple-generics)
+    build-depends: syb
     exposed-modules: Text.StringTemplate.GenericStandard
 
   if flag(quasi-quotation)
-    build-depends: template-haskell >= 2.3
+    build-depends: template-haskell >= 2.3, syb, mtl
     exposed-modules: Text.StringTemplate.QQ
 
   if flag(small-base)
