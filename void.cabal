@@ -1,6 +1,6 @@
 name:          void
 category:      Data Structures
-version:       0.5.12
+version:       0.6
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -9,12 +9,18 @@ maintainer:    Edward A. Kmett <ekmett@gmail.com>
 stability:     portable
 homepage:      http://github.com/ekmett/void
 bug-reports:   http://github.com/ekmett/void/issues
-copyright:     Copyright (C) 2008-2012 Edward A. Kmett
+copyright:     Copyright (C) 2008-2013 Edward A. Kmett
 synopsis:      A Haskell 98 logically uninhabited data type
 description:   A Haskell 98 logically uninhabited data type, used to indicate that a given term should not exist.
 build-type:    Simple
 
-extra-source-files: .travis.yml CHANGELOG.markdown README.markdown
+extra-source-files:
+  .ghci
+  .gitignore
+  .travis.yml
+  .vim.custom
+  CHANGELOG.markdown
+  README.markdown
 
 source-repository head
   type: git
@@ -25,12 +31,14 @@ flag safe
   default: False
 
 library
+  hs-source-dirs: src
   exposed-modules:
     Data.Void
     Data.Void.Unsafe
 
   build-depends:
     base       >= 3 && < 10,
+    hashable   >= 1.1,
     semigroups >= 0.8.2
 
   ghc-options: -Wall
@@ -39,5 +47,11 @@ library
     cpp-options: -DSAFE
 
   if impl(ghc)
-    extensions: DeriveDataTypeable
+    other-extensions: DeriveDataTypeable
     cpp-options: -DLANGUAGE_DeriveDataTypeable
+
+  if impl(ghc >= 7.2)
+    other-extensions: StandaloneDeriving
+    -- other-extensions: DeriveGeneric isn't known to cabal yet
+    cpp-options: -DLANGUAGE_DeriveGeneric
+    build-depends: ghc-prim
