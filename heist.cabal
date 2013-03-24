@@ -1,7 +1,7 @@
 name:           heist
-version:        0.6.1
-synopsis:       An xhtml templating system
-description:    An xhtml templating system
+version:        0.7.0
+synopsis:       An (x)html templating system
+description:    An (x)html templating system
 license:        BSD3
 license-file:   LICENSE
 author:         Doug Beardsley, Gregory Collins
@@ -9,7 +9,7 @@ maintainer:     snap@snapframework.com
 build-type:     Simple
 cabal-version:  >= 1.6
 homepage:       http://snapframework.com/
-category:       Web
+category:       Web, Snap
 
 extra-source-files:
   .ghci,
