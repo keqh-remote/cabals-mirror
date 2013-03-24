@@ -1,5 +1,5 @@
 Name:                wai-extra
-Version:             0.4.2
+Version:             0.4.3
 Synopsis:            Provides some basic WAI handlers and middleware.
 Description:         The goal here is to provide common features without many dependencies.
 License:             BSD3
@@ -11,6 +11,12 @@ Category:            Web
 Build-Type:          Simple
 Cabal-Version:       >=1.8
 Stability:           Stable
+extra-source-files:
+  runtests.hs
+  test/dalvik-request
+  test/json
+  test/test.html
+  test/sample.hs
 
 Library
   Build-Depends:     base >= 3 && < 5,
@@ -51,7 +57,7 @@ test-suite runtests
     build-depends:   base                      >= 4        && < 5
                    , wai-extra
                    , wai-test
-                   , hspec >= 0.6.1 && < 0.7
+                   , hspec >= 0.8 && < 0.9
                    , HUnit
 
                    , wai
