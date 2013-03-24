@@ -1,5 +1,5 @@
 name:			manatee-anything
-version:		0.0.5
+version:		0.0.6
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -7,6 +7,8 @@ copyright:		(c) 2009 ~ 2010 Andy Stewart
 synopsis:		Multithread interactive input/search framework for Manatee
 description:    manatee-anything is interactive plugin for Manatee (Haskell/Gtk+ Integrated Live Environment)
  . 
+ Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
+ .
  Screenshots at : <http://goo.gl/MkVw>
  .
  Manual at : <http://haskell.org/haskellwiki/Manatee>
@@ -29,7 +31,7 @@ Source-Repository head
   
 Library
      build-depends: base >= 4 && < 5, gtk >= 0.12.0, containers >= 0.3.0.0, text >= 0.7.1.0,
-                    gio >= 0.12.0, filepath >= 1.1.0.3, manatee-core >= 0.0.5, dbus-client >= 0.3 && < 0.4,
+                    gio >= 0.12.0, filepath >= 1.1.0.3, manatee-core >= 0.0.6, dbus-client >= 0.3 && < 0.4,
                     network >= 2.2.1.5, utf8-string >= 0.3.4, proc >= 0.0.8, mtl >= 1.1.0.2, stm >= 2.1.2.0,
                     unix >= 2.4.0.0, regex-tdfa >= 1.1.2, bytestring, GoogleSuggest >= 0.0.3, dataenc,
                     dbus-core, split
