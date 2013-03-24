@@ -1,5 +1,5 @@
 Name:                thrist
-Version:             0.2.1
+Version:             0.2.2
 Synopsis:            Type-threaded list
 
 Description:
@@ -25,18 +25,24 @@ Description:
 Category:            Data Structures
 License:             BSD3
 License-File:        LICENSE
-Copyright:           (c) 2008-2011 Gabor Greif and Brandon Simmons
+Copyright:           (c) 2008-2012 Gabor Greif and Brandon Simmons
 
 Author:              Gabor Greif, Brandon Simmons
-Maintainer:          ggreif@gmail.com, brandon.m.simmons@gmail.com
+Maintainer:          ggreif+thrist@gmail.com, brandon.m.simmons+thrist@gmail.com
 Homepage:            http://heisenbug.blogspot.com/search/label/thrist
+Bug-Reports:         mailto:ggreif+thrist@gmail.com
 
 Stability:           experimental
-Cabal-Version:       >= 1.2.3
-extra-source-files:  examples.hs
+Tested-With:         GHC == 7.0.4, GHC == 7.2.2
+Cabal-Version:       >= 1.6
+Extra-Source-Files:  examples.hs
 Build-Type:          Simple
 
-library
+Source-Repository head
+  Type:     darcs
+  Location: http://patch-tag.com/r/heisenbug/thrist/
+
+Library
     Build-Depends:       base >= 4 && < 5
     Exposed-Modules:     Data.Thrist Data.Thrist.List Data.Thrist.Monad
     Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances, TypeOperators, FlexibleContexts
