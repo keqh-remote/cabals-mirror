@@ -1,6 +1,6 @@
 --Package-properties
 Name:			toolshed
-Version:		0.11.1.0
+Version:		0.12.0.0
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2010 Dr. Alistair Ward
 License:		GPL
@@ -18,11 +18,11 @@ Bug-reports:		toolshed <at> functionalley <dot> eu
 Extra-Source-Files:	changelog, copyright, makefile
 
 flag haveDeepSeq
-    Description:	Use the new module 'Control.DeepSeq', where available, rather than 'Control.Parallel.Strategies'.
+    Description:	Import the type-class 'NFData' from module 'Control.DeepSeq' rather than 'Control.Parallel.Strategies'.
     Default:		True
 
 flag llvm
-    Description:	Whether the 'llvm' backend has been installed and is required for code-generation.
+    Description:	Whether the 'llvm' compiler-backend has been installed and is required for code-generation.
     manual:		True
     default:		False
 
@@ -33,7 +33,9 @@ Library
         ToolShed.Defaultable
         ToolShed.ListPlus
         ToolShed.Options
+        ToolShed.Pair
         ToolShed.SelfValidate
+        ToolShed.TimeAction
         ToolShed.TimePure
         ToolShed.Unsafe 
 
