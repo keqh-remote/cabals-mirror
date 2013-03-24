@@ -1,5 +1,5 @@
 Name:          ismtp
-Version:       1.0.1
+Version:       1.0.2
 Category:      Network
 Synopsis:      Fast, incremental ESMTP sessions
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -24,7 +24,7 @@ Library
         blaze-builder >= 0.2.0.1,
         bytestring >= 0.9.1.7,
         containers >= 0.3.0.0,
-        dnscache >= 1.0.0,
+        dnscache >= 1.0.1,
         enumerator >= 0.4.2,
         network-fancy >= 0.1.5,
         stm >= 2.1.2.1,
