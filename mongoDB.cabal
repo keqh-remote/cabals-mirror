@@ -1,5 +1,5 @@
 name: mongoDB
-version: 0.10.0
+version: 1.0.0
 build-type: Simple
 license: OtherLicense
 license-file: LICENSE
@@ -16,13 +16,14 @@ build-depends:
     cryptohash -any,
     network -any,
     parsec -any,
-    random -any
+    random -any,
+    random-shuffle -any
 stability: alpha
 homepage: http://github.com/TonyGen/mongoDB-haskell
 package-url:
 bug-reports:
-synopsis: MongoDB driver
-description: This module lets you connect to MongoDB (www.mongodb.org) and do inserts, queries, updates, etc. Please see the example in Database.MongoDB and the tutorial from the homepage.
+synopsis: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
+description: This package lets you connect to MongoDB servers and update/query their data. Please see the example in Database.MongoDB and the tutorial from the homepage. For information about MongoDB itself, see www.mongodb.org.
 category: Database
 author: Tony Hannan <tony@10gen.com> & Scott Parish <srp@srparish.net>
 tested-with:
@@ -31,19 +32,15 @@ data-dir: ""
 extra-source-files:
 extra-tmp-files:
 exposed-modules:
-    Control.Monad.Context
     Control.Monad.MVar
-    Control.Monad.Throw
-    Control.Monad.Util
-    Control.Pipeline
     Database.MongoDB
     Database.MongoDB.Admin
     Database.MongoDB.Connection
     Database.MongoDB.Internal.Protocol
     Database.MongoDB.Internal.Util
     Database.MongoDB.Query
-    Network.Abstract
-    Var.Pool
+    System.IO.Pipeline
+    System.IO.Pool
 exposed: True
 buildable: True
 build-tools:
