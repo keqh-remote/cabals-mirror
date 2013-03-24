@@ -7,7 +7,7 @@ Name:                DBlimited
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.1.1
 
 -- A short (one-line) description of the package.
 Synopsis:            A command-line SQL interface for flat files (tdf,csv,etc.)
@@ -54,7 +54,7 @@ Executable DBlimited
   Build-depends:     containers, base >= 2 && < 4, parsec
   
   -- Modules not exported by this package.
-  -- Other-modules:       
+  Other-modules:     Utils, Schema, Query
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
