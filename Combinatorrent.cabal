@@ -1,6 +1,6 @@
 name: Combinatorrent
 category: Network
-version: 0.3.1
+version: 0.3.2
 category: Network
 description:   Combinatorrent provides a BitTorrent client, based on STM
                for concurrency. This is an early preview release which is capable of
@@ -52,7 +52,7 @@ executable Combinatorrent
 
   build-depends:
     array >= 0.3,
-    attoparsec,
+    attoparsec >= 0.8,
     base >= 3.0,
     base < 5.0,
     bytestring,
