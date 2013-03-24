@@ -1,8 +1,8 @@
 Name:           WxGeneric
-Version:        0.5.1
+Version:        0.5.2
 Copyright:      Mads Lindstrøm <mads_lindstroem@yahoo.dk>
-License:        LGPL
-License-file:   COPYRIGHT.txt
+license:        LGPL
+License-file:   wxWidgetsLicense.txt
 Author:         Mads Lindstrøm <mads_lindstroem@yahoo.dk>
 Maintainer:     Mads Lindstrøm <mads_lindstroem@yahoo.dk>
 Category:       GUI
@@ -29,6 +29,11 @@ Extra-Source-Files:
       , examples/AlarmSpecialized.hs
       , examples/Examples.hs
       , examples/TupleExample.hs
+      , examples/EventPropagation/makefile
+      , examples/EventPropagation/AlarmEventPropagation.hs
+      , examples/EventPropagation/AllEventsComposite.hs
+      , examples/EventPropagation/IntEntry.hs
+      , examples/EventPropagation/PropagateEvents.hs
 Extensions:     
 hs-source-dirs: src
 
