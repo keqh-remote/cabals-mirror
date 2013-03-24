@@ -1,14 +1,14 @@
 name:            tdoc
 cabal-Version:   >=1.2
-version:         0.2.1
+version:         0.3.0
 license:         BSD3
-license-file:    LICENSE
+license-File:    LICENSE
 copyright:       (c) Nicolas Pouillard
 author:          Nicolas Pouillard
 maintainer:      Nicolas Pouillard <nicolas.pouillard@gmail.com>
 category:        Text, Web
 synopsis:        TDoc is a typed document builder with support for (X)HTML
-description:     TDoc is a typed document builder with support for (X)HTML
+--description:
 stability:       Experimental
 build-type:      Simple
 
