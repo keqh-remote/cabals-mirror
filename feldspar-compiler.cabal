@@ -1,5 +1,5 @@
 name:           feldspar-compiler
-version:        0.3.1
+version:        0.3.2
 cabal-version:  >= 1.6
 build-type:     Simple
 license:        BSD3
@@ -47,7 +47,7 @@ library
     Feldspar.Fs2dot
 
   build-depends:
-    feldspar-language == 0.3.1,
+    feldspar-language == 0.3.*,
     base >= 4 && < 4.3,
     containers,
     haskell-src-exts,
