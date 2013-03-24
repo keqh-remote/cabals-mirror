@@ -1,5 +1,5 @@
 name:               arbtt
-version:            0.4.4
+version:            0.4.5
 license:            GPL
 license-file:       LICENSE
 category:           Desktop
@@ -23,22 +23,40 @@ homepage:           http://www.joachim-breitner.de/projects#arbtt
 
 extra-source-files:
     categorize.cfg, arbtt-capture.desktop, README,
-    doc/arbtt.xml, doc/fptools.css, doc/Makefile
+    doc/arbtt.xml, doc/fptools.css, doc/Makefile,
+    setup.iss, modpath.iss
 
 executable arbtt-capture
     main-is:            capture-main.hs
     hs-source-dirs:     src
     build-depends:
-        base == 4.*, filepath, directory, mtl, time, unix,
-        X11 > 1.4.4, bytestring, binary
-    extra-libraries: Xss
+        base == 4.*, filepath, directory, mtl, time,
+        bytestring, binary
     other-modules:
         Data
+        Data.Binary.StringRef
         Capture
         TimeLog
         UpgradeLog1
-        Graphics.X11.XScreenSaver
-        System.Locale.SetLocale
+
+    if os(windows) 
+        extra-libraries: psapi
+        cpp-options:    -DWIN32
+        ghc-options:    -optl-mwindows
+        other-modules:
+            Capture.Win32
+            Graphics.Win32.Window.Extra
+            System.Win32.Mutex
+        build-depends:
+             Win32
+    else
+        extra-libraries: Xss
+        other-modules:
+            Capture.X11
+            Graphics.X11.XScreenSaver
+            System.Locale.SetLocale
+        build-depends:
+            X11 > 1.4.4, unix
 
 executable arbtt-stats
     main-is:            stats-main.hs
@@ -47,10 +65,15 @@ executable arbtt-stats
         base == 4.*, parsec == 2.*, containers, pcre-light
     other-modules:
         Data
+        Data.Binary.StringRef
         Categorize
         TimeLog
         Stats
-        System.Locale.SetLocale
+    if os(windows) 
+        cpp-options:    -DWIN32
+    else
+        other-modules:
+            System.Locale.SetLocale
 
 executable arbtt-dump
     main-is:            dump-main.hs
@@ -59,8 +82,13 @@ executable arbtt-dump
         base == 4.*, parsec == 2.*, containers
     other-modules:
         Data
+        Data.Binary.StringRef
         TimeLog
-        System.Locale.SetLocale
+    if os(windows) 
+        cpp-options:    -DWIN32
+    else
+        other-modules:
+            System.Locale.SetLocale
 
 executable arbtt-recover
     main-is:            recover-main.hs
@@ -69,8 +97,13 @@ executable arbtt-recover
         base == 4.*, parsec == 2.*, containers
     other-modules:
         Data
+        Data.Binary.StringRef
         TimeLog
-        System.Locale.SetLocale
+    if os(windows) 
+        cpp-options:    -DWIN32
+    else
+        other-modules:
+            System.Locale.SetLocale
 
 source-repository head
     type:     darcs
