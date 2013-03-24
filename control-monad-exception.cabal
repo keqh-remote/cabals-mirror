@@ -1,5 +1,5 @@
 name: control-monad-exception
-version: 0.6
+version: 0.8.0
 Cabal-Version:  >= 1.6
 build-type: Simple
 license: PublicDomain
@@ -44,8 +44,6 @@ description:
   .
     * Support for selective unchecked exceptions (via 'Control.Monad.Exception.UncaughtException').
   .
-    * Support for selective unexplicit exceptions.
-  .
     * Support for exception call traces via 'Control.Monad.Loc.MonadLoc'. /Example:/
   .
   >
@@ -69,21 +67,15 @@ category: Control, Monads
 stability: experimental
 tested-with: GHC ==6.10.3
 
-Flag mtl
-  description: Provide mtl instances
-  default: True 
-
-Flag monadsfd
-  description: Provide monads-fd instances
-  default: True 
-
 Flag extensibleExceptions
   description: Use extensible-exception package
   default: False
 
 Library
   buildable: True 
-  build-depends: control-monad-failure, monadloc, pretty
+  build-depends: failure
+               , monadloc
+               , pretty
 
   if flag(extensibleExceptions)
     build-depends:
@@ -93,28 +85,21 @@ Library
     build-depends:
       base >= 4 && < 5
 
-  if flag(mtl)
-    cpp-options: -DMTL
-    build-depends: mtl
-    exposed-modules : Control.Monad.Exception.Mtl
-
-  if flag(monadsfd)
-    cpp-options: -DMONADSFD
-    build-depends: transformers, monads-fd
-    exposed-modules : Control.Monad.Exception.MonadsFD
-
-  extensions:  MultiParamTypeClasses, 
-               FunctionalDependencies,
+  extensions:  MultiParamTypeClasses,
+               ScopedTypeVariables,
+               FlexibleContexts,
                FlexibleInstances,
+               TypeSynonymInstances,
                EmptyDataDecls,
                DeriveDataTypeable,
-               UndecidableInstances
+               PatternGuards
 
   exposed-modules:
      Control.Monad.Exception
      Control.Monad.Exception.Base
      Control.Monad.Exception.Catch
      Control.Monad.Exception.Throws
+
   ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-orphans
 
 
