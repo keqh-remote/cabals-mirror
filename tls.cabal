@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.9.10
+Version:             0.9.11
 Description:
    Native Haskell TLS and SSL protocol implementation for server and client.
    .
@@ -65,6 +65,8 @@ Library
                      Network.TLS.Util
                      Network.TLS.Wire
   ghc-options:       -Wall
+  if impl(ghc == 7.6.1)
+    ghc-options:     -O0
 
 executable           Tests
   Main-is:           Tests.hs
