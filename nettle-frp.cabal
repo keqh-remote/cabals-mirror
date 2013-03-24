@@ -1,5 +1,5 @@
 Name:           nettle-frp
-Version:        0.1
+Version:        0.1.1
 Synopsis:       FRP for controlling networks of OpenFlow switches.
 Cabal-Version:  >=1.2
 Build-Type:     Simple
@@ -57,7 +57,7 @@ Library
 
   build-depends:
     base >= 4 && < 5
-    , nettle-openflow
+    , nettle-openflow < 0.2
     , mtl
     , bytestring
     , containers
@@ -65,5 +65,5 @@ Library
     , binary
     , time
     , network
-    , haskell98
     , network-data
+    , random
