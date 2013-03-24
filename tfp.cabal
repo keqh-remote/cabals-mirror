@@ -1,5 +1,5 @@
 name:           tfp
-version:        0.3
+version:        0.4
 cabal-version:  >= 1.6
 build-type:     Simple
 license:        BSD3
@@ -7,9 +7,9 @@ license-file:   LICENSE
 copyright:      Copyright (c) 2008 Peter Gavin
 author:         Peter Gavin
 maintainer:     pgavin@gmail.com
-homepage:       http://abt12monk.org/git/tfp.git/
+homepage:       http://github.com/pgavin/tfp
 stability:      alpha
-package-url:    http://abt12monk.org/git/tfp.git/
+package-url:    http://github.com/pgavin/tfp
 synopsis:       Type-level programming library using type families
 description:	TFP (short for Type Family Programming) provides implementations of type-level integers and booleans,
 		and (eventually) simple type-level data structures. It uses type families as functions to produce new types,
@@ -19,7 +19,7 @@ tested-with:    GHC == 6.9.0
 
 source-repository head {
   type:         git
-  location:     http://abt12monk.org/git/tfp.git/
+  location:     git@github.com:pgavin/tfp.git
 }
 
 flag build-test
