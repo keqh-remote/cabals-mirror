@@ -1,5 +1,5 @@
 Name:           graph-rewriting-gl
-Version:        0.6.5
+Version:        0.6.6
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -17,7 +17,7 @@ Data-Files:  font/DejaVuSansMonoLicense.txt font/DejaVuSansMono.ttf
 
 Library
   Build-Depends:
-    base >= 4 && < 4.4,
+    base >= 4 && < 4.5,
     base-unicode-symbols >= 0.2 && < 0.3,
     graph-rewriting >= 0.4.6 && < 0.6,
     graph-rewriting-layout >= 0.4 && < 0.5,
