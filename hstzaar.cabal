@@ -1,5 +1,5 @@
 name:    hstzaar
-version: 0.6
+version: 0.7
 
 category: Game
 
@@ -30,10 +30,11 @@ extra-source-files:
 executable hstzaar
   hs-source-dirs:   src
   main-is:          Main.hs
-  other-modules:    GUI StateVar Board AI AI.Utils AI.Lame AI.Eval AI.Minimax Tournament Tests
+  other-modules:    GUI Var History Board AI AI.Utils AI.Eval AI.Minimax Tournament Tests
   build-depends:
     base       >= 4       && < 5,
     haskell98,
+    filepath >= 1.1,
     containers,
     gtk        >=0.11, 
     cairo      >= 0.11, 
