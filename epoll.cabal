@@ -1,6 +1,6 @@
 name:               epoll
-version:            0.1.1
-synopsis:           Low-level bindings to epoll.
+version:            0.2
+synopsis:           epoll bindings
 description:        Bindings to epoll, a Linux specific I/O
                     event notication facility (cf. man epoll(7)).
 category:           System
@@ -17,11 +17,15 @@ extra-source-files: README, examples/*.hs
 
 library
   exposed-modules:  System.Linux.Epoll,
-                    System.Linux.EpollM,
-                    System.Linux.Epoll.Base
-  other-modules:    Util
+                    System.Linux.Epoll.Base,
+                    System.Linux.Epoll.Buffer,
+                    System.Linux.Epoll.EventLoop
+  other-modules:    Util,
+                    BChan
   ghc-options:      -Wall -O2
-  extensions:       CPP, ForeignFunctionInterface, GeneralizedNewtypeDeriving
+  extensions:       CPP,
+                    ForeignFunctionInterface,
+                    TypeSynonymInstances
   build-depends:    base >= 3 && < 5, unix, mtl
   hs-source-dirs:   src
 
