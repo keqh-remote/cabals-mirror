@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.5.7
+version:       0.5.8
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -63,7 +63,7 @@ library
         Bundled.SHA256
         Storage.Hashed.Utils
 
-    build-depends: base >= 3 && < 5,
+    build-depends: base >= 4 && < 5,
                    containers,
                    mtl,
                    directory,
