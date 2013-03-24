@@ -1,5 +1,5 @@
 name: gtk2hs-cast-glib
-version: 0.10.1.0
+version: 0.10.1.1
 cabal-version: >= 1.6
 build-type: Simple
 license: OtherLicense
@@ -14,9 +14,13 @@ description:
  This package contains a type class called Cast with a function cast, that is a
  wrapper for all the castTo* functions of gtk2hs.  It makes it easier to write
  other functions that require a castTo* as a parameter, like xmlGetWidget from
- glade.
+ glade.  The main utility of these packages is to use xmlGetWidgetCast, a
+ version of xmlGetWidget defined in gtk2hs-cast-glade, which has the type:
+ xmlGetWidgetCast :: (Cast widget, WidgetClass widget) => GladeXML -> String ->
+ IO widget.
  .
- This is the glib package of gtk2hs-cast.
+ This is the glib package of gtk2hs-cast, which contains the definition of the
+ Cast class.
 category: GUI
 tested-with: GHC == 6.10.1
 library
