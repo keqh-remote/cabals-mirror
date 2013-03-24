@@ -1,5 +1,5 @@
 name:                ircbouncer
-version:             0.0
+version:             0.1
 synopsis:            IRC bouncer
 description:         A very simple IRC bouncer.
 category:            Network
