@@ -1,12 +1,12 @@
 Name:               collada-output
-Version:            0.5
+Version:            0.6
 Synopsis:           Generate animated 3d objects in COLLADA
 Description:        Generate a COLLADA file with textures, materials, animations, ... It can be used to visualize algorithms that produce a stream of positions, see <http://www.youtube.com/watch?v=ZpJzG28Yv8Y>
 category:           graphics
 License:            BSD3
 License-file:       LICENSE
 Author:             Tillmann Vogt
-Maintainer:         Tillmann.Vogt@rwth-aachen.de
+Maintainer:         tillk.vogt@googlemail.com
 Build-Type:         Simple
 Cabal-Version:    >=1.6
 
@@ -17,8 +17,9 @@ Library
         xml == 1.3.*,
         containers == 0.4.*,
         time == 1.2.*,
-        SVGPath == 1.0.*,
-        collada-types
+        SVGPath == 1.1.*,
+        collada-types == 0.3,
+        vector
     exposed-modules:
         Graphics.Formats.Collada.Animations
         Graphics.Formats.Collada.GenerateCollada
