@@ -1,5 +1,5 @@
 Name:                grammar-combinators
-Version:             0.2.5
+Version:             0.2.6
 Description:
     The grammar-combinators library is a novel parsing library using
     an explicit representation of recursion to provide various novel
