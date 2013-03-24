@@ -1,5 +1,5 @@
 Name:		pqueue
-Version:	1.0.0
+Version:	1.0.1
 Category:	Data Structures
 Author:		Louis Wasserman
 License:	BSD3
@@ -26,6 +26,7 @@ Library{
   other-modules:
         Data.PQueue.Prio.Internals
         Data.PQueue.Internals
+        Data.PQueue.Prio.Max.Internals
 
   if impl(ghc) {
     extensions: DeriveDataTypeable
