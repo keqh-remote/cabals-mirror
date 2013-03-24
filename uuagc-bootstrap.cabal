@@ -1,7 +1,7 @@
 cabal-version: >=1.2
 build-type: Simple
 name: uuagc-bootstrap
-version: 0.9.38.6.1
+version: 0.9.38.6.2
 license: GPL
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
