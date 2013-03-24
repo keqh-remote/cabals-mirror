@@ -1,5 +1,5 @@
 Name:                alex-meta
-Version:             0.3.0.2
+Version:             0.3.0.3
 Synopsis:            Quasi-quoter for Alex lexers
 -- Description:         
 License:             BSD3
@@ -23,8 +23,8 @@ Library
   
   -- Packages needed in order to build this package.
   Build-depends:
-      template-haskell >=2.5&&<2.7
-    , haskell-src-meta >=0.5&&<1.0
+      template-haskell >=2.5&&<2.8
+    , haskell-src-meta >=0.5.1.2&&<1.0
     , base >= 4.2 && < 5
     , array, containers
     , QuickCheck >=2
