@@ -1,5 +1,5 @@
 Name:               collada-output
-Version:            0.4
+Version:            0.5
 Synopsis:           Generate animated 3d objects in COLLADA
 Description:        Generate a COLLADA file with textures, materials, animations, ... It can be used to visualize algorithms that produce a stream of positions, see <http://www.youtube.com/watch?v=ZpJzG28Yv8Y>
 category:           graphics
