@@ -1,13 +1,13 @@
 Name:           hledger
-Version:        0.2
+Version:        0.3
 Category:       Finance
 Synopsis:       A ledger-compatible text-based accounting tool.
-Description:    hledger is a minimal haskell clone of John Wiegley's "ledger" text-based
-                accounting tool (http://newartisans.com/software/ledger.html).  hledger
-                generates ledger-compatible register & balance reports from a plain text
-                ledger file, and demonstrates a functional implementation of ledger.
+Description:    hledger is a haskell clone of John Wiegley's "ledger" text-based
+                accounting tool (http://newartisans.com/software/ledger.html).  
+                It generates ledger-compatible register & balance reports from a plain
+                text ledger file, and demonstrates a functional implementation of ledger.
 License:        GPL
-Stability:      alpha
+Stability:      beta
 Author:         Simon Michael <simon@joyful.com>
 Maintainer:     Simon Michael <simon@joyful.com>
 Homepage:       http://joyful.com/hledger
@@ -19,9 +19,21 @@ Extra-Tmp-Files:
 Cabal-Version:  >= 1.2
 
 Executable hledger
-  Build-Depends:  base, containers, haskell98, directory, parsec, regex-compat,
-                  old-locale, time, HUnit
   Main-Is:        hledger.hs
+  Build-Depends:  
+                  base,
+                  containers, 
+                  haskell98, 
+                  directory, 
+                  parsec, 
+                  regex-compat, 
+                  regexpr>=0.5.1,
+                  old-locale, 
+                  time, 
+                  HUnit, 
+                  mtl, 
+                  bytestring,
+                  vty>=3.1.8.2
   Other-Modules:  
                   BalanceCommand
                   Options
@@ -29,6 +41,7 @@ Executable hledger
                   RegisterCommand
                   Setup
                   Tests
+                  UICommand
                   Utils
                   Ledger
                   Ledger.Account
