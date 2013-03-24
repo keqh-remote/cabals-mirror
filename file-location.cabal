@@ -1,5 +1,5 @@
 Name:                file-location
-Version:             0.4.3
+Version:             0.4.4
 Synopsis:            common functions that show file location information
 Homepage:            https://github.com/gregwebs/FileLocation.hs
 License:             BSD3
@@ -8,7 +8,7 @@ Author:              Greg Weber
 Maintainer:          greg@gregweber.info
 Category:            Development
 Build-type:          Simple
-Cabal-version:       >=1.6
+Cabal-version:       >=1.8
 Description: 
     Common debugging\/error\/exception functions that give file location information
     .
@@ -68,8 +68,24 @@ Library
   -- Packages needed in order to build this package.
   Build-depends:  base >= 4 && < 5
                 , template-haskell
-                , transformers     >= 0.2 && < 0.3
+                , transformers     >= 0.2 && < 0.4
                 , containers
+
+-- This just helps you get the packages for test/main.hs
+-- tests are ran with test/run.sh
+-- probably can run it entirely through this interface with just a little work
+test-suite test
+    type:           exitcode-stdio-1.0
+    main-is:        main.hs
+    hs-source-dirs: ., test
+    ghc-options: -Wall
+    Build-depends: base
+                 , file-location
+                 , lifted-base
+                 , containers
+                 , template-haskell
+                 , transformers
+                  -- shelltestrunner: need shelltest executable
 
 Source-Repository head
   type: git
