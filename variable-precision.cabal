@@ -1,10 +1,10 @@
 Name:                variable-precision
-Version:             0.2
+Version:             0.2.1
 Synopsis:            variable-precision floating point
 Description:
   Software floating point with type-tagged variable mantissa precision,
   implemented using a strict pair of 'Integer' and 'Int' scaled alike
-  to 'decodeFloat'.
+  to 'decodeFloat'.  Version 0.2.1 added a fixed point number type.
   .
   Instances of the usual numeric type classes are provided, along with
   additional operators (with carefully chosen fixities) to coerce,
@@ -43,6 +43,7 @@ Library
   Exposed-modules:
     Numeric.VariablePrecision
     Numeric.VariablePrecision.Algorithms
+    Numeric.VariablePrecision.Fixed
     Numeric.VariablePrecision.Float
     Numeric.VariablePrecision.Complex
     Numeric.VariablePrecision.Precision
@@ -70,4 +71,4 @@ source-repository head
 source-repository this
   type:     git
   location: git://gitorious.org/variable-precision/variable-precision.git
-  tag:      v0.2
+  tag:      v0.2.1
