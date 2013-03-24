@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               shake
-version:            0.1.2
+version:            0.1.3
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -87,5 +87,8 @@ executable shake
         buildable: False
 
     other-modules:
-        Examples.Tar.Main
+        Examples.Util
         Examples.Self.Main
+        Examples.Test.Basic1
+        Examples.Test.Directory
+        Examples.Tar.Main
