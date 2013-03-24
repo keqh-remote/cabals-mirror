@@ -1,5 +1,5 @@
 name:       hfusion
-version:    0.0.3
+version:    0.0.4
 build-type: Simple
 cabal-version:  >= 1.6
 license:    BSD3
@@ -45,5 +45,5 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://www.fing.edu.uy/inco/proyectos/fusion/darcs/hfusion/
-  tag:      0.0.3
+  tag:      0.0.4
 
