@@ -1,5 +1,5 @@
 Name:                   wai-logger
-Version:                0.1.0
+Version:                0.1.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -16,10 +16,13 @@ library
                         Network.Wai.Logger.Format
                         Network.Wai.Logger.Utils
   Build-Depends:        base >= 4 && < 5, time, old-locale,
-                        unix, bytestring, blaze-builder,
+                        bytestring, blaze-builder,
                         wai, fast-logger, http-types, case-insensitive,
                         network, byteorder
+  if os(windows)
+    cpp-options: -DWINDOWS
+  else
+    build-depends: unix
 Source-Repository head
   Type:                 git
-  Location:             git://github.com/kazu-yamamoto/wai-logger.git
-
+  Location:             git://github.com/kazu-yamamoto/logger.git
