@@ -1,5 +1,5 @@
 name:                rangemin
-version:             1.0.3
+version:             1.0.4
 synopsis:            Effectively linear range-min algorithms.
 description:	     Rapidly and lazily preprocesses an array or list so that the smallest element in an arbitrary subrange can be found in constant time.
 tested-with:	     GHC
