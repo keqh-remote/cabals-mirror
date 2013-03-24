@@ -1,10 +1,10 @@
 Name:           numeric-prelude
-Version:        0.0.4
+Version:        0.0.5
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
 Maintainer:     Henning Thielemann <numericprelude@henning-thielemann.de>
-Homepage:       http://www.haskell.org/haskellwiki/Mathematical_prelude_discussion
+Homepage:       http://www.haskell.org/haskellwiki/Numeric_Prelude
 Package-URL:    http://darcs.haskell.org/numericprelude/
 Category:       Math
 Stability:      Experimental
@@ -97,10 +97,10 @@ Description:
   * I stuck with the Haskell 98 names.
     In some cases I find them lacking.
     Neglecting backwards compatibility, we have renamed classes as follows:
-      Num           --> Ring
-      Fractional    --> Field
-      Floating      --> Algebraic, Transcendental
-      RealFloat     --> RealTranscental
+      Num           --> Ring,
+      Fractional    --> Field,
+      Floating      --> Algebraic + Transcendental,
+      RealFloat     --> RealTranscendental,
   .
   * It's slightly unfortunate that 'abs' can no longer be used for complex numbers,
     since it is standard mathematically.
@@ -111,7 +111,7 @@ Description:
   .
   Additional standard libraries might include Enum, IEEEFloat (including
   the bulk of the functions in Haskell 98's RealFloat class),
-  VectorSpace, Ratio.T, and Lattice.
+  VectorSpace, Ratio, and Lattice.
 Tested-With:    GHC==6.4.1, GHC==6.8.2
 Cabal-Version:  >=1.2
 Build-Type:     Simple
