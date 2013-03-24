@@ -1,5 +1,5 @@
 name: Nomyx-Rules
-version: 0.0.2
+version: 0.0.3
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
@@ -8,8 +8,8 @@ copyright: 2012 Corentin Dupont
 maintainer: Corentin Dupont
 stability: Experimental
 synopsis: Language to express rules for Nomic
-description: Provide a DSL to express rules for the Nomic game, with evaluation engine
-category: Game Engine
+description: Provide a DSL to express rules for a Nomic game, with evaluation engine. See package Nomyx for a full game implementation.
+category: Language
 author: Corentin Dupont
 data-files: examples/Examples.hs src/Language/Nomyx/Evaluation.hs
             src/Language/Nomyx/Expression.hs src/Language/Nomyx/Rule.hs
