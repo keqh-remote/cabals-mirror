@@ -1,5 +1,5 @@
 Name:          regex-xmlschema
-Version:       0.1.4
+Version:       0.1.5
 Synopsis:      A regular expression library for W3C XML Schema regular expressions
 Description:   This library supports full W3C XML Schema regular expressions
                inclusive all Unicode character sets and blocks.
