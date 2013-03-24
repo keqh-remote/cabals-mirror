@@ -1,5 +1,5 @@
 name:           aeson-pretty
-version:        0.6
+version:        0.6.1
 license:        BSD3
 license-file:   LICENSE
 category:       Text, Web, JSON, Pretty Printer
@@ -16,7 +16,7 @@ description:
     A JSON pretty-printing library compatible with aeson as well as
     a command-line tool to improve readabilty of streams of JSON data.
     .
-    The /library/ provides a single function "encodePretty". It is a drop-in
+    The /library/ provides the function "encodePretty". It is a drop-in
     replacement for aeson's "encode" function, producing JSON-ByteStrings for
     human readers.
     .
@@ -45,7 +45,7 @@ executable aeson-pretty
             aeson == 0.6.*,
             attoparsec == 0.10.*,
             base == 4.*,
-            bytestring == 0.9.*,
+            bytestring >= 0.9 && < 0.11,
             cmdargs == 0.7.*,
             containers,
             vector == 0.9.*,
@@ -63,7 +63,7 @@ library
         aeson == 0.6.*,
         attoparsec == 0.10.*,
         base == 4.*,
-        bytestring == 0.9.*,
+        bytestring >= 0.9 && < 0.11,
         containers,
         vector == 0.9.*,
         text == 0.11.*,
