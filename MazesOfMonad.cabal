@@ -1,9 +1,9 @@
 Name:                MazesOfMonad
-Version:             1.0.5
+Version:             1.0.6
 Description:         MazesOfMonad is a console-based Role Playing Game. You create characters
 	with their strong and weak points, and try to complete mazes that are randomly generated. You can pick up gold and items on the way,
 	meet monsters, and deal with them as you want. You can fight, use magic, bribe, trade, steal... This is only a simple game that I did to see what building a 
-	full blown Haskell application is like to develop. Version 1.0.5 is complete and working.
+	full blown Haskell application is like to develop. Versions 1.0.5 and above are complete and working.
 License:             BSD3
 License-file:        LICENSE
 Author:              JP Moresmau
@@ -11,10 +11,10 @@ Category:            Game
 Maintainer:          jpmoresmau@gmail.com
 Synopsis:            Console-based Role Playing Game
 Build-Type:          Simple
-Build-Depends:       base >= 3 && < 4, HUnit, random, 
-	regex-posix, containers, filepath, directory, pretty, haskell98, 
+Build-Depends:       base < 5 , HUnit, random, 
+	regex-posix, containers, filepath, directory, pretty, 
 	array, mtl, old-locale, time
-tested-with:         GHC==6.10.1
+tested-with:         GHC==6.10.1, GHC==6.12.1
 data-files:          README.txt, WHATSNEW.txt, TODO.txt
 
 Executable:          mazesofmonad
