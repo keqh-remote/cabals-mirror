@@ -1,7 +1,8 @@
 Name:           wx
-Version:        0.10.6
+Version:        0.11.0
 License:        LGPL
 License-file:   license.txt
+Homepage:       http://haskell.org/haskellwiki/WxHaskell
 Author:         Daan Leijen
 Build-Type:     Simple
 Category:       GUI, User interfaces
