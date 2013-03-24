@@ -1,5 +1,5 @@
 name:                   random-source
-version:                0.3
+version:                0.3.0.2
 stability:              provisional
 
 cabal-version:          >= 1.6
@@ -18,16 +18,22 @@ description:            Random number generation based on entropy sources
                         \"completing\" partial implementations, making it
                         easy to define new entropy sources in a way that
                         is naturally forward-compatible.
+                        .
+                        Changes in 0.3.0.2: Fixes for GHC 7.2.*'s crazy
+                        Template Haskell changes.
+                        .
+                        Changes in 0.3.0.1: None except setting dependency
+                        on flexible-defaults >= 0.0.0.2.
 
-tested-with:            GHC == 6.8.3, GHC == 6.10.4, GHC == 6.12.1, 
-                        GHC == 6.12.3, GHC == 7.0.1, GHC == 7.0.2
+tested-with:            GHC == 6.8.3, GHC == 6.10.4, GHC == 6.12.3,
+                        GHC == 7.0.4, GHC == 7.2.1, GHC == 7.2.2
 
 source-repository head
   type:                 git
   location:             https://github.com/mokus0/random-fu.git
   subdir:               random-source
 
-Flag splitBase
+Flag base4
     Description:        base-4 and above do not include syb
 
 Flag mtl2
@@ -63,16 +69,17 @@ Library
   else
     build-depends:      mtl == 1.*
   
-  if flag(splitBase)
+  if flag(base4)
     build-depends:      base >= 4 && <5, syb
   else
     build-depends:      base >= 3 && <4
   
-  build-depends:        flexible-defaults,
+  build-depends:        flexible-defaults >= 0.0.0.2,
                         mersenne-random-pure64,
                         random,
                         stateref >= 0.3 && < 0.4,
-                        template-haskell
+                        template-haskell,
+                        th-extras
 
   if os(Windows)
     cpp-options:        -Dwindows
