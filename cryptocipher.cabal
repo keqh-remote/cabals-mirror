@@ -1,5 +1,5 @@
 Name:                cryptocipher
-Version:             0.2.12
+Version:             0.2.13
 Description:         Symmetrical Block, Stream and PubKey Ciphers
 License:             BSD3
 License-file:        LICENSE
@@ -24,6 +24,7 @@ Library
   Build-Depends:     base >= 4 && < 5
                    , bytestring
                    , vector >= 0.7
+                   , ghc-prim
                    , primitive
                    , crypto-api >= 0.5
                    , tagged
@@ -38,8 +39,14 @@ Library
                      Number.Serialize
                      Number.Generate
                      Number.Basic
+                     Number.Polynomial
                      Number.Prime
+                     System.Endian
   ghc-options:       -Wall
+  if arch(ppc) || arch(sparc)
+    cpp-options: -DBIG_ENDIAN
+  else
+    cpp-options: -DLITTLE_ENDIAN
 
 Executable           Tests
   Main-Is:           Tests.hs
@@ -52,6 +59,10 @@ Executable           Tests
                    , QuickCheck >= 2
   else
     Buildable:       False
+  if arch(ppc) || arch(sparc)
+    cpp-options: -DBIG_ENDIAN
+  else
+    cpp-options: -DLITTLE_ENDIAN
 
 Executable           Benchmarks
   Main-Is:           Benchmarks.hs
@@ -62,6 +73,10 @@ Executable           Benchmarks
                    , mtl
   else
     Buildable:       False
+  if arch(ppc) || arch(sparc)
+    cpp-options: -DBIG_ENDIAN
+  else
+    cpp-options: -DLITTLE_ENDIAN
 
 source-repository head
   type:     git
