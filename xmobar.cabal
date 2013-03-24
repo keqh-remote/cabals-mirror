@@ -1,5 +1,5 @@
 name:               xmobar
-version:            0.12
+version:            0.13
 homepage:           http://projects.haskell.org/xmobar/
 bug-reports:        http://code.google.com/p/xmobar/issues
 synopsis:           A Minimalistic Text Based Status Bar
@@ -16,8 +16,8 @@ maintainer:         Jose A. Ortega Ruiz <jao@gnu.org>
 cabal-version:      >= 1.6
 build-type:         Simple
 
-data-files:         samples/xmobar.config
 extra-source-files: README, NEWS,
+                    samples/xmobar.config, samples/xmonadpropwrite.hs
                     samples/Plugins/helloworld.config,
                     samples/Plugins/HelloWorld.hs
 
@@ -53,6 +53,10 @@ flag all_extensions
   description: Includes all optional extensions.
   default: False
 
+flag with_alsa
+  description: Use alsa-mixer to get the volume from soundcards.
+  default: False
+
 executable xmobar
     hs-source-dirs:     src
     main-is:            Main.hs
@@ -65,7 +69,8 @@ executable xmobar
       Plugins.Monitors.CoreTemp, Plugins.Monitors.CpuFreq,
       Plugins.Monitors.Cpu, Plugins.Monitors.Disk, Plugins.Monitors.Mem,
       Plugins.Monitors.MultiCpu, Plugins.Monitors.Net,
-      Plugins.Monitors.Swap, Plugins.Monitors.Thermal, Plugins.Monitors.Top,
+      Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
+      Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
       Plugins.Monitors.Uptime, Plugins.Monitors.Weather
 
     ghc-prof-options:   -prof -auto-all
@@ -109,3 +114,8 @@ executable xmobar
        build-depends: libmpd >= 0.5
        other-modules: Plugins.Monitors.MPD
        cpp-options: -DLIBMPD
+
+    if flag(with_alsa) || flag(all_extensions)
+       build-depends: alsa-mixer == 0.1.*
+       other-modules: Plugins.Monitors.Volume
+       cpp-options: -DALSA
