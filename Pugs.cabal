@@ -1,5 +1,5 @@
 Name            : Pugs
-Version         : 6.2.13.10
+Version         : 6.2.13.11
 license         : BSD3
 license-file    : LICENSE
 cabal-version   : >= 1.2
@@ -162,7 +162,7 @@ executable pugs
     build-depends:
         base, haskell98, filepath, mtl, stm, parsec < 3.0.0, network,
         pretty, time, random, process, containers, bytestring,
-        array, directory, utf8-string, binary, haskeline >= 0.2.1,
+        array, directory, utf8-string, binary, haskeline >= 0.2.1, FindBin,
 
         MetaObject       >= 0.0.4,
         HsParrot         >= 0.0.2,
