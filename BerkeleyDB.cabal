@@ -1,11 +1,11 @@
 name: BerkeleyDB
-version: 0.8.2
+version: 0.8.3
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
 copyright: (c) 2009 Stephen Blackheath, (c) 2010 typLAB
 author: Stephen Blackheath, Erik Hesselink <erik@typlab.com>
-maintainer: http://blacksapphire.com/antispam/, typLAB <code@typlab.com>
+maintainer: http://blacksapphire.com/antispam/
 stability: beta
 synopsis: Berkeley DB binding
 description:
