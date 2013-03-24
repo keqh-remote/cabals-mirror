@@ -1,5 +1,5 @@
 name:               regexqq
-version:            0.1
+version:            0.2
 cabal-version:      >= 1.2
 build-type:         Simple
 license:            BSD3
@@ -10,14 +10,14 @@ copyright:          Matt Morrow
 maintainer:         Matt Morrow <morrow@jypsis.com>
 stability:          unstable
 synopsis:           A quasiquoter for PCRE regexes.
-description:        > [$rx|([aeiou]).*(er|ing|tion)([\.,!\?]*)$|] "helloing.!?!?!"
-                    > Just ["elloing.!?!?!","e","ing",".!?!?!"]
-                    >
-                    > ghci> tail `fmap` [$rx|^([+-])?([0-9]+)\.([0-9]+)|] (show $ negate pi)
-                    > Just ["-","3","141592653589793"]
-                    >
-                    > ghci> maybe [] tail $ [$rx|^([+-])?([0-9]+)\.([0-9]+)|] (show $ negate pi)
-                    > ["-","3","141592653589793"]
+description:        A quasiquoter for Text.Regex.PCRE regexes.
+                    This makes use of a new GHC extension known as QuasiQuotes.
+                    QuasiQuotes do not appear in ghc until 6.9, BUT there is a
+                    patch for ghc-6.8.3 which adds quasiquote functionality. A
+                    pathed version of ghc-6.8.3 is located at
+                    <http://code.haskell.org/~morrow/quasiquotes/ghc-6.8.3_QQ-0.1.tar.bz2>.
+                    An example of the use of @regexqq@ is located at
+                    <http://code.haskell.org/~morrow/quasiquotes/regexqq.txt>
 
 library
   build-depends:    base, bytestring, template-haskell >= 2.2, pcre-light
