@@ -1,5 +1,5 @@
 name:       hfusion
-version:    0.0.6
+version:    0.0.6.1
 build-type: Simple
 cabal-version:  >= 1.6
 license:    BSD3
@@ -17,7 +17,7 @@ description:
 
 
 library
-  build-depends:    base<5, mtl, haskell-src, haskell98, containers, pretty, syb
+  build-depends:    base<5, mtl, haskell-src, containers, pretty, syb
   exposed-modules:
     HFusion.HFusion, HFusion.CHANGELOG
   other-modules:
@@ -47,5 +47,5 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/r/facundo/hfusion
-  tag:      0.0.6
+  tag:      0.0.6.1
 
