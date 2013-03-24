@@ -1,5 +1,5 @@
 name:                   HarmTrace
-version:                0.7
+version:                1.0
 synopsis:               Harmony Analysis and Retrieval of Music
 description:            HarmTrace: Harmony Analysis and Retrieval of Music 
                         with Type-level Representations of Abstract
@@ -16,7 +16,7 @@ description:            HarmTrace: Harmony Analysis and Retrieval of Music
                         <http://dreixel.net/research/pdf/fmmh.pdf>
 
 copyright:              (c) 2010--2011 Universiteit Utrecht
-license:                OtherLicense
+license:                GPL-3
 license-file:           LICENSE
 author:                 W. Bas de Haas and Jose Pedro Magalhaes
 stability:              experimental
@@ -25,12 +25,22 @@ homepage:               http://www.cs.uu.nl/wiki/GenericProgramming/HarmTrace
 category:               Music
 build-type:             Simple
 cabal-version:          >= 1.6
-tested-with:            GHC == 7.0.3
+tested-with:            GHC == 7.0.3, GHC == 7.2.1
 
+extra-source-files:     README
 
 executable harmtrace
   hs-source-dirs:       src
   other-modules:        HarmTrace.HarmTrace
+
+                        HarmTrace.Audio.Annotations
+                        HarmTrace.Audio.BeatChroma
+                        HarmTrace.Audio.ChordTypes
+                        HarmTrace.Audio.Evaluation
+                        HarmTrace.Audio.Harmonize
+                        HarmTrace.Audio.Key
+                        HarmTrace.Audio.Parser
+                        HarmTrace.Audio.Utils
 
                         HarmTrace.Base.MusicRep
                         HarmTrace.Base.Parsing
@@ -48,16 +58,11 @@ executable harmtrace
                         HarmTrace.IO.PrintTree
 
                         HarmTrace.Matching.Alignment
-                        HarmTrace.Matching.AlignmentFaster
-                        HarmTrace.Matching.FlatMatch
-                        HarmTrace.Matching.GuptaNishimura
-                        HarmTrace.Matching.GuptaNishimuraEditMatch
                         HarmTrace.Matching.HChord
-                        HarmTrace.Matching.Matching
                         HarmTrace.Matching.Sim
                         HarmTrace.Matching.SimpleChord
                         HarmTrace.Matching.Standard
-                        HarmTrace.Matching.Testing
+                        HarmTrace.Matching.GuptaNishimura
 
                         HarmTrace.Models.Models
                         HarmTrace.Models.Parser
@@ -70,21 +75,20 @@ executable harmtrace
                         HarmTrace.Models.Pop.Main
                         HarmTrace.Models.Pop.Model
 
-                        HarmTrace.Models.Test.Instances
-                        HarmTrace.Models.Test.Main
-                        HarmTrace.Models.Test.Model
-
                         HarmTrace.Tokenizer.Tokenizer
                         HarmTrace.Tokenizer.Tokens
 
   main-is:              Main.hs
-  build-depends:        base >= 4.2 && < 4.4, template-haskell >=2.4 && <2.6,
+  build-depends:        base >= 4.2 && < 4.5, template-haskell >=2.4 && <2.7,
                         mtl, directory, filepath, array, parallel >= 3,
                         Diff == 0.1.*, parseargs >= 0.1.3.2, 
                         regex-tdfa == 1.1.*, process >= 1.0,
-                        uu-parsinglib == 2.7.1, ListLike >= 3.0.1,
-                        vector == 0.7.*, deepseq,
-                        instant-generics >= 0.3.1 && < 0.4, binary == 0.5.*
+                        uu-parsinglib >= 2.7.1, ListLike >= 3.0.1,
+                        vector >= 0.7, deepseq,
+                        instant-generics >= 0.3.1 && < 0.4, binary == 0.5.*,
+                        hmatrix >= 0.11.0.3, hmatrix-gsl-stats >= 0.1.2.9
+
+  cpp-options:          -DAUDIO
 
   ghc-options:          -Wall
                         -O2 -fno-spec-constr-count -funbox-strict-fields
