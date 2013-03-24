@@ -1,5 +1,5 @@
 Name:           vector
-Version:        0.7.1
+Version:        0.8
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
@@ -12,22 +12,25 @@ Synopsis:       Efficient Arrays
 Description:
         .
         An efficient implementation of Int-indexed arrays (both mutable
-        and immutable), with a powerful loop fusion optimization framework .
+        and immutable), with a powerful loop optimisation framework .
         .
         It is structured as follows:
         .
-        [@Data.Vector@] Boxed vectors of arbitrary types.
+        ["Data.Vector"] Boxed vectors of arbitrary types.
         .
-        [@Data.Vector.Unboxed@] Unboxed vectors with an adaptive
+        ["Data.Vector.Unboxed"] Unboxed vectors with an adaptive
         representation based on data type families.
         .
-        [@Data.Vector.Storable@] Unboxed vectors of 'Storable' types.
+        ["Data.Vector.Storable"] Unboxed vectors of 'Storable' types.
         .
-        [@Data.Vector.Primitive@] Unboxed vectors of primitive types as
-        defined by the @primitive@ package. @Data.Vector.Unboxed@ is more
+        ["Data.Vector.Primitive"] Unboxed vectors of primitive types as
+        defined by the @primitive@ package. "Data.Vector.Unboxed" is more
         flexible at no performance cost.
         .
-        [@Data.Vector.Generic@] Generic interface to the vector types.
+        ["Data.Vector.Generic"] Generic interface to the vector types.
+        .
+        Each module has a @Safe@ version with is marked as @Trustworthy@
+        (see <http://hackage.haskell.org/trac/ghc/wiki/SafeHaskell>).
         .
         There is also a (draft) tutorial on common uses of vector.
         .
@@ -38,45 +41,25 @@ Description:
         .
         * <http://trac.haskell.org/vector>
         .
-        Changes in version 0.7.1
+        Changes in version 0.8
         .
-        * New functions: @iterateN@, @splitAt@
+        * New functions: @constructN@, @constructrN@
         .
-        * New monadic operations: @generateM@, @sequence@, @foldM_@ and
-          variants
+        * Support for GHC 7.2 array copying primitives
         .
-        * New functions for copying potentially overlapping arrays: @move@,
-          @unsafeMove@
+        * New fixity for @(!)@
         .
-        * Specialisations of various monadic operations for primitive monads
+        * Safe Haskell support (contributed by David Terei)
         .
-        * Unsafe casts for Storable vectors
+        * 'Functor', 'Monad', 'Applicative', 'Alternative', 'Foldable' and
+          'Traversable' instances for boxed vectors
+          (/WARNING: they tend to be slow and are only provided for completeness/)
         .
-        * Efficiency improvements
+        * 'Show' instances for immutable vectors follow containers conventions
         .
-        Changes in version 0.7.0.1
+        * 'Read' instances for all immutable vector types
         .
-        * Dependency on package ghc removed
-        .
-        Changes in version 0.7
-        .
-        * New functions for freezing, copying and thawing vectors: @freeze@,
-          @thaw@, @unsafeThaw@ and @clone@
-        .
-        * @newWith@ and @newUnsafeWith@ on mutable vectors replaced by
-          @replicate@
-        .
-        * New function: @concat@
-        .
-        * New function for safe indexing: @(!?)@
-        .
-        * @Monoid@ instances for all vector types
-        .
-        * Significant recycling and fusion improvements
-        .
-        * Bug fixes
-        .
-        * Support for GHC 7.0
+        * Performance improvements
         .
 
 Cabal-Version:  >= 1.2.3
@@ -133,15 +116,22 @@ Library
         Data.Vector.Fusion.Util
         Data.Vector.Fusion.Stream.Size
         Data.Vector.Fusion.Stream.Monadic
+        Data.Vector.Fusion.Stream.Monadic.Safe
         Data.Vector.Fusion.Stream
+        Data.Vector.Fusion.Stream.Safe
 
         Data.Vector.Generic.Mutable
+        Data.Vector.Generic.Mutable.Safe
         Data.Vector.Generic.Base
         Data.Vector.Generic.New
+        Data.Vector.Generic.New.Safe
         Data.Vector.Generic
+        Data.Vector.Generic.Safe
 
         Data.Vector.Primitive.Mutable
+        Data.Vector.Primitive.Mutable.Safe
         Data.Vector.Primitive
+        Data.Vector.Primitive.Safe
 
         Data.Vector.Storable.Internal
         Data.Vector.Storable.Mutable
@@ -149,10 +139,14 @@ Library
 
         Data.Vector.Unboxed.Base
         Data.Vector.Unboxed.Mutable
+        Data.Vector.Unboxed.Mutable.Safe
         Data.Vector.Unboxed
+        Data.Vector.Unboxed.Safe
 
         Data.Vector.Mutable
+        Data.Vector.Mutable.Safe
         Data.Vector
+        Data.Vector.Safe
 
   Include-Dirs:
         include, internal
@@ -160,7 +154,7 @@ Library
   Install-Includes:
         vector.h
 
-  Build-Depends: base >= 4 && < 5, primitive >= 0.3.1 && < 0.4
+  Build-Depends: base >= 4 && < 5, primitive >= 0.4 && < 0.5
 
   if impl(ghc<6.13)
     Ghc-Options: -finline-if-enough-args -fno-method-sharing
