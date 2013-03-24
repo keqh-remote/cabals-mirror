@@ -1,5 +1,5 @@
 name:        cmdlib
-version:     0.3.3
+version:     0.3.4
 synopsis:    a library for command line parsing & online help
 
 description: A commandline parsing library, based on getopt. Comes with a
@@ -45,6 +45,9 @@ source-repository head
   type:     darcs
   location: http://repos.mornfall.net/cmdlib
 
+flag mtl2
+  default:     True
+
 Library
   exposed-modules: System.Console.CmdLib
   other-modules: System.Console.CmdLib.Attribute
@@ -53,7 +56,11 @@ Library
                  System.Console.CmdLib.ADTs
                  System.Console.CmdLib.Record
 
-  build-depends: base >= 4 && < 5, syb, mtl, split
+  build-depends: base >= 4 && < 5, syb, split
+  if flag(mtl2)
+      build-depends: mtl >= 2, transformers >= 0.2.2
+  else
+      build-depends: mtl < 2
 
 flag test
   default:     False
