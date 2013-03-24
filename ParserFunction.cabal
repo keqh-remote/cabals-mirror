@@ -1,19 +1,18 @@
 name:          ParserFunction
-version:       0.0.4
+version:       0.0.5
 cabal-version: >= 1.6
 license:       BSD3
 license-file:  LICENSE
 author:        Enzo Haussecker
 maintainer:    ehaussecker@gmail.com
 category:      Parsing
-synopsis:      Utilities for parsing and evaluating string-expressions.
+synopsis:      Utilities for parsing and evaluating mathematical expressions.
 description:
-    ParserFunction provides utilities for parsing and evaluating string-expressions.
-    The centerpiece of this module is a function called @evalStrExpr@,
-    which evaluates a string-expression using a variable lookup map.
-    Example: @evalStrExpr@ \"exp(x)\" [(\'x\',1)] gives 2.718281828459045.
-    More examples can be found by viewing the source code for this module.
-    This module also exports all supporting functionality.
+    ParserFunction provides utilities for parsing and evaluating mathematical expressions.
+    The central parsing function in this package is @stringToExpr@, which parses an expression
+    (as a string) and returns an expression tree of type Expr (or nothing if the string is malformed).
+    Expressions can be evaluated using the function @evaluateExpression@. Examples of these
+    functions can be found by viewing the source code for this package.
 
 build-type: Simple
 
