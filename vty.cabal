@@ -1,9 +1,9 @@
 Name:                vty
-Version:             3.0.1
+Version:             3.0.2
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear
-Maintainer:          Stefan O'Rear <stefanor@cox.net>
+Maintainer:          Corey O'Connor (coreyoconnor@gmail.com)
 Category:            User Interfaces
 Synopsis:            A simple terminal access library
 Description:
@@ -16,7 +16,7 @@ Description:
   Notable infelicities: requires an ANSI-type terminal, poor efficiency,
                         requires Linux\/xterm style UTF8 support.
   .
-  You can 'darcs get' it from <http://members.cox.net/stefanor/vty>
+  You can 'darcs get' it from <http://code.haskell.org/vty/>
   &#169; 2006-2007 Stefan O'Rear; BSD3 license.
 
 Build-Depends:       base>3, bytestring, containers, unix
