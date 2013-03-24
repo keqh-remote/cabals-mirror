@@ -1,5 +1,5 @@
 Name:            pointless-lenses
-Version:         0.0.6
+Version:         0.0.7
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -27,6 +27,9 @@ Library
         Generics.Pointless.Lenses.RecursionPatterns,
         Generics.Pointless.Lenses.Reader.RecursionPatterns,
         Generics.Pointless.Lenses.Examples.Examples,
+        Generics.Pointless.Lenses.Examples.Imdb,
+        Generics.Pointless.Lenses.Examples.Recs,
+        Generics.Pointless.Lenses.Examples.MapExamples,
         Generics.Pointless.Lenses
 
   extensions: ScopedTypeVariables, FlexibleContexts, Rank2Types, TypeOperators, TypeFamilies, GADTs
