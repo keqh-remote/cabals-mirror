@@ -1,12 +1,13 @@
 name:    cil
-version: 0.0.2
+version: 0.1.0
 
 category: Language
 
-synopsis: An interface to CIL and ACSL through Frama-C.
+synopsis: An interface to CIL.
 
 description:
-  TODO
+  CIL (http://cil.sourceforge.net/) is a C frontend that reduces C to a manageable subset,
+  useful for source code analyzers, instrumenters, and compilers.
 
 author:     Tom Hawkins <tomahawkins@gmail.com>
 maintainer: Tom Hawkins <tomahawkins@gmail.com>
@@ -19,24 +20,17 @@ homepage: http://tomahawkins.org
 build-type:    Simple
 cabal-version: >= 1.6
 
-extra-source-files:
-  Makefile
-  cil_types.mli
-  GenCIL.hs
-
 library
     build-depends:
-        base       >= 4.0   && < 5.0,
-        process    >= 1.0.1 && < 1.1,
-        polyparse  >= 1.4
+        base          >= 4.0     && < 5.0,
+        bytestring    >= 0.9     && < 1.0,
+        language-c    >= 0.3.2   && < 0.4
 
     exposed-modules:
         Language.CIL
 
-    extensions: GADTs, EmptyDataDecls
+    extensions:
 
-    if impl(ghc > 6.8)
-          ghc-options: -fwarn-tabs
     ghc-options:       -W
 
 source-repository head
