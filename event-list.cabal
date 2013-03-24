@@ -1,5 +1,5 @@
 Name:             event-list
-Version:          0.0.9.1
+Version:          0.0.10
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -26,7 +26,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://darcs.haskell.org/event-list/
-  tag:      0.0.9.1
+  tag:      0.0.10
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -42,7 +42,9 @@ Library
   If flag(splitBase)
     Build-Depends: base >= 2 && <5
   Else
-    Build-Depends: base >= 1.0 && < 2
+    Build-Depends:
+      special-functors >= 1.0 && <1.1,
+      base >= 1.0 && < 2
 
   GHC-Options:      -Wall
   Hs-Source-Dirs:   src
