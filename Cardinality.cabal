@@ -66,7 +66,11 @@ Description:
         further first 2 elements. The complexity and power of this package is 
         that it provides a facility to /lazily/ evaluate amount of content in
         the container.
-Version: 0.1
+        .
+        To interface package functions 
+        .
+        @import Data.Cardinality@
+Version: 0.2
 Copyright: Copyright (c) 2010 Andrejs Sisojevs
 License: LGPL
 License-File: COPYRIGHT
@@ -81,6 +85,7 @@ Build-Type: Simple
 Extra-Source-Files:
     COPYRIGHT
     COPYING
+    NEWS
     doinst.sh
     examples/CardinalityRangeCompareTest.hs
     examples/ContainerTransformsTests.hs
@@ -89,8 +94,10 @@ Library
     Build-Depends:
         base >= 4 && < 5, containers, mtl
     Exposed-Modules:
+        Data.Cardinality.Cardinality
+        Data.Cardinality.CardinalityRange
+        Data.Cardinality.ContTrans
         Data.Cardinality
-        Data.CardinalityRange
         Data.EmptySet
         Data.Intersectable
         Data.NeverEmptyList
