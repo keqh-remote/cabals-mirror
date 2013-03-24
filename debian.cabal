@@ -1,11 +1,11 @@
 Name:           debian
-Version:        3.17.1
+Version:        3.18.1
 License:        BSD3
 License-File:	COPYING
 Author:         David Fox
 Category:	System
 Maintainer:     david@seereason.com
-Homepage:       http://seereason.org/
+Homepage:       http://src.seereason.com/ghc610/haskell-debian-3
 Build-Depends:  base >= 3 && < 4, unix, Unixutils, Extra >= 0.4, directory, process, bytestring,
 		pretty, containers, old-time, old-locale, network, parsec, mtl,
 		regex-compat, time, regex-posix, bzlib, zlib, HaXml, filepath
@@ -67,10 +67,6 @@ Exposed-modules:
 	Text.Format
 other-modules:
 	Debian.Version.Internal
-	Distribution.Package.Debian
-	Distribution.Package.Debian.Main
-	Distribution.Package.Debian.Setup
-	Distribution.Package.Debian.Bundled
 extra-source-files:
 	tests/Main.hs demos/Versions.hs debian/changelog  
 	debian/compat debian/control debian/copyright
