@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.1.5
+version:		0.1.6
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -16,7 +16,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  Manatee use multi-processes framework, any sub-module running in separate process to protected core won't crash.
  So it minimize your losses when some unexpected exception throw in extension. 
  .
- Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k>
+ Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> or <http://www.youtube.com/watch?v=A3DgKDVkyeM>
  .
  You can find screenshots at : <http://goo.gl/MkVw>
  .
@@ -71,7 +71,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  Unfortunately, Manatee can't work in XMonad, please let me know if some XMonad hacker know how to fix it. :)
  .
- Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
+ Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://www.youtube.com/watch?v=A3DgKDVkyeM> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
  .
  Screenshots at : <http://goo.gl/MkVw>
  .
@@ -117,7 +117,7 @@ library
      other-modules: 
 	 
 executable manatee
-     build-depends: base >=4 && < 5, manatee-core >= 0.0.6, containers >= 0.3.0.0, unix >= 2.4.0.0,
+     build-depends: base >=4 && < 5, manatee-core >= 0.0.7, containers >= 0.3.0.0, unix >= 2.4.0.0,
                     mtl >= 1.1.0.2, gtk-serialized-event >= 0.12.0, text >= 0.7.1.0, utf8-string,
                     gtk >= 0.12.0, dbus-client >= 0.3 && < 0.4, 
                     stm, cairo >= 0.12.0, directory, dbus-core, template-haskell
