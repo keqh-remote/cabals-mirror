@@ -1,5 +1,5 @@
 name:            yesod-auth
-version:         0.6.1.1
+version:         0.7.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman, Patrick Brisbin
@@ -11,6 +11,7 @@ cabal-version:   >= 1.6.0
 build-type:      Simple
 homepage:        http://www.yesodweb.com/
 extra-source-files: include/qq.h
+description:     Authentication for Yesod.
 
 flag ghc7
 
@@ -20,9 +21,9 @@ library
         cpp-options:     -DGHC7
     else
         build-depends:   base                      >= 4        && < 4.3
-    build-depends:   authenticate            >= 0.9       && < 0.10
+    build-depends:   authenticate            >= 0.10      && < 0.11
                    , bytestring              >= 0.9.1.4   && < 0.10
-                   , yesod-core              >= 0.8.3     && < 0.9
+                   , yesod-core              >= 0.9       && < 0.10
                    , wai                     >= 0.4       && < 0.5
                    , template-haskell
                    , pureMD5                 >= 1.1       && < 2.2
@@ -31,21 +32,22 @@ library
                    , text                    >= 0.7       && < 0.12
                    , mime-mail               >= 0.3       && < 0.4
                    , blaze-html              >= 0.4       && < 0.5
-                   , yesod-persistent        >= 0.1       && < 0.2
-                   , hamlet                  >= 0.8.1     && < 0.9
-                   , yesod-json              >= 0.1       && < 0.2
+                   , yesod-persistent        >= 0.2       && < 0.3
+                   , hamlet                  >= 0.10      && < 0.11
+                   , shakespeare-css         >= 0.10      && < 0.11
+                   , yesod-json              >= 0.2       && < 0.3
                    , containers              >= 0.2       && < 0.5
-                   , yesod-form              >= 0.2       && < 0.3
+                   , yesod-form              >= 0.3       && < 0.4
                    , transformers            >= 0.2       && < 0.3
-                   , persistent              >= 0.5       && < 0.6
-                   , persistent-template     >= 0.5       && < 0.6
-                   , SHA                     >= 1.4.1.3   && < 1.5
+                   , persistent              >= 0.6       && < 0.7
+                   , persistent-template     >= 0.6       && < 0.7
+                   , SHA                     >= 1.4.1.3   && < 1.6
                    , http-enumerator         >= 0.6       && < 0.7
-                   , aeson                   >= 0.3.2.2   && < 0.3.2.10
-                   , web-routes-quasi        >= 0.7       && < 0.8
-                   , pwstore-fast            >= 2.1       && < 2.2
+                   , aeson-native            >= 0.3.2.11  && < 0.4
+                   , pwstore-fast            >= 2.2       && < 3
 
     exposed-modules: Yesod.Auth
+                     Yesod.Auth.BrowserId
                      Yesod.Auth.Dummy
                      Yesod.Auth.Email
                      Yesod.Auth.Facebook
@@ -54,6 +56,7 @@ library
                      Yesod.Auth.Rpxnow
                      Yesod.Auth.HashDB
                      Yesod.Auth.Message
+                     Yesod.Auth.Kerberos
     ghc-options:     -Wall
     include-dirs: include
 
