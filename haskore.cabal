@@ -1,5 +1,5 @@
 Name:           haskore
-Version:        0.1.0.1
+Version:        0.1.0.2
 License:        GPL
 License-File:   LICENSE
 Author:         Paul Hudak <paul.hudak@yale.edu>, Henning Thielemann
@@ -31,7 +31,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/haskore/revised/core
-  tag:      0.1.0.1
+  tag:      0.1.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
