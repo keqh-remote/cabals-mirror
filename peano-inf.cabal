@@ -1,5 +1,5 @@
 name:           peano-inf
-version:        0.4
+version:        0.5
 synopsis:       Lazy Peano numbers including observable infinity value.
 description:    
     Lazy Peano numbers including observable infinity value.
