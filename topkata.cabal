@@ -1,5 +1,5 @@
 Name:                topkata
-Version:             0.2
+Version:             0.2.1
 Synopsis:            OpenGL Arcade Game
 Description:         Guide a jumping ball through a maze.
 License:             GPL
@@ -28,6 +28,10 @@ Flag Pdflaby
   Description: build also pdflaby
   Default:     False
 
+Flag FTGL
+  Description: use FTGL
+  Default: False
+
 Executable topkata
   Main-is:             Main.hs
   Build-Depends:       base, filepath, GLUT, OpenGL, array, random
@@ -38,6 +42,9 @@ Executable topkata
   if flag(sound)
       Build-Depends:   OpenAL, ALUT
       cpp-options:     -DSOUND
+  if flag(ftgl)
+      Build-Depends:   FTGL
+      cpp-options:     -DUSE_FTGL
 
 Executable pdflaby
     Main-is:        PdfLaby.hs
