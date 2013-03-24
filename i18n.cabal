@@ -1,6 +1,7 @@
 Name:                i18n
-Version:             0.2
+Version:             0.3
 Cabal-Version:       >= 1.2
+build-type:          Simple
 Synopsis:            Internationalization for Haskell
 Category:            Text
 License:             BSD3
