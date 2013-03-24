@@ -1,5 +1,5 @@
 name:                uhexdump
-version:             0.2.2
+version:             0.2.3
 synopsis:            hex dumper for UTF-8 text
 description:         hex dumper for UTF-8 text
 category:            Text
@@ -12,7 +12,7 @@ cabal-version:       >= 1.6
 
 source-repository head
   type:     darcs
-  location: http://patch-tag.com/kowey/uhexdump
+  location: http://patch-tag.com/r/kowey/uhexdump
 
 executable           uhexdump
   build-Depends:       base         < 4.1,
@@ -20,3 +20,4 @@ executable           uhexdump
                        utf8-string == 0.3.*
   main-is:             uhexdump.hs
   ghc-options:         -Wall
+  other-modules:       UTF8
