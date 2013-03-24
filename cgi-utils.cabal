@@ -1,5 +1,5 @@
 Name: cgi-utils
-Version: 0.2
+Version: 0.2.1
 Maintainer: Chris Done (chrisdone@gmail.com)
 Author: Chris Done (chrisdone@gmail.com)
 Copyright: 2010 Chris Done
@@ -15,6 +15,6 @@ License-File: LICENSE
 Library
   Exposed-Modules: Network.CGI.Session
   Hs-Source-Dirs: src
-  Build-Depends: base >= 2 && < 4, cgi, random, containers, mtl
+  Build-Depends: base >= 2 && < 5, cgi, random, containers, mtl
   Extensions: TypeSynonymInstances
   GHC-Options: -Wall
