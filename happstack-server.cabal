@@ -1,5 +1,5 @@
 Name:                happstack-server
-Version:             0.1
+Version:             0.2.1
 Synopsis:            Web related tools and services.
 Description:         Web framework
 License:             BSD3
@@ -9,54 +9,73 @@ Maintainer:          Happstack team <happs@googlegroups.com>
 homepage:            http://happstack.com
 Category:            Web, Distributed Computing
 Build-Type:          Simple
-Cabal-Version:       >= 1.2.3
+Cabal-Version:       >= 1.4
 
 Flag base4
     Description: Choose the even newer, even smaller, split-up base package.
 
 Flag tests
     Description: Build the testsuite, and include the tests in the library
-    Default: True
+    Default: False
 
 Library
 
   Exposed-modules:
-                       HAppS.Server,
-                       HAppS.Server.Cookie,
-                       HAppS.Server.HTTP.Client,
-                       HAppS.Server.HTTP.Types,
-                       HAppS.Server.HTTP.LowLevel,
-                       HAppS.Server.HTTP.FileServe,
-                       HAppS.Server.SimpleHTTP,
-                       HAppS.Server.JSON,
-                       HAppS.Server.MessageWrap,
-                       HAppS.Server.MinHaXML,
-                       HAppS.Server.SURI,
-                       HAppS.Server.XSLT,
-                       HAppS.Server.Cron,
-                       HAppS.Server.StdConfig,
-                       HAppS.Store.Util
+                       Happstack.Server
+                       Happstack.Server.Cookie
+                       Happstack.Server.HTTP.Client
+                       Happstack.Server.HTTP.Types
+                       Happstack.Server.HTTP.LowLevel
+                       Happstack.Server.HTTP.FileServe
+                       Happstack.Server.SimpleHTTP
+                       Happstack.Server.JSON
+                       Happstack.Server.MessageWrap
+                       Happstack.Server.MinHaXML
+                       Happstack.Server.SURI
+                       Happstack.Server.XSLT
+                       Happstack.Server.StdConfig
+                       Happstack.Server.Parts
   if flag(tests)
     Exposed-modules:   
-                       HAppS.Server.Tests
+                       Happstack.Server.Tests
   Other-modules:       
-                       HAppS.Server.S3,
-                       HAppS.Server.HTTPClient.HTTP,
-                       HAppS.Server.HTTPClient.Stream,
-                       HAppS.Server.HTTPClient.TCP,
-                       HAppS.Server.HTTP.Clock,
-                       HAppS.Server.HTTP.Handler,
-                       HAppS.Server.HTTP.LazyLiner,
-                       HAppS.Server.HTTP.Listen,
-                       HAppS.Server.HTTP.Multipart,
-                       HAppS.Server.HTTP.RFC822Headers,
-                       HAppS.Server.SURI.ParseURI
+                       Happstack.Server.S3
+                       Happstack.Server.HTTPClient.HTTP
+                       Happstack.Server.HTTPClient.Stream
+                       Happstack.Server.HTTPClient.TCP
+                       Happstack.Server.HTTP.Clock
+                       Happstack.Server.HTTP.Handler
+                       Happstack.Server.HTTP.LazyLiner
+                       Happstack.Server.HTTP.Listen
+                       Happstack.Server.HTTP.Multipart
+                       Happstack.Server.HTTP.RFC822Headers
+                       Happstack.Server.HTTP.Socket
+                       Happstack.Server.HTTP.SocketTH
+                       Happstack.Server.SURI.ParseURI
+                       Paths_happstack_server
 
-  Build-Depends:       base, HaXml >= 1.13 && < 1.14, parsec<3, mtl, network,
-                       hslogger >= 1.0.2, happstack-data, happstack-util,
-                       happstack-state, happstack-ixset, template-haskell, xhtml, html,
-                       bytestring, containers, old-time, old-locale, directory, 
-                       process, extensible-exceptions
+  Build-Depends:       base,
+                       bytestring,
+                       containers,
+                       directory,
+                       extensible-exceptions,
+                       HaXml >= 1.13 && < 1.14,
+                       hslogger >= 1.0.2,
+                       happstack-data >= 0.2.1 && < 0.3,
+                       happstack-util >= 0.2.1 && < 0.3,
+                       html,
+                       MaybeT,
+                       mtl,
+                       network,
+                       old-locale,
+                       old-time,
+                       parsec < 3,
+                       process,
+                       template-haskell,
+                       time,
+                       xhtml,
+                       zlib
+
   hs-source-dirs:      src
   if flag(tests)
     hs-source-dirs:    tests
@@ -70,11 +89,10 @@ Library
   if flag(tests)
     Build-Depends:     HUnit
 
-  -- Should have ", DeriveDataTypeable, PatternSignatures" but Cabal complains
   Extensions:          TemplateHaskell, DeriveDataTypeable, MultiParamTypeClasses,
                        TypeFamilies, FlexibleContexts, OverlappingInstances,
                        FlexibleInstances, UndecidableInstances, ScopedTypeVariables,
-                       TypeSynonymInstances, PatternGuards, PatternSignatures,
+                       TypeSynonymInstances, PatternGuards
                        CPP, ForeignFunctionInterface
   ghc-options:         -Wall
   GHC-Prof-Options:    -auto-all
