@@ -1,5 +1,5 @@
 Name:          stylish-haskell
-Version:       0.3.2.0
+Version:       0.4.0.0
 Synopsis:      Haskell code prettifier
 Homepage:      https://github.com/jaspervdj/stylish-haskell
 License:       BSD3
@@ -36,6 +36,7 @@ Executable stylish-haskell
     StylishHaskell.Step
     StylishHaskell.Step.Imports
     StylishHaskell.Step.LanguagePragmas
+    StylishHaskell.Step.Records
     StylishHaskell.Step.Tabs
     StylishHaskell.Step.TrailingWhitespace
     StylishHaskell.Step.UnicodeSyntax
@@ -46,7 +47,7 @@ Executable stylish-haskell
     aeson            >= 0.6  && < 0.7,
     base             >= 4    && < 5,
     bytestring       >= 0.9  && < 0.10,
-    cmdargs          >= 0.9  && < 0.10,
+    cmdargs          >= 0.9  && < 0.11,
     containers       >= 0.3  && < 0.6,
     directory        >= 1.1  && < 1.2,
     filepath         >= 1.1  && < 1.4,
@@ -63,8 +64,10 @@ Test-suite stylish-haskell-tests
   Type:           exitcode-stdio-1.0
 
   Other-modules:
+    StylishHaskell.Parse.Tests
     StylishHaskell.Step.Imports.Tests
     StylishHaskell.Step.LanguagePragmas.Tests
+    StylishHaskell.Step.Records.Tests
     StylishHaskell.Step.Tabs.Tests
     StylishHaskell.Step.TrailingWhitespace.Tests
     StylishHaskell.Step.UnicodeSyntax.Tests
@@ -78,7 +81,7 @@ Test-suite stylish-haskell-tests
     aeson            >= 0.6  && < 0.7,
     base             >= 4    && < 5,
     bytestring       >= 0.9  && < 0.10,
-    cmdargs          >= 0.9  && < 0.10,
+    cmdargs          >= 0.9  && < 0.11,
     containers       >= 0.3  && < 0.6,
     directory        >= 1.1  && < 1.2,
     filepath         >= 1.1  && < 1.4,
