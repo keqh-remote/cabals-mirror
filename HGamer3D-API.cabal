@@ -1,21 +1,24 @@
 Name:                HGamer3D-API
-Version:             0.1.4
+Version:             0.1.5
 Synopsis:            Library to enable 3D game development for Haskell - API
 Description:         
 	Library, to enable 3D game development for Haskell,
-	based on bindings to 3D Graphics, pyhsics engine and additional libraries.
-    Current implementation contains the following features: 
-      OGRE Binding, OIS Binding (limited functionality)
-      Platform: Windows only
-    Install following packages in sequence: HGamer3D-Data, HGamer3D-Ogre-Binding, HGamer3D-OIS-Binding, HGamer3D-API
+	based on bindings to 3D Graphics, Audio and GUI libraries.
+	THIS MODULE: APIs
+    List of features and modules: 
+	  Data Module (Basic Data Types),
+      OGRE Binding (3D Graphics Engine), 
+      OIS Binding (Input System),
+      cAudio Binding (Audio),
+      CEGUI Binding (GUI System),
+      APIs (Haskell style APIs, different ways, to approach API)
+    Platform: Windows only
 	License: Apache License, Version 2.0
-	
-	This part contains different types of API's
-	One - first trial API, to test overall API design
+	Install: see http://www.althainz.de/HGamer3D/Download-and-Installation.html
 	
 License:             OtherLicense
 License-file:        LICENSE
-Author:              Dr. Peter Althainz
+Author:              Peter Althainz
 Maintainer:          althainz@googlemail.com
 Build-Type:          Simple
 Cabal-Version:       >=1.2
@@ -24,7 +27,7 @@ Category:            Game
 Extra-source-files:  Setup.hs 
 
 Library
-  Build-Depends:     base >= 3 && < 5, HGamer3D-Data == 0.1.4, HGamer3D-Ogre-Binding == 0.1.4, HGamer3D-OIS-Binding == 0.1.4
+  Build-Depends:     base >= 3 && < 5, HGamer3D-Data == 0.1.5, HGamer3D-Ogre-Binding == 0.1.5, HGamer3D-OIS-Binding == 0.1.5
 
   Exposed-modules:   HGamer3D.APIs.One
   Other-modules:     
