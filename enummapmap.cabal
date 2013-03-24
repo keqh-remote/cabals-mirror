@@ -1,5 +1,5 @@
 name:               enummapmap
-version:            0.4.0
+version:            0.5.0
 synopsis:           Map of maps using Enum types as keys
 description:        This package provides 'maps of maps' using Enum types as
                     keys.  The code is based upon Data.IntMap in
@@ -22,8 +22,10 @@ Library
                     Data.EnumMapSet
    other-modules:   Data.EnumMapMap.Base, Data.EnumMapSet.Base
    build-depends:   base >= 4.0 && < 5,
+                    data-default,
                     deepseq >= 1.2 && < 1.4,
-                    ghc-prim
+                    ghc-prim,
+                    semigroups >= 0.8
    ghc-options:     -Wall -O2
    default-language: Haskell2010
 
@@ -37,7 +39,9 @@ Test-Suite test-enummapmap-lazy
                       HUnit,
                       QuickCheck >= 2,
                       hspec >= 1.3,
+                      hspec-expectations,
                       deepseq >= 1.2 && < 1.4,
+                      semigroups >= 0.8,
                       enummapmap
     cpp-options:      -DTESTING -DLAZY
 
@@ -52,6 +56,7 @@ Test-Suite test-enummapmap-intmap-lazy
                       QuickCheck >= 2,
                       hspec >= 1.3,
                       deepseq >= 1.2 && < 1.4,
+                      semigroups >= 0.8,
                       containers >= 0.4.2,
                       enummapmap
     cpp-options:      -DTESTING -DLAZY
@@ -66,7 +71,9 @@ Test-Suite test-enummapmap-strict
                       HUnit,
                       QuickCheck >= 2,
                       hspec >= 1.3,
+                      hspec-expectations,
                       deepseq >= 1.2 && < 1.4,
+                      semigroups >= 0.8,
                       enummapmap
     cpp-options:      -DTESTING -DSTRICT
 
@@ -81,9 +88,25 @@ Test-Suite test-enummapmap-intmap-strict
                       QuickCheck >= 2,
                       hspec >= 1.3,
                       deepseq >= 1.2 && < 1.4,
+                      semigroups >= 0.8,
                       containers >= 0.4.2,
                       enummapmap
     cpp-options:      -DTESTING -DSTRICT
+
+Test-Suite test-enummapset
+    type:             exitcode-stdio-1.0
+    main-is:          UnitEnumMapSet.hs
+    hs-source-dirs:   test
+    ghc-options:      -Wall -O2
+    default-language: Haskell2010
+    build-depends:    base >= 4.0 && < 5,
+                      HUnit,
+                      QuickCheck >= 2,
+                      hspec >= 1.3,
+                      hspec-expectations,
+                      deepseq >= 1.2 && < 1.4,
+                      containers >= 0.4.2,
+                      enummapmap
 
 Test-Suite test-enummapset-intset
     type:             exitcode-stdio-1.0
