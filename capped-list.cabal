@@ -1,5 +1,5 @@
 name: capped-list
-version: 1.0
+version: 1.1
 synopsis: A list-like type for lazy sequences, with a user-defined termination value.
 license: BSD3
 license-File: license.txt
@@ -13,7 +13,7 @@ extra-source-files:
   Tests.hs
 
 library
-  build-depends: base >= 2 && < 5
+  build-depends: base >= 2 && < 5, empty
 
   exposed-modules:
     Data.CappedList
