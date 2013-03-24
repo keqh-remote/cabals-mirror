@@ -1,5 +1,5 @@
 name:            shakespeare-i18n
-version:         0.0.2
+version:         0.0.2.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -18,7 +18,7 @@ homepage:        http://www.yesodweb.com/book/i18n
 
 library
     build-depends:   base             >= 4       && < 5
-                   , shakespeare      >= 0.10    && < 0.11
+                   , shakespeare      >= 0.10    && < 0.12
                    , template-haskell
                    , text             >= 0.7     && < 0.12
                    , parsec
@@ -30,4 +30,4 @@ library
 
 source-repository head
   type:     git
-  location: git://github.com/yesodweb/hamlet.git
+  location: git://github.com/yesodweb/shakespeare.git
