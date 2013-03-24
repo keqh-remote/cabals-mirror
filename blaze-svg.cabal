@@ -1,5 +1,5 @@
 name:                blaze-svg
-version:             0.1.0.0
+version:             0.1.1
 synopsis:            SVG combinator library
 description:         SVG combinator library
 homepage:            https://github.com/deepakjois/blaze-svg
@@ -27,7 +27,7 @@ Library
   Build-depends:
     base          >= 4  && < 5,
     mtl           >= 2  && < 3,
-    blaze-html    >= 0.4 && < 0.5,
+    blaze-html    >= 0.4.3.2 && < 0.5,
     bytestring    >= 0.9
 
 Source-repository head
