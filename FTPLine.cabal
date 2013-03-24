@@ -1,14 +1,22 @@
 Name: FTPLine
-Version: 1.0.0
+Version: 1.0.1
 Cabal-Version: >= 1.6
 License: BSD3
 License-file: license
 Author: Daniel Diaz
-Maintainer: danieldiaz@asofilak.es
+Maintainer: Daniel Diaz <danieldiaz@asofilak.es>
 Homepage: http://ddiaz.asofilak.es/packages/FTPLine
 Category: Network
 Synopsis: A command-line FTP client.
 Description: A command-line FTP client. Type @help@ for a list of commands.
+             .
+             Changes from last version:
+             .
+             * Added a restriction in the haskeline version.
+             .
+             * Added the type synonym @FTPState@.
+             .
+             * Removed unused function @addNChar@.
 Build-Type: Simple
 
 Executable FTPLine
@@ -18,6 +26,7 @@ Executable FTPLine
                , ftphs
                , directory
                , network
-               , haskeline
+               , haskeline >=0.6.2.4 && < 0.7
                , ansi-terminal
+  Extensions: FlexibleInstances
   Main-is: Main.hs
