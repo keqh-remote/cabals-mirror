@@ -1,5 +1,5 @@
 Name:                 mps
-Version:              2010.5.29
+Version:              2010.11.28
 Build-type:           Simple
 Synopsis:             simply oo
 Description:          DSL that allows one to write Haskell from left to right
@@ -15,7 +15,10 @@ data-files:           readme.md, changelog.md, known-issues.md
 
 library
   ghc-options: -Wall
-  build-depends:  base >= 4 && < 5
+
+      
+  build-depends:  
+                  base >= 4 && < 5
                 , containers
                 , array
                 , parallel
