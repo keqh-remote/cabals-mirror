@@ -1,5 +1,5 @@
 Name:           flower
-Version:        0.6.3
+Version:        0.6.5
 License:        GPL
 Cabal-Version:  >= 1.6
 Author:         Ketil Malde
@@ -55,5 +55,8 @@ Executable     frename
 Executable     flowt
     Main-Is:        Flowt.hs
     Hs-Source-Dirs: src
-    Ghc-Options:    -Wall -fno-warn-unused-do-bind
+    if impl(ghc >= 6.12)
+      Ghc-Options:     -Wall -fno-warn-unused-do-bind
+    else
+      Ghc-Options:     -Wall
     Extensions:     DeriveDataTypeable
