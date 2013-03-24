@@ -1,5 +1,5 @@
 name: sifflet
-version: 0.1.6
+version: 0.1.7
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -39,19 +39,19 @@ executable sifflet
   build-depends: 
     base >= 4.0.0.0 && < 5,
 -- begin GTK stuff, should have same version numbers
-    cairo >= 0.10.0,
-    glib >= 0.10.0,
-    gtk >= 0.10.0,
+    cairo >= 0.10.0 && < 0.12.0,
+    glib >= 0.10.0 && < 0.12.0,
+    gtk >= 0.10.0 && < 0.12.0,
 -- end
-    containers >= 0.2,
-    fgl >= 5.4,
+    containers >= 0.2 && < 1.0,
+    fgl >= 5.4 && < 5.4.2.3,
     haskell98,
-    haskell-src >= 1.0,
+    haskell-src >= 1.0 && < 2.0,
     hxt >= 8.3 && < 9,
-    mtl >= 1.1,
-    process >= 1.0
+    mtl >= 1.1 && < 2.0,
+    process >= 1.0 && < 2.0
   if !os(windows)
-    build-depends: unix >= 2.3
+    build-depends: unix >= 2.3 && < 3.0
   buildable: True
   extensions: ForeignFunctionInterface CPP
   ghc-options: -Wall
