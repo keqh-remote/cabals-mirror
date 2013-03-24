@@ -1,42 +1,38 @@
-Name:            iCalendar
-Version:         0.0.1
-Synopsis:        Parser for iCalendar format (RFC2445)
-
-Description: Parser for the iCalendar format (version 2.0, RFC2445).
-             .  
-             Features:
-             .
-               * Unfolds folded lines (see RFC)
-             . 
-               * Supports all IANA iCalendar tokens
-             .
-             /Warning!/  This is version 0.0, important things are missing
-             .   
-               * Property and parameter values are not parsed, but kept as in the file.
-             . 
-               * There are no restrictions on the properties components can have.
-             .  
-               * Line unfolding causes error messages to report the wrong line.
-             . 
-             This package is meant to grow to a full-fledged data definition, printer and
-             parser for the iCalendar format.  But that will probably take some time.  So,
-             if you've come here because you need this, please e-mail me (Eelco Lempsink).
-
-Category:        Text
-License:         BSD3
-License-file:    LICENSE
-Copyright:       (c) Tupil
-Author:          Eelco Lempsink <eml+hackage@tupil.com>
-Maintainer:      Clint Adams <clint@debian.org>
-Build-Type:      Simple
-Cabal-Version:   >=1.10
-
-Library
-  build-depends:   base >= 4 && < 5
-                 , parsec >=3 && <4
-  exposed-modules: Text.ICalendar.Parser
-  default-language: Haskell98
+name:                iCalendar
+version:             0.1
+synopsis:            iCalendar data types, parser, and printer.
+description:         Data definitions, parsing and printing of the iCalendar
+                     format (RFC5545).
+homepage:            http://github.com/tingtun/iCalendar
+bug-reports:         http://github.com/tingtun/iCalendar/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Christian Rødli Amble
+maintainer:          cra+code@cra.no
+copyright:           (c) Tingtun
+stability:           experimental
+category:            Text
+build-type:          Simple
+tested-with:         GHC==7.6.1
+cabal-version:       >=1.8
 
 source-repository head
-  type:     git
-  location: git://git.debian.org/users/clint/iCalendar-Haskell.git
+  type:              git
+  location:          git://github.com/tingtun/iCalendar.git
+
+library
+  exposed-modules:     Text.ICalendar.Types
+                     , Text.ICalendar.Parser
+                     , Text.ICalendar.Printer
+                     , Text.ICalendar
+  other-modules:       Text.ICalendar.Parser.Common
+                     , Text.ICalendar.Parser.Components
+                     , Text.ICalendar.Parser.Content
+                     , Text.ICalendar.Parser.Parameters
+                     , Text.ICalendar.Parser.Properties
+  build-depends:       base ==4.*, time ==1.4.*, data-default >=0.3
+                     , case-insensitive ==0.4.*, network ==2.4.*
+                     , bytestring >=0.10 && < 0.11, parsec ==3.1.*
+                     , text, containers >= 0.4 && < 0.6, mime ==0.3.*
+                     , mtl ==2.1.*, old-locale, base64-bytestring ==1.0.*
+  ghc-options:       -Wall
