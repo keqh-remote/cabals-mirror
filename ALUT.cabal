@@ -1,5 +1,5 @@
 name:		ALUT
-version:	2.1.0.2
+version:	2.2.0.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Sven Panne <sven.panne@aedion.de>
@@ -39,5 +39,6 @@ other-modules:
 include-dirs:	include
 includes: HsALUT.h
 install-includes: HsALUT.h
-build-depends:	base, OpenGL, OpenAL
+ghc-options: -Wall
+build-depends:	base >= 3 && < 5, StateVar, OpenAL
 extensions:	CPP, ForeignFunctionInterface
