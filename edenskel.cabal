@@ -1,5 +1,5 @@
 name:		edenskel
-version:	1.1.0.0
+version:	1.1.1.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	eden@mathematik.uni-marburg.de
@@ -17,16 +17,8 @@ description:
     The Eden homepage     <http://www.mathematik.uni-marburg.de/~eden>
     provides more documentation and a tutorial.
 category:       Control, Distributed Computing, Eden, Parallelism
-build-type:     Configure
+build-type:     Simple
 cabal-version:  >=1.6
-
-extra-source-files: 
-                edenskel.buildinfo.in,
-                configure,
-                configure.ac
-extra-tmp-files:config.status,
-                config.log,
-                edenskel.buildinfo
 
 source-repository head
     type:     git
