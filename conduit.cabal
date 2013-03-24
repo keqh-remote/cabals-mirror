@@ -1,10 +1,12 @@
 Name:                conduit
-Version:             0.5.6
+Version:             1.0.0
 Synopsis:            Streaming data processing library.
 Description:
     @conduit@ is a solution to the streaming data problem, allowing for production, transformation, and consumption of streams of data in constant memory. It is an alternative to lazy I\/O which guarantees deterministic resource handling, and fits in the same general solution space as @enumerator@/@iteratee@ and @pipes@. For a brief tutorial, please see the "Data.Conduit" module.
 	.
 	Release history:
+    .
+    [1.0] Simplified the user-facing interface back to the Source, Sink, and Conduit types, with Producer and Consumer for generic code. Error messages have been simplified, and optional leftovers and upstream terminators have been removed from the external API. Some long-deprecated functions were finally removed.
     .
     [0.5] The internals of the package are now separated to the .Internal module, leaving only the higher-level interface in the advertised API. Internally, switched to a @Leftover@ constructor and slightly tweaked the finalization semantics.
     .
@@ -27,20 +29,17 @@ Cabal-version:       >=1.8
 Homepage:            http://github.com/snoyberg/conduit
 extra-source-files:  test/main.hs, test/random
 
-flag debug
-    default: True
-    description: Turn on some runtime check to ensure invariants are respected.
-
 flag nohandles
+    default: False
 
 Library
   if os(windows)
       cpp-options: -DCABAL_OS_WINDOWS
       other-modules: System.Win32File
   else
-      other-modules: System.PosixFile
-  if flag(nohandles)
-      cpp-options: -DNO_HANDLES
+      if flag(nohandles)
+          other-modules: System.PosixFile
+          cpp-options: -DNO_HANDLES
   Exposed-modules:     Data.Conduit
                        Data.Conduit.Binary
                        Data.Conduit.Text
@@ -48,9 +47,6 @@ Library
                        Data.Conduit.Lazy
                        Data.Conduit.Internal
                        Data.Conduit.Util
-  Other-modules:       Data.Conduit.Util.Source
-                       Data.Conduit.Util.Sink
-                       Data.Conduit.Util.Conduit
   Build-depends:       base                     >= 4.3          && < 5
                      , resourcet                >= 0.4.3        && < 0.5
                      , lifted-base              >= 0.1
@@ -62,8 +58,6 @@ Library
                      , text                     >= 0.11
                      , void                     >= 0.5.5        && < 0.6
   ghc-options:     -Wall
-  if flag(debug)
-    cpp-options: -DDEBUG
 
 test-suite test
     hs-source-dirs: test
