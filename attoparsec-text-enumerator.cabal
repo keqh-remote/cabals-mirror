@@ -1,6 +1,6 @@
 name: attoparsec-text-enumerator
-version: 0.2.0.0
-synopsis: Convert an attoparsec-text parser into an iteratee
+version: 0.2.0.1
+synopsis: (deprecated)
 license: MIT
 license-file: license.txt
 author: Felipe Lessa <felipe.lessa@gmail.com>, John Millikin <jmillikin@gmail.com>
@@ -14,11 +14,9 @@ stability: experimental
 -- homepage: http://john-millikin.com/software/attoparsec-enumerator/
 tested-with: GHC==6.12.1
 description:
-  Convert an attoparsec-text parser into an iteratee.
-  .
-  This library is basically a translation of the original
-  attoparsec-enumerator library to use text instead of
-  bytestrings.
+  This package has been deprecated.  You recommend that you use
+  either @attoparsec-enumerator@ or @attoparsec-conduit@
+  packages.
 
 
 library
