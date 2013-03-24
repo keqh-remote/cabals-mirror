@@ -1,41 +1,44 @@
 Name:                imm
-Version:             0.4.1.0
+Version:             0.5.0.0
 Synopsis:            Retrieve RSS/Atom feeds and write one mail per new item in a maildir.
---Description:         
+Description:         Cf README
 --Homepage:
 Category:            Web
 
 License:             OtherLicense
 License-file:        LICENSE
--- Copyright:           
+-- Copyright:
 Author:              kamaradclimber, koral
 Maintainer:          koral att mailoo dott org
 
 Cabal-version:       >=1.8
 Build-type:          Simple
--- Extra-source-files:  
+Extra-source-files:  README
 
 Source-repository head
     Type:     git
-    Location: git@github:k0ral/imm.git
+    Location: git@github.com:k0ral/imm.git
 
 Library
     Exposed-modules:
+        Imm,
         Imm.Boot,
         Imm.Config,
-        Imm.HTTP,
-        Imm.Main,
+        Imm.Core,
+        Imm.Database,
+        Imm.Dyre,
+        Imm.Error,
         Imm.Feed,
-        Imm.OPML,
-        Imm.Types,
-        Imm.Util,
+        Imm.HTTP,
         Imm.Mail,
-        Imm.Maildir
+        Imm.Maildir,
+        Imm.OPML,
+        Imm.Options,
+        Imm.Util
     Build-depends:
         base == 4.*,
         bytestring,
         case-insensitive,
-        cmdargs,
         cond,
         data-default,
         directory,
@@ -44,7 +47,9 @@ Library
         filepath,
         http-conduit,
         http-types,
+        lens,
         mime-mail,
+        monad-control,
         mtl,
         network,
         old-locale,
@@ -52,15 +57,24 @@ Library
         random,
         text,
         text-icu,
+        transformers-base,
         time,
-        timerep,
+        timerep >= 1.0.3,
         tls,
         utf8-string,
         xdg-basedir,
         xml
-    
-    -- Other-modules:       
-    -- Build-tools:         
+    Extensions:
+        ConstraintKinds,
+        KindSignatures,
+        FlexibleContexts,
+        FunctionalDependencies,
+        GeneralizedNewtypeDeriving,
+        MultiParamTypeClasses,
+        RankNTypes
+
+    -- Other-modules:
+    -- Build-tools:
     Ghc-options: -Wall
 
 Executable imm
