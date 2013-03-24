@@ -1,5 +1,5 @@
 Name:                 hack-contrib
-Version:              2009.4.52.2
+Version:              2009.5.13
 Build-type:           Simple
 Synopsis:             Hack contrib
 Description:          Hack contrib
@@ -15,7 +15,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall
-  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, ansi-wl-pprint, mps >= 2009.4.50, data-default >= 0.2, ansi-wl-pprint, unix, time, pureMD5, hack >= 2009.4.52
+  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, ansi-wl-pprint, data-default >= 0.2, ansi-wl-pprint, unix, time, pureMD5, mps >= 2009.5.13, hack >= 2009.4.52
   hs-source-dirs: src/
   exposed-modules:  
                     Hack.Contrib.Utils
