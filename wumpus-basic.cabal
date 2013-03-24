@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.3.0
+version:          0.4.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -19,6 +19,17 @@ description:
   .
   .
   Changelog:
+  .
+  0.3.0 to 0.4.0:
+  .
+  * Reworked the monads. Monads.DrawingMonad replaces 
+    Monads.Trace, Monads.DrawingCtx, Monads.ConsDrawing. The 
+    SnocDrawing monads have been removed as they were a design
+    mistake.
+  .
+  * Removed MGraphicF type, added AGraphic.
+  .
+  * Initial work on arrow drawing and extended text drawing.
   .
   0.2.0 to 0.3.0 :
   . 
@@ -59,34 +70,39 @@ extra-source-files:
 library
   hs-source-dirs:     src
   build-depends:      base            <  5, 
+                      containers      >= 0.3     && <= 0.4, 
                       vector-space    >= 0.6,
                       monadLib        >= 3.6,
-                      wumpus-core     >= 0.21.0
+                      wumpus-core     >= 0.23.0
 
   
   exposed-modules:
     Wumpus.Basic.Anchors,
-    Wumpus.Basic.AnchorDots,
+    Wumpus.Basic.Arrows,
+    Wumpus.Basic.Arrows.Tips,
     Wumpus.Basic.Dots,
+    Wumpus.Basic.Dots.Base,
     Wumpus.Basic.Graphic,
     Wumpus.Basic.Graphic.DrawingAttr,
     Wumpus.Basic.Graphic.PointSupply,
-    Wumpus.Basic.Monads.ConsDrawing,
     Wumpus.Basic.Monads.Drawing,
+    Wumpus.Basic.Monads.DrawingMonad,
     Wumpus.Basic.Monads.DrawingCtxClass,
-    Wumpus.Basic.Monads.DrawingCtxMonad,
-    Wumpus.Basic.Monads.STraceMonad,
-    Wumpus.Basic.Monads.SnocDrawing,
     Wumpus.Basic.Monads.TraceClass,
-    Wumpus.Basic.Monads.TraceMonad,
     Wumpus.Basic.Monads.TurtleClass,
     Wumpus.Basic.Monads.TurtleMonad,
+    Wumpus.Basic.Paths,
+    Wumpus.Basic.Paths.Base,
+    Wumpus.Basic.Paths.Construction,
     Wumpus.Basic.SafeFonts,
     Wumpus.Basic.SVGColours,
-    Wumpus.Basic.X11Colours,
+    Wumpus.Basic.Text.LRSymbol,
+    Wumpus.Basic.Text.LRText,
+    Wumpus.Basic.Utils.Combinators,
     Wumpus.Basic.Utils.HList,
     Wumpus.Basic.Utils.Intersection,
     Wumpus.Basic.VersionNumber,
+    Wumpus.Basic.X11Colours,
     Wumpus.Deprecated.PictureLanguage
 
   other-modules:
