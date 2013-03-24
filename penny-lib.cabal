@@ -1,5 +1,5 @@
 Name: penny-lib
-Version: 0.6.0.0
+Version: 0.8.0.0
 Cabal-version: >=1.8
 Build-Type: Simple
 License: BSD3
@@ -21,8 +21,11 @@ description: Penny is a double-entry accounting system. It is inspired
   .
 
   This package is a library. To start using Penny you will want to
-  install the penny-bin package, which has the executable programs. It
-  is available on Hackage and by running "cabal install penny-bin".
+  install the penny-bin package, which has the executable programs.
+  More about the penny-bin package, along with a full sales pitch
+  for Penny and how to get started, is at
+  <http://hackage.haskell.org/package/penny-bin>. It may be installed
+  with "cabal install penny-bin".
 
   .
 
@@ -36,17 +39,19 @@ source-repository head
 Library
   Build-depends:
       base ==4.*
-    , bytestring ==0.9.*
+    , bytestring ==0.10.*
     , cereal ==0.3.*
-    , containers ==0.4.*
+    , containers ==0.5.*
     , explicit-exception ==0.1.*
-    , matchers ==0.4.*
+    , matchers ==0.6.*
     , monad-loops ==0.3.*
-    , multiarg ==0.8.*
+    , multiarg ==0.10.*
     , old-locale ==1.0.*
+    , optparse-applicative ==0.5.*
     , parsec >= 3.1.2 && < 3.2
-    , pretty-show ==1.2.*
-    , semigroups ==0.8.*
+    , pcre-light ==0.4.*
+    , pretty-show ==1.5.*
+    , semigroups ==0.9.*
     , split ==0.2.*
     , strict ==0.3.*
     , terminfo == 0.3.*
@@ -76,8 +81,6 @@ Library
     , Penny.Cabin.Balance.MultiCommodity.Chunker
     , Penny.Cabin.Balance.MultiCommodity.Parser
     , Penny.Cabin.Balance.Util
-    , Penny.Cabin.Chunk
-    , Penny.Cabin.Chunk.Switch
     , Penny.Cabin.Interface
     , Penny.Cabin.Meta
     , Penny.Cabin.Options
@@ -102,9 +105,6 @@ Library
     , Penny.Copper.Terminals
     , Penny.Copper.Types
     , Penny.Liberty
-    , Penny.Liberty.Expressions
-    , Penny.Liberty.Expressions.Infix
-    , Penny.Liberty.Expressions.RPN
     , Penny.Lincoln
     , Penny.Lincoln.Balance
     , Penny.Lincoln.Bits
@@ -119,7 +119,6 @@ Library
     , Penny.Lincoln.Family.Siblings
     , Penny.Lincoln.HasText
     , Penny.Lincoln.Matchers
-    , Penny.Lincoln.NestedMap
     , Penny.Lincoln.Predicates
     , Penny.Lincoln.PriceDb
     , Penny.Lincoln.Queries
@@ -127,6 +126,16 @@ Library
     , Penny.Lincoln.Transaction
     , Penny.Lincoln.Transaction.Unverified
     , Penny.Shield
+    , Penny.Steel
+    , Penny.Steel.Chunk
+    , Penny.Steel.Chunk.Switch
+    , Penny.Steel.Expressions
+    , Penny.Steel.Expressions.Infix
+    , Penny.Steel.Expressions.RPN
+    , Penny.Steel.NestedMap
+    , Penny.Steel.Pdct
+    , Penny.Steel.TestTree
+    , Penny.Wheat
     , Penny.Zinc
 
 
