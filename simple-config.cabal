@@ -1,11 +1,11 @@
 Name:                simple-config
-Version:             1.0.0
+Version:             1.1.0
 Synopsis:            Simple config file parser generator
 Description:         Simple config file parser generator
 Homepage:            https://github.com/yunomu/simple-config
 License:             BSD3
 License-file:        LICENSE
-Author:              YusukeNomura
+Author:              Yusuke Nomura
 Maintainer:          yunomu@gmail.com
 -- Copyright:           
 Category:            Text
