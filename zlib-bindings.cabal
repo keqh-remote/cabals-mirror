@@ -1,5 +1,5 @@
 name:            zlib-bindings
-version:         0.0.0
+version:         0.0.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -24,6 +24,7 @@ library
                  , bytestring            >= 0.9.1.4 && < 0.10
                  , zlib                  >= 0.5.2.0 && < 0.6
     exposed-modules: Codec.Zlib
+                     Codec.Zlib.Lowlevel
     ghc-options:     -Wall
     c-sources:       c/helper.c
     if os(windows)
@@ -37,8 +38,20 @@ executable zlib-bindings-test
         build-depends: base                  >= 4       && < 5
                      , bytestring            >= 0.9.1.4 && < 0.10
                      , zlib                  >= 0.5.2.0 && < 0.6
-                     , HTF                   >= 0.5     && < 0.6
+                     , HTF                   >= 0.5     && < 0.8
                      , QuickCheck            >= 2.1.2
+    else
+        Buildable: False
+    ghc-options:     -Wall
+    c-sources:       c/helper.c
+    if os(windows)
+        include-dirs:  cbits
+        install-includes: zlib.h zconf.h
+
+executable zlib-bindings-file-test
+    main-is: file-test.hs
+    if flag(test)
+        Buildable: True
     else
         Buildable: False
     ghc-options:     -Wall
