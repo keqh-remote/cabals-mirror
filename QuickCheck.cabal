@@ -1,13 +1,13 @@
 Name: QuickCheck
-Version: 2.1
+Version: 2.1.0.1
 Cabal-Version: >= 1.2
 Build-type: Simple
 License: BSD3
 License-file: LICENSE
-Copyright: Koen Claessen <koen@cs.chalmers.se>
-Author: Koen Claessen <koen@cs.chalmers.se>
-Maintainer: Koen Claessen <koen@cs.chalmers.se>
-Homepage: http://www.haskell.org/QuickCheck/
+Copyright: Koen Claessen <koen@chalmers.se>
+Author: Koen Claessen <koen@chalmers.se>
+Maintainer: Koen Claessen <koen@chalmers.se>
+Homepage: http://www.cs.chalmers.se/~koen
 Category:	    Testing
 Synopsis:	    Automatic testing of Haskell programs
 Description:
