@@ -1,5 +1,5 @@
 Name:                stringtable-atom
-Version:             0.0.3
+Version:             0.0.4
 Category:            Data, Pugs
 Synopsis:            Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 Description:         Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
