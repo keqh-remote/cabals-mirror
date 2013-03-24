@@ -1,5 +1,5 @@
 name:                base16-bytestring
-version:             0.1.1.4
+version:             0.1.1.5
 synopsis:            Fast base16 (hex) encoding and decoding for ByteStrings
 description:         Fast base16 (hex) encoding and decoding for ByteStrings
 homepage:            http://github.com/bos/base16-bytestring
@@ -23,7 +23,7 @@ library
   
   build-depends:
     base == 4.*,
-    bytestring == 0.9.*,
+    bytestring >= 0.9,
     ghc-prim
 
   ghc-options: -Wall -funbox-strict-fields
