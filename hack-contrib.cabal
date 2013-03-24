@@ -1,5 +1,5 @@
 Name:                 hack-contrib
-Version:              2009.4.30
+Version:              2009.4.50
 Build-type:           Simple
 Synopsis:             Hack contrib
 Description:
@@ -15,7 +15,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall
-  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, template, base64-string, zlib, ansi-wl-pprint, mps >= 2009.4.21, data-default >= 0.2, ansi-wl-pprint, unix, time, hack >= 2009.4.30
+  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, ansi-wl-pprint, mps >= 2009.4.27, data-default >= 0.2, ansi-wl-pprint, unix, time, pureMD5, hack >= 2009.4.30
   hs-source-dirs: src/
   exposed-modules:  
                     Hack.Contrib.Utils
@@ -37,6 +37,10 @@ library
                     Hack.Contrib.Middleware.SimpleAccessLogger
                     Hack.Contrib.Middleware.SimpleRouter
                     Hack.Contrib.Middleware.Static
+                    Hack.Contrib.Middleware.ETag
+                    Hack.Contrib.Middleware.BounceFavicon
+                    Hack.Contrib.Middleware.NotFound
+                    
 
                     
                     
