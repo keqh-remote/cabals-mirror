@@ -1,5 +1,5 @@
 Name: darcs-beta
-version:        2.3.99.2
+version:        2.4.98.1
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -33,7 +33,7 @@ Description:    Darcs is a free, open source revision control
 Homepage:       http://darcs.net/
 
 Build-Type:     Custom
-Cabal-Version:  >= 1.6
+Cabal-Version:  >= 1.8
 Tested-with:    GHC==6.8.2
 
 extra-source-files:
@@ -44,11 +44,11 @@ extra-source-files:
   -- The contrib directory would make a sensible 'darcs-contrib' package
   contrib/_darcs.zsh, contrib/darcs_completion,
   contrib/cygwin-wrapper.bash, contrib/update_roundup.pl, contrib/upload.cgi,
+  contrib/darcs-errors.hlint,
 
   -- documentation files
   src/best_practices.tex, src/building_darcs.tex, src/configuring_darcs.tex,
   src/features.tex, src/formats.tex, src/gpl.tex, src/switching.tex, src/darcs.tex
-  doc/manual/images.tex, doc/manual/bigimages.tex, doc/manual/patch-theory.tex,
   doc/darcs.css
 
   README, NEWS
@@ -59,11 +59,14 @@ extra-source-files:
   -- testsuite
   Distribution/ShellHarness.hs
   tests/repos/*.tgz tests/repos/README
+  tests/repos/minimal-darcs-2.4.tgz
   tests/*.sh
+  tests/trackdown-bisect-helper.hs
   tests/hspwd.hs
   tests/network/*.sh
   tests/lib
   tests/example_binary.png
+  tests/README.test_maintainers.txt
 
   GNUmakefile
 
@@ -73,12 +76,6 @@ source-repository head
 
 flag curl
   description: Use libcurl for HTTP support.
-
-flag curl-pipelining
-  description: Use libcurl's HTTP pipelining.
-  default:     False
-  --TODO: needs Cabal ticket #342 to allow default True
-  --      and decide on this automatically
 
 flag http
   description: Use the pure Haskell HTTP package for HTTP support.
@@ -97,6 +94,10 @@ flag threaded
 flag type-witnesses
   description: Use GADT type witnesses.
   default:     False
+
+flag library
+  description: Build darcs library
+  default:     True
 
 flag color
   description: Use ansi color escapes.
@@ -126,14 +127,19 @@ Executable          witnesses
                     src/maybe_relink.c
                     src/umask.c
                     src/Crypt/sha2.c
+  -- this module isn't exported by libdarcs, so not included in the tarball
+  -- if not mentioned
+  other-modules:    Darcs.Test.Patch.Check
 
   extensions:
     CPP
+    PatternGuards
     UndecidableInstances
     ScopedTypeVariables
+    PatternSignatures
     RankNTypes
     GADTs
-    ImpredicativeTypes
+    TypeOperators
 
   if !flag(type-witnesses)
     buildable: False
@@ -147,12 +153,48 @@ Executable          witnesses
                     System.Posix.IO
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
+    build-depends:  unix-compat >= 0.1.2
+
+  build-depends:   base          < 5,
+                   extensible-exceptions >= 0.1 && < 0.2,
+                   regex-compat >= 0.71 && < 0.94,
+                   mtl          >= 1.0 && < 1.2,
+                   parsec       >= 2.0 && < 3.1,
+                   html         == 1.0.*,
+                   filepath     == 1.1.*,
+                   haskeline    >= 0.6.2.2 && < 0.7,
+                   hashed-storage == 0.5.2,
+                   base >= 3,
+                   bytestring >= 0.9.0 && < 0.10,
+                   text >= 0.3,
+                   old-time   == 1.0.*,
+                   directory  == 1.0.*,
+                   process    == 1.0.*,
+                   containers >= 0.1 && < 0.4,
+                   array      >= 0.1 && < 0.4,
+                   random     == 1.0.*,
+                   tar          == 0.3.*,
+                   zlib >= 0.5.1.0 && < 0.6.0.0,
+                   QuickCheck   >= 2.1.0.0,
+                   test-framework             >= 0.2.2,
+                   test-framework-quickcheck2 >= 0.2.2
+  if !os(windows)
+    build-depends: unix >= 1.0 && < 2.5
+  if flag(http)
+      build-depends:    network == 2.2.*,
+                        HTTP    >= 3000.0 && < 4000.1
+
 
 -- ----------------------------------------------------------------------
 -- darcs library
 -- ----------------------------------------------------------------------
 
 Library
+  if flag(library)
+    buildable: True
+  else
+    buildable: False
+
   hs-source-dirs:   src
   include-dirs:     src
 
@@ -161,7 +203,6 @@ Library
                     Darcs.ArgumentDefaults
                     Darcs.Arguments
                     Darcs.Bug
-                    Darcs.CheckFileSystem
                     Darcs.ColorPrinter
                     Darcs.Commands
                     Darcs.Commands.Add
@@ -218,6 +259,7 @@ Library
                     Darcs.Lock
                     Darcs.Match
                     Darcs.Witnesses.Ordered
+                    Darcs.Witnesses.WZipper
                     Darcs.Patch
                     Darcs.Patch.Apply
                     Darcs.Patch.Bundle
@@ -273,10 +315,7 @@ Library
                     Darcs.SelectChanges
                     Darcs.Witnesses.Show
                     Darcs.SignalHandler
-                    Darcs.SlurpDirectory
-                    Darcs.SlurpDirectory.Internal
                     Darcs.Test
-                    Darcs.Test.Patch.Check
                     Darcs.TheCommands
                     Darcs.URL
                     Darcs.Utils
@@ -312,25 +351,28 @@ Library
                     System.Posix.Files
                     System.Posix.IO
     cpp-options:    -DWIN32
+    build-depends:  unix-compat >= 0.1.2
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
 
-  build-depends:   base          < 4,
+  build-depends:   base          < 5,
+                   extensible-exceptions >= 0.1 && < 0.2,
                    regex-compat >= 0.71 && < 0.94,
                    mtl          >= 1.0 && < 1.2,
                    parsec       >= 2.0 && < 3.1,
                    html         == 1.0.*,
                    filepath     == 1.1.*,
-                   haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.4.7 && < 0.5
+                   haskeline    >= 0.6.2.2 && < 0.7,
+                   hashed-storage == 0.5.2,
+                   tar          == 0.3.*
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
 
   build-depends: base >= 3,
                  bytestring >= 0.9.0 && < 0.10,
-                 utf8-string == 0.3.*,
+                 text >= 0.3,
                    old-time   == 1.0.*,
                    directory  == 1.0.*,
                    process    == 1.0.*,
@@ -340,7 +382,13 @@ Library
 
 
   -- We need optimizations, regardless of what Hackage says
-  ghc-options:      -Wall -O2 -funbox-strict-fields -fwarn-tabs
+  -- Note: "if true" works around a cabal bug with order of flag composition
+  if true
+    ghc-options:      -Wall -O2 -funbox-strict-fields -fwarn-tabs
+
+  if impl(ghc>=6.12)
+    ghc-options: -fno-warn-unused-do-bind
+
   ghc-prof-options: -prof -auto-all
 
   if flag(hpc)
@@ -353,12 +401,6 @@ Library
     c-sources:         src/hscurl.c
     cc-options:        -DHAVE_CURL
 
-    if flag(curl-pipelining)
-      -- curl 7.19.1 has bug-free pipelining
-      if !os(windows)
-        pkgconfig-depends: libcurl >= 7.19.1
-      cpp-options:       -DCURL_PIPELINING -DCURL_PIPELINING_DEFAULT
-
   if flag(http)
       build-depends:    network == 2.2.*,
                         HTTP    >= 3000.0 && < 4000.1
@@ -369,7 +411,7 @@ Library
       buildable: False
 
   if flag(mmap) && !os(windows)
-    build-depends:    mmap >= 0.2
+    build-depends:    mmap >= 0.5 && < 0.6
     cpp-options:      -DHAVE_MMAP
 
   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
@@ -391,12 +433,12 @@ Library
     UndecidableInstances,
     DeriveDataTypeable,
     GADTs,
-    ImpredicativeTypes,
     TypeOperators,
     ExistentialQuantification,
     FlexibleContexts,
     FlexibleInstances,
     ScopedTypeVariables,
+    PatternSignatures,
     KindSignatures,
     TypeSynonymInstances,
     Rank2Types,
@@ -419,7 +461,13 @@ Executable          darcs
                     src/Crypt/sha2.c
 
   -- We need optimizations, regardless of what Hackage says
-  ghc-options:      -Wall -O2 -funbox-strict-fields
+  -- Note: "if true" works around a cabal bug with order of flag composition
+  if true
+    ghc-options:      -Wall -O2 -funbox-strict-fields
+
+  if impl(ghc>=6.12)
+    ghc-options: -fno-warn-unused-do-bind
+
   ghc-prof-options: -prof -auto-all
   if flag(threaded)
     ghc-options:    -threaded
@@ -442,25 +490,28 @@ Executable          darcs
                     Preproc
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
+    build-depends:  unix-compat >= 0.1.2
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
 
-  build-depends:   base          < 4,
+  build-depends:   base          < 5,
+                   extensible-exceptions >= 0.1 && < 0.2,
                    regex-compat >= 0.71 && < 0.94,
                    mtl          >= 1.0 && < 1.2,
                    parsec       >= 2.0 && < 3.1,
                    html         == 1.0.*,
                    filepath     == 1.1.*,
-                   haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.4.4 && < 0.5
+                   haskeline    >= 0.6.2.2 && < 0.7,
+                   hashed-storage == 0.5.2,
+                   tar          == 0.3.*
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
 
   build-depends: base >= 3,
                  bytestring >= 0.9.0 && < 0.10,
-                 utf8-string == 0.3.*,
+                 text >= 0.3,
                    old-time   == 1.0.*,
                    directory  == 1.0.*,
                    process    == 1.0.*,
@@ -475,12 +526,6 @@ Executable          darcs
     c-sources:         src/hscurl.c
     cc-options:        -DHAVE_CURL
 
-    if flag(curl-pipelining)
-      -- curl 7.19.1 has bug-free pipelining
-      if !os(windows)
-        pkgconfig-depends: libcurl >= 7.19.1
-      cpp-options:       -DCURL_PIPELINING -DCURL_PIPELINING_DEFAULT
-
   if flag(http)
       build-depends:    network == 2.2.*,
                         HTTP    >= 3000.0 && < 4000.1
@@ -491,7 +536,7 @@ Executable          darcs
       buildable: False
 
   if flag(mmap) && !os(windows)
-    build-depends:    mmap >= 0.2
+    build-depends:    mmap >= 0.5 && < 0.6
     cpp-options:      -DHAVE_MMAP
 
   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
@@ -513,12 +558,12 @@ Executable          darcs
     UndecidableInstances,
     DeriveDataTypeable,
     GADTs,
-    ImpredicativeTypes,
     TypeOperators,
     ExistentialQuantification,
     FlexibleContexts,
     FlexibleInstances,
     ScopedTypeVariables,
+    PatternSignatures,
     KindSignatures,
     TypeSynonymInstances,
     Rank2Types,
@@ -539,9 +584,21 @@ Executable          unit
                     src/maybe_relink.c
                     src/umask.c
                     src/Crypt/sha2.c
+  -- list all unit test modules not exported by libdarcs; otherwise Cabal won't
+  -- include them in the tarball
+  other-modules:    Darcs.Test.Email
+                    Darcs.Test.Patch.Check
+                    Darcs.Test.Patch.Info
+                    Darcs.Test.Patch.QuickCheck
+                    Darcs.Test.Patch.Test
+                    Darcs.Test.Patch.Unit
 
   -- We need optimizations, regardless of what Hackage says
   ghc-options:      -Wall -O2 -funbox-strict-fields
+
+  if impl(ghc>=6.12)
+    ghc-options: -fno-warn-unused-do-bind
+
   ghc-prof-options: -prof -auto-all
   if flag(threaded)
     ghc-options:    -threaded
@@ -550,7 +607,8 @@ Executable          unit
     buildable: False
   else
     buildable: True
-    build-depends:   base          < 4,
+    build-depends:   base          < 5,
+                     extensible-exceptions >= 0.1 && < 0.2,
                      regex-compat >= 0.71 && < 0.94,
                      mtl          >= 1.0 && < 1.2,
                      parsec       >= 2.0 && < 3.1,
@@ -574,6 +632,7 @@ Executable          unit
                     System.Posix.IO
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
+    build-depends:  unix-compat >= 0.1.2
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
@@ -583,15 +642,18 @@ Executable          unit
 
   build-depends: base >= 3,
                  bytestring >= 0.9.0 && < 0.10,
+                   haskeline    >= 0.6.2.2 && < 0.7,
+                   text >= 0.3,
                    old-time   == 1.0.*,
                    directory  == 1.0.*,
                    process    == 1.0.*,
                    containers >= 0.1 && < 0.4,
                    array      >= 0.1 && < 0.4,
+                   hashed-storage == 0.5.2,
                    random     == 1.0.*
 
   if flag(mmap) && !os(windows)
-    build-depends:    mmap >= 0.2
+    build-depends:    mmap >= 0.5 && < 0.6
     cpp-options:      -DHAVE_MMAP
 
   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
@@ -600,6 +662,10 @@ Executable          unit
   if flag(terminfo) && !os(windows)
     build-depends:    terminfo == 0.3.*
     cpp-options:      -DHAVE_TERMINFO
+
+  if flag(http)
+      build-depends:    network == 2.2.*,
+                        HTTP    >= 3000.0 && < 4000.1
 
   if flag(color)
     x-use-color:
@@ -618,6 +684,7 @@ Executable          unit
     FlexibleContexts,
     FlexibleInstances,
     ScopedTypeVariables,
+    PatternSignatures,
     KindSignatures,
     TypeSynonymInstances,
     Rank2Types,
