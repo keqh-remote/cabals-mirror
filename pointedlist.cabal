@@ -1,5 +1,5 @@
 Name:          pointedlist
-Version:       0.3.3
+Version:       0.3.4
 Synopsis:      A zipper-like comonad which works as a list, tracking a position.
 Category:      Data
 Description:
