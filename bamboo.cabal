@@ -1,8 +1,7 @@
 Name:                 bamboo
-Version:              2009.6.25
+Version:              2009.8.16
 Build-type:           Simple
-Synopsis:             A simple blog middleware on hack
-Description:          A simple blog middleware on hack
+Synopsis:             A simple blog engine on Hack
 License:              GPL
 License-file:         LICENSE
 Author:               Wang, Jinjing
