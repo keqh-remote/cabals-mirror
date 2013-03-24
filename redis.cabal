@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.11
+Version:             0.12
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -11,11 +11,11 @@ Description:
 	key-value store. It is often referred as a data structure server
 	since keys can contain different data structures, such as strings,
 	hashes, lists, sets and sorted sets.
-    .	
+    .
     This library is a Haskell driver for Redis. It's tested with
-    current git version and with v2.2.4 of redis server. It also
-    tested with v2.0.5 and basic functions are works correctly but not
-    all of them.
+    current git version and with v2.4.6 of redis server. It also
+    tested with v2.2 and v2.0 and basic functions are works correctly
+    but not all of them.
 	.
 	You can use Test module from the source package to run unit
 	tests. Try /runhaskell Test.hs --help/ for usage info. Caution! Do not
@@ -28,28 +28,23 @@ Description:
 	.
 	Please let me know if tests or benchmark goes terribly wrong.
 	.
-	Changes from v0.10:
+	Changes from v0.11:
 	.
-	- Simple optimisation of redis protocol replays parsing that leads to
-	  significant speed improvement on get-like commands
-    .
-	- New commandline options for test runner (see above)
+	- Drop parsec dependency
 	.
-	- Simple benchmark included (see above)
+	- New commands implemented: incrbyfloat and hincrbyfloat
 	.
-	- New commands implemented: brpoplpush (blocking rpoplpush),
-      getrange, setrange, getbit and setbit
+	- Added variadic versions of del, hdel, lpush, rpush, sadd, srem,
+      zadd, zrem (named as del_, hdel_ etc.)
 	.
-	- getType reply is now parsed into RedisKeyType datatype instead
-      of just returning Reply. Warning! It's backward incompatible!
-	.
-	- info reply is now parsed into Map String String. Warning! It's
-      backward incompatible!
+	- Fixed compilation with GHC 7.2 (and hopefully with more recent
+      versions too), thanks Ben Gamari and Sean Hess for reporting.
 	.
 
 Stability:           beta
 Build-Type:          Simple
 Cabal-Version: >= 1.4
+License-File: LICENSE
 
 Extra-Source-Files: Test.hs,
 					Test/CASCommands.hs, Test/ListCommands.hs,
@@ -65,7 +60,7 @@ Extra-Source-Files: Test.hs,
 
 Library
     Build-Depends:       base < 5, containers, bytestring, utf8-string,
-                         network, mtl, old-time, MonadCatchIO-mtl, parsec
+                         network, mtl, old-time, MonadCatchIO-mtl
     Exposed-modules:     Database.Redis.Redis
                          Database.Redis.Monad
                          Database.Redis.ByteStringClass
