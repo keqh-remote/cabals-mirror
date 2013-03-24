@@ -1,8 +1,8 @@
 build-type:	Simple
-cabal-version:	>= 1.6
+cabal-version:	>= 1.8
 
 name:		lojbanParser
-version:	0.1.6
+version:	0.1.7
 stability:	experimental
 author:		.iocikun.juj. <PAF01143@nifty.ne.jp>
 maintainer:	.iocikun.juj. <PAF01143@nifty.ne.jp>
@@ -21,10 +21,13 @@ source-repository	head
 
 library
     hs-source-dirs:	src
+    extensions:		DeriveDataTypeable
     exposed-modules:	Language.Lojban.Parser
     other-modules: Preprocess LexerPappy Pos Parse TestPappy
+    build-depends:	base > 3 && < 5
 
 executable	testParser
-    hs-source-dirs:	src
+    hs-source-dirs:	bin
+    extensions:		DeriveDataTypeable
     main-is:		testParser.hs
-    build-depends:	base > 3 && < 5
+    build-depends:	base > 3 && < 5, lojbanParser
