@@ -1,5 +1,5 @@
 Name:		regexpr
-Version:	0.2.8
+Version:	0.2.9
 License:	GPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -14,7 +14,13 @@ Description:
   .
       matchRegexPR :: String -> Maybe ((String, (String, String)), [(Int, String)])
   .
+      gmatchRegexPR :: String -> [((String, (String, String)), [(Int, String)])]
+  .
+      subRegexPR :: String -> String -> String
+  .
       gsubRegexPR :: String -> String -> String
+  .
+      splitRegexPR :: String -> String -> [String]
   .
   Examples:
   .
@@ -33,12 +39,13 @@ Description:
   .
   gmatchRegexPR "(?=(?<!(?!abc)))abc" "abcdefdefabc" =>
                [(("abc", ("", "defdefabc")), []), (("abc", ("defdef", "")), [])]
+  .
+  splitRegexPR "\\s*,\\s*" "a,b ,c\t ,d , e" => ["a","b","c","d","e"]
 Category:	Text
-Build-Depends:	base, mtl, HUnit
+Build-Depends:	base, mtl, HUnit, mtlparse
 Build-Type:     Simple
 Exposed-modules: Text.RegexPR
-Other-modules:	Hidden.RegexPRTypes, Hidden.Tools, Hidden.ParseLib,
-		Hidden.ParseLibCore, Hidden.RegexPRCore,
+Other-modules:	Hidden.RegexPRTypes, Hidden.Tools, Hidden.RegexPRCore,
 		Hidden.ParseRegexStr, Hidden.SrcRegActList,
 		Hidden.TestMain
 Extra-source-files: TODO.ja.utf-8, localConfigure, BUGS.ja.utf-8
