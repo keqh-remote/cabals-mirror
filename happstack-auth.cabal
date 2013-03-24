@@ -1,5 +1,5 @@
 Name:                happstack-auth
-Version:             0.2
+Version:             0.2.1
 License:             BSD3
 License-File:        LICENSE
 Author:              Nils Schweinsberg
@@ -35,7 +35,6 @@ Library
         happstack-server    == 0.5.*,
         happstack-ixset     == 0.5.*,
         happstack-data      == 0.5.*,
-        Crypto              == 4.*,
         convertible         == 1.*
 
     Exposed-Modules:
@@ -44,6 +43,11 @@ Library
         Happstack.Auth.Internal.Data
 
     Other-Modules:
+
+        Codec.Utils
+        Data.Digest.SHA2
+        Data.Digest.SHA512
+
         Happstack.Auth.Internal.Data.AuthState
         Happstack.Auth.Internal.Data.SaltedHash
         Happstack.Auth.Internal.Data.SessionData
