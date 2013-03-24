@@ -1,6 +1,6 @@
 --Package-properties
 Name:			factory
-Version:		0.2.0.0
+Version:		0.2.0.1
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2011 Dr. Alistair Ward
 License:		GPL
@@ -144,7 +144,6 @@ Executable factory
 
     Build-depends:
         Cabal >= 1.6 && < 2,
-        haskell98,
         QuickCheck >= 2.2
 
     GHC-options:	-Wall -O2
