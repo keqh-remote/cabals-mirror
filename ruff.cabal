@@ -1,5 +1,5 @@
 Name:                ruff
-Version:             0.2
+Version:             0.3
 Synopsis:            relatively useful fractal functions
 Description:
     A library for analysis and exploration of fractals, providing
@@ -16,10 +16,11 @@ Copyright:           (c) 2011 Claude Heiland-Allen
 Category:            Math
 Build-type:          Simple
 
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
 
 Library
   Exposed-modules:    Fractal.RUFF.Mandelbrot.Address
+                      Fractal.RUFF.Mandelbrot.Atom
                       Fractal.RUFF.Mandelbrot.Image
                       Fractal.RUFF.Mandelbrot.Iterate
                       Fractal.RUFF.Mandelbrot.Nucleus
@@ -29,6 +30,16 @@ Library
   Build-depends:      base >= 3 && < 6,
                       array >= 0.3 && < 0.4,
                       mtl >= 2 && < 3,
-                      parsec >= 3.1 && < 3.2
+                      parsec >= 3.1 && < 3.2,
+                      Vec >= 0.9 && < 1
   GHC-Options:        -Wall -O2
   GHC-Prof-Options:   -prof -auto-all -caf-all
+
+source-repository head
+  type:     git
+  location: git://gitorious.org/ruff/ruff.git
+
+source-repository this
+  type:     git
+  location: git://gitorious.org/ruff/ruff.git
+  tag:      v0.3
