@@ -1,10 +1,10 @@
 name: sifflet
-version: 1.2.3
+version: 1.2.4
 cabal-version: >= 1.8
 build-type: Simple
 license: BSD3
 license-file: LICENSE
-copyright: (C) 2009-2010 Gregory D. Weber
+copyright: (C) 2009-2011 Gregory D. Weber
 author: Gregory D. Weber
 maintainer: "gdweber" ++ drop 3 "abc@" ++ "iue.edu"
 bug-reports: mailto:"gdweber" ++ drop 3 "abc@" ++ "iue.edu"
@@ -17,6 +17,7 @@ description: Sifflet is a visual, functional programming language.
   Sifflet show the intermediate steps of the computation
   on the diagram, and can expand function calls to show further details.
   It is intended as an aid for learning about recursion.
+  Version 1.2.4: Dependencies revised for compatibility with HXT 9.1.
   Version 1.2.3: Dependencies revised for compatibility with GHC 7.0
   and Haskell Platform 2011.2.
 category: 
@@ -46,7 +47,7 @@ executable sifflet
     containers >= 0.2 && < 0.5,
     fgl >= 5.4 && < 5.5,
     haskell98 >= 1.0.1 && < 1.2,
-    hxt >= 9 && < 9.1,
+    hxt >= 9 && < 10.0,
     mtl >= 1.1 && < 2.1,
     process >= 1.0 && < 1.1,
     sifflet-lib >= 1.2.3
