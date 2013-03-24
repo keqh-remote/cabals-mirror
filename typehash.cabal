@@ -1,6 +1,6 @@
 Name:           typehash
 Cabal-Version:  >= 1.2
-Version:        1.4.0.2
+Version:        1.4.0.3
 License:        BSD3
 Author:         Lennart Augustsson
 Maintainer:     Lennart Augustsson
@@ -14,5 +14,5 @@ Description:    Produce a hash for a type that is unique for that type.
 
 Library
   Hs-Source-Dirs: src
-  Build-Depends: base >= 4 && < 4.4, syb, mtl, bytestring, pureMD5, binary
+  Build-Depends: base >= 4 && < 4.5, syb, mtl, bytestring, pureMD5, binary
   Exposed-modules:      Data.TypeHash
