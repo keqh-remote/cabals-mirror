@@ -1,5 +1,5 @@
 name:			GoogleSuggest
-version:		0.0.3
+version:		0.0.4
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -18,5 +18,6 @@ Library
   Exposed-Modules:
      Google.Suggest
   Build-depends: base >= 4 && < 5, download-curl >= 0.1.2, 
-                 containers >= 0.3.0.0, dataenc, utf8-string, xml
+                 dataenc, utf8-string, xml
+  ghc-options: -Wall
                  
