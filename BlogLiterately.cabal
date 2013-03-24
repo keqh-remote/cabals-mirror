@@ -1,5 +1,5 @@
 Name:           BlogLiterately
-Version:        0.5.1
+Version:        0.5.2
 Synopsis:       A tool for posting Haskelly articles to blogs
 Description:    Write blog posts in Markdown format, then use BlogLiterately
                 to do syntax highlighting, format ghci sessions, and upload
@@ -53,14 +53,15 @@ Library
                    filepath,
                    directory,
                    bytestring,
-                   split >= 0.1.4 && < 0.2,
+                   containers,
+                   split >= 0.1.4 && < 0.3,
                    utf8-string >= 0.3 && < 0.4,
                    transformers >= 0.3 && < 0.4,
                    parsec >= 3 && < 3.2,
                    HaXml >= 1.22 && < 1.24,
                    hscolour >= 1.20 && < 1.21,
                    blaze-html >= 0.5 && < 0.6,
-                   cmdargs >= 0.9.5 && < 0.10,
+                   cmdargs >= 0.9.5 && < 0.11,
                    haxr >= 3000.9 && < 3000.10,
                    pandoc >= 1.9.3 && < 1.10
   Exposed-modules: Text.BlogLiterately
@@ -86,7 +87,7 @@ Library
 Executable BlogLiterately
   Build-Depends:   base,
                    BlogLiterately,
-                   cmdargs >= 0.9.5 && < 0.10,
+                   cmdargs >= 0.9.5 && < 0.11,
                    utf8-string >= 0.3 && < 0.4
   Main-Is:        BlogLiterately.hs
   hs-source-dirs: main
