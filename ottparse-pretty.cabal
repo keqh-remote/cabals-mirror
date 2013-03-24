@@ -1,5 +1,5 @@
 Name:                ottparse-pretty
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Pretty-printer for Ott parse trees
 Description:         Ott (<http://www.cl.cam.ac.uk/~pes20/ott/>) is a tool for
 		     writing formal definitions of programming
@@ -17,6 +17,7 @@ Description:         Ott (<http://www.cl.cam.ac.uk/~pes20/ott/>) is a tool for
 		     meaningless cruft removed.
 License:             BSD3
 License-file:        LICENSE
+Extra-source-files:  CHANGES
 Author:              Brent Yorgey
 Maintainer:          byorgey@cis.upenn.edu
 Category:            Text
