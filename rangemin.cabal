@@ -1,5 +1,5 @@
 name:                rangemin
-version:             2.1.1
+version:             2.1.2
 synopsis:            Linear range-min algorithms.
 description:	     Rapidly (in linear time) preprocesses a vector so that the minimum element of any given subrange can be looked up in constant time.
 tested-with:	     GHC
