@@ -1,5 +1,5 @@
 Name:            fclabels
-Version:         0.11.0
+Version:         0.11.1
 Author:          Sebastiaan Visser, Erik Hesselink, Chris Eidhof, Sjoerd Visscher.
 Synopsis:        First class accessor labels implemented as lenses.
 
@@ -36,7 +36,7 @@ Description:     First class labels that act as bidirectional record fields.
                  Template Haskell code to derive lenses for these fields.
                  Deriving lenses can be done with this simple one-liner:
                  .
-                 > $(mkLenses [''Person, ''Place])
+                 > $(mkLabels [''Person, ''Place])
                  .
                  These lenses can be used to get, set and modify the value and
                  are fully composable.
@@ -135,7 +135,7 @@ Library
                    Data.Record.Label.Monadic
   Other-Modules:   Data.Record.Label.TH
   Build-Depends:   base >= 3 && < 5
-                 , template-haskell >= 2.2 && < 2.5
+                 , template-haskell >= 2.2 && < 2.6
                  , mtl >= 1.1 && <= 2.1
   GHC-Options:     -Wall
 
