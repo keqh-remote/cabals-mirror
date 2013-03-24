@@ -1,5 +1,5 @@
 Name:                 bamboo
-Version:              2009.4.25
+Version:              2009.4.26
 Build-type:           Simple
 Synopsis:             A simple blog engine on Hack
 Description:          A simple blog engine on Hack
@@ -15,7 +15,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall -fno-warn-missing-signatures -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-type-defaults
-  build-depends: base, cgi, network, haskell98, old-locale, old-time, time, unix, bytestring, template, base64-string, zlib, directory, ansi-wl-pprint, hyena, filepath, containers, process, mps >= 2008.11.6, parsedate >= 3000.0.0, rss >= 3000.0.1, xhtml, kibro >= 0.4.2, utf8-string >= 0.3.3, pandoc, parsec >= 2, MissingH, gravatar >= 0.3, data-default >= 0.2, hcheat >= 2008.11.6, hack >= 2009.4.25
+  build-depends: base, cgi, network, haskell98, old-locale, old-time, time, unix, bytestring, template, base64-string, zlib, directory, ansi-wl-pprint, filepath, containers, process, mps >= 2008.11.6, parsedate >= 3000.0.0, rss >= 3000.0.1, xhtml, kibro >= 0.4.2, utf8-string >= 0.3.3, pandoc, parsec >= 2, MissingH, gravatar >= 0.3, data-default >= 0.2, hcheat >= 2008.11.6, hack >= 2009.4.28
   hs-source-dirs: src/
   exposed-modules:  
                     Bamboo
@@ -72,5 +72,3 @@ library
                     Bamboo.View.Widget.RSS
                     Bamboo.View.Widget.Body
                     Bamboo.View.Widget.Footer
-  
-  
