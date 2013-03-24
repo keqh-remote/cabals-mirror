@@ -1,13 +1,13 @@
-Name: BNFC
-Version: 2.4.2.1
+ Name: BNFC
+Version: 2.6.0.0
 cabal-version: >= 1.2
 build-type: Simple
 category: Development
-Copyright: (c) Krasimir Angelov, Bjorn Bringert, Johan Broberg, Paul Callaghan, Markus Forsberg, Ola Frid, Peter Gammie, Patrik Jansson, Kristofer Johannisson, Antti-Juhani Kaijanaho, Ulf Norell, Michael Pellauer and Aarne Ranta 2002 - 2010. Free software under GNU General Public License (GPL).
+Copyright: (c) Krasimir Angelov, Jean-Philippe Bernardy, Bjorn Bringert, Johan Broberg, Paul Callaghan, Markus Forsberg, Ola Frid, Peter Gammie, Patrik Jansson, Kristofer Johannisson, Antti-Juhani Kaijanaho, Ulf Norell, Michael Pellauer and Aarne Ranta 2002 - 2012. Free software under GNU General Public License (GPL).
 License: GPL
-License-File: COPYING
-Maintainer: Markus Forsberg <markus.forsberg@gu.se> Aarne Ranta <aarne@chalmers.se>
-Homepage: http://www.cse.chalmers.se/research/group/Language-technology/BNFC/
+License-File: LICENSE
+Maintainer: bnfc-dev@googlegroups.com
+Homepage: http://bnfc.digitalgrammars.com/
 Synopsis: A compiler front-end generator.
 Description:
   The BNF Converter is a compiler construction tool generating a compiler front-end 
@@ -21,28 +21,34 @@ Description:
   a Happy, CUP, or Bison parser generator file,
   a pretty-printer as a Haskell/Java/C++/C module,
   a Latex file containing a readable specification of the language.
-  .
-  This version only works with Alex version < 3, e.g. alex-2.3.5.
-tested-with:        GHC == 7.4.1
-Extra-source-files: BNF.cf 
+Extra-source-files: src/BNF.cf 
+
+Library 
+  hs-source-dirs: runtime, src           
+
+  exposed-modules: 
+   Algebra.RingUtils
+   Data.Pair
+   Data.Matrix.Quad
+   Parsing.Chart
+   Parsing.TestProgram
 
 Executable bnfc
-  Build-Depends:  mtl, directory, array, process, base>=4 && <5
--- haskell98, 
+  Build-Depends: base>=4.4 && <5, mtl, directory, array, process, containers, pretty >=1.1 && <1.2 
   Main-is: Main.hs
-  HS-source-dirs: . formats
-    formats/haskell2
-    formats/haskell-gadt
-    formats/xml
-    formats/profile
-    formats/java
-    formats/java1.5
-    formats/cpp
-    formats/c
-    formats/ocaml
-    formats/cpp_stl
-    formats/c-sharp
-    formats/f-sharp
+  HS-source-dirs: src src/formats
+    src/formats/haskell2
+    src/formats/haskell-gadt
+    src/formats/xml
+    src/formats/profile
+    src/formats/java
+    src/formats/java1.5
+    src/formats/cpp
+    src/formats/c
+    src/formats/ocaml
+    src/formats/cpp_stl
+    src/formats/c-sharp
+    src/formats/f-sharp
   Other-modules:
     LexBNF,
     ParBNF,
@@ -63,6 +69,7 @@ Executable bnfc
     HaskellTop,
     RegToAlex,
     CFtoTemplate,
+    CFtoAlex3,
     CFtoAlex2,
     CFtoAlex,
     CFtoHappy,
