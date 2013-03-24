@@ -1,5 +1,5 @@
 name:           uAgda
-version:        1.2.0.1
+version:        1.2.0.2
 category:       Dependent Types
 synopsis:       A simplistic dependently-typed language with parametricity.
 description:
@@ -46,9 +46,9 @@ executable uAgda
   build-depends: array==0.3.*
   build-depends: cmdargs==0.6.*
   build-depends: containers==0.4.*
-  build-depends: pretty==1.0.*
+  build-depends: pretty==1.1.*
   build-depends: parsec==2.1.*
-  build-depends: BNFC-meta==0.3.*
+  build-depends: BNFC-meta==0.2.*
   build-depends: transformers == 0.2.*
   build-depends: mtl == 2.0.*
   build-depends: split == 0.1.*
