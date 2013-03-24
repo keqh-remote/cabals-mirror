@@ -1,5 +1,5 @@
 Name:           CCA
-Version:        0.1
+Version:        0.1.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -9,7 +9,7 @@ Maintainer:     Paul H Liu <paul@thev.net>
 Homepage:       not available
 Category:       Development
 Stability:      Experimental
-Synopsis:       preprocessor and library for Causal Communtative Arrows (CCA)
+Synopsis:       preprocessor and library for Causal Commutative Arrows (CCA)
 Description:    A library that provides normalization support via Template 
                 Haskell for CCAs, and a modified preprocessor based on
                 Ross Patterson's arrowp that reads Haskell with arrow notation 
