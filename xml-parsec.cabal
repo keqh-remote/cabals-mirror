@@ -1,11 +1,13 @@
+
 Name:           xml-parsec
-Version:        1.0.2
+Version:        1.0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Stephan Friedrichs,
                 Henning Günther,
                 Oliver Mielentz,
                 Martin Wegner
+Maintainer:     Stephan Friedrichs <deduktionstheorem [at] web.de>
 
 Stability:      Stable
 Category:       Parsing
@@ -14,10 +16,10 @@ Description:    Helper functions to use a Parsec-based parser for XML documents.
                 This was originally developed as part of the Barracuda
                 ad-hoc P2P chat client.
                 .
-                The Darcs repository can be found at <http://repos.mroot.net/sep07-adhoc>
+                The Darcs repository can be found at <http://darcs.mroot.net/sep07-adhoc/>
 Homepage:       http://sep07.mroot.net/
 
-Build-Depends:  base, parsec, HaXml
+Build-Depends:  base, parsec, HaXml >= 1.19
 Build-Type:     Simple
 
 Exposed-Modules: Text.ParserCombinators.Parsec.XML
