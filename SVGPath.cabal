@@ -1,5 +1,5 @@
 Name:             SVGPath
-Version:          1.0.1
+Version:          1.0.2
 Synopsis:         Parsing the path command from SVG
 Description:      Parsing the path command from SVG
 category:         Graphics
@@ -14,6 +14,6 @@ Library
     hs-source-dirs: src
     build-depends:
         base == 4.*,
-        parsec == 2.1.*
+        parsec == 3.1.*
     exposed-modules:
         Graphics.SVG.ReadPath
