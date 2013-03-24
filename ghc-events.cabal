@@ -1,9 +1,16 @@
 name:             ghc-events
-version:          0.4.0.0
+version:          0.4.0.1
 synopsis:         Library and tool for parsing .eventlog files from GHC
-description:      Parses .eventlog files emitted by GHC 6.12.1 and later.
-                  Includes the ghc-events tool permitting, in particular,
-                  to dump an event log file as text.
+
+description:
+ Parses @.eventlog@ files emitted by GHC 6.12.1 and later.
+ Includes the @ghc-events@ tool which dumps an event log file
+ as text.
+ .
+ Changes in 0.4.0.1:
+ .
+ * compiles with GHC 7.6.1
+
 category:         Development, GHC, Debug, Profiling, Trace
 license:          BSD3
 license-file:     LICENSE
@@ -27,10 +34,10 @@ source-repository head
 
 library
   build-depends:    base       == 4.*,
-                    mtl        >= 1.1 && < 2.1,
-                    containers >= 0.2 && < 0.5,
+                    mtl        >= 1.1 && < 2.2,
+                    containers >= 0.2 && < 0.6,
                     binary     == 0.5.*,
-                    bytestring == 0.9.*,
+                    bytestring >= 0.9.0,
                     array      >= 0.2 && < 0.5
   exposed-modules:  GHC.RTS.Events,
                     GHC.RTS.Events.Merge
