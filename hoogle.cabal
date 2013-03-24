@@ -1,7 +1,7 @@
 cabal-version:      >= 1.1.4
 build-type:         Simple
 name:               hoogle
-version:            4.0.0.1
+version:            4.0.0.2
 license:            GPL
 license-file:       LICENSE
 category:           Development
@@ -89,7 +89,6 @@ other-modules:
     Hoogle.TypeSig.All
     Hoogle.TypeSig.Parser
     Hoogle.TypeSig.Type
-    Main
     Test.All
     Test.General
     Test.Parse_Query
@@ -97,3 +96,4 @@ other-modules:
     Test.Parse_TypeSig
     Web.Action
     Web.All
+    Web.Page
