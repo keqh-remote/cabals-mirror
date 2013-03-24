@@ -1,7 +1,7 @@
 Name:           stm-io-hooks
-Synopsis:       An STM monad with IO hooks
+Synopsis:       STM with IO hooks
 Description:
-    This library provides an Software Transactional Memory (STM) monad with commit and retry IO hooks. 
+    This library provides a Software Transactional Memory (STM) monad with commit and retry IO hooks. 
     A retry-action is run (at least once) if the transaction retries, while commit-actions are 
     executed iff the transaction commits. The AdvSTM monad also gives some atomicity
     guarantees for commit-actions:
@@ -26,7 +26,7 @@ Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        BSD3
 License-file:   LICENSE
 Homepage:       http://darcs.monoid.at/stm-io-hooks
-Version:        0.7.3
+Version:        0.7.5
 
 Build-type:     Simple                        
 Cabal-Version:  >= 1.2.3
@@ -43,10 +43,10 @@ library
                    Control.Monad.AdvSTM.Class
                    
     build-depends:  base       >= 4 && < 5
-                   ,stm        >= 2.1.1.2 && < 2.3
-                   ,array      >= 0.2.0.0 && < 0.4
-                   ,containers >= 0.2.0.0 && < 0.5
-                   ,mtl        >= 1.1.0.2 && < 2.1
+                   ,stm        >= 2.1.1.2 && < 2.5
+                   ,array      >= 0.2.0.0 && < 0.5
+                   ,containers >= 0.2.0.0 && < 0.6
+                   ,mtl        >= 1.1.0.2 && < 2.2
 
     extensions:    MultiParamTypeClasses
                    FunctionalDependencies
