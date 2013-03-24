@@ -1,5 +1,5 @@
 name: OpenCLRaw
-version: 1.0.1000
+version: 1.0.1001
 cabal-version: >=1.2
 build-type: Simple
 license: BSD3
@@ -62,7 +62,7 @@ includes:
 install-includes:
 include-dirs:
 hs-source-dirs: .
-other-modules:
+other-modules: System.OpenCL.Raw.V10.Utils
 ghc-prof-options:
 ghc-shared-options:
 ghc-options:
