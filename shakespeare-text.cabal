@@ -1,5 +1,5 @@
 name:            shakespeare-text
-version:         0.11
+version:         1.0.0
 license:         BSD3
 license-file:    LICENSE
 author:          Greg Weber <greg@gregweber.info>
@@ -17,13 +17,13 @@ description:
     Shakespeare is a template family for type-safe, efficient templates with simple variable interpolation . Shakespeare templates can be used inline with a quasi-quoter or in an external file. Shakespeare interpolates variables according to the type being inserted.
     In this case, the variable type needs a ToText instance.
     .
-    Please see http://docs.yesodweb.com/book/templates for a more thorough description and examples of the shakespeare family of template languages.
+    Please see http://www.yesodweb.com/book/shakespearean-templates for a more thorough description and examples of the shakespeare family of template languages.
 
 category:        Web, Yesod
 stability:       Stable
 cabal-version:   >= 1.8
 build-type:      Simple
-homepage:        http://www.yesodweb.com/book/templates
+homepage:        http://www.yesodweb.com/book/shakespearean-templates
 extra-source-files:
   test/texts/external1.text
   test/texts/external2.text
@@ -32,7 +32,7 @@ extra-source-files:
 
 library
     build-depends:   base             >= 4       && < 5
-                   , shakespeare      >= 0.11    && < 0.12
+                   , shakespeare      >= 1.0     && < 1.1
                    , template-haskell
                    , text             >= 0.7     && < 0.12
 
@@ -48,7 +48,7 @@ test-suite test
 
     ghc-options:   -Wall
     build-depends:
-                   shakespeare-text >= 0.10 && < 0.11
+                   shakespeare-text
                  , base             >= 4       && < 5
                  , HUnit
                  , hspec            >= 0.8     && < 0.10
