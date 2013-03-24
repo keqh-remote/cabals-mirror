@@ -1,8 +1,11 @@
 name:            list-grouping
-version:         0.1
+version:         0.1.1
 homepage:        http://coder.bsimmons.name/blog/2009/08/list-grouping-module-released/
 synopsis:        Functions for grouping a list into sublists  
 description:     Functions for grouping a list into sublists based on predicate or integer offsets.
+ .
+ NOTE: THIS MODULE IS DEPRECATED. PLEASE TRY THE 'split' PACKAGE INSTEAD
+      http://hackage.haskell.org/package/split-0.1.3
  .
  Grouping a list based on integer offsets:
  .
