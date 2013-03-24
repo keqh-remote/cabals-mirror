@@ -7,10 +7,10 @@ Name:                vector-buffer
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3
+Version:             0.4
 
 -- A short (one-line) description of the package.
-Synopsis:            A buffer compatible with Data.Vector.Storable
+Synopsis:            A buffer compatible with Data.Vector.*
 
 -- A longer description of the package.
 Description:         
@@ -58,7 +58,8 @@ Library
                        Data.Vector.Unboxed.Buffer
   
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4 && < 5, vector >= 0.7
+  Build-depends:       base >= 4 && < 5, vector >= 0.7,
+                       deepseq > 1
   
   -- Modules not exported by this package.
   -- Other-modules:       
