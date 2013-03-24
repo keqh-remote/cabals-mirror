@@ -1,7 +1,7 @@
 Name:             SVGFonts
-Version:          1.1.1
+Version:          1.1.2
 Synopsis:         Fonts from the SVG-Font format
-Description:      Native font support for the diagrams library. The SVG-Font format is easy to parse
+Description:      Native font support for the Diagrams library. The SVG-Font format is easy to parse
                   and was therefore chosen for a font library completely written in Haskell.
                   .
                   You can convert your own font to SVG with <http://fontforge.sourceforge.net/> or use the included LinLibertine, Bitstream
@@ -26,7 +26,7 @@ Description:      Native font support for the diagrams library. The SVG-Font for
                   >
                   > import Diagrams.Prelude
                   > import Diagrams.Backend.Cairo.CmdLine
-                  > import Graphics.SVGFonts.ReadFont (textSVG,textSVG_)
+                  > import Graphics.SVGFonts.ReadFont (textSVG)
                   >
                   >
                   > main = defaultMain ( (text' "Hello World") <> (rect 8 1) # alignBL )
@@ -38,21 +38,25 @@ category:         Graphics
 License:          BSD3
 License-file:     LICENSE
 Author:           Tillmann Vogt
-Maintainer:       tillk.vogt@googlemail.com
+Maintainer:       diagrams-discuss@googlegroups.com
 Build-Type:       Simple
-Cabal-Version:    >=1.6
+Cabal-Version:    >=1.10
 
 data-files: src/Test/*.svg
+
+source-repository head
+  type: git
+  location: https://github.com/tkvogt/SVGFonts.git
 
 Library
     hs-source-dirs: src
     other-modules: Paths_SVGFonts
     build-depends:
-        attoparsec-text,
+        attoparsec,
         base == 4.*,
-        containers == 0.4.*,
+        containers >= 0.4 && < 0.6,
         data-default,
-        diagrams-lib >= 0.5,
+        diagrams-lib,
         directory >= 1.0 && <1.2,
         parsec,
         split,
@@ -65,4 +69,4 @@ Library
         Graphics.SVGFonts.ReadFont
         Graphics.SVGFonts.CharReference
         Graphics.SVGFonts.ReadPath
-
+    default-language: Haskell2010
