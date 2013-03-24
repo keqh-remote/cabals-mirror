@@ -1,5 +1,5 @@
 Name:                clocked
-Version:             0.4.1
+Version:             0.4.1.1
 Synopsis:            timer functionality to clock IO commands
 Description:         clocked is a library that allows you to clock IO-operations. You can use it to clock the rendering of frames, the calculation of steps in a physics engine, the triggering of musical events in a real-time system, etc.
 Homepage:            http://patch-tag.com/r/shahn/clocked/home
@@ -45,6 +45,9 @@ Library
     if !os(darwin)
         build-depends:
             clock
+    if os(darwin)
+        build-depends:
+            time
 
     extra-libraries:
         stdc++
@@ -57,3 +60,4 @@ Library
     if os(darwin)
         frameworks:
             QtCore
+
