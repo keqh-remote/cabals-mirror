@@ -1,5 +1,5 @@
 Name:                pem
-Version:             0.1.0
+Version:             0.1.1
 Description:         Privacy Enhanced Mail (PEM) format reader and writer.
 License:             BSD3
 License-file:        LICENSE
@@ -13,6 +13,7 @@ stability:           experimental
 Cabal-Version:       >=1.8
 Homepage:            http://github.com/vincenthz/hs-pem
 data-files:          README.md
+extra-source-files:  Tests/pem.hs
 
 Library
   Build-Depends:     base >= 3 && < 5
@@ -33,7 +34,7 @@ Test-Suite test-pem
     main-is:         pem.hs
     build-depends:   base
                    , bytestring
-                   , test-framework >= 0.3.3 && < 0.6
+                   , test-framework >= 0.3.3 && < 0.7
                    , test-framework-quickcheck2 >= 0.2.9 && < 0.3
                    , QuickCheck >= 2.4.0.1
                    , pem
