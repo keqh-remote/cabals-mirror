@@ -1,12 +1,12 @@
 Name:                yesod-auth-zendesk
-Version:             0.1.0.2
+Version:             0.1.0.3
 Synopsis:            Zendesk remote authentication support for Yesod apps.
 Homepage:            https://github.com/meteficha/yesod-auth-zendesk
 License:             BSD3
 License-file:        LICENSE
 Author:              Felipe Lessa
 Maintainer:          Felipe Lessa <felipe.lessa@gmail.com>
-Category:            Web
+Category:            Web, Yesod
 Build-type:          Simple
 Cabal-version:       >= 1.6
 
