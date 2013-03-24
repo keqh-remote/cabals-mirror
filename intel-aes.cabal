@@ -1,21 +1,18 @@
 Name:           intel-aes
-Version:        0.1.2
+Version:        0.1.2.1
 
 License:                BSD3
 License-file:           LICENSE
 Stability:              Beta
 Maintainer:		Ryan Newton <rrnewton@gmail.com>
-Author:			Ryan Newton <rrnewton@gmail.com>, Svein Ove Aas <svein.ove@aas.no>, Thomas M. DuBuisson
+Author:			Ryan Newton <rrnewton@gmail.com>, 
+                        Svein Ove Aas <svein.ove@aas.no>, Thomas M. DuBuisson <thomas.dubuisson@gmail.com>
 Copyright:              Copyright (c) 2011 Intel Corporation
 Synopsis:               Hardware accelerated AES encryption and RNG.
 HomePage:               https://github.com/rrnewton/intel-aes/wiki
 Description: 
   AES encryption with optional hardware acceleration.  Plus,
   statistically sound, splittable random number generation based on AES.
-
-
-
-
   This package is nothing more than a wrapper around the Intel-provided
   AESNI sample library which also includes a portable software
   implementation of AES by Brian Gladman.  It contains C,
@@ -88,7 +85,7 @@ source-repository head
 ----------------------------------------------------------------------------------------------------
 library
   build-depends:  base >= 4 && < 5, random, DRBG, split, process, haskell98, time,
-                  DRBG, crypto-api, bytestring, cereal, tagged
+                  crypto-api, bytestring, cereal, tagged
 
   exposed-modules:  Codec.Encryption.BurtonRNGSlow
                  ,  Codec.Crypto.IntelAES
