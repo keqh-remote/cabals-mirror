@@ -1,5 +1,5 @@
 Name:                pandoc-types
-Version:             1.8.0.2
+Version:             1.8.2
 Synopsis:            Types for representing a structured document
 Description:         This package contains definitions for the 'Pandoc' data
                      structure, which is used by pandoc to represent
@@ -26,11 +26,9 @@ Copyright:           (c) 2006-2010 John MacFarlane
 Category:            Text
 Build-type:          Simple
 Cabal-version:       >=1.6
-
-Source-repository head
-  type:          git
-  location:      git://github.com/jgm/pandoc-types.git
-
+Source-repository    head
+  type:              git
+  location:          git://github.com/jgm/pandoc-types.git
 Library
   Exposed-modules:   Text.Pandoc.Definition
                      Text.Pandoc.Generic
