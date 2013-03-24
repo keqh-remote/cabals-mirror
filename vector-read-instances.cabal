@@ -1,11 +1,11 @@
 name:           vector-read-instances
-version:        0.0.1.1
+version:        0.0.2.0
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 copyright:      Christian Hoener zu Siederdissen, 2011
 homepage:       http://www.tbi.univie.ac.at/~choener/
 category:       Data, Data Structures
-synopsis:       Read instances for 'Data.Vector'
+synopsis:       (deprecated) Read instances for 'Data.Vector'
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -17,6 +17,8 @@ description:
                 .
                 It is planned to have read instances included in the vector
                 library in the future. This release is only temporary.
+                .
+                vector >= 0.8 has Read instances for all immutable vectors.
 
 library
   build-depends:
