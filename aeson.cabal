@@ -1,5 +1,5 @@
 name:            aeson
-version:         0.4.0.0
+version:         0.4.0.1
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Web, JSON
@@ -84,6 +84,7 @@ description:
 
 extra-source-files:
     README.markdown
+    benchmarks/*.cabal
     benchmarks/*.hs
     benchmarks/*.py
     benchmarks/Makefile
@@ -139,7 +140,7 @@ library
     ghc-options: -Werror
     ghc-prof-options: -auto-all
 
-  ghc-options:      -Wall
+  ghc-options: -O2 -Wall
 
 test-suite tests
   type:           exitcode-stdio-1.0
