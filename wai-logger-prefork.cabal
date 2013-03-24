@@ -1,5 +1,5 @@
 Name:                   wai-logger-prefork
-Version:                0.1.3
+Version:                0.2.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -11,7 +11,7 @@ Cabal-Version:          >= 1.6
 Build-Type:             Simple
 
 Library
-  GHC-Options:          -Wall -fno-warn-unused-do-bind
+  GHC-Options:          -Wall
   Exposed-Modules:      Network.Wai.Logger.Prefork
   Other-Modules:        Network.Wai.Logger.Prefork.File
                         Network.Wai.Logger.Prefork.Types
@@ -21,7 +21,7 @@ Library
                       , http-types
                       , unix
                       , wai
-                      , wai-logger
+                      , wai-logger >= 0.2 && < 0.3
 
 Source-Repository head
   Type:                 git
