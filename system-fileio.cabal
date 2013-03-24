@@ -1,5 +1,5 @@
 name: system-fileio
-version: 0.3.6
+version: 0.2.7
 license: MIT
 license-file: license.txt
 author: John Millikin <jmillikin@gmail.com>
@@ -37,12 +37,12 @@ extra-source-files:
 
 source-repository head
   type: bazaar
-  location: https://john-millikin.com/branches/system-fileio/0.3/
+  location: https://john-millikin.com/branches/system-fileio/0.2/
 
 source-repository this
   type: bazaar
-  location: https://john-millikin.com/branches/system-fileio/0.3/
-  tag: system-fileio_0.3.6
+  location: https://john-millikin.com/branches/system-fileio/0.2/
+  tag: system-fileio_0.2.7
 
 library
   ghc-options: -Wall -O2
@@ -68,3 +68,5 @@ library
 
   exposed-modules:
     Filesystem
+    System.Directory
+    System.File
