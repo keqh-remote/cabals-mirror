@@ -6,7 +6,7 @@ Name:                aws
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.5
+Version:             0.0.6
 
 -- A short (one-line) description of the package.
 Synopsis:            Amazon Web Services (AWS) for Haskell
@@ -57,9 +57,12 @@ Library
                        Aws.Response,
                        Aws.S3,
                        Aws.S3.Commands,
+                       Aws.S3.Commands.DeleteObject,
                        Aws.S3.Commands.GetBucket,
+                       Aws.S3.Commands.GetObject,
                        Aws.S3.Commands.GetService,
                        Aws.S3.Commands.PutBucket,
+                       Aws.S3.Commands.PutObject,
                        Aws.S3.Error,
                        Aws.S3.Info,
                        Aws.S3.Metadata,
@@ -85,6 +88,25 @@ Library
                        Aws.SimpleDb.Model,
                        Aws.SimpleDb.Query,
                        Aws.SimpleDb.Response,
+                       Aws.Sqs,
+                       Aws.Sqs.Commands,
+                       Aws.Sqs.Commands.AddPermission,
+                       Aws.Sqs.Commands.DeleteMessage,
+                       Aws.Sqs.Commands.DeleteQueue,
+                       Aws.Sqs.Commands.ListQueues,
+                       Aws.Sqs.Commands.GetQueueAttributes,
+                       Aws.Sqs.Commands.ChangeMessageVisibility,
+                       Aws.Sqs.Commands.CreateQueue,
+                       Aws.Sqs.Commands.ReceiveMessage,
+                       Aws.Sqs.Commands.RemovePermission,
+                       Aws.Sqs.Commands.SendMessage,
+                       Aws.Sqs.Commands.SetQueueAttributes,
+                       Aws.Sqs.Error,
+                       Aws.Sqs.Info,
+                       Aws.Sqs.Metadata,
+                       Aws.Sqs.Model,
+                       Aws.Sqs.Query,
+                       Aws.Sqs.Response,
                        Aws.Transaction,
                        Aws.Util,
                        Aws.Xml
@@ -105,16 +127,18 @@ Library
                        enumerator ==0.4.*,
                        failure >=0.1.0.1 && <0.2,
                        filepath >=1.1 && <1.3,
-                       http-enumerator >=0.6.5.5 && < 0.7,
+                       http-enumerator >=0.6.7 && < 0.7,
                        http-types >=0.6 && <0.7,
                        mtl ==2.*,
                        old-locale ==1.*,
                        shortcircuit ==0.1.*,
-                       text >=0.11 && <0.12,
+                       text >= 0.11,
                        time >=1.1.4 && <1.3,
-                       tls >=0.7.1 && <0.8,
+                       tls >= 0.7.1,
                        transformers >=0.2.2.0 && <0.3,
-                       xml-enumerator >=0.3.4 && <0.4
+                       transformers-compose ==0.1.*,
+                       utf8-string ==0.3.*,
+                       xml-enumerator >= 0.3.4
 
   GHC-Options: -Wall
   
@@ -123,15 +147,4 @@ Library
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
-
-
--- Source repository
-source-repository head
-  type: git
-  location: git://github.com/aristidb/aws.git
-  branch: master
-
-source-repository this
-  type: git
-  location: git://github.com/aristidb/aws.git
-  tag: 0.0.4
+  
