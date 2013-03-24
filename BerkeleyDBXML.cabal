@@ -1,8 +1,8 @@
 name: BerkeleyDBXML
-version: 0.6.1
+version: 0.6.2
 license: BSD3
 license-file: LICENSE
-cabal-version: >= 1.4
+cabal-version: >= 1.6
 copyright: (c) 2009 Stephen Blackheath
 author: Stephen Blackheath
 maintainer: http://blacksapphire.com/antispam/
@@ -35,7 +35,7 @@ Library
     exposed-modules: Database.Berkeley.DbXml
     c-sources: Database/Berkeley/dbxml_helper.cpp
 
-    build-depends: base >= 4, bytestring >= 0.9, BerkeleyDB >= 0.6
+    build-depends: base == 4.*, bytestring >= 0.9, BerkeleyDB >= 0.7.1
     include-dirs: Database/Berkeley/
     extra-libraries: db, dbxml, db_cxx, xqilla, xerces-c, xml2
     ghc-options: -pgml c++
