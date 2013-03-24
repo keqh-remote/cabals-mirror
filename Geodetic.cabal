@@ -1,5 +1,5 @@
 Name:                Geodetic
-Version:             0.2
+Version:             0.3
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            Geodetic calculations
@@ -37,6 +37,7 @@ Library
                    Data.Geo.Longitude
                    Data.Geo.Position
                    Data.Geo.Radians
+                   Data.Geo.Sphere
                    Data.Geo.Vincenty
                    Data.Geo.Accessor.Azi
                    Data.Geo.Accessor.Coordinate
@@ -46,3 +47,5 @@ Library
                    Data.Geo.Accessor.Lat
                    Data.Geo.Accessor.Lon
                    Data.Geo.Accessor.ReverseAzi
+                   Data.Geo.Accessor.Value
+
