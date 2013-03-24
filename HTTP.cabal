@@ -1,5 +1,5 @@
 Name: HTTP
-Version: 3001.0.3
+Version: 3001.0.4
 Cabal-Version: >= 1.2
 Build-type: Simple
 License: BSD3
@@ -11,6 +11,7 @@ Copyright:
   Copyright (c) 2004, Andre Furtado
   Copyright (c) 2004, Ganesh Sittampalam
   Copyright (c) 2004-2005, Dominic Steinitz
+  Copyright 2007 Robin Bate Boerop
 Author: Warrick Gray <warrick.gray@hotmail.com>
 Maintainer: Bjorn Bringert <bjorn@bringert.net>
 Homepage: http://www.haskell.org/http/
@@ -23,8 +24,11 @@ Flag old-base
 Library
   Exposed-modules: 
                  Network.Stream,
+                 Network.StreamDebugger,
+                 Network.StreamSocket,
                  Network.TCP,                
                  Network.HTTP,
+                 Network.HTTP.Headers,
                  Network.Browser
   Other-modules:
                  Network.HTTP.Base64,
