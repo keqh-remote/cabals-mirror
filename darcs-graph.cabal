@@ -1,5 +1,5 @@
 Name:                darcs-graph
-Version:             0.3.1
+Version:             0.3.2
 License:             BSD3
 License-file:        LICENSE
 Category:            Distribution
@@ -15,8 +15,8 @@ flag small_base
 
 Executable darcs-graph
     Main-is:             Graph.hs
-    Extensions:          CPP
-    Ghc-options:         -fglasgow-exts -Wall
+    Extensions:          CPP, PatternGuards
+    Ghc-options:         -Wall
     
     if flag(small_base)
         build-depends: base >= 3,
