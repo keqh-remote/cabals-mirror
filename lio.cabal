@@ -1,5 +1,5 @@
 Name:           lio
-Version:        0.9.0.1
+Version:        0.9.1.0
 Cabal-Version:  >= 1.8
 Build-type:     Simple
 License:        GPL
@@ -51,6 +51,7 @@ Extra-source-files:
   examples/dclabel.hs
   examples/gate.hs
   examples/waitAndCatch.hs
+  examples/bracket.hs
   examples/fsExample.hs
   examples/LambdaChair/LambdaChair.hs
   examples/LambdaChair/LambdaChair/TCB.hs
@@ -61,7 +62,7 @@ Extra-source-files:
 
 Source-repository head
   Type:     git
-  Location: http://www.gitstar.com/scs/lio.git
+  Location: ssh://anonymous@gitstar.com/scs/lio.git
 
 Flag toLabeled
   Description:
@@ -80,8 +81,8 @@ Library
    ,directory    >= 1.1.0.2
    ,xattr        >= 0.6.1
    ,zlib         >= 0.5.3.1
-   ,SHA          >= 1.5.0.0 && < 1.6
-   ,time         >= 1.2.0.5 && < 1.5
+   ,SHA          >= 1.5.0.0
+   ,time         >= 1.2.0.5
 
   GHC-options: -Wall -fno-warn-orphans
 
