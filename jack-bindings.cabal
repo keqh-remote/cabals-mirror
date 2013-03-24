@@ -1,7 +1,13 @@
 Name:                jack-bindings
-Version:             0.1
+Version:             0.1.1
 License:	     MIT
-Description:         
+Description:
+  This package has been /DEPRECATED/ and will not be maintained by the author.
+  .
+  This package contains known bugs:
+  .
+  * Function pointers are not freed after use
+  .
   Low level bindings to the JACK Audio Connection Kit ( <http://jackaudio.org/> )
   .
   This package provides bindings to the functionality providet in the jack.h include file
@@ -10,9 +16,9 @@ Description:
   For now, please refer to the Jack documentation for a complete description of the api.
   .
   <http://jackaudio.org/files/docs/html/jack_8h.html>
-Synopsis:	     Bindings to the JACK Audio Connection Kit
+Synopsis:	     DEPRECATED Bindings to the JACK Audio Connection Kit
 Author:              Philipp Balzarek
-Maintainer:          p.balzarek@googlemail.com
+Maintainer:          not maintained
 Stability:           experimental
 License-File:	     LICENSE
 Category:	     Sound
@@ -25,7 +31,7 @@ Library
   Exposed-modules:   Sound.Jack
                      , Sound.Jack.Bindings
                      , Sound.Jack.JackMonad
-                     
+
   Other-modules:     C2HS
                      , Sound.Jack.RawBindings
   Includes:	     jack/jack.h
