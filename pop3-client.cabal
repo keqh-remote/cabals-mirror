@@ -1,5 +1,5 @@
 Name: pop3-client
-Version: 0.1
+Version: 0.1.1
 License: BSD3
 License-File: LICENSE
 Maintainer: Peter van den Brand <peter@vdbrand.nl>
@@ -18,7 +18,7 @@ Description: pop3-client provides a Haskell library to implement a POP3 client.
 Build-Type: Simple
 Cabal-Version: >=1.4
 Library
-    Build-Depends:  base >= 3 && < 4, network, haskell98, mtl
+    Build-Depends:  base >= 4 && < 5, network, mtl
     Exposed-Modules: Network.POP3.Client
     GHC-Options: -Wall
 
