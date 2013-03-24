@@ -1,5 +1,5 @@
 name:		pureMD5
-version:	0.1.0
+version:	0.1.1
 license:	BSD3
 license-file:	LICENSE
 author:		Thomas DuBuisson <thomas.dubuisosn@gmail.com>
@@ -7,7 +7,7 @@ maintainer:	Thomas DuBuisson
 description:	A rolled (concise yet inefficient) and unrolled (more efficient, much less concise)
 		version of MD5 purely in Haskell.  Only the unrolled is exported.
 synopsis:	MD5 implementations that should become part of a ByteString Crypto package.
-category:	Data, Codes
+category:	Data, Cryptography
 stability:	stable
 build-type:	Simple
 cabal-version:	>= 1.2
