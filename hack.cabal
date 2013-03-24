@@ -1,5 +1,5 @@
 Name:                 hack
-Version:              2009.4.21
+Version:              2009.4.22
 Build-type:           Simple
 Synopsis:             a sexy Haskell Webserver Interface
 Description:          a sexy Haskell Webserver Interface
@@ -20,5 +20,7 @@ library
   exposed-modules:  
                     Hack
                     Hack.Handler.Kibro
-                    Hack.SimpleRoute
+                    Hack.Contrib.SimpleRouter
+                    Hack.Contrib.RawRouter
+                    Hack.Contrib.ContentType
                     Hack.Utils
