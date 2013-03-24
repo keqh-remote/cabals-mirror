@@ -1,5 +1,5 @@
 Name:		numbers
-Version:	2009.5.28.1
+Version:	2009.8.6.1
 License:	BSD3
 Author:		Lennart Augustsson
 Maintainer:	Lennart Augustsson
@@ -12,7 +12,7 @@ Description:	Instances of the numerical classes for a variety of
 		differentiable numbers, symbolic numbers,
 		natural numbers, interval arithmetic.
 Build-type:	Simple
-Build-Depends:	base
+Build-Depends:	base >= 3 && < 5
 Exposed-modules:	Data.Number.Symbolic Data.Number.Dif
 			Data.Number.CReal Data.Number.Fixed
 			Data.Number.Interval Data.Number.BigFloat
