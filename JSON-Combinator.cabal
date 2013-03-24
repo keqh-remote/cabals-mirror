@@ -1,5 +1,5 @@
 Name:               JSON-Combinator
-Version:            0.2.1
+Version:            0.2.2
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
@@ -33,6 +33,7 @@ Library
   GHC-Options:      -Wall
 
   Exposed-Modules:  Text.JSON.Combinator
+                    , Text.JSON.Failure
                     , Text.JSON.JSONLike
                     , Text.JSON.JSONField
                     , Text.JSON.JSONPrepend
