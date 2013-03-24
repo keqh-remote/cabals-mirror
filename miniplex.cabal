@@ -1,5 +1,5 @@
 name: miniplex
-version: 0.2.2
+version: 0.3.3
 cabal-version: >= 1.2
 license: LGPL
 license-file: LICENSE
@@ -22,17 +22,17 @@ library
   hs-source-dirs: lib
   if flag(small_base)
     build-depends: directory
-  build-depends: base, network, stm, unix, mtl
-  ghc-options: -Wall
+  build-depends: base, network, stm, unix, mtl, colock >=0.2.2
+  ghc-options: -O2 -Wall
 
 executable plox-read
   hs-source-dirs: bin, lib
   main-is: plox-read.hs
   other-modules: System.Miniplex
-  ghc-options: -Wall
+  ghc-options: -O2 -Wall
 
 executable plox-write
   hs-source-dirs: bin, lib
   main-is: plox-write.hs
   other-modules: System.Miniplex
-  ghc-options: -Wall
+  ghc-options: -O2 -Wall
