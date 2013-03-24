@@ -1,5 +1,5 @@
 name:                ipc
-version:             0.0.2
+version:             0.0.3
 synopsis:            High level inter-process communication library
 description:         Provides inter-process communication at a high level
 Copyright:           2008, Thomas DuBuisson
