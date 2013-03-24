@@ -1,7 +1,6 @@
 name:		polyparse
-version:	1.1
-ghc-options:	-DVERSION="1.1"
-cc-options:	-DVERSION="1.1"
+version:	1.2
+cpp-options:	-DVERSION="1.2"
 nhc98-options:	-K6M
 license:	LGPL
 license-file:	COPYRIGHT
@@ -21,19 +20,13 @@ exposed-modules:
 	Text.ParserCombinators.HuttonMeijer,
 	Text.ParserCombinators.HuttonMeijerWallace,
 	Text.ParserCombinators.Poly,
-	Text.ParserCombinators.PolyState,
-	Text.ParserCombinators.PolyLazy,
-	Text.ParserCombinators.PolyStateLazy,
 	Text.ParserCombinators.Poly.Base,
 	Text.ParserCombinators.Poly.Plain,
 	Text.ParserCombinators.Poly.Lazy,
 	Text.ParserCombinators.Poly.State,
 	Text.ParserCombinators.Poly.StateLazy,
-	Text.ParserCombinators.Poly.NoLeak.Plain,
-	Text.ParserCombinators.Poly.NoLeak.State,
-	Text.ParserCombinators.Poly.NoLeak.Lazy,
-	Text.ParserCombinators.Poly.NoLeak.StateLazy,
 	Text.Parse
-hs-source-dir:	src
+hs-source-dirs:	src
 build-depends:	base, haskell98
+build-type:	Simple
 extensions:	CPP
