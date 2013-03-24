@@ -1,5 +1,5 @@
 name:		     TrieMap
-version:             2.0.0
+version:             2.0.1
 tested-with:	     GHC
 category:            Algorithms
 synopsis:	     Automatic type inference of generalized tries with Template Haskell.
@@ -12,7 +12,7 @@ license:             BSD3
 license-file:	     LICENSE
 author:              Louis Wasserman
 maintainer:          wasserman.louis@gmail.com
-build-Depends:       base < 5.0.0.0, containers, template-haskell, bytestring, th-expand-syns, ghc-prim, vector, primitive
+build-Depends:       base < 5.0.0.0, containers, template-haskell, bytestring, th-expand-syns, vector, primitive
 build-type:	     Simple
 ghc-options:         -Wall -fno-warn-name-shadowing -fno-warn-orphans -O2 -fno-spec-constr-count -fno-spec-constr-threshold
 		     -fno-liberate-case-threshold -fmax-worker-args=100
