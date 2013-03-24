@@ -1,5 +1,5 @@
 name:                RefSerialize
-version:             0.2.7
+version:             0.2.8
 synopsis:            Write to and read from Strings maintaining internal memory references
 description:
                      Read, Show and Data.Binary do not check for internal data references to the same address.
@@ -27,32 +27,33 @@ description:
                      .
                      in this release:
                             .
-                            *  bug in 0.2.5 corrected: empty lists were written with two indirections (insertVar . insertVar). That caused an error in readp
+                            * Serialization instance now includes an internal wiriter
                             .
-                            *  bug in 0.2.6 corrected for lists
+                            * Solved a criitical bug only appearing in structures with many references, when StableNames started to be
+                               freed by the gartbage colllector before serialization was completed, which gave erroneous references
                             .
-                            *  removed the problematic instance (Show a, Read a) => Serialize a
+                            *  Bug in 0.2.5 fixed: empty lists were written with two indirections (insertVar . insertVar). That caused an error in readp
+                            .
+                            *  Bug in 0.2.6 fixed for lists
                             .
                             *  Added   instances for standard datatypes. More "deeper" instances favouring more variable usage
                             .
-                            *  instance of Serialize [a] changed
-                     .
-                     To do:
-                     .
-                                 -derived instances for Data.Binary
-                     .
-                                 -serialization to/from ByteStings
+                            *  Instance of Serialize [a] changed
+                             .
+                            *  Derived Serialize instances for Data.Binary instances: readpBinary, showpBinary
+                             .
+                            *- Serialization now is to/from ByteStings
                      
 
-category:           Parsing, Data, Database
-license:             BSD3
-license-file:        LICENSE
-author:              Alberto Gómez Corona
-maintainer:          agocorona@gmail.com
-Tested-With:         GHC == 6.8.2
+category:             Parsing, Data, Database
+license:                BSD3
+license-file:            LICENSE
+author:                Alberto Gómez Corona
+maintainer:           agocorona@gmail.com
+Tested-With:        GHC == 6.8.2
 Build-Type:          Simple
-build-Depends:       base >=3 && <4,containers
-Cabal-Version:       >= 1.2
+build-Depends:      binary,bytestring, base >=4 && <5,containers
 
-exposed-modules:     Data.RefSerialize, Data.Parser, Data.Serialize
+
+exposed-modules:     Data.RefSerialize, Data.RefSerialize.Parser, Data.RefSerialize.Serialize
 ghc-options:    -O2
