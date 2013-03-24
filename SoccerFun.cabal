@@ -1,5 +1,5 @@
 Name:           SoccerFun
-Version:        0.4.2
+Version:        0.4.3
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -13,7 +13,9 @@ Description:
   This is a Haskell port of the the SoccerFun framework originally implemented in Clean. From the website: Soccer-Fun is an educational project to stimulate functional programming by thinking about, designing, implementing, running, and competing with the brains of football players! It is open for participation by everybody who likes to contribute. It is not restricted to a particular functional programming language.
 Category:       Game, Education, AI
 Cabal-Version:  >= 1.6
-Data-Files:     template/Main.hs template/Makefile template/Children/Child.hs template/Children/Team.hs
+Data-Files:
+	template/Main.hs template/Makefile template/Children/Child.hs template/Children/Team.hs
+	tournament/makeAll.sh tournament/makeLoop.sh tournament/Makefile
 
 Library
   Extensions:
