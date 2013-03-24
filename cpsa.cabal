@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.10
+Version:		2.2.11
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -105,6 +105,7 @@ Extra-Source-Files:
   tst/DH_hack.scm tst/DH_hack.tst tst/timestamping.scm tst/timestamping.tst
   tst/ns-l.scm tst/ns-l.tst tst/pen-non-orig-test.scm
   tst/pen-non-orig-test.tst tst/preprocess.scm tst/preprocess.tst
+  tst/incompleteness_example.scm tst/incompleteness_example.tst
 
 -- Algebra implementations must import CPSA.Lib.CPSA.
 -- Tools may additionally import CPSA.Lib.Entry.
