@@ -1,5 +1,5 @@
 Name:                   TernaryTrees
-Version:                0.0.4.0
+Version:                0.1.0.0
 Category:               Data Structures
 Synopsis:               Efficient pure ternary tree Sets and Maps
 Description:            Ternary trees are an efficient structure often used for storing
@@ -11,7 +11,7 @@ Description:            Ternary trees are an efficient structure often used for 
 			as a dictionary program for spell checking, and how it can be 
 			used to serialise data with Don Stewart's Data.Binary package.
 			.
-			From my testing, using the /usr/shart/dict/words file on my system
+			From my testing, using the \/usr\/share\/dict\/words file on my system
 			(over 230,000 words), inserting all words, checking they all exist
 			in the tree, writing them to a binary file, reading them back in
 			and checking the read in result is the same as the original takes
@@ -20,9 +20,16 @@ Description:            Ternary trees are an efficient structure often used for 
 			.
 			New in this version:
 			.
-			* Made the Data.Binary instances much more efficient by using
-			  binary numbers to represent the number of *End nodes.
+			* First major interface change since the first release... (less than
+			  24 hours ago).
 			.
+			* Changed many function names to match those in Data.[Map,Set] to
+			  provide a more familiar interface.
+			.
+			* Added a Functor instance for TernaryMap.
+			.
+			* Added `empty` and `null` functions to all types, and `elems`
+			  to TernaryMap.
 			.
 			&#169; 2009 by Alex Mason (<http://axman6.homeip.net/blog/>). BSD3 license.
 			
