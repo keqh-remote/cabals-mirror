@@ -1,7 +1,7 @@
 cabal-version: >=1.2
 build-type: Simple
 name: uuagc
-version: 0.9.38.5
+version: 0.9.38.6
 license: GPL
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -80,6 +80,8 @@ executable uuagc
     , Knuth1
     , KennedyWarren
     , KWOrder
+    , ExecutionPlan
+    , ExecutionPlan2Hs
   extensions: TypeSynonymInstances, MultiParamTypeClasses
   hs-source-dirs: src, src-derived
 
