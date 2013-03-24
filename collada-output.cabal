@@ -1,5 +1,5 @@
 Name:               collada-output
-Version:            0.1
+Version:            0.2
 Synopsis:           Generate animated 3d objects in COLLADA
 Description:        Generate a COLLADA file with textures, materials, animations, ...
 category:           graphics
@@ -13,12 +13,11 @@ Cabal-Version:    >=1.6
 Library
     hs-source-dirs: src
     build-depends:
-        haskell98,
-        base == 4.*,
+        base ==4.*,
         xml == 1.3.*,
         containers == 0.3.*,
         Vec == 0.9.7,
-        time == 1.1.*,
+        time == 1.*,
         SVGPath == 1.0.*
     exposed-modules:
         Graphics.Formats.Collada.ColladaTypes
