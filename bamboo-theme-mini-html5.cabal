@@ -1,5 +1,5 @@
 Name:                 bamboo-theme-mini-html5
-Version:              2009.11.3
+Version:              2009.11.7
 Build-type:           Simple
 Synopsis:             bamboo mini html5 theme
 Description:          bamboo mini html5 theme
@@ -45,6 +45,7 @@ library
                   , hack-contrib >= 2009.11.1
                   , bamboo >= 2009.11.1
                   , moe >= 2009.11.3
+                  , yuuko >= 2009.10.23.2
   hs-source-dirs: src/
   exposed-modules:  
                     Bamboo.Theme.MiniHTML5
