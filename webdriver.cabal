@@ -1,5 +1,5 @@
 Name: webdriver
-Version: 0.3.0.1
+Version: 0.3.1
 Cabal-Version: >= 1.6
 License: BSD3
 License-File: LICENSE
@@ -38,7 +38,6 @@ library
                  , text >= 0.7 && < 0.12
                  , time == 1.*
                  , transformers >= 0.2
-                 , Cabal >= 1.6
                  , zip-archive >= 0.1.1.7
                  , directory == 1.*
                  , filepath >=1.1
@@ -48,9 +47,11 @@ library
                  , transformers-base < 1.0
                  , vector >= 0.3
                  , lifted-base == 0.1.*
+                 , filesystem-trees == 0.0.*
                  , data-default
-                 , base64-bytestring
                  , temporary
+                 , base64-bytestring
+                 , cond >= 0.3 && < 0.5
 
   exposed-modules: Test.WebDriver
                    Test.WebDriver.Classes
