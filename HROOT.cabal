@@ -1,5 +1,5 @@
 Name:		HROOT
-Version:	0.7
+Version:	0.7.1
 Synopsis:	Wrapper for ROOT
 Description: 	Haskell FFI binding for ROOT  
 Homepage:       http://ianwookim.org/HROOT
@@ -79,6 +79,7 @@ Extra-source-files:
                        csrc/HROOTTLatex.h
                        csrc/HROOTTText.h
                        csrc/HROOTTDirectory.h
+                       csrc/HROOTTROOT.h
                        csrc/HROOTTDirectoryFile.h
                        csrc/HROOTTFile.h
                        csrc/HROOTTBranch.h
@@ -195,6 +196,7 @@ Extra-source-files:
                        csrc/HROOTTLatex.cpp
                        csrc/HROOTTText.cpp
                        csrc/HROOTTDirectory.cpp
+                       csrc/HROOTTROOT.cpp
                        csrc/HROOTTDirectoryFile.cpp
                        csrc/HROOTTFile.cpp
                        csrc/HROOTTBranch.cpp
@@ -258,14 +260,14 @@ Extra-source-files:
                        test/compiletest.hs
 
 Source-repository head
-  type:     darcs
-  location: http://ianwookim.org/public/repo/HROOT
+  type:     git
+  location: https://github.com/wavewave/HROOT, https://github.com/wavewave/HROOT-generate
 
 -- Test-Suite compiletest
 --   default-language: Haskell2010
 --   type: exitcode-stdio-1.0
 --   main-is: compiletest.hs
---   build-depends: base>4, base<5, HROOT==0.7
+--   build-depends: base>4, base<5, HROOT==0.7.1
 --   hs-source-dirs: test
 
 Library
@@ -341,6 +343,7 @@ Library
                        HROOT.Class.TLatex
                        HROOT.Class.TText
                        HROOT.Class.TDirectory
+                       HROOT.Class.TROOT
                        HROOT.Class.TDirectoryFile
                        HROOT.Class.TFile
                        HROOT.Class.TBranch
@@ -459,6 +462,7 @@ Library
                        HROOT.Class.TLatex.RawType
                        HROOT.Class.TText.RawType
                        HROOT.Class.TDirectory.RawType
+                       HROOT.Class.TROOT.RawType
                        HROOT.Class.TDirectoryFile.RawType
                        HROOT.Class.TFile.RawType
                        HROOT.Class.TBranch.RawType
@@ -575,6 +579,7 @@ Library
                        HROOT.Class.TLatex.FFI
                        HROOT.Class.TText.FFI
                        HROOT.Class.TDirectory.FFI
+                       HROOT.Class.TROOT.FFI
                        HROOT.Class.TDirectoryFile.FFI
                        HROOT.Class.TFile.FFI
                        HROOT.Class.TBranch.FFI
@@ -691,6 +696,7 @@ Library
                        HROOT.Class.TLatex.Interface
                        HROOT.Class.TText.Interface
                        HROOT.Class.TDirectory.Interface
+                       HROOT.Class.TROOT.Interface
                        HROOT.Class.TDirectoryFile.Interface
                        HROOT.Class.TFile.Interface
                        HROOT.Class.TBranch.Interface
@@ -807,6 +813,7 @@ Library
                        HROOT.Class.TLatex.Cast
                        HROOT.Class.TText.Cast
                        HROOT.Class.TDirectory.Cast
+                       HROOT.Class.TROOT.Cast
                        HROOT.Class.TDirectoryFile.Cast
                        HROOT.Class.TFile.Cast
                        HROOT.Class.TBranch.Cast
@@ -923,6 +930,7 @@ Library
                        HROOT.Class.TLatex.Implementation
                        HROOT.Class.TText.Implementation
                        HROOT.Class.TDirectory.Implementation
+                       HROOT.Class.TROOT.Implementation
                        HROOT.Class.TDirectoryFile.Implementation
                        HROOT.Class.TFile.Implementation
                        HROOT.Class.TBranch.Implementation
@@ -1053,6 +1061,7 @@ Library
                        HROOTTLatex.h
                        HROOTTText.h
                        HROOTTDirectory.h
+                       HROOTTROOT.h
                        HROOTTDirectoryFile.h
                        HROOTTFile.h
                        HROOTTBranch.h
@@ -1171,6 +1180,7 @@ Library
                        csrc/HROOTTLatex.cpp
                        csrc/HROOTTText.cpp
                        csrc/HROOTTDirectory.cpp
+                       csrc/HROOTTROOT.cpp
                        csrc/HROOTTDirectoryFile.cpp
                        csrc/HROOTTFile.cpp
                        csrc/HROOTTBranch.cpp
