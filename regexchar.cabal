@@ -1,6 +1,6 @@
 --Package-properties
 Name:			regexchar
-Version:		0.9.0.9
+Version:		0.9.0.10
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2010 Dr. Alistair Ward
 License:		GPL
@@ -11,12 +11,12 @@ Synopsis:		A POSIX, extended regex-engine.
 Build-Type:		Simple
 Description:		Provides a POSIX, extended regex-engine, specialised from the underlying /polymorphic/ package /regexdot/, to merely process the traditional character-lists.
 Category:		Regex, Text
-Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
+Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0, GHC == 7.4
 Homepage:		http://functionalley.eu
 Maintainer:		regexchar <at> functionalley <dot> eu
 Bug-reports:		regexchar <at> functionalley <dot> eu
 Data-files:		data/*.txt
-Extra-Source-Files:	man/man1/*.1 *.spec changelog copyright makefile
+Extra-Source-Files:	changelog copyright makefile man/man1/grecce.1 regexchar.spec
 
 flag threaded
     Description:	Link with the threaded runtime.
@@ -39,8 +39,8 @@ Library
         base == 4.*,
         containers,
         parsec == 3.*,
-        regexdot == 0.11.*,
-        toolshed == 0.13.*
+        regexdot >= 0.11.1.0,
+        toolshed == 0.14.*
 
     GHC-options:	-Wall
 
