@@ -1,5 +1,5 @@
 name: dbus-core
-version: 0.3
+version: 0.4
 synopsis: Low-level DBus protocol implementation
 license: GPL
 license-file: License.txt
@@ -16,7 +16,6 @@ extra-source-files:
   Examples/*.hs
   Tests/*.hs
   Tests.hs
-  DBus/Types/Containers.lhs-boot
 
 source-repository head
   type: darcs
@@ -38,22 +37,27 @@ library
     network
 
   exposed-modules:
+    DBus.Address
     DBus.Bus
-    DBus.Bus.Address
-    DBus.Bus.Connection
+    DBus.Connection
+    DBus.Constants
     DBus.Message
     DBus.Types
+
+  other-modules:
+    DBus.Authentication
     DBus.Types.Atom
     DBus.Types.Containers
+    DBus.Types.Containers.Array
+    DBus.Types.Containers.Dictionary
+    DBus.Types.Containers.Structure
+    DBus.Types.Containers.Variant
     DBus.Types.Endianness
     DBus.Types.Names
     DBus.Types.ObjectPath
     DBus.Types.Serial
     DBus.Types.Signature
-
-  other-modules:
-    DBus.Protocol.Authentication
-    DBus.Protocol.Marshal
-    DBus.Protocol.Unmarshal
-    DBus.Protocol.Padding
-    DBus.Types.Util
+    DBus.Marshal
+    DBus.Padding
+    DBus.Unmarshal
+    DBus.Util
