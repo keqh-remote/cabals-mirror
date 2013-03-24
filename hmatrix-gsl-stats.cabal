@@ -1,5 +1,5 @@
 Name:               hmatrix-gsl-stats
-Version:            0.1.2.6
+Version:            0.1.2.7
 License:            GPL
 License-file:       LICENSE
 Copyright:          (c) A.V.H. McPhail 2010
@@ -20,7 +20,7 @@ Description:
 Category:           Math, Statistics, FFI
 tested-with:        GHC ==6.12.1
 
-cabal-version:      >=1.2
+cabal-version:      >=1.6
 
 build-type:         Custom
 
@@ -84,7 +84,7 @@ library
     extra-libraries:
     extra-lib-dirs:
 
-    source-repository head
-        type:     darcs
-        location: darcs get http://code.haskell.org/hmatrix-gsl-stats
+source-repository head
+    type:     darcs
+    location: http://code.haskell.org/hmatrix-gsl-stats
 
