@@ -1,11 +1,11 @@
 Name:                FieldTrip
-Version:             0.2.1
+Version:             0.2.2
 Synopsis: 	     Functional 3D
 Category:            graphics
 Description:
   FieldTrip is a library for functional 3D geometry
   .
-  Please see the project wiki page: <http://haskell.org/haskellwiki/reactive>
+  Please see the project wiki page: <http://haskell.org/haskellwiki/FieldTrip>
   .
   The module documentation pages have links to colorized source code and
   to wiki pages where you can read and contribute user comments.  Enjoy!
