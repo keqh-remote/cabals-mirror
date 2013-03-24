@@ -1,5 +1,5 @@
 Name:           satchmo-backends
-Version:        1.8.2
+Version:        1.9.1
 
 License:        GPL
 License-file:	gpl-2.0.txt
@@ -19,15 +19,14 @@ cabal-version: >= 1.6
 build-type: Simple
 
 library
-    Build-depends: satchmo >= 1.8, process, base == 4.* , containers, bytestring
+    Build-depends: satchmo >= 1.8, process, base == 4.* , containers, array, bytestring, timeit
     Exposed-modules:
         Satchmo.Solver.Minisat
         Satchmo.Solver.Pcosat
-        Satchmo.Solver.Clasp
-        Satchmo.Solver.Quantor
-        Satchmo.Solver.Qube
+        -- Satchmo.Solver.Clasp
+        -- Satchmo.Solver.Quantor
+        -- Satchmo.Solver.Qube
         Satchmo.Solver.Yices
     Other-modules:
         Satchmo.Solver.Internal
     hs-source-dirs:	.
-
