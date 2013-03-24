@@ -1,5 +1,5 @@
 name:           snap-server
-version:        0.8.1.1
+version:        0.9.0
 synopsis:       A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 description:
   Snap is a simple and fast web development framework and server written in
@@ -52,10 +52,6 @@ extra-source-files:
   test/testserver/static/hello.txt
 
 
-Flag libev
-    Description: Use libev?
-    Default:     False
-
 Flag portable
   Description: Compile in cross-platform mode. No platform-specific code or
                optimizations such as C routines will be used.
@@ -82,12 +78,12 @@ Library
     Snap.Internal.Http.Server.Address,
     Snap.Internal.Http.Server.Date,
     Snap.Internal.Http.Server.Backend,
+    Snap.Internal.Http.Server.Config,
     Snap.Internal.Http.Server.ListenHelpers,
     Snap.Internal.Http.Server.HttpPort,
     Snap.Internal.Http.Server.SimpleBackend,
     Snap.Internal.Http.Server.TimeoutManager,
-    Snap.Internal.Http.Server.TLS,
-    Snap.Internal.Http.Server.LibevBackend
+    Snap.Internal.Http.Server.TLS
 
   build-depends:
     array                     >= 0.2      && <0.5,
@@ -100,7 +96,7 @@ Library
     bytestring                >= 0.9.1    && < 0.10,
     bytestring-nums,
     case-insensitive          >= 0.3      && < 0.5,
-    containers                >= 0.3      && < 0.5,
+    containers                >= 0.3      && < 0.6,
     directory-tree            >= 0.10     && < 0.11,
     enumerator                >= 0.4.15   && < 0.5,
     filepath                  >= 1.1      && < 1.4,
@@ -109,15 +105,14 @@ Library
     murmur-hash               >= 0.1      && < 0.2,
     network                   >= 2.3      && < 2.4,
     old-locale,
-    snap-core                 >= 0.8.1    && < 0.9,
+    snap-core                 >= 0.9      && < 0.10,
     template-haskell          >= 2.2      && < 2.8,
     text                      >= 0.11     && < 0.12,
     time                      >= 1.0      && < 1.5,
     transformers              >= 0.2      && < 0.4,
     unix-compat               >= 0.2      && < 0.4,
     vector                    >= 0.7      && < 0.10,
-    vector-algorithms         >= 0.4      && < 0.6,
-    PSQueue                   >= 1.1      && < 1.2
+    vector-algorithms         >= 0.4      && < 0.6
 
   extensions:
     BangPatterns,
@@ -137,10 +132,6 @@ Library
     cpp-options: -DPORTABLE
   else
     build-depends: unix
-
-  if flag(libev)
-    build-depends: hlibev >= 0.2.8 && < 0.5
-    cpp-options: -DLIBEV
 
   if flag(openssl)
     cpp-options: -DOPENSSL
