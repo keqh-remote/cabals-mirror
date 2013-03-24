@@ -1,5 +1,5 @@
 Name:                   apelsin
-Version:                1.1
+Version:                1.2
 Author:                 Christoffer Öjeling
 Maintainer:             christoffer@ojeling.net
 License:                GPL-3
@@ -33,32 +33,39 @@ Flag relativePath
 Executable apelsin
   Default-Language:     Haskell2010
   Default-Extensions:   BangPatterns NamedFieldPuns RecordWildCards
-                        ScopedTypeVariables OverloadedStrings
-  Other-Extensions:     CPP
-  Build-Depends:        base>=4.3&&<5, array, mtl, stm, containers, transformers,
+                        ScopedTypeVariables OverloadedStrings TupleSections GADTs
+  Other-Extensions:     CPP StandaloneDeriving
+  Build-Depends:        base>=4.3&&<5, array, mtl, containers, transformers,
                         bytestring, directory, filepath, HTTP, network,
-                        tremulous-query>=1.0.2, gtk, glib, process
+                        tremulous-query>=1.0.5, gtk, glib, process, deepseq
   Hs-Source-Dirs:       src
   Main-is:              Apelsin.hs
   Other-Modules:        System.Environment.XDG.BaseDir
                         GtkExts
                         About
+                        AutoRefresh
                         ClanFetcher
                         Clanlist
                         Config
                         Constants
+                        ConcurrentUtil
+                        Exception2
                         FilterBar
                         FindPlayers
                         GtkUtils
+                        IndividualServerSettings
                         InfoBox
                         List2
+                        Monad2
+                        NumberSerializer
                         Preferences
                         ServerBrowser
                         ServerInfo
-                        STM2
+                        SettingsDialog
                         Toolbar
                         TremFormatting
                         Types
+                        OnlineClans
                         Paths_apelsin
 
   Ghc-Options:          -Wall -threaded -fno-warn-unused-do-bind -funbox-strict-fields
