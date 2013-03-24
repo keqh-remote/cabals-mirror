@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.1.5.0
+version: 0.1.5.1
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -41,12 +41,16 @@ description: A Web framework with some unique features thanks to the power of th
 category: Web, Application Server
 author: Alberto Gómez Corona
 data-dir: ""
-extra-source-files: src/MFlow/Forms/HSP.hs, Demos/ShoppingCart.hs, Demos/ShoppingCart.Wai.hs, Demos/demos.hs
+extra-source-files:   src/MFlow/Forms/HSP.hs
+                    , src/MFlow/Hack/Response.hs, src/MFlow/Hack.hs
+                    , src/MFlow/Hack/XHtml.hs, src/MFlow/Hack/XHtml/All.hs
+                    , Demos/ShoppingCart.hs, Demos/ShoppingCart.Wai.hs
+                    , Demos/demos.hs
 
 library
     build-depends: Workflow -any, transformers -any, mtl -any,
                    extensible-exceptions -any, xhtml -any, base >4.0 && < 5,
-                   hack -any, hack-handler-simpleserver -any, bytestring -any,
+                   bytestring -any,
                    containers -any, RefSerialize -any, TCache -any, stm >2,
                    old-time -any, vector -any,  directory -any,
                    utf8-string -any, wai -any, case-insensitive -any, http-types -any, conduit -any
@@ -55,7 +59,6 @@ library
     exposed-modules: MFlow.Forms
                      MFlow.Forms.Admin MFlow MFlow.FileServer
                      MFlow.Forms.Ajax MFlow.Cookies
-                     MFlow.Hack.Response, MFlow.Hack MFlow.Hack.XHtml MFlow.Hack.XHtml.All
                      MFlow.Wai.Response, MFlow.Wai, MFlow.Wai.XHtml.All
                      MFlow.Forms.XHtml
 
