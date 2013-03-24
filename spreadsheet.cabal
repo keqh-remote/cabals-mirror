@@ -1,5 +1,5 @@
 Name:             spreadsheet
-Version:          0.1.2
+Version:          0.1.2.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -29,7 +29,7 @@ Flag splitBase
 Library
   Build-Depends:
     utility-ht >=0.0.2 && <0.1,
-    transformers >=0.2 && <0.3,
+    transformers >=0.2 && <0.4,
     explicit-exception >=0.1 && <0.2
   If flag(splitBase)
     Build-Depends: base >= 2 && <5
