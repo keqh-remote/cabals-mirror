@@ -1,10 +1,11 @@
 Name:                cassy
-Version:             0.2.0.1
+Version:             0.2.0.2
 Synopsis:            A high level driver for the Cassandra datastore
 License:             BSD3
 License-file:        LICENSE
 Author:              Ozgun Ataman
 Maintainer:          ozataman@gmail.com
+Homepage:            http://github.com/ozataman/cassy
 Category:            Data
 Build-type:          Simple
 description:
