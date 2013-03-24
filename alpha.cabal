@@ -1,12 +1,12 @@
 name:           alpha
-version:        1.0.13
+version:        1.0.14
 synopsis:       A compiler for the Alpha language
 description:    Alpha is a programming language that aims at being very simple and 
                 low-level, so as to be efficient, while at the same time
                 being able to climb in abstraction through introspection
                 in the Lisp Way.
 category:       Compiler
-homepage:       http://www.alpha-lang.info/
+homepage:       http://www.alpha-lang.net/
 author:         Marc Coiffier
 maintainer:     marc.coiffier@gmail.com
 stability:      alpha
