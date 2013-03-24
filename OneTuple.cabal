@@ -1,7 +1,7 @@
 Name:            OneTuple
-Version:         0.1.0
-Synopsis:        OneTuple, the Singleton Tuple
-Description:     OneTuple, the Singleton Tuple
+Version:         0.1.1
+Synopsis:        Singleton Tuple
+Description:     Singleton Tuple
 Copyright:       (c) John Dorsey 2008
 License:	 BSD3
 License-file:    LICENSE
