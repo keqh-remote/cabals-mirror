@@ -1,5 +1,5 @@
 Name:                cyclotomic
-Version:             0.3
+Version:             0.3.1
 Synopsis:            A subfield of the complex numbers for exact calculation.
 Description:         The cyclotomic numbers are a subset of the
                      complex numbers that are represented exactly, enabling exact
