@@ -1,8 +1,8 @@
 Name:                hsyscall
-Version:             0.1
+Version:             0.2
 Synopsis:            FFI to syscalls
 Description:         FFI to OS syscalls (open, close, sendfile etc...).
-Homepage:            http://sites.google.com/site/iricanaycan/hsyscall
+Homepage:            http://github.com/aycanirican/hsyscall 
 License:             BSD3
 License-file:        LICENSE
 Author:              Aycan iRiCAN
@@ -10,14 +10,13 @@ Maintainer:          aycan.irican@core.gen.tr
 Stability:           Experimental
 Category:            System
 Build-type:          Simple
--- Build-Depends:       base >= 4 && < 5
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
 -- Extra-source-files:  
 
 -- Constraint on the version of Cabal needed to build this package.
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
 
 Library
   -- Modules exported by the library.
@@ -40,3 +39,7 @@ Library
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   Build-tools: hsc2hs
   
+source-repository head
+  type:     git
+  location: git://github.com/aycanirican/hsyscall.git
+
