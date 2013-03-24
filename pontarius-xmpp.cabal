@@ -2,7 +2,7 @@
 -- TODO: Highlighting bug: The last line of the description.
 
 Name:               pontarius-xmpp
-Version:            0.0.2.0
+Version:            0.0.3.0
 Cabal-Version:      >= 1.6
 Build-Type:         Simple
 License:            BSD3
@@ -13,8 +13,8 @@ Maintainer:         jon.kristensen@pontarius.org
 Stability:          alpha
 Homepage:           http://www.pontarius.org/projects/pontarius-xmpp/
 Bug-Reports:        mailto:info@pontarius.org
-Package-URL:        http://www.pontarius.org/releases/pontarius-xmpp-0.0.2.0.tar.gz
-Synopsis:           A (prototyped) easy to use XMPP library
+Package-URL:        http://www.pontarius.org/releases/pontarius-xmpp-0.0.3.0.tar.gz
+Synopsis:           A (prototyped) secure and easy to use XMPP library
 Description:        A work in progress of an implementation of RFC 3920: XMPP
                     Core.
 Category:           Network
@@ -25,12 +25,15 @@ Tested-With:        GHC ==6.12.3
 -- Extra-Tmp-Files:
 
 Library
-  Exposed-Modules:   Network.XMPP.PontariusXMPP
+  Exposed-Modules:   Network.XMPP, Network.XMPP.JID, Network.XMPP.SASL,
+                     Network.XMPP.Session, Network.XMPP.Stanza,
+                     Network.XMPP.Utilities
   Exposed:           True
-  Build-Depends:     hlogger ==0.0.2.0, base >= 2 && < 5, enumerator,
+  Build-Depends:     hlogger ==0.0.3.0, base >= 2 && < 5, enumerator,
                      crypto-api, base64-string, regex-posix, pureMD5,
                      utf8-string, network, xml-types, text, transformers,
-                     bytestring, binary, random, xml-enumerator, tls, containers
+                     bytestring, binary, random, xml-enumerator, tls ==0.4.1,
+                     containers
   -- Other-Modules:
   -- HS-Source-Dirs:
   -- Extensions:
@@ -51,12 +54,13 @@ Library
   -- Pkgconfig-Depends:
   -- Frameworks:
 
-Executable pontarius-xmpp-test
-  Main-Is:           Test.hs
-  Build-Depends:     hlogger ==0.0.2.0, base >= 2 && < 5, enumerator,
-                     crypto-api, base64-string, regex-posix, pureMD5,
-                     utf8-string, network, xml-types, text, transformers,
-                     bytestring, binary, random, xml-enumerator, tls, containers
+-- Executable pontarius-xmpp-test
+  -- Main-Is:           Test.hs
+  -- Build-Depends:     hlogger ==0.0.3.0, base >= 2 && < 5, enumerator,
+  --                    crypto-api, base64-string, regex-posix, pureMD5,
+  --                    utf8-string, network, xml-types, text, transformers,
+  --                    bytestring, binary, random, xml-enumerator, tls ==0.4.1,
+  --                    containers
   -- Other-Modules:
   -- HS-Source-Dirs:
   -- Extensions:
@@ -87,5 +91,5 @@ Source-Repository this
   Type:     darcs
   -- Module:
   Location: https://patch-tag.com/r/jonkri/pontarius-xmpp
-  Tag:      0.0.2.0
+  Tag:      0.0.3.0
   -- Subdir:
