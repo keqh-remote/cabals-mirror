@@ -1,24 +1,28 @@
 Name:                infinity
-Version:             0.1.1
-Description:         a tiny IRC bot, extendable through
-                     plugins written in haskell
-Synopsis:            a tiny IRC bot
-Category:            network
+Version:             0.3
+Description:         a tiny, pluggable irc bot
 License:             BSD3
 License-file:        LICENSE
+Stability:           Provisional
 Author:              Austin Seipp
 Maintainer:          austin@youareinferior.net
-Build-Depends:       base, mtl, network, plugins, haskell98
-Extra-Source-Files:  INSTALL, README,
-		     API.hs,
-		     Utils.hs,
-		     IRC.hs,
+Cabal-Version:       >= 1.2
+Extra-Source-Files:  README,
+		     INSTALL,
+		     PLoader.hs,
+		     Monitor.hs,
 		     Config.hs,
-		     Plugins.hs,
-		     Plugins/PLUGINS
-		     Plugins/GreetPlugin.hs,
-		     Plugins/SystemPlugin.hs
+		     Logger.hs,
+		     PState.hs,
+		     IMain.hs,
+		     Main.hs,
+		     API.hs,
+		     Net.hs,
+		     Plugins/System.hs,
+		     Plugins/Greet.hs,
+		     Plugins/Test.hs
 
-Executable:          infinity
-Main-is:             Infinity.hs
-ghc-options:         -O
+executable infinity
+  main-is:             Main.hs
+  build-depends:       Cabal >= 1.2, plugins >= 1.0, ghc >= 6.6 && < 6.8, binary >= 0.3, filepath, irc >= 0.2.3, base
+  ghc-options:         -O2 -threaded
