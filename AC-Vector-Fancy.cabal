@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Vector-Fancy
-Version:       2.2.0
+Version:       2.3.0
 Stability:     Experimental
 Synopsis:      Fancy type-system stuff for AC-Vector
 
@@ -10,12 +10,9 @@ Description:
   (Requires several language extensions, including
   type families.)
 
-  Names updated to match AC-Vector. Gather modules are now
-  here instead of in AC-Vector, and some module names have
-  changed too for greater consistency. Added a new HasSpace
-  class for generically dealing with structures of
-  different dimensionallities (and updated everything else
-  to use it).
+  Changed the @Project@ class from being multi-parameter
+  to using an associated type. (Should help resolve some
+  of the \"ambiguous type\" errors.)
 
 Category:      Data, Math, Numerical, Graphics
 License:       BSD3
@@ -33,5 +30,5 @@ Library
     Data.Vector.Transform.Fancy,
     Data.BoundingBox,
     Data.BoundingBox.Fancy
-  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.2.0
+  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.3.0
   HS-Source-Dirs:  .
