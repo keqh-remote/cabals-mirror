@@ -1,5 +1,5 @@
 Name:                fclabels-monadlib
-Version:             0.1.0
+Version:             0.1.1
 Synopsis:            MonadLib monadic interface for the "fclabels" package.
 Description:         A MonadLib-compatible monadic interface for the "fclabels" package.
 License:             BSD3
