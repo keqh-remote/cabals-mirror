@@ -1,5 +1,5 @@
 Name:           equal-files
-Version:        0.0.2.1
+Version:        0.0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -23,10 +23,17 @@ Description:
    .
    > find my_dir -type f -printf "'%p'\n" | xargs equal-files
    .
+   or
+   .
+   > equal_files -r my_dir
+   .
    The program reads all input files simultaneously,
    driven by sorting and grouping of their content.
    However be prepared that due to the simultaneous access
    you may exceed the admissible number of opened files.
+   Thus you may prefer to run it like
+   .
+   > equal_files -r -p 512 my_dir
    .
    The program can be used as a nice example of a declarative
    yet efficient implementation of a non-trivial algorithm,
@@ -36,20 +43,15 @@ Tested-With:    GHC==6.8.2
 Cabal-Version:  >=1.2
 Build-Type:     Simple
 
-Flag splitBase
-   description: Choose the new smaller, split-up base package.
-
 Executable equal-files
   Build-Depends:
-    bytestring >= 0.9 && <0.10
-
-  If flag(splitBase)
-    Build-Depends:
-      base >= 3
-  Else
-    Build-Depends:
-      base >= 1.0 && < 2
+    FileManip >= 0.3.2 && <0.4,
+    explicit-exception >= 0.0.2 && < 0.1,
+    mtl >= 1.1 && < 1.2,
+    bytestring >= 0.9 && <0.10,
+    base >= 3
 
   GHC-Options:    -Wall
   Hs-source-dirs: src
-  Main-Is: EqualFiles.hs
+  Other-Modules:  EqualFiles
+  Main-Is:        Main.hs
