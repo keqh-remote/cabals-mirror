@@ -2,7 +2,7 @@
 -- see
 -- http://www.haskell.org/cabal/release/cabal-latest/doc/users-guide/authors.html#pkg-descr.
 Name:                aosd
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Bindings to libaosd, a library for Cairo-based on-screen displays
 Description:         
  <http://www.atheme.org/project/libaosd>
@@ -38,6 +38,10 @@ Category:            Graphics
 Build-type:          Simple
 Extra-source-files:  test/test.hs
 Cabal-version:       >=1.10
+
+source-repository head
+  type:     hg
+  location: https://dschuessler@bitbucket.org/dschuessler/haskell-aosd 
 
 Library
   Default-Extensions: ForeignFunctionInterface
