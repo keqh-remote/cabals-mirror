@@ -1,5 +1,5 @@
 name:                astar
-version:             0.2
+version:             0.2.1
 synopsis:            General A* search algorithm.
 description:         This is a data-structure independent implementation of A* search.
 category:            Data
