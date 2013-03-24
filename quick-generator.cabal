@@ -1,7 +1,7 @@
 Name:                quick-generator
-Version:             0.1
+Version:             0.1.2
 Synopsis:            Generator random test data for QuickCheck
-Category:            Text
+Category:            Testing
 Description:         Generator random test data for QuickCheck
 License:             BSD3
 License-file:        LICENSE
