@@ -1,5 +1,5 @@
 name:           statistics
-version:        0.10.1.0
+version:        0.10.2.0
 synopsis:       A library of statistical types, data, and functions
 description:
   This library provides a number of common functions and types useful
@@ -21,6 +21,26 @@ description:
   .
   * Common statistical tests for significant differences between
     samples.
+  .
+  Changes in 0.10.2.0
+  .
+  * Bugs in DCT and IDCT are fixed.
+  .
+  * Accesors for uniform distribution are added.
+  .
+  * 'ContGen' instances for all continous distribtuions are added.
+  .
+  * Beta distribution is added.
+  .
+  * Constructor for improper gamma distribtuion is added.
+  .
+  * Binomial distribution allows zero trials.
+  .
+  * Poisson distribution now accept zero parameter.
+  .
+  * Integer overflow in caculation of Wilcoxon-T test is fixed.
+  .
+  * Bug in 'ContGen' instance for normal distribution is fixed.
   .
   Changes in 0.10.1.0
   .
@@ -135,6 +155,7 @@ library
     Statistics.Autocorrelation
     Statistics.Constants
     Statistics.Distribution
+    Statistics.Distribution.Beta
     Statistics.Distribution.Binomial
     Statistics.Distribution.CauchyLorentz
     Statistics.Distribution.ChiSquared
@@ -199,10 +220,11 @@ test-suite tests
   other-modules:
     Tests.Distribution
     Tests.Helpers
-    Tests.Math
-    Tests.Math.Tables
+    Tests.Function
     Tests.NonparametricTest
+    Tests.NonparametricTest.Table
     Tests.Transform
+    Tests.KDE
 
   ghc-options:
     -Wall -threaded -rtsopts
@@ -215,6 +237,7 @@ test-suite tests
     test-framework,
     test-framework-quickcheck2,
     test-framework-hunit,
+    math-functions,
     statistics,
     primitive,
     vector,
