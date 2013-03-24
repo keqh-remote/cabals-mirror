@@ -1,5 +1,5 @@
 name:			manatee-core
-version:		0.1.0
+version:		0.1.1
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -24,7 +24,7 @@ maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
 stability:		provisional
 category:		Manatee, Operating System, Desktop Environment, IDE
 
-tested-with:	GHC==7.0.2
+tested-with:	GHC==7.0.3
 build-type:		Simple
 
 Source-Repository head
