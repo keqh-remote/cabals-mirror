@@ -1,5 +1,5 @@
 name:          darcs-benchmark
-version:       0.1.8.2
+version:       0.1.8.3
 synopsis:      Comparative benchmark suite for darcs.
 
 description: A simple tool to compare performance of different Darcs 2.x
@@ -22,7 +22,8 @@ extra-source-files: README
 executable darcs-benchmark
     if impl(ghc >= 6.8)
       ghc-options: -fwarn-tabs
-    ghc-options:   -Wall -threaded
+
+    ghc-options:   -Wall -threaded -fno-warn-unused-do-bind
     ghc-prof-options: -prof -auto-all -threaded
 
     build-depends: base < 5,
