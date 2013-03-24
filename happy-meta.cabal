@@ -1,5 +1,5 @@
 Name:                happy-meta
-Version:             0.2.0.2
+Version:             0.2.0.3
 Synopsis:            Quasi-quoter for Happy parsers
 -- Description:         
 License:             BSD3
@@ -20,7 +20,7 @@ Library
     Text.Happy.Quote
 
   Build-depends:
-      template-haskell >=2.4&&<2.6
+      template-haskell >=2.4&&<2.7
     , haskell-src-meta >=0.3&&<1.0
     , base >= 4.2 && < 5
     , array, containers
