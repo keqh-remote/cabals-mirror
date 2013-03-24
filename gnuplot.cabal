@@ -1,5 +1,5 @@
 Name:             gnuplot
-Version:          0.5.0.2
+Version:          0.5.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -46,7 +46,7 @@ Data-Files:
   data/runtime.data
 
 Source-Repository this
-  Tag:         0.5.0.2
+  Tag:         0.5.1
   Type:        darcs
   Location:    http://code.haskell.org/gnuplot/
 
@@ -75,19 +75,19 @@ Flag executeShell
 
 Library
   Build-Depends:
-    array >= 0.1 && <0.5,
-    containers >= 0.1 && <0.6,
-    utility-ht >= 0.0.1 && < 0.1,
-    monoid-transformer >= 0.0.2 && <0.1
+    array >=0.1 && <0.5,
+    containers >=0.1 && <0.6,
+    utility-ht >=0.0.1 && <0.1,
+    monoid-transformer >=0.0.2 && <0.1
   If flag(splitBase)
     Build-Depends:
-      process >= 1.0 && < 1.2,
-      time >= 1.1 && < 1.5,
-      old-locale >= 1.0 && < 1.1,
-      base >= 2 && <5
+      process >=1.0 && <1.2,
+      time >=1.1 && <1.5,
+      old-locale >=1.0 && <1.1,
+      base >=2 && <5
   Else
     Build-Depends:
-      base >= 1.0 && < 2
+      base >=1.0 && <2
 
   GHC-Options: -Wall
 
