@@ -16,7 +16,7 @@ description:
   code shows how most macros are supposed to be used. More
   examples and reference documentation can be found at project
   homepage.
-version: 1.3.2
+version: 1.3.3
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -44,6 +44,5 @@ library
     Bindings.C.Stdio
     Bindings.C.String
     Bindings.C.Time
-    Bindings.Utils
   cc-options:
     "-D_ISOC99_SOURCE"
