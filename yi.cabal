@@ -1,5 +1,5 @@
 name:           yi
-version:        0.4.1
+version:        0.4.3
 category:       Editor
 synopsis:       The Haskell-Scriptable Editor
 description:
@@ -134,11 +134,12 @@ library
         System.FriendlyPath
         Yi.Region
         Yi.Regex
+        Yi.Buffer.Indent
         Yi.Buffer.HighLevel, Yi.Buffer.Implementation,
         Yi.Buffer.Normal, Yi.Buffer.Region, Yi.Completion, Yi.Core,
-        Yi.Debug, Yi.Dired, Yi.Dynamic, Yi.Editor, Yi.Eval, Yi.Event, Yi.FingerString, Yi.History,
-        Yi.Indent, Yi.Interact, Yi.Keymap, Yi.Keymap.Completion,
-        Yi.Keymap.Emacs.Keys, Yi.Keymap.Emacs.KillRing, Yi.Keymap.Emacs.UnivArgument,
+        Yi.Debug, Yi.Dired, Yi.Dynamic, Yi.Editor, Yi.Eval, Yi.Event, Data.ByteRope, Yi.History,
+        Yi.Interact, Yi.Keymap, Yi.Keymap.Completion,
+        Yi.Keymap.Emacs.KillRing, Yi.Keymap.Emacs.UnivArgument,
         Yi.Keymap.Emacs.Utils, Yi.Main, Yi.MkTemp, Yi.Monad, Yi.Process,
         Yi.Search, Yi.String, Yi.Style, Yi.Templates, Yi.TextCompletion,
         Yi.Undo, Yi.Window, Yi.WindowSet
@@ -264,11 +265,12 @@ executable yi
            Yi.Syntax.Linear
 
            Yi.Accessor, Yi.Interpreter,
+           Yi.Buffer.Indent
            Yi.Buffer.HighLevel, Yi.Buffer.Implementation,
            Yi.Buffer.Normal, Yi.Buffer.Region, Yi.Completion, Yi.Core,
-           Yi.Debug, Yi.Dired, Yi.Dynamic, Yi.Editor, Yi.Eval, Yi.Event, Yi.FingerString, Yi.History,
-           Yi.Indent, Yi.Interact, Yi.Keymap, Yi.Keymap.Completion,
-           Yi.Keymap.Emacs.Keys, Yi.Keymap.Emacs.KillRing, Yi.Keymap.Emacs.UnivArgument,
+           Yi.Debug, Yi.Dired, Yi.Dynamic, Yi.Editor, Yi.Eval, Yi.Event, Data.ByteRope, Yi.History,
+           Yi.Interact, Yi.Keymap, Yi.Keymap.Completion,
+           Yi.Keymap.Emacs.KillRing, Yi.Keymap.Emacs.UnivArgument,
            Yi.Keymap.Emacs.Utils, Yi.Main, Yi.MkTemp, Yi.Monad, Yi.Process,
            Yi.Search, Yi.String, Yi.Style, Yi.Templates, Yi.TextCompletion,
            Yi.Undo, Yi.Window, Yi.WindowSet
