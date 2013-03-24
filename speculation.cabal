@@ -1,5 +1,5 @@
 name:           speculation
-version:        0.5.0
+version:        0.4.0
 license:        BSD3
 license-file:   LICENSE
 author:         Edward A. Kmett
@@ -39,9 +39,11 @@ description:
  .
  'specSTM' provides a similar time table for STM actions, but also rolls back side-effects.
  . 
- /Changes in 0.5.0:/
+ /Changes in 0.3.0:/
  . 
- * Added monadic and transactional folds to Data.Foldable.Speculation. 
+ * Speculative folds moved to 'Data.Foldable.Speculation' and expanded to cover all of the 
+   'Data.Foldable' combinators.
+ * specBy and specOn variants added.
 
 copyright:          (c) 2010 Edward A. Kmett
 build-type:         Simple
