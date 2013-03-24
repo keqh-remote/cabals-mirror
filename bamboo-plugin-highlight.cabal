@@ -1,10 +1,10 @@
 Name:                 bamboo-plugin-highlight
-Version:              2009.6.9
+Version:              2009.7.5
 Build-type:           Simple
-Synopsis:             bamboo-plugin-highlight
+Synopsis:             A highlight middleware
 Description:
         
-    A standard hack middleware that highlights source code automaticaly
+    It uses highlighting-kate to highlight any code inside pre / code with a class attribute hinting the language. It's a proper middleware that works on any html document.
 
 License:              GPL
 License-file:         LICENSE
