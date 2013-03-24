@@ -7,13 +7,14 @@ Name:                floatshow
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.1
+Version:             0.2.0
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.6
 
 -- A short (one-line) description of the package.
-Synopsis:            Alternative faster String representations for Double and Float
+Synopsis:            Alternative faster String representations for Double and Float,
+                     String representations for more general numeric types.
 
 -- A longer description of the package.
 Description:         The String representations provided by this package
@@ -25,6 +26,10 @@ Description:         The String representations provided by this package
                      determine the number without caring whether there's a
                      shorter representation, the display functions of this
                      package can be faster, sometimes by a big margin.
+
+                     Text.FShow.Raw provides building blocks for representations
+                     of numeric types which don't belong to RealFloat but have
+                     some of its functionality.
 
                      The bulk of the code is a minor modification of code from
                      the base package, whence the GHC License is included as
@@ -67,6 +72,7 @@ Flag gmp
 Library
   -- Modules exported by the library.
   Exposed-modules:   Text.FShow.RealFloat
+                     Text.FShow.Raw
 
   -- Packages needed in order to build this package.
   Build-depends:     base >= 4 && < 5, array >= 0.1 && < 0.4
