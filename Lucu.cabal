@@ -8,13 +8,14 @@ Description:
         without messing around FastCGI. It is also intended to be run
         behind a reverse-proxy so it doesn't have some facilities like
         logging, client filtering or such like.
-Version: 0.7.0.1
+Version: 0.7.0.2
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
 Maintainer: PHO <pho at cielonegro dot org>
 Stability: experimental
 Homepage: http://cielonegro.org/Lucu.html
+Bug-Reports: http://static.cielonegro.org/ditz/Lucu/
 Category: Network
 Tested-With: GHC == 7.0.3
 Cabal-Version: >= 1.6
@@ -34,8 +35,8 @@ Extra-Source-Files:
     examples/small-file.txt
 
 Source-Repository head
-    Type: darcs
-    Location: http://darcs.cielonegro.org/Lucu/
+    Type: git
+    Location: git://git.cielonegro.org/Lucu.git
 
 Flag build-lucu-implant-file
     Description: Build the lucu-implant-file program.
@@ -43,22 +44,23 @@ Flag build-lucu-implant-file
 
 Library
     Build-Depends:
-        HsOpenSSL   == 0.10.*,
-        base        == 4.3.*,
-        bytestring  == 0.9.*,
-        containers  == 0.4.*,
-        dataenc     == 0.14.*,
-        filepath    == 1.2.*,
-        directory   == 1.1.*,
-        haskell-src == 1.0.*,
-        hxt         == 9.1.*,
-        mtl         == 2.0.*,
-        network     == 2.3.*,
-        stm         == 2.2.*,
-        time        == 1.2.*,
-        time-http   == 0.1.*,
-        unix        == 2.4.*,
-        zlib        == 0.5.*
+        HsOpenSSL            == 0.10.*,
+        base                 == 4.3.*,
+        base-unicode-symbols == 0.2.*,
+        base64-bytestring    == 0.1.*,
+        bytestring           == 0.9.*,
+        containers           == 0.4.*,
+        filepath             == 1.2.*,
+        directory            == 1.1.*,
+        haskell-src          == 1.0.*,
+        hxt                  == 9.1.*,
+        mtl                  == 2.0.*,
+        network              == 2.3.*,
+        stm                  == 2.2.*,
+        time                 == 1.2.*,
+        time-http            == 0.1.*,
+        unix                 == 2.4.*,
+        zlib                 == 0.5.*
 
     Exposed-Modules:
         Network.HTTP.Lucu
@@ -95,15 +97,6 @@ Library
         Network.HTTP.Lucu.ResponseWriter
         Network.HTTP.Lucu.SocketLike
 
-    Extensions:
-        BangPatterns
-        DeriveDataTypeable
-        FlexibleContexts
-        FlexibleInstances
-        ScopedTypeVariables
-        TypeFamilies
-        UnboxedTuples
-
     ghc-options:
         -Wall
         -funbox-strict-fields
@@ -115,11 +108,6 @@ Executable lucu-implant-file
         Buildable: False
 
     Main-Is: ImplantFile.hs
-
-    Extensions:
-        BangPatterns
-        ScopedTypeVariables
-        UnboxedTuples
 
     ghc-options:
         -Wall
