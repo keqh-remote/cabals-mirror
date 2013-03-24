@@ -1,5 +1,5 @@
 Name:                cqrs
-Version:             0.2.0
+Version:             0.2.1
 Synopsis:            Command-Query Responsibility Segregation
 Description:         Haskell implementation of the CQRS architectural pattern.
   An SQLite3-based backend is included.
