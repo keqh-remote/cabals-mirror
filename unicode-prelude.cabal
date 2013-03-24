@@ -1,12 +1,12 @@
 name:           unicode-prelude
-version:        0.1
+version:        0.1.1
 synopsis:       Unicode notation for some definitions in Prelude
 description:    
     This package adds unicode notation for some definitions in Prelude.
 category:       System
-author:         Peter Divianszky <divip@aszt.inf.elte.hu>
-maintainer:     Peter Divianszky <divip@aszt.inf.elte.hu>
-copyright:      (c) 2008 by Peter Divianszky
+author:         Péter Diviánszky <divip@aszt.inf.elte.hu>
+maintainer:     Péter Diviánszky <divip@aszt.inf.elte.hu>
+copyright:      (c) 2008 by Péter Diviánszky
 license:        BSD3
 license-file:   LICENSE
 stability:      alpha
