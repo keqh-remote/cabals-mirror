@@ -1,6 +1,6 @@
 Name:           terminfo
 Cabal-Version:  >=1.4
-Version:        0.3.2
+Version:        0.3.2.1
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -22,8 +22,8 @@ extra-tmp-files: config.log config.status autom4te.cache terminfo.buildinfo
 Library
     Build-depends:  base >= 1.0 && < 5,
                     extensible-exceptions >= 0.1.1.0 && < 0.2
-    Extensions:     ForeignFunctionInterface, DeriveDataTypeable, EmptyDataDecls,
-                    ScopedTypeVariables, FlexibleInstances
+    Extensions:     CPP, ForeignFunctionInterface, DeriveDataTypeable,
+                    EmptyDataDecls, ScopedTypeVariables, FlexibleInstances
     ghc-options:    -Wall
     Exposed-Modules:
                     System.Console.Terminfo
