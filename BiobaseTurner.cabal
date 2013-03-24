@@ -1,10 +1,10 @@
 name:           BiobaseTurner
-version:        0.0.2.1
+version:        0.0.2.2
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 copyright:      Christian Hoener zu Siederdissen, 2010
 category:       Bioinformatics
-synopsis:       RNA folding data structures.
+synopsis:       (deprecated) RNA folding data structures.
 license:        GPL-3
 license-file:   LICENSE
 build-type:     Simple
@@ -22,7 +22,7 @@ library
     containers,
     parsec >=3 && <4,
     primitive >=0.3 && <0.4,
-    FileManip >=0.3.3 && <0.4,
+    filemanip >=0.3.3 && <0.4,
     split >=0.1.2 && <0.2,
 
     Biobase >=0.0.2 && <0.0.3,
