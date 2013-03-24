@@ -1,7 +1,7 @@
 cabal-version:      >= 1.8
 build-type:         Simple
 name:               shake
-version:            0.3.2
+version:            0.3.3
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -40,8 +40,13 @@ extra-source-files:
     Examples/Tar/list.txt
 
 data-files:
-    html/*.js
-    html/*.css
+    html/bootstrap.js
+    html/bootstrap.css
+    html/bootstrap-responsive.css
+    html/bootstrap-tab.js
+    html/jquery.js
+    html/jquery-flot.js
+    html/shake.js
     html/report.html
 
 source-repository head
