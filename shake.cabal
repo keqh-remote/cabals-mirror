@@ -1,7 +1,7 @@
 cabal-version:      >= 1.8
 build-type:         Simple
 name:               shake
-version:            0.4
+version:            0.5
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -91,6 +91,7 @@ library
 
     exposed-modules:
         Development.Shake
+        Development.Shake.Classes
         Development.Shake.FilePath
 
     other-modules:
