@@ -1,5 +1,5 @@
 name:               vacuum-cairo
-version:            0.1
+version:            0.2
 cabal-version:      >= 1.2
 build-type:         Simple
 license:            BSD3
@@ -27,8 +27,10 @@ description:        Visualize live Haskell data structures using vacuum, graphvi
 
 library
   build-depends:    base >= 3,
-                    vacuum,
+                    vacuum >= 0.0.5,
                     gtk,
+                    parallel,
+                    strict-concurrency,
                     cairo,
                     svgcairo,
                     process,
