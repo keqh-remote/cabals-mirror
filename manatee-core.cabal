@@ -1,5 +1,5 @@
 name:			manatee-core
-version:		0.0.7
+version:		0.0.8
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -47,6 +47,7 @@ Library
          Manatee.Core.Interactive
          Manatee.Core.FileOpenRule
          Manatee.Core.Page
+         Manatee.Core.PageFrame
          Manatee.Core.PageMode
          Manatee.Core.PageView
          Manatee.Core.Config
