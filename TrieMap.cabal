@@ -1,22 +1,15 @@
 name:		     TrieMap
-version:             3.0.1
+version:             4.0.0
 cabal-version:       >= 1.6
 tested-with:	     GHC
 category:            Algorithms
 synopsis:	     Automatic type inference of generalized tries with Template Haskell.
 description:	     Provides a efficient and compact implementation of generalized tries, and Template Haskell tools to generate
-                     the necessary translation code.  This is meant as a drop-in replacement for Data.Map.
-                     
+                     the necessary translation code.  This is meant as a drop-in replacement for Data.Map, and can be used anywhere
+                     @Data.Map@ can be used.
+                     .
                      The most recent release combines zipper-based ideas from recently proposed changes to Data.Map, as well
                      as heavily optimized ByteString and Vector instances based on the vector package.
-                     
-                     Since version 2, unit tests and benchmarks have been taken much more seriously, and major optimizations
-                     have been made.
-                     
-                     Compared to Data.Map and Data.Set, on e.g. @ByteString@s, TrieMaps support 6-12x faster @union@, 
-                     @intersection@, and @difference@ operations, 2x faster @lookup@, but 2x slower @toList@, and 4x slower @filter@.
-                     Other operations are closely tied.  TrieMaps tend to use somewhat more memory, and frequently perform better
-                     with increased heap space and allocation area.
 license:             BSD3
 license-file:	     LICENSE
 author:              Louis Wasserman
@@ -29,10 +22,13 @@ source-repository head
   location:          git@github.com:lowasser/TrieMap.git
 
 Library{
-build-Depends:       base < 5.0.0.0, containers, template-haskell, bytestring, th-expand-syns, vector, primitive
+build-Depends:    base < 5.0.0.0, containers, template-haskell >= 2.5.0.0, bytestring >= 0.9.1.0, th-expand-syns,
+                  vector >= 0.6, primitive >= 0.3, unpack-funcs >= 0.1.2, transformers >= 0.2.0.0
 ghc-options:
   -Wall -fno-warn-name-shadowing -fno-warn-orphans -O2 -fno-spec-constr-count -fno-spec-constr-threshold
   -fno-liberate-case-threshold -fmax-worker-args=100
+if impl(ghc >= 7.0.0)
+  ghc-options: -fllvm -optlo-O3 -optlo-std-compile-opts
 exposed-modules:  
   Data.TrieMap,
   Data.TrieSet,
@@ -41,9 +37,16 @@ exposed-modules:
   Data.TrieMap.Modifiers
 other-modules:
   Control.Monad.Ends,
+  Control.Monad.Lookup,
+  Data.Vector.Build,
   Data.TrieMap.TrieKey,
   Data.TrieMap.Utils,
   Data.TrieMap.Sized,
+  Data.TrieMap.TrieKey.Search,
+  Data.TrieMap.TrieKey.Subset,
+  Data.TrieMap.TrieKey.Buildable,
+  Data.TrieMap.TrieKey.SetOp,
+  Data.TrieMap.TrieKey.Projection,
   Data.TrieMap.Representation.Class,
   Data.TrieMap.Representation.TH,
   Data.TrieMap.Representation.TH.Utils,
