@@ -1,5 +1,5 @@
 Name:         xhb
-Version:      0.1.2009.2.8
+Version:      0.2.2009.2.21
 Cabal-Version:  >= 1.2.3
 Synopsis:     X Haskell Bindings
 Description:
@@ -7,7 +7,7 @@ Description:
   .
   Similar to XCB - the X C Bindings.
   .
-  This library is based on version 1.3 of the xcb-proto
+  This library is based on version 1.4 of the xcb-proto
   package.  See http:\/\/xcb.freedesktop.org\/XmlXcb\/ and
   http:\/\/xcb.freedesktop.org\/dist\/ .
 
