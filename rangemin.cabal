@@ -1,5 +1,5 @@
 name:                rangemin
-version:             2.2.1
+version:             2.2.2
 Cabal-Version:       >= 1.2
 synopsis:            Linear range-min algorithms.
 description:	     
@@ -48,6 +48,10 @@ Library
         Data.RangeMin.LCA.Binary
         Data.RangeMin.Cartesian
   Other-modules:
+        Data.RangeMin.Int
+        Data.RangeMin.Vector
+        Data.RangeMin.Generic
+        Data.RangeMin.Inject
         Data.RangeMin.Common
         Data.RangeMin.Common.Math
         Data.RangeMin.Common.Types
@@ -70,4 +74,4 @@ Library
     ghc-options:     -fllvm -optlc-O3
   if flag(Wall)
     ghc-options:     -Wall -fno-warn-name-shadowing
-  ghc-options:       -O2 -fspec-constr-count=10 -fno-ignore-asserts
+  ghc-options:       -O2 -fspec-constr-count=10 -fno-ignore-asserts -fno-warn-unused-imports
