@@ -1,9 +1,9 @@
 Name:           vector-static
-Version:        0.0.1
+Version:        0.1.0
 License:        BSD3
 License-File:   LICENSE
 Author:         Daniel Peebles <pumpkingod@gmail.com>
-Maintainer:     Daniel Peebles <pumpkingod@gmail.com>
+Maintainer:     Jake McArthur <Jake.McArthur@gmail.com>
 Copyright:      (c) Daniel Peebles 2010
 Homepage:       http://github.com/pumpkin/vector-static
 Stability:      Unstable
@@ -26,7 +26,8 @@ Library
 
         Data.Vector.Static,
         Data.Vector.Mutable.Static,
-      
+        
+        Data.Vector.Unboxed.Fin,      
         Data.Vector.Unboxed.Static,
         Data.Vector.Unboxed.Mutable.Static,
 
@@ -34,4 +35,4 @@ Library
         Data.Vector.Storable.Mutable.Static
         
 
-  Build-Depends: base >= 2 && < 5, mmap >= 0.5.4, vector >= 0.5, primitive >= 0.2.1
+  Build-Depends: base >= 2 && < 5, vector >= 0.5, primitive >= 0.2.1
