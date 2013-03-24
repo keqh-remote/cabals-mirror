@@ -1,5 +1,5 @@
 Name:           SoccerFunGL
-Version:        0.5
+Version:        0.5.1
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -24,7 +24,7 @@ Library
     binary >= 0.5 && < 0.6,
     GLUT >= 2.2 && < 2.3,
     OpenGL >= 2.4 && < 2.5,
-    SoccerFun >= 0.5 && < 0.6,
+    SoccerFun >= 0.5.1 && < 0.6,
     process >= 1.0 && < 1.1
   Exposed-Modules:
     SoccerFun.UI.GL
