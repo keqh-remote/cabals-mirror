@@ -1,5 +1,5 @@
 Name:          curry-frontend
-Version:       0.2.2
+Version:       0.2.3
 Cabal-Version: >= 1.6
 Synopsis:      Compile the functional logic language Curry to several intermediate formats
 Description:   The Curry Frontend consists of the executable program "cymake".
@@ -25,36 +25,29 @@ Data-Files:    src/currydoc.css
 Executable cymake
   hs-source-dirs:   src
   Main-is:          cymake.hs
-  Build-Depends:    base >= 3 && < 4, mtl, old-time, directory, filepath, containers
-  ghc-options:      -fwarn-unused-binds -fwarn-unused-imports
--- -fwarn-incomplete-patterns
-  Other-Modules:    Curry.Base.Position, Curry.Base.Ident, Curry.Base.MessageMonad
-                    Curry.Syntax.Lexer, Curry.Syntax.LexComb
+  Build-Depends:    base >= 3 && < 4, curry-base == 0.2.2, mtl, old-time, containers, pretty
+  ghc-options:      -fwarn-unused-binds -fwarn-unused-imports  -auto-all 
+  Other-Modules:    Curry.Syntax.Lexer, Curry.Syntax.LexComb
                     Curry.Syntax.Parser, Curry.Syntax.LLParseComb
                     Curry.Syntax.ShowModule, Curry.Syntax.Pretty
                     Curry.Syntax, Curry.Syntax.Type
                     Curry.Syntax.Unlit, Curry.Syntax.Utils
-                    Curry.AbstractCurry, Curry.ExtendedFlat
+                    Curry.AbstractCurry,
                     CurryBuilder, IL.Type 
                     CurryCompilerOpts, Modules, Subst, Arity
                     CurryDeps, Eval, IL.Pretty, NestEnv, SyntaxCheck, Base
                     Exports, IL.Scope, SyntaxColoring, CurryEnv
                     IL.CurryToIL, OldScopeEnv, CurryHtml
                     IL.XML, PatchPrelude, TopEnv, CaseCompletion
-                    Imports, PathUtils, Filenames,
+                    Imports,
                     TypeCheck,
                     InterfaceCheck, 
                     Types, Frontend, PrecCheck
                     TypeSubst, GenAbstractCurry
-                    PrettyCombinators, Typing
+                    Typing
                     GenFlatCurry, KindCheck, Qual
                     SCC, Utils, GetOpt
                     Lift, ScopeEnv, WarnCheck
-                    Desugar, Curry.Base.Ident, 
+                    Desugar,  
                     Simplify
-
--- Executable pretty-ecy
---   hs-source-dirs:   src
---   Main-is:          pretty-ecy.hs
---   Build-Depends:    base >= 3 && < 4
 
