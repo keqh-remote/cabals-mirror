@@ -1,5 +1,5 @@
 Name:             cabal-sort
-Version:          0.0.3.1
+Version:          0.0.4
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -42,17 +42,23 @@ Description:
   Problem 2: We ignore flags and merge all dependencies.
   This may lead to dependency cycles that cannot occur for any flag assignment.
   .
+  You also have options @--parallel@ and @--makefile@
+  that support parallel compilation.
+  The first option is for manual parallelization
+  and the second one allows you to compile parallelly using
+  @make@'s @-j@/@--jobs@ option.
+  .
   There is a second program called @ghc-pkg-dep@
   that finds recursively all packages that a set of packages depends on.
   Duplicates are eliminated and the packages are given topologically sorted,
   such that you can use this for recompilation of the packages.
+  The packages must already be registered with @ghc-pkg@.
   .
   > ghc-pkg-dep pkgA-0.1 pkgB-2.3 pkgC-0.1.2
   .
-  Unfortunately ghc-pkg runs quite slowly.
+  On GHC versions before 7.0 ghc-pkg runs quite slowly.
   In order to not get bored you may run the program with @--verbose=2@ option.
-  Maybe there is a way to query the complete GHC package database at once.
-Tested-With:       GHC==6.10.4
+Tested-With:       GHC==6.10.4, GHC==6.12.3
 Cabal-Version:     >=1.6
 Build-Type:        Simple
 Source-Repository head
@@ -62,7 +68,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/cabal-sort/
-  tag:      0.0.3.1
+  tag:      0.0.4
 
 
 Executable cabal-sort
