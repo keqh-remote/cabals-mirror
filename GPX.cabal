@@ -1,13 +1,13 @@
 Name:                GPX
-Version:             0.6.0
+Version:             0.6.1
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            Parse GPX files
 Description:         Parse GPS Exchange (GPX) files using HXT into data structures.
 Homepage:            https://github.com/tonymorris/geo-gpx
 Category:            Utils
-Author:              Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
-Maintainer:          Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>
+Author:              Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>, Thomas DuBuisson
+Maintainer:          Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>, Thomas DuBuisson
 Copyright:           2009 -- 2012 Tony Morris
 Build-Type:          Simple
 Cabal-Version:       >= 1.6
@@ -52,6 +52,7 @@ Library
                      Data.Geo.GPX.Rte
                      Data.Geo.GPX.Metadata
                      Data.Geo.GPX.Gpx
+                     Data.Geo.GPX.Lens
                      Data.Geo.GPX.Lens.MinlatL
                      Data.Geo.GPX.Lens.MaxlatL
                      Data.Geo.GPX.Lens.MinlonL
