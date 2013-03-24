@@ -1,27 +1,28 @@
 Name:              hsc3-rec
-Version:           0.8
+Version:           0.9
 Synopsis:          Haskell SuperCollider Record Variants
 Description:       hsc3-rec provides record variants of the
                    unit generator constructors at hsc3.
 License:           GPL
 Category:          Sound
-Copyright:         (c) Rohan Drape and others, 2008-2010
+Copyright:         (c) Rohan Drape and others, 2008-2011
 Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/?t=hsc3-rec
-Tested-With:       GHC == 6.10.3
+Tested-With:       GHC == 6.12.1
 Build-Type:        Simple
 Cabal-Version:     >= 1.6
 
 Data-files:        README
                    Makefile
+                   mk/build.hs
                    Help/analog-bubbles.hs
                    Help/pitch.hs
 
 Library
   Build-Depends:   base == 4.*,
-                   hsc3 == 0.8
+                   hsc3 == 0.9
   GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.SC3.UGen.Record
                    -- the lines below are generate by running
@@ -74,6 +75,7 @@ Library
                    Sound.SC3.UGen.Record.BufSampleRate
                    Sound.SC3.UGen.Record.BufSamples
                    Sound.SC3.UGen.Record.BufWr
+                   Sound.SC3.UGen.Record.Changed
                    Sound.SC3.UGen.Record.ChaosGen
                    Sound.SC3.UGen.Record.CheckBadValues
                    Sound.SC3.UGen.Record.ClearBuf
@@ -106,6 +108,8 @@ Library
                    Sound.SC3.UGen.Record.DelayC
                    Sound.SC3.UGen.Record.DelayL
                    Sound.SC3.UGen.Record.DelayN
+                   Sound.SC3.UGen.Record.DelTapRd
+                   Sound.SC3.UGen.Record.DelTapWr
                    Sound.SC3.UGen.Record.DemandEnvGen
                    Sound.SC3.UGen.Record.Demand
                    Sound.SC3.UGen.Record.DetectIndex
@@ -119,6 +123,7 @@ Library
                    Sound.SC3.UGen.Record.Done
                    Sound.SC3.UGen.Record.Dpoll
                    Sound.SC3.UGen.Record.Drand
+                   Sound.SC3.UGen.Record.Dreset
                    Sound.SC3.UGen.Record.Dseq
                    Sound.SC3.UGen.Record.Dser
                    Sound.SC3.UGen.Record.Dseries
@@ -127,10 +132,12 @@ Library
                    Sound.SC3.UGen.Record.Dswitch1
                    Sound.SC3.UGen.Record.Dswitch
                    Sound.SC3.UGen.Record.DUGen
+                   Sound.SC3.UGen.Record.Dunique
                    Sound.SC3.UGen.Record.Dust2
                    Sound.SC3.UGen.Record.Dust
                    Sound.SC3.UGen.Record.Duty
                    Sound.SC3.UGen.Record.Dwhite
+                   Sound.SC3.UGen.Record.Dwrand
                    Sound.SC3.UGen.Record.Dxrand
                    Sound.SC3.UGen.Record.DynKlang
                    Sound.SC3.UGen.Record.DynKlank
@@ -178,6 +185,7 @@ Library
                    Sound.SC3.UGen.Record.Impulse
                    Sound.SC3.UGen.Record.Index
                    Sound.SC3.UGen.Record.IndexInBetween
+                   Sound.SC3.UGen.Record.IndexL
                    Sound.SC3.UGen.Record.InFeedback
                    Sound.SC3.UGen.Record.In
                    Sound.SC3.UGen.Record.InRange
@@ -390,3 +398,7 @@ Library
                    Sound.SC3.UGen.Record.XLine
                    Sound.SC3.UGen.Record.XOut
                    Sound.SC3.UGen.Record.ZeroCrossing
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hsc3-rec/
