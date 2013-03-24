@@ -1,5 +1,5 @@
 name:		collections
-version:	0.3
+version:	0.3.1
 category:       Data Structures
 description:    
         This package provides a suite of data structures types, with a consistent API. 
@@ -48,6 +48,7 @@ other-modules:
 	Data.Tree.AVL.Internals.HeightUtils
 include-dirs: 	include
 extra-source-files: include/Typeable.h include/ghcdefs.h include/h98defs.h
-build-depends:	base >= 2.0, QuickCheck
+build-type: Simple
+build-depends:	base >=3 && < 4, QuickCheck, containers, array, bytestring
 extensions:	CPP
-ghc-options:    -O -Wall -fno-warn-name-shadowing -fno-warn-incomplete-patterns
+ghc-options:    -Wall -fno-warn-name-shadowing -fno-warn-incomplete-patterns
