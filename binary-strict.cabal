@@ -1,5 +1,5 @@
 name:            binary-strict
-version:         0.4.5
+version:         0.4.6
 license:         BSD3
 license-file:    LICENSE
 author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
@@ -10,7 +10,7 @@ description:     This is a strict version of the Get monad from the binary
                  original source code. The binary team are currently unsure
                  about their future plans w.r.t. strictness, so this is just a
                  stop gap measure. See
-		 http://www.haskell.org/haskellwiki/DealingWithBinaryData for
+		 <http://www.haskell.org/haskellwiki/DealingWithBinaryData> for
 		 documentation.
 synopsis:        Binary deserialisation using strict ByteStrings
 category:        Data, Parsing
