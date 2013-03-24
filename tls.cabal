@@ -1,5 +1,5 @@
 Name:                tls
-Version:             0.1
+Version:             0.1.1
 Description:
    Implementation of the TLS protocol, focusing on purity and more type-checking.
    .
@@ -32,6 +32,7 @@ Library
                      binary >= 0.5,
                      bytestring,
                      vector,
+                     haskell98,
                      AES, RSA, spoon,
                      cryptocipher,
                      certificate >= 0.2
@@ -62,7 +63,7 @@ executable           Tests
   Main-is:           Tests.hs
   if flag(test)
     Buildable:       True
-    Build-Depends:   base >= 3 && < 5, HUnit, QuickCheck, bytestring, haskell98
+    Build-Depends:   base >= 3 && < 5, HUnit, QuickCheck >= 2 && < 2.3, bytestring, haskell98
   else
     Buildable:       False
 
