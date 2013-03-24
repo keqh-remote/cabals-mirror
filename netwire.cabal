@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       4.0.0
+Version:       4.0.1
 Category:      Control, FRP
 Synopsis:      Flexible wire arrows for FRP
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -82,8 +82,8 @@ Library
 --     Default-language: Haskell2010
 --     Default-extensions:
 --         Arrows
---         DoRec
 --         OverloadedStrings
+--         RecursiveDo
 --         TupleSections
 --     Hs-source-dirs: test
 --     Main-is: Main.hs
