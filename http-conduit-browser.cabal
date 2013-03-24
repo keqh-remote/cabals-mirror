@@ -1,5 +1,5 @@
 name:            http-conduit-browser
-version:         1.9.0
+version:         1.8.1.1
 license:         BSD3
 license-file:    LICENSE
 author:          Myles C. Maxfield <myles.maxfield@gmail.com>
@@ -22,7 +22,7 @@ source-repository head
 
 library
     build-depends: base                  >= 4       && < 5
-                 , http-conduit          >= 1.9   && < 1.10
+                 , http-conduit          >= 1.8.5   && < 1.9
                  , data-default
                  , cookie
                  , case-insensitive
@@ -35,7 +35,7 @@ library
                  , containers
                  , socks
                  , network               >= 2.3
-                 , failure
+                 , failure               >= 0.2
                  , monad-control
                  , resourcet             >= 0.3    && < 0.5
                  , certificate, tls
@@ -43,14 +43,12 @@ library
     ghc-options:     -Wall
 
 test-suite test
-    main-is: main.hs
+    main-is: test/main.hs
     type: exitcode-stdio-1.0
-    hs-source-dirs: test
+    hs-source-dirs: ., test
 
     ghc-options:   -Wall
-    build-depends:
-                   http-conduit-browser
-                 , base >= 4 && < 5
+    build-depends: base >= 4 && < 5
                  , HUnit
                  , hspec >= 1.3
                  , http-conduit
