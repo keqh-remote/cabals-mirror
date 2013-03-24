@@ -2,7 +2,7 @@ Name: bindings-audiofile
 Synopsis: Low level bindings to audiofile
 Description:
         Bindings to audiofile: <http://www.68k.org/~michael/audiofile/>
-Version: 0.1.0.1
+Version: 0.1.0.2
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
