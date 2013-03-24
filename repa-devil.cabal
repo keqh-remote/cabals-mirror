@@ -1,5 +1,5 @@
 Name:                repa-devil
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Support for image reading and writing of Repa arrays
 
 Description:         The repa-image library adds support for reading and
