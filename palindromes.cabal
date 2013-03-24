@@ -1,5 +1,5 @@
 name:                   palindromes
-version:                0.1
+version:                0.1.1
 synopsis:               Finding palindromes in strings
 homepage:               http://www.jeuring.net/Palindromes
 description:
@@ -7,7 +7,7 @@ description:
   FindingPalindromes is an executable and a library which takes a file name, and 
   returns information about palindromes in the file.
 
-category:               Algorithm
+category:               Algorithms
 copyright:              (c) 2007 - 2009 Johan Jeuring
 license:                BSD3
 license-file:           LICENSE
@@ -25,13 +25,13 @@ tested-with:            GHC == 6.10.1
 
 Library
   hs-source-dirs:       src
-  exposed-modules:      Data.Algorithm.Palindromes.Palindromes
+  exposed-modules:      Data.Algorithms.Palindromes.Palindromes
 
 Executable	            palindromes
-  Main-is:				Data/Algorithm/Palindromes/Main.hs
+  Main-is:				Data/Algorithms/Palindromes/Main.hs
   ghc-options:          -Wall
   hs-source-dirs:       src
-  other-modules:        Data.Algorithm.Palindromes.Palindromes
+  other-modules:        Data.Algorithms.Palindromes.Palindromes
 
 
   build-depends:        base >= 3.0 && < 4.0,
