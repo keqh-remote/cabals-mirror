@@ -1,5 +1,5 @@
 name:           criterion
-version:        0.5.0.5
+version:        0.5.0.7
 synopsis:       Robust, reliable performance measurement and analysis
 license:        BSD3
 license-file:   LICENSE
@@ -12,7 +12,7 @@ bug-reports:    http://bitbucket.org/bos/criterion/issues
 build-type:     Simple
 cabal-version:  >= 1.6
 extra-source-files:
-  README
+  README.markdown
   examples/Fibber.hs
   examples/Judy.hs
   examples/Makefile
@@ -30,6 +30,10 @@ description:
 flag Chart
   description: enable use of the Chart package
   -- Broken under GHC 6.12 so far.
+  default: False
+
+flag gtk
+  description: enable displaying charts in GTK+ windows
   default: False
 
 library
@@ -53,19 +57,22 @@ library
     deepseq >= 1.1.0.0,
     filepath,
     mtl,
-    mwc-random >= 0.7.0.0,
+    mwc-random >= 0.8.0.3,
     parallel,
     parsec >= 3.1.0,
-    statistics >= 0.6.0.0,
+    statistics >= 0.8.0.5,
     time,
-    vector >= 0.6.0.2,
-    vector-algorithms >= 0.3.2
+    vector >= 0.7.0.0,
+    vector-algorithms >= 0.4
 
   if flag(chart)
     build-depends:
-      Chart >= 0.13 && < 0.14,
+      Chart >= 0.13 && < 0.15,
       data-accessor
     cpp-options: -DHAVE_CHART
+
+  if flag(gtk)
+    cpp-options: -DHAVE_GTK
 
   -- gather extensive profiling data for now
   ghc-prof-options: -auto-all
