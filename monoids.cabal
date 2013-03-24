@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.21
+version:	    0.1.25
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -30,8 +30,12 @@ library
     array >= 0.2 && < 0.3,
     reflection >= 0.1 && < 0.2
   exposed-modules:
+    Data.Field
+    Data.Field.VectorSpace
     Data.Group
     Data.Group.Combinators
+    Data.Group.Multiplicative
+    Data.Group.Multiplicative.Sugar
     Data.Group.Sugar
     Data.Monoid.Additive
     Data.Monoid.Additive.Sugar
@@ -39,10 +43,11 @@ library
     Data.Monoid.Categorical
     Data.Monoid.Combinators
     Data.Monoid.FromString
-    Data.Monoid.Generator
-    Data.Monoid.Generator.Free
-    Data.Monoid.Generator.LZ78
-    Data.Monoid.Generator.RLE
+    Data.Generator
+    Data.Generator.Combinators
+    Data.Generator.Compressive.LZ78
+    Data.Generator.Compressive.RLE
+    Data.Generator.Free
     Data.Monoid.Instances
     Data.Monoid.Lexical.SourcePosition
     Data.Monoid.Lexical.UTF8.Decoder
@@ -57,6 +62,7 @@ library
     Data.Monoid.Self
     Data.Monoid.Union
     Data.Ring
+    Data.Ring.Algebra
     Data.Ring.Boolean
     Data.Ring.FromNum
     Data.Ring.ModularArithmetic
@@ -68,5 +74,5 @@ library
     Data.Ring.Semi.Ord
     Data.Ring.Semi.Tropical
     Data.Ring.Sugar
-    
+
   ghc-options: -Wall -fno-warn-duplicate-exports
