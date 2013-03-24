@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.3.7
+version:       0.3.8
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -19,7 +19,7 @@ maintainer:    Petr Rockai <me@mornfall.net>
 category:      System
 build-type:    Custom
 cabal-version: >= 1.6
-extra-source-files: Bundled/sha2.h
+extra-source-files: Bundled/sha2.h, testdata.zip
 
 flag test
     default: False
