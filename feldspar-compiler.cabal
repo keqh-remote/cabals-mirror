@@ -1,10 +1,10 @@
 name:           feldspar-compiler
-version:        0.1
-cabal-version:  >= 1.2
+version:        0.2
+cabal-version:  >= 1.2.3
 build-type:     Simple
 license:        BSD3
 license-file:   LICENSE
-copyright:      Copyright (c) 2009, ERICSSON AB
+copyright:      Copyright (c) 2009-2010, ERICSSON AB
 author:         Feldspar group,
                 Eotvos Lorand University Faculty of Informatics
 maintainer:     deva@inf.elte.hu
@@ -19,32 +19,54 @@ description:    Feldspar (**F**unctional **E**mbedded **L**anguage for **DSP**
                 language both according to ANSI C and also targeted to a real
                 DSP HW.
 category:       Compiler
-tested-with:    GHC==6.10.4
+tested-with:    GHC==6.10.*
 
 library
   exposed-modules:
+    Feldspar.Compiler.Imperative.CodeGeneration
     Feldspar.Compiler.Imperative.Representation
-    Feldspar.Compiler.Optimization.PrimitiveInstructions
-    Feldspar.Compiler.Optimization.Replace
-    Feldspar.Compiler.Optimization.Simplification
-    Feldspar.Compiler.Optimization.Unroll
+    Feldspar.Compiler.Imperative.Semantics
+    Feldspar.Compiler.PluginArchitecture.DefaultConvert
+    Feldspar.Compiler.Plugins.BackwardPropagation
+    Feldspar.Compiler.Plugins.ConstantFolding
+    Feldspar.Compiler.Plugins.ForwardPropagation
+    Feldspar.Compiler.Plugins.HandlePrimitives
+    Feldspar.Compiler.Plugins.Precompilation
+    Feldspar.Compiler.Plugins.PrettyPrint
+    Feldspar.Compiler.Plugins.PropagationUtils
+    Feldspar.Compiler.Plugins.Unroll
     Feldspar.Compiler.Precompiler.Precompiler
     Feldspar.Compiler.Transformation.GraphToImperative
     Feldspar.Compiler.Transformation.GraphUtils
     Feldspar.Compiler.Transformation.Lifting
     Feldspar.Compiler.Compiler
+    Feldspar.Compiler.Error
     Feldspar.Compiler.Options
+    Feldspar.Compiler.PluginArchitecture
     Feldspar.Compiler
     Feldspar.Fs2dot
 
   build-depends:
-    feldspar-language, base >= 3 && < 4, containers, directory, filepath,
-    haskell-src-exts, hint, mtl, process
+    feldspar-language == 0.2,
+    base >= 4.0 && < 4.2,
+    containers,
+    haskell-src-exts,
+    directory,
+    filepath,
+    hint,
+    MonadCatchIO-mtl,
+    mtl,
+    process
 
   extensions:
+    EmptyDataDecls
+    FlexibleContexts
     FlexibleInstances
+    MultiParamTypeClasses
+    Rank2Types
+    TypeFamilies
     TypeSynonymInstances
-    NoMonomorphismRestriction
+    UndecidableInstances
 
   include-dirs:
     ./Feldspar/C
@@ -58,8 +80,13 @@ executable feldspar
 
   extensions:
     CPP
+    EmptyDataDecls
+    FlexibleContexts
     FlexibleInstances
+    MultiParamTypeClasses
+    Rank2Types
+    TypeFamilies
     TypeSynonymInstances
-    NoMonomorphismRestriction
+    UndecidableInstances
 
   cpp-options: -DRELEASE
