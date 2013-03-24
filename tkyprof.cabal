@@ -1,5 +1,5 @@
 name:                 tkyprof
-version:              0.0.4
+version:              0.0.5.1
 license:              BSD3
 license-file:         LICENSE
 author:               Mitsutoshi Aoe
@@ -19,12 +19,13 @@ data-files:           static/js/d3.layout.min.js
                       static/js/jquery.iframe-transport.js
                       static/js/jquery.pjax.js
                       static/js/jquery.ui.widget.js
+                      static/images/*.png
+                      config/favicon.png
+
+extra-source-files:   config/routes
                       hamlet/*.hamlet
                       julius/*.julius
                       lucius/*.lucius
-                      config/favicon.ico
-
-extra-source-files:   config/routes
 
 flag production
   description:        Build the production executable.
@@ -85,6 +86,7 @@ library
   other-modules:      TKYProf
                       Handler.Home
                       Handler.Reports
+                      Handler.Reports.Helpers
                       Model
                       Paths_tkyprof
                       ProfilingReport
