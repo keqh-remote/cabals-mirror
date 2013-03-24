@@ -1,13 +1,11 @@
 name:            ieee
-version:         0.6.1
+version:         0.7
 homepage:        http://github.com/patperry/hs-ieee
-synopsis:        Approximate comparisons for IEEE floating point numbers
+synopsis:        Utilities for dealing with IEEE floating point numbers
 description:
-    Approximate comparison of floating point numbers based on the
-    algorithm in Section 4.2.2 of Knuth's _Seminumerical Algorithms_,
-    NaN-aware minimum and maximum, and a type class for approximate 
-    comparisons.
-    .
+    Utilities for dealing with IEEE floating point numbers, ported
+    from the Tango math library; approximate and exact equality
+    comparisons for general types.
 category:        Math
 license:         BSD3
 license-file:    LICENSE
@@ -15,17 +13,33 @@ copyright:       (c) 2010. Patrick Perry <patperry@gmail.com>
 author:          Patrick Perry
 maintainer:      Patrick Perry <patperry@gmail.com>
 cabal-version: >= 1.2.0
-build-type:      Custom
-tested-with:     GHC ==6.12.2
+build-type:      Simple
+tested-with:     GHC ==6.12.3
 
-extra-source-files: NEWS tests/Properties.hs
+extra-source-files: LICENSE.Tango NEWS cbits/feqrel_source.c
+                    tests/Makefile tests/Tests.hs
+
+flag big_endian
+  description: Build for a big endian machine.  Beware that only
+               little endian machines have been tested.
+  default:     False
 
 library
     exposed-modules: Data.AEq
                      Numeric.IEEE
 
-    build-depends:   base >= 3 && < 5
+    extensions:      FlexibleInstances
+                     ForeignFunctionInterface
 
+    build-depends:   base >= 3 && < 5
     ghc-options:     -Wall
 
-    extensions:      CPP
+
+    c-sources:       cbits/float.c
+                     cbits/double.c
+
+    cc-options:      -Wall --std=c99
+    if flag(big_endian)
+        cc-options:  -DBIG_ENDIAN
+
+    extra-libraries: m
