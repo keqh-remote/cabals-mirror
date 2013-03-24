@@ -1,11 +1,11 @@
 name:                gitit
-version:             0.4.1.3
+version:             0.5
 Cabal-version:       >= 1.2
 build-type:          Simple
-synopsis:            Wiki using HAppS, git, and pandoc.
+synopsis:            Wiki using HAppS, git or darcs, and pandoc.
 description:         Gitit is a wiki program. Pages and uploaded files
-                     are stored in a git repository and may be modified
-                     either by using git's command-line tools or through
+                     are stored in a git or darcs repository and may be modified
+                     either by using the VCS's command-line tools or through
                      the wiki's web interface. Pandoc's extended version
                      of markdown is used as a markup language. Pages
                      can be exported in a number of different formats,
@@ -42,15 +42,14 @@ data-files:          css/screen.css, css/print.css, css/ie.css, css/hk-pyg.css,
 Executable           gitit
   hs-source-dirs:    .
   main-is:           Gitit.hs 
-  other-modules:     Gitit.State, Gitit.Git, Gitit.HAppS, Gitit.Shell
+  other-modules:     Gitit.State, Gitit.HAppS, Gitit.MimeTypes,
                      Paths_gitit
   build-depends:     base >=3, parsec < 3, pretty, xhtml, containers, pandoc
                      >= 1.1, process, filepath, directory, mtl, cgi,
                      network, old-time, highlighting-kate, bytestring,
                      utf8-string, HAppS-Server >= 0.9.3 && < 0.9.4,
-                     HAppS-State >= 0.9.3 && < 0.9.4,
-                     HAppS-Data >= 0.9.3 && < 0.9.4, SHA > 1, HTTP,
-                     HStringTemplate, random, network >= 2.1.0.0, recaptcha >= 0.1
+                     SHA > 1, HTTP, HStringTemplate, random, network >= 2.1.0.0,
+                     recaptcha >= 0.1, filestore, datetime, zlib
   if impl(ghc >= 6.10)
     build-depends:   base >= 4, syb
   ghc-options:       -Wall -threaded
