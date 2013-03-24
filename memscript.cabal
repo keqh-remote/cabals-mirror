@@ -1,6 +1,6 @@
 Name:                memscript
 Synopsis:            Command line utility for memorizing scriptures or any other text
-Version:             0.0.1.1
+Version:             0.0.2.0
 Homepage:            http://hackage.haskell.org/cgi-bin/hackage-scripts/package/memscript
 Category:            Education
 License:             GPL
@@ -32,7 +32,7 @@ Description: "memscript <filename>"
   This update of the version is simply because there has been 
   some changes in the System.IO library, fixing the problem of
   handling multibyte characters becaus of the library update
-  (no need to use System.IO.UTF8 any more).
+  (no need to use utf8-string any more).
 
 Data-files:
   001en.txt
@@ -46,7 +46,7 @@ Data-files:
 
 Executable memscript
   main-is: MemScript.hs
-  build-depends: base >= 4 && < 6, readline, utf8-string
+  build-depends: base >= 4 && < 6, readline
   ghc-options: -Wall -O2
 
 
