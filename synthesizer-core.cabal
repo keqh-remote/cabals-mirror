@@ -1,5 +1,5 @@
 Name:           synthesizer-core
-Version:        0.4.0.4
+Version:        0.4.1
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -18,6 +18,10 @@ Description:
 -- the Overview module does not really fit into one of the part packages
 --   For an overview of the organization of the package
 --   and the discussion of various design issues see "Synthesizer.Overview".
+   .
+   Functions:
+     Oscillators, Noise generators, Frequency filters,
+     Fast Fourier transform for computation of frequency spectrum
 Stability:      Experimental
 Tested-With:    GHC==6.4.1, GHC==6.8.2, GHC==6.10.4
 Cabal-Version:  >=1.6
@@ -48,7 +52,7 @@ Flag buildTests
 
 
 Source-Repository this
-  Tag:         0.4.0.4
+  Tag:         0.4.1
   Type:        darcs
   Location:    http://code.haskell.org/synthesizer/core/
 
@@ -63,7 +67,8 @@ Library
     transformers >=0.2 && <0.3,
     event-list >=0.1 && <0.2,
     non-negative >=0.1 && <0.2,
-    numeric-prelude >=0.2 && <0.3,
+    explicit-exception >=0.1.6 && <0.2,
+    numeric-prelude >=0.2.1 && <0.3,
     numeric-quest >=0.1 && <0.2,
     utility-ht >=0.0.5 && <0.1,
     filepath >=1.1 && <1.2,
@@ -85,7 +90,7 @@ Library
       Build-Depends: base >= 3 && <4
     Build-Depends:
       array >=0.1 && <0.4,
-      containers >=0.1 && <0.4,
+      containers >=0.1 && <0.5,
       random >=1.0 && <2.0,
       process >=1.0 && <1.1
   Else
@@ -184,23 +189,27 @@ Library
     Synthesizer.State.ToneModulation
     Synthesizer.Causal.Process
     Synthesizer.Causal.Arrow
+    Synthesizer.Causal.Analysis
     Synthesizer.Causal.Cut
     Synthesizer.Causal.Displacement
     Synthesizer.Causal.Interpolation
     Synthesizer.Causal.Oscillator
     Synthesizer.Causal.Oscillator.Core
     Synthesizer.Causal.ToneModulation
+    Synthesizer.Causal.Spatial
     Synthesizer.Causal.Filter.NonRecursive
     Synthesizer.Causal.Filter.Recursive.Integration
     Synthesizer.Generic.Analysis
     Synthesizer.Generic.Cut
     Synthesizer.Generic.Control
+    Synthesizer.Generic.Cyclic
     Synthesizer.Generic.Displacement
     Synthesizer.Generic.Filter.NonRecursive
     Synthesizer.Generic.Filter.Delay
     Synthesizer.Generic.Filter.Recursive.Integration
     Synthesizer.Generic.Filter.Recursive.MovingAverage
     Synthesizer.Generic.Filter.Recursive.Comb
+    Synthesizer.Generic.Fourier
     Synthesizer.Generic.Interpolation
     Synthesizer.Generic.Loop
     Synthesizer.Generic.Noise
@@ -219,6 +228,9 @@ Library
 
   Other-Modules:
     Synthesizer.Basic.ComplexModule
+    Synthesizer.Basic.NumberTheory
+    Synthesizer.Generic.Permutation
+    Synthesizer.Generic.LengthSignal
 
 
 Executable test
@@ -243,9 +255,37 @@ Executable test
     Test.Sound.Synthesizer.Plain.ToneModulation
     Test.Sound.Synthesizer.Plain.Wave
     Test.Sound.Synthesizer.Basic.ToneModulation
+    Test.Sound.Synthesizer.Basic.NumberTheory
+    Test.Sound.Synthesizer.Generic.Cut
     Test.Sound.Synthesizer.Generic.ToneModulation
+    Test.Sound.Synthesizer.Generic.Permutation
+    Test.Sound.Synthesizer.Generic.Fourier
+    Test.Sound.Synthesizer.Generic.FourierInteger
+    Test.Sound.Synthesizer.Generic.Filter
     Test.Sound.Synthesizer.Storable.Cut
+    Test.Sound.Synthesizer.Causal.Analysis
   Main-Is: Test/Main.hs
+
+
+Executable fouriertest
+  If flag(buildProfilers)
+    Build-Depends:
+      storablevector >=0.2.7 && <0.3,
+      utility-ht >=0.0.5 && <0.1,
+      storable-tuple >=0.0.1 && <0.1,
+      numeric-prelude >=0.2 && <0.3,
+      timeit >=1.0 && <1.1,
+      base >=4 && <5
+  Else
+    Buildable: False
+
+  GHC-Options:    -Wall -auto-all
+  Hs-Source-Dirs: speedtest, src
+  If flag(category)
+    Hs-Source-Dirs: src-4
+  Else
+    Hs-Source-Dirs: src-3
+  Main-Is:        Fourier.hs
 
 Executable speedtest
   If !flag(buildProfilers)
