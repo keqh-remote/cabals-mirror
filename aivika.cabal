@@ -1,5 +1,5 @@
 name:            aivika
-version:         0.4
+version:         0.4.1
 synopsis:        A multi-paradigm simulation library
 description:
     Aivika is a small simulation library that covers many paradigms. 
@@ -50,6 +50,8 @@ extra-source-files:  examples/BassDiffusion.hs
                      examples/MachRep2.hs
                      examples/MachRep3.hs
                      examples/Furnace.hs
+                     examples/TimeOut.hs
+                     examples/TimeOutInt.hs
 
 data-files:          doc/aivika.pdf
 
