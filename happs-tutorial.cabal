@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.6.3
+Version:             0.6.4
 Synopsis:            A HAppS Tutorial that is is own web 2.0-type demo. 
 Description:         A nice way to learn how to build web sites with HAppS
 
@@ -23,7 +23,7 @@ Extra-Source-Files:
     static/*.css
     templates/*.st
 
-Cabal-Version:       >= 1.2
+Cabal-Version:       >= 1.6
 
 Executable happs-tutorial
     Main-is:             Main.hs
