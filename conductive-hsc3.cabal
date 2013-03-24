@@ -7,7 +7,7 @@ Name:                conductive-hsc3
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3
+Version:             0.3.1
 
 -- A short (one-line) description of the package.
 Synopsis:            a library with examples of using Conductive with hsc3
@@ -53,7 +53,7 @@ Library
   Exposed-modules:     Sound.Conductive.HSC3Utilities, Sound.Conductive.Synths
   
   -- Packages needed in order to build this package.
-  Build-depends:       base == 4.*, conductive-base >= 0.3, conductive-song >=0.2, containers, directory, filepath, hosc, hsc3, random 
+  Build-depends:       base == 4.*, conductive-base >= 0.3, conductive-song >=0.2, containers, directory, filepath, hosc, hsc3 >= 0.11 && < 0.12, random 
   
   -- Modules not exported by this package.
   -- Other-modules:       
