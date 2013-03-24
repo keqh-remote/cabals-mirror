@@ -1,5 +1,5 @@
 Name: FTPLine
-Version: 1.2.0
+Version: 1.3.0
 Cabal-Version: >= 1.6
 License: BSD3
 License-file: license
@@ -10,26 +10,24 @@ Category: Network
 Synopsis: A command-line FTP client.
 Description: A command-line FTP client. Type @help@ for a list of commands. Online documentation at the homepage.
              .
-             Changes from last version:
+             Changes from the last version:
              .
-             * Echoing of @stdin@ is turned off while running @pause@ command.
+             * Now, mtl dependency is == 2.0.*.
              .
-             * New field (@interactive@) in the state record.
+             * Due to the update to mtl-2, now haskeline dependency is >= 0.6.3.2 && < 0.7.
              .
-             * New login method, with hidden password. Now haskeline dependency is @>= 0.6.3 && < 0.7@.
+             * New feature: Reestablishing of last connection and login.
              .
-             * Added history.
-             .
-             * Added a few notes in the @help@ command.
+             * Current mode (local or remote) is displayed when switching between them.
 Build-Type: Simple
 
 Executable FTPLine
   Build-depends: base == 4.*
-               , mtl
+               , mtl == 2.0.*
                , ftphs
                , directory
                , network
-               , haskeline >= 0.6.3 && < 0.7
+               , haskeline >= 0.6.3.2 && < 0.7
                , ansi-terminal
                , strict
                , bytestring
