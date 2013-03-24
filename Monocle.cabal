@@ -1,6 +1,6 @@
 Name:                Monocle
 Cabal-Version:       >= 1.2
-Version:             0.0.1
+Version:             0.0.2
 Synopsis:            Symbolic computations in strict monoidal categories with LaTeX output.
 Description:         Symbolic computations in strict monoidal categories with LaTeX output.
                      See monocle-test.hs.
@@ -17,5 +17,5 @@ Stability:           alpha
 
 Library
     exposed-modules:     Monocle.Utils, Monocle.Core, Monocle.Markup, Monocle.Tex, Monocle
-    build-depends:       base >= 3 && < 5
+    build-depends:       base >= 3 && < 5, containers, mtl, haskell98
   
