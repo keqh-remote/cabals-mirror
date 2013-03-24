@@ -1,5 +1,5 @@
 name:                control-event
-version:             0.1
+version:             0.2
 synopsis:            Event scheduling system.
 description:         Allows scheduling and canceling of IO actions to be
                      executed at a specified future time.
@@ -10,7 +10,7 @@ author:              Thomas DuBuisson
 maintainer:          Thomas.DuBuisson@gmail.com
 build-type:          Simple
 build-Depends:       base, old-time, containers >= 0.1, stm
-ghc-options:         DeriveDataTypeable
+extensions:          DeriveDataTypeable
 exposed-modules:     Control.Event, Control.Event.Timeout
 stability:           alpha
 tested-with:         GHC == 6.8.2
