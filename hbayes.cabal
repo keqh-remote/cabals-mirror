@@ -7,7 +7,7 @@ Name:                hbayes
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3
+Version:             0.4
 
 -- A short (one-line) description of the package.
 Synopsis:            Inference with Discrete Bayesian Networks
@@ -74,6 +74,12 @@ Library
     Bayes.Examples
     Bayes.Examples.Tutorial
     Bayes.Test.ReferencePatterns
+    Bayes.Test.InfluencePatterns
+    Bayes.ImportExport
+    Bayes.BayesianNetwork
+    Bayes.InfluenceDiagram
+    Bayes.VariableElimination.Buckets
+    Bayes.Examples.Influence
   other-modules:
     Paths_hbayes
     Bayes.ImportExport.HuginNet.Splitting
@@ -81,6 +87,7 @@ Library
     Bayes.FactorElimination.JTree
     Bayes.Tools
     Bayes.Factor.PrivateCPT
+    Bayes.Network
 
   GHC-Options: -funbox-strict-fields
   Extensions: CPP
@@ -105,6 +112,7 @@ Library
     parsec,
     filepath,
     directory,
+    binary >= 0.5,
     test-framework-quickcheck2,
     test-framework,
     test-framework-hunit,
