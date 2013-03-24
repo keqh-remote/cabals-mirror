@@ -1,5 +1,5 @@
 Name:               lhs2TeX-hl
-Version:            0.1.3
+Version:            0.1.3.1
 Cabal-Version:      >= 1.6
 License:            MIT
 Author:             Alessandro Vermeulen <me@alessandrovermeulen.me>
@@ -29,5 +29,5 @@ Executable lhs2TeX-hl
                   , cmdargs >= 0.1
                   , MissingH
   hs-source-dirs:   src
-  Other-Modules:    Language.LaTeX, Literate.Agda, Literate.Haskell,
+  Other-Modules:    Language.LaTeX, Language.Markup, Literate.Agda, Literate.Haskell,
                     Literate.SimpleInfo, Base.CLI, Base.Common
