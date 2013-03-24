@@ -1,5 +1,5 @@
 Name:            GHood
-Version:         0.0.3
+Version:         0.0.4
 License:         BSD3
 License-file:    LICENSE
 Copyright:
@@ -26,11 +26,7 @@ Flag splitBase
 
 Library
   Hs-Source-Dirs: src
-  Build-Depends:        base, haskell98
-  if flag(splitBase)
-    Build-Depends:      base >= 3, array >= 0.1, pretty >= 1.0
-  else
-    Build-Depends:      base < 3
+  Build-Depends:     base >= 3 && < 6, array, process
   exposed-modules:
         Debug.Observe
   other-modules:
