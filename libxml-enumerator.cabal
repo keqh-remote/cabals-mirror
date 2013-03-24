@@ -1,5 +1,5 @@
 name: libxml-enumerator
-version: 0.1
+version: 0.2
 synopsis: Enumerator-based API for libXML's SAX interface
 license: MIT
 license-file: license.txt
