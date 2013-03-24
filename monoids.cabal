@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.9
+version:	    0.1.10
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -41,6 +41,7 @@ library
     Data.Monoid.Generator
     Data.Monoid.Generator.LZ78
     Data.Monoid.Generator.RLE
+    Data.Monoid.Instances
     Data.Monoid.Lexical.SourcePosition
     Data.Monoid.Lexical.UTF8.Decoder
     Data.Monoid.Lexical.Words
@@ -48,19 +49,20 @@ library
     Data.Monoid.Multiplicative
     Data.Monoid.Multiplicative.Sugar
     Data.Monoid.Ord
-    Data.Monoid.Self
     Data.Monoid.Reducer
     Data.Monoid.Reducer.Char
     Data.Monoid.Reducer.With
+    Data.Monoid.Self
     Data.Monoid.Union
     Data.Ring
     Data.Ring.Boolean
-    Data.Ring.Semi
-    Data.Ring.Semi.Tropical
-    Data.Ring.Semi.Near
-    Data.Ring.Semi.Ord
     Data.Ring.FromNum
     Data.Ring.Module
     Data.Ring.Module.AutomaticDifferentiation
+    Data.Ring.Semi
+    Data.Ring.Semi.Near
+    Data.Ring.Semi.Ord
+    Data.Ring.Semi.Tropical
     Data.Ring.Sugar
+    
   ghc-options: -Wall -fno-warn-duplicate-exports
