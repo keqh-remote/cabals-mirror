@@ -1,5 +1,5 @@
 Name: config-select
-Version: 0.0.0
+Version: 0.0.1
 Synopsis: A small program for swapping out dot files.
 Description: Manage multiple configuration profiles for the same program.  Swap out dot files quickly.
 Category:System
