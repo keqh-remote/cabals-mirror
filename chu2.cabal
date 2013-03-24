@@ -1,5 +1,5 @@
 Name:                 chu2
-Version:              2012.11.17.1
+Version:              2012.11.17.2
 Build-type:           Simple
 Synopsis:             FFI for Chu2 Agda Web Server Interface
 Description:
@@ -20,6 +20,7 @@ data-files:           readme.md
                       src/Chu2.agda
                       src/Hello.agda
                       src/Chu2/ByteString.agda
+                      src/Chu2/Handler/SnapServer.agda
                       
 
 library
