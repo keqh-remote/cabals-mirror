@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.5.1
+Version:             0.5.2
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -23,6 +23,10 @@ Description:
 	- initial support for (p)subscribe\/(p)unsubscribe\/publish
 	.
 	- getServer and getDatabase accessors added
+	.
+	New in this version:
+	.
+	- listen now have timeout argument
 
 Stability:           beta
 Build-Type:          Simple
