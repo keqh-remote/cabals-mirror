@@ -1,6 +1,6 @@
 -- would also be useful as type-safe alternative in wx, wxcore
 Name:             enumset
-Version:          0.0.2
+Version:          0.0.3
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -23,11 +23,6 @@ Cabal-Version:    >=1.10
 Tested-With:      GHC==6.10.4, GHC==6.12.3
 Build-Type:       Simple
 
-Source-Repository this
-  Tag:         0.0.2
-  Type:        darcs
-  Location:    http://code.haskell.org/~thielema/enumset/
-
 Source-Repository head
   Type:        darcs
   Location:    http://code.haskell.org/~thielema/enumset/
@@ -45,3 +40,6 @@ Library
     Data.EnumSet
     Data.EnumSet.PackedEnum
     Data.FlagSet
+    Data.FlagSet.PackedRecord
+  Other-Modules:
+    Data.EnumSet.Utility
