@@ -1,6 +1,6 @@
 cabal-version:                  >= 1.6
 name:                           Facts
-version:                        0.1.1
+version:                        0.1.2
 
 copyright:                      © 2010 2piix.com
 license:                        BSD3
@@ -31,7 +31,7 @@ Library
                               , containers       ==0.3.*
                               , digits           ==0.2.*
                               , template-haskell ==2.4.*
-                              , QuickCheck       ==2.1.*
+                              , QuickCheck       ==2.*
 
     hs-source-dirs:             src
 
