@@ -1,7 +1,7 @@
 cabal-version:      >= 1.8
 build-type:         Simple
 name:               shake
-version:            0.6
+version:            0.7
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -100,6 +100,7 @@ library
         Development.Shake.Database
         Development.Shake.Derived
         Development.Shake.Directory
+        Development.Shake.Errors
         Development.Shake.File
         Development.Shake.FilePattern
         Development.Shake.Files
@@ -108,6 +109,7 @@ library
         Development.Shake.Locks
         Development.Shake.Oracle
         Development.Shake.Pool
+        Development.Shake.Progress
         Development.Shake.Report
         Development.Shake.Rerun
         Development.Shake.Storage
@@ -156,6 +158,8 @@ executable shake
         Examples.Test.FilePattern
         Examples.Test.Files
         Examples.Test.Journal
+        Examples.Test.Oracle
         Examples.Test.Pool
+        Examples.Test.Progress
         Examples.Test.Random
         Examples.Test.Resources
