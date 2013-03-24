@@ -1,11 +1,13 @@
 Name:          fair-predicates
-Version:       0.1
+Version:       0.1.1
 Cabal-Version: >= 1.6
 Synopsis:      Fair Predicates
 Description:   
 
   This Haskell library provides an implementation of Boolean
-  predicates with an interleaved evaluation of arguments.
+  predicates with interleaved evaluation. Conjunction and disjunction
+  are not biased to one of their arguments but evaluate both step-wise
+  interleaved.
 
 Category:      Data
 License:       PublicDomain
@@ -17,6 +19,8 @@ Bug-Reports:   mailto:sebf@informatik.uni-kiel.de
 Homepage:      http://sebfisch.github.com/fair-predicates
 Build-Type:    Simple
 Stability:     experimental
+
+Extra-Source-Files: bintree.lhs
 
 Library
   Build-Depends:    base
