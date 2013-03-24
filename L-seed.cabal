@@ -1,5 +1,5 @@
 Name:           L-seed
-Version:        0.1
+Version:        0.2
 Cabal-Version:  >= 1.6
 License:        BSD3
 License-file:   LICENSE
@@ -75,7 +75,8 @@ Library
   if flag(Database) 
     Build-Depends:
         HDBC-odbc,
-        HDBC
+        HDBC,
+        random-shuffle == 0.0.2
     Exposed-Modules:
         Lseed.DB
 
@@ -85,6 +86,12 @@ Library
 
 Executable runGarden
   Main-Is:        main.hs
+  Hs-Source-Dirs: src/
+  if ! flag(RendererCairo)
+    Buildable:    False
+
+Executable renderAsPNG
+  Main-Is:        renderAsPNG.hs
   Hs-Source-Dirs: src/
   if ! flag(RendererCairo)
     Buildable:    False
