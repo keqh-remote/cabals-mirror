@@ -7,7 +7,7 @@ Name:                LambdaPrettyQuote
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.0.7
+Version:             0.0.0.8
 
 -- A short (one-line) description of the package.
 Synopsis:            Quasiquoter, and Arbitrary helpers for the lambda calculus.
@@ -51,7 +51,7 @@ Cabal-version:       >=1.8
 
 Library
   -- Modules exported by the library.
-  Exposed-modules: Language.Lambda.Untyped.Arbitrary, Language.Lambda.Untyped.Parser, Language.Lambda.Untyped.Pretty, Language.Lambda.Untyped.Quote, Language.Lambda.SimplyTyped.Arbitrary,  Language.Lambda.SimplyTyped.Pretty, Language.Lambda.SimplyTyped.TypeCheck 
+  Exposed-modules: Language.Lambda.Untyped.Arbitrary, Language.Lambda.Untyped.Parser, Language.Lambda.Untyped.Pretty, Language.Lambda.Untyped.Quote, Language.Lambda.SimplyTyped.Arbitrary,  Language.Lambda.SimplyTyped.Pretty, Language.Lambda.SimplyTyped.TypeCheck, Language.Lambda.SimplyTyped.Let.Arbitrary, Language.Lambda.SimplyTyped.Let.TypeCheck 
   Hs-Source-Dirs: src
   -- Packages needed in order to build this package.
   Build-depends: base >= 4.0 && <= 6.0,
