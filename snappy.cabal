@@ -1,7 +1,7 @@
 name:           snappy
-version:        0.2.0.0
-homepage:       http://github.com/mailrank/snappy
-bug-reports:    http://github.com/mailrank/snappy/issues
+version:        0.2.0.1
+homepage:       http://github.com/bos/snappy
+bug-reports:    http://github.com/bos/snappy/issues
 synopsis:
   Bindings to the Google Snappy library for fast compression/decompression
 description:
@@ -9,18 +9,18 @@ description:
   compression and decompression library: <http://code.google.com/p/snappy/>
 license:        BSD3
 license-file:   LICENSE
-author:         Bryan O'Sullivan <bos@mailrank.com>
-maintainer:     Bryan O'Sullivan <bos@mailrank.com>
+author:         Bryan O'Sullivan <bos@serpentine.com>
+maintainer:     Bryan O'Sullivan <bos@serpentine.com>
 copyright:      Copyright 2011 MailRank, Inc.
 category:       Codec, Compression
 build-type:     Simple
-cabal-version:  >= 1.6
+cabal-version:  >= 1.8
 extra-source-files:
   README.md
   include/hs_snappy.h
   tests/Makefile
   tests/Properties.hs
-  tests/Snappy.hs
+  tests/Speedy.hs
 
 library
   c-sources:       cbits/hs_snappy.cpp
@@ -41,6 +41,28 @@ library
   other-modules:
     Codec.Compression.Snappy.Internal
 
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: tests
+  main-is:        Properties.hs
+
+  ghc-options:
+    -Wall -threaded -O0 -rtsopts
+
+  cpp-options:
+    -DASSERTS -DHAVE_DEEPSEQ
+
+  build-depends:
+    base < 5,
+    bytestring,
+    cmdargs,
+    QuickCheck >= 2.4,
+    snappy,
+    test-framework,
+    test-framework-quickcheck2,
+    time,
+    zlib
+
 source-repository head
   type:     git
-  location: http://github.com/mailrank/snappy
+  location: http://github.com/bos/snappy
