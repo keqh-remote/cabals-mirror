@@ -1,13 +1,13 @@
 name: flickr
-version: 0.3.2
+version: 0.3.3
 Synopsis: Haskell binding to the Flickr API
 Description:
    The flickr API binding lets you access flickr.com's
    resources and methods from Haskell.
-
+   .
    Implements the full API, as specified by <http://flickr.com/services/api/>
 category      : Web
-license       :  BSD3
+license       : BSD3
 license-file  : LICENSE
 author        : Sigbjorn Finne <sof@forkIO.com>
 maintainer    : sof@forkIO.com
