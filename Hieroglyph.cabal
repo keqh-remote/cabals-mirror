@@ -1,5 +1,5 @@
 name: Hieroglyph
-version: 3.88
+version: 3.89
 cabal-version: >=1.2
 build-type: Simple
 license: BSD3
