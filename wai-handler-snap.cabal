@@ -1,5 +1,5 @@
 Name:                wai-handler-snap
-Version:             0.0.0.1
+Version:             0.1.0
 Synopsis:            Web Application Interface handler using snap-server.
 License:             BSD3
 License-file:        LICENSE
@@ -19,10 +19,10 @@ Library
   Build-Depends:     base >= 3 && < 5,
                      bytestring >= 0.9 && < 0.10,
                      wai >= 0.2.0 && < 0.3,
-                     snap-core >= 0.2.8.1 && < 0.3,
-                     snap-server >= 0.2.8.1 && < 0.3,
-                     containers >= 0.2 && < 0.4,
+                     snap-core >= 0.3 && < 0.4,
+                     snap-server >= 0.3 && < 0.4,
+                     containers >= 0.2 && < 0.5,
                      transformers >= 0.2.1 && < 0.3,
-                     iteratee >= 0.3.5 && < 0.4
+                     enumerator >= 0.4.2 && < 0.5
   Exposed-modules:   Network.Wai.Handler.Snap
   ghc-options:       -Wall
