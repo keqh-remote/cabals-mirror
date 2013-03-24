@@ -1,6 +1,6 @@
 Cabal-Version:      >= 1.2
 Name:               yhccore
-Version:            0.9
+Version:            0.9.1
 Copyright:          2006-8, Neil Mitchell and The Yhc Team
 Maintainer:         ndmitchell@gmail.com
 Homepage:           http://www.haskell.org/haskellwiki/Yhc
