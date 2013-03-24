@@ -1,5 +1,5 @@
 Name:           AERN-RnToRm
-Version:        0.4
+Version:        0.4.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -34,7 +34,7 @@ Description:
     .
     Simple examples of usage can be found in module @Demo.hs@ in folder @tests@.
 Extra-source-files:
-    ChangeLog tests/Demo.hs
+    ChangeLog tests/Demo.hs tests/ISin3.hs
 
 Flag containers-in-base
     Default: False
@@ -43,10 +43,10 @@ Library
   hs-source-dirs:  src
   if flag(containers-in-base)
     Build-Depends:
-      base < 3, binary >= 0.4, AERN-Real >= 0.9.6
+      base < 3, binary >= 0.4, AERN-Real >= 0.9.7
   else
     Build-Depends:
-      base >= 3, containers, binary >= 0.4, AERN-Real >= 0.9.6
+      base >= 3, containers, binary >= 0.4, AERN-Real >= 0.9.7
   Exposed-modules:
     Data.Number.ER.RnToRm,
     Data.Number.ER.RnToRm.BisectionTree.Path,
