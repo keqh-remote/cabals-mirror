@@ -1,10 +1,10 @@
 name:                terrahs
-version:        0.5
+version:        0.6
 license:        BSD3 
 author:                Sergio Costa <skosta@gmail.com>
 maintainer:     Sergio Costa <skosta@gmail.com>
 homepage:      http://lucc.ess.inpe.br/doku.php?id=terrahs
-category: Geographic Information System
+category: GIS Programs
 build-type: Simple
 license-file: LICENSE
 cabal-version: >= 1.6
@@ -21,41 +21,46 @@ Description:
    
 library
     exposed-modules: 
-        TerraHS ,
-        TerraHS.TerraLib.TeRaster,
-        TerraHS.TerraLib,
-        Algebras.Functor.Category,
-        Algebras.Functor.GeoModel ,
-        TerraHS.Misc TerraHS.Misc.Generic ,
-        TerraHS.Misc.StrFunctions,
-        TerraHS.TerraLib.TeTable ,
-        TerraHS.Misc.Object ,
-        TerraHS.TerraLib.TeDatabase ,
-        TerraHS.TerraLib.TeLayer ,
-        TerraHS.TerraLib.TeGeometry ,
-        TerraHS.TerraLib.TeGeometryAlgorithms,
-        TerraHS.TerraLib.TeSTInstance ,
-        TerraHS.TerraLib.TeQuerier Algebras.Base,
-        Algebras.Base.Points ,
-        Algebras.Base.Lines ,
-        Algebras.Base.Polygons ,
-        Algebras.Base.Raster ,
-        Algebras.Base.Geometries,
-        Algebras.Base.Ids ,
-        Algebras.Base.Operations,
+        TerraHS.Algebras.Spatial.Points ,
+        TerraHS.Algebras.Spatial.Lines ,
+        TerraHS.Algebras.Spatial.Polygons ,
+        TerraHS.Algebras.Spatial.Geometries,
+        TerraHS.Algebras.Spatial.Raster,
+        TerraHS.Algebras.Spatial.GeoObjects,
         TerraHS.TerraLib.TeCoord2D,
         TerraHS.TerraLib.TePoint,
         TerraHS.TerraLib.TeLine2D,
         TerraHS.TerraLib.TeBox,
         TerraHS.TerraLib.TeCell,
         TerraHS.TerraLib.TePolygon,
-        Algebras.Base.GeoObjects,
-        TerraHS.Misc.Databases,
-        Algebras.Base.Attribute,
-        Algebras.Base.Model ,
-        TerraHS.TerraLib.TeOverlay,
-        TerraHS.TerraLib.TeTopologyOps
+         TerraHS.TerraLib.TeRaster,
+         TerraHS.TerraLib.TeTable,
+         TerraHS.TerraLib.TeLayer,
+         TerraHS.TerraLib.TeGeometry ,
+         TerraHS.TerraLib.TeDatabase,
+         TerraHS.TerraLib.TeTopologyOps,
+         TerraHS.TerraLib.TeSTInstance,
+          TerraHS.TerraLib.TeGeoObject,
+         TerraHS.TerraLib.TeQuerier,
+         TerraHS.TerraLib.TeGeometryAlgorithms,
+        TerraHS.Algebras.Base.Object,
+        TerraHS.Misc.StrFunctions,
+        TerraHS.Misc.GenericFunctions,
+        TerraHS.Algebras.Temporal.TimeFunctions,
+        TerraHS.Algebras.Temporal.Interval
+        TerraHS.Algebras.Base.Attribute,
+        TerraHS.Algebras.Base.Ids,
+        TerraHS.Algebras.Base.Category,
+        TerraHS.Algebras.Base.Operations,
+        TerraHS.Algebras.DB.Databases,
+        TerraHS.Algebras.DB.Model,
+        TerraHS.Algebras.Spatial,
+        TerraHS.Algebras.Base,
+        TerraHS.TerraLib,
+         TerraHS
+        TerraHS.Misc,
+        TerraHS.Algebras.DB
     extra-libraries: terrahsc
-    ghc-options: -fglasgow-exts  -fwarn-name-shadowing 
-    build-depends:        base==3.*
-    extensions:     MultiParamTypeClasses, UndecidableInstances,OverlappingInstances, Generics, ForeignFunctionInterface, TypeSynonymInstances, CPP, RankNTypes, DeriveDataTypeable
+    ghc-options: -fglasgow-exts 
+    build-depends:        base==3.*, haskell98, old-time
+    extensions:     MultiParamTypeClasses, Generics, ForeignFunctionInterface, TypeSynonymInstances, CPP, RankNTypes, DeriveDataTypeable
