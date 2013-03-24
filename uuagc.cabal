@@ -1,7 +1,7 @@
 cabal-version: >=1.2
 build-type: Simple
 name: uuagc
-version: 0.9.38.1
+version: 0.9.38.3
 license: GPL
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -29,7 +29,7 @@ executable uuagc
     build-depends: base < 3
 
   build-depends: haskell98, uulib>=0.9.12, mtl>=1.1.1.1
-  build-depends: haskell-src-exts
+  build-depends: haskell-src-exts>=1.11.1
   main-is: Ag.hs
   other-modules: Ag
     , CommonTypes
