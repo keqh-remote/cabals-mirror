@@ -1,5 +1,5 @@
 Name:                reactive-fieldtrip
-Version:             0.0.2
+Version:             0.0.3
 Cabal-Version:       >= 1.2
 Synopsis:            Connect Reactive and FieldTrip
 Category:            Graphics, FRP
