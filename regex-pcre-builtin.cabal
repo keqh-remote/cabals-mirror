@@ -1,6 +1,6 @@
 Name:                   regex-pcre-builtin
 -- Keep the Version below in sync with ./Text/Regex/PCRE.hs value getVersion_Text_Regex_PCRE :: Version
-Version:                0.94.1.0.7.7
+Version:                0.94.2.0.7.7
 Cabal-Version:          >=1.2.3
 License:                BSD3
 License-File:           LICENSE
@@ -28,18 +28,10 @@ Extra-source-files:
     pcre/pcre_fullinfo.c pcre/pcre_scanner.h pcre/pcrecpp.h pcre/ucpinternal.h
     pcre/pcre_get.c pcre/pcre_stringpiece.h pcre/pcrecpp_internal.h pcre/ucptable.h
 
-flag splitBase
-  description: Choose the new smaller, split-up base package.
 library
-  if flag(splitBase)
     Build-Depends: base >= 3.0, regex-base >= 0.93, array, containers, bytestring
-    -- Need the next symbol for using CPP to get Data.ByteString.Base|Unsafe in
-    --  ./Text/Regex/Posix/ByteString.hs and  ./Text/Regex/Posix/ByteString/Lazy.hs
-    CPP-Options: "-DSPLIT_BASE=1"
     Extensions:    MultiParamTypeClasses, FunctionalDependencies, CPP, ForeignFunctionInterface, PatternSignatures, GeneralizedNewtypeDeriving, FlexibleContexts, TypeSynonymInstances, FlexibleInstances
-  else
-    Build-Depends: base < 3.0, regex-base >= 0.93
-    Extensions:    MultiParamTypeClasses, FunctionalDependencies, CPP
+
   -- Data-Files:
   -- Extra-Source-Files:
   -- Extra-Tmp-Files:
