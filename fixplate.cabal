@@ -1,6 +1,6 @@
 
 Name:                fixplate
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Uniplate-style generic traversals for fixed-point types, with some extras.
 Description:         Uniplate-style generic traversals for fixed-point types, which can be  
                      optionally annotated with attributes. We also provide a generic zipper.
@@ -39,23 +39,31 @@ Library
 
   Exposed-Modules:     Data.Generics.Fixplate
                        Data.Generics.Fixplate.Base
+                       Data.Generics.Fixplate.Open
                        Data.Generics.Fixplate.Traversals
                        Data.Generics.Fixplate.Morphisms
                        Data.Generics.Fixplate.Attributes
                        Data.Generics.Fixplate.Zipper
-                       Data.Generics.Fixplate.Structure
- 
+                       
+  if impl(ghc)||impl(hugs)                     
+    Exposed-Modules:     Data.Generics.Fixplate.Structure
+    cpp-options:         -DHAS_RANK2TYPES
+
   Other-Modules:       Data.Generics.Fixplate.Misc
 
   if flag(withQuickCheck)  
     Exposed-Modules:     Data.Generics.Fixplate.Test.Tools
                          Data.Generics.Fixplate.Test.Instances
                          Data.Generics.Fixplate.Tests
+    Extensions:          TypeSynonymInstances
  
   Extensions:          CPP
+
+  if impl(ghc)
+    Extensions:          BangPatterns
 
   Hs-Source-Dirs:      .
 
   ghc-options:         -Wall -fno-warn-unused-matches
 
-    
+   
