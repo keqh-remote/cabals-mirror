@@ -1,5 +1,5 @@
 name:         wxcore
-version:      0.90
+version:      0.90.0.1
 license:      OtherLicense
 license-file: LICENSE
 author:       Daan Leijen
@@ -59,6 +59,12 @@ library
     Graphics.UI.WXCore.WxcDefs
     Graphics.UI.WXCore.WxcObject
     Graphics.UI.WXCore.WxcTypes
+
+  other-modules:
+    Graphics.UI.WXCore.GHCiSupport
+
+  frameworks:
+    Carbon
 
   build-depends:
     bytestring,
