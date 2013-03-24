@@ -1,8 +1,8 @@
 name:                   erf-native
-version:                1.0.0.0
-stability:              experimental
+version:                1.0.0.1
+stability:              provisional
 
-cabal-version:          >= 1.2
+cabal-version:          >= 1.6
 build-type:             Simple
 
 author:                 James Cook <james.cook@usma.edu>
@@ -18,9 +18,12 @@ description:            Native Haskell implementation of the interface from the 
                         so I'm throwing this one out there.  It incorporates code translated 
                         from GSL's C source, and so is licensed under the GPL.
 
+source-repository head
+  type: git
+  location: git://github.com/mokus0/erf-native.git
+
 Library
   hs-source-dirs:       src
   exposed-modules:      Data.Number.Erf
   other-modules:        GSL.SpecFunc.Erf
-                        NR.Ch5.S8
-  build-depends:        base >= 3 && <5, vector
+  build-depends:        base >= 3 && <5, polynomial
