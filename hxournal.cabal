@@ -1,5 +1,5 @@
 Name:		hxournal
-Version:	0.5.1
+Version:	0.6
 Synopsis:	A pen notetaking program written in haskell 
 Description: 	notetaking program written in haskell and gtk2hs
 Homepage:       http://ianwookim.org/hxournal
@@ -17,7 +17,7 @@ data-files:     template/*.html.st
                 Config.hs
 Source-repository head
   type: git
-  location: https://www.github.com/wavewave/hxournal
+  location: http://www.github.com/wavewave/hxournal
 
 
 Executable hxournal
@@ -44,18 +44,21 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-parser == 0.2.0.*, 
-                     xournal-render == 0.2.0.*,
+                     xournal-types == 0.1.*,
+                     xournal-parser == 0.3.*,
+                     xournal-render == 0.3.*,
+                     xournal-builder == 0.1.*,
                      containers == 0.4.*,
                      template-haskell == 2.*,
-                     blaze-builder == 0.3.*, 
                      bytestring == 0.9.*, 
                      double-conversion == 0.2.*,
                      fclabels == 1.0.*,
                      cmdargs >= 0.7 && <= 0.10,
-                     configurator == 0.1.*
+                     configurator == 0.1.*, 
+                     poppler == 0.12.*
 
                      -- >= 0.1 && < 0.3
+                     -- blaze-builder == 0.3.*, 
   Exposed-Modules: 
                    Application.HXournal.ProgType
                    Application.HXournal.Job
@@ -95,9 +98,12 @@ Library
                    Application.HXournal.Util.Verbatim 
                    Application.HXournal.Draw
                    Application.HXournal.Device
-                   Application.HXournal.Builder 
                    Application.HXournal.Accessor
                    Application.HXournal.Config
+
+                   -- Application.HXournal.Builder 
+
+
   Other-Modules: 
                    Paths_hxournal
   c-sources: 
