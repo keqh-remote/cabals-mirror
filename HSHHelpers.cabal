@@ -1,5 +1,5 @@
 Name: HSHHelpers
-Version: 0.17
+Version: 0.18
 License: GPL
 License-file: gpl.txt
 Description: 
@@ -14,7 +14,7 @@ Author: Thomas Hartman
 Stability: Beta
 Copyright: Copyright (c) 2008 Thomas Hartman
 Exposed-Modules: HSH.Helpers, HSH.Helpers.Instances, HSH.Helpers.UnixUsers, HSH.Helpers.FileManip, 
-                 HSH.Helpers.Utils
+                 HSH.Helpers.Utils, HSH.Helpers.Email
 Build-Depends: base, HSH, unix, HStringTemplateHelpers, MissingH, regex-pcre, directory, bytestring, filepath, mtl,
                DebugTraceHelpers
 Category: System
