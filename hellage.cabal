@@ -1,5 +1,5 @@
 Name: hellage
-Version: 0.1
+Version: 0.1.1
 Synopsis: Distributed hackage mirror
 Author: Voker57
 Maintainer: voker57@gmail.com
@@ -10,6 +10,7 @@ License: BSD3
 License-file: COPYING
 Category: Distribution, Network
 Description: Distributed hackage mirror, based on Hellnet.
+Homepage: http://bitcheese.net/wiki/hellnet/hellage
 Executable hellage
  Main-is: hellage.hs
  Build-Depends: hellnet >= 0.1, Lucu >= 0.3.2, network, base >= 4.2 && < 5, hjson >= 1.1.1, hjpath >= 2.0, regex-pcre, safe, mtl, bytestring
