@@ -1,5 +1,5 @@
 Name:           CheatSheet
-Version:        1.0
+Version:        1.1
 License:        BSD3
 License-File:   LICENSE
 Author:         Justin Bailey
@@ -12,11 +12,12 @@ Synopsis:       A Haskell cheat sheet in PDF and literate formats.
 Description:
   This module includes a PDF giving a synopsis of Haskell syntax, keywords,
   and other essentials. It also has a literate source file which allows all
-  examples to be inspected. Download and unpack this archive to view them.
-Data-files: CheatSheet.pdf, CheatSheet.lhs
-Extra-Source-Files: CheatSheet.lhs, README
+  examples to be inspected.
+Exposed-modules: CheatSheet
+Hs-Source-Dirs: .
+Data-files: CheatSheet.pdf
 
 Executable: cheatsheet
 Main-Is: Main.lhs
-Hs-Source-Dirs: . 
+Hs-Source-Dirs: .
 
