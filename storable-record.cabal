@@ -1,5 +1,5 @@
 Name:         storable-record
-Version:      0.0.2.3
+Version:      0.0.2.4
 Category:     Data, Foreign
 Synopsis:     Elegant definition of Storable instances for records
 Description:
@@ -63,10 +63,14 @@ Source-Repository head
 Source-Repository this
   Type:     darcs
   Location: http://code.haskell.org/~thielema/storable-record/
-  Tag:      0.0.2.3
+  Tag:      0.0.2.4
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
+
+Flag buildTests
+  description: Build speed test
+  default:     False
 
 Library
   Build-Depends:
@@ -89,4 +93,18 @@ Library
     Foreign.Storable.Traversable
   Other-Modules:
     Foreign.Storable.FixedArray
+    Foreign.Storable.RecordMinimalSize
+    Foreign.Storable.RecordReaderPtr
     Foreign.Storable.TraversableUnequalSizes
+
+Executable storable-record-speed
+  If flag(buildTests)
+    Build-Depends:
+      storablevector >=0.2.7 && <0.2.8,
+      timeit >=1.0 && <1.1
+  Else
+    Buildable: False
+
+  GHC-Options:         -Wall
+  Hs-Source-Dirs:      src
+  Main-Is:             SpeedTest.hs
