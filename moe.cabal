@@ -1,7 +1,7 @@
 Name:                 moe
-Version:              2009.8.23
+Version:              2009.8.26
 Build-type:           Simple
-Synopsis:             html combinator with style
+Synopsis:             html with style
 Description:
 
     a purely functional html combinator with a clean syntax
