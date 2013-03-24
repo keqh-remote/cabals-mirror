@@ -1,5 +1,5 @@
 name:                showdown
-version:             0.5.2
+version:             0.5.3
 synopsis:            A simple gtk based Russian Roulette game.
 description:         A Russian Roulette game written in Haskell
 		     Using GTK2HS and Glade.
@@ -13,7 +13,7 @@ data-files:          showdown.glade
 build-type:          Simple
 cabal-version:       >= 1.2
 tested-with:         GHC == 6.10
-extra-source-files:   README,LICENSE
+extra-source-files:   README,LICENSE,Showdown.hs
 
 executable:          showdown
 main-is:             Main.hs
