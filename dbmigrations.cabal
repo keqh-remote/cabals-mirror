@@ -1,5 +1,5 @@
 Name:                dbmigrations
-Version:             0.1
+Version:             0.1.1
 Synopsis:            An implementation of relational database "migrations"
 Description:         A library and program for the creation,
                      management, and installation of schema updates
@@ -59,6 +59,11 @@ Library
           Database.Schema.Migrations.Backend
           Database.Schema.Migrations.Backend.HDBC
           Database.Schema.Migrations.Store
+
+  Other-Modules:
+          Database.Schema.Migrations.CycleDetection
+          Database.Schema.Migrations.Filesystem.Parse
+          Database.Schema.Migrations.Filesystem.Serialize
 
 Executable test
   Build-Depends:
