@@ -1,5 +1,5 @@
 Name:                fixed-point
-Version:             0.1.0.0
+Version:             0.1.0.1
 Synopsis:            Binary fixed-point arithmetic
 Description:         This package defines a type for binary
                      fixed-precision arithmetic. Its interface is
