@@ -1,5 +1,5 @@
 Name:                vty
-Version:             3.1.8
+Version:             3.1.8.2
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear
@@ -17,28 +17,41 @@ Description:
   Notable infelicities: requires an ANSI-type terminal, poor efficiency,
                         requires Linux\/xterm style UTF8 support.
   .
-  You can 'darcs get' it from <http://code.haskell.org/vty/>
+  The latest code is in a darcs repo at <http://code.haskell.org/vty/>. This is only
+  compatible with GHC 6.10+.
+  .
+  The 3.1.8.* line of vty which is compatable with GHC 6.8 and GHC 6.10 is currently 
+  in the darcs repo at <http://www.tothepowerofdisco.com/repo/vty-compat>.
   '
   &#169; 2006-2007 Stefan O'Rear; BSD3 license.
 
-Build-Depends:       base >= 4 && < 5, bytestring, containers, unix
-Build-Depends:       terminfo >= 0.2 && < 0.3
-Build-Depends:       utf8-string >= 0.3 && < 0.4
 Build-Type:          Simple
 Data-Files:          README, TODO
-Extra-Source-Files:  test/Test.hs, cbits/gwinsz.h, test/Bench.hs
+Extra-Source-Files:  test/Test.hs, test/Bench.hs, test/Test2.hs, test/make_tests.sh
+Extra-Source-Files:  cbits/gwinsz.h
+cabal-version:       >=1.2
 
-Exposed-Modules:     Graphics.Vty
-C-Sources:           cbits/gwinsz.c
-                     cbits/set_term_timing.c
-Include-Dirs:        cbits
-Install-Includes:    gwinsz.h
-Other-Modules:       Graphics.Vty.Types
-                     Graphics.Vty.Cursor
-                     Graphics.Vty.LLInput
-                     Graphics.Vty.Output
-                     Graphics.Vty.ControlStrings
+Library {
+    if impl(ghc>=6.9)
+        Build-Depends:       base >= 4 && < 5
+    else
+        Build-Depends:       base < 4
+    Build-Depends:       extensible-exceptions
+    Build-Depends:       bytestring, containers, unix
+    Build-Depends:       terminfo >= 0.2 && < 0.3
+    Build-Depends:       utf8-string >= 0.3 && < 0.4
 
-ghc-options:         -funbox-strict-fields -Wall -threaded
-ghc-prof-options:    -funbox-strict-fields -auto-all -Wall -threaded
+    Exposed-Modules:     Graphics.Vty
+    C-Sources:           cbits/gwinsz.c
+                         cbits/set_term_timing.c
+    Include-Dirs:        cbits
+    Install-Includes:    gwinsz.h
+    Other-Modules:       Graphics.Vty.Types
+                         Graphics.Vty.Cursor
+                         Graphics.Vty.LLInput
+                         Graphics.Vty.Output
+                         Graphics.Vty.ControlStrings
 
+    ghc-options:         -funbox-strict-fields -Wall -threaded
+    ghc-prof-options:    -funbox-strict-fields -prof -auto-all -Wall
+}
