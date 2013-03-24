@@ -1,5 +1,5 @@
 Name:		BASIC
-Version:	0.1.2.0
+Version:	0.1.2.1
 License:	BSD3
 Author:		Lennart Augustsson
 Maintainer:	Lennart Augustsson
@@ -15,6 +15,7 @@ Other-modules:
 	Language.BASIC.Translate
 	Language.BASIC.Types
 Extra-source-files:
+	examples/Func.hs
 	examples/Hello.hs
 	examples/HiLo.hs
 	examples/Infinity.hs
