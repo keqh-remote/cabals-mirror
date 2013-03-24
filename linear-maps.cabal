@@ -1,5 +1,5 @@
 Name:           linear-maps
-Version:        0.5
+Version:        0.6
 Synopsis:       Finite maps for linear use
 Description:    
     Finite maps for linear use. 
@@ -33,7 +33,16 @@ Cabal-Version:  >= 1.6
 Build-Type:     Simple
 Extra-Source-Files: 
     Intro.pandoc,
-    Intro.html
+    Exercises.pandoc,
+    Solutions.hs,
+    TypeInf.hs,
+    *.dot,
+    Makefile,
+    runtests
+Data-Files:
+    Intro.html,
+    *.png,
+    Exercises.html
 
 Flag check
     Description:    Check linear use
@@ -42,6 +51,12 @@ Flag check
 Flag pure
     Description:    Pure functional implementation
     Default:        False
+
+Executable linear-maps-introduction
+    Main-Is: LinearMapsIntroduction.hs
+
+Executable linear-maps-exercises
+    Main-Is: LinearMapsExercises.hs
 
 Library
     GHC-Options: -Wall -fwarn-tabs -fno-warn-incomplete-patterns  -fcontext-stack=33
@@ -60,15 +75,16 @@ Library
     -- applications / uses cases
         Data.Sequence.IdMap,
         Data.Sequence.IdMap.Tests,
---        Data.Sequence.IdMap.Profile,
-        Data.Sequence.IdMap2
---        Data.Sequence.Profile,
---        Data.IdSequence,
---        Data.List.IdMap,
---        Data.Graph.IdMap,
---        Data.LinkMap,
---        Data.LinkMap.Tests,
---        Test.IdMap
+        Data.Sequence.IdMap.Profile,
+        Data.Sequence.IdMap2,
+        Data.Sequence.Profile,
+        Data.IdSequence,
+        Data.List.IdMap,
+        Data.Graph.IdMap,
+        Data.Graph.IdMap.Tests,
+        Data.LinkMap,
+        Data.LinkMap.Tests
+        Test.IdMap
     --	Tests.PointerReversal,
     --	Tests.RandomGraph
 
