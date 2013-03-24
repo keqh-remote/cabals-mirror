@@ -1,6 +1,6 @@
 Name:           nptools
 Cabal-Version:  >=1.4
-Version:        0.2.1
+Version:        0.2.2
 License:        BSD3
 License-File:   LICENSE
 Copyright:      (c) Nicolas Pouillard
@@ -114,4 +114,21 @@ executable x-printable
 
 executable cp-rescue
     main-is: cp-rescue.hs
+    ghc-options: -Wall -Odph
+
+executable timer
+    main-is: timer.hs
+    Build-depends: unix<3
+    ghc-options: -Wall -Odph
+
+executable nest
+    main-is: nest.hs
+    ghc-options: -Wall -Odph
+
+executable getpin
+    main-is: getpin.hs
+    ghc-options: -Wall -Odph
+
+executable starecho
+    main-is: starecho.hs
     ghc-options: -Wall -Odph
