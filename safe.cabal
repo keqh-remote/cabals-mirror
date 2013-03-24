@@ -1,13 +1,13 @@
 Name:           safe
 Build-Type:     Simple
-Version:        0.2
+Version:        0.3
 License:        BSD3
 License-File:   LICENSE
-Copyright:      2007-8, Neil Mitchell
+Copyright:      2007-2010, Neil Mitchell
 Maintainer:     ndmitchell@gmail.com
 Author:         Neil Mitchell
-Homepage:       http://www-users.cs.york.ac.uk/~ndm/safe/
-Build-Depends:  base
+Homepage:       http://community.haskell.org/~ndm/safe/
+Build-Depends:  base < 5
 Category:       Unclassified
 Synopsis:       Library for safe (pattern match free) functions
 Description:
@@ -18,4 +18,4 @@ Description:
     These functions can be used to reduce the number of unsafe pattern matches in
     your code.
 Exposed-modules:
-        Safe
+    Safe
