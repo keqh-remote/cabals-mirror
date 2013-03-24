@@ -1,6 +1,9 @@
 ----------------------------------------------------------------
+-- wren ng thornton <wren@community.haskell.org>    ~ 2008.08.17
+----------------------------------------------------------------
+
 Name:           logfloat
-Version:        0.8.5
+Version:        0.8.6
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 Stability:      stable
@@ -22,7 +25,6 @@ Library
     Exposed-Modules: Data.Number.LogFloat
                    , Data.Number.Transfinite
     Build-Depends:   base
-    Ghc-Options:     -O2 -fvia-C -optc-O3
 
 ----------------------------------------------------------------
 ----------------------------------------------------------- fin.
