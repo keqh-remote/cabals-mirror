@@ -1,5 +1,5 @@
 Name:                monad-coroutine
-Version:             0.7
+Version:             0.7.1
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Coroutine monad transformer for suspending and resuming monadic computations
