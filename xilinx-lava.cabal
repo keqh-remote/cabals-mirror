@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
---- $Id: xilinx-lava.cabal#5 2010/09/21 16:57:48 REDMOND\\satnams $
+--- $Id: xilinx-lava.cabal#6 2010/09/21 17:21:45 REDMOND\\satnams $
 -------------------------------------------------------------------------------
 Name:            xilinx-lava
-Version:         5.0.0.0
+Version:         5.0.0.1
 License:         BSD3
 License-file:    LICENSE
 Author:          Satnam Singh
