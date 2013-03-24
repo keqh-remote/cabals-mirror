@@ -1,5 +1,5 @@
 name: hasim
-version: 0.1
+version: 0.1.1
 cabal-version: >= 1.2
 build-type: Simple
 license: BSD3
@@ -17,6 +17,8 @@ description:
 extra-source-files: 
     examples/simple1/Main.lhs
     examples/elevator/Main.lhs
+tested-with:
+    GHC ==6.8.2
 
 flag splitBase
   description: Choose the new smaller, split-up base package.
