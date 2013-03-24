@@ -4,7 +4,14 @@ Description:
     This library provides an STM monad with commit and retry IO hooks. 
     A retry-action is run (once) if the transaction retries, while commit-actions are 
     executed iff the transaction commits. The library also gives some atomicity
-    guarantees for commit-actions, see documentation for details. 
+    guarantees for commit-actions:
+    .
+    * When a TVar is modified in a transaction and this transaction commits,
+    the update remains invisible to other threads until the corresponding 
+    onCommit action is run. 
+    .
+    * If the onCommit action throws an exception, the original values of 
+    the modified TVars are restored.
     .
     Note: Part of this library uses code from
     the Haskell Wiki (see <http://haskell.org/haskellwiki/?title=New_monads/MonadAdvSTM>).
@@ -13,8 +20,8 @@ Author:         Peter Robinson 2009, Chris Kuklewicz 2006
 Maintainer:     Peter Robinson <robinson@ecs.tuwien.ac.at>
 License:        BSD3
 License-file:   LICENSE
-Homepage:       http://darcs.monoid.at/stm-io-hooks
-Version:        0.0.1
+-- Homepage:       http://darcs.monoid.at/stm-io-hooks
+Version:        0.1.0
 
 Build-type:     Simple                        
 Cabal-Version:  >= 1.2.3
