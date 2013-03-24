@@ -1,5 +1,5 @@
 Name:           webidl
-Version:        0.1
+Version:        0.1.1
 Author:         Dmitry Golubovsky
 Maintainer:     Dmitry Golubovsky <golubovsky@gmail.com>
 License:        BSD3
@@ -33,11 +33,15 @@ Description:    Web IDL is a dialect of OMG IDL used by the Web App group to spe
                 The program may be used to test the parser and pretty printer 
                 in the way that when @idlppr@ reads a pretty-printed Web IDL source, 
                 the output should be identical to the input. 
+                .
+                Changes from 1.1: the parser has been fixed to recognize outermost-declared
+                scoped names (those starting with "::"), and allow for use of @DOMString@
+                in typedefs and valuetypes, as the Web IDL working draft prescribes.
                 
 
 Build-Type:     Custom
 Build-Depends:  base >= 4.0.0 && < 5.0, utf8-env, utf8-string, 
-                cpphs, bytestring >= 0.9, LEXER, HSFFIG >= 1.1, 
+                bytestring >= 0.9, LEXER, HSFFIG >= 1.1, 
                 parsec >= 2.0 && < 3.0, pretty >= 1.0
 Extra-source-files: cbits/lexer.ll include/esidl.h include/lexer.h include/parser.h
                     cbits/Makefile
