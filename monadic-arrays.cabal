@@ -1,6 +1,6 @@
 name:          monadic-arrays
 category:      Data Structures
-version:       0.2.0.1
+version:       0.2.0.2
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -18,9 +18,9 @@ source-repository head
   location: git://github.com/ekmett/monadic-arrays.git
 
 library
-  build-depends: 
+  build-depends:
     base >= 4 && < 5,
-    array >= 0.3.0.2 && < 0.4,
+    array >= 0.3.0.2 && < 0.5,
     transformers >= 0.2.0 && < 0.3,
     stm >= 2.1.2.1 && < 2.3
 
@@ -28,4 +28,4 @@ library
     Control.Monad.Array.Class
     Data.Array.MArray.Extras
 
-  ghc-options: -Wall 
+  ghc-options: -Wall
