@@ -1,7 +1,12 @@
 Name:                bdelta
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Simple, fast binary diff/patch
 Description:
+    This package has been renamed from bdelta to bytestring-delta, to avoid
+    conflicting with an existing project by the same name:
+    .
+        * <http://bdelta.org>
+    .
     Compute a patch between two ByteStrings which can later be applied to the
     first to produce the second.  This can be used to save bandwidth and disk
     space when many strings differing by a small number of bytes need to be
@@ -16,7 +21,7 @@ Description:
     space and time with respect to the length of the patch.  A better
     algorithm may be introduced in a future version of bdelta.
 
-Homepage:            http://github.com/joeyadams/haskell-bdelta
+Homepage:            http://github.com/joeyadams/haskell-bytestring-delta
 License:             MIT
 License-file:        LICENSE
 Author:              Joey Adams
@@ -30,7 +35,7 @@ Cabal-version:       >=1.6
 
 source-repository head
     type:       git
-    location:   git://github.com/joeyadams/haskell-bdelta.git
+    location:   git://github.com/joeyadams/haskell-bytestring-delta.git
 
 Library
   Exposed-modules:     Data.BDelta
