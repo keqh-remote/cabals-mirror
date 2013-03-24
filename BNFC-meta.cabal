@@ -1,5 +1,5 @@
 Name:		BNFC-meta
-version:	0.1
+version:	0.1.0.1
 cabal-Version:  >= 1.6
 build-type:     Simple
 license:        GPL-2
