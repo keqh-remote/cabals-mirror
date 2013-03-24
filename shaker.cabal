@@ -1,5 +1,5 @@
 name: shaker
-version: 0.5.0
+version: 0.5.1
 cabal-version: >= 1.8
 build-type: Custom
 license: BSD3
@@ -10,7 +10,7 @@ maintainer: anthonin.bonnefoy@gmail.com
 homepage: http://github.com/bonnefoa/Shaker
 bug-reports: http://github.com/bonnefoa/Shaker/issues 
 Stability:alpha
-Tested-With:GHC == 6.12.3
+Tested-With:GHC >= 7
 category: Development
 synopsis: simple and interactive command-line build tool
 description: 
@@ -89,11 +89,11 @@ source-repository head
 source-repository this
   type:     git
   location: git://github.com/bonnefoa/Shaker.git 
-  tag:      0.4.3
+  tag:      0.5.1
 
 Library 
   ghc-options: -Wall -fno-warn-orphans 
-  hs-source-dirs:  src
+  hs-source-dirs:  src 
   exposed-modules:
     Shaker.Action.Compile
     Shaker.Action.Standard
@@ -101,6 +101,7 @@ Library
     Shaker.CabalInfo
     Shaker.CabalInterface
     Shaker.Cli
+    Shaker.CommonUtil
     Shaker.Conductor
     Shaker.Config
     Shaker.GhcInterface
@@ -112,54 +113,51 @@ Library
     Shaker.PluginConfig
     Shaker.Reflexivite
     Shaker.Regex
-    Shaker.TestHelper
     Shaker.TestTH
     Shaker.Type
   build-depends: base == 4.*
                  ,bytestring == 0.9.*
-                 ,Cabal == 1.8.*
-                 ,containers == 0.3.*
-                 ,directory == 1.0.*
-                 ,filepath == 1.1.*
-                 ,ghc == 6.*
+                 ,Cabal == 1.10.*
+                 ,containers == 0.4.*
+                 ,directory == 1.*
+                 ,filepath == 1.*
+                 ,ghc == 7.*
                  ,ghc-paths == 0.1.*
                  ,haskeline == 0.6.*
-                 ,haskell98 == 1.0.*
                  ,haskell-src == 1.0.*
                  ,HUnit == 1.2.*
                  ,mtl == 2.*
                  ,old-time >= 1.0.0
-                 ,parsec == 3.*
-                 ,QuickCheck == 2.3.*
-                 ,regex-posix == 0.94.*
-                 ,template-haskell >= 2.4.0.0
-                 ,test-framework == 0.3.*
+                 ,parsec3 == 1.*
+                 ,QuickCheck == 2.4.*
+                 ,regex-posix == 0.95.*
+                 ,template-haskell >= 2.5.0.0
+                 ,test-framework == 0.4.*
                  ,test-framework-hunit == 0.2.*
                  ,test-framework-quickcheck2 == 0.2.*
 
 Executable shaker
   Main-Is: Shaker.hs
   ghc-options: -Wall -fno-warn-orphans 
-  hs-source-dirs: prog src
+  hs-source-dirs: prog src 
   build-depends: base == 4.*
                  ,bytestring == 0.9.*
-                 ,Cabal == 1.8.*
-                 ,containers == 0.3.*
-                 ,directory == 1.0.*
-                 ,filepath == 1.1.*
-                 ,ghc == 6.*
+                 ,Cabal == 1.10.*
+                 ,containers == 0.4.*
+                 ,directory == 1.*
+                 ,filepath == 1.*
+                 ,ghc == 7.*
                  ,ghc-paths == 0.1.*
                  ,haskeline == 0.6.*
-                 ,haskell98 == 1.0.*
                  ,haskell-src
                  ,HUnit == 1.2.*
                  ,mtl == 2.*
                  ,old-time >= 1.0.0
-                 ,parsec == 3.*
-                 ,QuickCheck == 2.3.*
-                 ,regex-posix == 0.94.*
-                 ,template-haskell >= 2.4.0.0
-                 ,test-framework == 0.3.*
+                 ,parsec3 == 1.*
+                 ,QuickCheck == 2.4.*
+                 ,regex-posix == 0.95.*
+                 ,template-haskell >= 2.5.0.0
+                 ,test-framework == 0.4.*
                  ,test-framework-hunit == 0.2.*
                  ,test-framework-quickcheck2 == 0.2.*
 
