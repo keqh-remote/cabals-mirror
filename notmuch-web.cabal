@@ -1,5 +1,5 @@
 name:              notmuch-web
-version:           0.1.0
+version:           0.1.0.1
 cabal-version:     >= 1.8
 build-type:        Simple
 synopsis:          A web interface to the notmuch email indexer
