@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.2
 Name: xml-picklers
-Version: 0.2
+Version: 0.2.1
 Synopsis: XML picklers based on xml-types, ported from hexpat-pickle
 Description:
   A library of combinators that allows Haskell data structures to be pickled
@@ -8,9 +8,7 @@ Description:
   .
   Release history
   .
-  [0.2] Error system overhaul.
-  .
-  New picklers: @xpSubsetAll@, @xpElems@
+  [0.2] Error system overhaul. New picklers: @xpSubsetAll@, @xpElems@
   .
   [0.1] Initial release
 Category: XML
