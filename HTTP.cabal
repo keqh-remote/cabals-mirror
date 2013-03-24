@@ -1,21 +1,12 @@
 Name: HTTP
-Version: 4000.1.2
-Cabal-Version: >= 1.2
+Version: 4000.2.0
+Cabal-Version: >= 1.8
 Build-type: Simple
 License: BSD3
 License-file: LICENSE
-Copyright: 
-  Copyright (c) 2002, Warrick Gray
-  Copyright (c) 2002-2005, Ian Lynagh
-  Copyright (c) 2003-2006, Bjorn Bringert
-  Copyright (c) 2004, Andre Furtado
-  Copyright (c) 2004, Ganesh Sittampalam
-  Copyright (c) 2004-2005, Dominic Steinitz
-  Copyright 2007 Robin Bate Boerop
-  Copyright 2008- Sigbjorn Finne
 Author: Warrick Gray <warrick.gray@hotmail.com>
-Maintainer: Ganesh Sittampalam <ganesh@earth.li>
-Homepage: http://projects.haskell.org/http/
+Maintainer: Ganesh Sittampalam <http@projects.haskell.org>
+Homepage: https://github.com/haskell/HTTP
 Category: Network
 Synopsis: A library for client-side HTTP
 Description: 
@@ -49,13 +40,19 @@ Description:
  >               request $ getRequest "http://google.com/"
  >      fmap (take 100) (getResponseBody rsp)
  > 
- .
- Git repository available at <git://github.com/haskell/HTTP.git>
 
 Extra-Source-Files: CHANGES
 
+Source-Repository head
+  type: git
+  location: https://github.com/haskell/HTTP.git
+
 Flag old-base
   description: Old, monolithic base
+  default: False
+
+Flag mtl1
+  description: Use the old mtl version 1.
   default: False
 
 Library
@@ -76,16 +73,38 @@ Library
                  Network.Browser
   Other-modules:
                  Network.HTTP.Base64,
-                 Network.HTTP.MD5,
                  Network.HTTP.MD5Aux,
                  Network.HTTP.Utils
+                 Paths_HTTP
   GHC-options: -fwarn-missing-signatures -Wall
-  Build-depends: base >= 2 && < 4.5, network, parsec, mtl
+  Build-depends: base >= 2 && < 4.5, network, parsec
   Extensions: FlexibleInstances
   if flag(old-base)
     Build-depends: base < 3
   else
     Build-depends: base >= 3, array, old-time, bytestring
+  if flag(mtl1)
+    Build-depends: mtl >= 1.1 && < 1.2
+    CPP-Options: -DMTL1
+  else
+    Build-depends: mtl >= 2.0 && < 2.1
 
   if os(windows)
     Build-depends: Win32
+
+Test-Suite test
+  type: exitcode-stdio-1.0
+
+  build-tools: ghc >= 6.10 && < 7.4
+
+  hs-source-dirs: test
+  main-is: httpTests.hs
+
+  build-depends:     HTTP,
+                     HUnit,
+                     httpd-shed,
+                     base >= 2 && < 4.5,
+                     network,
+                     split >= 0.1 && < 0.2,
+                     test-framework,
+                     test-framework-hunit
