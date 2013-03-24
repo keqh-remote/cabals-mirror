@@ -1,5 +1,5 @@
 Name: pipes
-Version: 2.4.0
+Version: 2.5.0
 Cabal-Version: >=1.14.0
 Build-Type: Simple
 License: BSD3
@@ -20,11 +20,12 @@ Description:
   * /Concise API/: This library uses a few simple abstractions with a very high
     power-to-weight ratio to reduce adoption time.
   .
+  * /Bidirectionality/: The library offers bidirectional communication
+  .
+  * /Blazing fast/: Currently the fastest iteratee implementation
+  .
   * /Clear semantics/: All abstractions are grounded in category theory, which
     leads to intuitive behavior (and fewer bugs, if any!).
-  .
-  * /Bidirectionality/: The library provides a bidirectional type, called a
-    'Proxy'.
   .
   * /Extension Framework/: You can elegantly mix and match extensions to the
     base type and easily create your own!
@@ -32,7 +33,7 @@ Description:
   * /Extensive Documentation/: Second to none!
   .
   I recommend you begin by reading "Control.Pipe.Tutorial" which introduces the
-  basic concepts using the simpler 'Pipe' API.  Then move on to
+  basic concepts using the simpler unidirectional 'Pipe' API.  Then move on to
   "Control.Proxy.Tutorial", which introduces the 'Proxy' type which forms the
   core abstraction of this library.  To use extensions or define your own, check
   out "Control.Proxy.Trans.Tutorial".
@@ -48,9 +49,8 @@ Source-Repository head
 Library
     Build-Depends:
         base >= 4 && < 5,
-        free >= 3.2,
         index-core,
-        transformers
+        transformers >= 0.2.0.0
     Exposed-Modules:
         Control.Frame,
         Control.Frame.Tutorial,
@@ -77,5 +77,4 @@ Library
         Control.Pipe.Core,
         Control.Pipe.Tutorial,
         Data.Closed
-    GHC-Options: -O2
-    Default-Language: Haskell2010
+    Default-Language: Haskell98
