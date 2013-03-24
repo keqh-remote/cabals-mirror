@@ -1,5 +1,5 @@
 Name:         xhb
-Version:      0.3.2009.6.28
+Version:      0.4.2010.12.26
 Cabal-Version:  >= 1.2.3
 Synopsis:     X Haskell Bindings
 Description:
@@ -8,8 +8,8 @@ Description:
   Similar to XCB - the X C Bindings.
   .
   This library is based on version 1.5 of the xcb-proto
-  package.  See http:\/\/xcb.freedesktop.org\/XmlXcb\/ and
-  http:\/\/xcb.freedesktop.org\/dist\/ .
+  package.  See http://xcb.freedesktop.org/XmlXcb/ and
+  http://xcb.freedesktop.org/dist/ .
 
 License:      BSD3
 License-file: LICENSE
@@ -59,8 +59,8 @@ Library
    Graphics.XHB.Gen.Xproto,
    Graphics.XHB.Gen.SELinux,
    Graphics.XHB.Gen.Test,
-   Graphics.XHB.Gen.XvMC,
-   Graphics.XHB.Gen.Xv
+   Graphics.XHB.Gen.Xv,
+   Graphics.XHB.Gen.XvMC
 
  Other-modules:
    Graphics.XHB.Shared,
@@ -90,10 +90,9 @@ Library
    Graphics.XHB.Gen.Xproto.Types,
    Graphics.XHB.Gen.SELinux.Types,
    Graphics.XHB.Gen.Test.Types,
-   Graphics.XHB.Gen.XvMC.Types,
    Graphics.XHB.Gen.Xv.Types,
+   Graphics.XHB.Gen.XvMC.Types,
    Graphics.XHB.Gen.Extension
 
  hs-source-dirs: . patched
-
 
