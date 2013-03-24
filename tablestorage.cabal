@@ -1,10 +1,10 @@
 name:           tablestorage
-version:        0.1
-cabal-version:  >= 1.6
+version:        0.1.0.1
+cabal-version:  >= 1.2
 build-type:     Simple
 author:         Phil Freeman <paf31-at-cantab.net>
 stability:      experimental
-maintainer:     Phil Freeman <paf31-at-cantab.net>
+maintainer:     Phil Freeman <paf31@cantab.net>
 homepage:       http://github.com/paf31/tablestorage
 category:       Web, Database, API
 license:        BSD3
@@ -20,10 +20,6 @@ description:
                 Table and entity level functions are supported along with shared key authentication token generation, and error handling. 
                 Pagination and projections are currently not supported.
 
-source-repository head
-  type:     git
-  location: git://github.com/paf31/tablestorage.git
-
 library
   hs-source-dirs:  src
   build-depends:   
@@ -35,8 +31,8 @@ library
                    HTTP,
                    network,
                    time,
-                   haskell98,
-                   xml
+                   xml,
+                   old-locale
   ghc-options:     -Wall
   exposed-modules: 
                    Network.TableStorage,
