@@ -1,5 +1,5 @@
 Name:                   cab
-Version:                0.1.13
+Version:                0.1.14
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -19,10 +19,7 @@ Build-Type:             Simple
 
 Executable cab
   Main-Is:              Main.hs
-  if impl(ghc >= 6.12)
-    GHC-Options:        -Wall -fno-warn-unused-do-bind
-  else
-    GHC-Options:        -Wall
+  GHC-Options:          -Wall
   Build-Depends:        base >= 4.0 && < 5
                       , Cabal
                       , attoparsec >= 0.10
