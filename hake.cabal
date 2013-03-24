@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.4
+Version:	0.5
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -32,11 +32,6 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		>  ,
 		>  mkfl	( "script.sh", [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ] )
 		>  ,
-		>  mkfl2  ( "script.sh", [ "script.sh.gen" ], \[s] ->
-		>             do gen <- readFile s
-		>                return $ [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ]
-		>                         ++ gen )
-		>  ,
 		>  ruleSS ( "", ".o", \t s -> [ (".c",  [ "gcc " ++ s ++ " -o " ++ t ] ) ,
 		>                               (".cc", [ "g++ " ++ s ++ " -o " ++ t ] ) ] )
 		>  ,
@@ -55,7 +50,7 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 
 Stability:	experimental
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/hake/index.xhtml
-Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hake-0.4.tar.gz
+Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hake-0.5.tar.gz
 Cabal-Version:	>= 1.2
 Build-type:	Simple
 Tested-With:	GHC
@@ -66,7 +61,7 @@ Extra-Tmp-Files:
 Library
   GHC-Options:		-Wall
 --  CPP-Options:		-DDEBUG
-  Build-Depends:	base, old-time, mtl
+  Build-Depends:	base, old-time, mtl, filepath
   Exposed-Modules:	Development.Hake
   Other-Modules:	Development.Hake.HiddenTools
 
