@@ -1,5 +1,5 @@
 name:            shakespeare
-version:         0.10.3.1
+version:         0.11
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -56,4 +56,4 @@ test-suite test
 
 source-repository head
   type:     git
-  location: git://github.com/yesodweb/hamlet.git
+  location: git://github.com/yesodweb/shakespeare.git
