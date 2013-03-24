@@ -1,5 +1,5 @@
 Name:		regexpr
-Version:	0.2.3
+Version:	0.2.5
 License:	GPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -28,6 +28,9 @@ Description:
   .
   gsubRegexPR "(?ixm)  aBc  . # comment \n\n" "abc!" "abc\nABCDAbcAbc" =>
                "abc!abc!abc!bc"
+  .
+  gmatchRegexPR "(?=(?<!(?!abc)))abc" "abcdefdefabc" =>
+               [(("abc", ("", "defdefabc")), []), (("abc", ("defdef", "")), [])]
 Category:	Text
 Build-Depends:	base, mtl, HUnit
 Build-Type:     Simple
@@ -36,5 +39,5 @@ Other-modules:	Hidden.RegexPRTypes, Hidden.Tools, Hidden.ParseLib,
 		Hidden.ParseLibCore, Hidden.RegexPRCore,
 		Hidden.ParseRegexStr, Hidden.SrcRegActList,
 		Hidden.TestMain
-Extra-source-files: TODO.ja.utf-8, localConfigure
+Extra-source-files: TODO.ja.utf-8, localConfigure, BUGS.ja.utf-8
 ghc-options:    -Wall -O2 -optl-Wl,-s
