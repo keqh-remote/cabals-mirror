@@ -1,5 +1,5 @@
 name:            attoparsec-text
-version:         0.8.0.0
+version:         0.8.2.0
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
@@ -9,7 +9,7 @@ stability:       experimental
 tested-with:     GHC == 6.12.1
 synopsis:        Fast combinator parsing for texts
 cabal-version:   >= 1.6
--- homepage:        http://bitbucket.org/bos/attoparsec
+homepage:        http://patch-tag.com/r/felipe/attoparsec-text/home
 -- bug-reports:     http://bitbucket.org/bos/attoparsec/issues
 build-type:      Simple
 description:
@@ -19,11 +19,23 @@ description:
     .
     This library is basically a translation of the original
     attoparsec library to use text instead of bytestrings.
+    .
+    Changes in version 0.8.2.0:
+    .
+    * Add @IsString@ instance to @Parser@.
+    .
+    * Add specializations of @\<*@ and @*\>@, see the docs for
+      more information.
+    .
+    * Add @digit@, @letter@, @space@, @decimal@, @hexadecimal@,
+      @signed@, @double@ and @rational@.
 extra-source-files:
     README.markdown
     benchmarks/Makefile
+    benchmarks/Double.hs
     benchmarks/Tiny.hs
     benchmarks/med.txt.bz2
+    benchmarks/double_test.txt.bz2
     tests/Makefile
     tests/QC.hs
     tests/QCSupport.hs
@@ -46,4 +58,4 @@ library
                    Data.Attoparsec.Text.Lazy
   other-modules:   Data.Attoparsec.Text.Internal
   ghc-options:     -Wall
-  ghc-prof-options: -auto-all
+--  ghc-prof-options: -auto-all
