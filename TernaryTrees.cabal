@@ -1,5 +1,5 @@
 Name:                   TernaryTrees
-Version:                0.1.0.0
+Version:                0.1.1.0
 Category:               Data Structures
 Synopsis:               Efficient pure ternary tree Sets and Maps
 Description:            Ternary trees are an efficient structure often used for storing
@@ -20,18 +20,14 @@ Description:            Ternary trees are an efficient structure often used for 
 			.
 			New in this version:
 			.
-			* First major interface change since the first release... (less than
-			  24 hours ago).
+			* Refactored a lot of the datatypes for the Sets (much of their code is
+			  exactly the same now)
 			.
-			* Changed many function names to match those in Data.[Map,Set] to
-			  provide a more familiar interface.
+			* Made the get implementation shorter and clearer (thanks to olsner on IRC)
 			.
-			* Added a Functor instance for TernaryMap.
+			* There is now a darcs repo: <http://random.axman6.com/darcs/TernaryTrees/>
 			.
-			* Added `empty` and `null` functions to all types, and `elems`
-			  to TernaryMap.
-			.
-			&#169; 2009 by Alex Mason (<http://axman6.homeip.net/blog/>). BSD3 license.
+			&#169; 2009 by Alex Mason (<http://random.axman6.com/blog/>). BSD3 license.
 			
 License:                BSD3
 License-file:           LICENSE.txt
