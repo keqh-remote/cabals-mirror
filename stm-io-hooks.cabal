@@ -21,12 +21,12 @@ Description:
 
 Category:       Concurrency
 Stability:      experimental
-Author:         Peter Robinson 2009, Chris Kuklewicz 2006
+Author:         Peter Robinson 2009-2010, Chris Kuklewicz 2006
 Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        BSD3
 License-file:   LICENSE
 Homepage:       http://darcs.monoid.at/stm-io-hooks
-Version:        0.6.0
+Version:        0.7.0
 
 Build-type:     Simple                        
 Cabal-Version:  >= 1.2.3
