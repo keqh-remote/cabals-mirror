@@ -1,5 +1,5 @@
 name:             zmidi-core
-version:          0.4.0
+version:          0.5.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -13,6 +13,22 @@ description:
   dependencies only on ByteString and Data.Binary.
   .
   Changelog:
+  .
+  v0.4.0 to v0.5.0:
+  .
+  * Changed order of @MidiVoiceEnvent@ constructors so the Ord 
+    instance follows the order of the /tag/ in the MIDI binary
+    representation.
+  . 
+  * Changed @MidiSysCommonEvent@ to have different constructors 
+    for unidentified F4 anf F5 events.   
+  .
+  * Changed @MidiSysRealTimeEvent@ to have different constructors
+    for unidentified F9 and FD events.  
+  . 
+  * Added more Haddock docs.
+  .
+  * Various internal code changes.
   .
   v0.3.0 to v0.4.0:
   .
