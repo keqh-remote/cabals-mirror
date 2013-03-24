@@ -18,7 +18,7 @@
 --
 
 Name:           Thrift
-Version:        0.5.0.1
+Version:        0.5.0.2
 Cabal-Version:  >= 1.2.3
 License:        OtherLicense
 Category:       Foreign
@@ -28,7 +28,7 @@ Homepage:       http://incubator.apache.org/thrift
 Maintainer:     thrift-user-subscribe@incubator.apache.org 
 Description:
   The Thrift Haskell package that shipped with Thrift v.0.5.0, released under the Apache 2.0 license.
-  Thrift-0.5.0.1 adds a missing Framed Transport implementation, which Cassandra now depends on. 
+  Thrift-0.5.0-2 adds a missing Framed Transport implementation, which Cassandra now depends on. 
   For more information see: https://issues.apache.org/jira/browse/THRIFT-538.
   
 
