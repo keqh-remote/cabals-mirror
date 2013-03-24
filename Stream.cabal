@@ -1,5 +1,5 @@
 Name:                   Stream
-Version:                0.2.2
+Version:                0.2.3
 License:                BSD3
 License-file:           LICENSE
 Author:                 Wouter Swierstra
@@ -9,6 +9,7 @@ Synopsis:               A library for manipulating infinite lists.
 Description:            This package implements functions, analogous
                         to those from Data.List, to create and manipulate infinite lists.
 Category:               Data
-Build-Depends:          base
+Build-Depends:          base, QuickCheck < 2
+Build-Type:		Simple
 Exposed-modules:        Data.Stream
 
