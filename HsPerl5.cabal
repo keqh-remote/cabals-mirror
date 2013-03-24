@@ -1,5 +1,5 @@
 name:               HsPerl5
-version:            0.0.4
+version:            0.0.5
 copyright:          2008 Audrey Tang
 license:            BSD3
 license-file:       LICENSE
@@ -30,6 +30,6 @@ exposed-modules:    Language.Perl5
 build-depends:      base
 extra-source-files: README test.hs configure p5embed.h
 hs-source-dirs:     src
-category:           Language
+category:           Language, Pugs
 c-sources:          p5embed.c
 includes:           p5embed.h
