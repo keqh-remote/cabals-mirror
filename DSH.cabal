@@ -1,5 +1,5 @@
 Name:                DSH
-Version:             0.8.2.0
+Version:             0.8.2.1
 Synopsis:            Database Supported Haskell
 Description:
   This is a Haskell library for database-supported program execution. Using
@@ -39,13 +39,15 @@ Description:
 
 License:             BSD3
 License-file:        LICENSE
-Author:              George Giorgidze, Tom Schreiber, Nils Schweinsberg and Jeroen Weijers
+Author:              George Giorgidze, Alexander Ulrich, Tom Schreiber, Nils Schweinsberg and Jeroen Weijers
 Maintainer:          giorgidze@gmail.com, jeroen.weijers@uni-tuebingen.de
 Stability:           Experimental
 Category:            Database
 Build-type:          Simple
 
 Extra-source-files:  examples/Example01.hs
+                     examples/Example02.hs
+                     examples/Example03.hs
                      examples/Makefile
                      tests/Main.hs
                      tests/Makefile
