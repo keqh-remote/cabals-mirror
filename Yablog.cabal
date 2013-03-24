@@ -1,5 +1,5 @@
 name:              Yablog
-version:           0.0.1.1
+version:           0.0.1.2
 license:           BSD3
 license-file:      LICENSE
 author:            Hiromi ISHII
@@ -86,7 +86,7 @@ executable         Yablog
                 EmptyDataDecls
 
     build-depends: base                          >= 4          && < 5
-                 , yesod-platform                == 1.0.1
+                 , yesod-platform                == 1.0.*
                  , yesod                         >= 1.0        && < 1.1
                  , yesod-core                    >= 1.0        && < 1.1
                  , yesod-auth                    >= 1.0        && < 1.1
@@ -127,4 +127,4 @@ source-repository head
 source-repository this
   type:     git
   location: https://github.com/konn/Yablog
-  tag: 0.0.1.1
+  tag: 0.0.1.2
