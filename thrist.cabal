@@ -1,5 +1,5 @@
 Name:                thrist
-Version:             0.2
+Version:             0.2.1
 Synopsis:            Type-threaded list
 
 Description:
@@ -20,12 +20,12 @@ Description:
     .
     For further ideas, please consult the companion
     (draft) paper \"Thrists: Dominoes of Data\" at
-    <http://www.opendylan.org/~gabor/Thrist-draft-2008-07-18.pdf>
+    <http://omega.googlecode.com/files/Thrist-draft-2011-11-20.pdf>
 
 Category:            Data Structures
 License:             BSD3
 License-File:        LICENSE
-Copyright:           (c) 2008-2010 Gabor Greif and Brandon Simmons
+Copyright:           (c) 2008-2011 Gabor Greif and Brandon Simmons
 
 Author:              Gabor Greif, Brandon Simmons
 Maintainer:          ggreif@gmail.com, brandon.m.simmons@gmail.com
