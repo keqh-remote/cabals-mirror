@@ -1,5 +1,5 @@
 name:           family-tree
-version:        0.1.1
+version:        0.1.2
 cabal-version:  >= 1.2
 build-type:     Simple
 author:         Nathan "Taneb" van Doorn
@@ -7,9 +7,7 @@ maintainer:     nvd1234@gmail.com
 stability:      Unstable
 synopsis:       Family trees with lenses
 
-description:    This is a module which contains a data type for family trees.
-                .
-                It also includes appropriate lenses!
+description:    This is a module for the manipulation of family trees.
 category:       Genealogy, Data
 copyright:      (c) 2012 Nathan "Taneb" van Doorn
 license:        BSD3
