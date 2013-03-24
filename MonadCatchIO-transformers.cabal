@@ -1,5 +1,5 @@
 Name:            MonadCatchIO-transformers
-Version:         0.1.0.1
+Version:         0.2.0.0
 Cabal-Version:   >= 1.6
 License:         PublicDomain
 Description:
@@ -17,7 +17,7 @@ Library
   Build-Depends:
     base == 4.*,
     extensible-exceptions == 0.1.*,
-    transformers == 0.1.*
+    transformers == 0.2.*
   Exposed-Modules:
     Control.Monad.CatchIO
   Hs-Source-Dirs:  src
