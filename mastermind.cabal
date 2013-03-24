@@ -1,12 +1,12 @@
 name: mastermind
-version: 2010.7.25
+version: 2010.7.25.1
 license: BSD3
 license-file: LICENSE
 maintainer: Paolo Veronelli <paolo.veronelli@gmail.com> 
 stability: unstable
 category: game
-synopsis: console mastermind decrypter
-description:  a 5 guess decrypter for mastermind game
+synopsis: console mastermind decypher
+description:  a 5 guess decypher for mastermind game
 homepage: http://wiki.github.com/paolino/mastermind
 copyright: Copyright (c) 2010 Paolo Veronelli 
 build-type: Simple
