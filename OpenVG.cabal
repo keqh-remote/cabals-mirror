@@ -1,15 +1,17 @@
 name:             OpenVG
-version:          0.1
+version:          0.2
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
 maintainer:       Stephen Tetley <stephen.tetley@gmail.com>
 homepage:         http://code.google.com/p/copperbox/
 category:         Graphics
-synopsis:         OpenVG (shivag-0.2.0) binding
+synopsis:         OpenVG (shivag-0.2.1) binding
 description:
   A Haskell binding for the OpenVG vector graphics API version 1.0.1
-  (specifically the shivavg-0.2.0 implementation).
+  specifically the shivavg-0.2.1 implementation.
+  *** Windows users - use version 1.0 and ShivaVG-0.2.0. ***
+
 
 build-type:         Simple
 stability:          alpha
@@ -17,17 +19,20 @@ cabal-version:      >= 1.2
 
 extra-source-files:
   InstallWindows.txt,
+  NEWS,
   README.txt,
   examples/TestUtils.hs,
   examples/TestVgu.hs
 
 library
   hs-source-dirs:     src
-  build-depends:      base, OpenGL >= 2.2, GLUT >= 2.1.1.2
+  build-depends:      base < 5, OpenGL >= 2.2, GLUT >= 2.1.1.2
 
   
   exposed-modules:
     Graphics.Rendering.OpenVG,
+    Graphics.Rendering.OpenVG.Util.Colors,
+    Graphics.Rendering.OpenVG.Util.PathCommands,
     Graphics.Rendering.OpenVG.VG,
     Graphics.Rendering.OpenVG.VGU,
     Graphics.Rendering.OpenVG.VG.BasicTypes,
