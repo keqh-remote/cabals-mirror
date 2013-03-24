@@ -1,5 +1,5 @@
 Name:                amrun
-Version:             0.0
+Version:             0.0.0.1
 Synopsis:            Interpreter for AM
 Description:         The package contains an interpreter for the AM-Language that is introduced in the basic programming course \"Algorithmisches Denken und imperative Programmierung\" (WS 2011/12 and later) at the University of Bonn.
 License:             GPL
