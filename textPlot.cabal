@@ -1,7 +1,8 @@
 Name:                textPlot
-Version:             0.1
-Synopsis:            Graphs functions as lines of text
-Description:         Graphs standard, parametric, and polar functions and plots them into text files or prints them. One creates a standard, polar, or parametric plot with boundaries, dimensions and possible functions. One may add functions to any plot.
+Version:             0.2
+Synopsis:            Plot functions in text.
+Description:         Graph plots of y(x), parametric (x(t),y(t)),
+		     and polar r(phi) functions with ASCII text.
 Category:            Charts
 License:             BSD3
 Author:              William Tennien Murphy
@@ -10,5 +11,7 @@ Build-Type:          Simple
 Cabal-Version:       >= 1.2
 
 library
+  GHC-options:     -Wall -fno-warn-orphans -fno-warn-name-shadowing
   Exposed-Modules: TextPlot
   Build-Depends:   base >= 2.0 && < 5
+                 , array
