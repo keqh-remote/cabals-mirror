@@ -1,5 +1,5 @@
 Name:           wraxml
-Version:        0.3
+Version:        0.4
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -9,8 +9,8 @@ Category:       Text
 Build-Depends:
   polyparse >=1.1,
   tagsoup >=0.6 && <0.7,
-  tagsoup-ht >=0.3 && <0.4,
-  xml-basic >=0.0.1 && <0.1,
+  tagchup >=0.3 && <0.4,
+  xml-basic >=0.1 && <0.2,
   HaXml >=1.19.4, hxt >=8.1.0 && <9,
   hxt-filter >=8.1.1 && <9,
   transformers >=0.1 && <0.2,
@@ -63,6 +63,7 @@ Exposed-modules:
   Text.HTML.WraXML.Document
   Text.HTML.WraXML.Table
   Text.HTML.WraXML.Tree
+  Text.HTML.WraXML.Tree.HXT
   Text.HTML.WraXML.String
   Text.HTML.WraXML.Entity
   Text.XML.WraXML.Position.HaXml
@@ -74,11 +75,11 @@ Exposed-modules:
   Text.XML.WraXML.Tree.HaXml
   Text.XML.WraXML.Tree.HXT
   Text.XML.WraXML.Tree.TagSoup
-  Text.XML.WraXML.Tree.TagSoupHT
+  Text.XML.WraXML.Tree.Tagchup
   Text.XML.WraXML.Tree.Literal
   Text.XML.WraXML.Document
   Text.XML.WraXML.Document.TagSoup
-  Text.XML.WraXML.Document.TagSoupHT
+  Text.XML.WraXML.Document.Tagchup
 Other-Modules:
   Text.XML.WraXML.Utility
   Text.XML.WraXML.Tree.LazyParser
