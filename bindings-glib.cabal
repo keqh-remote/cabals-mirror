@@ -3,7 +3,7 @@ name: bindings-glib
 homepage: http://bitbucket.org/mauricio/bindings-glib
 synopsis:
   Low level bindings to GLib.
-version: 0.1
+version: 0.1.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -17,7 +17,7 @@ library
     ForeignFunctionInterface
   build-depends:
     base >= 3 && < 5,
-    bindings-DSL >= 1.0 && < 1.1
+    bindings-DSL >= 1.0.6 && < 1.1
   exposed-modules:
     Bindings.GLib
     Bindings.GLib.CoreApplicationSupport
@@ -51,4 +51,4 @@ library
     Bindings.GLib.Utilities.DateAndTimeFunctions
     Bindings.GLib.Utilities.HostnameUtilities
   c-sources: src/inlines.c
-  pkgconfig-depends: glib-2.0 >= 2.22.2
+  pkgconfig-depends: glib-2.0 >= 2.22.2, gthread-2.0 >= 2.22.2
