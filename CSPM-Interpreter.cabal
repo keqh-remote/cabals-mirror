@@ -1,5 +1,5 @@
 Name:                CSPM-Interpreter
-Version:             0.1.0.0
+Version:             0.1.0.1
 
 Synopsis:            An interpreter for CSPM
 Description:
@@ -15,6 +15,7 @@ category:            Language
 License-File:        License
 Author:              2010 Marc Fontaine
 Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
+Homepage:            http://www.stups.uni-duesseldorf.de/~fontaine/csp
 cabal-Version:       >= 1.6
 build-type: Simple
 Extra-source-files:
