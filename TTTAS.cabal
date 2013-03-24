@@ -1,7 +1,7 @@
-cabal-version:      >=1.2
+cabal-version:      >=1.2.3
 build-type:         Simple
 name:               TTTAS
-version:            0.2.1
+version:            0.3.0
 license:            LGPL
 license-file:       COPYRIGHT
 maintainer:         Arthur Baars <abaars@iti.upv.es>
@@ -11,7 +11,7 @@ synopsis:           Typed Transformations of Typed Abstract Syntax
 category: 
 stability:          Stable
 copyright:          Universiteit Utrecht
-build-depends:      base, haskell98
+build-depends:      base >= 2 && < 4.1.0.0, haskell98
 exposed-modules:    Language.TTTAS       
 extensions:         Arrows, GADTs, CPP
 hs-source-dirs:     src
