@@ -1,5 +1,5 @@
 Name:           AERN-RnToRm-Plot
-Version:        0.2
+Version:        0.2.0.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -24,10 +24,14 @@ Extra-source-files:
 Library
   hs-source-dirs:  src
   Build-Depends:
-      base >= 3, base < 4, containers, binary >= 0.4, directory, filepath, time, stm, mtl,
-      AERN-Real >= 0.9.9, AERN-RnToRm >= 0.4.9,
+      base >= 3, base < 4, containers, binary,
+      directory, filepath, time, stm, mtl,
+      AERN-Real >= 0.10, AERN-Real < 0.10.1,
+      AERN-RnToRm >= 0.5, AERN-RnToRm < 0.5.1,
       OpenGL >= 2.2.1.1, GLUT >= 2.1.1.1,
-      gtk >= 0.10.0, gtkglext >= 0.10.0, glib >= 0.10.0, glade >= 0.10.0
+      OpenGL < 3, GLUT < 3,
+      gtk >= 0.10, gtkglext >= 0.10, glib >= 0.10, glade >= 0.10,
+      gtk < 0.11, gtkglext < 0.11, glib < 0.11, glade < 0.11
   Exposed-modules:
     Data.Number.ER.RnToRm.Plot.FnView,
     Data.Number.ER.RnToRm.Plot.GLDrawable,
