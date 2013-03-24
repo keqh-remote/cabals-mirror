@@ -1,5 +1,5 @@
 Name:                hOpenPGP
-Version:             0.6
+Version:             0.6.1
 Synopsis:            native Haskell implementation of OpenPGP (RFC4880)
 Description:         native Haskell implementation of OpenPGP (RFC4880)
 Homepage:            http://floss.scru.org/hOpenPGP/
@@ -133,10 +133,10 @@ Library
                , bytestring
                , bzlib
                , cereal
-               , cereal-conduit        >= 0.6    && < 0.7
-               , conduit               >= 0.5    && < 0.6
+               , cereal-conduit        >= 0.6    && < 0.8
+               , conduit               >= 0.5    && < 1.1
                , containers
-               , crypto-pubkey         >= 0.1.1
+               , crypto-pubkey         >= 0.1.2
                , cryptohash
                , ixset                 >= 1.0
                , lens                  >= 3.0
@@ -157,10 +157,10 @@ Test-Suite tests
                , bytestring
                , bzlib
                , cereal
-               , cereal-conduit        >= 0.6    && < 0.7
-               , conduit               >= 0.5    && < 0.6
+               , cereal-conduit
+               , conduit
                , containers
-               , crypto-pubkey         >= 0.1.1
+               , crypto-pubkey         >= 0.1.2
                , cryptohash
                , ixset                 >= 1.0
                , lens                  >= 3.0
