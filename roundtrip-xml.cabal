@@ -1,5 +1,5 @@
 Name:           roundtrip-xml
-Version:        0.3.0.1
+Version:        0.3.0.2
 Synopsis:       Bidirectional (de-)serialization for XML.
 Description:    Roundtrip allows the definition of bidirectional
                 (de-)serialization specifications. This package provides
