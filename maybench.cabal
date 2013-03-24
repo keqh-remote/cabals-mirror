@@ -1,5 +1,5 @@
 Name:                maybench
-Version:             0.2
+Version:             0.2.1
 License:             BSD3
 License-file:        LICENSE
 Author:              Maybench developers
@@ -27,7 +27,7 @@ Tested-With:         GHC==6.8.2
 Flag splitBase
     Description: Choose the new smaller, split-up base package.
 Library
-    build-depends: benchpress >= 0.2.1 && < 0.3
+    build-depends: benchpress >= 0.2.2 && < 0.2.3
     if flag(splitBase)
         build-depends: base >= 3, process, old-time
     else
@@ -39,7 +39,7 @@ Library
 
 Executable maybench
  Hs-Source-Dirs: ., wrapper
- build-depends: benchpress >= 0.2.1 && < 0.3
+ build-depends: benchpress >= 0.2.2 && < 0.2.3
  if flag(splitBase)
         build-depends: base >= 3,
                        process
@@ -50,7 +50,7 @@ Executable maybench
 
 Executable darcs-benchmark
  Hs-Source-Dirs: ., darcs-benchmark
- build-depends: benchpress >= 0.2.1 && < 0.3
+ build-depends: benchpress >= 0.2.2 && < 0.2.3
  if flag(splitBase)
         build-depends: base >= 3,
                        process, unix, directory, time, mtl, filepath
