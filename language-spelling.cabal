@@ -1,12 +1,12 @@
 Cabal-Version:      >= 1.8
 Name:               language-spelling
-Version:            0.1
+Version:            0.1.1
 Author:             Francesco Mazzoli (f@mazzo.li)
 Maintainer:         Francesco Mazzoli (f@mazzo.li)
 Build-Type:         Simple
 License:            PublicDomain
 Build-Type:         Simple
-Category:           Foreign binding, Text
+Category:           NLP
 Synopsis:           Various tools to detect/correct mistakes in words
 Tested-With:        GHC==7.4.1
 Homepage:           https://github.com/bitonic/language-spelling
