@@ -2,7 +2,7 @@
 Name:		multisetrewrite
 Synopsis:	Multi-set rewrite rules with guards and a parallel execution scheme
 Category:       Concurrency
-Version:	0.4
+Version:	0.5
 Stability:      experimental
 Cabal-Version:  >= 1.2
 License:	BSD3
@@ -23,7 +23,8 @@ Exposed-modules:
                      MultiSetRewrite.Base,
                      MultiSetRewrite.RuleSyntax,
                      MultiSetRewrite.RuleCompiler,
-                     MultiSetRewrite.StoreRepresentation
+                     MultiSetRewrite.StoreRepresentation,
+                     MultiSetRewrite.StorePrettyPrinter
 Other-modules:     MultiSetRewrite.ConcurrentList,
                    MultiSetRewrite.ConcurrentBag
 
