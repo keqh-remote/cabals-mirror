@@ -1,5 +1,5 @@
 name:           mwc-random
-version:        0.8.0.0
+version:        0.8.0.1
 synopsis:       Fast, high quality pseudo random number generation
 description:
   This package contains code for generating high quality random
@@ -16,7 +16,7 @@ description:
   distributions.
 license:        BSD3
 license-file:   LICENSE
-homepage:       http://darcs.serpentine.com/mwc-random
+homepage:       http://bitbucket.org/bos/mwc-random
 author:         Bryan O'Sullivan <bos@serpentine.com>
 maintainer:     Bryan O'Sullivan <bos@serpentine.com>
 copyright:      2009, 2010 Bryan O'Sullivan
