@@ -1,5 +1,5 @@
 name:                fft
-version:             0.1.0.1
+version:             0.1.1
 synopsis:            Bindings to the FFTW library.
 description:
                      Bindings to the FFTW library.
@@ -13,7 +13,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Jed Brown
 maintainer:          <jed@59A2.org>
-build-Depends:       base, array, carray
+build-Depends:       base, array, carray, storable-complex
 extra-libraries:     fftw3
 extensions:	     ForeignFunctionInterface
 exposed-modules:     Math.FFT
