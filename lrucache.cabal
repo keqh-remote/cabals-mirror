@@ -1,5 +1,5 @@
 Name:                lrucache
-Version:             0.3
+Version:             1.0
 Synopsis:            a simple, pure LRU cache
 License:             BSD3
 License-file:        LICENSE
@@ -19,7 +19,15 @@ Description:
         .
         Version History:
         .
-        0.3 - Added a Show instance for LRU.
+        1.0 - Breaking API changes:
+               1) The newLRU smart constructor now makes the maximum
+                  size optional.
+               2) The delete function now returns the value removed, if
+                  one was.
+              Additionally, a function was added to remove the least-recently
+              used element in the LRU.
+        .
+        0.3 - Added a Show instance for LRU. (Requested by Ben Lee)
         .
         0.2.0.1 - Increase strictness slightly.
                   Remove cabal target for test executable.
@@ -36,9 +44,11 @@ Description:
         0.1 - First release
 
 Extra-source-files:
+        LICENSE
         README
         MemTest.hs
         OpTest.hs
+        Setup.hs
 
 Cabal-version:       >=1.6
 
@@ -53,4 +63,4 @@ Library
         base >= 4 && < 5,
         containers >= 0.2 && < 0.4
 
-  GHC-Options:             -Wall
+  GHC-options:  -Wall -O2
