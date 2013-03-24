@@ -1,5 +1,5 @@
 name:                haskell-mpi
-version:             1.2.0
+version:             1.2.1
 cabal-version:       >= 1.6
 synopsis:            Distributed parallel programming in Haskell using MPI.
 description:
@@ -114,7 +114,6 @@ Library
       src
    build-depends:
       base > 3 && <= 5,
-      haskell98,
       bytestring,
       cereal,
       extensible-exceptions,
