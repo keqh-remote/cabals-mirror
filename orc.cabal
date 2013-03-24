@@ -1,5 +1,5 @@
 name:               orc
-version:            1.1.1.0
+version:            1.1.2.0
 synopsis:           Orchestration-style co-ordination EDSL
 description:        Provides an EDSL with Orc primitives.
 category:           Web
@@ -15,7 +15,7 @@ build-type:         Simple
 Library
   Extensions:       GeneralizedNewtypeDeriving
   Build-Depends:    base    >= 4.2.0.0 && <= 4.3,
-                    stm     >= 2.1.2.0 && <= 2.2,
+                    stm     >= 2.1.0.0 && <= 2.2,
                     process >= 1.0.1.0 && <= 1.1,
                     mtl     >= 1.1.0.0 && <= 1.2,
                     monadIO >= 0.9.1.0 && <= 0.10,
