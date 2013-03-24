@@ -1,5 +1,5 @@
 name:                atomo
-version:             0.2
+version:             0.2.1
 synopsis:            A highly dynamic, extremely simple, very fun programming
                      language.
 description:
@@ -99,9 +99,9 @@ library
     Atomo.Kernel.Pattern,
     Atomo.Kernel.Ports,
     Atomo.Kernel.Time,
-    Atomo.Kernel.Exception,
     Atomo.Kernel.Environment,
     Atomo.Kernel.Continuation,
+    Atomo.Kernel.Char,
     Paths_atomo
 
 
