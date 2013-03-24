@@ -1,5 +1,5 @@
 name:                MonadPrompt
-version:             1.0.0.0
+version:             1.0.0.1
 cabal-version:       >= 1.2
 build-type:          Simple
 
@@ -10,7 +10,7 @@ author:              Ryan Ingram
 maintainer:          ryani.spam@gmail.com
 stability:           experimental
 synopsis:            MonadPrompt, implementation & examples
-category:            Control.Monad
+category:            Control
 -- tested-with:         ghc-6.8.2
 extra-source-files:  PromptExamples.hs
 description:         "prompting" monad that allows splitting the description
