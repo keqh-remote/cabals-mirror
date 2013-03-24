@@ -1,5 +1,6 @@
 Name:                mkbndl
-Version:             0.2
+Cabal-Version:       >= 1.2
+Version:             0.2.1
 Synopsis:            Makes an OS X .app bundle from a binary.
 Description:         Allows you to easily construct a .app bundle from a binary
                      complete with icon files and finder version info.
@@ -7,9 +8,12 @@ License:             GPL
 License-file:        LICENSE
 Author:              Thomas Davie
 Maintainer:          Thomas Davie (tom.davie@gmail.com)
-Build-Depends:       base,haskell98,filepath > 1.1,directory > 1.0
+Data-Files:          README
+Category:            Distribution
 build-type:          Simple
-category:            Distribution
 
-Executable:          mkbndl
-Main-is:             Main.hs
+Executable mkbndl
+  Build-Depends:        base >= 3.0,haskell98 >= 1.0,
+                        filepath >= 1.1,directory >= 1.0
+  Main-is:              Main.hs
+  Other-Modules:        MakeBundle
