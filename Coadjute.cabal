@@ -1,7 +1,7 @@
 Cabal-Version: >= 1.2
 
 Name:        Coadjute
-Version:     0.0.1
+Version:     0.1.0
 Homepage:    http://iki.fi/matti.niemenmaa/coadjute/
 Synopsis:    A generic build tool
 Category:    Development
@@ -11,7 +11,7 @@ Description:
    portable replacement for make. It's not tailored toward any particular
    language, and is not meant to replace tools which target a specific
    environment.
-
+   .
    Portability is striven towards in two ways:
      - You don't have to deal with the idiosyncrasies of many make implementations
        (well, people don't, but they call their GNU Make files makefiles
@@ -19,7 +19,7 @@ Description:
      - You have Haskell at your disposal, and are encouraged to use that
        whenever possible instead of system-specific binaries like the POSIX
        commands we all know and love.
-
+   .
    With support for:
      - Parallel task performing.
      - Advanced out-of-dateness detection:
@@ -43,9 +43,9 @@ Extra-Source-Files: CHANGELOG.txt
 
 Library
    Build-Depends: base           >= 4     && < 5
-                , array          >= 0.1   && < 0.3
+                , array          >= 0.1   && < 0.4
                 , bytestring     >= 0.9   && < 0.10
-                , containers     >= 0.2   && < 0.3
+                , containers     >= 0.2   && < 0.4
                 , directory      >= 1.0   && < 1.1
                 , filepath       >= 1.1   && < 1.2
                 , mtl            >= 1.1   && < 1.2
@@ -53,8 +53,7 @@ Library
                 , pretty         >= 1.0.1 && < 1.1
                 , bytestring-csv >= 0.1.2 && < 0.2
                 , fgl            >= 5.4   && < 5.5
-                , pureMD5        >= 0.2.4 && < 0.3
-                , regex-dfa      >= 0.91  && < 1
+                , pureMD5        >= 0.2.4 && < 1.2
                 , safe           >= 0.2   && < 0.3
                 , utf8-string    >= 0.3   && < 0.4
 
