@@ -1,11 +1,11 @@
 Name:               Measure
-Version:            0.0.1
+Version:            0.0.2
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <code@tmorris.net>
 Maintainer:         Tony Morris
 Synopsis:           A library for units of measurement
-Category:           Development
+Category:           Data
 Description:        A library for units of measurement
 Cabal-version:      >= 1.2
 Build-Type:         Simple
