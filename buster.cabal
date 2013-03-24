@@ -1,5 +1,5 @@
 name: buster
-version: 2.2
+version: 2.21
 cabal-version: -any
 build-type: Simple
 license: BSD3
