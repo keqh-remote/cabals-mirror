@@ -1,5 +1,5 @@
 Name:             data-accessor-transformers
-Version:          0.2.1
+Version:          0.2.1.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -9,7 +9,10 @@ Package-URL:      http://code.haskell.org/data-accessor/
 Category:         Data
 -- Portability:      Haskell98
 Build-Type:       Simple
-Build-Depends:    base>=1.0, data-accessor >=0.2 && <0.3, transformers >=0.0.1 && <0.2
+Build-Depends:
+  data-accessor >=0.2 && <0.4,
+  transformers >=0.2 && <0.3,
+  base >=1.0 && <6
 Synopsis:         Use Accessor to access state in transformers State monad
 Description:      Use Accessor to access state in transformers State monad
 GHC-Options:      -Wall
@@ -18,3 +21,5 @@ Hs-Source-Dirs:   src
 Exposed-Modules:
   Data.Accessor.Monad.Trans.RWS
   Data.Accessor.Monad.Trans.State
+Other-Modules:
+  Data.Accessor.Monad.Trans.Example
