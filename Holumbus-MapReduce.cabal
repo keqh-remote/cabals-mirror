@@ -1,9 +1,9 @@
 name:          Holumbus-MapReduce
-version:       0.0.1
+version:       0.1.0
 license:       OtherLicense
 license-file:  LICENSE
 author:        Uwe Schmidt, Stefan Schmidt
-copyright:     Copyright (c) 2008 Uwe Schmidt, Stefan Schmidt
+copyright:     Copyright (c) 2010 Stefan Schmidt, Uwe Schmidt, Sebastian Reese
 maintainer:    Stefan Schmidt <sts@holumbus.org>
 stability:     experimental
 category:      Distributed Computing
@@ -48,7 +48,7 @@ extra-source-files:
     Examples/Utils/PickleTest/PickleTest.hs
 
 library
-  build-depends:  base >= 3
+  build-depends:  base >= 4 && < 5
                 , binary     >= 0.4
                 , bytestring >= 0.9
                 , containers >= 0.1
@@ -59,13 +59,17 @@ library
                 , network    >= 2.1
                 , time       >= 1.1
                 , unix       >= 2.3
-                , Holumbus-Distribution >= 0.0.1
-                , Holumbus-Storage >= 0.0.1
+                , parallel   >= 1.1.0.0
+                , Holumbus-Distribution >= 0.0.1 && < 0.2
+                , Holumbus-Storage >= 0.0.1 && < 0.2
+                , extensible-exceptions
+                , readline   >= 1.0
 
   hs-source-dirs: 
                   source
   exposed-modules:  
                   Holumbus.Distribution.DMapReduce
+                , Holumbus.Distribution.SimpleDMapReduceIO
                 , Holumbus.Distribution.Messages
                 , Holumbus.Distribution.Worker
                 , Holumbus.Distribution.Worker.WorkerData
@@ -73,13 +77,16 @@ library
                 , Holumbus.Distribution.Master
                 , Holumbus.Distribution.Master.MasterData
                 , Holumbus.Distribution.Master.MasterPort
+                , Holumbus.Distribution.Master.MasterState
                 , Holumbus.Standalone.SMapReduce
                 , Holumbus.MapReduce.MapReduce
                 , Holumbus.MapReduce.JobController
                 , Holumbus.MapReduce.TaskProcessor
                 , Holumbus.MapReduce.Types
                 , Holumbus.MapReduce.UserInterface
-  ghc-options: -Wall -threaded
+                , Holumbus.MapReduce.DaemonInterface
+                , Holumbus.MapReduce.DaemonInterfaceWithFS
+  ghc-options: -Wall
   extensions: Arrows DeriveDataTypeable ExistentialQuantification
 
 executable Master
@@ -87,3 +94,8 @@ executable Master
   hs-source-dirs: Programs/MapReduceMaster source
   ghc-options: -Wall -threaded
   extensions: Arrows DeriveDataTypeable ExistentialQuantification
+
+executable MasterDaemon
+  main-is: MasterDaemon.hs
+  hs-source-dirs: Programs/MapReduceMasterDaemon source
+  ghc-options: -Wall -threaded
