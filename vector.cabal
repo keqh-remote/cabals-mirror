@@ -1,10 +1,10 @@
 Name:           vector
-Version:        0.9.1
+Version:        0.10
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
 Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
-Copyright:      (c) Roman Leshchinskiy 2008-2011
+Copyright:      (c) Roman Leshchinskiy 2008-2012
 Homepage:       http://code.haskell.org/vector
 Bug-Reports:    http://trac.haskell.org/vector
 Category:       Data, Data Structures
@@ -29,9 +29,6 @@ Description:
         .
         ["Data.Vector.Generic"] Generic interface to the vector types.
         .
-        Each module has a @Safe@ version with is marked as @Trustworthy@
-        (see <http://hackage.haskell.org/trac/ghc/wiki/SafeHaskell>).
-        .
         There is also a (draft) tutorial on common uses of vector.
         .
         * <http://haskell.org/haskellwiki/Numeric_Haskell:_A_Vector_Tutorial>
@@ -41,42 +38,14 @@ Description:
         .
         * <http://trac.haskell.org/vector>
         .
-        Changes in version 0.9.1
+        Changes in version 0.10
         .
-        * New functions: @unsafeFromForeignPtr0@ and @unsafeToForeignPtr0@
-        .
-        * Small performance improvements
-        .
-        * Fixes for GHC 7.4
-        .
-        Changes in version 0.9
-        .
-        * 'MonadPlus' instance for boxed vectors
-        .
-        * Export more @construct@ and @constructN@ from @Safe@ modules
-        .
-        * Require @primitive-0.4.0.1@
-        .
-        Changes in version 0.8
-        .
-        * New functions: @constructN@, @constructrN@
-        .
-        * Support for GHC 7.2 array copying primitives
-        .
-        * New fixity for @(!)@
-        .
-        * Safe Haskell support (contributed by David Terei)
-        .
-        * 'Functor', 'Monad', 'Applicative', 'Alternative', 'Foldable' and
-          'Traversable' instances for boxed vectors
-          (/WARNING: they tend to be slow and are only provided for completeness/)
-        .
-        * 'Show' instances for immutable vectors follow containers conventions
-        .
-        * 'Read' instances for all immutable vector types
-        .
-        * Performance improvements
-        .
+	* @NFData@ instances
+	.
+	* More efficient block fills
+	.
+	* Safe Haskell support removed
+	.
 
 Cabal-Version:  >= 1.2.3
 Build-Type:     Simple
@@ -88,6 +57,7 @@ Extra-Source-Files:
       tests/Main.hs
       tests/Boilerplater.hs
       tests/Utilities.hs
+      tests/Tests/Move.hs
       tests/Tests/Stream.hs
       tests/Tests/Vector.hs
       benchmarks/vector-benchmarks.cabal
@@ -107,7 +77,6 @@ Extra-Source-Files:
       benchmarks/TestData/Random.hs
       internal/GenUnboxTuple.hs
       internal/unbox-tuple-instances
-      Changelog
 
 Flag BoundsChecks
   Description: Enable bounds checking
@@ -132,22 +101,15 @@ Library
         Data.Vector.Fusion.Util
         Data.Vector.Fusion.Stream.Size
         Data.Vector.Fusion.Stream.Monadic
-        Data.Vector.Fusion.Stream.Monadic.Safe
         Data.Vector.Fusion.Stream
-        Data.Vector.Fusion.Stream.Safe
 
         Data.Vector.Generic.Mutable
-        Data.Vector.Generic.Mutable.Safe
         Data.Vector.Generic.Base
         Data.Vector.Generic.New
-        Data.Vector.Generic.New.Safe
         Data.Vector.Generic
-        Data.Vector.Generic.Safe
 
         Data.Vector.Primitive.Mutable
-        Data.Vector.Primitive.Mutable.Safe
         Data.Vector.Primitive
-        Data.Vector.Primitive.Safe
 
         Data.Vector.Storable.Internal
         Data.Vector.Storable.Mutable
@@ -155,14 +117,10 @@ Library
 
         Data.Vector.Unboxed.Base
         Data.Vector.Unboxed.Mutable
-        Data.Vector.Unboxed.Mutable.Safe
         Data.Vector.Unboxed
-        Data.Vector.Unboxed.Safe
 
         Data.Vector.Mutable
-        Data.Vector.Mutable.Safe
         Data.Vector
-        Data.Vector.Safe
 
   Include-Dirs:
         include, internal
@@ -170,7 +128,10 @@ Library
   Install-Includes:
         vector.h
 
-  Build-Depends: base >= 4 && < 5, primitive >= 0.4.0.1 && < 0.5, ghc-prim
+  Build-Depends: base >= 4 && < 5
+               , primitive >= 0.5 && < 0.6
+               , ghc-prim
+               , deepseq >= 1.1 && < 1.4
 
   if impl(ghc<6.13)
     Ghc-Options: -finline-if-enough-args -fno-method-sharing
