@@ -1,6 +1,6 @@
 name:               lens-family-core
-category:           Data
-version:            0.0.1
+category:           Data, Lenses
+version:            0.1.0
 license:            BSD3
 cabal-version:      >= 1.6
 license-file:       LICENSE
@@ -42,6 +42,9 @@ library
     Lens.Family.State.Lazy
     Lens.Family.State.Strict
     Lens.Family.State
+  other-modules:
+    Lens.Family.State.Focus
+    Lens.Family.Setting
 
   ghc-options:      -Wall
 
