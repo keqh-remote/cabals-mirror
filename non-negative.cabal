@@ -1,10 +1,10 @@
 Name:             non-negative
-Version:          0.0.5
+Version:          0.0.5.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
-Homepage:         http://darcs.haskell.org/non-negative/
+Homepage:         http://code.haskell.org/~thielema/non-negative/
 Category:         Math
 Synopsis:         Non-negative numbers
 Description:
@@ -25,7 +25,7 @@ Flag buildTests
   default:     False
 
 Library
-  Build-Depends: QuickCheck >= 1.0 && <2
+  Build-Depends: QuickCheck >= 1.0 && <3
   If flag(splitBase)
     Build-Depends: base >= 2 && < 5
   Else
