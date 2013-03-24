@@ -1,6 +1,7 @@
 Name:                hoopl
-Version:             3.8.6.0
+Version:             3.8.7.0
 -- version 3.8.6.0 is the version that goes with the camera-ready Haskell'10 paper
+-- version 3.8.7.0 works with GHC 7
 Description:         Higher-order optimization library
 License:             BSD3
 License-file:        LICENSE
@@ -42,6 +43,7 @@ Library
                        Compiler.Hoopl.Util
                        Compiler.Hoopl.XUtil
   ghc-options:       -Wall -fno-warn-name-shadowing
+  hs-source-dirs:  src
 
 
 Source-repository head
