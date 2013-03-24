@@ -1,7 +1,10 @@
 Name:                scgi
-Version:             0.3.2
+Version:             0.3.3
 Stability:           alpha
 Description:
+  THIS LIBRARY IS DEPRECATED. For new applications, please use WAI
+  - see <http://hackage.haskell.org/package/wai>.
+  .
   This library lets you write SCGI programs. This package reuses the
   cgi package API, making it very easy to port CGI programs to SCGI.
 License:             BSD3
@@ -18,8 +21,8 @@ source-repository head
     location: http://code.haskell.org/scgi/
 
 library
-  build-depends:     base >= 3 && < 5, bytestring, cgi, network,
-      network-bytestring, extensible-exceptions >= 0.1 && < 0.2
+  build-depends:     base >= 3 && < 5, bytestring, cgi, network >= 2.2.3,
+      extensible-exceptions >= 0.1 && < 0.2
   exposed-modules:   Network.SCGI
   ghc-options:       -Wall -fno-warn-name-shadowing -fno-warn-unused-matches
                      -fno-warn-missing-signatures -fno-warn-orphans
