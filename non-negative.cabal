@@ -1,5 +1,5 @@
 Name:             non-negative
-Version:          0.0.4
+Version:          0.0.5
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -27,7 +27,7 @@ Flag buildTests
 Library
   Build-Depends: QuickCheck >= 1.0 && <2
   If flag(splitBase)
-    Build-Depends: base >= 2
+    Build-Depends: base >= 2 && < 5
   Else
     Build-Depends: base >= 1.0 && < 2
 
