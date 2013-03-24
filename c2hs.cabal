@@ -1,5 +1,5 @@
 Name:           c2hs
-Version:        0.16.2
+Version:        0.16.3
 License:        GPL-2
 License-File:   COPYING
 Copyright:      Copyright (c) 1999-2007 Manuel M T Chakravarty
@@ -81,4 +81,4 @@ Executable c2hs
     extensions:     ForeignFunctionInterface
     c-sources:      src/C2HS/config.c
     --TODO: eliminate the need to suppress these warnings:
-    ghc-options:    -Wall -fno-warn-incomplete-patterns
+    ghc-options:    -Wall -fno-warn-incomplete-patterns -fwarn-tabs
