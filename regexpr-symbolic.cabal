@@ -2,9 +2,9 @@
 Name:		regexpr-symbolic
 Synopsis:	Regular expressions via symbolic manipulation
 Category:       Text
-Version:	0.4
+Version:	0.5
 Stability:      experimental
-Cabal-Version:  >= 1.2.3
+Cabal-Version:  -any 
 License:	BSD3
 License-File:	LICENSE
 Author:		Martin Sulzmann
@@ -17,13 +17,10 @@ data-files: README
 extra-source-files: Example.lhs
 
 Build-Type: Simple
-Build-Depends:	base, haskell98
+Build-Depends:	base >= 4 && < 4.1
 Exposed-modules:
                      RegExpr.RegExprOperations
 
 
-Extensions: GADTs
 
-
-
-tested-with: GHC == 6.8.2
+tested-with: GHC == 7.4.1
