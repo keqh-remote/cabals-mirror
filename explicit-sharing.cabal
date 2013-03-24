@@ -1,5 +1,5 @@
 Name:          explicit-sharing
-Version:       0.1
+Version:       0.2
 Cabal-Version: >= 1.6
 Synopsis:      Explicit Sharing of Monadic Effects
 Description:   
@@ -23,7 +23,7 @@ Library
   Exposed-Modules:  Control.Monad.Trans.ContT,
                     Control.Monad.Sharing,
                     Control.Monad.Sharing.Lazy
-                    Control.Monad.Sharing.Lazy.State,
+                    Control.Monad.Sharing.Lazy.Simple,
                     Control.Monad.Sharing.Lazy.ContReader,
                     Control.Monad.Sharing.Lazy.ContReaderNoThunks,
                     Control.Monad.Sharing.Lazy.ContReaderNoThunksInlined
