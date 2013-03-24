@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
---- $Id: xilinx-lava.cabal#17 2010/10/01 02:55:20 REDMOND\\satnams $
+--- $Id: xilinx-lava.cabal#18 2010/10/01 12:28:01 REDMOND\\satnams $
 -------------------------------------------------------------------------------
 Name:            xilinx-lava
-Version:         5.0.0.8
+Version:         5.0.0.9
 License:         BSD3
 License-file:    LICENSE
 Author:          Satnam Singh
@@ -20,8 +20,13 @@ cabal-version:    >= 1.8
 Library 
   Build-Depends:	 array, base >= 4 && < 5, mtl, directory, haskell98, old-time, process
   Exposed-modules: Lava,
+                   Lava.Adder,
+                   Lava.Comparator,
                    Lava.Diagnostics,
                    Lava.ISE,
+                   Lava.OneBitAdder,
+                   Lava.OneBitSubtractor
+                   Lava.Subtractor
                    Lava.Virtex2,
                    Lava.Virtex4,
                    Lava.Virtex5,
