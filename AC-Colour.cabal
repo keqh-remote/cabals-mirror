@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Colour
-Version:       1.1.1
+Version:       1.1.2
 Stability:     Experimental
 Synopsis:      Efficient RGB colour types.
 
@@ -11,9 +11,13 @@ Description:
   efficient conversions between the two (GHC-specific),
   and general arithmetic over colours.
 
+  Changes:
+
+  * Now works with GHC 6.12.x.
+
 Category:      Data, Math, Numerical, Graphics
 License:       BSD3
-License-file:  Licence.txt
+License-file:  License.txt
 Author:        Andrew Coppin
 Maintainer:    MathematicalOrchid@hotmail.com
 Build-Type:    Simple
@@ -21,5 +25,5 @@ Tested-With:   GHC == 6.10.3
 
 Library
   Exposed-modules: Data.Colour.Double, Data.Colour.Word8, Data.Colour.FastFloor, Data.Colour
-  Build-Depends:   base >= 4 && < 5, ghc-prim >= 0.1.0.0 && < 0.2
+  Build-Depends:   base >= 4 && < 5, ghc-prim >= 0.1.0.0 && < 0.3
   HS-Source-Dirs:  .
