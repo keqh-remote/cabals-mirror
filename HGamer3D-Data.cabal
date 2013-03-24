@@ -1,5 +1,5 @@
 Name:                HGamer3D-Data
-Version:             0.1.0
+Version:             0.1.3
 Synopsis:            Library to enable 3D game development for Haskell - API
 Description:         
 	Library, to enable 3D game development for Haskell,
