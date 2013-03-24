@@ -1,5 +1,5 @@
 name:                TCache
-version:             0.8.0.1
+version:             0.8.0.2
 synopsis:            Data caching and Persistent STM transactions
 description:
 
@@ -42,7 +42,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Alberto Gómez Corona
 maintainer:          agocorona@gmail.com
-Tested-With:         GHC == 6.12.3
+Tested-With:         GHC == 7.0
 Build-Type:          Simple
 build-Depends:       base >=4 && <5,directory >= 1.0, old-time >=1.0,stm>=2, containers >= 0.1.0.1,  transformers >=0.2 && <0.3
 
