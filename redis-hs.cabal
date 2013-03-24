@@ -1,5 +1,5 @@
 name:               redis-hs
-version:            0.0.8
+version:            0.0.9
 author:             Will Langstroth <will@langstroth.com>
 maintainer:         Will Langstroth <will@langstroth.com>
 license:            MIT
@@ -9,14 +9,12 @@ synopsis:           A simple Redis library for Haskell
 description:
   This package provides access to Redis stores using the Data.ByteString.UTF8
   ByteString, for consistent handling of UTF8 encoding. It is a developer pre-
-  release, and so lacks many of the features of the existing `redis` package
-  (like a monad wrapper, state management, and custom concurrency management)
+  release, so it lacks many of the features of the existing `redis` package
+  (including a monad wrapper, state management, and custom concurrency management)
   but for light use, this library makes using Redis very straightforward.
   .
-  The feature set is incomplete, and version 1.0.0 will be tagged only when the
-  library has full command coverage, reasonable test coverage, and solid
-  documentation.
-
+  The feature set is incomplete, with full command coverage planned for version
+  0.1.0, and full documentation and test coverage for 1.0.0.
 
 category:           Database
 build-type:         Simple
@@ -31,9 +29,9 @@ extra-source-files:
   test/suite/TestSuite.hs,
   test/suite/Database/Redis/Connection/Tests.hs
   test/suite/Database/Redis/General/Tests.hs
+  test/suite/Database/Redis/String/Tests.hs
   test/suite/Database/Redis/List/Tests.hs
   test/suite/Database/Redis/Set/Tests.hs
-  test/suite/Database/Redis/String/Tests.hs
 
 library
   hs-source-dirs: src
