@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name: hexpat-iteratee
-Version: 0.4
+Version: 0.5
 Synopsis: Chunked XML parsing using iteratees
 Description:
   This package provides chunked XML parsing using iteratees.  It is especially suited
@@ -50,8 +50,8 @@ Library
     parallel,
     containers,
     extensible-exceptions >= 0.1 && < 0.2,
-    iteratee >= 0.3,
-    hexpat >= 0.16,
+    iteratee == 0.3.*,
+    hexpat >= 0.17,
     List >= 0.4
   Exposed-Modules:
     Text.XML.Expat.Chunked
