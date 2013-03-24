@@ -1,17 +1,20 @@
 Name:          csound-expression
-Version:       0.2.0
+Version:       0.3.0
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
 Author:	       Anton Kholomiov
 Maintainer:    <anton.kholomiov@gmail.com>
 Synopsis:      Csound combinator library
-Description:   Csound code generator. See "CsoundExpr.Tutorial" for guides and examples. 
+Description:   Csound code generator. See root module "CsoundExpr" 
+               for introduction guides. Score module is no longer 
+               availible inside 'csound-expression' package, consider 
+               using 'temporal-media' or 'temporal-music-notation'
+               packages.
 
-               WARNING : API changes (see TemporalFunctor method tmap, and ./Changelog)
 Category:      Sound, Music
 Stability:     Experimental
-Tested-With:   GHC==6.12.1
+Tested-With:   GHC==6.12.3
 Build-Type:    Simple
 
 Extra-Source-Files : 
@@ -19,8 +22,8 @@ Extra-Source-Files :
 
 Library
   Build-Depends:
-        base >= 4, base < 5, containers, mtl == 2.0.1.0, pretty, 
-        filepath, directory, haskell98, Boolean, temporal-media == 0.1.0
+        base >= 4, base < 5, containers, mtl >= 2.0, pretty, 
+        filepath, directory, haskell98, Boolean, temporal-media >= 0.2
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         CsoundExpr
@@ -33,17 +36,16 @@ Library
         CsoundExpr.Base.SideEffect
         CsoundExpr.Base.Arithmetic
         CsoundExpr.Base.Header
-        CsoundExpr.Base.Score
         CsoundExpr.Base.Gens
         CsoundExpr.Base.Pitch
         CsoundExpr.Base.UserDefined
         CsoundExpr.Base.Pretty
 -- Tutorial
-        CsoundExpr.Tutorial
-        CsoundExpr.Tutorial.Intro
-        CsoundExpr.Tutorial.Composition
-        CsoundExpr.Tutorial.Orchestra
-        CsoundExpr.Tutorial.Limits
+--        CsoundExpr.Tutorial
+--        CsoundExpr.Tutorial.Intro
+--        CsoundExpr.Tutorial.Composition
+--        CsoundExpr.Tutorial.Orchestra
+--        CsoundExpr.Tutorial.Limits
 
 -- Opcodes
         CsoundExpr.Opcodes
