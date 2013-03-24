@@ -1,6 +1,6 @@
 Name:                InfixApplicative
 Cabal-Version:       >= 1.2
-Version:             1.0
+Version:             1.0.1
 Synopsis:            liftA2 for infix operators.
 Description:         liftA2 for infix operators.
 License:             BSD3
