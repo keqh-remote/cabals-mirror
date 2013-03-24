@@ -1,5 +1,5 @@
 Name:          hArduino
-Version:       0.2
+Version:       0.3
 Category:      Hardware
 Synopsis:      Control your Arduino board from Haskell.
 Description:   Control Arduino from Haskell, using the Firmata protocol.
@@ -10,6 +10,8 @@ Description:   Control Arduino from Haskell, using the Firmata protocol.
                Arduino! It simply allows you to control a board from Haskell, where you
                can exchange information with the board, send/receive commands from other
                peripherals connected, etc.
+               .
+               A short (4m29s) video of the blinking example: <http://www.youtube.com/watch?v=PPa3im44t2g>
                .
                hArduino is work-in-progress. Comments, bug-reports, and patches are welcome.
 Copyright:     Levent Erkok, 2013
@@ -22,7 +24,7 @@ Bug-reports:   http://github.com/LeventErkok/hArduino/issues
 Maintainer:    Levent Erkok (erkokl@gmail.com)
 Build-Type:    Simple
 Cabal-Version: >= 1.14
-Extra-Source-Files: INSTALL, README, COPYRIGHT, RELEASENOTES
+Extra-Source-Files: INSTALL, README.md, COPYRIGHT, CHANGES.md
 
 source-repository head
     type:       git
@@ -37,11 +39,14 @@ Library
                   -- threaddelay is broken on Mac. See: http://hackage.haskell.org/trac/ghc/ticket/7299
                   , process
   Exposed-modules : System.Hardware.Arduino
-                  , System.Hardware.Arduino.Examples.Blink
-                  , System.Hardware.Arduino.Examples.Switch
+                  , System.Hardware.Arduino.LCD
+                  , System.Hardware.Arduino.SamplePrograms.Analog
+                  , System.Hardware.Arduino.SamplePrograms.Blink
+                  , System.Hardware.Arduino.SamplePrograms.Button
+                  , System.Hardware.Arduino.SamplePrograms.Counter
+                  , System.Hardware.Arduino.SamplePrograms.LCD
   Other-modules   : System.Hardware.Arduino.Comm
                   , System.Hardware.Arduino.Data
                   , System.Hardware.Arduino.Firmata
-                  , System.Hardware.Arduino.Firmata.Basics
                   , System.Hardware.Arduino.Protocol
                   , System.Hardware.Arduino.Utils
