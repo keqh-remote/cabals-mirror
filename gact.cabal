@@ -1,5 +1,5 @@
 Name: gact
-Version:       0.1
+Version:       0.2
 License:       GPL
 Cabal-Version: >= 1.6
 Build-Type:    Simple
@@ -7,6 +7,12 @@ Category:      Bioinformatics
 Author:        Ketil Malde
 Maintainer:    Ketil Malde <ketil@malde.org>
 Synopsis:      General Alignment Clustering Tool
+Description:   Cluster sequences from PSL alignments.
+
+Source-repository this
+    Type: darcs
+    Location: http://malde.org/~ketil/biohaskell/biocore/
+    Tag: 0.2
 
 Executable gact
     Hs-Source-Dirs:  src
