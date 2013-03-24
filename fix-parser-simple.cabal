@@ -1,5 +1,5 @@
 Name:fix-parser-simple
-Version:15318.2
+Version:15319.1
 Description:Simple fix-expression parser
 License:LGPL
 License-File:license.txt
@@ -11,7 +11,8 @@ Build-Type:Simple
 Cabal-Version: >= 1.2
 
 Library {
-  Build-Depends: base >= 4 && < 5
+  Build-Depends: base >= 4 && < 5, mmtl
   Extensions: PatternGuards
   Exposed-Modules: Parser.Fix.Simple
+  Other-Modules: Util
 }
