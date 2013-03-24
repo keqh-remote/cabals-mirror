@@ -1,9 +1,9 @@
 Name:                warp
-Version:             1.3.1.1
+Version:             1.3.1.2
 Synopsis:            A fast, light-weight web server for WAI applications.
 License:             MIT
 License-file:        LICENSE
-Author:              Michael Snoyman, Matt Brown
+Author:              Michael Snoyman, Kazu Yamamoto, Matt Brown
 Maintainer:          michael@snoyman.com
 Homepage:            http://github.com/yesodweb/wai
 Category:            Web, Yesod
@@ -32,8 +32,8 @@ Library
                    , void
                    , wai                       >= 1.3      && < 1.4
   if flag(network-bytestring)
-      Build-Depends: network               >= 2.2.1.5 && < 2.2.3
-                   , network-bytestring    >= 0.1.3   && < 0.1.4
+      Build-Depends: network                   >= 2.2.1.5  && < 2.2.3
+                   , network-bytestring        >= 0.1.3    && < 0.1.4
   else
       Build-Depends: network               >= 2.3
   Exposed-modules:   Network.Wai.Handler.Warp
@@ -50,6 +50,11 @@ Library
   Ghc-Options:       -Wall
   if os(windows)
       Cpp-options:   -DWINDOWS
+  else
+      Build-Depends: unix
+                   , hashable
+      Other-modules: Network.Wai.Handler.Warp.FdCache
+                     Network.Wai.Handler.Warp.MultiMap
 
 -- DISABLED: older Cabal lib versions have a bug which means they fall
 -- over when looking at test-suite sections that contain conditionals
@@ -78,6 +83,11 @@ Library
 --                   , HUnit
 --                   , QuickCheck
 --                   , hspec                    == 1.3.*
+--  if os(windows)
+--      Cpp-options:   -DWINDOWS
+--  else
+--      Build-Depends: unix
+--                   , hashable
 
 Source-Repository head
   Type:     git
