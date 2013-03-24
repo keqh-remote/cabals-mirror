@@ -4,7 +4,7 @@
 -- The name of the package.
 Name:                derive-IG
 
-Version:             0.1
+Version:             0.1.1
 Synopsis: Macro to derive instances for Instant-Generics using Template Haskell
 Description: Macro to derive instances for Instant-Generics using Template Haskell
 
