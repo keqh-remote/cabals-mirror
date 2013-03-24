@@ -1,5 +1,5 @@
 Name:           hackport
-Version:	0.2.6
+Version:	0.2.7
 License:	GPL
 License-file:   LICENSE
 Author:		Henning Günther, Duncan Coutts, Lennart Kolmodin
@@ -67,6 +67,7 @@ Executable	hackport
     Portage.Overlay
     Portage.Resolve
     Portage.Host
+    Merge.Dependencies
     Setup
     Status
     Merge
