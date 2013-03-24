@@ -1,5 +1,5 @@
 name: cblrepo
-version: 0.2.3
+version: 0.3.0
 cabal-version: >= 1.6
 license: OtherLicense
 license-file: LICENSE-2.0
@@ -26,8 +26,9 @@ flag BuildTests
 executable cblrepo
     hs-source-dirs: src
     main-is: Main.hs
-    other-modules: Util.Misc PkgDB AddBase AddCabal BumpPkgs BuildPkgs IdxSync
+    other-modules: Util.Misc PkgDB Add BumpPkgs BuildPkgs IdxSync
         IdxVersion Updates ListPkgs Urls PkgBuild Util.Translation
+        OldPkgDB ConvertDB
     build-depends: base ==4.3.*, cmdargs ==0.7.*, filepath ==1.2.*,
         directory ==1.1.*, Cabal ==1.10.*, json ==0.4.*,
         bytestring ==0.9.*, tar ==0.3.*, zlib ==0.5.*, mtl ==2.0.*,
@@ -39,8 +40,8 @@ executable tests
     main-is: tst.hs
     other-modules: TestSystem TestPkgDB
     if flag(BuildTests)
-        build-depends: base ==4.3.*, test-framework-th ==0.1.*, HUnit ==1.2.*,
-            test-framework-hunit ==0.2.*, test-framework ==0.3.*
+        build-depends: base ==4.3.*, test-framework-th ==0.2.*, HUnit ==1.2.*,
+            test-framework-hunit ==0.2.*, test-framework ==0.4.*
     else
         buildable: False
 
