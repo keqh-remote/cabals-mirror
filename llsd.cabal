@@ -1,24 +1,21 @@
 Name: llsd
-Version: 0.2.0.0
+Version: 0.1.0.1
 Copyright: 2009-2010 Linden Lab
 Author: Mark Lentczner
-Maintainer: bos@lindenlab.com
+Maintainer: zero@lindenlab.com
 License: MIT
 License-File: LICENSE
 
 Category: Networking
 Synopsis: An implementation of the LLSD data system
-Description: An implementation of the LLSD data system
+Description: .
 Stability: provisional
-Homepage: http://wiki.secondlife.com/wiki/LLSD
-Bug-Reports: mailto:bos@lindenlab.com
+Homepage:
+Package-URL:
+Bug-Reports: mailto:zero@lindenlab.com
 
 Build-type: Simple
 Cabal-version: >= 1.6
-
-Source-repository head
-  type: mercurial
-  location: http://hg.secondlife.com/llsd
 
 Flag test
     Description: Build unit tests.
@@ -39,7 +36,7 @@ Library
         Network.Format.LLSD.Pretty
         Network.Format.LLSD.XML
     Build-Depends:
-        base >= 4 && < 5,
+        base == 4.*,
         binary >= 0.5,
         bytestring == 0.9.*,
         cereal >= 0.2,
