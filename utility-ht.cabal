@@ -1,5 +1,5 @@
 Name:             utility-ht
-Version:          0.0.5
+Version:          0.0.5.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -27,7 +27,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/utility/
-  tag:      0.0.5
+  tag:      0.0.5.1
 
 Flag buildTests
   description: Build test executables
@@ -64,10 +64,10 @@ Library
 
 
 Executable test
-  If !flag(buildTests)
+  If flag(buildTests)
+    Build-Depends:  QuickCheck >=1.1 && <2
+  Else
     Buildable:      False
-
-  Build-Depends: QuickCheck >=1.1 && <2
   GHC-Options:      -Wall
   Hs-source-dirs:   src
   Other-Modules:
