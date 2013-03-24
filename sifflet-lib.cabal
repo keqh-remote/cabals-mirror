@@ -1,6 +1,6 @@
 name: sifflet-lib
-version: 1.1
-cabal-version: >= 1.6
+version: 1.2
+cabal-version: >= 1.8
 build-type: Simple
 license: BSD3
 license-file: LICENSE
@@ -42,7 +42,7 @@ library
     filepath >= 1.1 && < 1.2,
     fgl >= 5.4 && < 5.5,
     haskell98 >= 1.0.1 && < 1.0.2,
-    hxt >= 8.3 && < 8.6,
+    hxt >= 9.0 && < 9.1,
     mtl >= 1.1 && < 1.2,
     parsec >= 2.1.0.1 && < 2.3, 
     process >= 1.0 && < 1.1
@@ -51,8 +51,8 @@ library
   buildable: True
   extensions: ForeignFunctionInterface CPP
   ghc-options: -Wall
-  includes: gtk-2.0/gtk/gtk.h, gtk-2.0/gdk/gdk.h
-  extra-libraries: gdk-x11-2.0 gtk-x11-2.0
+--  includes: gtk-2.0/gtk/gtk.h, gtk-2.0/gdk/gdk.h
+--  extra-libraries: gdk-x11-2.0 gtk-x11-2.0
   exposed-modules: 
       Data.Number.Sifflet
     , Sifflet.Data.Geometry
