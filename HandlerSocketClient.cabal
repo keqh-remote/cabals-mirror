@@ -1,5 +1,5 @@
 Name:              HandlerSocketClient
-Version:           0.0.3
+Version:           0.0.4
 Synopsis:          Haskell implementation of a HandlerSocket client (API).
 Description:       This package implemets API for a HandlerSocket client.
 homepage:          https://github.com/wuxb45/HandlerSocket-Haskell-Client
