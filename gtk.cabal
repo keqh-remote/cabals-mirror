@@ -1,5 +1,5 @@
 Name:           gtk
-Version:        0.11.0
+Version:        0.11.1
 License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
@@ -16,17 +16,96 @@ Description: This is the core library of the Gtk2Hs suite of libraries for Haske
              for creating graphical user interfaces.
 Category:       Graphics
 Tested-With:    GHC == 6.10.4
-x-Types-File:   Graphics/UI/Gtk/Types.chs
-x-Types-ModName: Graphics.UI.Gtk.Types
-x-Types-Forward:  *System.Glib.GObject Graphics.UI.Gtk.General.Threading
-x-Types-Destructor: objectUnrefFromMainloop
 Extra-Source-Files: wingtk.h
                     Graphics/UI/Gtk/ModelView/Gtk2HsStore.h
                     Graphics/UI/Gtk/General/hsgthread.h
                     template-hsc-gtk2hs.h
                     Gtk2HsSetup.hs
                     marshal.list
+					hierarchy.list
+					
+x-Types-File:       Graphics/UI/Gtk/Types.chs
+x-Types-ModName:    Graphics.UI.Gtk.Types
+x-Types-Forward:    *System.Glib.GObject Graphics.UI.Gtk.General.Threading
+x-Types-Destructor: objectUnrefFromMainloop
+x-Types-Hierarchy:  hierarchy.list
 
+Data-Dir:		demo
+Data-Files:		actionMenu/ActionMenu.hs
+                actionMenu/Makefile
+                
+                buttonbox/ButtonBox.hs
+                buttonbox/Makefile
+                
+                carsim/CarSim.hs
+                carsim/Makefile
+                
+                concurrent/Makefile
+                concurrent/Progress.hs
+                concurrent/ProgressThreadedRTS.hs
+                
+                embedded/Embedded.hs
+                embedded/Makefile
+                embedded/Notes.txt
+                embedded/Uzbl.hs
+                
+                fastdraw/FastDraw.hs
+                fastdraw/Makefile
+                
+                filechooser/FileChooserDemo.glade
+                filechooser/FileChooserDemo.hs
+                filechooser/Makefile
+                
+                fonts/Fonts.hs
+                fonts/Makefile
+                
+                graphic/Drawing.hs
+                graphic/Makefile
+                
+                gtkbuilder/GtkBuilderTest.hs
+                gtkbuilder/Makefile
+                gtkbuilder/simple.ui
+                
+                hello/Makefile
+                hello/World.hs
+                
+                inputmethod/Layout.hs
+                inputmethod/Makefile
+                
+                menu/ComboDemo.hs
+                menu/Makefile
+                menu/MenuDemo.hs
+                
+                statusicon/Makefile
+                statusicon/StatusIcon.hs
+                
+                treeList/Completion.hs
+                treeList/DirList.hs
+                treeList/FilterDemo.hs
+                treeList/ListDemo.hs
+                treeList/ListDND.hs
+                treeList/ListTest.glade
+                treeList/ListTest.hs
+                treeList/ListText.hs
+                treeList/Makefile
+                treeList/rgb.txt
+                treeList/TreeDemo.hs
+                treeList/TreeSort.hs
+                treeList/TreeTest.glade
+                treeList/TreeTest.hs
+                
+                treeList/resListDND/desktop.png
+                treeList/resListDND/laptop.png
+                treeList/resListDND/laptopSmall.png
+                treeList/resListDND/printer.png
+                treeList/resListDND/server.png
+                treeList/resListDND/tower.png
+                
+                unicode/Arabic.hs
+                unicode/Makefile
+				
+				demos.txt
+				
 Source-Repository head
   type:         darcs
   location:     http://code.haskell.org/gtk2hs/
@@ -43,12 +122,12 @@ Flag have-gio
 
 Library
         build-depends:  base >= 4 && < 5,
-                        array, containers, haskell98, mtl,
-                        glib  >= 0.11 && < 0.12,
-                        pango >= 0.11 && < 0.12,
-                        cairo >= 0.11 && < 0.12
+                        array, containers, haskell98, mtl, bytestring,
+                        glib  >= 0.11.1 && < 0.12,
+                        pango >= 0.11.1 && < 0.12,
+                        cairo >= 0.11.1 && < 0.12
         if flag(have-gio)
-          build-depends: gio >= 0.11 && < 0.12
+          build-depends: gio >= 0.11.1 && < 0.12
           cpp-options:    -DHAVE_GIO
 
         build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
@@ -159,6 +238,7 @@ Library
           Graphics.UI.Gtk.Misc.HandleBox
           Graphics.UI.Gtk.Misc.IMMulticontext
           Graphics.UI.Gtk.Misc.SizeGroup
+          Graphics.UI.Gtk.Misc.Tooltip
           Graphics.UI.Gtk.Misc.Tooltips
           Graphics.UI.Gtk.Misc.Viewport
           Graphics.UI.Gtk.ModelView
@@ -230,7 +310,12 @@ Library
         extensions:     ForeignFunctionInterface
         c-sources: Graphics/UI/Gtk/ModelView/Gtk2HsStore.c
                    Graphics/UI/Gtk/General/hsgthread.c
-
+	      -- Due to http://hackage.haskell.org/trac/ghc/ticket/781
+        -- we need to compile the hsgthread.c module with -fPIC to ensure that a global
+        -- variable in GLib that holds the address for the mutex lock and unlock functions
+        -- is accessed correctly. This bug only exists on x86-64 platforms.
+        if arch(x86_64)
+          cc-options:      -fPIC
         x-Signals-File:  Graphics/UI/Gtk/Signals.chs
         x-Signals-Modname: Graphics.UI.Gtk.Signals
         x-Signals-Types: marshal.list
