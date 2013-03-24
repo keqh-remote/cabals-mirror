@@ -1,5 +1,5 @@
 Name:          distributed-process 
-Version:       0.3.1
+Version:       0.4.0
 Cabal-Version: >=1.8
 Build-Type:    Simple
 License:       BSD3 
@@ -33,10 +33,14 @@ flag th
   description: Build with Template Haskell support
   default: True
 
+flag benchmarks
+  description: Build benchmarks
+  default: False
+
 Library
   Build-Depends:     base >= 4.4 && < 5,
                      binary >= 0.5 && < 0.6,
-                     network-transport >= 0.2 && < 0.3,
+                     network-transport >= 0.3 && < 0.4,
                      stm >= 2.3 && < 2.5,
                      transformers >= 0.2 && < 0.4,
                      mtl >= 2.0 && < 2.2,
@@ -58,8 +62,11 @@ Library
                      Control.Distributed.Process.Internal.CQueue,
                      Control.Distributed.Process.Internal.Types,
                      Control.Distributed.Process.Internal.Closure.BuiltIn,
-                     Control.Distributed.Process.Internal.Node
-                     Control.Distributed.Process.Internal.StrictMVar
+                     Control.Distributed.Process.Internal.Messaging,
+                     Control.Distributed.Process.Internal.StrictList,
+                     Control.Distributed.Process.Internal.StrictMVar,
+                     Control.Distributed.Process.Internal.WeakTQueue
+                     Control.Distributed.Process.Internal.StrictContainerAccessors
   Extensions:        RankNTypes,
                      ScopedTypeVariables,
                      FlexibleInstances,
@@ -84,9 +91,10 @@ Test-Suite TestCH
                      random >= 1.0 && < 1.1,
                      ansi-terminal >= 0.5 && < 0.6,
                      distributed-process >= 0.3 && < 0.4,
-                     network-transport >= 0.2 && < 0.3,
-                     network-transport-tcp >= 0.2 && < 0.3,
-                     binary >= 0.5 && < 0.6
+                     network-transport >= 0.3 && < 0.4,
+                     network-transport-tcp >= 0.3 && < 0.4,
+                     binary >= 0.5 && < 0.6,
+                     network >= 2.3 && < 2.5
   Other-modules:     TestAuxiliary
   Extensions:        CPP,
                      ScopedTypeVariables,
@@ -103,11 +111,64 @@ Test-Suite TestClosure
                      ansi-terminal >= 0.5 && < 0.6,
                      distributed-static >= 0.2 && < 0.3,
                      distributed-process >= 0.3 && < 0.4,
-                     network-transport >= 0.2 && < 0.3,
-                     network-transport-tcp >= 0.2 && < 0.3,
-                     bytestring >= 0.9 && < 0.11
+                     network-transport >= 0.3 && < 0.4,
+                     network-transport-tcp >= 0.3 && < 0.4,
+                     bytestring >= 0.9 && < 0.11,
+                     network >= 2.3 && < 2.5
   Other-modules:     TestAuxiliary
   Extensions:        CPP, 
                      ScopedTypeVariables
   ghc-options:       -Wall -threaded -rtsopts -with-rtsopts=-N -fno-warn-unused-do-bind 
   HS-Source-Dirs:    tests 
+
+Executable distributed-process-throughput 
+  if flag(benchmarks)
+    Build-Depends:   base >= 4.4 && < 5,
+                     distributed-process >= 0.3 && < 0.4,
+                     network-transport-tcp >= 0.3 && < 0.4,
+                     bytestring >= 0.9 && < 0.11,
+                     binary >= 0.5 && < 0.6
+  else
+    buildable: False
+  Main-Is:           benchmarks/Throughput.hs
+  ghc-options:       -Wall
+  Extensions:        BangPatterns
+
+Executable distributed-process-latency
+  if flag(benchmarks)
+    Build-Depends:   base >= 4.4 && < 5,
+                     distributed-process >= 0.3 && < 0.4,
+                     network-transport-tcp >= 0.3 && < 0.4,
+                     bytestring >= 0.9 && < 0.11,
+                     binary >= 0.5 && < 0.6
+  else
+    buildable: False
+  Main-Is:           benchmarks/Latency.hs
+  ghc-options:       -Wall
+  Extensions:        BangPatterns
+
+Executable distributed-process-channels
+  if flag(benchmarks)
+    Build-Depends:   base >= 4.4 && < 5,
+                     distributed-process >= 0.3 && < 0.4,
+                     network-transport-tcp >= 0.3 && < 0.4,
+                     bytestring >= 0.9 && < 0.11,
+                     binary >= 0.5 && < 0.6
+  else
+    buildable: False
+  Main-Is:           benchmarks/Channels.hs
+  ghc-options:       -Wall
+  Extensions:        BangPatterns
+
+Executable distributed-process-spawns
+  if flag(benchmarks)
+    Build-Depends:   base >= 4.4 && < 5,
+                     distributed-process >= 0.3 && < 0.4,
+                     network-transport-tcp >= 0.3 && < 0.4,
+                     bytestring >= 0.9 && < 0.11,
+                     binary >= 0.5 && < 0.6
+  else
+    buildable: False
+  Main-Is:           benchmarks/Spawns.hs
+  ghc-options:       -Wall
+  Extensions:        BangPatterns
