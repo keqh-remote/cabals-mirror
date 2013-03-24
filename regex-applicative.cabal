@@ -9,7 +9,7 @@ Name:                regex-applicative
 -- standards guiding when and how versions should be incremented.
 
 -- DO NOT FORGET TO UPDATE THE GIT TAG BELOW!!!
-Version:             0.1.5
+Version:             0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            Regex-based parsing with applicative interface
@@ -56,13 +56,13 @@ Source-repository head
 Source-repository this
   type:     git
   location: git://github.com/feuerbach/regex-applicative.git
-  tag:      v0.1.5
+  tag:      v0.2
 
 Library
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4.2 && < 4.5,
-                       containers >= 0.3 && < 0.5,
-                       monads-tf == 0.1.*
+  Build-depends:       base < 5,
+                       containers,
+                       transformers
 
 
   -- Modules exported by the library.
@@ -78,4 +78,8 @@ Library
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:         
   
-  GHC-Options:     -O2 -Wall -fno-warn-name-shadowing -fno-warn-missing-signatures
+  GHC-Options:     -O2
+                   -Wall
+                   -fno-warn-name-shadowing
+                   -fno-warn-missing-signatures
+                   -fno-warn-orphans
