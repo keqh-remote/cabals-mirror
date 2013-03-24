@@ -1,6 +1,6 @@
 cabal-version:       >= 1.2
 name:                lhc
-version:             0.6.20081127
+version:             0.6.20081210
 synopsis:            LHC Haskell Compiler
 description:
   lhc is a haskell compiler which aims to produce the most efficient programs possible via whole
@@ -12,7 +12,7 @@ license-file:        COPYING
 author:              John Meacham, David Himmelstrup
 maintainer:          lemmih@gmail.com
 homepage:            http://lhc.seize.it/
-build-type:          Simple
+build-type:          Custom
 Extra-Source-Files:  src/arch/generic.arch, src/arch/i686.arch, src/arch/x86_64.arch
 data-dir:            data
 data-files:          HsFFI.h names.txt operators.txt prelude.m4 primitives.txt props.txt wsize.h ViaGhc.hs
@@ -22,6 +22,10 @@ flag base4
 flag hpc
   default:            False
 flag threaded
+  default:            False
+flag lhc-regress
+  default:            False
+flag with-base
   default:            False
 
 Executable lhc
@@ -36,18 +40,23 @@ Executable lhc
  build-depends:       containers, mtl, pretty, array, bytestring, pureMD5,
                       binary >= 0.4.4, directory, haskeline, random, regex-compat,
                       graphviz, fgl, unix, zlib, old-time, haskell98,
-                      utf8-string, stringtable-atom, derive >= 0.1.4,
+                      utf8-string, stringtable-atom, derive >= 0.1.4, Cabal >= 1.7,
                       filepath, ansi-wl-pprint >= 0.5.0, ansi-terminal >= 0.5.0
-
-
+                      
+ ghc-options:         -fwarn-unused-imports
  if flag(base4)
   build-depends:      base >= 4 && < 5, syb
+  cpp-options:        -DBASE4
  else
   build-depends:      base >= 3 && < 4
   Extensions:         PatternSignatures
+
  if flag(threaded)
   ghc-options:        -threaded
-
+ if flag(with-base)
+  x-build-base:       True
+ else
+  x-build-base:       False
  Other-modules:
   CharIO, FindFixpoint, FlagOpts, Interactive, Options, PrimitiveOperators,
   DataConstructors, FlagDump, GenUtil, PackedString, RawFiles, Stats,
@@ -77,3 +86,17 @@ Executable lhc
   Util.Inst Util.IntBag Util.Interact Util.NameMonad Util.Once Util.Perhaps
   Util.RWS Util.Relation Util.SameShape Util.Seq Util.SetLike Util.TrueSet
   Util.UnionFind Util.UnionSolve Util.UniqueMonad Util.VarName Util.Util LHCVersion
+
+Executable lhc-regress
+  if flag(lhc-regress)
+    Buildable:      True
+  else
+    Buildable:      False
+  main-is:          Main.hs
+  hs-source-dirs:   lhc-regress/
+  build-depends:    process
+  if flag(base4)
+    build-depends:  base >= 4 && < 5
+    cpp-options:    -DBASE4
+  else
+    build-depends:  base >= 3 && < 4
