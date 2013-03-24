@@ -1,5 +1,5 @@
 Name:               http-monad
-Version:            0.0.1
+Version:            0.1
 Cabal-Version:      >= 1.6
 Build-type:         Simple
 License:            BSD3
@@ -9,7 +9,7 @@ Copyright:          (c) 2009, Henning Thielemann
 Author:             Henning Thielemann <http@henning-thielemann.de>
 Maintainer:         Henning Thielemann <http@henning-thielemann.de>
 -- Homepage:           http://www.haskell.org/http/
-Synopsis:           Monad abstraction for HTTP communication allowing lazy transfer and non-I/O simulation
+Synopsis:           Monad abstraction for HTTP allowing lazy transfer and non-I/O simulation
 Description:
   This library implements a monad class with various interesting instances:
   .
@@ -30,7 +30,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/http-monad/
-  tag:      0.0.1
+  tag:      0.0.2
 
 Flag splitBase
   description: Old, monolithic base
@@ -59,8 +59,8 @@ Library
   Build-depends: HTTP >=4000 && <4001
   Build-depends: network >=2.1 && <3, parsec >=2.1 && <3
   Build-depends: bytestring >=0.9 && <0.10
-  Build-depends: transformers >=0.0.1 && <0.2
-  Build-depends: explicit-exception >=0.1 && <0.2
+  Build-depends: transformers >=0.2 && <0.3
+  Build-depends: explicit-exception >=0.1.4 && <0.2
   Build-depends: utility-ht >=0.0.4 && <0.1
   Build-depends: lazyio >=0.0.2 && <0.1
 
