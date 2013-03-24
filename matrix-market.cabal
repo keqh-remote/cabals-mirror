@@ -1,5 +1,5 @@
 name:            matrix-market
-version:         1.1
+version:         1.2
 homepage:        http://stat.stanford.edu/~patperry/code/matrix-market
 synopsis:        Read and write NIST Matrix Market files
 description:
