@@ -1,6 +1,6 @@
 name:          bound
 category:      Language, Compilers/Interpreters
-version:       0.1.4
+version:       0.2
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -74,7 +74,7 @@ description:
    set of variables is visible in the type, we can provide stronger type safety
    guarantees.
    .
-   There are longer worked examples in the @examples/@ folder:
+   There are longer examples in the @examples/@ folder:
    .
    <https://github.com/ekmett/bound/tree/master/examples>
    .
@@ -96,6 +96,7 @@ extra-source-files:
   examples/Simple.hs
   examples/Deriving.hs
   examples/Overkill.hs
+  README.markdown
 
 source-repository head
   type: git
