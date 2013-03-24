@@ -1,5 +1,5 @@
 Name:          distributed-process 
-Version:       0.2.0.1
+Version:       0.2.1
 Cabal-Version: >=1.8
 Build-Type:    Simple
 License:       BSD3 
@@ -51,13 +51,14 @@ Library
                      Control.Distributed.Process.Internal.Primitives,
                      Control.Distributed.Process.Internal.CQueue,
                      Control.Distributed.Process.Internal.Dynamic,
-                     Control.Distributed.Process.Internal.Closure,
                      Control.Distributed.Process.Internal.TypeRep,
                      Control.Distributed.Process.Internal.MessageT,
                      Control.Distributed.Process.Internal.Types,
-                     Control.Distributed.Process.Internal.Closure.BuiltIn,
-                     Control.Distributed.Process.Internal.Closure.Combinators,
+                     Control.Distributed.Process.Internal.Closure.Static,
+                     Control.Distributed.Process.Internal.Closure.MkClosure,
+                     Control.Distributed.Process.Internal.Closure.CP,
                      Control.Distributed.Process.Internal.Closure.TH,
+                     Control.Distributed.Process.Internal.Closure.Resolution,
                      Control.Distributed.Process.Internal.Node
   Extensions:        RankNTypes,
                      ScopedTypeVariables,
