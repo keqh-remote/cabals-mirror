@@ -7,7 +7,7 @@ Name:                	Fungi
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             	1.0.1
+Version:             	1.0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            	An interpreter for Funge-98 programming languages, including Befunge.
@@ -60,48 +60,49 @@ Build-depends:
   
 -- Modules not exported by this package.
 Other-modules:
-	  Data.ByteSize
-	, Data.Deque
-	, Data.History
-	, Data.I
-	, Data.IntegralLike
-	, Data.Labeled
-	, Data.LogicalBits
-	, Data.MaybeBounded
-	, Data.Stack
-	, Data.Vector
-	, Debug.Debug
-	, Debug.Debugger
-	, Env
-	, Fingerprint
-	, Fingerprint.BASE
-	, Fingerprint.BOOL
-	, Fingerprint.CPLI
-	, Fingerprint.FIXP
-	, Fingerprint.MODE
-	, Fingerprint.MODU
-	, Fingerprint.NULL
-	, Fingerprint.ORTH
-	, Fingerprint.REFC
-	, Fingerprint.ROMA
-	, Fungi
-	, Instruction
-	, Interpreter
-	, Ip
-	, Math
-	, Mode
-	, ProcessArgs
-	, Random
-	, Semantics
-	, Space.Cell
-	, Space.Space
-	, System.IO.Buffering
-	, Text.Help.Debug
-	, Text.Help.Fungi
-	, Text.PrettyShow
-	, Text.PrintOption
-	, UnknownInstruction
-	, Version
+	Data.ByteSize
+	Data.Deque
+	Data.History
+	Data.I
+	Data.IntegralLike
+	Data.Labeled
+	Data.LogicalBits
+	Data.MaybeBounded
+	Data.Stack
+	Data.Vector
+	Debug.Debug
+	Debug.Debugger
+	Env
+	Fingerprint
+	Fingerprint.BASE
+	Fingerprint.BOOL
+	Fingerprint.CPLI
+	Fingerprint.FIXP
+	Fingerprint.HRTI
+	Fingerprint.MODE
+	Fingerprint.MODU
+	Fingerprint.NULL
+	Fingerprint.ORTH
+	Fingerprint.REFC
+	Fingerprint.ROMA
+	Fungi
+	Instruction
+	Interpreter
+	Ip
+	Math
+	Mode
+	ProcessArgs
+	Random
+	Semantics
+	Space.Cell
+	Space.Space
+	System.IO.Buffering
+	Text.Help.Debug
+	Text.Help.Fungi
+	Text.PrettyShow
+	Text.PrintOption
+	UnknownInstruction
+	Version
   
 -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
 -- Build-tools:         
