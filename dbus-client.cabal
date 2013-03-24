@@ -1,5 +1,5 @@
 name: dbus-client
-version: 0.4.0.1
+version: 0.4.0.2
 synopsis: Monadic and object-oriented interfaces to DBus
 license: GPL-3
 license-file: License.txt
@@ -10,7 +10,7 @@ cabal-version: >=1.6
 category: Network, Desktop
 stability: experimental
 bug-reports: mailto:jmillikin@gmail.com
-homepage: http://ianen.org/haskell/dbus/
+homepage: http://john-millikin.com/software/haskell-dbus/
 tested-with: GHC==6.12.1
 
 extra-source-files:
@@ -18,18 +18,23 @@ extra-source-files:
   Examples/*.hs
 
 source-repository head
-  type: darcs
-  location: http://ianen.org/haskell/dbus/client/
+  type: bazaar
+  location: http://john-millikin.com/software/haskell-dbus/
 
 library
-  ghc-options: -Wall -fno-warn-unused-do-bind
+  if true
+    ghc-options: -Wall
+
+  if impl(ghc >= 6.11)
+    ghc-options: -fno-warn-unused-do-bind
+
   hs-source-dirs: hs
 
   build-depends:
-      base >=3 && < 5
+      base >= 4.0 && < 5
     , dbus-core >= 0.8 && < 0.9
     , containers >= 0.1 && < 0.4
-    , text >= 0.7 && < 0.9
+    , text >= 0.7 && < 0.11
     , transformers >= 0.2 && < 0.3
     , monads-tf >= 0.1 && < 0.2
 
