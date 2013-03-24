@@ -1,5 +1,5 @@
 Name:               data-reify
-Version:            0.4
+Version:            0.5
 Synopsis:           Reify a recursive data structure into an explicit graph.
 Description:	    'data-reify' provided the ability to turn recursive structures into explicit graphs. 
 		    Many (implicitly or explicitly) recursive data structure can be given this ability, via
@@ -13,12 +13,16 @@ Description:	    'data-reify' provided the ability to turn recursive structures 
 		    Providing an instance for 'MuRef' is the mechanism for allowing a structure to be 
 		    reified into a graph, and several examples of this are provided.
 		    .
+		    History: 
+		    Version 0.1 used unsafe pointer compares.
 		    Version 0.2 of 'data-reify' used 'StableName's, and was much faster.
 		    Version 0.3 provided two versions of 'MuRef', the mono-typed version,
 		    for trees of a single type,
 		    and the dynamic-typed version, for trees of different types.
-		    Version 0.4 uses 'Int' as a synonym for 'Unique' rather than 'Data.Unique'
+		    Version 0.4 used 'Int' as a synonym for 'Unique' rather than 'Data.Unique'
 		    for node ids, by popular demand.
+		    Version 0.5 merged the mono-typed and dynamic version again, by using 
+		    'DynStableName', an unphantomized version of StableName.
 		    .
 		    &#169; 2009 Andy Gill; BSD3 license.
 
@@ -37,10 +41,8 @@ Library
   Build-Depends: base >= 3 && < 4.2, containers
   Exposed-modules:
        Data.Reify,
-       Data.Dynamic.Reify,
        Data.Reify.Graph
   Ghc-Options:  -Wall
-
 
 Executable data-reify-test1
   Build-Depends:  base
@@ -75,5 +77,11 @@ Executable data-reify-test5
 Executable data-reify-test6
   Build-Depends:  base
   Main-Is:        Test6.hs
+  Hs-Source-Dirs: ., test
+  buildable: False
+
+Executable data-reify-test7
+  Build-Depends:  base
+  Main-Is:        Test7.hs
   Hs-Source-Dirs: ., test
   buildable: False
