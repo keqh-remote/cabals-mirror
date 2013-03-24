@@ -1,5 +1,5 @@
 Name:           simple-sessions
-Version:        0.1
+Version:        0.1.1
 Cabal-Version:  >= 1.2
 License:        BSD3
 License-File:   LICENSE
@@ -12,9 +12,10 @@ Synopsis:       A simple implementation of session types
 Build-type:     Simple
 Description:
         This library is based on the session types implementation
-        from "Haskell Session Types with Almost No Class," from the 2008
-        Haskell Symposium.  For a full-featured session types library,
-        see the sessions package.
+        from \"Haskell Session Types with (Almost) No Class,\" from
+        the 2008 Haskell Symposium.  For a full-featured session types
+        library, see the sessions package
+        (<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/sessions>).
 
 Extra-Source-Files:
     TODO
@@ -22,7 +23,9 @@ Extra-Source-Files:
     Control/Concurrent/SimpleSession/Examples/Positional.lhs
 
 Library
-  Build-Depends:        base, category-extras
+  Build-Depends:        base,
+                        category-extras,
+                        synchronous-channels
   Exposed-modules:
     Control.Concurrent.SimpleSession.SessionTypes,
     Control.Concurrent.SimpleSession.Implicit,
