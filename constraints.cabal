@@ -1,6 +1,6 @@
 name:          constraints
 category:      Constraints
-version:       0.1
+version:       0.2
 license:       BSD3
 cabal-version: >= 1.10
 license-file:  LICENSE
@@ -31,7 +31,10 @@ library
     Rank2Types,
     GADTs
 
-  build-depends: base >= 4.4 && < 5
+  build-depends: 
+    base >= 4.4 && < 5,
+    newtype >= 0.2 && < 0.3,
+    ghc-prim
   exposed-modules:
     Data.Constraint
     Data.Constraint.Forall
