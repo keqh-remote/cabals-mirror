@@ -1,5 +1,5 @@
 Name:                diagrams-lib
-Version:             0.1.1
+Version:             0.2
 Synopsis:            Embedded domain-specific language for declarative graphics
 Description:         Diagrams is a flexible, extensible EDSL for creating
                      graphics of many types.  Graphics can be created
@@ -17,6 +17,7 @@ Stability:           Experimental
 Category:            Graphics
 Build-type:          Simple
 Cabal-version:       >=1.6
+Extra-source-files:  CHANGES
 Tested-with:         GHC == 6.12.3, GHC >= 7.0.2 && <= 7.0.3
 Source-repository head
   type:     darcs
@@ -30,6 +31,8 @@ Library
                        Diagrams.Segment,
                        Diagrams.Path,
                        Diagrams.Solve,
+                       Diagrams.Transform,
+                       Diagrams.BoundingBox,
                        Diagrams.TwoD,
                        Diagrams.TwoD.Types,
                        Diagrams.TwoD.Align,
@@ -41,12 +44,12 @@ Library
                        Diagrams.TwoD.Shapes,
                        Diagrams.TwoD.Util,
                        Diagrams.TwoD.Model,
---                       Diagrams.Animation,
                        Diagrams.Util,
                        Diagrams.Backend.Show
   Build-depends:       base >= 4.2 && < 4.4,
                        containers >= 0.3 && < 0.5,
-                       diagrams-core >= 0.1 && < 0.2,
+                       semigroups >= 0.3.4 && < 0.6,
+                       diagrams-core >= 0.2 && < 0.3,
                        vector-space >= 0.7 && < 0.8,
                        colour >= 2.3.1 && < 2.4,
                        data-default >= 0.2 && < 0.3,
