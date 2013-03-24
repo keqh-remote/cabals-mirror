@@ -1,6 +1,6 @@
 build-type:         Simple
 name:               scyther-proof
-version:            0.4.0
+version:            0.4.1.0
 license:            GPL
 license-file:       LICENSE
 category:           Security, Theorem Provers
@@ -18,13 +18,6 @@ description:
                     Machine-Checked Protocol Security Proofs\" by Meier,
                     Cremers, and Basin available from
                     <http://people.inf.ethz.ch/meiersi/publications/index.html>
-                    .
-                    Parts of the infrastructure underlying scyther-proof are
-                    reused in other projects by the same author. Therefore,
-                    most of its modules are exported in the corresponding
-                    scyther-proof library. However, this library is not yet
-                    thought for general use. Please contact the author, if you
-                    would like to build upon/extend scyther-proof.
 
 homepage:           http://www.infsec.ethz.ch/people/meiersi/
 stability:          Beta
@@ -127,7 +120,7 @@ executable scyther-proof
         time          >= 1.1   && < 1.3 ,
         
         parsec        == 3.1.*  ,
-        pretty        == 1.0.*  ,
+        pretty        >= 1.0   && < 1.2 ,
         tagsoup       == 0.12.*  ,
         json          == 0.5.*  ,
         uniplate      == 1.6.*
