@@ -1,5 +1,6 @@
    Name:                HaskellForMaths
-   Version:             0.1.2
+   Version:             0.1.3
+   Category:            Math
    Description:         Math library - combinatorics, group theory, commutative algebra, non-commutative algebra
    License:             BSD3
    License-file:        license.txt
@@ -13,6 +14,7 @@
      Build-Depends:     base >=3 && < 4, containers
      Exposed-modules:
         Math.Algebra.LinearAlgebra,
+        Math.Algebra.Commutative.Monomial,
         Math.Algebra.Commutative.MPoly, Math.Algebra.Commutative.GBasis,
         Math.Algebra.Field.Base, Math.Algebra.Field.Extension,
         Math.Algebra.Group.PermutationGroup, Math.Algebra.Group.SchreierSims, Math.Algebra.Group.StringRewriting,
@@ -22,8 +24,6 @@
         Math.Common.IntegerAsType, Math.Common.ListSet,
         Math.Projects.RootSystem,
         Math.Projects.ChevalleyGroup.Classical, Math.Projects.ChevalleyGroup.Exceptional,
+        Math.Projects.KnotTheory.Braid,
         Math.Projects.KnotTheory.LaurentMPoly, Math.Projects.KnotTheory.TemperleyLieb, Math.Projects.KnotTheory.IwahoriHecke
-     Other-modules:
-        Math.Algebra.Commutative.Monomial,
-        Math.Projects.KnotTheory.Braid     
      ghc-options:       -w
