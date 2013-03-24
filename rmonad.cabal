@@ -1,9 +1,9 @@
 name:           rmonad
-cabal-version:  >= 1.6
+cabal-version:  >= 1.8
 build-type:     Simple
 copyright:      (c) 2008-9 Ganesh Sittampalam, 2008 Peter Gavin
 stability:      provisional
-version:        0.7
+version:        0.8
 license:        BSD3
 license-file:   LICENSE
 category:       Control
@@ -25,7 +25,11 @@ source-repository head
 source-repository this
       type: darcs
       location: http://code.haskell.org/rmonad/
-      tag: "version 0.7"
+      tag: "version 0.8"
+
+flag warn-as-error
+  description: build with warnings as errors
+  default: False
 
 Library
   build-depends:  base < 5, containers, transformers, suitable >=0.1 && < 0.2
@@ -43,3 +47,21 @@ Library
         Control.RMonad.Trans.List
         Control.RMonad.Trans.Reader
         Control.RMonad.Trans.Cont
+
+  ghc-options: -Wall
+  if flag(warn-as-error)
+    ghc-options: -Werror
+
+Test-Suite test
+  type: exitcode-stdio-1.0
+
+  hs-source-dirs: test
+  main-is: allTests.hs
+
+  build-depends:
+    rmonad,
+    base,
+    containers,
+    HUnit,
+    test-framework,
+    test-framework-hunit
