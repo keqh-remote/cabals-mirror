@@ -8,7 +8,7 @@ Description:
         messing around FastCGI. It is also intended to be run behind a
         reverse-proxy so it doesn't have some facilities like logging,
         client filtering or such like.
-Version: 0.3.2
+Version: 0.3.3
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
@@ -80,7 +80,7 @@ Library
         Network.HTTP.Lucu.RequestReader
         Network.HTTP.Lucu.ResponseWriter
     Extensions:
-        BangPatterns, DeriveDataTypeable, UnboxedTuples
+        BangPatterns, DeriveDataTypeable, ScopedTypeVariables, UnboxedTuples
     ghc-options:
         -Wall
         -funbox-strict-fields
@@ -92,7 +92,7 @@ Executable lucu-implant-file
         Buildable: False
     Main-Is: ImplantFile.hs
     Extensions:
-        BangPatterns, UnboxedTuples
+        BangPatterns, ScopedTypeVariables, UnboxedTuples
     ghc-options:
         -Wall
         -funbox-strict-fields
@@ -101,3 +101,8 @@ Executable lucu-implant-file
 --    Main-Is: HelloWorld.hs
 --    Hs-Source-Dirs: ., examples
 --    ghc-options: -fglasgow-exts -Wall -funbox-strict-fields -O3 -prof -auto-all
+
+--Executable Multipart
+--    Main-Is: Multipart.hs
+--    Hs-Source-Dirs: ., examples
+--    ghc-options: -XBangPatterns -fglasgow-exts -Wall -funbox-strict-fields -prof -auto-all
