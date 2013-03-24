@@ -1,12 +1,12 @@
 name:           feldspar-language
-version:        0.3.3
+version:        0.4.0.2
 synopsis:       A functional embedded language for DSP and parallelism
 description:    Feldspar (Functional Embedded Language for DSP and PARallelism)
                 is an embedded DSL for describing digital signal processing
                 algorithms. This package contains the language front-end and an
                 interpreter.
 category:       Language
-copyright:      Copyright (c) 2009-2010, ERICSSON AB
+copyright:      Copyright (c) 2009-2011, ERICSSON AB
 author:         Functional programming group at Chalmers University of Technology
 maintainer:     Emil Axelsson <emax@chalmers.se>
 license:        BSD3
@@ -15,50 +15,73 @@ stability:      experimental
 homepage:       http://feldspar.inf.elte.hu/feldspar/
 build-type:     Simple
 cabal-version:  >= 1.6
-tested-with:    GHC==6.10.*
+tested-with:    GHC==6.12.*, GHC==7.0.2
 
-data-files:
-  examples/Memocode2010.hs
+extra-source-files:
+  Examples/Tutorial/*.hs,
+  Examples/Simple/*.hs,
+  Examples/Effects/*.hs,
+  Examples/Math/*.hs
 
 library
   exposed-modules:
     Feldspar.Prelude
-    Feldspar.Utils
-    Feldspar.Haskell
+    Feldspar.DSL.Expression
+    Feldspar.DSL.Lambda
+    Feldspar.DSL.Sharing
+    Feldspar.DSL.Val
+    Feldspar.DSL.Network
+    Feldspar.Set
     Feldspar.Range
     Feldspar.Core.Types
-    Feldspar.Core.Ref
-    Feldspar.Core.Expr
-    Feldspar.Core.Graph
-    Feldspar.Core.Show
-    Feldspar.Core.Reify
+    Feldspar.Core.Representation
+    Feldspar.Core.Constructs
+    Feldspar.Core.Functions.Logic
+    Feldspar.Core.Functions.Eq
+    Feldspar.Core.Functions.Ord
+    Feldspar.Core.Functions.Num
+    Feldspar.Core.Functions.Bits
+    Feldspar.Core.Functions.Integral
+    Feldspar.Core.Functions.Fractional
+    Feldspar.Core.Functions.Floating
+    Feldspar.Core.Functions.Complex
+    Feldspar.Core.Functions.Tuple
+    Feldspar.Core.Functions.Array
+    Feldspar.Core.Functions.Conversion
+    Feldspar.Core.Functions.Trace
     Feldspar.Core.Functions
-    Feldspar.Core.Trace
+    Feldspar.Core.Wrap
     Feldspar.Core
     Feldspar.Vector
     Feldspar.Matrix
-    Feldspar.FixedPoint
     Feldspar.Stream
+    Feldspar.FixedPoint
     Feldspar
 
   build-depends:
-    base >= 4 && < 4.3,
+    array,
+    base >= 4 && < 4.4,
     containers,
     mtl,
+    QuickCheck >= 2.4 && < 3,
     random,
-    QuickCheck >= 2.3 && < 3
+    tagged == 0.2.*,
+    type-level >= 0.2.4
 
   extensions:
+    EmptyDataDecls
     FlexibleInstances
     FlexibleContexts
+    FunctionalDependencies
     GADTs
+    GeneralizedNewtypeDeriving
     MultiParamTypeClasses
-    NoMonomorphismRestriction
-    OverlappingInstances
     PatternGuards
     Rank2Types
     ScopedTypeVariables
+    StandaloneDeriving
     TypeFamilies
     TypeOperators
     TypeSynonymInstances
     UndecidableInstances
+    DeriveDataTypeable
