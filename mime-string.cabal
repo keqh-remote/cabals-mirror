@@ -1,5 +1,5 @@
 Name:               mime-string
-Version:            0.3
+Version:            0.4
 License:            OtherLicense
 License-File:       COPYING
 Copyright:          Ian Lynagh, 2005, 2007
@@ -7,12 +7,12 @@ Author:             Ian Lynagh
 Maintainer:         igloo@earth.li
 Stability:          experimental
 Synopsis:           MIME implementation for String's.
+Build-Type:         Simple
 Description:
     Implementation of the MIME RFCs 2045-2049.
     Rather rough around the edges at the moment.
 Category:           Codec
-Tested-With:        GHC==6.6
-Build-Depends:      base, mtl, network, iconv, base64-string
+Build-Depends:      base, mtl, network, iconv, base64-string, old-time, bytestring
 Extensions:         PatternGuards
 Extra-source-files: "BSD3", "GPL-2"
 Exposed-modules:
@@ -29,5 +29,5 @@ Exposed-modules:
 Other-Modules:
     Codec.MIME.String.Internal.ABNF
     Codec.MIME.String.Internal.Utils
-GHC-Options: -O -Wall -Werror
+GHC-Options: -Wall
 
