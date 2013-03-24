@@ -1,5 +1,5 @@
 Name:                 air-extra
-Version:              2011.10.12
+Version:              2012.5.15
 Build-type:           Simple
 Synopsis:             air-extra
 Description:          An alternative Haskell Prelude library, extra helpers
