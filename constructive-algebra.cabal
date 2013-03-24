@@ -7,10 +7,10 @@ Name:                constructive-algebra
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.0
+Version:             0.1
 
-Synopsis:            A library for constructive algebra.
-Description:         A library for constructive algebra.
+Synopsis:            A library of constructive algebra.
+Description:         A library of constructive algebra.
 
 License:             BSD3
 License-file:        LICENSE
@@ -39,7 +39,14 @@ Cabal-version:       >=1.2
 
 Library
   -- Modules exported by the library.
-  Exposed-modules:     Algebra.Structures.Ring
+  Exposed-modules:     Algebra.Structures.Ring, 
+                       Algebra.Structures.CommutativeRing,
+                       Algebra.Structures.IntegralDomain, 
+                       Algebra.Structures.Field,
+                       Algebra.Structures.StronglyDiscrete,
+                       Algebra.Ideal,
+                       Algebra.Z
+
   
   -- Packages needed in order to build this package.
   Build-depends:       base >= 3 && <= 4, QuickCheck >= 2 
