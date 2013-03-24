@@ -1,5 +1,5 @@
 Name:                happs-tutorial
-Version:             0.4
+Version:             0.4.1
 Synopsis:            A HAppS Tutorial that is is own demo
 Description:         A nice way to learn how to build web sites with HAppS
 
@@ -93,14 +93,24 @@ Executable happs-tutorial
     hs-source-dirs:
         src
     Other-Modules:
-        ControllerBasic
-        Misc   
-        View
-        Controller          
-        SerializeableSessions
-        SerializeableUsers         
-        AppStateSetBased
         AppStateGraphBased
+        AppStateSetBased
+        ControllerBasic
+        ControllerGetActions
+        Controller
+        ControllerMisc
+        ControllerPostActions
+        Debugging
+        Main
+        Misc
+        SerializeableSessions
+        SerializeableSocialGraph
+        SerializeableUsers
+        StateStuff
+        UniqueLabelsGraph
+        View
+        ViewPagination
+        ViewStuff
     Build-Depends:   base >= 3, HStringTemplate, mtl, bytestring,
                      HAppS-Server, HAppS-Data, HAppS-State,
                      containers, pretty, pureMD5, directory, filepath, hscolour, HTTP
