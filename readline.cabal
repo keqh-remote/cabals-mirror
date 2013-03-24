@@ -1,8 +1,9 @@
 name:		readline
-version:	1.0.1.0
+version:	1.0.2.0
 license:	GPL
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
+category:       Console
 synopsis:	An interface to the GNU readline library
 description:
 		More information on readline can be found at
@@ -24,10 +25,9 @@ library
                 System.Console.Readline
                 System.Console.SimpleLineEditor
   if flag(split-base)
-    build-depends:	base >= 3, process
+    build-depends:	base >= 3 && < 5, process
   else
     build-depends:	base < 3
-  extensions:	CPP
   include-dirs: 	include
   includes:	HsReadline.h
   install-includes:	HsReadline.h HsReadlineConfig.h
