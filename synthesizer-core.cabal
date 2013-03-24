@@ -1,5 +1,5 @@
 Name:           synthesizer-core
-Version:        0.5.0.1
+Version:        0.5.1
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -203,6 +203,7 @@ Library
     Synthesizer.CausalIO.Process
     Synthesizer.Generic.Analysis
     Synthesizer.Generic.Cut
+    Synthesizer.Generic.CutChunky
     Synthesizer.Generic.Control
     Synthesizer.Generic.Cyclic
     Synthesizer.Generic.Displacement
