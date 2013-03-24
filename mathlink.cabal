@@ -1,5 +1,5 @@
 Name:                 mathlink
-Version:              2.0.0.7
+Version:              2.0.1.1
 Cabal-Version:        >= 1.6
 Build-Type:           Custom
 License:              BSD3
@@ -31,10 +31,11 @@ mimics that of /Mathematica/'s @mprep@ utility.
 Data marshaling is accomplished via the 'MLGet' and 'MLPut' classes, which
 specify types that that can be read from or written to the /MathLink/
 connection. Instances of these classes are provided for the obvious 
-standard data types, including tuples, lists, 'Array's and 'UArray's.
+standard data types, including tuples, lists, and 'UArray's.
 .
 A Haskell function that is to be exposed to /Mathematica/ has the type
-signature @('MLGet' a, 'MLPut' b) => a -> IO b@.
+signature @('MLGet' a, 'MLPut' b) => a -> 'ML' b@. The 'ML' monad provides
+single-threaded access to the /MathLink/ connection.
 .
 A simple example of a /Mathematica/ package:
 .
@@ -42,7 +43,7 @@ A simple example of a /Mathematica/ package:
 import Foreign.MathLink
 .
 \-- define a function
-addTwo :: (Int,Int) -> IO Int
+addTwo :: (Int,Int) -> ML Int
 addTwo (x,y) = return $ x+y
 .
 \-- specify a package
@@ -76,11 +77,11 @@ main = runMathLink spec
 }
 
 Library
-  Build-Depends:      base >= 4.0 && < 4.2,
+  Build-Depends:      base >= 4.0 && < 4.3,
                       mtl >= 1.1 && < 1.2,
                       haskell98,
-                      array >= 0.2 && < 0.3,
-                      containers >= 0.2 && < 0.3,
+                      array >= 0.2 && < 0.4,
+                      containers >= 0.2 && < 0.4,
                       ix-shapable
 
   Exposed-Modules:    Foreign.MathLink
