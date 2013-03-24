@@ -1,5 +1,5 @@
 Name:           DPM
-Version:        0.2.0
+Version:        0.2.1
 License:        GPL
 License-File:   LICENSE
 Copyright:      (c) 2009-2010 Stefan Wehr
@@ -20,7 +20,6 @@ Description:
 Stability:      Beta
 Cabal-Version:  >= 1.6
 Build-Type:     Simple
-Tested-with:      GHC==6.10.4, GHC==6.12.1
 
 flag test
   description:          Enable the test configuration: Build the test
@@ -60,7 +59,14 @@ Executable dpm-tests
 Executable dpm
   Main-Is:        CommandlineMain.hs
   Hs-Source-Dirs: src
-  Other-Modules:  DPM.Core.Lexer, DPM.Core.QueryParser
+  Other-Modules:  DPM.Core.Lexer, DPM.Core.QueryParser,
+                  DPM.Core.Conflicts, DPM.Core.DataTypes, DPM.Core.Model,
+                  DPM.Core.ReverseDependencies, DPM.Core.TestDarcs,
+                  DPM.Core.DPM_Monad, DPM.Core.Email, DPM.Core.PatchBundleParser,
+                  DPM.Core.ShortID, DPM.Core.Utils, DPM.Core.Darcs, DPM.Core.Storage,
+                  DPM.UI.Commandline.ANSIColors, DPM.UI.Commandline.CDPM_Monad,
+                  DPM.UI.Commandline.Commands, DPM.UI.Commandline.Interaction,
+                  DPM.UI.Commandline.Main
   Build-Depends:  darcs >= 2.4
                   , bytestring >= 0.9
                   , time
