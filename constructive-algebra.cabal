@@ -7,7 +7,7 @@ Name:                constructive-algebra
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.5
+Version:             0.1.6
 
 Synopsis:            A library of constructive algebra.
 Description:         
@@ -65,6 +65,8 @@ Library
                        Algebra.Matrix,
                        Algebra.PLM,
                        Algebra.UPoly,
+                       Algebra.EllipticCurve,
+                       Algebra.ZSqrt5,
                        Algebra.Zn,
                        Algebra.Z,
                        Algebra.Q
