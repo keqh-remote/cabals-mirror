@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.0
+Version:		2.2.1
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -55,7 +55,7 @@ Extra-Source-Files:
   doc/SDAG.lhs doc/cpsatheory.pdf doc/cpsaspec.pdf doc/cpsadesign.pdf
   src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg
   src/cpsa.el src/httpd_allow_execmem.te src/cpsaops.scm src/preskel
-  src/cpsa.pl src/pp.pl src/sexpr.pl src/sliders.js src/js2hs
+  src/cpsa.pl src/pp.pl src/sexpr.pl src/zoom.js src/js2hs src/ghcmemlimit
   tst/README tst/Makefile
   tst/Make.hs tst/checktst tst/cpsagraphall tst/cpsashapesall
   tst/blanchet.scm tst/blanchet.tst tst/completeness-test.scm
@@ -89,7 +89,8 @@ Extra-Source-Files:
   tst/wide-mouth-frog.tst tst/wonthull2.scm tst/wonthull2.tst
   tst/wonthull3.scm tst/wonthull3.tst tst/wonthull.scm
   tst/wonthull.tst tst/woolam.scm tst/woolam.tst tst/yahalom-6.3.6.scm
-  tst/yahalom-6.3.6.tst tst/yahalom.scm tst/yahalom.tst
+  tst/yahalom-6.3.6.tst tst/yahalom.scm tst/yahalom.tst tst/tor.scm
+  tst/tor.tst
 
 -- Disable with -f-par option during configuration.
 
