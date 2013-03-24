@@ -6,23 +6,21 @@ Description:
         fusion. This is like @bytestring@ but stores bits instead of
         bytes.
 
-        NOTE: GHC 7.0.1 fails to fuse almost every cases of bitstream
-        fusion, producing very large and not-so-fast object code. See:
-        <http://hackage.haskell.org/trac/ghc/ticket/4397>
-
-Version: 0.1
+Version: 0.2
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
 Maintainer: PHO <pho at cielonegro dot org>
 Stability: experimental
 Homepage: http://cielonegro.org/Bitstream.html
+Bug-Reports: http://static.cielonegro.org/ditz/bitstream/
 Category: Data
 Tested-With: GHC == 7.0.1
 Cabal-Version: >= 1.10
 Build-Type: Simple
 Extra-Source-Files:
     COPYING
+    ChangeLog
 
 Source-Repository head
     Type: git
