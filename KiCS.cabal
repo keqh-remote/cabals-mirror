@@ -1,6 +1,6 @@
 Name:          KiCS
-Version:       0.9.0
-Cabal-Version: >= 1.6
+Version:       0.9.1
+Cabal-Version: >= 1.6.0.3
 Author:        Bernd Braßel
 Maintainer:    Bernd Braßel
 Homepage:      http://curry-language.org
@@ -15,15 +15,21 @@ Description:   This package builds the Curry to Haskell compiler "kics".
 Stability:     experimental
 extra-source-files: 
    src/lib/Curry/Module/*.hs.include
-Data-Dir:      src/lib/Curry/Module/.curry
-Data-Files:    *.fcy
-               *.fint
-               *.efc
-               *.acy
-               *.uacy
-               *.cy
-               
-
+extra-tmp-files:
+   src/lib/Curry/Module/*.fcy
+   src/lib/Curry/Module/*.fint
+   src/lib/Curry/Module/*.efc
+   src/lib/Curry/Module/*.acy
+   src/lib/Curry/Module/*.uacy
+   src/lib/Curry/Module/*.cy
+Data-Dir:      src/lib/
+Data-Files:    Curry/Module/*.fcy
+               Curry/Module/*.fint
+               Curry/Module/*.efc
+               Curry/Module/*.acy
+               Curry/Module/*.uacy
+               Curry/Module/*.cy
+               debugOptions.hs
                
 Executable kics
   main-is:        kics.hs
@@ -38,8 +44,8 @@ Executable kics
     containers,
     ghc-paths,
     process,
-    curry-base >= 0.2.5,
-    curry-frontend >= 0.2.7
+    curry-base     >= 0.2.6,
+    curry-frontend >= 0.2.8
   Other-Modules:
     Curry.Compiler.Config
     Curry.Compiler.CurryToHaskell
@@ -128,6 +134,7 @@ Library
     Curry.Module.FlatCurryXML
     Curry.Module.FlexRigid
     Curry.Module.PrettyFlat
+    Curry.Module.Trace
 
   Other-Modules:
     Paths_KiCS
