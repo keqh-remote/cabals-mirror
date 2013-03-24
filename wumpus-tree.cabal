@@ -1,5 +1,5 @@
 name:             wumpus-tree
-version:          0.15.0
+version:          0.16.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -32,48 +32,15 @@ description:
   .
   Changelog:
   .
-  v0.14.0 to v0.15.0
+  v0.15.0 to v0.16.0:
   .
-  * Updated to work with latest Wumpus libraries. 
-    @ScalingContext@ has been temporarily added from Wumpus-Basic 
-    (it was considered obsolete there). At some point the 
-    functionality needs re-implementing so it can be removed from 
-    Tree.
-  .  
-  v0.13.0 to v0.14.0:
+  * Re-worked so tree drawings form a @LocGraphic@ rather than a 
+    @TraceDrawing@, this makes more in line with other graphic 
+    objects in Wumpus like shapes.
   .
-  * Updated to work with latest Wumpus libraries. 
+  * Changed node type to be any @LocImage@ where the answer 
+    supports anchors.
   .
-  v0.12.0 to v0.13.0:
-  .
-  * Changed the specification of trees so that they are built in a
-    monad. The bind operation of the monad allows /anchors/ to be 
-    extracted from tree nodes so they can be annotated with 
-    supplementary graphics. At the moment this is rather limited 
-    as Wumpus-Basic and Wumpus-Drawing do not offer much support 
-    for anchors other than the basic type classes.
-  .
-  * Changed the type of the rendering functions so they produce a 
-    TreeDrawing. This type is more suitable for building composite
-    pictures than the previous type TreePicture. 
-  .
-  * Also the rendering functions now take a start point for the 
-    root node, again this should be more convenient for drawing 
-    composite pictures - see the demo which now draws all the 
-    example trees on one page.
-  .
-  * Internally the tree design is now more flexible - trees can be 
-    designed upwards or leftwards rightwards, rather than just 
-    downwards; and edge drawing style is lifted out of the 
-    rendering to use a supplied combinator. Currently these 
-    features are not exposed by the API, the API needs more 
-    thought (possibly warranting changes to Wumpus-Basic and 
-    Wumpus-Drawing).
-  .
-  .
-  v0.11.1 to v0.12.0:
-  .
-  * Internal changes to track updates to Wumpus-Basic.
   . 
   .
 build-type:         Simple
@@ -90,18 +57,18 @@ library
   build-depends:      base              <  5, 
                       containers        >= 0.3.0     && <= 0.6.0,
                       vector-space      >= 0.6       && <  1.0,
-                      wumpus-core       >= 0.50.0    && <  0.51.0,
-                      wumpus-basic      == 0.17.0,
-                      wumpus-drawing    == 0.3.0
+                      wumpus-core       >= 0.51.0    && <  0.52.0,
+                      wumpus-basic      == 0.18.0,
+                      wumpus-drawing    == 0.4.0
 
   
   exposed-modules:
     Wumpus.Tree,
     Wumpus.Tree.Base,
     Wumpus.Tree.Design,
-    Wumpus.Tree.Draw,
-    Wumpus.Tree.ScalingContext,
-    Wumpus.Tree.TreeBuildMonad,
+    Wumpus.Tree.DrawLoc,
+    Wumpus.Tree.OTMConnectors,
+    Wumpus.Tree.TreeBuilder,
     Wumpus.Tree.VersionNumber
 
   other-modules:
