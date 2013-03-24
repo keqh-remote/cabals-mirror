@@ -1,5 +1,5 @@
 Name:           	ReviewBoard
-Version:        	0.2
+Version:        	0.2.1
 Synopsis:			Haskell bindings to ReviewBoard
 Description:    	Haskell bindings to ReviewBoard (<http://code.google.com/p/reviewboard/>).
 Author:         	Adam Smyczek
@@ -17,6 +17,7 @@ Library
                 ReviewBoard.Core
                 ReviewBoard.Browser
                 ReviewBoard.Response
+                ReviewBoard.Request
   Build-Depends:
                 base, mtl, random,
                 network, HTTP, json
@@ -29,6 +30,7 @@ Executable mkrr
                 ReviewBoard.Core
                 ReviewBoard.Browser
                 ReviewBoard.Response
+                ReviewBoard.Request
   Build-Depends:
                 base, mtl, random, directory,
                 network, HTTP, json
