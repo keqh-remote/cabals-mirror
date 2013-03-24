@@ -1,5 +1,5 @@
 Name:           hCsound
-Version:        0.3.1
+Version:        0.4.0
 Cabal-Version:  >= 1.2
 Description:    Haskell interface to Csound API.
 License:        LGPL
@@ -9,8 +9,9 @@ Maintainer:     John W. Lato, jwlato@gmail.com
 Stability:      experimental
 synopsis:       interface to CSound API
 category:       Sound, Music
+cabal-version:  >= 1.6
 build-type:     Simple
-tested-with:    GHC == 6.10.1, GHC == 6.8.3, GHC == 6.6.1
+tested-with:    GHC == 7.0.4
 extra-source-files: README COPYRIGHT changelog TODO examples/test1.csd examples/simple.hs examples/test2.hs examples/test3.hs
 
 flag splitBase
@@ -29,7 +30,7 @@ Library
  build-depends:         base         >=3 && < 5
                        ,monads-tf    >= 0.1 && < 0.2
                        ,transformers >= 0.2 && < 0.3
-                       ,vector       >= 0.6 && < 0.8
+                       ,vector       >= 0.6 && < 0.10
  build-tools:           c2hs
  exposed-modules:       Sound.Csound
                         Sound.Csound.Foreign
@@ -58,3 +59,8 @@ Library
     build-depends:      base >= 3, base < 5
  else
     build-depends:      base < 3
+
+source-repository head
+  type:     darcs
+  location: http://www.tiresiaspress.us/haskell/hCsound
+
