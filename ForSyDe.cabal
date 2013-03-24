@@ -1,5 +1,5 @@
 name:           ForSyDe
-version:        3.1
+version:        3.1.1
 cabal-version:  >= 1.2
 build-type:     Custom
 license:        BSD3
@@ -15,8 +15,10 @@ description:
  The ForSyDe (Formal System Design) methodology has been developed with the objective to move system design to a higher level of abstraction and to bridge the abstraction gap by transformational design refinement. 
  
  This library provides ForSyDe's implementation as a Haskell-embedded Domain Specific Language (DSL). For more information, please see ForSyDe's website: <http://www.ict.kth.se/forsyde/>.
-category:       Language
-tested-with:    GHC==6.10.4
+
+ This will be most probably the last update on this package. It will be splitted to ForSyDe-shallow and ForSyDe-deep in the next release.
+category:       Language, Hardware
+tested-with:    GHC==6.12.3
 data-files:     lib/forsyde.vhd
 -- In order to include all this files with sdist
 extra-source-files: LICENSE,
@@ -85,9 +87,8 @@ extra-source-files: LICENSE,
 
 Library
   build-depends:   type-level,
-                   parameterized-data,
+                   parameterized-data >= 0.1.5,
                    containers,
-                   packedstring,
                    base>=4 && <6, 
                    regex-posix, 
                    mtl, 
@@ -98,8 +99,8 @@ Library
                    filepath,
                    old-time,
                    random,
-                   array,
-                   syb
+                   array
+
 
   hs-source-dirs:  src
   exposed-modules: Language.Haskell.TH.Lift,
@@ -139,7 +140,8 @@ Library
                    ForSyDe.Shallow.UtilityLib,
                    ForSyDe.Shallow.Gaussian,
                    ForSyDe.Shallow.Vector,
-                   ForSyDe.Shallow.Memory
+                   ForSyDe.Shallow.Memory,
+                   ForSyDe.Shallow.DataflowLib
 
  
   other-modules:   Paths_ForSyDe,
