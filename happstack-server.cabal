@@ -1,5 +1,5 @@
 Name:                happstack-server
-Version:             0.4.1
+Version:             0.5.0
 Synopsis:            Web related tools and services.
 Description:         Web framework
 License:             BSD3
@@ -65,15 +65,15 @@ Library
                        filepath,
                        HaXml >= 1.13 && < 1.14,
                        hslogger >= 1.0.2,
-                       happstack-data >= 0.4.1 && < 0.5,
-                       happstack-util >= 0.4.1 && < 0.5,
+                       happstack-data >= 0.5 && < 0.6,
+                       happstack-util >= 0.5 && < 0.6,
                        html,
                        MaybeT,
                        mtl,
                        network,
                        old-locale,
                        old-time,
-                       parsec < 3,
+                       parsec < 4,
                        process,
                        sendfile >= 0.6.1 && < 0.7,
                        template-haskell,
@@ -106,7 +106,7 @@ Library
 Executable happstack-server-tests
   Main-Is: Test.hs
   GHC-Options: -threaded
-  Build-depends: HUnit
+  Build-depends: HUnit, parsec < 4
   hs-source-dirs: tests, src
   if flag(tests)
     Buildable: True
