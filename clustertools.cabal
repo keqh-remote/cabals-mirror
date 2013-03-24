@@ -1,9 +1,9 @@
 Name:                clustertools
-Version:             0.1
+Version:             0.1.1
 License:             GPL
 License-file:        LICENSE
 Author:              Ketil Malde
-Maintainer:          Ketil Malde <ketil@ii.uib.no>
+Maintainer:          Ketil Malde <ketil@malde.org>
 
 Category:            Bioinformatics
 Synopsis:            Tools for manipulating sequence clusters
@@ -22,11 +22,15 @@ Description:         This is a bunch of stuff I needed at some for manipulating 
                      .
                      * ace2fasta - parse an ACE assembly, and output each assembly in a separate FASTA file
                      .
+		     * ace2clusters - parse an ACE assembly, and output clusters in TGICL format
+		     .
                      * clusterlibs - given a table of regular expressions and library names, along with a
                      clustering (TGICL-format), output a table of clusters with the library name
                      prepended to the sequences.
                      .
-                     The Darcs repository is at: <http://malde.org/~ketil/cluster_tools>.
+		     * xcerpt - extract sequences from a list of sequence labels.
+		     .
+                     The Darcs repository is at: <http://malde.org/~ketil/biohaskell/cluster_tools>.
 Homepage:            http://malde.org/~ketil/
 
 Tested-With:         GHC==6.8.2
@@ -53,13 +57,24 @@ Executable add_single
 Executable ace2contigs
            Hs-source-dirs: src
            Main-Is:     Ace2Contigs.hs
-           Build-depends: bio>=0.3.3
+           Build-depends: bio>=0.3.3.4
 
 Executable ace2fasta
            Hs-source-dirs: src
            Main-Is:     Ace2Fasta.hs
+           Build-depends: bio>=0.3.3.4
+
+Executable ace2clusters
+           Hs-source-dirs: src
+           Main-Is:     Ace2Clusters.hs
+           Build-depends: bio>=0.3.3.4
 
 Executable clusterlibs
            Hs-source-dirs: src
            Main-Is:     ClusterLibs.hs
            Build-depends: regex-compat
+
+Executable xcerpt
+           Hs-source-dirs: src
+           Main-Is:     Xcerpt.lhs
+           Build-depends: haskell98
