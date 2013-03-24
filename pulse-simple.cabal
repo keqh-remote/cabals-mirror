@@ -1,6 +1,6 @@
 Name:            pulse-simple
 Cabal-Version:   >=1.2
-Version:         0.1.12
+Version:         0.1.13
 Author:          Daiki Handa
 Maintainer:      xanxys@gmail.com
 Synopsis:        binding to Simple API of pulseaudio
@@ -17,6 +17,6 @@ Description:
 Library
     Extensions: ForeignFunctionInterface
     Extra-Libraries: pulse-simple
-    Build-depends:   base>=3 && <4, bytestring
+    Build-depends:   base>=3 && <5, bytestring
     Exposed-Modules: Sound.Pulse.Simple
 
