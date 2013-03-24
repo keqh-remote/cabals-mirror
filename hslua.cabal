@@ -1,11 +1,11 @@
 Name: hslua
-Version: 0.3.4
+Version: 0.3.5
 Stability: beta
 Cabal-version: >= 1.6
 License: BSD3
 Build-type: Simple
 License-File: COPYRIGHT
-Copyright: 2007-2010, Gracjan Polak
+Copyright: 2007-2012, Gracjan Polak
 Author: Gracjan Polak <gracjanpolak@gmail.com>
 Maintainer: Gracjan Polak <gracjanpolak@gmail.com>
 Synopsis: A Lua language interpreter embedding in Haskell
@@ -19,7 +19,7 @@ Category: Scripting
 Extra-source-files: src/*.h
 
 Library
-  Build-depends: base==4.*
+  Build-depends: base==4.*, mtl >= 2.1
   Exposed-modules: Scripting.Lua, Scripting.Lua.ConfigFile
   Hs-source-dirs: src
   C-sources: src/lapi.c, src/lauxlib.c, src/lbaselib.c, src/lcode.c,
