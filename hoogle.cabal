@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hoogle
-version:            4.2.10
+version:            4.2.11
 license:            GPL
 license-file:       docs/LICENSE
 category:           Development
@@ -42,9 +42,9 @@ library
         safe,
         binary,
         parsec >= 2.1,
-        transformers == 0.2.*,
+        transformers >= 0.2 && < 0.4,
         uniplate == 1.6.*,
-        haskell-src-exts >= 1.9 && < 1.12
+        haskell-src-exts >= 1.12 && < 1.14
 
     if !os(mingw32)
         build-depends: unix
@@ -114,9 +114,9 @@ executable hoogle
         blaze-builder >= 0.2 && < 0.4,
         http-types == 0.6.*,
         case-insensitive >= 0.2 && < 0.5,
-        conduit == 0.2.*,
-        wai == 1.1.*,
-        warp == 1.1.*,
+        conduit >= 0.2 && < 0.5,
+        wai >= 1.1 && < 1.3,
+        warp >= 1.1 && < 1.3,
         Cabal >= 1.8 && < 1.15
 
     other-modules:
