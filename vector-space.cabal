@@ -1,5 +1,5 @@
 Name:                vector-space
-Version:             0.3.1
+Version:             0.4
 Cabal-Version:       >= 1.2
 Synopsis:            Vector & affine spaces, linear maps, and derivatives (requires ghc 6.9)
 Category:            math
@@ -28,35 +28,35 @@ License:             BSD3
 Stability:           experimental
 build-type:          Simple
 
--- WARNING: Data.Basis depends on type families working fairly well,
--- and requires ghc version at least 6.9.  I don't know how to specify
--- that dependency in the .cabal.
-
 Library
   hs-Source-Dirs:      src
   Extensions:          
   Build-Depends:       base, MemoTrie
   Exposed-Modules:     
-                     Data.AdditiveGroup
                      Data.VectorSpace
                      Data.Basis
                      Data.LinearMap
                      Data.Maclaurin
+--                   Data.Horner
                      Data.Derivative
                      Data.Cross
                      Data.AffineSpace
                      Data.NumInstances
+    
+  -- This library relies on type families working as well as in 6.9.
+  if impl(ghc < 6.9) {
+    buildable: False
+  }
+  -- More bug fixes in 6.10 allow replacing some fundeps.  After a while,
+  -- when 6.10 is widespread, I'll switch over entirely and eliminate the
+  -- earlier versions.
+  if impl(ghc >= 6.10) {
+    Exposed-Modules:
+                     Data.AVectorSpace
+                     Data.ABasis
+                     Data.ALinearMap
+  }
   ghc-options:         -Wall -O2
   ghc-prof-options:    -prof -auto-all 
 
---  -fno-method-sharing
-
--- Executable Perf
---   main-is:           Perf.hs
---   build-depends:     base, OpenGL, old-time
---   Hs-Source-Dirs:    src, tests/src
---   ghc-options:       -Wall -O2
---   ghc-prof-options:    -prof -auto-all   
-
---                   Data.Horner
 -- For ghc-options: -ddump-simpl-stats -ddump-rules -ddump-simpl -ddump-simpl-phases
