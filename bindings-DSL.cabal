@@ -17,7 +17,7 @@ description:
   .
   This package contains no Haskell code, only C header files
   designed for hsc2hsc.
-version: 1.0.1
+version: 1.0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -28,3 +28,4 @@ bug-reports: http://bitbucket.org/mauricio/bindings-dsl/issues
 category: FFI
 install-includes: bindings.dsl.h , bindings.cmacros.h
 build-depends: base >= 0 && < 1000
+exposed-modules: Bindings
