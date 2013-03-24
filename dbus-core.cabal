@@ -1,5 +1,5 @@
 name: dbus-core
-version: 0.6
+version: 0.7
 synopsis: Low-level D-Bus protocol implementation
 license: GPL
 license-file: License.txt
@@ -55,13 +55,14 @@ library
     DBus.Message
     DBus.NameReservation
     DBus.Types
+    DBus.Wire
 
   other-modules:
     DBus.Message.Internal
-    DBus.Wire
+    DBus.Wire.Internal
     DBus.Util
 
-executable tests
+executable dbus-core-tests
   main-is: Tests.hs
   hs-source-dirs: hs
 
