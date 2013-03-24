@@ -1,5 +1,5 @@
 name:               bacteria
-version:            1.0
+version:            1.1
 synopsis:           braindead utility to compose Xinerama backgrounds
 description:        Compose a sequence of images by centering them on rectangles the size of the Xinerama screens available.  Supports jpg, png, and gif input, and produces png output.
 category:           Graphics
