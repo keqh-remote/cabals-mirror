@@ -1,5 +1,5 @@
 Name:           serialport
-Version:        0.3.0
+Version:        0.3.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 license:        BSD3
@@ -10,15 +10,6 @@ maintainer:     Joris.Putcuyps@gmail.com
 homepage:       http://users.skynet.be/jputcu/projects/haskell-serialport/index.html
 bug-reports:    mailto:Joris.Putcuyps@gmail.com
 synopsis:       Cross platform serial port library.  
-
-description:    This library provides a way to interface the serial port from haskell in a cross platform way.
-                .
-                Tested on the following platforms:
-                . 
-                 * Linux (Arch)
-                .
-                 * Windows XP 32-bit
-
 category:       Hardware
 
 Library
