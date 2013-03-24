@@ -1,5 +1,7 @@
-name:           mcpi
-Version:        0.0.0.1
+Name:           mcpi
+Version:        0.0.0.2
+Homepage:       https://github.com/DougBurke/hmcpi
+Bug-Reports:    https://github.com/DougBurke/hmcpi/issues
 Stability:      experimental
 License:        PublicDomain
 Author:         Douglas Burke (dburke.gw@gmail.com)
@@ -8,27 +10,29 @@ Category:       network, raspberrypi, minecraft
 Synopsis:       Connect to MineCraft running on a Raspberry PI.
 Description:
   The MineCraft edition for Raspberry PI comes with a Java and
-  Python API.
+  Python API. See "Network.MineCraft.Pi.Client" for a basic
+  example.
   .
   This is a *very* basic, and *incomplete* Haskell version. I
   fully expect everything to change in later versions.
   .
-  Two very simple examples are included in the examples/ directory,
-  as well as a way to interact with MineCraft directly.
+  A number of very simple examples are included in the examples/ directory,
+  as well as a program that lets you interact with MineCraft directly.
   .
-  Please see the TODO file in the source code for an incomplete
-  list of possible changes.
+  Please see the TODO.md file in the source code for an incomplete
+  list of possible changes, and the CHANGES.md file for changes
+  in the module.
 
 Tested-With:    GHC==7.4.1
 Cabal-Version:  >= 1.8
 Build-Type:     Simple
 
--- #Source-repository head
--- #  type:      mercurial
--- #  location:  https://bitbucket.org/doug_burke/grabtweets
-
-Data-Files:     examples/README
+Data-Files:     examples/README.md
                 examples/*.hs
+
+source-repository  head
+  type:            git
+  location:        git://github.com/DougBurke/hmcpi.git
 
 Flag build-examples
   Description: Build the example programs (defaults to True)
@@ -37,7 +41,7 @@ Flag build-examples
 Library
    Build-Depends:
       base >=3 && < 5,
-      network == 2.3.*,
+      network >= 2.3 && < 2.5,
       split == 0.2.*,
       transformers == 0.3.*
 
@@ -91,6 +95,7 @@ Executable         hmcpi
 
    Main-Is:        HMCPI.hs
    Hs-Source-Dirs: examples/ 
+   Other-Modules:  Paths_mcpi
 
    ghc-options:
       -Wall
@@ -98,7 +103,7 @@ Executable         hmcpi
    Build-Depends:
       base,
       network,
-      pipes == 3.1.*
+      pipes >= 3.0 && < 3.2
 
 Executable         isongold
    if !flag(build-examples)
@@ -112,5 +117,18 @@ Executable         isongold
 
    Build-Depends:
       base,
-      mcpi,
-      transformers
+      mcpi
+
+Executable         xjump
+   if !flag(build-examples)
+     Buildable: False
+
+   Main-Is:        XJump.hs
+   Hs-Source-Dirs: examples/ 
+
+   ghc-options:
+      -Wall
+
+   Build-Depends:
+      base,
+      mcpi
