@@ -1,11 +1,11 @@
 Name:		haslo
-Version:	0.1
+Version:	0.1.1
 License:	BSD3
 License-file: license
 Author:		Bartosz Wojcik
 Maintainer:	Bartosz Wojcik <bartoszmwojcik@gmail.com>
 Copyright:  Copyright (c) 2011 Bartosz Wojcik
-Category:	Financial
+Category:	Finance
 Synopsis:	Loan calculator engine.
 Stability:  experimental
 Build-type:	Simple
@@ -16,7 +16,7 @@ Description: Loan calculator engine implementing rules mentioned in paper "Haske
 Cabal-Version: >=1.2.3
 
 library
-  Build-Depends:	base >= 3 && < 5, old-time, wtk, mtl
+  Build-Depends:	base >= 3 && < 5, old-time, wtk >= 0.2, mtl
   Exposed-Modules: Haslo
   Other-Modules: Haslo.BasicType,
                  Haslo.CalcCalendar,
