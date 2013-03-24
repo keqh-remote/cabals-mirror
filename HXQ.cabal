@@ -1,6 +1,6 @@
 Cabal-Version:       >= 1.2
 Name:                HXQ
-Version:             0.16.0
+Version:             0.17.0
 Synopsis:            A Compiler from XQuery to Haskell
 Description:         
         HXQ is a fast and space-efficient compiler from XQuery (the standard
@@ -13,11 +13,12 @@ Build-type:          Simple
 License-file:        LICENSE
 License:             BSD3
 Author:              Leonidas Fegaras
-Copyright:           2008, Leonidas Fegaras
+Copyright:           2008, 2009 Leonidas Fegaras
 Stability:           experimental
 Maintainer:          fegaras@cse.uta.edu
 Homepage:            http://lambda.uta.edu/HXQ/
 Extra-Source-Files:
+  src/DeepSeq.hs
   src/noDB/Text/XML/HXQ/OptionalDB.hs
   src/withDB/Text/XML/HXQ/DB.hs
   src/withDB/Text/XML/HXQ/OptionalDB.hs
@@ -31,13 +32,14 @@ Extra-Source-Files:
   TestDB.hs
   TestDBa.hs
   TestDB2.hs
-  TestDBLP1.hs
-  TestDBLP2.hs
+  TestDBLP.hs
+  TestXMark.hs
   compile
   compile.bat
 data-files:
   index.html
   db.html
+  release.html
   hxq-manual.pdf
   data/cs.xml
   data/a.xml
@@ -46,6 +48,7 @@ data-files:
   data/q2.xq
   data/q3.xq
   data/q4.xq
+  data/q5.xq
   data/dblp.xq
   data/dblp2.xq
   data/test.xq
