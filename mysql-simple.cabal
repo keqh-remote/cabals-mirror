@@ -1,5 +1,5 @@
 name:           mysql-simple
-version:        0.2.1.2
+version:        0.2.2.0
 homepage:       https://github.com/mailrank/mysql-simple
 bug-reports:    https://github.com/mailrank/mysql-simple/issues
 synopsis:       A mid-level MySQL client library.
@@ -41,6 +41,7 @@ library
   build-depends:
     attoparsec >= 0.8.5.3,
     base < 5,
+    base16-bytestring,
     blaze-builder,
     blaze-textual,
     bytestring >= 0.9,
