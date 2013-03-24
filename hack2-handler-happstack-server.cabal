@@ -1,5 +1,5 @@
 Name:                 hack2-handler-happstack-server
-Version:              2011.6.19
+Version:              2011.6.20
 Build-type:           Simple
 Synopsis:             Hack2 Happstack server handler
 Description:          Hack2 Happstack server handler
@@ -21,7 +21,7 @@ library
                     , network
                     , bytestring
                     , data-default >= 0.2
-                    , hack2 >= 2011.6.19
+                    , hack2 >= 2011.6.20
                     , happstack-server < 6
                     , containers
                     , mtl
