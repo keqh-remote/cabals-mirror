@@ -1,5 +1,5 @@
 Name:		BNFC-meta
-version:	0.2.2
+version:	0.3
 cabal-Version:  >= 1.6
 build-type:     Simple
 license:        GPL-2
@@ -28,9 +28,10 @@ Library
     base>=4.2&&<5
     , array==0.3.0.*
     , template-haskell >=2.4&&<2.7
-    , haskell-src-meta >= 0.3 && < 1.0
+    , haskell-src-meta >= 0.5 && < 1.0
     , happy-meta >= 0.2.0.2
-    , alex-meta >= 0.2.0.1
+    , alex-meta >= 0.3
+    , syb >= 0.2 && <1.0
   Exposed-modules:
     Language.LBNF
     , Language.LBNF.Runtime
@@ -41,6 +42,7 @@ Library
     , Language.LBNF.CFtoAbstract
     , Language.LBNF.CFtoAlex2
     , Language.LBNF.CFtoHappy 
+    , Language.LBNF.CFtoLayout 
     , Language.LBNF.CFtoPrinter
     , Language.LBNF.CFtoQQ
     , Language.LBNF.GetCF
