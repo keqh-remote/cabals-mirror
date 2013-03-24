@@ -1,5 +1,5 @@
 name:            http-conduit-browser
-version:         1.6.1
+version:         1.6.2
 license:         BSD3
 license-file:    LICENSE
 author:          Myles C. Maxfield <myles.maxfield@gmail.com>
@@ -15,15 +15,14 @@ category:        Web, Conduit
 stability:       Stable
 cabal-version:   >= 1.8
 build-type:      Simple
-homepage:        https://github.com/litherum/http-conduit/tree/http-conduit-browser
+homepage:        https://github.com/litherum/http-conduit-browser
 extra-source-files: test/main.hs
 
-flag network-bytestring
-  default: False
+flag new-http-conduit
+  default: True
 
 library
     build-depends: base                  >= 4       && < 5
-                 , http-conduit          >= 1.6.1   && < 1.7
                  , data-default
                  , cookie
                  , utf8-string
@@ -35,6 +34,12 @@ library
                  , mtl
                  , bytestring
                  , containers
+                 , socks
+    if flag(new-http-conduit)
+        build-depends: http-conduit          >= 1.7     && < 1.8
+        exposed-modules: Network.HTTP.Conduit.Browser
+    else
+        build-depends: http-conduit          >= 1.6.1   && < 1.7
     exposed-modules: Network.HTTP.Conduit.Browser2
     ghc-options:     -Wall
 
@@ -67,7 +72,8 @@ test-suite test
                  , mtl
                  , warp
                  , wai
+                 , socks
 
 source-repository head
   type:     git
-  location: git://github.com/litherum/http-conduit.git
+  location: git://github.com/litherum/http-conduit-browser.git
