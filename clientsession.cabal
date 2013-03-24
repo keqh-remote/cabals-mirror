@@ -1,5 +1,5 @@
 name:            clientsession
-version:         0.4.1
+version:         0.5.0
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -13,7 +13,7 @@ cabal-version:   >= 1.6
 build-type:      Simple
 homepage:        http://github.com/snoyberg/clientsession/tree/master
 
-flag buildtests
+flag test
   description: Build the executable to run unit tests
   default: False
 
@@ -22,13 +22,14 @@ library
                      bytestring >= 0.9 && < 0.10,
                      directory >= 1 && < 1.2,
                      random >= 1.0.0.2 && < 1.1,
+                     ascii >= 0.0.2 && < 0.1,
                      template-haskell
     exposed-modules: Web.ClientSession
     ghc-options:     -Wall
     c-sources:       c/aestable.c c/helper.c
 
 executable             runtests
-    if flag(buildtests)
+    if flag(test)
         Buildable: True
         cpp-options:   -DTEST
         build-depends: test-framework,
