@@ -1,10 +1,10 @@
 name:                epub-tools
 cabal-version:       >= 1.8
-version:             2.0.0
+version:             2.1.0
 build-type:          Simple
 license:             BSD3
 license-file:        LICENSE
-copyright:           2008-2012 Dino Morelli 
+copyright:           2008-2013 Dino Morelli
 author:              Dino Morelli 
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           stable
@@ -28,7 +28,7 @@ source-repository    head
 executable           epubmeta
    main-is:          EpubTools/epubmeta.hs
    build-depends:    base >= 3 && < 5, bytestring, directory,
-                     epub-metadata >= 2.3.1, filepath, mtl, process,
+                     epub-metadata >= 2.3.2, filepath, mtl, process,
                      zip-archive
    hs-source-dirs:   src
    other-modules:    EpubTools.EpubMeta.Display
@@ -41,7 +41,7 @@ executable           epubmeta
 
 executable           epubname
    main-is:          EpubTools/epubname.hs
-   build-depends:    base >= 3 && < 5, directory, epub-metadata >= 2.3.1, 
+   build-depends:    base >= 3 && < 5, directory, epub-metadata >= 2.3.1,
                      filepath, mtl, parsec, regex-compat
    hs-source-dirs:   src
    other-modules:    EpubTools.EpubName.Format.Author
