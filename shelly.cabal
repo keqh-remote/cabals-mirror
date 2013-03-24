@@ -1,6 +1,6 @@
 Name:       shelly
 
-Version:     0.3.1
+Version:     0.4
 Synopsis:    shell-like (systems) programming in Haskell
 
 Description: Shelly is a package provides a single module for convenient
@@ -25,12 +25,10 @@ Author:              Greg Weber, Petr Rockai
 Maintainer:          Greg Weber <greg@gregweber.info>
 Category:            Development
 Build-type:          Simple
-Cabal-version:       >=1.6
+Cabal-version:       >=1.8
 
--- Extra-source-files:
 
 Library
-  -- Modules exported by the library.
   Exposed-modules:     Shelly
 
   Build-depends: base >= 4 && < 5, time, directory, mtl, process, text, unix-compat
@@ -38,11 +36,19 @@ Library
 
   ghc-options: -Wall
 
+test-suite test
+    type:           exitcode-stdio-1.0
+    main-is:        main.hs
+    hs-source-dirs: ., test
+
+    build-depends:   base >= 4 && < 5
+                   -- , hspec
+
 -- demonstarated that command output in Shellish was not shown until after the command finished
 -- not necessary anymore
 -- Executable drain
 --  main-is: test/drain.hs
 
 source-repository head
-  type:     darcs
-  location: http://repos.mornfall.net/shelly
+  type:     git
+  location: https://github.com/yesodweb/Shelly.hs
