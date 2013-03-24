@@ -1,5 +1,5 @@
 name:               hack-handler-epoll
-version:            0.1.1
+version:            0.1.2
 synopsis:           hack handler implementation using epoll
 description:        Hack handler implemented using System.Linux.Epoll
 category:           Web
@@ -20,13 +20,13 @@ library
   ghc-options:      -Wall -O2
   build-depends:    base >= 3 && < 5,
                     unix,
-                    hack >= 2009.10.30,
-                    epoll >= 0.2.2,
-                    HTTP >= 4000.0.8,
-                    data-default >= 0.2,
-                    network >= 2.2.1.2,
-                    failure >= 0.0.0.1,
-                    utf8-string >= 0.3.4,
-                    containers >= 0.2.0.1
+                    hack,
+                    epoll,
+                    HTTP,
+                    data-default,
+                    network,
+                    failure,
+                    utf8-string,
+                    containers
   hs-source-dirs:   src
 
