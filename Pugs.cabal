@@ -1,5 +1,5 @@
 Name            : Pugs
-Version         : 6.2.13.4
+Version         : 6.2.13.5
 license         : BSD3
 license-file    : LICENSE
 cabal-version   : >= 1.2
@@ -40,6 +40,7 @@ extra-source-files:
     src/Pugs/CodeGen/PIR/Prelude.hs
     src/Pugs/CodeGen/Perl5.hs
     src/Pugs/CodeGen/YAML.hs
+    src/Pugs/CodeGen/Binary.hs
     src/Pugs/Compile.hs
     src/Pugs/Compile/Pugs.hs
     src/Pugs/Config.hs
@@ -120,14 +121,18 @@ flag Optimize
     description: Enable optimizations
     default:     False
 
+flag Debug
+    description: Enable debugging hooks
+    default:     False
+
 executable pugs
     main-is:            Main.hs
     hs-source-dirs:     src
 
     build-depends:
-        base, haskell98, filepath, mtl, stm, parsec, network,
+        base, haskell98, filepath, mtl, stm, parsec < 3.0.0, network,
         pretty, time, random, process, containers, bytestring,
-        array, directory, utf8-string,
+        array, directory, utf8-string, binary,
 
         MetaObject       >= 0.0.4,
         HsParrot         >= 0.0.2,
@@ -143,4 +148,10 @@ executable pugs
 
     if flag(Optimize)
         ghc-options: -O2
+        
+--    if flag(Debug)
+--        ghc-options: -prof -auto-all
+
+    c-sources:
+        cbits/Prelude_pm.c cbits/Test_pm.c
 
