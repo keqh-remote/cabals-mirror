@@ -1,5 +1,5 @@
 Name:              combinatorial-problems
-Version:           0.0.2
+Version:           0.0.3
 Synopsis:          A number of data structures to represent and allow the manipulation of standard combinatorial problems, used as test problems in computer science.
 Description:       In computer science there are a number of standard test problems that are used for testing algorithms, 
                    especially those related to Artificial Intelligence and Operations Research. Online there are a number 
@@ -32,6 +32,7 @@ library
                    FileFormat.TSPLIB
                    CombinatorialOptimisation.SAT
                    CombinatorialOptimisation.TSP
+                   CombinatorialOptimisation.TSP.FixedPoint
   Build-Depends:   base >= 2.0 && <=5, 
                    random >= 1.0.0.1,
                    containers >= 0.2.0.1,
