@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               loopy
-version:            0.0
+version:            0.0.1
 stability:          Alpha
 license:            BSD3
 license-file:       LICENSE
@@ -10,7 +10,10 @@ author:             Emily Mitchell <emily.g.h.mitchell@gmail.com>
 maintainer:         Emily Mitchell <emily.g.h.mitchell@gmail.com>
 copyright:          Emily Mitchell 2009-2011
 synopsis:           Find all biological feedback loops within an ecosystem graph.
-description:        Find all biological feedback loops within an ecosystem graph.
+description:
+    Find all biological feedback loops within an ecosystem graph.
+    This software is very much in development, and can probably only be used
+    in conjunction with emailing the author! Documentation and cleanups to follow.
 homepage:           http://www.esc.cam.ac.uk/people/research-students/emily-king
 
 executable loopy
