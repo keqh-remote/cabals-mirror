@@ -1,5 +1,5 @@
 Name:                hit
-Version:             0.2.2
+Version:             0.3.0
 Synopsis:            Git operations
 Description:         Provides low level git operations
 License:             BSD3
@@ -11,12 +11,9 @@ Category:            Development
 Stability:           experimental
 Build-Type:          Simple
 Homepage:            http://github.com/vincenthz/hit
-Cabal-Version:       >=1.6
+Cabal-Version:       >=1.8
 data-files:          README.md
-
-Flag test
-  Description:       Build unit test
-  Default:           False
+extra-source-files:  Tests/*.hs
 
 Flag executable
   Description:       Build the executable
@@ -38,26 +35,31 @@ Library
                    , vector
                    , random
                    , zlib
-                   , zlib-bindings >= 0.0.1
+                   , zlib-bindings >= 0.1 && < 0.2
                    , bytedump
-  Exposed-modules:   Data.Git.Index
-                     Data.Git.Pack
-                     Data.Git.Object
-                     Data.Git.Loose
+                   , time
+  Exposed-modules:   Data.Git
+                     Data.Git.Types
+                     Data.Git.Storage
+                     Data.Git.Storage.PackIndex
+                     Data.Git.Storage.Pack
+                     Data.Git.Storage.Object
+                     Data.Git.Storage.Loose
                      Data.Git.Named
                      Data.Git.Delta
                      Data.Git.Ref
                      Data.Git.Revision
                      Data.Git.Repository
   Other-modules:     Data.Git.Internal
-                     Data.Git.FileReader
-                     Data.Git.FileWriter
+                     Data.Git.Storage.FileReader
+                     Data.Git.Storage.FileWriter
                      Data.Git.Path
   ghc-options:       -Wall -fno-warn-missing-signatures
 
 Executable           Hit
   Main-Is:           Hit.hs
-  ghc-options:       -Wall -fno-warn-missing-signatures
+  hs-source-dirs:    Hit
+  ghc-options:       -Wall -fno-warn-orphans -fno-warn-missing-signatures
   if flag(debug)
     ghc-options:     -rtsops -auto-all -caf-all
   if flag(executable)
@@ -68,27 +70,41 @@ Executable           Hit
                    , hashtables
                    , bytestring
                    , attoparsec >= 0.10.1
+                   , parsec     >= 3
                    , filepath
                    , directory
-                   , zlib
                    , bytedump
+                   , hit
     Buildable: True
   else
     Buildable: False
 
-Executable           Tests
+Test-Suite test-unit
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    Tests
   Main-Is:           Tests.hs
-  if flag(test)
-    Buildable:       True
-    Build-depends:   base >= 3 && < 7
+  Build-depends:     base >= 3 && < 7
                    , HUnit
                    , QuickCheck >= 2
                    , bytestring
                    , test-framework >= 0.3
                    , test-framework-quickcheck2 >= 0.2
-  else
-    Buildable:       False
+                   , time
+                   , hit
 
+Test-Suite test-repository
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    Tests
+  Main-Is:           Repo.hs
+  Build-depends:     base >= 3 && < 7
+                   , HUnit
+                   , QuickCheck >= 2
+                   , bytestring
+                   , test-framework >= 0.3
+                   , test-framework-quickcheck2 >= 0.2
+                   , time
+                   , bytedump
+                   , hit
 
 source-repository head
   type: git
