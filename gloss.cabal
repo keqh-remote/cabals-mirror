@@ -1,12 +1,12 @@
 Name:                gloss
-Version:             1.5.2.1
+Version:             1.6.0.1
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
 Maintainer:          benl@ouroborus.net
 Build-Type:          Simple
 Cabal-Version:       >=1.6
-Stability:           provisional
+Stability:           stable
 Category:            Graphics
 Homepage:            http://gloss.ouroborus.net
 Bug-reports:         gloss@ouroborus.net
@@ -18,7 +18,7 @@ Description:
 Synopsis:
         Painless 2D vector graphics, animations and simulations.
 
-Tested-with: GHC == 6.12.1, GHC == 7.0.1
+Tested-with: GHC == 7.2.1
 
 Flag GLUT
   Description: Enable the GLUT backend
@@ -29,7 +29,7 @@ Flag GLFW
   Default:     False
 
 Flag ExplicitBackend
-  Description: Expose versions of displayInWindow and friends that allow
+  Description: Expose versions of 'display' and friends that allow
                you to choose what window manager backend to use.
   Default:     False
 
@@ -41,7 +41,7 @@ Library
         bytestring == 0.9.*,
         OpenGL     == 2.4.*,
         GLUT       == 2.2.*,
-        bmp        == 1.1.*
+        bmp        == 1.2.*
 
   ghc-options:      -O2 -Wall
 
@@ -50,6 +50,7 @@ Library
         Graphics.Gloss.Geometry
         Graphics.Gloss.Geometry.Angle
         Graphics.Gloss.Geometry.Line
+        Graphics.Gloss.Data.Display
         Graphics.Gloss.Data.Point
         Graphics.Gloss.Data.Vector
         Graphics.Gloss.Data.Quad
@@ -100,7 +101,7 @@ Library
 
   If flag(GLFW)
     Build-Depends:
-        GLFW-b == 0.0.2.*
+        GLFW-b >= 0.1.0.1 && < 0.2
     CPP-Options: -DWITHGLFW
     Other-modules:
         Graphics.Gloss.Internals.Interface.Backend.GLFW
