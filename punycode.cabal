@@ -1,5 +1,5 @@
 name:            punycode
-version:         1.0
+version:         2.0
 license:         BSD3
 license-file:    LICENSE
 author:          Myles C. Maxfield <myles.maxfield@gmail.com>
@@ -34,6 +34,7 @@ Test-Suite test-punycode
                  , text
                  , HUnit
                  , QuickCheck
+                 , encoding
 
 source-repository head
   type:     git
