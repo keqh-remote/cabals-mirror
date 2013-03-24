@@ -1,5 +1,5 @@
 Name:                gearbox
-Version:             1.0.0.1
+Version:             1.0.0.2
 Synopsis:            zooming rotating fractal gears graphics demo
 Description:         OpenGL gearbox iterated function system.  Usage:
                      @gearbox quality@ where quality is an integer between
@@ -17,9 +17,8 @@ Executable gearbox
   Build-depends:
     base < 5,
     GLUT >= 2.2 && < 2.4,
-    OpenGLRaw >= 1.1 && < 1.3,
-    Vec >= 1 && < 2,
-    Vec-OpenGLRaw >= 0.2 && < 0.3
+    OpenGLRaw >= 1.3 && < 1.4,
+    Vec >= 1 && < 2
 
 Source-repository head
   type:                git
@@ -28,4 +27,4 @@ Source-repository head
 Source-repository this
   type:                git
   location:            git://gitorious.org/maximus/gearbox.git
-  tag:                 v1.0.0.1
+  tag:                 v1.0.0.2
