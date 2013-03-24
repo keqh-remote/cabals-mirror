@@ -1,5 +1,5 @@
 Name:                timberc
-Version:             1.0.2
+Version:             1.0.3
 Synopsis:            The Timber Compiler.
 Description:         This is a compiler for a strict and pure functional 
 		     language
@@ -28,6 +28,7 @@ data-files:          examples/Counter.t,
                      include/float.c,
                      include/timber.c,
                      include/timber.h,
+                     lib/ARM.t,
                      lib/BitOps.t,
                      lib/Data.Functional.List.t,
                      lib/Data.Objects.Dictionary.t,
@@ -43,7 +44,6 @@ extra-source-files:  rtsPOSIX/Makefile.in,
                      rtsPOSIX/config.h.in,
                      rtsPOSIX/cyclic.c,
                      rtsPOSIX/env.c,
-                     rtsPOSIX/env.h,
                      rtsPOSIX/gc.c,
                      rtsPOSIX/install-sh,
                      rtsPOSIX/main.c,
