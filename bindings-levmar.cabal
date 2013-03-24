@@ -1,5 +1,5 @@
 name:          bindings-levmar
-version:       1.1
+version:       1.1.0.1
 cabal-version: >= 1.6
 build-type:    Simple
 stability:     provisional
@@ -32,11 +32,10 @@ description:   See the @levmar@ package for a high-level wrapper
                variants are included.  All functions have Double and
                Float variants.
                .
-               See: <http://www.ics.forth.gr/~lourakis/levmar/>
-               .
-	       Note that the included C library is lightly patched to
-	       make it pure. This way the functions can be used inside
-	       @unsafePerformIO@.
+	       Note that the included
+               <http://www.ics.forth.gr/~lourakis/levmar/ C library>
+               is lightly patched to make it pure. This way the
+               functions can be used inside @unsafePerformIO@.
 	       .
                A note regarding the license:
                .
@@ -76,7 +75,7 @@ source-repository head
   location: git://github.com/basvandijk/bindings-levmar.git
 
 library
-  build-depends: base         >= 3      && < 4.6
+  build-depends: base         >= 3      && < 4.7
                , bindings-DSL >= 1.0.15 && < 1.1
   exposed-modules: Bindings.LevMar
   ghc-options: -Wall
