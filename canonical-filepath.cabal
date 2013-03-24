@@ -1,5 +1,5 @@
 name:                   canonical-filepath
-version:                1.0.0.1
+version:                1.0.0.2
 license:                BSD3
 license-file:           LICENSE
 author:                 Max Bolingbroke, Thomas Schilling
@@ -16,8 +16,8 @@ cabal-version:          >= 1.6
 library
   build-depends:
     base                >= 4     && < 5,
-    deepseq             == 1.1.*,
+    deepseq             >= 1.1   && < 1.4,
     directory           == 1.1.*,
-    filepath            == 1.2.*
+    filepath            >= 1.2   && < 1.4
   exposed-modules:
     System.FilePath.Canonical
