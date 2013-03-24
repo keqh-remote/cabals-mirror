@@ -1,5 +1,5 @@
-Name:           darcs-beta
-version:        2.3.98.1
+Name: darcs-beta
+version:        2.3.98.2
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -48,7 +48,7 @@ extra-source-files:
   -- documentation files
   src/best_practices.tex, src/building_darcs.tex, src/configuring_darcs.tex,
   src/features.tex, src/formats.tex, src/gpl.tex, src/switching.tex, src/darcs.tex
-  doc/manual/patch-theory.tex,
+  doc/manual/images.tex, doc/manual/bigimages.tex, doc/manual/patch-theory.tex,
   doc/darcs.css
 
   README, NEWS
@@ -295,7 +295,7 @@ Library
                     URL
                     Workaround
 
-  other-modules:    ThisVersion
+  other-modules:    Version
 
   c-sources:        src/atomic_create.c
                     src/fpstring.c
@@ -323,7 +323,7 @@ Library
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.4.2 && < 0.5
+                   hashed-storage >= 0.4.5 && < 0.5
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
@@ -453,7 +453,7 @@ Executable          darcs
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.4.2 && < 0.5
+                   hashed-storage >= 0.4.4 && < 0.5
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
