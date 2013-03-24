@@ -1,5 +1,5 @@
 Name:           hakyll
-Version:        0.1
+Version:        0.2
 
 Synopsis:       A simple static site generator library.
 Description:
@@ -21,5 +21,7 @@ library
   build-depends:   base >= 4 && < 5, template, filepath, directory, containers, bytestring,
                    pandoc >= 1
   exposed-modules: Text.Hakyll.Render
+                   Text.Hakyll.Renderable
+                   Text.Hakyll.Renderables
                    Text.Hakyll.Page
                    Text.Hakyll.Util
