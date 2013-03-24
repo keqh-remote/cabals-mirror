@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.8.0
+version:          0.9.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -20,6 +20,37 @@ description:
   .
   .
   Changelog:
+  .
+  0.8.0 to 0.9.0:
+  .
+  * Re-worked @Basic.Text.LRSymbol@ changed the type name and the
+    types of the run functions. Added more symbols and a new demo 
+    @Symbols.hs@.
+  .
+  * @ScalingContext@ added to @Basic.Graphic@. Changed 
+    @monoTextWidth@ to take a character count, the old behaviour 
+    is recreated by the new function @monoTextLength@. 
+  .
+  * @Basic.Graphic.Chain@ removed. It is now superseded by
+    @Basic.Chains@.
+  .
+  * Added new property to @DrawingContext@ for line spacing 
+    scaling factor, and added a new drawing primitive 
+    @textlineMulti@ for multi-line, left justified labels.
+  .
+  * Synthezied attribute /getters/ such as @textDimensions@ moved
+    from @Basic.Graphic.DrawingContext@ to the new module
+    @Basic.Graphic.Query@. The type of all the functions has 
+    changed to DrawingF. @lowerxHeight@ is renamed 
+    @monoLowerxHeight@ emphasizing that the metrics pertain to
+    monospaced Courier font.
+  .
+  * Added Shapes modules.
+  . 
+  * TurtleMonad module - the TurtleDrawing type and run functions
+    have been removed and the internals have been reworked. 
+    Turtle is now run solely as a /local effect/ within the 
+    Drawing monad. 
   .
   0.7.0 to 0.8.0:
   .
@@ -53,23 +84,29 @@ extra-source-files:
   CHANGES,
   LICENSE,
   demo/DotPic.hs,
+  demo/ClipPic.hs,
   demo/ColourCharts.hs,
   demo/ColourDefns.hs,
   demo/FontPic.hs,
-  demo/Picture.hs
+  demo/Picture.hs,
+  demo/Shapes.hs,
+  demo/Symbols.hs
 
 library
   hs-source-dirs:     src
   build-depends:      base            <  5, 
                       containers      >= 0.3     && <= 0.4, 
                       vector-space    >= 0.6,
-                      wumpus-core     == 0.33.0
+                      wumpus-core     == 0.34.0
 
   
   exposed-modules:
     Wumpus.Basic.Anchors,
     Wumpus.Basic.Arrows,
     Wumpus.Basic.Arrows.Tips,
+    Wumpus.Basic.Chains,
+    Wumpus.Basic.Chains.Base,
+    Wumpus.Basic.Chains.Derived,
     Wumpus.Basic.Colour.SVGColours,
     Wumpus.Basic.Colour.X11Colours,
     Wumpus.Basic.Dots,
@@ -77,16 +114,20 @@ library
     Wumpus.Basic.Graphic,
     Wumpus.Basic.Graphic.BaseClasses,
     Wumpus.Basic.Graphic.BaseTypes,
-    Wumpus.Basic.Graphic.Chain,
     Wumpus.Basic.Graphic.Drawing,
     Wumpus.Basic.Graphic.DrawingContext,
     Wumpus.Basic.Graphic.PrimGraphic,
+    Wumpus.Basic.Graphic.Query,
+    Wumpus.Basic.Graphic.ScalingContext,
     Wumpus.Basic.Monads.TurtleClass,
     Wumpus.Basic.Monads.TurtleMonad,
     Wumpus.Basic.Paths,
     Wumpus.Basic.Paths.Base,
+    Wumpus.Basic.Paths.Connectors,
     Wumpus.Basic.Paths.Construction,
     Wumpus.Basic.SafeFonts,
+    Wumpus.Basic.Shapes.Base,
+    Wumpus.Basic.Shapes.Derived,
     Wumpus.Basic.Text.LRSymbol,
     Wumpus.Basic.Text.LRText,
     Wumpus.Basic.Utils.HList,
