@@ -1,13 +1,13 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               cmdargs
-version:            0.10.1
+version:            0.10.2
 license:            BSD3
 license-file:       LICENSE
 category:           Console
 author:             Neil Mitchell <ndmitchell@gmail.com>
 maintainer:         Neil Mitchell <ndmitchell@gmail.com>
-copyright:          Neil Mitchell 2009-2012
+copyright:          Neil Mitchell 2009-2013
 synopsis:           Command line argument processing
 description:
     This library provides an easy way to define command line parsers. Most users
@@ -49,8 +49,8 @@ library
     build-depends:
         base == 4.*,
         filepath,
-        transformers >= 0.2 && < 0.4,
-        process >= 1.0 && < 1.2
+        transformers >= 0.2,
+        process >= 1.0
 
     if flag(quotation)
         build-depends: template-haskell
