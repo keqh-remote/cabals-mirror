@@ -1,5 +1,5 @@
 Name:                matsuri
-Version:             0.0.2
+Version:             0.0.3
 Category:            Network
 Synopsis:            ncurses XMPP client
 License:             GPL
@@ -25,4 +25,4 @@ Executable matsuri
 
   Build-Depends:     base >= 4 && < 5, vty >= 4, vty-ui >= 0.2,
                      containers, mtl, network, split, directory,
-                     ConfigFile, XMPP==0.0.4, time, old-locale
+                     ConfigFile, XMPP==0.1.1, time, old-locale
