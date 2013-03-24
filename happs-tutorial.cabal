@@ -1,13 +1,13 @@
 Name:                happs-tutorial
-Version:             0.6.5
+Version:             0.7
 Synopsis:            A HAppS Tutorial that is is own web 2.0-type demo. 
 Description:         A nice way to learn how to build web sites with HAppS
 
 License:             BSD3
 License-file:        LICENSE
-Author:              Thomas Hartman, Eelco Lempsink
+Author:              Thomas Hartman, Eelco Lempsink, Creighton Hogg
 
-Maintainer:          thomashartman1 at gmail dot com
+Maintainer:          Creighton Hogg <wchogg at gmail.com>
 Copyright:           2008 Thomas Hartman
 
 Stability:           Experimental
@@ -42,10 +42,6 @@ Executable happs-tutorial
         ControllerStressTests
         View
     Build-Depends:   base>=3.0.3.0, HStringTemplate, HStringTemplateHelpers, mtl, bytestring,
-                     HAppS-Server, HAppS-Data, HAppS-State,
+                     happstack-server == 0.1, happstack-data == 0.1, happstack-state == 0.1,
                      containers, pretty, pureMD5, directory, filepath, hscolour >= 1.10.1, HTTP, safe,
-                     old-time, parsec, HAppSHelpers >= 0.9, DebugTraceHelpers
-
-
-
-
+                     old-time, parsec, happstack-helpers >= 0.11 && < 0.20, DebugTraceHelpers
