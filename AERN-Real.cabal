@@ -1,12 +1,13 @@
 Name:           AERN-Real
-Version:        0.10.0
+Version:        0.10.0.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
 License-File:   LICENCE
 Author:         Michal Konecny (Aston University)
-Copyright:      (c) 2007-2008 Michal Konecny, Amin Farjudian, Jan Duracz 
-Maintainer:     mik@konecny.aow.cz
+Copyright:      (c) 2007-2009 Michal Konecny, Amin Farjudian, Jan Duracz
+Maintainer:     mikkonecny@gmail.com
+Homepage:       http://www-users.aston.ac.uk/~konecnym/DISCERN
 Stability:      beta
 Category:       Data, Math
 Synopsis:       arbitrary precision interval arithmetic for approximating exact real numbers
