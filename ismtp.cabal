@@ -1,5 +1,5 @@
 Name:          ismtp
-Version:       2.0.1
+Version:       2.0.2
 Category:      Network
 Synopsis:      Advanced ESMTP library
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -24,7 +24,7 @@ Library
         dnscache >= 1.0.1,
         enumerator >= 0.4.7,
         monad-peel >= 0.1,
-        netlines >= 0.1.0,
+        netlines >= 0.3.0,
         network >= 2.2.1.7,
         unix >= 2.4.0.2,
         vector >= 0.7.0.1
@@ -32,14 +32,15 @@ Library
     Exposed-modules:
         Network.Smtp
         Network.Smtp.Connect
+        Network.Smtp.Ext.Auth
         Network.Smtp.Monad
         Network.Smtp.Session
         Network.Smtp.Simple
         Network.Smtp.Tools
         Network.Smtp.Types
 
---Executable test
---    Build-depends:
---        base >= 4 && <= 5
---    GHC-Options: -W -threaded
---    Main-is: Test.hs
+-- Executable test
+--     Build-depends:
+--         base >= 4 && <= 5
+--     GHC-Options: -W -threaded
+--     Main-is: Test.hs
