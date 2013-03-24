@@ -1,5 +1,5 @@
 Name: haskelldb-hdbc-mysql
-Version: 0.1
+Version: 0.1.1
 Cabal-version: >= 1.2
 Build-type: Simple
 Copyright: The authors
@@ -12,11 +12,11 @@ Description: haskelldb-hdbc-mysql allows the HDBC-mysql package to be used from 
 
 Library
   Build-depends: 
-    base <= 4,
+    base < 5,
     mtl, 
     haskelldb>=0.12,
     haskelldb-hdbc>=0.12,
-    HDBC>=2.0.0 && < 2.2.0,
+    HDBC>=2.0.0 && < 2.3.0,
     HDBC-mysql>=0.1
   Exposed-Modules:
         Database.HaskellDB.HDBC.MySQL
