@@ -6,7 +6,7 @@ Description:
 
     This package provides low-level bindings to librrd, which contains
     most of the functionality in RRDtool.
-Version:        0.2
+Version:        0.2.0.1
 License:        PublicDomain
 License-File:   COPYING
 Author:         PHO <pho at cielonegro dot org>
@@ -23,7 +23,7 @@ Source-Repository head
 
 Library
     Build-Depends:
-        base         == 4.2.*,
+        base         == 4.*,
         bindings-DSL == 1.0.*
 
     PkgConfig-Depends:
