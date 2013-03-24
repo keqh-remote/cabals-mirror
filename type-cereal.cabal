@@ -1,5 +1,5 @@
 Name:           type-cereal
-Version:        0.1.1
+Version:        0.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Nicolas Frisby <nicolas.frisby@gmail.com>
@@ -19,8 +19,10 @@ Build-Type: Simple
 
 
 Library
-  Build-Depends: base >= 4 && < 5, template-haskell
-  Build-Depends: cereal >= 0.3 && < 0.4, bytestring >= 0.9 && < 0.10, data-hash < 0.2
-  Build-Depends: type-spine < 0.2, type-digits < 0.2
+  Build-Depends: base >= 4 && < 5, template-haskell, bytestring
+
+  Build-Depends: cereal, data-hash
+
+  Build-Depends: type-spine >= 0.2, type-digits >= 0.2
 
   Exposed-Modules: Type.Serialize, Type.Serialize.Base
