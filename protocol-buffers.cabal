@@ -1,5 +1,5 @@
 name:           protocol-buffers
-version:        0.0.5
+version:        0.1.0
 cabal-version:  >= 1.2
 build-type:     Simple
 license:        BSD3
@@ -45,14 +45,20 @@ Library
                    Text.DescriptorProtos.MethodOptions
                    Text.DescriptorProtos.ServiceDescriptorProto
                    Text.DescriptorProtos.ServiceOptions
+                   Text.ProtocolBuffers.Basic
+                   Text.ProtocolBuffers.BootStrap
                    Text.ProtocolBuffers.Default
-                   Text.ProtocolBuffers.Header
-                   Text.ProtocolBuffers.Instances
-                   Text.ProtocolBuffers.ParseProto
-                   Text.ProtocolBuffers.WireMessage
-                   Text.ProtocolBuffers.Mergeable
                    Text.ProtocolBuffers.DeriveMergeable
                    Text.ProtocolBuffers.Gen
+                   Text.ProtocolBuffers.Get
+                   Text.ProtocolBuffers.Header
+                   Text.ProtocolBuffers.Instances
+                   Text.ProtocolBuffers.Lexer
+                   Text.ProtocolBuffers.Mergeable
+                   Text.ProtocolBuffers.Parser
+                   Text.ProtocolBuffers.Reflections
+                   Text.ProtocolBuffers.Resolve
+                   Text.ProtocolBuffers.WireMessage
 
   if flag(small_base)
         build-depends: base >= 3,
@@ -62,9 +68,14 @@ Library
   else
         build-depends: base < 3
 
-  build-depends:   derive, parsec, utf8-string, haskell-src-exts
+  build-depends:   binary, binary-strict, derive, parsec, utf8-string, haskell-src-exts
   extensions:      GADTs,
                    EmptyDataDecls,
                    TemplateHaskell,
                    DeriveDataTypeable,
-                   FlexibleInstances
+                   FlexibleInstances,
+                   PatternGuards,
+                   MagicHash,
+                   GeneralizedNewtypeDeriving,
+                   ScopedTypeVariables,
+                   RankNTypes
