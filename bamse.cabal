@@ -1,5 +1,5 @@
 name: bamse
-version: 0.9.4
+version: 0.9.5
 Synopsis: A Windows Installer (MSI) generator framework
 Description:
    Bamse is a framework for building Windows Installers for
