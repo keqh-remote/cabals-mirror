@@ -1,5 +1,5 @@
 Name:               operational
-Version:            0.2.0.0
+Version:            0.2.0.1
 Synopsis:           Implement monads by specifying operational semantics.
 Description:
   Tiny library for implementing monads by specifying the primitive instructions
@@ -41,7 +41,7 @@ source-repository head
 
 Library
     hs-source-dirs:     src
-    build-depends:      base == 4.* , mtl == 1.1.*
+    build-depends:      base == 4.* , mtl >= 1.1 && < 2.0.1
     ghc-options:        -Wall
     extensions:         GADTs, UndecidableInstances,
                         MultiParamTypeClasses, FlexibleInstances
