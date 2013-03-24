@@ -10,7 +10,7 @@ License-file:	LICENSE
 Maintainer:	miguelimo38@yandex.ru
 Name:		mix-arrows
 Synopsis:	Mixing effects of one arrow into another one
-Version:	1.0
+Version:	1.1
 
 Library
   Build-Depends:	base >= 4.0 && < 6
