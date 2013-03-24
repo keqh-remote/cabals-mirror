@@ -1,5 +1,5 @@
 Name:                dingo-core
-Version:             0.0.3.3
+Version:             0.0.3.4
 Synopsis:            Dingo is a Rich Internet Application platform based on the Warp web server.
 Description:         Dingo is a Rich Internet Application platform based on the Warp web server. It allows you to write code which looks very much like regular GUI code and have it work in the browser. 
 
@@ -17,13 +17,13 @@ Extra-source-files:  bundles/_bootstrap/bootstrap.js
 
 Library
   Build-Depends: base == 4.*
-               , aeson-native == 0.3.*
+               , aeson >= 0.3.2.12 && <0.4
                , attoparsec >= 0.9.0.0 && < 0.10
                , base64-bytestring >= 0.1 && < 0.2
                , bytestring >= 0.9.0.1
                , blaze-builder >= 0.3 && <0.4
                , blaze-html >= 0.4.1.6 && < 0.5
-               , blaze-textual-native >= 0.2 && < 0.3
+               , blaze-textual >= 0.2.0.5 && < 0.3
                , containers >= 0.4
                , cookie >= 0.3.0 && < 0.4
                , deepseq >= 1.1 && < 1.2
