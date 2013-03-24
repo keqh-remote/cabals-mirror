@@ -1,5 +1,5 @@
 Name:                vacuum-opengl
-Version:             0.0
+Version:             0.0.1
 Synopsis:            Visualize live Haskell data structures using vacuum, graphviz and OpenGL.
 Description:         Visualize live Haskell data structures using vacuum, graphviz and OpenGL.
                      Intended as an easier-to-build alternative (no large dependency chain)
