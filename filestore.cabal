@@ -1,5 +1,5 @@
 Name:                filestore
-Version:             0.3.2
+Version:             0.3.2.1
 Cabal-version:       >= 1.2
 Build-type:          Custom
 Tested-with:         GHC==6.10.1
@@ -39,7 +39,7 @@ Library
                          Data.FileStore.Utils, Data.FileStore.Generic
     Other-modules:       Paths_filestore, Data.FileStore.DarcsXml
 
-    if flag(maxcount)
+    if flag(maxcount) 
         cpp-options: -DUSE_MAXCOUNT
         extensions: CPP
 
