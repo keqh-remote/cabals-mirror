@@ -1,5 +1,5 @@
 Name:          ihttp
-Version:       0.2.0
+Version:       0.2.1
 Category:      Network
 Synopsis:      Incremental HTTP iteratee
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -23,7 +23,7 @@ Library
     containers >= 0.4.0.0,
     contstuff >= 1.2.4,
     enumerator >= 0.4.7,
-    netlines >= 0.3.0
+    netlines >= 0.4.3
   GHC-Options:   -W
   Exposed-modules:
     Network.IHttp
