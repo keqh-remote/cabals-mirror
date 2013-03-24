@@ -1,5 +1,5 @@
 Name:            pointless-haskell
-Version:         0.0.4
+Version:         0.0.5
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -27,12 +27,12 @@ Library
   exposed-modules:
         Generics.Pointless.Combinators
         Generics.Pointless.Functors,
+        Generics.Pointless.Fctrable,
         Generics.Pointless.RecursionPatterns,
         Generics.Pointless.Observe.Functors,
         Generics.Pointless.Observe.RecursionPatterns,
         Generics.Pointless.Examples.Examples,
         Generics.Pointless.Examples.Observe,
-        Generics.Pointless.Fctrable,
         Generics.Pointless.MonadCombinators,
         Generics.Pointless.Bifunctors,
         Generics.Pointless.Bifctrable
