@@ -1,5 +1,5 @@
 Name:			oi
-Version:		0.2.0.1
+Version:		0.2.1.0
 Category:		Data
 Synopsis:		Library for purely functional lazy interactions with the outer world.
 Description:		This package implements a data structure and operations on it for writing interactive program with no imperative flavor of IO monads.
@@ -20,7 +20,7 @@ Data-files:		Makefile catsSIO.hs catsLIO.hs catsIO.hs catsOI.hs echo.hs recdircs
 Library
   Default-Language:         Haskell2010
   Hs-Source-Dirs:	    src/
-  Build-Depends:	    base >= 4.5 && < 5, parallel, comonad, filepath
+  Build-Depends:	    base >= 4.5 && < 5, parallel, comonad >= 3, filepath
   GHC-Options:		    -Wall -O0
   Exposed-modules:	    Data.OI
                            ,Data.OI.Internal
