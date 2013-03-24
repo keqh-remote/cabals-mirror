@@ -1,5 +1,5 @@
 Name:                waitfree
-Version:             0.1.4
+Version:             0.1.5
 Description:         A combinator library for asynchronous waitfree computation among forkIO threads.
 Synopsis: 	     A wrapping library for waitfree computation.
 License:	     MIT
@@ -8,7 +8,7 @@ Author:              Yoichi Hirai
 Maintainer:          yhirai@pira.jp
 Build-Type:          Simple
 Cabal-version:	     >= 1.6
-Category:	     System
+Category:	     System, Concurrency
 Source-Repository head
   type:		  git
   location:	  https://github.com/pirapira/waitfree
