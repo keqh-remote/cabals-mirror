@@ -1,14 +1,14 @@
 Name:           gio
-Version:        0.12.0
+Version:        0.12.1
 License:        LGPL-2.1
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
 Author:         Peter Gavin, Andy Stewart
-Maintainer:     gtk2hs-users@sourceforge.net
+Maintainer:     gtk2hs-users@lists.sourceforge.net
 Build-Type:     Custom
-Cabal-Version:  >= 1.6
+Cabal-Version:  >= 1.8
 Stability:      stable
-homepage:       http://www.haskell.org/gtk2hs/
+homepage:       http://projects.haskell.org/gtk2hs/
 bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
 Synopsis:       Binding to the GIO.
 Description:    GIO is striving to provide a modern, easy-to-use VFS API that sits at the right level in the library stack. 
@@ -17,8 +17,8 @@ Description:    GIO is striving to provide a modern, easy-to-use VFS API that si
                 Among other things that means using GObject. 
                 It also means not cloning the POSIX API, but providing higher-level, document-centric interfaces.
 Category:       System
-Tested-With:    GHC == 6.12.1
-Extra-Source-Files: Gtk2HsSetup.hs
+Tested-With:    GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
+Extra-Source-Files: SetupWrapper.hs SetupMain.hs Gtk2HsSetup.hs
                     marshal.list
 					hierarchy.list
 
@@ -40,9 +40,10 @@ Source-Repository head
   subdir:       gio
 
 Library
-        build-depends:  base >= 4 && < 5, array, containers, haskell98, mtl, bytestring,
+        build-depends:  base >= 4 && < 5, array, containers, mtl, bytestring,
                         glib >= 0.12.0 && < 0.13
-        build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
+        build-tools:    gtk2hsC2hs >= 0.13.5,
+                        gtk2hsHookGenerator, gtk2hsTypeGen
 
         exposed-modules:
           System.GIO
