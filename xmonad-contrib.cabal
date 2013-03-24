@@ -1,5 +1,5 @@
 name:               xmonad-contrib
-version:            0.5
+version:            0.6
 homepage:           http://xmonad.org/
 synopsis:           Third party extensions for xmonad
 description:
@@ -33,6 +33,10 @@ flag small_base
 flag use_xft
   description: Use Xft to render text
 
+flag testing
+  description: Testing mode
+  default: False
+
 library
     if flag(small_base)
         build-depends: base >= 3, containers, directory, process, random
@@ -43,8 +47,12 @@ library
         build-depends: X11-xft >= 0.2
         cpp-options: -DXFT
 
-    build-depends:      mtl, unix, X11>=1.4.0, xmonad==0.5
-    ghc-options:        -Wall -Werror
+    build-depends:      mtl, unix, X11>=1.4.1, xmonad==0.6
+    ghc-options:        -Wall
+
+    if flag(testing)
+        ghc-options:    -Werror
+
     exposed-modules:    XMonad.Doc
                         XMonad.Doc.Configuring
                         XMonad.Doc.Extending
@@ -62,8 +70,10 @@ library
                         XMonad.Actions.FloatKeys
                         XMonad.Actions.FocusNth
                         XMonad.Actions.MouseGestures
+                        XMonad.Actions.NoBorders
                         XMonad.Actions.RotSlaves
                         XMonad.Actions.RotView
+                        XMonad.Actions.Search
                         XMonad.Actions.SimpleDate
                         XMonad.Actions.SinkAll
                         XMonad.Actions.Submap
@@ -79,6 +89,7 @@ library
                         XMonad.Hooks.DynamicLog
                         XMonad.Hooks.EwmhDesktops
                         XMonad.Hooks.ManageDocks
+                        XMonad.Hooks.ManageHelpers
                         XMonad.Hooks.SetWMName
                         XMonad.Hooks.UrgencyHook
                         XMonad.Hooks.XPropManage
@@ -102,10 +113,12 @@ library
                         XMonad.Layout.Named
                         XMonad.Layout.NoBorders
                         XMonad.Layout.PerWorkspace
+                        XMonad.Layout.Reflect
                         XMonad.Layout.ResizableTile
                         XMonad.Layout.Roledex
                         XMonad.Layout.Spiral
                         XMonad.Layout.Square
+                        XMonad.Layout.ShowWName
                         XMonad.Layout.Tabbed
                         XMonad.Layout.ThreeColumns
                         XMonad.Layout.ToggleLayouts
@@ -133,5 +146,7 @@ library
                         XMonad.Util.Invisible
                         XMonad.Util.NamedWindows
                         XMonad.Util.Run
+                        XMonad.Util.Timer
+                        XMonad.Util.WorkspaceCompare
                         XMonad.Util.XSelection
                         XMonad.Util.XUtils
