@@ -1,5 +1,5 @@
 Name:          temporal-music-notation
-Version:       0.1
+Version:       0.1.2
 Cabal-Version: >= 1.2
 License-file:  LICENSE
 License:       BSD3
@@ -9,7 +9,7 @@ Synopsis:      music notation
 Description:   Library for expressing musical ideas. Includes composable score representation, microsound tunings, flexible pitch and volume control.
 Category:      Music
 Stability:     Experimental
-Tested-With:   GHC==6.12.1
+Tested-With:   GHC==6.12.3
 Build-Type:    Simple
 
 Extra-Source-Files:
@@ -23,10 +23,9 @@ Extra-Source-Files:
 Library
   Build-Depends:
         base >= 4, base < 5,
-        vector, 
-        temporal-media >= 0.2,
-        type-level-natural-number, 
-        type-level-natural-number-operations
+        vector >= 0.7, 
+        temporal-media >= 0.2.1,
+        type-level-natural-number-decimal 
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         Temporal.Music.Notation
@@ -34,4 +33,5 @@ Library
         Temporal.Music.Notation.Pitch
         Temporal.Music.Notation.Score
         Temporal.Music.Notation.Note
-        Temporal.Music.Notation.Local.Scales
+        Temporal.Music.Notation.Seg
+        Temporal.Music.Notation.Scales
