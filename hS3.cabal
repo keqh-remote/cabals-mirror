@@ -1,13 +1,13 @@
 Name:           hS3
-Version:        0.4
+Version:        0.5
 License:        BSD3
 License-file:   LICENSE
-Cabal-Version: >= 1.2
+Cabal-Version: >= 1.6
 Copyright: 
   Copyright (c) 2008, Greg Heartsfield
 Author:         Greg Heartsfield <scsibug@imap.cc>
 Maintainer:     Greg Heartsfield <scsibug@imap.cc>
-Homepage:       http://gregheartsfield.com/repos/hS3/doc/
+Homepage:       http://gregheartsfield.com/hS3/
 Category:       Network, Web
 Stability:      Alpha
 build-type:     Simple
@@ -25,6 +25,10 @@ extra-source-files: README, Tests.hs,
                     examples/getObject.hs
                     examples/listObjects.hs
                     examples/uploadFile.hs
+
+source-repository head
+  type:     darcs
+  location: http://gregheartsfield.com/repos/hS3/
 
 Library
 
