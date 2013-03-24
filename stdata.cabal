@@ -1,5 +1,5 @@
 Name:                stdata
-Version:             0.0.1
+Version:             0.0.2
 Synopsis:            Structure Data Library
 Description:         Contains datatypes and quasi-quoting functionaly for
                      standard s-expressions and nested structured/unstructured data
@@ -19,7 +19,7 @@ Library
   Exposed-modules:     Data.SExp, Data.SExp.Data, Data.SExp.Parse
                      , Data.STData, Data.STData.Data, Data.STData.Parse
   -- Other-modules:
-  Build-depends:       base == 4.3.*
+  Build-depends:       base > 4 && < 5
                      , syb == 0.3.*
                      , template-haskell == 2.5.*
                      , parsec == 3.1.*
