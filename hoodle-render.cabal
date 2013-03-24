@@ -1,5 +1,5 @@
 Name:		hoodle-render
-Version:	0.1.0
+Version:	0.2
 Synopsis:       Hoodle file renderer
 Description: 	Rendering library using cairo for hoodle file format
 License: 	BSD3
@@ -23,32 +23,25 @@ Library
   ghc-options: 	-Wall -fno-warn-orphans -funbox-strict-fields -fno-warn-unused-do-bind
   ghc-prof-options: -caf-all -auto-all
 
-  if flag(poppler)
-    Build-Depends: base == 4.*, 
-                   mtl == 2.*, 
-                   containers == 0.4.*, 
-                   cairo == 0.12.*, 
-                   strict == 0.3.*, 
-                   bytestring == 0.9.*,
-                   poppler == 0.12.*, 
-                   lens >= 2.4 && < 2.7, 
-                   hoodle-types >= 0.0.999 && < 0.2,
-                   TypeCompose == 0.9.*
-  else
-    Build-Depends: base == 4.*, 
-                   mtl == 2.*, 
-                   containers == 0.4.*, 
-                   cairo == 0.12.*, 
-                   strict == 0.3.*, 
-                   bytestring == 0.9.*,
-                   lens >= 2.4 && < 2.7, 
-                   hoodle-types >= 0.0.999 && < 0.2,
-                   TypeCompose == 0.9.*
+  Build-Depends: base == 4.*, 
+                 mtl == 2.*, 
+                 containers == 0.4.*, 
+                 cairo == 0.12.*, 
+                 strict == 0.3.*, 
+                 bytestring == 0.9.*,
+                 lens >= 2.4, 
+                 hoodle-types >= 0.1 && < 0.2,
+                 TypeCompose == 0.9.*
 
+  if flag(poppler)
+    Build-Depends: poppler >= 0.12.2.1
+  else 
+    Build-Depends: 
 
   Exposed-Modules: 
                    Graphics.Hoodle.Render 
                    Graphics.Hoodle.Render.Background
+                   Graphics.Hoodle.Render.Debug
                    Graphics.Hoodle.Render.Generic
                    Graphics.Hoodle.Render.Highlight
                    Graphics.Hoodle.Render.Item  
@@ -61,21 +54,5 @@ Library
                    Graphics.Hoodle.Render.Type.Select
                    Graphics.Hoodle.Render.Util
                    Graphics.Hoodle.Render.Util.HitTest
-
-
   if flag(poppler)
     cpp-options: -DPOPPLER
-                  
-
-                   -- Graphics.Hoodle.Render.SimpleNew 
-                   -- Graphics.Hoodle.Render.BBox
-                   -- Graphics.Hoodle.Render.PDFBackground
-                   -- Graphics.Hoodle.Render.BBoxMapPDF
-                   -- Graphics.Hoodle.Render.BBoxMapPDFImg
-                   -- Graphics.Hoodle.Render.Type
-                   -- Graphics.Hoodle.Render.Type.BBoxMapPDFImg
-                   -- Graphics.Hoodle.Render.Type.Select
-                   -- Graphics.Hoodle.Render.BBoxOnly
-                   -- Graphics.Hoodle.Render.InBBox
-                   -- Graphics.Hoodle.Render.Item
-                   -- Graphics.Hoodle.Render.Simple
