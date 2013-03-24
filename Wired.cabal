@@ -1,12 +1,12 @@
 name:      Wired
-version:   0.2.1
+version:   0.2.2
 homepage:  http://www.cs.chalmers.se/~emax/wired/
 synopsis:  Wire-aware hardware description
 
 description:
   Wired is an extension to the hardware description library Lava targeting (not
   exclusively) semi-custom VLSI design. A particular aim of Wired is to give the
-  designer more control over the routing wires' effects on performance.
+  designer more control over on-chip wires' effects on performance.
   .
   The goal is a system with the following features:
   .
@@ -59,7 +59,7 @@ license-file:   LICENSE
 copyright:      (c) 2008. Emil Axelsson <emax@chalmers.se>
 author:         Emil Axelsson <emax@chalmers.se>
 maintainer:     Emil Axelsson <emax@chalmers.se>
-cabal-version:  >= 1.2.3
+cabal-version:  >= 1.4
 build-type:     Simple
 
 data-files:
@@ -102,7 +102,7 @@ library
   c-sources:
     Libs/Nangate45/timing.c
 
-  build-Depends: base, chalmers-lava2000, containers, mtl, QuickCheck
+  build-Depends: base >= 3 && < 4, chalmers-lava2000 >= 1.1 && < 2, containers >= 0.2 && < 1, mtl >= 1.1 && < 2, QuickCheck >= 1 && < 2
 
   extensions:
     FlexibleContexts
@@ -113,6 +113,7 @@ library
     MultiParamTypeClasses
     OverlappingInstances
     OverloadedStrings
+    PackageImports
     PatternGuards
     Rank2Types
     RecursiveDo
