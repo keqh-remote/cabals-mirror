@@ -1,5 +1,5 @@
 name:             wumpus-tree
-version:          0.8.0
+version:          0.9.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -18,21 +18,16 @@ description:
   \*\* WARNING \*\* - the API is unstable and will change. 
   .
   Changelog:
-  . 
-  0.7.0 to 0.8.0:
   .
-  * Changed drawTreePicture to use the @ScalingContext@ datatype
-    from Wumpus.Basic. The type @ScaleFactors@ is now a type
-    synonym for @SalingContext@ operation on all Doubles. 
-  . 
-  * Added an alternative drawing style /family tree/.
-  . 
-  0.6.0 to 0.7.0:
-  . 
-  * More example trees in Demo01.hs.
+  0.8.0 to 0.9.0:
   .
-  * Updated to track changes in Wumpus-Basic.
+  * Stopped re-exporting @DrawingContext@ from Wumpus-Basic in 
+    the module Wumpus.Tree. Clients must now import 
+    @Wumpus.Basic.Graphic@ to get the @DrawingContext@ type and 
+    the constructor @StandardContext@.
   .
+  * Internal changes to track updates to Wumpus-Basic.
+  . 
   .
 build-type:         Simple
 stability:          highly unstable
@@ -48,18 +43,18 @@ library
   build-depends:      base              <  5, 
                       containers        >= 0.3.0     && < 0.4.0,
                       vector-space      >= 0.6,
-                      wumpus-core       == 0.34.0,
-                      wumpus-basic      == 0.9.0
+                      wumpus-core       == 0.35.0,
+                      wumpus-basic      == 0.10.0
 
   
   exposed-modules:
     Wumpus.Tree,
+    Wumpus.Tree.Base,
+    Wumpus.Tree.Design,
+    Wumpus.Tree.Draw,
     Wumpus.Tree.VersionNumber
 
   other-modules:
-    Wumpus.Tree.Base,
-    Wumpus.Tree.Design,
-    Wumpus.Tree.Draw
 
   extensions:
     
