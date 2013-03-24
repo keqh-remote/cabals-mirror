@@ -1,8 +1,9 @@
 name: gf
-version: 3.1.6.2
-cabal-version: >= 1.2
+version: 3.2
+
+cabal-version: >= 1.8
 build-type: Custom
-license: GPL
+license: OtherLicense
 license-file: LICENSE
 category: Natural Language Processing, Compiler
 synopsis: Grammatical Framework
@@ -19,7 +20,9 @@ library
                  array,
                  containers,
                  bytestring,
-                 random
+                 random,
+                 pretty,
+                 mtl
   ghc-options: -O2
   hs-source-dirs: src/compiler src/runtime/haskell
   extensions: 
@@ -42,6 +45,9 @@ library
     PGF.VisualizeTree
     PGF.Printer
     PGF.Probabilistic
+    PGF.Forest
+    PGF.Optimize
+    PGF.Signature
     GF.Data.TrieMap
     GF.Data.Utilities
     GF.Data.SortedList
@@ -54,6 +60,7 @@ library
     Data.Binary.Put
     Data.Binary.Get
     Data.Binary.Builder
+    Data.Binary.IEEE754
 
 executable gf
   build-depends: base >= 4.2,
@@ -79,27 +86,25 @@ executable gf
   main-is: GF.hs
   other-modules:
     GF.Data.BacktrackM
-    GF.JavaScript.AbsJS
-    GF.JavaScript.PrintJS
-    GF.Infra.CompactPrint
     GF.Data.TrieMap
     GF.Data.Utilities
     GF.Data.SortedList
     GF.Data.ErrM
     GF.Data.Operations
-    GF.Infra.Ident
-    GF.Grammar.Predef
     GF.Data.Str
-    GF.Data.Zipper
+    GF.JavaScript.AbsJS
+    GF.JavaScript.PrintJS
+    GF.Infra.Ident
+    GF.Infra.Modules
     GF.Infra.GetOpt
     GF.Infra.Option
     GF.Infra.UseIO
+    GF.Infra.CheckM
     GF.Command.Commands
     GF.Command.Interpreter
     GF.Command.Abstract
     GF.Command.Parse
     GF.Command.Importing
-    GF.Infra.Modules
     GF.Grammar
     GF.Grammar.Lexer
     GF.Grammar.Parser
@@ -114,22 +119,21 @@ executable gf
     GF.Grammar.Printer
     GF.Grammar.ShowTerm
     GF.Grammar.Binary
-    GF.Infra.CheckM
     GF.Compile.Update
     GF.Compile.CheckGrammar
     GF.Compile.Refresh
     GF.Compile.Rename
     GF.Compile.ReadFiles
     GF.Compile.GrammarToPGF
-    GF.Compile.Concrete.TypeCheck
-    GF.Compile.Concrete.Compute
-    GF.Compile.Concrete.AppPredefined
-    GF.Compile.Abstract.TC
-    GF.Compile.Abstract.TypeCheck
-    GF.Compile.Abstract.Compute
+    GF.Compile.ToAPI
+    GF.Compile.TypeCheck.Abstract
+    GF.Compile.TypeCheck.Concrete
+    GF.Compile.TypeCheck.TC
+    GF.Compile.Compute.Abstract
+    GF.Compile.Compute.Concrete
+    GF.Compile.Compute.AppPredefined
     GF.Compile.Optimize
     GF.Compile.SubExOpt
-    GF.Compile.ModDeps
     GF.Compile.GetGrammar
     GF.Compile.PGFtoHaskell
     GF.Compile.PGFtoProlog
@@ -150,6 +154,7 @@ executable gf
     PGF.TypeCheck
     PGF.Binary
     PGF.Printer
+    PGF.Optimize
     GFC
     GFI
 
