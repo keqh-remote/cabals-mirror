@@ -1,5 +1,5 @@
 name:           hgal
-version:        1.0.2
+version:        2.0.0
 license:        GPL
 license-file:   LICENSE
 author:         Jean-Philippe Bernardy
@@ -12,9 +12,10 @@ exposed-modules:
         Data.Graph.Permutation,
         Data.Graph.Automorphism
 
-build-depends: base>=3 && <4
-build-depends: mtl >= 1.1 && < 1.2
-build-depends: containers >= 0.1 && <0.2
-build-depends: array >= 0.1 && <0.2
+build-depends: base>= 4, base < 5,
+               mtl >= 2, mtl < 3,
+               containers >= 0.4, containers < 0.5,
+               array >= 0.3 , array < 0.4
+
 build-type:     Simple
 ghc-options:    -Wall -O2
