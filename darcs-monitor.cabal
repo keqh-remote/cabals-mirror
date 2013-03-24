@@ -1,6 +1,6 @@
-Cabal-Version: >= 1.2
+Cabal-Version: >= 1.6
 Name: darcs-monitor
-Version: 0.4.1
+Version: 0.4.2
 License: GPL
 License-File: GPL.txt
 Copyright:
@@ -28,7 +28,7 @@ flag splitBase
   description: Choose the new smaller, split-up base package.
 
 Executable darcs-monitor
-  Build-Depends: mtl, HaXml < 1.14
+  Build-Depends: mtl, HaXml == 1.20.*
   if flag(splitBase)
     Build-Depends: base >=3 && < 5, containers, directory, process
   else
