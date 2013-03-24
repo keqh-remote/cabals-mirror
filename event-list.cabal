@@ -1,5 +1,5 @@
 Name:             event-list
-Version:          0.0.6
+Version:          0.0.7
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -23,12 +23,18 @@ Build-Type:        Simple
 Flag splitBase
   description: Choose the new smaller, split-up base package.
 
+Flag buildTests
+  description: Build test executables
+  default:     False
+
 Library
+  Build-Depends: non-negative>=0.0 && <0.1
+  Build-Depends: mtl >=1 && <2, QuickCheck >=1 && <2
   If flag(splitBase)
-    Build-Depends: base >= 2, non-negative==0.0.1, mtl, QuickCheck, random
+    Build-Depends: base >= 2, random
     -- random is needed for the Test
   Else
-    Build-Depends: base >= 1.0 && < 2, non-negative==0.0.1, mtl, QuickCheck
+    Build-Depends: base >= 1.0 && < 2
     -- From the Monad Template Library we only need the State monad.
     -- If your compiler does not support functional dependencies,
     -- it would be easy to replace that by mapAccumL.
@@ -60,6 +66,9 @@ Library
     Data.AlternatingList.List.Mixed
 
 Executable       test
+  If !flag(buildTests)
+    Buildable:         False
+
   If flag(splitBase)
     Hs-source-dirs:   src, src-2
   Else
