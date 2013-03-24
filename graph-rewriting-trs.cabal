@@ -1,15 +1,15 @@
 Name:           graph-rewriting-trs
-Version:        0.1
+Version:        0.1.1
 Copyright:      (c) 2011, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
 Author:         Jan Rochel
 Maintainer:     jan@rochel.info
 Homepage:       http://rochel.info/#graph-rewriting
-Stability:      alpha
+Stability:      beta
 Build-Type:     Simple
 Synopsis:       Evaluate a first-order term rewrite system interactively using graph reduction
-Description:    Given a set of term rewriting rules (see examples) and a term with this tool you can interactively evaluate the corresponding term graph by applying the rules, which are translated into their graph rewriting equivalents.
+Description:    Given a set of term rewriting rules and an initial term with this tool you can interactively evaluate the corresponding term graph. The employed rule set has to be defined in one or more files. In the examples-directory a few rewriting systems are already supplied. To see how it works invoke the with the SKI-combinator rules and an initial term as arguments: @trs examples/ski.trs "SK(S(KIS)K)I"@. On how to interact with the application see the "GraphRewriting.GL.UI" module of the graph-rewriting-gl package.
 Category:       Graphs, Application
 Cabal-Version:  >= 1.6
 Data-Files:     examples/*.trs
