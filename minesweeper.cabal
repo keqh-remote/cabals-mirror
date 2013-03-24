@@ -1,49 +1,108 @@
 name:                minesweeper
-version:             0.4.1
+version:             0.8.8
 category:            Game
 synopsis:            Minesweeper game which is always solvable without guessing
 description:         
 	Minesweeper game which is always solvable without guessing. 
-    .
-    TODO list:
-    .
-    * Source code documentation and improvement
-    .
-    * Implement the score table.
 stability:          alpha
 license:            BSD3
 license-file:       LICENSE
 author:             Péter Diviánszky
 maintainer:         divip@aszt.inf.elte.hu
-data-files:         ms.glade
 cabal-version:      >=1.4
 build-type:         Simple
+data-files:         ms.glade
+extra-source-files: runInGHCi
 
-executable          minesweeper
-  ghc-options:      -Wall -fno-warn-incomplete-patterns -fno-warn-name-shadowing -fno-warn-missing-signatures
-  build-depends:    base >= 3.0, 
-                    containers, 
-                    random, 
-                    time, 
-                    glade, 
-                    gtk >= 0.10, 
-                    cairo >= 0.10
+Flag tests
+    Description:    Enable inner project testing
+    Default:        False
 
-  main-is:          Minesweeper.hs
+executable minesweeper
+  extensions:       
+    NoMonomorphismRestriction,
+--    NoNPlusKPatterns,
+    EmptyDataDecls,
+    ScopedTypeVariables,
+    ExistentialQuantification,
+    Rank2Types,
+    MultiParamTypeClasses,
+    TypeFamilies,
+    NamedFieldPuns,
+    PatternGuards,
+    ViewPatterns,
+    FlexibleContexts,
+    TemplateHaskell,
+    CPP
 
-  other-modules:    Place,
-                    PlaceSet,
-                    PlaceMap,
-                    Delay,
-                    Core, 
-                    Game,
-                    Table,
-                    TableGraphics,
-                    Timer
+  build-depends:
+    base >= 3.0 && < 5.0, 
+    numeric-prelude,
+    containers, 
+    time, 
+    random, 
+    directory,
+    filepath,
+    binary, 
+    derive,
+    lazysmallcheck,
+    gtk >= 0.10, 
+    cairo >= 0.10,
+    glade
 
-  extensions:       RecursiveDo,
-                    NamedFieldPuns,
-                    ViewPatterns,
-                    PatternGuards
+  if flag(tests)
+    build-depends:
+      numeric-prelude,
+      lazysmallcheck
+
+    CPP-Options: -DTEST
+
+  main-is:          
+    Minesweeper.hs
+
+  other-modules:    
+    Data.ChangeMap,
+    Data.ChangeSet,
+    Data.PContainer,
+    System.Random.Instances,
+
+    Core.Square,
+    Core.BitField,
+    Core.Constraints,
+
+    Configuration,     
+    Step,
+
+    Scores,
+    State,
+    State.Functions,
+
+    Event,
+    When,
+
+    GTK,
+    GTK.Square,
+    GTK.Preferences,
+    GTK.Score,
+
+    Transition,
+    Transition.State,
+    Transition.Action,
+    Transition.Response,
+    Transition.Graphics,
+    Transition.Managed,
+
+    Log,
+
+    Driver,
+    Driver.Log
+    Driver.Simplified
+
+  ghc-options: 
+    -threaded
+    -Wall 
+    -fno-warn-incomplete-patterns 
+    -fno-warn-name-shadowing 
+    -fno-warn-missing-signatures 
 
 
