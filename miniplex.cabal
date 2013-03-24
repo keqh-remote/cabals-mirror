@@ -1,5 +1,5 @@
 name: miniplex
-version: 0.3.3
+version: 0.3.4
 cabal-version: >= 1.2
 license: LGPL
 license-file: LICENSE
@@ -7,6 +7,7 @@ author: Lukas Mai
 maintainer: Lukas Mai <l.mai@web.de>
 stability: experimental
 category: System
+build-type: Simple
 synopsis: simple 1-to-N interprocess communication
 description:
     This module provides interprocess communication channels. This is meant
@@ -22,7 +23,7 @@ library
   hs-source-dirs: lib
   if flag(small_base)
     build-depends: directory
-  build-depends: base, network, stm, unix, mtl, colock >=0.2.2
+  build-depends: base <4, network, stm, unix, mtl, colock >=0.2.2
   ghc-options: -O2 -Wall
 
 executable plox-read
