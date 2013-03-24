@@ -1,5 +1,5 @@
 name: dbus-core
-version: 0.9.2.1
+version: 0.9.3
 synopsis: Low-level D-Bus protocol implementation
 license: GPL-3
 license-file: license.txt
@@ -12,6 +12,11 @@ category: Network, Desktop
 stability: experimental
 homepage: https://john-millikin.com/software/dbus-core/
 bug-reports: mailto:jmillikin@gmail.com
+
+description:
+  OBSOLETE: Use the \"dbus\" package instead.
+  .
+  <http://hackage.haskell.org/package/dbus>
 
 extra-source-files:
   readme.txt
@@ -62,7 +67,7 @@ source-repository head
 source-repository this
   type: bazaar
   location: https://john-millikin.com/branches/dbus-core/0.9/
-  tag: dbus-core_0.9.2.1
+  tag: dbus-core_0.9.3
 
 library
   ghc-options: -Wall -O2
