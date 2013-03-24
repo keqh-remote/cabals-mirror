@@ -1,5 +1,5 @@
 Name:                buildbox
-Version:             1.5.1.1
+Version:             1.5.2.1
 License:             BSD3
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -61,6 +61,7 @@ Library
         BuildBox.Command.Network
         BuildBox.Command.System
         BuildBox.Command.Sleep
+        BuildBox.Control.Gang
         BuildBox.Cron.Schedule
         BuildBox.Cron
         BuildBox.Data.Log
