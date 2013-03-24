@@ -1,5 +1,5 @@
 Name:                Vec-OpenGLRaw
-Version:             0.2.0.0
+Version:             0.2.0.1
 Synopsis:            Instances and functions to interoperate Vec and OpenGL.
 Description:         Provides:
                      * NearZero instances for all OpenGL numeric types
