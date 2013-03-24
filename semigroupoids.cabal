@@ -1,6 +1,6 @@
 name:          semigroupoids
 category:      Control, Comonads
-version:       3.0.0.1
+version:       3.0.0.2
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -36,7 +36,7 @@ description:
   >                                 Bind ---------> Monad -------> MonadPlus          Arrow
   >
   .
-  Apply, Bind, and Extract give rise the Static, Kleisli and Cokleisli semigroupoids respectively.
+  Apply, Bind, and Extend (not shown) give rise the Static, Kleisli and Cokleisli semigroupoids respectively.
   .
   This lets us remove many of the restrictions from various monad transformers
   as in many cases the binding operation or @\<*\>@ operation does not require them.
@@ -55,8 +55,8 @@ library
     transformers  >= 0.2     && < 0.4,
     containers    >= 0.3     && < 0.6,
     contravariant >= 0.2.0.1 && < 0.3,
-    comonad       >= 3.0     && < 3.1,
-    semigroups    >= 0.8.3.1 && < 0.9
+    comonad       >= 3.0,
+    semigroups    >= 0.8.3.1
 
   exposed-modules:
     Data.Functor.Alt
