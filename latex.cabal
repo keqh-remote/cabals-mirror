@@ -1,5 +1,5 @@
 Name:             latex
-Version:          0.1
+Version:          0.1.0.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -18,16 +18,21 @@ Description:
   .
   See the packages @HaTeX@ for LaTeX document generation
   and @pandoc@ for document analysis and generation in multiple markup languages.
-Tested-With:      GHC==6.12.3
+Tested-With:      GHC==6.12.3, GHC==7.4.1
 Cabal-Version:    >=1.6
 Build-Type:       Simple
 Source-Repository head
   type:     darcs
   location: http://code.haskell.org/~thielema/latex/
 
+Source-Repository this
+  tag:      0.1.0.1
+  type:     darcs
+  location: http://code.haskell.org/~thielema/latex/
+
 Library
   Build-Depends:
-    containers >= 0.1 && <0.4,
+    containers >= 0.1 && <0.5,
     utility-ht >=0.0.5 && <0.1,
     base >= 3 && <5
 
