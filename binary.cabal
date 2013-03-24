@@ -1,8 +1,8 @@
 name:            binary
-version:         0.5.1.0
+version:         0.4.5
 license:         BSD3
 license-file:    LICENSE
-author:          Lennart Kolmodin <kolmodin@gmail.com>
+author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
 maintainer:      Lennart Kolmodin, Don Stewart <dons@galois.com>
 homepage:        http://code.haskell.org/binary/
 description:     Efficient, pure binary serialisation using lazy ByteStrings.
@@ -48,14 +48,17 @@ library
                    Data.Binary.Put,
                    Data.Binary.Get,
                    Data.Binary.Builder
-                   Data.Binary.Builder.Internal
-
-  other-modules:   Data.Binary.Builder.Base
 
   extensions:      CPP,
                    FlexibleContexts
 
-  ghc-options:     -O2 -Wall -fliberate-case-threshold=1000
+  ghc-options:     -O2
+                   -Wall
+                   -fspec-constr
+                   -funbox-strict-fields 
+                   -fdicts-cheap
+                   -fliberate-case-threshold=1000
+                   -fmax-simplifier-iterations10
 
 --  if impl(ghc < 6.5)
 --    ghc-options:   -fallow-undecidable-instances
