@@ -1,5 +1,5 @@
 name:                   gt-tools
-version:                0.1
+version:                0.1.1
 cabal-version:          >= 1.8
 build-type:             Simple
 license:                GPL
@@ -16,7 +16,7 @@ description:            This package consist from console backend, GUI backend a
 category:               Tools
 author:                 Mikhail S. Pobolovets
 stability:              experimental
-tested-with:            GHC==6.10.4
+tested-with:            GHC==6.12.1
 data-files:             LICENSE README Gtg/main.glade
 data-dir:               ""
 extra-source-files:     Setup.lhs
@@ -42,17 +42,14 @@ executable              gtc
 
 executable              gtg
     main-is:            gtg.hs
-
-    if flag(gui)
-      buildable:        True
-    else
-      buildable:        False
-
     ghc-options:        -Wall
     include-dirs:       .
     hs-source-dirs:     ., Gt, Gtg
     other-modules:      Gt.Core, Gt.Helpers, Gt.Langs, Gt.Net, Gt.Translation
-    build-depends:
+
+    if flag(gui)
+      buildable:        True
+      build-depends:
                         base >= 4 && < 5,
                         containers,
                         HTTP,
@@ -61,3 +58,5 @@ executable              gtg
                         gtk,
                         glade,
                         utf8-string
+    else
+      buildable:        False
