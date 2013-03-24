@@ -1,5 +1,5 @@
 Name:                highlighting-kate
-Version:             0.2
+Version:             0.2.1
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Category:            Text
@@ -27,8 +27,10 @@ License:             GPL
 License-file:        LICENSE
 Author:              John MacFarlane
 Maintainer:          jgm@berkeley.edu
+Homepage:            http://johnmacfarlane.net/highlighting-kate
 Extra-Source-Files:  README
                      BUGS
+                     changelog
                      Highlight.hs
                      ParseSyntaxFiles.hs
                      css/hk-espresso.css
