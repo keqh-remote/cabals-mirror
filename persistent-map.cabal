@@ -1,6 +1,11 @@
 Name:           persistent-map
 Synopsis:       A thread-safe interface for finite map types with optional persistency support.
 Description:
+
+    /Changes in 0.1.0:/
+    .
+    * Added the binary serialization backend.
+    .
     This library provides a thread-safe (STM) frontend for finite map types together with a
     backend interface for persistent storage. The /TMap/ data type
     is thread-safe, since all access functions run inside an STM monad . Any type 
@@ -54,23 +59,23 @@ Description:
     probably change.
 
 Author:         Peter Robinson
-Maintainer:     thaldyron@gmail.com
+Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        LGPL
 License-file:   LICENSE
-Version:        0.0.0
-Category:       Data, Concurrency
+Version:        0.1.0
+Category:       Middleware, Concurrency
 Stability:      experimental
 Homepage:       http://darcs.monoid.at/persistent-map
 
 build-type:     Simple                        
 cabal-version: >= 1.2.3
 library
-    ghc-options:        -Wall -fno-ignore-asserts
+    ghc-options:        -Wall -fno-ignore-asserts -fno-warn-missing-fields
 
     exposed-modules:    Data.TMap
                         Data.TStorage
---                        Data.TMap.Exception
                         Data.TMap.Backend
+                        Data.TMap.Backend.Binary
                         Data.TMap.Backend.NoBackend
                         Data.TMap.Backend.StdoutBackend
                         Data.CacheStructure
@@ -83,11 +88,12 @@ library
                         EdisonAPI  >= 1.2.1 && < 1.3,
                         LRU >= 0.1.1 && < 0.2,
                         EdisonCore >= 1.2.1.3 && < 1.3,
---                        binary,
-                        stm-io-hooks >= 0.2.0 && < 0.3, 
+                        stm-io-hooks >= 0.3.0 && < 0.4, 
 --                        HDBC >= 2.0 && < 2.1, 
-                        mtl >= 1.1.0.2 && < 1.2
---                        MonadCatchIO-mtl
+                        mtl >= 1.1.0.2 && < 1.2,
+                        binary >= 0.5 && < 0.6,
+                        filepath >= 1.1 && < 1.2,
+                        directory >= 1.0.0.3 && < 1.1
 
     extensions:         MultiParamTypeClasses,
                         RankNTypes, 
