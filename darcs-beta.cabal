@@ -1,5 +1,5 @@
 Name: darcs-beta
-version:        2.7.98.1
+version:        2.7.98.2
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -95,6 +95,10 @@ flag library
   description: Build darcs library
   default:     True
 
+flag executable
+  description: Build darcs executable
+  default:     True
+
 flag color
   description: Use ansi color escapes.
 
@@ -103,10 +107,6 @@ flag mmap
 
 flag hpc
   default:     False
-
-flag deps-only
-  default:     False
-  description: A cunning trick to have cabal install build dependencies
 
 flag test
   default:     False
@@ -121,6 +121,15 @@ flag warn-as-error
   default:     False
   description: Build with warnings-as-errors
 
+-- If base >= 4.4 is used, the standard directory functions
+-- do Unicode translation. Use an explicit flag so we can
+-- detect this situation and use a workaround.
+flag base44
+  default:     False
+  -- once we have a workaround remove the manual: line
+  manual:      True
+  description: Allow base 4.4 or above: note, there are known problems with Unicode filenames (http://bugs.darcs.net/issue2095)
+
 -- ----------------------------------------------------------------------
 -- darcs library
 -- ----------------------------------------------------------------------
@@ -130,6 +139,8 @@ Library
     buildable: False
   else
     buildable: True
+
+    build-tools: ghc >= 6.10 && < 7.6
 
     hs-source-dirs:   src
     include-dirs:     src
@@ -234,6 +245,15 @@ Library
                       Darcs.Patch.Prim.V1.Details
                       Darcs.Patch.Prim.V1.Read
                       Darcs.Patch.Prim.V1.Show
+                      Darcs.Patch.Prim.V3
+                      Darcs.Patch.Prim.V3.ObjectMap
+                      Darcs.Patch.Prim.V3.Apply
+                      Darcs.Patch.Prim.V3.Coalesce
+                      Darcs.Patch.Prim.V3.Commute
+                      Darcs.Patch.Prim.V3.Core
+                      Darcs.Patch.Prim.V3.Details
+                      Darcs.Patch.Prim.V3.Read
+                      Darcs.Patch.Prim.V3.Show
                       Darcs.Patch.Read
                       Darcs.Patch.ReadMonads
                       Darcs.Patch.RegChars
@@ -280,6 +300,7 @@ Library
                       Darcs.RunCommand
                       Darcs.SelectChanges
                       Darcs.SignalHandler
+                      Darcs.Ssh
                       Darcs.Test
                       Darcs.TheCommands
                       Darcs.URL
@@ -294,15 +315,16 @@ Library
                       English
                       Exec
                       ByteStringUtils
-                      HTTP
                       IsoDate
                       Lcs
                       Printer
                       Progress
                       Ratified
                       SHA1
-                      Ssh
                       URL
+                      URL.Request
+                      URL.Curl
+                      URL.HTTP
                       Workaround
 
     other-modules:    Version
@@ -312,6 +334,8 @@ Library
                       src/maybe_relink.c
                       src/umask.c
                       src/Crypt/sha2.c
+                      src/system_encoding.c
+
     cc-options:       -D_REENTRANT
 
     if os(windows)
@@ -329,29 +353,32 @@ Library
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
 
-    build-depends:   base          >= 4 && < 5,
-                     extensible-exceptions >= 0.1 && < 0.2,
+    if flag(base44)
+      build-depends: base >= 4 && < 4.6
+    else
+      build-depends: base >= 4 && < 4.4
+
+    build-depends:   extensible-exceptions >= 0.1 && < 0.2,
                      regex-compat >= 0.95.1,
                      mtl          >= 1.0 && < 2.1,
                      parsec       >= 2.0 && < 3.2,
                      html         == 1.0.*,
-                     filepath     >= 1.1.0.0 && < 1.3.0.0,
+                     filepath     >= 1.1.0.0 && < 1.5.0.0,
                      haskeline    >= 0.6.3 && < 0.7,
                      hashed-storage >= 0.5.6 && < 0.6,
                      vector       >= 0.7,
                      tar          == 0.3.*
 
     if !os(windows)
-      build-depends: unix >= 1.0 && < 2.5
+      build-depends: unix >= 1.0 && < 2.6
 
-    build-depends: base >= 4 && < 5,
-                   bytestring >= 0.9.0 && < 0.10,
-                   text == 0.11.*,
-                   old-time   == 1.0.*,
+    build-depends: bytestring >= 0.9.0 && < 0.10,
+                   text       >= 0.11.0.6 && < 0.12.0.0,
+                   old-time   >= 1.0 && < 1.2,
                    directory  >= 1.0.0.0 && < 1.2.0.0,
-                   process    == 1.0.*,
+                   process    >= 1.0.0.0 && < 1.2.0.0,
                    containers >= 0.1 && < 0.5,
-                   array      >= 0.1 && < 0.4,
+                   array      >= 0.1 && < 0.5,
                    random     == 1.0.*
 
 
@@ -381,11 +408,11 @@ Library
 
     if flag(http)
         build-depends:    network >= 2.2 && < 2.4,
-                          HTTP    >= 3000.0 && < 4000.2
+                          HTTP    >= 4000.0.8 && < 4000.3
         cpp-options:      -DHAVE_HTTP
         x-have-http:
 
-    if (!flag(curl) && !flag(http)) || flag(deps-only)
+    if (!flag(curl) && !flag(http))
         buildable: False
 
     if flag(mmap) && !os(windows)
@@ -426,6 +453,12 @@ Library
 -- ----------------------------------------------------------------------
 
 Executable          darcs
+  if !flag(executable)
+    buildable: False
+  else
+    buildable: True
+  build-tools: ghc >= 6.10 && < 7.6
+
   main-is:          darcs.hs
   hs-source-dirs:   src
   include-dirs:     src
@@ -434,6 +467,7 @@ Executable          darcs
                     src/maybe_relink.c
                     src/umask.c
                     src/Crypt/sha2.c
+                    src/system_encoding.c
 
 
   if flag(optimize)
@@ -476,29 +510,32 @@ Executable          darcs
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
 
-  build-depends:   base          >= 4 && < 5,
-                   extensible-exceptions >= 0.1 && < 0.2,
+  if flag(base44)
+    build-depends: base >= 4 && < 4.6
+  else
+    build-depends: base >= 4 && < 4.4
+
+  build-depends:   extensible-exceptions >= 0.1 && < 0.2,
                    regex-compat >= 0.95.1,
                    mtl          >= 1.0 && < 2.1,
                    parsec       >= 2.0 && < 3.2,
                    html         == 1.0.*,
-                   filepath     >= 1.1.0.0 && < 1.3.0.0,
+                   filepath     >= 1.1.0.0 && < 1.5.0.0,
                    haskeline    >= 0.6.3 && < 0.7,
                    hashed-storage >= 0.5.6 && < 0.6,
                    vector       >= 0.7,
                    tar          == 0.3.*
 
   if !os(windows)
-    build-depends: unix >= 1.0 && < 2.5
+    build-depends: unix >= 1.0 && < 2.6
 
-  build-depends: base >= 4 && < 5,
-                 bytestring >= 0.9.0 && < 0.10,
-                 text == 0.11.*,
-                   old-time   == 1.0.*,
+  build-depends:   bytestring >= 0.9.0 && < 0.10,
+                   text       >= 0.11.0.6 && < 0.12.0.0,
+                   old-time   >= 1.0 && < 1.2,
                    directory  >= 1.0.0.0 && < 1.2.0.0,
-                   process    == 1.0.*,
+                   process    >= 1.0.0.0 && < 1.2.0.0,
                    containers >= 0.1 && < 0.5,
-                   array      >= 0.1 && < 0.4,
+                   array      >= 0.1 && < 0.5,
                    random     == 1.0.*
 
   if flag(curl)
@@ -510,11 +547,11 @@ Executable          darcs
 
   if flag(http)
       build-depends:    network >= 2.2 && < 2.4,
-                        HTTP    >= 3000.0 && < 4000.2
+                        HTTP    >= 4000.0.8 && < 4000.3
       cpp-options:      -DHAVE_HTTP
       x-have-http:
 
-  if (!flag(curl) && !flag(http)) || flag(deps-only)
+  if (!flag(curl) && !flag(http))
       buildable: False
 
   if flag(mmap) && !os(windows)
@@ -557,17 +594,20 @@ Executable          darcs
 Executable          darcs-test
   main-is:          test.hs
 
+  build-tools: ghc >= 6.10 && < 7.2
+
+
   if !flag(test)
     buildable: False
   else
     buildable: True
-    build-depends:   base          < 5,
-                     extensible-exceptions >= 0.1 && < 0.2,
+
+    build-depends:   extensible-exceptions >= 0.1 && < 0.2,
                      regex-compat >= 0.95.1,
                      mtl          >= 1.0 && < 2.1,
                      parsec       >= 2.0 && < 3.2,
                      html         == 1.0.*,
-                     filepath     >= 1.1.0.0 && < 1.3.0.0,
+                     filepath     >= 1.1.0.0 && < 1.5.0.0,
                      QuickCheck   >= 2.3,
                      HUnit        >= 1.0,
                      cmdlib       >= 0.2.1 && < 0.4,
@@ -583,22 +623,30 @@ Executable          darcs-test
                       src/maybe_relink.c
                       src/umask.c
                       src/Crypt/sha2.c
+                      src/system_encoding.c
     -- list all unit test modules not exported by libdarcs; otherwise Cabal won't
     -- include them in the tarball
     other-modules:    Darcs.Test.Email
                       Darcs.Test.Patch.Check
-                      Darcs.Test.Patch.Examples
-                      Darcs.Test.Patch.Examples2
+                      Darcs.Test.Patch.Examples.Set1
+                      Darcs.Test.Patch.Examples.Set2Unwitnessed
+                      Darcs.Test.Patch.WSub
                       Darcs.Test.Patch.Info
-                      Darcs.Test.Patch.Prim.V1
-                      Darcs.Test.Patch.Properties
-                      Darcs.Test.Patch.Properties2
-                      Darcs.Test.Patch.QuickCheck
+                      Darcs.Test.Patch.Properties.V1Set1
+                      Darcs.Test.Patch.Properties.V1Set2
+                      Darcs.Test.Patch.Properties.Generic
+                      Darcs.Test.Patch.Properties.GenericUnwitnessed
+                      Darcs.Test.Patch.Properties.Check
+                      Darcs.Test.Patch.Properties.Real
+                      Darcs.Test.Patch.Arbitrary.Generic
+                      Darcs.Test.Patch.Arbitrary.Real
+                      Darcs.Test.Patch.Arbitrary.PrimV1
+                      Darcs.Test.Patch.Arbitrary.PrimV3
+                      Darcs.Test.Patch.Arbitrary.PatchV1
                       Darcs.Test.Patch.RepoModel
-                      Darcs.Test.Patch.Test
-                      Darcs.Test.Patch.Unit
-                      Darcs.Test.Patch.Unit2
                       Darcs.Test.Patch.Utils
+                      Darcs.Test.Patch.V1Model
+                      Darcs.Test.Patch.V3Model
                       Darcs.Test.Patch.WithState
                       Darcs.Test.Patch
                       Darcs.Test.Misc
@@ -643,18 +691,22 @@ Executable          darcs-test
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
 
-    if !os(windows)
-      build-depends: unix >= 1.0 && < 2.5
+    if flag(base44)
+      build-depends: base >= 4 && < 4.6
+    else
+      build-depends: base >= 4 && < 4.4
 
-    build-depends: base >= 4 && < 5,
-                   bytestring >= 0.9.0 && < 0.10,
+    if !os(windows)
+      build-depends: unix >= 1.0 && < 2.6
+
+    build-depends: bytestring >= 0.9.0 && < 0.10,
                    haskeline    >= 0.6.3 && < 0.7,
-                   text == 0.11.*,
-                   old-time   == 1.0.*,
+                   text       >= 0.11.0.6 && < 0.12.0.0,
+                   old-time   >= 1.0 && < 1.2,
                    directory  >= 1.0.0.0 && < 1.2.0.0,
-                   process    == 1.0.*,
+                   process    >= 1.0.0.0 && < 1.2.0.0,
                    containers >= 0.1 && < 0.5,
-                   array      >= 0.1 && < 0.4,
+                   array      >= 0.1 && < 0.5,
                    hashed-storage >= 0.5.6 && < 0.6,
                    vector       >= 0.7,
                    tar        == 0.3.*,
@@ -673,7 +725,7 @@ Executable          darcs-test
 
     if flag(http)
         build-depends:    network >= 2.2 && < 2.4,
-                          HTTP    >= 3000.0 && < 4000.2
+                          HTTP    >= 4000.0.8 && < 4000.3
 
     if flag(color)
       x-use-color:
