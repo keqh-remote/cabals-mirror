@@ -7,7 +7,7 @@ Name:                delta-h
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.1
+Version:             0.0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            Online entropy-based model of lexical category acquisition.
@@ -50,6 +50,19 @@ Data-files: 20-28.txt.nosingle, 26-28.txt.nosingle, 29-30.txt.nosingle,
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.2
 
+Library
+  Exposed-modules: Entropy.Algorithm, Entropy.Features, Reader, ListZipper
+       -- Packages needed in order to build this package.
+  Build-depends: nlp-scores, monad-atom, binary, text, containers, 
+                 bytestring,
+                 base >= 3 && < 5
+  
+  -- Modules not exported by this package.
+  Other-modules: Counts, SparseVector, Utils
+  
+  Hs-source-dirs: src
+
+  ghc-options: -O2 -rtsopts
 
 Executable delta-h
   -- .hs or .lhs file containing the Main module.
@@ -61,11 +74,8 @@ Executable delta-h
                  base >= 3 && < 5
   
   -- Modules not exported by this package.
-  Other-modules: Counts, Entropy.Algorithm, Reader, ListZipper, SparseVector,
-                 Utils, Entropy.Features       
+  Other-modules: Counts, SparseVector, Utils
   
-  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
-  -- Build-tools:         
   Hs-source-dirs: src
 
   ghc-options: -O2 -rtsopts
