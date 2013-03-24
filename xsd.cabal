@@ -1,5 +1,5 @@
 Name:                xsd
-Version:             0.3.0
+Version:             0.3.1
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            XML Schema data structures
@@ -22,4 +22,5 @@ Library
     Build-Depends: base < 3, parsec, time
 
   GHC-Options:    -Wall
-  Exposed-Modules: Text.XML.XSD.DateTime
+  Exposed-Modules: Text.XML.XSD
+                   Text.XML.XSD.DateTime
