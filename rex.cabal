@@ -1,5 +1,5 @@
 Name:                rex
-Version:             0.3.1
+Version:             0.4.1
 Synopsis:            A quasi-quoter for typeful results of regex captures.
 Description:         Provides a quasi-quoter for regular expressions which
                      yields a tuple, of appropriate arity and types,
@@ -18,8 +18,9 @@ Copyright:           Michael Sloan 2011
 Category:            Control
 Build-type:          Simple
 Stability:           experimental
-Extra-source-files:  Test.hs, Bench.hs
-Data-files:          README
+Extra-source-files:  Demo.hs, Bench.hs
+Data-files:          README.md
+                     CHANGES.md
 Cabal-version:       >=1.6
 Bug-Reports:         http://github.com/mgsloan/rex/issues
 Source-Repository head
@@ -30,6 +31,6 @@ Library
   Extensions:        TemplateHaskell, QuasiQuotes, TupleSections, ViewPatterns
   Exposed-modules:   Text.Regex.PCRE.Rex, Text.Regex.PCRE.Precompile
   Build-depends:     base >= 3.0 && < 6, bytestring, containers, ghc >= 7.0,
-                     haskell-src-meta, MissingH, pcre-light, split,
+                     haskell-src-meta >= 0.5, pcre-light, split,
                      template-haskell >= 2.5.0.0
   Ghc-options:       -Wall
