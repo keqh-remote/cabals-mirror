@@ -1,5 +1,5 @@
 Name:                hissmetrics
-Version:             0.3
+Version:             0.4
 Synopsis:            Unofficial API bindings to KISSmetrics.
 Homepage:            https://github.com/meteficha/hissmetrics
 License:             BSD3
@@ -28,9 +28,9 @@ Library
                  , time         >= 1.1     && < 2
                  , bytestring
                  , text         >= 0.7     && < 0.12
-                 , conduit      == 0.4.*
+                 , conduit      == 0.5.*
                  , http-types
-                 , http-conduit == 1.4.*
+                 , http-conduit == 1.5.*
   Extensions:
     DeriveDataTypeable,
     RecordWildCards,
