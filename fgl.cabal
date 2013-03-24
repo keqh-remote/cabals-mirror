@@ -1,5 +1,5 @@
 name:		fgl
-version:	5.4.1.1
+version:	5.4.2.0
 license:	BSD3
 license-file:	LICENSE
 author:	        Martin Erwig
@@ -7,6 +7,7 @@ maintainer:	Martin Erwig
 homepage:	http://web.engr.oregonstate.edu/~erwig/fgl/haskell
 category:	Data Structures
 synopsis:	Martin Erwig's Functional Graph Library
+description:    Martin Erwig's Functional Graph Library.
 exposed-modules:
 	Data.Graph.Inductive.Internal.FiniteMap,
 	Data.Graph.Inductive.Internal.Heap,
@@ -36,5 +37,6 @@ exposed-modules:
 	Data.Graph.Inductive.Query.SP,
 	Data.Graph.Inductive.Query.TransClos,
 	Data.Graph.Inductive
+build-type:	Simple
 build-depends:	base, mtl, containers, array
 extensions: MultiParamTypeClasses, OverlappingInstances, FlexibleInstances
