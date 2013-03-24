@@ -1,5 +1,5 @@
 Name:          pointedlist
-Version:       0.0.2
+Version:       0.1
 Synopsis:      A zipper-like comonad which works as a list, tracking a position.
 Category:      Data
 Description:
@@ -12,4 +12,5 @@ Author:        Jeff Wheeler
 Maintainer:    jeffwheeler@gmail.com
 Build-type:    Simple
 Build-depends: base>=4
+Build-depends: binary
 Exposed-modules: Data.List.PointedList
