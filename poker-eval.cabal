@@ -7,7 +7,7 @@ Name:                poker-eval
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.1.1
 
 -- A short (one-line) description of the package.
 Synopsis:            Binding to libpoker-eval
@@ -15,6 +15,8 @@ Synopsis:            Binding to libpoker-eval
 -- A longer description of the package.
 Description:         Performance oriented functions for judging poker hands
                      and related tasks.
+                     .
+                     Haddock documentation can be found here: <http://mirror.seize.it/poker-eval/documentation/>
 
 -- The license under which the package is released.
 License:             PublicDomain
@@ -27,7 +29,7 @@ Author:              David Himmelstrup
 
 -- An email address to which users can send suggestions, bug reports,
 -- and patches.
-Maintainer:          lemmih@gmail.com
+Maintainer:          David Himmelstrup <lemmih@gmail.com>
 
 -- A copyright notice.
 -- Copyright:           
