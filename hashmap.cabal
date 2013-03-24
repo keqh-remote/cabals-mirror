@@ -1,5 +1,5 @@
 Name:                hashmap
-Version:             1.0.0.2
+Version:             1.0.0.3
 Synopsis:            Persistent containers HashMap and HashSet.
 Description:         An implementation of persistent 'HashMap' and 'HashSet' on
                      top of 'Data.IntMap.IntMap' and 'Data.IntSet.IntSet',
