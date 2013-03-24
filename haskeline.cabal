@@ -1,6 +1,6 @@
 Name:           haskeline
-Cabal-Version:  >=1.2
-Version:        0.5.0.1
+Cabal-Version:  >=1.6
+Version:        0.6
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -25,12 +25,16 @@ extra-source-files: examples/Test.hs
 flag old-base
     Description: Use the base packages from before version 6.8
 
+flag terminfo
+    Description: Use the terminfo package for POSIX consoles.
+    Default: True
+
 Library
     if flag(old-base)
         Build-depends: base < 3
     else
         Build-depends: base>=3 && <5 , containers>=0.1, directory>=1.0
-    Build-depends:  stm==2.1.*, filepath==1.1.*, mtl==1.1.*,
+    Build-depends:  filepath==1.1.*, mtl==1.1.*,
                     bytestring==0.9.*,
                     utf8-string==0.3.* && >=0.3.1.1,
                     extensible-exceptions==0.1.* && >=0.1.1.0
@@ -44,6 +48,7 @@ Library
     Exposed-Modules:
                 System.Console.Haskeline
                 System.Console.Haskeline.Completion
+                System.Console.Haskeline.Encoding
                 System.Console.Haskeline.MonadException
                 System.Console.Haskeline.History
                 System.Console.Haskeline.IO
@@ -52,6 +57,7 @@ Library
                 System.Console.Haskeline.Command
                 System.Console.Haskeline.Command.Completion
                 System.Console.Haskeline.Command.History
+                System.Console.Haskeline.Directory
                 System.Console.Haskeline.Emacs
                 System.Console.Haskeline.InputT
                 System.Console.Haskeline.Key
@@ -70,11 +76,17 @@ Library
         install-includes: win_console.h
         cpp-options: -DMINGW
     } else {
-        Build-depends: terminfo==0.3.*, unix==2.2.* || ==2.3.*
+        Build-depends: unix==2.2.* || ==2.3.*
                         -- unix-2.3 doesn't build on ghc-6.8.1
+        Extra-libraries: iconv
         Other-modules: 
                 System.Console.Haskeline.Backend.Posix
+                System.Console.Haskeline.Backend.IConv
                 System.Console.Haskeline.Backend.DumbTerm
-                System.Console.Haskeline.Backend.Terminfo
+        if flag(terminfo) {
+            Build-depends: terminfo==0.3.*
+            Other-modules: System.Console.Haskeline.Backend.Terminfo
+            cpp-options: -DTERMINFO
+        }
     }
     ghc-options: -Wall
