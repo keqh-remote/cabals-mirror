@@ -1,5 +1,5 @@
 Name:            pointless-lenses
-Version:         0.0.3
+Version:         0.0.4
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -29,4 +29,4 @@ Library
         Generics.Pointless.Lenses.Examples.Examples,
         Generics.Pointless.Lenses
 
-  extensions: ScopedTypeVariables, FlexibleContexts, Rank2Types, TypeOperators, TypeFamilies
+  extensions: ScopedTypeVariables, FlexibleContexts, Rank2Types, TypeOperators, TypeFamilies, GADTs
