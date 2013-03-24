@@ -1,10 +1,10 @@
 name:               utf8-light
-version:            0.2
+version:            0.3
 cabal-version:      >= 1.3
 build-type:         Simple
 license:            BSD3
 license-file:       LICENSE
-category:           Text
+category:           Codec
 author:             Matt Morrow
 copyright:          Matt Morrow
 maintainer:         Matt Morrow <mjm2002@gmail.com>
@@ -16,9 +16,9 @@ description:        Lightweight UTF8 handling. Haddock docs are at
 library
   build-depends:      base, bytestring
   ghc-options:        -O2 -fglasgow-exts -fvia-C -optc-O2
-  extensions:
+  extensions:         CPP
   hs-source-dirs:     src
-  exposed-modules:    Encoding.UTF8.Light
+  exposed-modules:    Codec.Binary.UTF8.Light
 
 executable utf8flip
   executable:       utf8flip
