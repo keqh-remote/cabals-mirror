@@ -1,5 +1,5 @@
 name:               regexqq
-version:            0.3
+version:            0.4
 cabal-version:      >= 1.2
 build-type:         Simple
 license:            BSD3
@@ -7,7 +7,7 @@ license-file:       LICENSE
 category:           Text
 author:             Matt Morrow
 copyright:          Matt Morrow
-maintainer:         Matt Morrow <morrow@jypsis.com>
+maintainer:         Matt Morrow <mjm2002@gmail.com>
 homepage:           http://code.haskell.org/~morrow/code/haskell/regexqq
 stability:          unstable
 synopsis:           A quasiquoter for PCRE regexes.
