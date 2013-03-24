@@ -1,5 +1,5 @@
 Name:                socks
-Version:             0.1.0
+Version:             0.2.0
 Description:         Socks proxy (version 5) implementation.
 License:             BSD3
 License-file:        LICENSE
@@ -24,3 +24,7 @@ Library
                      Network.Socks5.Types
                      Network.Socks5.Command
   ghc-options:       -Wall -fno-warn-missing-signatures
+
+source-repository head
+  type: git
+  location: git://github.com/vincenthz/hs-socks
