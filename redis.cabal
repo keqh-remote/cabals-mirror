@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.10
+Version:             0.10.1
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -48,6 +48,9 @@ Description:
       \<path-to-your-redis-binary\>\". \*Warning!\* Don't do that if you
       have running redis instance on the default port and host! All
       data in databases 0 and 1 will be lost!
+	.
+	- Fixed issues with connection on OSX and missed exports in Redis
+      module - many thanks to Dan Colish
 	.
 
 Stability:           beta
