@@ -1,5 +1,5 @@
 name:           RNAwolf
-version:        0.3.0.2
+version:        0.3.1.0
 author:         Christian Hoener zu Siederdissen, Stephan H Bernhart, Peter F Stadler, Ivo L Hofacker
 copyright:      Christian Hoener zu Siederdissen, 2010-2011
 homepage:       http://www.tbi.univie.ac.at/software/rnawolf/
@@ -42,11 +42,15 @@ description:
                 the runtimes down (as has been done for the extended loops
                 without triplets).
                 .
-                /We have recently split the Biohaskell libraries into smaller
+                We have recently split the Biohaskell libraries into smaller
                 individual libraries. In addition, stacking, intermediate
                 arrays, fusion and newtype-wrapping did require a number of
                 changes. Please send a mail, if you encounter strange behaviour
-                or bugs./
+                or bugs.
+                .
+                Last Changes:
+                .
+                * fixed bugs introduced by bulge/interior/multi-loops
 
 Flag llvm
   description: build using llvm backend
@@ -64,7 +68,7 @@ library
     vector,
     PrimitiveArray,
     BiobaseXNA,
-    BiobaseTrainingData == 0.1.*,
+    BiobaseTrainingData >= 0.1.2.2,
     StatisticalMethods
   exposed-modules:
     BioInf.Keys
