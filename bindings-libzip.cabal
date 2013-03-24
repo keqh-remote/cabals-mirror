@@ -1,5 +1,5 @@
 Name:                bindings-libzip
-Version:             0.1.0.2
+Version:             0.1.0.3
 Synopsis:            Low level bindings to libzip.
 Description:
   This package provides low-level bindings to libzip library.
@@ -16,7 +16,7 @@ Category:            FFI, Foreign
 Build-type:          Simple
 
 Cabal-version:       >=1.2.3
-Tested-with:         GHC == 6.12.1, GHC == 7.0.1
+Tested-with:         GHC == 6.12.1, GHC == 7.0.1, GHC == 7.2.1
 
 Flag NoPkgConfig
   Description: Do not use pkg-config to check for library dependencies.
@@ -30,7 +30,7 @@ Library
         Bindings.LibZip
 
   Build-Depends:
-        base >= 4.0 && < 4.4
+        base >= 4.0 && < 4.5
       , bindings-DSL >= 1.0 && < 1.1
 
   if flag(NoPkgConfig)
