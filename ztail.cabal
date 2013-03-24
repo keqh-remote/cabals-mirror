@@ -1,5 +1,5 @@
 Name:		ztail
-Version:	1.0.1
+Version:	1.0.2
 Author:		Dylan Simon
 Maintainer:     dylan@dylex.net
 License:        BSD3
@@ -8,16 +8,21 @@ Description:	An even more improved version of xtail/tail -f, including inotify s
 Category:	System,Console
 Build-Type:	Simple
 Cabal-Version:	>= 1.6
-tested-with:    GHC == 6.8.2, GHC == 6.10.1
+tested-with:    GHC == 6.12.3
 extra-source-files: README
+
+Source-Repository head
+    Type:	darcs
+    Location:	http://dylex.net/src/ztail
 
 Flag INotify
     Description:	Enable inotify support
+    Default:		True
 
 Executable ztail
     Main-is:		Main.hs
     Other-Modules:	Util, Display, TailTypes, TailHandle, Tail
     Build-Depends:	base == 4.*, regex-compat, unix, time, old-locale, process, array
     if flag(inotify)
-        Build-Depends:	hinotify
+        Build-Depends:	hinotify == 0.3.2
         CPP-Options:	-DINOTIFY
