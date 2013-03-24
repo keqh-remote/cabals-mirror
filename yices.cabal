@@ -1,5 +1,5 @@
 name:                yices
-version:             0.0.0.11
+version:             0.0.0.12
 synopsis:            Haskell programming interface to Yices SMT solver
 description:         Incomplete (no bitvectors) syntax, parser, and inter
                      process communication to Yices from Haskell through pipe.
@@ -17,8 +17,7 @@ maintainer:          Ki Yung Ahn <kya@pdx.edu>
 build-type:          Simple
 extra-source-files:  Main.hs
 data-files:          README, ChangeLog
-build-depends:       base >= 4 && < 5, process, parsec,
-                     template-haskell, th-lift
+build-depends:       base >= 4 && < 5, process, parsec
 exposed-modules:     Math.SMT.Yices.Syntax,
                      Math.SMT.Yices.Parser,
                      Math.SMT.Yices.Pipe
