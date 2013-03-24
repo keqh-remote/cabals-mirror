@@ -1,5 +1,5 @@
 name:           text
-version:        0.2
+version:        0.3
 synopsis:       An efficient packed Unicode text type
 description:    An efficient packed Unicode text type.
 license:        BSD3
@@ -18,6 +18,7 @@ library
   exposed-modules:
     Data.Text
     Data.Text.Encoding
+    Data.Text.Encoding.Error
     Data.Text.Encoding.Fusion
     Data.Text.Foreign
     Data.Text.Fusion
@@ -31,9 +32,11 @@ library
     Data.Text.Internal
     Data.Text.Encoding.Fusion.Common
     Data.Text.Fusion.Internal
+    Data.Text.Fusion.CaseMapping
     Data.Text.Lazy.Internal
     Data.Text.Unsafe
     Data.Text.UnsafeChar
+    Data.Text.UnsafeShift
     Data.Text.Encoding.Utf8
     Data.Text.Encoding.Utf16
     Data.Text.Encoding.Utf32
