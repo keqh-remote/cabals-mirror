@@ -1,6 +1,6 @@
 Name:              local-search 
-Version:           0.0.1
-Synopsis:          AA first attempt at generalised local search within Haskell, for applications in combinatorial optimisation. 
+Version:           0.0.2
+Synopsis:          A first attempt at generalised local search within Haskell, for applications in combinatorial optimisation. 
 Description:       This library represents a first attempt at creating a generalised library for
                    local (non-exhaustive) search in Haskell.  It is based on work presented to
                    IFL2010, a draft of which is currently available on the homepage. The library
