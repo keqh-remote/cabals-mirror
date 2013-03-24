@@ -1,5 +1,5 @@
 Name:                mutable-iter
-Version:             0.6
+Version:             0.6.1
 Synopsis:            iteratees based upon mutable buffers
 Description:         Provides iteratees backed by mutable buffers.  This enables iteratees to run without any extra memory allocations.
 Homepage:            http://jwlato.webfactional.com/haskell/mutable-iter
