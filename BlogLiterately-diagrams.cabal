@@ -1,5 +1,5 @@
 name:                BlogLiterately-diagrams
-version:             0.1.0.1
+version:             0.1.1
 synopsis:            Include images in blog posts with inline diagrams code
 description:         A plugin for @BlogLiterately@ (<http://hackage.haskell.org/package/BlogLiterately>) which turns inline diagrams
                      code into images.
@@ -56,6 +56,7 @@ license-file:        LICENSE
 extra-source-files:  CHANGES
 author:              Brent Yorgey
 maintainer:          byorgey@cis.upenn.edu
+bug-reports:         http://hub.darcs.net/byorgey/BlogLiterately-diagrams/issues
 copyright:           Copyright 2012 Brent Yorgey
 category:            Web
 build-type:          Simple
@@ -63,7 +64,7 @@ cabal-version:       >=1.10
 
 source-repository head
   type:     darcs
-  location: http://code.haskell.org/~byorgey/code/BlogLiterately-diagrams
+  location: http://hub.darcs.net/byorgey/BlogLiterately-diagrams
 
 library
   default-language:    Haskell2010
@@ -71,9 +72,10 @@ library
   build-depends:       base >= 4.3 && < 4.7,
                        containers,
                        filepath,
-                       diagrams-cairo >= 0.5 && < 0.6,
+                       directory,
+                       diagrams-cairo >= 0.6 && < 0.7,
                        diagrams-builder ==0.2.*,
-                       diagrams-lib ==0.5.*,
+                       diagrams-lib >= 0.6 && < 0.7,
                        BlogLiterately ==0.5.*,
                        pandoc ==1.9.*,
                        safe ==0.3.*
