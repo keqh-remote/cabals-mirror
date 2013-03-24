@@ -1,14 +1,21 @@
 Name:                cabal-rpm
-Version:             0.6.0
+Version:             0.6.1
 Synopsis:            RPM package creator for Haskell Cabal-based packages
-Description:         This package generates RPM spec files from Haskell Cabal packages.
+Description:
+    This package generates RPM spec files from Haskell Cabal packages.
+    .
+    Recent changes:
+    .
+    * 0.6.1: fix bugs for "cabal-rpm pkg" unpacking and extra docs
+    .
+    * 0.6.0: new update and release for Cabal >= 1.10
 Homepage:            https://github.com/juhp/cabal-rpm
 Bug-reports:         https://github.com/juhp/cabal-rpm/issues
 License:             GPL-3
 License-file:        COPYING
 Author:              Bryan O'Sullivan <bos@serpentine.com>
 Maintainer:          Jens Petersen <juhp@community.haskell.org>
-Copyright:           2007-2008 Bryan O'Sullivan <bos@serpentine.com>
+Copyright:           2007-2008 Bryan O'Sullivan <bos@serpentine.com>,
                      2012 Jens Petersen <petersen@fedoraproject.org>
 Category:            Distribution
 Build-type:          Simple
