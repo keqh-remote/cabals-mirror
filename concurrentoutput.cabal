@@ -1,5 +1,5 @@
 Name:            concurrentoutput
-version:         0.2.0.1
+version:         0.2.0.2
 Category:        User Interfaces
 author:          Joachim Breitner
 maintainer:      Joachim Breitner <mail@joachim-breitner.de>
@@ -44,7 +44,7 @@ Build-Type:      Simple
 Library
         hs-source-dirs: src
         Exposed-Modules: System.Terminal.Concurrent
-        Build-Depends:  base > 3 && < 4
+        Build-Depends:  base > 3 && < 5
 
 source-repository head
   type:     darcs
