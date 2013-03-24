@@ -1,5 +1,5 @@
 name:           codemonitor
-version:        0.2
+version:        0.1
 synopsis:       Tool that automatically runs arbitrary commands when files change on disk.
 description:    Tool that automatically runs arbitrary commands when files change on disk.
 category:       Tool
@@ -17,18 +17,17 @@ Flag dev
 
 source-repository head
   type:     git
-  location: git://github.com/rickardlindberg/codemonitor.git
+  location: http://github.com/rickardlindberg/codemonitor
 
 executable codemonitor
   main-is:            Main.hs
   other-modules:      Config
                ,      Job
-               ,      Job.Types
+               ,      Layout
                ,      Monitor
                ,      Notifier
-               ,      Render.Graphics
-               ,      Render.Layout
-               ,      Render.Rect
+               ,      Rect
+               ,      Render
   hs-source-dirs:     src
   if flag(dev)
     ghc-options:      -fwarn-unused-imports -Werror
@@ -43,4 +42,3 @@ executable codemonitor
                ,      filepath
                ,      directory
                ,      time
-               ,      MissingH
