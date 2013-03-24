@@ -1,6 +1,6 @@
 name:           hledger
 -- Version is set by the makefile
-version:        0.6.1
+version:        0.7.0
 category:       Finance
 synopsis:       A command-line (or curses or web-based) double-entry accounting tool.
 description:
@@ -21,7 +21,7 @@ bug-reports:    http://code.google.com/p/hledger/issues
 stability:      experimental
 tested-with:    GHC==6.8, GHC==6.10
 cabal-version:  >= 1.2
-build-type:     Simple
+build-type:     Custom
 
 extra-tmp-files:
 extra-source-files:
@@ -33,7 +33,7 @@ flag vty
   description: enable the curses ui
   default:     False
 
-flag happs
+flag web
   description: enable the web ui
   default:     False
 
@@ -61,6 +61,7 @@ library
                  ,directory
                  ,filepath
                  ,haskell98
+                 ,old-time
                  ,parsec
                  ,time
                  ,utf8-string >= 0.3 && < 0.4
@@ -106,6 +107,7 @@ executable hledger
                  ,filepath
                  ,haskell98
                  ,mtl
+                 ,old-time
                  ,parsec
                  ,process
                  ,regexpr >= 0.5.1
@@ -114,6 +116,7 @@ executable hledger
                  ,time
                  ,utf8-string >= 0.3 && < 0.4
                  ,HUnit
+                 ,safe >= 0.2
 
   -- should set patchlevel here as in Makefile
   cpp-options:    -DPATCHLEVEL=0
@@ -122,18 +125,27 @@ executable hledger
     cpp-options: -DVTY
     other-modules:Commands.UI
     build-depends:
-                  vty >= 3.1.8.2 && < 3.2
+                  vty >= 4.0.0.1 && < 4.1
 
-  if flag(happs)
-    cpp-options: -DHAPPS
+  if flag(web)
+    cpp-options: -DWEB
     other-modules:Commands.Web
     build-depends:
-                  happstack >= 0.2 && < 0.3
-                 ,happstack-data >= 0.2 && < 0.3
-                 ,happstack-server >= 0.2 && < 0.3
-                 ,happstack-state >= 0.2 && < 0.3
+                  hsp
+                 ,hsx
                  ,xhtml >= 3000.2 && < 3000.3
+                 ,loli
+                 ,io-storage
+                 ,hack-contrib
+                 ,hack
+                 ,hack-handler-happstack
+                 ,happstack >= 0.3 && < 0.4
+                 ,happstack-data >= 0.3 && < 0.4
+                 ,happstack-server >= 0.3 && < 0.4
+                 ,happstack-state >= 0.3 && < 0.4
                  ,HTTP >= 4000.0 && < 4000.1
+                 ,applicative-extras
+
 
 -- source-repository head
 --   type:     darcs
@@ -144,3 +156,7 @@ executable hledger
 -- >= 1.6'.
 
 -- cf http://www.haskell.org/cabal/release/cabal-latest/doc/users-guide/authors.html
+
+-- Additional dependencies:
+-- required for make test: test-framework, test-framework-hunit
+-- required for make bench: tabular-0.1
