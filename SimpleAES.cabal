@@ -3,7 +3,7 @@ Synopsis:            Fast AES encryption/decryption for bytestrings
 Description:
   A simplified binding to Brian Gladman's AES implementation,
   including a copy of that implementation
-Version:             0.4.1
+Version:             0.4.2
 License:             BSD3
 License-file:        COPYING
 Copyright:           Copyright (c) 2009 University of Tromsø,
@@ -36,6 +36,7 @@ Library
   
   C-sources: cbits/aescrypt.c, cbits/aeskey.c, cbits/aestab.c,
              cbits/aes_modes.c, cbits/ctr_inc.c
+  CC-options: -std=gnu99
   Include-Dirs: cbits
   Hs-Source-Dirs: src
   
