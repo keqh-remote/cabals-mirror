@@ -1,5 +1,5 @@
 Name:          contstuff
-Version:       1.2.3
+Version:       1.2.4
 Category:      Control, Monads
 Synopsis:      Fast, easy to use CPS-based monad transformers
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -29,7 +29,7 @@ Library
     Build-depends:
         base >= 4 && <= 5,
         transformers >= 0.2.2.0
-    GHC-Options: -W -O2
+    GHC-Options: -W
     Exposed-modules:
         Control.ContStuff
         Control.ContStuff.Classes
