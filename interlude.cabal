@@ -1,11 +1,11 @@
 Name:         interlude
-Version:      0.1.1
+Version:      0.1.2
 License:      GPL
 License-File: LICENSE
 
 Author:       Ketil Malde <ketil@malde.org>
 Category:     Development
-Stability:    Alpa
+Stability:    Alpha
 Synopsis:     Replaces some Prelude functions for enhanced error reporting
 Description:  Interlude is a CPP include file, and a module which you can use instead of the
               (often implicit) Prelude import.  It replaces some partial
@@ -14,7 +14,7 @@ Description:  Interlude is a CPP include file, and a module which you can use in
               location can be printed out.
 Homepage:     http://malde.org/~ketil/
 
-Build-Depends:  base
+Build-Depends:  base >= 4 && < 5
 Build-Type:     Simple
 Tested-With:    GHC==6.8.2
 
