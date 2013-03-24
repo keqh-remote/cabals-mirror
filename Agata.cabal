@@ -1,5 +1,5 @@
 Name:		Agata
-version:	0.2.0
+version:	0.2.1
 cabal-Version:  >= 1.6
 build-type:     Simple
 license:        BSD3
@@ -19,7 +19,7 @@ Library
     template-haskell<2.5, 
     QuickCheck>=2.1&&<2.2, 
     containers, 
-    tagged
+    tagged==0.0
   Exposed-modules:
     Test.Agata,
     Test.AgataTH,
