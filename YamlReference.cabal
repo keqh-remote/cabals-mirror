@@ -1,14 +1,14 @@
 Name:                YamlReference
-Version:             0.6
+Version:             0.7
 Cabal-Version:       >= 1.2
 License:             LGPL
 License-File:        lgpl.txt
-Copyright:           Oren Ben-Kiki 2007
+Copyright:           Oren Ben-Kiki 2007, 2008
 Author:              Oren Ben-Kiki
 Maintainer:          yaml-oren@ben-kiki.org
 Stability:           alpha
 Homepage:            www.ben-kiki.org/oren/YamlReference
-Package-Url:         www.ben-kiki.org/oren/YamlReference/YamlReference-0.6.tar.gz
+Package-Url:         www.ben-kiki.org/oren/YamlReference/YamlReference-0.7.tar.gz
 Category:            Text
 Synopsis:            YAML reference implementation
 Description:         This package contains \"the\" reference YAML syntax parser
@@ -21,10 +21,9 @@ Description:         This package contains \"the\" reference YAML syntax parser
                      possible to build interesting tools on top of it, such as
                      the @yeast2html@ YAML syntax visualizer (contained in this
                      package), pretty printers, etc. This is a streaming parser
-                     that will \"immediately\" begin to generate output. The
-                     memory leak that existed in previous version has been
-                     plugged. Package was updated for Cabal version 1.2 and a
-                     bug handling indentation in mapping keys was fixed.
+                     that will \"immediately\" begin to generate output. Updated
+                     to lift the 1K key size limit inside flow mapping for
+                     complete JSON compatibility.
 Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/b-as-line-feed.input tests/b-as-line-feed.output
                      tests/b-carriage-return.input
@@ -42,8 +41,8 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/b-chomped-last.t=keep.output
                      tests/b-chomped-last.t=strip.input
                      tests/b-chomped-last.t=strip.output
-                     tests/b-generic.cr.input tests/b-generic.cr.output
-                     tests/b-generic.crlf.input tests/b-generic.crlf.output
+                     tests/b-generic.cr.input tests/b-generic.crlf.input
+                     tests/b-generic.crlf.output tests/b-generic.cr.output
                      tests/b-generic.invalid.input
                      tests/b-generic.invalid.output tests/b-generic.lf.input
                      tests/b-generic.lf.output tests/b-generic.nl.input
@@ -68,14 +67,16 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/b-l-folded-as-space.output
                      tests/b-l-folded-specific.n=4.s=plain.invalid.input
                      tests/b-l-folded-specific.n=4.s=plain.invalid.output
+                     tests/b-l-folded-specific.n=4.s=plain.ls.input
                      tests/b-l-folded-specific.n=4.s=plain.ls-lf-ls.input
                      tests/b-l-folded-specific.n=4.s=plain.ls-lf-ls.output
-                     tests/b-l-folded-specific.n=4.s=plain.ls.input
                      tests/b-l-folded-specific.n=4.s=plain.ls.output
                      tests/b-l-folded-trimmed.n=4.s=plain.invalid.input
                      tests/b-l-folded-trimmed.n=4.s=plain.invalid.output
                      tests/b-l-folded-trimmed.n=4.s=plain.lf-ls-lf.input
                      tests/b-l-folded-trimmed.n=4.s=plain.lf-ls-lf.output
+                     tests/b-line-feed.input tests/b-line-feed.output
+                     tests/b-line-separator.input tests/b-line-separator.output
                      tests/b-l-literal-next.n=4.input
                      tests/b-l-literal-next.n=4.invalid.input
                      tests/b-l-literal-next.n=4.invalid.output
@@ -83,9 +84,7 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/b-l-spaced.n=4.input
                      tests/b-l-spaced.n=4.invalid.input
                      tests/b-l-spaced.n=4.invalid.output
-                     tests/b-l-spaced.n=4.output tests/b-line-feed.input
-                     tests/b-line-feed.output tests/b-line-separator.input
-                     tests/b-line-separator.output tests/b-next-line.input
+                     tests/b-l-spaced.n=4.output tests/b-next-line.input
                      tests/b-next-line.output tests/b-normalized.invalid.input
                      tests/b-normalized.invalid.output
                      tests/b-normalized.lf.input tests/b-normalized.lf.output
@@ -99,17 +98,17 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-alias.output tests/c-anchor.input
                      tests/c-anchor.output
                      tests/c-b+block-header.n=2.s=folded.i.input
-                     tests/c-b+block-header.n=2.s=folded.i.output
                      tests/c-b+block-header.n=2.s=folded.im.input
                      tests/c-b+block-header.n=2.s=folded.im.output
                      tests/c-b+block-header.n=2.s=folded.imt.input
                      tests/c-b+block-header.n=2.s=folded.imt.output
                      tests/c-b+block-header.n=2.s=folded.invalid.input
                      tests/c-b+block-header.n=2.s=folded.invalid.output
+                     tests/c-b+block-header.n=2.s=folded.i.output
                      tests/c-b+block-header.n=2.s=folded.it.input
-                     tests/c-b+block-header.n=2.s=folded.it.output
                      tests/c-b+block-header.n=2.s=folded.itm.input
                      tests/c-b+block-header.n=2.s=folded.itm.output
+                     tests/c-b+block-header.n=2.s=folded.it.output
                      tests/c-byte-order-mark.invalid.input
                      tests/c-byte-order-mark.invalid.output
                      tests/c-byte-order-mark.utf16be.input
@@ -135,12 +134,12 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-document-end.output tests/c-document-start.input
                      tests/c-document-start.invalid.input
                      tests/c-document-start.invalid.output
-                     tests/c-document-start.output tests/c-double-quote.input
-                     tests/c-double-quote.output
+                     tests/c-document-start.output
                      tests/c-double-quoted.n=4.c=flow-out.input
                      tests/c-double-quoted.n=4.c=flow-out.invalid.input
                      tests/c-double-quoted.n=4.c=flow-out.invalid.output
                      tests/c-double-quoted.n=4.c=flow-out.output
+                     tests/c-double-quote.input tests/c-double-quote.output
                      tests/c-escape.input tests/c-escape.invalid.input
                      tests/c-escape.invalid.output tests/c-escape.output
                      tests/c-flow-indicator.collect-entry.input
@@ -173,6 +172,8 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-flow-mapping.n=4.c=flow-in.compact.output
                      tests/c-flow-mapping.n=4.c=flow-in.invalid.input
                      tests/c-flow-mapping.n=4.c=flow-in.invalid.output
+                     tests/c-flow-mapping.n=4.c=flow-in.long.input
+                     tests/c-flow-mapping.n=4.c=flow-in.long.output
                      tests/c-flow-mapping.n=4.c=flow-in.spaced.input
                      tests/c-flow-mapping.n=4.c=flow-in.spaced.output
                      tests/c-flow-sequence.n=4.c=flow-in.compact.input
@@ -225,20 +226,6 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-indicator.single-quote.input
                      tests/c-indicator.single-quote.output
                      tests/c-indicator.tag.input tests/c-indicator.tag.output
-                     tests/c-l+folded.n=2.indent.input
-                     tests/c-l+folded.n=2.indent.output
-                     tests/c-l+folded.n=2.invalid.input
-                     tests/c-l+folded.n=2.invalid.output
-                     tests/c-l+folded.n=2.simple.input
-                     tests/c-l+folded.n=2.simple.output
-                     tests/c-l+literal.n=2.invalid.input
-                     tests/c-l+literal.n=2.invalid.output
-                     tests/c-l+literal.n=2.simple.input
-                     tests/c-l+literal.n=2.simple.output
-                     tests/c-l+literal.n=2.strip-indent.input
-                     tests/c-l+literal.n=2.strip-indent.output
-                     tests/c-l+literal.n=2.strip.input
-                     tests/c-l+literal.n=2.strip.output
                      tests/c-l-block-map-explicit-entry.n=2.input
                      tests/c-l-block-map-explicit-entry.n=2.invalid.input
                      tests/c-l-block-map-explicit-entry.n=2.invalid.output
@@ -256,20 +243,33 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-l-block-seq-entry.n=2.input
                      tests/c-l-block-seq-entry.n=2.invalid.input
                      tests/c-l-block-seq-entry.n=2.invalid.output
-                     tests/c-l-block-seq-entry.n=2.output tests/c-literal.input
-                     tests/c-literal.output tests/c-mapping-end.input
-                     tests/c-mapping-end.output tests/c-mapping-key.input
-                     tests/c-mapping-key.output tests/c-mapping-start.input
-                     tests/c-mapping-start.output tests/c-mapping-value.input
-                     tests/c-mapping-value.output
+                     tests/c-l-block-seq-entry.n=2.output
+                     tests/c-l+folded.n=2.indent.input
+                     tests/c-l+folded.n=2.indent.output
+                     tests/c-l+folded.n=2.invalid.input
+                     tests/c-l+folded.n=2.invalid.output
+                     tests/c-l+folded.n=2.simple.input
+                     tests/c-l+folded.n=2.simple.output tests/c-literal.input
+                     tests/c-literal.output tests/c-l+literal.n=2.invalid.input
+                     tests/c-l+literal.n=2.invalid.output
+                     tests/c-l+literal.n=2.simple.input
+                     tests/c-l+literal.n=2.simple.output
+                     tests/c-l+literal.n=2.strip-indent.input
+                     tests/c-l+literal.n=2.strip-indent.output
+                     tests/c-l+literal.n=2.strip.input
+                     tests/c-l+literal.n=2.strip.output
+                     tests/c-mapping-end.input tests/c-mapping-end.output
+                     tests/c-mapping-key.input tests/c-mapping-key.output
+                     tests/c-mapping-start.input tests/c-mapping-start.output
+                     tests/c-mapping-value.input tests/c-mapping-value.output
                      tests/c-named-tag-handle.input
                      tests/c-named-tag-handle.invalid.input
                      tests/c-named-tag-handle.invalid.output
                      tests/c-named-tag-handle.output
-                     tests/c-nb-comment-text.comment-text.input
-                     tests/c-nb-comment-text.comment-text.output
                      tests/c-nb-comment-text.comment.input
                      tests/c-nb-comment-text.comment.output
+                     tests/c-nb-comment-text.comment-text.input
+                     tests/c-nb-comment-text.comment-text.output
                      tests/c-nb-comment-text.invalid.input
                      tests/c-nb-comment-text.invalid.output
                      tests/c-non-specific-tag.input
@@ -290,24 +290,24 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-ns-flow-map-adjacent-value.n=4.c=flow-in.invalid.output
                      tests/c-ns-flow-map-adjacent-value.n=4.c=flow-in.spaced.input
                      tests/c-ns-flow-map-adjacent-value.n=4.c=flow-in.spaced.output
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.compact.input
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.compact.output
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.empty.input
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.empty.output
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.invalid.input
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.invalid.output
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.spaced.input
-                     tests/c-ns-flow-map-implicit-json.n=4.c=flow-in.spaced.output
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.compact.input
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.compact.output
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.empty.input
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.empty.output
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.invalid.input
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.invalid.output
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.spaced.input
+                     tests/c-ns-flow-map-json-key-entry.n=4.c=flow-in.spaced.output
                      tests/c-ns-flow-map-separate-value.n=4.c=flow-in.empty.input
                      tests/c-ns-flow-map-separate-value.n=4.c=flow-in.empty.output
                      tests/c-ns-flow-map-separate-value.n=4.c=flow-in.invalid.input
                      tests/c-ns-flow-map-separate-value.n=4.c=flow-in.invalid.output
                      tests/c-ns-flow-map-separate-value.n=4.c=flow-in.value.input
                      tests/c-ns-flow-map-separate-value.n=4.c=flow-in.value.output
-                     tests/c-ns-flow-map-single-json.n=4.c=flow-in.input
-                     tests/c-ns-flow-map-single-json.n=4.c=flow-in.invalid.input
-                     tests/c-ns-flow-map-single-json.n=4.c=flow-in.invalid.output
-                     tests/c-ns-flow-map-single-json.n=4.c=flow-in.output
+                     tests/c-ns-flow-pair-json-key-entry.n=4.c=flow-in.input
+                     tests/c-ns-flow-pair-json-key-entry.n=4.c=flow-in.invalid.input
+                     tests/c-ns-flow-pair-json-key-entry.n=4.c=flow-in.invalid.output
+                     tests/c-ns-flow-pair-json-key-entry.n=4.c=flow-in.output
                      tests/c-ns-local-tag-prefix.input
                      tests/c-ns-local-tag-prefix.invalid.input
                      tests/c-ns-local-tag-prefix.invalid.output
@@ -342,6 +342,24 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-ns-tag-property.shorthand.output
                      tests/c-ns-tag-property.verbatim.input
                      tests/c-ns-tag-property.verbatim.output
+                     tests/count-spaces.n=0.0.input
+                     tests/count-spaces.n=0.0.output
+                     tests/count-spaces.n=0.1.input
+                     tests/count-spaces.n=0.1.output
+                     tests/count-spaces.n=0.2.input
+                     tests/count-spaces.n=0.2.output
+                     tests/count-spaces.n=-1.0.input
+                     tests/count-spaces.n=1.0.input
+                     tests/count-spaces.n=-1.0.output
+                     tests/count-spaces.n=1.0.output
+                     tests/count-spaces.n=-1.1.input
+                     tests/count-spaces.n=1.1.input
+                     tests/count-spaces.n=-1.1.output
+                     tests/count-spaces.n=1.1.output
+                     tests/count-spaces.n=-1.2.input
+                     tests/count-spaces.n=1.2.input
+                     tests/count-spaces.n=-1.2.output
+                     tests/count-spaces.n=1.2.output
                      tests/c-primary-tag-handle.input
                      tests/c-primary-tag-handle.invalid.input
                      tests/c-primary-tag-handle.invalid.output
@@ -368,12 +386,6 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-quoted-quote.output tests/c-reserved.at.input
                      tests/c-reserved.at.output tests/c-reserved.backtick.input
                      tests/c-reserved.backtick.output
-                     tests/c-s-simple-json-key.just.input
-                     tests/c-s-simple-json-key.just.output
-                     tests/c-s-simple-json-key.long.input
-                     tests/c-s-simple-json-key.long.output
-                     tests/c-s-simple-json-key.short.input
-                     tests/c-s-simple-json-key.short.output
                      tests/c-secondary-tag-handle.input
                      tests/c-secondary-tag-handle.invalid.input
                      tests/c-secondary-tag-handle.invalid.output
@@ -381,11 +393,17 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-sequence-end.input tests/c-sequence-end.output
                      tests/c-sequence-entry.input tests/c-sequence-entry.output
                      tests/c-sequence-start.input tests/c-sequence-start.output
-                     tests/c-single-quote.input tests/c-single-quote.output
+                     tests/c-s-implicit-json-key.just.input
+                     tests/c-s-implicit-json-key.just.output
+                     tests/c-s-implicit-json-key.long.input
+                     tests/c-s-implicit-json-key.long.output
+                     tests/c-s-implicit-json-key.short.input
+                     tests/c-s-implicit-json-key.short.output
                      tests/c-single-quoted.n=4.c=flow-out.input
                      tests/c-single-quoted.n=4.c=flow-out.invalid.input
                      tests/c-single-quoted.n=4.c=flow-out.invalid.output
                      tests/c-single-quoted.n=4.c=flow-out.output
+                     tests/c-single-quote.input tests/c-single-quote.output
                      tests/c-style-indicator.s=folded.input
                      tests/c-style-indicator.s=folded.output
                      tests/c-style-indicator.s=literal.input
@@ -404,36 +422,22 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/c-verbatim-tag.invalid.input
                      tests/c-verbatim-tag.invalid.output
                      tests/c-verbatim-tag.output
-                     tests/count-spaces.n=-1.0.input
-                     tests/count-spaces.n=-1.0.output
-                     tests/count-spaces.n=-1.1.input
-                     tests/count-spaces.n=-1.1.output
-                     tests/count-spaces.n=-1.2.input
-                     tests/count-spaces.n=-1.2.output
-                     tests/count-spaces.n=0.0.input
-                     tests/count-spaces.n=0.0.output
-                     tests/count-spaces.n=0.1.input
-                     tests/count-spaces.n=0.1.output
-                     tests/count-spaces.n=0.2.input
-                     tests/count-spaces.n=0.2.output
-                     tests/count-spaces.n=1.0.input
-                     tests/count-spaces.n=1.0.output
-                     tests/count-spaces.n=1.1.input
-                     tests/count-spaces.n=1.1.output
-                     tests/count-spaces.n=1.2.input
-                     tests/count-spaces.n=1.2.output
                      tests/detect-collection-indentation.n=1.input
                      tests/detect-collection-indentation.n=1.output
                      tests/detect-inline-indentation.input
                      tests/detect-inline-indentation.output
                      tests/detect-scalar-indentation.n=2.input
                      tests/detect-scalar-indentation.n=2.output
-                     tests/e-no-document.input tests/e-no-document.output
                      tests/e-node.input tests/e-node.output
+                     tests/e-no-document.input tests/e-no-document.output
                      tests/e-scalar.input tests/e-scalar.output
+                     tests/l-block-map-explicit-value.n=2.input
+                     tests/l-block-map-explicit-value.n=2.invalid.input
+                     tests/l-block-map-explicit-value.n=2.invalid.output
+                     tests/l-block-map-explicit-value.n=2.output
                      tests/l+block-mapping.n=-1.input
-                     tests/l+block-mapping.n=-1.output
                      tests/l+block-mapping.n=1.input
+                     tests/l+block-mapping.n=-1.output
                      tests/l+block-mapping.n=1.output
                      tests/l+block-mapping.n=2.invalid.input
                      tests/l+block-mapping.n=2.invalid.output
@@ -441,10 +445,6 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/l+block-sequence.n=1.output
                      tests/l+block-sequence.n=2.invalid.input
                      tests/l+block-sequence.n=2.invalid.output
-                     tests/l-block-map-explicit-value.n=2.input
-                     tests/l-block-map-explicit-value.n=2.invalid.input
-                     tests/l-block-map-explicit-value.n=2.invalid.output
-                     tests/l-block-map-explicit-value.n=2.output
                      tests/l-chomped-empty.n=4.t=clip.input
                      tests/l-chomped-empty.n=4.t=clip.output
                      tests/l-chomped-empty.n=4.t=keep.input
@@ -477,26 +477,26 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/l-document-prefix.empty.output
                      tests/l-document-prefix.invalid.input
                      tests/l-document-prefix.invalid.output
-                     tests/l-document-suffix.input
-                     tests/l-document-suffix.invalid.input
-                     tests/l-document-suffix.invalid.output
-                     tests/l-document-suffix.output
                      tests/l-documents.explicit.input
                      tests/l-documents.explicit.output
                      tests/l-documents.implicit.input
                      tests/l-documents.implicit.output
+                     tests/l-document-suffix.input
+                     tests/l-document-suffix.invalid.input
+                     tests/l-document-suffix.invalid.output
+                     tests/l-document-suffix.output
+                     tests/l-empty.n=4.s=literal.indent.input
                      tests/l-empty.n=4.s=literal.indent-lt.input
                      tests/l-empty.n=4.s=literal.indent-lt.output
+                     tests/l-empty.n=4.s=literal.indent.output
                      tests/l-empty.n=4.s=literal.indent-sp.invalid.input
                      tests/l-empty.n=4.s=literal.indent-sp.invalid.output
-                     tests/l-empty.n=4.s=literal.indent.input
-                     tests/l-empty.n=4.s=literal.indent.output
+                     tests/l-empty.n=4.s=plain.indent.input
                      tests/l-empty.n=4.s=plain.indent-lt.input
                      tests/l-empty.n=4.s=plain.indent-lt.output
+                     tests/l-empty.n=4.s=plain.indent.output
                      tests/l-empty.n=4.s=plain.indent-sp.input
                      tests/l-empty.n=4.s=plain.indent-sp.output
-                     tests/l-empty.n=4.s=plain.indent.input
-                     tests/l-empty.n=4.s=plain.indent.output
                      tests/l-explicit-document.invalid.input
                      tests/l-explicit-document.invalid.output
                      tests/l-explicit-document.literal.input
@@ -517,9 +517,9 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/l-forbidden.end-space.output
                      tests/l-forbidden.invalid.input
                      tests/l-forbidden.invalid.output
+                     tests/l-forbidden.start.input
                      tests/l-forbidden.start-lf.input
                      tests/l-forbidden.start-lf.output
-                     tests/l-forbidden.start.input
                      tests/l-forbidden.start.output
                      tests/l-implicit-document.invalid.input
                      tests/l-implicit-document.invalid.output
@@ -624,12 +624,12 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-anchor-char.output tests/ns-anchor-name.input
                      tests/ns-anchor-name.invalid.input
                      tests/ns-anchor-name.invalid.output
-                     tests/ns-anchor-name.output tests/ns-ascii-letter.Z.input
-                     tests/ns-ascii-letter.Z.output
-                     tests/ns-ascii-letter.a.input
+                     tests/ns-anchor-name.output tests/ns-ascii-letter.a.input
                      tests/ns-ascii-letter.a.output
                      tests/ns-ascii-letter.invalid.input
-                     tests/ns-ascii-letter.invalid.output tests/ns-char.input
+                     tests/ns-ascii-letter.invalid.output
+                     tests/ns-ascii-letter.Z.input
+                     tests/ns-ascii-letter.Z.output tests/ns-char.input
                      tests/ns-char.invalid.input tests/ns-char.invalid.output
                      tests/ns-char.output tests/ns-dec-digit.0.input
                      tests/ns-dec-digit.0.output tests/ns-dec-digit.1.input
@@ -692,10 +692,10 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-esc-double-quote.output tests/ns-esc-escape.input
                      tests/ns-esc-escape.output tests/ns-esc-form-feed.input
                      tests/ns-esc-form-feed.output
-                     tests/ns-esc-horizontal-tab.t.input
-                     tests/ns-esc-horizontal-tab.t.output
                      tests/ns-esc-horizontal-tab.tab.input
                      tests/ns-esc-horizontal-tab.tab.output
+                     tests/ns-esc-horizontal-tab.t.input
+                     tests/ns-esc-horizontal-tab.t.output
                      tests/ns-esc-line-feed.input tests/ns-esc-line-feed.output
                      tests/ns-esc-line-separator.input
                      tests/ns-esc-line-separator.output
@@ -714,60 +714,63 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-flow-content.n=4.c=flow-in.json.output
                      tests/ns-flow-content.n=4.c=flow-in.yaml.input
                      tests/ns-flow-content.n=4.c=flow-in.yaml.output
+                     tests/ns-flow-map-empty-key-entry-key-entry.n=4.c=flow-in.output
+                     tests/ns-flow-map-empty-key-entry.n=4.c=flow-in.input
+                     tests/ns-flow-map-empty-key-entry.n=4.c=flow-in.invalid.input
+                     tests/ns-flow-map-empty-key-entry.n=4.c=flow-in.invalid.output
+                     tests/ns-flow-map-empty-key-entry.n=4.c=flow-in.output
                      tests/ns-flow-map-entry.n=4.c=flow-in.explicit.input
                      tests/ns-flow-map-entry.n=4.c=flow-in.explicit.output
                      tests/ns-flow-map-entry.n=4.c=flow-in.implicit.input
                      tests/ns-flow-map-entry.n=4.c=flow-in.implicit.output
                      tests/ns-flow-map-entry.n=4.c=flow-in.invalid.input
                      tests/ns-flow-map-entry.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-map-implicit-empty.n=4.c=flow-in.input
-                     tests/ns-flow-map-implicit-empty.n=4.c=flow-in.invalid.input
-                     tests/ns-flow-map-implicit-empty.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-map-implicit-empty.n=4.c=flow-in.output
-                     tests/ns-flow-map-implicit-entry.n=4.c=flow-in.empty.input
-                     tests/ns-flow-map-implicit-entry.n=4.c=flow-in.empty.output
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.empty.input
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.empty.output
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.json.input
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.json.output
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.value.input
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.value.output
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.yaml.input
+                     tests/ns-flow-map-explicit-entry.n=4.c=flow-in.yaml.output
                      tests/ns-flow-map-implicit-entry.n=4.c=flow-in.invalid.input
                      tests/ns-flow-map-implicit-entry.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-map-implicit-entry.n=4.c=flow-in.json.input
-                     tests/ns-flow-map-implicit-entry.n=4.c=flow-in.json.output
-                     tests/ns-flow-map-implicit-entry.n=4.c=flow-in.yaml.input
-                     tests/ns-flow-map-implicit-entry.n=4.c=flow-in.yaml.output
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.compact.input
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.compact.output
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.empty.input
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.empty.output
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.invalid.input
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.spaced.input
-                     tests/ns-flow-map-implicit-yaml.n=4.c=flow-in.spaced.output
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.empty.input
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.empty.output
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.invalid.input
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.json.input
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.json.output
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.yaml.input
-                     tests/ns-flow-map-single-entry.n=4.c=flow-in.yaml.output
-                     tests/ns-flow-map-single-pair.n=4.c=flow-in.explicit.input
-                     tests/ns-flow-map-single-pair.n=4.c=flow-in.explicit.output
-                     tests/ns-flow-map-single-pair.n=4.c=flow-in.implicit.input
-                     tests/ns-flow-map-single-pair.n=4.c=flow-in.implicit.output
-                     tests/ns-flow-map-single-pair.n=4.c=flow-in.invalid.input
-                     tests/ns-flow-map-single-pair.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-map-single-yaml.n=4.c=flow-in.input
-                     tests/ns-flow-map-single-yaml.n=4.c=flow-in.invalid.input
-                     tests/ns-flow-map-single-yaml.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-map-single-yaml.n=4.c=flow-in.output
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.compact.input
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.compact.output
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.empty.input
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.empty.output
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.invalid.input
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.invalid.output
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.spaced.input
+                     tests/ns-flow-map-yaml-key-entry.n=4.c=flow-in.spaced.output
                      tests/ns-flow-node.n=4.c=flow-in.alias.input
                      tests/ns-flow-node.n=4.c=flow-in.alias.output
                      tests/ns-flow-node.n=4.c=flow-in.invalid.input
                      tests/ns-flow-node.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-node.n=4.c=flow-in.tag.input
-                     tests/ns-flow-node.n=4.c=flow-in.tag.output
                      tests/ns-flow-node.n=4.c=flow-in.tagged.input
                      tests/ns-flow-node.n=4.c=flow-in.tagged.output
+                     tests/ns-flow-node.n=4.c=flow-in.tag.input
+                     tests/ns-flow-node.n=4.c=flow-in.tag.output
                      tests/ns-flow-node.n=4.c=flow-in.untagged.input
                      tests/ns-flow-node.n=4.c=flow-in.untagged.output
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.empty.input
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.empty.output
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.invalid.input
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.invalid.output
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.json.input
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.json.output
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.yaml.input
+                     tests/ns-flow-pair-entry.n=4.c=flow-in.yaml.output
+                     tests/ns-flow-pair.n=4.c=flow-in.explicit.input
+                     tests/ns-flow-pair.n=4.c=flow-in.explicit.output
+                     tests/ns-flow-pair.n=4.c=flow-in.implicit.input
+                     tests/ns-flow-pair.n=4.c=flow-in.implicit.output
+                     tests/ns-flow-pair.n=4.c=flow-in.invalid.input
+                     tests/ns-flow-pair.n=4.c=flow-in.invalid.output
+                     tests/ns-flow-pair-yaml-key-entry.n=4.c=flow-in.input
+                     tests/ns-flow-pair-yaml-key-entry.n=4.c=flow-in.invalid.input
+                     tests/ns-flow-pair-yaml-key-entry.n=4.c=flow-in.invalid.output
+                     tests/ns-flow-pair-yaml-key-entry.n=4.c=flow-in.output
                      tests/ns-flow-seq-entry.n=4.c=flow-in.invalid.input
                      tests/ns-flow-seq-entry.n=4.c=flow-in.invalid.output
                      tests/ns-flow-seq-entry.n=4.c=flow-in.node.input
@@ -782,10 +785,10 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-flow-yaml-node.n=4.c=flow-in.alias.output
                      tests/ns-flow-yaml-node.n=4.c=flow-in.invalid.input
                      tests/ns-flow-yaml-node.n=4.c=flow-in.invalid.output
-                     tests/ns-flow-yaml-node.n=4.c=flow-in.tag.input
-                     tests/ns-flow-yaml-node.n=4.c=flow-in.tag.output
                      tests/ns-flow-yaml-node.n=4.c=flow-in.tagged.input
                      tests/ns-flow-yaml-node.n=4.c=flow-in.tagged.output
+                     tests/ns-flow-yaml-node.n=4.c=flow-in.tag.input
+                     tests/ns-flow-yaml-node.n=4.c=flow-in.tag.output
                      tests/ns-flow-yaml-node.n=4.c=flow-in.untagged.input
                      tests/ns-flow-yaml-node.n=4.c=flow-in.untagged.output
                      tests/ns-global-tag-prefix.input
@@ -793,12 +796,12 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-global-tag-prefix.invalid.output
                      tests/ns-global-tag-prefix.output
                      tests/ns-hex-digit.6.input tests/ns-hex-digit.6.output
-                     tests/ns-hex-digit.B.input tests/ns-hex-digit.B.output
-                     tests/ns-hex-digit.D.input tests/ns-hex-digit.D.output
-                     tests/ns-hex-digit.F.input tests/ns-hex-digit.F.output
                      tests/ns-hex-digit.a.input tests/ns-hex-digit.a.output
+                     tests/ns-hex-digit.B.input tests/ns-hex-digit.B.output
                      tests/ns-hex-digit.c.input tests/ns-hex-digit.c.output
+                     tests/ns-hex-digit.D.input tests/ns-hex-digit.D.output
                      tests/ns-hex-digit.e.input tests/ns-hex-digit.e.output
+                     tests/ns-hex-digit.F.input tests/ns-hex-digit.F.output
                      tests/ns-hex-digit.invalid.input
                      tests/ns-hex-digit.invalid.output
                      tests/ns-l-block-map-entry.n=2.explicit.input
@@ -821,60 +824,60 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-l-in-line-sequence.n=3.invalid.input
                      tests/ns-l-in-line-sequence.n=3.invalid.output
                      tests/ns-l-in-line-sequence.n=3.output
-                     tests/ns-plain-char.c=flow-in.a.input
-                     tests/ns-plain-char.c=flow-in.a.output
-                     tests/ns-plain-char.c=flow-in.ac.input
-                     tests/ns-plain-char.c=flow-in.ac.output
                      tests/ns-plain-char.c=flow-in.acc.input
                      tests/ns-plain-char.c=flow-in.acc.output
+                     tests/ns-plain-char.c=flow-in.ac.input
+                     tests/ns-plain-char.c=flow-in.ac.output
+                     tests/ns-plain-char.c=flow-in.a.input
+                     tests/ns-plain-char.c=flow-in.a.output
                      tests/ns-plain-char.c=flow-in.c.input
                      tests/ns-plain-char.c=flow-in.c.output
-                     tests/ns-plain-char.c=flow-in.m.input
-                     tests/ns-plain-char.c=flow-in.m.output
                      tests/ns-plain-char.c=flow-in.ma.input
                      tests/ns-plain-char.c=flow-in.ma.output
                      tests/ns-plain-char.c=flow-in.mc.input
                      tests/ns-plain-char.c=flow-in.mc.output
+                     tests/ns-plain-char.c=flow-in.m.input
                      tests/ns-plain-char.c=flow-in.mmcc.input
                      tests/ns-plain-char.c=flow-in.mmcc.output
                      tests/ns-plain-char.c=flow-in.mms.input
                      tests/ns-plain-char.c=flow-in.mms.output
+                     tests/ns-plain-char.c=flow-in.m.output
                      tests/ns-plain-char.c=flow-in.s.input
                      tests/ns-plain-char.c=flow-in.s.output
                      tests/ns-plain-first.c=flow-in.a.input
                      tests/ns-plain-first.c=flow-in.a.output
                      tests/ns-plain-first.c=flow-in.c.input
                      tests/ns-plain-first.c=flow-in.c.output
-                     tests/ns-plain-first.c=flow-in.d.input
-                     tests/ns-plain-first.c=flow-in.d.output
                      tests/ns-plain-first.c=flow-in.da.input
                      tests/ns-plain-first.c=flow-in.da.output
                      tests/ns-plain-first.c=flow-in.dc.input
                      tests/ns-plain-first.c=flow-in.dc.output
+                     tests/ns-plain-first.c=flow-in.d.input
+                     tests/ns-plain-first.c=flow-in.d.output
                      tests/ns-plain-first.c=flow-in.ds.input
                      tests/ns-plain-first.c=flow-in.ds.output
-                     tests/ns-plain-first.c=flow-in.i.input
-                     tests/ns-plain-first.c=flow-in.i.output
                      tests/ns-plain-first.c=flow-in.ia.input
                      tests/ns-plain-first.c=flow-in.ia.output
-                     tests/ns-plain-first.c=flow-in.k.input
-                     tests/ns-plain-first.c=flow-in.k.output
+                     tests/ns-plain-first.c=flow-in.i.input
+                     tests/ns-plain-first.c=flow-in.i.output
                      tests/ns-plain-first.c=flow-in.ka.input
                      tests/ns-plain-first.c=flow-in.ka.output
                      tests/ns-plain-first.c=flow-in.kc.input
                      tests/ns-plain-first.c=flow-in.kc.output
+                     tests/ns-plain-first.c=flow-in.k.input
+                     tests/ns-plain-first.c=flow-in.k.output
                      tests/ns-plain-first.c=flow-in.ks.input
                      tests/ns-plain-first.c=flow-in.ks.output
                      tests/ns-plain-first.c=flow-in.m.input
                      tests/ns-plain-first.c=flow-in.m.output
                      tests/ns-plain-first.c=flow-in.s.input
                      tests/ns-plain-first.c=flow-in.s.output
-                     tests/ns-plain-first.c=flow-in.v.input
-                     tests/ns-plain-first.c=flow-in.v.output
                      tests/ns-plain-first.c=flow-in.va.input
                      tests/ns-plain-first.c=flow-in.va.output
                      tests/ns-plain-first.c=flow-in.vc.input
                      tests/ns-plain-first.c=flow-in.vc.output
+                     tests/ns-plain-first.c=flow-in.v.input
+                     tests/ns-plain-first.c=flow-in.v.output
                      tests/ns-plain-first.c=flow-in.vs.input
                      tests/ns-plain-first.c=flow-in.vs.output
                      tests/ns-plain-first.c=flow-out.m.input
@@ -883,6 +886,22 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-plain-multi.n=4.c=flow-in.invalid.input
                      tests/ns-plain-multi.n=4.c=flow-in.invalid.output
                      tests/ns-plain-multi.n=4.c=flow-in.output
+                     tests/ns-plain.n=4.c=flow-in.input
+                     tests/ns-plain.n=4.c=flow-in.output
+                     tests/ns-plain.n=4.c=flow-key.input
+                     tests/ns-plain.n=4.c=flow-key.invalid.input
+                     tests/ns-plain.n=4.c=flow-key.invalid.output
+                     tests/ns-plain.n=4.c=flow-key.output
+                     tests/ns-plain-safe.c=flow-in.mapping-start.input
+                     tests/ns-plain-safe.c=flow-in.mapping-start.output
+                     tests/ns-plain-safe.c=flow-in.v.input
+                     tests/ns-plain-safe.c=flow-in.v.output
+                     tests/ns-plain-safe.c=flow-out.a.input
+                     tests/ns-plain-safe.c=flow-out.a.output
+                     tests/ns-plain-safe.c=flow-out.c.input
+                     tests/ns-plain-safe.c=flow-out.c.output
+                     tests/ns-plain-safe.c=flow-out.mapping-start.input
+                     tests/ns-plain-safe.c=flow-out.mapping-start.output
                      tests/ns-plain-safe-in.a.input
                      tests/ns-plain-safe-in.a.output
                      tests/ns-plain-safe-in.c.input
@@ -899,26 +918,10 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-plain-safe-out.mapping-start.output
                      tests/ns-plain-safe-out.v.input
                      tests/ns-plain-safe-out.v.output
-                     tests/ns-plain-safe.c=flow-in.mapping-start.input
-                     tests/ns-plain-safe.c=flow-in.mapping-start.output
-                     tests/ns-plain-safe.c=flow-in.v.input
-                     tests/ns-plain-safe.c=flow-in.v.output
-                     tests/ns-plain-safe.c=flow-out.a.input
-                     tests/ns-plain-safe.c=flow-out.a.output
-                     tests/ns-plain-safe.c=flow-out.c.input
-                     tests/ns-plain-safe.c=flow-out.c.output
-                     tests/ns-plain-safe.c=flow-out.mapping-start.input
-                     tests/ns-plain-safe.c=flow-out.mapping-start.output
                      tests/ns-plain-single.c=flow-key.invalid.input
                      tests/ns-plain-single.c=flow-key.invalid.output
                      tests/ns-plain-single.c=flow-out.input
                      tests/ns-plain-single.c=flow-out.output
-                     tests/ns-plain.n=4.c=flow-in.input
-                     tests/ns-plain.n=4.c=flow-in.output
-                     tests/ns-plain.n=4.c=flow-key.input
-                     tests/ns-plain.n=4.c=flow-key.invalid.input
-                     tests/ns-plain.n=4.c=flow-key.invalid.output
-                     tests/ns-plain.n=4.c=flow-key.output
                      tests/ns-reserved-directive.input
                      tests/ns-reserved-directive.invalid.input
                      tests/ns-reserved-directive.invalid.output
@@ -941,12 +944,12 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/ns-s-flow-seq-entries.n=4.c=flow-in.multi.output
                      tests/ns-s-flow-seq-entries.n=4.c=flow-in.single.input
                      tests/ns-s-flow-seq-entries.n=4.c=flow-in.single.output
-                     tests/ns-s-simple-yaml-key.just.input
-                     tests/ns-s-simple-yaml-key.just.output
-                     tests/ns-s-simple-yaml-key.long.input
-                     tests/ns-s-simple-yaml-key.long.output
-                     tests/ns-s-simple-yaml-key.short.input
-                     tests/ns-s-simple-yaml-key.short.output
+                     tests/ns-s-implicit-yaml-key.just.input
+                     tests/ns-s-implicit-yaml-key.just.output
+                     tests/ns-s-implicit-yaml-key.long.input
+                     tests/ns-s-implicit-yaml-key.long.output
+                     tests/ns-s-implicit-yaml-key.short.input
+                     tests/ns-s-implicit-yaml-key.short.output
                      tests/ns-single-char.input
                      tests/ns-single-char.invalid.input
                      tests/ns-single-char.invalid.output
@@ -1027,10 +1030,10 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-b-comment.invalid.output
                      tests/s-b-comment.sol-text.input
                      tests/s-b-comment.sol-text.output
-                     tests/s-b-comment.spaces-text.input
-                     tests/s-b-comment.spaces-text.output
                      tests/s-b-comment.spaces.input
                      tests/s-b-comment.spaces.output
+                     tests/s-b-comment.spaces-text.input
+                     tests/s-b-comment.spaces-text.output
                      tests/s-b-double-escaped.input
                      tests/s-b-double-escaped.invalid.input
                      tests/s-b-double-escaped.invalid.output
@@ -1059,23 +1062,23 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-ignored-prefix.n=4.s=plain.output
                      tests/s-ignored-prefix.n=4.s=single.input
                      tests/s-ignored-prefix.n=4.s=single.output
+                     tests/s-indent-le.n=0.input tests/s-indent-le.n=0.output
                      tests/s-indent-le.n=-1.invalid.input
                      tests/s-indent-le.n=-1.invalid.output
-                     tests/s-indent-le.n=0.input tests/s-indent-le.n=0.output
                      tests/s-indent-le.n=4.input
                      tests/s-indent-le.n=4.invalid.input
                      tests/s-indent-le.n=4.invalid.output
                      tests/s-indent-le.n=4.output
-                     tests/s-indent-lt.n=-1.invalid.input
-                     tests/s-indent-lt.n=-1.invalid.output
                      tests/s-indent-lt.n=0.invalid.input
                      tests/s-indent-lt.n=0.invalid.output
+                     tests/s-indent-lt.n=-1.invalid.input
+                     tests/s-indent-lt.n=-1.invalid.output
                      tests/s-indent-lt.n=4.input
                      tests/s-indent-lt.n=4.invalid.input
                      tests/s-indent-lt.n=4.invalid.output
-                     tests/s-indent-lt.n=4.output tests/s-indent.n=-1.input
-                     tests/s-indent.n=-1.output tests/s-indent.n=0.input
-                     tests/s-indent.n=0.output tests/s-indent.n=4.input
+                     tests/s-indent-lt.n=4.output tests/s-indent.n=0.input
+                     tests/s-indent.n=0.output tests/s-indent.n=-1.input
+                     tests/s-indent.n=-1.output tests/s-indent.n=4.input
                      tests/s-indent.n=4.invalid.input
                      tests/s-indent.n=4.invalid.output
                      tests/s-indent.n=4.output
@@ -1103,8 +1106,16 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-l+block-indented.n=2.c=block-out.literal.output
                      tests/s-l+block-indented.n=2.c=block-out.sequence.input
                      tests/s-l+block-indented.n=2.c=block-out.sequence.output
-                     tests/s-l+block-node.n=-1.c=block-out.input
-                     tests/s-l+block-node.n=-1.c=block-out.output
+                     tests/s-l+block-node.n=0.c=block-in.invalid.input
+                     tests/s-l+block-node.n=0.c=block-in.invalid.output
+                     tests/s-l+block-node.n=-1.c=block-in.input
+                     tests/s-l+block-node.n=-1.c=block-in.output
+                     tests/s-l+block-node.n=-1.c=block-out.1.input
+                     tests/s-l+block-node.n=-1.c=block-out.1.output
+                     tests/s-l+block-node.n=-1.c=block-out.2.input
+                     tests/s-l+block-node.n=-1.c=block-out.2.output
+                     tests/s-l+block-node.n=-1.c=block-out.3.input
+                     tests/s-l+block-node.n=-1.c=block-out.3.output
                      tests/s-l+block-node.n=2.c=block-out.block.input
                      tests/s-l+block-node.n=2.c=block-out.block.output
                      tests/s-l+block-node.n=2.c=block-out.flow.input
@@ -1115,10 +1126,6 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-l+block-scalar.n=2.c=block-out.folded.output
                      tests/s-l+block-scalar.n=2.c=block-out.literal.input
                      tests/s-l+block-scalar.n=2.c=block-out.literal.output
-                     tests/s-l+flow-in-block.n=2.input
-                     tests/s-l+flow-in-block.n=2.invalid.input
-                     tests/s-l+flow-in-block.n=2.invalid.output
-                     tests/s-l+flow-in-block.n=2.output
                      tests/s-l-comments.invalid.input
                      tests/s-l-comments.invalid.output
                      tests/s-l-comments.multi.input
@@ -1136,6 +1143,10 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-l-flow-folded.n=4.lf.output
                      tests/s-l-flow-folded.n=4.sp-lf-lf.input
                      tests/s-l-flow-folded.n=4.sp-lf-lf.output
+                     tests/s-l+flow-in-block.n=2.input
+                     tests/s-l+flow-in-block.n=2.invalid.input
+                     tests/s-l+flow-in-block.n=2.invalid.output
+                     tests/s-l+flow-in-block.n=2.output
                      tests/s-nb-folded-text.n=4.input
                      tests/s-nb-folded-text.n=4.invalid.input
                      tests/s-nb-folded-text.n=4.invalid.output
@@ -1152,26 +1163,6 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-ns-double-next.n=4.invalid.input
                      tests/s-ns-double-next.n=4.invalid.output
                      tests/s-ns-double-next.n=4.output
-                     tests/s-ns-flow-map-explicit-empty.n=4.c=flow-in.input
-                     tests/s-ns-flow-map-explicit-empty.n=4.c=flow-in.invalid.input
-                     tests/s-ns-flow-map-explicit-empty.n=4.c=flow-in.invalid.output
-                     tests/s-ns-flow-map-explicit-empty.n=4.c=flow-in.output
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.empty.input
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.empty.output
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.json.input
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.json.output
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.value.input
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.value.output
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.yaml.input
-                     tests/s-ns-flow-map-explicit-entry.n=4.c=flow-in.yaml.output
-                     tests/s-ns-flow-map-explicit-json.n=4.c=flow-in.input
-                     tests/s-ns-flow-map-explicit-json.n=4.c=flow-in.invalid.input
-                     tests/s-ns-flow-map-explicit-json.n=4.c=flow-in.invalid.output
-                     tests/s-ns-flow-map-explicit-json.n=4.c=flow-in.output
-                     tests/s-ns-flow-map-explicit-yaml.n=4.c=flow-in.input
-                     tests/s-ns-flow-map-explicit-yaml.n=4.c=flow-in.invalid.input
-                     tests/s-ns-flow-map-explicit-yaml.n=4.c=flow-in.invalid.output
-                     tests/s-ns-flow-map-explicit-yaml.n=4.c=flow-in.output
                      tests/s-ns-plain-chars.c=flow-in.input
                      tests/s-ns-plain-chars.c=flow-in.invalid.input
                      tests/s-ns-plain-chars.c=flow-in.invalid.output
