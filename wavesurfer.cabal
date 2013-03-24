@@ -1,5 +1,5 @@
 name:               wavesurfer
-version:            0.0.3
+version:            0.0.4
 synopsis:           Parse WaveSurfer files
 description:        Parse WaveSurfer files
 license:            BSD3
@@ -20,8 +20,6 @@ library
   build-depends:    base >= 3,
                     binary == 0.4.*,
                     bytestring == 0.9.*,
-                    bytestring-lexing == 0.2.*,
+                    bytestring-lexing == 0.2,
                     bytestring-show == 0.2.*,
                     delimited-text == 0.0.*
-
-  ghc-options:      -O2 -funbox-strict-fields 
