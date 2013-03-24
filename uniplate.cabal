@@ -1,7 +1,7 @@
 Cabal-Version:      >= 1.2
 Build-Type:         Simple
 Name:               uniplate
-Version:            1.5.1
+Version:            1.6
 Copyright:          2006-10, Neil Mitchell
 Maintainer:         ndmitchell@gmail.com
 Homepage:           http://community.haskell.org/~ndm/uniplate/
@@ -30,6 +30,8 @@ Description:
     .
     In addition, some users may want to make use of the following modules:
     .
+    * "Data.Generics.Uniplate.Zipper" - a zipper built on top of Uniplate instances.
+    .
     * "Data.Generics.SYB" - users transitioning from the Scrap Your Boilerplate library.
     .
     * "Data.Generics.Compos" - users transitioning from the Compos library.
@@ -46,19 +48,20 @@ Flag ghc_6_10
 
 Library
     if flag(ghc_6_10)
-        build-depends: base >=4 && <5, mtl, containers, syb
+        build-depends: base >=4 && <5, containers, syb
     else
-        build-depends: base >=3 && <4, mtl, containers
+        build-depends: base >=3 && <4, containers
 
     Exposed-modules:
         Data.Generics.Str
         Data.Generics.Compos
         Data.Generics.SYB
-        Data.Generics.Uniplate.Operations
-        Data.Generics.Uniplate.Direct
-        Data.Generics.Uniplate.Typeable
         Data.Generics.Uniplate.Data
         Data.Generics.Uniplate.DataOnly
+        Data.Generics.Uniplate.Direct
+        Data.Generics.Uniplate.Operations
+        Data.Generics.Uniplate.Typeable
+        Data.Generics.Uniplate.Zipper
 
         -- DEPRECATED
         Data.Generics.Uniplate
