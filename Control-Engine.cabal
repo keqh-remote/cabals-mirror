@@ -1,5 +1,5 @@
 name:		Control-Engine
-version:	1.1.0.0
+version:	1.1.0.1
 license:	BSD3
 license-file:	LICENSE
 author:		Thomas DuBuisson <thomas.dubuisson@gmail.com>
@@ -16,14 +16,8 @@ cabal-version:	>= 1.6
 tested-with:	GHC == 6.10.3
 extra-source-files:
 
-Flag small_base
-  Description: Choose the split-up base package.
-
 Library
-  if flag(small_base)
-    Build-Depends: base == 4.*, stm, concurrent, BoundedChan >= 1.0.0.2
-  else
-    Build-Depends: base == 4.*, stm, BoundedChan >= 1.0.0.2
+  Build-Depends: base == 4.*, stm, BoundedChan >= 1.0.0.2
   hs-source-dirs:
   exposed-modules: Control.Engine, Control.ThreadPool
   ghc-options:
