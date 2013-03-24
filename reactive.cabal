@@ -1,5 +1,5 @@
 Name:                reactive
-Version:             0.9.8
+Version:             0.9.9
 Synopsis:            Simple foundation for functional reactive programming
 Category:            reactivity, FRP
 Description:
@@ -32,7 +32,7 @@ Build-Type:          Simple
 Extra-Source-Files:
 Library
     Build-Depends:       base, old-time, random, QuickCheck < 2.0,
-                         TypeCompose>=0.6.0, vector-space>=0.5,
+                         TypeCompose>=0.6.3, vector-space>=0.5,
                          unamb>=0.1.2, checkers >= 0.1.2,
                          category-extras >= 0.53.5
     -- This library uses the ImpredicativeTypes flag, and it depends
