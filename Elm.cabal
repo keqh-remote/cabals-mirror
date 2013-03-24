@@ -1,6 +1,6 @@
 
 Name:                Elm
-Version:             0.1.1.2
+Version:             0.1.1.3
 Synopsis:            The Elm compiler and server.
 Description:         Elm aims to make client-side web-development more pleasant.
                      It is a statically/strongly typed, functional reactive
@@ -40,7 +40,8 @@ Executable elm
   ghc-options:	       -O3 -rtsopts -auto-all -caf-all
   Build-depends:       base >=4.2 && <5, containers >= 0.3,
                        transformers >= 0.2, mtl >= 2, parsec >= 3.1.1,
-                       blaze-html == 0.5.0.*, blaze-markup == 0.5.1.*, deepseq
+                       blaze-html == 0.5.0.*, blaze-markup == 0.5.1.*,
+                       deepseq
   
   -- Modules not exported by this package.
   -- Other-modules:       
@@ -59,7 +60,8 @@ Executable elm-server
   ghc-options:	       -O3 -rtsopts -auto-all -caf-all
   Build-depends:       base >=4.2 && <5, containers >= 0.3, transformers >= 0.2,
                        mtl >= 2, parsec >= 3.1.1, blaze-html == 0.5.0.*,
-                       HTTP >= 4000, happstack-server == 7.0.2
+                       HTTP >= 4000, happstack-server == 7.0.2,
+                       deepseq
 
 Library
   exposed-modules:     Language.Elm
