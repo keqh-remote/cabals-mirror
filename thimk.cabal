@@ -1,5 +1,5 @@
 name: thimk
-version: 0.3
+version: 0.3.1
 cabal-version: >= 1.2
 build-type: Simple
 license: BSD3
@@ -32,7 +32,7 @@ tested-with: GHC == 6.8.3, GHC == 6.12.1
 Executable thimk
   main-is: thimk.hs
   other-modules: PCDB
-  build-depends: base < 5, parseargs >= 0.1.1,
+  build-depends: base >= 4.2 && < 5, parseargs >= 0.1.1,
                  edit-distance >= 0.1, phonetic-code >= 0.1,
                  sqlite >= 0.5.1
 
