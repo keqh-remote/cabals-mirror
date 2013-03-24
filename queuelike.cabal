@@ -1,6 +1,5 @@
-
 name:		queuelike
-version:	1.0.0
+version:	1.0.1
 synopsis:	A library of queuelike data structures, both functional and stateful.
 description:	Contains several implementations of data structures implementing a /single-in, single-out/ paradigm.  Intended to be a better, more useful replacement for pqueue-mtl.
 tested-with:	GHC
@@ -20,16 +19,16 @@ Exposed-modules:
 	Data.Queue.Instances
 	Data.Queue.Stack
 	Data.Queue.Queue
-	Data.Queue.SkewQueue
-	Data.Queue.SoftHeap
-	Data.Queue.IntQueue
+--	Data.Queue.SkewQueue
+--	Data.Queue.SoftHeap
+--	Data.Queue.IntQueue
 	Data.MQueue.Class
 	Data.MQueue.Heap
 	Data.MQueue.SyncQueue
-	Data.MQueue.ChanQ
+	Data.MQueue.Chan
 	Data.MQueue
 other-modules: 
 	Data.Queue.QueueHelpers
 	Data.MQueue.MonadHelpers
-	Data.Queue.Numeric
+--	Data.Queue.Numeric
 ghc-options:
