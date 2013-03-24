@@ -1,5 +1,5 @@
 Name:           tagsoup-ht
-Version:        0.2
+Version:        0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <tagsoup@henning-thielemann.de>
@@ -12,28 +12,38 @@ Description:
    Here I present my own parser,
    which I find (of course) more comprehensible and easier to extend.
    It also handles XML declarations and CDATA sections correctly.
+   This package is abandoned and will be renamed to Tagchup.
 Build-Type:  Simple
-Build-Depends:  base, mtl, tagsoup >=0.6 && <0.7, data-accessor >=0.1 && <0.2
--- mtl for StateT monad transformer
---    you can omit it and the module Text.HTML.TagSoup.HT.Parser.MTL,
---    falling back to Text.HTML.TagSoup.HT.Parser.Custom
+Build-Depends:
+   xml-basic >=0.0.1 && <0.1,
+   transformers >=0.0 && <0.2,
+      -- 'transformers' for StateT monad transformer
+      --    you can omit it and the module Text.HTML.TagSoup.HT.Parser.MTL,
+      --    falling back to Text.HTML.TagSoup.HT.Parser.Custom
+   explicit-exception >=0.1 && <0.2,
+   tagsoup >=0.6 && <0.7,
+   bytestring >=0.9.0.1 && <0.10,
+   containers >=0.1 && <0.3,
+   data-accessor >=0.2 && <0.3,
+   utility-ht >=0.0.1 && <0.1,
+   base >=3 && <4
 GHC-Options: -Wall
 Hs-Source-Dirs: src
 Exposed-Modules:
    Text.HTML.TagSoup.HT.ParserNM
    Text.HTML.TagSoup.HT.Parser
+   Text.HTML.TagSoup.HT.Format
    Text.HTML.TagSoup.HT.Tag
+   Text.HTML.TagSoup.HT.Tag.Match
    Text.HTML.TagSoup.HT.PositionTag
-   Text.HTML.TagSoup.HT.Position
-   Text.HTML.TagSoup.HT.Match
-   Text.HTML.TagSoup.HT.HTMLChar
+   Text.HTML.TagSoup.HT.Process
 
 Other-Modules:
    Text.HTML.TagSoup.HT.Parser.Combinator
    Text.HTML.TagSoup.HT.Parser.Custom
    Text.HTML.TagSoup.HT.Parser.MTL
    Text.HTML.TagSoup.HT.Parser.Status
-   Text.HTML.TagSoup.HT.Utility
+   Text.HTML.TagSoup.HT.Parser.Stream
 
 Executable: tagsouptest
 GHC-Options: -Wall
@@ -41,6 +51,12 @@ Hs-Source-Dirs: src, .
 Other-Modules:
    Text.HTML.TagSoup.HT.Test
 Main-Is:     example/Test.hs
+
+Executable: tagsoupspeed
+GHC-Options: -Wall
+Hs-Source-Dirs: src, .
+Build-Depends: old-time >=1.0 && <1.1
+Main-Is:     example/Speed.hs
 
 Executable: validate-tagsoup
 GHC-Options: -Wall
