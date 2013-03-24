@@ -1,5 +1,5 @@
 Name:               nntp
-Version:            0.0.1
+Version:            0.0.2
 Cabal-Version:      >= 1.2
 Build-Type:         Simple
 License:            LGPL
@@ -11,15 +11,19 @@ Copyright:          (c) 2009 Maciej Piechotka
 Synopsis:           Library to connect to an NNTP Server
 Description:        This library allows to connect to NNTP server.
 Category:           Network
-Extra-Source-Files: test/TestRFC977.hs
 
 Library
   Exposed-Modules: Network.NNTP,
-                   Network.NNTP.RFC977
+                   Network.NNTP.Common,
+                   Network.NNTP.Core,
+                   Network.NNTP.Internal,
+                   Network.NNTP.ParserHelpers
   Build-Depends:   base < 5 && >= 4,
                    bytestring,
-                   haskell98,
+                   mtl,
                    network,
+                   old-locale,
+                   parsec >= 3.0,
                    time
   HS-Source-Dirs:  src
   GHC-Options:     -Wall
