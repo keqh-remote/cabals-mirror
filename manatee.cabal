@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.1.0
+version:		0.1.1
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -73,7 +73,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .               
  IRC channel: irc.freenode.net 6667 <##manatee>
  .
- Mailing-List: manatee-user@googlegroups.com manatee-develop@googlegroups.com
+ Mailing-List: manatee-user\@googlegroups.com manatee-develop\@googlegroups.com
  .
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
@@ -109,7 +109,7 @@ library
      other-modules: 
 	 
 executable manatee
-     build-depends: base >=4 && < 5, manatee-core >= 0.0.4, containers >= 0.3.0.0, unix >= 2.4.0.0,
+     build-depends: base >=4 && < 5, manatee-core >= 0.0.5, containers >= 0.3.0.0, unix >= 2.4.0.0,
                     mtl >= 1.1.0.2, gtk-serialized-event >= 0.12.0, text >= 0.7.1.0, utf8-string,
                     gtk >= 0.12.0, dbus-client >= 0.3 && < 0.4, 
                     stm, cairo >= 0.12.0, directory, dbus-core, template-haskell
