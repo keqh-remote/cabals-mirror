@@ -1,5 +1,5 @@
 Name:               hmatrix
-Version:            0.11.0.1
+Version:            0.11.0.3
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
@@ -21,14 +21,14 @@ Description:        Purely functional interface to basic linear algebra
                     .
                     - "Numeric.LinearAlgebra": everything + instances of standard Haskell numeric classes
 Category:           Math
-tested-with:        GHC ==6.10.4, GHC ==6.12.1, GHC ==6.12.3
+tested-with:        GHC ==6.10.4, GHC ==6.12.1, GHC ==6.12.3, GHC ==7.0.1, GHC==7.0.2
 
 cabal-version:      >=1.6
 
 build-type:         Custom
 
 extra-source-files: lib/Numeric/LinearAlgebra/Tests/quickCheckCompat.h
-                    configure configure.hs THANKS INSTALL CHANGES
+                    Config.hs THANKS INSTALL CHANGES
 extra-tmp-files:    hmatrix.buildinfo
 
 extra-source-files: examples/tests.hs
@@ -164,12 +164,14 @@ library
     if impl(ghc < 6.10.2)
         cpp-options: -DFINIT
 
+    if impl(ghc >= 7.0.1)
+        cpp-options: -DFINIT
+
     if flag(finit)
         cpp-options: -DFINIT
 
     if impl(ghc == 7.0.1)
         cpp-options: -DNONORMVTEST
-        cpp-options: -DFINIT
 
     if flag(mkl)
       if arch(x86_64)
@@ -179,7 +181,9 @@ library
 
     if os(OSX)
         extra-lib-dirs: /opt/local/lib/
-        include-dirs: /opt/local/include
+        include-dirs: /opt/local/include/
+        extra-lib-dirs: /usr/local/lib/
+        include-dirs: /usr/local/include/
         extra-libraries: gsl
         if arch(i386)
             cc-options: -arch i386
