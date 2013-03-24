@@ -1,5 +1,5 @@
 name: ncurses
-version: 0.2.2
+version: 0.2.3
 license: GPL-3
 license-file: license.txt
 author: John Millikin <jmillikin@gmail.com>
@@ -34,7 +34,7 @@ description:
   &#x20;       drawString \"(press q to quit)\"
   &#x20;       moveCursor 0 0
   &#x20;   render
-  &#x20;   waitFor w (\ev -> ev == EventCharacter \'q\' || ev == EventCharacter \'Q\')
+  &#x20;   waitFor w (\\ev -> ev == EventCharacter \'q\' || ev == EventCharacter \'Q\')
   .
   waitFor :: Window -> (Event -> Bool) -> Curses ()
   waitFor w p = loop where
@@ -56,7 +56,7 @@ source-repository head
 source-repository head
   type: bazaar
   location: https://john-millikin.com/branches/haskell-ncurses/0.2/
-  tag: haskell-ncurses_0.2.2
+  tag: haskell-ncurses_0.2.3
 
 library
   hs-source-dirs: lib
@@ -71,7 +71,9 @@ library
   build-tools:
     c2hs >= 0.15
 
-  extra-libraries: panel ncursesw
+  -- Do not use pkg-config to find ncurses libraries, because the .pc files
+  -- are missing or broken in many installations.
+  extra-libraries: panelw ncursesw
 
   c-sources: cbits/hsncurses-shim.c
 
