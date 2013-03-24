@@ -1,5 +1,5 @@
 Name:                bitset
-Version:             0.6
+Version:             1.0
 Synopsis:            A functional data structure for efficient membership testing.
 Description:
         A /bit set/ maintains a record of members from a type that can be mapped
@@ -11,10 +11,13 @@ License-file:        LICENSE
 Author:              Denis Bueno
 Maintainer:          Denis Bueno <dbueno@gmail.com>
 Stability:           provisional
+Cabal-Version:       >= 1.2.3
 Build-Depends:       base, QuickCheck
 Build-type:          Simple
 
 Exposed-modules:     Data.BitSet
-Ghc-options:         -Wall
+Build-depends:       base >= 4.0.0
+Extensions:          ScopedTypeVariables, DeriveDataTypeable
+Ghc-options:         -Wall -O2
 Ghc-prof-options:    -prof -auto-all
 Extra-source-files:  tests/Properties.hs
