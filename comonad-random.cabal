@@ -1,5 +1,5 @@
 name:                comonad-random
-version:             0.1.0
+version:             0.1.1
 synopsis:            Comonadic interface for random values
 description:         Comonadic interface for random values
 category:            Control
