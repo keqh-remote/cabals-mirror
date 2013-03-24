@@ -1,5 +1,6 @@
 cabal-version: >= 1.2
 name: bindings
+homepage: http://bitbucket.org/mauricio/bindings
 synopsis:
   Low level bindings for foreign libraries
   following community driven guidelines
@@ -19,14 +20,13 @@ description:
   portability; and developers of higher-level modules can put their
   efforts where they are needed, with a reliable set of low-level code
   at hand.
-version: 0.0.1
+version: 0.1
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
 author: Maurício C. Antunes
 build-type: Simple
 category: FFI
-
 library
   hs-source-dirs: src
   extensions:
