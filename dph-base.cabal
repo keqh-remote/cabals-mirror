@@ -1,12 +1,14 @@
 Name:           dph-base
-Version:        0.5.1.1
+Version:        0.6.0.1
 License:        BSD3
 License-File:   LICENSE
 Author:         The DPH Team
 Maintainer:     Ben Lippmeier <benl@cse.unsw.edu.au>
 Homepage:       http://www.haskell.org/haskellwiki/GHC/Data_Parallel_Haskell
 Category:       Data Structures
-Synopsis:       Common utilities and config for Data Parallel Haskell
+Synopsis:       Data Parallel Haskell common config and debugging functions.
+Description:    Common configuration, debugging and utilities.
+
 
 Cabal-Version:  >= 1.6
 Build-Type:     Simple
@@ -18,15 +20,16 @@ Flag DTrace
 Library
   Exposed-Modules:
         Data.Array.Parallel.Base
-        Data.Array.Parallel.Stream
+        Data.Array.Parallel.Base.Text
         Data.Array.Parallel.Base.DTrace
         Data.Array.Parallel.Base.TracePrim
+        Data.Array.Parallel.Pretty
+        Data.Array.Parallel.Array
 
   Other-Modules:
         Data.Array.Parallel.Base.Config
         Data.Array.Parallel.Base.Debug
-        Data.Array.Parallel.Base.Util
-        Data.Array.Parallel.Base.Text
+        Data.Array.Parallel.Base.Tag
 
   Include-Dirs:
         include
@@ -38,14 +41,19 @@ Library
 
   Extensions: 
          TypeFamilies, GADTs, RankNTypes,
-         BangPatterns, MagicHash, UnboxedTuples, TypeOperators, CPP
+         BangPatterns, MagicHash, UnboxedTuples, TypeOperators, CPP,
+         MultiParamTypeClasses, FlexibleInstances
 
-  GHC-Options: -Odph -funbox-strict-fields -fcpr-off 
+  GHC-Options:
+        -Odph
+        -funbox-strict-fields -fcpr-off 
 
   Build-Depends:  
-        base     == 4.4.*,
+        base     == 4.5.*,
         ghc-prim == 0.2.*,
-        array    == 0.3.*,
+        array    == 0.4.*,
         random   == 1.0.*,
-        vector   == 0.7.*
+        vector   == 0.9.*,
+        pretty   == 1.1.*
+
           
