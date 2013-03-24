@@ -1,5 +1,5 @@
 name:            download-curl
-version:         0.1
+version:         0.1.1
 homepage:        http://code.haskell.org/~dons/code/download-curl
 synopsis:        High-level file download based on URLs
 description:     High-level file download based on URLs
@@ -8,7 +8,7 @@ description:     High-level file download based on URLs
  tags, XML, RSS or Atom feeds or JSON, using the curl network library.
  .
  Importing the library:
- .                 
+ .
  > import Network.Curl.Download
  .
  Loading a webpage as a "ByteString":
