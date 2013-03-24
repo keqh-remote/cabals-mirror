@@ -1,5 +1,5 @@
 name:                SGdemo
-version:             1.0.1
+version:             1.1
 synopsis:            An example of using the SG and OpenGL libraries
 description:         This program serves as a demonstration of the functions of the SG library
                      (to be found on Hackage:
@@ -14,7 +14,7 @@ author:              Neil Brown
 maintainer:          neil@twistedsquare.com
 copyright:           Copyright (c) 2009, Neil Brown
 stability:           Provisional
-build-depends:       base > 3 && < 5, SG, OpenGL < 2.3, GLUT < 2.2
+build-depends:       base > 3 && < 5, SG, GLUT >=2.2 && <2.3, OpenGL >=2.4 && <2.5
 build-type:          Simple
 
 executable:          sgdemo
