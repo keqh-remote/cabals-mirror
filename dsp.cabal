@@ -1,18 +1,18 @@
 Name:             dsp
-Version:          0.1
+Version:          0.2
 License:          GPL
-Copyright:        Matt Donadio, 2003
-Author:           Matt Donadio <m.p.donadio@ieee.org>
+License-File:     LICENSE
+Copyright:        Matthew Donadio, 2003
+Author:           Matthew Donadio <m.p.donadio@ieee.org>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Stability:        Experimental
 Homepage:         http://haskelldsp.sourceforge.net/
-Synopsis:         Haskell Digital Signal Processing
-Description:      Digital Signal Processing, Fourier Transform, Linear Algebra, Interpolation
+Synopsis:         Digital Signal Processing
+Description:      Digital Signal Processing, Fourier Transform, Filter design, Frequency estimation, Interpolation, Linear Algebra, Polynomials
 Category:         Sound
 Tested-With:      GHC
 Build-Depends:    base
-GHC-Options:      -O2
---  -Wall
+GHC-Options:      -O2 -Wall
 Exposed-modules:
    DSP.Basic
    DSP.Convolution
