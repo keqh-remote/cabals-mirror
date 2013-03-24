@@ -1,5 +1,5 @@
 Name:                gloss-examples
-Version:             1.3.1.2
+Version:             1.3.2.1
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -134,5 +134,13 @@ Executable gloss-bitmap
         bmp            == 1.1.*
   Main-is: Main.hs
   hs-source-dirs: Bitmap
+  ghc-options: -O2
+
+Executable gloss-boids
+  Build-depends:
+        base           == 4.*,
+        gloss          == 1.3.*
+  Main-is: Main.hs
+  hs-source-dirs: Boids
   ghc-options: -O2
 
