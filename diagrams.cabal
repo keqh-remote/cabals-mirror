@@ -1,5 +1,5 @@
 Name:                diagrams
-Version:             0.2.2
+Version:             0.2.2.1
 Stability:           experimental
 Description:         An embedded domain-specific language (EDSL) for 
                      creating simple diagrams, built on top of the Cairo
@@ -26,7 +26,7 @@ library
     ghc-options: -Werror
   Build-Depends:     base >= 2 && < 5, mtl >= 2.0 && < 2.1,
                      containers >= 0.2 && < 0.4,
-                     cairo >= 0.9 && < 0.12, colour >= 2.2.1 && < 2.4
+                     cairo >= 0.9 && < 0.13, colour >= 2.2.1 && < 2.4
   Exposed-Modules:   Graphics.Rendering.Diagrams,
                      Graphics.Rendering.Diagrams.Types,
                      Graphics.Rendering.Diagrams.Paths,
