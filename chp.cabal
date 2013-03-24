@@ -1,5 +1,5 @@
 Name:            chp
-Version:         1.5.1
+Version:         1.6.0
 Synopsis:        An implementation of concurrency ideas from Communicating Sequential Processes
 License:         BSD3
 License-file:    LICENSE
@@ -27,6 +27,7 @@ Exposed-modules: Control.Concurrent.CHP
                  Control.Concurrent.CHP.Alt
                  Control.Concurrent.CHP.Arrow
                  Control.Concurrent.CHP.Barriers
+                 Control.Concurrent.CHP.Behaviours
                  Control.Concurrent.CHP.BroadcastChannels
                  Control.Concurrent.CHP.Buffers
                  Control.Concurrent.CHP.Channels
