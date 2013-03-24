@@ -1,5 +1,5 @@
 name: YampaSynth
-version: 0.0.1
+version: 0.0.2
 cabal-Version: >= 1.2
 license: BSD3
 license-file: LICENSE
@@ -41,31 +41,31 @@ flag gtk
 
 executable yampasynth-wav
   if flag (wav)
-    build-depends: base, array, bytestring, containers, Yampa, HCodecs
+    build-depends: base < 5, array, bytestring, containers, Yampa, HCodecs
   else
     buildable: False
   hs-source-dirs: src
   main-is: Main/Wav.hs
   other-modules: SynthBasics, SynthParams, MidiSynth, Player.Wav  
-  ghc-options: -O2 -Wall
+  ghc-options: -O3 -Wall
   
 executable yampasynth-openal
   if flag (openal)
-    build-Depends: base, array, containers, OpenAL, Yampa, HCodecs
+    build-Depends: base < 5, array, containers, OpenAL, Yampa, HCodecs
   else
     buildable: False
   hs-source-dirs:  src
   main-is: Main/OpenAL.hs
   other-modules: SynthBasics, SynthParams, MidiSynth, Player.OpenAL
-  ghc-options: -threaded -O2 -Wall
+  ghc-options: -threaded -O3 -Wall
 
 executable yampasynth-gtk
   if flag (gtk)
-    build-Depends: base, array, containers, OpenAL, glade, gtk, Yampa, HCodecs  
+    build-Depends: base < 5, array, containers, OpenAL, glade, gtk, Yampa, HCodecs  
   else
     buildable: False
   hs-source-dirs:  src
   main-is: Main/Gtk.hs
   other-modules: SynthBasics, SynthParams, MidiSynth, Player.OpenAL, Player.Gtk
-  ghc-options: -threaded -O2 -Wall
+  ghc-options: -threaded -O3 -Wall
 
