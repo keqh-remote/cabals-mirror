@@ -1,24 +1,30 @@
-Name:               iconv
-Version:            0.2
-License:            OtherLicense
-License-File:       COPYING
-Copyright:          Ian Lynagh, 2005
-Author:             Ian Lynagh
-Maintainer:         igloo@earth.li
-Stability:          experimental
-Homepage:           http://urchin.earth.li/~ian/cabal/iconv/
-Synopsis:           Perform character set conversion
-Description:
-    Provides an interface to the unix iconv functions for character
-    set conversion.
-    .
-    It makes use of some knowledge of glibc's iconv that isn't
-    guaranteed by the standard.
-Category:           Text
-Tested-with:        GHC==6.6
-Build-depends:      base
-Extensions:         EmptyDataDecls, ForeignFunctionInterface
-Extra-source-files: BSD3, GPL-2, Changelog
-Exposed-modules:
-    Text.Iconv
+name:            iconv
+version:         0.4
+copyright:       (c) 2006-2007 Duncan Coutts
+license:         BSD3
+license-file:    LICENSE
+author:          Duncan Coutts <duncan@haskell.org>
+maintainer:      Duncan Coutts <duncan@haskell.org>
+synopsis:        String encoding conversion
+description:     Provides an interface to the POSIX iconv library functions
+                 for string encoding conversion.
+stability:       experimental
+build-type:      Simple
+cabal-version:   >= 1.2.1
+extra-source-files: README examples/hiconv.hs
 
+flag bytestring_in_base
+
+library
+  exposed-modules: Codec.Text.IConv
+  other-modules:   Codec.Text.IConv.Internal
+  if flag(bytestring_in_base)
+    -- bytestring was in base-2.0 and 2.1.1
+    build-depends: base >= 2.0 && < 2.2
+    cpp-options: -DBYTESTRING_IN_BASE
+  else
+    build-depends: base < 2.0 || >= 2.2, bytestring >= 0.9
+  extensions:      CPP, ForeignFunctionInterface
+  includes:        iconv.h
+  -- extra-libraries: --may need iconv lib on some systems
+  ghc-options:     -fvia-C -Wall
