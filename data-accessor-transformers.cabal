@@ -1,5 +1,5 @@
 Name:             data-accessor-transformers
-Version:          0.2
+Version:          0.2.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -16,4 +16,5 @@ GHC-Options:      -Wall
 Tested-With:      GHC==6.8.2
 Hs-Source-Dirs:   src
 Exposed-Modules:
+  Data.Accessor.Monad.Trans.RWS
   Data.Accessor.Monad.Trans.State
