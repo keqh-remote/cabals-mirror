@@ -1,5 +1,5 @@
 name:             wumpus-drawing
-version:          0.2.0
+version:          0.3.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -12,7 +12,7 @@ description:
   \*\* WARNING \*\* - this package is sub-alpha. Although many of 
   the drawing objects have been improved since the code was split 
   from Wumpus-Basic, the code is still prototypical. Essentially
-  this package is a /technology preview/ and not a re-usable 
+  this package is a /technology preview/ and not yet a re-usable 
   library.
   .
   NOTE - many of the demos use font metrics. Font metrics for
@@ -24,7 +24,7 @@ description:
   links below. To run the demos properly you will need one of 
   these sets of metrics.
   .
-  Adobe Font techinal notes:
+  Adobe Font technical notes:
   <https://www.adobe.com/devnet/font.html>
   .
   Core 14 AFM metrics:
@@ -38,7 +38,22 @@ description:
   .
   Changelog:
   .
-  v0.1.0 to 0.2.0:
+  v0.2.0 to v0.3.0:
+  .
+  * Moved Turtle and Grids into the @Wumpus.Drawing.Extras@
+    name-space. Modules here are considered sketches.
+  .
+  * Re-implemented arrowheads and connectors.
+  .
+  * Re-implemented monadic path construction. This is now 
+    essentially \"turtle drawing\" with a path trace.
+  .
+  * Removed chains - a simplified implementation is now 
+    provided by Wumpus-Basic.
+  .
+  * Re-implemented and expanded Text.  
+  .
+  v0.1.0 to v0.2.0:
   .
   * Added new Shapes.
   .
@@ -73,16 +88,17 @@ extra-source-files:
   LICENSE,
   demo/ArrowCircuit.hs,
   demo/Arrowheads.hs,
+  demo/Automata.hs,
   demo/ClipPic.hs,
   demo/ColourCharts.hs,
   demo/ColourChartUtils.hs,
   demo/Connectors.hs
   demo/DotPic.hs,
   demo/FeatureModel.hs,
-  demo/FontLoaderUtils.hs,
   demo/FontPic.hs,
   demo/LeftRightText.hs,
   demo/PetriNet.hs,
+  demo/SingleChar.hs,
   demo/SingleLine.hs,
   demo/SampleShapes.hs,
   demo/Symbols.hs,
@@ -93,27 +109,33 @@ library
   build-depends:      base            <  5, 
                       containers      >= 0.3     && <= 0.6,
                       vector-space    >= 0.6     && <  1.0,
-                      wumpus-core     >= 0.43.0  && <  0.44.0,
-                      wumpus-basic    == 0.16.0
+                      wumpus-core     >= 0.50.0  && <  0.51.0,
+                      wumpus-basic    == 0.17.0
 
   
   exposed-modules:
-    Wumpus.Drawing.Arrows,
-    Wumpus.Drawing.Arrows.Connectors,
-    Wumpus.Drawing.Arrows.Tips,
-    Wumpus.Drawing.Chains,
-    Wumpus.Drawing.Chains.Base,
-    Wumpus.Drawing.Chains.Derived,
     Wumpus.Drawing.Colour.SVGColours,
     Wumpus.Drawing.Colour.X11Colours,
+    Wumpus.Drawing.Connectors,
+    Wumpus.Drawing.Connectors.Arrowheads,
+    Wumpus.Drawing.Connectors.Base,
+    Wumpus.Drawing.Connectors.BoxConnectors,
+    Wumpus.Drawing.Connectors.ConnectorPaths,
+    Wumpus.Drawing.Connectors.Loop,
     Wumpus.Drawing.Dots.AnchorDots,
     Wumpus.Drawing.Dots.Marks,
-    Wumpus.Drawing.Grids,
-    Wumpus.Drawing.Paths,
-    Wumpus.Drawing.Paths.Base,
-    Wumpus.Drawing.Paths.Connectors,
-    Wumpus.Drawing.Paths.MonadicConstruction,
-    Wumpus.Drawing.Paths.ControlPoints,
+    Wumpus.Drawing.Extras.Axes,
+    Wumpus.Drawing.Extras.Grids,
+    Wumpus.Drawing.Extras.Turtle.TurtleClass,
+    Wumpus.Drawing.Extras.Turtle.TurtleMonad,
+    Wumpus.Drawing.Paths.Absolute,
+    Wumpus.Drawing.Paths.Base.AbsBuilder,
+    Wumpus.Drawing.Paths.Base.AbsPath,
+    Wumpus.Drawing.Paths.Base.BuildCommon,
+    Wumpus.Drawing.Paths.Base.RelBuilder,
+    Wumpus.Drawing.Paths.Base.RelPath,
+    Wumpus.Drawing.Paths.Relative,
+    Wumpus.Drawing.Paths.Vamps,
     Wumpus.Drawing.Shapes,
     Wumpus.Drawing.Shapes.Base,
     Wumpus.Drawing.Shapes.Circle,
@@ -128,12 +150,13 @@ library
     Wumpus.Drawing.Shapes.Semicircle,
     Wumpus.Drawing.Shapes.Semiellipse,
     Wumpus.Drawing.Shapes.Triangle,
-    Wumpus.Drawing.Text.Base,
-    Wumpus.Drawing.Text.CatText,
-    Wumpus.Drawing.Text.LRText,
-    Wumpus.Drawing.Text.SafeFonts,
-    Wumpus.Drawing.Turtle.TurtleClass,
-    Wumpus.Drawing.Turtle.TurtleMonad,
+    Wumpus.Drawing.Text.Base.Common,
+    Wumpus.Drawing.Text.Base.DocTextZero,
+    Wumpus.Drawing.Text.Base.Label,
+    Wumpus.Drawing.Text.Base.PosChar,
+    Wumpus.Drawing.Text.Base.RotTextZero,
+    Wumpus.Drawing.Text.DirectionZero,
+    Wumpus.Drawing.Text.StandardFontDefs,
     Wumpus.Drawing.VersionNumber
 
   other-modules:
