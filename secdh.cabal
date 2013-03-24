@@ -1,7 +1,7 @@
 name:                secdh
-version:             0.1
+version:             0.2
 synopsis:            SECDH Machine Simulator
-homepage:            http://abt12monk.org/git/secdh.git
+homepage:            http://github.com/pgavin/secdh
 license:             BSD3
 license-file:        LICENSE
 author:              Peter Gavin
@@ -50,7 +50,7 @@ data-files:          programs/lib.slam
 
 source-repository head
   type:              git
-  location:          http://abt12monk.org/git/secdh.git/
+  location:          git@github.com:pgavin/secdh.git
 
 library
   hs-source-dirs:    lib
