@@ -1,6 +1,6 @@
 name: harchive
-version: 0.1
-copyright: (c) David Brown
+version: 0.2
+copyright: (C) 2007, David Brown
 license: GPL
 license-file: COPYING
 author: David Brown <harchive@davidb.org>
@@ -19,7 +19,7 @@ hs-source-dirs: src
 extensions: ForeignFunctionInterface
 extra-libraries: ssl
 -- ghc-options: -Wall -Werror
-ghc-options: -Wall -Werror -O2 -fvia-C
+ghc-options: -Wall -Werror -O2
 other-modules:
   Hash
   Protocol
@@ -34,9 +34,10 @@ extensions: ForeignFunctionInterface
 extra-libraries: ssl sqlite3
 -- ghc-options: -Wall -Werror
 -- ghc-options: -Wall
-ghc-options: -Wall -Werror -O2 -fvia-C
-ld-options: -threaded
+ghc-options: -Wall -Werror -O2
+-- ld-options: -threaded
 other-modules:
+  Hash
   Protocol
   Sqlite3
   Store
