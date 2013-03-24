@@ -1,5 +1,5 @@
 Name:                topkata
-Version:             0.2.2
+Version:             0.2.3
 Synopsis:            OpenGL Arcade Game
 Description:         Guide a jumping ball through a maze.
 License:             GPL
@@ -37,7 +37,7 @@ Executable topkata
   Build-Depends:       base, filepath, GLUT, OpenGL, array, random
   Other-Modules:       Labygen, Labygen.Render, 
                        Topkata.Topka.Topka, Topkata.Topka.Ghost, Topkata.Topka.Base
-                       Vector, ReadImage
+                       Vector, ReadImage, Dijkstra
   Extensions:          CPP
   if flag(sound)
       Build-Depends:   OpenAL, ALUT
