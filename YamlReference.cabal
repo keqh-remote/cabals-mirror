@@ -1,5 +1,5 @@
 Name:            YamlReference
-Version:         0.3
+Version:         0.4
 License:         LGPL
 License-File:    lgpl.txt
 Copyright:       Oren Ben-Kiki 2007
@@ -7,7 +7,7 @@ Author:          Oren Ben-Kiki
 Maintainer:      yaml-oren@ben-kiki.org
 Stability:       alpha
 Homepage:        www.ben-kiki.org/oren/YamlReference
-Package-Url:     www.ben-kiki.org/oren/YamlReference/YamlReference-0.3.tar.gz
+Package-Url:     www.ben-kiki.org/oren/YamlReference/YamlReference-0.4.tar.gz
 Category:        Text
 Synopsis:        YAML reference implementation
 Description:     This package contains \"the\" reference YAML syntax parser
@@ -298,10 +298,16 @@ Data-Files:      Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                  tests/c-ns-local-tag-prefix.input
                  tests/c-ns-local-tag-prefix.invalid.input
                  tests/c-ns-local-tag-prefix.invalid.output
-                 tests/c-ns-local-tag-prefix.output tests/c-ns-properties.input
-                 tests/c-ns-properties.invalid.input
-                 tests/c-ns-properties.invalid.output
-                 tests/c-ns-properties.output tests/c-ns-property.anchor.input
+                 tests/c-ns-local-tag-prefix.output
+                 tests/c-ns-properties.n=0.c=block-out.input
+                 tests/c-ns-properties.n=0.c=block-out.invalid.input
+                 tests/c-ns-properties.n=0.c=block-out.invalid.output
+                 tests/c-ns-properties.n=0.c=block-out.output
+                 tests/c-ns-properties.n=0.c=flow-out.input
+                 tests/c-ns-properties.n=0.c=flow-out.invalid.input
+                 tests/c-ns-properties.n=0.c=flow-out.invalid.output
+                 tests/c-ns-properties.n=0.c=flow-out.output
+                 tests/c-ns-property.anchor.input
                  tests/c-ns-property.anchor.output
                  tests/c-ns-property.invalid.input
                  tests/c-ns-property.invalid.output
@@ -1118,18 +1124,6 @@ Data-Files:      Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                  tests/s-ns-single-next.n=4.invalid.input
                  tests/s-ns-single-next.n=4.invalid.output
                  tests/s-ns-single-next.n=4.output
-                 tests/s-separate-in-flow.n=4.c=flow-key.empty.input
-                 tests/s-separate-in-flow.n=4.c=flow-key.empty.output
-                 tests/s-separate-in-flow.n=4.c=flow-key.invalid.input
-                 tests/s-separate-in-flow.n=4.c=flow-key.invalid.output
-                 tests/s-separate-in-flow.n=4.c=flow-key.sp.input
-                 tests/s-separate-in-flow.n=4.c=flow-key.sp.output
-                 tests/s-separate-in-flow.n=4.c=flow-out.empty.input
-                 tests/s-separate-in-flow.n=4.c=flow-out.empty.output
-                 tests/s-separate-in-flow.n=4.c=flow-out.line.input
-                 tests/s-separate-in-flow.n=4.c=flow-out.line.output
-                 tests/s-separate-in-flow.n=4.c=flow-out.sp.input
-                 tests/s-separate-in-flow.n=4.c=flow-out.sp.output
                  tests/s-separate-in-line.invalid.input
                  tests/s-separate-in-line.invalid.output
                  tests/s-separate-in-line.sol.input
@@ -1144,6 +1138,18 @@ Data-Files:      Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                  tests/s-separate-lines.n=4.sol.output
                  tests/s-separate-lines.n=4.sp.input
                  tests/s-separate-lines.n=4.sp.output
+                 tests/s-separate.n=4.c=flow-key.empty.input
+                 tests/s-separate.n=4.c=flow-key.empty.output
+                 tests/s-separate.n=4.c=flow-key.invalid.input
+                 tests/s-separate.n=4.c=flow-key.invalid.output
+                 tests/s-separate.n=4.c=flow-key.sp.input
+                 tests/s-separate.n=4.c=flow-key.sp.output
+                 tests/s-separate.n=4.c=flow-out.empty.input
+                 tests/s-separate.n=4.c=flow-out.empty.output
+                 tests/s-separate.n=4.c=flow-out.line.input
+                 tests/s-separate.n=4.c=flow-out.line.output
+                 tests/s-separate.n=4.c=flow-out.sp.input
+                 tests/s-separate.n=4.c=flow-out.sp.output
                  tests/s-single-multi.n=4.input
                  tests/s-single-multi.n=4.invalid.input
                  tests/s-single-multi.n=4.invalid.output
