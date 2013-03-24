@@ -1,5 +1,5 @@
 name: yajl-enumerator
-version: 0.2.0.4
+version: 0.3
 synopsis: Enumerator-based interface to YAJL, an event-based JSON implementation
 license: GPL-3
 license-file: license.txt
