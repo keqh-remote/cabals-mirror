@@ -1,5 +1,5 @@
 Name:                Ebnf2ps
-Version:             1.0.10
+Version:             1.0.11
 Synopsis:               Peter's Syntax Diagram Drawing Tool
 Homepage:            http://www.informatik.uni-freiburg.de/~thiemann/haskell/ebnf2ps/
 License:             BSD3
@@ -24,7 +24,8 @@ Extra-source-files:
 	  doc/Production.eps, doc/String.eps, doc/Term.eps, doc/Character.eps, doc/Atom_unfold.eps,
 	  doc/RAtom.eps, doc/RAtom_unfold.eps, doc/Export.eps,
 	  doc/RExtAtom.eps, doc/RFactor.eps, doc/Regexp.eps,
-	  doc/doc.tex, doc/doc.ps, src/afmpath.h, src/rgbpath.h
+	  doc/doc.tex, doc/doc.ps, src/afmpath.h, src/rgbpath.h,
+	  CHANGES
 
 Executable ebnf2ps
   Main-is:   Ebnf2ps.hs
@@ -32,7 +33,7 @@ Executable ebnf2ps
   Build-depends:        base < 5, containers,
                         old-time,
                         directory,
-                        unix, array, haskell98
+                        unix, array
   Build-tools:         happy
   Cc-options: -DAFMPATH=/usr/share/texmf-texlive/fonts/afm
   Other-modules:        
