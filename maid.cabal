@@ -1,5 +1,5 @@
 Name:                 maid
-Version:              2010.9.9
+Version:              2010.9.9.1
 Build-type:           Simple
 Synopsis:             A simple static web server
 Description:
@@ -23,7 +23,7 @@ Executable            maid
                     , haskell98
                     , hack-contrib >= 2010.1.26
                     , data-default
-                    , hack-handler-hyena
+                    , hack-handler-happstack
                     , hack
                     , containers
                     , moe
