@@ -1,5 +1,5 @@
 name:                HRay
-version:             1.2.2
+version:             1.2.3
 synopsis:            Haskell raytracer
 description:         HRay is a ray tracing application written in Haskell as part of my
                      masters thesis at Ghent University. 
@@ -15,7 +15,7 @@ author:              boegel
 maintainer:          boegel <kenneth [dot] hoste [at] [dot] ugent [dot] be>
 homepage:            http://boegel.kejo.be/ELIS/Haskell/HRay/
 
-build-depends:       base>3 && <5, array, directory, haskell98, happy
+build-depends:       base>3 && <5, array, directory, haskell98
 build-type:          Simple
 data-files:          readme.txt,
                      -- and some files to experiment with
