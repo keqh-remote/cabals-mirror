@@ -1,18 +1,17 @@
 name:               yeganesh
-version:            2.4
+version:            2.5
 cabal-version:      >=1.2
 build-type:         Simple
 license:            BSD3
 license-file:       LICENSE
 author:             Daniel Wagner
 maintainer:         daniel@wagner-home.com
-homepage:           http://www.dmwit.com/yeganesh
+homepage:           http://dmwit.com/yeganesh
 synopsis:           small dmenu wrapper
 description:        I get so annoyed when I go to use dmenu, and the three
                     programs I use every day aren't at the beginning of the
                     list.  Let's make it so, and automatically!
 category:           Text
-extra-source-files: Catch.hs, Version.hs, Yeganesh.hs
 cabal-version:      >= 1.6
 source-repository head
     type:           darcs
@@ -20,10 +19,15 @@ source-repository head
 source-repository this
     type:           darcs
     location:       http://dmwit.com/yeganesh
-    tag:            2.4
+    tag:            2.5
+
+flag profiling
+    description: Build with profiling and -auto-all
+    default: False
 
 Executable yeganesh
     main-is:        main.hs
+    other-modules:  Catch, Lex, Paths_yeganesh, Version, Yeganesh
     build-depends:  base >= 3 && < 5,
                     containers >= 0.1,
                     directory >= 1.0,
@@ -31,13 +35,17 @@ Executable yeganesh
                     process >= 1.0,
                     strict >= 0.3,
                     time >= 1.1,
-                    unix >= 2.5,
+                    unix >= 2.4,
                     xdg-basedir >= 0.2
     ghc-options:    -Wall
     extensions:     CPP
+    if flag(profiling)
+        ghc-options: -auto-all
+        cpp-options: -Dprofiling
 
 Executable yeganesh-strip
     main-is:        strip.hs
+    other-modules:  Catch, Lex, Paths_yeganesh, Version, Yeganesh
     build-depends:  base >= 3 && < 5,
                     containers >= 0.1,
                     directory >= 1.0,
@@ -45,6 +53,6 @@ Executable yeganesh-strip
                     process >= 1.0,
                     strict >= 0.3,
                     time >= 1.1,
-                    unix >= 2.5,
+                    unix >= 2.4,
                     xdg-basedir >= 0.2
     ghc-options:    -Wall
