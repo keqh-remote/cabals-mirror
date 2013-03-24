@@ -1,5 +1,5 @@
 Name:           synthesizer-dimensional
-Version:        0.2
+Version:        0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -9,14 +9,14 @@ Category:       Sound
 Synopsis:       Audio signal processing with static physical dimensions
 Description:
    High-level functions which use physical units and
-   abstract from the sample rate in a statically type safe way.
+   abstract from the sample rate in statically type safe way.
 Stability:      Experimental
 Tested-With:    GHC==6.4.1, GHC==6.8.2
 Cabal-Version:  >=1.6
 Build-Type:     Simple
 
--- Extra-Source-Files:
---   Makefile
+Extra-Source-Files:
+  Makefile
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -31,7 +31,7 @@ Flag buildExamples
 
 
 Source-Repository this
-  Tag:         0.2
+  Tag:         0.3
   Type:        darcs
   Location:    http://code.haskell.org/synthesizer/dimensional/
 
@@ -41,9 +41,9 @@ Source-Repository head
 
 Library
   Build-Depends:
-    synthesizer-core >=0.2 && <0.3,
+    synthesizer-core >=0.2.1 && <0.3,
     transformers >=0.0.1 && <0.2,
-    event-list >=0.0.8 && <0.1,
+    event-list >=0.0.10 && <0.1,
     non-negative >=0.0.5 && <0.1,
     numeric-prelude >=0.1.1 && <0.2,
     utility-ht >=0.0.5 && <0.1,
@@ -67,30 +67,25 @@ Library
   GHC-Options:    -Wall
   Hs-source-dirs: src
   Exposed-modules:
-    Synthesizer.Dimensional.Abstraction.Flat
-    Synthesizer.Dimensional.Abstraction.Homogeneous
-    Synthesizer.Dimensional.Abstraction.HomogeneousGen
-    Synthesizer.Dimensional.Abstraction.RateIndependent
+    Synthesizer.Dimensional.Signal
     Synthesizer.Dimensional.Amplitude
+    Synthesizer.Dimensional.Rate
+    Synthesizer.Dimensional.Arrow
+    Synthesizer.Dimensional.Map
+    Synthesizer.Dimensional.Process
+    Synthesizer.Dimensional.Causal.Process
+
+    Synthesizer.Dimensional.Amplitude.Flat
     Synthesizer.Dimensional.Amplitude.Analysis
     Synthesizer.Dimensional.Amplitude.Cut
     Synthesizer.Dimensional.Amplitude.Control
     Synthesizer.Dimensional.Amplitude.Displacement
     Synthesizer.Dimensional.Amplitude.Filter
-    Synthesizer.Dimensional.Amplitude.Signal
-    Synthesizer.Dimensional.Arrow
-    Synthesizer.Dimensional.Map
-    Synthesizer.Dimensional.Causal.Process
     Synthesizer.Dimensional.Causal.ControlledProcess
     Synthesizer.Dimensional.Causal.Displacement
     Synthesizer.Dimensional.Causal.Filter
     Synthesizer.Dimensional.Causal.Oscillator
-    Synthesizer.Dimensional.ControlledProcess
-    Synthesizer.Dimensional.Cyclic.Signal
-    Synthesizer.Dimensional.Process
-    Synthesizer.Dimensional.Rate
-    Synthesizer.Dimensional.RatePhantom
-    Synthesizer.Dimensional.RateWrapper
+--    Synthesizer.Dimensional.ControlledProcess
     Synthesizer.Dimensional.Rate.Analysis
     Synthesizer.Dimensional.Rate.Control
     Synthesizer.Dimensional.Rate.Cut
@@ -105,13 +100,26 @@ Library
     Synthesizer.Dimensional.RateAmplitude.Filter
     Synthesizer.Dimensional.RateAmplitude.Instrument
     Synthesizer.Dimensional.RateAmplitude.Noise
+    Synthesizer.Dimensional.RateAmplitude.Piece
     Synthesizer.Dimensional.RateAmplitude.Play
-    Synthesizer.Dimensional.RateAmplitude.Signal
-    Synthesizer.Dimensional.Straight.Displacement
-    Synthesizer.Dimensional.Straight.Signal
+    Synthesizer.Dimensional.Cyclic.Signal
+    Synthesizer.Dimensional.Cyclic.Analysis
+    Synthesizer.Dimensional.Wave
+    Synthesizer.Dimensional.Wave.Controlled
 
---  Other-Modules:
+  Other-Modules:
+    Synthesizer.Dimensional.Signal.Private
+--    Synthesizer.Dimensional.Utility
 
+
+Executable rain
+  If !flag(buildExamples)
+    Buildable: False
+  GHC-Options: -Wall -fexcess-precision
+  If flag(optimizeAdvanced)
+    GHC-Options: -O2 -fvia-C -optc-O2
+  Hs-Source-Dirs: src
+  Main-Is: Synthesizer/Dimensional/RateAmplitude/Rain.hs
 
 Executable demonstration
   If !flag(buildExamples)
