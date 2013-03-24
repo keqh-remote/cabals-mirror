@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       1.2.6
+Version:       1.2.7
 Category:      FRP, Network
 Synopsis:      Arrowized FRP implementation
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -21,6 +21,7 @@ Library
         base >= 4 && <= 5,
         containers >= 0.4.0,
         deepseq >= 1.1.0,
+--        forkable-monad >= 0.1.1,
         mersenne-random >= 1.0.0,
         monad-control >= 0.2.0,
         random >= 1.0.0,
@@ -45,7 +46,6 @@ Library
         FRP.NetWire
         FRP.NetWire.Analyze
         FRP.NetWire.Calculus
-        FRP.NetWire.Concurrent
         FRP.NetWire.Event
         FRP.NetWire.IO
         FRP.NetWire.Pure
