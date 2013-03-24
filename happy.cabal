@@ -1,5 +1,5 @@
 name: happy
-version: 1.18.4
+version: 1.18.5
 license: BSD3
 license-file: LICENSE
 copyright: (c) Andy Gill, Simon Marlow
@@ -97,9 +97,9 @@ extra-source-files:
 	examples/LexerTest.ly
 	happy.spec
 	src/ARRAY-NOTES
-	templates/GLR_Base.lhs
+	templates/GLR_Base.hs
 	templates/GenericTemplate.hs
-	templates/GLR_Lib.lhs
+	templates/GLR_Lib.hs
 	tests/error001.y
 	tests/error001.stdout
 	tests/error001.stderr
@@ -128,12 +128,12 @@ executable happy
   if flag(small_base)
     build-depends: base >= 2.1, array, containers
   else
-    build-depends: base >= 1.0
+    build-depends: base >= 1.0 && < 2.1
 
-  build-depends: haskell98 >= 1.0, mtl >= 1.0
+  build-depends: base < 5, mtl >= 1.0
+  build-tools: perl
 
   extensions: CPP, MagicHash
-  ghc-options: -W
   other-modules:
         AbsSyn
         First
@@ -147,7 +147,6 @@ executable happy
         Parser
         ProduceCode
         ProduceGLRCode
-        Set
         NameSet
         Target
         AttrGrammar
