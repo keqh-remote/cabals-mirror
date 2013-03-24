@@ -1,12 +1,11 @@
 name:           crypto-api
-version:        0.7
+version:        0.8
 license:        BSD3
 license-file:   LICENSE
 copyright:      Thomas DuBuisson <thomas.dubuisson@gmail.com>, Francisco Blas Izquierdo Riera (klondike) (see AUTHORS)
 author:         Thomas DuBuisson <thomas.dubuisson@gmail.com>, Francisco Blas Izquierdo Riera (klondike)
 maintainer:     Thomas DuBuisson <thomas.dubuisson@gmail.com>
-description:    A generic interface for cryptographic operations,
-                and a platform independent quality RNG.
+description:    A generic interface for cryptographic operations (hashes, ciphers, randomness).
 
                 Maintainers of hash and cipher implementations are
                 encouraged to add instances for the classes defined
@@ -35,7 +34,7 @@ Library
                  largeword >= 1.0.0, array, entropy
   ghc-options:
   hs-source-dirs:
-  exposed-modules: Crypto.Classes, Crypto.Types, Crypto.HMAC, Crypto.Modes, Crypto.Random, Crypto.Padding, System.Crypto.Random
+  exposed-modules: Crypto.Classes, Crypto.Types, Crypto.HMAC, Crypto.Modes, Crypto.Random, Crypto.Padding
   other-modules: Crypto.Util, Crypto.CPoly
 
 source-repository head
