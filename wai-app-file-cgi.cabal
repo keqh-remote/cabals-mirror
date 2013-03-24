@@ -1,5 +1,5 @@
 Name:                   wai-app-file-cgi
-Version:                0.5.9
+Version:                0.5.10
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -13,10 +13,7 @@ Cabal-Version:          >= 1.8
 Build-Type:             Simple
 
 Library
-  if impl(ghc >= 6.12)
-    GHC-Options:        -Wall -fno-warn-unused-do-bind
-  else
-    GHC-Options:        -Wall
+  GHC-Options:          -Wall
   Exposed-Modules:      Network.Wai.Application.Classic
   Other-Modules:        Network.Wai.Application.Classic.CGI
                         Network.Wai.Application.Classic.Conduit
