@@ -1,7 +1,7 @@
 cabal-version: >=1.2
 build-type: Simple
 name: uuagc
-version: 0.9.21
+version: 0.9.23
 license: GPL
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -63,6 +63,7 @@ executable uuagc
     , Order
     , Patterns
     , PrintCode
+    , PrintOcamlCode
     , PrintErrorMessages
     , SemHsTokens
     , Transform
