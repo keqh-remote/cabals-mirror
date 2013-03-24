@@ -1,5 +1,5 @@
 name:           text-format
-version:        0.3.0.6
+version:        0.3.0.7
 license:        BSD3
 license-file:   LICENSE
 homepage:       https://github.com/bos/text-format
@@ -57,7 +57,7 @@ library
   cpp-options: -DINTEGER_GMP
 
   if impl(ghc >= 6.11)
-    build-depends: integer-gmp >= 0.2 && < 0.4
+    build-depends: integer-gmp >= 0.2 && < 0.5
 
   if impl(ghc >= 6.9) && impl(ghc < 6.11)
     build-depends: integer >= 0.1 && < 0.2
