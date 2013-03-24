@@ -1,5 +1,5 @@
 Name:            Crypto
-Version:         4.2.2
+Version:         4.2.3
 License:         OtherLicense
 License-File:    ReadMe.tex
 Author:          Dominic Steinitz
@@ -46,7 +46,7 @@ Library
                  Data.Digest.SHA512,
                  Data.LargeWord,
                  Data.HMAC
-        Build-Depends:  QuickCheck >= 2, HUnit
+        Build-Depends:  QuickCheck >= 2.4.0.1, HUnit
         if flag(small_base)
             Build-Depends: base >= 3, base < 5, array, random, pretty
         else
