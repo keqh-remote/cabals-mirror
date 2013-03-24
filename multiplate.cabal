@@ -1,5 +1,5 @@
 Name:               multiplate
-Version:            0.0
+Version:            0.0.1
 Cabal-Version:      >= 1.4
 License:            MIT
 License-File:       LICENSE
@@ -18,6 +18,8 @@ Description:
 
     Multiplate does not require GADTs and does not require multi-parameter type classes.
     It only requires rank 3 polymorphism.
+Tested-with:        GHC == 6.12.3
+data-files:         CHANGELOG
 
 Library
     Build-Depends:     base >= 3 && < 5, transformers >= 0.2 && < 0.3
