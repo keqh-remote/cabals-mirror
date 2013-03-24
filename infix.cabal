@@ -1,5 +1,5 @@
 name:                infix
-version:             0.1
+version:             0.1.1
 synopsis:            Infix expression re-parsing (for HsParser library)
 description:         The Haskell parser does not consider the fixity
                      of operators when parsing infix applications.
@@ -22,7 +22,7 @@ author:              Bernie Pope <bjpop@csse.unimelb.edu.au>
 maintainer:          None
 homepage:            http://www.cs.mu.oz.au/~bjpop/code.html
 
-build-depends:       base, containers, haskell-src, FiniteMap
+build-depends:       base, containers, haskell-src
 build-type:          Simple
 tested-with:         GHC==6.5
 
