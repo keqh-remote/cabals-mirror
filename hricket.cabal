@@ -1,5 +1,5 @@
 Name:           hricket
-Version:        0.4
+Version:        0.5
 Synopsis:       A Cricket scoring application.
 Description:    An application to help with scoring Cricket dart games.
 Cabal-Version:  >= 1.2
