@@ -1,5 +1,5 @@
 Name:               ArrayRef
-Version:            0.1
+Version:            0.1.2
 Category:           Data
 Synopsis:           Unboxed references, dynamic arrays and more
 Description:        This array library supports: unboxed references,
