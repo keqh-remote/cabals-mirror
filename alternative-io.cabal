@@ -1,11 +1,11 @@
 Name:                   alternative-io
-Version:                0.0.0
+Version:                0.0.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
 License-File:           LICENSE
-Synopsis:               IO as Alternative instance
-Description:            IO as Alternative instance
+Synopsis:               IO as Alternative instance (deprecated)
+Description:            This package is deprecated, Please use io-choice.
 Category:               Data
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
