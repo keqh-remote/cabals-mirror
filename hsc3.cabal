@@ -1,7 +1,7 @@
 Name:             hsc3
-Version:          0.2
+Version:          0.1.1
 License:          GPL
-Copyright:        Rohan Drape, 2006-2008
+Copyright:        Rohan Drape, 2006-2007
 Author:           Rohan Drape
 Maintainer:       rd@slavepianos.org
 Stability:        Experimental
@@ -9,124 +9,11 @@ Homepage:         http://slavepianos.org/rd/f/207949/
 Synopsis:         Haskell SuperCollider
 Description:      Haskell client for the SuperCollider synthesis server
 Category:         Sound
-Tested-With:      GHC==6.8.2
+Tested-With:      GHC==6.4.1, GHC==6.8.2
+Cabal-Version:    >=1.2
 Build-Type:       Simple
-Build-Depends:    base, binary, bytestring, containers, hosc == 0.2,
-                  network, random
-GHC-Options:      -Wall -fno-warn-orphans -fwarn-tabs -O2
-Exposed-modules:  Sound.SC3
-                  Sound.SC3.UGen
-                  Sound.SC3.UGen.Analysis
-                  Sound.SC3.UGen.Base
-                  Sound.SC3.UGen.Buffer
-                  Sound.SC3.UGen.Chaos
-                  Sound.SC3.UGen.Composite
-                  Sound.SC3.UGen.Demand
-                  Sound.SC3.UGen.Demand.Base
-                  Sound.SC3.UGen.Demand.Monadic
-                  Sound.SC3.UGen.Envelope
-                  Sound.SC3.UGen.Envelope.Construct
-                  Sound.SC3.UGen.Enum
-                  Sound.SC3.UGen.FFT
-                  Sound.SC3.UGen.FFT.Base
-                  Sound.SC3.UGen.FFT.Monadic
-                  Sound.SC3.UGen.Filter
-                  Sound.SC3.UGen.Graph.Naive
-                  Sound.SC3.UGen.Granular
-                  Sound.SC3.UGen.Information
-                  Sound.SC3.UGen.IO
-		  Sound.SC3.UGen.MachineListening
-                  Sound.SC3.UGen.Math
-                  Sound.SC3.UGen.Noise.Base
-                  Sound.SC3.UGen.Noise.Monadic
-                  Sound.SC3.UGen.Operator
-                  Sound.SC3.UGen.Oscillator
-                  Sound.SC3.UGen.Panner
-                  Sound.SC3.UGen.Rate
-                  Sound.SC3.UGen.UGen
-                  Sound.SC3.UGen.UGen.Construct
-                  Sound.SC3.UGen.UGen.Math
-                  Sound.SC3.UGen.UGen.MCE
-                  Sound.SC3.UGen.UGen.Predicate
-                  Sound.SC3.UGen.UId
-                  Sound.SC3.Server
-                  Sound.SC3.Server.Command
-                  Sound.SC3.Server.Play
-                  Sound.SC3.Server.Status
-                  Sound.SC3.Server.Synthdef
-                  Sound.SC3.Server.NRT
-Other-modules:    Sound.SC3.Server.Utilities
-                  Sound.SC3.UGen.Utilities
 
-Data-files:       README
-                  emacs/hsc3.el
-                  -- The below is appended by:
-                  -- find Help -name "*.*hs" | sort | \
-                  -- sed "s/^/                  /" >> hsc3.cabal
-                  Help/Graphs/aleatoric-quartet.lhs
-                  Help/Graphs/analog-bubbles.lhs
-                  Help/Graphs/babbling-brook.lhs
-                  Help/Graphs/bit-reduction.lhs
-                  Help/Graphs/bowed-string.lhs
-                  Help/Graphs/ccomb.lhs
-                  Help/Graphs/chain-saw.lhs
-                  Help/Graphs/chrd.lhs
-                  Help/Graphs/cricket.lhs
-                  Help/Graphs/crotale.lhs
-                  Help/Graphs/cut-outs.lhs
-                  Help/Graphs/cymbalism.lhs
-                  Help/Graphs/deep-sea.lhs
-                  Help/Graphs/demanding-studies.lhs
-                  Help/Graphs/dial-history.lhs
-                  Help/Graphs/discretion.lhs
-                  Help/Graphs/drummer.lhs
-                  Help/Graphs/eggcrate.lhs
-                  Help/Graphs/forest-sounds.lhs
-                  Help/Graphs/fwalk.lhs
-                  Help/Graphs/half-life.lhs
-                  Help/Graphs/harmonic-swimming.lhs
-                  Help/Graphs/harmonic-tumbling.lhs
-                  Help/Graphs/h-chatter.lhs
-                  Help/Graphs/hh-808.lhs
-                  Help/Graphs/implosion.lhs
-                  Help/Graphs/karplus-strong.lhs
-                  Help/Graphs/klink.lhs
-                  Help/Graphs/k-ppr.lhs
-                  Help/Graphs/lfo-modulation.lhs
-                  Help/Graphs/lf-pulses.lhs
-                  Help/Graphs/modal-space.lhs
-                  Help/Graphs/moto-rev.lhs
-                  Help/Graphs/mouse-clatter.lhs
-                  Help/Graphs/noise-burst-sweep.lhs
-                  Help/Graphs/one-line.lhs
-                  Help/Graphs/oscillator-cluster.lhs
-                  Help/Graphs/pattern-buffer.lhs
-                  Help/Graphs/plucked-strings.lhs
-                  Help/Graphs/police-state.lhs
-                  Help/Graphs/pulsing-bottles.lhs
-                  Help/Graphs/record-scratcher.lhs
-                  Help/Graphs/red-frik.lhs
-                  Help/Graphs/reverberated-sine-percussion.lhs
-                  Help/Graphs/sample-and-hold-liquidities.lhs
-                  Help/Graphs/s-chirp.lhs
-                  Help/Graphs/scratchy.lhs
-                  Help/Graphs/scritto.lhs
-                  Help/Graphs/shepard-tones.lhs
-                  Help/Graphs/shifting-pulses.lhs
-                  Help/Graphs/snare-909.lhs
-                  Help/Graphs/spe.lhs
-                  Help/Graphs/sprinkler.lhs
-                  Help/Graphs/strummable-guitar.lhs
-                  Help/Graphs/sweepy-noise.lhs
-                  Help/Graphs/synthetic-piano.lhs
-                  Help/Graphs/tank.lhs
-                  Help/Graphs/theremin.lhs
-                  Help/Graphs/three-cpsw.lhs
-                  Help/Graphs/tsort.lhs
-                  Help/Graphs/what-was-i-thinking.lhs
-                  Help/Graphs/wind-metals.lhs
-                  Help/Graphs/xy-interference.lhs
-                  Help/hsc3.help.lhs
+Data-files:       emacs/hsc3.el
                   Help/Server/b_alloc.help.lhs
                   Help/Server/b_allocRead.help.lhs
                   Help/Server/b_close.help.lhs
@@ -228,7 +115,6 @@ Data-files:       README
                   Help/UGen/Chaos/rossler.help.lhs
                   Help/UGen/Demand/dbrown.help.lhs
                   Help/UGen/Demand/dbufrd.help.lhs
-                  Help/UGen/Demand/dbufwr.help.lhs
                   Help/UGen/Demand/demandEnvGen.help.lhs
                   Help/UGen/Demand/demand.help.lhs
                   Help/UGen/Demand/dgeom.help.lhs
@@ -319,7 +205,6 @@ Data-files:       README
                   Help/UGen/Filter/onePole.help.lhs
                   Help/UGen/Filter/oneZero.help.lhs
                   Help/UGen/Filter/pitchShift.help.lhs
-                  Help/UGen/Filter/pluck.help.lhs
                   Help/UGen/Filter/resonz.help.lhs
                   Help/UGen/Filter/rhpf.help.lhs
                   Help/UGen/Filter/ringz.help.lhs
@@ -437,10 +322,63 @@ Data-files:       README
                   Help/UGen/Trigger/runningMin.help.lhs
                   Help/UGen/Trigger/sendTrig.lhs
                   Help/UGen/Trigger/setResetFF.help.lhs
-                  Help/UGen/Trigger/stepper.help.lhs
                   Help/UGen/Trigger/sweep.help.lhs
                   Help/UGen/Trigger/tDelay.help.lhs
                   Help/UGen/Trigger/timer.help.lhs
                   Help/UGen/Trigger/toggleFF.help.lhs
                   Help/UGen/Trigger/trig1.help.lhs
                   Help/UGen/Trigger/trig.help.lhs
+
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
+
+Library
+  Build-Depends:  binary, bytestring, hosc>=0.1 && <0.2, network
+  If flag(splitBase)
+    Build-Depends: base >= 2, random
+  Else
+    Build-Depends: base >= 1.0 && < 2
+
+  GHC-Options:     -Wall -fno-warn-orphans
+  Exposed-modules: Sound.SC3
+                   Sound.SC3.UGen
+                   Sound.SC3.UGen.Analysis
+                   Sound.SC3.UGen.Buffer
+                   Sound.SC3.UGen.Chaos
+                   Sound.SC3.UGen.Demand
+                   Sound.SC3.UGen.Demand.Base
+                   Sound.SC3.UGen.Demand.Monadic
+                   Sound.SC3.UGen.Envelope
+                   Sound.SC3.UGen.Envelope.Construct
+                   Sound.SC3.UGen.Enum
+                   Sound.SC3.UGen.FFT
+                   Sound.SC3.UGen.FFT.Base
+                   Sound.SC3.UGen.FFT.Monadic
+                   Sound.SC3.UGen.Filter
+                   Sound.SC3.UGen.Graph
+                   Sound.SC3.UGen.Granular
+                   Sound.SC3.UGen.Information
+                   Sound.SC3.UGen.IO
+                   Sound.SC3.UGen.MachineListening
+                   Sound.SC3.UGen.Math
+                   Sound.SC3.UGen.Mix
+                   Sound.SC3.UGen.Noise.Base
+                   Sound.SC3.UGen.Noise.Monadic
+                   Sound.SC3.UGen.Operator
+                   Sound.SC3.UGen.Oscillator
+                   Sound.SC3.UGen.Panner
+                   Sound.SC3.UGen.Rate
+                   Sound.SC3.UGen.UGen
+                   Sound.SC3.UGen.UGen.Construct
+                   Sound.SC3.UGen.UGen.Math
+                   Sound.SC3.UGen.UGen.MCE
+                   Sound.SC3.UGen.UGen.Predicate
+                   Sound.SC3.UGen.UId
+                   Sound.SC3.Server
+                   Sound.SC3.Server.Command
+                   Sound.SC3.Server.Graphdef
+                   Sound.SC3.Server.Play
+                   Sound.SC3.Server.Status
+                   Sound.SC3.Server.NRT
+  Other-modules:   Sound.SC3.Server.Utilities
+                   Sound.SC3.UGen.Utilities
