@@ -3,7 +3,7 @@
 --  documentation, see http://haskell.org/cabal/users-guide/
 
 name:                cctools-workqueue
-version:             3.6.1.0.1.0.0
+version:             3.6.1.0.1.0.0.1
 
 synopsis:            High-level interface to CCTools' WorkQueue library
 
@@ -127,7 +127,7 @@ library
   if impl(ghc == 7.6.*)
     build-depends:     base ==4.6.*
 
-  build-depends:       bindings-cctools == 3.6.1.0.1.0.0
+  build-depends:       bindings-cctools == 3.6.1.0.1.*
                      , lens
                      , unix
                      , bytestring
