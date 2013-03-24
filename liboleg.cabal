@@ -1,5 +1,5 @@
 name:           liboleg
-version:        2010.1.5
+version:        2010.1.6
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -52,6 +52,7 @@ library
             Language.CBAny
             Language.CPS
             Language.CB98
+            Language.LinearLC
             Language.TTF
             Language.TTFdB
             Language.TDPE
