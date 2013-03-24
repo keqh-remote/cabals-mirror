@@ -1,13 +1,13 @@
 Name: feed-cli
-Version: 2008.5.3
+Version: 2009.7.5
 Author: Isaac Potoczny-Jones <ijones@syntaxpolice.org>
 Maintainer: Isaac Potoczny-Jones <ijones@syntaxpolice.org>
-Copyright: (c) Isaac Potoczny-Jones, 2008
+Copyright: (c) Isaac Potoczny-Jones, 2008-2009
 Category: Web, Text
 HomePage: http://www.syntaxpolice.org/darcs_repos/feed-cli
 License: BSD3
 License-File: LICENSE
-build-depends: feed, xml, base, time, old-locale, old-time, directory
+build-depends: feed, xml,  base < 4, time, old-locale, old-time, directory
 data-files: README, examples/getURL.sh,  examples/piper2.sh,  examples/piper.sh
 build-type: Simple
 Synopsis: A simple command line interface for creating and updating feeds like RSS
@@ -17,7 +17,7 @@ Description:
  feeds from shell scripts, build scripts, cron jobs, CGIs, or other programs
  instead of using an RSS or Atom library.
  .
- eg: feed-cli new-item -t"entry of the day" -d"This is a description..." -u/tmp/feed.xml  -lhttp://www.syntaxpolice.org
+ eg: ./feed-cli new-item -t"entry of the day" -d"This is a description..." -u/tmp/feed.xml  -lhttp://www.syntaxpolice.org
 
 Executable: feed-cli
 main-is: FeedCLI.hs
