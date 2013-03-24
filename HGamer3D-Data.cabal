@@ -1,6 +1,6 @@
 Name:                HGamer3D-Data
-Version:             0.1.3
-Synopsis:            Library to enable 3D game development for Haskell - API
+Version:             0.1.4
+Synopsis:            Library to enable 3D game development for Haskell - Data
 Description:         
 	Library, to enable 3D game development for Haskell,
 	based on bindings to 3D Graphics, pyhsics engine and additional libraries.
@@ -23,9 +23,9 @@ Category:            Game
 Extra-source-files:  Setup.hs 
 
 Library
-  Build-Depends:     base >= 3 && < 5
+  Build-Depends:     base >= 3 && < 5, Vec == 0.9.7, Vec-Transform == 1.0.4
 
-  Exposed-modules:   HGamer3D.Data.Vector2,HGamer3D.Data.Vector3,HGamer3D.Data.Vector4,HGamer3D.Data.ColourValue,HGamer3D.Data.Quaternion,HGamer3D.Data.HG3DClass,HGamer3D.Data.Radian,HGamer3D.Data.Degree,HGamer3D.Data.Angle
+  Exposed-modules:   HGamer3D.Data.Vector2,HGamer3D.Data.Vector3,HGamer3D.Data.Vector4,HGamer3D.Data.Matrix4,HGamer3D.Data.Colour,HGamer3D.Data.Quaternion,HGamer3D.Data.HG3DClass,HGamer3D.Data.Angle
   Other-modules:     
 
   c-sources:         
