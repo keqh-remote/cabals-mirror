@@ -1,5 +1,5 @@
 Name:                NumberSieves
-Version:             0.1.1
+Version:             0.1.2
 Description:         This package includes the Sieve of O'Neill and two generalizations of the Sieve of Eratosthenes.   The Sieve of O'Neill is a fully incremental primality sieve based on priority queues.  The other two are array based, and are not incremental.   One sieves the smallest prime factor,  and is useful if you want to factor a large quantity of small numbers.   The other sieves Euler's Totient,  which is the number of positive integers relatively prime and less than a given number.
 License:             BSD3
 License-file:        LICENSE
@@ -20,9 +20,9 @@ Library
 
 source-repository head
   type:      darcs
-  location:  http://patch-tag.com/r/lpsmith/NumberSieves/pullrepo
+  location:  http://patch-tag.com/r/lpsmith/NumberSieves
 
 source-repository this
   type:      darcs
-  location:  http://patch-tag.com/r/lpsmith/NumberSieves/pullrepo
-  tag:       0.1.1
+  location:  http://patch-tag.com/r/lpsmith/NumberSieves
+  tag:       0.1.2
