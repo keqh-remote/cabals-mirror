@@ -1,5 +1,5 @@
 Name:           fixed-vector
-Version:        0.1.2
+Version:        0.1.2.1
 Synopsis:       Generic vectors with fixed length
 Description:
   Generic vectors with fixed length. Package is structured as follows:
@@ -28,7 +28,7 @@ Description:
   * @foldM@ and @tailWith@ added. Type synonyms for numbers up to 6 are
     added. @Fun@ is reexported from @Data.Vector.Fixed@.
 
-Cabal-Version:  >= 1.6
+Cabal-Version:  >= 1.8
 License:        BSD3
 License-File:   LICENSE
 Author:         Aleksey Khudyakov <alexey.skladnoy@gmail.com>
@@ -59,3 +59,14 @@ Library
     Data.Vector.Fixed.Primitive
     Data.Vector.Fixed.Unboxed
     Data.Vector.Fixed.Storable
+
+Test-Suite doctests
+  Type: exitcode-stdio-1.0
+  Hs-Source-Dirs: test
+  Main-Is: Doctests.hs
+  Build-Depends:
+    base >=3 && <5,
+    primitive,
+    -- Additional test dependencies.
+    doctest   == 0.9.*,
+    filemanip == 0.3.6.*
