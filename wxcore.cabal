@@ -1,10 +1,10 @@
 Name:           wxcore
-Version:        0.10.3
+Version:        0.10.4
 License:        LGPL
 License-file:   license.txt
 Author:         Daan Leijen
 Build-Type:     Make
-Description:    wxHaskell is a portable and native GUI library for Haskell.  It is built on top of wxWidgets - a comprehensive C++ library that is portable across all major GUI platforms; including GTK, Windows, X11, and MacOS X.  At present, it works with wxWidgets 2.6 (and sadly, not with with wxWidgets 2.8)
+Description:    wxHaskell is a portable and native GUI library for Haskell.  It is built on top of wxWidgets - a comprehensive C++ library that is portable across all major GUI platforms; including GTK, Windows, X11, and MacOS X.  This version works with wxWidgets 2.8 only.
 Maintainer:     wxhaskell-devel@lists.sourceforge.net
 Cabal-Version:  >= 1.2
 Category:       GUI, User interfaces
@@ -14,9 +14,10 @@ Flag splitBase
     Description: Choose the new smaller, split-up base package.
 Library
     if flag(splitBase)
-        build-depends: base >= 3, parsec, array, directory, old-time, time
+        build-depends: base >= 3, array, containers, directory,
+                       parsec, old-time, time, stm
     else
-        build-depends: base <  3, parsec, time
+        build-depends: base <  3, parsec, time, stm
  Exposed-Modules:
   Graphics.UI.WXCore
   Graphics.UI.WXCore.WxcObject
@@ -29,7 +30,6 @@ Library
   Graphics.UI.WXCore.WxcClassesMZ
   Graphics.UI.WXCore.Events
   Graphics.UI.WXCore.Frame
-  Graphics.UI.WXCore.IntMap
   Graphics.UI.WXCore.Layout
   Graphics.UI.WXCore.Controls
   Graphics.UI.WXCore.Types
