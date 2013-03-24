@@ -1,5 +1,5 @@
 Name:            flexiwrap
-Version:         0.0.1
+Version:         0.1.0
 Cabal-version:   >= 1.2.3
 Build-Type:      Simple
 Synopsis:        Flexible wrappers
@@ -11,7 +11,8 @@ License-File:    LICENSE
 Author:          Iain Alexander <ia@stryx.demon.co.uk>
 Maintainer:      Iain Alexander <ia@stryx.demon.co.uk>
 Build-Type:      Simple
-Extra-source-files:   Data/Flex/SmallCheck/Wrap.hs
+Extra-source-files:   Data/Flex/QuickCheck/Wrap.hs
+                    , test/Data/Flex/SmallCheck/Wrap.hs
                     , Data/Flex/Test/Compose.hs
                     , Data/Flex/Test/Wrap.hs
                     , Data/Flex/Test/WrappedMonad.hs
@@ -19,10 +20,16 @@ Extra-source-files:   Data/Flex/SmallCheck/Wrap.hs
                     , Data/Flex/Examples/Lex/Strict.hs
                     , Data/Wrap.hs
                     , .ghci
+                    , test/.ghci
+                    , README
+                    , CHANGES
+                    , TODO
+                    , doc/intro.txt
 Tested-with:     GHC==6.4.1, GHC==6.6.1, GHC==6.8.3, GHC==6.10.4, GHC==6.12.3
-               , GHC==7.0.1
+               , GHC==7.0.1, GHC==7.0.4
 Library
     Exposed-Modules:     Data.Flex.Applicative
+                       , Data.Flex.Arbitrary
                        , Data.Flex.Compose
                        , Data.Flex.FlipT
                        , Data.Flex.Functor
@@ -42,5 +49,6 @@ Library
         Ghc-options:     -fglasgow-exts
     if impl(ghc >= 6.8.1)
         Extensions:      TypeOperators, KindSignatures
-    Build-Depends:   base < 5, data-type < 0.1, mtl < 2.1
+    Build-Depends:   base < 5, data-type >= 0.1 && < 0.2, mtl < 2.1
+                   , QuickCheck
 -- vim: expandtab:tabstop=4:shiftwidth=4
