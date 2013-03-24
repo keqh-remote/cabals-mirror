@@ -1,9 +1,10 @@
 name: llvm
-version: 0.6.7.0
+version: 0.6.8.0
 license: BSD3
 license-file: LICENSE
 synopsis: Bindings to the LLVM compiler toolkit.
 description: Bindings to the LLVM compiler toolkit.
+             New in 0.6.8.0: Add functions to allow freeing function resources;
              New in 0.6.7.0: Struct types;
              New in 0.6.6.0: Bug fixes;
 	     New in 0.6.5.0: Adapted to LLVM 2.5;
@@ -83,3 +84,5 @@ library
       LLVM.Core.Vector
       LLVM.ExecutionEngine.Engine
       LLVM.ExecutionEngine.Target
+
+  C-Sources: cbits/free.c
