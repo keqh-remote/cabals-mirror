@@ -1,5 +1,5 @@
 name:             doctest
-version:          0.5.2
+version:          0.6.0
 synopsis:         Test interactive Haskell examples
 description:      The doctest program checks examples in source code comments.
                   It is modeled after doctest for Python
@@ -16,7 +16,7 @@ copyright:        (c) 2009-2012 Simon Hengel
 author:           Simon Hengel <sol@typeful.net>
 maintainer:       Simon Hengel <sol@typeful.net>
 build-type:       Simple
-cabal-version:    >= 1.6
+cabal-version:    >= 1.8
 
 source-repository head
   type: git
@@ -32,21 +32,19 @@ library
   other-modules:
       Interpreter
     , Options
-    , HaddockBackend.Api
-    , HaddockBackend.Markup
     , DocTest
+    , Parse
+    , Extract
+    , GhcUtil
   build-depends:
-      base        >= 4.0  && < 4.5
-    , ghc         >= 6.12 && < 7.4
+      base        >= 4.0  && < 4.6
+    , ghc         >= 6.12 && < 7.6
+    , syb
+    , deepseq
     , directory
-    , containers
     , process
     , ghc-paths   == 0.1.*
     , HUnit       == 1.2.*
-  if impl(ghc >= 7.2)
-    build-depends: haddock >= 2.9.4 && < 2.10
-  else
-    build-depends: haddock >= 2.8 && <= 2.9.2
 
 executable doctest
   main-is:
@@ -58,18 +56,39 @@ executable doctest
   other-modules:
       Interpreter
     , Options
-    , HaddockBackend.Api
-    , HaddockBackend.Markup
     , DocTest
+    , Parse
+    , Extract
+    , GhcUtil
   build-depends:
-      base        >= 4.0  && < 4.5
-    , ghc         >= 6.12 && < 7.4
+      base        >= 4.0  && < 4.6
+    , ghc         >= 6.12 && < 7.6
+    , syb
+    , deepseq
     , directory
-    , containers
     , process
     , ghc-paths   == 0.1.*
     , HUnit       == 1.2.*
-  if impl(ghc >= 7.2)
-    build-depends: haddock >= 2.9.4 && < 2.10
-  else
-    build-depends: haddock >= 2.8 && <= 2.9.2
+
+test-suite spec
+  type:
+      exitcode-stdio-1.0
+  main-is:
+      Spec.hs
+  ghc-options:
+      -Wall -Werror -threaded
+  hs-source-dirs:
+      src, test
+  build-depends:
+      base        >= 4.0  && < 4.6
+    , ghc         >= 6.12 && < 7.6
+    , syb
+    , deepseq
+    , directory
+    , process
+    , ghc-paths   == 0.1.*
+    , HUnit       == 1.2.*
+    , hspec-shouldbe
+    , transformers
+    , stringbuilder
+    , filepath
