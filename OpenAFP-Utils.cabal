@@ -1,5 +1,5 @@
 Name:               OpenAFP-Utils
-Version:            1.1
+Version:            1.2.1
 License:            BSD3
 License-file:       LICENSE
 Author:             Audrey Tang
@@ -58,3 +58,8 @@ Executable:         afp2line
 Main-is:            afp2line.hs
 Build-depends:      OpenAFP, haskell98, base
 Extensions:         GeneralizedNewtypeDeriving 
+
+Executable:         afp-olndump
+Main-is:            afp-olndump.hs
+Build-depends:      OpenAFP, haskell98, base, bytestring, containers, binary
+
