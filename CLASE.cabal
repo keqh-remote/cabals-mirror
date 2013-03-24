@@ -1,5 +1,5 @@
 Name:           CLASE
-Version:        2008.9.23.2
+Version:        2009.2.11
 Cabal-Version:  >= 1.2
 License:        BSD3
 Build-Type:     Simple
@@ -12,7 +12,7 @@ Synopsis:       Cursor Library for A Structured Editor
 Description:    A library to aid the development of structured editors that
                 require a zipper-like interface to the language being edited.
 Category:       Data
-Tested-With:    GHC ==6.8.3
+Tested-With:    GHC == 6.10.1
 
 Library
   Build-Depends:    base,
