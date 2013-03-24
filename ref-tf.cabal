@@ -1,6 +1,6 @@
 name:           ref-tf
-version:        0.1
-cabal-version:  >= 1.2
+version:        0.2
+cabal-version:  >= 1.6
 license:        BSD3
 license-file:   LICENSE
 copyright:      (c) 2006-2010 Harvard University
@@ -21,4 +21,10 @@ library
     Control.Monad.Ref
 
   build-depends:
-    base >= 4 && < 5
+    base >= 4 && < 5,
+    stm >= 2.1 && < 2.2,
+    transformers >= 0.2 && < 0.3
+
+source-repository head
+  type:     svn
+  location: http://senseless.eecs.harvard.edu/repos/mainland-projects/ref-tf/trunk/
