@@ -1,5 +1,5 @@
 name:           snap-core
-version:        0.2.12
+version:        0.2.13
 synopsis:       Snap: A Haskell Web Framework (Core)
 
 description:
@@ -140,6 +140,7 @@ Library
     Snap.Util.GZip
 
   other-modules:
+    Snap.Internal.Parsing,
     Snap.Internal.Routing,
     Snap.Internal.Types
 
@@ -148,6 +149,7 @@ Library
     base >= 4 && < 5,
     bytestring,
     bytestring-nums,
+    bytestring-show >= 0.3.2 && < 0.4,
     cereal >= 0.3 && < 0.4,
     containers,
     deepseq >= 1.1 && <1.2,
@@ -189,6 +191,7 @@ Executable snap
     base >= 4 && < 5,
     bytestring,
     bytestring-nums,
+    bytestring-show >= 0.3.2 && < 0.4,
     cereal >= 0.3 && < 0.4,
     containers,
     deepseq >= 1.1 && <1.2,
