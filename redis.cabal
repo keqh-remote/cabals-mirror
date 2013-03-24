@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.12.1
+Version:             0.13
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -7,6 +7,15 @@ Copyright:           Copyright (c) 2009-2010 Alexander Bogdanov
 Category:            Database
 Synopsis:            A driver for Redis key-value database
 Description:
+
+	Caution! This library is currently not supported. If you looking
+	for an alternative, hedis package is a great one. It looks more
+	complete and more "functional" in its nature. If you absolutely
+	need *this* library, please let me know, I'll do my best to help
+	you in any way. On the other hand, if you want to adopt this
+	library, do not hesitate and let me know too. Many thanks!
+	.
+	.
 	Redis (<http://redis.io>) is an open source, BSD licensed, advanced
 	key-value store. It is often referred as a data structure server
 	since keys can contain different data structures, such as strings,
@@ -28,26 +37,11 @@ Description:
 	.
 	Please let me know if tests or benchmark goes terribly wrong.
 	.
-	Changes from v0.11:
+	Changes from v0.12:
 	.
-	- Drop parsec dependency
-	.
-	- New commands implemented: incrbyfloat and hincrbyfloat
-	.
-	- Added variadic versions of del, hdel, lpush, rpush, sadd, srem,
-      zadd, zrem (named as del_, hdel_ etc.)
-	.
-	- Fixed compilation with GHC 7.2 (and hopefully with more recent
-      versions too), thanks Ben Gamari and Sean Hess for reporting.
-	.
-	- Using RLock from concurrent-extra fixes multithreading issues,
-      thanks Dmitry Dzhus for reporting
-	.
-	- Hopefully, fix building on Windows (untested), thanks Piotr
-      Staszewski and Alexander Dorofeev
-	.
+	- nothing here
 
-Stability:           beta
+Stability:           deprecated
 Build-Type:          Simple
 Cabal-Version: >= 1.4
 License-File: LICENSE
