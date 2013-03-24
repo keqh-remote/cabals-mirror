@@ -1,5 +1,5 @@
 name: flickr
-version: 0.2
+version: 0.2.1
 Synopsis: Haskell binding to the Flickr API
 Description:
    The flickr API binding lets you access flickr.com's
@@ -25,6 +25,7 @@ flag new-base
 
 library
  Exposed-modules: Flickr.API,
+                  Flickr.Monad,
                   Flickr.Types,
                   Flickr.Types.Import,
                   Flickr.Activity,
