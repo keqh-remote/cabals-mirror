@@ -1,7 +1,7 @@
 name:         hgeometric
-version:      0.0.1
+version:      0.0.2
 license:      GPL
-license-file: COPYING.txt
+license-file: LICENSE
 copyright:    Copyright (C) 2007, 2008 Marco Túlio Gontijo e Silva
               Copyright (C) 2007 Rafael Cunha de Almeida
 author:       Marco Túlio Gontijo e Silva
@@ -9,8 +9,8 @@ author:       Marco Túlio Gontijo e Silva
 maintainer:   malebria@riseup.net
 
 stability: experimental
-category: Algebra
-synopsis: A geometric library with bindings to GPC.
+category:  Math
+synopsis:  A geometric library with bindings to GPC.
 description:
     hgeometric is a geometric library with bindings to the General Polygon
     Clipper Library (GPC), a flexible and highly robust polygon set operations
@@ -19,8 +19,8 @@ description:
     some functions to deal with geometric types.
 homepage: ftp://ftp.cs.man.ac.uk/pub/toby/gpc/
 
-build-depends: base, containers
-tested-with: GHC == 6.8.2
+build-depends: base>3, containers
+tested-with: GHC==6.8.2
 build-type:  Simple
 
 extra-source-files:
