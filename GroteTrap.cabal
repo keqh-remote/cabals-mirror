@@ -1,5 +1,5 @@
 Name:           GroteTrap
-Version:        0.4
+Version:        0.5
 Synopsis:       Parser and selection library for expression languages.
 Description:    Allows quick definition of expression languages. You get a parser for free, as well as conversion from text selection to tree selection and back.
 Homepage:       http://www.haskell.org/haskellwiki/GroteTrap
@@ -24,5 +24,6 @@ Library
                     Language.GroteTrap.Lexer
                     Language.GroteTrap.Unparse
                     Language.GroteTrap.ShowTree
+                    Language.GroteTrap.Util
   Other-Modules:    Language.GroteTrap.ParseTree
                     Language.GroteTrap.Parser
