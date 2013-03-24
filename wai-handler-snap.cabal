@@ -1,5 +1,5 @@
 Name:                wai-handler-snap
-Version:             0.0.0
+Version:             0.0.0.1
 Synopsis:            Web Application Interface handler using snap-server.
 License:             BSD3
 License-file:        LICENSE
