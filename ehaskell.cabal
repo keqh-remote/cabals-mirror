@@ -1,5 +1,5 @@
 Name:		ehaskell
-Version:	0.4
+Version:	0.5
 Cabal-Version:	>= 1.2
 Build-Type:	Simple
 License:	GPL
@@ -46,3 +46,4 @@ Executable ehs
   Main-Is:		Main.hs
   Build-Depends:	base, mtlparse >= 0.0.1, yjtools >= 0.8, directory, regexpr >= 0.3.3, process, filepath, utf8-string
   GHC-Options:		-Wall
+  Extensions:		FlexibleContexts
