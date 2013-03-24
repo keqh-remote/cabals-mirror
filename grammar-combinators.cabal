@@ -1,5 +1,5 @@
 Name:                grammar-combinators
-Version:             0.2.2
+Version:             0.2.3
 Description:
     The grammar-combinators library is a novel parsing library using
     an explicit representation of recursion to provide various novel
@@ -7,7 +7,7 @@ Description:
     functionality.
 License:             LGPL
 License-file:        COPYING.LGPL
-Homepage:	     http://projects.haskell.org/grammar-combinators/ 
+Homepage:	     http://people.cs.kuleuven.be/~dominique.devriese/grammar-combinators/ 
 Author:              Dominique Devriese <dominique.devriese@gmail.com>
 Maintainer:          Dominique Devriese <dominique.devriese@gmail.com>
 Build-Type:          Simple
