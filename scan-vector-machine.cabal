@@ -1,5 +1,5 @@
 name:     scan-vector-machine
-version:  0.2.2
+version:  0.2.3
 Cabal-Version: >= 1.8
 build-type: Simple
 synopsis: An implementation of the Scan Vector Machine instruction set in Haskell
@@ -16,7 +16,7 @@ library
                  , Control.Parallel.ScanVectorMachine.NestedVectors
                  , Control.Parallel.ScanVectorMachine.DataParallelHaskellSVM
                  , Control.Parallel.ScanVectorMachine.AccelerateSVM
-  build-depends: haskell2010, HUnit >=1.0, array, dph-par, accelerate
+  build-depends: haskell2010, HUnit >=1.0, array, dph-seq, accelerate
 
 Test-Suite Test
     type:          exitcode-stdio-1.0
