@@ -1,12 +1,12 @@
 Name:          csound-expression
-Version:       0.0
+Version:       0.0.1
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
 Author:	       Anton Kholomiov
 Maintainer:    <anton.kholomiov@gmail.com>
 Synopsis:      Csound combinator library
-Description:   Csound code generator
+Description:   Csound code generator. See "CsoundExpr.Tutorial" for guides and examples.
 Category:      Sound, Music
 Stability:     Experimental
 Tested-With:   GHC==6.12.1
@@ -15,14 +15,14 @@ Build-Type:    Simple
 
 Library
   Build-Depends:
-        base >= 4, base < 5, containers, mtl, pretty, temporal-media == 0.0
+        base >= 4, base < 5, containers, mtl, pretty, filepath, directory, haskell98, temporal-media == 0.0
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         CsoundExpr
 -- Base
         CsoundExpr.Base
         CsoundExpr.Base.Types
-        CsoundExpr.Base.Literal
+        CsoundExpr.Base.Imperative
         CsoundExpr.Base.MultiOut
         CsoundExpr.Base.SideEffect
         CsoundExpr.Base.Arithmetic
@@ -31,6 +31,14 @@ Library
         CsoundExpr.Base.Gens
         CsoundExpr.Base.Pitch
         CsoundExpr.Base.UserDefined
+        CsoundExpr.Base.Pretty
+-- Tutorial
+        CsoundExpr.Tutorial
+        CsoundExpr.Tutorial.Intro
+        CsoundExpr.Tutorial.Composition
+        CsoundExpr.Tutorial.Orchestra
+        CsoundExpr.Tutorial.Limits
+
 -- Opcodes
         CsoundExpr.Opcodes
         CsoundExpr.Opcodes.Siggen
