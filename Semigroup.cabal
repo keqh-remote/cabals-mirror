@@ -1,5 +1,5 @@
 Name:                Semigroup
-Version:             0.0.5
+Version:             0.0.6
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            A semigroup
@@ -16,7 +16,7 @@ Flag small_base
   Description:       Choose the new, split-up base package.
 
 Library
-  Build-Depends:     base < 5 && >= 3, mtl
+  Build-Depends:     base < 5 && >= 3, mtl, containers, bytestring
 
   GHC-Options:       -Wall
   Exposed-Modules:   Data.Semigroup
