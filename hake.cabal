@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.6
+Version:	0.7
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -51,7 +51,7 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 
 Stability:	experimental
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/hake/index.xhtml
-Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/hake-0.5.tar.gz
+Package-Url:	http://code.haskell.org/hake/
 Cabal-Version:	>= 1.2
 Build-type:	Simple
 Tested-With:	GHC
@@ -69,6 +69,6 @@ Library
 Executable hake
   GHC-Options:		-Wall
 --  CPP-Options:		-DDEBUG
-  Build-Depends:	directory, process, yjtools > 0.3, regexpr >= 0.2.9
+  Build-Depends:	directory, process, yjtools >= 0.5, regexpr >= 0.3
   Other-Modules:	Development.Hake.HiddenTools
   Main-Is:		Main.hs
