@@ -1,5 +1,5 @@
 Name:                DifferentialEvolution
-Version:             0.0.1
+Version:             0.0.2
 Category:            Numerical, Optimization, Algorithms 
 Synopsis:            Global optimization using Differential Evolution
 Description:         Plain Differential Evolution algorithm for optimizing 
@@ -24,6 +24,7 @@ Description:         Plain Differential Evolution algorithm for optimizing
 
 License:             MIT
 License-File:        LICENSE
+homepage:            http://yousource.it.jyu.fi/optimization-with-haskell
 Author:              Ville Tirronen
 Maintainer:          ville.tirronen@jyu.fi
 Build-Type:          Simple
