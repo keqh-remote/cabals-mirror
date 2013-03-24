@@ -1,6 +1,6 @@
 Name:           Shellac-haskeline
 Cabal-Version:  >=1.6
-Version:        0.2
+Version:        0.2.0.1
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -16,7 +16,8 @@ Stability:      Experimental
 Build-Type:     Simple
 
 Library
-    Build-depends: base>=3 && <5, Shellac==0.9.*, haskeline==0.6.*, mtl==1.1.*,
+    Build-depends: base>=3 && <5, Shellac==0.9.*, haskeline==0.6.*, 
+                   mtl>=1.1 && < 2.1,
                    bytestring==0.9.*
     Exposed-Modules:
                 System.Console.Shell.Backend.Haskeline
