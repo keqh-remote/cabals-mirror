@@ -1,5 +1,5 @@
 Name:          Scurry
-Version:       0.0.2
+Version:       0.0.3
 Category:      Network
 Description:   A distributed VPN system written in Haskell.
 License:       BSD3
@@ -87,6 +87,7 @@ executable scurry
     if os(darwin) || os(freebsd)
         build-depends: unix >= 2.3.0.0
         c-sources:          src/C/help-bsd.c
+                            src/C/tun_ioctls.h
         cc-options:         -D BSD
         cpp-options:        -DCALLCONV=ccall
  
