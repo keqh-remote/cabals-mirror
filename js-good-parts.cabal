@@ -1,5 +1,5 @@
 Name:                js-good-parts
-Version:             0.0.2
+Version:             0.0.3
 Cabal-Version:       >= 1.6
 Synopsis:            Javascript: The Good Parts -- AST & Pretty Printer
 Category:            Language, Javascript
@@ -28,3 +28,4 @@ Library
   Exposed-Modules:    Language.JavaScript.AST
                       Language.JavaScript.Pretty
   Other-Modules:      Language.JavaScript.NonEmptyList
+                      Text.PrettyPrint.Leijen.PrettyPrec
