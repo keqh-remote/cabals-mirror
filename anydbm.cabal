@@ -1,10 +1,11 @@
 Name: anydbm
-Version: 1.0.5
+Version: 1.0.7
 License: GPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Copyright: Copyright (c) 2004-2008 John Goerzen
 license-file: COPYRIGHT
 extra-source-files: COPYING
+build-type: Simple
 homepage: http://software.complete.org/anydbm
 synopsis: Interface for DBM-like database systems
 Description:  This module provides a generic infrastructure for supporting storage
@@ -25,8 +26,8 @@ Exposed-Modules: Database.AnyDBM,
     Database.AnyDBM.StringDBM
 Extensions: ExistentialQuantification, OverlappingInstances, 
    UndecidableInstances, CPP, FlexibleInstances, TypeSynonymInstances
-Build-Depends: base,
-               haskell98, mtl, MissingH>=1.0.0, containers
+Build-Depends: base < 5,
+               mtl, MissingH>=1.0.0, containers
 GHC-Options: -O2
 
 Executable: runtests
