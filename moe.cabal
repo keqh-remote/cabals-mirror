@@ -1,5 +1,5 @@
 Name:                 moe
-Version:              2010.9.29.2
+Version:              2011.6.11
 Build-type:           Simple
 Synopsis:             html with style
 Description:
@@ -18,7 +18,7 @@ data-files:           readme.md, changelog.md, known-issues.md, Nemesis, src/tes
 
 library
   ghc-options: -Wall -fno-warn-orphans
-  build-depends: base >= 4 && < 5, mtl, mps >= 2009.9.18, data-default, bytestring, utf8-string, dlist
+  build-depends: base >= 4 && < 5, mtl, air >= 2011.6.11, data-default, bytestring, utf8-string, dlist
   hs-source-dirs: src/
   exposed-modules:  
                       Text.HTML.Moe   
