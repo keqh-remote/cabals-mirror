@@ -1,12 +1,12 @@
 Name:              hsc3
-Version:           0.3
+Version:           0.4
 Synopsis:          Haskell SuperCollider
 Description:       hsc3 provides Sound.SC3, a haskell module that 
                    facilitates using haskell as a client to the 
                    SuperCollider synthesis server.  
 License:           GPL
 Category:          Sound
-Copyright:         (c) Rohan Drape, 2006-2008
+Copyright:         (c) Rohan Drape and others, 2006-2008
 Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
@@ -447,14 +447,15 @@ Data-files:        README
                    Help/UGen/Trigger/trig.help.lhs
 
 Library
-  Build-Depends:   base, binary, bytestring, containers, hosc == 0.3,
-                   network, random
-  GHC-Options:     -Wall -fwarn-tabs -O2
+  Build-Depends:   base, binary, bytestring, containers, hosc == 0.4,
+                   network, process, random
+  GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.SC3
                    Sound.SC3.Server
                    Sound.SC3.Server.Command
                    Sound.SC3.Server.NRT
                    Sound.SC3.Server.Play
+                   Sound.SC3.Server.Process
                    Sound.SC3.Server.Status
                    Sound.SC3.Server.Synthdef
                    Sound.SC3.UGen
@@ -463,6 +464,7 @@ Library
                    Sound.SC3.UGen.Buffer
                    Sound.SC3.UGen.Chaos
                    Sound.SC3.UGen.Composite
+                   Sound.SC3.UGen.Composite.Monadic
                    Sound.SC3.UGen.Demand
                    Sound.SC3.UGen.Demand.Base
                    Sound.SC3.UGen.Demand.Monadic
@@ -483,6 +485,7 @@ Library
                    Sound.SC3.UGen.Information
                    Sound.SC3.UGen.MachineListening
                    Sound.SC3.UGen.Math
+                   Sound.SC3.UGen.Monadic
                    Sound.SC3.UGen.Noise.Base
                    Sound.SC3.UGen.Noise.Monadic
                    Sound.SC3.UGen.Noise.Unsafe
@@ -490,6 +493,7 @@ Library
                    Sound.SC3.UGen.Oscillator
                    Sound.SC3.UGen.Panner
                    Sound.SC3.UGen.Rate
+                   Sound.SC3.UGen.Record.Pitch
                    Sound.SC3.UGen.UGen
                    Sound.SC3.UGen.UId
                    Sound.SC3.UGen.Unsafe
