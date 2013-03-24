@@ -1,6 +1,6 @@
 Name:                haskell-updater
 Homepage:            http://haskell.org/haskellwiki/Gentoo#haskell-updater
-Version:             1.2.0.5
+Version:             1.2.0.6
 Synopsis:            Rebuild Haskell dependencies in Gentoo
 Description:         haskell-updater rebuilds Haskell packages on Gentoo
                      after a GHC upgrade or a dependency upgrade.
@@ -29,16 +29,17 @@ Build-Type:          Simple
 Extra-Source-Files:  TODO
 
 Source-Repository head
-    Type:         darcs
-    Location:     http://code.haskell.org/gentoo/haskell-updater/
+    Type:         git
+    Location:     git://github.com/gentoo-haskell/haskell-updater.git
 
 Executable haskell-updater {
 
     Main-Is:            Main.hs
     Other-Modules:      Distribution.Gentoo.GHC,
-                        Distribution.Gentoo.Util,
                         Distribution.Gentoo.Packages,
                         Distribution.Gentoo.PkgManager,
+                        Distribution.Gentoo.Util,
+                        Output,
                         Paths_haskell_updater
     Ghc-Options:        -Wall
     Ghc-Prof-Options:   -auto-all
