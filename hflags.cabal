@@ -1,5 +1,5 @@
 name: hflags
-version: 0.1
+version: 0.1.1
 license: OtherLicense
 license-file: COPYING
 author: Mihaly Barasz <klao@google.com>, Gergely Risko <errge@google.com>
@@ -68,9 +68,10 @@ library
   ghc-options: -Wall
 
   build-depends:
-      base >= 4.5 && < 5
+      base >= 4.6 && < 5
     , containers >= 0.4
-    , template-haskell >= 2.7
+    , template-haskell >= 2.8
+    , text >= 0.11
 
   exposed-modules:
     HFlags
