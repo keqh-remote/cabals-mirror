@@ -1,5 +1,6 @@
 name:               hinotify
-version:            0.2
+version:            0.3
+build-type:         Simple
 synopsis:           Haskell binding to INotify
 description:
     .
@@ -22,7 +23,7 @@ flag split-base
 library
     build-depends:  unix
     if flag(split-base)
-        build-depends:  base >= 3, containers, directory
+        build-depends:  base >= 3 && < 5, containers, directory
     else
         build-depends:  base < 3
     extensions:     ForeignFunctionInterface
@@ -34,5 +35,4 @@ library
 
     ghc-options:    -fvia-C -Wall
 
-    include-dirs:   include
     hs-source-dirs: src
