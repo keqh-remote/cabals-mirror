@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       1.3
+version:       1.3.1
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -171,6 +171,7 @@ library
                    Data.Bits.Lens
                    Data.Complex.Lens
                    Data.Dynamic.Lens
+                   Data.List.Lens
 
   -- containers
   exposed-modules: Data.IntMap.Lens
@@ -196,9 +197,6 @@ library
 
   build-depends:   parallel == 3.2.*
   exposed-modules: Control.Parallel.Strategies.Lens Control.Seq.Lens
-
-  -- build-depends:   time == 1.4.*
-  -- exposed-modules: Data.Time.Calendar.Lens Data.Time.Clock.Lens
 
   other-extensions:
     CPP
