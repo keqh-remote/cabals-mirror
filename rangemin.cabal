@@ -1,5 +1,5 @@
 name:                rangemin
-version:             2.1.0
+version:             2.1.1
 synopsis:            Linear range-min algorithms.
 description:	     Rapidly (in linear time) preprocesses a vector so that the minimum element of any given subrange can be looked up in constant time.
 tested-with:	     GHC
@@ -11,6 +11,9 @@ maintainer:          wasserman.louis@gmail.com
 build-Depends:       base >= 4 && < 5, vector >= 0.6, containers >= 0.3.0.0, primitive >= 0.3
 build-type:	     Simple
 Exposed-modules:     Data.RangeMin
+                     Data.RangeMin.LCA
+                     Data.RangeMin.LCA.Binary
+                     Data.RangeMin.Cartesian
 Other-modules:	     Data.RangeMin.Common
                      Data.RangeMin.Common.ST
                      Data.RangeMin.Common.Math
@@ -21,7 +24,6 @@ Other-modules:	     Data.RangeMin.Common
                      Data.RangeMin.Common.Vector.Utils
                      Data.RangeMin.Common.Unf
                      Data.RangeMin.Common.Unf.Slice
-                     Data.RangeMin.Cartesian
                      Data.RangeMin.Cartesian.STInt
                      Data.RangeMin.Int.Quadratic
                      Data.RangeMin.Int.Linearithmic
@@ -30,7 +32,8 @@ Other-modules:	     Data.RangeMin.Common
                      Data.RangeMin.Int.Catalan.Combinators
                      Data.RangeMin.Int.Catalan.Table
                      Data.RangeMin.Int.Linear
-ghc-options:         -O2 -fvia-c -optc-O3 -fspec-constr-count=10
+                     Data.RangeMin.LCA.IndexM
+ghc-options:         -O2 -fspec-constr-count=10
 extra-source-files:  newRMQ.tgz
                      Test.hs
                      QC.hs
