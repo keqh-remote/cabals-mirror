@@ -1,5 +1,5 @@
 Name:            DrHylo
-Version:         0.0.1
+Version:         0.0.2
 License:         BSD3
 License-file:    LICENSE
 Author:          Alcino Cunha <alcino@di.uminho.pt>, Hugo Pacheco <hpacheco@di.uminho.pt>
@@ -23,7 +23,7 @@ Flag splitBase
 
 Library
   Hs-Source-Dirs: lib
-  Build-Depends:        base >= 4, pointless-haskell, mtl, haskell-src-exts >= 0.4.4, syb
+  Build-Depends:        base >= 4, pointless-haskell, mtl, haskell-src-exts == 0.4.4.1, syb
   exposed-modules:
        Language.Pointwise.Matching,
        Language.Pointwise.Parser,
