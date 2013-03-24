@@ -1,14 +1,14 @@
 name:            groundhog
-version:         0.0.1
+version:         0.0.1.1
 license:         BSD3
 license-file:    LICENSE
 author:          Boris Lykah <lykahb@gmail.com>
 maintainer:      Boris Lykah <lykahb@gmail.com>
-synopsis:        Type-safe, relational, multi-backend persistence.
+synopsis:        Type-safe ADT-database mapping library.
 description:     This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.
 category:        Database
 stability:       Non-stable
-cabal-version:   >= 1.6
+cabal-version:   >= 1.10
 build-type:      Simple
 
 library
@@ -28,3 +28,4 @@ library
                      Database.Groundhog.Generic.Sql
                      Database.Groundhog.TH
     ghc-options:     -Wall
+    default-language: Haskell2010
