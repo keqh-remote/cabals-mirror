@@ -1,5 +1,5 @@
 Name:           AutoForms
-Version:        0.4.0
+Version:        0.4.2
 Copyright:      Mads Lindstrøm <mads_lindstroem@yahoo.dk>
 License:        LGPL
 License-file:   COPYRIGHT.txt
@@ -7,11 +7,18 @@ Author:         Mads Lindstrøm <mads_lindstroem@yahoo.dk>
 Maintainer:     Mads Lindstrøm <mads_lindstroem@yahoo.dk>
 Homepage:       http://autoforms.sourceforge.net/
 Category:       GUI
+build-type:     Simple
 Build-Depends:  base,haskell98,mtl,template-haskell,wx,wxcore,syb-with-class>=0.4,array
 Synopsis:       GUI library based upon generic programming (SYB3)
 Tested-with:    GHC==6.8.1,GHC==6.8.2
 Stability:      experimental
 Description:
+        IMPORTANT! Development of AutoForms has stopped. In stead use
+        WxGeneric (see
+        http://lindstroem.wordpress.com/2008/05/03/introducing-wxgeneric/ )
+        which is based upon AutoForms. Nonetheless, AutoForms may still a good
+        resource for ideas.
+        .
         AutoForms is a library to ease the creation of Graphical User
         Interfaces (GUI). It does this by using generic programming to
         construct GUI components.
@@ -27,7 +34,7 @@ Description:
         custom monad called WxM.. The first facilitates that people who
         already knows WxHaskell quickly will be able to make GUIs. The second
         is our attempt at a more type-safe and easier to use GUI toolkit.
-Ghc-options:        -O -Wall
+Ghc-options:        -Wall
 Exposed-modules:
          Graphics.UI.AF.PolyCommand
         ,Graphics.UI.AF.General
