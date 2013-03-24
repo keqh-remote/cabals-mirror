@@ -1,5 +1,5 @@
 Name:                MemoTrie
-Version:             0.4.1
+Version:             0.4.2
 Cabal-Version:       >= 1.2
 Synopsis:            Trie-based memo functions
 Category:            Data
@@ -8,9 +8,6 @@ Description:
   using tries.  It's based on some code I got from Spencer Janssen.
   .
   Project wiki page: <http://haskell.org/haskellwiki/MemoTrie>
-  .
-  The module documentation pages have links to colorized source code and
-  to wiki pages where you can read and contribute user comments.  Enjoy!
   .
   &#169; 2008 by Conal Elliott; BSD3 license.
 Author:              Conal Elliott 
