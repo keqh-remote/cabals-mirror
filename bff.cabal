@@ -1,5 +1,5 @@
 name:           bff
-version:        0.1
+version:        0.2
 license:        PublicDomain
 description:
         This is an implementation of the ideas presented in "Bidirectionalization
@@ -55,8 +55,8 @@ library
                 Data.Derive.Zippable
                 Data.Zippable.Definition
         build-depends:
-                base, containers, mtl, template-haskell, category-extras == 0.53.5, derive == 0.1.1,
-                haskell98, bimap == 0.2.3, unix
+                base, containers, mtl, template-haskell, category-extras >= 0.53.5, derive >= 0.1.1,
+                haskell98, bimap >= 0.2.3, unix
         
 executable bff-shell
         main-is:
@@ -90,7 +90,7 @@ executable bff-stats
         if flag(stats)
                 buildable: True 
                 build-depends:
-                        benchpress == 0.2.2.2
+                        benchpress >= 0.2.2.2
         else
                 buildable: False
 
@@ -112,6 +112,6 @@ executable bff-stats-render
         if flag(render)
                 buildable: True 
                 build-depends:
-                        Chart == 0.8
+                        Chart >= 0.8
         else
                 buildable: False
