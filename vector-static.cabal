@@ -1,11 +1,11 @@
 Name:           vector-static
-Version:        0.1.0
+Version:        0.1.1
 License:        BSD3
 License-File:   LICENSE
 Author:         Daniel Peebles <pumpkingod@gmail.com>
 Maintainer:     Jake McArthur <Jake.McArthur@gmail.com>
 Copyright:      (c) Daniel Peebles 2010
-Homepage:       http://github.com/pumpkin/vector-static
+Homepage:       http://github.com/geezusfreeek/vector-static
 Stability:      Unstable
 Category:       Data, Data Structures
 Synopsis:       Statically checked sizes on Data.Vector
