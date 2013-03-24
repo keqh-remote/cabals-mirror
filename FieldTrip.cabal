@@ -1,5 +1,5 @@
 Name:                FieldTrip
-Version:             0.2.4
+Version:             0.2.6
 Synopsis: 	     Functional 3D
 Category:            graphics
 Description:
@@ -11,14 +11,16 @@ Description:
 Author:              Conal Elliott and Andy Gill
 Maintainer:          conal@conal.net, andygill@ku.edu
 Homepage:            http://haskell.org/haskellwiki/FieldTrip
-Package-Url:	     http://code.haskell.org/f3d
+Package-Url:	     http://code.haskell.org/FieldTrip
+Bug-Reports:         http://trac.haskell.org/FieldTrip
+
 Copyright:           (c) 2007-2008 by Conal Elliott and Andy Gill
 License:             BSD3
 Stability:           experimental
 build-type:	     Simple
 Hs-Source-Dirs:      src
 Extensions:          
-Build-Depends:       base, old-time, OpenGL, GLUT, TypeCompose, MemoTrie, vector-space >= 0.5.7, graphicsFormats
+Build-Depends:       base<=4, old-time, OpenGL>=2.2.3.0, GLUT, TypeCompose, MemoTrie, vector-space >= 0.5.7, graphicsFormats
 Exposed-Modules:     
 		     Graphics.FieldTrip
 		     Graphics.FieldTrip.Misc
