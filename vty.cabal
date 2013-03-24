@@ -1,5 +1,5 @@
 Name:                vty
-Version:             4.2.1.0
+Version:             4.4.0.0
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear, Corey O'Connor
@@ -24,13 +24,13 @@ Description:
   .
   &#169; 2006-2007 Stefan O'Rear; BSD3 license.
   .
-  &#169; 2008-2009 Corey O'Connor; BSD3 license.
+  &#169; 2008-2010 Corey O'Connor; BSD3 license.
 
 Build-Depends:       base >= 4 && < 5, bytestring, containers, unix
 Build-Depends:       terminfo >= 0.3 && < 0.4
 Build-Depends:       utf8-string >= 0.3 && < 0.4
 Build-Depends:       mtl >= 1.1.0.0 && < 1.2
-Build-Depends:       ghc-prim, parallel < 2
+Build-Depends:       ghc-prim, parallel >= 2.2 && < 2.3, deepseq >= 1.1 && < 1.2
 Build-Depends:       array
 Build-Depends:       parsec >= 2 && < 4
 Build-Depends:       vector-space >= 0.5 && < 0.6
@@ -59,36 +59,42 @@ other-modules:       Codec.Binary.UTF8.Width
 C-Sources:           cbits/gwinsz.c
                      cbits/set_term_timing.c
                      cbits/mk_wcwidth.c
+                     cbits/output_buffer.c
+
 Include-Dirs:        cbits
 hs-source-dirs:      src
 Extra-Source-Files: test/Makefile
-                    test/Bench2.hs
                     test/Bench.hs
+                    test/Bench2.hs
                     test/BenchRenderChar.hs
                     test/ControlTable.hs
                     test/HereDoc.hs
-                    test/interactive_terminal_test.hs
-                    test/Test2.hs
                     test/Test.hs
+                    test/Test2.hs
+                    test/Verify.hs
+                    test/Verify/Data/Terminfo/Parse.hs
+                    test/Verify/Graphics/Vty/Attributes.hs
+                    test/Verify/Graphics/Vty/DisplayRegion.hs
+                    test/Verify/Graphics/Vty/Image.hs
+                    test/Verify/Graphics/Vty/Picture.hs
+                    test/Verify/Graphics/Vty/Span.hs
+                    test/interactive_terminal_test.hs
                     test/verify_attribute_ops.hs
                     test/verify_debug_terminal.hs
+                    test/verify_display_attributes.hs
+                    test/verify_empty_image_props.hs
                     test/verify_eval_terminfo_caps.hs
-                    test/Verify.hs
                     test/verify_image_ops.hs
                     test/verify_image_trans.hs
+                    test/verify_inline.hs
                     test/verify_parse_terminfo_caps.hs
                     test/verify_picture_ops.hs
                     test/verify_picture_to_span.hs
                     test/verify_span_ops.hs
                     test/verify_utf8_width.hs
+                    test/vty_inline_example.hs
                     test/vty_issue_18.hs
                     test/yi_issue_264.hs
-                    test/Verify/Graphics/Vty/Attributes.hs
-                    test/Verify/Graphics/Vty/Picture.hs
-                    test/Verify/Graphics/Vty/Span.hs
-                    test/Verify/Graphics/Vty/DisplayRegion.hs
-                    test/Verify/Graphics/Vty/Image.hs
-                    test/Verify/Data/Terminfo/Parse.hs
                     src/Codec/Binary/UTF8/Debug.hs
                     src/Graphics/Vty/Terminal/Debug.hs
                     src/Graphics/Vty/Debug.hs
@@ -96,7 +102,8 @@ Extra-Source-Files: test/Makefile
                     cbits/mk_wcwidth.c
                     cbits/set_term_timing.c
                     cbits/gwinsz.h
+                    cbits/output_buffer.h
 
-ghc-options:         -funbox-strict-fields -Wall -fno-full-laziness -fspec-constr
-ghc-prof-options:    -funbox-strict-fields -caf-all -Wall -fno-full-laziness -fspec-constr
+ghc-options:         -O2 -funbox-strict-fields -Wall -fno-full-laziness -fspec-constr
+ghc-prof-options:    -O2 -funbox-strict-fields -caf-all -Wall -fno-full-laziness -fspec-constr
 
