@@ -1,11 +1,11 @@
 name: wxFruit
-version: 0.1
+version: 0.1.1
 Cabal-Version:		>= 1.2
 License: BSD3
 License-file: LICENSE
 Author: Antony Courtney, Bart Robinson, Paul Hudak
 homepage: http://zoo.cs.yale.edu/classes/cs490/03-04b/bartholomew.robinson/
-category: Reactivity, FRP
+category: Reactivity, FRP, GUI
 synopsis: An implementation of Fruit using wxHaskell.
 description:
   This is an original version of wxFruit.
