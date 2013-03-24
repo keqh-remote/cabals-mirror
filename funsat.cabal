@@ -1,5 +1,5 @@
 Name:                funsat
-Version:             0.6.0
+Version:             0.6.1
 Cabal-Version:       >= 1.2
 Description:
 
@@ -30,10 +30,20 @@ Extra-source-files:  README CHANGES
 Executable funsat
  Main-is:             Main.hs
  Ghc-options:         -funbox-strict-fields
-                      -Wall -fwarn-tabs
+                      -Wall
+                      -fwarn-tabs
                       -fno-warn-name-shadowing
                       -fno-warn-orphans
- Extensions:          CPP, ScopedTypeVariables
+ Extensions:          CPP,
+                      BangPatterns,
+                      ScopedTypeVariables,
+                      TypeSynonymInstances,
+                      MultiParamTypeClasses,
+                      FunctionalDependencies,
+                      FlexibleInstances,
+                      FlexibleContexts
+
+
  CPP-options:         -DTESTING
  Hs-source-dirs:      . src tests
  Other-modules:
@@ -43,45 +53,58 @@ Executable funsat
                       Funsat.Resolution
                       Funsat.Solver
                       Funsat.Types
+                      Funsat.Types.Internal
                       Funsat.Utils
+                      Funsat.Utils.Internal
                       Text.Tabular
                       Properties
 
- Build-Depends:       base,
-                      random,
-                      containers,
-                      pretty,
-                      mtl,
-                      array,
+ Build-Depends:       base >= 3 && < 5,
+                      random < 2,
+                      containers >= 0.2 && < 0.3,
+                      pretty < 2,
+                      mtl >= 1 && < 2,
+                      array >= 0.2 && < 0.3,
                       QuickCheck < 2,
                       parse-dimacs >= 1.2 && < 2,
                       bitset < 1,
                       bimap >= 0.2 && < 0.3,
-                      fgl,
-                      time
+                      fgl >= 5 && <= 5.4.2.2,
+                      time < 1.2
 
 Library
+ Extensions:          CPP,
+                      BangPatterns,
+                      ScopedTypeVariables,
+                      TypeSynonymInstances,
+                      MultiParamTypeClasses,
+                      FunctionalDependencies,
+                      FlexibleInstances,
+                      FlexibleContexts
  Exposed-modules:     Control.Monad.MonadST
                       Funsat.Circuit
                       Funsat.Monad
                       Funsat.Resolution
                       Funsat.Solver
                       Funsat.Types
+                      Funsat.Types.Internal
                       Text.Tabular
- Other-modules:       Funsat.FastDom Funsat.Utils
+                      Funsat.Utils
+                      Funsat.Utils.Internal
+ Other-modules:       Funsat.FastDom
  Ghc-options:         -funbox-strict-fields
                       -Wall -fwarn-tabs
                       -fno-warn-name-shadowing
                       -fno-warn-orphans
  Extensions:          CPP, ScopedTypeVariables
  Hs-source-dirs:      src
- Build-Depends:       base,
-                      containers,
-                      pretty,
-                      mtl,
-                      array,
+ Build-Depends:       base >= 3 && < 5,
+                      containers >= 0.2 && < 0.3,
+                      pretty < 2,
+                      mtl >= 1 && < 2,
+                      array >= 0.2 && < 0.3,
                       QuickCheck < 2,
                       parse-dimacs >= 1.2 && < 2,
                       bitset < 1,
                       bimap >= 0.2 && < 0.3,
-                      fgl
+                      fgl >= 5 && <= 5.4.2.2
