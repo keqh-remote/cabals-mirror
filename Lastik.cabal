@@ -1,5 +1,5 @@
 Name:               Lastik
-Version:            0.2
+Version:            0.3
 License:            BSD3
 License-File:       LICENSE
 Author:             Tony Morris <code@tmorris.net>
@@ -16,7 +16,7 @@ Flag small_base
 
 Library
   if flag(small_base)
-    Build-Depends: base < 4 && >= 3, bytestring, directory, filepath, process, FileManip, zip-archive, pureMD5, SHA
+    Build-Depends: base < 4 && >= 3, bytestring, directory, filepath, process, zip-archive, pureMD5, SHA
   else
     Build-Depends: base < 3, filepath, process, FileManip, zip-archive, pureMD5, SHA
 
@@ -25,6 +25,7 @@ Library
           Lastik.Compile,
           Lastik.Directory,
           Lastik.Extension,
+          Lastik.Find,
           Lastik.Output,
           Lastik.Runner,
           Lastik.Util,
