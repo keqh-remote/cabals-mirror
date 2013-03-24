@@ -1,5 +1,5 @@
 name:           liboleg
-version:        2010.1.6
+version:        2010.1.6.1
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -14,11 +14,12 @@ cabal-version:  >= 1.2
 
 library
     build-depends:
-            base < 4,
+            base >= 2 && < 4,
             containers,
             mtl,
             unix,
-            template-haskell
+            template-haskell,
+            CC-delcont
 
     exposed-modules:
             Data.FDList
@@ -53,6 +54,7 @@ library
             Language.CPS
             Language.CB98
             Language.LinearLC
+            Language.Symantics1
             Language.TTF
             Language.TTFdB
             Language.TDPE
