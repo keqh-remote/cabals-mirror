@@ -1,5 +1,5 @@
 name:                sexp-show
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:            Produce a s-expression representation of Show values.
 description:         Program to produce a s-expression representation of Show values.
 license:             BSD3
