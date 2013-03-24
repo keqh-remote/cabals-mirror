@@ -1,20 +1,20 @@
 name: buster
-version: 0.99.5
+version: 0.99.6
 cabal-version: -any
 build-type: Simple
 license: BSD3
 license-file: ""
 copyright: 2009 Renaissance Computing Institute
 maintainer: Jeff Heard <jeff@renci.org>
-build-depends: binary -any, parsec >=3.0.0, pretty -any, mtl -any,
-               gtk -any, bytestring -any, base -any, containers -any, time -any,
-               old-locale -any
+build-depends: network -any, HTTP >=4000.0, binary -any,
+               parsec >=3.0.0, pretty -any, mtl -any, gtk -any, bytestring -any,
+               base -any, containers -any, time -any, old-locale -any
 stability: Experimental
 homepage: http://vis.renci.org/jeff/buster
 package-url:
 bug-reports:
 synopsis: Almost but not quite entirely unlike FRP
-description: Buster is best described by the following blog post: http://vis.renci.org/jeff/2009/03/31/almost-but-not-quite-entirely-like-frp/
+description: Buster is best described by the following blog post: http:\/\/vis.renci.org\/jeff\/2009\/03\/31\/almost-but-not-quite-entirely-like-frp\/
              .
              It is an engine for orchestrating large, complex, and multifaceted applications by couching them in terms of time, events, a bus,
              behaviours, and widgets.  Time is continuous and infininte.  Events are discrete and exist for a particular time.  The bus is a
@@ -33,7 +33,7 @@ data-dir: ""
 extra-source-files:
 extra-tmp-files:
 exposed-modules: App.EventBus App.Behaviours.PrintEvents
-                 App.Behaviours.Exception App.Behaviours.FileOps
+                 App.Behaviours.Exception App.Behaviours.FileOps App.Behaviours.HTTP
                  App.Widgets.GtkMouseKeyboard App.Widgets.Environment
 exposed: True
 buildable: True
