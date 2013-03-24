@@ -1,5 +1,5 @@
 Name:		regexpr
-Version:	0.5.1
+Version:	0.5.3
 License:	LGPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -37,11 +37,10 @@ Description:
   >              [(("abc", ("", "defdefabc")), []), (("abc", ("defdef", "")), [])]
   > splitRegexPR "\\s*,\\s*" "a,b ,c\t ,d , e" => ["a","b","c","d","e"]
 Category:	Text
-Build-Depends:	base, mtl, HUnit, mtlparse >= 0.0.1
+Build-Depends:	base < 5, mtl, HUnit, mtlparse >= 0.1.0
 Build-Type:     Simple
 Exposed-modules: Text.RegexPR
 Other-modules:	Hidden.RegexPRTypes, Hidden.Tools, Hidden.RegexPRCore,
-		Hidden.ParseRegexStr, Hidden.SrcRegActList,
-		Hidden.TestMain
-Extra-source-files: TODO.ja.utf-8, localConfigure, BUGS.ja.utf-8
+		Hidden.ParseRegexStr, Hidden.SrcRegActList
+Extra-source-files:
 ghc-options:    -Wall
