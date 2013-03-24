@@ -1,5 +1,5 @@
 Name:    websockets
-Version: 0.4.0.0
+Version: 0.4.0.1
 
 Synopsis:
   A sensible and clean way to write WebSocket-capable servers in Haskell.
@@ -55,21 +55,25 @@ Library
     Network.WebSockets.Monad
     Network.WebSockets.Protocol
     Network.WebSockets.Protocol.Hybi00
+    Network.WebSockets.Protocol.Hybi00.Internal
     Network.WebSockets.Protocol.Hybi10
+    Network.WebSockets.Protocol.Hybi10.Internal
+    Network.WebSockets.Protocol.Hybi17
+    Network.WebSockets.Protocol.Hybi17.Internal
     Network.WebSockets.Protocol.Unsafe
     Network.WebSockets.Socket
     Network.WebSockets.Types
 
   Build-depends:
-    attoparsec               >= 0.9    && < 0.10,
-    attoparsec-enumerator    >= 0.2    && < 0.3,
+    attoparsec               >= 0.9    && < 0.11,
+    attoparsec-enumerator    >= 0.2    && < 0.4,
     base                     >= 4      && < 5,
     base64-bytestring        >= 0.1    && < 0.2,
     binary                   >= 0.5    && < 0.6,
     blaze-builder            >= 0.3    && < 0.4,
     blaze-builder-enumerator >= 0.2    && < 0.3,
     bytestring               >= 0.9    && < 0.10,
-    case-insensitive         >= 0.3    && < 0.4,
+    case-insensitive         >= 0.3    && < 0.5,
     containers               >= 0.3    && < 0.5,
     enumerator               >= 0.4.13 && < 0.5,
     mtl                      >= 2.0    && < 2.2,
