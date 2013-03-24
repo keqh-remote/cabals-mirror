@@ -1,10 +1,10 @@
 Name: HaTeX-meta
-Version: 1.0.0
+Version: 1.1.0
 Cabal-Version: >= 1.6
 Build-Type: Simple
 License: BSD3
 License-file: license
-Maintainer: Daniel Díaz {danieldiaz <at> dhelta <dot> net}
+Maintainer: Daniel Díaz (danieldiaz <at> dhelta <dot> net)
 Stability: Experimental
 Homepage: http://dhelta.net/hprojects/HaTeX-meta
 Bug-reports: danieldiaz <at> dhelta <dot> net
@@ -27,4 +27,5 @@ Executable metahatex
                , containers == 0.4.*
                , directory == 1.*
                , filepath == 1.*
+               , Cabal == 1.10.*
   Main-is: MetaHaTeX.hs
