@@ -1,5 +1,5 @@
 Name:                data-ordlist
-Version:             0.4.3
+Version:             0.4.4
 Description:
    This module provides set and multiset operations on ordered lists.
 License:             BSD3
@@ -22,4 +22,4 @@ source-repository head
 source-repository this
   type:      darcs
   location:  http://patch-tag.com/r/lpsmith/data-ordlist/pullrepo
-  tag:       0.4.3
+  tag:       0.4.4
