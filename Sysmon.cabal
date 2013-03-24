@@ -1,6 +1,16 @@
 Name:                Sysmon
-Version:             0.1
+Version:             0.1.1
 Description:         A library for processing Sysbase 15 sysmon reports.
+                     Sysmon parses and stores the reports in the interval map. 
+                     The interval is defined by the report's time range. 
+
+                     The library main features are parsing sysmon reports, querying the 
+                     time interval, aggregating the multiple sysmon reports covered by the 
+                     requested time interval, providing some hints. The hints properties are 
+                     configured.
+ 
+                     See the Log.hs for the exported functions and examples/Sample.hs for the 
+                     usage example.
 License:             BSD3
 License-File:        LICENSE
 Author:              Vitaliy Rukavishnikov
@@ -11,10 +21,11 @@ Build-Type:          Simple
 Tested-with:	     GHC==6.12.3
 Category:            Database
 Synopsis:            Sybase 15 sysmon reports processor
-Data-Dir:            tests
+Data-Dir:            examples
 Data-Files:	     sysmon_100310_0952.out
 Cabal-Version:       >=1.2
-Extra-Source-Files:  README
+Extra-Source-Files:  README,
+                     examples/Sample.hs
 
 Library
     Exposed-Modules:     Database.Sybase.Sysmon.LogTypes, 
