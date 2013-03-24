@@ -1,6 +1,6 @@
 Name:                SBench
 
-Version:             0.1.1
+Version:             0.2.0
 
 Synopsis:            A benchmark suite for runtime and heap measurements over 
                      a series of inputs.
@@ -56,16 +56,19 @@ Library
     Test.SBench.Space.Series.Test
 
   Build-depends:
-    base >= 4 && <5, 
-    criterion >= 0.5 && <0.6,
-    gnuplot >= 0.4.0.1 && <0.5,
-    hp2any-core, 
+    base >= 4 && <6, 
+    criterion >= 0.5,
+    gnuplot >= 0.4.0.1,
+    hp2any-core >= 0.11.2, 
     deepseq,
-    txt-sushi >= 0.5 && <0.6,
+    cassava >= 0.2.1.2,
     parsec >= 3 && <= 4, 
-    directory >= 1 && <2, 
+    directory >= 1, 
     filepath,
-    haskell98
+    vector,
+    process,
+    utf8-string,
+    bytestring
   
   Other-modules:       
     Test.SBench.File.Parser
