@@ -1,5 +1,5 @@
 Name:          simple-css
-Version:       0.0.3
+Version:       0.0.4
 Cabal-Version: >= 1.6
 License:       BSD3
 License-file:  LICENSE
@@ -24,7 +24,9 @@ Extra-Source-Files : example/Main.hs
 
 Library
   Build-Depends:
-        base >= 4, base < 5, containers == 0.*, language-css == 0.0.1, blaze-html >= 0.3.0.1  
+        base >= 4, base < 5, 
+        unordered-containers >= 0.1.1, hashable >= 1.1.1.0,
+        language-css >= 0.0.2, blaze-html >= 0.4  
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         SimpleCss
