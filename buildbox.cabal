@@ -1,5 +1,5 @@
 Name:                buildbox
-Version:             2.1.1.1
+Version:             2.1.2.1
 License:             BSD3
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -22,7 +22,7 @@ Tested-with:
 Library
   Build-Depends: 
         base           == 4.6.*,
-        containers     == 0.4.*,
+        containers     == 0.5.*,
         time           == 1.4.*,
         directory      == 1.2.*,
         mtl            == 2.1.*,
