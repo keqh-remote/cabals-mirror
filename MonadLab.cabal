@@ -1,5 +1,5 @@
 Name:          MonadLab
-Version:       0.0.1
+Version:       0.0.2
 Synopsis:      Automatically generate layered monads
 Category:      Monads
 
@@ -39,5 +39,5 @@ Library {
                    MonadLab.Identity, MonadLab.Io, MonadLab.IoList,
                    MonadLab.ListIo, MonadLab.List, MonadLab.State,
                    MonadLab.Env, MonadLab.Error, MonadLab.Cont, MonadLab.Run,
-                   MonadLab.Declarations
+                   MonadLab.Declarations, MonadLab.Res
 }
