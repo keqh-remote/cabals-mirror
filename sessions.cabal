@@ -1,5 +1,5 @@
 name: sessions
-version: 2007.6.20
+version: 2007.7.15
 stability: Alpha
 copyright: Matthew Sackman
 category: Control
@@ -26,5 +26,5 @@ other-modules: Control.Concurrent.Session.BaseClasses
                Control.Concurrent.Session.Runtime
                Control.Concurrent.Session.State
 ghc-options: -O2
-extra-source-files: Tests.hs, ChangeLog.txt
+extra-source-files: Tests.hs, ChoiceTests.hs, ChangeLog.txt
 
