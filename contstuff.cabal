@@ -1,5 +1,5 @@
 Name:          contstuff
-Version:       1.2.0
+Version:       1.2.3
 Category:      Control, Monads
 Synopsis:      Fast, easy to use CPS-based monad transformers
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -17,7 +17,7 @@ Description:
     transformers.  Most of the usual monad transformers are implemented,
     including ChoiceT, ContT, EitherT, MaybeT and StateT.  Because of
     the design of this library, many other monad transformers are just
-    special cases of those, including e.g. WriterT.
+    special cases of those, including e.g. ReaderT and WriterT.
 
     The Control.ContStuff.Simple module also provides simplified monad
     transformer wrappers, which hide the underlying CPS, so you get the
@@ -29,7 +29,7 @@ Library
     Build-depends:
         base >= 4 && <= 5,
         transformers >= 0.2.2.0
-    GHC-Options: -W
+    GHC-Options: -W -O2
     Exposed-modules:
         Control.ContStuff
         Control.ContStuff.Classes
