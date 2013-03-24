@@ -1,6 +1,6 @@
 Name:           hledger
 -- updated by build process from VERSION
-Version:        0.4
+Version:        0.5
 Category:       Finance
 Synopsis:       A ledger-compatible text-based accounting tool.
 Description:    hledger is a partial haskell clone of John Wiegley's "ledger" text-based
@@ -28,7 +28,7 @@ Flag happs
 
 Library
   Build-Depends:  base, containers, haskell98, directory, parsec, regex-compat,
-                  old-locale, time, HUnit, filepath
+                  old-locale, time, HUnit, filepath, utf8-string
 
   Exposed-modules:Ledger
                   Ledger.Account
@@ -36,10 +36,11 @@ Library
                   Ledger.Amount
                   Ledger.Commodity
                   Ledger.Dates
-                  Ledger.Entry
+                  Ledger.IO
+                  Ledger.LedgerTransaction
                   Ledger.RawLedger
                   Ledger.Ledger
-                  Ledger.RawTransaction
+                  Ledger.Posting
                   Ledger.Parse
                   Ledger.TimeLog
                   Ledger.Transaction
@@ -51,10 +52,13 @@ Executable hledger
 
   Build-Depends:  base, containers, haskell98, directory, parsec,
                   regex-compat, regexpr>=0.5.1, old-locale, time,
-                  HUnit, mtl, bytestring, filepath, process, testpack
+                  HUnit, mtl, bytestring, filepath, process, testpack,
+                  regex-pcre, csv, split, utf8-string
 
   Other-Modules:  
+                  AddCommand
                   BalanceCommand
+                  HistogramCommand
                   Options
                   PrintCommand
                   RegisterCommand
@@ -68,17 +72,18 @@ Executable hledger
                   Ledger.Amount
                   Ledger.Commodity
                   Ledger.Dates
-                  Ledger.Entry
+                  Ledger.IO
+                  Ledger.LedgerTransaction
                   Ledger.Ledger
                   Ledger.Parse
                   Ledger.RawLedger
-                  Ledger.RawTransaction
+                  Ledger.Posting
                   Ledger.TimeLog
                   Ledger.Transaction
                   Ledger.Types
                   Ledger.Utils
 
-  -- how to set patchlevel in cabal builds ?
+  -- need to set patchlevel here (darcs changes --from-tag=. --count)
   cpp-options:    -DPATCHES=0
 
   if flag(vty)
