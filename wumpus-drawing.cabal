@@ -1,5 +1,5 @@
 name:             wumpus-drawing
-version:          0.7.0
+version:          0.9.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -38,7 +38,22 @@ description:
   .
   Changelog:
   .
-  v0.6.0 to v0.7.0
+  v0.8.0 to v0.9.0:
+  . 
+  * Updated to work with wumpus-basic-0.24.0. 
+  .
+  * Removed monoid mappend alias @(<>)@ as it is now defined by
+    Data.Monoid. 
+  .
+  v0.7.0 to v0.8.0:
+  .
+  * Changed API to make Connectors.
+  .
+  * Added InclineTrails to Drawing.Basis.
+  . 
+  * Reworked @Extras.Loop@.
+  .
+  v0.6.0 to v0.7.0:
   .
   * Changed paths - @RelPath@ has been removed and there are now 
     only absolute paths. @PathBuilder@ builds absolute paths.
@@ -53,7 +68,7 @@ description:
   .
   * Added a tube box connector.
   .
-  v0.5.0 to v0.6.0
+  v0.5.0 to v0.6.0:
   .
   * Removed @LocTrace@ and @RefTrace@ from @Wumpus.Drawing.Basis@,
     they are superseded by @LocDrawing@ in Wumpus-Basic.
@@ -91,11 +106,15 @@ library
                       containers      >= 0.3     && <= 0.6,
                       vector-space    >= 0.6     && <  1.0,
                       wumpus-core     >= 0.52.0  && <  0.53.0,
-                      wumpus-basic    == 0.22.0
+                      wumpus-basic    == 0.24.0
 
   
   exposed-modules:
+    Wumpus.Drawing.Basis.BezierCurve,
     Wumpus.Drawing.Basis.DrawingPrimitives,
+    Wumpus.Drawing.Basis.Geometry,
+    Wumpus.Drawing.Basis.InclineTrails,
+    Wumpus.Drawing.Basis.ShapeTrails,
     Wumpus.Drawing.Basis.Symbols,
     Wumpus.Drawing.Colour.SVGColours,
     Wumpus.Drawing.Colour.X11Colours,
@@ -113,6 +132,8 @@ library
     Wumpus.Drawing.Extras.Loop,
     Wumpus.Drawing.Paths,
     Wumpus.Drawing.Paths.Base,
+    Wumpus.Drawing.Paths.Illustrate,
+    Wumpus.Drawing.Paths.Intersection,
     Wumpus.Drawing.Paths.PathBuilder,
     Wumpus.Drawing.Paths.Vamps,
     Wumpus.Drawing.Shapes,
