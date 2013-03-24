@@ -1,5 +1,5 @@
 name:            persistent
-version:         0.2.1
+version:         0.2.2
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -25,7 +25,8 @@ library
                      web-routes-quasi >= 0.6.0 && < 0.7,
                      containers >= 0.2 && < 0.4,
                      parsec >= 2.1 && < 4,
-                     enumerator >= 0.4 && < 0.5
+                     enumerator >= 0.4 && < 0.5,
+                     stm >= 2.1 && < 2.2
     exposed-modules: Database.Persist
                      Database.Persist.Base
                      Database.Persist.TH
