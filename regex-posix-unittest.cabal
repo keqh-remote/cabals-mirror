@@ -1,5 +1,5 @@
 name:                   regex-posix-unittest
-version:                1.0
+version:                1.1
 cabal-version:          >=1.2
 license:                BSD3
 license-File:           LICENSE
@@ -17,7 +17,9 @@ data-files:             test-manifest.txt,
                         basic3.txt,class.txt,forced-assoc.txt,nullsub3.txt,repetition2.txt,right-assoc.txt,totest.txt,left-assoc.txt,osx-bsd-critical.txt
 
 executable regex-posix-unittest
-  build-depends:        regex-base >= 0.93.1, base >= 2.0, regex-posix >= 0.93, bytestring, containers, array, mtl
+  build-depends:        regex-base >= 0.93.1, base >=4  && < 5, regex-posix >= 0.93, bytestring, containers, array, mtl
   main-is:              Main.hs
   other-modules:        Paths_regex_posix_unittest
   extensions:           FlexibleInstances, FlexibleContexts,Rank2Types
+  GHC-Options:          -Wall -O2 -funbox-strict-fields
+  GHC-Prof-Options:       -auto-all
