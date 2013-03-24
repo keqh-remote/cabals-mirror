@@ -1,5 +1,5 @@
 name:                io-capture
-version:             0.1
+version:             0.2
 synopsis:            capture IO action's stdout and stderr
 description:         capture IO action's stdout and stderr
 category:            System
