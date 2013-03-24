@@ -1,5 +1,5 @@
 Name:		fquery
-Version:	0.2.1
+Version:	0.2.1.1
 
 Author:		David Wang <millimillenary@gmail.com>, Sergei Trofimovich <slyfox@inbox.ru>
 Maintainer:	Sergei Trofimovich <slyfox@inbox.ru>
@@ -10,14 +10,16 @@ License:	OtherLicense
 
 Synopsis:	Installed package query tool for Gentoo Linux
 Description:	Installed package query tool for Gentoo Linux
-
-		Home page http://home.exetel.com.au/tjaden/fquery/
-		Public repository is http://repo.or.cz/w/fquery.git
+		.
+		Home page <http://home.exetel.com.au/tjaden/fquery/>
+		.
+		Public repository is at <http://repo.or.cz/w/fquery.git>
 
 Category:	Gentoo
 
 Build-Type:	Configure
-Build-Depends:	base, haskell98, parsec, unix, regex-compat, process, directory
+Build-Depends:	base >= 2 && < 4, haskell98, parsec, unix, regex-compat, process, directory
+
 Extra-Source-Files:
 		configure
 		Adelie/Config.hs.in
