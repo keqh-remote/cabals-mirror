@@ -1,5 +1,5 @@
 name:                fft
-version:             0.1.6
+version:             0.1.7
 synopsis:            Bindings to the FFTW library.
 description:
                      Bindings to the FFTW library.
@@ -14,10 +14,19 @@ license-file:        LICENSE
 author:              Jed Brown
 maintainer:          <jed@59A2.org>
 build-type:	     Simple
-cabal-version:       >= 1.2
+cabal-version:       >= 1.6
 
 flag splitBase
 flag base4
+
+source-repository this
+  tag:         0.1.7
+  type:        darcs
+  location:    http://code.haskell.org/fft/
+
+source-repository head
+  type:        darcs
+  location:    http://code.haskell.org/fft/
 
 library
   if flag(splitBase)
@@ -31,6 +40,7 @@ library
 
   exposed-modules: Math.FFT
                    Math.FFT.Base
-  extra-libraries: fftw3
+  pkgconfig-depends:
+                   fftw3 >=3.3 && <4
   extensions:      ForeignFunctionInterface
   ghc-options:     -Wall
