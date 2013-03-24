@@ -1,6 +1,6 @@
 
 Name:                fixplate
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Uniplate-style generic traversals for fixed-point types, with some extras.
 Description:         Uniplate-style generic traversals for fixed-point types, which can be  
                      optionally annotated with attributes. We also provide a generic zipper.
@@ -9,7 +9,7 @@ Description:         Uniplate-style generic traversals for fixed-point types, wh
 License:             BSD3
 License-file:        LICENSE
 Author:              Balazs Komuves
-Copyright:           (c) 2011 Balazs Komuves
+Copyright:           (c) 2011-2012 Balazs Komuves
 Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
 Homepage:            http://code.haskell.org/~bkomuves/
 Stability:           Experimental
@@ -64,6 +64,6 @@ Library
 
   Hs-Source-Dirs:      .
 
-  ghc-options:         -Wall -fno-warn-unused-matches
+  ghc-options:         -Wall -fno-warn-unused-matches -fno-warn-name-shadowing
 
    
