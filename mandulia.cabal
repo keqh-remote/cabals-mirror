@@ -1,17 +1,20 @@
 Name:                mandulia
-Version:             0.6
+Version:             0.7
 Stability:           Provisional
 Synopsis:            A zooming visualisation of the Mandelbrot Set as many Julia Sets.
 Description:         Mandulia provides a zooming visualisation of the Mandelbrot Set
                      as many Julia Sets.  Featuring a profiled and optimized renderer,
                      and a Lua configuration and scripting interface.
                      .
-                     By default Mandulia compiles using SSE4 instructions.  If your
-                     CPU does not support SSE4, you should add "-f-SSE4" to your
-                     cabal-install command line.
+                     Mandulia supports additional compile-time flags for speed, but by
+                     default these are disabled because they don't work on all systems.
+                     These flags are "-ffast" for miscellaneous optimizations, and
+                     "-ffast -fSSE4" to use SSE4 instructions too.
                      .
-                     Changes from "mandulia-0.5": the program help text now correctly
-                     reflects the implementation, thus avoiding confusion.
+                     Changes from "mandulia-0.6": the optimization flags are disabled
+                     by default as they were causing problems on some systems; reduced
+                     visual jitter for smoother animation; smoother colour gradations;
+                     access runtime statistics from Lua scripts.
 Homepage:            http://gitorious.org/maximus/mandulia
 Cabal-version:       >=1.6
 License:             GPL-3
@@ -26,19 +29,27 @@ Extra-source-files:  AUTHORS ChangeLog HACKING INSTALL NEWS README TODO
 Data-dir:            config
 Data-files:          defaults.lua distance.lua main.lua transition.lua
 
+Flag fast
+  Description:         Enable optimizations that might break some compilers.
+  Default:             False
+
 Flag SSE4
   Description:         Enable optimizations for SSE4 CPUs.
-  Default:             True
+  Default:             False
 
 Executable mandulia
   Build-depends:       base >= 4 && < 5, array, bytestring, containers, directory, filepath, time, GLUT >= 2.2, hslua >= 0.2
   Build-tools:         hsc2hs
   Extensions:          ForeignFunctionInterface
-  if  flag(SSE4) && impl(ghc)
+  if !flag(fast) && impl(ghc)
+    GHC-options:         -Wall -threaded
+    GHC-prof-options:    -Wall -threaded -prof -auto-all
+    CC-options:          -std=c99 -Wall -pedantic
+  if  flag(fast) &&  flag(SSE4) && impl(ghc)
     GHC-options:         -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math -optc-msse4
     GHC-prof-options:    -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math -optc-msse4 -prof -auto-all
     CC-options:          -std=c99 -Wall -pedantic -O3 -march=native -ffast-math -msse4
-  if !flag(SSE4) && impl(ghc)
+  if  flag(fast) && !flag(SSE4) && impl(ghc)
     GHC-options:         -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math
     GHC-prof-options:    -Wall -O3 -threaded -fvia-c -funbox-strict-fields -optc-O3 -optc-march=native -optc-ffast-math -prof -auto-all
     CC-options:          -std=c99 -Wall -pedantic -O3 -march=native -ffast-math
@@ -73,4 +84,4 @@ Source-repository head
 Source-repository this
   type:                git
   location:            git://gitorious.org/maximus/mandulia.git
-  tag:                 v0.6
+  tag:                 v0.7
