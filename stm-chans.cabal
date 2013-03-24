@@ -1,9 +1,9 @@
 ----------------------------------------------------------------
--- wren ng thornton <wren@community.haskell.org>    ~ 2011.04.05
+-- wren ng thornton <wren@community.haskell.org>    ~ 2011.05.07
 ----------------------------------------------------------------
 
 Name:           stm-chans
-Version:        1.1.0
+Version:        1.2.0
 -- Source-Repository requires version 1.6
 Cabal-Version:  >= 1.6
 -- We need a custom build in order to define __HADDOCK__
@@ -12,7 +12,7 @@ Stability:      experimental
 Copyright:      Copyright (c) 2011 wren ng thornton
 License:        BSD3
 License-File:   LICENSE
-Author:         wren ng thornton
+Author:         wren ng thornton, Thomas DuBuisson
 Maintainer:     wren@community.haskell.org
 Homepage:       http://code.haskell.org/~wren/
 Category:       Concurrency
@@ -28,8 +28,11 @@ Source-Repository head
 Library
     -- Not sure what the real minbounds are for base and stm...
     --
-    -- N.B., stm >= 2.1.2 is required for fast readTVarIO
-    Build-Depends: base >= 4.1 && < 5, stm >= 2.1.1
+    -- N.B., stm >= 2.1.2 is required for fast readTVarIO. And
+    -- stm >= ?.?.? is required for fast tryReadTChan, peekTChan,
+    -- tryPeekTChan.
+    Build-Depends: base >= 4.1 && < 5
+                 , stm  >= 2.1.1
     
     Hs-Source-Dirs:  src
     Exposed-Modules: Control.Concurrent.STM.TBChan
