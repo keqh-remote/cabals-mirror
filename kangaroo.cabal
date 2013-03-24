@@ -1,5 +1,5 @@
 name:             kangaroo
-version:          0.3.0
+version:          0.4.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -18,17 +18,25 @@ description:
   \* Caveat \* - the above of course means that the target file 
   is obliged to be small enough to fit into memory. 
   .
-  \*\* MAJOR CAVEAT \*\* - kangaroo is somewhat half-baked at the
-  moment - the parsing machinery seems good but the combinators
-  and primitive parsers need more work. I\'ve only released it on 
-  Hackage because I'm now using it with Hurdle which was already 
-  on Hackage.
+  \*\* MAJOR CAVEAT \*\* - kangaroo is somewhat half-baked (maybe 
+  now two thirds baked). The parsing machinery seems good but the 
+  combinators need more work. It\'s on Hackage because I'm using 
+  it with Hurdle which was already on Hackage and the techinique
+  of moving a cursor rather than consuming input seems at least 
+  interesting.
   .
   Currently kangaroo is twinned with its own library of formatting
-  combinators, at some point this is likely to be put into its 
-  own package
+  combinators (JoinPrint), at some point this is may go in its a 
+  separate package.
   .
   Changelog:
+  .
+  0.4.0 Changed JoinPrint to have distinct types for single-line
+  documents (Doc) and multi-line documents (VDoc). This is 
+  because single-line docs track their horizontal length.
+  .
+  Added a 'skip' primitive to the Parse Monad. Added 'local' and
+  'asks' to the Reader top-level modules.
   .
   0.3.0 Documented the primitive parsers. @char@ renamed @anyChar@
   to match Parsec\'s convention. Rationalized exports from 
@@ -45,11 +53,7 @@ stability:          half baked
 cabal-version:      >= 1.2
 
 extra-source-files:
-  demo/MidiDatatypes.hs
-  demo/MidiRead.hs
-  demo/MidiText.hs
-  demo/PrintMidi.hs
-  test/Picklers.hs
+  demo/AR.hs
 
 
 library
