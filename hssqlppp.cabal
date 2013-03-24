@@ -1,5 +1,5 @@
 Name:                hssqlppp
-Version:             0.0.8
+Version:             0.0.9
 Synopsis:            Sql parser and type checker
 Description:
     Sql parser, pretty printer and type checker, targets PostGreSQL SQL
@@ -51,18 +51,45 @@ homepage:            https://launchpad.net/hssqlppp
 bug-reports:         mailto:jakewheatmail@gmail.com
 category:            Database
 
-extra-source-files:  README,
-                     TODO,
-                     development,
-                     questions,
-                     usage,
-                     LICENSE,
-                     changelog,
-                     Database/HsSqlPpp/AstInternals/AstInternal.ag
-                     Database/HsSqlPpp/AstInternals/TypeChecking.ag
+extra-source-files:  README
+                     TODO
+                     development
+                     questions
+                     usage
+                     LICENSE
+                     changelog
                      sqltestfiles/system.sql
                      sqltestfiles/server.sql
                      sqltestfiles/client.sql
+                     --find Database/ -type f -a ! -iname '*.o' -a ! -iname '*.hi'
+                     Database/HsSqlPpp/Utils.lhs
+                     Database/HsSqlPpp/Dbms/DBAccess.lhs
+                     Database/HsSqlPpp/Dbms/DatabaseLoader.lhs
+                     Database/HsSqlPpp/AstInternals/DefaultTemplate1Environment.lhs
+                     Database/HsSqlPpp/AstInternals/TypeCheckingH.lhs
+                     Database/HsSqlPpp/AstInternals/AnnotationUtils.lhs
+                     Database/HsSqlPpp/AstInternals/TypeConversion.lhs
+                     Database/HsSqlPpp/AstInternals/TypeChecking.ag
+                     Database/HsSqlPpp/AstInternals/EnvironmentReader.lhs
+                     Database/HsSqlPpp/AstInternals/EnvironmentInternal.lhs
+                     Database/HsSqlPpp/AstInternals/AstAnnotation.lhs
+                     Database/HsSqlPpp/AstInternals/AstInternal.hs
+                     Database/HsSqlPpp/AstInternals/AstInternal.ag
+                     Database/HsSqlPpp/AstInternals/TypeType.lhs
+                     Database/HsSqlPpp/AstInternals/AstUtils.lhs
+                     Database/HsSqlPpp/Tests/AstCheckTests.lhs
+                     Database/HsSqlPpp/Tests/ParserTests.lhs
+                     Database/HsSqlPpp/Tests/DatabaseLoaderTests.lhs
+                     Database/HsSqlPpp/PrettyPrinter/AnnotateSource.lhs
+                     Database/HsSqlPpp/PrettyPrinter/PrettyPrinter.lhs
+                     Database/HsSqlPpp/Parsing/Lexer.lhs
+                     Database/HsSqlPpp/Parsing/Parser.lhs
+                     Database/HsSqlPpp/Parsing/ParseErrors.lhs
+                     Database/HsSqlPpp/Ast/Annotator.lhs
+                     Database/HsSqlPpp/Ast/Ast.lhs
+                     Database/HsSqlPpp/Ast/Environment.lhs
+                     Database/HsSqlPpp/Ast/Annotation.lhs
+                     Database/HsSqlPpp/Ast/SqlTypes.lhs
 
 Library
   Build-Depends:     base >= 4 && < 5,
@@ -84,6 +111,23 @@ Library
                      Database.HsSqlPpp.Ast.Annotation,
                      Database.HsSqlPpp.Ast.SqlTypes,
                      Database.HsSqlPpp.Dbms.DatabaseLoader
+  other-modules:     Database.HsSqlPpp.Utils
+                     Database.HsSqlPpp.Dbms.DBAccess
+                     Database.HsSqlPpp.AstInternals.DefaultTemplate1Environment
+                     Database.HsSqlPpp.AstInternals.TypeCheckingH
+                     Database.HsSqlPpp.AstInternals.AnnotationUtils
+                     Database.HsSqlPpp.AstInternals.TypeConversion
+                     Database.HsSqlPpp.AstInternals.EnvironmentReader
+                     Database.HsSqlPpp.AstInternals.EnvironmentInternal
+                     Database.HsSqlPpp.AstInternals.AstAnnotation
+                     Database.HsSqlPpp.AstInternals.AstInternal
+                     Database.HsSqlPpp.AstInternals.TypeType
+                     Database.HsSqlPpp.AstInternals.AstUtils
+                     Database.HsSqlPpp.Tests.AstCheckTests
+                     Database.HsSqlPpp.Tests.ParserTests
+                     Database.HsSqlPpp.Parsing.Lexer
+                     Database.HsSqlPpp.Parsing.ParseErrors
+                     Database.HsSqlPpp.Utils
   extensions:        DeriveDataTypeable,RankNTypes,ScopedTypeVariables
 
 Executable HsSqlSystem
@@ -94,30 +138,34 @@ Executable HsSqlSystem
                      HDBC,
                      HDBC-postgresql,
                      directory
-  Other-Modules:     Database.HsSqlPpp.AstInternals.AstAnnotation,
-                     Database.HsSqlPpp.Ast.Ast,
-                     Database.HsSqlPpp.Ast.Annotation,
-                     Database.HsSqlPpp.Ast.SqlTypes,
-                     Database.HsSqlPpp.AstInternals.AstInternal,
-                     Database.HsSqlPpp.Ast.Annotator,
-                     Database.HsSqlPpp.AstInternals.AstUtils,
-                     Database.HsSqlPpp.Dbms.DatabaseLoader,
-                     Database.HsSqlPpp.Dbms.DBAccess,
-                     Database.HsSqlPpp.Parsing.Lexer,
-                     Database.HsSqlPpp.Parsing.ParseErrors,
-                     Database.HsSqlPpp.Parsing.Parser,
-                     Database.HsSqlPpp.PrettyPrinter.PrettyPrinter,
-                     Database.HsSqlPpp.PrettyPrinter.AnnotateSource,
-                     Database.HsSqlPpp.AstInternals.TypeCheckingH,
-                     Database.HsSqlPpp.AstInternals.TypeConversion,
-                     Database.HsSqlPpp.AstInternals.TypeType,
-                     Database.HsSqlPpp.Ast.Environment,
-                     Database.HsSqlPpp.AstInternals.EnvironmentInternal,
-                     Database.HsSqlPpp.AstInternals.EnvironmentReader,
-                     Database.HsSqlPpp.Utils
-                     Database.HsSqlPpp.AstInternals.DefaultTemplate1Environment
-                     Database.HsSqlPpp.AstInternals.AnnotationUtils
   extensions:        DeriveDataTypeable,RankNTypes,ScopedTypeVariables
+  other-modules:     Database.HsSqlPpp.Utils
+                     Database.HsSqlPpp.Dbms.DBAccess
+                     Database.HsSqlPpp.Dbms.DatabaseLoader
+                     Database.HsSqlPpp.AstInternals.DefaultTemplate1Environment
+                     Database.HsSqlPpp.AstInternals.TypeCheckingH
+                     Database.HsSqlPpp.AstInternals.AnnotationUtils
+                     Database.HsSqlPpp.AstInternals.TypeConversion
+                     Database.HsSqlPpp.AstInternals.EnvironmentReader
+                     Database.HsSqlPpp.AstInternals.EnvironmentInternal
+                     Database.HsSqlPpp.AstInternals.AstAnnotation
+                     Database.HsSqlPpp.AstInternals.AstInternal
+                     Database.HsSqlPpp.AstInternals.TypeType
+                     Database.HsSqlPpp.AstInternals.AstUtils
+                     Database.HsSqlPpp.Tests.AstCheckTests
+                     Database.HsSqlPpp.Tests.ParserTests
+                     Database.HsSqlPpp.Tests.DatabaseLoaderTests
+                     Database.HsSqlPpp.PrettyPrinter.AnnotateSource
+                     Database.HsSqlPpp.PrettyPrinter.PrettyPrinter
+                     Database.HsSqlPpp.Parsing.Lexer
+                     Database.HsSqlPpp.Parsing.Parser
+                     Database.HsSqlPpp.Parsing.ParseErrors
+                     Database.HsSqlPpp.Ast.Annotator
+                     Database.HsSqlPpp.Ast.Ast
+                     Database.HsSqlPpp.Ast.Environment
+                     Database.HsSqlPpp.Ast.Annotation
+                     Database.HsSqlPpp.Ast.SqlTypes
+                     Database.HsSqlPpp.Utils
 
 Executable HsSqlPppTests
   Main-is:           HsSqlPppTests.lhs
@@ -129,31 +177,32 @@ Executable HsSqlPppTests
                      HDBC,
                      HDBC-postgresql,
                      directory
-
-  Other-Modules:     Database.HsSqlPpp.AstInternals.AstAnnotation,
-                     Database.HsSqlPpp.Tests.AstCheckTests,
-                     Database.HsSqlPpp.Ast.Ast,
-                     Database.HsSqlPpp.Ast.Annotation,
-                     Database.HsSqlPpp.AstInternals.AstInternal,
-                     Database.HsSqlPpp.Ast.Annotator,
-                     Database.HsSqlPpp.AstInternals.AstUtils,
-                     Database.HsSqlPpp.Dbms.DatabaseLoader,
-                     Database.HsSqlPpp.Tests.DatabaseLoaderTests,
-                     Database.HsSqlPpp.Dbms.DBAccess,
-                     Database.HsSqlPpp.Parsing.Lexer,
-                     Database.HsSqlPpp.Parsing.ParseErrors,
-                     Database.HsSqlPpp.Parsing.Parser,
-                     Database.HsSqlPpp.Tests.ParserTests,
-                     Database.HsSqlPpp.PrettyPrinter.PrettyPrinter,
-                     Database.HsSqlPpp.PrettyPrinter.AnnotateSource,
-                     Database.HsSqlPpp.AstInternals.TypeCheckingH,
-                     Database.HsSqlPpp.AstInternals.TypeConversion,
-                     Database.HsSqlPpp.AstInternals.TypeType,
-                     Database.HsSqlPpp.Ast.Environment,
-                     Database.HsSqlPpp.Ast.SqlTypes,
-                     Database.HsSqlPpp.AstInternals.EnvironmentInternal,
-                     Database.HsSqlPpp.AstInternals.EnvironmentReader,
-                     Database.HsSqlPpp.Utils
+  other-modules:     Database.HsSqlPpp.Utils
+                     Database.HsSqlPpp.Dbms.DBAccess
+                     Database.HsSqlPpp.Dbms.DatabaseLoader
                      Database.HsSqlPpp.AstInternals.DefaultTemplate1Environment
+                     Database.HsSqlPpp.AstInternals.TypeCheckingH
                      Database.HsSqlPpp.AstInternals.AnnotationUtils
+                     Database.HsSqlPpp.AstInternals.TypeConversion
+                     Database.HsSqlPpp.AstInternals.EnvironmentReader
+                     Database.HsSqlPpp.AstInternals.EnvironmentInternal
+                     Database.HsSqlPpp.AstInternals.AstAnnotation
+                     Database.HsSqlPpp.AstInternals.AstInternal
+                     Database.HsSqlPpp.AstInternals.TypeType
+                     Database.HsSqlPpp.AstInternals.AstUtils
+                     Database.HsSqlPpp.Tests.AstCheckTests
+                     Database.HsSqlPpp.Tests.ParserTests
+                     Database.HsSqlPpp.Tests.DatabaseLoaderTests
+                     Database.HsSqlPpp.PrettyPrinter.AnnotateSource
+                     Database.HsSqlPpp.PrettyPrinter.PrettyPrinter
+                     Database.HsSqlPpp.Parsing.Lexer
+                     Database.HsSqlPpp.Parsing.Parser
+                     Database.HsSqlPpp.Parsing.ParseErrors
+                     Database.HsSqlPpp.Ast.Annotator
+                     Database.HsSqlPpp.Ast.Ast
+                     Database.HsSqlPpp.Ast.Environment
+                     Database.HsSqlPpp.Ast.Annotation
+                     Database.HsSqlPpp.Ast.SqlTypes
+                     Database.HsSqlPpp.Utils
+
   extensions:        DeriveDataTypeable,RankNTypes,ScopedTypeVariables
