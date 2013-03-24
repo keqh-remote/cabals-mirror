@@ -1,6 +1,6 @@
 name:            strict-io
 cabal-Version:   >=1.6
-version:         0.2.0
+version:         0.1.2
 license:         BSD3
 license-File:    LICENSE
 copyright:       (c) Nicolas Pouillard
@@ -14,7 +14,7 @@ stability:       Provisional
 build-type:      Simple
 
 library
-  build-depends:   base>=3.0 && <5, deepseq==1.1.*, extensible-exceptions
+  build-depends:   base>=3.0 && <5, deepseq>=1.1 && <1.4, extensible-exceptions
   exposed-modules: System.IO.Strict
                    System.IO.Strict.Internals
                    Data.IORef.Strict
@@ -28,5 +28,5 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/publicrepos/strict-io
-  tag:      0.2.0
+  tag:      0.1
 
