@@ -1,5 +1,5 @@
 name:            Agda
-version:         2.3.0
+version:         2.3.0.1
 cabal-version:   >= 1.8
 build-type:      Simple
 license:         OtherLicense
@@ -34,7 +34,7 @@ description:
   Note also that this library does not follow the package versioning
   policy, because the library is only intended to be used by the Emacs
   mode and the Agda-executable package.
-tested-with:        GHC == 7.2.2
+tested-with:        GHC == 7.4.1
 extra-source-files: src/full/Agda/undefined.h
                     README
                     doc/release-notes/*.txt
@@ -69,24 +69,24 @@ flag epic
 library
   hs-source-dirs:   src/full
   if flag(use-locale)
-    build-depends:  base >= 4.2 && < 4.5
+    build-depends:  base >= 4.2 && < 4.6
   else
     build-depends:  base == 4.1.*,
                     utf8-string == 0.3.*
   if flag(epic)
-    build-depends:  epic >= 0.1.13 && < 0.2
+    build-depends:  epic >= 0.1.13 && < 0.10
   build-depends:    mtl == 2.0.*,
                     QuickCheck >= 2.3 && < 2.5,
                     haskell-src-exts >= 1.9.6 && < 1.12,
                     containers >= 0.1 && < 0.5,
                     pretty >= 1.0 && < 1.2,
                     directory >= 1.0 && < 1.2,
-                    old-time == 1.0.*,
+                    old-time >= 1.0 && < 1.2,
                     bytestring >= 0.9.0.1 && < 0.10,
-                    array >= 0.1 && < 0.4,
+                    array >= 0.1 && < 0.5,
                     binary >= 0.4.4 && < 0.6,
                     zlib >= 0.4.0.1 && < 0.6,
-                    filepath >= 1.1 && < 1.3,
+                    filepath >= 1.1 && < 1.4,
                     process >= 1.0.1.0 && < 1.2,
                     haskeline >= 0.6.3.2 && < 0.7,
                     xhtml == 3000.2.*,
@@ -332,10 +332,10 @@ executable agda-mode
   main-is:          Main.hs
   other-modules:    Paths_Agda
   if flag(use-locale)
-    build-depends:  base >= 4.2 && < 4.5
+    build-depends:  base >= 4.2 && < 4.6
   else
     build-depends:  base == 4.1.*,
                     utf8-string == 0.3.*
-  build-depends:    filepath >= 1.1 && < 1.3,
+  build-depends:    filepath >= 1.1 && < 1.4,
                     process >= 1.0.1.0 && < 1.2,
                     directory >= 1.0 && < 1.2
