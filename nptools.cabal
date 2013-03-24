@@ -1,6 +1,6 @@
 Name:           nptools
 Cabal-Version:  >=1.4
-Version:        0.2.2
+Version:        0.3.0
 License:        BSD3
 License-File:   LICENSE
 Copyright:      (c) Nicolas Pouillard
@@ -74,11 +74,6 @@ executable show-pollbox
 
 executable summ
     main-is: summ.hs
-    Build-depends: base>=3&&<5
-    ghc-options: -Wall -Odph
-
-executable tac
-    main-is: tac.hs
     Build-depends: base>=3&&<5
     ghc-options: -Wall -Odph
 
