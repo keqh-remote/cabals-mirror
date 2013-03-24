@@ -1,5 +1,5 @@
 Name:                Numbers
-Version:             0.2
+Version:             0.2.1
 Cabal-Version: >= 1.2
 Synopsis:            An assortment of number theoretic functions
 Description:         Functions for finding prime numbers, checking whether a number is prime, finding the factors of a number etc.
@@ -14,7 +14,7 @@ build-type:          Simple
 extra-source-files:  README, Changelog, test.hs, lgpl-3.0.txt
 
 Library
-    exposed-modules:     Data.Numbers
+    exposed-modules:     Data.Numbers, Data.Numbers.Primes
     build-depends: 
          base,
          random >= 1.0.0.1
