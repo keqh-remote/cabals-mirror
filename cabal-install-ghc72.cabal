@@ -1,5 +1,5 @@
 Name:               cabal-install-ghc72
-Version:            0.10.3
+Version:            0.10.4
 Synopsis:           Temporary version of cabal-install for ghc-7.2
 Description:
     The \'cabal\' command-line program simplifies the process of managing
