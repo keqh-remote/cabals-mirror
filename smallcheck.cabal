@@ -1,5 +1,5 @@
 Name:          smallcheck
-Version:       0.5
+Version:       0.6
 Cabal-Version: >= 1.6
 License:       BSD3
 License-File:  LICENSE
@@ -10,11 +10,10 @@ Bug-reports:   https://github.com/feuerbach/smallcheck/issues
 
 Stability:     Beta
 Category:      Testing
-Synopsis:      Another lightweight testing library in Haskell.
-Description:   SmallCheck is similar to QuickCheck (Claessen and Hughes 2000-) but
-               instead of testing for a sample of randomly generated values, SmallCheck
-               tests properties for all the finitely many values up to some depth,
-               progressively increasing the depth used.
+Synopsis:      A property-based testing library
+Description:   SmallCheck is a testing library that allows to verify properties
+               for all test cases up to some depth. The test cases are generated
+               automatically by SmallCheck.
 Build-Type:    Simple
 
 Extra-source-files: examples/numeric/NumProps.hs, examples/logical/LogicProps.hs,
@@ -24,11 +23,14 @@ Extra-source-files: examples/numeric/NumProps.hs, examples/logical/LogicProps.hs
                     examples/imperative/StackMap.hs, examples/imperative/Compiler.hs,
                     examples/listy/ListProps.hs, examples/regular/Regular.hs,
                     examples/circuits/BitAdd.hs, examples/circuits/Mux.hs, examples/circuits/Sad.hs,
-                    examples/binarytries/BinaryTries.hs
-
-Data-files:         examples/numeric/README, examples/logical/README, examples/imperative/README,
+                    examples/binarytries/BinaryTries.hs,
+                    examples/numeric/README, examples/logical/README, examples/imperative/README,
                     examples/listy/README, examples/regular/README, examples/circuits/README,
-                    examples/binarytries/README, README.md, CREDITS.md, CHANGES.md
+                    examples/binarytries/README,
+                    README.md, CREDITS.md, CHANGES.md,
+                    examples/run-examples.sh
+
+
 
 Source-repository head
   type:     git
@@ -37,10 +39,18 @@ Source-repository head
 Source-repository this
   type:     git
   location: git://github.com/feuerbach/smallcheck.git
-  tag:      v0.5
+  tag:      v0.6
 
 Library
 
     Build-Depends: base == 4.*
 
-    Exposed-modules:    Test.SmallCheck
+    Exposed-modules:
+        Test.SmallCheck
+        Test.SmallCheck.Drivers
+        Test.SmallCheck.Property
+        Test.SmallCheck.Series
+
+    if impl(ghc >= 7.2.1)
+      cpp-options: -DGENERICS
+      build-depends: ghc-prim >= 0.2, dlist >= 0.2 && < 0.6
