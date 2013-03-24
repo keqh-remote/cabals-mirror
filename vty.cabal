@@ -1,5 +1,5 @@
 Name:                vty
-Version:             4.7.0.0
+Version:             4.7.0.4
 License:             BSD3
 License-file:        LICENSE
 Author:              Stefan O'Rear, Corey O'Connor
@@ -28,12 +28,12 @@ Description:
   .
   &#169; 2008-2011 Corey O'Connor; BSD3 license.
 
-Build-Depends:       base >= 4 && < 5, bytestring, containers, unix
+Build-Depends:       base >= 4 && < 5, ghc-prim, bytestring, containers, unix
 Build-Depends:       terminfo >= 0.3 && < 0.4
 Build-Depends:       utf8-string >= 0.3 && < 0.4
 Build-Depends:       mtl >= 1.1.1.0 && < 2.1
-Build-Depends:       ghc-prim, parallel >= 2.2 && < 3.2, deepseq >= 1.1 && < 1.2
-Build-Depends:       array
+Build-Depends:       parallel >= 2.2 && < 3.2, deepseq >= 1.1 && < 1.2
+Build-Depends:       vector >= 0.7
 Build-Depends:       parsec >= 2 && < 4
 Build-Type:          Simple
 Data-Files:          README, TODO
@@ -105,4 +105,4 @@ Extra-Source-Files: test/Makefile
 
 ghc-options:         -O2 -funbox-strict-fields -Wall -fno-full-laziness -fspec-constr -fspec-constr-count=10
 ghc-prof-options:    -O2 -funbox-strict-fields -caf-all -Wall -fno-full-laziness -fspec-constr -fspec-constr-count=10
-
+cc-options:          -O2
