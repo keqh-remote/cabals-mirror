@@ -1,5 +1,5 @@
 Name:                   TernaryTrees
-Version:                0.0.3.0
+Version:                0.0.4.0
 Category:               Data Structures
 Synopsis:               Efficient pure ternary tree Sets and Maps
 Description:            Ternary trees are an efficient structure often used for storing
@@ -16,15 +16,15 @@ Description:            Ternary trees are an efficient structure often used for 
 			in the tree, writing them to a binary file, reading them back in
 			and checking the read in result is the same as the original takes
 			slightly over 3 seconds using the StringSet. The written file is 
-			also slightly smaller than the input (by about 10% for shuffled data,
-			and 7% for in order data).
+			also slightly smaller than the input (by over 40% in some cases).
 			.
 			New in this version:
 			.
-			* Added the all important getVal function to Data.Map.TernaryMap.
-			* (Hopefully fixed this .cabal file again).
+			* Made the Data.Binary instances much more efficient by using
+			  binary numbers to represent the number of *End nodes.
 			.
-			&#169; 2009 by Alex Mason (<http://axman6.homeip.net/blog/>); BSD3 license.
+			.
+			&#169; 2009 by Alex Mason (<http://axman6.homeip.net/blog/>). BSD3 license.
 			
 License:                BSD3
 License-file:           LICENSE.txt
