@@ -1,9 +1,11 @@
 name:                   HarmTrace
-version:                0.1
-synopsis:               HarmTrace: Harmony Analysis and Retrieval of Music 
+version:                0.1.1
+synopsis:               HarmTrace: Harmony Analysis and Retrieval of Music
+description:            HarmTrace: Harmony Analysis and Retrieval of Music 
                         with Type-level Representations of Abstract
                         Chords Entities
-description:            This is the first public release of HarmTrace, a system
+                        .
+                        This is the first public release of HarmTrace, a system
                         for automatically analysing the harmony of music
                         sequences. HarmTrace is described in the paper:
                         .
