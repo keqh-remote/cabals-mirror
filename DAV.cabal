@@ -1,5 +1,5 @@
 name:                DAV
-version:             0.0.1
+version:             0.1
 synopsis:            RFC 4918 WebDAV support
 description:
    This is a library for the Web Distributed Authoring and Versioning
@@ -29,7 +29,7 @@ library
                      , case-insensitive >= 0.4
                      , containers
                      , http-conduit >= 1.4
-                     , http-types >= 0.6
+                     , http-types >= 0.7
                      , lens >= 3.0
                      , lifted-base >= 0.1
                      , mtl >= 2.1
@@ -47,7 +47,7 @@ executable hdav
                      , cmdargs >= 0.9
                      , containers
                      , http-conduit >= 1.4
-                     , http-types >= 0.6
+                     , http-types >= 0.7
                      , lens >= 3.0
                      , lifted-base >= 0.1
                      , mtl >= 2.1
