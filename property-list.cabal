@@ -1,5 +1,5 @@
 name:                   property-list
-version:                0.0.0.1
+version:                0.0.0.3
 stability:              experimental
 license:                PublicDomain
 
@@ -19,12 +19,18 @@ Library
   exposed-modules:      Data.PropertyList
   other-modules:        Data.PropertyList.Xml
                         Data.PropertyList.Xml.Dtd
-  build-depends:        base >= 3,
+                        Data.PropertyList.Type
+                        Data.PropertyList.Parse
+                        Data.PropertyList.PropertyListItem
+  build-depends:        base >= 3 && <5,
                         bytestring,
                         containers, 
                         dataenc,
-                        HaXml,
+                        HaXml >= 1.19,
+                        mtl,
                         old-locale,
                         pretty,
                         time,
+                        
+                        template-haskell,
                         th-fold
