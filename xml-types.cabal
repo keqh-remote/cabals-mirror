@@ -1,5 +1,5 @@
 name: xml-types
-version: 0.1
+version: 0.1.1
 synopsis: Basic types for representing XML
 license: MIT
 license-file: license.txt
