@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.5.8
+version:       0.5.9
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
