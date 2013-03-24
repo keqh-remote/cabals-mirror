@@ -1,5 +1,5 @@
 name:                hackage-sparks
-version:             0.1
+version:             0.2
 homepage:            http://code.haskell.org/~dons/code/hackage-sparks
 license:             BSD3
 license-file:        LICENSE
@@ -16,7 +16,6 @@ flag small_base
 
 executable hackagesparks
     main-is:         Main.hs
-
     if flag(small_base) 
         build-depends:   base >= 3, old-locale, old-time, directory
     else
