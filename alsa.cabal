@@ -1,5 +1,5 @@
 Name: alsa
-Version: 0.3
+Version: 0.4
 Copyright: Bjorn Bringert, Iavor S. Diatchki, Henning Thielemann
 Maintainer: Henning Thielemann <alsa@henning-thielemann.de>
 Author: Bjorn Bringert <bjorn@bringert.net>, Iavor S. Diatchki <iavor.diatchki@gmail.com>
@@ -9,8 +9,9 @@ License-file: LICENSE
 Homepage: http://www.haskell.org/haskellwiki/ALSA
 Build-depends:
   sample-frame >=0.0.1 && <0.1,
-  array >= 0.1 && <0.3,
-  base >= 3 && <4
+  array >= 0.1 && <0.4,
+  extensible-exceptions >=0.1.1 && <0.2,
+  base >= 3 && <6
 Stability: Experimental
 Extensions: ForeignFunctionInterface, GeneralizedNewtypeDeriving, EmptyDataDecls
 Build-Type: Simple
