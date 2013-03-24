@@ -1,5 +1,5 @@
 Name:		encoding
-Version:	0.3
+Version:	0.4
 Author:		Henning Günther
 Maintainer:	h.guenther@tu-bs.de
 License:	BSD3
@@ -10,6 +10,7 @@ Description:
 Category:	Codec
 Homepage:	http://code.haskell.org/encoding/
 Cabal-Version:	>=1.2
+Build-Type:	Simple
 Extra-Source-Files:
   8859-2.TXT
   8859-3.TXT
@@ -83,6 +84,7 @@ Library
     Data.Encoding.CP1257
     Data.Encoding.CP1258
     Data.Encoding.KOI8R
+    Data.Encoding.KOI8U
     Data.Encoding.GB18030
     System.IO.Encoding
   Other-Modules:
