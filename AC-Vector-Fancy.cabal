@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Vector-Fancy
-Version:       2.3.0
+Version:       2.4.0
 Stability:     Experimental
 Synopsis:      Fancy type-system stuff for AC-Vector
 
@@ -10,9 +10,10 @@ Description:
   (Requires several language extensions, including
   type families.)
 
-  Changed the @Project@ class from being multi-parameter
-  to using an associated type. (Should help resolve some
-  of the \"ambiguous type\" errors.)
+  Added missing @Vector Point@ constraint to @HasSpace@
+  class. Consequently removed @HasSpace Range@ instance.
+  Added @unions@ method to @BoundingBox@ class. Added
+  @axis_range@ function.
 
 Category:      Data, Math, Numerical, Graphics
 License:       BSD3
@@ -30,5 +31,5 @@ Library
     Data.Vector.Transform.Fancy,
     Data.BoundingBox,
     Data.BoundingBox.Fancy
-  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.3.0
+  Build-Depends:   base >= 4 && < 5, AC-Angle >= 1.0, AC-Vector >= 2.3.1
   HS-Source-Dirs:  .
