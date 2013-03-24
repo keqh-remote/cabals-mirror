@@ -1,5 +1,5 @@
 Name:           synthesizer-dimensional
-Version:        0.5.1
+Version:        0.6
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -11,7 +11,7 @@ Description:
    High-level functions that use physical units and
    abstract from the sample rate in statically type safe way.
 Stability:      Experimental
-Tested-With:    GHC==6.10.4, GHC==6.12.1
+Tested-With:    GHC==6.10.4, GHC==6.12.1, GHC==7.0.4, GHC==7.2.1
 Cabal-Version:  >=1.6
 Build-Type:     Simple
 
@@ -27,22 +27,17 @@ Flag buildExamples
   default:     False
 
 
-Source-Repository this
-  Tag:         0.5.1
-  Type:        darcs
-  Location:    http://code.haskell.org/synthesizer/dimensional/
-
 Source-Repository head
   Type:        darcs
   Location:    http://code.haskell.org/synthesizer/dimensional/
 
 Library
   Build-Depends:
-    synthesizer-core >=0.4 && <0.5,
+    synthesizer-core >=0.5 && <0.6,
     transformers >=0.2 && <0.3,
     event-list >=0.1 && <0.2,
     non-negative >=0.1 && <0.2,
-    numeric-prelude >=0.2 && <0.3,
+    numeric-prelude >=0.3 && <0.4,
     storable-record >=0.0.1 && <0.1,
     sox >=0.2 && <0.3,
     storablevector >=0.2.3 && <0.3,
@@ -50,6 +45,11 @@ Library
     random >=1.0 && <2.0,
     utility-ht >=0.0.5 && <0.1,
     base >= 4 && <5
+
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
 
   GHC-Options:    -Wall
   Hs-source-dirs: src
@@ -75,9 +75,9 @@ Library
     Synthesizer.Dimensional.Causal.ControlledProcess
     Synthesizer.Dimensional.Causal.Displacement
     Synthesizer.Dimensional.Causal.Filter
+    Synthesizer.Dimensional.Causal.FilterParameter
     Synthesizer.Dimensional.Causal.Oscillator
     Synthesizer.Dimensional.Causal.Oscillator.Core
---    Synthesizer.Dimensional.ControlledProcess
     Synthesizer.Dimensional.Rate.Analysis
     Synthesizer.Dimensional.Rate.Control
     Synthesizer.Dimensional.Rate.Cut
@@ -113,6 +113,11 @@ Executable rain
   GHC-Options: -Wall -fexcess-precision
   If flag(optimizeAdvanced)
     GHC-Options: -O2 -fvia-C -optc-O2
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
+
   Hs-Source-Dirs: src
   Main-Is: Synthesizer/Dimensional/RateAmplitude/Rain.hs
 
@@ -123,6 +128,10 @@ Executable demonstration
       old-time >=1.0 && <2
   Else
     Buildable: False
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
 
   GHC-Options: -Wall -fexcess-precision
   If flag(optimizeAdvanced)
@@ -138,6 +147,11 @@ Executable traumzauberbaum
   If !flag(buildExamples)
     Buildable: False
   GHC-Options: -Wall -fexcess-precision
+  If impl(ghc>=7.0)
+    GHC-Options: -fwarn-unused-do-bind
+    CPP-Options: -DNoImplicitPrelude=RebindableSyntax
+    Extensions: CPP
+
   If flag(optimizeAdvanced)
     GHC-Options: -O2 -fvia-C -optc-O2
   Hs-Source-Dirs: src
