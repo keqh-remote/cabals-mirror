@@ -1,5 +1,5 @@
 Name:                phooey
-Version:             1.4
+Version:             2.0
 Synopsis: 	     Functional user interfaces
 Category:            User Interfaces
 Description:
@@ -9,6 +9,8 @@ Description:
   exposed for extensibility.
   .
   Try out the examples in @src\/Examples\/@.
+  .
+  Because this library uses reactive, compile apps with @-threaded@.
   .
   See also
   .
@@ -33,13 +35,14 @@ License:             BSD3
 Stability:           provisional
 Hs-Source-Dirs:      src
 Extensions:          CPP, Arrows
-Build-Depends:       base, array, mtl, wx, wxcore, TypeCompose>=0.2, DataDriven
+Build-Depends:       base, array, mtl, wx, wxcore, TypeCompose>=0.2, reactive
 Exposed-Modules:     
-                     Graphics.UI.Phooey.WinEvents
                      Graphics.UI.Phooey.Imperative
+                     Graphics.UI.Phooey.WinEvents
                      Graphics.UI.Phooey.Monad
                      Graphics.UI.Phooey.Applicative
 Extra-Source-Files:
                      Examples.Monad
                      Examples.Applicative
 ghc-options:         -O -Wall
+
