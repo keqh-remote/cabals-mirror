@@ -1,5 +1,5 @@
 Name:		regexpr
-Version:	0.3.4
+Version:	0.4
 License:	LGPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -14,8 +14,9 @@ Description:
   .
   > matchRegexPR :: String -> Maybe ((String, (String, String)), [(Int, String)])
   > gmatchRegexPR :: String -> [((String, (String, String)), [(Int, String)])]
-  > subRegexPR :: String -> String -> String
-  > gsubRegexPR :: String -> String -> String
+  > subRegexPR :: String -> String -> String -> String
+  > gsubRegexPR :: String -> String -> String -> String
+  > gsubRegexPRBy :: String -> (String -> String) -> String -> String
   > splitRegexPR :: String -> String -> [String]
   .
   Examples
