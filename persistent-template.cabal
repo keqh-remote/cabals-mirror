@@ -1,6 +1,7 @@
 name:            persistent-template
-version:         0.5.1
+version:         0.6.1
 license:         BSD3
+license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
 synopsis:        Type-safe, non-relational, multi-backend persistence.
@@ -9,13 +10,12 @@ category:        Database, Yesod
 stability:       Stable
 cabal-version:   >= 1.6
 build-type:      Simple
-homepage:        http://www.yesodweb.com/
+homepage:        http://www.yesodweb.com/book/persistent
 
 library
     build-depends:   base                     >= 4         && < 5
                    , template-haskell
-                   , persistent               >= 0.5.1     && < 0.6
-                   , web-routes-quasi         >= 0.7       && < 0.8
+                   , persistent               >= 0.6.0     && < 0.7
                    , monad-control            >= 0.2       && < 0.3
                    , text                     >= 0.5       && < 1.0
     exposed-modules: Database.Persist.TH
@@ -23,4 +23,4 @@ library
 
 source-repository head
   type:     git
-  location: git://github.com/snoyberg/persistent.git
+  location: git://github.com/yesodweb/persistent.git
