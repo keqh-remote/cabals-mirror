@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.1.6
+version:		0.1.7
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -59,7 +59,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  Then do below command (NOTE: don't use root permission with cabal, otherwise Manatee can't work):
  .
- > cabal update && cabal install alex happy c2hs gtk2hs-buildtools glib gio pango cairo gtk
+ > cabal update && cabal install alex happy c2hs && cabal install gtk2hs-buildtools glib gio pango cairo gtk
  .
  6) Install Manatee (same, don't use root permission):
  .
