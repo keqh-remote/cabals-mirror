@@ -1,5 +1,5 @@
 Name:                grammar-combinators
-Version:             0.2.6
+Version:             0.2.7
 Description:
     The grammar-combinators library is a novel parsing library using
     an explicit representation of recursion to provide various novel
@@ -28,7 +28,8 @@ Library
                      MaybeT >= 0.1.2,
                      uu-parsinglib >= 2.5.1,
                      graphviz >= 2999.10,
-                     fgl >= 5.4.2.2
+                     fgl >= 5.4.2.2,
+                     text >= 0.11
   Exposed-modules:   Text.GrammarCombinators.Base.Domain
                      Text.GrammarCombinators.Base.Grammar
                      Text.GrammarCombinators.Base
