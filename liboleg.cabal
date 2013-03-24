@@ -1,5 +1,5 @@
 name:           liboleg
-version:        0.1
+version:        0.1.0.1
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -14,17 +14,18 @@ cabal-version:  >= 1.2
 
 library
     build-depends:
-            base, containers
+            base, containers, mtl
 
     exposed-modules:
             Data.FDList
+
+            Control.CaughtMonadIO
+
+            Language.TypeLC
+            Language.TypeFN
+
             Text.PrintScan
             Text.PrintScanF
-
---
---    extensions:         
---            GADTs
---
 
     ghc-options:
             -funbox-strict-fields 
