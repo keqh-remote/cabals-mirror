@@ -1,6 +1,6 @@
 cabal-version: >= 1.2
 name:           parsec1
-version:        1.0.0.3
+version:        1.0.0.4
 license:        BSD3
 license-file:   LICENSE
 author:         Daan Leijen <daan@cs.uu.nl>
@@ -27,6 +27,7 @@ description:
     Your own module ambiguities are best avoided by hiding packages.
     .
     This version only differs from pervious ones by a changed description.
+    (In version 1.0.0.4 only the inline pragmas have been removed #4849.)
 build-type:     Simple
 cabal-version:      >= 1.6
 library {
