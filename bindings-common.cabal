@@ -9,12 +9,14 @@ description:
   level modules that can use it as foundation. They all mimic the
   names and functionality of the original libraries. For
   a specific library, look for package @bindings-library_name@.
-version: 0.2
+version: 0.2.1
 license: BSD3
 license-file: LICENSE
-maintainer: Maurício C. Antunes
+maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
 author: Maurício C. Antunes
+stability: Needs users feedback
 build-type: Simple
+bug-reports: http://bitbucket.org/mauricio/bindings-common/issues
 category: FFI
 library
   hs-source-dirs: src
