@@ -1,6 +1,6 @@
 Name:           tokyocabinet-haskell
-Version:        0.0.1
-Cabal-Version:  >= 1.6.0.2
+Version:        0.0.2
+Cabal-Version:  >= 1.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Tom Tsuruhara
@@ -38,6 +38,8 @@ Library
     Database.TokyoCabinet.List
     Database.TokyoCabinet.List.C
     Database.TokyoCabinet.Storable
+    Database.TokyoCabinet.Sequence
+
   other-modules:
     Database.TokyoCabinet.Internal
   Extensions:           CPP, ForeignFunctionInterface,
