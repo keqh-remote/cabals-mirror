@@ -1,5 +1,5 @@
 Name:                biophd
-Version:             0.0.3
+Version:             0.0.4
 Synopsis:            Library for reading phd sequence files
 Description:         Library for reading phd sequence files
 Homepage:	     https://patch-tag.com/r/dfornika/biophd/home
@@ -14,7 +14,7 @@ Build-Type:          Simple
 
 Library
   Build-depends:     base >= 2 && < 5, biocore, bytestring, parsec, text, binary
-  Exposed-modules:   Bio.Sequence.Phd, Bio.Sequence.PhdData
+  Exposed-modules:   Bio.Sequence.Phd, Bio.Sequence.PhdData, Bio.Sequence.PhdTag
   Hs-source-dirs:    src
 
 source-Repository    head
