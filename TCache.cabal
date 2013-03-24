@@ -1,57 +1,51 @@
 name:                TCache
-version:             0.6.5
-synopsis:            A Transactional data cache with configurable persistence
+version:             0.8.0
+synopsis:            Data caching and Persistent STM transactions
 description:
-        Data.Tcache is a transactional cache with configurable persistence. It tries to simulate Hibernate
-        for Java or Rails for Ruby. The main difference is that transactions are done in memory trough STM.
-        There are transactional cache implementations for some J2EE servers like JBOSS.
-        .
-        TCache uses STM. It can  atomically apply a function to a list of cached objects. The resulting
-        objects go back to the cache (withResources). It also can retrieve these objects (getResources).
-        Persistence can be syncronous (syncCache)  or asyncronous, wtih configurable time between cache
-        writes and configurable cache clearance strategy. the size of the cache can be configured too .
-        All of this can be done trough clearSyncCacheProc. Even the TVar variables can be accessed
-        directly (getTVar) to acceess all the semantic of atomic blocks while maintaining the persistence of the
-        TVar updates.
-        .
-        Persistence can be defined for each object: Each object must have a defined key, a default filename
-        path (if applicable). Persistence is pre-defined in files, but the readResource writeResource and
-        delResource methods can be redefined to persist in databases or whatever.
-	    .
-	    Serialization is also configurable.
-        .
-        There are  Samples here that explain the main features.
-        .
 
-    In this release
+    TCache is a transactional cache with configurable persitence. It allows conventional
+    STM transactions for objects that syncronize  with
+    their user defined storages. Default persistence in files is provided for testing purposes
     .
-    * added withSTMResources. Most of the rest of the methods are derived from withSTMResources .  the results are returned in the STM monad, so  this method can be part of al larger STM transaction
-       It also can perforn used defined retries.
+    This version support  the backward compatible stuff, that permits transparent
+    retrievals of objects and transcactions between objects without directly using STM references
+    ('with*Resource(s)' calls), Now it goes in the oposite direction by providing explicit STM persistent
+    references (called 'DBRefś') that leverage the nice and traditional haskell reference syntax
+    for performing database transactions.
     .
-    * added modules for cached TMVars
-	Data.TCache.TMVar and Data.TCache.TMVar.Dynamic uses TMVars instead of TVars (See Control.Concurrent.STM.TMVar)
+    'DBRef's are in essence, persistent TVars indexed in the cache, with a traditional 'readDBRef',
+     'writeDBRef' Haskell interface in the STM monad.
+    Additionally, because DBRefs are serializable, they can be embeded in serializable registers.
+    Because they are references,they point to other serializable registers.
+    This permits persistent mutable and efficient Inter-object relations.
     .
-        It is not possible tu mix TVars and TMVars packages in the same executable. However code that uses dynamic and non dynamic can
-        can be mixed
-        .
-          * Data.TCache                       - cached TVars of object of type a.
-        .
-          * Data.TCache.Dynamic           - cached TVars of objects of type IDynamic.
-        .
-          * Data.TCache.TMVar             - cached TMVars of objects of type a.
-        .
-          * Data.TCache..TMVar.Dynamic    - cached TMVars of objects of type IDynamic.
+    Triggers are also included in this release. They are user defined hooks that are called back on register updates. That can be used for
+     easing the actualization of inter-object relations and also permit more higuer level
+     and customizable accesses. The internal indexes used for the query language uses triggers.
+    .
+    It also  implements an straighforwards non-intrusive pure-haskell type safe query language  based
+    on register field relations. This module must be imported separately. See
+    "Data.TCache.IndexQuery" for further information
+    .
+    Now the file persistence is more reliable.The IO reads are safe inside STM transactions.
+    .
+    To ease the implementation of other user-defined persistence, "Data.TCache.FIlePersistence" needed
+    to be imported  explcitly for deriving file persistence instances.
+    .
+    In this release some stuff has been supressed without losing functionality. Dynamic interfaces
+    are not needed since TCache can handle heterogeneous data.
 
 
-category:            Middleware, Data, Database, Concurrency
+
+category:            Data, Database, Concurrency
 license:             BSD3
 license-file:        LICENSE
 author:              Alberto Gómez Corona
 maintainer:          agocorona@gmail.com
-Tested-With:         GHC == 6.8.2
+Tested-With:         GHC == 6.12.3
 Build-Type:          Simple
-build-Depends:       base >=3 && <4,directory >= 1.0, old-time >=1.0,stm>=2, containers>=0.1.0.1, RefSerialize >= 0.2.4
-Cabal-Version:       >= 1.2
+build-Depends:       base >=4 && <5,directory >= 1.0, old-time >=1.0,stm>=2, containers >= 0.1.0.1,  transformers >=0.2 && <0.3
 
-exposed-modules:   Data.TCache, Data.TCache.IResource, Data.TCache.Dynamic, Data.TCache.TMVar, Data.TCache.TMVar.Dynamic, Data.TCache.IDynamic
+
+exposed-modules:   Data.TCache, Data.TCache.FilePersistence, Data.TCache.IndexQuery
 ghc-options:       -O2
