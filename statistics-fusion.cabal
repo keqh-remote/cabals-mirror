@@ -1,6 +1,6 @@
 Name:                statistics-fusion
-Version:             1.0
-Synopsis:            An obsolete implementation of high performance, minimal statistics functions
+Version:             1.0.1
+Synopsis:            An implementation of high performance, minimal statistics functions
 Description:
     This package is obsolete. Please use O\'Sullivan\'s /statistics/
     package: <http://hackage.haskell.org/package/statistics>
@@ -18,14 +18,12 @@ Build-Type:          Simple
 Cabal-Version:       >= 1.2
 
 library
-  build-depends:     base < 10, uvector >= 0.1
+  build-depends:     base < 10, vector >= 0.5
   exposed-modules:   Math.Statistics.Fusion
 
   ghc-options:
             -fglasgow-exts
             -O2
-            -fvia-C -optc-O2
-            -fspec-constr
             -funbox-strict-fields 
             -fdicts-cheap
             -fno-method-sharing
