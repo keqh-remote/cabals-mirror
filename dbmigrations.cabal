@@ -1,5 +1,5 @@
 Name:                dbmigrations
-Version:             0.3
+Version:             0.5
 Synopsis:            An implementation of relational database "migrations"
 Description:         A library and program for the creation,
                      management, and installation of schema updates
@@ -24,9 +24,12 @@ Maintainer:          Jonathan Daugherty <drcygnus@gmail.com>
 Build-Type:          Simple
 License:             BSD3
 License-File:        LICENSE
-Cabal-Version:       >= 1.2
-Homepage:            http://repos.codevine.org/dbmigrations/
+Cabal-Version:       >= 1.6
 Data-Files:          README MOO.TXT
+
+Source-Repository head
+  type:     git
+  location: git://github.com/jtdaugherty/dbmigrations.git
 
 Flag testing
     Description:     Build for testing
@@ -41,16 +44,17 @@ Library
 
   Build-Depends:
     base >= 4 && < 5,
-    HDBC >= 2.2.1 && < 2.3,
+    HDBC >= 2.2.1 && < 2.4,
     time >= 1.1 && < 1.2,
     random >= 1.0 && < 1.1,
-    containers >= 0.2 && < 0.4,
+    containers >= 0.2 && < 0.6,
     mtl >= 1.1 && < 1.2,
-    parsec >= 2.1 && < 2.2,
-    filepath >= 1.1 && < 1.2,
+    filepath >= 1.1 && < 1.4,
     directory >= 1.0 && < 1.2,
     fgl >= 5.4 && < 5.5,
-    template-haskell
+    template-haskell,
+    yaml-light >= 0.1 && < 0.2,
+    bytestring >= 0.9 && < 1.0
 
   Hs-Source-Dirs:    src
   Exposed-Modules:
@@ -64,7 +68,6 @@ Library
 
   Other-Modules:
           Database.Schema.Migrations.CycleDetection
-          Database.Schema.Migrations.Filesystem.Parse
           Database.Schema.Migrations.Filesystem.Serialize
 
 Executable dbmigrations-tests
