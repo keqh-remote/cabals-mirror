@@ -1,12 +1,13 @@
 Name:              stringsearch
-Version:           0.2
+Version:           0.2.1.1
 Description:       Fast search of ByteStrings
 Category:          Text, Data, Search
 License:           BSD3
 License-file:      LICENSE
-Author:            Daniel Fischer, Chris Kuklewicz
+Author:            Daniel Fischer, Chris Kuklewicz, Justin Bailey
 Maintainer:        bos@serpentine.com
 Cabal-version:     >= 1.2
+Build-type:        Simple
 
 Flag splitBase
   Description:     Choose the new, split-up base package.
@@ -19,5 +20,5 @@ Library
   Exposed-modules: Data.ByteString.Search.BoyerMoore
                    Data.ByteString.Search.KnuthMorrisPratt
   Extensions:      CPP
-  ghc-options:     -O2 -Wall -Werror
+  ghc-options:     -O2 -Wall
   nhc98-options:   -K4M
