@@ -1,5 +1,5 @@
 Name:            YamlReference
-Version:         0.2
+Version:         0.3
 License:         LGPL
 License-File:    lgpl.txt
 Copyright:       Oren Ben-Kiki 2007
@@ -7,7 +7,7 @@ Author:          Oren Ben-Kiki
 Maintainer:      yaml-oren@ben-kiki.org
 Stability:       alpha
 Homepage:        www.ben-kiki.org/oren/YamlReference
-Package-Url:     www.ben-kiki.org/oren/YamlReference/YamlReference-0.2.tar.gz
+Package-Url:     www.ben-kiki.org/oren/YamlReference/YamlReference-0.3.tar.gz
 Category:        Text
 Synopsis:        YAML reference implementation
 Description:     This package contains \"the\" reference YAML syntax parser
@@ -20,15 +20,12 @@ Description:     This package contains \"the\" reference YAML syntax parser
                  interesting tools on top of it, such as the @yeast2html@ YAML
                  syntax visualizer (contained in this package), pretty
                  printers, etc. This is a streaming parser that will
-                 \"immediately\" begin to generate output, but it has a memory
-                 leak (actually, retention) problem that prevents it from being
-                 applied to \"large\" files. To debug this with minimal syntax
-                 productions use @yes "#" | yaml2yeast -p debug-leak@.
+                 \"immediately\" begin to generate output. The memory leak that
+                 existed in previous version has been plugged.
 Build-Depends:   base >= 2.0, HUnit >= 1.1, regex-compat >= 0.71, dlist >= 0.2
 Exposed-Modules: Text.Yaml.Reference
 Extensions:      CPP, MultiParamTypeClasses
 Data-Files:      Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
-                 tests/debug-leak.input tests/debug-leak.output
                  tests/b-as-line-feed.input tests/b-as-line-feed.output
                  tests/b-carriage-return.input tests/b-carriage-return.output
                  tests/b-char.cr.input tests/b-char.cr.output
