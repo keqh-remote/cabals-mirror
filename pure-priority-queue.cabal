@@ -1,5 +1,5 @@
 name:                pure-priority-queue
-version:             0.13
+version:             0.14
 synopsis:            A pure priority queue.
 description:         A pure priority queue.
 category:            Data
