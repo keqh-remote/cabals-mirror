@@ -1,5 +1,5 @@
 Name:             explicit-exception
-Version:          0.1.7
+Version:          0.1.7.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -46,7 +46,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/explicit-exception/
-  tag:      0.1.7
+  tag:      0.1.7.1
 
 Flag buildTests
   description: Build test suite
@@ -92,7 +92,7 @@ Library
 Executable ee-tar
   If flag(buildTests)
     Build-Depends:
-      bytestring >=0.9.0.1 && <0.10,
+      bytestring >=0.9.0.1 && <0.11,
       tar >=0.3 && <0.4
   Else
     Buildable: False
@@ -103,7 +103,7 @@ Executable ee-tar
 Executable ee-test
   If flag(buildTests)
     Build-Depends:
-      bytestring >=0.9.0.1 && <0.10
+      bytestring >=0.9.0.1 && <0.11
   Else
     Buildable: False
   GHC-Options: -Wall
