@@ -1,5 +1,5 @@
 name:                hs-gizapp
-version:             0.1.0.2
+version:             0.1.0.3
 synopsis:            Haskell wrapper around the GIZA++ toolkit.
 description:         This provides a simple wrapper around the GIZA++ toolkit,
                      which is used for Statistical Machine Translation for
@@ -19,8 +19,8 @@ license:             BSD3
 license-file:        LICENSE
 author:              Eric Kow
 maintainer:          Eric Kow <E.Y.Kow@brighton.ac.uk>
-build-Depends:       base       >= 3   && < 4,
-                     containers >= 0.1 && < 0.3,
+build-Depends:       base       >= 3   && < 4.3,
+                     containers >= 0.1 && < 0.5,
                      directory  >= 1.0 && < 1.1,
                      filepath   >= 1.1 && < 1.2,
                      parsec     >= 2.1 && < 3.1,
