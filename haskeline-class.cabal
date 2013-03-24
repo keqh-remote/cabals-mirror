@@ -1,5 +1,5 @@
 Name:                   haskeline-class
-Version:                0.6
+Version:                0.6.1
 License:                BSD3
 License-File:           LICENSE
 Author:                 Antoine Latter
@@ -13,7 +13,7 @@ Description:
                * Introduced here is a type-class which defines the operations
                  supported by the Haskeline monad transformer - MonadHaskeline
                .
-               * Also is a newtype wrapper around Haskeline's InputT, called
+               * A newtype wrapper around Haskeline's InputT, called
                  HaskelineT. Sadly, InputT defines ints own instance of the
                  mtl MonadState, which is no good for folks wanting to use
                  InputT in an existing monad transformer stack.
@@ -25,7 +25,7 @@ Description:
                here for convinience.
                .
                Note on build-dependencies: If you've succesfully built this with
-               any packages other than the ones noted, please let me know!
+               any packages other than the ones noted, please let me know.
 
 Homepage:               http://community.haskell.org/~aslatter/code/haskeline-class
 Build-Type:             Simple
