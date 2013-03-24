@@ -1,12 +1,15 @@
 Name:             data-accessor
-Version:          0.2.1.7
+Version:          0.2.1.8
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>, Luke Palmer <lrpalmer@gmail.com>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:         http://www.haskell.org/haskellwiki/Record_access
-Package-URL:      http://code.haskell.org/data-accessor/core/
 Category:         Data
+-- Default-Language: Haskell98
+Cabal-Version:    >=1.6
+Build-Type:       Simple
+Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.1, JHC==0.7.3
 Synopsis:         Utilities for accessing and manipulating fields of records
 Description:
   In Haskell 98 the name of a record field
@@ -48,6 +51,9 @@ Description:
   rather than plain @get@ functions.
   For now, the package @data-accessor-template@ provides Template Haskell functions
   for automated generation of 'Data.Acesssor.Accessor's.
+  See also the other @data-accessor@ packages
+  that provide an Accessor interface to other data types.
+  The package @enumset@ provides accessors to bit-packed records.
   .
   For similar packages see @lenses@ and @fclabel@.
   A related concept are editors
@@ -58,19 +64,19 @@ Description:
   whereas an accessor can only change a single function value,
   say, it can change @f 0 = 1@ to @f 0 = 2@.
   This way, editors can even change the type of a record or a function.
-  An Arrow instance can be define for editors,
+  An Arrow instance can be defined for editors,
   but for accessors only a Category instance is possible ('(.)' method).
   The reason is the @arr@ method of the @Arrow@ class,
   that conflicts with the two-way nature (set and get) of accessors.
--- Portability:      Haskell98
-Cabal-Version:    >=1.2
-Tested-With:      GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==7.0.1, JHC==0.7.3
-Build-Type:       Simple
 
 Extra-Source-Files:
   RegExp
   src-3/Data/Accessor/Private.hs
   src-4/Data/Accessor/Private.hs
+
+Source-Repository head
+  Type:        darcs
+  Location:    http://code.haskell.org/data-accessor/core/
 
 Flag category
   description: Check whether Arrow class is split into Arrow and Category.
@@ -87,7 +93,7 @@ Library
       containers >=0.1 && <0.5
     If flag(category)
       Hs-Source-Dirs: src-4
-      Build-Depends: base >= 4 && <6
+      Build-Depends: base >= 4 && <5
     Else
       Hs-Source-Dirs: src-3
       Build-Depends: base >= 2 && <4
@@ -112,3 +118,4 @@ Library
   Other-Modules:
     Data.Accessor.Example
     Data.Accessor.Private
+    Data.Accessor.MonadStatePrivate
