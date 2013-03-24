@@ -1,5 +1,5 @@
 Name:                bio
-Version:             0.4
+Version:             0.4.4
 License:             LGPL
 License-file:        LICENSE
 Author:              Ketil Malde
@@ -24,13 +24,11 @@ Description:         This is a collection of data structures and algorithms
                      The Darcs repository is at: <http://malde.org/~ketil/biohaskell/biolib>.
 Homepage:            http://blog.malde.org/index.php/the-haskell-bioinformatics-library/
 
-Tested-With:         GHC==6.8.2
+Tested-With:         GHC==6.12.1
 Build-Type:          Simple
-Build-Depends:       base>=3 && <4, QuickCheck<2, binary, tagsoup>=0.4, bytestring >= 0.9.1,
+Build-Depends:       base>=4 && <5, QuickCheck>=2, binary >=0.4 && <0.5, tagsoup>=0.4 && <0.8, bytestring >= 0.9.1,
                      containers, array, parallel, parsec, random, old-time, mtl
--- add fps for ghc 6.4.2; change imports in Bio/Sequence/TwoBit.hs if you want QC 2
 
--- We omit the debian/ and Test/ files because those are for development, not installation.
 Data-Files:          README
 
 Exposed-modules:     Bio.Sequence,
@@ -41,7 +39,8 @@ Exposed-modules:     Bio.Sequence,
                      Bio.Sequence.GOA,
                      Bio.Sequence.GeneOntology,
 		     Bio.Sequence.KEGG,
-		     Bio.Sequence.SFF, Bio.Sequence.SFF_name
+		     Bio.Sequence.AminoProperties,
+		     Bio.Sequence.SFF, Bio.Sequence.SFF_name, Bio.Sequence.SFF_filters
                      Bio.Alignment.BlastData, Bio.Alignment.BlastFlat,
                      Bio.Alignment.Blast, Bio.Alignment.BlastXML,
                      Bio.Alignment.AlignData, Bio.Alignment.Matrices,
@@ -49,6 +48,7 @@ Exposed-modules:     Bio.Sequence,
                      Bio.Alignment.Multiple, Bio.Alignment.ACE,
                      Bio.Alignment.Bowtie,
                      Bio.Alignment.Soap,
+		     Bio.Alignment.BED, Bio.Alignment.PSL
                      Bio.Clustering,
                      Bio.Util, Bio.Util.Parsex, Bio.Util.TestBase
 		 Bio.Location.Strand, Bio.Location.Position,
