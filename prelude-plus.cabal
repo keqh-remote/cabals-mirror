@@ -1,5 +1,5 @@
 name:                prelude-plus
-version:             0.0.0.2
+version:             0.0.0.3
 synopsis:            Prelude for rest of us
 description:
   > import Prelude ()
@@ -31,17 +31,17 @@ Library
 Executable test
   hs-source-dirs:    src, test
   main-is:           Test.hs
-  other-modules:
-                     Test.Helper
-  build-depends:     test-framework
-                   , test-framework-hunit
-                   , test-framework-quickcheck2
-                   , HUnit
-                   , containers
-                   , QuickCheck >= 2.1.0.1 && < 2.2
+  other-modules:     Test.Helper
   ghc-options:       -fglasgow-exts
   if !flag(test)
-    buildable:      False
+    buildable:       False
+  else
+    build-depends:     test-framework
+                     , test-framework-hunit
+                     , test-framework-quickcheck2
+                     , HUnit
+                     , containers
+                     , QuickCheck >= 2.1.0.1 && < 2.2
 
 Source-repository head
   type:              darcs
