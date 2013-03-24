@@ -1,11 +1,11 @@
 name:         transformers
-version:      0.1.4.0
+version:      0.2.0.0
 license:      BSD3
 license-file: LICENSE
-author:       Andy Gill
+author:       Andy Gill, Ross Paterson
 maintainer:   Ross Paterson <ross@soi.city.ac.uk>
 category:     Control
-synopsis:     Concrete monad transformers
+synopsis:     Concrete functor and monad transformers
 description:
     Haskell 98 part of a monad transformer library, inspired by the paper
     \"Functional Programming with Overloading and Higher-Order Polymorphism\",
@@ -26,12 +26,12 @@ flag ApplicativeInBase
 
 library
   if flag(ApplicativeInBase)
-    build-depends: base >= 2
+    build-depends: base >= 2 && < 6
   else
     build-depends: base >= 1.0 && < 2, special-functors >=1.0 && <1.1
   exposed-modules:
-    Control.Monad.Identity
-    Control.Monad.Trans
+    Control.Monad.IO.Class
+    Control.Monad.Trans.Class
     Control.Monad.Trans.Cont
     Control.Monad.Trans.Error
     Control.Monad.Trans.Identity
@@ -47,4 +47,6 @@ library
     Control.Monad.Trans.Writer
     Control.Monad.Trans.Writer.Lazy
     Control.Monad.Trans.Writer.Strict
-  extensions: CPP
+    Data.Functor.Compose
+    Data.Functor.Constant
+    Data.Functor.Identity
