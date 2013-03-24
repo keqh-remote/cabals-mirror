@@ -1,5 +1,5 @@
 Name:                   prof2dot
-Version:                0.3.1
+Version:                0.4.1
 Cabal-Version:		>= 1.2
 License:                BSD3
 License-file:           LICENSE
@@ -27,6 +27,6 @@ Executable             prof2dot
   Build-depends: haskell98, parsec, filepath
 
   Main-is:                Prof2Dot.hs
-  Other-modules:          Grapher ParseProfile TreeToGraph
+  Other-modules:          Grapher GraphUtils ParseProfile
   Ghc-options:            -Wall
 
