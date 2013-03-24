@@ -1,5 +1,5 @@
 Name:           atom
-Version:        0.0.3
+Version:        0.0.4
 Synopsis:       A DSL for embedded hard realtime applications.
 Description:    Atom is a Haskell DSL for designing hard realtime embedded programs.
                 Based on conditional term rewriting, atom will compile
@@ -26,8 +26,7 @@ Library
     Language.Atom.Example,
     Language.Atom.Expressions,
     Language.Atom.Language,
-    Language.Atom.Scheduling,
-    Language.Atom.Verify
+    Language.Atom.Scheduling
   extensions:      GADTs
   ghc-options:     -W
   Other-Modules:   
