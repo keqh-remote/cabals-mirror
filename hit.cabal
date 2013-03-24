@@ -1,5 +1,5 @@
 Name:                hit
-Version:             0.2.1
+Version:             0.2.2
 Synopsis:            Git operations
 Description:         Provides low level git operations
 License:             BSD3
@@ -40,7 +40,6 @@ Library
                    , zlib
                    , zlib-bindings >= 0.0.1
                    , bytedump
-                   , unix
   Exposed-modules:   Data.Git.Index
                      Data.Git.Pack
                      Data.Git.Object
