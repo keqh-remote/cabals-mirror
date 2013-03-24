@@ -1,5 +1,5 @@
 Name: darcs-beta
-version:        2.4.99.1
+version:        2.7.98.1
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -47,8 +47,8 @@ extra-source-files:
   contrib/darcs-errors.hlint,
 
   -- documentation files
-  src/best_practices.tex, src/building_darcs.tex, src/configuring_darcs.tex,
-  src/features.tex, src/formats.tex, src/gpl.tex, src/switching.tex, src/darcs.tex
+  doc/src/best_practices.tex, doc/src/building_darcs.tex, doc/src/configuring_darcs.tex,
+  doc/src/features.tex, doc/src/gpl.tex, doc/src/darcs.tex
   doc/darcs.css
 
   README, NEWS
@@ -57,15 +57,15 @@ extra-source-files:
   release/distributed-version, release/distributed-context
 
   -- testsuite
-  Distribution/ShellHarness.hs
-  tests/repos/*.tgz tests/repos/README
-  tests/repos/minimal-darcs-2.4.tgz
+  tests/data/*.tgz tests/data/README
+  tests/data/*.dpatch
+  tests/data/convert/darcs1/*.dpatch tests/data/convert/darcs2/*.dpatch
   tests/*.sh
-  tests/trackdown-bisect-helper.hs
-  tests/hspwd.hs
+  tests/bin/trackdown-bisect-helper.hs
+  tests/bin/hspwd.hs
   tests/network/*.sh
   tests/lib
-  tests/example_binary.png
+  tests/data/example_binary.png
   tests/README.test_maintainers.txt
 
   GNUmakefile
@@ -91,10 +91,6 @@ flag threaded
   description: Use threading and SMP support.
   default:     True
 
-flag type-witnesses
-  description: Use GADT type witnesses.
-  default:     False
-
 flag library
   description: Build darcs library
   default:     True
@@ -105,10 +101,6 @@ flag color
 flag mmap
   description: Compile with mmap support.
 
-flag test
-  description: Compile unit tests (requires QuickCheck >= 2.1.0.0).
-  default:     False
-
 flag hpc
   default:     False
 
@@ -116,79 +108,18 @@ flag deps-only
   default:     False
   description: A cunning trick to have cabal install build dependencies
 
-Executable          witnesses
-  main-is:          witnesses.hs
+flag test
+  default:     False
+  description: Build test harness
 
-  if !flag(type-witnesses)
-    buildable: False
-  else
-    buildable: True
+-- We need optimizations by default, regardless of what Hackage says
+flag optimize
+  default:     True
+  description: Build with optimizations (-O2)
 
-    hs-source-dirs:   src
-    include-dirs:     src
-    cpp-options:      -DGADT_WITNESSES=1
-    -- FIXME...
-    c-sources:        src/atomic_create.c
-                      src/fpstring.c
-                      src/maybe_relink.c
-                      src/umask.c
-                      src/Crypt/sha2.c
-    -- this module isn't exported by libdarcs, so not included in the tarball
-    -- if not mentioned
-    other-modules:    Darcs.Test.Patch.Check
-
-    extensions:
-      CPP
-      PatternGuards
-      UndecidableInstances
-      ScopedTypeVariables
-      -- PatternSignatures is needed for GHC 6.8
-      PatternSignatures
-      RankNTypes
-      GADTs
-      TypeOperators
-
-    if os(windows)
-      hs-source-dirs: src/win32
-      include-dirs:   src/win32
-      other-modules:  CtrlC
-                      System.Posix
-                      System.Posix.Files
-                      System.Posix.IO
-      cpp-options:    -DWIN32
-      c-sources:      src/win32/send_email.c
-      build-depends:  unix-compat >= 0.1.2,
-                      regex-posix >= 0.94.4 && < 0.95
-
-    build-depends:   base          < 5,
-                     extensible-exceptions >= 0.1 && < 0.2,
-                     regex-compat >= 0.71 && < 0.94,
-                     mtl          >= 1.0 && < 1.2,
-                     parsec       >= 2.0 && < 3.1,
-                     html         == 1.0.*,
-                     filepath     == 1.1.*,
-                     haskeline    >= 0.6.2.2 && < 0.7,
-                     hashed-storage >= 0.5.2 && < 0.6,
-                     base >= 3,
-                     bytestring >= 0.9.0 && < 0.10,
-                     text >= 0.3,
-                     old-time   == 1.0.*,
-                     directory  == 1.0.*,
-                     process    == 1.0.*,
-                     containers >= 0.1 && < 0.4,
-                     array      >= 0.1 && < 0.4,
-                     random     == 1.0.*,
-                     tar          == 0.3.*,
-                     zlib >= 0.5.1.0 && < 0.6.0.0,
-                     QuickCheck   >= 2.1.0.0,
-                     test-framework             >= 0.2.2,
-                     test-framework-quickcheck2 >= 0.2.2
-    if !os(windows)
-      build-depends: unix >= 1.0 && < 2.5
-    if flag(http)
-        build-depends:    network == 2.2.*,
-                          HTTP    >= 3000.0 && < 4000.1
-
+flag warn-as-error
+  default:     False
+  description: Build with warnings-as-errors
 
 -- ----------------------------------------------------------------------
 -- darcs library
@@ -203,8 +134,11 @@ Library
     hs-source-dirs:   src
     include-dirs:     src
 
+    cpp-options:      -DGADT_WITNESSES=1
+
     exposed-modules:  CommandLine
                       Crypt.SHA256
+                      Darcs.Annotate
                       Darcs.ArgumentDefaults
                       Darcs.Arguments
                       Darcs.Bug
@@ -232,7 +166,6 @@ Library
                       Darcs.Commands.Put
                       Darcs.Commands.Record
                       Darcs.Commands.Remove
-                      Darcs.Commands.Repair
                       Darcs.Commands.Replace
                       Darcs.Commands.Revert
                       Darcs.Commands.Rollback
@@ -249,6 +182,7 @@ Library
                       Darcs.Commands.Tag
                       Darcs.Commands.TrackDown
                       Darcs.Commands.TransferMode
+                      Darcs.Commands.Util
                       Darcs.Commands.Unrecord
                       Darcs.Commands.Unrevert
                       Darcs.Commands.WhatsNew
@@ -256,43 +190,73 @@ Library
                       Darcs.Diff
                       Darcs.Email
                       Darcs.External
-                      Darcs.FilePathMonad
                       Darcs.Flags
                       Darcs.Global
-                      Darcs.Hopefully
                       Darcs.IO
                       Darcs.Lock
                       Darcs.Match
-                      Darcs.Witnesses.Ordered
-                      Darcs.Witnesses.WZipper
+                      Darcs.MonadProgress
                       Darcs.Patch
                       Darcs.Patch.Apply
+                      Darcs.Patch.ApplyMonad
+                      Darcs.Patch.Bracketed
+                      Darcs.Patch.Bracketed.Instances
                       Darcs.Patch.Bundle
                       Darcs.Patch.Choices
                       Darcs.Patch.Commute
-                      Darcs.Patch.Core
+                      Darcs.Patch.Conflict
+                      Darcs.Patch.ConflictMarking
                       Darcs.Patch.Depends
+                      Darcs.Patch.Dummy
+                      Darcs.Patch.Effect
                       Darcs.Patch.FileName
+                      Darcs.Patch.FileHunk
+                      Darcs.Patch.Format
                       Darcs.Patch.Info
+                      Darcs.Patch.Inspect
+                      Darcs.Patch.Invert
                       Darcs.Patch.Match
                       Darcs.Patch.MatchData
-                      Darcs.Patch.Non
+                      Darcs.Patch.Merge
+                      Darcs.Patch.Named
                       Darcs.Patch.OldDate
+                      Darcs.Patch.PatchInfoAnd
                       Darcs.Patch.Patchy
+                      Darcs.Patch.Patchy.Instances
                       Darcs.Patch.Permutations
                       Darcs.Patch.Prim
-                      Darcs.Patch.Properties
+                      Darcs.Patch.Prim.Class
+                      Darcs.Patch.Prim.V1
+                      Darcs.Patch.Prim.V1.Apply
+                      Darcs.Patch.Prim.V1.Coalesce
+                      Darcs.Patch.Prim.V1.Commute
+                      Darcs.Patch.Prim.V1.Core
+                      Darcs.Patch.Prim.V1.Details
+                      Darcs.Patch.Prim.V1.Read
+                      Darcs.Patch.Prim.V1.Show
                       Darcs.Patch.Read
                       Darcs.Patch.ReadMonads
-                      Darcs.Patch.Real
                       Darcs.Patch.RegChars
+                      Darcs.Patch.Repair
+                      Darcs.Patch.RepoPatch
                       Darcs.Patch.Set
                       Darcs.Patch.Show
                       Darcs.Patch.Split
+                      Darcs.Patch.Summary
+                      Darcs.Patch.SummaryData
+                      Darcs.Patch.TokenReplace
                       Darcs.Patch.TouchesFiles
                       Darcs.Patch.Viewing
-                      Darcs.Population
-                      Darcs.PopulationData
+                      Darcs.Patch.V1
+                      Darcs.Patch.V1.Apply
+                      Darcs.Patch.V1.Commute
+                      Darcs.Patch.V1.Core
+                      Darcs.Patch.V1.Read
+                      Darcs.Patch.V1.Show
+                      Darcs.Patch.V1.Viewing
+                      Darcs.Patch.V2
+                      Darcs.Patch.V2.Non
+                      Darcs.Patch.V2.Real
                       Darcs.PrintPatch
                       Darcs.ProgressPatches
                       Darcs.RemoteApply
@@ -300,8 +264,6 @@ Library
                       Darcs.Repository
                       Darcs.Repository.ApplyPatches
                       Darcs.Repository.Cache
-                      Darcs.Repository.Checkpoint
-                      Darcs.Repository.DarcsRepo
                       Darcs.Repository.Format
                       Darcs.Repository.HashedIO
                       Darcs.Repository.HashedRepo
@@ -310,20 +272,24 @@ Library
                       Darcs.Repository.Merge
                       Darcs.Repository.InternalTypes
                       Darcs.Repository.Motd
+                      Darcs.Repository.Old
                       Darcs.Repository.Prefs
-                      Darcs.Repository.Pristine
                       Darcs.Repository.Repair
                       Darcs.Repository.State
                       Darcs.Resolution
                       Darcs.RunCommand
-                      Darcs.Witnesses.Sealed
                       Darcs.SelectChanges
-                      Darcs.Witnesses.Show
                       Darcs.SignalHandler
                       Darcs.Test
                       Darcs.TheCommands
                       Darcs.URL
                       Darcs.Utils
+                      Darcs.Witnesses.Eq
+                      Darcs.Witnesses.Ordered
+                      Darcs.Witnesses.Sealed
+                      Darcs.Witnesses.Show
+                      Darcs.Witnesses.Unsafe
+                      Darcs.Witnesses.WZipper
                       DateMatcher
                       English
                       Exec
@@ -356,49 +322,55 @@ Library
                       System.Posix.Files
                       System.Posix.IO
       cpp-options:    -DWIN32
+      c-sources:      src/win32/send_email.c
       build-depends:  unix-compat >= 0.1.2,
-                      regex-posix >= 0.94.4 && < 0.95
+                      regex-posix >= 0.95.1
 
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
 
-    build-depends:   base          < 5,
+    build-depends:   base          >= 4 && < 5,
                      extensible-exceptions >= 0.1 && < 0.2,
-                     regex-compat >= 0.71 && < 0.94,
-                     mtl          >= 1.0 && < 1.2,
-                     parsec       >= 2.0 && < 3.1,
+                     regex-compat >= 0.95.1,
+                     mtl          >= 1.0 && < 2.1,
+                     parsec       >= 2.0 && < 3.2,
                      html         == 1.0.*,
-                     filepath     == 1.1.*,
-                     haskeline    >= 0.6.2.2 && < 0.7,
-                     hashed-storage >= 0.5.2 && < 0.6,
+                     filepath     >= 1.1.0.0 && < 1.3.0.0,
+                     haskeline    >= 0.6.3 && < 0.7,
+                     hashed-storage >= 0.5.6 && < 0.6,
+                     vector       >= 0.7,
                      tar          == 0.3.*
 
     if !os(windows)
       build-depends: unix >= 1.0 && < 2.5
 
-    build-depends: base >= 3,
+    build-depends: base >= 4 && < 5,
                    bytestring >= 0.9.0 && < 0.10,
-                   text >= 0.3,
+                   text == 0.11.*,
                    old-time   == 1.0.*,
-                   directory  == 1.0.*,
+                   directory  >= 1.0.0.0 && < 1.2.0.0,
                    process    == 1.0.*,
-                   containers >= 0.1 && < 0.4,
+                   containers >= 0.1 && < 0.5,
                    array      >= 0.1 && < 0.4,
                    random     == 1.0.*
 
 
-    -- We need optimizations, regardless of what Hackage says
+    if flag(optimize)
+      ghc-options:      -O2
+    else
+      ghc-options:      -O0
+
+    if flag(warn-as-error)
+      ghc-options:      -Werror
+
     -- Note: "if true" works around a cabal bug with order of flag composition
     if true
-      ghc-options:      -Wall -O2 -funbox-strict-fields -fwarn-tabs
-
-    if impl(ghc>=6.12)
-      ghc-options: -fno-warn-unused-do-bind
+      ghc-options:      -Wall -funbox-strict-fields -fwarn-tabs
 
     ghc-prof-options: -prof -auto-all
 
     if flag(hpc)
-      ghc-prof-options: -fhpc
+      ghc-prof-options: -fhpc -hpcdir dist/hpc/libdarcs
 
     if flag(curl)
       extra-libraries:   curl
@@ -408,8 +380,8 @@ Library
       cc-options:        -DHAVE_CURL
 
     if flag(http)
-        build-depends:    network == 2.2.*,
-                          HTTP    >= 3000.0 && < 4000.1
+        build-depends:    network >= 2.2 && < 2.4,
+                          HTTP    >= 3000.0 && < 4000.2
         cpp-options:      -DHAVE_HTTP
         x-have-http:
 
@@ -430,28 +402,24 @@ Library
     if flag(color)
       x-use-color:
 
-    extensions:
-      CPP,
-      ForeignFunctionInterface,
-      BangPatterns,
-      PatternGuards,
-      MagicHash,
-      UndecidableInstances,
-      DeriveDataTypeable,
-      GADTs,
-      TypeOperators,
-      ExistentialQuantification,
-      FlexibleContexts,
-      FlexibleInstances,
-      ScopedTypeVariables,
-      -- PatternSignatures is needed for GHC 6.8
-      PatternSignatures,
-      KindSignatures,
-      TypeSynonymInstances,
-      Rank2Types,
-      RankNTypes,
-      GeneralizedNewtypeDeriving,
-      MultiParamTypeClasses
+    -- if true to work around cabal bug with flag ordering
+    if true
+      extensions:
+        CPP
+        BangPatterns
+        PatternGuards
+        GADTs
+        TypeOperators
+        FlexibleContexts
+        FlexibleInstances
+        ScopedTypeVariables
+        KindSignatures
+        RankNTypes
+        TypeFamilies
+
+    if impl(ghc>=7.0)
+      extensions:
+        NoMonoLocalBinds
 
 -- ----------------------------------------------------------------------
 -- darcs itself
@@ -467,13 +435,18 @@ Executable          darcs
                     src/umask.c
                     src/Crypt/sha2.c
 
-  -- We need optimizations, regardless of what Hackage says
+
+  if flag(optimize)
+    ghc-options:      -O2
+  else
+    ghc-options:      -O0
+
+  if flag(warn-as-error)
+    ghc-options:      -Werror
+
   -- Note: "if true" works around a cabal bug with order of flag composition
   if true
-    ghc-options:      -Wall -O2 -funbox-strict-fields -fwarn-tabs
-
-  if impl(ghc>=6.12)
-    ghc-options: -fno-warn-unused-do-bind
+    ghc-options:      -Wall -funbox-strict-fields -fwarn-tabs
 
   ghc-prof-options: -prof -auto-all
   if flag(threaded)
@@ -483,7 +456,7 @@ Executable          darcs
     ghc-options: -static -optl-static -optl-pthread
 
   if flag(hpc)
-    ghc-prof-options: -fhpc
+    ghc-prof-options: -fhpc -hpcdir dist/hpc/darcs
 
   cc-options:       -D_REENTRANT
 
@@ -498,32 +471,33 @@ Executable          darcs
     cpp-options:    -DWIN32
     c-sources:      src/win32/send_email.c
     build-depends:  unix-compat >= 0.1.2,
-                    regex-posix >= 0.94.4 && < 0.95
+                    regex-posix >= 0.95.1
 
   if os(solaris)
     cc-options:     -DHAVE_SIGINFO_H
 
-  build-depends:   base          < 5,
+  build-depends:   base          >= 4 && < 5,
                    extensible-exceptions >= 0.1 && < 0.2,
-                   regex-compat >= 0.71 && < 0.94,
-                   mtl          >= 1.0 && < 1.2,
-                   parsec       >= 2.0 && < 3.1,
+                   regex-compat >= 0.95.1,
+                   mtl          >= 1.0 && < 2.1,
+                   parsec       >= 2.0 && < 3.2,
                    html         == 1.0.*,
-                   filepath     == 1.1.*,
-                   haskeline    >= 0.6.2.2 && < 0.7,
-                   hashed-storage >= 0.5.2 && < 0.6,
+                   filepath     >= 1.1.0.0 && < 1.3.0.0,
+                   haskeline    >= 0.6.3 && < 0.7,
+                   hashed-storage >= 0.5.6 && < 0.6,
+                   vector       >= 0.7,
                    tar          == 0.3.*
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.5
 
-  build-depends: base >= 3,
+  build-depends: base >= 4 && < 5,
                  bytestring >= 0.9.0 && < 0.10,
-                 text >= 0.3,
+                 text == 0.11.*,
                    old-time   == 1.0.*,
-                   directory  == 1.0.*,
+                   directory  >= 1.0.0.0 && < 1.2.0.0,
                    process    == 1.0.*,
-                   containers >= 0.1 && < 0.4,
+                   containers >= 0.1 && < 0.5,
                    array      >= 0.1 && < 0.4,
                    random     == 1.0.*
 
@@ -535,8 +509,8 @@ Executable          darcs
     cc-options:        -DHAVE_CURL
 
   if flag(http)
-      build-depends:    network == 2.2.*,
-                        HTTP    >= 3000.0 && < 4000.1
+      build-depends:    network >= 2.2 && < 2.4,
+                        HTTP    >= 3000.0 && < 4000.2
       cpp-options:      -DHAVE_HTTP
       x-have-http:
 
@@ -557,35 +531,31 @@ Executable          darcs
   if flag(color)
     x-use-color:
 
-  extensions:
-    CPP,
-    ForeignFunctionInterface,
-    BangPatterns,
-    PatternGuards,
-    MagicHash,
-    UndecidableInstances,
-    DeriveDataTypeable,
-    GADTs,
-    TypeOperators,
-    ExistentialQuantification,
-    FlexibleContexts,
-    FlexibleInstances,
-    ScopedTypeVariables,
-    -- PatternSignatures is needed for GHC 6.8
-    PatternSignatures,
-    KindSignatures,
-    TypeSynonymInstances,
-    Rank2Types,
-    RankNTypes,
-    GeneralizedNewtypeDeriving,
-    MultiParamTypeClasses
+  -- if true to work around cabal bug with flag ordering
+  if true
+    extensions:
+      CPP
+      BangPatterns
+      PatternGuards
+      GADTs
+      TypeOperators
+      FlexibleContexts
+      FlexibleInstances
+      ScopedTypeVariables
+      KindSignatures
+      RankNTypes
+      TypeFamilies
+
+  if impl(ghc>=7.0)
+    extensions:
+      NoMonoLocalBinds
 
 -- ----------------------------------------------------------------------
 -- unit test driver
 -- ----------------------------------------------------------------------
 
-Executable          unit
-  main-is:          unit.hs
+Executable          darcs-test
+  main-is:          test.hs
 
   if !flag(test)
     buildable: False
@@ -593,17 +563,18 @@ Executable          unit
     buildable: True
     build-depends:   base          < 5,
                      extensible-exceptions >= 0.1 && < 0.2,
-                     regex-compat >= 0.71 && < 0.94,
-                     mtl          >= 1.0 && < 1.2,
-                     parsec       >= 2.0 && < 3.1,
+                     regex-compat >= 0.95.1,
+                     mtl          >= 1.0 && < 2.1,
+                     parsec       >= 2.0 && < 3.2,
                      html         == 1.0.*,
-                     filepath     == 1.1.*,
-                     QuickCheck   >= 2.1.0.0,
+                     filepath     >= 1.1.0.0 && < 1.3.0.0,
+                     QuickCheck   >= 2.3,
                      HUnit        >= 1.0,
+                     cmdlib       >= 0.2.1 && < 0.4,
+                     shellish     >= 0.1.3 && < 0.2,
                      test-framework             >= 0.2.2,
                      test-framework-hunit       >= 0.2.2,
-                     test-framework-quickcheck2 >= 0.2.2
-
+                     test-framework-quickcheck2 >= 0.2.8
 
     hs-source-dirs:   src
     include-dirs:     src
@@ -616,25 +587,46 @@ Executable          unit
     -- include them in the tarball
     other-modules:    Darcs.Test.Email
                       Darcs.Test.Patch.Check
+                      Darcs.Test.Patch.Examples
+                      Darcs.Test.Patch.Examples2
                       Darcs.Test.Patch.Info
+                      Darcs.Test.Patch.Prim.V1
+                      Darcs.Test.Patch.Properties
+                      Darcs.Test.Patch.Properties2
                       Darcs.Test.Patch.QuickCheck
+                      Darcs.Test.Patch.RepoModel
                       Darcs.Test.Patch.Test
                       Darcs.Test.Patch.Unit
-                      Darcs.Test.Unit
+                      Darcs.Test.Patch.Unit2
+                      Darcs.Test.Patch.Utils
+                      Darcs.Test.Patch.WithState
+                      Darcs.Test.Patch
+                      Darcs.Test.Misc
+                      Darcs.Test.Util.TestResult
+                      Darcs.Test.Util.QuickCheck
 
-    -- We need optimizations, regardless of what Hackage says
+    if flag(optimize)
+      ghc-options:      -O2
+    else
+      ghc-options:      -O0
+
+    if flag(warn-as-error)
+      ghc-options:      -Werror
+
     -- Note: "if true" works around a cabal bug with order of flag composition
     if true
-      ghc-options:      -Wall -O2 -funbox-strict-fields -fwarn-tabs
-
-    if impl(ghc>=6.12)
-      ghc-options: -fno-warn-unused-do-bind
+      ghc-options:      -Wall -funbox-strict-fields -fwarn-tabs
 
     ghc-prof-options: -prof -auto-all
     if flag(threaded)
       ghc-options:    -threaded
 
+    if flag(hpc)
+      ghc-prof-options: -fhpc -hpcdir dist/hpc/darcs-test
+
     cc-options:       -D_REENTRANT
+
+    cpp-options:      -DGADT_WITNESSES=1
 
     if os(windows)
       hs-source-dirs: src/win32
@@ -646,7 +638,7 @@ Executable          unit
       cpp-options:    -DWIN32
       c-sources:      src/win32/send_email.c
       build-depends:  unix-compat >= 0.1.2,
-                      regex-posix >= 0.94.4 && < 0.95
+                      regex-posix >= 0.95.1
 
     if os(solaris)
       cc-options:     -DHAVE_SIGINFO_H
@@ -654,16 +646,18 @@ Executable          unit
     if !os(windows)
       build-depends: unix >= 1.0 && < 2.5
 
-    build-depends: base >= 3,
+    build-depends: base >= 4 && < 5,
                    bytestring >= 0.9.0 && < 0.10,
-                   haskeline    >= 0.6.2.2 && < 0.7,
-                   text >= 0.3,
+                   haskeline    >= 0.6.3 && < 0.7,
+                   text == 0.11.*,
                    old-time   == 1.0.*,
-                   directory  == 1.0.*,
+                   directory  >= 1.0.0.0 && < 1.2.0.0,
                    process    == 1.0.*,
-                   containers >= 0.1 && < 0.4,
+                   containers >= 0.1 && < 0.5,
                    array      >= 0.1 && < 0.4,
-                   hashed-storage >= 0.5.2 && < 0.6,
+                   hashed-storage >= 0.5.6 && < 0.6,
+                   vector       >= 0.7,
+                   tar        == 0.3.*,
                    random     == 1.0.*
 
     if flag(mmap) && !os(windows)
@@ -678,32 +672,27 @@ Executable          unit
       cpp-options:      -DHAVE_TERMINFO
 
     if flag(http)
-        build-depends:    network == 2.2.*,
-                          HTTP    >= 3000.0 && < 4000.1
+        build-depends:    network >= 2.2 && < 2.4,
+                          HTTP    >= 3000.0 && < 4000.2
 
     if flag(color)
       x-use-color:
 
-    extensions:
-      CPP,
-      ForeignFunctionInterface,
-      BangPatterns,
-      PatternGuards,
-      MagicHash,
-      UndecidableInstances,
-      DeriveDataTypeable,
-      GADTs,
-      TypeOperators,
-      ExistentialQuantification,
-      FlexibleContexts,
-      FlexibleInstances,
-      ScopedTypeVariables,
-      -- PatternSignatures is needed for GHC 6.8
-      PatternSignatures,
-      KindSignatures,
-      TypeSynonymInstances,
-      Rank2Types,
-      RankNTypes,
-      GeneralizedNewtypeDeriving,
-      MultiParamTypeClasses
-      OverlappingInstances
+    -- if true to work around cabal bug with flag ordering
+    if true
+      extensions:
+        CPP
+        BangPatterns
+        PatternGuards
+        GADTs
+        TypeOperators
+        FlexibleContexts
+        FlexibleInstances
+        ScopedTypeVariables
+        KindSignatures
+        RankNTypes
+        TypeFamilies
+
+    if impl(ghc>=7.0)
+      extensions:
+        NoMonoLocalBinds
