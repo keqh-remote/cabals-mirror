@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.8
+Version:		2.2.9
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -44,16 +44,15 @@ Category:		Cryptography
 Build-Type:		Simple
 Data-Files:
    index.html cpsauser.html cpsa.mk Make.hs cpsaprimer.pdf
-   cpsaoverview.pdf cpsaspec.pdf cpsadesign.pdf cpsasdha.pdf
+   cpsaoverview.pdf cpsaspec.pdf cpsadesign.pdf cpsadha.pdf
    ffgg.scm ns.scm or.scm woolam.scm yahalom.scm dhke.scm
 Data-Dir:	    	doc
 Extra-Source-Files:
   Makefile ChangeLog README NEWS ghci cpsatst setup.bat doc/README
   doc/Makefile doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
   doc/cpsaspec.tex doc/cpsadesign.tex doc/cpsaoverview.tex
-  doc/cpsasdha.tex doc/cpsadiagrams.mp doc/strands.mp doc/cmstrands.mp
+  doc/cpsadha.tex doc/cpsadiagrams.mp doc/strands.mp doc/cmstrands.mp
   doc/carriers.mp doc/termtree.mp doc/cpsa.bib doc/SDAG.lhs
-  doc/SimpleDiffieHellman.hs
   src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg src/cpsa.el
   src/httpd_allow_execmem.te src/cpsaops.scm src/preskel src/cpsa.pl
   src/pp.pl src/sexpr.pl src/prover9.pl src/zoom.js src/js2hs
@@ -111,7 +110,7 @@ Extra-Source-Files:
 
 Executable cpsa
   Main-Is:		CPSA/Lib/Main.hs
-  Build-Depends:	base >= 3 && < 5, containers, parallel
+  Build-Depends:	base >= 3 && < 5, containers, parallel, array
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports -threaded
   Hs-Source-Dirs:	src
@@ -122,6 +121,8 @@ Executable cpsa
     CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.Expand CPSA.Lib.CPSA
     CPSA.Lib.Reduction CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
     CPSA.DiffieHellman.IntLinEq CPSA.SimpleDiffieHellman.Algebra
+    CPSA.DiffieHellmanNoReciprocal.Algebra
+    CPSA.DiffieHellmanNoReciprocal.LinDiophEq
   if impl(ghc >= 7.0.0)
     GHC-Options: -rtsopts
 
@@ -168,6 +169,8 @@ Executable cpsaannotations
     CPSA.Annotations.Formulas CPSA.Annotations.Annotations
     CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
     CPSA.DiffieHellman.IntLinEq CPSA.SimpleDiffieHellman.Algebra
+    CPSA.DiffieHellmanNoReciprocal.Algebra
+    CPSA.DiffieHellmanNoReciprocal.LinDiophEq
 
 Executable cpsaparameters
   Main-Is:		CPSA/Parameters/Main.hs
@@ -182,6 +185,8 @@ Executable cpsaparameters
     CPSA.Lib.Displayer CPSA.Lib.Cohort CPSA.Lib.CPSA
     CPSA.Parameters.Flow CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
     CPSA.DiffieHellman.IntLinEq CPSA.SimpleDiffieHellman.Algebra
+    CPSA.DiffieHellmanNoReciprocal.Algebra
+    CPSA.DiffieHellmanNoReciprocal.LinDiophEq
 
 Executable cpsapp
   Main-Is:		CPSA/Pretty/Main.hs
@@ -219,3 +224,5 @@ Executable cpsalogic
     CPSA.Logic.Logic
     CPSA.Basic.Algebra CPSA.DiffieHellman.Algebra
     CPSA.DiffieHellman.IntLinEq CPSA.SimpleDiffieHellman.Algebra
+    CPSA.DiffieHellmanNoReciprocal.Algebra
+    CPSA.DiffieHellmanNoReciprocal.LinDiophEq
