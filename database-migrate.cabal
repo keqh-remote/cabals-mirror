@@ -1,5 +1,5 @@
 Name:               database-migrate
-Version:            0.0.1
+Version:            0.0.2
 License:            BSD3
 License-File:       LICENSE
 Author:             Mark Hibberd <mark@hibberd.id.au>
@@ -9,16 +9,16 @@ Synopsis:           Database versioning and migration
 Category:           Database
 Homepage:           https://github.com/markhibberd/database-migrate
 Bug-reports:           https://github.com/markhibberd/database-migrate/issues
-Cabal-Version:      >= 1.6
+Cabal-Version:      >= 1.8
 Build-Type:         Simple
 Description:
   A database versioning and migration library.
   .
-  /Note/: that this library is under heavy development, currently
+  /Note/: This library is under heavy development, currently
   the PostgreSQL implementation is functional, but
   expected to change. It is intended that a type safe
-  migration api and command line tools be added to this
-  library before it be considered stable.
+  migration api, command line tools and MySql support be added
+  before this library will be considered stable.
 
 Source-Repository   head
   Type:             git
@@ -29,7 +29,7 @@ Flag                small_base
 
 Library
   Build-Depends:
-                    base >= 3 && < 5
+                    base                            >= 3          && < 5
                     , text                          >= 0.11       && < 0.12
                     , directory                     >= 1.0        && < 2.0
                     , filepath                      >= 1.0        && < 2.0
@@ -39,6 +39,7 @@ Library
                     , containers                    >= 0.4        && < 0.5
                     , either                        >= 3.0.2      && < 4.0
                     , transformers                  >= 0.2        && < 0.4
+                    , cmdargs                       >= 0.9.3      && < 1.0.0
 
   GHC-Options:
                     -Wall -fno-warn-orphans
@@ -48,6 +49,7 @@ Library
 
   Exposed-Modules:
                     Database.Migrate
+                    Database.Migrate.Main
                     Database.Migrate.Core
                     Database.Migrate.PostgreSQL
 
@@ -56,3 +58,14 @@ Library
                     OverloadedStrings
 
 
+Executable          migrate
+  Main-Is:          main.hs
+  Hs-Source-Dirs:   src
+  Ghc-Options:      -Wall -O2
+  Build-Depends:
+                    base                            >= 3          && < 5
+                    , database-migrate
+                    , cmdargs                       >= 0.9.3      && < 1.0.0
+                    , directory                     >= 1.0        && < 2.0
+                    , postgresql-simple             >= 0.1        && < 1.0
+                    , text                          >= 0.11       && < 0.12
