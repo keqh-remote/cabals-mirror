@@ -1,5 +1,5 @@
 name:    atom
-version: 0.1.3
+version: 0.1.4
 
 category: Language
 
@@ -35,8 +35,7 @@ library
     build-depends:
         base       >= 4       && < 5,
         mtl        >= 1.1.0.1 && < 1.2,
-        process    >= 1.0.1.1 && < 1.2,
-        yices      >= 0.0.0.4
+        process    >= 1.0.1.1 && < 1.2
 
     exposed-modules:
         Language.Atom
@@ -50,7 +49,6 @@ library
         Language.Atom.Language
         Language.Atom.Scheduling
         Language.Atom.Unit
-        Language.Atom.Verification
 
     extensions: GADTs
 
