@@ -1,5 +1,5 @@
 name:             wumpus-core
-version:          0.23.0
+version:          0.30.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -29,9 +29,9 @@ description:
   .
   For actually drawing pictures, diagrams, etc. Wumpus is very 
   low level. There is a supplemantary package @wumpus-basic@ 
-  available that helps create certain types of diagram, but even 
-  this lacks the higher-level stuff (polygons, arrows etc.) that 
-  would make creating general drawings easy.
+  available that helps create certain types of diagram, but it is
+  experimental - functionality is added an dropped between 
+  releases.
   .
   Some of the design decisions made for wumpus-core are not 
   sophisticated (e.g. how attributes like colour are handled, 
@@ -43,13 +43,6 @@ description:
   appears okay for Latin 1 but may be inadequate for other 
   character sets, so I may have to revise it significantly.
   .
-  WARNING...
-  .
-  The module @Core.BoundingBox@ is likely to be reworked 
-  significantly in the future. It has too many functions that do 
-  not offer distinct functionality. Some functions were removed in 
-  revision 0.17.0 and some more are likely to follow. 
-  .
   .
   \[1\] Because the output is simple, straight-line PostScript 
   code, it is possible to use GraphicsMagick or a similar tool 
@@ -57,6 +50,47 @@ description:
   (bitmaps). 
   .
   Changelog:
+  .
+  0.23.0 to 0.30.0:
+  .
+  * Substantial changes - the output machinery has been heavily 
+    modified, the intention was to reduce the use of matrix 
+    transformations in SVG output. Though this goal has not been 
+    achieved, some code-size improvements in the SVG output have 
+    been made. 
+  .
+  * The code generation monads have been changed - Wumpus no 
+    longer uses a writer monad for code generation, but it will
+    keep the Wumpus name.
+  .
+  * Added support for hyperlinks in the SVG output.
+  .
+  * Improved internal pretty printing and added the function 
+    @printPicture@ for debugging.
+  .
+  * The @Core.Colour@ module has been simplified to support just 
+    one (new) type - RGBi, and the conversion type class 
+    @PSColour@ has been eliminated.
+  .
+  * @Core.Picture@ - the type of the @frame@ function has been 
+    changed to take a list of Primitives rather than a single 
+    Primitive. The function @frameMulti@ which previously 
+    provided this functionality has been removed. SVG hyperlinks
+    are now supported for Primitives. 
+  . 
+  * The default font size has been changed to 14 pt. 
+  .
+  * The Path datatype has been renamed PrimPath, likewise Ellipse 
+    is now PrimEllispe and Label becomes PrimLabel.
+  .
+  * @Core.Geometry@ now longer defines an affine frame datatype.
+  .
+  * @Core.BoundingBox@ module changed significantly. The corner 
+    functions (@boundaryBottomLeft@, etc.) have been removed, 
+    along with the plane functions (@leftPlane@, etc.). Some 
+    functions have been given more verbose names - @corners@ is 
+    now @boundaryCorners@, @within@ is now @withinBoundary@ and 
+    @union@ is now @boundaryUnion@. 
   .
   0.22.0 TO 0.23.0:
   . 
@@ -94,10 +128,11 @@ extra-source-files:
   demo/AffineTestBase.hs,
   demo/FontMetrics.hs
   demo/LabelPic.hs,
-  demo/MultiPic.hs
-  demo/Rotated.hs
-  demo/Scaled.hs
-  demo/Translated.hs
+  demo/MultiPic.hs,
+  demo/Rotated.hs,
+  demo/Scaled.hs,
+  demo/Translated.hs,
+  demo/ZOrderPic.hs,
   doc/Guide.pdf,
   doc-src/Guide.lhs,
   doc-src/Makefile,
@@ -107,10 +142,11 @@ extra-source-files:
 
 library
   hs-source-dirs:     src
-  build-depends:      base < 5, containers,
-                      time >= 1.1.3 && < 1.2,
-                      wl-pprint, vector-space, 
-                      monadLib, xml, algebra
+  build-depends:      base            <  5, 
+                      containers      >= 0.3      && <= 0.4, 
+                      time            >= 1.1.3    && < 1.2,
+                      vector-space    >= 0.6      && < 1.0,
+                      algebra         >= 0.0.0.1
                         
   exposed-modules:
     Wumpus.Core,
@@ -130,11 +166,13 @@ library
     Wumpus.Core.WumpusTypes
 
   other-modules:
+    Wumpus.Core.FormatCombinators,
+    Wumpus.Core.PageTranslation,
     Wumpus.Core.PictureInternal,
-    Wumpus.Core.PostScript,
-    Wumpus.Core.SVG,
+    Wumpus.Core.PostScriptDoc,
+    Wumpus.Core.SVGDoc,
     Wumpus.Core.OneList,
-    Wumpus.Core.TextEncodingInternal,
+    Wumpus.Core.TextInternal,
     Wumpus.Core.Utils
     
   extensions:
