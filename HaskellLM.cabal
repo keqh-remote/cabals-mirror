@@ -1,5 +1,5 @@
 Name:         HaskellLM
-Version:      0.1.1
+Version:      0.1.2
 License:      GPL
 License-file: LICENSE
 Author:       Kiet Lam
@@ -7,7 +7,7 @@ Maintainer:   Kiet Lam <ktklam9@gmail.com>
 Synopsis:     Pure Haskell implementation of the Levenberg-Marquardt algorithm
 Description:  The Levenberg-Marquardt algorithm is a minimization algorithm for functions expressed as a sum of squared errors
               .
-              This can be used for curve-fitting, multidimensional function optimization, or neural networks training
+              This can be used for curve-fitting, multidimensional function minimization, and neural networks training
               .
               Go to <https://github.com/ktklam9/HaskellLM> for example usage (in tests)
 
