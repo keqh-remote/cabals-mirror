@@ -1,7 +1,7 @@
 name: dataenc
-version: 0.11.1
-license: LGPL
-license-file: COPYING.LESSER
+version: 0.12
+license: BSD3
+license-file: LICENSE
 cabal-version: >= 1.2
 build-type: Simple
 author: Magnus Therning
@@ -11,8 +11,8 @@ copyright: Magnus Therning, 2007
 category: Codec
 synopsis: Data encoding library
 description: Data encoding library currently providing Uuencode, Base64,
-        Base64Url, Base32, Base32Hex, Base16, and Base85.
-extra-source-files: UT.hs QC.hs COPYING
+        Base64Url, Base32, Base32Hex, Base16, Base85, and yEncoding.
+extra-source-files: UT.hs QC.hs
 
 flag large_base
         description: Choose the old larger, monolithic base package.
@@ -33,3 +33,4 @@ library
                 Codec.Binary.Base64Url
                 Codec.Binary.Base64
                 Codec.Binary.Base85
+                Codec.Binary.Yenc
