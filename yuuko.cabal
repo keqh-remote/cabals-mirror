@@ -1,5 +1,5 @@
 Name:                 yuuko
-Version:              2009.10.23.1
+Version:              2009.10.23.2
 Build-type:           Simple
 Synopsis:             A transcendental HTML parser gently wrapping the HXT library
 Description:
@@ -21,6 +21,13 @@ Cabal-version:        >= 1.2
 category:             Text
 homepage:             http://github.com/nfjinjing/yuuko
 data-files:           readme.md, changelog.md, known-issues.md, Nemesis
+
+Executable            yuuko
+  ghc-options:        -Wall
+  build-depends:      base >= 4 && < 5, hxt, haskell98, utf8-prelude
+  hs-source-dirs:     src/
+  main-is:            Main.hs
+  other-modules:      Text.HTML.Yuuko
 
 library
   ghc-options: -Wall
