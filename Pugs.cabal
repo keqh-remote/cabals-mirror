@@ -1,5 +1,5 @@
 Name            : Pugs
-Version         : 6.2.13.1
+Version         : 6.2.13.2
 license         : BSD3
 license-file    : LICENSE
 copyright       : 2005-2008, The Pugs Contributors
@@ -9,11 +9,11 @@ build-depends   : base, haskell98, filepath, mtl, stm, parsec, network,
                   pretty, time, random, process, containers, bytestring,
                   array, directory, readline, utf8-string,
 
-                  MetaObject       >= 0.0.3,
+                  MetaObject       >= 0.0.4,
                   HsParrot         >= 0.0.2,
-                  pugs-compat      >= 0.0.2,
+                  pugs-compat      >= 0.0.3,
                   pugs-DrIFT       >= 2.2.3.0,
-                  stringtable-atom >= 0.0.3,
+                  stringtable-atom >= 0.0.4,
                   HsSyck           >= 0.44
 
                   -- HsPerl5
