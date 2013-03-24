@@ -1,5 +1,5 @@
 name:                   priority-queue
-version:                0.2
+version:                0.2.1
 stability:              provisional
 license:                BSD3
 license-file:           LICENSE
@@ -30,4 +30,4 @@ Library
     cpp-options:        -DNoMinViewWithKey
   
   build-depends:        reord >= 0.0.0.2, stateref >= 0.3 && < 0.4,
-                        queue >= 0.1.1.3
+                        queue >= 0.1.2 && < 0.2
