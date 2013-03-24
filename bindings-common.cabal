@@ -8,7 +8,7 @@ description:
   modules that can be used to write C library
   bindings according to a well defined standard. See
   "Bindings" module documentation for details.
-version: 0.2.5
+version: 0.2.6
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
