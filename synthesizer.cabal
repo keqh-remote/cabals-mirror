@@ -1,5 +1,5 @@
 Name:           synthesizer
-Version:        0.2
+Version:        0.2.0.1
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -56,7 +56,7 @@ Flag buildTests
 
 
 Source-Repository this
-  Tag:         0.2
+  Tag:         0.2.0.1
   Type:        darcs
   Location:    http://darcs.haskell.org/synthesizer/
 
@@ -79,7 +79,7 @@ Library
     -- bytestring and binary are only needed by SpeedTest
     bytestring >= 0.9 && <0.10,
     binary >=0.1 && <1,
-    storablevector >=0.2.2 && <0.3,
+    storablevector >=0.2.3 && <0.3,
     filepath >=1.1 && <1.2,
 --    for ST.Lazy.read
     -- QuickCheck is needed for Filter.Delay.Block
