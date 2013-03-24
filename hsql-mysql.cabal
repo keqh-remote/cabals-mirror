@@ -1,22 +1,37 @@
-name: hsql-mysql 
-version: 1.8.1 
-license: BSD3 
-author: Krasimir Angelov <kr.a...@gmail.com> 
-category: Database 
-description: MySQL driver for HSQL. 
-synopsis: MySQL driver for HSQL.
-ghc-options: -O2 
-build-depends: base >=4 && < 5, hsql >= 1.8, Cabal 
-extensions: ForeignFunctionInterface, CPP 
-include-dirs: Database/HSQL, /usr/include/mysql 
-build-type: Simple 
-extra-source-files: Database/HSQL/HsMySQL.h 
-extra-libraries: mysqlclient 
-extra-lib-dirs: /usr/lib,/usr/lib/mysql 
-exposed-modules: 
-  Database.HSQL.MySQL
-  DB.HSQL.MySQL.Type
-  DB.HSQL.MySQL.Functions
-maintainer: Chris Done <chrisdone@gmail.com>
-license-file: LICENSE
-cabal-version: >= 1.6
+Name: hsql-mysql 
+Version: 1.8.2
+Cabal-Version: >=1.10
+Build-Type: Simple
+License: BSD3 
+License-File: LICENSE
+Author: Krasimir Angelov <kr.a...@gmail.com> 
+Maintainer: Chris Done <chrisdone@gmail.com>
+Category: Database 
+Synopsis: MySQL driver for HSQL.
+Description: MySQL driver for HSQL.
+
+Library {
+  Build-Depends: base >=4 && < 5, hsql >= 1.8.2, Cabal 
+  Exposed-Modules: Database.HSQL.MySQL
+                   DB.HSQL.MySQL.Type
+                   DB.HSQL.MySQL.Functions
+  Exposed: True
+  Other-Modules:
+  Hs-Source-Dirs: .
+  Default-Extensions:
+  Other-Extensions: CPP, DeriveDataTypeable, FlexibleInstances, 
+                    ForeignFunctionInterface, RankNTypes, ScopedTypeVariables
+  Buildable: True
+  GHC-Options: -O2
+  Includes: Database/HSQL/HsMySQL.h 
+  Install-Includes:
+  Include-Dirs: Database/HSQL, /usr/include/mysql 
+  C-Sources:
+  Extra-Libraries: mysqlclient
+  Extra-Lib-Dirs: /usr/lib,/usr/lib/mysql 
+  CC-Options:
+  LD-Options:
+  PkgConfig-Depends:
+  Frameworks:
+  Default-Language: Haskell2010
+}
