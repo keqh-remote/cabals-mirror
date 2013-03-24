@@ -1,12 +1,22 @@
 name:			manatee-core
-version:		0.0.2
+version:		0.0.3
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
 copyright:		(c) 2009 ~ 2010 Andy Stewart
 synopsis:		The core of Manatee.
-description:    manatee-core is core package of Manatee (Haskell/Gtk+ Integrated Live Environment)
-                To provide basic communication protocol and toolkit.
+description:    manatee-core is core package of Manatee (Haskell/Gtk+ Integrated Live Environment) 
+ .
+ To provide basic communication protocol and toolkit.
+ .
+ Manual look <http://haskell.org/haskellwiki/Manatee>
+ .
+ Screenshot at <http://goo.gl/MkVw>
+ .
+ IRC channel: 
+ .
+ irc.freenode.net 6667 <##manatee>
+ .
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
 stability:		provisional
@@ -27,7 +37,7 @@ Library
                     filepath >= 1.1.0.3, unix >= 2.4.0.0, process >= 1.0.1.2, array >= 0.3.0.0,
                     old-time >= 1.0.0.3, glib >= 0.12.0, time >= 1.1.4, gtksourceview2 >= 0.12.0,
                     Cabal >= 1.8.0.2, old-locale >= 1.0.0.2, datetime >= 0.2, bytestring, split, dataenc,
-                    derive, gconf >= 0.12.0, binary, directory
+                    derive, gconf >= 0.12.0, binary, directory, haskell-src-exts
      exposed-modules:
          Manatee.Core.DBus
          Manatee.Core.Debug
