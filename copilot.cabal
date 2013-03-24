@@ -1,5 +1,5 @@
 name:                copilot
-version:             0.23
+version:             0.25
 cabal-version:       >= 1.2
 license:             BSD3
 license-file:        LICENSE
@@ -31,13 +31,15 @@ extra-source-files:  README
 
 library
     ghc-options:     -Wall
-    build-depends:     base > 4 && < 5
+    -- These build depends represent my current system.  This will probably
+    -- build on packages outside these constaints.
+    build-depends:     base > 4 && < 6
                      , atom >= 1.0.7
                      , containers >= 0.2.0.1
                      , process >= 1.0.0.0
                      , random >= 1.0.0.0
-                     , directory
-                     , mtl >= 1.0.0.0                   
+                     , directory >= 1.0.0.0
+                     , mtl >= 1.0.0.0
                      , filepath >= 1.0.0.0
 
     extensions:
