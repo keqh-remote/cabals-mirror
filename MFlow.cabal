@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.2.0.0
+version: 0.2.0.1
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
@@ -44,8 +44,7 @@ description: A Web framework with some unique features thanks to the power of th
 category: Web, Application Server
 author: Alberto Gómez Corona
 data-dir: ""
-extra-source-files: Demos/ShoppingCart.hs Demos/ShoppingCart.Wai.hs
-                    Demos/demos.hs Demos/demos.blaze.hs
+extra-source-files: Demos/demos.blaze.hs
 
 source-repository head
     type: git
