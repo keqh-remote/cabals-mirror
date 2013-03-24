@@ -1,5 +1,5 @@
 Name:          alsa-gui
-Version:       0.0.1
+Version:       0.1
 Maintainer:    Henning Thielemann <alsa@henning-thielemann.de>
 Author:        Henning Thielemann <alsa@henning-thielemann.de>
 Category:      Sound, Music, GUI
@@ -21,9 +21,14 @@ Description:
   .
   * Show a list widget, that triggers MIDI program changes.
 
+Source-Repository this
+  Tag:      0.1
+  Type:     darcs
+  Location: http://code.haskell.org/alsa/gui/
+
 Source-Repository head
-  type:     darcs
-  location: http://code.haskell.org/alsa/gui/
+  Type:     darcs
+  Location: http://code.haskell.org/alsa/gui/
 
 Executable alsa-midi-mode
   Main-Is: mode.hs
@@ -31,11 +36,11 @@ Executable alsa-midi-mode
   Hs-Source-Dirs: src
   GHC-Options: -Wall -threaded
   Build-Depends:
-    wx >=0.12.1.6 && <0.13,
-    wxcore >=0.12.1.6 && <0.13,
-    midi-alsa >=0.1.1 && <0.2,
-    midi >=0.1.6 && <0.2,
-    alsa-seq >=0.5.1 && <0.6,
+    wx >=0.12.1.6 && <0.14,
+    wxcore >=0.12.1.6 && <0.14,
+    midi-alsa >=0.1.1 && <0.3,
+    midi >=0.1.6 && <0.3,
+    alsa-seq >=0.6 && <0.7,
     alsa-core >=0.5 && <0.6,
     base >=3 && <5
 
@@ -45,9 +50,9 @@ Executable alsa-midi-program
   Hs-Source-Dirs: src
   GHC-Options: -Wall -threaded
   Build-Depends:
-    wx >=0.12.1.6 && <0.13,
-    wxcore >=0.12.1.6 && <0.13,
-    alsa-seq >=0.5.1 && <0.6,
+    wx >=0.12.1.6 && <0.14,
+    wxcore >=0.12.1.6 && <0.14,
+    alsa-seq >=0.6 && <0.7,
     alsa-core >=0.5 && <0.6,
     base >=3 && <5
 
@@ -57,8 +62,8 @@ Executable alsa-midi-controller
   Hs-Source-Dirs: src
   GHC-Options: -Wall -threaded
   Build-Depends:
-    wx >=0.12.1.6 && <0.13,
-    wxcore >=0.12.1.6 && <0.13,
-    alsa-seq >=0.5.1 && <0.6,
+    wx >=0.12.1.6 && <0.14,
+    wxcore >=0.12.1.6 && <0.14,
+    alsa-seq >=0.6 && <0.7,
     alsa-core >=0.5 && <0.6,
     base >=3 && <5
