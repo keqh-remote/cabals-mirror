@@ -1,5 +1,5 @@
 Name:            chp
-Version:         2.1.0.1
+Version:         2.2.0
 Synopsis:        An implementation of concurrency ideas from Communicating Sequential Processes
 License:         BSD3
 License-file:    LICENSE
@@ -23,7 +23,7 @@ Category:        Concurrency
 
 Cabal-Version:   >= 1.2.3
 Build-Type:      Simple
-Build-Depends:   base >= 3 && < 5, containers, deepseq >= 1.1 && < 1.2, extensible-exceptions >= 0.1.1.0, loop-while, mtl, pretty, stm
+Build-Depends:   base >= 3 && < 5, containers, deepseq >= 1.1 && < 1.2, extensible-exceptions >= 0.1.1.0, pretty, stm
 
 Exposed-modules: Control.Concurrent.CHP
                  Control.Concurrent.CHP.Alt
@@ -57,7 +57,7 @@ Other-modules:   Control.Concurrent.CHP.Base
                  Control.Concurrent.CHP.ProcessId
                  Control.Concurrent.CHP.Traces.Base
 
-Extensions:      BangPatterns CPP FlexibleInstances GeneralizedNewtypeDeriving
-                 MultiParamTypeClasses ScopedTypeVariables 
+Extensions:      BangPatterns CPP FlexibleInstances
+                 MultiParamTypeClasses Rank2Types ScopedTypeVariables
 
 GHC-Options:     -Wall -auto-all
