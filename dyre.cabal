@@ -1,6 +1,6 @@
 name:          dyre
-version:       0.4
-category:      Development
+version:       0.5
+category:      Development, Configuration
 synopsis:      Dynamic reconfiguration in Haskell
 
 description:   Dyre implements dynamic reconfiguration facilities after the
@@ -32,7 +32,7 @@ library
                    Config.Dyre.Compile,
                    Config.Dyre.Relaunch
   build-depends:   base >= 4 && < 5, process, filepath,
-                   directory, ghc-paths, old-time,
+                   directory, ghc-paths, old-time, binary,
                    executable-path, xdg-basedir, io-storage
 
   if os(windows)
