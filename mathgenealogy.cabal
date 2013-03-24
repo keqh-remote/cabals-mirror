@@ -7,7 +7,7 @@ Name:                mathgenealogy
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.1
+Version:             0.0.2
 
 Synopsis:            Discover your (academic) ancestors!
 
@@ -20,11 +20,16 @@ Description:         A command line program for extracting data from the
   .
   > mathgenealogy http://genealogy.math.ndsu.nodak.edu/id.php?id=18231 
   .
-  which will produce a directed acyclic graph in output.pdf. See 
+  which will produce a directed acyclic graph in output.pdf
+  (<http://dl.dropbox.com/u/22490968/genealogy_of_gauss.pdf>). See 
   .
   > mathgenealogy --help
   .
   for details. Requires GraphViz to run.
+  . 
+  /Changes in 0.0.2:/
+  .
+  * fixed bug regarding trailing commas (thanks to A. Koessler) 
 
 -- Homepage:            http://darcs.monoid.at/mathgenealogy
 
