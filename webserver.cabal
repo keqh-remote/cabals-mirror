@@ -1,11 +1,11 @@
 Name:                   webserver
-Version:                0.4.6
+Version:                0.5.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
-Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
+Maintainer:             John W. Lato <jwlato@gmail.com>
 License:                BSD3
 License-File:           LICENSE
 Synopsis:               HTTP server library
-Description:            A simple but practical library of HTTP server
+Description:            A simple but practical HTTP server library.
 Category:               Network
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
@@ -18,7 +18,7 @@ library
                         Network.Web.Server
                         Network.Web.Server.Basic
                         Network.Web.URI
-  Other-Modules:        Network.Web.Date
+                        Network.Web.Date
                         Network.Web.Params
                         Network.Web.Server.CGI
                         Network.Web.Server.Lang
@@ -29,4 +29,4 @@ library
                         filepath, time, unix, process, c10k
 Source-Repository head
   Type:                 git
-  Location:             https://github.com/kazu-yamamoto/webserver
+  Location:             git://github.com/JohnLato/webserver.git
