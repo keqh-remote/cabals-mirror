@@ -1,5 +1,5 @@
 Name:                reactive
-Version:             0.3
+Version:             0.5
 Synopsis: 	     Simple foundation for functional reactive programming
 Category:            reactivity, FRP
 Description:
@@ -23,13 +23,20 @@ Package-Url:	     http://darcs.haskell.org/packages/reactive
 Copyright:           (c) 2007-2008 by Conal Elliott
 License:             BSD3
 Stability:           provisional
+build-type:	     Simple
 Hs-Source-Dirs:      src
 Extensions:          
-Build-Depends:       base, TypeCompose
+Build-Depends:       base, TypeCompose>=0.3
 Exposed-Modules:     
 		     Data.SFuture
 		     Data.Future
 		     Data.Fun
 		     Data.Reactive
 Extra-Source-Files:
-ghc-options:         -Wall -O
+ghc-options:         -Wall
+
+-- Experimental modules:
+-- 		     Data.SEvent
+-- 		     Data.MEvent
+-- 		     Data.EventExtras
+-- 		     Data.SReactive
