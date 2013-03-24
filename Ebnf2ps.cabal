@@ -1,5 +1,5 @@
 Name:                Ebnf2ps
-Version:             1.0.8
+Version:             1.0.9
 Synopsis:               Peter's Syntax Diagram Drawing Tool
 Homepage:            http://www.informatik.uni-freiburg.de/~thiemann/haskell/ebnf2ps/
 License:             BSD3
@@ -16,6 +16,14 @@ Description:            Ebnf2ps generates nice looking syntax diagrams in EPS
                         immediatedly included in TeX/LaTeX documents and in
                         texts created with other popular document preparation
                         systems.
+
+Extra-source-files:   examples/ebnf.BNF examples/gofer.BNF examples/regular.BNF,
+          doc/Atom.eps, doc/ExtAtom.eps, doc/Factor.eps, doc/File.eps,
+	  doc/Production_unfold.eps, doc/Nonterminal.eps,
+	  doc/Production.eps, doc/String.eps, doc/Term.eps, doc/Character.eps, doc/Atom_unfold.eps,
+	  doc/RAtom.eps, doc/RAtom_unfold.eps, doc/Export.eps,
+	  doc/RExtAtom.eps, doc/RFactor.eps, doc/Regexp.eps,
+	  doc/doc.tex, doc/doc.ps
 
 Executable ebnf2ps
   Main-is:   Ebnf2ps.hs
