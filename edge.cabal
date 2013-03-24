@@ -7,7 +7,7 @@ Name:                edge
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.8.14
+Version:             0.8.16
 
 -- A short (one-line) description of the package.
 Synopsis:            Top view space combat arcade game
@@ -62,7 +62,7 @@ Executable edge
   Default-language:  Haskell2010
   -- Packages needed in order to build this package.
   Build-depends:     gloss >= 1.7.4.1 && < 1.8
-                     , wraparound >= 0.0.1.1 && < 0.1
+                     , wraparound >= 0.0.2 && < 0.1
                      , base >= 4 && < 5
                      , containers >= 0.4.2.1 && < 0.6
                      , ALUT >= 2.2 && < 2.3
@@ -73,7 +73,7 @@ Executable edge
                      , Asteroid
                      , BigAsteroid
                      , Common
-                     , Trigonometry
+                     , Math
                      , Animation
                      , Star
                      , Paths_edge
