@@ -1,12 +1,12 @@
 name:           double-conversion
-version:        0.2.0.1
+version:        0.2.0.3
 license:        BSD3
 license-file:   LICENSE
-homepage:       https://github.com/mailrank/double-conversion
-bug-reports:    https://github.com/mailrank/double-conversion/issues
+homepage:       https://github.com/bos/double-conversion
+bug-reports:    https://github.com/bos/double-conversion/issues
 category:       Text
-author:         Bryan O'Sullivan <bos@mailrank.com>
-maintainer:     Bryan O'Sullivan <bos@mailrank.com>
+author:         Bryan O'Sullivan <bos@serpentine.com>
+maintainer:     Bryan O'Sullivan <bos@serpentine.com>
 stability:      experimental
 tested-with:    GHC == 7.0.3
 synopsis:       Fast conversion between double precision floating point and text
@@ -46,7 +46,6 @@ extra-source-files:
     double-conversion/test/cctest/*.h
     double-conversion/test/cctest/SConscript
     include/*.h
-    tests/*.cabal
     tests/*.hs
 
 flag developer
@@ -100,9 +99,22 @@ library
   if impl(ghc >= 6.9) && impl(ghc < 6.11)
     build-depends: integer >= 0.1 && < 0.2
 
+test-suite tests
+  type: exitcode-stdio-1.0
+  hs-source-dirs: tests
+  main-is: Properties.hs
+  ghc-options: -Wall
+  build-depends:
+    base,
+    bytestring,
+    double-conversion,
+    test-framework,
+    test-framework-quickcheck2,
+    text
+
 source-repository head
   type:     git
-  location: https://github.com/mailrank/double-conversion
+  location: https://github.com/bos/double-conversion
 
 source-repository head
   type:     mercurial
