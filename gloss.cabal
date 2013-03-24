@@ -1,5 +1,5 @@
 Name:                gloss
-Version:             1.7.7.1
+Version:             1.7.7.201204.1
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -35,13 +35,13 @@ Flag ExplicitBackend
 
 Library
   Build-Depends: 
-        base       == 4.*,
-        ghc-prim   >= 0.2 && < 0.4,
-        containers == 0.5.*,
+        base       == 4.5.*,
+        ghc-prim   == 0.2.*,
+        containers == 0.4.*,
         bytestring == 0.10.*,
         OpenGL     == 2.6.*,
         GLUT       == 2.3.*,
-        bmp        == 1.2.*
+        bmp        >= 1.2.3.2 && < 1.2.4
 
   ghc-options:      -O2 -Wall
 
