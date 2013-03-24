@@ -1,5 +1,5 @@
 name:               she
-version:            0.3
+version:            0.4
 homepage:           http://personal.cis.strath.ac.uk/~conor/pub/she
 synopsis:           A Haskell preprocessor adding miscellaneous features
 description:
@@ -31,8 +31,8 @@ executable she
     main-is:            Main.lhs
 
     build-depends:      base >=3 && < 5,
-                        mtl,
-                        filepath
+                        mtl >=2 && <3,
+                        filepath >= 1 && < 2
     hs-source-dirs:     src
 
     other-modules:      Aspect
@@ -48,8 +48,8 @@ executable she
 library
     exposed-modules:    ShePrelude
     build-depends:      base >=3 && < 5,
-                        mtl,
-                        filepath
+                        mtl >=2 && <3,
+                        filepath >= 1 && < 2
     hs-source-dirs:     src    
 
 source-repository head
