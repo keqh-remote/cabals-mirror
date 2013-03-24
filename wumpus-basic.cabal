@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.11.0
+version:          0.12.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -19,22 +19,35 @@ description:
   @PrimGraphic@, @DrawingContext@) seem to support a good set
   primitive functions, but the exact types of drawing objects do 
   not feel right at the moment. Other modules (Paths, Chains, 
-  Shapes) are essentially sketches and are expected to be
-  substantially revised in subsequent updates.
+  Shapes) are still being worked out and may be substantially 
+  revised in subsequent updates.
   .
-  Version 0.11.0 is an interim release. It is expected that the 
-  next release will substantially rework Shapes and likely change
-  the @Graphic.Base@ types. As quite a large amount of code has 
-  already changed since version 0.10.0 (to support better 
-  arrowheads and connectors) it seems sensible to release 0.11.0 
-  now, rather than have a huge delta after Shapes have been 
-  reworked again. The current versions of @Wumpus-Tree@ and 
-  @Wumpus-Microprint@ will work with version 0.11.0 if their 
-  respective @.cabal@ files are edited to bump the version number. 
-  There will be no matching releases to work automatically with 
-  version 0.11.0 of Wumpus-Basic.
+  Version 0.12.0 extends the sets of arrowheads and connectors.
+  Unfortunately Shapes are still undercooked.
   .
   Changelog:
+  .
+  0.11.0 to 0.12.0:
+  .
+  * Changes Base types in  @Basic.Graphic@. The @Graphic@ and 
+    @Image@ types now produce (wrapped) @Primitives@, rather than 
+    Hughes lists of @Primitives@. This means they can now be 
+    transformed with the affine transformations. Removed the 
+    function @ati@, it is replaced by @at@.
+  .
+  * Added @Basic.Utils.Combinators@.
+  .
+  * Arrowheads and Connectors reworked - Arrowheads are now a 
+    functional type, Connectors use new Image combining 
+    operations from @Basic.Graphic.Base@.
+  .
+  * Path connectors re-worked and renamed. 
+  .
+  * Dot hierarchy changed - @Basic.Dots@ becomes 
+    @Basic.Dots.AnchorDots@; @Basic.Dots.Primitive@ becomes
+    @Basic.Dots.Marks@.
+  .
+  * @Basic.Shapes@ - internals reworked.
   .
   0.10.0 to 0.11.0:
   . 
@@ -87,9 +100,11 @@ extra-source-files:
   CHANGES,
   LICENSE,
   demo/ArrowCircuit.hs,
+  demo/Arrowheads.hs,
   demo/ClipPic.hs,
   demo/ColourCharts.hs,
   demo/ColourDefns.hs,
+  demo/Connectors.hs
   demo/DotPic.hs,
   demo/FontPic.hs,
   demo/PetriNet.hs,
@@ -101,7 +116,7 @@ library
   build-depends:      base            <  5, 
                       containers      >= 0.3     && <= 0.4, 
                       vector-space    >= 0.6,
-                      wumpus-core     == 0.35.0
+                      wumpus-core     == 0.36.0
 
   
   exposed-modules:
@@ -114,11 +129,10 @@ library
     Wumpus.Basic.Chains.Derived,
     Wumpus.Basic.Colour.SVGColours,
     Wumpus.Basic.Colour.X11Colours,
-    Wumpus.Basic.Dots,
-    Wumpus.Basic.Dots.Primitive,
+    Wumpus.Basic.Dots.AnchorDots,
+    Wumpus.Basic.Dots.Marks,
     Wumpus.Basic.Graphic,
     Wumpus.Basic.Graphic.Base,
-    Wumpus.Basic.Graphic.DirectionContext,
     Wumpus.Basic.Graphic.Drawing,
     Wumpus.Basic.Graphic.DrawingContext,
     Wumpus.Basic.Graphic.PrimGraphic,
@@ -130,6 +144,7 @@ library
     Wumpus.Basic.Paths.Base,
     Wumpus.Basic.Paths.Connectors,
     Wumpus.Basic.Paths.Construction,
+    Wumpus.Basic.Paths.ControlPoints,
     Wumpus.Basic.Paths.RoundCorners,
     Wumpus.Basic.SafeFonts,
     Wumpus.Basic.Shapes,
@@ -139,6 +154,7 @@ library
     Wumpus.Basic.Shapes.Plaintext,
     Wumpus.Basic.Text.LRSymbol,
     Wumpus.Basic.Text.LRText,
+    Wumpus.Basic.Utils.Combinators,
     Wumpus.Basic.Utils.HList,
     Wumpus.Basic.Utils.Intersection,
     Wumpus.Basic.VersionNumber,
