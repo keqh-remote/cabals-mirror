@@ -1,33 +1,34 @@
-name:          llvm
-version:       0.8.0.2
-license:       BSD3
-license-file:  LICENSE
-synopsis:      Bindings to the LLVM compiler toolkit.
-description:   Bindings to the LLVM compiler toolkit.
-               * New in 0.8.0.0: Adapted to LLVM 2.7;
-               .
-               * New in 0.7.1.0: More attributes
-               .
-               * New in 0.7.0.1: MacOS fixes.
-               .
-               * New in 0.7.0.0: Adapted to LLVM 2.6;
-               .
-               * New in 0.6.8.0: Add functions to allow freeing function resources;
-               .
-               * New in 0.6.7.0: Struct types;
-               .
-               * New in 0.6.6.0: Bug fixes;
-               .
-               * New in 0.6.5.0: Adapted to LLVM 2.5;
-author:        Bryan O'Sullivan, Lennart Augustsson
-maintainer:    Bryan O'Sullivan <bos@serpentine.com>, Lennart Augustsson <lennart@augustsson.net>
-bug-reports:   Lennart Augustsson <lennart@augustsson.net>
-homepage:      http://code.haskell.org/llvm/
-stability:     experimental
-category:      Compilers/Interpreters, Code Generation
-tested-with:   GHC == 6.10.4, GHC == 6.12.2
-cabal-version: >= 1.6
-build-type:    Custom
+name: llvm
+version: 0.7.1.2
+license: BSD3
+license-file: LICENSE
+synopsis: Bindings to the LLVM compiler toolkit.
+description: Bindings to the LLVM compiler toolkit.
+             .
+             * New in 0.7.1.2: Free pass manager after optimization
+             .
+             * New in 0.7.1.0: More attributes
+             .
+             * New in 0.7.0.1: MacOS fixes.
+             .
+             * New in 0.7.0.0: Adapted to LLVM 2.6;
+             .
+             * New in 0.6.8.0: Add functions to allow freeing function resources;
+             .
+             * New in 0.6.7.0: Struct types;
+             .
+             * New in 0.6.6.0: Bug fixes;
+             .
+             * New in 0.6.5.0: Adapted to LLVM 2.5;
+author: Bryan O'Sullivan, Lennart Augustsson
+maintainer: Bryan O'Sullivan <bos@serpentine.com>, Lennart Augustsson <lennart@augustsson.net>
+bug-reports: Lennart Augustsson <lennart@augustsson.net>
+homepage: http://darcs.serpentine.com/llvm/
+stability: experimental
+category: Compilers/Interpreters, Code Generation
+tested-with: GHC == 6.10.4
+cabal-version: >= 1.2.3
+build-type: Custom
 
 extra-source-files:
     INSTALL.txt
@@ -36,22 +37,20 @@ extra-source-files:
     README.txt
     configure
     configure.ac
-    examples/Align.hs
     examples/Arith.hs
+    examples/Align.hs
     examples/Array.hs
     examples/BrainF.hs
     examples/Convert.hs
     examples/DotProd.hs
     examples/Fibonacci.hs
     examples/HelloJIT.hs
-    examples/Makefile
-    examples/Struct.hs
-    examples/Varargs.hs
     examples/Vector.hs
+    examples/Makefile
     examples/mainfib.c
+    examples/Struct.hs
     examples/structCheck.c
-    llvm.buildinfo.in
-    llvm.buildinfo.windows.in
+    examples/Varargs.hs
     tests/Makefile
     tests/TestValue.hs
     tools/DiffFFI.hs
@@ -59,6 +58,8 @@ extra-source-files:
     tools/FunctionMangulation.hs
     tools/IntrinsicMangler.hs
     tools/Makefile
+    llvm.buildinfo.in
+    llvm.buildinfo.windows.in
 
 extra-tmp-files:
     autom4te.cache
@@ -67,13 +68,7 @@ extra-tmp-files:
     llvm.buildinfo
 
 library
-  build-depends:
-    base >= 3 && < 5,
-    bytestring >= 0.9,
-    directory,
-    mtl,
-    process,
-    type-level
+  build-depends: base >= 3 && < 5, bytestring >= 0.9, mtl, directory, process, type-level
 
   ghc-options: -Wall
 
@@ -108,25 +103,21 @@ library
       LLVM.Core.Vector
       LLVM.ExecutionEngine.Engine
       LLVM.ExecutionEngine.Target
-      LLVM.Target.ARM
+      LLVM.Target.Native
+      LLVM.Target.X86
+      LLVM.Target.Sparc
+      LLVM.Target.PowerPC
       LLVM.Target.Alpha
+      LLVM.Target.ARM
+      LLVM.Target.Mips
+      LLVM.Target.CellSPU
+      LLVM.Target.PIC16
+      LLVM.Target.XCore
+      LLVM.Target.MSP430
+      LLVM.Target.SystemZ
       LLVM.Target.Blackfin
       LLVM.Target.CBackend
-      LLVM.Target.CellSPU
-      LLVM.Target.CppBackend
       LLVM.Target.MSIL
-      LLVM.Target.MSP430
-      LLVM.Target.Mips
-      LLVM.Target.Native
-      LLVM.Target.PIC16
-      LLVM.Target.PowerPC
-      LLVM.Target.Sparc
-      LLVM.Target.SystemZ
-      LLVM.Target.X86
-      LLVM.Target.XCore
+      LLVM.Target.CppBackend
 
   C-Sources: cbits/free.c
-
-source-repository head
-  type:     darcs
-  location: http://code.haskell.org/llvm/
