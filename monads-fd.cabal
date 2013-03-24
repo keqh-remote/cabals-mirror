@@ -1,5 +1,6 @@
 name:         monads-fd
-version:      0.1.0.1
+version:      0.1.0.2
+cabal-version: >= 1.6
 license:      BSD3
 license-file: LICENSE
 author:       Andy Gill
@@ -37,7 +38,7 @@ exposed-modules:
     Control.Monad.Writer.Class
     Control.Monad.Writer.Lazy
     Control.Monad.Writer.Strict
-build-depends: base < 6, transformers >= 0.2
+build-depends: base < 6, transformers == 0.2.*
 extensions:
     MultiParamTypeClasses
     FunctionalDependencies
