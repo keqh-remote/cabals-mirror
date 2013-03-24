@@ -1,5 +1,5 @@
 Name:                hssqlppp
-Version:             0.3.1
+Version:             0.4.0
 Synopsis:            SQL parser and type checker
 License:             BSD3
 License-file:        LICENSE
@@ -57,11 +57,11 @@ Library
                      Database.HsSqlPpp.Parsing.ParserInternal
                      Database.HsSqlPpp.Internals.Catalog.CatalogInternal
                      Database.HsSqlPpp.Internals.Catalog.DefaultTemplate1Catalog
-                     Database.HsSqlPpp.Internals.AstAnti
                      Database.HsSqlPpp.Internals.TypeChecking.TypeConversion
                      Database.HsSqlPpp.Internals.TypeChecking.ErrorUtils
                      Database.HsSqlPpp.Internals.TypeChecking.LocalBindings
                      Database.HsSqlPpp.Internals.TypeChecking.Utils
+                     Database.HsSqlPpp.Internals.TypeChecking.IDEnv
                      Database.HsSqlPpp.Internals.TypeChecking.LocalBindingsInternal
                      Database.HsSqlPpp.Internals.AstAnnotation
                      Database.HsSqlPpp.Internals.AnnotationUtils
