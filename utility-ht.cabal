@@ -1,5 +1,5 @@
 Name:             utility-ht
-Version:          0.0.3
+Version:          0.0.4
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -27,7 +27,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/utility/
-  tag:      0.0.3
+  tag:      0.0.4
 
 
 Library
@@ -47,6 +47,7 @@ Library
     Data.Record.HT
     Data.Tuple.HT
     Control.Monad.HT
+    Data.String.HT
     Text.Read.HT
     Text.Show.HT
   Other-Modules:
