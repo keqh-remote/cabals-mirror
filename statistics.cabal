@@ -1,5 +1,5 @@
 name:           statistics
-version:        0.8.0.1
+version:        0.8.0.2
 synopsis:       A library of statistical types, data, and functions
 description:
   This library provides a number of common functions and types useful
@@ -23,6 +23,7 @@ description:
 license:        BSD3
 license-file:   LICENSE
 homepage:       http://bitbucket.org/bos/statistics
+bug-reports:    http://bitbucket.org/bos/statistics/issues
 author:         Bryan O'Sullivan <bos@serpentine.com>
 maintainer:     Bryan O'Sullivan <bos@serpentine.com>
 copyright:      2009, 2010 Bryan O'Sullivan
@@ -36,14 +37,17 @@ library
     Statistics.Autocorrelation
     Statistics.Constants
     Statistics.Distribution
+    Statistics.Distribution.Beta
     Statistics.Distribution.Binomial
     Statistics.Distribution.ChiSquared
+    Statistics.Distribution.Exponential
     Statistics.Distribution.Gamma
     Statistics.Distribution.Geometric
-    Statistics.Distribution.Exponential
     Statistics.Distribution.Hypergeometric
+    Statistics.Distribution.LogNormal
     Statistics.Distribution.Normal
     Statistics.Distribution.Poisson
+    Statistics.Distribution.Triangular
     Statistics.Function
     Statistics.KernelDensity
     Statistics.Math
