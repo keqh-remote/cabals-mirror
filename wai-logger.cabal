@@ -1,5 +1,5 @@
 Name:                   wai-logger
-Version:                0.0.0
+Version:                0.0.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -24,7 +24,8 @@ library
   Build-Depends:        base >= 4 && < 5, wai,
                         http-types, bytestring, filepath,
                         directory, old-locale, case-insensitive,
-                        time, deepseq, unix, byteorder, network
+                        time, deepseq, unix, byteorder, network,
+                        blaze-builder
 Source-Repository head
   Type:                 git
   Location:             git://github.com/kazu-yamamoto/wai-logger.git
