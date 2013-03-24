@@ -1,5 +1,5 @@
 Name:                 hack
-Version:              2009.4.29
+Version:              2009.4.30
 Build-type:           Simple
 Synopsis:             a sexy Haskell Webserver Interface
 Description:
@@ -20,32 +20,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall
-  build-depends: base, cgi, network, haskell98, old-locale, old-time, directory, filepath, containers, bytestring, template, base64-string, zlib, hyena, ansi-wl-pprint, mps >= 2009.4.21, kibro >= 0.4.3, data-default >= 0.2, ansi-wl-pprint, bytestring, template, unix, time
+  build-depends: base, data-default >= 0.2
   hs-source-dirs: src/
   exposed-modules:  
                     Hack
-                    Hack.Utils
-                    Hack.Request
-                    Hack.Response
-                    Hack.Constants
-                    
-                    Hack.Handler.Kibro
-                    Hack.Handler.Hyena
-                    
-                    Hack.Contrib.ContentSize
-                    Hack.Contrib.ContentType
-                    Hack.Contrib.File
-                    Hack.Contrib.Head
-                    Hack.Contrib.Hub
-                    Hack.Contrib.Lambda
-                    Hack.Contrib.Lucky
-                    Hack.Contrib.Mime
-                    Hack.Contrib.RawRouter
-                    Hack.Contrib.ShowExceptions
-                    Hack.Contrib.ShowStatus
-                    Hack.Contrib.SimpleAccessLogger
-                    Hack.Contrib.SimpleRouter
-                    Hack.Contrib.Static
-
-                    
-                    
