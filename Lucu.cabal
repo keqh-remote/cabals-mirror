@@ -8,7 +8,7 @@ Description:
         messing around FastCGI. It is also intended to be run behind a
         reverse-proxy so it doesn't have some facilities like logging,
         client filtering or such like.
-Version: 0.2
+Version: 0.2.1
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
@@ -17,9 +17,8 @@ Stability: experimental
 Homepage: http://cielonegro.org/Lucu.html
 Category: Network
 Tested-With: GHC == 6.10.1
-Cabal-Version: >= 1.2.3
+Cabal-Version: >= 1.6
 Build-Type: Simple
-
 Extra-Source-Files:
     ImplantFile.hs
     NEWS
@@ -28,14 +27,19 @@ Extra-Source-Files:
     examples/HelloWorld.hs
     examples/Makefile
 
+Source-Repository head
+    Type: darcs
+    Location: http://darcs.cielonegro.org/Lucu/
+
 Flag build-lucu-implant-file
     Description: Build the lucu-implant-file program.
     Default:     True
 
 Library
     Build-Depends:
-        HsOpenSSL, base, bytestring, containers, dataenc, directory,
-        haskell-src, hxt, mtl, network, stm, time, unix, zlib
+        HsOpenSSL, base >= 4, bytestring, containers, dataenc,
+        directory, haskell-src, hxt, mtl, network, stm, time, unix,
+        zlib
     Exposed-Modules:
         Network.HTTP.Lucu
         Network.HTTP.Lucu.Abortion
