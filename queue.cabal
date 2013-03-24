@@ -1,5 +1,5 @@
 name:                   queue
-version:                0.1.1.3
+version:                0.1.2
 stability:              provisional
 license:                BSD3
 license-file:           LICENSE
@@ -9,7 +9,7 @@ build-type:             Simple
 
 author:                 James Cook <mokus@deepbondi.net>
 maintainer:             James Cook <mokus@deepbondi.net>
-homepage:               http://darcs.deepbondi.net/queue
+homepage:               http://code.haskell.org/~mokus/queue
 
 category:               Data
 synopsis:               Abstraction typeclasses for queue-like things.
@@ -29,7 +29,7 @@ Library
   exposed-modules:      Data.Queue
                         Data.Queue.Classes
                         Data.Queue.Instances
-  build-depends:        base >= 3
+  build-depends:        base >= 3 && <5
   
   extensions:           CPP
   
