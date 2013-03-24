@@ -1,15 +1,15 @@
 name:               Encode
-version:            1.2
+version:            1.3.1
 license:            GPL
 license-file:       LICENSE
 extra-source-files: INSTALL, LicenseBSD, LicenseGPL, Setup.PL
-copyright:          2009
+copyright:          2010
 author:             Otakar Smrz
 maintainer:         otakar.smrz mff.cuni.cz
 homepage:           http://ufal.mff.cuni.cz/~smrz/
 package-url:        http://sourceforge.net/projects/encode-arabic/
 category:           Text, Codec
-build-depends:      Cabal, base, mtl
+build-depends:      Cabal, base <= 4.2, mtl
 build-type:         Simple
 synopsis:           Encoding character data
 description:        The "Encode" library provides a unified interface for
