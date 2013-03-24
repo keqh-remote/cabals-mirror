@@ -1,5 +1,5 @@
 name:            hamlet
-version:         0.4.1
+version:         0.4.2
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -44,8 +44,10 @@ library
                      utf8-string >= 0.3.4 && < 0.4,
                      template-haskell,
                      blaze-html >= 0.1.1 && < 0.2,
-                     parsec >= 2 && < 4
+                     parsec >= 2 && < 4,
+                     failure >= 0.1.0 && < 0.2
     exposed-modules: Text.Hamlet
+                     Text.Hamlet.RT
     other-modules:   Text.Hamlet.Parse
                      Text.Hamlet.Quasi
     ghc-options:     -Wall
