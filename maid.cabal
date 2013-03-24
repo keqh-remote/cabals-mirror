@@ -1,5 +1,5 @@
 Name:                 maid
-Version:              2011.6.20
+Version:              2011.6.21
 Build-type:           Simple
 Synopsis:             A simple static web server
 Description:
@@ -23,9 +23,11 @@ Executable            maid
                     , air-extra
                     , haskell98
                     , hack2 >= 2011.6.20
-                    , hack2-contrib >= 2011.6.20
+                    , hack2-contrib >= 2011.6.21
                     , data-default
                     , hack2-handler-warp
+                    -- , hack2-handler-snap-server
+
                     , containers
                     , moe >= 2011.6
                     , unix
