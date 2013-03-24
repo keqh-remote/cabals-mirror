@@ -1,10 +1,10 @@
 name:                   bindings-bfd
-version:                1.0.0
+version:                1.2.0.0
 cabal-version:          >= 1.4
 build-type:             Simple
 license:                LGPL-3
 license-file:           LICENSE
-copyright:              (c) 2009,2010,2011 Mick Nelso
+copyright:              (c) 2009-2012 Mick Nelso
 author:                 Mick Nelso
 maintainer:             mcnster@gmail.com
 stability:              alpha
@@ -15,11 +15,11 @@ synopsis:               Bindings for libbfd, a library of the GNU `binutils'
 description:            These are bindings for `libbfd', a library of the GNU
                         `binutils' package.  The bindings let a Haskell program
                         query the structure of any executable, object, or 
-                        library file format supported by the GNU Project (alot).
+                        library file format supported by the GNU Project (many).
                         It also has support for disassembly of code in these
                         files where available.
 category:               FFI, Development
-tested-with:            GHC==7.0.3
+tested-with:            GHC==7.0.4
 extra-source-files:     README,
                         LICENSE,
                         TODO,
@@ -30,6 +30,7 @@ library
    exposed-modules:     Bindings.Bfd
                         Bindings.Bfd.Disasm
                         Bindings.Bfd.Disasm.I386.Address
+                        Bindings.Bfd.Disasm.I386.Cell
                         Bindings.Bfd.Disasm.I386.CondCode
                         Bindings.Bfd.Disasm.I386.EffectiveAddr
                         Bindings.Bfd.Disasm.I386.Insn
@@ -40,6 +41,7 @@ library
                         Bindings.Bfd.Disasm.I386.Parse
                         Bindings.Bfd.Disasm.I386.Precision
                         Bindings.Bfd.Disasm.I386.Prefix
+                        Bindings.Bfd.Disasm.I386.Register
                         Bindings.Bfd.Disasm.I386.Term
                         Bindings.Bfd.Disasm.I386.XmmType
                         Bindings.Bfd.Disasm.Info
@@ -58,10 +60,10 @@ library
                         Bindings.Bfd.Symbol.Flags
                         Bindings.Bfd.SymbolTable
                         Bindings.Bfd.Target
-   build-depends:       array >= 0.3 && < 1,
-                        base >= 4.1.0.0 && < 5,
-                        containers >= 0.2.0.1 && < 1,
-                        unix >= 2.3.2.0 && < 3
+   build-depends:       array >= 0.3 && < 0.4,
+                        base >= 4.3 && < 4.4,
+                        containers >= 0.4 && < 0.5,
+                        unix >= 2.4 && < 2.5
    hs-source-dirs:      src
    extensions:          CPP, 
                         ForeignFunctionInterface
