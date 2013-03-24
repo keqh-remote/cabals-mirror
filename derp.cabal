@@ -1,8 +1,8 @@
 Name:                derp
-Version:             0.1.2
+Version:             0.1.3
 Description:         A parser based on derivatives of parser combinators (Might
                      and Darais).  Our paper on Arxiv details the theory of
-                     parsing with derivatives: http://arxiv.org/abs/1010.5023.
+                     parsing with derivatives: <http://arxiv.org/abs/1010.5023>.
                      This implementation uses my latest work on the theory that
                      brings the O(n*|G|^2) complexity bound to O(n) for parsing
                      most not-painfully-ambiguous grammars.  (|G| would be the
