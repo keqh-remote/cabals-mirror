@@ -1,5 +1,5 @@
 name:             base-compat
-version:          0.0.0
+version:          0.1.0
 license:          MIT
 license-file:     LICENSE
 copyright:        (c) 2012 Simon Hengel
@@ -8,20 +8,20 @@ maintainer:       Simon Hengel <sol@typeful.net>
 build-type:       Simple
 cabal-version:    >= 1.8
 category:         System
-synopsis:         Provide new additions to base for older versions of base
-description:      Provide new additions to base for older versions of base, so
-                  that you can use them without sacrificing backward
+synopsis:         Provides readMaybe, lookupEnv, etc. for older versions of base
+description:      Provides new additions to base for older versions of base, so
+                  that they can be used without sacrificing backward
                   compatibility.
                   .
-                  Currently the following is covered:
+                  So far the following is covered:
                   .
-                  * Text.Read.readMaybe
+                  * readMaybe
                   .
-                  * Text.Read.readEither
+                  * readEither
                   .
-                  * System.Environment.lookupEnv
+                  * lookupEnv
                   .
-                  * System.Environment.getExecutablePath
+                  * <>
 
 source-repository head
   type: git
@@ -33,12 +33,9 @@ library
   hs-source-dirs:
       src
   exposed-modules:
+      Data.Monoid.Compat
       System.Environment.Compat
       Text.Read.Compat
-  other-modules:
-      -- This is compiled, even if it is not needed (base >= 4.6.0.0).  We
-      -- probably want to prevent this.
-      System.Environment.ExecutablePath
   build-depends:
       base == 4.*
 
