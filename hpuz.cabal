@@ -1,10 +1,10 @@
 Name:                hpuz
-Version:             1.0.0
+Version:             1.0.1
 Cabal-Version:       >=1.2
 Build-Type:          Simple
 License:             OtherLicense
 License-file:        LICENSE
-Copyright:           Copyright (c) Chris Casinghino 2009
+Copyright:           Copyright (c) Chris Casinghino 2009-2010
 Author:              Chris Casinghino
 Maintainer:          chris.casinghino@gmail.com
 Category:            Crosswords
