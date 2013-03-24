@@ -1,5 +1,5 @@
 Name:                scgi
-Version:             0.2.1
+Version:             0.3
 Stability:           provisional
 Description:
   This library lets you write SCGI programs. This package reuses the
@@ -15,7 +15,7 @@ cabal-version:       >= 1.2
 build-type:          Simple
 
 library
-  build-depends:     base >=3 && <4, bytestring, cgi, network
+  build-depends:     base >= 4, bytestring, cgi, network
   exposed-modules:   Network.SCGI
   ghc-options:       -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-matches
   hs-source-dirs:    src
