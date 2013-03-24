@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.6
+Version:             0.7
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -16,16 +16,12 @@ Description:
 	protocol. Most of the functions will work correctly with stable version
 	but not all.
 	.
-	Changes from v0.5:
+	Changes from v0.6:
 	.
-	- zunion and zinter was renamed to zunionstore and zinterstore.
-	  Important! It makes this version incompatible with older versions of Redis server.
+	- new commands added: watch, unwatch
 	.
-	- new message type for pmessages: MPMessage
+	- new batch command: run_cas
 	.
-	- new reply type RParseError used for replies that was failed to convert from ByteString
-	.
-	- new command added: setEx
 
 Stability:           beta
 Build-Type:          Simple
