@@ -1,5 +1,5 @@
 name:            http-wget
-version:         0.6.0.1
+version:         0.6.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -16,18 +16,11 @@ cabal-version:   >= 1.2
 build-type:      Simple
 homepage:        http://github.com/snoyberg/http-wget/tree/master
 
-flag transformers_02
-    description: transformers = 0.2.*
-
 library
     build-depends:   base >= 4 && < 5,
                      process >= 1.0.1.1 && < 1.1,
                      failure >= 0.0.0 && < 0.1,
+                     transformers >= 0.1 && < 0.3,
                      syb
-    if flag(transformers_02)
-      build-depends: transformers >= 0.2 && < 0.3
-      CPP-OPTIONS: -DTRANSFORMERS_02
-    else
-      build-depends: transformers >= 0.1 && < 0.2
     exposed-modules: Network.HTTP.Wget
     ghc-options:     -Wall
