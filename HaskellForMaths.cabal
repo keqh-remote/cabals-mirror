@@ -1,5 +1,5 @@
    Name:                HaskellForMaths
-   Version:             0.1.9
+   Version:             0.2.0
    Category:            Math
    Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended for educational purposes, but does have efficient implementations of several fundamental algorithms.
    Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
@@ -22,19 +22,21 @@
         Math/Test/TestAll.hs
 
    Library
-     Build-Depends:     base >=3 && < 4, containers
+     Build-Depends:     base >=3 && < 4, containers, array, random, QuickCheck
      Exposed-modules:
         Math.Algebra.LinearAlgebra,
         Math.Algebra.Commutative.Monomial,
         Math.Algebra.Commutative.MPoly, Math.Algebra.Commutative.GBasis,
         Math.Algebra.Field.Base, Math.Algebra.Field.Extension,
-        Math.Algebra.Group.PermutationGroup, Math.Algebra.Group.SchreierSims, Math.Algebra.Group.StringRewriting,
+        Math.Algebra.Group.PermutationGroup, Math.Algebra.Group.SchreierSims,
+        Math.Algebra.Group.RandomSchreierSims, Math.Algebra.Group.StringRewriting,
         Math.Algebra.NonCommutative.NCPoly, Math.Algebra.NonCommutative.GSBasis, Math.Algebra.NonCommutative.TensorAlgebra,
         Math.Combinatorics.Graph, Math.Combinatorics.GraphAuts, Math.Combinatorics.StronglyRegularGraph,
         Math.Combinatorics.Design, Math.Combinatorics.FiniteGeometry, Math.Combinatorics.Hypergraph,
+        Math.Combinatorics.LatinSquares,
         Math.Common.IntegerAsType, Math.Common.ListSet,
         Math.Projects.RootSystem,
-        Math.Projects.Rubik,
+        Math.Projects.Rubik, Math.Projects.MiniquaternionGeometry,
         Math.Projects.ChevalleyGroup.Classical, Math.Projects.ChevalleyGroup.Exceptional,
         Math.Projects.KnotTheory.Braid,
         Math.Projects.KnotTheory.LaurentMPoly, Math.Projects.KnotTheory.TemperleyLieb, Math.Projects.KnotTheory.IwahoriHecke
