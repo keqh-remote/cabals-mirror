@@ -1,5 +1,5 @@
 Name:                TV
-Version:             0.4
+Version:             0.4.2
 Synopsis:	     Tangible Values -- composable interfaces
 Category:            Interfaces
 Description:
@@ -21,11 +21,11 @@ Author:              Conal Elliott
 Maintainer:          conal@conal.net
 Homepage:            http://haskell.org/haskellwiki/TV
 Package-Url:	     http://darcs.haskell.org/packages/TV
-Copyright:           (c) 2006 by Conal Elliott
+Copyright:           (c) 2006,2009 by Conal Elliott
 License:             BSD3
 Stability:	     experimental
 Hs-Source-Dirs:      src
-Build-Depends:       base, DeepArrow, TypeCompose >= 0.2
+Build-Depends:       base<5, DeepArrow>=0.3.1, TypeCompose >= 0.2
 tested-with:	     GHC==6.6
 build-type:	     Simple
 Exposed-Modules:     
@@ -39,4 +39,4 @@ Exposed-Modules:
                      Interface.TV.Defaults
 Extra-Source-Files:  
                      Examples
-ghc-options:         -W
+ghc-options:         -Wall
