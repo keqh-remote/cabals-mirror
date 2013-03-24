@@ -1,9 +1,11 @@
 Name: Cabal
-Version: 1.2.3.0
+Version: 1.4.0.0
 Copyright: 2003-2006, Isaac Jones
+           2005-2008, Duncan Coutts
 License: BSD3
 License-File: LICENSE
 Author: Isaac Jones <ijones@syntaxpolice.org>
+        Duncan Coutts <duncan@haskell.org>
 Maintainer: cabal-devel@haskell.org
 Homepage: http://www.haskell.org/cabal/
 Synopsis: A framework for packaging Haskell software
@@ -21,23 +23,28 @@ Build-Type: Custom
 -- that we build Setup.lhs using our own local Cabal source code.
 
 Extra-Source-Files:
-        mkGHCMakefile.sh Distribution/Simple/GHC/Makefile.in
+        README changelog
+        Distribution/Simple/GHC/mkGHCMakefile.sh
+        Distribution/Simple/GHC/Makefile.in
 
 Flag small_base
   Description: Choose the new smaller, split-up base package.
 
 Library
   if flag(small_base)
-    Build-Depends: base >= 3, pretty, directory, old-time, process, containers
+    Build-Depends: base       >= 3   && < 4,
+                   directory  >= 1   && < 1.1,
+                   process    >= 1   && < 1.1,
+                   old-time   >= 1   && < 1.1,
+                   containers >= 0.1 && < 0.2,
+                   array      >= 0.1 && < 0.2,
+                   pretty     >= 1   && < 1.1
   else
     Build-Depends: base < 3
-  Build-Depends: filepath
-
-  if impl(ghc < 6.3)
-    Build-Depends: unix
+  Build-Depends: filepath >= 1 && < 1.2
 
   GHC-Options: -Wall
-  CPP-Options: "-DCABAL_VERSION=1,2,3,0"
+  CPP-Options: "-DCABAL_VERSION=1,4,0,0"
   nhc98-Options: -K4M
 
   Exposed-Modules:
@@ -49,15 +56,17 @@ Library
         Distribution.Make,
         Distribution.Package,
         Distribution.PackageDescription,
-        Distribution.Configuration,
+        Distribution.PackageDescription.Configuration,
+        Distribution.PackageDescription.Check,
         Distribution.ParseUtils,
+        Distribution.ReadE,
         Distribution.Simple,
         Distribution.Simple.Build,
+        Distribution.Simple.BuildPaths,
+        Distribution.Simple.Command,
         Distribution.Simple.Compiler,
         Distribution.Simple.Configure,
         Distribution.Simple.GHC,
-        Distribution.Simple.GHC.Makefile,
-        Distribution.Simple.GHC.PackageConfig,
         Distribution.Simple.Haddock,
         Distribution.Simple.Hugs,
         Distribution.Simple.Install,
@@ -65,6 +74,7 @@ Library
         Distribution.Simple.JHC,
         Distribution.Simple.LocalBuildInfo,
         Distribution.Simple.NHC,
+        Distribution.Simple.PackageIndex,
         Distribution.Simple.PreProcess,
         Distribution.Simple.PreProcess.Unlit,
         Distribution.Simple.Program,
@@ -72,8 +82,10 @@ Library
         Distribution.Simple.Setup,
         Distribution.Simple.SetupWrapper,
         Distribution.Simple.SrcDist,
+        Distribution.Simple.UserHooks,
         Distribution.Simple.Utils,
         Distribution.System,
+        Distribution.Text,
         Distribution.Verbosity,
         Distribution.Version,
         Distribution.Compat.ReadP,
@@ -81,10 +93,7 @@ Library
 
   Other-Modules:
         Distribution.GetOpt,
-        Distribution.Compat.Map,
-        Distribution.Compat.Directory,
-        Distribution.Compat.Exception,
-        Distribution.Compat.RawSystem,
         Distribution.Compat.TempFile
+        Distribution.Simple.GHC.Makefile
 
   Extensions: CPP
