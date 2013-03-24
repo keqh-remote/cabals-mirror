@@ -1,5 +1,5 @@
 name:            aivika
-version:         0.3
+version:         0.4
 synopsis:        A multi-paradigm simulation library
 description:
     Aivika is a small simulation library that covers many paradigms. 
@@ -27,8 +27,8 @@ description:
     .
     The PDF documentation is available at 
     <https://github.com/dsorokin/aivika/blob/master/doc/aivika.pdf>.
-    Please note that the documentation is obsolete and it corresponds to 
-    the previous version but it can still be helpful.
+    Please note that the documentation is outdated and it corresponds to 
+    version 0.2 but it can still be helpful.
     .
 category:        Simulation
 license:         BSD3
@@ -39,7 +39,7 @@ maintainer:      David Sorokin <david.sorokin@gmail.com>
 homepage:        http://github.com/dsorokin/aivika
 cabal-version:   >= 1.2.0
 build-type:      Simple
-tested-with:     GHC == 7.0.4
+tested-with:     GHC == 7.4.1
 
 extra-source-files:  examples/BassDiffusion.hs
                      examples/ChemicalReaction.hs
@@ -69,6 +69,10 @@ library
                      Simulation.Aivika.Dynamics.SystemDynamics
                      Simulation.Aivika.Dynamics.UVar
                      Simulation.Aivika.Dynamics.Var
+                     Simulation.Aivika.Dynamics.FIFO
+                     Simulation.Aivika.Dynamics.LIFO
+                     Simulation.Aivika.Dynamics.Buffer
+                     Simulation.Aivika.Dynamics.Signal
                      Simulation.Aivika.Statistics
                      Simulation.Aivika.PriorityQueue
                      Simulation.Aivika.Queue
@@ -81,6 +85,7 @@ library
                      Simulation.Aivika.Dynamics.Internal.Memo
                      Simulation.Aivika.Dynamics.Internal.Interpolate
                      Simulation.Aivika.Dynamics.Internal.Fold
+                     Simulation.Aivika.Dynamics.Internal.Signal
                      Simulation.Aivika.Vector
                      Simulation.Aivika.UVector
                      
