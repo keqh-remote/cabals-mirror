@@ -1,5 +1,5 @@
 Name:                containers-benchmark
-Version:             1.0
+Version:             1.0.0.1
 Synopsis:            Extensive benchmark suite for containers package.
 Description:         This package evaluates performance of a containers package
                      from multiple perspectives.
