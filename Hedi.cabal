@@ -1,5 +1,5 @@
 Name:                    Hedi
-Version:                 0.1
+Version:                 0.1.1
 Cabal-Version:           >= 1.2
 Description:             Haskell line editor. Cloned from ed manual.
 Category:                Editor
@@ -13,16 +13,16 @@ data-files:		 command.help
 
 Library
     Exposed-Modules:     Engine,Editor,Operation,Eval,Parser,Helper,Offset,
-                         Main,Test,Buffer,Undo
-    Build-Depends:       base,mtl,parsec,regex-posix,readline,QuickCheck,
+                         Main,Test,Undo
+    Build-Depends:       editline,base,mtl,parsec,regex-posix,QuickCheck,
                          process,pretty
 	
 Executable hedi
-    Build-Depends:       base,mtl,parsec,regex-posix,readline,QuickCheck,
+    Build-Depends:       editline,base,mtl,parsec,regex-posix,QuickCheck,
                          process,pretty
     Main-is:             Main.hs
     other-modules:  	 Engine,Editor,Operation,Eval,Parser,Helper,Offset,
-                         Test,Buffer,Undo
+                         Test,Undo
     extensions:          NoMonomorphismRestriction,MultiParamTypeClasses,
                          FlexibleContexts,FlexibleInstances,
                          GeneralizedNewtypeDeriving
