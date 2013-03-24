@@ -1,12 +1,15 @@
 Name:           dph-prim-interface
-Version:        0.5.1.1
+Version:        0.6.0.1
 License:        BSD3
 License-File:   LICENSE
 Author:         The DPH Team
 Maintainer:     Ben Lippmeier <benl@cse.unsw.edu.au>
 Homepage:       http://www.haskell.org/haskellwiki/GHC/Data_Parallel_Haskell
 Category:       Data Structures
-Synopsis:       Backend Interface for Data Parallel Haskell
+Synopsis:       Data Parallel Haskell segmented arrays. (abstract interface)
+Description:    Empty implementation of flat parallel arrays. 
+                This package exists only so that dph-prim-par and dph-prim-seq
+                can provide the same interface.
 
 Cabal-Version:  >= 1.6
 Build-Type:     Simple
@@ -26,10 +29,13 @@ Library
 
   Extensions: BangPatterns
 
-  GHC-Options: -Odph -funbox-strict-fields -fcpr-off
+  GHC-Options:
+        -Odph
+        -funbox-strict-fields -fcpr-off
 
   Build-Depends: 
-        base     == 4.4.*,
+        base     == 4.5.*,
         random   == 1.0.*,
-        dph-base == 0.5.*
+        dph-base == 0.6.*,
+        vector   == 0.9.*
 
