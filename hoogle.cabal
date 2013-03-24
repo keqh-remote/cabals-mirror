@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hoogle
-version:            4.2.7
+version:            4.2.8
 license:            GPL
 license-file:       docs/LICENSE
 category:           Development
@@ -28,6 +28,7 @@ data-files:
     -- Cabal doesn't find files with . in them, Cabal bug #794
     resources/jquery-1.4.2.js
     resources/jquery.cookie.js
+    resources/search.xml
 
 source-repository head
     type:     darcs
@@ -100,6 +101,7 @@ library
         Hoogle.Store.ReadBuffer
         Hoogle.Store.Type
         Hoogle.Store.WriteBuffer
+        Paths_hoogle
 
 executable hoogle
     main-is:            Main.hs
@@ -107,12 +109,12 @@ executable hoogle
 
     build-depends:
         time, old-time, old-locale,
-        cmdargs >= 0.7 && < 0.9,
+        cmdargs >= 0.7 && < 0.10,
         tagsoup >= 0.11 && < 0.13,
         enumerator == 0.4.*,
         blaze-builder >= 0.2 && < 0.4,
         http-types == 0.6.*,
-        case-insensitive >= 0.2 && < 0.4,
+        case-insensitive >= 0.2 && < 0.5,
         wai == 0.4.*,
         warp == 0.4.*,
         Cabal >= 1.8 && < 1.13
