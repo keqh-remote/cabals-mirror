@@ -1,5 +1,5 @@
 Name:		regexpr
-Version:	0.4
+Version:	0.5
 License:	LGPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -12,9 +12,12 @@ Description:
   This package has a module RegexPR.
   And RegexPR export functions matchRegexPR and gsubRegexPR.
   .
-  > matchRegexPR :: String -> Maybe ((String, (String, String)), [(Int, String)])
-  > gmatchRegexPR :: String -> [((String, (String, String)), [(Int, String)])]
+  > getbrsRegexPR :: String -> String -> [ String ]
+  > matchRegexPR :: String -> String -> Maybe ((String, (String, String)), [(Int, String)])
+  > gmatchRegexPR :: String -> String -> [((String, (String, String)), [(Int, String)])]
+  > multiMatchRegexPR :: String -> String -> [ ((String, (String, String)), [(Int, String)]) ]
   > subRegexPR :: String -> String -> String -> String
+  > subRegexPRBy :: String -> (String -> String) -> String -> String
   > gsubRegexPR :: String -> String -> String -> String
   > gsubRegexPRBy :: String -> (String -> String) -> String -> String
   > splitRegexPR :: String -> String -> [String]
