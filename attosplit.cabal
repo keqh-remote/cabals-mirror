@@ -7,7 +7,7 @@ Name:                attosplit
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.1
+Version:             0.1.0.0
 
 -- A short (one-line) description of the package.
 Synopsis:
@@ -59,8 +59,8 @@ Library
   -- Packages needed in order to build this package.
   Build-depends:
     base >= 3 && < 5,
-    attoparsec == 0.8.*,
-    bytestring == 0.9.*
+    attoparsec ==0.10.*,
+    bytestring ==0.9.*
 
   -- Modules not exported by this package.
   -- Other-modules:
