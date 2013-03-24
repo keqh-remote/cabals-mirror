@@ -1,5 +1,5 @@
 Name:           statethread
-Version:        0.1
+Version:        0.1.1
 License:        BSD3
 License-File:   LICENSE
 Maintainer:     haskell@henning-thielemann.de
@@ -16,17 +16,17 @@ Cabal-Version:  >=1.6
 Tested-With:    JHC==0.7.3
 
 Source-Repository this
-  Tag:         0.1
+  Tag:         0.1.1
   Type:        darcs
-  Location:    http://darcs.haskell.org/packages/statethread/
+  Location:    http://code.haskell.org/~thielema/statethread/
 
 Source-Repository head
   Type:        darcs
-  Location:    http://darcs.haskell.org/packages/statethread/
+  Location:    http://code.haskell.org/~thielema/statethread/
 
 Library
   Build-Depends:
-    transformers >=0.0 && <0.2,
+    transformers >=0.2 && <0.4,
     applicative >=1.0 && <1.1,
     base >=1.0 && <2
   Extensions: Rank2Types
