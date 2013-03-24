@@ -1,5 +1,5 @@
 Name:                vty-ui
-Version:             0.3
+Version:             0.4
 Synopsis:            A user interface composition library for Vty
 Description:         An extensible library of user interface widgets
                      for composing and laying out Vty user interfaces.
@@ -25,8 +25,8 @@ Flag testing
 Library
   Build-Depends:
     base >= 4 && < 5,
-    vty >= 4.0 && < 4.1,
-    containers >= 0.2 && < 0.3,
+    vty >= 4.0 && < 4.5,
+    containers >= 0.2 && < 0.4,
     pcre-light >= 0.3 && < 0.4
 
   GHC-Options:       -Wall
@@ -52,8 +52,14 @@ Executable vty-ui-tests
   if !flag(testing)
     Buildable:     False
   end
-  Hs-Source-Dirs:  src,test
+  Hs-Source-Dirs:  src,test,test/src
   Main-is:         TestDriver.hs
+
+  Other-Modules:
+        Tests.Instances
+        Tests.Util
+        Tests.Text
+        Tests.Tokenize
 
 Executable vty-ui-demo
   Hs-Source-Dirs:  src
