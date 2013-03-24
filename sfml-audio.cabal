@@ -1,7 +1,10 @@
 Name:                sfml-audio
-Version:             0.2.1816.0
+Version:             0.3.1816.0
 Synopsis:            minimal bindings to the audio module of sfml
 Description:         Provides a very minimal interface to the audio module of sfml.
+    Currently, only the playing of sounds is covered.
+    Playing background music is not yet supported, but planned.
+    (sfml is a multimedia library: <http://www.sfml-dev.org/>)
 Homepage:            http://patch-tag.com/r/shahn/sfml-audio
 License:             OtherLicense
 License-file:        LICENSE
@@ -43,10 +46,10 @@ Library
     base >= 4 && < 5
 
   extra-libraries:
-    stdc++, sndfile, pthread
+    stdc++, sndfile
   if os(linux)
     extra-libraries:
-        openal
+        openal, pthread
   if os(mingw32)
     extra-libraries:
         openal32
