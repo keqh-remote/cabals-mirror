@@ -1,5 +1,5 @@
 Name:                ZipFold
-Version:             0.1
+Version:             0.1.4
 Cabal-Version:       >= 1.2
 Synopsis:            Zipping folds
 Category:            Data
@@ -9,9 +9,6 @@ Description:
   <http://squing.blogspot.com/2008/11/beautiful-folding.html>.
   .
   Project wiki page: <http://haskell.org/haskellwiki/ZipFold>
-  .
-  The module documentation pages have links to colorized source code and
-  to wiki pages where you can read and contribute user comments.  Enjoy!
   .
   &#169; 2008 by Conal Elliott; BSD3 license.
 Author:              Conal Elliott 
@@ -26,9 +23,11 @@ build-type:          Simple
 Library
   hs-Source-Dirs:      src
   Extensions:
-  Build-Depends:       base, TypeCompose >= 0.5.2
+  Build-Depends:       base < 5, TypeCompose >= 0.5.2
   Exposed-Modules:     
+                       Data.WithCont
                        Data.Zip.FoldL
+                       Data.Zip.FoldR
                        
   ghc-options:         -Wall
 
