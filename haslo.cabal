@@ -1,5 +1,5 @@
 Name:		haslo
-Version:	0.1.1
+Version:	0.1.2
 License:	BSD3
 License-file: license
 Author:		Bartosz Wojcik
@@ -30,9 +30,11 @@ library
 
 Executable hasloQC
   Build-Depends:	old-time, QuickCheck, mtl, time, wtk
+  Other-Modules: Haslo.HasloQCTestL
   Main-Is: HasloQC.hs
 
 Executable hasloSample
   Build-Depends:	old-time, QuickCheck, mtl, time, wtk
+  Other-Modules: Haslo.HasloQCTestL
   Main-Is: Sample.hs
 
