@@ -1,8 +1,8 @@
 Name:                listlike-instances
-Version:             0.1
+Version:             0.2
 Synopsis:            Extra instances of the ListLike class
 Description:         Provides ListLike instances for Vector and Text types
-Homepage:            http://tanimoto.us/~jwlato/haskell/listlike-instances
+Homepage:            http://jwlato.webfactional.com/haskell/listlike-instances
 License:             BSD3
 License-file:        LICENSE
 Author:              John W. Lato
@@ -28,4 +28,9 @@ Library
                     ,bytestring       >= 0.8  && < 0.10
                     ,ListLike         >= 2.0  && < 4.0
                     ,text             >= 0.11 && < 0.12
-                    ,vector           >= 0.5  && < 0.8
+                    ,vector           >= 0.5  && < 0.10
+
+source-repository head
+  type:     darcs
+  location: http://www.tiresiaspress.us/haskell/listlike-instances
+
