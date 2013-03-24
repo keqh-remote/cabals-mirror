@@ -1,5 +1,5 @@
 name:           free-theorems-counterexamples
-version:        0.3.0.1
+version:        0.3.0.2
 license:        PublicDomain
 author:         Daniel Seidel, Joachim Breitner
 maintainer:     ds@iai.uni-bonn.de
@@ -30,7 +30,7 @@ description:
 	<http://www-ps.iai.uni-bonn.de/cgi-bin/polyseq.cgi>.
 	
 category:       Language
-tested-with:    GHC==6.8.2
+tested-with:    GHC==7.6.1
 build-type:	Simple
 cabal-version:  >= 1.2.3
 
@@ -70,7 +70,7 @@ executable counterexamples.cgi
     main-is:
         counterexamples-cgi.hs
     build-depends:
-        xhtml, cgi, utf8-string, free-theorems >= 0.3.1
+        xhtml, cgi, utf8-string, free-theorems >= 0.3.2
 
   extensions:
       FlexibleContexts
