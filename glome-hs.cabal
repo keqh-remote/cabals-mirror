@@ -1,5 +1,5 @@
 Name:                glome-hs
-Version:             0.4.1
+Version:             0.5
 Synopsis:            ray tracer
 Description:         Ray Tracer capable of rendering a variety of primitives,
                      with support for CSG (difference and intersection of solids),
@@ -13,10 +13,10 @@ Copyright:           Copyright 2008 Jim Snow
 Homepage:            http://syn.cs.pdx.edu/~jsnow/glome
 Stability:           experimental
 Category:            graphics
-Build-Depends:       base,haskell98,time,parallel,GLUT,OpenGL,random,array
+Build-Depends:       base,haskell98,time,parallel,GLUT,OpenGL,random,array,binary
 build-type:          Simple
 Executable:          glome
-ghc-options:         -fglasgow-exts -funbox-strict-fields
+ghc-options:         -fglasgow-exts -funbox-strict-fields -threaded
 extensions:          BangPatterns 
 Main-is:             Glome.hs
 
