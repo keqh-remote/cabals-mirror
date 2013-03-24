@@ -1,6 +1,6 @@
 Name:                lrucache
-Version:             0.1.0.1
-Synopsis:            a simple pure LRU cache
+Version:             0.1.1
+Synopsis:            a simple, pure LRU cache
 License:             BSD3
 License-file:        LICENSE
 Author:              Carl Howells
@@ -11,11 +11,20 @@ Stability:           Experimental
 Category:            Data
 Build-type:          Simple
 Description:
-        This package contains a simple pure LRU cache, implemented in
+        This package contains a simple, pure LRU cache, implemented in
         terms of "Data.Map".
         .
         It also contains a mutable IO wrapper providing atomic updates to
         an LRU cache.
+        .
+        Version History:
+        .
+        0.1.1 - Add the Data.Cache.LRU.IO.Internal module.
+                Clean up build warnings on GHC 6.12.1.
+        .
+        0.1.0.1 - Minor refactoring
+        .
+        0.1 - First release
 
 Extra-source-files:
         README
@@ -30,12 +39,13 @@ Flag Test
 Library
   Exposed-modules:
         Data.Cache.LRU
-        Data.Cache.LRU.IO
         Data.Cache.LRU.Internal
+        Data.Cache.LRU.IO
+        Data.Cache.LRU.IO.Internal
 
   Build-depends:
-        base < 5,
-        containers
+        base > 4 && < 5,
+        containers > 0.2 && < 0.4
 
   GHC-Options:             -Wall
 
@@ -45,7 +55,6 @@ Executable test
     Buildable: True
 
     Build-Depends:
-        base < 4.2,
         explicit-exception == 0.1.*,
         QuickCheck == 2.1.*
 
