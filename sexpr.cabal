@@ -1,5 +1,5 @@
 Name:                sexpr
-Version:             0.1
+Version:             0.1.1
 Cabal-Version:	     >= 1.2
 Synopsis:            S-expression printer and parser 
 Description:         Parser and printer for S-expressions, including Ron 
