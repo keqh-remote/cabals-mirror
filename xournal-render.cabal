@@ -1,13 +1,18 @@
 Name:		xournal-render
-Version:	0.2.0.0
+Version:	0.3
 Synopsis:       Xournal file renderer
-Description: 	Xournal file renderer
+Description: 	Rendering library using cairo for xournal file format
 License: 	BSD3
 License-file:	LICENSE
 Author:		Ian-Woo Kim
 Maintainer: 	Ian-Woo Kim <ianwookim@gmail.com>
+Category:       Graphics
 Build-Type: 	Simple
 Cabal-Version:  >= 1.8
+data-files:     CHANGES
+Source-repository head
+  type: git
+  location: http://www.github.com/wavewave/xournal-render
 
 
 
@@ -19,20 +24,23 @@ Library
                  base == 4.*, 
                  mtl == 2.*, 
                  containers == 0.4.*, 
-                 xournal-parser == 0.2.*, 
                  cairo == 0.12.*, 
                  strict == 0.3.*, 
-                 bytestring == 0.9.*
+                 bytestring == 0.9.*,
+                 poppler == 0.12.*, 
+                 fclabels == 1.0.*, 
+                 xournal-types == 0.1.* 
+                 -- xournal-parser >= 0.2.0.999 && < 0.3, 
   Exposed-Modules: 
-                   Graphics.Xournal.Render
+                   Graphics.Xournal.Render.Simple
                    Graphics.Xournal.Render.BBox
-                   Graphics.Xournal.HitTest
-                   Graphics.Xournal.Type
-                   Graphics.Xournal.Type.Map
-                   Graphics.Xournal.Type.Select
+                   Graphics.Xournal.Render.Generic
+                   Graphics.Xournal.Render.PDFBackground
+                   Graphics.Xournal.Render.BBoxMapPDF
+                   Graphics.Xournal.Render.HitTest
+                   Graphics.Xournal.Render.Type
+---                   Graphics.Xournal.Type.Map
+--                  Graphics.Xournal.Type.Select
+--                   Graphics.Xournal.Type.Generic
+                  
 
-
-
-
- 
-		 
