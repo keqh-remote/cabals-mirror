@@ -1,5 +1,5 @@
 name: hoauth
-version: 0.1.4
+version: 0.1.5
 category: Network,Protocol,OAuth
 license: BSD3
 license-file: LICENSE
@@ -18,23 +18,19 @@ description: This library implements all PLAINTEXT, HMAC-SHA1 and RSA-SHA1
              More info at: <http://oauth.net/>
 
 library
-  build-depends: base>=4&&<5
-                ,bytestring>=0.9.0.1
-                ,SHA>=1.4.0
-                ,RSA>=1.0.2
-                ,base64-string>=0.1
-                ,utf8-string>=0.3.3
-                ,binary>=0.5
-                ,time>=1.1.4
+  build-depends: base<5
+                ,bytestring
+                ,SHA
+                ,RSA
+                ,base64-string
+                ,utf8-string
+                ,binary
+                ,time
                 ,old-locale
-                ,system-uuid>=1.1.0
+                ,system-uuid
   exposed-modules: Network.Protocol.OAuth.Consumer,Network.Protocol.OAuth.Request,Network.Protocol.OAuth.Signature
   hs-source-dirs: src/main/haskell
   ghc-options: -Wall -fwarn-tabs
-
-flag test
-  Description: Build the hoauth test suite.
-  Default: False
 
 source-repository head
   type:     darcs
