@@ -1,5 +1,5 @@
 Name: augeas
-Version: 0.4.0
+Version: 0.5.0
 Synopsis:  A Haskell FFI wrapper for the Augeas API
 Description: A Haskell FFI wrapper for the Augeas API
 Author: Jude Nagurney
@@ -12,7 +12,7 @@ Build-Type: Configure
 Category: System
 Stability: Alpha
 HomePage: http://trac.haskell.org/augeas
-Package-URL: http://hackage.haskell.org/packages/archive/augeas/0.4.0/augeas-0.4.0.tar.gz
+Package-URL: http://hackage.haskell.org/packages/archive/augeas/0.5.0/augeas-0.5.0.tar.gz
 Extra-Source-Files: Makefile, configure.ac, configure, Config.h.in
 
 library 
