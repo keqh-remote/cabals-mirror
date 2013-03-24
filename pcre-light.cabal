@@ -1,9 +1,9 @@
 name:            pcre-light
-version:         0.1
+version:         0.2
 homepage:        http://code.haskell.org/~dons/code/pcre-light
-synopsis:        A lightweight binding to PCRE
+synopsis:        A small, efficient and portable regex library for Perl 5 compatible regular expressions
 description:
-    A lightweight binding to PCRE
+    A small, efficient and portable regex library for Perl 5 compatible regular expressions
     .
     The PCRE library is a set of functions that implement regular
     expression pattern matching using the same syntax and semantics as Perl 5.
@@ -19,8 +19,9 @@ author:          Don Stewart
 maintainer:      Don Stewart <dons@galois.com>
 cabal-version: >= 1.2.0
 build-type:      Configure
+tested-with:     GHC ==6.8.2, GHC ==6.6.1, Hugs ==2005
 
-flag new-base
+flag small_base
   description: Build with new smaller base library
   default:     False
 
@@ -32,5 +33,9 @@ library
     extensions:      CPP, ForeignFunctionInterface
     ghc-options:     -Wall -O2 -fvia-C
 
-    build-depends: base >= 3, bytestring >= 0.9
+    if flag(small_base)
+        build-depends: base >= 3, bytestring >= 0.9
+    else
+        build-depends: base < 3
+
     extra-libraries: pcre
