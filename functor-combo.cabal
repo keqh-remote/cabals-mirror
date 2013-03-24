@@ -1,5 +1,5 @@
 Name:                functor-combo
-Version:             0.0.2
+Version:             0.0.3
 Cabal-Version:       >= 1.2
 Synopsis:            Functor combinators with tries & zippers
 Category:            Data
@@ -27,16 +27,21 @@ Package-Url:         http://code.haskell.org/~conal/code/functor-combo
 Library
   hs-Source-Dirs:      src
   Extensions:
-  Build-Depends:       base<5, TypeCompose >= 0.8, containers, data-inttrie
+  Build-Depends:       base<5, TypeCompose >= 0.8, containers, data-inttrie, lub
   Exposed-Modules:     
                        FunctorCombo.Functor
+                       FunctorCombo.Lub
                        FunctorCombo.Derivative
                        FunctorCombo.Holey
                        FunctorCombo.DHoley
                        FunctorCombo.FixC
                        FunctorCombo.Regular
                        FunctorCombo.LocT
-                       FunctorCombo.MemoTrie
+                       FunctorCombo.StrictMemo
+                       FunctorCombo.NonstrictMemo
   ghc-options:         -Wall
+
+--                       FunctorCombo.MemoTrie
+
 
 --  ghc-prof-options:    -prof -auto-all 
