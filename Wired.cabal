@@ -1,5 +1,6 @@
 name:                Wired
-version:             0.1
+version:             0.1.1
+homepage:            http://www.cs.chalmers.se/~emax/wired/
 synopsis:            Wire-aware hardware description
 
 description:         An extension to the hardware description library Lava
@@ -16,8 +17,13 @@ maintainer:          Emil Axelsson <emax@chalmers.se>
 cabal-version:       >= 1.2
 build-type:          Simple
 tested-with:         GHC ==6.8.3
-data-files:          Examples/UsingLava.hs, Examples/UsingWired.hs,
-                     Examples/Sklansky.hs, Examples/Mult.hs
+
+data-files:
+  .ghci
+  Examples/UsingLava.hs
+  Examples/UsingWired.hs
+  Examples/Sklansky.hs
+  Examples/Mult.hs
 
 library
   exposed-modules:
@@ -43,6 +49,7 @@ library
     Layout.Postscript
     Layout.Internal
     Wired.Model
+    Analysis.STA.Library
 
   build-Depends: base, chalmers-lava2000, containers, mtl, QuickCheck
 
