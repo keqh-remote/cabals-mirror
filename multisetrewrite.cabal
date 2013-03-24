@@ -2,7 +2,7 @@
 Name:		multisetrewrite
 Synopsis:	Multi-set rewrite rules with guards and a parallel execution scheme
 Category:       Concurrency
-Version:	0.1
+Version:	0.1.1
 Stability:      experimental
 Cabal-Version:  >= 1.2
 License:	BSD3
@@ -13,7 +13,8 @@ Description:    Multi-set rewrite rules with guards and a parallel execution sch
 homepage:       http://sulzmann.blogspot.com/2008/10/multi-set-rewrite-rules-with-guards-and.html
             
 data-files: README
-extra-source-files: Stack.hs, CHR.hs
+extra-source-files: Stack.hs, MergeSort.hs, CHR.hs, CHRSolver.hs, Join.hs, GossipingGirlsinCHR.hs,
+                    GossipingGirlsinJoin.hs, BaggerProblem.hs
 
 Build-Type: Simple
 Build-Depends:	base, haskell98, stm
