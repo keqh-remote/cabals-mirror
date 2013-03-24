@@ -1,5 +1,5 @@
 Name:               gmndl
-Version:            0.1
+Version:            0.2
 Synopsis:           Mandelbrot Set explorer using GTK
 
 Description:
@@ -22,8 +22,8 @@ Executable gmndl
   Main-is:          gmndl.hs
   Build-depends:    base >= 4 && < 5,
                     array >= 0.3 && < 0.4,
-                    gtk >= 0.11 && < 0.12,
-                    gtkglext >= 0.11 && < 0.12,
+                    gtk >= 0.11 && < 0.13,
+                    gtkglext >= 0.11 && < 0.13,
                     mtl,
                     OpenGL >= 2.4 && < 2.5,
                     priority-queue >= 0.2.1 && < 0.3,
