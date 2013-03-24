@@ -1,5 +1,5 @@
 Name:           darcs-beta
-version:        2.2.98.1
+version:        2.2.98.2
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -64,6 +64,7 @@ extra-source-files:
   Distribution/ShellHarness.hs
   tests/repos/*.tgz tests/repos/README
   tests/*.sh
+  tests/hspwd.hs
   tests/network/*.sh
   tests/lib
   tests/example_binary.png
@@ -317,7 +318,7 @@ Library
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.3.3.1 && < 0.4
+                   hashed-storage >= 0.3.4 && < 0.4
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.4
@@ -352,7 +353,7 @@ Library
 
   if flag(http)
       build-depends:    network == 2.2.*,
-                        HTTP    >= 3000.0 && < 3001.2
+                        HTTP    >= 3000.0 && < 4000.1
       cpp-options:      -DHAVE_HTTP
       x-have-http:
 
@@ -450,7 +451,7 @@ Executable          darcs
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.3.3.1 && < 0.4
+                   hashed-storage >= 0.3.4 && < 0.4
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.4
@@ -479,9 +480,9 @@ Executable          darcs
         pkgconfig-depends: libcurl >= 7.19.1
       cpp-options:       -DCURL_PIPELINING -DCURL_PIPELINING_DEFAULT
 
-   if flag(http)
+  if flag(http)
       build-depends:    network == 2.2.*,
-                        HTTP    >= 3000.0 && < 3001.2
+                        HTTP    >= 3000.0 && < 4000.1
       cpp-options:      -DHAVE_HTTP
       x-have-http:
 
