@@ -1,11 +1,11 @@
 Name:          LibZip
-Version:       0.10.1
+Version:       0.10.2
 License:       BSD3
 License-File:  LICENSE
 Author:        Sergey Astanin
 Maintainer:    Sergey Astanin <s.astanin@gmail.com>
-Homepage:      http://bitbucket.org/jetxee/hs-libzip/
-Bug-reports:   http://bitbucket.org/jetxee/hs-libzip/issues/
+Homepage:      http://bitbucket.org/astanin/hs-libzip/
+Bug-reports:   http://bitbucket.org/astanin/hs-libzip/issues/
 
 Category:      Codec, Foreign
 Synopsis:      Bindings to libzip, a library for manipulating zip archives.
@@ -15,7 +15,7 @@ Description:
 
 Build-Type:     Simple
 Cabal-Version:  >= 1.2.3
-Tested-With:    GHC == 7.0.3, GHC == 7.2.2, GHC == 7.4.1
+Tested-With:    GHC == 7.4.1, GHC == 7.6.1
 
 Extra-Source-Files:
     examples/hzip.hs
@@ -29,7 +29,7 @@ Library
   Other-Modules:
       Codec.Archive.LibZip.Errors
   Build-Depends:
-      base >= 4.0 && < 4.6
+      base >= 4.0 && < 5.0
     , bindings-libzip >= 0.10 && < 0.11
     , bytestring
     , filepath
@@ -37,4 +37,3 @@ Library
     , mtl
   GHC-Options:
       -Wall
-
