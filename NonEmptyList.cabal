@@ -1,5 +1,5 @@
 Name:                NonEmptyList
-Version:             0.0.6
+Version:             0.0.7
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            A list with a length of at least one.
