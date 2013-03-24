@@ -1,5 +1,5 @@
 name: dbus-client
-version: 0.1
+version: 0.2
 synopsis: D-Bus client libraries
 description: Connect and interact with the D-Bus IPC system.
 license: GPL
@@ -26,7 +26,7 @@ library
 
   build-depends:
       base >=3 && < 5
-    , dbus-core >= 0.5
+    , dbus-core >= 0.6
     , containers
     , text
 
