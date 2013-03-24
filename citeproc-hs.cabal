@@ -1,5 +1,5 @@
 name:               citeproc-hs
-version:            0.3.0
+version:            0.3.1
 homepage:           http://code.haskell.org/citeproc-hs
 synopsis:           A Citation Style Language implementation in Haskell
 
@@ -94,16 +94,16 @@ library
     ghc-options:      -funbox-strict-fields -Wall
     ghc-prof-options: -prof -auto-all
     hs-source-dirs:   src
-    build-depends:    containers, directory, mtl, xml, json, filepath,
-                      pandoc-types == 1.7
+    build-depends:    containers, directory, mtl, xml, json, utf8-string,
+                      bytestring, filepath, pandoc-types >= 1.8 && < 1.9
 
     if flag(bibutils)
-       build-depends: hs-bibutils >= 0.3
-       extensions:    CPP
-       cpp-options:   -DUSE_BIBUTILS
+       build-depends:   hs-bibutils >= 0.3
+       extensions:      CPP
+       cpp-options:     -DUSE_BIBUTILS
 
     if flag(network)
-       build-depends: network >= 2, HTTP >= 4000.0.5
+       build-depends: network >= 2, HTTP >= 4000.0.9
        extensions:    CPP
        cpp-options:   -DUSE_NETWORK
 
