@@ -7,16 +7,16 @@ Name:                brillig
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3
+Version:             0.3.1
 
 -- A short (one-line) description of the package.
 Synopsis:            Simple part of speech tagger
 
 -- A longer description of the package.
-Description:         Right now, this just implements a stupid unigram tagger.
-                     One day it may grow up to an HMM tagger or an implementation
-                     of the Brill tagger.
-
+Description:         This is almost a Brill tagger implementation.
+                     Among other things, it needs to be generalised
+                     to look back beyond one tag.
+ 
 -- The license under which the package is released.
 License:             BSD3
 
