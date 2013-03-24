@@ -1,5 +1,5 @@
 Name:                FieldTrip
-Version:             0.2.6
+Version:             0.2.7
 Synopsis: 	     Functional 3D
 Category:            graphics
 Description:
@@ -20,7 +20,7 @@ Stability:           experimental
 build-type:	     Simple
 Hs-Source-Dirs:      src
 Extensions:          
-Build-Depends:       base<=4, old-time, OpenGL>=2.2.3.0, GLUT, TypeCompose, MemoTrie, vector-space >= 0.5.7, graphicsFormats
+Build-Depends:       base<5, old-time, OpenGL>=2.2.3.0, GLUT, TypeCompose, MemoTrie, vector-space >= 0.5.7, graphicsFormats
 Exposed-Modules:     
 		     Graphics.FieldTrip
 		     Graphics.FieldTrip.Misc
