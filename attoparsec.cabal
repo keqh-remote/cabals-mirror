@@ -1,5 +1,5 @@
 name:            attoparsec
-version:         0.8.1.1
+version:         0.8.2.0
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
@@ -17,6 +17,7 @@ description:
     efficiently with network protocols and complicated text/binary
     file formats.
 extra-source-files:
+    README.markdown
     benchmarks/Makefile
     benchmarks/Tiny.hs
     benchmarks/med.txt.bz2
