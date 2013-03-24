@@ -1,9 +1,9 @@
 Name:                vect
-Version:             0.4.5.2
+Version:             0.4.6
 Synopsis:            A low-dimensional linear algebra library, tailored to computer graphics.
 Description:         A low-dimensional (2, 3 and 4) linear algebra library, 
                      with lots of useful functions. Intended usage is primarily 
-                     computer graphics (basic OpenGL support is included).
+                     computer graphics (basic OpenGL support is included as a separate package).
                      Projective 4 dimensional operations, as used in eg. 
                      OpenGL, are also supported.
                      The base field is either Float or Double.
@@ -22,7 +22,6 @@ Build-Type:          Custom
 extra-source-files:  src/flt.hs,
                      src/flt/Base.hs,
                      src/flt/Interpolate.hs,
-                     src/flt/OpenGL.hs,
                      src/flt/GramSchmidt.hs,
                      src/flt/Util/Dim2.hs,
                      src/flt/Util/Dim3.hs,
@@ -32,10 +31,6 @@ extra-source-files:  src/flt.hs,
                      
 Flag splitBase
   Description: Choose the new smaller, split-up base package.
-
-Flag OpenGL
-  Description: Compile with OpenGL support 
-  Default:     True  
   
 Library
   if flag(splitBase)
@@ -43,12 +38,6 @@ Library
     Build-Depends:       random 
   else
     Build-Depends:       base >= 2 && < 3
-
-  if flag(OpenGL)
-    Build-Depends:       OpenGL
-    cpp-options:         -DVECT_OPENGL
-    Exposed-Modules:     Data.Vect.Float.OpenGL,                         
-                         Data.Vect.Double.OpenGL                         
 
   Exposed-Modules:     Data.Vect, 
   
