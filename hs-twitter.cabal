@@ -1,5 +1,5 @@
 name: hs-twitter
-version: 0.2.2
+version: 0.2.3
 synopsis: Haskell binding to the Twitter API
 description:
    The hs-twitter API binding lets you access twitter.com's
@@ -18,10 +18,6 @@ cabal-version:  >= 1.2
 build-type: Simple
 extra-source-files: README
 
-flag old-base
-  description: Old, monolithic base
-  default: False
-
 library
  Exposed-modules: Web.Twitter,
                   Web.Twitter.Types,
@@ -33,9 +29,4 @@ library
                   Web.Codec.URLEncoder,
                   Web.Codec.Percent
  Ghc-Options:     -Wall
- build-depends:   HTTP >= 4000.0.1, network, utf8-string, json, mime, old-locale, old-time, random
-
- if flag(old-base)
-   Build-Depends: base < 3
- else
-   Build-Depends: base >= 4
+ build-depends:   base, HTTP >= 4000.0.1, network, utf8-string, json, mime, old-locale, old-time, random
