@@ -1,5 +1,5 @@
 name:               redis-hs
-version:            0.0.7
+version:            0.0.8
 author:             Will Langstroth <will@langstroth.com>
 maintainer:         Will Langstroth <will@langstroth.com>
 license:            MIT
@@ -16,8 +16,7 @@ description:
   The feature set is incomplete, and version 1.0.0 will be tagged only when the
   library has full command coverage, reasonable test coverage, and solid
   documentation.
-  .
-  The source code is available on GitHub <http://github.com/wlangstroth/redis-hs>.
+
 
 category:           Database
 build-type:         Simple
@@ -30,7 +29,11 @@ extra-source-files:
   README.md,
   test/redis-tests.cabal,
   test/suite/TestSuite.hs,
-  test/suite/Database/Redis/Tests.hs
+  test/suite/Database/Redis/Connection/Tests.hs
+  test/suite/Database/Redis/General/Tests.hs
+  test/suite/Database/Redis/List/Tests.hs
+  test/suite/Database/Redis/Set/Tests.hs
+  test/suite/Database/Redis/String/Tests.hs
 
 library
   hs-source-dirs: src
@@ -47,9 +50,11 @@ library
   build-depends:
     base == 4.*,
     bytestring >= 0.9,
-    mtl == 2.*,
+--    mtl == 2.*,
     network >= 2.2.3,
     utf8-string >= 0.3.5
+
+  ghc-options: -Wall -fwarn-tabs
 
 source-repository head
   type:     git
