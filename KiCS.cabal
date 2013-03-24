@@ -1,5 +1,5 @@
 Name:          KiCS
-Version:       0.8.3
+Version:       0.8.4
 Cabal-Version: >= 1.6
 Author:        Bernd Braßel
 Maintainer:    Bernd Braßel
@@ -26,6 +26,20 @@ Executable kics
     directory,
     containers,
     curry-base >= 0.2.4
+  Other-Modules: 
+    Config
+    CurryToHaskell
+    SafeCalls
+    Names
+    KicsSubdir
+    FunctionalProg
+    ShowFunctionalProg
+    ShowFlatCurry
+    PreTrans
+    Simplification
+    Brace
+    InstallDir
+    MyReadline
 
 Executable kicsi
   main-is:        kicsi.hs
@@ -40,4 +54,18 @@ Executable kicsi
     containers,
     readline,
     curry-base >= 0.2.4
+  Other-Modules: 
+    Config
+    CurryToHaskell
+    SafeCalls
+    Names
+    KicsSubdir
+    FunctionalProg
+    ShowFunctionalProg
+    ShowFlatCurry
+    PreTrans
+    Simplification
+    Brace
+    InstallDir
+    MyReadline
 
