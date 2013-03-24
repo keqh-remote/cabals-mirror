@@ -1,6 +1,6 @@
 Name:                Monocle
 Cabal-Version:       >= 1.2
-Version:             0.0.0
+Version:             0.0.1
 Synopsis:            Symbolic computations in strict monoidal categories with LaTeX output.
 Description:         Symbolic computations in strict monoidal categories with LaTeX output.
                      See monocle-test.hs.
