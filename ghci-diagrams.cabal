@@ -1,12 +1,14 @@
 name:                ghci-diagrams
-version:             0.1
+version:             0.1.1
 category:            Graphics
 synopsis:            Display simple diagrams from ghci
 description:
     This library provides a simple 2D graphics environment which is used
     in our beginner's Haskell course at ELTE University in Budapest.
     .
-    Example> draw $ circle 3
+    Example> draw $ circle 10 `fill` lightblue
+    .
+    Changes since version 0.1: resizeable diagram, easier exit
 stability:           alpha
 license:             BSD3
 license-file:        LICENSE
