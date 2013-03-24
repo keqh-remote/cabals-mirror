@@ -1,5 +1,5 @@
 Name:               bits-extras
-Version:            0.1.2
+Version:            0.1.3
 License:            BSD3
 License-File:       License.txt
 Maintainer:         Gabriel Wicke <wicke@wikidev.net>
@@ -30,15 +30,23 @@ Description:
  * <http://hackage.haskell.org/trac/ghc/ticket/3563>
  .
  * <http://hackage.haskell.org/trac/ghc/ticket/4102>
+ .
+ /Changes/:
+ .
+ * 0.1.3: Added a first test and tweaked documentation. No functional changes.
+ .
+ * 0.1.2: Moved the 'Data.Bits.Atomic' module to the package @bits-atomic@.
+   Those operations do not depend on libgcc_s and should work wherever GCC 4.X
+   is available.  Link to @bits-atomic@ on hackage:
+   <http://hackage.haskell.org/package/bits-atomic>
 Category:           Data
 Stability:          experimental
 Build-Type:         Simple
 Cabal-Version: >= 1.6
---Extra-Source-Files: cbits/bitops-gcc.c cbits/bitops-gcc.h
+Extra-Source-Files: cbits/bitops-gcc.c cbits/bitops-gcc.h
 Source-Repository head
     type: mercurial
     location: http://dev.wikidev.net/hg/bits-extras/
---extra-tmp-files: cbits/bitops-gcc.h
 library
     Exposed-Modules:  Data.Bits.Extras
     Build-Depends:    base >= 4 && < 6
@@ -58,3 +66,29 @@ library
     --Includes:       bitops-gcc.h
     --LD-Options:     -flto
     --hs-source-dirs: .
+
+flag test
+    description: Build test program.
+    default:     False
+
+Executable test
+    if flag(test)
+        buildable:  True
+        build-depends:   
+                    base >= 4 && < 6, 
+                    QuickCheck, 
+                    HUnit,
+                    test-framework-quickcheck2,
+                    test-framework-hunit,
+                    test-framework
+    else
+        buildable:  False
+    hs-source-dirs:  ., test
+    other-modules:   Data.Bits.Extras
+    main-is:         test.hs
+    --GHC-Options:      -O2 -threaded -fhpc
+    GHC-Options:      -O2 -threaded
+    GHC-Prof-Options: -auto-all
+
+    Include-Dirs:     cbits
+    C-Sources:        cbits/bitops-gcc.c
