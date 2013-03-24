@@ -1,5 +1,5 @@
 name:               arbtt
-version:            0.4.1
+version:            0.4.2
 license:            GPL
 license-file:       LICENSE
 category:           Desktop
@@ -22,7 +22,8 @@ homepage:           http://www.joachim-breitner.de/projects#arbtt
 
 
 extra-source-files:
-    categorize.cfg, arbtt-capture.desktop, README
+    categorize.cfg, arbtt-capture.desktop, README,
+    doc/arbtt.xml, doc/fptools.css, doc/Makefile
 
 executable arbtt-capture
     main-is:            capture-main.hs
@@ -53,6 +54,16 @@ executable arbtt-stats
 
 executable arbtt-dump
     main-is:            dump-main.hs
+    hs-source-dirs:     src
+    build-depends:
+        base == 4.*, parsec == 2.*, containers
+    other-modules:
+        Data
+        TimeLog
+        System.Locale.SetLocale
+
+executable arbtt-recover
+    main-is:            recover-main.hs
     hs-source-dirs:     src
     build-depends:
         base == 4.*, parsec == 2.*, containers
