@@ -1,5 +1,5 @@
 name:                copilot
-version:             0.28
+version:             1.0
 cabal-version:       >= 1.2
 license:             BSD3
 license-file:        LICENSE
@@ -32,7 +32,7 @@ description:         Can you write a list in Haskell? Then you can write embedde
 extra-source-files:  README
 
 library
-    ghc-options:     -Wall
+    ghc-options:     -Wall 
     -- These build depends represent my current system.  This will probably
     -- build on packages outside these constaints.
     build-depends:     
@@ -50,6 +50,10 @@ library
                      Language.Copilot.AdHocC
                      Language.Copilot.Core
                      Language.Copilot.Language
+                     Language.Copilot.Language.Sampling
+                     Language.Copilot.Language.FunctionCalls
+                     Language.Copilot.Language.RandomOps
+                     Language.Copilot.Language.Casting
                      Language.Copilot.AtomToC
                      Language.Copilot.Compiler
                      Language.Copilot.Interpreter
