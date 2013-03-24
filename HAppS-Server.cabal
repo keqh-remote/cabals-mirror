@@ -1,5 +1,5 @@
 Name:                HAppS-Server
-Version:             0.9.3
+Version:             0.9.3.1
 Synopsis:            Web related tools and services.
 Description:         Web framework
 License:             BSD3
@@ -47,10 +47,8 @@ Library
                        HAppS.Server.HTTP.RFC822Headers,
                        HAppS.Server.SURI.ParseURI
   if impl(ghc >= 6.10)
-    Build-Depends:     parsec < 3, syb
-  else
-    Build-Depends:     parsec >= 3 && < 4
-  Build-Depends:       base, HaXml >= 1.13 && < 1.14, parsec, mtl, network,
+    Build-Depends:     syb
+  Build-Depends:       base, HaXml >= 1.13 && < 1.14, parsec<3, mtl, network,
                        hslogger >= 1.0.2, HAppS-Data>=0.9.2, HAppS-Util>=0.9.2,
                        HAppS-State>=0.9.2, HAppS-IxSet>=0.9.2, HTTP, template-haskell, xhtml, html,
                        bytestring, random, containers, old-time, old-locale, directory, process
