@@ -1,5 +1,5 @@
 Name:           SoccerFun
-Version:        0.4.1
+Version:        0.4.2
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -29,7 +29,11 @@ Library
     random >= 1.0 && < 1.1,
     mtl >= 1.1 && < 1.2,
     derive >= 2.3 && < 2.4,
-    binary >= 0.5 && < 0.6
+    binary >= 0.5 && < 0.6,
+    plugins >= 1.5 && < 1.6,
+    process >= 1.0 && < 1.1,
+    directory >= 1.0 && < 1.1,
+    zlib >= 0.5 && < 0.6
   Exposed-Modules:
     SoccerFun.Ball
     SoccerFun.Types
@@ -46,3 +50,6 @@ Library
     SoccerFun.Referee
     SoccerFun.Random
     SoccerFun.Prelude
+
+Executable sfRecord
+  Main-Is: SoccerFun/Tape/Record.hs
