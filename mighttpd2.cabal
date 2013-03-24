@@ -1,5 +1,5 @@
 Name:                   mighttpd2
-Version:                2.1.0
+Version:                2.1.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -22,7 +22,7 @@ Executable mighty
     else
       GHC-Options:        -Wall
   Build-Depends:        base >= 4.0 && < 5, parsec >= 3,
-                        network >=2.2 && <2.3,
+                        network,
                         unix, bytestring, warp, old-locale, time,
                         wai-app-file-cgi, wai, transformers, http-types,
                         directory, filepath,
