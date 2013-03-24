@@ -1,5 +1,5 @@
 name: yoko
-version: 0.9
+version: 2.0
 synopsis: Generic Programming with Disbanded Data Types
 
 description:
@@ -97,12 +97,12 @@ library
 
   build-depends: th-sccs, invariant
 
-  build-depends: type-equality, bifunctors
+  build-depends: type-equality, bifunctors, semigroups
 
   build-depends: kinds >= 0.0.1.5, type-functions >= 0.2.0.3, records >= 0.1.1.6
 
   build-depends:
-    type-spine >= 0.2, type-digits >= 0.2, type-cereal >= 0.2, type-ord >= 0.2, type-ord-spine-cereal >= 0.2
+    type-spine >= 0.2.0.20120924, type-digits >= 0.2, type-cereal >= 0.2, type-ord >= 0.2, type-ord-spine-cereal >= 0.2
 
   exposed-modules:
     Data.Yoko,
@@ -111,7 +111,16 @@ library
 
     Data.YokoRaw, Data.Yoko.HCompos, Data.Yoko.TH,
 
-    Data.Yoko.TypeBasics, Data.Yoko.Each
+    Data.Yoko.Invariant,
+
+    Data.Yoko.TypeBasics, Data.Yoko.W,
+
+    Data.Yoko.Prelude,
+
+    Data.Yoko.MinCtors,
+    Data.Yoko.MinCtors.Prims0, Data.Yoko.MinCtors.Prims1,
+    Data.Yoko.MinCtors.Minima,
+    Data.Yoko.MinCtors.MMap
 
   other-modules:
     Data.Yoko.View,
