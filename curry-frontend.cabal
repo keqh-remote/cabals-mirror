@@ -1,5 +1,5 @@
 Name:          curry-frontend
-Version:       0.2
+Version:       0.2.1
 Cabal-Version: >= 1.6
 Synopsis:      Compile the functional logic language Curry to several intermediate formats
 Description:   The Curry Frontend consists of the executable program "cymake".
@@ -26,20 +26,34 @@ Executable cymake
   hs-source-dirs:   src
   Main-is:          cymake.hs
   Build-Depends:    base >= 3 && < 4, mtl, old-time, directory, filepath, containers
-  Other-Modules:    AbstractCurry, CurryBuilder, Env, IL, Message
-                    CurryCompilerOpts, Error, Modules, Subst, Arity
-                    CurryDeps, Eval, ILPP, NestEnv, SyntaxCheck, Base
-                    Exports, ILScope, SyntaxColoring, CurryEnv
-                    ExtendedFlat, ILTrans, OldScopeEnv, CurryHtml
-                    ILxml, PatchPrelude, TopEnv, CaseCompletion
-                    CurryLexer, Imports, PathUtils, TypeCheck
-                    CurryParser, InterfaceCheck, Position
-                    Types, CurryPP, Frontend, PrecCheck
+  ghc-options:      -fwarn-unused-binds -fwarn-unused-imports
+-- -fwarn-incomplete-patterns
+  Other-Modules:    Curry.Base.Position, Curry.Base.Ident, Curry.Base.MessageMonad
+                    Curry.Syntax.Lexer, Curry.Syntax.LexComb
+                    Curry.Syntax.Parser, Curry.Syntax.LLParseComb
+                    Curry.Syntax.ShowModule, Curry.Syntax.Pretty
+                    Curry.Syntax, Curry.Syntax.Type
+                    Curry.Syntax.Unlit, Curry.Syntax.Utils
+                    Curry.AbstractCurry, Curry.ExtendedFlat
+                    CurryBuilder, IL.Type 
+                    CurryCompilerOpts, Modules, Subst, Arity
+                    CurryDeps, Eval, IL.Pretty, NestEnv, SyntaxCheck, Base
+                    Exports, IL.Scope, SyntaxColoring, CurryEnv
+                    IL.CurryToIL, OldScopeEnv, CurryHtml
+                    IL.XML, PatchPrelude, TopEnv, CaseCompletion
+                    Imports, PathUtils, TypeCheck
+                    InterfaceCheck, 
+                    Types, Frontend, PrecCheck
                     TypeSubst, GenAbstractCurry
-                    Pretty, Typing, Combined, CurrySyntax
-                    GenFlatCurry, KindCheck, Qual, Unlit, CompilerResults
-                    LexComb, SCC, Utils, GetOpt
+                    PrettyCombinators, Typing
+                    GenFlatCurry, KindCheck, Qual
+                    SCC, Utils, GetOpt
                     Lift, ScopeEnv, WarnCheck
-                    LLParseComb, Desugar, Ident, ShowCurrySyntax
+                    Desugar, Curry.Base.Ident, 
                     Simplify
+
+-- Executable pretty-ecy
+--   hs-source-dirs:   src
+--   Main-is:          pretty-ecy.hs
+--   Build-Depends:    base >= 3 && < 4
 
