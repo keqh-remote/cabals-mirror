@@ -1,5 +1,5 @@
 name:                pqc
-version:             0.7
+version:             0.7.0.1
 description:         Parallel batch driver for QuickCheck
 synopsis:            Parallel batch driver for QuickCheck
 category:            Testing
