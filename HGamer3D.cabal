@@ -1,32 +1,27 @@
 Name:                HGamer3D
-Version:             0.1.8
-Synopsis:            Library to enable 3D game development for Haskell
+Version:             0.1.9
+Synopsis:            Windows Game Engine for the Haskell Programmer
 Description:         
-	Library, to enable 3D game development for Haskell,
-	based on bindings to 3D Graphics, Audio and GUI libraries.
-	
-	This is the module, which includes all other needed modules and provides
-	an higher level API for primary
-	use.
-	
-    Platform: Windows only
-	License: Apache License, Version 2.0
-	Install: see http://www.althainz.de/HGamer3D/Download-and-Installation.html
+	HGamer3D is a game engine for developing 3D games in the programming 
+	language Haskell. The game engine uses available libraries for 3D graphics, 
+	sound, input device handling, gui programming and other areas and make
+	those functions available for the Haskell programmer by providing  
+	a Haskell API on top of that. HGamer3D is available on Windows only.
 	
 License:             OtherLicense
 License-file:        LICENSE
 Author:              Peter Althainz
-Maintainer:          althainz@googlemail.com
+Maintainer:          althainz@gmail.com
 Build-Type:          Simple
 Cabal-Version:       >=1.2
-Homepage:            http://www.althainz.de/HGamer3D.html
+Homepage:            http://www.hgamer3d.org
 Category:            Game
 Extra-source-files:  Setup.hs 
 
 Library
-  Build-Depends:     base >= 3 && < 5, text, directory, Win32, mtl, HGamer3D-Data == 0.1.8, HGamer3D-Ogre-Binding == 0.1.8, HGamer3D-SFML-Binding == 0.1.8
+  Build-Depends:     base >= 3 && < 5, containers, text, directory, Win32, mtl, FindBin, HGamer3D-Data >= 0.1.9, HGamer3D-Ogre-Binding == 0.1.9, HGamer3D-SFML-Binding == 0.1.9, HGamer3D-CEGUI-Binding == 0.1.9
 
-  Exposed-modules:   HGamer3D.APIs.Base.Common,HGamer3D.APIs.Base.Audio,HGamer3D.APIs.Base.InputSystem,HGamer3D.APIs.Base.Graphics3D.Engine3D,HGamer3D.APIs.Base.Graphics3D.Light,HGamer3D.APIs.Base.Graphics3D.Object3D,HGamer3D.BaseAPI
+  Exposed-modules:   HGamer3D.APIs.Base.Engine.Types,HGamer3D.APIs.Base.Graphics3D.Basic3D,HGamer3D.APIs.Base.Graphics3D.EngineHelper,HGamer3D.APIs.Base.Graphics3D.Light,HGamer3D.APIs.Base.Graphics3D.Object3D,HGamer3D.APIs.Base.Graphics3D.PlatonObjects,HGamer3D.APIs.Base.GUI.BasicGUI,HGamer3D.APIs.Base.GUI.EngineHelper,HGamer3D.APIs.Base.Engine.Engine,HGamer3D.APIs.Base.Audio.Audio,HGamer3D.APIs.Base.InputSystem.InputSystem,HGamer3D.BaseAPI
   Other-modules:     
 
   c-sources:         
