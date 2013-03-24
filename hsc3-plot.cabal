@@ -1,5 +1,5 @@
 Name:              hsc3-plot
-Version:           0.12
+Version:           0.13
 Synopsis:          Haskell SuperCollider Plotting
 Description:       Plotting functions for hsc3
 License:           GPL
@@ -17,7 +17,7 @@ Data-files:        README
 
 Library
   Build-Depends:   base == 4.*,
-                   hsc3 == 0.12.*,
+                   hsc3 == 0.13.*,
                    gnuplot,
                    statistics,
                    vector
