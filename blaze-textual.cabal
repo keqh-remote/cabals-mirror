@@ -1,5 +1,5 @@
 name:            blaze-textual
-version:         0.2.0.5
+version:         0.2.0.6
 license:         BSD3
 license-file:    LICENSE
 category:        Text
@@ -67,7 +67,7 @@ library
 
   if impl(ghc >= 6.11)
     cpp-options: -DINTEGER_GMP
-    build-depends: integer-gmp >= 0.2 && < 0.4
+    build-depends: integer-gmp >= 0.2 && < 0.5
 
   if impl(ghc >= 6.9) && impl(ghc < 6.11)
     cpp-options: -DINTEGER_GMP
