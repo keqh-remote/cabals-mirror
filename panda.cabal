@@ -1,5 +1,5 @@
 Name:                 panda
-Version:              2008.12.16
+Version:              2009.1.20
 Build-type:           Simple
 Synopsis:             A simple static blog engine
 Description:          A simple static blog engine
@@ -24,52 +24,53 @@ library
 
                     Panda.Controller.Application
 
-                    Panda.Helper.Env
                     Panda.Helper.Helper
-                    Panda.Helper.Html
-                    Panda.Helper.PreludeEnv
                     Panda.Helper.StateHelper
+                    Panda.Helper.Html
+                    Panda.Helper.Env
+                    Panda.Helper.PreludeEnv
                     Panda.Helper.ThumbHelper
 
-                    Panda.Model.Album
-                    Panda.Model.Comment
-                    Panda.Model.Helper
-                    Panda.Model.Post
-                    Panda.Model.Static
                     Panda.Model.Tag
+                    Panda.Model.Post
+                    Panda.Model.Helper
+                    Panda.Model.Video
+                    Panda.Model.Comment
+                    Panda.Model.Album
+                    Panda.Model.Static
                     
                     
-                    Panda.Type.Extension
-                    Panda.Type.Pager
-                    Panda.Type.Reader
+                    Panda.Type.Theme
                     Panda.Type.Plugin
+                    Panda.Type.Pager
                     Panda.Type.State
                     Panda.Type.StaticWidget
-                    Panda.Type.Theme
-
+                    Panda.Type.Reader
+                    Panda.Type.Extension
                     
-                    Panda.View.Atom.Album
-                    Panda.View.Atom.Comment
-                    Panda.View.Atom.Post
-                    Panda.View.Atom.Static
                     Panda.View.Atom.Tag
+                    Panda.View.Atom.Post
+                    Panda.View.Atom.Video
+                    Panda.View.Atom.Comment
+                    Panda.View.Atom.Album
+                    Panda.View.Atom.Static
                     
-                    Panda.View.Control.Comment
-                    Panda.View.Control.Helper
+                    Panda.View.Control.Tag
                     Panda.View.Control.Post
+                    Panda.View.Control.Helper
+                    Panda.View.Control.Comment
                     Panda.View.Control.Search
                     Panda.View.Control.Static
-                    Panda.View.Control.Tag
                     
+                    Panda.View.Widget.Template
+                    Panda.View.Widget.Helper
+                    Panda.View.Widget.Header
+                    Panda.View.Widget.Sidebar
+                    Panda.View.Widget.Navigation
+                    Panda.View.Widget.SearchBar
+                    Panda.View.Widget.Head
+                    Panda.View.Widget.RSS
                     Panda.View.Widget.Body
                     Panda.View.Widget.Footer
-                    Panda.View.Widget.Head
-                    Panda.View.Widget.Header
-                    Panda.View.Widget.Helper
-                    Panda.View.Widget.Navigation
-                    Panda.View.Widget.RSS
-                    Panda.View.Widget.SearchBar
-                    Panda.View.Widget.Sidebar
-                    Panda.View.Widget.Template
   
   
