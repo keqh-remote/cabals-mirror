@@ -1,5 +1,5 @@
 Name:                SableCC2Hs
-Version:             0.0.0.1
+Version:             0.0.0.2
 
 Synopsis:            Generate a parser (in Haskell) with the SableCC parser generator.
 Description:
@@ -36,7 +36,7 @@ Extra-Source-Files:
   prolog/parser.pl
   prolog/trim_ast.pl
 
-Executable sableToHs
+Executable sable2hs
   Build-Depends:
      base >= 4.0 && < 5.0
     ,containers >= 0.4 && < 0.5
