@@ -1,8 +1,8 @@
 Name:               pontarius-xmpp
-Version:            0.0.6.0
+Version:            0.0.7.0
 Cabal-Version:      >= 1.6
 Build-Type:         Simple
-License:            LGPL-3
+License:            BSD3
 License-File:       LICENSE
 Copyright:          Copyright © 2011, Jon Kristensen
 Author:             Jon Kristensen, Mahdi Abdinejadi
@@ -25,16 +25,14 @@ Tested-With:        GHC ==7.0.2
 -- Extra-Tmp-Files:
 
 Library
-  Exposed-Modules:   Network.XMPP, Network.XMPP.Address, Network.XMPP.SASL,
-                     Network.XMPP.Session, Network.XMPP.Stanza,
-                     Network.XMPP.Stream, Network.XMPP.TLS, Network.XMPP.Types,
-                     Network.XMPP.Utilities
+  Exposed-Modules:   Network.XMPP
   Exposed:           True
-  Build-Depends:     base >= 2 && < 5, parsec, enumerator, crypto-api,
+  Build-Depends:     base >= 2 && < 5, parsec, enumerator, crypto-api ==0.6.3,
                      base64-string, pureMD5, utf8-string, network, xml-types,
-                     text, transformers, bytestring, binary, random,
-                     xml-enumerator, tls ==0.4.1, containers, mtl, text-icu,
-                     stringprep, idna2008 ==0.0.1.0
+                     text, transformers, bytestring, cereal ==0.3.3.0, random,
+                     xml-enumerator, tls, tls-extra, containers, mtl, text-icu,
+                     stringprep, asn1-data, cryptohash ==0.7.0,
+                     time, certificate, ranges, uuid
   -- Other-Modules:
   -- HS-Source-Dirs:
   -- Extensions:
@@ -58,12 +56,12 @@ Library
 Source-Repository head
   Type:     darcs
   -- Module:
-  Location: https://patch-tag.com/r/jonkri/pontarius-xmpp
+  Location: git://github.com/pontarius/pontarius-xmpp.git
   -- Subdir:
 
 Source-Repository this
   Type:     darcs
   -- Module:
-  Location: https://patch-tag.com/r/jonkri/pontarius-xmpp
-  Tag:      0.0.6.0
+  Location: git://github.com/pontarius/pontarius-xmpp.git
+  Tag:      0.0.7.0
   -- Subdir:
