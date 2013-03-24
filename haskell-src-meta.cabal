@@ -1,5 +1,5 @@
 name:               haskell-src-meta
-version:            0.1.1
+version:            0.2
 cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
@@ -14,9 +14,9 @@ description:        The translation from haskell-src-exts abstract syntax
                     to template-haskell abstract syntax isn't 100% complete yet.
 
 library
-  build-depends:      base == 4.2.*, containers == 0.3.*,
+  build-depends:      base >= 4.1 && < 4.3, containers >= 0.2 && < 0.4,
                       haskell-src-exts >= 1.6 && < 1.10,
-                      template-haskell == 2.4.*,
+                      template-haskell >= 2.3 && < 2.5,
                       pretty == 1.0.*, syb >= 0.1 && < 0.2, th-lift == 0.5.*
   hs-source-dirs:     src
   exposed-modules:    Language.Haskell.Meta,
@@ -26,6 +26,7 @@ library
                       Language.Haskell.Meta.Syntax.Translate,
                       Language.Haskell.TH.Instances.Lift,
                       Language.Haskell.Meta.Utils,
+                      Language.Haskell.Meta.QQ.ADo,
                       Language.Haskell.Meta.QQ.Hs,
                       Language.Haskell.Meta.QQ.Here,
                       Language.Haskell.Meta.QQ.HsHere,
