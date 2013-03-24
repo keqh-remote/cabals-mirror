@@ -1,7 +1,11 @@
 Name:                HXQ
-Version:             0.7
-Description:         A Compiler from XQuery to Haskell
-Synopsis:            A Compiler from XQuery to Haskell
+Version:             0.7.2
+Synopsis:            An XQuery Compiler and Interpreter
+Description:         
+        HXQ is a fast and space-efficient compiler from XQuery (the standard
+        query language for XML) to embedded Haskell code. The translation is
+        based on Haskell templates. It also provide an interpreter for
+        evaluating ad-hoc XQueries read from input or from files.
 Category:            XML
 build-type:          Simple
 License-file:        LICENSE
@@ -16,6 +20,7 @@ extra-source-files:
   data/q1.xq
   data/q2.xq
   data/dblp.xq
+  data/dblp2.xq
   XQuery.hs
   XQueryParser.hs
   XQueryParser.y
@@ -23,6 +28,7 @@ extra-source-files:
   XQueryInterpreter.hs
   Test1.hs
   Test2.hs
+  profile.hs
   compile
   hxml-0.2/Arrow.hs
   hxml-0.2/LLParsing.hs
@@ -43,7 +49,7 @@ extra-source-files:
   hxml-0.2/00-LICENSE.txt
   hxml-0.2/00-README.txt
 
-Build-Depends:       base, haskell98, template-haskell
+Build-Depends:       base, haskell98, array, template-haskell
 
 Executable:          xquery
 Main-is:             Main.hs
