@@ -1,5 +1,5 @@
 Name:                   TernaryTrees
-Version:                0.1.1.1
+Version:                0.1.2.0
 Category:               Data Structures
 Synopsis:               Efficient pure ternary tree Sets and Maps
 Description:            Ternary trees are an efficient structure often used for storing
@@ -20,12 +20,11 @@ Description:            Ternary trees are an efficient structure often used for 
 			.
 			New in this version:
 			.
-			* Refactored a lot of the datatypes for the Sets (much of their code is
-			  exactly the same now)
+			* Changed TernaryMap to match the Set implementations more.
 			.
-			* Made the get implementation shorter and clearer (thanks to olsner on IRC)
+			* Changed the Data.Binary instance again, hopefully it'll remain more stable from here on.
 			.
-			* There is now a darcs repo: <http://random.axman6.com/darcs/TernaryTrees/>
+			* Changed the tdict source to actually do what i said it would, by actually asking the user for input.
 			.
 			&#169; 2009 by Alex Mason (<http://random.axman6.com/blog/>). BSD3 license.
 			
