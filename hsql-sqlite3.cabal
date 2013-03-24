@@ -1,9 +1,15 @@
-name:		 hsql-sqlite3
-version:	 1.7
-license:	 BSD3
-author:		 Krasimir Angelov <kr.angelov@gmail.com>
-category:	 Database
-description: 	 SQLite3 driver for HSQL.
-exposed-modules: Database.HSQL.SQLite3
-build-depends: 	 base, hsql
-extensions:      ForeignFunctionInterface, CPP
+Name:            hsql-sqlite3
+Version:         1.7.1
+Synopsis:        SQLite3 driver for HSQL.
+License:         BSD3
+License-File:    LICENSE
+Author:          Krasimir Angelov <kr.angelov@gmail.com>
+Maintainer:      nick.rudnick@googlemail.com
+Category:        Database
+Description:     A Haskell Interface to SQLite 3 via libsqlite3
+                 in the standard library path.
+Exposed-modules: Database.HSQL.SQLite3
+build-depends: 	 base >= 4 && < 5, hsql >= 1.7
+Extensions:      ForeignFunctionInterface, CPP
+Build-type:      Simple
+Extra-libraries: sqlite3
