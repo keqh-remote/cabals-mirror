@@ -1,5 +1,5 @@
 Name:                HXQ
-Version:             0.5
+Version:             0.6
 Description:         A Compiler from XQuery to Haskell
 Synopsis:            A Compiler from XQuery to Haskell
 Category:            XML
