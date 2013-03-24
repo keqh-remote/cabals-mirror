@@ -1,5 +1,5 @@
 name:                nanocurses
-version:             1.5.1
+version:             1.5.2
 homepage:            http://www.cse.unsw.edu.au/~dons/hmp3.html
 license:             BSD3
 license-file:        LICENSE
@@ -30,7 +30,7 @@ extra-source-files: configure configure.ac
 
 exposed-modules:    UI.Nanocurses.Curses
 extensions:         CPP, ForeignFunctionInterface
-ghc-options:        -Wall -funbox-strict-fields -optl-Wl,-s -threaded
+ghc-options:        -Wall -funbox-strict-fields -threaded
 extra-libraries:    curses
 include-dirs:       cbits
 c-sources:          cbits/utils.c
