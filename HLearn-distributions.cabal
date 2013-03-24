@@ -1,5 +1,5 @@
 Name:                HLearn-distributions
-Version:             0.0.1.1
+Version:             0.0.1.2
 Synopsis:            Distributions for use with the HLearn library
 Description:         This module is used to estimate statistical distributions from data.  The focus is a clean interface inspired by algebra.
 Category:            Data Mining, Machine Learning, Statistics
@@ -63,7 +63,7 @@ Library
         
         QuickCheck              >= 2.5.1,
         vector                  >= 0.9,
-        vector-th-unbox         >= 0.1,
+        vector-th-unbox         == 0.1.0.1,
         
         -- are these really necessary?
         MonadRandom             >= 0.1.6,
