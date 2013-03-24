@@ -1,5 +1,5 @@
 name:                whim
-version:             0.1
+version:             0.1.1
 synopsis:            A Haskell window manager
 description:         A simple X Windows window manager in Haskell; written before XMonad.
 Stability:           Experimental
@@ -7,7 +7,7 @@ category:            System
 license:             BSD3
 license-file:        LICENSE
 author:              Evan Martin
-maintainer:          Evan Martin <martine@danga.com>
+maintainer:          none
 homepage:            http://neugierig.org/software/darcs/whim/
 
 tested-with:         GHC==6.8.2
@@ -17,10 +17,10 @@ data-files:          NOTES
 extra-source-files:  boot.sh
 
 Library
-        build-depends:          base>3, X11, GLUT, OpenGL, random, process, containers, mtl
+        build-depends:          base>3 && <4, X11, GLUT, OpenGL, random, process, containers, mtl
         extensions:             ForeignFunctionInterface, ExistentialQuantification
 
-        ghc-options:            -O2 -Wall -optl-Wl,-s
+        ghc-options:            -O2 -Wall
         ghc-prof-options:       -prof -auto-all
 
         Exposed-modules:        Whim.Playground, Whim.Util, Whim.Xlib
@@ -29,5 +29,5 @@ Executable whim
             executable:          whim
             main-is:             Whim.hs
 
-            ghc-options:         -O2 -Wall -optl-Wl,-s
-            ghc-prof-options:    -prof -auto-al
+            ghc-options:         -O2 -Wall
+            ghc-prof-options:    -prof -auto-all
