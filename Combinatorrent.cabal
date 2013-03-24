@@ -1,6 +1,6 @@
 name: Combinatorrent
 category: Network
-version: 0.2.0
+version: 0.2.1
 category: Network
 description:   Combinatorrent provides a BitTorrent client, based on STM
                for concurrency. This is an early preview release which is capable of
@@ -13,7 +13,7 @@ cabal-version: >= 1.6
 
 license: BSD3
 license-file: LICENSE
-copyright: (c) 2009 Jesper Louis Andersen
+copyright: (c) 2009,2010 Jesper Louis Andersen
 author: Jesper Louis Andersen
 maintainer: jesper.louis.andersen@gmail.com
 stability: experimental
@@ -56,6 +56,7 @@ executable Combinatorrent
     bytestring,
     cereal,
     containers,
+    deepseq,
     directory,
     filepath,
     hopenssl,
@@ -76,8 +77,8 @@ executable Combinatorrent
     test-framework-quickcheck2,
     time
 
-  ghc-prof-options: -auto-all -ignore-scc -caf-all
-  ghc-options: -Wall -fno-warn-orphans -threaded
+  ghc-prof-options: -auto-all -caf-all
+  ghc-options: -Wall -fno-warn-orphans -threaded -feager-blackholing -O2
   if !flag(debug)
       cpp-options: "-DNDEBUG"
 
