@@ -1,5 +1,5 @@
 Name:             HJScript
-Version:          0.4.6
+Version:          0.4.7
 License:          BSD3
 Author:           Joel Bjornson, joel.bjornson@gmail.com,
                   Niklas Broberg, nibro@cs.chalmers.se
@@ -45,7 +45,7 @@ Other-Modules:    HJScript.Monad
 
                   
 Cabal-Version:    >= 1.2.3
-Build-Depends:    base <= 4, HJavaScript >= 0.4.4, mtl, hsx >= 0.4.4
+Build-Depends:    base < 5, HJavaScript >= 0.4.4, mtl, hsx >= 0.4.4
 Build-Type:       Simple
 Category:         Web, Language
 
