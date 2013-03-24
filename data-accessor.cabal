@@ -1,14 +1,15 @@
 Name:             data-accessor
-Version:          0.1.2
+Version:          0.1.3
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>, Luke Palmer <lrpalmer@gmail.com>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
-Homepage:         http://code.haskell.org/data-accessor/
+Homepage:         http://www.haskell.org/haskellwiki/Record_access
+Package-URL:      http://code.haskell.org/data-accessor/
 Category:         Data
 -- Portability:      Haskell98, not quite because of MTL dependency
 Build-Type:       Simple
-Build-Depends:    base>=1.0, mtl
+Build-Depends:    base>=1.0, array, containers, mtl
 Synopsis:         Utilities for accessing and manipulating fields of records
 Description:
   In Haskell 98 the name of a record field
@@ -56,6 +57,7 @@ Hs-Source-Dirs:   src
 Exposed-Modules:
   Data.Accessor
   Data.Accessor.Basic
+  Data.Accessor.Container
   Data.Accessor.Show
   Data.Accessor.Tuple
   Data.Accessor.BinaryRead
