@@ -1,5 +1,5 @@
 name:                tkhs
-version:             0.1.0.4
+version:             0.1.0.5
 synopsis:            Simple Presentation Utility
 description:         If you want to give your presentation in a terminal,
                      or if PowerPoint would be overkill, you may find tkhs useful.
@@ -51,4 +51,4 @@ Executable test
 
 Source-repository head
   type:              darcs
-  location:          http://patch-tag.com/r/tkhs/pullrepo
+  location:          http://patch-tag.com/r/nonowarn/tkhs/pullrepo
