@@ -1,6 +1,6 @@
 cabal-version:       >= 1.6
 name:                lhc
-version:             0.6.20081216
+version:             0.6.20090126
 synopsis:            LHC Haskell Compiler
 description:
   lhc is a haskell compiler which aims to produce the most efficient programs possible via whole
@@ -17,6 +17,7 @@ Extra-Source-Files:  src/arch/generic.arch, src/arch/i686.arch, src/arch/x86_64.
 extra-source-files:  lib/base/base.cabal,
                      lib/base/Setup.hs,
                      lib/base/src/Control/*.hs,
+                     lib/base/src/Control/Monad/*.hs,
                      lib/base/src/Data/Array/*.hs,
                      lib/base/src/Data/*.hs,
                      lib/base/src/Debug/*.hs,
@@ -24,8 +25,9 @@ extra-source-files:  lib/base/base.cabal,
                      lib/base/src/Foreign/Marshal/*.hs,
                      lib/base/src/Foreign/*.hs,
                      lib/base/src/Foreign/Storable.m4,
+                     lib/base/src/Lhc/*.hs
                      lib/base/src/Lhc/Inst/*.hs,
-                     lib/base/src/Lhc/*.hs,
+                     lib/base/src/Lhc/Inst/Num.m4
                      lib/base/src/Lhc/Order.m4,
                      lib/base/src/Lhc/Text/*.hs,
                      lib/base/src/Prelude/*.hs,
@@ -98,13 +100,13 @@ Executable lhc
   Grin.HashConst Grin.Interpret Grin.Lint Grin.NodeAnalyze Grin.Noodle Grin.Optimize
   Grin.SSimplify Grin.Show Grin.Simplify Grin.Unboxing Grin.Val Grin.Whiz Ho.Collected
   Ho.Binary Ho.Build Ho.Library Ho.Type Info.Binary Info.Info Info.Types Info.Properties
-  Name.Prim Name.Binary Name.Id Name.Name Name.Names Name.VConsts
+  Name.Prim Name.Id Name.Name Name.Names Name.VConsts
   Support.Tuple Support.CFF Support.FreeVars Support.CanType Support.ShowTable
-  Support.Tickle Support.Transform Support.Unparse Support.MapBinaryInstance Util.Graph
+  Support.Tickle Support.Transform Support.Unparse Util.Graph
   Util.Gen Util.ArbitraryInstances Util.BitSet Util.BooleanSolver Util.ContextMonad
   Util.FilterInput Util.ReaderWriter Util.Graphviz Util.HasSize Util.Histogram
   Util.Inst Util.IntBag Util.Interact Util.NameMonad Util.Once Util.Perhaps
-  Util.RWS Util.Relation Util.SameShape Util.Seq Util.SetLike Util.TrueSet
+  Util.RWS Util.Relation Util.SameShape Util.Seq Util.SetLike
   Util.UnionFind Util.UnionSolve Util.UniqueMonad Util.VarName Util.Util LHCVersion
 
 Executable lhc-regress
