@@ -1,5 +1,5 @@
 Name:                   mighttpd2
-Version:                2.7.0
+Version:                2.7.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -17,7 +17,7 @@ Data-Files:             example.conf example.route
 
 Executable mighty
   Main-Is:              Mighty.hs
-  GHC-Options:          -Wall -threaded -eventlog
+  GHC-Options:          -Wall -threaded
   Build-Depends:        base >= 4.0 && < 5
                       -- should be removed someday
                       , blaze-html >= 0.5
@@ -50,6 +50,7 @@ Executable mighty
                         Config.Internal
                         FileCGIApp
                         FileCache
+                        Log
                         Mighty
                         Parser
                         Process
