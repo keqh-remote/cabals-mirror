@@ -7,7 +7,7 @@ Name:                bbdb
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3
+Version:             0.4
 
 -- A short (one-line) description of the package.
 Synopsis:            Ability to read, write, and examine BBDB files
@@ -21,7 +21,7 @@ Description:         BBDB (http://sourceforge.bbdb.net) is a contact management 
                      See the hackage docs for usage and examples.
 
 -- URL for the project homepage or repository.
-Homepage:            http://maztravel.com/haskell/database-bbdb.html
+Homepage:            http://www.nadineloveshenry.com/haskell/database-bbdb.html
 
 -- The license under which the package is released.
 License:             GPL-3
@@ -54,6 +54,7 @@ Cabal-version:       >=1.4
 Library
   -- Modules exported by the library.
   Exposed-modules:     Database.BBDB
+  hs-source-dirs:      src
   
   -- Packages needed in order to build this package.
   Build-depends: 
