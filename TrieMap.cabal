@@ -1,5 +1,5 @@
 name:		     TrieMap
-version:             0.5.2
+version:             0.5.3
 tested-with:	     GHC
 category:            Algorithms
 synopsis:	     Automatic type inference of generalized tries.
@@ -24,10 +24,15 @@ other-modules:
 	Data.TrieMap.Class.Instances,
 	Data.TrieMap.TrieKey,
 	Data.TrieMap.Applicative,
+	Data.TrieMap.CPair,
+	Data.TrieMap.ProdMap,
+	Data.TrieMap.RadixTrie,
+	Data.TrieMap.UnionMap,
+	Data.TrieMap.UnitMap,
 	Data.TrieMap.Rep,
 	Data.TrieMap.Rep.Instances,
 	Data.TrieMap.Rep.TH,
-	Data.TrieMap.MultiRec.TH,
+	-- Data.TrieMap.MultiRec.TH,
 	Data.TrieMap.MultiRec.FamMap,
 	Data.TrieMap.MultiRec.Eq,
 	Data.TrieMap.MultiRec.Ord,
@@ -36,7 +41,7 @@ other-modules:
 	Data.TrieMap.MultiRec.IMap,
 	Data.TrieMap.MultiRec.Base,
 	-- Data.TrieMap.MultiRec.XMap,
-	Data.TrieMap.MultiRec.FixMap,
+	-- Data.TrieMap.MultiRec.FixMap,
 	-- Data.TrieMap.MultiRec.AppMap,
 	Data.TrieMap.MultiRec.Instances,
 	Data.TrieMap.MultiRec.ProdMap,
