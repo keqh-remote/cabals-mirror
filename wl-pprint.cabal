@@ -1,0 +1,13 @@
+Name:                wl-pprint
+Version:             1.0
+Synopsis:            The Wadler/Leijen Pretty Printer
+Category:            Text
+Description:
+ This is a pretty printing library based on Wadler's paper "A Prettier
+ Printer".  See the haddocks for full info.
+License:             BSD3
+License-file:        LICENSE
+Author:              Daan Leijen
+Maintainer:          stefanor@cox.net
+Build-Depends:       base
+Exposed-Modules:     Text.PrettyPrint.Leijen
