@@ -4,12 +4,12 @@ homepage: http://bitbucket.org/mauricio/bindings
 synopsis:
   Low-level library bindings, base package.
 description: 
-  The @bindings-*@ set of packages contain low level bindings
+  The @bindings-*@ set of packages contains low level bindings
   for established libraries, and is aimed at developers of higher
   level modules that can use it as foundation. They all mimic the
-  exact names and functionality of the original libraries. For
+  names and functionality of the original libraries. For
   a specific library, look for package @bindings-library_name@.
-version: 0.1.4
+version: 0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
@@ -18,13 +18,11 @@ build-type: Simple
 category: FFI
 library
   hs-source-dirs: src
-  c-sources:
-    src/ctypes.c
-    src/cfunctions.c
-    src/cconstants.c
+  include-dirs: src
+  install-includes:
+    bindings.macros.h
   extensions:
     ForeignFunctionInterface
-    TypeSynonymInstances
     ScopedTypeVariables
     MultiParamTypeClasses
     TypeFamilies
@@ -33,7 +31,3 @@ library
     Bindings
     Bindings.Utilities
     Bindings.C
-  other-modules:
-    CFunctions
-    CConstants
-    CTypes
