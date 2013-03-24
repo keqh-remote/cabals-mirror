@@ -1,5 +1,5 @@
 name:                data-category
-version:             0.3.1.1
+version:             0.4
 synopsis:            Restricted categories
 
 description:         Data-category is a collection of categories, and some categorical constructions on them.
@@ -31,6 +31,7 @@ Library
     Data.Category,
     Data.Category.Functor,
     Data.Category.NaturalTransformation,
+    Data.Category.RepresentableFunctor,
     Data.Category.Adjunction,
     Data.Category.Limit,
     Data.Category.Monoidal,
@@ -38,6 +39,7 @@ Library
     Data.Category.Product,
     Data.Category.Coproduct,
     Data.Category.Discrete,
+    Data.Category.Yoneda,
     Data.Category.Monoid,
     Data.Category.Boolean,
     Data.Category.Omega,
