@@ -1,6 +1,6 @@
 name:                epub-tools
 cabal-version:       >= 1.8
-version:             2.1.0
+version:             2.1.1
 build-type:          Simple
 license:             BSD3
 license-file:        LICENSE
@@ -37,11 +37,11 @@ executable           epubmeta
                      EpubTools.EpubMeta.Import
                      EpubTools.EpubMeta.Opts
                      EpubTools.EpubMeta.Util
-   ghc-options:      -Wall
+   ghc-options:      -Wall -rtsopts -with-rtsopts=-K32m
 
 executable           epubname
    main-is:          EpubTools/epubname.hs
-   build-depends:    base >= 3 && < 5, directory, epub-metadata >= 2.3.1,
+   build-depends:    base >= 3 && < 5, directory, epub-metadata >= 2.3.2,
                      filepath, mtl, parsec, regex-compat
    hs-source-dirs:   src
    other-modules:    EpubTools.EpubName.Format.Author
@@ -54,19 +54,19 @@ executable           epubname
                      EpubTools.EpubName.Prompt
                      EpubTools.EpubName.Util
 
-   ghc-options:      -Wall
+   ghc-options:      -Wall -rtsopts -with-rtsopts=-K32m
 
 test-suite           epubname-tests
    type:             exitcode-stdio-1.0
    main-is:          EpubTools/test-epubname.hs
-   build-depends:    base, directory, epub-metadata >= 2.3.1, filepath,
+   build-depends:    base, directory, epub-metadata >= 2.3.2, filepath,
                      HUnit, mtl, parsec, regex-compat
    hs-source-dirs:   src testsuite
-   ghc-options:      -Wall
+   ghc-options:      -Wall -rtsopts -with-rtsopts=-K32m
 
 executable           epubzip
    main-is:          EpubTools/epubzip.hs
-   build-depends:    base >= 3 && < 5, directory, epub-metadata >= 2.3.1,
+   build-depends:    base >= 3 && < 5, directory, epub-metadata >= 2.3.2,
                      filepath, mtl, parsec, regex-compat
    hs-source-dirs:   src
    other-modules:    EpubTools.EpubZip.Opts
