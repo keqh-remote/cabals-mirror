@@ -1,11 +1,11 @@
 Cabal-version:      >=1.2
 Name:               cpuid
-Version:            0.2
+Version:            0.2.1
 License:            GPL
 License-file:       COPYING
-Author:             Martin Grabmueller <magr@cs.tu-berlin.de>
-Maintainer:         magr@cs.tu-berlin.de
-Homepage:           http://uebb.cs.tu-berlin.de/~magr/projects/cpuid/doc/
+Author:             Martin Grabmueller <martin@grabmueller.de>
+Maintainer:         martin@grabmueller.de
+Homepage:           http://code.haskell.org/cpuid
 Category:           Foreign binding
 Synopsis:           Binding for the cpuid machine instruction on x86 compatible
         processors
@@ -21,7 +21,7 @@ Extra-source-files: README
                     tests/TestCpuid.hs
 
 Library
-  Build-depends:      base
+  Build-depends:      base >= 4 && < 5
   Exposed-Modules:    System.Cpuid
   Extensions:         ForeignFunctionInterface
   C-sources:	    cbits/cpuid.c
