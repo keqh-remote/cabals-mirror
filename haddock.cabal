@@ -1,7 +1,7 @@
 cabal-version:        >= 1.2
 build-type:           Simple
 name:                 haddock
-version:              2.0.0.0
+version:              2.1.0
 license:              BSD3
 license-file:         LICENSE
 copyright:            (c) Simon Marlow, David Waern
@@ -9,6 +9,7 @@ author:               Simon Marlow, David Waern
 maintainer:           David Waern <david.waern@gmail.com>
 stability:            experimental
 homepage:             http://www.haskell.org/haddock/
+synopsis:             A documentation-generation tool for Haskell libraries
 description:          Haddock is a documentation-generation tool for Haskell
                       libraries
 category:             Development
@@ -21,8 +22,8 @@ build-depends:
   pretty,
   containers,
   array
-extensions:           CPP, PatternGuards
-ghc-options:          -fglasgow-exts
+extensions:           CPP, PatternGuards, DeriveDataTypeable,
+                      PatternSignatures, MagicHash
 hs-source-dirs:       src
 exposed-modules:      Distribution.Haddock
 other-modules:
@@ -75,8 +76,9 @@ extra-source-files:
 executable:           haddock
 hs-source-dirs:       src
 main-is:              Main.hs
-extensions:           CPP, PatternGuards
-ghc-options:          -fglasgow-exts -funbox-strict-fields -O2 -fasm
+extensions:           CPP, PatternGuards, DeriveDataTypeable,
+                      PatternSignatures, MagicHash
+ghc-options:          -funbox-strict-fields -O2
 other-modules:
   Haddock.Interface
   Haddock.Interface.Rename
@@ -94,6 +96,7 @@ other-modules:
   Haddock.Backends.Hoogle
   Haddock.ModuleTree
   Haddock.Types
+  Haddock.DocName
   Haddock.Version
   Haddock.InterfaceFile        
   Haddock.Exception
@@ -101,4 +104,3 @@ other-modules:
   Haddock.GHC.Typecheck
   Haddock.GHC.Utils
   Haddock.GHC
-  Haddock.Comments
