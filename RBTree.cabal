@@ -1,5 +1,5 @@
 Name:              RBTree
-Version:           0.0.1
+Version:           0.0.2
 Synopsis:          Pure haskell Red-Black-Tree implemetation
 Description:       This package implemets Red-Black tree data-structure.
 homepage:          git://github.com/wuxb45/Haskell-RBTree.git
@@ -16,8 +16,8 @@ Cabal-Version:     >= 1.2
 extra-source-files: README
 
 Library
-  Build-Depends:   base >=2 && <=4
+  Build-Depends:   base ==4
   Exposed-modules:  
     Data.Tree.RBTree, 
     Data.Tree.RBTreeTest
-  ghc-options:     -Wall
+  ghc-options:     -Wall -funbox-strict-fields -optc-O2
