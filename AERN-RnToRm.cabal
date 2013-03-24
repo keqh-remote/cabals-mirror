@@ -1,5 +1,5 @@
 Name:           AERN-RnToRm
-Version:        0.4.1
+Version:        0.4.2
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -10,7 +10,7 @@ Maintainer:     mik@konecny.aow.cz
 Stability:      experimental
 Category:       Data, Math
 Synopsis:       polynomial function enclosures (PFEs) approximating exact real functions
-Tested-with:    GHC ==6.8.2
+Tested-with:    GHC ==6.8.3
 Description:
     AERN-RnToRm provides
     datatypes and abstractions for approximating functions
@@ -34,7 +34,9 @@ Description:
     .
     Simple examples of usage can be found in module @Demo.hs@ in folder @tests@.
 Extra-source-files:
-    ChangeLog tests/Demo.hs tests/ISin3.hs
+    tests/Demo.hs tests/ISin3.hs
+Data-files:
+    ChangeLog
 
 Flag containers-in-base
     Default: False
@@ -43,10 +45,10 @@ Library
   hs-source-dirs:  src
   if flag(containers-in-base)
     Build-Depends:
-      base < 3, binary >= 0.4, AERN-Real >= 0.9.7
+      base < 3, binary >= 0.4, html >= 1.0, AERN-Real >= 0.9.7
   else
     Build-Depends:
-      base >= 3, containers, binary >= 0.4, AERN-Real >= 0.9.7
+      base >= 3, containers, binary >= 0.4, html >= 1.0, AERN-Real >= 0.9.7
   Exposed-modules:
     Data.Number.ER.RnToRm,
     Data.Number.ER.RnToRm.BisectionTree.Path,
@@ -69,13 +71,4 @@ Library
     Data.Number.ER.RnToRm.Approx.Tuple,
     Data.Number.ER.RnToRm.Approx,
     Data.Number.ER.RnToRm.TestingDefs  
-    
-  Extensions: 
-    CPP,
-    DeriveDataTypeable,
-    FlexibleContexts,
-    FlexibleInstances,
-    FunctionalDependencies,
-    MultiParamTypeClasses,
-    UndecidableInstances
-  
+
