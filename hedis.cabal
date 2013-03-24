@@ -1,5 +1,5 @@
 name:               hedis
-version:            0.4.1
+version:            0.5
 synopsis:
     Client library for the Redis datastore: supports full command set,  
     pipelining.
@@ -10,7 +10,7 @@ Description:
     datastore. Compared to other Haskell client libraries it has some
     advantages:
     .
-    [Complete Redis 2.4 command set:] All Redis commands
+    [Complete Redis 2.6 command set:] All Redis commands
         (<http://redis.io/commands>) are available as haskell functions, except
         for the MONITOR and SYNC commands. Additionally, a low-level API is
         exposed that  makes it easy for the library user to implement additional
@@ -34,14 +34,18 @@ Description:
     .
     For detailed documentation, see the "Database.Redis" module.
     .
-    [Changes since version 0.3.2]
+    [Changes since version 0.4.1]
     .
-    * The following commands got a 'Maybe' added to their return type, to
-      properly handle Redis returning @nil@-replies: @brpoplpush, lindex, lpop,
-      objectEncoding, randomkey, rpop, rpoplpush, spop, srandmember, zrank,
-      zrevrank, zscore@.
+    * Added new Redis 2.6 commands, including Lua scripting support.
     .
-    * Updated dependencies on @bytestring-lexing@ and @stm@.
+    * A transaction context is now created by using the 'multiExec' function.
+      The functions 'multi' and 'exec' are no longer available individually.
+    .
+    * Inside of a transaction, commands return their results wrapped in a
+      composable /future/, called 'Queued'.
+    .
+    * The 'getType' command (the Redis TYPE command) now has a custom return
+      type 'RedisType'.
     .
     * Minor improvements and fixes to the documentation.
     .
@@ -78,6 +82,7 @@ library
   exposed-modules:  Database.Redis
   build-depends:    attoparsec == 0.10.*,
                     base == 4.*,
+                    BoundedChan == 1.0.*,
                     bytestring == 0.9.*,
                     bytestring-lexing == 0.4.*,
                     mtl == 2.*,
@@ -87,9 +92,9 @@ library
                     time
 
   other-modules:    Database.Redis.Core,
+                    Database.Redis.Protocol,
                     Database.Redis.PubSub,
-                    Database.Redis.Reply,
-                    Database.Redis.Request,
+                    Database.Redis.Transactions,
                     Database.Redis.Types
                     Database.Redis.Commands,
                     Database.Redis.ManualCommands
