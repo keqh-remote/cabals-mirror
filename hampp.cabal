@@ -2,7 +2,7 @@ Name:                hampp
 -- The package version. See the Haskell package versioning policy
 -- http://www.haskell.org/haskellwiki/Package_versioning_policy for
 -- standards guiding when and how versions should be incremented.
-Version:             0.2
+Version:             0.2.1
 Synopsis:            Haskell macro preprocessor
 License:             PublicDomain
 Category:            Preprocessor
@@ -22,6 +22,7 @@ Executable hampp
     containers >= 0.4.0.0 && < 0.5,
     directory >= 1.1 && < 1.2,
     filepath >= 1.2.0.0 && < 1.4,
+    Glob >= 0.7 && < 0.8,
     preprocessor-tools >= 0.1.2 && < 0.2
 
 ---- Features:
@@ -31,9 +32,14 @@ Executable hampp
 -- Binary and ASCII integer literals
 -- Include files (Haskell and literate Haskell)
 -- Remove commas at end of {a,b,c,} and [a,b,c,]
+-- Wildcard includes/imports
 
 ---- To-do:
 -- Other file formats (C header, CSV, XML, etc)
 -- Layout mode
 -- Pool strings
 -- Any other feature that you might want; please ask
+
+---- Changes in version 0.2.1:
+-- Wildcard includes added
+-- Wildcard imports added
