@@ -1,5 +1,5 @@
 name: GPipe
-version: 1.0.4
+version: 1.1.0
 cabal-version: >= 1.2.3
 build-type: Simple
 license: BSD3
@@ -7,7 +7,7 @@ license-file: ""
 copyright: Tobias Bexelius
 maintainer: Tobias Bexelius
 build-depends: Boolean -any, GLUT >=2.2.2.0, OpenGL >=2.4.0.1,
-               Vec -any, base == 4.1.0.0, containers -any, mtl -any
+               Vec -any, Vec-Boolean -any, base == 4.1.0.0, containers -any, mtl -any, list-tries -any
 stability: Experimental
 homepage: http://www.haskell.org/haskellwiki/GPipe
 package-url: http://hackage.haskell.org/package/GPipe
