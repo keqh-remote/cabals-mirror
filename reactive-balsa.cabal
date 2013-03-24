@@ -1,5 +1,5 @@
 Name:             reactive-balsa
-Version:          0.1
+Version:          0.1.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -45,14 +45,14 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/reactive-balsa/
-  tag:      0.1
+  tag:      0.1.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
 
 Library
   Build-Depends:
-    reactive-banana >=0.5 && <0.6,
+    reactive-banana >=0.7 && <0.8,
     midi-alsa >=0.2 && <0.3,
     midi >=0.2 && <0.3,
     alsa-seq >=0.6 && <0.7,
