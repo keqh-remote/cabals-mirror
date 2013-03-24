@@ -1,5 +1,5 @@
 Name:                   mighttpd2
-Version:                2.5.11
+Version:                2.6.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -22,6 +22,7 @@ Executable mighty
                       -- should be removed someday
                       , blaze-html >= 0.5
                       , bytestring
+                      , conduit
                       , deepseq
                       , directory
                       , filepath
@@ -33,34 +34,50 @@ Executable mighty
                       , network-conduit
                       , old-locale
                       , parsec >= 3
+                      , process-conduit
                       , time
                       , transformers
                       , unix
                       , unix-bytestring
+                      , unix-time
                       , unordered-containers
                       , wai >= 1.1
                       , wai-app-file-cgi
                       , wai-logger
                       , wai-logger-prefork
-                      , warp
+                      , warp >= 1.2.1.1
   Other-Modules:        Config
                         Config.Internal
                         FileCGIApp
                         FileCache
                         Mighty
                         Parser
+                        Process
+                        Report
                         Route
+                        Signal
+                        State
                         Types
+                        Utils
                         Paths_mighttpd2
 
 Executable mkindex
   Main-Is:              mkindex.hs
-  GHC-Options:          -Wall -fno-warn-unused-do-bind
+  GHC-Options:          -Wall
   Build-Depends:        base >= 4 && < 5
                       , unix
                       , old-locale
                       , directory
                       , time
+
+Executable mightyctl
+  Main-Is:              mightyctl.hs
+  GHC-Options:          -Wall
+  Build-Depends:        base >= 4 && < 5
+                      , bytestring
+                      , conduit
+                      , process-conduit
+                      , unix
 
 Test-Suite test
   Main-Is:              Test.hs
