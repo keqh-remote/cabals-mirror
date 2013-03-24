@@ -1,5 +1,5 @@
 name:                bein
-version:             0.2
+version:             0.3
 synopsis:            Bein is a provenance and workflow management system for bioinformatics.
 description:         To avoid having thousands of files produced in a random way from a bunch of scripts, as is typically the case for a bioinformaticist, Bein keeps track of scripts, and their executions on various inputs.  It provides a web front end, and will integrate with LSF clusters.
 category:            Application
@@ -8,12 +8,14 @@ license-file:        LICENSE
 author:              Fred Ross
 maintainer:          fred.ross@epfl.ch
 build-type:          Simple
-Cabal-Version:       >= 1.4
+Cabal-Version:       >= 1.6
+Data-Files:          INSTALL README sql/*.sql static/default.css
 
 Executable beinctl
   Main-is:           Bein/BeinCtl.hs
   Build-Depends:     base >= 3 && < 5, HDBC, HDBC-postgresql, process
   Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind
+  Other-Modules:     Bein.Types, Bein.Configuration, Bein.ShellScripting
   Hs-Source-Dirs:    .
 
 Executable beind
@@ -22,6 +24,10 @@ Executable beind
                      hdaemonize >= 0.3, hsyslog, parsec, random, unix, network,
                      convertible, stm, mtl, filepath
   Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind
+  Other-Modules:     Bein.Types, Bein.Commands, Bein.Configuration,
+                     Bein.SocketHandler, Bein.Daemon.Types, 
+                     Bein.Daemon.Commands, Bein.Daemon.Protocol,
+                     Bein.Daemon.SignalHandlers
   Hs-Source-Dirs:    .
 
 Executable beinclient
@@ -35,6 +41,10 @@ Executable beinminion
   Build-Depends:     base >= 3 && < 5, network, hsyslog, parsec, HDBC,
                      HDBC-postgresql, process, unix, stm, mtl, filepath, directory
   Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind
+  Other-Modules:     Bein.Types, Bein.Commands, Bein.SocketHandler,
+                     Bein.Minion.Types, Bein.Minion.Arguments,
+                     Bein.Minion.Commands, Bein.Minion.Protocol,
+                     Bein.Configuration
   Hs-Source-Dirs:    .
 
 Executable beinhttpd
@@ -44,4 +54,14 @@ Executable beinhttpd
                      happstack-util, containers, xhtml, time, old-locale, utf8-string,
                      bytestring
   Ghc-Options:       -Wall -threaded -fno-warn-unused-do-bind
+  Other-Modules:     Bein.Web.Elements.Attributes, Bein.Web.Elements.Base,
+                     Bein.Web.Elements.Tags, Bein.Web.Elements,
+                     Bein.Types, Bein.Commands, Bein.Web.Types.Local,
+                     Bein.Configuration, Bein.Web.Types,
+                     Bein.Web.Commands.Local, Bein.Web.Commands,
+                     Bein.Web.Pages.Common, Bein.Web.Authentication,
+                     Bein.Web.Pages.SignOut, Bein.Web.Pages.Login,
+                     Bein.Web.Pages.Index, Bein.Web.Pages.Object,
+                     Bein.Web.Pages.Settings, Bein.Web.Pages.New,
+                     Bein.Web.Routing
   Hs-Source-Dirs:    .
