@@ -1,5 +1,5 @@
 name:               xmonad-extras
-version:            0.9.2
+version:            0.10
 homepage:           http://projects.haskell.org/xmonad-extras
 synopsis:           Third party extensions for xmonad with wacky dependencies
 description:        Various modules for xmonad that cannot be added to xmonad-contrib
@@ -30,6 +30,9 @@ flag with_mpd
 flag with_hlist
   description: Build modules depending on HList.
 
+flag with_regex_posix
+  description: Build modules depending on posix-regex.
+
 flag with_template_haskell
   description: Build modules depending on template haskell.
 
@@ -43,7 +46,7 @@ library
     else
         build-depends: base < 3
 
-    build-depends:      mtl, unix, X11>=1.4.3, xmonad>=0.9 && <0.10, xmonad-contrib>=0.9 && <0.10
+    build-depends:      mtl, unix, X11>=1.4.3, xmonad>=0.10 && <0.11, xmonad-contrib>=0.10 && <0.11
 
     if true
         ghc-options:        -fwarn-tabs -Wall
@@ -58,14 +61,22 @@ library
         build-depends: parsec >= 2 && < 4, split >= 0.1 && < 0.2
         exposed-modules: XMonad.Actions.Volume
 
-    if flag(with_hint)
+    -- At the moment of writing, hint does not yet support
+    -- GHCs newer than 7.0.4; If that changes and no new release
+    -- of xmonad-extras has been made, please contact the maintainer.
+    if flag(with_hint) && impl (ghc < 7.2)
         build-depends: hint >= 0.3 && < 0.4, network
         exposed-modules: XMonad.Actions.Eval XMonad.Prompt.Eval
 --                         XMonad.Hooks.EvalServer
 
     if flag(with_mpd)
-        build-depends: libmpd >= 0.5 && < 0.6
+        build-depends: libmpd >= 0.6 && < 0.8
         exposed-modules: XMonad.Prompt.MPD
+        other-modules: XMonad.Prompt.MPD.Compat
+
+    if flag(with_regex_posix)
+        build-depends: regex-posix
+        exposed-modules: XMonad.Util.WindowPropertiesRE
 
     if impl(ghc >= 6.12.1) && flag(with_template_haskell) && flag(with_hlist)
         build-depends: template-haskell, HList >= 0.2.3 && < 0.3
@@ -77,7 +88,7 @@ library
 
         other-modules:   XMonad.Config.Alt.Types
 
---     exposed-modules: XMonad.Hooks.PerWindowKbdLayout
+        exposed-modules: XMonad.Hooks.PerWindowKbdLayout
 
     if impl(ghc >= 6.12.1)
         ghc-options:    -fno-warn-unused-do-bind
