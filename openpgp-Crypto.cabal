@@ -1,5 +1,5 @@
 name:            openpgp-Crypto
-version:         0.3
+version:         0.5
 cabal-version:   >= 1.8
 license:         OtherLicense
 license-file:    COPYING
@@ -18,7 +18,7 @@ description:
         that currently does fingerprint generation, signature generation, and
         signature verification (for RSA keys only).
         .
-        It is indended to be used with <http://hackage.haskell.org/openpgp>
+        It is indended to be used with <http://hackage.haskell.org/package/openpgp>
         .
         It is intended that you use qualified imports with this library.
         .
@@ -44,11 +44,10 @@ library
 
         build-depends:
                 base == 4.*,
-                containers,
                 bytestring,
                 utf8-string,
                 binary,
-                openpgp,
+                openpgp <= 0.5,
                 Crypto
 
 test-suite tests
@@ -57,11 +56,10 @@ test-suite tests
 
         build-depends:
                 base == 4.*,
-                containers,
                 bytestring,
                 utf8-string,
                 binary,
-                openpgp,
+                openpgp <= 0.5,
                 Crypto,
                 HUnit,
                 QuickCheck >= 2.4.1.1,
