@@ -1,5 +1,5 @@
 Name:                invertible-syntax
-Version:             0.2
+Version:             0.2.1
 Synopsis:            Invertible syntax descriptions for both parsing and pretty printing.
 Description:         Invertible syntax descriptions as a common 
                      interface for parser combinator and pretty 
