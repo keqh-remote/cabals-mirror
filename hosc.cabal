@@ -1,35 +1,40 @@
 Name:              hosc
-Version:           0.9
+Version:           0.10
 Synopsis:          Haskell Open Sound Control
 Description:       hosc provides Sound.OpenSoundControl, a haskell
                    module implementing a subset of the Open Sound
                    Control byte protocol.
 License:           GPL
 Category:          Sound
-Copyright:         (c) Rohan Drape and others, 2006-2011
-Author:            Rohan Drape
+Copyright:         (c) Rohan Drape, Stefan Kersten and others, 2006-2011
+Author:            Rohan Drape, Stefan Kersten
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/?t=hosc
-Tested-With:       GHC == 6.12.1
+Tested-With:       GHC == 7.0.4
 Build-Type:        Simple
-Cabal-Version:     >= 1.6
+Cabal-Version:     >= 1.8
 Data-Files:        README
-                   Help/timer.hs
 
 Library
-  Build-Depends:   array,
-                   base == 4.*,
-                   bytestring,
+  Build-Depends:   base == 4.*,
                    binary,
-                   network,
+                   blaze-builder >= 0.3,
+                   bytestring,
+                   data-binary-ieee754,
+                   network >= 2.3,
                    time
   GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.OpenSoundControl
-                   Sound.OpenSoundControl.Byte
-                   Sound.OpenSoundControl.Cast
-                   Sound.OpenSoundControl.Coerce
-                   Sound.OpenSoundControl.OSC
+                   Sound.OpenSoundControl.Coding.Byte
+                   Sound.OpenSoundControl.Coding.Cast
+                   Sound.OpenSoundControl.Coding.Coerce
+                   Sound.OpenSoundControl.Coding.Decode.Base
+                   Sound.OpenSoundControl.Coding.Decode.Binary
+                   Sound.OpenSoundControl.Coding.Encode.Base
+                   Sound.OpenSoundControl.Coding.Encode.Builder
+                   Sound.OpenSoundControl.Type
+                   Sound.OpenSoundControl.Coding
                    Sound.OpenSoundControl.Time
                    Sound.OpenSoundControl.Transport
                    Sound.OpenSoundControl.Transport.TCP
