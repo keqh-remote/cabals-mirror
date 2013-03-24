@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.2
+version:	    0.1.5
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -14,48 +14,32 @@ build-type:     Simple
 cabal-version:  >=1.2
 
 library
-  build-depends: base >= 4, text, fingertree, bytestring, category-extras, parallel, containers, mtl, stm, bitset, QuickCheck
+  build-depends: base >= 4, text, fingertree, bytestring, category-extras, parallel, containers, mtl, stm, bitset, QuickCheck, array, parsec >= 3
   exposed-modules:
     Data.Group
+    Data.Group.Combinators
     Data.Group.Sugar
     Data.Monoid.Additive
     Data.Monoid.Additive.Sugar
     Data.Monoid.Applicative
     Data.Monoid.Categorical
+    Data.Monoid.Combinators
     Data.Monoid.FromString
     Data.Monoid.Generator
-    Data.Monoid.Generator.Combinators
-    Data.Monoid.IntMap
     Data.Monoid.Lexical.SourcePosition
+    Data.Monoid.Lexical.RunLengthEncoding
     Data.Monoid.Lexical.UTF8.Decoder
     Data.Monoid.Lexical.Words
-    Data.Monoid.Map
     Data.Monoid.Monad
-    Data.Monoid.Monad.Cont
-    Data.Monoid.Monad.Either
---  Data.Monoid.Monad.Error
-    Data.Monoid.Monad.Identity
-    Data.Monoid.Monad.IO
-    Data.Monoid.Monad.Reader
-    Data.Monoid.Monad.RWS.Lazy
-    Data.Monoid.Monad.RWS.Strict
-    Data.Monoid.Monad.State.Lazy
-    Data.Monoid.Monad.State.Strict
-    Data.Monoid.Monad.ST.Lazy
-    Data.Monoid.Monad.STM
-    Data.Monoid.Monad.ST.Strict
-    Data.Monoid.Monad.Writer.Lazy
-    Data.Monoid.Monad.Writer.Strict
     Data.Monoid.Multiplicative
     Data.Monoid.Multiplicative.Sugar
-    Data.Monoid.Multiplicative.Transformer
     Data.Monoid.Ord
     Data.Monoid.Reducer
     Data.Monoid.Reducer.Char
-    Data.Monoid.Reducer.Sugar
     Data.Monoid.Reducer.With
-    Data.Monoid.Unit
+    Data.Monoid.Union
     Data.Ring
+    Data.Ring.Boolean
     Data.Ring.Semi
     Data.Ring.Semi.Near
     Data.Ring.Semi.Ord
