@@ -1,5 +1,5 @@
 Name:           graph-rewriting-ski
-Version:        0.5.2
+Version:        0.5.4
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -13,32 +13,34 @@ Description:
 Category:       Graphs, Application
 Cabal-Version:  >= 1.6
 Data-Files:     examples/*.ski examples/combinator_birds/*.ski
-Build-Depends:
-	base >= 4 && < 4.3,
-	base-unicode-symbols >= 0.2 && < 0.3,
-	graph-rewriting >= 0.4.4 && < 0.5,
-	graph-rewriting-layout >= 0.4.2 && < 0.5,
-	graph-rewriting-gl >= 0.6 && < 0.7,
-	parsec >= 2.1 && < 2.2,
-	GLUT >= 2.2 && < 2.3,
-	OpenGL >= 2.4 && < 2.5
 
-Executable:     ski-inet
-Main-Is:        INet/Main.hs
-GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-imports
-Other-Modules:  Common.GL INet.GL INet.Graph INet.Rules Common.Term
-Extensions:
-	UnicodeSyntax
-	FlexibleInstances
-	FlexibleContexts
-	MultiParamTypeClasses
+Library
+  Build-Depends:
+    base >= 4 && < 4.3,
+    base-unicode-symbols >= 0.2 && < 0.3,
+    graph-rewriting >= 0.4.4 && < 0.5,
+    graph-rewriting-layout >= 0.4.2 && < 0.5,
+    graph-rewriting-gl >= 0.6 && < 0.7,
+    parsec >= 2.1 && < 2.2,
+    GLUT >= 2.2 && < 2.3,
+    OpenGL >= 2.4 && < 2.5
 
-Executable:     ski-direct
-Main-Is:        Direct/Main.hs
-GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-imports
-Other-Modules:  Common.GL Direct.GL Direct.Graph Direct.Rules Common.Term
-Extensions:
-	UnicodeSyntax
-	FlexibleInstances
-	FlexibleContexts
-	MultiParamTypeClasses
+Executable ski-inet
+  Main-Is:        INet/Main.hs
+  GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-imports
+  Other-Modules:  Common.GL INet.GL INet.Graph INet.Rules Common.Term
+  Extensions:
+    UnicodeSyntax
+    FlexibleInstances
+    FlexibleContexts
+    MultiParamTypeClasses
+
+Executable ski-direct
+  Main-Is:        Direct/Main.hs
+  GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-imports
+  Other-Modules:  Common.GL Direct.GL Direct.Graph Direct.Rules Common.Term
+  Extensions:
+    UnicodeSyntax
+    FlexibleInstances
+    FlexibleContexts
+    MultiParamTypeClasses
