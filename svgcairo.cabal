@@ -1,24 +1,24 @@
 Name:           svgcairo
-Version:        0.12.0
+Version:        0.12.1
 License:        BSD3
 License-file:   COPYING
 Copyright:      (c) 2001-2010 The Gtk2Hs Team
 Author:         Duncan Coutts
-Maintainer:     gtk2hs-users@sourceforge.net
+Maintainer:     gtk2hs-users@lists.sourceforge.net
 Build-Type:     Custom
-Cabal-Version:  >= 1.6.0
+Cabal-Version:  >= 1.8
 Stability:      provisional
-homepage:       http://www.haskell.org/gtk2hs/
+homepage:       http://projects.haskell.org/gtk2hs/
 bug-reports:    http://hackage.haskell.org/trac/gtk2hs/
 Synopsis:       Binding to the libsvg-cairo library.
 Description:    Svgcairo is used to render SVG with cairo.
 
 Category:       Graphics
-Tested-With:    GHC == 6.12.1
+Tested-With:    GHC == 6.10.4, GHC == 6.12.3, GHC == 7.0.4, GHC == 7.2.1
 x-Types-Forward: *Graphics.UI.GtkInternals
 x-Types-Destructor: objectUnrefFromMainloop
 Extra-Source-Files: svgcairo.h
-                    Gtk2HsSetup.hs
+                    SetupWrapper.hs SetupMain.hs Gtk2HsSetup.hs
 
 Data-Dir:		demo
 Data-Files:		Makefile
@@ -30,11 +30,12 @@ Source-Repository head
   location:     http://code.haskell.org/svgcairo
 
 Library
-        build-depends:  base >= 4 && < 5, array, containers, haskell98, mtl,
-                        glib  >= 0.12 && < 0.13, 
-                        cairo >= 0.12 && < 0.13
+        build-depends:  base  == 4.*, mtl,
+                        glib  == 0.12.*, 
+                        cairo == 0.12.*
 						
-        build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
+        build-tools:    gtk2hsC2hs >= 0.13.5,
+                        gtk2hsTypeGen
 		
         exposed-modules:
           Graphics.Rendering.Cairo.SVG
@@ -42,4 +43,4 @@ Library
         extensions:     ForeignFunctionInterface
 		
         x-c2hs-Header:  svgcairo.h
-        pkgconfig-depends: librsvg-2.0 >= 2.16.0, cairo-svg >= 1.6.0
+        pkgconfig-depends: librsvg-2.0 >= 2.16.0
