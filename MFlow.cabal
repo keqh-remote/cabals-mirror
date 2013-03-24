@@ -2,7 +2,7 @@ name: MFlow
 synopsis:  (Web) application server. Stateful server processes. Simple, statically correct widget combinators.
 
 
-version: 0.0.2
+version: 0.0.3
 cabal-version: -any
 build-type: Simple
 license: BSD3
