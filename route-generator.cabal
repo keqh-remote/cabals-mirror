@@ -1,5 +1,5 @@
 name:            route-generator
-version:         0.2
+version:         0.3
 cabal-version:   >= 1.8
 license:         OtherLicense
 license-file:    COPYING
@@ -29,7 +29,7 @@ description:
         > GET /post/: => showPost
         > PUT /*      => updateSomething
         .
-        > ./routeGenerator routes.txt SomeModule
+        > ./routeGenerator -r -m SomeModule routes.txt
         .
         Will generate routes that map the correct HTTP verb (which you should
         pass as a prepended "path segment" to your Dispatch) and path to
