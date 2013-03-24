@@ -1,5 +1,5 @@
 Name:                maybench
-Version:             0.2.1
+Version:             0.2.2
 License:             BSD3
 License-file:        LICENSE
 Author:              Maybench developers
@@ -53,8 +53,8 @@ Executable darcs-benchmark
  build-depends: benchpress >= 0.2.2 && < 0.2.3
  if flag(splitBase)
         build-depends: base >= 3,
-                       process, unix, directory, time, mtl, filepath
+                       process, directory, time, mtl, filepath
  else
-        build-depends: base <  3, unix, time, mtl
+        build-depends: base <  3, time, mtl
  Main-Is: DarcsBenchmark.hs
  ghc-options: -Wall
