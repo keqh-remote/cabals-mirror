@@ -1,10 +1,10 @@
 name:            hack-middleware-cleanpath
-version:         0.0.1
+version:         0.0.1.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Applies some basic redirect rules to get cleaner paths.
+synopsis:        Applies some basic redirect rules to get cleaner paths. (deprecated)
 description:     Forces request to have a trailing slash (unless there is a
                  file extension) and ensures there are no doubled slashes.
                  Takes the idea from Django.
