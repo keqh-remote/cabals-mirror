@@ -1,5 +1,5 @@
 Name: timeplot
-Version: 0.2.13
+Version: 0.2.14
 License: BSD3
 License-file: LICENSE
 Copyright: Eugene Kirpichov, 2009
@@ -35,7 +35,7 @@ executable tplot
   if flag(gtk)
     cpp-options: -DHAVE_GTK=1
   
-  Build-Depends: Chart >= 0.14, cairo, bytestring, bytestring-lexing, strptime >= 0.1.5, time, 
+  Build-Depends: Chart >= 0.14, cairo, bytestring, bytestring-lexing, strptime >= 0.1.7, time, 
                  containers, colour, data-accessor == 0.2.*, data-accessor-template >= 0.2.1.1 && < 0.3, 
                  haskell98, regex-tdfa
   Main-Is: Tools/TimePlot.hs
