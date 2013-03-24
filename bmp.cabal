@@ -1,5 +1,5 @@
 Name:                bmp
-Version:             1.0.0.1
+Version:             1.1.0.0
 License:             MIT
 License-file:        LICENSE
 Author:              Ben Lippmeier
@@ -11,10 +11,10 @@ Category:            Codec
 Homepage:            http://code.haskell.org/~benl/code/bmp-head
 Bug-reports:         bmp@ouroborus.net
 Description:
-	Read and write uncompressed 24bit BMP image files. 100% robust Haskell implementation.
+	Read and write uncompressed BMP image files. 100% robust Haskell implementation.
 
 Synopsis:
-        Read and write uncompressed 24bit BMP image files.
+        Read and write uncompressed BMP image files.
 
 Tested-with: GHC == 6.12.1
 
@@ -33,6 +33,10 @@ Library
   Other-modules:
         Codec.BMP.Base
         Codec.BMP.BitmapInfo
+        Codec.BMP.BitmapInfoV3
+        Codec.BMP.BitmapInfoV4
+        Codec.BMP.BitmapInfoV5
+        Codec.BMP.CIEXYZ
         Codec.BMP.Error
         Codec.BMP.FileHeader
         Codec.BMP.Pack
