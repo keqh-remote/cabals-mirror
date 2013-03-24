@@ -1,9 +1,9 @@
 Name: HDBC-sqlite3
-Version: 1.1.4.0
+Version: 1.1.6.0
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
-Copyright: Copyright (c) 2005-2007 John Goerzen
+Copyright: Copyright (c) 2005-2008 John Goerzen
 license-file: COPYRIGHT
 extra-source-files: COPYING, hdbc-sqlite3-helper.h
 homepage: http://software.complete.org/hdbc-sqlite3
@@ -19,7 +19,7 @@ Flag splitBase
 
 Library
   if flag(splitBase)
-    Build-Depends: base>=3, bytestring
+    Build-Depends: base>=3 && <4, bytestring
   else
     Build-Depends: base<3
   Build-Depends: mtl, HDBC>=1.1.0
