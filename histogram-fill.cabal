@@ -1,9 +1,24 @@
 Name:           histogram-fill
-Version:        0.6.1.0
+Version:        0.6.2.0
 Synopsis:       Library for histograms creation.
 Description:    
   This is library for histograms filling. Its aim to provide
   convenient way to create and fill histograms. 
+  .
+  Changes in 0.6.2.0
+  .
+  * MaybeBin added.
+  .
+  * Helper function for defining Read instances for bins are exposed. 
+  .
+  * mapData function is added.
+  .
+  * Slicing histogram do not results in crash if indices are out of
+    bounds.
+  .
+  * Eq instances for BinF and BinD are added.
+  .
+  * NFData instance for Bin2D is fixed.
   .
   Changes in 0.6.1.0
   .
@@ -13,7 +28,7 @@ Description:
   .
   * Fixed compilation with GHC 7.4
 
-Cabal-Version:  >= 1.6
+Cabal-Version:  >= 1.8
 License:        BSD3
 License-File:   LICENSE
 Author:         Alexey Khudyakov
@@ -47,9 +62,23 @@ Library
                         Data.Histogram.Bin.BinEnum
                         Data.Histogram.Bin.BinF
                         Data.Histogram.Bin.LogBinD
+                        Data.Histogram.Bin.MaybeBin
                         Data.Histogram.Bin.Bin2D
                         Data.Histogram.Bin.Extra
+                        Data.Histogram.Bin.Read
                         Data.Histogram.ST
-  Other-modules:        Data.Histogram.Parse
   Ghc-options:          -O2 -Wall
   Ghc-prof-options:     -auto-all
+
+test-suite tests
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        QC.hs
+  other-modules:  QC.Instances
+  ghc-options:    -Wall
+  build-depends:  base >=3 && < 5,
+                  histogram-fill,
+                  vector,
+                  QuickCheck >= 2,
+                  test-framework,
+                  test-framework-quickcheck2
