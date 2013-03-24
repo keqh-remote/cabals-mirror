@@ -1,5 +1,5 @@
 Name:                   webserver
-Version:                0.5.1.0
+Version:                0.6.0.0
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             John W. Lato <jwlato@gmail.com>
 License:                BSD3
@@ -25,7 +25,8 @@ library
                         Network.Web.Server.Params
                         Network.Web.Server.Range
   Build-Depends:        base >= 4 && < 5, parsec >= 3,
-                        network, bytestring, containers, old-locale,
+                        network, directory, bytestring, containers, old-locale,
+                        stm,
                         filepath, time, unix, process, c10k
 Source-Repository head
   Type:                 git
