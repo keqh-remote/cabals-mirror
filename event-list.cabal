@@ -1,10 +1,10 @@
 Name:             event-list
-Version:          0.0.10
+Version:          0.0.10.1
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
-Homepage:         http://darcs.haskell.org/event-list/
+Homepage:         http://code.haskell.org/~thielema/event-list/
 Category:         Data
 Synopsis:         Event lists with relative or absolute time stamps
 Description:
@@ -21,12 +21,12 @@ Cabal-Version:     >=1.6
 Build-Type:        Simple
 Source-Repository head
   type:     darcs
-  location: http://darcs.haskell.org/event-list/
+  location: http://code.haskell.org/~thielema/event-list/
 
 Source-Repository this
   type:     darcs
-  location: http://darcs.haskell.org/event-list/
-  tag:      0.0.10
+  location: http://code.haskell.org/~thielema/event-list/
+  tag:      0.0.10.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -36,11 +36,13 @@ Flag buildTests
   default:     False
 
 Library
-  Build-Depends: non-negative>=0.0 && <0.1
-  Build-Depends: transformers >=0.0.1 && <0.2
-  Build-Depends: utility-ht >=0.0.3 && <0.1
+  Build-Depends:
+    non-negative>=0.0 && <0.1,
+    transformers >=0.0.1 && <0.2,
+    utility-ht >=0.0.3 && <0.1,
+    QuickCheck >=1.1 && <3
   If flag(splitBase)
-    Build-Depends: base >= 2 && <5
+    Build-Depends: base >= 2 && <6
   Else
     Build-Depends:
       special-functors >= 1.0 && <1.1,
@@ -77,9 +79,11 @@ Executable       test
     Buildable:         False
 
   -- QuickCheck 1.1 has Maybe instance which we need
-  Build-Depends: QuickCheck >=1.1 && <2
+  Build-Depends:
+    QuickCheck >=1.1 && <3
   If flag(splitBase)
-    Build-Depends: random >=1.0 && <2.0
+    Build-Depends:
+      random >=1.0 && <2.0
 
   GHC-Options:      -Wall
   Hs-Source-Dirs:   src
