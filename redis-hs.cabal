@@ -1,5 +1,5 @@
 name:               redis-hs
-version:            0.0.9
+version:            0.0.10
 author:             Will Langstroth <will@langstroth.com>
 maintainer:         Will Langstroth <will@langstroth.com>
 license:            MIT
@@ -10,11 +10,12 @@ description:
   This package provides access to Redis stores using the Data.ByteString.UTF8
   ByteString, for consistent handling of UTF8 encoding. It is a developer pre-
   release, so it lacks many of the features of the existing `redis` package
-  (including a monad wrapper, state management, and custom concurrency management)
-  but for light use, this library makes using Redis very straightforward.
+  (including a monad wrapper, custom state management, and custom concurrency
+  management) but for ordinary tasks, this library makes using Redis very
+  straightforward.
   .
-  The feature set is incomplete, with full command coverage planned for version
-  0.1.0, and full documentation and test coverage for 1.0.0.
+  The feature set is incomplete, with a full command set, test coverage, and
+  documentation planned for version 0.1.
 
 category:           Database
 build-type:         Simple
