@@ -1,5 +1,5 @@
 Name:                   TernaryTrees
-Version:                0.1.3.2
+Version:                0.1.3.3
 Category:               Data Structures
 Synopsis:               Efficient pure ternary tree Sets and Maps
 Description:            Ternary trees are an efficient structure often used for storing
@@ -20,7 +20,7 @@ Description:            Ternary trees are an efficient structure often used for 
                         .
                         New in this version:
                         .
-                        * (Exported the Internal modules because apparently you need to)
+                        * (Added the empty function to TernaryMap's export list)
                         .
                         * Moved datatype definitions into .Internal modules so that
                           testing can be performed, without needing to export their definitions in the
