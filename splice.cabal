@@ -1,5 +1,5 @@
 name:          splice
-version:       0.3
+version:       0.3.1
 stability:     stable on Linux, experimental on other operating systems
 synopsis:      Socket to Socket Data Splicing (supports all operating systems)
 description:   A library that implements most efficient socket to socket
@@ -24,7 +24,7 @@ license:       BSD3
 license-file:  LICENSE
 author:        Cetin Sert <fusion@corsis.eu>
 maintainer:    Cetin Sert <fusion@corsis.eu>
-homepage:      http://fusion.corsis.eu
+homepage:      https://github.com/corsis/splice
 category:      Network
 build-type:    Simple
 cabal-version: >=1.2
@@ -34,7 +34,7 @@ tested-with:   GHC >= 7.0
 
 flag portable
     description: explicitly enable portable splice implemented in Haskell
-    default    : True
+    default    : False
 
 
 library
