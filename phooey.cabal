@@ -1,5 +1,5 @@
 Name:                phooey
-Version:             1.2
+Version:             1.4
 Synopsis: 	     Functional user interfaces
 Category:            User Interfaces
 Description:
@@ -33,17 +33,13 @@ License:             BSD3
 Stability:           provisional
 Hs-Source-Dirs:      src
 Extensions:          CPP, Arrows
-Build-Depends:       base, mtl, arrows, TypeCompose>=0.1, wx, wxcore
+Build-Depends:       base, array, mtl, wx, wxcore, TypeCompose>=0.2, DataDriven
 Exposed-Modules:     
+                     Graphics.UI.Phooey.WinEvents
                      Graphics.UI.Phooey.Imperative
-                     Graphics.UI.Phooey.TagT
-                     Graphics.UI.Phooey.LayoutT
                      Graphics.UI.Phooey.Monad
                      Graphics.UI.Phooey.Applicative
-                     Graphics.UI.Phooey.Arrow
 Extra-Source-Files:
-                     Examples.Imperative
                      Examples.Monad
                      Examples.Applicative
-                     Examples.Arrow
 ghc-options:         -O -Wall
