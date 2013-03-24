@@ -1,5 +1,5 @@
 Name:           hCsound
-Version:        0.3.0
+Version:        0.3.1
 Cabal-Version:  >= 1.2
 Description:    Haskell interface to Csound API.
 License:        LGPL
