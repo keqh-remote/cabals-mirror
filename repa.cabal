@@ -1,5 +1,5 @@
 Name:                repa
-Version:             3.2.2.3
+Version:             3.2.2.201204.1
 License:             BSD3
 License-file:        LICENSE
 Author:              The DPH Team
@@ -11,6 +11,9 @@ Category:            Data Structures
 Homepage:            http://repa.ouroborus.net
 Bug-reports:         repa@ouroborus.net
 Description:
+        Legacy version for Haskell Platform 2012.04. You will get better performance
+        if you upgrade to the most recent version of GHC.
+
         Repa provides high performance, regular, multi-dimensional, shape polymorphic
         parallel arrays. All numeric data is stored unboxed. Functions written with
         the Repa combinators are automatically parallel provided you supply
@@ -21,12 +24,12 @@ Synopsis:
 
 Library
   Build-Depends: 
-        base                 == 4.6.*,
-        ghc-prim             == 0.3.*,
+        base                 == 4.5.*,
+        ghc-prim             == 0.2.*,
         vector               == 0.10.*,
         bytestring           == 0.10.*,
-        template-haskell     == 2.8.*,
-        QuickCheck           >= 2.3 && < 2.6
+        template-haskell     == 2.7.*,
+        QuickCheck           == 2.4.*
 
   ghc-options:
         -Wall -fno-warn-missing-signatures
