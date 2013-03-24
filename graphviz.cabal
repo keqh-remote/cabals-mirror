@@ -1,5 +1,5 @@
 Name:               graphviz
-Version:            2999.15.0.1
+Version:            2999.16.0.0
 Stability:          Beta
 Synopsis:           Bindings to Graphviz for graph visualisation.
 Description: {
@@ -58,6 +58,7 @@ Library {
                            containers,
                            process,
                            directory,
+                           temporary >=1.1 && <1.2,
                            fgl == 5.4.*,
                            filepath,
                            polyparse >= 1.7 && < 1.9,
@@ -65,7 +66,7 @@ Library {
                            colour == 2.3.*,
                            transformers >= 0.2 && < 0.4,
                            text,
-                           wl-pprint-text >= 1.0.0.0 && < 1.2.0.0,
+                           wl-pprint-text >= 1.1.0.0 && < 1.2.0.0,
                            dlist == 0.5.*
 
         Exposed-Modules:   Data.GraphViz
@@ -117,6 +118,7 @@ Test-Suite graphviz-testsuite {
                            containers,
                            process,
                            directory,
+                           temporary,
                            fgl,
                            filepath,
                            polyparse,
