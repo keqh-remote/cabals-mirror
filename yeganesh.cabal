@@ -1,5 +1,5 @@
 name:               yeganesh
-version:            2.1
+version:            2.2
 cabal-version:      >=1.2
 build-type:         Simple
 license:            BSD3
@@ -15,11 +15,12 @@ category:           Text
 
 Executable yeganesh
     main-is:        yeganesh.hs
-    build-depends:  base >= 3.0,
+    build-depends:  base >= 3 && <= 4,
                     containers >= 0.1,
                     directory >= 1.0,
                     filepath >= 1.1,
                     process >= 1.0,
                     strict >= 0.3,
-                    time >= 1.1
+                    time >= 1.1,
+                    xdg-basedir >= 0.2
     ghc-options:    -Wall
