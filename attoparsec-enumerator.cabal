@@ -1,5 +1,5 @@
 name: attoparsec-enumerator
-version: 0.1.0.2
+version: 0.1.0.3
 synopsis: Convert an Attoparsec parser into an iteratee
 license: MIT
 license-file: license.txt
@@ -8,7 +8,7 @@ maintainer: jmillikin@gmail.com
 copyright: Copyright (c) John Millikin 2010
 build-type: Simple
 cabal-version: >=1.6
-category: Text, Parsing
+category: Text, Parsing, Enumerator
 stability: experimental
 bug-reports: mailto:jmillikin@gmail.com
 tested-with: GHC==6.12.1
