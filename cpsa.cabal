@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.2.5
+Version:		2.2.6
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.6
 License:		BSD3
@@ -50,10 +50,10 @@ Data-Dir:	    	doc
 Extra-Source-Files:
   Makefile ChangeLog README NEWS ghci cpsatst setup.bat doc/README
   doc/Makefile doc/macros.tex doc/cpsaprimer.tex doc/bcasyntax.tex
-  doc/cpsatheory.tex doc/cpsaspec.tex doc/cpsadesign.tex
-  doc/cpsaoverview.tex doc/cpsadiagrams.mp doc/strands.mp
-  doc/cmstrands.mp doc/carriers.mp doc/termtree.mp doc/cpsa.bib
-  doc/SDAG.lhs doc/cpsatheory.pdf doc/cpsaspec.pdf doc/cpsadesign.pdf
+  doc/cpsaspec.tex doc/cpsadesign.tex doc/cpsaoverview.tex
+  doc/cpsadiagrams.mp doc/strands.mp doc/cmstrands.mp doc/carriers.mp
+  doc/termtree.mp doc/cpsa.bib doc/SDAG.lhs doc/cpsaspec.pdf
+  doc/cpsadesign.pdf
   src/index.html src/cpsacgi src/cpsacgi.py src/cpsa2svg src/cpsa.el
   src/httpd_allow_execmem.te src/cpsaops.scm src/preskel src/cpsa.pl
   src/pp.pl src/sexpr.pl src/prover9.pl src/zoom.js src/js2hs
@@ -67,6 +67,7 @@ Extra-Source-Files:
   tst/denning-sacco.tst tst/deorig_contract.scm
   tst/deorig_contract.tst tst/dhke.scm tst/dhke.tst
   tst/deorig_simple.scm tst/deorig_simple.tst tst/ds-short.lisp
+  tst/deorig_mesg.scm tst/deorig_mesg.tst
   tst/dy.lsp tst/dy.tst tst/encsig.scm tst/encsig.tst
   tst/epmo_acctnum.scm tst/epmo_acctnum.tst tst/epmo.scm tst/epmo.tst
   tst/ffgg.scm tst/ffgg.tst tst/fragile_pruning.scm
@@ -100,7 +101,8 @@ Extra-Source-Files:
   tst/epmo-hash.scm tst/epmo-hash.tst tst/hashtest-key-hash.scm
   tst/hashtest-key-hash.tst tst/hashtest.scm tst/hashtest.tst
   tst/wang-key-hash.scm tst/wang-key-hash.tst tst/wang-hash.scm
-  tst/wang-hash.tst
+  tst/wang-hash.tst tst/mass.lsp tst/mass.tst tst/mass2.lsp tst/mass2.tst
+  tst/DH_hack.scm tst/DH_hack.tst
 
 -- Algebra implementations must import CPSA.Lib.CPSA.
 -- Tools may additionally import CPSA.Lib.Entry.
