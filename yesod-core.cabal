@@ -1,5 +1,5 @@
 name:            yesod-core
-version:         0.9.3.6
+version:         0.9.4
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -52,10 +52,11 @@ library
                    , text                  >= 0.7      && < 0.12
                    , template-haskell
                    , path-pieces           >= 0.0      && < 0.1
-                   , hamlet                >= 0.10     && < 0.11
+                   , hamlet                >= 0.10.6   && < 0.11
                    , shakespeare           >= 0.10     && < 0.11
-                   , shakespeare-js        >= 0.10     && < 0.11
-                   , shakespeare-css       >= 0.10     && < 0.11
+                   , shakespeare-js        >= 0.10.4   && < 0.11
+                   , shakespeare-css       >= 0.10.5   && < 0.11
+                   , shakespeare-i18n      >= 0.0      && < 0.1
                    , blaze-builder         >= 0.2.1.4  && < 0.4
                    , transformers          >= 0.2.2    && < 0.3
                    , clientsession         >= 0.7.3.1  && < 0.8
@@ -75,10 +76,10 @@ library
                    , directory             >= 1        && < 1.2
                    , data-object           >= 0.3      && < 0.4
                    , data-object-yaml      >= 0.3      && < 0.4
-                   -- for logger. Probably logger should be a separate package
-                   , strict-concurrency    >= 0.2.4    && < 0.2.5
                    , vector                >= 0.9      && < 0.10
                    , aeson                 >= 0.3
+                   , fast-logger           >= 0.0.1
+                   , wai-logger            >= 0.0.1
 
     exposed-modules: Yesod.Content
                      Yesod.Core
