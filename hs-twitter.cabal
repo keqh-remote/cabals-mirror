@@ -1,5 +1,5 @@
 name: hs-twitter
-version: 0.2.4
+version: 0.2.5
 synopsis: Haskell binding to the Twitter API
 description:
    The hs-twitter API binding lets you access twitter.com's
@@ -16,7 +16,7 @@ author:   Sigbjorn Finne
 maintainer: Sigbjorn Finne <sof@forkio.com>
 cabal-version:  >= 1.2
 build-type: Simple
-extra-source-files: README
+extra-source-files: README CHANGES
 
 library
  Exposed-modules: Web.Twitter,
