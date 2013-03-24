@@ -1,13 +1,13 @@
 Name:                filestore
-Version:             0.3.3.1
+Version:             0.3.4
 Cabal-version:       >= 1.2
 Build-type:          Custom
 Tested-with:         GHC==6.10.1
 Synopsis:            Interface for versioning file stores.
 Description:         The filestore library provides an abstract interface for a versioning
                      file store, and modules that instantiate this interface.  Currently
-                     only Git & Darcs modules are provided, but other VCSs or databases could be
-                     added.
+                     Git, Darcs, and Mercurial modules are provided, and other VCSs
+                     or databases could be added.
 Category:            Data
 Stability:           Experimental
 License:             BSD3
@@ -32,9 +32,9 @@ Flag maxcount
 
 Library
     Build-depends:       base >= 4 && < 5, bytestring, utf8-string, filepath, directory, datetime,
-                         parsec >= 2 && < 3, process, time, datetime, regex-posix, xml, split, Diff
+                         parsec >= 2 && < 3, process, time, datetime, regex-posix, xml, split, Diff, old-locale
 
-    Exposed-modules:     Data.FileStore, Data.FileStore.Types, Data.FileStore.Git, Data.FileStore.Darcs,
+    Exposed-modules:     Data.FileStore, Data.FileStore.Types, Data.FileStore.Git, Data.FileStore.Darcs, Data.FileStore.Mercurial,
                          -- Data.FileStore.Sqlite3,
                          Data.FileStore.Utils, Data.FileStore.Generic
     Other-modules:       Paths_filestore, Data.FileStore.DarcsXml
