@@ -1,16 +1,13 @@
 Name:               alsa-midi
-Version:            0.3
+Version:            0.3.1
 License:            GPL
+License-File:       LICENSE
 Author:             Soenke Hahn
 Maintainer:         Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:           http://open-projects.net/~shahn/index.php?seite=code
 Repository:         http://darcs.haskell.org/alsa-midi/
 Category:           Sound
-Tested-With:        GHC==6.4.1
 Build-Type:         Simple
-Build-Depends:      base, midi==0.0.4, event-list==0.0.5, non-negative==0.0.1
--- mtl==1.0 only needed in PlayMIDI for Monad instance of Either
--- jack for SimpleSynth example
 Synopsis:           Bindings for the ALSA sequencer API (MIDI stuff)
 Description:
   Bindings for the ALSA sequencer API (MIDI stuff)
@@ -18,40 +15,54 @@ Description:
       <http://code.haskell.org/alsa/>
   which aims at a more complete interface to ALSA
   we will no longer maintain this one.
-Hs-Source-Dirs:     src
-Exposed-Modules:
-    Sound.ALSA.Sequencer
--- Other-Modules:
-    Sound.ALSA.SequencerFFI
-GHC-Options:        -Wall -threaded
-extensions:         ForeignFunctionInterface
-license-file:       LICENSE
-extra-libraries:    asound
-includes:           alsa/asoundlib.h
-include-dirs:       /usr/local/include, /usr/include
-extra-source-files: README
-    , examples/SimpleSynth.hs
+Tested-With:        GHC==6.4.1, GHC==6.8.2
+Cabal-Version:      >=1.2
+Build-Type:         Simple
+Data-Files:
+   README, examples/SimpleSynth.hs
 
-Executable: playnote
-Hs-source-dirs:     src, .
-GHC-Options:        -Wall -threaded
-Extensions:         ForeignFunctionInterface
-Extra-Libraries:    asound
-Main-Is: examples/PlayNote.hs
 
-Executable: playmidi
-Hs-source-dirs:     src, .
-GHC-Options:        -Wall -threaded
-Extensions:         ForeignFunctionInterface
-Extra-Libraries:    asound
-Main-Is: examples/PlayMIDI.hs
+Flag splitBase
+  description: Choose the new smaller, split-up base package.
 
-Executable: mididump
-Hs-source-dirs:     src, .
-GHC-Options:        -Wall -threaded
-Extensions:         ForeignFunctionInterface
-Extra-Libraries:    asound
-Main-Is: examples/MidiDump.hs
+Library
+  If flag(splitBase)
+    Build-Depends: base >= 2, midi==0.0.5, event-list==0.0.6, non-negative==0.0.1, array
+  Else
+    Build-Depends: base >= 1.0 && < 2, midi==0.0.5, event-list==0.0.6, non-negative==0.0.1
+    -- jack for SimpleSynth example
+
+  Hs-Source-Dirs:     src
+  Exposed-Modules:
+      Sound.ALSA.Sequencer
+  -- Other-Modules:
+      Sound.ALSA.SequencerFFI
+  GHC-Options:        -Wall -threaded
+  extensions:         ForeignFunctionInterface
+  extra-libraries:    asound
+  includes:           alsa/asoundlib.h
+  include-dirs:       /usr/local/include, /usr/include
+
+Executable playnote
+  Hs-source-dirs:     src, .
+  GHC-Options:        -Wall -threaded
+  Extensions:         ForeignFunctionInterface
+  Extra-Libraries:    asound
+  Main-Is: examples/PlayNote.hs
+
+Executable playmidi
+  Hs-source-dirs:     src, .
+  GHC-Options:        -Wall -threaded
+  Extensions:         ForeignFunctionInterface
+  Extra-Libraries:    asound
+  Main-Is: examples/PlayMIDI.hs
+
+Executable mididump
+  Hs-source-dirs:     src, .
+  GHC-Options:        -Wall -threaded
+  Extensions:         ForeignFunctionInterface
+  Extra-Libraries:    asound
+  Main-Is: examples/MidiDump.hs
 
 -- needs Jack package
 -- Executable: simplesynth
