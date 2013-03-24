@@ -1,5 +1,5 @@
 Name:                thrist
-Version:             0.1.2
+Version:             0.2
 Synopsis:            Type-threaded list
 
 Description:
@@ -15,6 +15,9 @@ Description:
     suitable semantics, function composition (.)
     can be embedded.
     .
+    Sub-modules demonstrate the power of the thrist
+    idea by emulating some familiar data structures.
+    .
     For further ideas, please consult the companion
     (draft) paper \"Thrists: Dominoes of Data\" at
     <http://www.opendylan.org/~gabor/Thrist-draft-2008-07-18.pdf>
@@ -22,18 +25,19 @@ Description:
 Category:            Data Structures
 License:             BSD3
 License-File:        LICENSE
-Copyright:           (c) 2008-2009 Gabor Greif
+Copyright:           (c) 2008-2010 Gabor Greif and Brandon Simmons
 
-Author:              Gabor Greif
-Maintainer:          ggreif@gmail.com
+Author:              Gabor Greif, Brandon Simmons
+Maintainer:          ggreif@gmail.com, brandon.m.simmons@gmail.com
 Homepage:            http://heisenbug.blogspot.com/search/label/thrist
 
 Stability:           experimental
-Build-Depends:       base >= 4 && < 5
-Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances, TypeOperators, FlexibleContexts
-
-Exposed-Modules:     Data.Thrist
-Ghc-Options:         -Wall
 Cabal-Version:       >= 1.2.3
-
+extra-source-files:  examples.hs
 Build-Type:          Simple
+
+library
+    Build-Depends:       base >= 4 && < 5
+    Exposed-Modules:     Data.Thrist Data.Thrist.List Data.Thrist.Monad
+    Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances, TypeOperators, FlexibleContexts
+    Ghc-Options:         -Wall
