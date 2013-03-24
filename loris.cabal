@@ -1,5 +1,5 @@
 Name:           loris
-Version:        0.1
+Version:        0.3
 Cabal-Version:  >= 1.6
 Description:    Haskell interface to the Loris toolkit,
                 'http://sourceforge.net/projects/loris/'
@@ -17,9 +17,12 @@ extra-source-files:
 
 Library
  Hs-Source-Dirs:        src
- build-depends:         base         >=3 && < 5
+ build-depends:         base         >= 3   && < 5
+                       ,vector       >= 0.6 && < 0.10
  build-tools:           c2hs
  exposed-modules:       Sound.Loris.Foreign
+                        Sound.Loris.ForeignPtr
+                        Sound.Loris
  includes:              loris.h
  extra-libraries:       loris
 
