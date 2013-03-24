@@ -1,5 +1,5 @@
 Name:                vty-ui
-Version:             1.3
+Version:             1.3.1
 Synopsis:            An interactive terminal user interface library
                      for Vty
 Description:         An extensible library of user interface widgets
@@ -63,7 +63,6 @@ Data-Files:
     doc/vty-ui-users-manual.tex
     doc/title_page.tex
     doc/toc.tex
-    doc/minted.sty
 
 Source-Repository head
   type:     git
