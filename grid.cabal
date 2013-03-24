@@ -1,5 +1,5 @@
 name:           grid
-version:        3.0.1
+version:        3.1
 synopsis:       Tools for working with regular grids (graphs, lattices).
 description:    Provides tools for working with regular arrangements
                 of tiles, such as might be used in a board game or some
@@ -26,7 +26,8 @@ library
   hs-source-dirs:  src
   build-depends:   base ==4.*,
                    base-unicode-symbols ==0.2.*,
-                   containers ==0.4.2.*
+                   cereal ==0.3.*,
+                   containers ==0.4.2.* || ==0.5.*
   ghc-options:     -Wall
   exposed-modules: Math.Geometry.Grid,
                    Math.Geometry.GridInternal,
@@ -36,9 +37,9 @@ test-suite grid-tests
   type:            exitcode-stdio-1.0
   build-depends:   base ==4.*,
                    exact-combinatorics ==0.2.*,
-                   test-framework-quickcheck2 == 0.3.*,
-                   QuickCheck == 2.4.*,
-                   test-framework == 0.*,
+                   test-framework-quickcheck2 ==0.3.*,
+                   QuickCheck ==2.4.* || ==2.5.*,
+                   test-framework ==0.8.*,
                    grid,
                    base-unicode-symbols ==0.2.*
   hs-source-dirs:  test
