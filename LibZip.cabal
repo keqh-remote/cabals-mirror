@@ -1,5 +1,5 @@
 Name:          LibZip
-Version:       0.1.0
+Version:       0.2.0
 License:       BSD3
 License-File:  LICENSE
 Author:        Sergey Astanin
@@ -23,25 +23,19 @@ Extra-Source-Files:
   , Tests/MonadicTests.hs, Tests/test.zip
 
 Library
-  Extensions:
-      ForeignFunctionInterface
   Exposed-Modules:
       Codec.Archive.LibZip
-      Codec.Archive.LibZip.LowLevel
       Codec.Archive.LibZip.Types
       Codec.Archive.LibZip.LegacyZeroZero
   Other-Modules:
       Codec.Archive.LibZip.Errors
   Build-Depends:
       base >= 4.0 && < 4.3
-    , bindings-DSL >= 1.0 && < 1.1
+    , bindings-libzip >= 0.1 && < 0.2
     , bytestring
     , filepath
     , time
     , mtl
-  PkgConfig-Depends:
-      libzip >= 0.9
   GHC-Options:
       -Wall
-
 
