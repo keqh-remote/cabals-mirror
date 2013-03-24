@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                Checked
-version:             0.0.0.1
+version:             0.0.0.2
 synopsis:            Inbuilt checking for ultra reliable computing
 -- description:         
 license:             BSD3
@@ -17,5 +17,5 @@ cabal-version:       >=1.8
 library
   exposed-modules:   Data.Checked
   -- other-modules:       
-  build-depends:       base ==4.5.*,
-                       text >=0.11.2.0
+  build-depends:       base >= 4.5.0.0 && < 4.7.0.0,
+                       text >= 0.11.2.0 && < 0.12.0.0
