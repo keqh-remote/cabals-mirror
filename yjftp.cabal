@@ -1,5 +1,5 @@
 Name:		yjftp
-Version:	0.3.3
+Version:	0.3.4
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -22,10 +22,11 @@ Description:	Just CUI FTP client.
 		And you can put or get immediately by doing following.
 		.
 		> yjftp put filepath srvr.address/directorypath [user_name] [-p password]
+		.
 		> yjftp get srvr.address/filepath [user_name] [-p password]
 Stability:	experimental
 Homepage:	http://homepage3.nifty.com/salamander/second/projects/yjftp/index.xhtml
-Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/yjftp-0.3.2.tar.gz
+Package-Url:	http://homepage3.nifty.com/salamander/second/portage/distfiles/yjftp-0.3.4.tar.gz
 Cabal-Version:	>= 1.2
 Build-Type:	Simple
 Tested-With:	GHC
@@ -35,7 +36,7 @@ Extra-Tmp-Files:
 
 Library
   GHC-Options:		-Wall
-  Build-Depends:	base, unix, directory, process, ftphs, readline
+  Build-Depends:	base >= 4 && <= 4.1.0.0, unix, directory, process, ftphs, readline
   Exposed-Modules:	Network.Yjftp
   Other-Modules:	Network.CommandList
 
