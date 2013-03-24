@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.2
 Name: hexpat-pickle
-Version: 0.3
+Version: 0.3.1
 Synopsis: XML picklers based on hexpat, source-code-similar to those of the HXT package
 Description:
   A library of combinators that allows Haskell data structures to be pickled
@@ -35,7 +35,7 @@ Stability: beta
 
 Library
   Build-Depends:
-    base,
+    base >= 3 && < 5,
     hexpat >= 0.5,
     utf8-string >= 0.3.3,
     bytestring >= 0.9,
