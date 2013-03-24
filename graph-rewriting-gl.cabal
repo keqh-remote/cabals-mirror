@@ -1,5 +1,5 @@
 Name:           graph-rewriting-gl
-Version:        0.6.6
+Version:        0.6.7
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -13,7 +13,6 @@ Description:
   Once a graph rewriting system has been specified using the @graph-rewriting@ library this package can be used to create an application that allows to experiment with this system by interactively applying the rewrite rules. The usage of the interface is the same for all applications. In the center you will see the graph. It might be moving around which is due the force-directed layouting. On the top-left corner you will find a menu with the individual rewriting rules of the rewriting system. The controls are described in the "GraphRewriting.GL.UI" module.
 Category:       Graphs, Graphics
 Cabal-Version:  >= 1.6
-Data-Files:  font/DejaVuSansMonoLicense.txt font/DejaVuSansMono.ttf
 
 Library
   Build-Depends:
@@ -24,8 +23,7 @@ Library
     GLUT >= 2.2 && < 2.3,
     OpenGL >= 2.4 && < 2.5,
     containers >= 0.3 && < 0.5,
-    AC-Vector >= 2.3 && < 2.4,
-    FTGL >= 1.333 && < 1.334
+    AC-Vector >= 2.3 && < 2.4
   Exposed-Modules:
     GraphRewriting.GL.UI
     GraphRewriting.GL.Render
@@ -34,7 +32,6 @@ Library
     GraphRewriting.GL.Menu
     GraphRewriting.GL.Canvas
     GraphRewriting.GL.HyperEdge
-    Paths_graph_rewriting_gl
   Extensions:
     UnicodeSyntax
     FlexibleInstances
