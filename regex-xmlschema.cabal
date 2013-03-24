@@ -1,5 +1,5 @@
 name:          regex-xmlschema
-version:       0.1.1
+version:       0.1.2
 license:       BSD3
 license-file:  LICENSE
 maintainer:    Uwe Schmidt <uwe@fh-wedel.de>
@@ -16,6 +16,8 @@ tested-with:   GHC
 extra-source-files:
   examples/test/Main.hs
   examples/test/.ghci
+  examples/colorizeProgs/ColorizeSourceCode.hs
+  examples/colorizeProgs/Makefile
   src/Text/Regex/XMLSchema/String/Unicode/Makefile
   src/Text/Regex/XMLSchema/String/Unicode/CharProps.hs
   src/Text/Regex/XMLSchema/String/Unicode/GenBlocks.hs
