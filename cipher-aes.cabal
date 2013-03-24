@@ -1,5 +1,5 @@
 Name:                cipher-aes
-Version:             0.1.4
+Version:             0.1.5
 Description:
     Fast AES cipher implementation with advanced mode of operations.
     .
@@ -50,8 +50,8 @@ Test-Suite test-cipher-aes
                    , cipher-aes
                    , bytestring
                    , QuickCheck >= 2
-                   , test-framework >= 0.3.3 && < 0.7
-                   , test-framework-quickcheck2 >= 0.2.9 && < 0.3
+                   , test-framework >= 0.3.3
+                   , test-framework-quickcheck2 >= 0.2.9
 
 Benchmark bench-cipher-aes
   hs-source-dirs:    Benchmarks
