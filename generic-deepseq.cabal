@@ -1,5 +1,5 @@
 Name:		generic-deepseq
-Version:	1.0.0.0
+Version:	2.0.0.0
 License-File:	LICENSE
 License:	BSD3
 Author:		Maxime Henrion
@@ -12,8 +12,9 @@ Build-Type:	Simple
 Cabal-Version:	>= 1.6
 Tested-with:	GHC ==7.4.1
 Description:
-  This package provides a 'deepseq' function analogous to 'seq', except that
-  it traverses data structures deeply, and not just up to head normal form.
+  This package provides a 'deepseq' function analogous to 'seq', except that it
+  traverses the entire data structure, evaluating it fully, and not just up to
+  head normal form.
   .
   Using lists as an example:
   .
@@ -33,6 +34,12 @@ Description:
   > data MyType = MyType String Int (Maybe Double)
   >   deriving Generic
   > instance DeepSeq MyType
+  .
+  Changes in version 2.0.0.0:
+  .
+  * Vastly improved performance. As a consequence of these changes, the member function of the DeepSeq class is now 'rnf', instead of 'deepseq'.
+  .
+  * New instances for functions, Ratio and Complex types.
 
 Source-Repository head
   Type:			mercurial
@@ -41,4 +48,5 @@ Source-Repository head
 Library
   Build-Depends:	base >= 3 && < 5, ghc-prim >= 0.2
   Exposed-Modules:	Control.DeepSeq
+  Extensions:		FlexibleContexts, TypeOperators
   GHC-Options:		-Wall -O2
