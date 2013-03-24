@@ -1,6 +1,6 @@
 cabal-version:       >=1.10
 name:                copilot-core
-version:             0.2.1
+version:             0.2.2
 synopsis:            An intermediate representation for Copilot.
 description:         Intermediate representation for Copilot.
                      Strictly follows Haskell 2010 except for universal
@@ -62,7 +62,8 @@ library
     Copilot.Core.Type
     Copilot.Core.Type.Dynamic
     Copilot.Core.Type.Equality
+    Copilot.Core.Type.Eq
     Copilot.Core.Type.Show
+    Copilot.Core.Type.Read
     Copilot.Core.Type.Uninitialized
     Copilot.Core.PrettyPrint
-    Copilot.Core.Version
