@@ -1,5 +1,5 @@
 name:               json
-version:            0.6
+version:            0.7
 synopsis:           Support for serialising Haskell to and from JSON
 description:
     JSON (JavaScript Object Notation) is a lightweight data-interchange
@@ -97,7 +97,7 @@ library
     else
       build-depends:    base >= 3
 
-    build-depends:   array, containers, bytestring, mtl
+    build-depends:   array, containers, bytestring, mtl, text
 
     if flag(parsec)
       build-depends:    parsec
