@@ -1,13 +1,15 @@
 Name:                 yuuko
-Version:              2009.10.23
+Version:              2009.10.23.1
 Build-type:           Simple
 Synopsis:             A transcendental HTML parser gently wrapping the HXT library
 Description:
 
     Parse without thinking ...
-    
-    yuuko "//body/text()" "<html><body>hi</body></html>"
-    
+    .
+
+    yuuko "//body" "<html><body>hi</body></html>"
+    .
+
     > ["hi"]
 
 License:              BSD3
