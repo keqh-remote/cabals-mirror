@@ -1,5 +1,5 @@
 name:           mwc-random
-version:        0.12.0.0
+version:        0.12.0.1
 synopsis:       Fast, high quality pseudo random number generation
 description:
   This package contains code for generating high quality random
@@ -61,12 +61,12 @@ test-suite tests
   main-is:        tests.hs
   other-modules:  KS
                   QC
-                  Uniform
 
   ghc-options:
     -Wall -threaded -rtsopts
 
   build-depends:
+    vector >= 0.7,
     HUnit,
     QuickCheck,
     base,
