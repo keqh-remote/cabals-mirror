@@ -1,5 +1,5 @@
 Name:                 hack-contrib
-Version:              2009.11.1
+Version:              2009.12.20
 Build-type:           Simple
 Synopsis:             Hack contrib
 Description:          Common middlewares and utilities that helps working with Hack
@@ -29,7 +29,7 @@ library
                   , data-default >= 0.2
                   , time
                   , pureMD5
-                  , mps >= 2009.9.18
+                  , mps >= 2009.11.7
                   , hack >= 2009.10.30
                   , utf8-string
                   , ansi-wl-pprint
