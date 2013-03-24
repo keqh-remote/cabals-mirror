@@ -1,13 +1,13 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               cmdargs
-version:            0.9.3
+version:            0.9.4
 license:            BSD3
 license-file:       LICENSE
 category:           Console
 author:             Neil Mitchell <ndmitchell@gmail.com>
 maintainer:         Neil Mitchell <ndmitchell@gmail.com>
-copyright:          Neil Mitchell 2009-2011
+copyright:          Neil Mitchell 2009-2012
 synopsis:           Command line argument processing
 description:
     This library provides an easy way to define command line parsers. Most users
@@ -49,12 +49,15 @@ library
     build-depends:
         base == 4.*,
         filepath,
-        transformers == 0.2.*,
+        transformers >= 0.2 && < 0.4,
         process >= 1.0 && < 1.2
 
     if flag(quotation)
         build-depends: template-haskell
         exposed-modules: System.Console.CmdArgs.Quote
+
+    -- See bug #539 for why this magic is required
+    extensions: TemplateHaskell
 
     exposed-modules:
         System.Console.CmdArgs
