@@ -1,5 +1,5 @@
 name:         language-dot
-version:      0.0.7
+version:      0.0.8
 category:     Language
 synopsis:     A library for the analysis and creation of Graphviz DOT files
 description:  A library for the analysis and creation of Graphviz DOT files.
@@ -32,7 +32,7 @@ library
   build-depends:
     base    == 4.*,
     mtl     == 1.* || == 2.*,
-    parsec3 == 1.*,
+    parsec  == 3.*,
     pretty  == 1.*
 
   ghc-options: -Wall
