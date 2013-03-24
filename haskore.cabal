@@ -1,5 +1,5 @@
 Name:           haskore
-Version:        0.1
+Version:        0.1.0.1
 License:        GPL
 License-File:   LICENSE
 Author:         Paul Hudak <paul.hudak@yale.edu>, Henning Thielemann
@@ -11,7 +11,7 @@ Stability:      Experimental
 Description:
   Compose music using programming features.
   Output in MIDI, CSound, SuperCollider or as an audio signal.
-Tested-With:       GHC==6.4.1, GHC==6.8.2, Hugs==2006.9
+Tested-With:       GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, Hugs==2006.9
 Cabal-Version:     >=1.6
 Build-Type:        Simple
 
@@ -26,12 +26,12 @@ Extra-Source-Files:
 
 Source-Repository head
   type:     darcs
-  location: http://darcs.haskell.org/haskore/
+  location: http://code.haskell.org/haskore/revised/core
 
 Source-Repository this
   type:     darcs
-  location: http://darcs.haskell.org/haskore/
-  tag:      0.1
+  location: http://code.haskell.org/haskore/revised/core
+  tag:      0.1.0.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -55,7 +55,7 @@ Library
 
   If flag(splitBase)
     Build-Depends:
-      base >=3,
+      base >=3 && <6,
       array >=0.1 && <1.0,
       containers >=0.1 && <1.0,
       random >=1.0 && <2.0,
@@ -153,6 +153,7 @@ Library
     Haskore.General.LoopTreeTaggedGen,
     Haskore.General.GraphRecursiveGen,
     Haskore.General.GraphTaggedGen,
+    Haskore.General.LetRec,
     Haskore.General.Map,
     Haskore.General.TagDictionary,
     Haskore.General.Utility
