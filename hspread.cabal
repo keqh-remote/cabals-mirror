@@ -1,5 +1,5 @@
 name:		hspread
-version: 	0.3
+version: 	0.3.1
 license:	BSD3
 license-file:	LICENSE
 author:		Andrea Vezzosi
@@ -27,7 +27,7 @@ library
                         Spread.Constants
 
   if flag(small_base)
-        build-depends: base >= 3, containers, bytestring
+        build-depends: base >= 3 && < 4, containers, bytestring
   else
         build-depends: base < 3
   build-depends: network, binary >= 0.3
