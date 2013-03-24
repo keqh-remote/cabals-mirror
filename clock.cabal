@@ -1,5 +1,5 @@
 Name:               clock
-Version:            0.1
+Version:            0.1.1
 License:            BSD3
 License-file:       COPYING
 Copyright:          (c) 2009 Cetin Sert
@@ -7,11 +7,12 @@ Author:             Cetin Sert <cetin@sertcom.de>
 Maintainer:         Cetin Sert <cetin@sertcom.de>
 Homepage:           http://sert.homedns.org/hs/clock/
 Category:           System
-Synopsis:           bindings to time.h: clock_gettime and clock_getres
-Description:        bindings to time.h: clock_gettime and clock_getres
+Synopsis:           low-level binding to time.h: clock_gettime and clock_getres
+Description:        low-level binding to time.h: clock_gettime and clock_getres. 
+                    clock_settime will be added in later versions.
 Stability:          Experimental
 Build-type:         Simple
-Build-depends:      base >= 2 && < 4.2
+Build-depends:      base >= 2 && < 5
 Exposed-Modules:    System.CPUTime.Clock
 Extensions:         ForeignFunctionInterface
 C-sources:	        csec/clock.c
