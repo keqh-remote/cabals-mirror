@@ -1,5 +1,5 @@
 Name: alloy
-Version: 1.1.0
+Version: 1.2.0
 License: BSD3
 License-File: LICENSE
 Author: Neil Brown and Adam Sampson
@@ -30,7 +30,7 @@ Extra-Source-Files: tutorial/tutorial.tex
                     tutorial/Selective.lhs
 
 Library
-  Build-Depends:   base >= 4.3 && < 5, containers, mtl, syb
+  Build-Depends:   base >= 4.3 && < 5, containers, mtl, syb, vector
 
   Exposed-modules: Data.Generics.Alloy
                    Data.Generics.Alloy.Effect
