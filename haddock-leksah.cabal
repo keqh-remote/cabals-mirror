@@ -1,5 +1,5 @@
 name:                 haddock-leksah
-version:              2.5.0
+version:              2.6.0
 cabal-version:        >= 1.6
 license:              BSD3
 build-type:           Simple
@@ -67,14 +67,13 @@ flag in-ghc-tree
 executable haddock
   build-depends:
     base >= 4.0.0.0 && < 4.3.0.0,
-    haskell98,
     filepath,
     directory,
     pretty,
     containers,
     array,
     Cabal >= 1.5,
-    ghc >= 6.10 && < 6.13 
+    ghc >= 6.12 && < 6.14
 
   if flag(in-ghc-tree)
     cpp-options: -DIN_GHC_TREE
@@ -92,7 +91,13 @@ executable haddock
     Haddock.Interface
     Haddock.Interface.Rename
     Haddock.Interface.Create
+    Haddock.Interface.ExtractFnArgDocs
     Haddock.Interface.AttachInstances
+    Haddock.Interface.Lex
+    Haddock.Interface.Parse
+    Haddock.Interface.Rn
+    Haddock.Interface.LexParseRn
+    Haddock.Interface.ParseModuleHeader
     Haddock.Utils.FastMutInt2
     Haddock.Utils.BlockTable
     Haddock.Utils.Html
@@ -105,11 +110,13 @@ executable haddock
     Haddock.Backends.Hoogle
     Haddock.ModuleTree
     Haddock.Types
+    Haddock.HsDoc
     Haddock.Version
-    Haddock.InterfaceFile
+    Haddock.InterfaceFile        
     Haddock.Options
     Haddock.GhcUtils
-
+    Haddock.Convert
+   
   -- Cabal doesn't define __GHC_PATCHLEVEL__
   if impl(ghc == 6.10.1)
     cpp-options: -D__GHC_PATCHLEVEL__=1
@@ -122,30 +129,30 @@ executable haddock
 
 library
   hs-source-dirs:       src
-  ghc-options:          -funbox-strict-fields -O2 -Wall
   extensions:           CPP, PatternGuards, DeriveDataTypeable,
                         ScopedTypeVariables, MagicHash
-  exposed-modules:      Distribution.Haddock Haddock.Types Haddock.Interface
+  exposed-modules:      Distribution.Haddock Haddock.Types 				
+                        Haddock.Interface Haddock.Interface.Parse
+                        Haddock.Interface.Lex
                         Haddock.Options
-  other-modules:
     Haddock.Interface.Rename
     Haddock.Interface.Create
-    Haddock.Interface.AttachInstances
+    Haddock.Interface.ExtractFnArgDocs
+    Haddock.Interface.AttachInstances 
+    Haddock.Interface.Rn
+    Haddock.Interface.LexParseRn
+    Haddock.Interface.ParseModuleHeader
     Haddock.Utils.FastMutInt2
     Haddock.Utils.BlockTable
     Haddock.Utils.Html
     Haddock.Utils
-    Haddock.Backends.Html
-    Haddock.Backends.HaddockDB
-    Haddock.Backends.DevHelp
-    Haddock.Backends.HH
-    Haddock.Backends.HH2
-    Haddock.Backends.Hoogle
     Haddock.ModuleTree
+    Haddock.HsDoc
     Haddock.Version
-    Haddock.InterfaceFile
+    Haddock.InterfaceFile        
     Haddock.GhcUtils
-
+    Haddock.Convert
+  
   -- Cabal doesn't define __GHC_PATCHLEVEL__
   if impl(ghc == 6.10.1)
     cpp-options: -D__GHC_PATCHLEVEL__=1
