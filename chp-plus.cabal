@@ -1,5 +1,5 @@
 Name:            chp-plus
-Version:         1.1.0
+Version:         1.2.0
 Synopsis:        A set of high-level concurrency utilities built on Communicating Haskell Processes
 License:         BSD3
 License-file:    LICENSE
@@ -25,13 +25,14 @@ Exposed-modules: Control.Concurrent.CHP.Actions
                  Control.Concurrent.CHP.Behaviours
                  Control.Concurrent.CHP.Buffers
                  Control.Concurrent.CHP.Common
+                 Control.Concurrent.CHP.Composed
                  Control.Concurrent.CHP.Connect
                  Control.Concurrent.CHP.Connect.TwoDim
                  Control.Concurrent.CHP.Console
                  Control.Concurrent.CHP.Test
 
 Extensions:      CPP FlexibleInstances GeneralizedNewtypeDeriving
-                 MultiParamTypeClasses ParallelListComp ScopedTypeVariables
-                 TypeFamilies
+                 MultiParamTypeClasses ParallelListComp Rank2Types
+                 ScopedTypeVariables TypeFamilies 
 
 GHC-Options:     -Wall -auto-all
