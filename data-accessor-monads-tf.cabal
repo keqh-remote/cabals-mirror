@@ -1,22 +1,29 @@
 Name:             data-accessor-monads-tf
-Version:          0.2.1.3
+Version:          0.2.1.4
 License:          BSD3
 License-File:     LICENSE
-Author:           Stephan Friedrichs
-Maintainer:       Stephan Friedrichs (deduktionstheorem at web dot de)
+Author:           Stephan Friedrichs (deduktionstheorem at web dot de)
+Maintainer:       Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:         http://www.haskell.org/haskellwiki/Record_access
-Package-URL:      http://code.haskell.org/data-accessor/monads-tf/
 Category:         Data
+-- Default-Language: Haskell98
+Cabal-Version:    >=1.6
 Build-Type:       Simple
-Build-Depends:
-  data-accessor >=0.2 && <0.4,
-  monads-tf >=0.1 && <0.2,
-  transformers >=0.2 && <0.3,
-  base >=1.0 && <6
+Tested-With:      GHC==6.8.2, GHC==6.10.4, GHC==6.12.3, GHC==7.0.1
 Synopsis:         Use Accessor to access state in monads-tf State monad type family
 Description:      Use Accessor to access state in monads-tf State monad type family
-GHC-Options:      -Wall
-Tested-With:      GHC==6.8.2, GHC==6.10.4, GHC==7.0.1
-Hs-Source-Dirs:   src
-Exposed-Modules:
-  Data.Accessor.Monad.TF.State
+
+Source-Repository head
+  Type:        darcs
+  Location:    http://code.haskell.org/data-accessor/monads-tf/
+
+Library
+  Build-Depends:
+    data-accessor >=0.2 && <0.4,
+    monads-tf >=0.1 && <0.2,
+    transformers >=0.2 && <0.4,
+    base >=1.0 && <5
+  Hs-Source-Dirs:   src
+  GHC-Options:      -Wall
+  Exposed-Modules:
+    Data.Accessor.Monad.TF.State
