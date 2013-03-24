@@ -1,5 +1,5 @@
 Name:                disjoint-set
-Version:             0.1
+Version:             0.2
 Synopsis:            Persistent disjoint-sets, a.k.a union-find.
 Description:         This is a persistent data structure for disjoint sets.
                      .
@@ -10,19 +10,37 @@ Description:         This is a persistent data structure for disjoint sets.
                      persistent maps.
                      .
                      Data.IntDisjointSet is as strict as possible.
-License:             LGPL
+License:             BSD3
 License-file:        LICENSE
-Author:              Maxwell Sayles <maxwellsayles@gmail.com>
-Maintainer:          Maxwell Sayles <maxwellsayles@gmail.com>
+Author:              Maxwell Sayles, Myles Maxfield
+Maintainer:          <maxwellsayles@gmail.com>, <myles.maxfield@gmail.com>
 Category:            Data
 Build-type:          Simple
 Stability:           stable
 Homepage:            https://github.com/maxwellsayles/disjoint-set
 Cabal-version:       >= 1.8
 
+source-repository head
+  type:              git
+  location:          git://github.com/maxwellsayles/disjoint-set.git
+
 Library
   Exposed-modules:   Data.IntDisjointSet
+  GHC-Options:       -O3 -Wall
   Build-depends:     base >= 3 && < 5,
                      containers >= 0.3,
                      mtl >= 2,
                      transformers >= 0.3
+
+test-suite test
+  main-is: Test.hs
+  type: exitcode-stdio-1.0
+  hs-source-dirs: .
+
+  ghc-options:   -Wall
+  build-depends: base >= 3 && < 5,
+                 HUnit,
+                 QuickCheck,
+                 containers >= 0.3,
+                 mtl >= 2,
+                 transformers >= 0.3
