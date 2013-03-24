@@ -3,7 +3,7 @@ name: bindings-sqlite3
 homepage: http://bitbucket.org/mauricio/bindings
 synopsis:
   Check bindings-common package for directions.
-version: 0.0.1
+version: 0.0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes
