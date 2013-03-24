@@ -1,6 +1,6 @@
 Name:           iterIO
 Homepage:       http://www.scs.stanford.edu/~dm/iterIO
-Version:        0.1
+Version:        0.2
 Cabal-version:  >= 1.6
 build-type:     Simple
 License:        BSD3
@@ -11,7 +11,7 @@ Maintainer:     http://www.scs.stanford.edu/~dm/addr/
 Category:       System, Data, Enumerator
 Synopsis:       Iteratee-based IO with pipe operators
 Extra-source-files:
-        GNUmakefile, README,
+        GNUmakefile, README, NEWS,
         Examples/fgrep.hs, Examples/zpipe.hs, Examples/httptest.hs
 
 Description:
@@ -64,7 +64,7 @@ Library
                  bytestring >= 0.9 && < 2,
                  containers >= 0.3 && < 2,
                  filepath >= 1.2 && < 2,
-                 HsOpenSSL >= 0.8 && < 2,
+                 HsOpenSSL >= 0.10.1 && < 2,
                  ListLike >= 1.0 && < 4,
                  mtl >= 1.1.0.2 && < 3,
                  network >= 2.3 && < 3,
