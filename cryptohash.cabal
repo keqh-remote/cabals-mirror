@@ -1,5 +1,5 @@
 Name:                cryptohash
-Version:             0.5.3
+Version:             0.6
 Description:
     A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,
     with performance close to the fastest implementations available in others languages.
@@ -27,10 +27,26 @@ Flag test
   Description:       Build unit test
   Default:           False
 
+Flag cryptoapi
+  Description:       Defines crypto-api instances
+  Default:           False
+
 Library
   Build-Depends:     base >= 3 && < 5, bytestring
   Extensions:        ForeignFunctionInterface
-  Exposed-modules:   Data.CryptoHash.SHA1
+  Exposed-modules:   Crypto.Hash.SHA1
+                     Crypto.Hash.SHA224
+                     Crypto.Hash.SHA256
+                     Crypto.Hash.SHA384
+                     Crypto.Hash.SHA512
+                     Crypto.Hash.MD2
+                     Crypto.Hash.MD4
+                     Crypto.Hash.MD5
+                     Crypto.Hash.RIPEMD160
+                     Crypto.Hash.Skein256
+                     Crypto.Hash.Skein512
+                     Crypto.Hash.Tiger
+                     Data.CryptoHash.SHA1
                      Data.CryptoHash.SHA224
                      Data.CryptoHash.SHA256
                      Data.CryptoHash.SHA384
@@ -57,7 +73,7 @@ Library
 
 Executable           Tests
   Main-Is:           Tests.hs
-  Extensions:        ForeignFunctionInterface
+  Extensions:        ForeignFunctionInterface, CPP
   C-sources:         cbits/sha1.c
                      cbits/sha256.c
                      cbits/sha512.c
@@ -70,9 +86,12 @@ Executable           Tests
                      cbits/tiger.c
   if flag(test)
     Buildable:       True
-    Build-depends:   base >= 3 && < 5, HUnit, bytestring
+    Build-depends:   base >= 4, HUnit, bytestring
   else
     Buildable:       False
+  if flag(cryptoapi)
+    Build-depends:   crypto-api >= 0.1, tagged >= 0.1, cereal >= 0.2
+    cpp-options:     -DHAVE_CRYPTOAPI
 
 source-repository head
   type:     git
