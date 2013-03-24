@@ -1,5 +1,5 @@
 Name:		encoding
-Version:	0.1
+Version:	0.2
 Author:		Henning Günther
 Maintainer:	h.guenther@tu-bs.de
 License:	BSD3
@@ -12,7 +12,8 @@ Homepage:	http://code.haskell.org/encoding/
 Build-Depends:	base, template-haskell
 Extensions:	TemplateHaskell,CPP,ExistentialQuantification
 C-Sources:	system_encoding.c
-Includes:	system_encoding.h
+Include-Dirs:	.
+Install-Includes:	system_encoding.h
 Exposed-Modules:
 	Data.Encoding
 	Data.Encoding.ASCII
@@ -45,9 +46,12 @@ Exposed-Modules:
 	Data.Encoding.CP1257
 	Data.Encoding.CP1258
 	Data.Encoding.KOI8R
+	Data.Encoding.GB18030
 	System.IO.Encoding
 Other-Modules:
 	Data.Encoding.Base
+	Data.Encoding.GB18030Data
+	Data.Encoding.Helper.Template
 Extra-Source-Files:
 	8859-2.TXT
 	8859-3.TXT
@@ -72,3 +76,7 @@ Extra-Source-Files:
 	CP1256.TXT
 	CP1257.TXT
 	CP1258.TXT
+	gb-18030-2000.xml
+	system_encoding.h
+	create_gb18030_data.sh
+	NEWS
