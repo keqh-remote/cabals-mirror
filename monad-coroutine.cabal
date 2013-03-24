@@ -1,5 +1,5 @@
 Name:                monad-coroutine
-Version:             0.5.1
+Version:             0.6
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Coroutine monad transformer for suspending and resuming monadic computations
@@ -22,6 +22,7 @@ Extra-source-files:  TestCoroutine.hs
 --   location:          http://code.haskell.org/SCC/
 
 Library
-  Exposed-Modules:   Control.Monad.Coroutine, Control.Monad.Coroutine.SuspensionFunctors, Control.Monad.Coroutine.Nested
+  Exposed-Modules:   Control.Cofunctor.Ticker,
+                     Control.Monad.Coroutine, Control.Monad.Coroutine.SuspensionFunctors, Control.Monad.Coroutine.Nested
   Build-Depends:     base < 5, monad-parallel, transformers >= 0.2 && < 0.3
   GHC-prof-options:  -auto-all
