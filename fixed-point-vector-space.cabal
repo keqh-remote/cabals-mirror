@@ -1,5 +1,5 @@
 Name:                fixed-point-vector-space
-Version:             0.5.0.0
+Version:             0.5.0.1
 Synopsis:            vector-space instances for the fixed-point package
 Description:         This package provides instances of VectorSpace,
                      AffineSpace, etc. for the fixed-point package.
@@ -10,15 +10,16 @@ Maintainer:          Jake McArthur <Jake.McArthur@gmail.com>
 Category:            Data, Game, Math, Numerical
 
 Build-type:          Simple
-Cabal-version:       >=1.6
+Cabal-version:       >=1.10
 
 
 Library
+  Default-language:  Haskell2010
   Exposed-modules:   Data.Fixed.Binary.VectorSpace
-  Extensions:        FlexibleContexts,
+  Other-extensions:  FlexibleContexts,
                      TypeFamilies
-  Build-depends:     base == 4.3.*,
-                     fixed-point == 0.5.0.0,
+  Build-depends:     base == 4.3.* || == 4.4.*,
+                     fixed-point == 0.5.0.1,
                      vector-space == 0.7.3.*
   GHC-options:       -Wall -fno-warn-orphans -fwarn-tabs -funfolding-use-threshold=16
 
@@ -29,4 +30,4 @@ Source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/r/jmcarthur/fixed-point
-  tag:      v0.5.0.0
+  tag:      v0.5.0.1
