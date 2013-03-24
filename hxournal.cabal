@@ -1,5 +1,5 @@
 Name:		hxournal
-Version:	0.6.3
+Version:	0.6.4
 Synopsis:	A pen notetaking program written in haskell 
 Description: 	notetaking program written in haskell and gtk2hs
 Homepage:       http://ianwookim.org/hxournal
@@ -8,7 +8,7 @@ License-file:	LICENSE
 Author:		Ian-Woo Kim
 Maintainer: 	Ian-Woo Kim <ianwookim@gmail.com>
 Category:       Application
-Tested-with:    GHC == 7.0.4
+Tested-with:    GHC == 7.0
 Build-Type: 	Custom
 Cabal-Version:  >= 1.8
 data-files:     template/*.html.st
@@ -48,7 +48,7 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types >= 0.3.1 && < 0.4,
+                     xournal-types >= 0.3.2 && < 0.4,
                      xournal-parser >= 0.3.0.2 && < 0.4,
                      xournal-render >= 0.5.1 && < 0.6,
                      xournal-builder >= 0.1.0.2 && < 0.2,
@@ -74,7 +74,7 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types >= 0.3.1 && < 0.4,
+                     xournal-types >= 0.3.1.999 && < 0.4,
                      xournal-parser >= 0.3.0.2 && < 0.4,
                      xournal-render >= 0.5.1 && < 0.6,
                      xournal-builder >= 0.1.0.2 && < 0.2,
@@ -95,14 +95,21 @@ Library
                    Application.HXournal.Job
                    Application.HXournal.Command 
                    Application.HXournal.Type
+                   Application.HXournal.Type.Alias 
                    Application.HXournal.Type.Event 
                    Application.HXournal.Type.Enum
                    Application.HXournal.Type.Clipboard
                    Application.HXournal.Type.Canvas
                    Application.HXournal.Type.Coroutine
+                   Application.HXournal.Type.PageArrangement 
                    Application.HXournal.Type.XournalState
                    Application.HXournal.Type.Window
                    Application.HXournal.Type.Undo 
+                   Application.HXournal.Type.Predefined 
+                   Application.HXournal.View.Draw
+                   Application.HXournal.View.Coordinate
+                   Application.HXournal.GUI
+                   Application.HXournal.GUI.Menu
                    Application.HXournal.ModelAction.Adjustment
                    Application.HXournal.ModelAction.Pen 
                    Application.HXournal.ModelAction.Page
@@ -112,10 +119,8 @@ Library
                    Application.HXournal.ModelAction.Window
                    -- Application.HXournal.ModelAction.Network
                    Application.HXournal.ModelAction.Layer
-                   Application.HXournal.Coroutine.Callback
-                   Application.HXournal.GUI
-                   Application.HXournal.GUI.Menu
                    Application.HXournal.Coroutine
+                   Application.HXournal.Coroutine.Callback
                    Application.HXournal.Coroutine.Draw
                    Application.HXournal.Coroutine.EventConnect
                    Application.HXournal.Coroutine.Default
@@ -133,7 +138,6 @@ Library
                    Application.HXournal.Coroutine.Layer
                    Application.HXournal.Util
                    Application.HXournal.Util.Verbatim 
-                   Application.HXournal.Draw
                    Application.HXournal.Device
                    Application.HXournal.Accessor
                    Application.HXournal.Config
