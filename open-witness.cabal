@@ -1,5 +1,5 @@
 name:			open-witness
-version:		0.1
+version:		0.1.1
 license:		BSD3
 license-file:	LICENSE
 author:			Ashley Yakeley <ashley@semantic.org>
@@ -28,4 +28,5 @@ exposed-modules:
 	Data.OpenWitness.Typeable
 	Data.OpenWitness.Typeable.Rep
 	Data.OpenWitness.Dynamic
+	Data.OpenWitness.Exception
 other-modules:
