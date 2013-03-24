@@ -1,5 +1,5 @@
 name:                   HarmTrace
-version:                2.1
+version:                2.2.0
 synopsis:               Harmony Analysis and Retrieval of Music
 description:            HarmTrace: Harmony Analysis and Retrieval of Music 
                         with Type-level Representations of Abstract
@@ -33,6 +33,7 @@ extra-source-files:     README
 executable harmtrace
   hs-source-dirs:       src
   other-modules:        Constants
+                        Replace
 
                         HarmTrace.HarmTrace
 
@@ -44,6 +45,8 @@ executable harmtrace
                         HarmTrace.Audio.Key
                         HarmTrace.Audio.Evaluation
                         HarmTrace.Audio.Statistical
+
+                        HarmTrace.Base.Instances
 
                         HarmTrace.HAnTree.HAn
                         HarmTrace.HAnTree.HAnParser
@@ -130,6 +133,8 @@ library
                         HarmTrace.Audio.Key
                         HarmTrace.Audio.Evaluation
                         HarmTrace.Audio.Statistical
+
+                        HarmTrace.Base.Instances
 
                         HarmTrace.HAnTree.HAn
                         HarmTrace.HAnTree.HAnParser
