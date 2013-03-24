@@ -1,5 +1,5 @@
 Name:           modsplit
-Version:        0.1.1
+Version:        0.2
 Author:         Dmitry Golubovsky
 Maintainer:     Dmitry Golubovsky <golubovsky@gmail.com>
 License:        BSD3
@@ -20,13 +20,19 @@ Description:    The "modsplit" program takes a (most likely auto-generated) sing
                 .
                 This program is intended to post-process the output of programs generating
                 Haskell code rather than to deal with handwritten code.
+                .
+                Special comment values are exported by this package in order to simplify
+                writing of programs that use the splitter. See the documentation for
+                the "Data.SplitBounds" module.
                 
 
 Build-Type:     Simple
 Build-Depends:  base > 3, filepath, mtl, utf8-env, utf8-string, haskell98, directory
 
+Exposed-modules: Data.SplitBounds
+
 Executable:     modsplit
 Main-is:        ModSplit.hs
-Other-Modules:  SplitBounds
+Other-Modules:  Data.SplitBounds
 
 
