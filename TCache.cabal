@@ -1,14 +1,14 @@
 name:                TCache
-version:             0.5
-synopsis:            A Transactional cache with configurable persitence 
+version:             0.5.1
+synopsis:            A Transactional data cache with configurable persitence 
 description:         -------------------------------------------------
 -- A Transactional data cache with configurable persitence
 -- The exported methods are documented in the TCache.hs header
--- See also  http://haskellandweb.blogspot.com
+-- See also  http://haskell-web.blogspot.com
 -- (Something like a little Java Hybernate or Rails for Rubi)
 -- Author: Alberto Gómez Corona Nov 2006-2008   agocorona at gmail.com
 -- Language: Haskell
--- Version: 0.5
+-- Version: 0.5.1
 -- Terms of use: you can do whatever you want
 -- with this code as long as you keep this notice
 
