@@ -1,6 +1,6 @@
 name:            Agda
-version:         2.2.0
-cabal-version:   >= 1.4 && < 2
+version:         2.2.2
+cabal-version:   >= 1.6 && < 2
 build-type:      Simple
 license:         OtherLicense
 license-file:    LICENSE
@@ -18,17 +18,32 @@ description:
   Emacs interface (the type checker can assist in the development of
   your code).
   .
-  Agda is a proof assistant: It is an interactive system for writing
-  and checking proofs. Agda is based on intuitionistic type theory, a
-  foundational system for constructive mathematics developed by the
-  Swedish logician Per Martin-Löf. It has many similarities with other
-  proof assistants based on dependent types, such as Coq, Epigram and
-  NuPRL.
-tested-with:     GHC == 6.8.3 && == 6.10.1
+  Agda is also a proof assistant: It is an interactive system for
+  writing and checking proofs. Agda is based on intuitionistic type
+  theory, a foundational system for constructive mathematics developed
+  by the Swedish logician Per Martin-Löf. It has many similarities
+  with other proof assistants based on dependent types, such as Coq,
+  Epigram and NuPRL.
+  .
+  Note that if you want to use the command-line program (agda), then
+  you should also install the Agda-executable package. This package
+  includes an Emacs mode for Agda, but you need to set up the Emacs
+  mode yourself (see the README).
+tested-with:     GHC == 6.8.3 && == 6.10.2
 extra-source-files: src/full/Agda/undefined.h
                     README
-data-dir:        src/data
-data-files:      Agda.css
+data-dir:           src/data
+data-files:         Agda.css
+                    emacs-mode/*.el
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/Agda/
+
+source-repository this
+  type:     darcs
+  location: http://code.haskell.org/Agda/
+  tag:      2.2.2
 
 library
   hs-source-dirs:  src/full
@@ -43,7 +58,7 @@ library
                    old-time >= 1 && < 2,
                    bytestring >= 0.9.0.1 && < 1,
                    array >= 0.1 && < 1,
-                   binary >= 0.4.4 && < 0.5,
+                   binary >= 0.4.4 && < 0.6,
                    zlib >= 0.4.0.1 && < 1,
                    filepath >= 1.1 && < 2,
                    process >= 1.0.1.0 && < 2,
@@ -227,3 +242,12 @@ library
   if impl(ghc >= 6.10)
     ghc-options:   -fwarn-warnings-deprecations -fwarn-deprecated-flags
                    -fwarn-dodgy-foreign-imports
+
+executable agda-mode
+  hs-source-dirs:  src/agda-mode
+  main-is:         Main.hs
+  other-modules:   Paths_Agda
+  build-depends:   base >= 3 && < 4,
+                   filepath >= 1.1 && < 2,
+                   process >= 1.0.1.0 && < 2,
+                   utf8-string >= 0.3 && < 0.4
