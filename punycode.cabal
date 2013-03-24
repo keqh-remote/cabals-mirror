@@ -1,64 +1,38 @@
-Name:               punycode
-Version:            0.0.1.0
-Cabal-Version:      >= 1.6
-Build-Type:         Simple
-License:            BSD3
-License-File:       LICENSE
-Copyright:          Copyright © 2011, Jon Kristensen
-Author:             Jon Kristensen
-Maintainer:         jon.kristensen@pontarius.org
-Stability:          alpha
--- Homepage:
-Bug-Reports:        mailto:jon.kristensen@pontarius.org
--- Package-URL:
-Synopsis:           Punycode encoder
-Description:        Punicode library to uniquely and reversibly transform a
-                    Unicode string into an ASCII string. This is a partial
-                    implementation of RFC 3492: Punycode: A Bootstring encoding
-                    of Unicode for Internationalized Domain Names in
-                    Applications (IDNA). 0.0.2.0 will ship with support for
-                    Punycode decoding. The code is currently prototyped and
-                    untested.
-Category:           Network
-Tested-With:        GHC ==7.0.2
--- Data-Files:
--- Data-Dir:
--- Extra-Source-Files:
--- Extra-Tmp-Files:
+name:            punycode
+version:         0.5
+license:         BSD3
+license-file:    LICENSE
+author:          Myles C. Maxfield <myles.maxfield@gmail.com>
+maintainer:      Myles C. Maxfield <myles.maxfield@gmail.com>
+synopsis:        Encode unicode strings to ascii forms according to RFC 3492
+description:     Encode unicode strings to ascii forms according to RFC 3492. It is written in pure Haskell, as opposed to gnuidn's Data.Text.IDN.Punycode
+category:        Text, Web
+stability:       Experimental
+cabal-version:   >= 1.8
+build-type:      Simple
+homepage:        https://github.com/litherum/punycode
 
-Library
-  Exposed-Modules:   Data.Text.Punycode
-  Exposed:           True
-  Build-Depends:     base >= 2 && < 5, parsec, text, bytestring, text-icu
-  -- Other-Modules:
-  -- HS-Source-Dirs:
-  -- Extensions:
-  -- Build-Tools:
-  -- Buildable:
-  -- GHC-Options:
-  -- GHC-Prof-Options:
-  -- Hugs-Options:
-  -- NHC98-Options:
-  -- Includes:
-  -- Install-Includes:
-  -- Include-Dirs:
-  -- C-Sources:
-  -- Extra-Libraries:
-  -- Extra-Lib-Dirs:
-  -- CC-Options:
-  -- LD-Options:
-  -- Pkgconfig-Depends:
-  -- Frameworks:
+library
+    build-depends: base         >= 4       && < 5
+                 , bytestring
+                 , cereal
+                 , mtl
+    exposed-modules: Data.Text.Punycode
+    other-modules:   Data.Text.Punycode.Encode
+                   , Data.Text.Punycode.Decode
+                   , Data.Text.Punycode.Shared
+    ghc-options:     -Wall
 
-Source-Repository head
-  Type:     git
-  -- Module:
-  Location: git://github.com/jonkri/punycode.git
-  -- Subdir:
+Test-Suite test-punycode
+    type: exitcode-stdio-1.0
+    main-is: Test/Main.hs
+    build-depends: base >= 4 && < 5
+                 , bytestring
+                 , cereal
+                 , mtl
+                 , HUnit
+                 , QuickCheck
 
-Source-Repository this
-  Type:     git
-  -- Module:
-  Location: git://github.com/jonkri/punycode.git
-  Tag:      0.0.1.0
-  -- Subdir:
+source-repository head
+  type:     git
+  location: git://github.com/litherum/punycode.git
