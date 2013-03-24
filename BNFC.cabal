@@ -1,5 +1,5 @@
 Name: BNFC
-Version: 2.6.0.2
+Version: 2.6.0.3
 cabal-version: >= 1.8
 build-type: Simple
 category: Development
@@ -11,8 +11,8 @@ Homepage: http://bnfc.digitalgrammars.com/
 bug-reports: https://github.com/BNFC/bnfc/issues
 Synopsis: A compiler front-end generator.
 Description:
-  The BNF Converter is a compiler construction tool generating a compiler front-end 
-  from a Labelled BNF grammar. It was originally written to generate Haskell, 
+  The BNF Converter is a compiler construction tool generating a compiler front-end
+  from a Labelled BNF grammar. It was originally written to generate Haskell,
   but starting from Version 2.0, it can also be used for generating Java, C++, and C.
   .
   Given a Labelled BNF grammar the tool produces:
@@ -22,15 +22,16 @@ Description:
   a Happy, CUP, or Bison parser generator file,
   a pretty-printer as a Haskell/Java/C++/C module,
   a Latex file containing a readable specification of the language.
-Extra-source-files: src/BNF.cf 
+Extra-source-files: src/BNF.cf
 
-Library 
-  hs-source-dirs: runtime, src           
+Library
+  hs-source-dirs: runtime, src
   Build-Depends: base>=4.4 && <5, array
-  exposed-modules: 
+  exposed-modules:
    Algebra.RingUtils
    Data.Pair
    Data.Matrix.Quad
+   Data.Matrix.Class
    Parsing.Chart
    Parsing.TestProgram
 
@@ -65,7 +66,9 @@ Executable bnfc
     OOAbstract,
     CFtoLatex,
     CFtoXML,
-    CFtoTxt,	
+    CFtoTxt,
+    Options,
+    ToCNF,
     -- Haskell
     HaskellTop,
     RegToAlex,
@@ -79,6 +82,7 @@ Executable bnfc
     CFtoLayout,
     MkErrM,
     MkSharedString,
+    HsOpts,
     -- Profile
     ProfileTop,
     CFtoHappyProfile,
