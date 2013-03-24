@@ -1,5 +1,5 @@
 Name:          barchart
-Version:       0.1
+Version:       0.1.1
 Cabal-Version: >= 1.6
 Synopsis:      Creating Bar Charts in Haskell
 
@@ -18,7 +18,7 @@ License-File:  LICENSE
 Author:        Sebastian Fischer
 Maintainer:    Sebastian Fischer
 Bug-Reports:   http://github.com/sebfisch/haskell-barchart/issues
-Homepage:      http://sebfish.github.com/haskell-barchart
+Homepage:      http://sebfisch.github.com/haskell-barchart
 Build-Type:    Simple
 Stability:     experimental
 
