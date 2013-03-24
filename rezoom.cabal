@@ -1,6 +1,6 @@
 Cabal-Version:	>= 1.6
 Name:			rezoom
-Version:		0.0.3
+Version:		0.0.4
 Synopsis:		Github resume generator
 Description:	Generates a resume from your github page.
 License:		GPL
