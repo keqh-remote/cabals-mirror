@@ -14,7 +14,7 @@ Description:
     the modified TVars are restored.
     .
     Note: The package can be used as a drop-in replacement for 
-    'Control.Concurrent.STM'. Part of this library uses code from
+    'Control.Concurrent.STM'. This library was inspired by the AdvSTM monad on 
     the Haskell Wiki (see <http://haskell.org/haskellwiki/?title=New_monads/MonadAdvSTM>).
     .
     Feedback is welcome!
@@ -26,7 +26,7 @@ Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        BSD3
 License-file:   LICENSE
 Homepage:       http://darcs.monoid.at/stm-io-hooks
-Version:        0.5.4
+Version:        0.6.0
 
 Build-type:     Simple                        
 Cabal-Version:  >= 1.2.3
@@ -44,9 +44,9 @@ library
                    
     build-depends:  base       >= 4 && < 5
                    ,stm        >= 2.1.1.2 && < 2.2
-                   ,array      >= 0.2.0.0 && < 0.3
-                   ,containers >= 0.2.0.0 && < 0.3
-                   ,mtl        >= 1.1.0.2 && < 1.2
+                   ,array      >= 0.2.0.0 && < 0.4
+                   ,containers >= 0.2.0.0 && < 0.4
+                   ,mtl        >= 1.1.0.2 && < 1.3
 
     extensions:    MultiParamTypeClasses
                    FunctionalDependencies
