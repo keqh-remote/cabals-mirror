@@ -1,6 +1,6 @@
 Name:                mathgenealogy
 
-Version:             1.1.0
+Version:             1.1.1
 
 Synopsis:            Discover your (academic) ancestors!
 
@@ -21,8 +21,10 @@ Description:         A simple command line program for extracting data from the
   .
   for more options. Requires GraphViz (in particular the /dot/ program) to run.
   . 
-  /Changes in 1.1.0:/
+  /Changes in 1.1.1:/
   .
+  * provide error message when given invalid start URL
+  . 
   * documentation and code cleanup
   .
   /Changes in 1.0.0:/
@@ -73,6 +75,7 @@ Executable mathgenealogy
                    , containers >= 0.4 && <0.6
                    , tagsoup >= 0.12.6 && <0.13
                    , HTTP >= 4000.1.2 && <5000
+                   , safe >= 0.3.3 && <0.5
       Main-Is: Main.hs
       Other-modules: Graph
                    , Extract 
