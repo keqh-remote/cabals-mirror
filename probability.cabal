@@ -1,12 +1,12 @@
 Name:               probability
-Version:            0.1
+Version:            0.2
 License:            BSD3
-Author:             Martin Erwig <erwig@eecs.oregonstate.edu>
+Author:             Martin Erwig <erwig@eecs.oregonstate.edu>, Steve Kollmansberger
 Maintainer:         Henning Thielemann <haskell@henning-thielemann.de>
 Homepage:           http://darcs.haskell.org/probability
 Category:           Math, Monads, Graphics
-Build-Depends:      base, haskell98
-Synopsis:           Computations with discrete random variables
+Build-Depends:      base, mtl
+Synopsis:           Probabilistic Functional Programming
 Description:
    The Library allows exact computation with discrete random variables
    in terms of their distributions by using a monad.
@@ -16,26 +16,36 @@ Description:
 Tested-With:        GHC==6.4
 Build-Type:         Simple
 License-File:       COPYRIGHT
-Hs-Source-Dirs:     .
+Hs-Source-Dirs:     src
+GHC-Options:        -Wall
 Exposed-Modules:
-    Alarm
-    Barber
-    Bayesian
-    Boys
-    Collection
-    Dice
-    MontyHall
-    NBoys
-    Predator
-    Probability
-    Queuing
-    TreeGrowth
-    Visualize
+    Numeric.Probability.Visualize
+    Numeric.Probability.Expectation
+    Numeric.Probability.Percentage
+    Numeric.Probability.Distribution
+    Numeric.Probability.Transition
+    Numeric.Probability.Random
+    Numeric.Probability.Shape
+    Numeric.Probability.Trace
+    Numeric.Probability.Simulation
+    Numeric.Probability.Object
+    Numeric.Probability.Example.Alarm
+    Numeric.Probability.Example.Barber
+    Numeric.Probability.Example.Bayesian
+    Numeric.Probability.Example.Boys
+    Numeric.Probability.Example.Collection
+    Numeric.Probability.Example.Diagnosis
+    Numeric.Probability.Example.Dice
+    Numeric.Probability.Example.DiceAccum
+    Numeric.Probability.Example.MontyHall
+    Numeric.Probability.Example.NBoys
+    Numeric.Probability.Example.Predator
+    Numeric.Probability.Example.Queuing
+    Numeric.Probability.Example.TreeGrowth
 Other-Modules:
-    ListUtils
-    PrintList
-    Show
+    Numeric.Probability.Monad
+    Numeric.Probability.PrintList
+    Numeric.Probability.Show
 Extra-Source-Files:
     README
     ToDo
-GHC-Options:        -Wall -O2
