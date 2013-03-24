@@ -1,5 +1,5 @@
 Name:                HGamer3D
-Version:             0.1.9
+Version:             0.1.10
 Synopsis:            Windows Game Engine for the Haskell Programmer
 Description:         
 	HGamer3D is a game engine for developing 3D games in the programming 
@@ -31,4 +31,4 @@ Library
   hs-source-dirs:    .
   Include-dirs:      . 
   build-depends:     
-  extra-libraries:   stdc++.dll
+  extra-libraries:   
