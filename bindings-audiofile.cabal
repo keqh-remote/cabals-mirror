@@ -2,7 +2,7 @@ Name: bindings-audiofile
 Synopsis: Low level bindings to audiofile
 Description:
         Bindings to audiofile: <http://www.68k.org/~michael/audiofile/>
-Version: 0.1
+Version: 0.1.0.1
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
@@ -15,6 +15,7 @@ Cabal-Version: >= 1.6
 Build-Type: Simple
 Extra-Source-Files:
     COPYING
+    NEWS
 
 Source-Repository head
     Type: git
@@ -22,7 +23,7 @@ Source-Repository head
 
 Library
     Build-Depends:
-        base         == 4.2.*,
+        base         == 4.*,
         bindings-DSL == 1.0.*
 
     PkgConfig-Depends:
