@@ -1,5 +1,5 @@
 Name          : happstack-yui
-Version       : 7351.3.0
+Version       : 7351.4.0
 Category      : Web, Happstack
 Synopsis      : Utilities for using YUI3 with Happstack.
 Homepage      : https://github.com/dag/happstack-yui
@@ -28,10 +28,11 @@ Description :
   of this package itself, as defined by the Package Versioning Policy.
   .
   The package also includes some utilities for working with the YUI CSS
-  modules.  In a future release, the plan is to add more utilities, for
-  example a combo handler for YUI modules written using JMacro, a bridge
-  between HSX and YUI Node objects and tools for making it easier to work
-  with modules like Uploader and Pjax.
+  modules and for using HSX to create YUI Node objects with JMacro.  In a
+  future release, the plan is to add more utilities, for example a combo
+  handler for YUI modules written using JMacro, tools for making it
+  easier to work with modules like Uploader and Pjax and a quasi-quoter for
+  compile-time syntax checked YQL queries.
   .
   For an example application, see:
   <https://github.com/dag/happstack-yui/blob/master/demo/happstack-yui-demo.hs>
@@ -2848,20 +2849,23 @@ Library
   Other-Modules    :
     Happstack.Server.YUI.Bundle
   Build-Depends    :
-    base                  >= 4.3 && < 4.6,
-    boomerang             == 1.3.*,
-    bytestring            == 0.9.*,
-    containers            >= 0.4 && < 0.6,
-    happstack-jmacro      == 7.0.*,
-    happstack-server      == 7.0.*,
-    jmacro                == 0.5.*,
-    mtl                   >= 2.0 && < 2.2,
-    pretty                == 1.1.*,
-    template-haskell      >= 2.5 && < 2.8,
-    text                  == 0.11.*,
-    web-routes            == 0.27.*,
-    web-routes-boomerang  == 0.26.*,
-    web-routes-happstack  == 0.23.*
+    base                     >= 4.3 && < 4.6,
+    boomerang                == 1.3.*,
+    bytestring               == 0.9.*,
+    containers               >= 0.4 && < 0.6,
+    happstack-jmacro         == 7.0.*,
+    happstack-server         == 7.0.*,
+    hsp                      == 0.7.*,
+    interpolatedstring-perl6 == 0.9.*,
+    jmacro                   == 0.5.*,
+    mtl                      >= 2.0 && < 2.2,
+    pretty                   == 1.1.*,
+    template-haskell         >= 2.5 && < 2.8,
+    text                     == 0.11.*,
+    web-routes               == 0.27.*,
+    web-routes-boomerang     == 0.26.*,
+    web-routes-happstack     == 0.23.*,
+    web-routes-th            == 0.21.*
 
   if !flag(embed)
     CPP-Options   :
