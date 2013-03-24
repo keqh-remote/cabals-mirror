@@ -1,5 +1,5 @@
 Name:             soxlib
-Version:          0.0
+Version:          0.0.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -22,7 +22,7 @@ Extra-Source-Files:
   src/Sound/SoxLib/Template.h
 
 Source-Repository this
-  Tag:         0.0
+  Tag:         0.0.1
   Type:        darcs
   Location:    http://code.haskell.org/~thielema/soxlib/
 
@@ -38,7 +38,7 @@ Library
     -- that's the way to get compatibility between GHC 6.10 and 6.12
     extensible-exceptions >=0.1.1 && <0.2,
     transformers >=0.2 && <0.4,
-    containers >=0.1 && <0.5,
+    containers >=0.1 && <0.6,
     utility-ht >=0.0.5 && <0.1,
     base >=4 && <5
 
