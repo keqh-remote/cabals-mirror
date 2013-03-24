@@ -1,5 +1,5 @@
 Name:               utf8-string
-Version:            0.3
+Version:            0.3.1
 Author:             Eric Mertens
 Maintainer:         emertens@galois.com
 License:            BSD3
@@ -15,5 +15,8 @@ Build-depends:      base>=1.0, bytestring>=0.9
 Ghc-options:        -W -O2
 Build-type:         Simple
 Exposed-modules:    Codec.Binary.UTF8.String
+                    Codec.Binary.UTF8.Generic
                     System.IO.UTF8
+                    Data.String.UTF8
                     Data.ByteString.UTF8
+                    Data.ByteString.Lazy.UTF8
