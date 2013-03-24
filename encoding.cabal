@@ -1,5 +1,5 @@
 Name:		encoding
-Version:	0.5.1
+Version:	0.5.2
 Author:		Henning Günther
 Maintainer:	h.guenther@tu-bs.de
 License:	BSD3
@@ -47,7 +47,7 @@ Flag splitBase
 
 Library
   if flag(splitBase)
-    Build-Depends:	bytestring, base >= 3, binary, mtl, containers, extensible-exceptions, array, template-haskell, regex-compat
+    Build-Depends:	bytestring, base >= 3 && < 5, binary, mtl, containers, extensible-exceptions, array, template-haskell, regex-compat
   else
     Build-Depends:	base < 3, binary, extensible-exceptions, template-haskell
 
