@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       2.6.1
+version:       2.7
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -37,7 +37,7 @@ description:
   .
   The core of this hierarchy looks like:
   .
-  <<https://github.com/ekmett/lens/wiki/images/Hierarchy-2.6.png>>
+  <<https://github.com/ekmett/lens/wiki/images/Hierarchy-2.7.png>>
   .
   You can compose any two elements of the hierarchy above using (.) from the Prelude, and you can
   use any element of the hierarchy as any type it links to above it.
@@ -119,7 +119,7 @@ flag template-haskell
 
 -- Generate inline pragmas when using template-haskell. This defaults to enabled, but you can
 --
--- > cabal install lens -f-inlining 
+-- > cabal install lens -f-inlining
 --
 -- to shut it off to benchmark the relative performance impact, or as last ditch effort to address compile
 -- errors resulting from the myriad versions of template-haskell that all purport to be 2.8.
@@ -177,10 +177,8 @@ library
     Data.Data.Lens
     Data.Dynamic.Lens
     Data.HashSet.Lens
-    Data.IntMap.Lens
     Data.IntSet.Lens
     Data.List.Lens
-    Data.Map.Lens
     Data.Monoid.Lens
     Data.Sequence.Lens
     Data.Set.Lens
@@ -226,11 +224,13 @@ test-suite doctests
   type:    exitcode-stdio-1.0
   main-is: doctests.hs
   build-depends:
-    base == 4.*,
-    directory >= 1.0 && < 1.2,
+    base,
+    directory >= 1.0 && < 1.3,
     doctest >= 0.8 && <= 0.9,
-    filepath >= 1.3 && < 1.4
-  ghc-options: -Wall -Werror -threaded
+    filepath
+  ghc-options: -Wall -threaded
+  if impl(ghc<7.6.1)
+    ghc-options: -Werror
   hs-source-dirs: tests
 
 -- Verify that Template Haskell expansion works
@@ -240,7 +240,9 @@ test-suite templates
   build-depends:
     base,
     lens
-  ghc-options: -Wall -Werror -threaded
+  ghc-options: -Wall -threaded
+  if impl(ghc<7.6.1)
+    ghc-options: -Werror
   hs-source-dirs: tests
 
 -- Verify the properties of lenses with QuickCheck
@@ -251,7 +253,22 @@ test-suite properties
     base,
     lens,
     QuickCheck   >= 2.4 && < 2.6,
-    transformers >= 0.3 && < 0.5
+    transformers
+  ghc-options: -w -threaded
+  hs-source-dirs: tests
+
+test-suite hunit
+  type: exitcode-stdio-1.0
+  main-is: hunit.hs
+  build-depends:
+    base,
+    containers,
+    HUnit == 1.2.*,
+    lens,
+    mtl,
+    test-framework == 0.6.*,
+    test-framework-hunit == 0.2.*,
+    test-framework-th == 0.2.*
   ghc-options: -w -threaded
   hs-source-dirs: tests
 
