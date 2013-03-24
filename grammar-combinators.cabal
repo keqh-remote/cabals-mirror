@@ -1,5 +1,5 @@
 Name:                grammar-combinators
-Version:             0.2
+Version:             0.2.1
 Description:
     The grammar-combinators library is a novel parsing library using
     an explicit representation of recursion to provide various novel
@@ -36,6 +36,7 @@ Library
                      Text.GrammarCombinators.Base.ProductionRule
                      Text.GrammarCombinators.Base.Processor
                      Text.GrammarCombinators.Base.Token
+                     Text.GrammarCombinators.Library.Numeric
                      Text.GrammarCombinators.Parser.LL1
                      Text.GrammarCombinators.Parser.LL1TH
                      Text.GrammarCombinators.Parser.Packrat
@@ -69,6 +70,8 @@ Library
                      Text.GrammarCombinators.Utils.IsDead
                      Text.GrammarCombinators.Utils.IsEpsilon
                      Text.GrammarCombinators.Utils.IsReachable
+                     Text.GrammarCombinators.Utils.LiftGrammar
+                     Text.GrammarCombinators.Utils.MemoizeGrammar
                      Text.GrammarCombinators.Utils.PrintGrammar
                      Text.GrammarCombinators.Utils.ToGraph
                      Text.GrammarCombinators.Utils.UnfoldDepthFirst
