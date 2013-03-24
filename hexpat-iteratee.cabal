@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name: hexpat-iteratee
-Version: 0.3
+Version: 0.4
 Synopsis: Chunked XML parsing using iteratees
 Description:
   This package provides chunked XML parsing using iteratees.  It is especially suited
@@ -9,10 +9,12 @@ Description:
   Haskell's lazy I\/O.
   .
   The XML is presented as a lazy tree, and is processed by a handler implemented using
-  a special HandlerT monad.  This monad is suspended whenever it tries to read a part
-  of the tree that hasn't been parsed yet, and continued as soon as it is available.
+  a monad transformer called XMLT.  The resulting monad is suspended whenever it tries
+  to read a part of the tree that hasn't been parsed yet, and continued as soon as it
+  is available.
   The resulting code looks and functions very much as if you were using lazy I\/O,
-  only without the associated problems.  The handler monad may have effects.
+  only without the associated problems. Your handlers can have effects, yet they
+  come out in quite a functional style.
   .
   Background:  Haskell's lazy I\/O can be problematic in some applications because it
   doesn't handle I\/O errors properly, and you can't predict when it will clean up its
@@ -35,6 +37,7 @@ Extra-Source-Files:
     test/test4.hs
     test/sudoku.xml
     test/broken.xml
+    test/client-server/server.hs
 source-repository head
     type:     darcs
     location: http://code.haskell.org/hexpat-iteratee/
@@ -43,13 +46,13 @@ Library
   Build-Depends:
     base >= 3 && < 5,
     bytestring,
-    mtl,
+    transformers,
     parallel,
     containers,
     extensible-exceptions >= 0.1 && < 0.2,
     iteratee >= 0.3,
-    hexpat >= 0.15,
-    List >= 0.3
+    hexpat >= 0.16,
+    List >= 0.4
   Exposed-Modules:
     Text.XML.Expat.Chunked
   ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-unused-matches -fno-warn-missing-signatures -fno-warn-orphans
