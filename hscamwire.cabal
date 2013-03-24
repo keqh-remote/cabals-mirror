@@ -1,5 +1,5 @@
 name:                hscamwire
-version:             0.2
+version:             0.2.1
 synopsis:            Haskell bindings to IIDC1394 cameras, via Camwire
 description:         These are idiomatic bindings to the Camwire library, which interfaces with IIDC1394-compliant cameras on Linux.
 category:            System
@@ -16,3 +16,6 @@ Library
         build-depends: base >= 3 && < 4, unix, array, time
         Exposed-Modules: System.Camera.IIDC1394 System.Camera.IIDC1394.Camwire
         ghc-options:         -Wall
+        include-dirs: /usr/local/include/camwire
+        extra-lib-dirs: /usr/local/lib
+        extra-libraries: dc1394_control raw1394 camwire_1394
