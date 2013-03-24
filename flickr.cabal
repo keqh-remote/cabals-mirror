@@ -1,5 +1,5 @@
 name: flickr
-version: 0.2.1
+version: 0.2.2
 Synopsis: Haskell binding to the Flickr API
 Description:
    The flickr API binding lets you access flickr.com's
@@ -49,6 +49,7 @@ library
                   Flickr.Photosets.Comments,
                   Flickr.Places,
                   Flickr.Tags,
+                  Flickr.Test,
                   Flickr.URLs,
                   Flickr.Utils,
                   Util.Fetch,
