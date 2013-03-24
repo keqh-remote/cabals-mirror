@@ -1,5 +1,5 @@
 Name: penny-lib
-Version: 0.2.0.0
+Version: 0.4.0.0
 Cabal-version: >=1.8
 Build-Type: Simple
 License: MIT
@@ -191,7 +191,6 @@ Library
         Penny.Cabin.Balance,
         Penny.Cabin.Balance.Parser,
         Penny.Cabin.Balance.Help,
-        Penny.Cabin.Balance.Options,
         Penny.Cabin.Balance.Tree,
         Penny.Cabin.Chunk,
         Penny.Cabin.Chunk.Switch,
@@ -210,9 +209,9 @@ Library
         Penny.Cabin.Posts.Chunk,
         Penny.Cabin.Posts.Help,
         Penny.Cabin.Posts.Meta,
-        Penny.Cabin.Posts.Options,
         Penny.Cabin.Posts.Parser,
         Penny.Cabin.Posts.Spacers,
+        Penny.Cabin.Posts.Types,
         Penny.Cabin.Row,
         Penny.Cabin.TextFormat,
         Penny.Copper,
@@ -262,6 +261,7 @@ Library
         Penny.Lincoln.Family.Family,
         Penny.Lincoln.Family.Siblings,
         Penny.Lincoln.HasText,
+        Penny.Lincoln.Matchers,
         Penny.Lincoln.Meta,
         Penny.Lincoln.NestedMap,
         Penny.Lincoln.Predicates,
