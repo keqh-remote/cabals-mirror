@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.1.5.2
+version: 0.1.5.3
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
