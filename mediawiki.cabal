@@ -1,5 +1,5 @@
 Name:               mediawiki
-Version:            0.2.1
+Version:            0.2.2
 License:            BSD3
 License-file:       LICENSE
 Category:           Web
@@ -111,16 +111,22 @@ library
                      MediaWiki.Util.Codec.Percent,
                      MediaWiki.Util.Codec.URLEncoder
     Ghc-Options:     -Wall -O2 
-    Build-Depends:   base, xml, HTTP, network, mime, utf8-string
+    Build-Depends:   base, xml, HTTP >= 3001, network, mime, utf8-string
+  if impl(ghc >= 6.10)
+    cpp-options:     -DEXTENSIBLE_EXCEPTIONS
 
 executable main {
   build-depends:        base
   main-is:              Main.hs
   ghc-options:          -Wall -fglasgow-exts
+  if impl(ghc >= 6.10)
+    cpp-options:     -DEXTENSIBLE_EXCEPTIONS
 }
 
 executable listCat {
   build-depends:        base, pretty
   main-is:              examples/ListCat.hs
   ghc-options:          -Wall -fglasgow-exts -iexamples
+  if impl(ghc >= 6.10)
+    CPP-options:     -DEXTENSIBLE_EXCEPTIONS
 }
