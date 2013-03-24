@@ -1,10 +1,8 @@
 name:           peano-inf
-version:        0.6
+version:        0.6.1
 synopsis:       Lazy Peano numbers including observable infinity value.
 description:    
     Lazy Peano numbers including observable infinity value.
-    .
-    This data type was needed in a graph traversing algorithm.
     .
     This data type is ideal for lazy list length computation (the infinite value is not needed in this case).
     For a comparison with other Peano number implementation, see <http://people.inf.elte.hu/divip/peano/>
