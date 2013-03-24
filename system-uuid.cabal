@@ -1,5 +1,5 @@
 name                          : system-uuid
-version                       : 0.0.0
+version                       : 0.0.1
 category                      : System
 license                       : BSD3
 license-file                  : LICENSE
@@ -8,7 +8,8 @@ maintainer                    : jason.dusek@gmail.com
 homepage                      : http://github.com/jsnx/system-uuid/
 synopsis                      : Bindings to system UUID functions.
 description                   :
-  Bindings to the native UUID generator for a number of platforms.
+  Bindings to the native UUID generator for a number of platforms. Please
+  contact the author if your platform is not supported.
 
 
 cabal-version                 : >= 1.2
@@ -17,6 +18,7 @@ extra-source-files            : README
                                 CONTRIBUTORS
                                 Options.hs
                                 Macros.hs
+                                MacroMacros.hs
                                 Messages.hs
 
 
