@@ -1,6 +1,6 @@
 Name:           nptools
 Cabal-Version:  >=1.4
-Version:        0.2.0
+Version:        0.2.1
 License:        BSD3
 License-File:   LICENSE
 Copyright:      (c) Nicolas Pouillard
@@ -110,4 +110,8 @@ executable what-I-have-done-today
 executable x-printable
     main-is: x-printable.hs
     Build-depends: base>=3&&<5
+    ghc-options: -Wall -Odph
+
+executable cp-rescue
+    main-is: cp-rescue.hs
     ghc-options: -Wall -Odph
