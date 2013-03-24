@@ -1,5 +1,5 @@
 name:            yesod-json
-version:         0.2.2.2
+version:         0.2.2.3
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -27,4 +27,4 @@ library
 
 source-repository head
   type:     git
-  location: git://github.com/snoyberg/yesod-json.git
+  location: git://github.com/yesodweb/yesod.git
