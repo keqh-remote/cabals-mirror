@@ -1,6 +1,6 @@
 Name:           CCA
-Version:        0.1.1
-Cabal-Version:  >= 1.2
+Version:        0.1.3
+Cabal-Version:  >= 1.6
 Build-Type:     Simple
 License:        BSD3
 License-File:   LICENSE
@@ -12,7 +12,7 @@ Stability:      Experimental
 Synopsis:       preprocessor and library for Causal Commutative Arrows (CCA)
 Description:    A library that provides normalization support via Template 
                 Haskell for CCAs, and a modified preprocessor based on
-                Ross Patterson's arrowp that reads Haskell with arrow notation 
+                Ross Paterson's arrowp that reads Haskell with arrow notation 
                 and outputs Haskell 98 + Template Haskell sources for
                 use with CCA library.
 Extra-Source-Files: 
@@ -20,6 +20,7 @@ Extra-Source-Files:
                 test/Makefile
                 test/Main.hs
                 test/Sample.as
+                test/Sample1.hs
 
 
 library
@@ -31,9 +32,11 @@ library
     build-depends: base >= 4 && < 5, syb, ghc-prim
 
 Executable ccap
-    Main-is:        Main.lhs
-    Other-Modules:  ArrCode ArrSyn Lexer Parser Parser State Utils
-    Build-Depends:  base >= 3 && < 5, array, containers, haskell-src
-    Hs-Source-Dirs: preprocessor
+  Main-is:        Main.lhs
+  Other-Modules:  ArrCode ArrSyn Lexer Parser Parser State Utils
+  Build-Depends:  base >= 3 && < 5, array, containers, haskell-src
+  Hs-Source-Dirs: preprocessor
 
-
+source-repository head
+  type:          darcs
+  location:      http://code.haskell.org/CCA/
