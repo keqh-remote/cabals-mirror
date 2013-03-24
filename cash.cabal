@@ -1,5 +1,5 @@
 Name:			cash
-Version:		0.1.0.0
+Version:		0.1.0.1
 Author:			Chris Brown, Hans-Wolfgang Loidl, Jost Berthold, Kevin Hammond
 Maintainer:		Chris Brown
 Stability:		Provisional
@@ -15,7 +15,7 @@ Data-Dir:		misc
 Data-Files:		*.g, sample-sgprc, sgp_admin.sh
 extra-source-files:	SCSCP/BaseServices.hs
 Library
-        Build-Depends:  base >4 && <= 5, network, parallel, HaXml <= 1.13.3, pretty, haskell98, deepseq
+        Build-Depends:  base >4 && <= 5, network, parallel <= 2.2.0.1, HaXml <= 1.13.3, pretty, haskell98, deepseq
         Exposed-modules: Math.ComputerAlgebra.Cash
                          Math.ComputerAlgebra.Cash.BaseServices
                          Math.ComputerAlgebra.Cash.SCSCP_API
