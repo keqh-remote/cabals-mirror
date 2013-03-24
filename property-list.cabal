@@ -1,5 +1,5 @@
 name:                   property-list
-version:                0.0.0.5
+version:                0.0.0.6
 stability:              experimental
 license:                PublicDomain
 
@@ -14,7 +14,10 @@ category:               Data, Parsing
 synopsis:               XML property list parser
 description:            Parser, data type and formatter for Apple's XML property list 1.0 format.
 
-flag data_object_uses_lazy_bytestrings
+flag new-data-object
+  description:          Use the new version of the data-object package (>= 0.0.2)
+                        Which has a "generic object" type in place of the simpler
+                        Object type in previous versions.
   default:              True
 
 Library
@@ -28,6 +31,7 @@ Library
                         Data.PropertyList.Object
   build-depends:        base >= 3 && <5,
                         bytestring,
+                        bytestring-class,
                         containers, 
                         dataenc,
                         HaXml >= 1.19,
@@ -39,9 +43,9 @@ Library
                         template-haskell,
                         th-fold
 
-  if flag(data_object_uses_lazy_bytestrings)
+  if flag(new-data-object)
     build-depends:      data-object >= 0.0.2
-    cpp-options:        -Ddata_object_uses_lazy_bytestrings
+    cpp-options:        -DNEW_DATA_OBJECT
   else
     build-depends:      data-object <  0.0.2
     
