@@ -1,5 +1,5 @@
 name:           uvector
-version:        0.1.0.1
+version:        0.1.0.2
 license:        BSD3
 license-file:   LICENSE
 author:         Manuel Chakravarty, Gabriele Keller, Roman Leshchinskiy, Don Stewart
@@ -15,7 +15,7 @@ description:    Fast unboxed arrays with a flexible interface.
                 For best results, compile with your user programs  
                 with -O2 -fvia-C -optc-O2.
 build-type:     Simple
-stability:           experimental
+stability:      experimental
 cabal-version:  >= 1.2
 extra-source-files: include/fusion-phases.h README TODO
 
@@ -72,6 +72,6 @@ library
     if flag(safe)
         cpp-options: -DSAFE
 
-    if impl(ghc >= 6.10)
+    if impl(ghc >= 6.9)
         build-depends: ghc-prim
         ghc-options:   -fno-spec-constr-threshold
