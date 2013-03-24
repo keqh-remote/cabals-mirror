@@ -1,5 +1,5 @@
 Name:                hbro
-Version:             0.4.3
+Version:             0.4.4
 Synopsis:            A suckless minimal KISSy browser
 -- Description:         
 -- Homepage:
@@ -44,7 +44,7 @@ Library
         Hbro.Gui,
         Hbro.Socket
         Hbro.Util
-    Ghc-options: -Wall -threaded 
+    Ghc-options: -Wall
 
 Executable hbro
     Build-depends: 
