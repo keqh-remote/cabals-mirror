@@ -1,7 +1,7 @@
 cabal-version: >=1.2
 build-type: Simple
 name: uuagc
-version: 0.9.10
+version: 0.9.11
 license: GPL
 license-file: LICENSE
 maintainer: Arie Middelkoop <ariem@cs.uu.nl>
@@ -19,12 +19,12 @@ flag compatibility2
   description: compatibility flag.
 executable uuagc
   if flag(compatibility1)
-    build-depends: base >= 4, ghc-prim
+    build-depends: base >= 4, base < 5, ghc-prim
   else
     build-depends: base < 4
 
   if flag(compatibility2)
-    build-depends: base >= 3, containers, directory, array
+    build-depends: base >= 3, base < 5, containers, directory, array
   else
     build-depends: base < 3
 
