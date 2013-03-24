@@ -1,6 +1,6 @@
 -- arch-tag: Haskell XML Toolbox main description file
 name: hxt
-version: 8.2.0
+version: 8.3.0
 license: OtherLicense
 license-file: LICENCE
 maintainer: Uwe Schmidt <uwe@fh-wedel.de>
@@ -31,7 +31,6 @@ library
   Data.Char.UTF8,
   Data.NavTree,
   Data.Tree.Class,
-  Data.Tree.NTree.Filter,
   Data.Tree.NTree.TypeDefs,
   Text.XML.HXT.Arrow,
   Text.XML.HXT.Arrow.DTDProcessing,
@@ -58,7 +57,6 @@ library
   Text.XML.HXT.DOM.IsoLatinTables,
   Text.XML.HXT.DOM.MimeTypeDefaults,
   Text.XML.HXT.DOM.MimeTypes,
-  Text.XML.HXT.DOM.NamespacePredicates,
   Text.XML.HXT.DOM.QualifiedName,
   Text.XML.HXT.DOM.ShowXml,
   Text.XML.HXT.DOM.TypeDefs,
@@ -68,7 +66,6 @@ library
   Text.XML.HXT.DOM.XmlKeywords,
   Text.XML.HXT.DOM.XmlNode,
   Text.XML.HXT.DOM.XmlOptions,
-  Text.XML.HXT.DOM.XmlTreeTypes,
   Text.XML.HXT.DTDValidation.AttributeValueValidation,
   Text.XML.HXT.DTDValidation.DTDValidation,
   Text.XML.HXT.DTDValidation.DocTransformation,
