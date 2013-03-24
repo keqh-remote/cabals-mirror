@@ -1,5 +1,5 @@
 Name:                uu-parsinglib
-Version:             2.4.2
+Version:             2.4.4
 Build-Type:          Simple
 License:             MIT
 Copyright:           S Doaitse Swierstra 
@@ -26,6 +26,8 @@ Description:         New version of the Utrecht University parser combinator lib
                      .
                      Version 2.4.2 fixes a dependency in the .cabal file and has made the class 
                      ExtApplicative obsolete since <$ is now in the class Functor
+                     .
+                     Version 2.4.3: removed the class Symbol, which enabled us to become more H98-ish
 Category:            Parsing
 
 Library
