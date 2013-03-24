@@ -1,5 +1,5 @@
 name:                mage
-version:             1.0
+version:             1.0.1
 Stability:           Alpa
 synopsis:            Rogue-like
 description:         A simple rogue-like; currently has a Curses interface
@@ -12,15 +12,16 @@ author:              Richard Braakman <dark@xs.nl>
 --maintainer:          none
 homepage:            http://www.scannedinavian.com/~shae/mage-1.0pre35.tar.gz
 
-build-depends:       base>3, FiniteMap, array, random, mtl, containers
+build-depends:       base>3, array, random, mtl, containers
 build-type:          Simple
-data-files:          THANKS, TODO
 tested-with:         GHC==6.8.2
+
+data-files:          THANKS, TODO
+extra-source-files: src/curses_wrapper.h
 
 executable:          mage
 main-is:             Main.hs
 hs-source-dirs:      src
-c-sources:           src/curses_wrapper.h
 other-modules:       Curses, Language.Dutch, Language.English, Language,
                      LevelGen, MonsterGen, Messages, Vision,
                      Actions, Body, MessageWindow, Util.PQueue,
@@ -29,6 +30,8 @@ other-modules:       Curses, Language.Dutch, Language.English, Language,
                      Glyph, Color, LanguageSelect, Items,
                      Monsters, BoxChar, Materials, Keymap,
                      Util, Test.Language, Test.Search, Landscape, World
+include-dirs:        src/
+extra-libraries:     curses
 Extensions:          ForeignFunctionInterface
 ghc-options:         -O2 -Wall -optl-Wl,-s
 ghc-prof-options:    -prof -auto-all
