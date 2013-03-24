@@ -1,5 +1,5 @@
 Name:                openpgp-asciiarmor
-Version:             0.0
+Version:             0.1
 Synopsis:            OpenPGP (RFC4880) ASCII Armor codec
 Description:         OpenPGP (RFC4880) ASCII Armor codec
 Homepage:            http://floss.scru.org/openpgp-asciiarmor
@@ -15,9 +15,15 @@ Extra-source-files: tests/suite.hs
   , tests/data/msg1a.asc
   , tests/data/msg1b.asc
   , tests/data/msg1c.asc
-  , tests/data/msg2.asc
   , tests/data/msg1.gpg
+  , tests/data/msg2.asc
   , tests/data/msg2.pgp
+  , tests/data/msg3
+  , tests/data/msg3.asc
+  , tests/data/msg3.sig
+  , tests/data/msg4
+  , tests/data/msg4.asc
+  , tests/data/msg4.sig
 
 Cabal-version:       >= 1.10
 
@@ -29,6 +35,7 @@ Library
                      , Codec.Encryption.OpenPGP.ASCIIArmor.Types
   Other-Modules: Data.Digest.CRC24
                , Codec.Encryption.OpenPGP.ASCIIArmor.Multipart
+               , Codec.Encryption.OpenPGP.ASCIIArmor.Utils
   Build-depends: attoparsec
                , base                  > 4       && < 5
                , base64-bytestring
