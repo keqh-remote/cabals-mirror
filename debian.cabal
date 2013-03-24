@@ -1,12 +1,12 @@
 Name:           debian
-Version:        3.35
+Version:        3.40
 License:        BSD3
 License-File:	debian/copyright
 Author:         David Fox
 Category:	System
 Maintainer:     david@seereason.com
-Homepage:       http://src.seereason.com/ghc610/haskell-debian-3
-Build-Depends:  base >= 4 && < 5, syb, bytestring, containers, directory, filepath, mtl, network, old-locale, parsec, pretty, process, regex-compat, regex-posix, time, unix, bzlib, Extra >= 0.4, HaXml, Unixutils, zlib
+Homepage:       http://src.seereason.com/ghc6103/haskell-debian-3
+Build-Depends:  base >= 4 && < 5, syb, bytestring, containers, directory, filepath, mtl, network, old-locale, parsec >= 3, pretty, process, regex-compat, regex-posix, time, unix, bzlib, HaXml, Unixutils, zlib
 Build-Type:	Simple
 Synopsis:       Modules for working with the Debian package system
 Description:
@@ -26,7 +26,6 @@ Exposed-modules:
 	Debian.Control.ByteString,
 	Debian.Control.String,
 	Debian.Deb,
-	Debian.Extra.CIO,
 	Debian.Extra.Files,
 	Debian.GenBuildDeps,
 	Debian.Relation,
@@ -39,7 +38,6 @@ Exposed-modules:
 	Debian.Version.Common,
 	Debian.Version.String,
 	Debian.Version.ByteString,
-	Debian.VersionPolicy,
 	Debian.Report,
         Debian.Time,
         Debian.URI,
@@ -51,9 +49,7 @@ other-modules:
 	Distribution.Package.Debian.Main,
 	Distribution.Package.Debian
 extra-source-files:
-	tests/Main.hs debian/changelog  
-	debian/compat debian/control debian/copyright
-	debian/rules
+	tests/Main.hs
 
 Executable: fakechanges
 Main-is: utils/FakeChanges.hs
@@ -62,6 +58,9 @@ ghc-options: -O2 -threaded -W
 Executable: debian-report
 Main-is: utils/Report.hs
 ghc-options: -O2 -threaded -W
+C-Sources:	     cbits/gwinsz.c
+Include-Dirs:        cbits
+Install-Includes:    gwinsz.h
 
 Executable: cabal-debian
 Main-is: utils/CabalDebian.hs
