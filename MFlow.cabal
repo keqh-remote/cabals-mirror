@@ -1,5 +1,5 @@
 name: MFlow
-version: 0.2.0.2
+version: 0.2.0.3
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
@@ -58,7 +58,7 @@ library
                    stm >2, old-time -any, vector -any, directory -any,
                    utf8-string -any, wai -any, case-insensitive -any, http-types -any,
                    conduit -any, text -any, parsec -any, warp -any,
-                   random -any, hsp == 0.7.1, hack -any, hack-handler-simpleserver -any,
+                   random -any, hsp >= 0.8, hack -any, hack-handler-simpleserver -any,
                    blaze-html -any, blaze-markup -any
     exposed-modules: MFlow.Wai.Blaze.Html.All
                      MFlow.Forms MFlow.Forms.Admin MFlow MFlow.FileServer
