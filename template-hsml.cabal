@@ -1,11 +1,11 @@
 name:                template-hsml
-version:             0.1.0.0
+version:             0.2.0.1
 synopsis:            Haskell's Simple Markup Language
 description:         HSML syntax is very similar to that of XML, but there are less rules.
-                     The main advantage over plain HTML is that it allows you to embed Haskell declarations
+                     The main advantage over plain XML or HTML is that it allows you to embed Haskell declarations
                      and expression directly into your template.
 
-                     The main dvantage over something like Blaze is thatit saves
+                     The main advantage over something like Blaze is that it saves
                      you the overhead of using Blaze's combinators. It's also relatively easy to port your existing
                      plain HTML templates into HSML (most of the times, cut & paste will suffice).
 
@@ -20,17 +20,22 @@ build-type:          Simple
 cabal-version:       >=1.8
 stability:           Experimental
 
+flag testing
+  description: Are we building for testing?
+  default: False 
+
 library
   hs-source-dirs:      src
-  
+
   exposed-modules:
-      Template.HSML 
- 
+        Template.HSML 
+  
   other-modules:       
-      Template.HSML.Internal.TH
-    , Template.HSML.Internal.Types
-    , Template.HSML.Internal.Parser
-    , Template.HSML.Internal.Parser.Raw
+        Template.HSML.Internal.TH
+      , Template.HSML.Internal.Types
+      , Template.HSML.Internal.Types.Syntax
+      , Template.HSML.Internal.Parser
+      , Template.HSML.Internal.Parser.Syntax
 
   build-depends:
       base == 4.5.*
@@ -40,3 +45,32 @@ library
     , haskell-src-meta == 0.5.*
     , parsec           == 3.1.*
     , template-haskell == 2.7.*
+
+  extensions: CPP
+
+  ghc-options: -O2 -Wall
+ 
+  if flag(testing) 
+    cpp-options: -DTESTING
+
+
+test-suite template-hsml-tests
+    type:           exitcode-stdio-1.0
+    hs-source-dirs: tests
+    main-is:        Main.hs
+    
+    other-modules:
+        Parser.Syntax
+    
+
+    build-depends:
+        base == 4.5.*
+      , template-hsml
+      , parsec           == 3.1.*
+      , QuickCheck == 2.4.*
+      , test-framework == 0.6.*
+      , test-framework-quickcheck2 == 0.2.*
+
+    ghc-options: -Wall
+    cpp-options: -DTESTING
+
