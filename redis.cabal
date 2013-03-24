@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.2
+Version:             0.3
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -11,7 +11,17 @@ Description:
     but the dataset is not volatile. Values can be strings, exactly
     like in memcached, but also lists, sets, and ordered sets.
     .
-    This library is a Haskell driver for Redis.
+    This library is a Haskell driver for Redis. Note that this library
+	supports the most recent (actually the git one) version of Redis
+	protocol. Most of the functions will work correctly with stable version
+	but not all.
+	.
+	Changes from v0.2:
+	.
+	- (!) A lot of data and function types changed. Now it is posible to get not only
+	  String result but also a ByteString and other.
+	.
+	- New protocol functions added: substr, zrank
 
 Stability:           beta
 Build-Type:          Simple
@@ -19,9 +29,10 @@ Cabal-Version: >= 1.4
 
 Library
     Build-Depends:       base < 5, bytestring, utf8-string,
-                         network, mtl, old-time
+                         network, mtl, old-time, binary
     Exposed-modules:     Database.Redis.Redis
                          Database.Redis.Monad
+                         Database.Redis.ByteStringClass
                          Database.Redis.Monad.State
                          Database.Redis.Utils.Lock
                          Database.Redis.Utils.Monad.Lock
