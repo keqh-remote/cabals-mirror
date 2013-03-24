@@ -1,5 +1,5 @@
 name:            codec-libevent
-version:         0.1
+version:         0.1.1
 license:         BSD3
 license-file:    LICENSE
 author:          Adam Langley <agl@imperialviolet.org>
@@ -10,11 +10,10 @@ synopsis:        Cross-platform structure serialisation
 category:        Data, Parsing
 build-depends:   base, containers, array, bytestring>=0.9, QuickCheck>=1.1, binary-strict>=0.1, binary>=0.4.1, parsec>=2.1, regex-compat>=0.71
 stability:       provisional
-tested-with:     GHC == 6.8.1
+tested-with:     GHC == 6.8.2
 exposed-modules: Codec.Libevent, Codec.Libevent.Parse, Codec.Libevent.Generate, Codec.Libevent.Class
 extensions:      CPP, FlexibleContexts
 hs-source-dirs:  src
-ghc-options:     -O2
 
 executable:      codec-libevent-generate
 hs-source-dirs:  src
