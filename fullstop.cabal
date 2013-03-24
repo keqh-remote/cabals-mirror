@@ -1,5 +1,5 @@
 name:                fullstop
-version:             0.1.1
+version:             0.1.2
 synopsis:            Simple sentence segmenter
 description:         FullStop splits texts into sentences, using some orthographical
                      conventions (used in English and hopefully other languages).
@@ -22,20 +22,30 @@ homepage:            http://patch-tag.com/r/kowey/fullstop
 cabal-version:       >= 1.6
 build-type:          Custom
 
+flag test
+     Description: Build the test suite
+     Default: False
+
 library
     exposed-modules:  NLP.FullStop
 
     -- NB: there actualy isn't any particular need for GHC 6.10
     build-Depends: base >= 3 && < 4.3
-                 , HUnit == 1.2.*
-                 , QuickCheck == 2.1.*
-                 , test-framework       == 0.2.*
-                 , test-framework-hunit == 0.2.*
-                 , test-framework-quickcheck2 == 0.2.*
                  , split == 0.1.*
 
 executable fullstop
     main-is:  fullstop.hs
 
 executable hstest-fullstop
-    main-is:  Tests.hs
+  main-is:         Tests.hs
+  other-modules:   Tests.NLP.FullStop
+
+  if flag(test)
+    build-depends:   base >= 3 && < 4.3
+                 ,   HUnit == 1.2.*
+                 ,   QuickCheck == 2.4.*
+                 ,   test-framework       == 0.3.*
+                 ,   test-framework-hunit == 0.2.*
+                 ,   test-framework-quickcheck2 == 0.2.*
+  else
+    Buildable: False
