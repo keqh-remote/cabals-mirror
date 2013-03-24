@@ -1,15 +1,18 @@
 name:           yi-gtk
-version:        0.2
+version:        0.2.1
 category:       Editor
 synopsis:       GTK backend for Yi
 description:
   Core functions for the GTK backend of Yi.
   Note that you will need the yi package to use this.
+  .
+  Note that this is *not* for versions of Yi 0.3 or higher!
 license:        GPL
 license-file:   LICENSE
 author:         Don Stewart
 maintainer:     dons@cse.unsw.edu.au
-build-depends:  ghc>=6.6, base, mtl, gtk>=0.9.11, sourceview>=0.9.11, regex-posix, filepath>=1.0
+build-type: Simple
+build-depends:  ghc>=6.6, base, mtl, gtk>=0.9.11, sourceview>=0.9.11, regex-posix, filepath>=1.0, yi<= 0.2
 exposed-modules:
  Yi
  Yi.Buffer
@@ -52,7 +55,7 @@ include-dirs:   cbits
 hs-source-dirs: gtk, .
 c-sources:      cbits/YiUtils.c
 extensions:     CPP, ForeignFunctionInterface
-ghc-options:    -Wall -fglasgow-exts -O -funbox-strict-fields -fasm -optl-Wl,-s
+ghc-options:    -Wall -fglasgow-exts -funbox-strict-fields
 extra-source-files:
  gtk/Yi/UI.hs-boot
  Yi/Editor.hs-boot
