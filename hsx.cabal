@@ -1,8 +1,8 @@
 Name:                   hsx
-Version:                0.4.4
+Version:                0.4.5
 License:                BSD3
 License-File:           LICENSE
-Author:                 Niklas Broberg, Joel Bjornson
+Author:                 Niklas Broberg, Joel Björnson
 Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
 
 Stability:              Experimental
@@ -29,7 +29,7 @@ Description:            HSX (Haskell Source with XML) allows literal XML syntax 
                         
 Homepage:               http://code.google.com/hsp
 
-Build-Depends:          base>3, mtl, haskell-src-exts>=0.3.2
+Build-Depends:          base>3, mtl, haskell-src-exts>=0.3.2, utf8-string
 Build-Type:             Simple
 Tested-With:            GHC==6.8.3
 
@@ -46,7 +46,8 @@ Extensions:             MultiParamTypeClasses,
                         TypeFamilies,
                         TypeSynonymInstances,
                         FlexibleContexts,
-                        TypeOperators
+                        TypeOperators,
+                        CPP
 
 Executable:             trhsx
 Main-Is:                Trhsx.hs
