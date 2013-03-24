@@ -3,7 +3,7 @@ Build-Type:    Simple
 Tested-With:   GHC
 Category:      Physics, Game
 Name:          Hipmunk
-Version:       5.2.0.1
+Version:       5.2.0.2
 Stability:     provisional
 License:       OtherLicense
 License-File:  LICENSE
@@ -11,6 +11,7 @@ Copyright:     (c) 2008-2010 Felipe A. Lessa
 Author:        Felipe A. Lessa <felipe.lessa@gmail.com>
 Maintainer:    Felipe A. Lessa <felipe.lessa@gmail.com>
 Synopsis:      A Haskell binding for Chipmunk.
+Homepage:      http://patch-tag.com/r/felipe/hipmunk/home
 Description:
       Chipmunk is a fast, simple, portable, 2D physics engine
       (<http://code.google.com/p/chipmunk-physics/> and
@@ -21,92 +22,89 @@ Description:
       <http://hackage.haskell.org/package/HipmunkPlayground>
       for a demonstration of this library.
       .
-      New in version 5.2.0.1:
+      New in version 5.2.0.2:
       .
-      * Minor documentation fixes.
+      * Update to Chipmunk 5.3.4.  Note, however, that not all
+        functionality available in Chipmunk 5.3.4 is here yet.  But
+        the bug fixes and performance improvements are.
       .
-      New in version 5.2.0:
+      * Fix linking bug present since Hipmunk 5.1.0.  Thanks, Sönke Hahn.
       .
-      * Use package StateVar for all variables.
+      * Correctly destroy the space in the presence of callbacks.
       .
-      * Do not use Chipmunk's debug mode.
-      .
-      New in version 5.1.0:
-      .
-      * Updated to Chipmunk 5.0 revision 402.
-        'setElasticIterations' is now deprecated.
-      .
-      * New, revamped callback system.  See module
-        "Physics.Hipmunk.Callbacks".
-      .
-      * Support for the new ratchet joint.  Thanks, Owen
-        Anderson.
-      .
-      * Support for limits on linear and angular velocities.
-      .
-      * @shapePointQuery@ and @shapeSegmentQuery@ don't filter
-        groups and layers anymore.
+      * Workaround difficult-to-reproduce bug in Chipmunk where the
+        number of contact points in an arbiter would get garbage.
+        When that happens (and the garbage does look like garbage) we
+        give an empty list of contact points.
       .
       Licensed under the MIT license (like Chipmunk itself).
 Extra-Source-Files:
       NEWS,
-      chipmunk-r402/include/chipmunk/chipmunk_ffi.h,
-      chipmunk-r402/include/chipmunk/chipmunk.h,
-      chipmunk-r402/include/chipmunk/chipmunk_types.h,
-      chipmunk-r402/include/chipmunk/chipmunk_unsafe.h,
-      chipmunk-r402/include/chipmunk/constraints/cpConstraint.h,
-      chipmunk-r402/include/chipmunk/constraints/cpDampedRotarySpring.h,
-      chipmunk-r402/include/chipmunk/constraints/cpDampedSpring.h,
-      chipmunk-r402/include/chipmunk/constraints/cpGearJoint.h,
-      chipmunk-r402/include/chipmunk/constraints/cpGrooveJoint.h,
-      chipmunk-r402/include/chipmunk/constraints/cpPinJoint.h,
-      chipmunk-r402/include/chipmunk/constraints/cpPivotJoint.h,
-      chipmunk-r402/include/chipmunk/constraints/cpRatchetJoint.h,
-      chipmunk-r402/include/chipmunk/constraints/cpRotaryLimitJoint.h,
-      chipmunk-r402/include/chipmunk/constraints/cpSimpleMotor.h,
-      chipmunk-r402/include/chipmunk/constraints/cpSlideJoint.h,
-      chipmunk-r402/include/chipmunk/constraints/util.h,
-      chipmunk-r402/include/chipmunk/cpArbiter.h,
-      chipmunk-r402/include/chipmunk/cpArray.h,
-      chipmunk-r402/include/chipmunk/cpBB.h,
-      chipmunk-r402/include/chipmunk/cpBody.h,
-      chipmunk-r402/include/chipmunk/cpCollision.h,
-      chipmunk-r402/include/chipmunk/cpHashSet.h,
-      chipmunk-r402/include/chipmunk/cpPolyShape.h,
-      chipmunk-r402/include/chipmunk/cpShape.h,
-      chipmunk-r402/include/chipmunk/cpSpace.h,
-      chipmunk-r402/include/chipmunk/cpSpaceHash.h,
-      chipmunk-r402/include/chipmunk/cpVect.h,
-      chipmunk-r402/LICENSE.txt,
-      chipmunk-r402/README.txt,
-      chipmunk-r402/src/chipmunk.c,
-      chipmunk-r402/src/constraints/cpConstraint.c,
-      chipmunk-r402/src/constraints/cpDampedRotarySpring.c,
-      chipmunk-r402/src/constraints/cpDampedSpring.c,
-      chipmunk-r402/src/constraints/cpGearJoint.c,
-      chipmunk-r402/src/constraints/cpGrooveJoint.c,
-      chipmunk-r402/src/constraints/cpPinJoint.c,
-      chipmunk-r402/src/constraints/cpPivotJoint.c,
-      chipmunk-r402/src/constraints/cpRatchetJoint.c,
-      chipmunk-r402/src/constraints/cpRotaryLimitJoint.c,
-      chipmunk-r402/src/constraints/cpSimpleMotor.c,
-      chipmunk-r402/src/constraints/cpSlideJoint.c,
-      chipmunk-r402/src/cpArbiter.c,
-      chipmunk-r402/src/cpArray.c,
-      chipmunk-r402/src/cpBB.c,
-      chipmunk-r402/src/cpBody.c,
-      chipmunk-r402/src/cpCollision.c,
-      chipmunk-r402/src/cpHashSet.c,
-      chipmunk-r402/src/cpPolyShape.c,
-      chipmunk-r402/src/cpShape.c,
-      chipmunk-r402/src/cpSpace.c,
-      chipmunk-r402/src/cpSpaceHash.c,
-      chipmunk-r402/src/cpVect.c,
-      chipmunk-r402/src/prime.h,
+      Chipmunk-5.3.4/include/chipmunk/chipmunk_ffi.h,
+      Chipmunk-5.3.4/include/chipmunk/chipmunk.h,
+      Chipmunk-5.3.4/include/chipmunk/chipmunk_private.h,
+      Chipmunk-5.3.4/include/chipmunk/chipmunk_types.h,
+      Chipmunk-5.3.4/include/chipmunk/chipmunk_unsafe.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpConstraint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpDampedRotarySpring.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpDampedSpring.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpGearJoint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpGrooveJoint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpPinJoint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpPivotJoint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpRatchetJoint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpRotaryLimitJoint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpSimpleMotor.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/cpSlideJoint.h,
+      Chipmunk-5.3.4/include/chipmunk/constraints/util.h,
+      Chipmunk-5.3.4/include/chipmunk/cpArbiter.h,
+      Chipmunk-5.3.4/include/chipmunk/cpArray.h,
+      Chipmunk-5.3.4/include/chipmunk/cpBB.h,
+      Chipmunk-5.3.4/include/chipmunk/cpBody.h,
+      Chipmunk-5.3.4/include/chipmunk/cpCollision.h,
+      Chipmunk-5.3.4/include/chipmunk/cpHashSet.h,
+      Chipmunk-5.3.4/include/chipmunk/cpPolyShape.h,
+      Chipmunk-5.3.4/include/chipmunk/cpShape.h,
+      Chipmunk-5.3.4/include/chipmunk/cpSpace.h,
+      Chipmunk-5.3.4/include/chipmunk/cpSpaceHash.h,
+      Chipmunk-5.3.4/include/chipmunk/cpVect.h,
+      Chipmunk-5.3.4/LICENSE.txt,
+      Chipmunk-5.3.4/README.txt,
+      Chipmunk-5.3.4/src/chipmunk.c,
+      Chipmunk-5.3.4/src/constraints/cpConstraint.c,
+      Chipmunk-5.3.4/src/constraints/cpDampedRotarySpring.c,
+      Chipmunk-5.3.4/src/constraints/cpDampedSpring.c,
+      Chipmunk-5.3.4/src/constraints/cpGearJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpGrooveJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpPinJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpPivotJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpRatchetJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpRotaryLimitJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpSimpleMotor.c,
+      Chipmunk-5.3.4/src/constraints/cpSlideJoint.c,
+      Chipmunk-5.3.4/src/cpArbiter.c,
+      Chipmunk-5.3.4/src/cpArray.c,
+      Chipmunk-5.3.4/src/cpBB.c,
+      Chipmunk-5.3.4/src/cpBody.c,
+      Chipmunk-5.3.4/src/cpCollision.c,
+      Chipmunk-5.3.4/src/cpHashSet.c,
+      Chipmunk-5.3.4/src/cpPolyShape.c,
+      Chipmunk-5.3.4/src/cpShape.c,
+      Chipmunk-5.3.4/src/cpSpace.c,
+      Chipmunk-5.3.4/src/cpSpaceComponent.c,
+      Chipmunk-5.3.4/src/cpSpaceHash.c,
+      Chipmunk-5.3.4/src/cpSpaceQuery.c,
+      Chipmunk-5.3.4/src/cpSpaceStep.c,
+      Chipmunk-5.3.4/src/cpVect.c,
+      Chipmunk-5.3.4/src/prime.h,
       Physics/Hipmunk/wrapper.h
 
 Flag small_base
   Description: Choose the new smaller, split-up base package.
+
+Flag debug
+  Description: Enable debugging.
+  Default: False
 
 
 Library
@@ -123,33 +121,36 @@ Library
       Physics.Hipmunk.Internal
   Include-Dirs:
       Physics/Hipmunk,
-      chipmunk-r402/include/chipmunk
+      Chipmunk-5.3.4/include/chipmunk
   Includes:
       wrapper.h
   C-Sources:
-      chipmunk-r402/src/chipmunk.c,
-      chipmunk-r402/src/constraints/cpConstraint.c,
-      chipmunk-r402/src/constraints/cpDampedRotarySpring.c,
-      chipmunk-r402/src/constraints/cpDampedSpring.c,
-      chipmunk-r402/src/constraints/cpGearJoint.c,
-      chipmunk-r402/src/constraints/cpGrooveJoint.c,
-      chipmunk-r402/src/constraints/cpPinJoint.c,
-      chipmunk-r402/src/constraints/cpPivotJoint.c,
-      chipmunk-r402/src/constraints/cpRatchetJoint.c,
-      chipmunk-r402/src/constraints/cpRotaryLimitJoint.c,
-      chipmunk-r402/src/constraints/cpSimpleMotor.c,
-      chipmunk-r402/src/constraints/cpSlideJoint.c,
-      chipmunk-r402/src/cpArbiter.c,
-      chipmunk-r402/src/cpArray.c,
-      chipmunk-r402/src/cpBB.c,
-      chipmunk-r402/src/cpBody.c,
-      chipmunk-r402/src/cpCollision.c,
-      chipmunk-r402/src/cpHashSet.c,
-      chipmunk-r402/src/cpPolyShape.c,
-      chipmunk-r402/src/cpShape.c,
-      chipmunk-r402/src/cpSpace.c,
-      chipmunk-r402/src/cpSpaceHash.c,
-      chipmunk-r402/src/cpVect.c,
+      Chipmunk-5.3.4/src/chipmunk.c,
+      Chipmunk-5.3.4/src/constraints/cpConstraint.c,
+      Chipmunk-5.3.4/src/constraints/cpDampedRotarySpring.c,
+      Chipmunk-5.3.4/src/constraints/cpDampedSpring.c,
+      Chipmunk-5.3.4/src/constraints/cpGearJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpGrooveJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpPinJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpPivotJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpRatchetJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpRotaryLimitJoint.c,
+      Chipmunk-5.3.4/src/constraints/cpSimpleMotor.c,
+      Chipmunk-5.3.4/src/constraints/cpSlideJoint.c,
+      Chipmunk-5.3.4/src/cpArbiter.c,
+      Chipmunk-5.3.4/src/cpArray.c,
+      Chipmunk-5.3.4/src/cpBB.c,
+      Chipmunk-5.3.4/src/cpBody.c,
+      Chipmunk-5.3.4/src/cpCollision.c,
+      Chipmunk-5.3.4/src/cpHashSet.c,
+      Chipmunk-5.3.4/src/cpPolyShape.c,
+      Chipmunk-5.3.4/src/cpShape.c,
+      Chipmunk-5.3.4/src/cpSpace.c,
+      Chipmunk-5.3.4/src/cpSpaceComponent.c,
+      Chipmunk-5.3.4/src/cpSpaceHash.c,
+      Chipmunk-5.3.4/src/cpSpaceQuery.c,
+      Chipmunk-5.3.4/src/cpSpaceStep.c,
+      Chipmunk-5.3.4/src/cpVect.c,
       Physics/Hipmunk/wrapper.c
   if flag(small_base)
     Build-Depends: base >= 3 && < 5,
@@ -164,5 +165,9 @@ Library
   Extensions:    CPP, ForeignFunctionInterface
   Build-Tools:   hsc2hs
   GHC-Options:   -Wall
-  CC-Options:    -ffast-math -std=gnu99 -DNDEBUG
+  CC-Options:    -ffast-math -std=gnu99
+  if flag(debug)
+    CC-Options:  -g
+  else
+    CC-Options:  -DNDEBUG
   Extra-Libraries: m
