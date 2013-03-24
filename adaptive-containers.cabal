@@ -1,5 +1,5 @@
 name:               adaptive-containers
-version:            0.2.1
+version:            0.3
 homepage:           http://code.haskell.org/~dons/code/adaptive-containers
 synopsis:           Self optimizing container types
 description:
@@ -24,7 +24,7 @@ description:
     .
     * /List (Pair Int Int)/: An adaptive list of adaptive pairs <http://code.haskell.org/~dons/images/vacuum/list-pair.png>
     .
-    Currently supported adaptive containers: pairs, lists
+    Currently supported adaptive containers: pairs, lists, maybes
     .
     Most unboxed element types are supported.
 
@@ -39,6 +39,7 @@ build-type:         Simple
 library
     exposed-modules:    Data.Adaptive.Tuple
                         Data.Adaptive.List
+                        Data.Adaptive.Maybe
 
     ghc-options:        -O2
                         -fdicts-cheap
