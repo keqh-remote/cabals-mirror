@@ -1,9 +1,11 @@
 name:           BiobaseInfernal
-version:        0.0.2.0
+version:        0.0.2.1
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
+copyright:      Christian Hoener zu Siederdissen, 2010
+homepage:       http://www.tbi.univie.ac.at/~choener/Haskell/
 category:       Bioinformatics
-synopsis:       Infernal CM manipulation
+synopsis:       (deprecated) Infernal CM manipulation
 license:        GPL-3
 license-file:   LICENSE
 build-type:     Simple
