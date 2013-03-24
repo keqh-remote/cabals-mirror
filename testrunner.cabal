@@ -1,5 +1,5 @@
 Name:           testrunner
-Version:        0.9
+Version:        0.9.1
 Category:       Testing
 Synopsis:       Easy unit test driver framework
 Description:    testrunner is a framework to run unit tests. It has the
@@ -17,6 +17,7 @@ Description:    testrunner is a framework to run unit tests. It has the
                   tests by name and replay QuickCheck tests.
 License:        GPL
 License-file:   LICENSE
+extra-source-files: README
 Author:         Reinier Lamers <tux_rocker@reinier.de>
 Maintainer:     Reinier Lamers <tux_rocker@reinier.de>
 Build-Type:     Simple
