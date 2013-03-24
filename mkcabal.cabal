@@ -1,5 +1,5 @@
 Name:                mkcabal
-Version:             0.4
+Version:             0.4.1
 License:             GPL
 License-file:        LICENSE
 Homepage:            http://code.haskell.org/~dons/code/mkcabal
@@ -17,7 +17,7 @@ flag small_base
  
 Executable mkcabal
     main-is:             mkcabal.hs
-    build-depends:       mtl, pcre-light, readline
+    build-depends:       mtl, pcre-light ==0.3, readline
     if flag(small_base)
         build-depends: base >= 3,
                        pretty, old-locale, old-time, directory
