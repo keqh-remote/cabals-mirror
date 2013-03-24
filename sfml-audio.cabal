@@ -1,5 +1,5 @@
 Name:                sfml-audio
-Version:             0.7.0.1816
+Version:             0.7.1.1816
 Synopsis:            minimal bindings to the audio module of sfml
 Description:         Provides a very minimal interface to the audio module of sfml.
     Currently, only the playing of sounds is covered.
@@ -43,7 +43,8 @@ Library
 
   -- Packages needed in order to build this package.
   Build-depends:
-    base >= 4 && < 5
+    base >= 4 && < 5,
+    bytestring == 0.9.* || == 0.10.*
 
   extra-libraries:
     stdc++, sndfile
