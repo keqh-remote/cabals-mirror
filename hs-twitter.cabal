@@ -1,5 +1,5 @@
 name: hs-twitter
-version: 0.2.5
+version: 0.2.6
 synopsis: Haskell binding to the Twitter API
 description:
    The hs-twitter API binding lets you access twitter.com's
