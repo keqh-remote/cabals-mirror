@@ -1,5 +1,5 @@
 Name:                 loli
-Version:              2009.6.29
+Version:              2009.7.2
 Build-type:           Simple
 Synopsis:             A minimum web dev DSL in Haskell
 Description:
@@ -25,6 +25,7 @@ library
                       Network.Loli.Config
                       Network.Loli.DSL
                       Network.Loli.Engine
+                      Network.Loli.Middleware.IOConfig
                       Network.Loli.Middleware.LoliRouter
                       Network.Loli.Middleware.UserMime
                       Network.Loli.Template
