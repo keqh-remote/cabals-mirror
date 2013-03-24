@@ -1,5 +1,5 @@
 name:                progression
-version:             0.1
+version:             0.2
 synopsis:            Automates the recording and graphing of criterion benchmarks
 description:         Progression is a library that builds on the criterion
                      benchmarking library.  It stores the results of running
@@ -30,5 +30,7 @@ exposed-modules:     Progression.Config
                      Progression.Plot
 
 other-modules:       Progression.Prompt
+
+extensions:          FlexibleInstances
 
 ghc-options:         -Wall
