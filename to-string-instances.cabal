@@ -1,14 +1,10 @@
 Name:               to-string-instances
-Version:            0.1
+Version:            0.2
 Synopsis:           Instances for the ToString class.
 Description:        This library provides the following instances
                     for the ToString class:
                     .
-                    * ShowS
-                    .
                     * ByteString
-                    .
-                    * DString
                     .
                     * Doc
                     .
@@ -35,10 +31,6 @@ Source-repository head
   Type:     darcs
   Location: http://code.haskell.org/~basvandijk/code/to-string-instances/
 
-Flag ShowS
-  Description: Add ShowS support.
-  Default:     True
-
 Flag ByteString
   Description: Add ByteString support.
   Default:     True
@@ -52,14 +44,9 @@ Flag Text
   Default:     True
 
 Library
-  Build-Depends:   to-string-class == 0.1.*
+  Build-Depends:   to-string-class >= 0.1.2 && < 0.1.3
   Exposed-modules: Data.String.ToString.Instances
   Ghc-options:     -O2 -Wall -fno-warn-orphans
-
-  if flag(ShowS)
-    CPP-Options:   -DSHOWS
-    Build-Depends: base == 4.*
-    Extensions:    TypeSynonymInstances
 
   if flag(ByteString)
     CPP-Options:   -DBYTESTRING
