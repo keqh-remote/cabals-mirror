@@ -1,5 +1,5 @@
 name:           derivation-trees
-version:        0.7.1
+version:        0.7.2
 category:       Graphics, Math
 synopsis:       Typeset Derivation Trees via MetaPost
 description:
@@ -16,11 +16,11 @@ build-type:     Simple
 extra-source-files: Main.hs
 
 library
+  build-depends: labeled-tree==1.*
   build-depends: base==4.*
   build-depends: mtl==1.1.*
   build-depends: applicative-extras==0.1.*
   exposed-modules:
-     Data.LabeledTree
      DerivationTrees
      DerivationTrees.Basics
      DerivationTrees.ManualPTS
