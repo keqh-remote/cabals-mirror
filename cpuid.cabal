@@ -1,5 +1,5 @@
 Name:               cpuid
-Version:            0.2.2.1
+Version:            0.2.2.2
 License:            GPL
 License-file:       COPYING
 Author:             Martin Grabmueller <martin@grabmueller.de>
@@ -19,7 +19,8 @@ Cabal-version:      >=1.6
 
 Extra-source-files:
   README
-  cbits/cpuid-pic.c
+  cbits/cpuid-pic-i386.c
+  cbits/cpuid-pic-x86_64.c
   cbits/cpuid-pdc.c
 
 Flag buildExamples
@@ -31,12 +32,13 @@ Source-Repository head
   Location:    http://code.haskell.org/cpuid/
 
 Library
-  If !arch(i386)
+  If arch(i386) || arch(x86_64)
+    Build-depends:
+      data-accessor >=0.2.2 && <0.3,
+      enumset >=0.0.3 && <0.1,
+      base >=4 && < 5
+  Else
     Buildable: False
-  Build-depends:
-    data-accessor >=0.2.2 && <0.3,
-    enumset >=0.0.3 && <0.1,
-    base >=4 && < 5
   Exposed-Modules:    System.Cpuid
   Extensions:         ForeignFunctionInterface
   C-sources:          cbits/cpuid.c
