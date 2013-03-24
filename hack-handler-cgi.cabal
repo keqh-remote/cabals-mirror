@@ -1,10 +1,10 @@
 name:            hack-handler-cgi
-version:         0.0.3
+version:         0.2.0
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Hack handler using network.cgi
+synopsis:        Hack handler using CGI protocol.
 category:        Web
 stability:       stable
 cabal-version:   >= 1.2
@@ -13,8 +13,7 @@ homepage:        http://github.com/snoyberg/hack-handler-cgi/tree/master
 
 library
     build-depends:   base >= 4 && < 5,
-                     bytestring,
-                     hack >= 2009.5.19,
-                     data-default
+                     bytestring >= 0.9.1.4 && < 0.10,
+                     hack == 2009.10.30
     exposed-modules: Hack.Handler.CGI
     ghc-options:     -Wall
