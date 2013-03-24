@@ -1,5 +1,5 @@
 name:                atomo
-version:             0.3
+version:             0.4
 synopsis:            A highly dynamic, extremely simple, very fun programming
                      language.
 description:
@@ -13,9 +13,11 @@ description:
     Neat stuff: first-class continuations, very metaprogramming and DSL
     -friendly, message-passing concurrency, pattern-matching.
     .
-    Documentation: <http://atomo-lang.org/docs/>
+    Release Notes: <http://atomo-lang.org/notes/0.4>
     .
-    Examples: <http://bitbucket.org/alex/atomo/src/tip/examples/>
+    Documentation: <http://atomo-lang.org/docs>
+    .
+    Examples: <http://darcsden.com/alex/atomo/browse/examples>
     .
     IRC Channel: <irc://irc.freenode.net/atomo>
 homepage:            http://atomo-lang.org/
@@ -35,14 +37,23 @@ extra-source-files: bin/eco
 data-files:         prelude/*.atomo
 
 source-repository   head
-    type:           hg
-    location:       http://bitbucket.org/alex/atomo
+    type:           darcs
+    location:       http://darcsden.com/alex/atomo
+
+flag lib
+    description:   Install the Atomo library.
+    default:       False
 
 library
+  if !flag(lib)
+    buildable: False
+
   hs-source-dirs:    src
 
   build-depends:
+    array,
     base >= 4 && < 5,
+    bytestring,
     containers,
     directory,
     filepath,
@@ -51,6 +62,7 @@ library
     mtl,
     parsec >= 3.0.0,
     pretty,
+    regex-pcre,
     template-haskell,
     text >= 0.11.0.0,
     time,
@@ -60,17 +72,21 @@ library
     Atomo,
     Atomo.Core,
     Atomo.Environment,
+    Atomo.Format,
+    Atomo.Format.Parser,
+    Atomo.Format.Types,
     Atomo.Helpers,
     Atomo.Load,
+    Atomo.Lexer,
+    Atomo.Lexer.Base,
+    Atomo.Lexer.Primitive,
     Atomo.Method,
     Atomo.Parser,
     Atomo.Parser.Base,
     Atomo.Parser.Expr,
     Atomo.Parser.Expand,
-    Atomo.Parser.Primitive,
     Atomo.Pattern,
     Atomo.Pretty,
-    Atomo.PrettyVM,
     Atomo.QuasiQuotes,
     Atomo.Run,
     Atomo.Spawn,
@@ -97,7 +113,10 @@ library
     Atomo.Kernel.Time,
     Atomo.Kernel.Environment,
     Atomo.Kernel.Continuation,
-    Atomo.Kernel.Char,
+    Atomo.Kernel.Character,
+    Atomo.Kernel.Regexp,
+    Atomo.Kernel.Pretty,
+    Atomo.Kernel.Format,
     Paths_atomo
 
 
@@ -107,10 +126,11 @@ executable atomo
 
   ghc-prof-options:  -prof -auto-all -caf-all
   ghc-options:       -Wall -threaded -fno-warn-unused-do-bind
-                     -funfolding-use-threshold=9999
 
   build-depends:
+    array,
     base >= 4 && < 5,
+    bytestring,
     containers,
     directory,
     filepath,
@@ -120,6 +140,7 @@ executable atomo
     mtl,
     parsec >= 3.0.0,
     pretty,
+    regex-pcre,
     template-haskell,
     text >= 0.11.0.0,
     time,
