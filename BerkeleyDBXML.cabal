@@ -1,12 +1,12 @@
 name: BerkeleyDBXML
-version: 0.4
+version: 0.5
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
 copyright: (c) Stephen Blackheath
 author: Stephen Blackheath
 maintainer: http://blacksapphire.com/antispam/
-stability: alpha
+stability: beta
 synopsis: Berkeley DB and Berkeley DB XML binding
 description:
     Berkeley DB XML is a powerful, fully transactional, XML-based database that uses
@@ -30,6 +30,7 @@ build-type: Simple
 homepage: http://www.haskell.org/haskellwiki/BerkeleyDBXML
 extra-source-files:
     README,
+    ChangeLog,
     Database/Berkeley/db_helper.h,
     Database/Berkeley/dbxml_helper.h,
     examples/adventure/Makefile
@@ -45,7 +46,7 @@ Library
     c-sources: Database/Berkeley/dbxml_helper.cpp
 
     other-modules: Database.Berkeley.Util
-    build-depends: base
+    build-depends: base, bytestring >= 0.9
     include-dirs: Database/Berkeley/
     extra-libraries: db, dbxml, db_cxx, xqilla, xerces-c, xml2
     ghc-options: -pgml c++
