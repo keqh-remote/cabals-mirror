@@ -3,18 +3,14 @@ name: bindings-gpgme
 homepage: http://bitbucket.org/mauricio/bindings-gpgme
 synopsis:
   Low level bindings to gpgme.
-version: 0.1
+version: 0.1.1
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
 author: Maurício C. Antunes
 build-type: Simple
 category: FFI
-stability: Misses C dependencies.
 bug-reports: http://bitbucket.org/mauricio/bindings-gpgme/issues
-extra-source-files:
-  include/gpgme.h
-  include/gpg-error.h
 library
   hs-source-dirs: src
   extensions:
@@ -26,5 +22,8 @@ library
     Bindings.Gpgme
   c-sources:
     src/inlines.c
-  include-dirs:
-    include
+  includes:
+    gpgme.h
+    gpg-error.h
+  extra-libraries:
+    gpgme
