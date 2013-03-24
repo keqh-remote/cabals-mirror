@@ -1,6 +1,6 @@
 --Package-properties
 Name:			factory
-Version:		0.1.0.0
+Version:		0.1.0.2
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2011 Dr. Alistair Ward
 License:		GPL
@@ -36,12 +36,14 @@ Library
         Factory.Data.Monomial
         Factory.Data.Polynomial
         Factory.Data.PrimeFactors
+        Factory.Data.PrimeWheel
         Factory.Data.QuotientRing
         Factory.Data.Ring
         Factory.Math.ArithmeticGeometricMean
         Factory.Math.DivideAndConquer
         Factory.Math.Factorial
         Factory.Math.Fibonacci
+        Factory.Math.Hyperoperation
         Factory.Math.Implementations.Factorial
         Factory.Math.Implementations.Pi.AGM.Algorithm
         Factory.Math.Implementations.Pi.AGM.BrentSalamin
@@ -66,6 +68,7 @@ Library
         Factory.Math.Implementations.Pi.Spigot.Spigot
         Factory.Math.Implementations.Primality
         Factory.Math.Implementations.PrimeFactorisation
+        Factory.Math.Implementations.Primes
         Factory.Math.Implementations.SquareRoot
         Factory.Math.MultiplicativeOrder
         Factory.Math.Pi
@@ -73,6 +76,7 @@ Library
         Factory.Math.Precision
         Factory.Math.Primality
         Factory.Math.PrimeFactorisation
+        Factory.Math.Primes
         Factory.Math.Probability
         Factory.Math.Radix
         Factory.Math.SquareRoot
@@ -107,13 +111,16 @@ Executable factory
     Other-modules:
         Factory.Test.CommandOptions
         Factory.Test.Performance.Factorial
+        Factory.Test.Performance.Hyperoperation
         Factory.Test.Performance.Pi
         Factory.Test.Performance.Primality
         Factory.Test.Performance.PrimeFactorisation
+        Factory.Test.Performance.Primes
         Factory.Test.Performance.SquareRoot
         Factory.Test.Performance.Statistics
         Factory.Test.QuickCheck.ArithmeticGeometricMean
         Factory.Test.QuickCheck.Factorial
+        Factory.Test.QuickCheck.Hyperoperation
         Factory.Test.QuickCheck.Interval
         Factory.Test.QuickCheck.MonicPolynomial
         Factory.Test.QuickCheck.Pi
@@ -121,6 +128,7 @@ Executable factory
         Factory.Test.QuickCheck.Power
         Factory.Test.QuickCheck.Primality
         Factory.Test.QuickCheck.PrimeFactorisation
+        Factory.Test.QuickCheck.Primes
         Factory.Test.QuickCheck.Probability
         Factory.Test.QuickCheck.QuickChecks
         Factory.Test.QuickCheck.Radix
