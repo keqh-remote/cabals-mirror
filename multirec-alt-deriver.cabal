@@ -1,5 +1,5 @@
 name:                multirec-alt-deriver
-version:             0.1.1
+version:             0.1.2
 synopsis:            Alternative multirec instances deriver
 description:         
  New features/changes:
@@ -26,9 +26,13 @@ source-repository head
  location: http://code.haskell.org/~daniels/multirec-alt-deriver
 
 Library
-    build-depends:       base >= 4 && < 5, template-haskell < 2.5, syb, 
-                         multirec, th-expand-syns,
-                         containers, mtl
+    build-depends:       base >= 4 && < 5, 
+                         template-haskell < 2.6, 
+                         syb, 
+                         multirec, 
+                         th-expand-syns,
+                         containers, 
+                         mtl
     ghc-options:         
     exposed-modules:     Generics.MultiRec.TH.Alt
                        , Generics.MultiRec.TH.Alt.DerivOptions
