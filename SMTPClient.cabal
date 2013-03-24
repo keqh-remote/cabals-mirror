@@ -1,5 +1,5 @@
 name: SMTPClient
-version: 1.0.3
+version: 1.0.4
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.6
@@ -20,6 +20,6 @@ source-repository head
     location: http://code.haskell.org/SMTPClient/
 Library
     exposed-modules: Network.SMTP.Client, Network.SMTP.ClientSession, Network.SMTP.Simple
-    build-depends: base >= 3 && < 5, hsemail >= 1.6 && < 1.7, network, old-time, old-locale,
+    build-depends: base >= 3 && < 5, hsemail == 1.*, network, old-time, old-locale,
                    containers, extensible-exceptions >= 0.1 && < 0.2
 
