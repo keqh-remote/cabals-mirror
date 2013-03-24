@@ -1,8 +1,8 @@
 name:                Emping
-version:             0.4
+version:             0.5
 license:             GPL
 license-file:        LICENSE
-build-depends:       base, parsec
+build-depends:       base, parsec, fgl
 copyright:           Hans van Thiel 2006 - 2008
 author:              Hans van Thiel
 maintainer:          hthiel.char@zonnet.nl
@@ -10,19 +10,13 @@ build-depends:       containers
 build-type:          Simple
 
 stability:           experimental
-homepage:            http://j-van-thiel.speedlinq.nl/
+homepage:            http://home.telfort.nl/sp969709/
 synopsis:            derives heuristic rules from nominal data
-description:         utility that reads a table in a csv (comma
-                     separated) format that can be generated from
-                     Open Office Calc (spreadsheet), derives all shortest rules
-                     for a selected attribute, and writes them to a .csv file
-                     that can be read by OO Calc. The shortest rules may be
-                     partially ordered by implication (entailment) and equivalence
-                     (equality) and the top level is also shown in .csv format.
-                     Optionally all logical entailments and equalities are listed
-                     as well. If the data set contains ambiguous rules or more
-                     occurrences of the same rule the user is warned. Version 0.4
-                     allows blank fields for values and has a Gtk2Hs based GUI.
+description:         utility that reads a table in a csv (comma separated) format that can be generated from
+                     Open Office Calc (spreadsheet), derives all shortest rules for a selected attribute,
+                     and writes them to a .csv file that can be read by OO Calc. The shortest rules may be
+                     partially ordered by implication (entailment) and equivalence (equality) and this partial
+                     order is shown in Graphviz readable .dot files. Emping has a Gtk2Hs based GUI.
 category:            Data Mining
 extra-source-files:  README
 
@@ -30,7 +24,7 @@ executable:        emping
 hs-source-dirs:    src
 main-is:           Main.hs
 
-ghc-options:       -O2 -Wall -optl-Wl,-s
+ghc-options:       -O2 -Wall 
 other-modules:     CSVParse
                    Codec
                    Reduce
