@@ -14,15 +14,25 @@ description:
  .
  * When waiting for a thread to return a result,
    if the thread dies with an exception then the
-   caller must either handle the exception
-   ('wait') or re-throw it ('waitThrow'); the
+   caller must either re-throw the exception
+   ('wait') or handle it ('waitCatch'); the
    exception cannot be ignored.
  .
  * The API makes it possible to build a tree of
    threads that are automatically killed when
    their parent dies (see 'withAsync').
+ .
+ Changes in 2.0.1.0:
+ .
+ * Added a @Functor@ instance for @Async@
+ .
+ * Added @asyncBound@, @asyncOn@, @asyncWithUnmask@, @asyncOnWithUnmask@, @withAsyncBound@, @withAsyncOn@, @withAsyncWithUnmask@, @withAsyncOnWithUnmask@.
+ .
+ * Added @mapConcurrently@
+ .
+ * Added @Concurrently@ (with @Applicative@ and @Alternative@ instances)
 
-version:             2.0.0.0
+version:             2.0.1.0
 license:             BSD3
 license-file:        LICENSE
 author:              Simon Marlow
