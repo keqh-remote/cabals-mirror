@@ -1,11 +1,20 @@
 name:            darcsden
-version:         1.0
+version:         1.0.1
 synopsis:        Darcs repository UI and hosting/collaboration app.
 description:
     A web application and SSH server for browsing and hosting darcs
     repositories and collaborating with others.
     .
-    See the README in the source repository for installation help.
+    Installation: http://hub.darcs.net/simon/darcsden-1.0/README
+    .
+    1.0 release notes: http://hub.darcs.net/simon/darcsden-1.0/ANNOUNCE.md
+    .
+    1.0.1 changes:
+    .
+    * cabal file now includes the required highlightingkate/highlighter build flags
+    .
+    * cabal file points to a darcsden 1.0 source repo
+
 cabal-version:   >=1.6
 build-type:      Simple
 license:         GPL
@@ -17,20 +26,33 @@ category:        Development, Distribution, Web
 
 source-repository   head
     type:           darcs
-    location:       http://hub.darcs.net/simon/darcsden
+
+    -- Alex's original darcsden trunk, currently at 0.5
     -- location:       http://darcsden.com/alex/darcsden
+
+    -- the 1.0 release branch
+    location:       http://hub.darcs.net/simon/darcsden-1.0
+
+    -- latest development branch, used to run hub.darcs.net
+    -- location:       http://hub.darcs.net/simon/darcsden
 
 flag darcs28
     Description:   Build with released darcs 2.8.2+, not the latest darcs-screened.
     Default:       True
 
 -- Several flags just to help with building on windows in the short term.
--- Disable these to skip the highlighting-kate, pcre-light, and ssh
--- dependencies:
+-- Disable these to skip the highlighting-kate/highlighter, pcre-light,
+-- and ssh dependencies:
 
-flag highlighting
-    Description:   Enable source code highlighting
+--- Enable at most one of these two:
+flag highlightingkate
+    Description:   Enable source code highlighting, using highlighting-kate (faster).
     Default:       True
+
+flag highlighter
+    Description:   Enable source code highlighting, using highlighter.
+    Default:       False
+--
 
 flag closing
     Description:   Enable closing of bugs in the post-hook
@@ -50,12 +72,12 @@ executable darcsden
     build-depends: darcs >= 2.8.2 && < 2.9
   else
     build-depends: darcs > 2.9 && < 2.10
-  if flag(highlighting)
-    cpp-options: -DHIGHLIGHTING
-    build-depends:
-    { highlighter
-    , highlighting-kate
-    }
+  if flag(highlightingkate)
+    cpp-options: -DHIGHLIGHTINGKATE
+    build-depends: highlighting-kate
+  if flag(highlighter)
+    cpp-options: -DHIGHLIGHTER
+    build-depends: highlighter
   if flag(ssh)
     cpp-options: -DSSH_FLAG
     build-depends:
