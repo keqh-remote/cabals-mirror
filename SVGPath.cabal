@@ -1,7 +1,7 @@
 Name:             SVGPath
-Version:          1.0.2
-Synopsis:         Parsing the path command from SVG
-Description:      Parsing the path command from SVG
+Version:          1.0.3
+Synopsis:         Parsing the path command of SVG
+Description:      Parsing the path command of SVG
 category:         Graphics
 License:          BSD3
 License-file:     LICENSE
