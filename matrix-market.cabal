@@ -1,5 +1,5 @@
 name:            matrix-market
-version:         1.0
+version:         1.1
 homepage:        http://stat.stanford.edu/~patperry/code/matrix-market
 synopsis:        Read and write NIST Matrix Market files
 description:
@@ -19,8 +19,6 @@ description:
     Array Format - A file format suitable for representing general dense
     matrices. All entries are provided in a pre-defined (column-oriented)
     order.
-    .
-    We extend the above two storage schemes to vectors, as well.
     .
     For more information, see the NIST Matrix Market webpage:
     <http://http://math.nist.gov/MatrixMarket/>
