@@ -1,5 +1,5 @@
 Name:          Dangerous
-Version:       0.1
+Version:       0.1.1
 License:       MIT
 License-file:  LICENSE
 Category:      Error Handling
@@ -13,10 +13,9 @@ Maintainer:    nate@natesoares.com
 Build-Type:    Simple
 Cabal-Version: >=1.6
 
-source-repository this
+source-repository head
     type: git
-    location: git://github.com/Soares/Dangerous.git
-    tag: v1.0
+    location: git://github.com/Soares/Dangerous.hs.git
 
 Library
     Hs-Source-Dirs:   src
