@@ -1,5 +1,5 @@
 Name:               shpider 
-Version:            0.0.5
+Version:            0.0.6
 Synopsis:           Web automation library in Haskell.
 Description:
     Shpider is a web automation library for Haskell.   It allows you to quickly write crawlers, and for simple cases ( like following links ) even without reading the page source.
@@ -17,7 +17,7 @@ Description:
     >            "occupation" =: "unemployed Haskell programmer"
     >            "location" =: "mother's house"
     .
-    Shpider contains a patched version of the curl package, to fix cookie handling.  The curl licence is therefore distributed with this package.
+    Shpider contains a patched version of the curl package ( the original package's garbage-collection caused non-deterministic behaviour ).  The curl licence is therefore distributed with this package.
 Category:           Web
 License:            BSD3
 License-file:       LICENSE
@@ -29,7 +29,7 @@ Cabal-version:      >= 1.2.0
 Extra-source-files: LICENSE.CURL, configure, configure.ac, curl.buildinfo.in
 
 Library
-   Build-depends:   base , regex-posix , tagsoup-parsec , url==2 , containers , tagsoup , mtl , bytestring
+   Build-depends:   base < 5, regex-posix , tagsoup-parsec , url>=2 , containers , tagsoup , mtl , bytestring
    Exposed-modules: Network.Shpider.URL
                     Network.Shpider.Code
                     Network.Shpider.State
