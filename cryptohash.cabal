@@ -1,5 +1,5 @@
 Name:                cryptohash
-Version:             0.7.3
+Version:             0.7.4
 Description:
     A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,
     with performance close to the fastest implementations available in others languages.
@@ -51,6 +51,7 @@ Library
                      Crypto.Hash.Skein256
                      Crypto.Hash.Skein512
                      Crypto.Hash.Tiger
+                     Crypto.MAC.HMAC
   ghc-options:       -Wall -O2 -optc-O3 -fno-cse
   C-sources:         cbits/sha1.c
                      cbits/sha256.c
