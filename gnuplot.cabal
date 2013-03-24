@@ -1,5 +1,5 @@
 Name:             gnuplot
-Version:          0.3.2
+Version:          0.3.3
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -108,6 +108,7 @@ Library
     Graphics.Gnuplot.Private.Graph
     Graphics.Gnuplot.Private.Graph2D
     Graphics.Gnuplot.Private.Graph3D
+    Graphics.Gnuplot.Private.GraphEmpty
     Graphics.Gnuplot.Utility
     Graphics.Gnuplot.Execute
     Graphics.Gnuplot.Display
