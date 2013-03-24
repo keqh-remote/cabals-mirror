@@ -1,5 +1,5 @@
 Name:         imapget
-Version:      0.0.2
+Version:      0.0.3
 Synopsis:     Downloads email from imap SSL servers.
 Description:  This programs shows how to use HaskellNet to download email from imap SSL servers.
               The IMAP implementation is provided by HaskellNet, and the SSL implementation is
@@ -37,7 +37,7 @@ source-repository head
 source-repository this
     type:     darcs
     location: http://patch-tag.com/r/facundo/imapget
-    tag:      0.0.2
+    tag:      0.0.3
 
 
 Executable imapget
@@ -48,7 +48,7 @@ Executable imapget
   build-depends:    base < 5
                   , bytestring
                   , directory
-                  , HaskellNet<0.4
+                  , HaskellNet >=0.3.1 && <0.4
                   , HsOpenSSL
                   , network
                   , text
