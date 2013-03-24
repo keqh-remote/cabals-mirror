@@ -1,5 +1,5 @@
 name:                DAV
-version:             0.1
+version:             0.2
 synopsis:            RFC 4918 WebDAV support
 description:
    This is a library for the Web Distributed Authoring and Versioning
@@ -19,6 +19,7 @@ copyright:           Copyright (C) 2012  Clint Adams
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.8
+extra-source-files:  AUTHORS
 
 library
   exposed-modules:  Network.Protocol.HTTP.DAV
@@ -56,3 +57,13 @@ executable hdav
                      , transformers >= 0.3
                      , xml-conduit >= 1.0          && <= 1.1
                      , xml-hamlet >= 0.4           && <= 0.5
+
+source-repository head
+  type:     git
+  location: git://anonscm.debian.org/users/clint/DAV.git
+  branch:   master
+
+source-repository this
+  type:     git
+  location: git://anonscm.debian.org/users/clint/DAV.git
+  tag:      DAV/0.2
