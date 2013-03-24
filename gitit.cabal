@@ -1,5 +1,5 @@
 name:                gitit
-version:             0.6.4
+version:             0.6.5
 Cabal-version:       >= 1.2
 build-type:          Simple
 synopsis:            Wiki using happstack, git or darcs, and pandoc.
@@ -69,6 +69,7 @@ data-files:          data/static/css/screen.css, data/static/css/print.css,
                      data/markupHelp/LaTeX, data/markupHelp/LaTeX+LHS,
                      data/markupHelp/HTML,
                      plugins/CapitalizeEmphasis.hs,
+                     plugins/PigLatin.hs,
                      plugins/Dot.hs,
                      plugins/ImgTex.hs,
                      plugins/Interwiki.hs,
@@ -95,6 +96,8 @@ Library
                      Network.Gitit.Authentication, Network.Gitit.Page, Network.Gitit.Feed
   if flag(plugins)
     exposed-modules: Network.Gitit.Interface
+    build-depends:   ghc, ghc-paths
+    cpp-options:     -D_PLUGINS
   build-depends:     base >= 3, pandoc >= 1.1, filepath
   ghc-options:       -Wall
   ghc-prof-options:  -auto-all -caf-all
