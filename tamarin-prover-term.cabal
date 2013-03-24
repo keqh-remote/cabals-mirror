@@ -2,7 +2,7 @@ name:               tamarin-prover-term
 
 cabal-version:      >= 1.8
 build-type:         Simple
-version:            0.6.0.0
+version:            0.8.0.0
 license:            GPL
 license-file:       LICENSE
 category:           Theorem Provers
@@ -23,7 +23,7 @@ description:        This is an internal library of the Tamarin prover for
                     (<http://maude.cs.uiuc.edu/>) as a backend for
                     normalization, equational matching, and unification.
 
-homepage:           http://www.infsec.ethz.ch/research/software#TAMARIN
+homepage:           http://www.infsec.ethz.ch/research/software/tamarin
 
 
 source-repository head
@@ -35,6 +35,8 @@ source-repository head
 ----------------------
 
 library
+    ghc-options:       -Wall -fwarn-tabs
+
     ghc-prof-options:  -auto-all
 
     build-depends:
@@ -56,7 +58,7 @@ library
 
       , HUnit                == 1.2.*
 
-      , tamarin-prover-utils == 0.6.*
+      , tamarin-prover-utils == 0.8.*
 
 
     hs-source-dirs: src
