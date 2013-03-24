@@ -1,5 +1,5 @@
 Name:           BlogLiterately
-Version:        0.2
+Version:        0.3
 Synopsis:	A tool for posting Haskelly articles to blogs
 
 Description:     BlogLiterately is a tool for uploading web log posts to web log servers
@@ -92,7 +92,7 @@ Description:     BlogLiterately is a tool for uploading web log posts to web log
                  above background!).  Note that if Pandoc isn't installed with highlighting
                  enabled, there will be fewer options (no -kate options):
                  .
-                 > BlogLierately v0.2, (C) Robert Greayer 2009
+                 > BlogLierately v0.3, (C) Robert Greayer 2009
                  > This program comes with ABSOLUTELY NO WARRANTY
                  > 
                  > 
@@ -149,10 +149,10 @@ Tested-With:	GHC ==6.10.4
 Extra-Source-Files: hscolour.css
                     kate.css
 Executable BlogLiterately
-  Build-Depends:  base >= 4.0 && < 4.2, haskell98, parsec >= 2.1.0.0 && < 3,
-                  HaXml >= 1.13 && < 1.19, utf8-string >= 0.3 && < 0.4,
-                  hscolour >= 1.15 && < 1.16, xhtml >= 3000.2 && < 3000.3, cmdargs >= 0.1 && < 0.2,
-                  haxr >= 3000.2.1 && < 3000.3, pandoc >= 1.2 && < 1.3
+  Build-Depends:  base >= 4.0 && < 4.3, haskell98, parsec >= 2.1.0.0 && < 3,
+                  HaXml >= 1.20 && < 1.21, utf8-string >= 0.3 && < 0.4,
+                  hscolour >= 1.15 && < 1.17, xhtml >= 3000.2 && < 3000.3, cmdargs >= 0.1 && < 0.2,
+                  haxr >= 3000.2.1 && < 3000.6, pandoc >= 1.2 && < 1.6
   Main-Is:        BlogLiterately.lhs
   Hs-Source-Dirs: src
   Ghc-Options: -fwarn-unused-imports
