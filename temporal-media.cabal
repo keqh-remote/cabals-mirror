@@ -1,7 +1,7 @@
 Name:          temporal-media
-Version:       0.3.0
+Version:       0.3.1
 License-file:  LICENSE
-Cabal-Version: >= 1.2
+Cabal-Version: >= 1.6
 License:       BSD3
 Author:	       Anton Kholomiov
 Maintainer:    <anton.kholomiov@gmail.com>
@@ -16,6 +16,12 @@ Stability:     Experimental
 Tested-With:   GHC==6.13.1
 Build-Type:    Simple
 
+Homepage:        https://github.com/anton-k/temporal-media
+Bug-Reports:     https://github.com/anton-k/temporal-media/issues
+
+Source-repository head
+    Type: git
+    Location: https://github.com/anton-k/temporal-media
 
 Library
   Build-Depends:
