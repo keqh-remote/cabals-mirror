@@ -1,6 +1,6 @@
 name:			category-extras
 category:		Control, Monads, Comonads
-version:		0.44.1
+version:		0.44.2
 license:		BSD3
 license-file:		LICENSE
 build-depends:		base -any, mtl -any, array -any
@@ -33,30 +33,29 @@ extensions:
 
 
 exposed-modules:
+	Control.Applicative.Indexed,
+	Control.Applicative.Parameterized,
 	Control.Arrow.BiKleisli,
 	Control.Arrow.CoKleisli,
 	Control.Bifunctor,
 	Control.Bifunctor.Associative,
+	Control.Bifunctor.Biff,
 	Control.Bifunctor.Braided,
 	Control.Bifunctor.Composition,
-	Control.Bifunctor.Either,
+	Control.Bifunctor.Constant,
+	Control.Bifunctor.Functor,
 	Control.Bifunctor.Fix,
-	Control.Bifunctor.HigherOrder,
 	Control.Bifunctor.Monoidal,
-	Control.Bifunctor.Pair,
+	Control.Bifunctor.Swap,
 	Control.Comonad,
 	Control.Comonad.Cofree,
-	Control.Comonad.Composition,
 	Control.Comonad.Context,
-	Control.Comonad.Context.Class,
-	Control.Comonad.Identity,
+--	Control.Comonad.Identity,
 	Control.Comonad.Indexed,
 	Control.Comonad.HigherOrder,
 	Control.Comonad.Parameterized,
-	Control.Comonad.Parameterized.Class,
 	Control.Comonad.Pointer,
 	Control.Comonad.Reader,
-	Control.Comonad.Reader.Class,
 	Control.Comonad.Supply
 	Control.Functor.Adjunction,
 	Control.Functor.Algebra,
@@ -65,7 +64,6 @@ exposed-modules:
 	Control.Functor.Composition.Class
 	Control.Functor.Contravariant,
 	Control.Functor.Constant,
-	Control.Functor.Derivative,
 	Control.Functor.Extras,
 	Control.Functor.Exponential,
 	Control.Functor.Fix,
@@ -76,10 +74,11 @@ exposed-modules:
 	Control.Functor.Strong,
 	Control.Functor.Pointed,
 	Control.Functor.Pointed.Composition,
+	Control.Functor.Pointed.Indexed,
+	Control.Functor.Pointed.Parameterized,
 	Control.Functor.Representable,
 	Control.Functor.Zip,
 	Control.Functor.Zap,
-	Control.Monad.Composition,
 	Control.Monad.Free,
 	Control.Monad.HigherOrder,
 	Control.Monad.Indexed,
