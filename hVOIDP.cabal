@@ -1,5 +1,5 @@
 Name:	hVOIDP
-Version: 1.0.1
+Version: 1.0.2
 Synopsis: Optimal variable selection in chain graphical model.
 Description: 
    An implementation of the VOIDP algorithm that selects the optimal observations in chain graphical models.
@@ -24,19 +24,27 @@ Category:    AI
 Build-Type:  Simple
 cabal-version:  >=1.6
 
+Data-Dir:  example
+Data-Files:
+  hmm_prior.txt
+  hmm_obsmat.txt
+  hmm_transmat.txt
+  README
+
 Source-Repository head
   Type:     git
   Location: git://github.com/qiqi789/VOIDP--haskell-implementation-for-the-optimal-value-of-information-in-chain-models.git
 
 Executable hVOIDP
-  Main-is:    voidp.hs
+  Main-is:    hVOIDP.hs
   Build-Depends:   array,hmatrix,base >=3 && <5
   extra-libraries: lapack blas
   extra-lib-dirs:  /usr/lib 
 
 
 Library  
-  Hs-source-dirs:  .
+  Hs-Source-Dirs:  .
   Exposed-Modules:
     Dynamic
     Table
+
