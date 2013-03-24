@@ -1,5 +1,5 @@
 Name:           graph-rewriting-gl
-Version:        0.6.7
+Version:        0.6.9
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -16,10 +16,10 @@ Cabal-Version:  >= 1.6
 
 Library
   Build-Depends:
-    base >= 4 && < 4.5,
+    base >= 4 && < 4.6,
     base-unicode-symbols >= 0.2 && < 0.3,
-    graph-rewriting >= 0.4.6 && < 0.6,
-    graph-rewriting-layout >= 0.4 && < 0.5,
+    graph-rewriting >= 0.7 && < 0.8,
+    graph-rewriting-layout >= 0.4 && < 0.6,
     GLUT >= 2.2 && < 2.3,
     OpenGL >= 2.4 && < 2.5,
     containers >= 0.3 && < 0.5,
@@ -38,4 +38,5 @@ Library
     FlexibleContexts
     MultiParamTypeClasses
     TypeSynonymInstances
-  GHC-Options: -fno-warn-duplicate-exports
+    OverlappingInstances
+  GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-do-bind -fwarn-wrong-do-bind -fwarn-unrecognised-pragmas
