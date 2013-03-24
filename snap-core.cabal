@@ -1,6 +1,6 @@
 name:           snap-core
-version:        0.7.0.1
-synopsis:       Snap: A Haskell Web Framework (Core)
+version:        0.8.0
+synopsis:       Snap: A Haskell Web Framework (core interfaces and types)
 
 description:
   Snap is a simple and fast web development framework and server written in
@@ -15,8 +15,7 @@ description:
   .
     2. Type aliases and helper functions for Iteratee I/O
   .
-    3. A monad for programming web handlers called \"Snap\", inspired by
-       happstack's (<http://happstack.com/index.html>), which allows:
+    3. A monad for programming web handlers called \"Snap\", which allows:
   .
        * Stateful access to the HTTP request and response objects
   .
@@ -28,15 +27,6 @@ description:
   .
   /Quick start/: The 'Snap' monad and HTTP definitions are in "Snap.Core",
   some iteratee utilities are in "Snap.Iteratee".
-  .
-  Higher-level facilities for building web applications (like user/session
-  management, component interfaces, data modeling, etc.) are planned but not
-  yet implemented, so this release will mostly be of interest for those who:
-  .
-  * need a fast and minimal HTTP API at roughly the same level of abstraction
-    as Java servlets, or
-  .
-  * are interested in contributing to the Snap Framework project.
 
 license:        BSD3
 license-file:   LICENSE
@@ -76,8 +66,8 @@ extra-source-files:
   test/suite/Snap/Test/Common.hs,
   test/suite/Snap/Util/FileServe/Tests.hs,
   test/suite/Snap/Util/FileUploads/Tests.hs,
-  test/suite/Snap/Util/GZip/Tests.hs
-
+  test/suite/Snap/Util/GZip/Tests.hs,
+  test/suite/Snap/Util/Proxy/Tests.hs
 
 Flag portable
   Description: Compile in cross-platform mode. No platform-specific code or
@@ -115,6 +105,7 @@ Library
     Snap.Types,
     Snap.Iteratee,
     Snap.Internal.Debug,
+    Snap.Internal.Exceptions,
     Snap.Internal.Http.Types,
     Snap.Internal.Iteratee.Debug,
     Snap.Internal.Parsing,
@@ -123,6 +114,7 @@ Library
     Snap.Util.FileServe,
     Snap.Util.FileUploads,
     Snap.Util.GZip,
+    Snap.Util.Proxy,
     Snap.Util.Readable
 
   other-modules:
@@ -149,12 +141,12 @@ Library
     deepseq >= 1.1 && <1.4,
     directory,
     dlist >= 0.5 && < 0.6,
-    enumerator >= 0.4.13.1 && < 0.5,
+    enumerator >= 0.4.15 && < 0.5,
     filepath,
     HUnit >= 1.2 && < 2,
     MonadCatchIO-transformers >= 0.2.1 && < 0.3,
     mtl == 2.0.*,
-    mwc-random >= 0.10 && <0.11,
+    mwc-random >= 0.10 && <0.13,
     old-locale,
     old-time,
     regex-posix <= 0.95.2,
@@ -162,27 +154,27 @@ Library
     time >= 1.0 && < 1.5,
     transformers == 0.2.*,
     unix-compat >= 0.2 && <0.4,
-    unordered-containers >= 0.1.4.3 && <0.2,
+    unordered-containers >= 0.1.4.3 && <0.3,
     vector >= 0.6 && <0.10,
     zlib-enum >= 0.2.1 && <0.3
 
   extensions:
     BangPatterns,
     CPP,
-    PackageImports,
-    ScopedTypeVariables,
-    EmptyDataDecls,
-    ForeignFunctionInterface,
-    OverloadedStrings,
-    Rank2Types,
-    TypeSynonymInstances,
-    FlexibleInstances,
-    ExistentialQuantification,
-    OverloadedStrings,
-    FlexibleContexts,
-    GeneralizedNewtypeDeriving,
     DeriveDataTypeable,
-    MultiParamTypeClasses
+    EmptyDataDecls,
+    ExistentialQuantification,
+    FlexibleContexts,
+    FlexibleInstances,
+    ForeignFunctionInterface,
+    GeneralizedNewtypeDeriving,
+    MultiParamTypeClasses,
+    OverloadedStrings,
+    OverloadedStrings,
+    PackageImports,
+    Rank2Types,
+    ScopedTypeVariables,
+    TypeSynonymInstances
 
   ghc-prof-options: -prof -auto-all
 
