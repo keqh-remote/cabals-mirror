@@ -1,5 +1,5 @@
 Name: com
-version: 1.2.3
+version: 1.2.3.1
 Synopsis: Haskell COM support library
 Description: 
    Supporting for writing COM\/Automation clients in Haskell, and for
@@ -76,7 +76,7 @@ if os(windows)
  GHC-Options: -fglasgow-exts -fvia-C 
 -- I can't seem to feed this into the 'ld' invocation that creates the
 -- relocatable object file.
- Ld-options: --enable-stdcall-fixup --disable-stdcall-fixup
+-- Ld-options: --enable-stdcall-fixup --disable-stdcall-fixup
  Extensions: CPP
 
  Build-depends: old-time
