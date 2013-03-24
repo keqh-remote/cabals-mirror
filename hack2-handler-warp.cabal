@@ -1,5 +1,5 @@
 Name:                 hack2-handler-warp
-Version:              2011.10.12
+Version:              2012.5.25
 Build-type:           Simple
 Synopsis:             Hack2 warp handler
 Description:          Hack2 warp handler
@@ -17,20 +17,11 @@ library
 
   build-depends: 
                       base >= 4.0 && <= 100
-                    , network
-                    , bytestring
                     , data-default >= 0.2
                     , hack2 >= 2011.6.20
-                    , containers
-                    , mtl
-                    , enumerator
-                    , wai
                     , warp
-                    , blaze-builder
-                    , http-types
-                    , case-insensitive
                     , air
-                    , safe
+                    , hack2-interface-wai
                     
   hs-source-dirs: src/
   exposed-modules:  
