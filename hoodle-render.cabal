@@ -1,5 +1,5 @@
 Name:		hoodle-render
-Version:	0.2.0
+Version:	0.2.1
 Synopsis:       Hoodle file renderer
 Description: 	Rendering library using cairo for hoodle file format
 License: 	BSD3
@@ -25,16 +25,21 @@ Library
 
   Build-Depends: base == 4.*, 
                  mtl == 2.*, 
+                 filepath, 
+                 directory, 
                  containers >= 0.4, 
                  cairo == 0.12.*, 
+                 svgcairo == 0.12.*,
                  strict == 0.3.*, 
                  bytestring >= 0.9,
-                 lens >= 2.4, 
-                 hoodle-types >= 0.1.0,
-                 TypeCompose == 0.9.*
+                 base64-bytestring >= 0.1, 
+                 lens >= 2.5, 
+                 hoodle-types >= 0.1.1,
+                 TypeCompose == 0.9.*, 
+                 gd >= 3000.7 
 
   if flag(poppler)
-    Build-Depends: poppler >= 0.12.2.1
+    Build-Depends: poppler >= 0.12.2.2
   else 
     Build-Depends: 
 
