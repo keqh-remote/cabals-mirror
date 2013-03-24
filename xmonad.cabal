@@ -1,5 +1,5 @@
 name:               xmonad
-version:            0.8.1
+version:            0.9
 homepage:           http://xmonad.org
 synopsis:           A tiling window manager
 description:
@@ -18,10 +18,12 @@ license-file:       LICENSE
 author:             Spencer Janssen
 maintainer:         xmonad@haskell.org
 extra-source-files: README TODO CONFIG STYLE tests/loc.hs tests/Properties.hs
-                    man/xmonad.1.in man/xmonad.1 man/xmonad.html man/xmonad.hs
+                    man/xmonad.1.in man/xmonad.1 man/xmonad.html
                     util/GenerateManpage.hs
 cabal-version:      >= 1.2
 build-type:         Simple
+
+data-files:         man/xmonad.hs
 
 flag small_base
     description: Choose the new smaller, split-up base package.
@@ -41,10 +43,10 @@ library
                         XMonad.StackSet
 
     if flag(small_base)
-        build-depends: base < 4 && >=3, containers, directory, process
+        build-depends: base < 4 && >=3, containers, directory, process, filepath
     else
         build-depends: base < 3
-    build-depends: X11>=1.4.3, mtl, unix
+    build-depends: X11>=1.4.6.1, mtl, unix
 
     ghc-options:        -funbox-strict-fields -Wall
     ghc-prof-options:   -prof -auto-all
