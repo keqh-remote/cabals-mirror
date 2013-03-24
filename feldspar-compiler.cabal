@@ -1,15 +1,18 @@
 name:           feldspar-compiler
-version:        0.5.0.1
-cabal-version:  >= 1.6
+version:        0.6.0.2
+cabal-version:  >= 1.14
 build-type:     Simple
 license:        BSD3
 license-file:   LICENSE
-copyright:      Copyright (c) 2009-2011, ERICSSON AB
+copyright:      Copyright (c) 2012 Emil Axelsson, Gergely Dévai,
+                                   Anders Persson, Josef Svenningsson
+                Copyright (c) 2009-2011, ERICSSON AB
 author:         Feldspar group,
                 Eotvos Lorand University Faculty of Informatics
 maintainer:     deva@inf.elte.hu
 stability:      experimental
-homepage:       http://feldspar.inf.elte.hu/feldspar/
+homepage:       https://feldspar.github.com
+bug-reports:    https://github.com/feldspar/feldspar-compiler/issues
 synopsis:       Compiler for the Feldspar language
 description:    Feldspar (**F**unctional **E**mbedded **L**anguage for **DSP**
                 and **PAR**allelism) is an embedded DSL for describing digital
@@ -19,9 +22,15 @@ description:    Feldspar (**F**unctional **E**mbedded **L**anguage for **DSP**
                 language both according to ANSI C and also targeted to a real
                 DSP HW.
 category:       Compiler
-tested-with:    GHC==7.0
+tested-with:    GHC==7.6.1, GHC==7.4.2
+
+source-repository head
+  type:     git
+  location: git://github.com/feldspar/feldspar-compiler.git
 
 library
+  hs-source-dirs: lib
+
   exposed-modules:
     Feldspar.Compiler.Imperative.Representation
     Feldspar.Compiler.Imperative.FromCore
@@ -30,11 +39,13 @@ library
     Feldspar.Compiler.Imperative.FromCore.Condition
     Feldspar.Compiler.Imperative.FromCore.ConditionM
     Feldspar.Compiler.Imperative.FromCore.Error
+    Feldspar.Compiler.Imperative.FromCore.Future
     Feldspar.Compiler.Imperative.FromCore.Interpretation
     Feldspar.Compiler.Imperative.FromCore.Literal
     Feldspar.Compiler.Imperative.FromCore.Loop
     Feldspar.Compiler.Imperative.FromCore.Mutable
     Feldspar.Compiler.Imperative.FromCore.MutableToPure
+    Feldspar.Compiler.Imperative.FromCore.NoInline
     Feldspar.Compiler.Imperative.FromCore.Par
     Feldspar.Compiler.Imperative.FromCore.Primitive
     Feldspar.Compiler.Imperative.FromCore.SizeProp
@@ -44,7 +55,10 @@ library
     Feldspar.Compiler.Imperative.FromCore.Save
     Feldspar.Compiler.Imperative.Frontend
     Feldspar.Compiler.Imperative.TransformationInstance
+    Feldspar.Compiler.Imperative.Plugin.CollectFreeVars
     Feldspar.Compiler.Imperative.Plugin.ConstantFolding
+    Feldspar.Compiler.Imperative.Plugin.Free
+    Feldspar.Compiler.Imperative.Plugin.IVars
     Feldspar.Compiler.Imperative.Plugin.Unroll
     Feldspar.Compiler.Imperative.Plugin.Naming
     Feldspar.Compiler.Backend.C.CodeGeneration
@@ -54,15 +68,10 @@ library
     Feldspar.Compiler.Backend.C.Plugin.TypeCorrector
     Feldspar.Compiler.Backend.C.Plugin.TypeDefinitionGenerator
     Feldspar.Compiler.Backend.C.Plugin.VariableRoleAssigner
-    Feldspar.Compiler.Backend.C.Plugin.AllocationEliminator
     Feldspar.Compiler.Backend.C.Plugin.Rule
     Feldspar.Compiler.Backend.C.Library
     Feldspar.Compiler.Backend.C.Options
     Feldspar.Compiler.Backend.C.Platforms
-    Feldspar.Compiler.Frontend.CommandLine.API.Library
-    Feldspar.Compiler.Frontend.CommandLine.API.Constants
-    Feldspar.Compiler.Frontend.CommandLine.API.Options
-    Feldspar.Compiler.Frontend.CommandLine.API
     Feldspar.Compiler.Frontend.Interactive.Interface
     Feldspar.Compiler.Compiler
     Feldspar.Compiler.Error
@@ -71,21 +80,22 @@ library
     Feldspar.Transformation.Framework
     Feldspar.NameExtractor
 
+  default-language: Haskell98
+
   build-depends:
-    feldspar-language == 0.5.*,
+    feldspar-language >= 0.6 && < 0.7,
     ansi-terminal,
-    base >= 4 && < 4.4,
+    base >= 4 && < 4.7,
     containers,
-    haskell-src-exts,
+    haskell-src-exts >= 1.12,
     directory,
     filepath,
-    hint,
     MonadCatchIO-mtl,
     mtl,
     process,
-    syntactic >= 0.8
+    syntactic >= 1.4 && < 1.5
 
-  extensions:
+  default-extensions:
     DeriveDataTypeable
     EmptyDataDecls
     FlexibleContexts
@@ -104,11 +114,13 @@ library
     ViewPatterns
 
   include-dirs:
-    ./Feldspar/C
+    ./lib/Feldspar/C
 
   c-sources:
---    ./Feldspar/C/feldspar_c99.c
---    ./Feldspar/C/feldspar_array.c
+--    lib/Feldspar/C/feldspar_c99.c
+--    lib/Feldspar/C/feldspar_array.c
+--    lib/Feldspar/C/ivar.c
+--    lib/Feldspar/C/taskpool.c
 
   cc-options: -std=c99 -Wall
 
@@ -119,29 +131,46 @@ library
     feldspar_c99.c
     feldspar_tic64x.h
     feldspar_tic64x.c
+    feldspar_future.h
+    log.h
+    ivar.h
+    ivar.c
+    taskpool.h
+    taskpool.c
 
   ghc-options: -fcontext-stack=100
 
   cpp-options: -DRELEASE
 
 executable feldspar
-  main-is : ./Feldspar/Compiler/Frontend/CommandLine/Main.hs
+  hs-source-dirs: src
+
+  main-is : Feldspar/Compiler/Frontend/CommandLine/Main.hs
+
+  default-language: Haskell98
+
+  other-modules:
+    Feldspar.Compiler.Frontend.CommandLine.API.Library
+    Feldspar.Compiler.Frontend.CommandLine.API.Constants
+    Feldspar.Compiler.Frontend.CommandLine.API.Options
+    Feldspar.Compiler.Frontend.CommandLine.API
 
   build-depends:
---    feldspar-language == 0.5.*,
---    syntactic >= 0.8.*,
-    ansi-terminal
---    base >= 4 && < 4.4,
---    mtl,
---    hint,
---    process,
---    filepath,
---    directory,
---    containers,
---    haskell-src-exts,
---    MonadCatchIO-mtl
+    feldspar-language >= 0.6 && < 0.7,
+    feldspar-compiler,
+    syntactic >= 1.4 && < 1.5,
+    base >= 4 && < 4.7,
+    hint,
+    MonadCatchIO-mtl,
+    mtl,
+    directory,
+    filepath,
+    process,
+    ansi-terminal,
+    containers,
+    haskell-src-exts >= 1.12
 
-  extensions:
+  default-extensions:
     CPP
     DeriveDataTypeable
     EmptyDataDecls
@@ -163,3 +192,4 @@ executable feldspar
   ghc-options: -fcontext-stack=100
 
   cpp-options: -DRELEASE
+
