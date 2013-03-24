@@ -1,10 +1,12 @@
 Name:			oi
-Version:		0.1.0
+Version:		0.1.1
 Category:		Data
 Synopsis:		Purely Functional Lazy Interaction with the outer world
 Description:		This package implements a data structure and operations on it 
 			for making interactive program without using explicitly IO monads.
-			Version 0.1.0: APIs are changed from before.
+			
+			Version 0.1.1: APIs are changed!
+
 Stability:		Experimental
 License:		BSD3
 License-File:		LICENSE
@@ -14,7 +16,7 @@ Build-Type:		Simple
 Cabal-Version:		>= 1.14
 
 Data-dir:		sample
-Data-files:		Makefile cats.hs echo.hs recdircs.hs talk.hs
+Data-files:		Makefile catsSIO.hs catsLIO.hs catsIO.hs catsOI.hs echo.hs recdircs.hs talk.hs
 
 Library
   Default-Language:         Haskell2010
