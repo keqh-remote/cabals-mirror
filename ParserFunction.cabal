@@ -1,18 +1,23 @@
-Name:            ParserFunction
-Version:         0.0.3
-License:         BSD3
-License-file:    LICENSE
-Author:          Enzo Haussecker
-Synopsis:        An algorithm for parsing Expressions.
-Description:     The centerpiece of this package is a function called "expressionToDouble", which parses an expression (in the form of a string) and returns a Double. Examples of this function can be found by viewing the source code for this module.
-Build-Depends:   base, parsec, containers
-stability:       Stable
-Category:        Parsing
-build-type:      Simple
-cabal-version:   >= 1.2
-tested-with:     GHC ==6.8.2
+name:          ParserFunction
+version:       0.0.4
+cabal-version: >= 1.6
+license:       BSD3
+license-file:  LICENSE
+author:        Enzo Haussecker
+maintainer:    ehaussecker@gmail.com
+category:      Parsing
+synopsis:      Utilities for parsing and evaluating string-expressions.
+description:
+    ParserFunction provides utilities for parsing and evaluating string-expressions.
+    The centerpiece of this module is a function called @evalStrExpr@,
+    which evaluates a string-expression using a variable lookup map.
+    Example: @evalStrExpr@ \"exp(x)\" [(\'x\',1)] gives 2.718281828459045.
+    More examples can be found by viewing the source code for this module.
+    This module also exports all supporting functionality.
 
-Exposed-modules: 
-	Text.ParserCombinators.Parsec.ParserFunction
+build-type: Simple
 
-
+Library
+  exposed-modules:
+    Text.ParserCombinators.Parsec.ParserFunction
+  build-depends: base < 6, parsec, containers
