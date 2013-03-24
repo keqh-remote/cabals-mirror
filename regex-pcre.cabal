@@ -1,6 +1,6 @@
 Name:                   regex-pcre
 -- Keep the Version below in sync with ./Text/Regex/PCRE.hs value getVersion_Text_Regex_PCRE :: Version
-Version:                0.94.2
+Version:                0.94.3
 Cabal-Version:          >=1.2.3
 License:                BSD3
 License-File:           LICENSE
@@ -64,5 +64,5 @@ library
   -- anyway.  The resulting regex-posix will exist, but throw errors.
   CC-Options:             -DHAVE_PCRE_H
   Extra-Libraries:        pcre
-  --Include-Dirs:           /opt/local/include
-  --Extra-Lib-Dirs:         /opt/local/lib
+  Include-Dirs:           /opt/local/include
+  Extra-Lib-Dirs:         /opt/local/lib
