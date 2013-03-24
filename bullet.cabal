@@ -1,5 +1,5 @@
 Name:                bullet
-Version:             0.2.1
+Version:             0.2.2
 Synopsis:            A wrapper for the Bullet physics engine.
 Description:         A wrapper for the Bullet physics engine.
 License:             BSD3
@@ -16,6 +16,7 @@ Build-Type:          Simple
 Extra-Source-Files:
   cbits/Bullet.h
   cbits/HaskellBulletAPI.h
+  cbits/GLDebugDrawer.h
 
   bullet/LICENSE
   bullet/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
