@@ -1,5 +1,5 @@
 Name:                reactive
-Version:             0.8.3
+Version:             0.8.6
 Synopsis:            Simple foundation for functional reactive programming
 Category:            reactivity, FRP
 Description:
@@ -9,12 +9,18 @@ Description:
   demand/data-driven implementation, as described in the paper \"Simply
   efficient functional reactivity\", <http://conal.net/papers/simply-reactive/>.
   .
+  Import "FRP.Reactive" for FRP client apps.  To make an Reactive adapter for an
+  imperative library, import "FRP.Reactive.LegacyAdapters".
+  .
   Please see the project wiki page: <http://haskell.org/haskellwiki/reactive>
   .
   The module documentation pages have links to colorized source code and
   to wiki pages where you can read and contribute user comments.  Enjoy!
   .
   &#169; 2007-2008 by Conal Elliott; BSD3 license.
+  .
+  Contributions from: Thomas Davie, Luke Palmer, David Sankel.  (Please let me
+  know if I've forgotten to list you.)
 Author:              Conal Elliott 
 Maintainer:          conal@conal.net
 Homepage:            http://haskell.org/haskellwiki/reactive
@@ -46,8 +52,6 @@ Library
         FRP.Reactive.Num
         FRP.Reactive.VectorSpace
 
-        -- FRP.Reactive.LegacyAdapters
-
         FRP.Reactive.Internal.Misc
         FRP.Reactive.Internal.Fun
         FRP.Reactive.Internal.Future
@@ -55,6 +59,8 @@ Library
         FRP.Reactive.Internal.Behavior
         FRP.Reactive.Internal.Clock
         FRP.Reactive.Internal.Timing
+
+        FRP.Reactive.LegacyAdapters
 
         Data.AddBounds
         Data.Min
