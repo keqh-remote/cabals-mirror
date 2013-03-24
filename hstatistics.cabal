@@ -1,5 +1,5 @@
 Name:               hstatistics
-Version:            0.1.0.1
+Version:            0.1.0.2
 License:            GPL
 License-file:       LICENSE
 Copyright:          (c) A.V.H. McPhail 2010
@@ -22,7 +22,7 @@ extra-tmp-files:    hstatistics.buildinfo
 library
 
     Build-Depends:      base >= 3 && < 5,
-                        storable-complex, hmatrix
+                        storable-complex, hmatrix >= 0.9.3
 
     Extensions:         ForeignFunctionInterface
 
