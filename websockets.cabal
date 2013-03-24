@@ -1,24 +1,38 @@
-Name:           websockets
-Version:        0.3.0.0
+Name:    websockets
+Version: 0.3.1.0
 
-Cabal-version:  >=1.6
+Cabal-version:  >= 1.6
 
-Synopsis:       Create WebSocket servers
+Synopsis:
+  A sensible and clean way to write WebSocket-capable servers in Haskell.
 
 Description:
- A library for creating WebSocket-capable servers, where the implemented protocol is defined here: <http://is.gd/eSdLB>.
+ This library allows you to write WebSocket-capable servers.
  .
- This library is tested with Chromium >=7, Opera >=11 and Firefox >=4 and is a work in progress. (Note: many of these newest browsers have recently stopped shipping with websockets enabled by default, due to security issues which are yet to be resolved.)
+ See an example: <http://github.com/jaspervdj/websockets/tree/master/example>.
  .
- An example of usage can be found in the Network.WebSockets module documentation.
+ The API of the 'Network.WebSockets' module should also contain enough
+ information to get you started.
+ .
+ This library currently works with Chromium @>= 14@, and Firefox @>= 6@.
+ .
+ See also:
+ .
+ * The specification of the WebSocket protocol:
+ <http://www.whatwg.org/specs/web-socket-protocol/>
+ .
+ * The JavaScript API for dealing with WebSockets:
+ <http://www.w3.org/TR/websockets/>
 
-License:        BSD3
-License-file:   LICENCE
-Copyright:      (c) 2010 Siniša Biđin
+License:      BSD3
+License-file: LICENCE
+Copyright:    (c) 2010-2011 Siniša Biđin
+              (c) 2011 Jasper Van der Jeugt
 
-Author:         Siniša Biđin
-Maintainer:     Siniša Biđin <sinisa@bidin.cc>
-Bug-reports:    mailto:sinisa@bidin.cc
+Author:      Siniša Biđin <sinisa@bidin.cc>
+             Jasper Van der Jeugt <m@jaspervdj.be>
+Maintainer:  Siniša Biđin <sinisa@bidin.cc>
+             Jasper Van der Jeugt <m@jaspervdj.be>
 
 Stability:      experimental
 Category:       Network
@@ -27,7 +41,39 @@ Tested-with:    GHC ==6.12
 Build-type:     Simple
 
 Library
-  Exposed-Modules: Network.WebSockets
-  Build-depends: pureMD5 >=2.1, network >=2.2.1.7, base ==4.*,
-                 bytestring >=0.9, binary >=0.5, containers >=0.3
+  Hs-source-dirs: src
+  Ghc-options:    -Wall
 
+  Exposed-modules:
+    Network.WebSockets
+
+  Other-modules:
+    Network.WebSockets.Decode
+    Network.WebSockets.Demultiplex
+    Network.WebSockets.Encode
+    Network.WebSockets.Handshake
+    Network.WebSockets.Mask
+    Network.WebSockets.Monad
+    Network.WebSockets.Socket
+    Network.WebSockets.Types
+
+  Build-depends:
+    attoparsec               >= 0.9    && < 0.10,
+    attoparsec-enumerator    >= 0.2    && < 0.3,
+    base                     >= 4      && < 5,
+    base64-bytestring        >= 0.1    && < 0.2,
+    binary                   >= 0.5    && < 0.6,
+    blaze-builder            >= 0.3    && < 0.4,
+    blaze-builder-enumerator >= 0.2    && < 0.3,
+    bytestring               >= 0.9    && < 0.10,
+    case-insensitive         >= 0.3    && < 0.4,
+    enumerator               >= 0.4.13 && < 0.5,
+    mtl                      >= 2.0    && < 2.2,
+    network                  >= 2.3    && < 2.4,
+    random                   >= 1.0    && < 1.1,
+    SHA                      >= 1.5    && < 1.6,
+    text                     >= 0.10   && < 0.12
+
+Source-repository head
+  Type:     git
+  Location: https://github.com/jaspervdj/websockets
