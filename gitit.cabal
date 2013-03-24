@@ -1,5 +1,5 @@
 name:                gitit
-version:             0.1.1
+version:             0.2
 build-type:          Simple
 synopsis:            Wiki using HAppS, git, and pandoc.
 description:         Gitit is a wiki program. HAppS is used for the web
@@ -22,7 +22,7 @@ maintainer:          jgm@berkeley.edu
 data-files:          stylesheets/gitit.css, stylesheets/hk-pyg.css,
                      stylesheets/folder.png, stylesheets/page.png,
                      javascripts/dragdiff.js, javascripts/folding.js,
-                     javascripts/jquery.min.js,
+                     javascripts/jquery.min.js, javascripts/uploadForm.js,
                      javascripts/jquery-ui-personalized-1.6rc2.min.js,
                      javascripts/preview.js, javascripts/search.js,
                      data/post-update, data/FrontPage.page, data/Help.page,
@@ -35,7 +35,8 @@ other-modules:       Gitit.State, Gitit.Git, Paths_gitit
 build-depends:       base, parsec < 3, pretty, xhtml, containers, pandoc
                      >= 1.1, process, filepath, directory, mtl, cgi,
                      network, old-time, highlighting-kate, bytestring,
-                     utf8-string, HAppS-Server, HAppS-State, HAppS-Data,
+                     utf8-string, HAppS-Server == 0.9.2.1,
+                     HAppS-State == 0.9.2.1, HAppS-Data == 0.9.2.1,
                      Crypto, HTTP
 
 ghc-options:         -Wall -threaded
