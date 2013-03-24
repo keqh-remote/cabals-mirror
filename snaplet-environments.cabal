@@ -7,10 +7,10 @@ Name:                snaplet-environments
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.1.1
 
 -- A short (one-line) description of the package.
-Synopsis:            Provides ability to easly read configuration based on given app environment given at command line, envs are defined in app configuration file
+Synopsis:            DEPRECATED! You should use standard Snap >= 0.9 "environments" functionality. It provided ability to easly read configuration based on given app environment given at command line, envs are defined in app configuration file
 
 -- A longer description of the package.
 -- Description:         
@@ -54,13 +54,12 @@ Library
   Build-depends:
     base >= 4 && < 5,
     snap == 0.7.*,
-    snap-core   == 0.7.*,
+    snap-core  == 0.7.*,
     mtl >= 2 && < 3,
-    configurator == 0.2.0.0,
-    regex-tdfa == 1.1.8,
-    unordered-containers == 0.1.4.3,
+    configurator >= 0.2 && < 0.3,
+    regex-tdfa >= 1.1.8 && < 1.2, 
+    unordered-containers >= 0.1.4.3 && < 0.2,
     text >= 0.11 && < 0.12,
-    haskell98 == 1.1.0.1,
     bson == 0.1.6
   
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
