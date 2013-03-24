@@ -3,7 +3,7 @@
 -- http://www.haskell.org/cabal/release/cabal-latest/doc/users-guide/authors.html#pkg-descr.
 -- The name of the package.
 Name:                snaplet-i18n
-Version:             0.0.3
+Version:             0.0.3.1
 Description:         A light weight i18n snaplet.
 Synopsis:            snaplet-i18n
 Homepage:            https://github.com/HaskellCNOrg/snaplet-i18n
@@ -19,13 +19,13 @@ Cabal-version:       >=1.6
 
 Extra-source-files:  
   README.md
-  test/snap.hs
-  test/snaplets/heist/templates/*.tpl
-  test/data/*.cfg
+  example/snap.hs
+  example/snaplets/heist/templates/*.tpl
+  example/snaplets/i18n/*.cfg
 
 Source-Repository head
   Type:     git
-  Location: https://github.com/HaskellCNOrg/snaplet-i18n
+  Location: git://github.com/HaskellCNOrg/snaplet-i18n.git
 
 
 Library
@@ -33,12 +33,16 @@ Library
   Exposed-modules:     
       Snap.Snaplet.I18N
 
+  Other-modules: Paths_snaplet_i18n
+
   Build-Depends:    
       base               >= 4     && < 5,
-      snap               >= 0.9.1 && < 0.10,
-      snap-core          == 0.9.0,
-      xmlhtml            == 0.2.0,
-      heist              == 0.8.1,
+      snap               == 0.9.*,
+      snap-core          == 0.9.*,
+      snap-loader-dynamic == 0.9.*,
+      snap-loader-static == 0.9.*,
+      xmlhtml            >= 0.2,
+      heist              >= 0.8.1 && < 0.9,
       bytestring         >= 0.9   && < 1.0,
       data-lens-template >= 2.1   && < 2.2,
       data-lens          >= 2.0   && < 2.1,
