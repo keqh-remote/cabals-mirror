@@ -1,5 +1,5 @@
 name: llvm
-version: 0.6.0.2
+version: 0.6.0.3
 license: BSD3
 license-file: LICENSE
 synopsis: Bindings to the LLVM compiler toolkit
@@ -58,7 +58,7 @@ library
     build-depends: base < 2.0 || >= 2.2, bytestring >= 0.9, mtl, directory, process
 
   ghc-options: -Wall
-  cpp-options: -DHAS_GETPOINTERTOGLOBAL=1
+  --cpp-options: -DHAS_GETPOINTERTOGLOBAL=1
 
   if os(darwin)
     ld-options: -w /System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
