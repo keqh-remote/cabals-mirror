@@ -1,10 +1,10 @@
 name:                Octree
-version:             0.2.0.1
+version:             0.2.2
 stability:           beta
 homepage:            https://github.com/mgajda/octree
 package-url:         http://hackage.haskell.org/package/octree
 synopsis:            Simple unbalanced Octree for storing data about 3D points
-description:         Octree data structure is relatively shallow data structure for space partitioning. [This version is not different that 0.2.1.]
+description:         Octree data structure is relatively shallow data structure for space partitioning.
 category:            Data
 license:             BSD3
 license-file:        LICENSE
@@ -17,8 +17,7 @@ bug-reports:         mailto:mjgajda@googlemail.com
 
 build-type:          Simple
 cabal-version:       >=1.8
-tested-with:         GHC==7.0.4
--- Also tested with GHC-7.4rc2
+tested-with:         GHC==7.0.4, GHC==7.4.1
 
 source-repository head
   type:     git
