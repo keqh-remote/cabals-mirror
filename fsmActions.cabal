@@ -1,5 +1,5 @@
 Name:                   fsmActions
-Version:                0.4.2
+Version:                0.4.3
 Stability:              Alpha
 Synopsis:               Finite state machines and FSM actions
 Description:
@@ -26,9 +26,9 @@ Source-Repository head
 
 Library
   Build-Depends:   base >= 3 && < 5, containers, filepath,
-                   fgl == 5.4.2.2,
-                   graphviz >= 2999.6.0.0 && <= 2999.9.0.0,
-                   MissingH, mtl, parsec, pretty
+                   fgl >= 5.4.2.3,
+                   graphviz >= 2999.11.0.0,
+                   MissingH, mtl, parsec >= 3, pretty
   Exposed-modules: Data.FsmActions,
                    Data.FsmActions.ActionMatrix,
                    Data.FsmActions.Error,
