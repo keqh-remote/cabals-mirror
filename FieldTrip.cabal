@@ -1,14 +1,11 @@
 Name:                FieldTrip
-Version:             0.2.2
+Version:             0.2.4
 Synopsis: 	     Functional 3D
 Category:            graphics
 Description:
   FieldTrip is a library for functional 3D geometry
   .
   Please see the project wiki page: <http://haskell.org/haskellwiki/FieldTrip>
-  .
-  The module documentation pages have links to colorized source code and
-  to wiki pages where you can read and contribute user comments.  Enjoy!
   .
   &#169; 2008 by Andy Gill and Conal Elliott; BSD3 license.
 Author:              Conal Elliott and Andy Gill
@@ -21,7 +18,7 @@ Stability:           experimental
 build-type:	     Simple
 Hs-Source-Dirs:      src
 Extensions:          
-Build-Depends:       base, old-time, OpenGL, GLUT, TypeCompose, MemoTrie, vector-space >= 0.5, graphicsFormats
+Build-Depends:       base, old-time, OpenGL, GLUT, TypeCompose, MemoTrie, vector-space >= 0.5.7, graphicsFormats
 Exposed-Modules:     
 		     Graphics.FieldTrip
 		     Graphics.FieldTrip.Misc
