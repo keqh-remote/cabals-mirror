@@ -1,5 +1,5 @@
 name:                hlcm
-version:             0.2.1
+version:             0.2.2
 synopsis:            Fast algorithm for mining closed frequent itemsets
 description:         Closed frequent itemsets are patterns that occur more 
 		     than a defined threshold in a transactional database. 
@@ -10,7 +10,7 @@ description:         Closed frequent itemsets are patterns that occur more
 category: 	     Algorithms, Data Mining           
 license:             BSD3
 license-file:        LICENSE
-author:              Alexandre Termier
+author:              Alexandre Termier, Simon Marlow, Satnam Singh
 maintainer:          Alexandre.Termier@imag.fr
 homepage:	     http://membres-liglab.imag.fr/termier/HLCM/hlcm.html
 build-depends:       base >=3 && < 4,
