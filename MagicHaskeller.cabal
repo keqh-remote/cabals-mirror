@@ -1,7 +1,8 @@
 Name:            MagicHaskeller
-Version:         0.8.6.2
+Version:         0.8.6.3
 Cabal-Version:   >= 1.2
 License:         BSD3
+License-file:	 LICENSE 
 Author:	         Susumu Katayama
 Maintainer:      Susumu Katayama <skata@cs.miyazaki-u.ac.jp>
 Stability:       experimental
@@ -11,7 +12,8 @@ Synopsis:        Automatic inductive functional programmer by systematic search
 Build-Type:      Simple
 Category:        Language
 data-files:      ExperimIOP.hs
-Tested-with:     GHC == 6.10.4
+-- Tested-with:     GHC == 6.10.4
+Tested-with:     GHC == 6.12.1
 
 Flag GHCAPI
   Description: Enable execution using the GHC API rather than the combinatory interpreter
