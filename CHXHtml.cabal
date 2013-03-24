@@ -1,6 +1,6 @@
 
 Name:                CHXHtml
-Version:             0.1.1
+Version:             0.1.2
 
 Synopsis: A W3C compliant (X)HTML generating library            
 
@@ -32,6 +32,8 @@ Tested-With:         GHC ==6.10.3
 Library
   -- Modules exported by the library.
   Exposed-modules:     Text.CHXHtml.XHtml1_strict
+                       Text.CHXHtml.XHtml1_transitional
+                       Text.CHXHtml.XHtml1_frameset
   
   -- Packages needed in order to build this package.
   Build-depends:    base >= 2 && < 5, 
