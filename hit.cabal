@@ -1,5 +1,5 @@
 Name:                hit
-Version:             0.4.3
+Version:             0.5.0
 Synopsis:            Git operations in haskell
 Description:
     .
@@ -77,7 +77,7 @@ Executable           Hit
     Build-depends:   base >= 4 && < 5
                    , mtl
                    , containers
-                   , hashable
+                   , hashable >= 1.2
                    , hashtables
                    , bytestring
                    , attoparsec >= 0.10.1
