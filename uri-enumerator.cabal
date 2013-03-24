@@ -1,6 +1,6 @@
 Name:                uri-enumerator
-Version:             0.1.0
-Synopsis:            Read and write URIs
+Version:             0.1.0.1
+Synopsis:            Read and write URIs (deprecated)
 Homepage:            http://github.com/snoyberg/xml
 License:             BSD3
 License-file:        LICENSE
@@ -9,7 +9,7 @@ Maintainer:          michaels@suite-sol.com
 Category:            Text
 Build-type:          Simple
 Cabal-version:       >=1.6
-Description:         Read and write URIs
+Description:         This package is deprecated in favor of uri-conduit.
 
 Library
   Exposed-modules:     Network.URI.Enumerator
