@@ -1,5 +1,5 @@
 Name: happstack-helpers
-Version: 0.44
+Version: 0.45
 License: BSD3
 License-file: bsd3.txt
 Description: Functions I found I was using repeatedly when programming Happstack based web-apps. 
@@ -41,7 +41,7 @@ Library
                , HStringTemplate >= 0.4.0 && < 0.7.0
                , HStringTemplateHelpers >= 0.0.14 
                , safe >= 0.2 && < 0.3
-               , MissingH >= 1.0.0 && < 2.0.0
+               , MissingH == 1.0.3
                , containers >= 0.2.0.0 && < 0.3.0.0
                , parsec >= 2.1.0.0 && < 2.2.0.0
                , haskell98 >= 1.0.0.0 && < 2.0.0.0
@@ -52,4 +52,5 @@ Library
                , old-time >= 1.0.0.0 && < 1.1.0.0
                , pureMD5 >= 1.0.0.0 && < 1.1.0.0
                , PBKDF2 >= 0.3 && < 0.4
+               , DebugTraceHelpers
   ghc-options: -Wall
