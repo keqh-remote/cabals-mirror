@@ -1,6 +1,6 @@
 Name:		concurrent-sa
-Version:	1.0.0
-Category:	Algorithms
+Version:	1.0.1
+Category:	Algorithms, Concurrency
 Author:		Louis Wasserman
 License:	BSD3
 License-file:	LICENSE
