@@ -1,6 +1,6 @@
 Cabal-version:          >= 1.6
 Name:                   sundown
-Version:                0.2
+Version:                0.2.1
 Author:                 Francesco Mazzoli (f@mazzo.li)
 Maintainer:             Francesco Mazzoli (f@mazzo.li)
 Build-Type:             Simple
@@ -15,7 +15,7 @@ Description:
 
 source-repository head
   type:     git
-  location: git://github.com/rostayob/upskirt.git
+  location: git://github.com/rostayob/sundown.git
 
 Library
   Hs-Source-Dirs:       src
