@@ -1,5 +1,5 @@
 name:               redis-hs
-version:            0.0.12
+version:            0.0.13
 author:             Will Langstroth <will@langstroth.com>
 maintainer:         Will Langstroth <will@langstroth.com>
 license:            MIT
@@ -44,7 +44,8 @@ library
     Database.Redis.General,
     Database.Redis.String,
     Database.Redis.List,
-    Database.Redis.Set
+    Database.Redis.Set,
+    Database.Redis.Transaction
 
   build-depends:
     base == 4.*,
