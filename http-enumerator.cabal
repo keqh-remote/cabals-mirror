@@ -1,5 +1,5 @@
 name:            http-enumerator
-version:         0.7.1.4
+version:         0.7.1.5
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -25,7 +25,7 @@ library
                  , transformers          >= 0.2     && < 0.3
                  , failure               >= 0.1     && < 0.2
                  , enumerator            >= 0.4.9   && < 0.5
-                 , attoparsec            >= 0.8.0.2 && < 0.10
+                 , attoparsec            >= 0.8.0.2 && < 0.11
                  , attoparsec-enumerator >= 0.2.0.4 && < 0.3
                  , utf8-string           >= 0.3.4   && < 0.4
                  , blaze-builder         >= 0.2.1   && < 0.4
@@ -36,9 +36,9 @@ library
                  , tls                   >= 0.8.1   && < 0.9
                  , tls-extra             >= 0.3     && < 0.5
                  , monad-control         >= 0.2     && < 0.3
-                 , containers            >= 0.2     && < 0.5
+                 , containers            >= 0.2
                  , certificate           >= 0.7     && < 1.1
-                 , case-insensitive      >= 0.2     && < 0.4
+                 , case-insensitive      >= 0.2
                  , base64-bytestring     >= 0.1     && < 0.2
                  , asn1-data             >= 0.5.1   && < 0.7
                  , data-default          >= 0.3     && < 0.4
