@@ -1,6 +1,6 @@
 
 Name:                fixplate
-Version:             0.1.4
+Version:             0.1.5
 Synopsis:            Uniplate-style generic traversals for optionally annotated fixed-point types.
 Description:         Uniplate-style generic traversals for fixed-point types, which can be  
                      optionally annotated with attributes. We also provide recursion schemes,
@@ -26,8 +26,8 @@ Flag withQuickCheck
   Description: Compile with the QuickCheck tests. 
   default: False
 
-Flag withHashing
-  Description: Include the generic hashing functionality
+Flag withUtils
+  Description: Include utility modules
   default: True
 
 Flag base4
@@ -42,8 +42,9 @@ Library
     Build-Depends:       base >= 3 && < 4
     cpp-options:         -DBASE_VERSION=3
 
-  if flag(withHashing)
+  if flag(withUtils)
     Build-Depends:       containers
+    cpp-options:         -DWITH_UTILITY_MODULES
 
   if flag(withQuickCheck)
     Build-Depends:       QuickCheck > 2.4
@@ -57,17 +58,15 @@ Library
                        Data.Generics.Fixplate.Attributes
                        Data.Generics.Fixplate.Zipper
                        Data.Generics.Fixplate.Draw
+                       Data.Generics.Fixplate.Trie
+                       Data.Generics.Fixplate.Hash
 
-  if flag(withHashing)
-    Exposed-Modules:     Data.Generics.Fixplate.Hash
-                         Data.Generics.Fixplate.Hash.Class
-                         Data.Generics.Fixplate.Hash.Table
-                         Data.Generics.Fixplate.Hash.FNV.FNV32
-                         Data.Generics.Fixplate.Hash.FNV.FNV64
-                       
-  if impl(ghc)||impl(hugs)                     
-    Exposed-Modules:     Data.Generics.Fixplate.Structure
-    cpp-options:         -DHAS_RANK2TYPES
+  if flag(withUtils)
+    Exposed-Modules:     
+                         Data.Generics.Fixplate.Util.Hash.Class
+                         Data.Generics.Fixplate.Util.Hash.Table
+                         Data.Generics.Fixplate.Util.Hash.FNV.FNV32
+                         Data.Generics.Fixplate.Util.Hash.FNV.FNV64
 
   Other-Modules:       Data.Generics.Fixplate.Misc
 
