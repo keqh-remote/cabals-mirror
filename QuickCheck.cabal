@@ -1,13 +1,14 @@
 Name: QuickCheck
-Version: 2.1.0.3
+Version: 2.1.1
 Cabal-Version: >= 1.2
 Build-type: Simple
 License: BSD3
 License-file: LICENSE
+Extra-source-files: README
 Copyright: Koen Claessen <koen@chalmers.se>
 Author: Koen Claessen <koen@chalmers.se>
 Maintainer: QuickCheck developers <quickcheck@projects.haskell.org>
-Homepage: http://www.cs.chalmers.se/~koen
+Homepage: http://www.cse.chalmers.se/~koen
 Category:	    Testing
 Synopsis:	    Automatic testing of Haskell programs
 Description:
@@ -30,6 +31,9 @@ flag splitBase
 flag extensibleExceptions
   Description: Choose the even newer, even smaller, split-up base package.
 
+flag ghciInterruptedException
+  Description: Use the ghc package to get access to GhcException(Interrupted).
+
 library
   Build-depends: mtl
   if flag(extensibleExceptions)
@@ -40,7 +44,10 @@ library
     else
       Build-depends: base < 3
   if impl(ghc >= 6.7)
-    Build-depends: ghc
+    if flag(ghciInterruptedException)
+      Build-depends: base < 4.3, ghc
+    else
+      Build-depends: base >= 4.3
   if impl(ghc >= 6.9)
     Build-depends: extensible-exceptions
   Exposed-Modules:
