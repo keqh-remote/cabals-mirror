@@ -1,5 +1,5 @@
 Name:           AERN-Real
-Version:        0.9.6.1
+Version:        0.9.7
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -13,7 +13,7 @@ Synopsis:       arbitrary precision interval arithmetic for approximating exact 
 Tested-with:    GHC ==6.8.2
 Description:
     Datatypes and abstractions for approximating exact real numbers
-    and a basic arithmetic over such approximations.  
+    and a basic arithmetic over such approximations.
     The main datatype is interval with arbitrary precision endpoints
     supported by safely rounding field and elementary operations
     whose precision can be increased arbitrarily, so that they
@@ -27,19 +27,32 @@ Description:
     .
     Simple examples of usage can be found in module @Demo.hs@ in folder @tests@.
 Extra-source-files:
-    ChangeLog tests/Demo.hs
+    ChangeLog tests/Demo.hs tests/Pi.hs tests/Matrix.hs tests/ISin3.hs
 
 Flag containers-in-base
+    Default: False
+
+Flag use-hmpfr
     Default: False
 
 Library
   hs-source-dirs:  src
   if flag(containers-in-base)
-    Build-Depends:
-      base < 3, binary >= 0.4
+    if flag(use-hmpfr)
+      Build-Depends:
+        base < 3, binary >= 0.4, hmpfr == 0.1.1
+      cpp-options: -DUSE_MPFR
+    else
+      Build-Depends:
+        base < 3, binary >= 0.4
   else
-    Build-Depends:
-      base >= 3, containers, binary >= 0.4
+    if flag(use-hmpfr)
+      Build-Depends:
+        base >= 3, containers, binary >= 0.4, hmpfr == 0.1.1
+      cpp-options: -DUSE_MPFR
+    else
+      Build-Depends:
+        base >= 3, containers, binary >= 0.4
   Exposed-modules:
     Data.Number.ER,
     Data.Number.ER.Real,
@@ -48,6 +61,7 @@ Library
     Data.Number.ER.Real.Base.CombinedMachineAP,
     Data.Number.ER.Real.Base.Rational,
     Data.Number.ER.Real.Base.Float,
+    Data.Number.ER.Real.Base.MPFR,
     Data.Number.ER.Real.Base,
     Data.Number.ER.Real.Arithmetic.Elementary,
     Data.Number.ER.Real.Arithmetic.Integration,
@@ -64,5 +78,5 @@ Library
     Data.Number.ER.BasicTypes,
     Data.Number.ER.Misc,
     Data.Number.ER.ExtendedInteger
-  Extensions: DeriveDataTypeable, ForeignFunctionInterface, ScopedTypeVariables, MultiParamTypeClasses, FunctionalDependencies, TypeSynonymInstances, FlexibleInstances
+  Extensions: CPP, DeriveDataTypeable, ForeignFunctionInterface, ScopedTypeVariables, MultiParamTypeClasses, FunctionalDependencies, TypeSynonymInstances, FlexibleInstances
   
