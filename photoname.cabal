@@ -1,10 +1,10 @@
 name:                photoname
 cabal-version:       >= 1.2
-version:             2.3.0
+version:             3.0.0
 build-type:          Simple
 license:             BSD3
 license-file:        LICENSE
-copyright:           2007-2010 Dino Morelli 
+copyright:           2007-2011 Dino Morelli 
 author:              Dino Morelli 
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           stable
@@ -12,13 +12,13 @@ homepage:            http://ui3.info/d/proj/photoname.html
 synopsis:            Rename JPEG photo files based on shoot date
 description:         
    Command-line utility for renaming/moving photo image files based on 
-   EXIF tags. Written in Haskell.
-category:            Unclassified
+   EXIF tags.
+category:            Application, Console
 tested-with:         GHC>=6.8.2
 
 executable           photoname
    main-is:          photoname.hs
-   build-depends:    base >= 3 && < 5, exif, filepath, mtl, old-locale, 
-                     parsec, time, unix
+   build-depends:    base >= 3 && < 5, directory, exif, filepath, mtl, 
+                     old-locale, parsec, time, unix
    ghc-options:      -Wall
    hs-source-dirs:   src
