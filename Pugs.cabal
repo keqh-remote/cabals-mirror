@@ -1,5 +1,5 @@
 Name            : Pugs
-Version         : 6.2.13.8
+Version         : 6.2.13.9
 license         : BSD3
 license-file    : LICENSE
 cabal-version   : >= 1.2
@@ -13,10 +13,40 @@ synopsis        : A Perl 6 Implementation
 description     : A Perl 6 Implementation
 author          : Audrey Tang <audreyt@audreyt.org>
 tested-with     : GHC
--- c-sources       : src/perl5/p5embed.c
--- hs-source-dirs  : src
--- extensions      : ForeignFunctionInterface
--- include-dirs    : /usr/local/include /opt/local/include /usr/local/lib/perl5/5.9.5/darwin-2level/CORE
+data-files      :
+    blib6/pugs/perl5/lib/Parse/Yapp/Driver.pm
+    blib6/pugs/perl5/lib/Parse/Yapp/Grammar.pm
+    blib6/pugs/perl5/lib/Parse/Yapp/Lalr.pm
+    blib6/pugs/perl5/lib/Parse/Yapp/Options.pm
+    blib6/pugs/perl5/lib/Parse/Yapp/Output.pm
+    blib6/pugs/perl5/lib/Parse/Yapp/Parse.pm
+    blib6/pugs/perl5/lib/Parse/Yapp.pm
+    blib6/pugs/perl5/lib/Pugs/AST/Expression.pm
+    blib6/pugs/perl5/lib/Pugs/Compiler/Grammar.pm
+    blib6/pugs/perl5/lib/Pugs/Compiler/Regex.pm
+    blib6/pugs/perl5/lib/Pugs/Compiler/RegexPerl5.pm
+    blib6/pugs/perl5/lib/Pugs/Compiler/Rule.pm
+    blib6/pugs/perl5/lib/Pugs/Compiler/Token.pm
+    blib6/pugs/perl5/lib/Pugs/Emitter/Grammar/Perl5.pm
+    blib6/pugs/perl5/lib/Pugs/Emitter/Rule/Parsec.pm
+    blib6/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5/CharClass.pm
+    blib6/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5/Ratchet.pm
+    blib6/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5/Regex.pm
+    blib6/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5.pm
+    blib6/pugs/perl5/lib/Pugs/Emitter/Rule/Perl6/Ratchet.pm
+    blib6/pugs/perl5/lib/Pugs/Grammar/Base.pm
+    blib6/pugs/perl5/lib/Pugs/Grammar/Precedence.pm
+    blib6/pugs/perl5/lib/Pugs/Grammar/Rule.pm
+    blib6/pugs/perl5/lib/Pugs/Grammar/Rule.pmc
+    blib6/pugs/perl5/lib/Pugs/Grammar/Rule2.pm
+    blib6/pugs/perl5/lib/Pugs/Grammar/RulePure.pm
+    blib6/pugs/perl5/lib/Pugs/Runtime/Common.pm
+    blib6/pugs/perl5/lib/Pugs/Runtime/Match/HsBridge.pm
+    blib6/pugs/perl5/lib/Pugs/Runtime/Match.pm
+    blib6/pugs/perl5/lib/Pugs/Runtime/Regex.pm
+    blib6/pugs/perl5/lib/Pugs/Runtime/Rule.pm
+    blib6/pugs/perl5/lib/Pugs/Runtime/StrPos.pm
+    blib6/pugs/perl5/lib/Pugs/Runtime/Tracer.pm
 extra-source-files:
     src/Pugs.hs
     src/Pugs/AST.hs
@@ -115,13 +145,9 @@ extra-source-files:
     src/Pugs/Val/Code.hs
     src/Pugs/Version.hs
 
-flag Optimize
-    description: Enable optimizations
-    default:     False
-
--- flag Debug
---     description: Enable debugging hooks
---     default:     False
+flag Perl5
+    description: Enable Perl 5 Embedding
+    default:     True
 
 executable pugs
     main-is:            Main.hs
@@ -130,27 +156,22 @@ executable pugs
     build-depends:
         base, haskell98, filepath, mtl, stm, parsec < 3.0.0, network,
         pretty, time, random, process, containers, bytestring,
-        array, directory, utf8-string, binary, haskeline >= 0.2,
+        array, directory, utf8-string, binary, haskeline >= 0.2.1,
 
         MetaObject       >= 0.0.4,
         HsParrot         >= 0.0.2,
-        pugs-compat      >= 0.0.4,
+        pugs-compat      >= 0.0.5,
         pugs-DrIFT       >= 2.2.3.0,
         stringtable-atom >= 0.0.4,
         HsSyck           >= 0.44
         -- HsPerl5
 
-    if flag(Optimize)
-        ghc-options: -O2
-        
-    -- if flag(Debug)
-    --     ghc-options: -prof -auto-all
-
-    -- cpp-options: -DPUGS_HAVE_PERL5=1
+    if flag(Perl5)
+        cpp-options: -DPUGS_HAVE_PERL5=1
 
     c-sources:
         cbits/Prelude_pm.c cbits/Test_pm.c
-    --        perl5/p5embed.c
+        perl5/p5embed.c
 
-    --    includes:
-    --        perl5/p5embed.h
+    includes:
+        perl5/p5embed.h
