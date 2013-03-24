@@ -1,5 +1,5 @@
 name: lambdacube-engine
-version: 0.2.2
+version: 0.2.3
 cabal-version: >= 1.6 && < 2
 build-type: Simple
 license: BSD3
@@ -76,6 +76,7 @@ library
     Graphics.LambdaCube.Loader.Generated.ResourceScriptScanner
     Graphics.LambdaCube.Loader.MaterialScript
     Graphics.LambdaCube.Loader.MeshXML
+    Graphics.LambdaCube.Loader.VMesh
     Graphics.LambdaCube.Loader.ParserUtil
     Graphics.LambdaCube.Loader.ResourceScript
     Graphics.LambdaCube.Loader.SkeletonXML
