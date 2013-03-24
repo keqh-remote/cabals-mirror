@@ -1,5 +1,5 @@
 Name:             latex
-Version:          0.1.0.1
+Version:          0.1.0.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -26,13 +26,13 @@ Source-Repository head
   location: http://code.haskell.org/~thielema/latex/
 
 Source-Repository this
-  tag:      0.1.0.1
+  tag:      0.1.0.2
   type:     darcs
   location: http://code.haskell.org/~thielema/latex/
 
 Library
   Build-Depends:
-    containers >= 0.1 && <0.5,
+    containers >= 0.1 && <0.6,
     utility-ht >=0.0.5 && <0.1,
     base >= 3 && <5
 
