@@ -1,5 +1,5 @@
 Name:                mysnapsession
-Version:             0.4
+Version:             0.4.1
 Synopsis:            Sessions and continuations for Snap web apps
 Description:         This package provides two Snap extensions, implementing
                      sessions as either memory-backed arbitrary types, or as
@@ -31,8 +31,8 @@ Library
     base == 4.*,
     bytestring >= 0.9.1 && < 0.10,
     mtl == 2.0.*,
-    snap >= 0.4 && < 0.5,
-    snap-core >= 0.4 && < 0.5,
+    snap >= 0.4 && < 0.6,
+    snap-core >= 0.4 && < 0.6,
     time >= 1.1 && < 1.3,
     random == 1.0.*,
     containers >= 0.3 && < 0.5,
