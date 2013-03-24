@@ -1,5 +1,5 @@
 name:                rangemin
-version:             2.1.3
+version:             2.1.4
 synopsis:            Linear range-min algorithms.
 description:	     Rapidly (in linear time) preprocesses a vector so that the minimum element of any given subrange can be looked up in constant time.
 tested-with:	     GHC
@@ -20,13 +20,13 @@ Other-modules:	     Data.RangeMin.Common
                      Data.RangeMin.Common.Types
                      Data.RangeMin.Common.Combinators
                      Data.RangeMin.Common.Vector
-                     Data.RangeMin.Common.Vector.Utils
                      Data.RangeMin.Fusion
                      Data.RangeMin.Fusion.Stream
                      Data.RangeMin.Fusion.Stream.Monadic
                      Data.RangeMin.Cartesian.STInt
                      Data.RangeMin.Int.Quadratic
                      Data.RangeMin.Int.Linearithmic
+                     Data.RangeMin.Int.Linearithmic.Combinators
                      Data.RangeMin.Int.NearLinear
                      Data.RangeMin.Int.Catalan
                      Data.RangeMin.Int.Catalan.Combinators
