@@ -1,6 +1,6 @@
 name:           hprotoc
 -- Synchronize this version number with Text.ProtocolBuffers.ProtocolCompile.version
-version:        0.3.1
+version:        1.0.0
 cabal-version:  >= 1.2
 build-type:     Simple
 license:        BSD3
@@ -24,8 +24,8 @@ flag small_base
 Executable hprotoc
   Main-Is:         Text/ProtocolBuffers/ProtoCompile.hs
   build-tools:     alex
-  ghc-options:     -O2 -Wall
-  build-depends:   protocol-buffers == 0.3.1, protocol-buffers-descriptor == 0.3.1
+  ghc-options:     -Wall
+  build-depends:   protocol-buffers == 0.4.4, protocol-buffers-descriptor == 0.4.4
   build-depends:   binary, utf8-string
   build-depends:   parsec, haskell-src
   if flag(small_base)
@@ -47,14 +47,16 @@ Executable hprotoc
                    Text.ProtocolBuffers.ProtoCompile.Resolve
   extensions:      DeriveDataTypeable,
                    EmptyDataDecls,
+                   FlexibleContexts 
                    FlexibleInstances,
+                   FunctionalDependencies,
                    GADTs,
                    GeneralizedNewtypeDeriving,
                    MagicHash,
+                   MultiParamTypeClasses,
                    PatternGuards,
                    RankNTypes,
+                   RecursiveDo,
                    ScopedTypeVariables,
-                   TypeSynonymInstances,
-                   MultiParamTypeClasses,
-                   FunctionalDependencies
-
+                   TypeSynonymInstances
+--                   PatternSignatures
