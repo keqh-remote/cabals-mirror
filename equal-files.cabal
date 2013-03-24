@@ -1,10 +1,10 @@
 Name:           equal-files
-Version:        0.0.3
+Version:        0.0.4
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
-Homepage:       http://code.haskell.org/~thielema/equal-files
+Homepage:       http://code.haskell.org/~thielema/equal-files/
 Category:       Console
 Synopsis:       Shell command for finding equal files
 Description:
@@ -45,11 +45,12 @@ Build-Type:     Simple
 
 Executable equal-files
   Build-Depends:
-    FileManip >= 0.3.2 && <0.4,
-    explicit-exception >= 0.0.2 && < 0.1,
-    mtl >= 1.1 && < 1.2,
-    bytestring >= 0.9 && <0.10,
-    base >= 3
+    filemanip >=0.3.5 && <0.4,
+    explicit-exception >=0.1 && <0.2,
+    transformers >=0.2 && <0.4,
+    utility-ht >=0.0.1 && <0.1,
+    bytestring >=0.9 && <0.10,
+    base >=3 && <5
 
   GHC-Options:    -Wall
   Hs-source-dirs: src
