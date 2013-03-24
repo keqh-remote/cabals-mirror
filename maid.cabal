@@ -1,5 +1,5 @@
 Name:                 maid
-Version:              2010.4.24
+Version:              2010.9.9
 Build-type:           Simple
 Synopsis:             A simple static web server
 Description:
@@ -20,12 +20,15 @@ Executable            maid
   ghc-options:        -Wall -threaded
   build-depends:      base >= 4 && < 5
                     , mps >= 2010.1.26
-                    , loli >= 2009.8.18
                     , haskell98
                     , hack-contrib >= 2010.1.26
                     , data-default
-                    , hack-handler-hyena >= 2009.12.20
+                    , hack-handler-hyena
                     , hack
                     , containers
+                    , moe
+                    , unix
+                    , bytestring
+                    , process
   hs-source-dirs:     src/
   main-is:            maid.hs
