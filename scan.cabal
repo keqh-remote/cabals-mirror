@@ -1,7 +1,7 @@
 cabal-version:      >= 1.4
 build-type:         Simple
 name:               scan
-version:            0.1.0.7
+version:            0.1.0.8
 license:            BSD3
 license-file:       doc/LICENSE
 category:           Development
