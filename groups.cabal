@@ -1,5 +1,5 @@
 name:                groups
-version:             0.2.0.0
+version:             0.2.0.1
 synopsis:            Haskell 98 groups
 description:         
   Haskell 98 groups. A group is a monoid with invertibility.
