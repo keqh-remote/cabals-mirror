@@ -1,5 +1,5 @@
 Name:                gruff
-Version:             0.1
+Version:             0.1.1
 Synopsis:            fractal explorer GUI using the ruff library
 Description:
     Currently allows exploration only of the Mandelbrot Set fractal.
