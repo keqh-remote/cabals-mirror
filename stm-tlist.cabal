@@ -1,5 +1,5 @@
 name:                stm-tlist
-version:             0.1
+version:             0.1.1
 synopsis:            Mutable, singly-linked list in STM
 description:
     This package provides a mutable, singly-linked list type for use in 'STM'.
@@ -17,6 +17,7 @@ cabal-version:       >=1.8
 
 extra-source-files:
     examples/TChan.hs
+    examples/TChan-with-TCursor.hs
 
 source-repository head
     type:       git
@@ -24,6 +25,7 @@ source-repository head
 
 library
     exposed-modules:
+        Data.STM.TCursor
         Data.STM.TList
 
     ghc-options: -Wall -O2 -fwarn-tabs
