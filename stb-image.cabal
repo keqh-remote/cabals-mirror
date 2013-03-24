@@ -1,5 +1,5 @@
 Name:                stb-image
-Version:             0.2
+Version:             0.2.1
 Synopsis:            A wrapper around Sean Barrett's JPEG/PNG decoder
 Description:         Partial implementation of JPEG, PNG, TGA, BMP, PSD decoders,
                      with a really simple API.
@@ -10,32 +10,26 @@ Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
 Homepage:            http://code.haskell.org/~bkomuves/
 Stability:           Experimental
 Category:            Codec, Graphics
-Tested-With:         GHC == 6.10.1, GHC == 6.8.3 
+Tested-With:         GHC == 6.12.3
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 
 Extra-Source-Files:  example/viewer.hs,
                      cbits/stb_image.h
 
-Flag splitBase
-  Description: Choose the new smaller, split-up base package.
-
 Flag base4
   Description: Base-4 uses new exception framework
 
 Library
-  if flag(splitBase)
-    Build-Depends:          bytestring >= 0.9,
-                            bitmap < 0.1
-    if flag(base4)
-      Build-Depends:        base >= 4 && < 5
-      cpp-options:          -DBASE_MAJOR_VERSION=4
-    else
-      Build-Depends:        base >= 3 && < 4
-      cpp-options:          -DBASE_MAJOR_VERSION=3
+  Build-Depends:          bytestring >= 0.9,
+                          bitmap >= 0.0.2 && < 0.1
+                          
+  if flag(base4)
+    Build-Depends:        base >= 4 && < 5
+    cpp-options:          -DBASE_MAJOR_VERSION=4
   else
-    Build-Depends:        base <  3
-    cpp-options:          -DBASE_MAJOR_VERSION=2
+    Build-Depends:        base >= 3 && < 4
+    cpp-options:          -DBASE_MAJOR_VERSION=3
     
   Exposed-Modules:     Codec.Image.STB
   
