@@ -1,5 +1,5 @@
 name:               concraft
-version:            0.3.2
+version:            0.4.0
 synopsis:           Morphosyntactic tagging tool based on constrained CRFs
 description:
     A morphosyntactic tagging tool based on constrained conditional
@@ -16,6 +16,8 @@ homepage:           http://zil.ipipan.waw.pl/Concraft
 build-type:         Simple
 
 library
+    hs-source-dirs: src
+
     build-depends:
         base >= 4 && < 5
       , array
@@ -37,13 +39,15 @@ library
 
     exposed-modules:
         NLP.Concraft
+      , NLP.Concraft.Guess
+      , NLP.Concraft.Disamb
       , NLP.Concraft.Morphosyntax
       , NLP.Concraft.Format
       , NLP.Concraft.Format.Plain
       , NLP.Concraft.Schema
-      , NLP.Concraft.Guess
-      , NLP.Concraft.Disamb
-      , NLP.Concraft.Disamb.Tiered
+
+    other-modules:
+        NLP.Concraft.Disamb.Tiered
       , NLP.Concraft.Disamb.Positional
 
     ghc-options: -Wall -O2
@@ -52,23 +56,9 @@ source-repository head
     type: git
     location: https://github.com/kawu/concraft.git
 
--- executable concraft-guess
---     build-depends:
---         cmdargs
---     hs-source-dirs: ., tools
---     main-is: concraft-guess.hs    
---     ghc-options: -Wall -O2 -threaded -rtsopts
--- 
--- executable concraft-disamb
---     build-depends:
---         cmdargs
---     hs-source-dirs: ., tools
---     main-is: concraft-disamb.hs    
---     ghc-options: -Wall -O2 -threaded -rtsopts
-
 executable concraft
     build-depends:
         cmdargs
-    hs-source-dirs: ., tools
+    hs-source-dirs: src, tools
     main-is: concraft.hs    
     ghc-options: -Wall -O2 -threaded -rtsopts
