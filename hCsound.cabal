@@ -1,5 +1,5 @@
 Name:           hCsound
-Version:        0.2.3
+Version:        0.3.0
 Cabal-Version:  >= 1.2
 Description:    Haskell interface to Csound API.
 License:        LGPL
@@ -26,13 +26,15 @@ flag useFramework
 
 Library
  Hs-Source-Dirs:        src
-                        src/Sound
-                        src/Sound/Csound
- build-depends:         base, haskell98, mtl
+ build-depends:         base         >=3 && < 5
+                       ,monads-tf    >= 0.1 && < 0.2
+                       ,transformers >= 0.2 && < 0.3
+                       ,vector       >= 0.6 && < 0.8
  build-tools:           c2hs
- other-modules:         C2HS
  exposed-modules:       Sound.Csound
+                        Sound.Csound.Foreign
                         Sound.Csound.Interface
+                        Sound.Csound.Vector
  includes:              csound.h
  extra-libraries:       sndfile
 
