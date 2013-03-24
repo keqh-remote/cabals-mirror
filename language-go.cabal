@@ -1,5 +1,5 @@
 Cabal-Version: >= 1.8
-Version:       0.7
+Version:       0.8
 Name:          language-go
 Author:        Andrew Robbins
 Maintainer:    and_j_rob@yahoo.com
@@ -59,6 +59,7 @@ Library
     Language.Go.Parser.Lexer,
     Language.Go.Parser.Parser,
     Language.Go.Parser.Tokens,
+    Language.Go.Parser.Operators,
     Language.Go.Syntax,
     Language.Go.Syntax.AST
 
