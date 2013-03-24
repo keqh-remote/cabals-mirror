@@ -1,5 +1,5 @@
 name:                esqueleto
-version:             0.2.1
+version:             0.2.2
 synopsis:            Bare bones, type-safe EDSL for SQL queries on persistent backends.
 homepage:            https://github.com/meteficha/esqueleto
 license:             BSD3
@@ -42,7 +42,8 @@ description:
   <https://github.com/meteficha/esqueleto/>.
   .
   The name of this library means \"skeleton\" in Portuguese and
-  contains all three SQL letters in the correct order =).
+  contains all three SQL letters in the correct order =).  It was
+  inspired by Scala's Squeryl but created from scratch.
 
 source-repository head
   type:     git
