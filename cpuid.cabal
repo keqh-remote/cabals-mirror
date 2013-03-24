@@ -1,5 +1,5 @@
 Name:               cpuid
-Version:            0.2.2
+Version:            0.2.2.1
 License:            GPL
 License-file:       COPYING
 Author:             Martin Grabmueller <martin@grabmueller.de>
@@ -45,7 +45,7 @@ Library
   GHC-Options:        -Wall
 
 Executable cpuid-test
-  If !(flag(buildExamples) && arch(i386))
+  If !(flag(buildExamples) && (arch(i386) || arch(x86_64)))
     Buildable: False
   Main-Is:            tests/TestCpuid.hs
   C-sources:          cbits/cpuid.c
