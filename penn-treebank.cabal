@@ -1,5 +1,5 @@
 Name:                penn-treebank
-Version:             0.1
+Version:             0.1.0.1
 Synopsis:            Tools for manipulating the Penn TreeBank
 Description:
     .
@@ -7,8 +7,6 @@ Description:
     .
     Right now, this only includes a parser for the Penn TreeBank
     format.  But additional tools would be more than welcome!
-    .
-    See <http://code.google.com/p/haskell-ptb>
     .
 License:             BSD3
 License-file:        LICENSE
@@ -18,5 +16,5 @@ Author:              Eric Kow
 Maintainer:          eric.kow@gmail.com
 Stability:           provisional
 Build-Type:          Simple
-Build-depends:       base, parsec, containers
+Build-depends:       base < 5, parsec, containers
 Exposed-modules:     NLP.PennTreebank
