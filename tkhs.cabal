@@ -1,5 +1,5 @@
 name:                tkhs
-version:             0.2.2
+version:             0.2.3
 synopsis:            Simple Presentation Utility
 description:         If you want to give your presentation in a terminal,
                      or if PowerPoint would be overkill, you may find tkhs useful.
@@ -25,7 +25,7 @@ Executable tkhs
   ghc-options:       -Wall
   build-depends:     base == 4.*
                    , mtl
-                   , vty == 4.*
+                   , vty == 4.2.1.*
                    , parsec == 2.*
                    , pretty
                    , utf8-string
