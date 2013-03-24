@@ -1,11 +1,11 @@
 Name:           Unixutils
-Version:        1.17
+Version:        1.22
 License:        BSD3
--- License-File:	debian/copyright
+License-File:	COPYING
 Author:         Jeremy Shaw
 Homepage:       http://src.seereason.com/haskell-unixutils
 Category:	System
-Build-Depends:  base, unix, regex-compat, process, bytestring, directory, old-time, parallel
+Build-Depends:  base >= 3 && < 4, unix, regex-compat, process, bytestring, directory, old-time, parallel, filepath
 Synopsis:       A crude interface between Haskell and Unix-like operating systems
 Maintainer:     jeremy@n-heptane.com
 Description:
