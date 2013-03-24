@@ -1,5 +1,5 @@
 Name:           synthesizer-core
-Version:        0.4.0.3
+Version:        0.4.0.4
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
@@ -48,7 +48,7 @@ Flag buildTests
 
 
 Source-Repository this
-  Tag:         0.4.0.3
+  Tag:         0.4.0.4
   Type:        darcs
   Location:    http://code.haskell.org/synthesizer/core/
 
