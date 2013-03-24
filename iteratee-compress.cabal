@@ -1,5 +1,5 @@
 Name:                iteratee-compress
-Version:             0.2.1.0
+Version:             0.3.0.0
 Synopsis:            An enumerators for compressing and decompressing streams
 Description:         An enumerators for compressing and decompressing streams
 License:             BSD3
@@ -14,7 +14,7 @@ Cabal-version:       >=1.6
 
 Flag Debug
   Description:       Enable debug support
-  Default:           True
+  Default:           False
 
 Library
   Exposed-modules:   Data.Iteratee.BZip,
@@ -26,8 +26,7 @@ Library
   Build-tools:       c2hs
   Extensions:        CPP,
                      DeriveDataTypeable,
-                     ForeignFunctionInterface,
-                     ScopedTypeVariables
+                     ForeignFunctionInterface
   Extra-libraries:   z, bz2
   if flag(debug)
       CPP-Options:   -DDEBUG
