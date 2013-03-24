@@ -1,5 +1,5 @@
 Name:                HGamer3D-Data
-Version:             0.1.7
+Version:             0.1.8
 Synopsis:            Library to enable 3D game development for Haskell - Data
 Description:         
 	Library, to enable 3D game development for Haskell,
@@ -33,5 +33,5 @@ Library
   cc-options:        -Wno-attributes 
   hs-source-dirs:    .
   Include-dirs:      . 
-  build-depends:     haskell98
+  build-depends:     
   extra-libraries:   
