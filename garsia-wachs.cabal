@@ -1,5 +1,5 @@
 Name:           garsia-wachs
-Version:        1.1
+Version:        1.2
 License:        BSD3
 License-File:   LICENSE
 Copyright:      (c) Nicolas Pouillard
@@ -26,6 +26,6 @@ Library
     if flag(old-base)
         Build-depends: base < 3
     else
-        Build-depends: base>=3.0, containers>=0.1
+        Build-depends: base>=3.0
     Exposed-Modules: Data.Algorithm.GarsiaWachs
     ghc-options: -Wall
