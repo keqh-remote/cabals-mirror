@@ -1,5 +1,5 @@
 Name:    hakyll
-Version: 3.2.7.2
+Version: 3.2.8.0
 
 Synopsis: A static website compiler library
 Description:
@@ -52,7 +52,11 @@ Source-Repository head
 
 Flag previewServer
   Description: Include the preview server
-  default:     True
+  Default:     True
+
+Flag unixFilter
+  Description: Include the UnixFilter module
+  Default:     True
 
 Library
   Ghc-Options:    -Wall
@@ -61,25 +65,26 @@ Library
   Build-Depends:
     base        >= 4      && < 5,
     binary      >= 0.5    && < 0.6,
-    blaze-html  >= 0.4    && < 0.6,
+    blaze-html  >= 0.5    && < 0.6,
+    blaze-markup >= 0.5.1  && < 0.6,
     bytestring  >= 0.9    && < 0.10,
     citeproc-hs >= 0.3.2  && < 0.4,
     containers  >= 0.3    && < 0.5,
     cryptohash  >= 0.7    && < 0.8,
     directory   >= 1.0    && < 1.2,
     filepath    >= 1.0    && < 1.4,
-    hamlet      >= 0.10.3 && < 1.1,
+    hamlet      >= 1.0    && < 1.1,
     mtl         >= 1      && < 2.2,
     old-locale  >= 1.0    && < 1.1,
     old-time    >= 1.0    && < 1.2,
-    pandoc      >= 1.9    && < 1.10,
+    pandoc      >= 1.9.3  && < 1.10,
     parsec      >= 3.0    && < 3.2,
     process     >= 1.0    && < 1.2,
     regex-base  >= 0.93   && < 0.94,
     regex-tdfa  >= 1.1    && < 1.2,
     tagsoup     >= 0.12.6 && < 0.13,
-    time        >= 1.1    && < 1.5,
-    unix        >= 2.4    && < 2.6
+    text        >= 0.11   && < 1.12,
+    time        >= 1.1    && < 1.5
 
   Exposed-Modules:
     Hakyll
@@ -94,12 +99,12 @@ Library
     Hakyll.Core.Logger
     Hakyll.Core.Resource
     Hakyll.Core.Resource.Provider
+    Hakyll.Core.Resource.Provider.Dummy
     Hakyll.Core.Resource.Provider.File
     Hakyll.Core.Routes
     Hakyll.Core.Rules
     Hakyll.Core.Run
     Hakyll.Core.Store
-    Hakyll.Core.UnixFilter
     Hakyll.Core.Util.Arrow
     Hakyll.Core.Util.File
     Hakyll.Core.Util.String
@@ -138,11 +143,19 @@ Library
     Build-depends:
       snap-core   >= 0.6 && < 0.9,
       snap-server >= 0.6 && < 0.9
-    Cpp-Options:
+    Cpp-options:
       -DPREVIEW_SERVER
-    Other-Modules:
+    Other-modules:
       Hakyll.Web.Preview.Poll
       Hakyll.Web.Preview.Server
+
+  If flag(unixFilter)
+    Build-depends:
+      unix >= 2.4 && < 2.6
+    Cpp-options:
+      -DUNIX_FILTER
+    Other-modules:
+      Hakyll.Core.UnixFilter
 
 Test-suite hakyll-tests
   Type:           exitcode-stdio-1.0
@@ -170,7 +183,7 @@ Test-suite hakyll-tests
     mtl         >= 1      && < 2.2,
     old-locale  >= 1.0    && < 1.1,
     old-time    >= 1.0    && < 1.2,
-    pandoc      >= 1.9    && < 1.10,
+    pandoc      >= 1.9.3  && < 1.10,
     parsec      >= 3.0    && < 3.2,
     process     >= 1.0    && < 1.2,
     regex-base  >= 0.93   && < 0.94,
