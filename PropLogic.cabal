@@ -1,6 +1,6 @@
 Name:           PropLogic
-Version:        0.9.0.2
-Cabal-Version:  >= 1.2
+Version:        0.9.0.3
+Cabal-Version:  >= 1.9
 Build-type:     Simple
 License:        BSD3
 -- License:        PublicDomain
@@ -9,17 +9,15 @@ Author:         bucephalus
 Maintainer:     b@bucephalus.org
 Stability:      experimental
 Homepage:       http://www.bucephalus.org/PropLogic
-Bug-reports:    http://www-bucephalus-org.blogspot.com/PropLogic-bugs
+Bug-reports:    http://www-bucephalus-org.blogspot.com/2010/02/proplogic.html
 -- Package-url:    http://www.bucephalus.org/....
 Category:       Logic, Algorithms
-Synopsis:       A system for propositional logic with default and fast instances of propositional algebras.
--- Description:    ....
+Synopsis:       Propositional Logic
+Description:    A system for propositional logic with default and fast instances of propositional algebras.
 
 Library
   exposed-modules:
-    PropLogic, Olist, PropLogicCore, DefaultPropLogic, FastPropLogic, PropLogicTest
-  other-modules:
-    TextDisplay, Costack
+    PropLogic, Olist, PropLogicCore, DefaultPropLogic, FastPropLogic, PropLogicTest, TextDisplay, Costack
   build-depends:
     base < 5, old-time, random
   extensions:
@@ -27,3 +25,7 @@ Library
 
 Executable program
   Main-Is: Main.hs
+
+source-repository head
+  type:     darcs
+  location: http://src.seereason.com/darcs/PropLogic
