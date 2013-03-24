@@ -1,5 +1,5 @@
 Name:               sessions
-Version:            2008.5.12
+Version:            2008.6.17
 Stability:          Beta
 Copyright:          Matthew Sackman
 Category:           Control
@@ -11,7 +11,7 @@ License-File:       LICENSE
 Cabal-Version:      >= 1.2
 Build-Type:         Simple
 Synopsis:           Session Types for Haskell
-Extra-Source-Files: ChangeLog.txt, Tests/Tests.hs, Tests/Queens.hs, Tests/TestNetwork.hs
+Extra-Source-Files: ChangeLog.txt, Tests/Tests.hs, Tests/Queens.hs, Tests/TestNetwork.hs, Tests/Speed.hs
 Description:
   Session Types for Haskell. Allows the specification of communication
   protocols and then validation that an implementation does not
@@ -35,6 +35,7 @@ Library {
                            Control.Concurrent.Session.Base.Number
                            Control.Concurrent.Session.Base.List
                            Control.Concurrent.Session.Base.Map
+                           System.Session
         ghc-options:       -Wall -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-missing-signatures
 }
 
