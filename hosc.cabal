@@ -1,5 +1,5 @@
 Name:              hosc
-Version:           0.4
+Version:           0.5
 Synopsis:          Haskell Open Sound Control
 Description:       hosc provides Sound.OpenSoundControl, a haskell
                    module implementing a subset of the Open Sound
@@ -11,17 +11,18 @@ Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/f/269573/
-Tested-With:       GHC==6.8.2
+Tested-With:       GHC==6.10.1
 Build-Type:        Simple
 Cabal-Version:     >= 1.2
 Data-Files:        README
 
 Library
   Build-Depends:   array, base, bytestring, binary, network, time
-  GHC-Options:     -Wall -fwarn-tabs -O2
+  GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.OpenSoundControl
                    Sound.OpenSoundControl.Byte
                    Sound.OpenSoundControl.Cast
+                   Sound.OpenSoundControl.Coerce
                    Sound.OpenSoundControl.OSC
                    Sound.OpenSoundControl.Time
                    Sound.OpenSoundControl.Transport
