@@ -1,10 +1,11 @@
 name:                hackage-sparks
-version:             0.5
+version:             0.5.1
 homepage:            http://code.haskell.org/~dons/code/hackage-sparks
 license:             BSD3
 license-file:        LICENSE
 author:              Don Stewart
-maintainer:          dons@galois.com
+copyright:           Don Stewart (c) 2008-2011
+maintainer:          dons00@gmail.com
 category:            Distribution
 synopsis:            Generate sparkline graphs of hackage statistics
 description:         Generate sparkline graphs of hackage statistics
@@ -17,8 +18,8 @@ flag small_base
 executable hackagesparks
     main-is:         Main.hs
     if flag(small_base) 
-        build-depends:   base >= 3, old-locale, old-time, directory
+        build-depends:   base >= 3 && < 5, old-locale, old-time, directory
     else
         build-depends:   base <  3
-    build-depends:   hsparklines, tagsoup, parsedate, filepath
+    build-depends:   hsparklines, tagsoup, parsedate, filepath, download, bytestring
 
