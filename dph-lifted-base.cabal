@@ -1,5 +1,5 @@
 Name:           dph-lifted-base
-Version:        0.6.1.1
+Version:        0.7.0.1
 License:        BSD3
 License-File:   LICENSE
 Author:         The DPH Team
@@ -15,7 +15,7 @@ Library
   Exposed-Modules:
         Data.Array.Parallel.PArray.Types
         Data.Array.Parallel.PArray.Reference
-        Data.Array.Parallel.PArray
+        Data.Array.Parallel.PArray.Reference.Convert
         Data.Array.Parallel.PArr
         
   Exposed:
@@ -43,7 +43,7 @@ Library
         ExistentialQuantification,
         ScopedTypeVariables,
         PatternGuards,
-        PackageImports
+        DeriveDataTypeable
 
   GHC-Options:
         -Odph 
@@ -53,13 +53,13 @@ Library
         -fno-warn-orphans
 
   Build-Depends:  
-        base                    == 4.5.*,
+        base                    == 4.6.*,
         ghc                     == 7.*,
         array                   == 0.4.*,
         random                  == 1.0.*,
-        template-haskell        == 2.7.*,
-        vector                  == 0.9.*,
+        template-haskell        == 2.8.*,
+        dph-base                == 0.7.*,
+        dph-prim-par            == 0.7.*,
+        vector                  == 0.10.*,
         pretty                  == 1.1.*,
-        containers              == 0.4.*, 
-        dph-base                == 0.6.1.*,
-        dph-prim-par            == 0.6.1.*
+        containers              == 0.5.*
