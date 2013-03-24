@@ -1,6 +1,6 @@
 Name:                mathgenealogy
 
-Version:             1.1.1
+Version:             1.2.0
 
 Synopsis:            Discover your (academic) ancestors!
 
@@ -20,22 +20,26 @@ Description:         A simple command line program for extracting data from the
   > mathgenealogy --help
   .
   for more options. Requires GraphViz (in particular the /dot/ program) to run.
+  .
+  /Changes in 1.2.0:/
+  .
+  * Correct handling of entries with multiple PhDs (reported by Dima Pasechnik)
   . 
   /Changes in 1.1.1:/
   .
-  * provide error message when given invalid start URL
+  * Provide error message when given invalid start URL
   . 
-  * documentation and code cleanup
+  * Documentation and code cleanup
   .
   /Changes in 1.0.0:/
   .
-  * choice between PDF and PNG output
+  * Choice between PDF and PNG output
   .
-  * optional inclusion of PhD theses in output
+  * Optional inclusion of PhD theses in output
   .
   /Changes in 0.0.2:/
   .
-  * fixed bug regarding trailing commas (thanks to A. Koessler) 
+  * Fixed bug regarding trailing commas (reported by Alexander Koessler) 
 
 -- Homepage:            http://darcs.monoid.at/mathgenealogy
 
@@ -49,7 +53,7 @@ Author:              Peter Robinson
 
 Maintainer:          Peter Robinson <thaldyron@gmail.com>
 
-Copyright:           (C) 2010-2012 Peter Robinson
+Copyright:           (C) 2010-2013 Peter Robinson
 
 Category:            Web
 
