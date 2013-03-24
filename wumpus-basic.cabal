@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.5.0
+version:          0.6.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -20,6 +20,15 @@ description:
   .
   Changelog:
   .
+  0.5.0 to 0.6.0:
+  .
+  * Updates to work with wumpus-core-0.30.0.
+  .
+  * The code from @Basic.Graphic@ has been moved in to 
+    @Basic.Graphic.Primitive@ - this module is due a major 
+    overhaul. @Basic.Graphic@ is now an /import/ shim for
+    @Basic.Graphic.Primitive@.
+  .
   0.4.0 to 0.5.0:
   .
   * Re-worked the PictureLanguage module.
@@ -30,39 +39,6 @@ description:
   .
   * Updates to work with wumpus-core-0.30.0.
   .
-  0.3.0 to 0.4.0:
-  .
-  * Reworked the monads. Monads.DrawingMonad replaces 
-    Monads.Trace, Monads.DrawingCtx, Monads.ConsDrawing. The 
-    SnocDrawing monads have been removed as they were a design
-    mistake.
-  .
-  * Removed MGraphicF type, added AGraphic.
-  .
-  * Initial work on arrow drawing and extended text drawing.
-  .
-  0.2.0 to 0.3.0 :
-  . 
-  * Added the anchors, monads, drawingAttrs...
-  .
-  * Added the module @PictureLanguage@ from Wumpus-Core.
-    It is located with the path prefix @Wumpus.Deprecated@.
-    At some point it will be replaced...
-  .
-  * Basic.Graphic - rectangles and lines now take the supplied
-    point to be the center rather than the bottom-left corner.
-    Name changes - @circle@ changed to @disk@, @text@ changed to 
-    @textline@.
-  .
-  0.1.1 to 0.2.0:
-  .
-  * Added the module @Wumpus.Basic.Graphic@.
-  .
-  * SafeFonts changed to be size neutral. PostScript\'s 
-    @scalefont@ command (which wumpus-core uses in the generated
-    output) should be able to scale to any integer size.
-  .
-  * New demo @ColourCharts.hs@.
   .
 build-type:         Simple
 stability:          highly unstable
@@ -72,9 +48,9 @@ extra-source-files:
   CHANGES,
   LICENSE,
   demo/DotPic.hs,
-  demo/FontPic.hs,
   demo/ColourCharts.hs,
   demo/ColourDefns.hs,
+  demo/FontPic.hs,
   demo/Picture.hs
 
 library
@@ -82,7 +58,7 @@ library
   build-depends:      base            <  5, 
                       containers      >= 0.3     && <= 0.4, 
                       vector-space    >= 0.6,
-                      wumpus-core     >= 0.30.0
+                      wumpus-core     == 0.31.0
 
   
   exposed-modules:
@@ -95,6 +71,7 @@ library
     Wumpus.Basic.Dots.Base,
     Wumpus.Basic.Graphic,
     Wumpus.Basic.Graphic.DrawingAttr,
+    Wumpus.Basic.Graphic.Primitive,
     Wumpus.Basic.Graphic.PointSupply,
     Wumpus.Basic.Monads.Drawing,
     Wumpus.Basic.Monads.DrawingMonad,
