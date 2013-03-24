@@ -1,16 +1,18 @@
 Name:                   haskell-src-exts
-Version:                0.2.1
-License:                BSD4
+Version:                0.3.2
+License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
 Maintainer:             Niklas Broberg <nibro@cs.chalmers.se>
 Category:               Language
 Synopsis:               Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
-Description:            Haskell-Source with eXtensions (HSX, haskell-src-exts)
+Description:            Haskell-Source with Extensions (HSE, haskell-src-exts)
                         is an extension of the standard haskell-src package,
                         and handles most common syntactic extensions to Haskell, including:
                         .
                         * Multi-parameter type classes with functional dependencies
+                        .
+                        * Indexed type families (including associated types)
                         .
                         * Empty data declarations
                         .
@@ -18,15 +20,14 @@ Description:            Haskell-Source with eXtensions (HSX, haskell-src-exts)
                         .
                         * Implicit parameters (ghc and hugs style)
                         .
-                        * Template Haskell (broken for 6.4, needs redoing)
+                        * Template Haskell (broken for 6.4+, needs redoing)
                         .
                         and a few more. Apart from these standard extensions,
                         it also handles regular patterns as per the HaRP extension
-                        as well as HSP-style embedded XML syntax (HSP release imminent).
+                        as well as HSX-style embedded XML syntax (new HSP/HSX release imminent).
                         .
                         For details on usage, please see the website.
-Homepage:               http://www.cs.chalmers.se/~d00nibro/harp/
-
+Homepage:               http://code.haskell.org/HSP/haskell-src-exts
 Stability:              Experimental
 Tested-with:            GHC==6.8.2
 Build-Type:             Simple
@@ -36,19 +37,18 @@ Flag splitBase
   Description:          Choose the new smaller, split-up base package.
 
 Library
-  Build-Tools:          happy
+  Build-Tools:          happy >= 1.17
   Build-Depends:        base
   if flag(splitBase)
     Build-Depends:      base >= 3, array >= 0.1, pretty >= 1.0
   else
     Build-Depends:      base < 3
 
-  Exposed-modules:      Language.Haskell.Hsx,
-                        Language.Haskell.Hsx.Parser,
-                        Language.Haskell.Hsx.Pretty,
-                        Language.Haskell.Hsx.Transform,
-                        Language.Haskell.Hsx.Syntax,
-                        Language.Haskell.Hsx.Build
-  Other-modules:        Language.Haskell.Hsx.ParseMonad,
-                        Language.Haskell.Hsx.Lexer,
-                        Language.Haskell.Hsx.ParseUtils
+  Exposed-modules:      Language.Haskell.Exts,
+                        Language.Haskell.Exts.Parser,
+                        Language.Haskell.Exts.Pretty,
+                        Language.Haskell.Exts.Syntax,
+                        Language.Haskell.Exts.Build
+  Other-modules:        Language.Haskell.Exts.ParseMonad,
+                        Language.Haskell.Exts.Lexer,
+                        Language.Haskell.Exts.ParseUtils
