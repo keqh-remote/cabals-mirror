@@ -1,10 +1,10 @@
 name:            web-encodings
-version:         0.3.0.8
+version:         0.3.0.9
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
 maintainer:      Michael Snoyman <michael@snoyman.com>
-synopsis:        Encapsulate multiple web encoding in a single package.
+synopsis:        Encapsulate multiple web encoding in a single package. (deprecated)
 description:     The idea is to minimize external dependencies so this is usable in just about any context.
 category:        Web
 stability:       stable
