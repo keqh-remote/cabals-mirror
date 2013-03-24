@@ -1,5 +1,5 @@
 name:		parsec
-version:	2.0
+version:	2.1.0.0
 license:	BSD3
 license-file:	LICENSE
 author:		Daan Leijen <daan@cs.uu.nl>
@@ -12,6 +12,7 @@ description:
 	library.  It is simple, safe, well documented (on the package
 	homepage), has extensive libraries and good error messages,
 	and is also fast.
+build-type:     Simple
 exposed-modules:
 	Text.ParserCombinators.Parsec.Error,
 	Text.ParserCombinators.Parsec.Char,
