@@ -1,5 +1,5 @@
 Name:          Bitly
-Version:       0.0.1
+Version:       0.0.2
 Cabal-version: >= 1.2
 Build-type:    Simple
 
@@ -17,15 +17,23 @@ Description:
   .
   API key is required. Please find yours at <http://bit.ly/account/>.
   .
-  An optional command line utility is provided (use `-f buildCLI` to build it).
+  Configuration file (`~/.bitly`) format:
+  .
+  > login = your_bit.ly_login
+  > apikey = your_API_key
+  .
+  Examples (command line utility):
+  .
+  > $ echo "Text with an URL: http://example.com/" | bitly
+  > Text with an URL: http://bit.ly/2eSq1z
+  > $ bitly shorten http://example.com
+  > http://bit.ly/2eSq1z
+  > $ bitly expand http://bit.ly/2eSq1z
+  > http://example.com/
 
 Homepage:      http://bitbucket.org/jetxee/hs-bitly/
 Bug-reports:   http://bitbucket.org/jetxee/hs-bitly/issues/
 Tested-with:   GHC == 6.10
-
-Flag buildCLI
-  Description: Build a command line tool to access bit.ly service.
-  Default:     False
 
 Library
   Build-depends:
@@ -36,9 +44,8 @@ Library
 
 Executable bitly
   Main-is:     bitly.hs
-  if !flag(buildCLI)
-    Buildable: False
   Build-depends:
                  filepath
                , directory
+               , regexpr
 
