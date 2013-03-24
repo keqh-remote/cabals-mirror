@@ -1,5 +1,5 @@
 Name:                Finance-Quote-Yahoo
-Version:             0.5.0
+Version:             0.6.0
 Description:         Obtain quote data from finance.yahoo.com
 Synopsis:	     Obtain quote data from finance.yahoo.com
 Category:            Web
@@ -10,6 +10,7 @@ License-file:        LICENSE
 Author:              brad clawsie
 Maintainer:          haskell@fastmail.fm
 cabal-version: 	     >=1.2
+build-type:          Simple
 Flag splitBase
   Description: Choose the new smaller, split-up base package.
 Library 
@@ -17,6 +18,5 @@ Library
     Build-Depends: base >= 3,containers,old-locale
   else
     Build-Depends: base < 3
-  Build-Depends: network,HTTP,HTTP-Simple,time>=1.1.1
-  GHC-Options:         -O
+  Build-Depends: network,curl,time>=1.1.1
   Exposed-modules:     Finance.Quote.Yahoo
