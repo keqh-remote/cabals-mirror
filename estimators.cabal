@@ -1,5 +1,5 @@
 name:                estimators
-version:             0.1
+version:             0.1.1
 synopsis:            Tool for managing probability estimation
 description:         This library provides data structures for collecting counts 
                      and estimating distributions from observed data. It is designed for natural language
@@ -13,10 +13,6 @@ maintainer:          <srush@mit.edu>
 build-Type:          Simple
 cabal-version:       >= 1.2
 
-flag testing
-    description: Testing mode, only build minimal components
-    default: False
-
 library
     exposed-modules:     NLP.Probability.Distribution
                          NLP.Probability.Observation
@@ -24,8 +20,6 @@ library
                          NLP.Probability.Example.Trigram 
 
     other-modules:       NLP.Probability.SmoothTrie
-    if flag(testing)
-        buildable: False
 
     build-Depends:   base       >= 3   && < 4,
                      containers >= 0.1 && < 0.3,
@@ -35,21 +29,5 @@ library
                      prettyclass, 
                      text 
 
-executable hstestprobdist
-    main-is:         Tests.hs
-    hs-source-dirs: . tests/
-
-    build-Depends:   base       >= 3   && < 4,
-                     containers >= 0.1 && < 0.3,
-                     QuickCheck >= 2,
-                     text,
-                     pretty,
-                     prettyclass,
-                     HUnit,
-                     test-framework,
-                     test-framework-hunit,
-                     test-framework-quickcheck2
                     
-    if !flag(testing)
-        buildable: False
                   
