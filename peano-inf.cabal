@@ -1,5 +1,5 @@
 name:           peano-inf
-version:        0.5
+version:        0.6
 synopsis:       Lazy Peano numbers including observable infinity value.
 description:    
     Lazy Peano numbers including observable infinity value.
@@ -21,9 +21,12 @@ cabal-version:  >=1.2
 library
     ghc-options:    -Wall -fno-warn-overlapping-patterns -fno-warn-incomplete-patterns
     build-depends:
-        base
+        base,
+        lazysmallcheck
 
     exposed-modules:
-        Number.Peano.Inf
+        Number.Peano.Inf,
+        Number.Peano.Inf.Test,
+        Number.Peano.Inf.Functions
 
 
