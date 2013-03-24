@@ -1,5 +1,5 @@
 name:                type-settheory
-version:             0.1
+version:             0.1.1
 synopsis:            
  Type-level sets and functions expressed as types
 description:         
@@ -30,7 +30,7 @@ source-repository head
 Library
  build-depends:       base >= 4, base < 5
                      , syb
-                     , category-extras, type-equality
+                     , type-equality
                      , template-haskell
                      , mtl
                      , containers
@@ -39,6 +39,7 @@ Library
                      Type.Set.Example
                      Type.Function
                      Type.Dummies
+                     Type.Nat
                      Data.Category
                      Data.Typeable.Extras
                      Control.SMonad
