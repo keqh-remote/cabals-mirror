@@ -1,29 +1,27 @@
 Name:               FileManipCompat
-Version:            0.13
+Version:            0.14
 License:            BSD3
 License-File:       LICENSE
 Author:             Bryan O'Sullivan <bos@serpentine.com>
 Maintainer:         Thomas Hartman <thomashartman1@gmail.com>
-Synopsis:           Port of Find function of FileManip lib for use on windows systems
+Synopsis:           Expressive file and directory manipulation for Haskell.
 Category:           System
 Description:        A Haskell library for working with files and directories.
                     Includes code for pattern matching, finding files,
                     modifying file contents, and more.
-Build-type:         Simple
 Cabal-version:      >= 1.6
+build-type: Simple
 Extra-Source-Files: README
-homepage:            http://patch-tag.com/tphyahoo/r/tphyahoo/FileManipCompat
-Flag base4
-    Description: Choose the even newer, even smaller, split-up base package.
+
+Flag splitBase
+  Description:     Choose the new, split-up base package.
 
 Library
-  Build-Depends: bytestring, directory, filepath, mtl, unix-compat, extensible-exceptions
-  if flag(base4)
-    Build-Depends:       base >= 4 && < 5
+  if flag(splitBase)
+    Build-Depends: base <5, bytestring, directory, filepath, mtl, unix-compat
   else
-    Build-Depends:       base < 4
+    Build-Depends: base <4, filepath, mtl, unix-compat
 
-  GHC-Options:    -Wall
+  GHC-Options:    -Wall 
   Exposed-Modules:
           System.FilePath.FindCompat
-
