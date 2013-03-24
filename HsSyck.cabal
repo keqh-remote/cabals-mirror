@@ -1,5 +1,5 @@
 Name:                HsSyck
-Version:             0.42
+Version:             0.43
 Category:            Text
 Synopsis:            Fast, lightweight YAML loader and dumper
 Description:         This is a simple YAML ('Yet Another Markup Language') processor,
@@ -11,11 +11,11 @@ Description:         This is a simple YAML ('Yet Another Markup Language') proce
                      object of type 'YamlNode', and vice versa, fast.
 
 -- License is really "MIT", but Cabal doesn't have that constant yet
-License:             OtherLicense
+License:             BSD3
 License-File:        LICENSE
 Author:              Audrey Tang
 Maintainer:          audreyt@audreyt.org
-Copyright:           Audrey Tang, Gaal Yahas, 2005, 2006, 2007
+Copyright:           Audrey Tang, Gaal Yahas, 2005, 2006, 2007, 2008
 
 Exposed-modules:     Data.Yaml.Syck
 
@@ -23,8 +23,9 @@ Build-Depends:       base, bytestring>=0.9.0.1
 Build-Type:          Simple
 Tested-With:         GHC==6.8.2
 
-extensions:          ForeignFunctionInterface
-ghc-options:         -O2 -optc-w -funbox-strict-fields -fglasgow-exts
+extensions:          ForeignFunctionInterface, MagicHash, RecursiveDo,
+                     DeriveDataTypeable, TypeSynonymInstances, PatternGuards
+ghc-options:         -funbox-strict-fields
 
 data-files:          Changes
 c-sources:           syck/bytecode.c syck/emitter.c syck/gram.c syck/handler.c
