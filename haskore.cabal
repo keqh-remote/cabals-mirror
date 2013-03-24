@@ -1,5 +1,5 @@
 Name:           haskore
-Version:        0.0.6
+Version:        0.0.7
 License:        GPL
 License-File:   LICENSE
 Author:         Paul Hudak <paul.hudak@yale.edu>, Henning Thielemann
@@ -31,7 +31,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://darcs.haskell.org/haskore/
-  tag:      0.0.6
+  tag:      0.0.7
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -46,7 +46,7 @@ Library
     midi >=0.1.1 && <0.2,
     markov-chain >=0.0.1 && <0.1,
     non-negative >=0.0.1 && <0.1,
-    data-accessor >=0.1 && <0.2,
+    data-accessor >=0.2 && <0.3,
     transformers >=0.0.1 && <0.2,
     haskell-src >=1.0 && <1.1,
     parsec >=2.1 && <2.2,
