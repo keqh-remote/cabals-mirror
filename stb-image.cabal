@@ -1,5 +1,5 @@
 Name:                stb-image
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            A wrapper around Sean Barrett's JPEG/PNG decoder
 Description:         Partial implementation of JPEG, PNG, TGA, BMP, PSD decoders,
                      with a really simple API.
@@ -9,8 +9,8 @@ Author:              Balazs Komuves
 Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
 Stability:           Experimental
 Category:            Codec
-Tested-With:         GHC == 6.10.1
-Cabal-Version:       >= 1.2
+Tested-With:         GHC == 6.10.1, GHC == 6.8.3 
+Cabal-Version:       >= 1.4
 Build-Type:          Simple
 Extra-Source-Files:  example/viewer.hs
 
@@ -22,11 +22,6 @@ Library
     Build-Depends: base >= 3, bytestring
   else
     Build-Depends: base <  3
-    
-  -- should check the base version instead of the
-  -- compiler version, but i don't know how to do that...
-  if impl(ghc >= 6.10.1)
-    cpp-options:        -DSTBIMAGE_NEW_EXCEPTIONS
     
   Exposed-Modules:     Codec.Image.STB
   Hs-Source-Dirs:      .
