@@ -1,5 +1,5 @@
 Name:                bytestring-csv
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Parse CSV formatted data efficiently
 Description:         Parse CSV formatted data efficiently
 License:             BSD3
@@ -25,6 +25,7 @@ library
   if flag(small_base)
       build-depends:     base >= 3, bytestring, array
   else
-      build-depends: base < 3
+      build-depends:     base < 3
+  build-depends:         dlist
 
   ghc-options:       -O2 -funbox-strict-fields 
