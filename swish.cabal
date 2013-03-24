@@ -1,10 +1,10 @@
 Name:               swish
-Version:            0.6.3.0
+Version:            0.6.4.0
 Stability:          experimental
 License:            LGPL
 License-file:       LICENSE 
 Author:             Graham Klyne - GK@ninebynine.org
-Copyright:          (c) 2003, 2004 G. Klyne; 2009 Vasili I Galchin; 2011 Doug Burke; All rights reserved.
+Copyright:          (c) 2003, 2004 G. Klyne; 2009 Vasili I Galchin; 2011, 2012 Doug Burke; All rights reserved.
 Maintainer:         dburke@cfa.harvard.edu
 Category:           Semantic Web
 Synopsis:           A semantic web toolkit. 
@@ -45,6 +45,10 @@ Description:
   * Complete, ready-to-run, command-line and script-driven programs.
   .
   Changes:
+  .
+  [Version 0.6.4.0] Added support for xsd:decimal with "Swish.RDF.RDFDatatypeXsdDecimal"
+  and "Swish.RDF.MapXsdDecimal" thanks to William Waites <https://bitbucket.org/ww>.
+  Added "Swish.RDF.Vocabulary.Provenance".
   .
   [Version 0.6.3.0] Added "Swish.RDF.Vocabulary.SIOC".
   .
@@ -222,6 +226,7 @@ Library
       Swish.RDF.GraphMatch
       Swish.RDF.GraphMem
       Swish.RDF.GraphPartition
+      Swish.RDF.MapXsdDecimal
       Swish.RDF.MapXsdInteger
       Swish.RDF.NTFormatter
       Swish.RDF.NTParser
@@ -229,6 +234,7 @@ Library
       Swish.RDF.N3Parser
       Swish.RDF.Proof
       Swish.RDF.RDFDatatype
+      Swish.RDF.RDFDatatypeXsdDecimal
       Swish.RDF.RDFDatatypeXsdInteger
       Swish.RDF.RDFDatatypeXsdString
       Swish.RDF.RDFGraph
@@ -253,6 +259,7 @@ Library
       Swish.RDF.Vocabulary.FOAF
       Swish.RDF.Vocabulary.Geo
       Swish.RDF.Vocabulary.OWL
+      Swish.RDF.Vocabulary.Provenance
       Swish.RDF.Vocabulary.RDF
       Swish.RDF.Vocabulary.SIOC
       Swish.RDF.Vocabulary.XSD
@@ -709,4 +716,3 @@ Executable         Swish
       filepath >= 1.1 && < 1.3,
       hashable == 1.1.*,
       intern == 0.8.*
-
