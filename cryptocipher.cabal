@@ -1,5 +1,5 @@
 Name:                cryptocipher
-Version:             0.2.8
+Version:             0.2.9
 Description:         Symmetrical Block, Stream and PubKey Ciphers
 License:             BSD3
 License-file:        LICENSE
@@ -33,9 +33,12 @@ Library
                      Crypto.Cipher.Camellia
                      Crypto.Cipher.RSA
                      Crypto.Cipher.DSA
+                     Crypto.Cipher.DH
   other-modules:     Number.ModArithmetic
                      Number.Serialize
                      Number.Generate
+                     Number.Basic
+                     Number.Prime
   ghc-options:       -Wall
 
 Executable           Tests
