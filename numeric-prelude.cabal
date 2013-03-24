@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.3.0.1
+Version:        0.3.0.2
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -8,7 +8,7 @@ Homepage:       http://www.haskell.org/haskellwiki/Numeric_Prelude
 Category:       Math
 Stability:      Experimental
 Tested-With:    GHC==6.4.1, GHC==6.8.2, GHC==6.10.4, GHC==6.12.3
-Tested-With:    GHC==7.2.2
+Tested-With:    GHC==7.2.2, GHC==7.4.1
 Cabal-Version:  >=1.6
 Build-Type:     Simple
 Synopsis:       An experimental alternative hierarchy of numeric type classes
@@ -154,7 +154,7 @@ Flag buildTests
   default:     False
 
 Source-Repository this
-  Tag:         0.3.0.1
+  Tag:         0.3.0.2
   Type:        darcs
   Location:    http://code.haskell.org/numeric-prelude/
 
@@ -174,7 +174,7 @@ Library
     Build-Depends:
       base >= 2 && <5,
       array >=0.1 && <0.5,
-      containers >=0.1 && <0.5,
+      containers >=0.1 && <0.6,
       random >=1.0 && <1.1
   Else
     Build-Depends: base >= 1.0 && < 2
