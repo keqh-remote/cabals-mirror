@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.10
+version:	    0.1.13
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -39,6 +39,7 @@ library
     Data.Monoid.Combinators
     Data.Monoid.FromString
     Data.Monoid.Generator
+    Data.Monoid.Generator.Free
     Data.Monoid.Generator.LZ78
     Data.Monoid.Generator.RLE
     Data.Monoid.Instances
