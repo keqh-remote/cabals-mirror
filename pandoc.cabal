@@ -1,5 +1,5 @@
 Name:            pandoc
-Version:         1.8.0.1
+Version:         1.8.0.2
 Cabal-Version:   >= 1.6
 Build-Type:      Custom
 License:         GPL
@@ -11,7 +11,7 @@ Bug-Reports:     http://code.google.com/p/pandoc/issues/list
 Stability:       alpha
 Homepage:        http://johnmacfarlane.net/pandoc
 Category:        Text
-Tested-With:     GHC == 6.12.1, GHC == 6.12.3, GHC == 7.0.1
+Tested-With:     GHC == 6.10.4, GHC == 6.12.1, GHC == 6.12.3, GHC == 7.0.1
 Synopsis:        Conversion between markup formats
 Description:     Pandoc is a Haskell library for converting from one markup
                  format to another, and a command-line tool that uses
@@ -159,6 +159,10 @@ Extra-Source-Files:
 Extra-Tmp-Files: man/man1/pandoc.1,
                  man/man1/markdown2pdf.1,
                  man/man5/pandoc_markdown.5
+
+Source-repository head
+  type:          git
+  location:      https://jgm@github.com/jgm/pandoc.git
 
 Flag threaded
   Description:   Compile markdown2pdf with -threaded option.
