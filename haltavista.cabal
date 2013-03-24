@@ -1,29 +1,28 @@
 Name:                haltavista
-Version:             0.1
+Version:             0.1.0.1
 Synopsis:            looks for functions given a set of example input/outputs
 Stability:           alpha
 Description:
-
   Looks for functions in the local hoogle library given a set of example input/outputs.
   Requires hoogle.
-
+  .
   Usage:
-
+  .
   > ~$ haltavista
   > input_1_1 ... input_1_n output_1
   > ...
   > input_m_1 ... input_m_n output_m
   > <EOF>
-
+  .
   Example usage:
-  
+  .
   > ~$ haltavista
   > 1 1 2
   > 1 2 3
   > <EOF> 
   >
   > Prelude (+)
-
+  .
   See README.md for more examples.
 
 License:             GPL-2
