@@ -1,6 +1,6 @@
 name:               utf8-light
-version:            0.4
-cabal-version:      >= 1.5
+version:            0.4.0.1
+cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
 license-file:       LICENSE
@@ -13,9 +13,12 @@ synopsis:           Unicode
 description:        Lightweight UTF8 handling.
 
 library
-  build-depends:      base, ghc-prim, bytestring
-  ghc-options:        -O2 -fglasgow-exts -fvia-C -optc-O3
-  extensions:         CPP
+  build-depends:      base < 6
+                    , ghc-prim
+                    , bytestring
   hs-source-dirs:     src
   exposed-modules:    Codec.Binary.UTF8.Light
 
+source-repository head
+  type:     git
+  location: git://lambda.ath.cx/patrick/utf8-light
