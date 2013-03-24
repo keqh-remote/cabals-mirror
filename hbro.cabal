@@ -1,5 +1,5 @@
 Name:                hbro
-Version:             0.6.1
+Version:             0.6.2
 Synopsis:            A suckless minimal KISSy browser
 -- Description:         
 Homepage:            http://projects.haskell.org/hbro/
@@ -35,6 +35,7 @@ Library
         mtl,
         pango,
         process,
+        split,
         url,
         webkit,
         unix,
