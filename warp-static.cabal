@@ -1,14 +1,14 @@
 Name:                warp-static
-Version:             1.2.0
+Version:             1.2.0.1
 Synopsis:            Static file server based on Warp and wai-app-static
 Homepage:            http://github.com/yesodweb/wai
-License:             BSD3
+License:             MIT
 License-file:        LICENSE
 Author:              Michael Snoyman
 Maintainer:          michael@snoyman.com
 Category:            Web
 Build-type:          Simple
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
 Description:         Serve up static files by running the warp executable. Based on Warp and wai-app-static. 
 
 
@@ -23,3 +23,7 @@ Executable warp
                , containers      >= 0.2                && < 0.5
                , bytestring                >= 0.9.1.4  && < 0.10
                , text                     >= 0.7           && < 0.12
+
+source-repository head
+  type:     git
+  location: git://github.com/yesodweb/wai.git
