@@ -1,5 +1,5 @@
 Name:                egison
-Version:             2.4.4
+Version:             2.4.5
 Synopsis:            An Interpreter and Compiler for the Programming Language Egison
 Description:         An interpreter and compiler for the programming language Egison.
                      A feature of Egison is the strong pattern match facility.
@@ -7,7 +7,7 @@ Description:         An interpreter and compiler for the programming language Eg
                      especially for collection data, such as lists, multisets, sets, and so on.
                      This package include sample Egison program codes "*-test.egi" in "sample/" directory.
                      This package also include Emacs Lisp file "egison-mode.el" in "elisp/" directory.
-Homepage:            http://hagi.is.s.u-tokyo.ac.jp/~egi/egison/
+Homepage:            http://egison.pira.jp
 License:             MIT
 License-file:        LICENSE
 Author:              Satoshi Egi
@@ -28,7 +28,7 @@ Data-files:          lib/core/base.egi lib/core/number.egi lib/core/collection.e
                      etc/template-for-test.hs
 
 Library
-  Build-Depends:   base >= 4.0 && < 5, array, containers, haskeline >= 0.7.0.3, transformers, mtl, parsec >= 3.0, directory, ghc, ghc-paths, strict-io
+  Build-Depends:   base >= 4.0 && < 5, array, containers, haskeline, transformers, mtl, parsec >= 3.0, directory, ghc, ghc-paths, strict-io
   Hs-Source-Dirs:  hs-src
   Exposed-Modules: Language.Egison.Core
                    Language.Egison.Types
@@ -42,7 +42,7 @@ Library
 
 Executable egison
   Main-is:             egisoni.hs
-  Build-depends:       egison, base >= 4.0 && < 5, array, containers, haskeline >= 0.7.0.3, transformers, mtl, parsec >= 3.0, directory, ghc, ghc-paths, regex-posix, strict-io
+  Build-depends:       egison, base >= 4.0 && < 5, array, containers, haskeline, transformers, mtl, parsec >= 3.0, directory, ghc, ghc-paths, regex-posix, strict-io
   Other-modules:       Paths_egison
   Hs-Source-Dirs:      hs-src/Interpreter
   
