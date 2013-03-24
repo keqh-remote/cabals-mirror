@@ -1,5 +1,5 @@
 Name:                 moe
-Version:              2009.9.16
+Version:              2009.11.3
 Build-type:           Simple
 Synopsis:             html with style
 Description:
@@ -18,7 +18,7 @@ data-files:           readme.md, changelog.md, known-issues.md, Nemesis, src/tes
 
 library
   ghc-options: -Wall -fno-warn-orphans
-  build-depends: base >= 4 && < 5, mtl, mps >= 2009.8.18.1, data-default, bytestring, utf8-string, dlist
+  build-depends: base >= 4 && < 5, mtl, mps >= 2009.9.18, data-default, bytestring, utf8-string, dlist
   hs-source-dirs: src/
   exposed-modules:  
                       Text.HTML.Moe   
@@ -26,6 +26,7 @@ library
                       Text.HTML.Moe.Element
                       Text.HTML.Moe.DSL.Markdown
                       Text.HTML.Moe.DSL.Kawaii
+                      Text.HTML.Moe.DSL.HTML5
                       Text.HTML.Moe.Type
                       Text.HTML.Moe.Utils
                       Text.HTML.Moe.Backend.ByteString
