@@ -1,5 +1,5 @@
 Name: augeas
-Version: 0.5.0
+Version: 0.5.1
 Synopsis:  A Haskell FFI wrapper for the Augeas API
 Description: A Haskell FFI wrapper for the Augeas API
 Author: Jude Nagurney
