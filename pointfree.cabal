@@ -1,5 +1,5 @@
 name:                pointfree
-version:             1.0
+version:             1.0.1
 synopsis:            Pointfree refactoring tool
 description:         Stand-alone command-line version of the point-less plugin for lambdabot.
 license:             OtherLicense
