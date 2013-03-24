@@ -1,5 +1,5 @@
 name:                TCache
-version:             0.6.4
+version:             0.6.5
 synopsis:            A Transactional data cache with configurable persistence
 description:
         Data.Tcache is a transactional cache with configurable persistence. It tries to simulate Hibernate
