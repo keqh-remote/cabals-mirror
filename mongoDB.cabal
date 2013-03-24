@@ -1,9 +1,10 @@
 Name:                mongoDB
-Version:             0.1
+Version:             0.2
 License:             MIT
 Maintainer:          Scott Parish <srp@srparish.net>
 Author:              Scott Parish <srp@srparish.net>
 Copyright:           Copyright (c) 2010-2010 Scott Parish
+homepage:            http://github.com/srp/mongoDB
 Category:            Database
 Synopsis:            A driver for MongoDB
 Description:         This driver lets you connect to MongoDB, do inserts,
