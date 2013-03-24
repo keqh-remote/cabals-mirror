@@ -10,7 +10,7 @@ name:                hipe
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.1.1.0
+version:             0.2.0.0
 
 -- A short (one-line) description of the package.
 synopsis:            Support for reading and writing ipe7 files (http://ipe7.sourceforge.net)
@@ -30,6 +30,9 @@ author:              Frank Staals
 -- An email address to which users can send suggestions, bug reports, and
 -- patches.
 maintainer:          f.staals@uu.nl
+
+
+homepage:            http://fstaals.net/software/hipe
 
 -- A copyright notice.
 -- copyright:
@@ -51,14 +54,14 @@ library
   -- GHC-Options:    -Wall
 
   -- Modules exported by the library.
-  exposed-modules: Data.Geometry.Ipe.IpeGeometry
-                 , Data.Geometry.Ipe.ReadIpeGeometry
-                 , Data.Geometry.Ipe.WriteIpeGeometry
+  exposed-modules: Data.Geometry.Ipe.Ipe
                  , Data.Geometry.Ipe.IpeTypes
                  , Data.Geometry.Ipe.IpeGeometryTypes
                  , Data.Geometry.Ipe.IGC
-                 , Data.Geometry.Ipe.IpeView
+                 , Data.Geometry.Ipe.ReadIpeGeometry
+                 , Data.Geometry.Ipe.WriteIpeGeometry
                  , Data.Geometry.Ipe.Pickle
+                 , Data.Geometry.Ipe.InternalTypes
 
   -- Modules included in this library but not exported.
   -- other-modules:
