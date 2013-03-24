@@ -1,5 +1,5 @@
 Name:                   paragon
-Version:                0.1.7
+Version:                0.1.8
 License:                BSD3
 License-File:           LICENSE
 Author:                 Niklas Broberg
@@ -50,6 +50,7 @@ Library
                         Language.Java.Paragon.TypeCheck.Uniq,
                         Language.Java.Paragon.QuasiQuoter,
                         Language.Java.Paragon.Compile,
+                        Language.Java.Paragon.PiGeneration,
                         Language.Java.Paragon.Verbosity
 
   Hs-source-dirs:       src
@@ -82,6 +83,7 @@ Executable parac
                         Language.Java.Paragon.TypeCheck.Uniq,
                         Language.Java.Paragon.QuasiQuoter,
                         Language.Java.Paragon.Compile,
+                        Language.Java.Paragon.PiGeneration,
                         Language.Java.Paragon.Verbosity
 
 
