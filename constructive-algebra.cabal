@@ -7,7 +7,7 @@ Name:                constructive-algebra
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.1
+Version:             0.1.2
 
 Synopsis:            A library of constructive algebra.
 Description:         
@@ -16,7 +16,7 @@ Description:
         .
         Classical structures are implemented without Noetherian assumptions. 
         This means that it is not assumed that all ideals are finitely 
-        generated. For example, instead of principal ideal domains one get 
+        generated. For example, instead of principal ideal domains one gets 
         Bezout domains which are integral domains in which all finitely 
         generated ideals are principal (and not necessarily that all ideals are
         principal).
@@ -56,8 +56,11 @@ Library
                        Algebra.Structures.EuclideanDomain,
                        Algebra.Structures.StronglyDiscrete,
                        Algebra.Structures.FieldOfFractions,
-                       Algebra.Structures.GCDDomain,         
+                       Algebra.Structures.GCDDomain, 
+                       Algebra.Structures.Coherent,
                        Algebra.Ideal,
+                       Algebra.Matrix,
+                       Algebra.PLM,
                        Algebra.Z,
                        Algebra.Q
                        
