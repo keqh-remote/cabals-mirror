@@ -1,5 +1,5 @@
 Name:           hunit-gui
-Version:        0.1.1
+Version:        0.1.2
 Cabal-Version:  >= 1.6
 License:        PublicDomain
 Author:         Kim Wallmark
@@ -26,6 +26,7 @@ Library
   Hs-Source-Dirs:   .
   Build-Depends:
     base == 3.*,
+    haskell98,
     HUnit == 1.2.*,
     gtk == 0.10.*,
     cairo == 0.10.*
@@ -33,9 +34,14 @@ Library
 
 Executable tests
   Main-Is:           AllTests.hs
+  Other-Modules:
+    BarComputationsTests
+    DescriptionsTests
+    StatusTests
   Hs-Source-Dirs:    . tests
   Build-Depends:
     base == 3.*,
+    haskell98,
     HUnit == 1.2.*,
     gtk == 0.10.*,
     cairo == 0.10.*
