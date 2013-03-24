@@ -1,29 +1,29 @@
 Name:            console-program
-Version:         0.3.0.0
+Version:         0.3.0.1
 Cabal-Version:   >= 1.6
 License:         BSD3
 Author:          Arie Peterson
 Maintainer:      ariep@xs4all.nl
 Category:        Console
-Synopsis:        Interprets command line arguments and the contents of a config file as commands and options
+Synopsis:        Interpret the command line and contents of a config file as commands and options
 Description:
   This library provides an infrastructure to build command line programs. It provides the following features:
   .
-  - declare any number of \"actions\" (commands, or modes of operation, of the program);
+  - declare any number of \"commands\" (modes of operation) of the program;
   .
-  - declare options of the program;
+  - declare options of these commands;
   .
-  - collect options and actions from a configuration file and the command line, and execute the proper action.
+  - collect options from a configuration file and the command line, and execute the proper command.
   .
   .
-  Examples of using this library may be found in the "Examples" directory in the package tarball.
+  Examples of using this library may be found in the Examples directory in the package tarball.
   .
   .
   It provides functionality similar to the cmdargs package. Main differences:
   .
   - console-program does not use unsafePerformIO, and tries to give a more haskellish, referentially transparent interface;
   .
-  - it allows a full tree of \"modes\", instead of a list, so a command can have subcommands;
+  - it allows a full tree of commands, instead of a list, so a command can have subcommands;
   .
   - it parses a configuration file, in addition to the command line arguments.
 Category:        System
