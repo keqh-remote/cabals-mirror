@@ -1,5 +1,5 @@
 name:             precis
-version:          0.3.1
+version:          0.4.0
 license:          OtherLicense
 license-file:     LICENCE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -13,7 +13,16 @@ description:
   Note Precis library is BSD3, Precis executable is LGPL apropos 
   the dependency on CppHs.
   .
-
+  CHANGES
+  .
+  0.3.1 to 0.4.0
+  .
+  * Substantial changes to reporting - now a summary is printed
+    to the console, and an HTML report can be generated via a
+    command line flag.
+  .
+  * Changed constructor names for Edit data type
+  . 
 
 build-type:         Simple
 stability:          unstable
@@ -25,24 +34,33 @@ extra-source-files:
 library
   build-depends:  base               <  5,
                   containers         <  0.5,
-                  Cabal              >= 1.8  && < 2.0,
-                  filepath           >= 1.1  && < 2.0,
-                  directory          >= 1.0  && < 2.0,
-                  haskell-src-exts   >= 1.8  && < 2.0,
-                  cpphs              >= 1.11 && < 2.0
+                  Cabal              >= 1.8    && < 2.0,
+                  filepath           >= 1.1    && < 2.0,
+                  directory          >= 1.0    && < 2.0,
+                  haskell-src-exts   >= 1.8    && < 2.0,
+                  cpphs              >= 1.11   && < 2.0,
+                  xhtml              >= 3000.2 && < 3010
+
                   
   hs-source-dirs: src
 
   exposed-modules: 
     Precis.CabalPackage,
     Precis.Datatypes,
+    Precis.Diff,
     Precis.HsSrcUtils,
+    Precis.HtmlReport,
     Precis.ModuleProperties,
     Precis.PathUtils,
     Precis.PPShowS,
-    Precis.Properties,
-    Precis.Utils
+    Precis.ReportMonad,
+    Precis.StyleSheet,
+    Precis.TextOutput,
+    Precis.VersionNumber
   
+  other-modules:
+    Precis.Utils  
+
 executable precis
   main-is: Main.hs
 
@@ -52,11 +70,16 @@ executable precis
     CPP,
     Precis.CabalPackage,
     Precis.Datatypes,
+    Precis.Diff,
     Precis.HsSrcUtils,
+    Precis.HtmlReport,
     Precis.ModuleProperties,
     Precis.PathUtils,
     Precis.PPShowS,
-    Precis.Properties,
-    Precis.Utils
+    Precis.ReportMonad,
+    Precis.StyleSheet,
+    Precis.TextOutput,
+    Precis.Utils,
+    Precis.VersionNumber
 
 
