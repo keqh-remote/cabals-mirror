@@ -7,7 +7,7 @@ Name:                hako
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3.0
+Version:             1.0.0
 
 -- A short (one-line) description of the package.
 Synopsis:            A mako-like quasi-quoter template library
@@ -62,6 +62,8 @@ Library
                ,       base >= 3.0 && < 5.0
                ,       template-haskell >= 2.5 && < 3.0
                ,       haskell-src-meta >= 0.5 && < 0.6
+               ,       transformers
+               ,       text
   
   -- Modules not exported by this package.
   -- Other-modules:       
