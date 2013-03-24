@@ -1,5 +1,5 @@
 Name:                OpenGLRaw21
-Version:             1.1.0.0
+Version:             1.2.0.0
 Synopsis:            The intersection of OpenGL 2.1 and OpenGL 3.1 Core
 Description:         This package simply reexports a subset of the
                      parts of OpenGLRaw which are compatible with
