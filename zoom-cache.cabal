@@ -3,7 +3,7 @@ Name:                zoom-cache
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             1.0.0.0
+Version:             1.1.0.0
 
 Synopsis:            A streamable, seekable, zoomable cache file format
 
@@ -95,6 +95,7 @@ Library
   Exposed-modules:
     Blaze.ByteString.Builder.ZoomCache
     Data.Iteratee.ZoomCache
+    Data.Iteratee.ZoomCache.Seek
     Data.Iteratee.ZoomCache.Utils
     Data.ZoomCache
     Data.ZoomCache.Bool
