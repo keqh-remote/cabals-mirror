@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hoogle
-version:            4.1.5
+version:            4.2
 license:            GPL
 license-file:       docs/LICENSE
 category:           Development
@@ -26,6 +26,7 @@ data-files:
     resources/*.png
     -- surely a Cabal bug that this isn't picked up by *.js
     resources/jquery-1.4.2.js
+    resources/jquery.cookie.js
 
 library
     hs-source-dirs:     src
@@ -84,6 +85,7 @@ library
         Hoogle.DataBase.TypeSearch.All
         Hoogle.Type.Documentation
         Hoogle.Type.Item
+        Hoogle.Type.Language
         Hoogle.Type.TagStr
         Hoogle.Type.TypeSig
         Hoogle.Type.ParseError
@@ -101,7 +103,7 @@ executable hoogle
     hs-source-dirs:     src
 
     build-depends:
-        time,
+        time, old-locale,
         cmdargs == 0.6.*,
         tagsoup >= 0.11 && < 0.13,
         network >= 2.2 && < 2.4,
@@ -113,6 +115,7 @@ executable hoogle
         CmdLine.Load
         CmdLine.Type
         Console.All
+        Console.Log
         Console.Rank
         Console.Search
         Console.Test
