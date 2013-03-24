@@ -1,8 +1,8 @@
 Name          : happstack-yui
-Version       : 7372.5.1
+Version       : 7373.5.2
 Category      : Web, Happstack
 Synopsis      : Utilities for using YUI3 with Happstack.
-Homepage      : https://github.com/dag/happstack-yui
+Homepage      : http://hub.darcs.net/dag/yui/browse/happstack-yui
 License       : BSD3
 License-File  : LICENSE
 Maintainer    : dag.odenhall@gmail.com
@@ -10,7 +10,7 @@ Cabal-Version : >= 1.10
 Build-Type    : Simple
 
 Description :
-  Bundles YUI 3.7.2 and includes a \"combo handler\" for use in
+  Bundles YUI 3.7.3 and includes a \"combo handler\" for use in
   Happstack which concatenates YUI modules server-side to send in a single
   HTTP request.  The YUI bundle can be embedded in compiled code with
   Template Haskell (install with @-fembed@) which means the files are
@@ -356,6 +356,10 @@ bundle/history-base/history-base-debug.js
 bundle/history-base/history-base.js
 bundle/history-base/history-base-min.js
 bundle/history-base/history-base-coverage.js
+bundle/yql-nodejs/yql-nodejs-debug.js
+bundle/yql-nodejs/yql-nodejs-coverage.js
+bundle/yql-nodejs/yql-nodejs-min.js
+bundle/yql-nodejs/yql-nodejs.js
 bundle/recordset-filter/recordset-filter.js
 bundle/recordset-filter/recordset-filter-min.js
 bundle/recordset-filter/recordset-filter-coverage.js
@@ -375,6 +379,10 @@ bundle/dataschema-array/dataschema-array-debug.js
 bundle/dataschema-array/dataschema-array.js
 bundle/dataschema-array/dataschema-array-coverage.js
 bundle/dataschema-array/dataschema-array-min.js
+bundle/yql-winjs/yql-winjs-coverage.js
+bundle/yql-winjs/yql-winjs.js
+bundle/yql-winjs/yql-winjs-min.js
+bundle/yql-winjs/yql-winjs-debug.js
 bundle/swf/swf-min.js
 bundle/swf/swf.js
 bundle/swf/swf-debug.js
@@ -1707,9 +1715,6 @@ bundle/graphics-vml/graphics-vml-debug.js
 bundle/graphics-vml/graphics-vml.js
 bundle/graphics-vml/graphics-vml-min.js
 bundle/graphics-vml/graphics-vml-coverage.js
-bundle/transition-native/transition-native-min.js
-bundle/transition-native/transition-native.js
-bundle/transition-native/transition-native-debug.js
 bundle/widget-stack/widget-stack-debug.js
 bundle/widget-stack/assets/skins/sam/widget-stack-skin.css
 bundle/widget-stack/assets/skins/sam/widget-stack.css
@@ -1746,8 +1751,8 @@ Flag embed
   Default     : False
 
 Source-Repository head
-  Type     : git
-  Location : git://github.com/dag/happstack-yui.git
+  Type     : darcs
+  Location : http://hub.darcs.net/dag/yui
 
 Library
   HS-Source-Dirs   : src
@@ -1778,16 +1783,16 @@ Library
 
   if !flag(embed)
     CPP-Options   :
-      -DYUI_VERSION=3.7.2
-      -DYUI_VERSION_STR="3.7.2"
+      -DYUI_VERSION=3.7.3
+      -DYUI_VERSION_STR="3.7.3"
     Other-Modules :
       Paths_happstack_yui
     Build-Depends :
       directory == 1.1.*
   else
     CPP-Options   :
-      -DYUI_VERSION=3.7.2
-      -DYUI_VERSION_STR="3.7.2"
+      -DYUI_VERSION=3.7.3
+      -DYUI_VERSION_STR="3.7.3"
       -DEMBED
     Build-Depends :
       file-embed == 0.0.*
