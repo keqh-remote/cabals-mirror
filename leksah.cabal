@@ -1,5 +1,5 @@
 name: leksah
-version: 0.4.0.1
+version: 0.4.0.2
 cabal-version: >=1.4
 build-type: Custom
 license: GPL
@@ -68,7 +68,7 @@ other-modules: MyMissing Default DeepSeq Graphics.UI.Editor.Simple
                IDE.Core.State IDE.Core.Types
 ghc-prof-options: -prof -auto-all
 ghc-shared-options: -prof -auto-all
-ghc-options: -fwarn-unused-imports -fwarn-missing-fields -fwarn-incomplete-patterns 
+ghc-options: -fwarn-unused-imports -fwarn-missing-fields -fwarn-incomplete-patterns
 hugs-options:
 nhc98-options:
 jhc-options:
