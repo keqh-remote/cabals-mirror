@@ -1,7 +1,7 @@
 Name:                stream-fusion
-Version:             0.1.2.3
+Version:             0.1.2.4
 Author:              Duncan Coutts, Don Stewart
-Maintainer:          duncan.coutts@worc.ox.ac.uk, dons00@gmail.com
+Maintainer:          none
 License:             BSD3
 License-file:        LICENSE
 Synopsis:            Faster Haskell lists using stream fusion
@@ -16,20 +16,26 @@ Description:
         and hide list functions from the Prelude.
 Category:            Data
 Build-Type:          Simple
-Build-Depends:       base >= 3 && < 5
-Stability:           experimental
+Cabal-Version:       >= 1.6
 Tested-with:         GHC==7.0.3
-Exposed-modules:     Data.Stream
+Stability:           experimental
+
+source-repository head
+   type: darcs
+   location: http://hub.darcs.net/shelarcy/stream-fusion
+
+Library
+  Build-Depends:     base >= 3 && < 5
+  Exposed-modules:   Data.Stream
                      Data.List.Stream
                      Control.Monad.Stream
-Extensions:          CPP, BangPatterns, ExistentialQuantification
-cpp-options:         -DEXTERNAL_PACKAGE
-ghc-options:         -fglasgow-exts
-                     -Odph
+  Extensions:        CPP, BangPatterns, ExistentialQuantification,
+                     MagicHash, TypeOperators
+  cpp-options:       -DEXTERNAL_PACKAGE
+  ghc-options:       -Odph
                      -fspec-constr
                      -funbox-strict-fields 
                      -fdicts-cheap
-                     -fno-method-sharing
                      -fmax-simplifier-iterations10
                      -fliberate-case-threshold100
                      -Wall
