@@ -1,5 +1,5 @@
 Name:               hmatrix
-Version:            0.10.0.0
+Version:            0.10.0.1
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
@@ -78,13 +78,16 @@ flag vector
     description:    Use Data.Vector.Storable type from "vector" package.
     default:        False
 
+flag binary
+    description:    Define Binary instances
+    default:        True
+
 library
 
     Build-Depends:      base >= 4 && < 5,
                         array,
                         storable-complex,
-                        process,
-                        binary
+                        process
 
     Extensions:         ForeignFunctionInterface,
                         CPP
@@ -131,6 +134,10 @@ library
        Build-Depends:   vector >= 0.7
        cpp-options:     -DVECTOR
 
+    if flag(binary)
+       Build-Depends:   binary
+       cpp-options:     -DBINARY
+
     if flag(tests)
        Build-Depends:   QuickCheck, HUnit, random
        exposed-modules: Numeric.LinearAlgebra.Tests
@@ -176,3 +183,4 @@ library
 source-repository head
     type:     darcs
     location: http://code.haskell.org/hmatrix
+
