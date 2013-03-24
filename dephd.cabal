@@ -1,5 +1,5 @@
 Name:           dephd
-Version:        0.1.5
+Version:        0.1.6
 License:        GPL
 License-File:   LICENSE
 
@@ -26,19 +26,20 @@ Description:    dephd - A simple tool for base calling and quality appraisal.
                 The Darcs repository is at <http://malde.org/~ketil/biohaskell/dephd>.
 
 HomePage:	http://malde.org/~ketil/biohaskell/dephd
-Build-Depends:  base>=3 && <5, bio > 0.4, regex-compat, bytestring, process, directory, cmdargs <= 0.1.1
 Build-Type:     Simple
-Cabal-Version:	>= 1.2.3
+Cabal-Version:	>= 1.6
 Tested-with:    GHC==6.12.1
-
 Data-files:     README, TODO
-Executable:     dephd
-Main-Is:        Dephd.hs
-Hs-Source-Dirs: src
-Extensions: 	BangPatterns
-Ghc-Options:    -Wall
 
-Executable: 	fakequal
-Main-Is:	FakeQual.hs
-Hs-Source-Dirs: src
-Extensions:	DeriveDataTypeable
+Executable dephd
+  Main-Is:        Dephd.hs
+  Hs-Source-Dirs: src
+  Extensions: 	  BangPatterns
+  Build-Depends:  base >= 3 && <5, bio > 0.4, bytestring, regex-compat, process, directory
+  Ghc-Options:    -Wall
+
+Executable fakequal
+  Main-Is:	  FakeQual.hs
+  Hs-Source-Dirs: src
+  Build-Depends:  bio > 0.4, cmdargs >= 0.5
+  Extensions:	  DeriveDataTypeable
