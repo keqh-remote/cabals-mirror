@@ -1,5 +1,5 @@
 Name:               happstack-data
-Version:            0.4.1
+Version:            0.5.0
 License:            BSD3
 License-File:       COPYING
 Author:             Happstack team, HAppS LLC
@@ -54,11 +54,14 @@ Library
   Build-Depends:      binary,
                       bytestring,
                       containers,
-                      happstack-util >= 0.4.1 && < 0.5, 
+                      happstack-util >= 0.5 && < 0.6, 
                       HaXml >= 1.13 && < 1.14,
                       mtl,
                       pretty,
                       syb-with-class >= 0.5,
+                      syb-with-class-instances-text,
+                      text >= 0.7.1,
+                      time >= 1.1.4,
                       template-haskell
 
   hs-source-dirs:     src
@@ -79,6 +82,7 @@ Library
     Happstack.Data.Serialize
     Happstack.Data.SerializeTH
   if flag(tests)
+    Build-depends: HUnit
     Exposed-modules:   
       Happstack.Data.Tests
       Happstack.Data.Tests.Xml001
@@ -96,7 +100,7 @@ Library
               TypeSynonymInstances, PatternGuards,
               PolymorphicComponents
   -- Should also have ", DeriveDataTypeable" but Cabal complains
-  GHC-Options: -Wall
+  GHC-Options: -Wall -O0
 
 Executable happstack-data-tests
   Main-Is: Test.hs
