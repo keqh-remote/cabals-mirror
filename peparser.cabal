@@ -1,5 +1,5 @@
 Name:			peparser
-Version:		0.2
+Version:		0.21
 Description:	Extract the header information and sections from a file of the PE object format.
 Synopsis: A parser for PE object files.
 License:		BSD3
@@ -14,11 +14,12 @@ Cabal-Version:	>=1.6
 
 source-repository head
   type: git
-  location: git clone git://github.com/igraves/peparser-haskell.git
+  location: git://github.com/igraves/peparser-haskell.git
 
 
 Library
     Build-Depends:	haskell98, base >= 3 && < 5, bytestring >= 0.9.1, binary >= 0.5.0
     Exposed-modules: 
        Data.PE.Parser, 
-       Data.PE.Structures
+       Data.PE.Structures,
+       Data.PE.Utils
