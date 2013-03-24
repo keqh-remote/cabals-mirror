@@ -1,5 +1,5 @@
 name:                minesweeper
-version:             0.4
+version:             0.4.1
 category:            Game
 synopsis:            Minesweeper game which is always solvable without guessing
 description:         
@@ -20,7 +20,7 @@ cabal-version:      >=1.4
 build-type:         Simple
 
 executable          minesweeper
-  ghc-options:      -Wall -fno-warn-incomplete-patterns -fno-warn-name-shadowing
+  ghc-options:      -Wall -fno-warn-incomplete-patterns -fno-warn-name-shadowing -fno-warn-missing-signatures
   build-depends:    base >= 3.0, 
                     containers, 
                     random, 
