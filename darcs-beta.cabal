@@ -1,5 +1,5 @@
 Name:           darcs-beta
-version:        2.2.98.3
+version:        2.2.98.4
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-users@darcs.net>
@@ -110,8 +110,6 @@ flag color
 
 flag mmap
   description: Compile with mmap support.
-
-flag base3
 
 flag test
   description: Compile unit tests (requires QuickCheck >= 2.1.0.0).
@@ -318,21 +316,18 @@ Library
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.3.5 && < 0.4
+                   hashed-storage >= 0.3.6 && < 0.4
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.4
 
-  if flag(base3)
-    build-depends: base >= 3,
+  build-depends: base >= 3,
                    old-time   == 1.0.*,
                    directory  == 1.0.*,
                    process    == 1.0.*,
                    containers >= 0.1 && < 0.3,
                    array      >= 0.1 && < 0.3,
                    random     == 1.0.*
-  else
-    build-depends: base < 3
 
   -- We need optimizations, regardless of what Hackage says
   ghc-options:      -Wall -O2 -funbox-strict-fields
@@ -451,21 +446,18 @@ Executable          darcs
                    html         == 1.0.*,
                    filepath     == 1.1.*,
                    haskeline    >= 0.6.1 && < 0.7,
-                   hashed-storage >= 0.3.5 && < 0.4
+                   hashed-storage >= 0.3.6 && < 0.4
 
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.4
 
-  if flag(base3)
-    build-depends: base >= 3,
+  build-depends: base >= 3,
                    old-time   == 1.0.*,
                    directory  == 1.0.*,
                    process    == 1.0.*,
                    containers >= 0.1 && < 0.3,
                    array      >= 0.1 && < 0.3,
                    random     == 1.0.*
-  else
-    build-depends: base < 3
 
   if flag(curl)
     extra-libraries:   curl
@@ -593,16 +585,13 @@ Executable          unit
   if !os(windows)
     build-depends: unix >= 1.0 && < 2.4
 
-  if flag(base3)
-    build-depends: base >= 3,
+  build-depends: base >= 3,
                    old-time   == 1.0.*,
                    directory  == 1.0.*,
                    process    == 1.0.*,
                    containers >= 0.1 && < 0.3,
                    array      >= 0.1 && < 0.3,
                    random     == 1.0.*
-  else
-    build-depends: base < 3
 
   if flag(mmap) && !os(windows)
     build-depends:    mmap >= 0.2
