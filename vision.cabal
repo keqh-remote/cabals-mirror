@@ -1,5 +1,5 @@
 name:               vision
-version:            0.0.2.2
+version:            0.0.2.3
 
 author:             Oleg Belozeorov
 maintainer:         Oleg Belozeorov <upwawet@gmail.com>
@@ -18,6 +18,18 @@ description:
 cabal-version:      >= 1.6
 build-type:         Simple
 extra-tmp-files:    config.status, config.log, autom4te.cache
+extra-source-files: configure.ac,
+                    configure,
+                    src/Properties/Makefile.in,
+                    src/Properties/Editor/Makefile.in,
+                    src/Makefile.in,
+                    src/Location/Makefile.in,
+                    src/Playlist/Format/Makefile.in,
+                    src/Playlist/Makefile.in,
+                    src/Collection/Makefile.in,
+                    src/Collection/List/Makefile.in,
+                    Makefile.in,
+                    ui/Makefile.in
 data-files:         ui/*.xml
 
 executable vision
@@ -28,6 +40,7 @@ executable vision
                     XMMS,
                     Environment,
                     Medialib,
+                    About,
                     UI,
                     Atoms,
                     DnD,
@@ -100,4 +113,4 @@ source-repository head
 source-repository head
   type:             git
   location:         git://github.com/upwawet/vision.git
-  tag:              v0.0.2.2
+  tag:              v0.0.2.3
