@@ -1,5 +1,5 @@
 name: shaker
-version: 0.1
+version: 0.2
 cabal-version: >= 1.8
 build-type: Custom
 license: BSD3
@@ -54,7 +54,7 @@ description:
   [@% ~Compile@] Switch to continuous mode and will compile the project when sources are modified.
   .
   [@% ~Clean Compile@] Switch to continuous mode and will clean and compile the project when sources are modified.
-extra-source-files: README.textile TODO testsuite/tests/resources/invalidMain/dist/setup-config
+extra-source-files: README TODO testsuite/tests/resources/invalidMain/dist/setup-config
     testsuite/tests/resources/invalidMain/src/Main.hs
     testsuite/tests/resources/invalidMain/tests/Dummy.hs
     testsuite/tests/resources/invalidMain/invalidMain.cabal
@@ -73,11 +73,11 @@ source-repository head
 source-repository this
   type:     git
   location: git://github.com/bonnefoa/Shaker.git 
-  tag:      0.1
+  tag:      0.2
 
 Executable shaker
   Main-Is: Shaker.hs
-  ghc-options: -Wall
+  ghc-options: -Wall -fno-warn-orphans
   hs-source-dirs: src 
   other-modules: 
     Shaker.Parser
@@ -116,6 +116,7 @@ flag test
 Executable test
   hs-source-dirs:  src, testsuite/tests 
   main-is:         RunTest.hs
+  ghc-options: -Wall -fno-warn-orphans
   other-modules: 
     Shaker.RegexTest
     Shaker.Properties
