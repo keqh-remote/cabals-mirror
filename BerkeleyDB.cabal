@@ -1,5 +1,5 @@
 name: BerkeleyDB
-version: 0.7.1
+version: 0.7.2
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
@@ -30,6 +30,8 @@ description:
     .
     DARCS repository:
     <http://code.haskell.org/BerkeleyDB/>
+    .
+    Changes: 0.7.2: Fix on db4.7
 
 category: Database
 build-type: Simple
