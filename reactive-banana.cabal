@@ -1,5 +1,5 @@
 Name:                reactive-banana
-Version:             0.5.0.2
+Version:             0.5.0.3
 Synopsis:            Practical library for functional reactive programming (FRP).
 Description:         
     Reactive-banana is a practical library for Functional Reactive Programming (FRP).
@@ -39,7 +39,7 @@ Library
         base >= 4.2 && < 5, containers >= 0.3 && < 0.5,
         transformers >= 0.2 && < 0.4,
         QuickCheck >= 1.2 && < 2.5,
-        vault == 0.1.*, unordered-containers == 0.2.*, hashable == 1.1.*,
+        vault == 0.2.*, unordered-containers == 0.2.*, hashable == 1.1.*,
         fclabels == 1.1.*
     exposed-modules:
                         Reactive.Banana,
