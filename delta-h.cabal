@@ -7,7 +7,7 @@ Name:                delta-h
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.0.2
+Version:             0.0.3
 
 -- A short (one-line) description of the package.
 Synopsis:            Online entropy-based model of lexical category acquisition.
@@ -53,12 +53,12 @@ Cabal-version:       >=1.2
 Library
   Exposed-modules: Entropy.Algorithm, Entropy.Features, Reader, ListZipper
        -- Packages needed in order to build this package.
-  Build-depends: nlp-scores, monad-atom, binary, text, containers, 
+  Build-depends: nlp-scores, monad-atom >= 0.4 , binary, text, containers, 
                  bytestring,
                  base >= 3 && < 5
   
   -- Modules not exported by this package.
-  Other-modules: Counts, SparseVector, Utils
+  Other-modules: Counts, SparseVector, Utils, EvalSem
   
   Hs-source-dirs: src
 
@@ -74,7 +74,7 @@ Executable delta-h
                  base >= 3 && < 5
   
   -- Modules not exported by this package.
-  Other-modules: Counts, SparseVector, Utils
+  Other-modules: Counts, SparseVector, Utils, EvalSem
   
   Hs-source-dirs: src
 
