@@ -1,5 +1,5 @@
 Name:             sample-frame-np
-Version:          0.0.1
+Version:          0.0.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -9,10 +9,12 @@ Package-URL:      http://code.haskell.org/~thielema/sample-frame/core/
 Category:         Sound
 Synopsis:         Orphan instances for types from sample-frame and numericprelude
 Description:
-   Orphan instances for types from sample-frame package
-   and type classes from numeric-prelude.
+   Orphan instances for types from @sample-frame@ package
+   and type classes from @numeric-prelude@.
+   Using this package instead defining custom orphan instances
+   saves you from conflicting instances.
    .
-   This is used by packages synthesizer.
+   This is used by packages @synthesizer@, @synthesizer-alsa@, @synthesizer-llvm@.
 Tested-With:       GHC==6.10.4
 Cabal-Version:     >=1.2
 Build-Type:        Simple
@@ -23,7 +25,7 @@ Flag splitBase
 Library
   Build-Depends:
     sample-frame >=0.0.1 && <0.1,
-    numeric-prelude >= 0.1.2 && <0.2
+    numeric-prelude >= 0.2 && <0.3
   If flag(splitBase)
     Build-Depends:
       base >= 2 && <5
@@ -38,3 +40,6 @@ Library
 
   Exposed-Modules:
     Sound.Frame.NumericPrelude.Stereo
+
+  Other-Modules:
+    Sound.Frame.NumericPrelude.StereoApplicative
