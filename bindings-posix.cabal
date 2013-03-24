@@ -2,7 +2,7 @@ cabal-version: >= 1.2.3
 name: bindings-posix
 synopsis:
   Low level bindings to posix.
-version: 1.2.2
+version: 1.2.3
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
@@ -16,13 +16,15 @@ library
     ForeignFunctionInterface
   build-depends:
     base >= 3 && < 5,
-    bindings-DSL >= 1.0.7 && < 1.1
+    bindings-DSL >= 1.0.12 && < 1.1
   exposed-modules:
     Bindings.Posix
     Bindings.Posix.Errno
+    Bindings.Posix.Fcntl
     Bindings.Posix.Locale
     Bindings.Posix.Signal
     Bindings.Posix.Sys
+    Bindings.Posix.Sys.Mman
     Bindings.Posix.Sys.Select
     Bindings.Posix.Sys.Types
     Bindings.Posix.Sys.Utsname
@@ -33,3 +35,5 @@ library
     "-D_POSIX_C_SOURCE=200112L"
     "-D_XOPEN_SOURCE=600"
   c-sources: src/inlines.c
+  extra-libraries: pthread
+
