@@ -1,8 +1,8 @@
 Name:               hsignal
-Version:            0.1.0.4
+Version:            0.1.0.5
 License:            GPL
 License-file:       LICENSE
-Author:             Alexander Vivian Hugh McPhail
+Author:             Vivian McPhail
 Maintainer:         haskell.vivian.mcphail <at> gmail <dot> com
 Stability:          provisional
 Homepage:           http://code.haskell.org/hsignal
@@ -26,7 +26,8 @@ library
                         storable-complex, haskell98, mtl, bytestring,
                         hmatrix >= 0.9.3,
                         hstatistics >= 0.1.0.5,
-                        array
+                        array,
+                        ghc-binary
 
     Extensions:         ForeignFunctionInterface
 
