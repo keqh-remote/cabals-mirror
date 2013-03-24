@@ -1,5 +1,5 @@
 name:                Flippi
-version:             0.0.3
+version:             0.0.4
 synopsis:            Wiki
 description:         Flippi is a Wiki clone written in Haskell
 category:            Text
@@ -8,9 +8,9 @@ license-file:        LICENSE
 author:              Philippa Cowderoy
 maintainer:          Philippa Cowderoy <flippa@flippac.org>
 homepage:            http://www.flippac.org/projects/flippi/
-build-depends:       base, haskell98, xhtml, html, cgi, parsec, directory, old-time, FiniteMap
+build-depends:       base, haskell98, xhtml, cgi, parsec, directory, old-time, containers
 build-type:          Simple
-tested-with:         GHC==6.4
+tested-with:         GHC==6.8
 data-files:          README, data/ScriptLinks, data/RecentChanges, data/LameEasterEgg, data/WhatIsFlippi,
                      data/FrontPage, data/FlippiSyntax
 
