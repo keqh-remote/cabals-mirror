@@ -1,5 +1,5 @@
 Name:              bytestring-show
-Version:           0.1.1
+Version:           0.2
 License:           BSD3
 License-File:      LICENSE
 Author:            Dan Doel
@@ -12,7 +12,7 @@ Build-Type:        Simple
 Cabal-Version:     >= 1.2
 
 Library
-    Build-Depends: base, binary, bytestring >= 0.9
+    Build-Depends: base, binary, bytestring >= 0.9, array, containers
 
     Exposed-Modules:
         Text.Show.ByteString
