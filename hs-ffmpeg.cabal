@@ -1,5 +1,5 @@
 name:           hs-ffmpeg
-version:        0.3.2
+version:        0.3.3
 cabal-version:  >= 1.6
 license:        BSD3
 author:         Vasyl Pasternak
@@ -13,14 +13,18 @@ stability:      alpha
 category:       Media
 
 
-build-type:     Simple
+build-type:     Configure
 extra-source-files: src/macros.hsc2hs.h
+                    src/config.h.in
+                    src/ffmpeg.h
+                    configure
+                    configure.ac
+                    hs-ffmpeg.buildinfo.in
 
 library
         build-depends:   base < 4, haskell98, bytestring
         hs-source-dirs:  src
-        include-dirs:    /usr/local/include
-                         src
+        include-dirs:    src
         exposed-modules: Media.FFMpeg
                          Media.FFMpeg.Format
                          Media.FFMpeg.SWScale
@@ -31,7 +35,3 @@ library
                          Media.FFMpeg.SWScaleEnums_
                          Media.FFMpeg.Common
         c-sources:       src/Media/FFMpeg/_c_utils.c
-        extra-lib-dirs:  /usr/local/lib
-        extra-libraries: avformat, avcodec, avutil, avfilter,
-                         avdevice, swscale, vorbisfile, vorbis, vorbisenc, 
-                         theora, mp3lame, faac, z, dc1394_control
