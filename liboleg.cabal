@@ -1,13 +1,13 @@
 name:           liboleg
-version:        2010.1.1
+version:        2010.1.2
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
 maintainer:     Don Stewart <dons@galois.com>
 homepage:       http://okmij.org/ftp/
 category:       Text
-synopsis:       A collection of Oleg Kiselyov's Haskell modules (2009-2008)
-description:    A collection of Oleg Kiselyov's Haskell modules (2009-2008) (released with his permission)
+synopsis:       A collection of Oleg Kiselyov's Haskell modules (2008-2010)
+description:    A collection of Oleg Kiselyov's Haskell modules (2008-2010) (released with his permission)
 build-type:     Simple
 stability:      experimental
 cabal-version:  >= 1.2
@@ -29,6 +29,7 @@ library
             Control.ShiftResetGenuine
             Control.VarStateM
             Control.ExtensibleDS
+            Control.Poly2
 
             Codec.Image.Tiff
 
@@ -45,6 +46,8 @@ library
             Language.TEval.TInfT
             Language.TEval.TInfTEnv
             Language.TEval.TInfTM
+            Language.CB
+            Language.CB98
 
             Text.PrintScan
             Text.PrintScanF
