@@ -5,7 +5,7 @@ Description:
         generate RSA and DSA keys, read and write PEM files, generate
         message digests, sign and verify messages, encrypt and decrypt
         messages.
-Version: 0.2
+Version: 0.3
 License: PublicDomain
 License-File: COPYING
 Author: PHO <phonohawk at ps dot sakura dot ne dot jp>
@@ -18,6 +18,7 @@ Build-Depends:
         base, time >= 1.1.1
 Exposed-Modules:
         OpenSSL
+        OpenSSL.BN
         OpenSSL.EVP.Base64
         OpenSSL.EVP.Cipher
         OpenSSL.EVP.Digest
@@ -26,8 +27,10 @@ Exposed-Modules:
         OpenSSL.EVP.Seal
         OpenSSL.EVP.Sign
         OpenSSL.EVP.Verify
+        OpenSSL.Cipher
         OpenSSL.PEM
         OpenSSL.PKCS7
+        OpenSSL.Random
         OpenSSL.DSA
         OpenSSL.RSA
         OpenSSL.X509
@@ -37,7 +40,6 @@ Exposed-Modules:
 Other-Modules:
         OpenSSL.ASN1
         OpenSSL.BIO
-        OpenSSL.BN
         OpenSSL.ERR
         OpenSSL.Objects
         OpenSSL.SSL
