@@ -1,5 +1,5 @@
 name:                HaLeX
-version:             1.1
+version:             1.1.1
 synopsis:            HaLeX enables modelling, manipulation and animation of regular languages
 description:         This library was developed in the context of a programming methodology course for
                      undergraduate students, and as a consequence, it was defined mainly for educational purposes.
@@ -24,7 +24,7 @@ Library
         build-depends:          base, mtl
         extensions:             FlexibleContexts, FlexibleInstances, MultiParamTypeClasses
 
-        ghc-options:         -O2 -Wall -optl-Wl,-s
+        ghc-options:         -O2 -Wall
         ghc-prof-options:    -prof -auto-all
 
         hs-source-dirs:         HaLeX_lib
@@ -39,5 +39,5 @@ Executable halex
            main-is:             halex.hs
            hs-source-dirs:      HaLeX_tool, HaLeX_lib
 
-           ghc-options:         -O2 -Wall -optl-Wl,-s
-           ghc-prof-options:    -prof -auto-al
+           ghc-options:         -O2 -Wall 
+           ghc-prof-options:    -prof -auto-all
