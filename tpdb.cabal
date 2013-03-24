@@ -1,5 +1,5 @@
 Name: tpdb
-Version: 0.6.0
+Version: 0.6.1
 Author: Johannes Waldmann
 Maintainer: Johannes Waldmann
 Category: Science
@@ -20,7 +20,7 @@ Build-Type: Simple
 
 Source-Repository head
   Type: git
-  Location: git://dfa.imn.htwk-leipzig.de/srv/git/tpdb/
+  Location: git://github.com/jwaldmann/haskell-tpdb.git
 
 -- Extra-Source-Files:
 --   test/3.15.xml, test/33.trs ,  test/z001.srs
@@ -31,7 +31,7 @@ Library
   Exposed-Modules:
     TPDB.Data,     TPDB.Data.Term, TPDB.Data.Xml
     TPDB.Compress, TPDB.Convert, TPDB.Input
-    TPDB.Mirror, 
+    TPDB.Mirror, TPDB.DP
     TPDB.Pretty, TPDB.Plain.Write,     TPDB.Plain.Read,
     TPDB.XTC,  TPDB.XTC.Read, TPDB.Xml, 
     TPDB.Rainbow.Proof.Xml,     TPDB.Rainbow.Proof.Type
@@ -39,22 +39,22 @@ Library
 
 Executable Compressor
     Main-is: Compressor.hs
-    Build-depends: base==4.*, containers, directory, pretty, hxt, parsec
+    Build-depends: base==4.*, containers >= 0.5, directory, pretty, hxt, parsec
 
 Test-Suite XML
-  Build-Depends: base==4.*, hxt, pretty, parsec, time, containers, HaXml
+  Build-Depends: base==4.*, hxt, pretty, parsec, time, containers  >= 0.5, HaXml
   Type: exitcode-stdio-1.0
   main-is: read_print_xml.hs
   hs-source-dirs: test .
 
 Test-Suite TRS
-  Build-Depends: base==4.*, hxt, pretty, parsec, time, containers, HaXml
+  Build-Depends: base==4.*, hxt, pretty, parsec, time, containers  >= 0.5, HaXml
   Type: exitcode-stdio-1.0
   main-is: read_print_trs.hs
   hs-source-dirs: test .
 
 Test-Suite SRS
-  Build-Depends: base==4.*, hxt, pretty, parsec, time, containers, HaXml
+  Build-Depends: base==4.*, hxt, pretty, parsec, time, containers  >= 0.5, HaXml
   Type: exitcode-stdio-1.0
   main-is: read_print_srs.hs
 
