@@ -1,11 +1,13 @@
 name:    afv
-version: 0.0.1
+version: 0.0.2
 
 category: Formal Methods
 
-synopsis: Model checking Atom generated C.
+synopsis: Infinite state model checking of iterative C programs.
 
-description: A model checker for Atom generated, or similar, C code.
+description: AFV is an infinite state model checker that
+             verifies iterative C programs by k-induction.
+             AFV uses Yices as the backend SMT solver.
 
 author:     Tom Hawkins <tomahawkins@gmail.com>
 maintainer: Tom Hawkins <tomahawkins@gmail.com>
