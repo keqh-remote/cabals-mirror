@@ -1,30 +1,47 @@
 Name:           HaTeX
-Version:        1.0.0
-Author:         Daniel Díaz
+Version:        2.0.0
+Author:         Daniel Diaz
+Homepage:       http://ddiaz.asofilak.es/packages/HaTeX
 License:        BSD3
 License-file:   license
-Maintainer:     lazy.ddiaz@gmail.com
+Maintainer:     danieldiaz@asofilak.es
 Category:       Text
-Synopsis:       Library for generate LaTeX code.
+Synopsis:       Library for write LaTeX code.
 Description:    
          You can write LaTeX files using this package.
          See Text.LaTeX for a brief introduction.
          .
-         It's a first version,
-         and documentation is in process,
-         but you can test the library and report me any bug or suggestion at:
+         Report any bug or suggestion to the author:
          .
-         lazy.ddiaz\@gmail.com
+         danieldiaz\@asofilak.es
          .
-         Also, if you have an example where you use HaTeX, you could send it to my email. Thank you.
+         Also, if you have an example where you use HaTeX, you could send it to the same email. Thanks in advance.
+         .
+         Changes from last version:
+         .
+         * IMPORTANT: @LaTeXM@ monad has been replaced by @LaTeXT@ monadic transformer.
+         So, change types of form @LaTeXM a@ (or @LaTeX@) to @LaTeXT m a@ (or @LaTeX m@).
+         This allow you to use computations of any monad through a lift function.
+         .
+         * Function @iolx@ replaced by @mlx@.
+         .
+         * IMPORTANT: IO module has been removed.
+         .
+         * Added new documentation.
+         .
+         * Added new macros.
+         .
 Extensions:     OverloadedStrings , FlexibleInstances , TypeSynonymInstances
 Build-type:     Simple
-Build-depends:  base >= 4 && < 5 , mtl , dstring , to-string-class , filepath
-Cabal-version:  >= 1.2.3
-Tested-with:    GHC == 6.12.1
+Build-depends:  base == 4.*
+              , mtl
+              , dstring
+              , to-string-class
+              , string-combinators
+              , filepath
+Cabal-version:  >= 1.6
 Exposed-modules: Text.LaTeX
                , Text.LaTeX.Macro
-               , Text.LaTeX.IO
                , Text.LaTeX.Commands
                , Text.LaTeX.Packages
                , Text.LaTeX.Arguments
