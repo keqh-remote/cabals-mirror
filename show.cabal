@@ -1,5 +1,5 @@
 name:                show
-version:             0.3.1
+version:             0.3.2
 
 license:             GPL
 license-file:        LICENSE
@@ -11,7 +11,7 @@ category:            Language
 synopsis:            'Show' instances for Lambdabot
 description:         This package provides ShowQ, ShowFun, and SimpleReflect.
                      .
-                     ShowFun gives us Typeable instances for neutring IO expressions.
+                     ShowFun gives us Typeable instances for showing functions and IO values as their type.
                      .
                      ShowQ adds SmallCheck & QuickCheck support.
                      .
@@ -25,7 +25,7 @@ tested-with:         GHC==6.8.2
 library
    exposed-modules:     ShowQ, ShowFun, SimpleReflect
 
-   build-depends:       base, random, QuickCheck<2, smallcheck>=0.4
+   build-depends:       base >= 3 && < 5, random, QuickCheck<2, smallcheck>=0.4
 
    ghc-options:         -Wall
    ghc-prof-options:    -prof -auto-all
