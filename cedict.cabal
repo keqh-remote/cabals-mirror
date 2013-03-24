@@ -1,5 +1,5 @@
 name:               cedict
-version:            0.2.2
+version:            0.2.3
 category:           Text
 description:        Convenient Chinese character lookup.
 synopsis:           Convenient Chinese character lookup.
@@ -7,7 +7,7 @@ license:            GPL
 license-file:       LICENSE
 author:             Jason Dusek
 maintainer:         jason.dusek@gmail.com
-cabal-version:      >=1.2
+cabal-version:      >= 1.2
 build-type:         Simple
 extra-tmp-files:    c/data.h
 extra-source-files: d/cedict_readme.txt
@@ -15,7 +15,12 @@ extra-source-files: d/cedict_readme.txt
                     Data/Char/CEDICT/GenerateCode.hs
 
 library
-  build-depends:    base, containers, parsec, utf8-string, bytestring, mtl
+  build-depends:      base
+                    , containers
+                    , parsec < 2.2
+                    , utf8-string
+                    , bytestring
+                    , mtl
   exposed-modules:  Data.Char.CEDICT
                     Data.Char.CEDICT.C.Declarations
                     Data.Char.CEDICT.C.Walker
