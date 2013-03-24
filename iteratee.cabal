@@ -1,5 +1,5 @@
 name:          iteratee
-version:       0.7.0.0
+version:       0.7.0.1
 synopsis:      Iteratee-based I/O
 description:
   The Iteratee monad provides strict, safe, and functional I/O. In addition
@@ -73,6 +73,7 @@ library
     Data.Iteratee.Exception
     Data.Iteratee.IO
     Data.Iteratee.IO.Handle
+    Data.Iteratee.IO.Interact
     Data.Iteratee.Iteratee
     Data.Iteratee.ListLike
 
