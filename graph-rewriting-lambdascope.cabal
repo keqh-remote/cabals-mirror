@@ -1,5 +1,5 @@
 Name:           graph-rewriting-lambdascope
-Version:        0.4.8
+Version:        0.4.9
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -9,7 +9,7 @@ Homepage:       http://rochel.info/#graph-rewriting
 Stability:      alpha
 Build-Type:     Simple
 Synopsis:       Implementation of Lambdascope as an interactive graph-rewriting system
-Description:    Lambdascope is an optimal implementation of the λβ-calculus described in the paper "Lambdascope - Another optimal implementation of the lambda-calculus" by Vincent van Oostrom, Kees-Jan van de Looij, and Marijn Zwitserlood. Examples of lambda terms are supplied in the "examples" directory.
+Description:    Lambdascope is an optimal implementation of the λβ-calculus described in the paper "Lambdascope - Another optimal implementation of the lambda-calculus" by Vincent van Oostrom, Kees-Jan van de Looij, and Marijn Zwitserlood. Call "lambdascope" with one of the files from the "examples" directory as an argument. For usage of the GUI see "GraphRewriting.GL.UI".
 Category:       Graphs, Application
 Cabal-Version:  >= 1.6
 Data-Files:     examples/*.l
@@ -17,7 +17,7 @@ Data-Files:     examples/*.l
 Executable lambdascope
   Main-Is:        Main.hs
   Build-Depends:
-    base >= 4 && < 4.4,
+    base >= 4 && < 4.5,
     base-unicode-symbols >= 0.2 && < 0.3,
     graph-rewriting >= 0.4.4 && < 0.6,
     graph-rewriting-layout >= 0.4.1 && < 0.5,
