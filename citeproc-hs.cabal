@@ -1,5 +1,5 @@
 name:               citeproc-hs
-version:            0.3.7
+version:            0.3.8
 homepage:           http://gorgias.mine.nu/repos/citeproc-hs/
 synopsis:           A Citation Style Language implementation in Haskell
 
