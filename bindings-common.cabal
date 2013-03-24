@@ -2,7 +2,7 @@ cabal-version: >= 1.2.3
 name: bindings-common
 homepage: http://bitbucket.org/mauricio/bindings-common
 synopsis:
-  Support package for low-level FFI.
+  Preprocessor combinator library for low level FFI.
 description: 
   Packages named @bindings-*@ contain low level bindings to well
   known libraries, as a resource to be used by developers of
@@ -16,15 +16,12 @@ description:
   read the code for "Bindings.C" to understand how they work, or
   just fill question\/sugestion reports in the bug tracking web
   site.
-  (/Caveat/: fields of a struct declared as arrays are
-  not properly supported in this release. Pointer fieds, of course,
-  are okay.)
-version: 1.1
+version: 1.2
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
 author: Maurício C. Antunes
-stability: Very close to API stability.
+stability: Stable, tested, maintained.
 build-type: Simple
 bug-reports: http://bitbucket.org/mauricio/bindings-common/issues
 category: FFI
@@ -40,6 +37,7 @@ library
     Bindings.C
     Bindings.C.Errno
     Bindings.C.Math
+    Bindings.C.Signal
     Bindings.C.Stddef
     Bindings.C.Stdio
     Bindings.C.String
