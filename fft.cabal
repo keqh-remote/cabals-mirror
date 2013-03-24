@@ -1,5 +1,5 @@
 name:                fft
-version:             0.1.7
+version:             0.1.7.1
 synopsis:            Bindings to the FFTW library.
 description:
                      Bindings to the FFTW library.
@@ -12,15 +12,19 @@ category:            Math
 license:             BSD3
 license-file:        LICENSE
 author:              Jed Brown
-maintainer:          <jed@59A2.org>
+maintainer:          Jed Brown <jed@59A2.org>, Henning Thielemann <fft@henning-thielemann.de>
 build-type:	     Simple
 cabal-version:       >= 1.6
 
 flag splitBase
 flag base4
 
+flag buildTests
+  description: build test suite executable
+  default: False
+
 source-repository this
-  tag:         0.1.7
+  tag:         0.1.7.1
   type:        darcs
   location:    http://code.haskell.org/fft/
 
@@ -44,3 +48,18 @@ library
                    fftw3 >=3.3 && <4
   extensions:      ForeignFunctionInterface
   ghc-options:     -Wall
+
+executable test-fft
+  if flag(buildTests)
+    build-depends:
+      QuickCheck >=2.5 && <2.6
+  else
+    buildable: False
+  ghc-options:     -Wall
+  main-is: tests.hs
+  hs-source-dirs: ., tests
+  other-modules:   Math.FFT
+                   Math.FFT.Base
+  pkgconfig-depends:
+                   fftw3 >=3.3 && <4
+  extensions:      ForeignFunctionInterface
