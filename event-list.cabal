@@ -1,5 +1,5 @@
 Name:             event-list
-Version:          0.1.0.1
+Version:          0.1.0.2
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -26,7 +26,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/event-list/
-  tag:      0.1.0.1
+  tag:      0.1.0.2
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
