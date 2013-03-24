@@ -1,5 +1,5 @@
 name:           snap-server
-version:        0.2.15.1
+version:        0.2.16
 synopsis:       A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 description:
   This is the first developer prerelease of the Snap framework.  Snap is a
@@ -109,6 +109,7 @@ Library
     attoparsec >= 0.8.1 && < 0.9,
     attoparsec-iteratee >= 0.1.1 && <0.2,
     base >= 4 && < 5,
+    binary >=0.5 && <0.6,
     bytestring,
     bytestring-nums,
     bytestring-show >= 0.3.2 && < 0.4,
@@ -122,12 +123,13 @@ Library
     murmur-hash >= 0.1 && < 0.2,
     network == 2.2.1.*,
     old-locale,
-    snap-core == 0.2.15.1,
+    snap-core == 0.2.16,
     template-haskell,
     time,
     transformers,
     unix-compat,
-    vector >= 0.7 && <0.8
+    vector >= 0.7 && <0.8,
+    vector-algorithms >= 0.3.4 && <0.4
 
   if flag(portable) || os(windows)
     cpp-options: -DPORTABLE
