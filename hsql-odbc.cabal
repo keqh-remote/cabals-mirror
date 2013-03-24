@@ -1,5 +1,5 @@
 name:		hsql-odbc
-version:	1.8.1
+version:	1.8.1.1
 Synopsis:	A Haskell Interface to ODBC. 
 license:	BSD3
 License-file:	 LICENSE
