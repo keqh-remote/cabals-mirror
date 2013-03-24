@@ -1,5 +1,6 @@
+-- would also be useful as type-safe alternative in wx, wxcore
 Name:             enumset
-Version:          0.0.1
+Version:          0.0.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -14,17 +15,16 @@ Description:
   represents a flag set stored in a Word16
   that supports the flags @LT@, @EQ@, @GT@.
   .
-  This package is similar to the @bitset@ package
-  the @Data.Edison.Coll.EnumSet@ module in the edison package,
+  This package is similar to the @bitset@ package and
+  the @Data.Edison.Coll.EnumSet@ module in the @edison@ package,
   however our implementation allows you to choose the embedding type
   and thus the maximum size of the set.
--- Portability:      Haskell98
-Cabal-Version:    >=1.6
+Cabal-Version:    >=1.10
 Tested-With:      GHC==6.10.4, GHC==6.12.3
 Build-Type:       Simple
 
 Source-Repository this
-  Tag:         0.0.1
+  Tag:         0.0.2
   Type:        darcs
   Location:    http://code.haskell.org/~thielema/enumset/
 
@@ -33,7 +33,9 @@ Source-Repository head
   Location:    http://code.haskell.org/~thielema/enumset/
 
 Library
+  Default-Language: Haskell98
   Build-Depends:
+    data-accessor >=0.2.1 && <0.3,
     storable-record >=0.0.1 && <0.1,
     base >= 4 && <5
 
@@ -42,3 +44,4 @@ Library
   Exposed-Modules:
     Data.EnumSet
     Data.EnumSet.PackedEnum
+    Data.FlagSet
