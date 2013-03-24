@@ -1,5 +1,5 @@
    Name:                HaskellForMaths
-   Version:             0.3.2
+   Version:             0.3.3
    Category:            Math
    Description:         A library of maths code in the areas of combinatorics, group theory, commutative algebra, and non-commutative algebra. The library is mainly intended for educational purposes, but does have efficient implementations of several fundamental algorithms.
    Synopsis:            Combinatorics, group theory, commutative algebra, non-commutative algebra
@@ -26,7 +26,11 @@
         Math/Test/TAlgebras/TTensorProduct.hs
         Math/Test/TAlgebras/TStructures.hs
         Math/Test/TAlgebras/TQuaternions.hs
+        Math/Test/TAlgebras/TMatrix.hs
         Math/Test/TAlgebras/TGroupAlgebra.hs
+        Math/Test/TCombinatorics/TPoset.hs
+        Math/Test/TCombinatorics/TDigraph.hs
+        Math/Test/TCombinatorics/TIncidenceAlgebra.hs
 
    Library
      Build-Depends:     base >= 2 && < 5, containers, array, random, QuickCheck
@@ -45,7 +49,8 @@
         Math.Algebras.TensorProduct, Math.Algebras.VectorSpace,
         Math.Combinatorics.Graph, Math.Combinatorics.GraphAuts, Math.Combinatorics.StronglyRegularGraph,
         Math.Combinatorics.Design, Math.Combinatorics.FiniteGeometry, Math.Combinatorics.Hypergraph,
-        Math.Combinatorics.LatinSquares,
+        Math.Combinatorics.LatinSquares, Math.Combinatorics.Poset, Math.Combinatorics.IncidenceAlgebra,
+        Math.Combinatorics.Digraph,
         Math.Common.IntegerAsType, Math.Common.ListSet,
         Math.Projects.RootSystem,
         Math.Projects.Rubik, Math.Projects.MiniquaternionGeometry,
