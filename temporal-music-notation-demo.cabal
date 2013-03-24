@@ -1,6 +1,6 @@
 Name:          temporal-music-notation-demo
-Version:       0.2
-Cabal-Version: >= 1.2
+Version:       0.2.1
+Cabal-Version: >= 1.6
 License:       BSD3
 License-file:  LICENSE
 Author:	       Anton Kholomiov
@@ -19,11 +19,18 @@ Stability:     Experimental
 Tested-With:   GHC==6.12.3
 Build-Type:    Simple
 
--- Extra-Source-Files : 
---              gen/genGM.hs
---              examples/choral.hs
---              examples/break.hs
---              examples/readme.hs
+Extra-Source-Files : 
+               gen/genGM.hs
+               examples/choral.hs
+               examples/break.hs
+               examples/readme.hs
+
+
+               
+Source-repository head
+  Type:     git
+  Location: https://github.com/anton-k/temporal-music-notation-demo
+
 
 Library
   Build-Depends:
