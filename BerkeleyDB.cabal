@@ -1,5 +1,5 @@
 name: BerkeleyDB
-version: 0.7
+version: 0.7.1
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
@@ -50,7 +50,7 @@ Flag CXX
 Library
     exposed-modules: Database.Berkeley.Db
 
-    build-depends: base, extensible-exceptions, bytestring >= 0.9
+    build-depends: base >= 3 && < 5, extensible-exceptions, bytestring >= 0.9
     include-dirs: Database/Berkeley/
     if flag(CXX)
         extra-libraries: db db_cxx
