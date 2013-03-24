@@ -1,6 +1,6 @@
-Cabal-Version: >= 1.2
+Cabal-Version: >= 1.6
 Name: hexpat-pickle
-Version: 0.5
+Version: 0.6
 Synopsis: XML picklers based on hexpat, source-code-similar to those of the HXT package
 Description:
   A library of combinators that allows Haskell data structures to be pickled
@@ -25,13 +25,14 @@ Copyright:
 Homepage: http://code.haskell.org/hexpat-pickle/
 Extra-Source-Files:
   test/tests.hs,
-  test/test.hs,
-  test/test.xml,
   test/example.hs,
   test/lazyUnpickle.hs,
   test/lazyUnpickleThrow.hs
 Build-Type: Simple
 Stability: beta
+source-repository head
+    type:     darcs
+    location: http://code.haskell.org/hexpat-pickle/
 
 Library
   Build-Depends:
