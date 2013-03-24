@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.5
+Version:	0.6
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -39,10 +39,11 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		>  ,
 		>  rule   ( ".o", ".cc", \_ s -> [ "g++ -c " ++ s ] )
 		>  ,
-		>  ( [ (=="foo") ], const [ "foo.gen", "Hakefile" ], \t [s] -> [ do
-		>         gen <- liftIO $ readFile s
-		>         liftIO $ writeFile t $ unlines $
-		>           [ "#!/bin/sh", "echo This is script" ] ++ lines gen ] )
+		>  base   ( [ (=="foo") ], const [ "foo.gen", "Hakefile" ], \t [s] -> [ \_ -> do
+		>               gen <- readFile s
+		>               writeFile t $ unlines $
+		>                 [ "#!/bin/sh", "echo This is script" ] ++ lines gen
+		>               return ExitSuccess ] )
 		>
 		>  ]
 		>
@@ -68,6 +69,6 @@ Library
 Executable hake
   GHC-Options:		-Wall
 --  CPP-Options:		-DDEBUG
-  Build-Depends:	directory, process, yjtools > 0.1
+  Build-Depends:	directory, process, yjtools > 0.3, regexpr >= 0.2.9
   Other-Modules:	Development.Hake.HiddenTools
   Main-Is:		Main.hs
