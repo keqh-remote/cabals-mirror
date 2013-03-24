@@ -1,8 +1,8 @@
 name:		        X11-xdamage
-version:	        0.1.1
+version:	        0.1.2
 license:	        BSD3
 license-file:	    LICENSE
-copyright:	        Ewan Higgs, 2008, libraries@haskell.org 2008
+copyright:	        Ewan Higgs, 2011, libraries@haskell.org 2011
 maintainer:	        Ewan Higgs <ewan_higgs@yahoo.co.uk>
 homepage:           http://darcs.haskell.org/X11-xdamage
 category:	        Graphics
