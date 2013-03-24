@@ -1,6 +1,6 @@
 name:            strict-io
 cabal-Version:   >=1.6
-version:         0.1.1
+version:         0.2.0
 license:         BSD3
 license-File:    LICENSE
 copyright:       (c) Nicolas Pouillard
@@ -28,5 +28,5 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/publicrepos/strict-io
-  tag:      0.1
+  tag:      0.2.0
 
