@@ -1,13 +1,13 @@
 Name:                hsns
-Version:             0.5.2
-Description:         a network sniffer written in a purely fun language
-Synopsis:            the haskell network sniffer
+Version:             0.5.3
+Description:         a tiny network sniffer, written in haskell
+Synopsis:            a miniature network sniffer
 Category:            Network
 License:             BSD3
 License-file:        LICENSE
 Author:              Austin Seipp 
 Maintainer:          austin@youareinferior.net
-Build-Depends:       base,network,pcap
+Build-Depends:       base,network,pcap>=0.3.2
 Extra-source-files:  README,
 		     Options.hs
 
