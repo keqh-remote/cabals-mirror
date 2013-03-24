@@ -1,5 +1,5 @@
 Name:           dephd
-Version:        0.1
+Version:        0.1.1
 License:        GPL
 License-File:   LICENSE
 
@@ -14,7 +14,7 @@ Description:    dephd - A simple tool for base calling and quality appraisal.
                 or in a directory (use the --dir option to read directories).
                 The Darcs repository is at <http://malde.org/~ketil/biohaskell/dephd>.
 
-Build-Depends:  base>3, bio >= 0.3, regex-compat, bytestring, process, directory
+Build-Depends:  base>3, bio >= 0.3.3.4, regex-compat, bytestring, process, directory
 Build-Type:     Simple
 Tested-with:    GHC==6.8.3
 
