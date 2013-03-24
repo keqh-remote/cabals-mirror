@@ -1,50 +1,64 @@
 name:           shelltestrunner
-version:        0.3
+version:        0.4
 category:       Testing
 synopsis:       A tool for testing command-line programs.
 description:
-                Run a given program through "shell" tests specifed by
-                one or more test files, each of which specifies:
-                command-line arguments, input, expected output,
-                expected stderr output, and expected exit code.  This
-                was extracted from the hledger project, and inspired
-                by the tests in John Wiegley's ledger project.
-
-                This uses test-framework's test runner. Any command-line
-                options are passed through to the test-framework runner,
-                but they must not contain spaces, so use eg -tpattern not
-                -t pattern. You may be able to get a big speedup by
-                running tests in parallel: try -j8.
-
-                Usage: 
-
-                $ shelltestrunner [testrunneropts] executable testfile1 [testfile2 ...]
-
-                Test file format:
-
-                ; 0 or more comment lines beginning with ;
-                -opt1 -opt2 arg1 arg2
-                <<<
-                0 or more lines of input
-                >>>
-                0 or more lines of expected output
-                >>>2
-                0 or more lines of expected error output
-                >>>=
-                expected numeric exit code
-
-                Initial lines beginning with ; are ignored.  The next line
-                is the command-line arguments which will be appended to
-                the executable name.  All remaining fields are optional;
-                when omitted they are assumed to be "", "", "", and 0
-                respectively.
-
-                Issues:
-                
-                - on mac, will hang if executable does not read stdin
-                - output order is mixed up
-                - can't test input/ouput which does not end with newline
-
+ .
+ Run a given program through "shell" tests specifed by one or more test
+ files, each of which can specify: command-line arguments, input, expected
+ output, expected stderr output, and expected exit code.  This was
+ extracted from the hledger project, inspired by the tests in John
+ Wiegley's ledger project, and uses test-framework's test runner.
+ .
+ Usage: 
+ .
+ > shelltestrunner [opts] executable testfile1 [testfile2 ...] [-- <test-framework runner opts>]
+ .
+ You can pass options through to test-framework's runner; they must go
+ after -- at the end. You may be able to get a big speedup by running
+ tests in parallel: try -- -j8.
+ .
+ Test file format:
+ .
+ > # 0 or more comment lines beginning with #
+ > -opt1 -opt2 arg1 arg2 # command line args, executable will be prepended
+ > <<<
+ > 0 or more lines of input
+ > >>> [/regexp/]
+ > [..or 0 or more lines of expected output]
+ > >>>2 [/regexp/]
+ > [..or 0 or more lines of expected error output]
+ > >>>= [/regexp/]
+ > [..or expected numeric exit code]
+ .
+ The expected fields can also have a regular expression match expression
+ following the delimiter on the same line, with no other data lines, in
+ which case the test passes if the output is matched by the regexp. The
+ regexp is enclosed in forward slashess. A ! preceding the expression
+ negates the match. For example, to check that stdout does not contain
+ "axe":
+ .
+ > >>> !/axe/
+ .
+ Apart from the command line, all fields are optional. Only fields
+ specified in the test will be tested, unless you use the
+ -i/--implicit-tests flag, which will test for empty stdout, empty stderr,
+ or 0 exit code whenever fields are omitted.
+ .
+ Issues:
+ .
+ - output order is mixed up
+ .
+ - option processing is weak
+ .
+ - can't test input/output which does not end with newline
+ .
+ Wishlist:
+ .
+ - configurable delimiters
+ .
+ - multiple tests per file
+ .
 license:        GPL
 license-file:   LICENSE
 author:         Simon Michael <simon@joyful.com>
@@ -70,3 +84,4 @@ executable shelltestrunner
                 ,test-framework
                 ,test-framework-hunit >= 0.2 && < 0.3
                 ,parseargs >= 0.1 && < 0.2
+                ,regexpr >= 0.5.1
