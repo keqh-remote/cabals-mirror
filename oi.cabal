@@ -1,5 +1,5 @@
 Name:			oi
-Version:		0.0.4
+Version:		0.0.5
 Category:		Data
 Synopsis:		Purely Functional Lazy Interaction with the outer world
 Description:		This package implements a data structure and operations on it 
