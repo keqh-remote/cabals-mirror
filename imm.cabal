@@ -1,6 +1,6 @@
 Name:                imm
-Version:             0.3.0.0
-Synopsis:            RSS-to-maildir tool
+Version:             0.4.0.0
+Synopsis:            Retrieve RSS/Atom feeds and write one mail per new item in a maildir.
 --Description:         
 --Homepage:
 Category:            Web
@@ -23,8 +23,10 @@ Library
     Exposed-modules:
         Imm.Boot,
         Imm.Config,
+        Imm.HTTP,
         Imm.Main,
         Imm.Feed,
+        Imm.OPML,
         Imm.Types,
         Imm.Util,
         Imm.Mail,
@@ -32,21 +34,27 @@ Library
     Build-depends:
         base == 4.*,
         bytestring,
+        case-insensitive,
         cmdargs,
         cond,
+        data-default,
         directory,
         dyre,
         feed,
         filepath,
-        HTTP,
+        http-conduit,
+        http-types,
         mime-mail,
         mtl,
         network,
         old-locale,
+        opml,
         random,
         text,
+        text-icu,
         time,
         timerep,
+        tls,
         utf8-string,
         xdg-basedir,
         xml
