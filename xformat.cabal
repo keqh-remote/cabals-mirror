@@ -1,10 +1,10 @@
 name:                   xformat
-version:                0.1
+version:                0.1.1
 synopsis:
 
   Extensible, type-safe formatting with scanf- and printf-like functions
 
-homepage:               http://github.com/spl/xformat/tree/master
+homepage:               http://github.com/spl/xformat
 description:
 
   /Warning:/ This version of the package is very experimental and the interface
@@ -33,12 +33,12 @@ category:               Text, Generics
 copyright:              (c) 2009 Sean Leather
 license:                BSD3
 license-file:           LICENSE
-author:                 Sean Leather,
+author:                 Sean Leather
 maintainer:             leather@cs.uu.nl
 stability:              experimental
 build-type:             Custom
 cabal-version:          >= 1.2.1
-tested-with:            GHC == 6.8.3, GHC == 6.10.1
+tested-with:            GHC == 6.8.3, GHC == 6.10.1, GHC == 7.4.1
 
 --------------------------------------------------------------------------------
 
