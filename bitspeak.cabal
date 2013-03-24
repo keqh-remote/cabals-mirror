@@ -1,24 +1,18 @@
 cabal-version: >= 1.2.3
 name: bitspeak
-homepage: http://bitbucket.org/mauricio/bitspeak
 synopsis:
-  Writing helper for those with Stephen Hawking like impairment.
+  Proof-of-concept tool for writing using binary choices.
 description:
-  This is a proof-of-concept application for exercising writing
+  This was an application for exercising writing
   using binary choices, i.e., selecting from two sets of
-  consecutive letters. This is tiresome, but for those suffering
-  from motor neuron diseases (specially one like amyotrophic
-  lateral sclerosis, where cognitive functions remain intact) even
-  this small program can already be used to comunicate with the
-  help of an assistant.
-version: 0.0.2
+  consecutive letters.
+version: 0.0.3
 license: GPL
 license-file: LICENSE
-maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
+maintainer: none
 author: Maurício C. Antunes
 build-type: Simple
 category: Accessibility
-bug-reports: http://bitbucket.org/mauricio/bitspeak/issues
 executable bitspeak
   main-is: Main.hs
   hs-source-dirs: src
