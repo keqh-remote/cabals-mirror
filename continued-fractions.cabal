@@ -1,5 +1,5 @@
 name:                   continued-fractions
-version:                0.9.1.0
+version:                0.9.1.1
 stability:              provisional
 
 cabal-version:          >= 1.6
@@ -17,13 +17,18 @@ description:            A type and some functions for manipulating and
 
 tested-with:            GHC == 6.8.3,
                         GHC == 6.10.4,
-                        GHC == 6.12.1, GHC == 6.12.3
+                        GHC == 6.12.1, GHC == 6.12.3,
+                        GHC == 7.0.4,
+                        GHC == 7.2.1,
+                        GHC == 7.4.1-rc1
 
 source-repository head
-  type: darcs
-  location: http://code.haskell.org/~mokus/continued-fractions
+  type:                 git
+  location:             https://github.com/mokus0/continued-fractions.git
 
 Library
   hs-source-dirs:       src
   exposed-modules:      Math.ContinuedFraction
   build-depends:        base >= 3 && <5
+  if impl(ghc >= 7.2)
+    ghc-options:        -trust base
