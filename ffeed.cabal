@@ -1,5 +1,5 @@
 name: ffeed
-version: 0.3.1
+version: 0.3.2
 synopsis: Haskell binding to the FriendFeed API
 description:
    The hs-ffeed API binding lets you access friendfeed.com's
@@ -45,7 +45,7 @@ library
  if flag(old-base)
    Build-Depends: base < 3
  else
-   Build-Depends: base > 3
+   Build-Depends: base >= 4
 
 executable main {
   build-depends:        base
