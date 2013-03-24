@@ -1,5 +1,5 @@
 name:                lojban
-version:             0.2
+version:             0.3
 synopsis:            Useful utilities for the Lojban language
 description:         Some utilities such as querying Jbovlaste XML 
                      exports for gismu, gloss, rafsi, etc. and 
@@ -14,7 +14,7 @@ cabal-Version:       >= 1.2
 build-type:          Simple
 
 library
-  build-depends: base,xml,strict,parsec,process,regex-compat,containers,tagsoup,HTTP,curl,random,directory,markov-chain
+  build-depends: base==3.*,xml,strict,parsec,process,regex-compat,containers,tagsoup,HTTP,curl,random,directory,markov-chain,mtl
   exposed-modules: Language.Lojban.Jbovlaste,Language.Lojban.Lujvo,Language.Lojban.Util,Language.Lojban.CLL,Language.Lojban.Jbobau,Language.Lojban.Mlismu,Language.Lojban.Camxes.Parse
   other-modules: WildCard, Utils
   ghc-options: -O2
