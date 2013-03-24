@@ -1,5 +1,5 @@
 name:                LazyVault
-version:             0.0
+version:             0.0.1
 synopsis:            A simple sandboxing tool for Haskell packages.
 homepage:            https://github.com/AtticHacker/lazyvault
 license:             GPL-3
