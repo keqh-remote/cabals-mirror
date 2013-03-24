@@ -1,5 +1,5 @@
 Name:                imagepaste
-Version:             0.2.0.0
+Version:             0.2.0.1
 Synopsis:            Command-line image paste utility
 Description:
     Command-line utility to paste images to image hosting sites.
@@ -60,4 +60,4 @@ Executable imagepaste
 source-repository this
   type:     mercurial
   location: https://bitbucket.org/balta2ar/imagepaste
-  tag:      0.2.0.0
+  tag:      0.2.0.1
