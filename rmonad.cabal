@@ -1,9 +1,9 @@
 name:           rmonad
 cabal-version:  >= 1.2
 build-type:     Simple
-copyright:      (c) 2008 Ganesh Sittampalam
+copyright:      (c) 2008 Ganesh Sittampalam, Peter Gavin
 stability:      provisional
-version:        0.2
+version:        0.3
 license:        BSD3
 license-file:   LICENSE
 category:       Control
@@ -23,3 +23,4 @@ description:
 exposed-modules:
         Control.RMonad
         Control.RMonad.AsMonad
+        Control.RMonad.Fix
