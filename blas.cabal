@@ -1,5 +1,5 @@
 name:            blas
-version:         0.5
+version:         0.6
 homepage:        http://stat.stanford.edu/~patperry/code/blas
 synopsis:        Bindings to the BLAS library
 description:
@@ -21,21 +21,42 @@ copyright:       (c) 2008. Patrick Perry <patperry@stanford.edu>
 author:          Patrick Perry
 maintainer:      Patrick Perry <patperry@stanford.edu>
 cabal-version:   >= 1.2.0
-build-type:      Custom
-tested-with:     GHC == 6.8.2
+build-type:      Simple
+tested-with:     GHC == 6.8.3
 
 extra-source-files:     INSTALL
                         NEWS
+                        TODO
+                        
+                        examples/LU.hs
+                        
                         tests/Makefile
+                        tests/Main.hs
+                        tests/Driver.hs
+                        
+                        tests/Generators/Vector/Dense.hs
+                        tests/Generators/Matrix.hs
+                        tests/Generators/Matrix/Banded.hs
+                        tests/Generators/Matrix/Dense.hs
+                        tests/Generators/Matrix/Diag.hs
+                        tests/Generators/Matrix/Perm.hs
+                        tests/Generators/Matrix/Herm/Banded.hs
+                        tests/Generators/Matrix/Herm/Dense.hs
+                        tests/Generators/Matrix/Tri/Banded.hs
+                        tests/Generators/Matrix/Tri/Dense.hs
+                        tests/Generators/Permutation.hs
+                        
+                        tests/Vector.hs
+                        tests/STVector.hs
+                        tests/Matrix.hs
+                        tests/STMatrix.hs
                         tests/Banded.hs
                         tests/Diag.hs
-                        tests/Matrix.hs
                         tests/Perm.hs
                         tests/HermMatrix.hs
                         tests/HermBanded.hs
                         tests/TriBanded.hs
                         tests/TriMatrix.hs
-                        tests/Vector.hs
 
 
 -- Below are the flags for specifying which CBLAS to link with.  If no flag
@@ -65,83 +86,95 @@ flag custom
     -- You must edit this file below to use this option.  
 
 library
-    exposed-modules:    BLAS.Access
+    exposed-modules:    
                         BLAS.C
                             BLAS.C.Level1
                             BLAS.C.Level2
                             BLAS.C.Level3
                             BLAS.C.Types
+
+                        BLAS.Conj
+
                         BLAS.Elem
                             BLAS.Elem.Base
+
                         BLAS.Internal
+
                         BLAS.Matrix
                             BLAS.Matrix.Base
                             BLAS.Matrix.Immutable
-                            BLAS.Matrix.ReadOnly
+                            BLAS.Matrix.Mutable
                             BLAS.Matrix.Solve
                                 BLAS.Matrix.Solve.Immutable
-                                BLAS.Matrix.Solve.ReadOnly
+                                BLAS.Matrix.Solve.Mutable
+
                         BLAS.Tensor
                             BLAS.Tensor.Base
-                            BLAS.Tensor.Dense
-                                BLAS.Tensor.Dense.Immutable
-                                BLAS.Tensor.Dense.ReadOnly
                             BLAS.Tensor.Immutable
-                            BLAS.Tensor.ReadOnly
-                            BLAS.Tensor.Mutable
-                            BLAS.Tensor.Scalable
+                            BLAS.Tensor.Read
+                            BLAS.Tensor.Write
+
                         BLAS.Types
-                        BLAS.Vector
-                        
+
+                        BLAS.UnsafeIOToM
+
                         Data.Matrix.Banded
                             Data.Matrix.Banded.IO
-                            Data.Matrix.Banded.Internal
-                            Data.Matrix.Banded.Operations
-                        
-                        Data.Matrix.Diag
+                            Data.Matrix.Banded.ST
+                            Data.Matrix.Banded.Class
                         
                         Data.Matrix.Dense
                             Data.Matrix.Dense.IO
-                            Data.Matrix.Dense.Internal
-                            Data.Matrix.Dense.Operations
-                        
+                            Data.Matrix.Dense.ST
+                            Data.Matrix.Dense.Class
+
+                        Data.Matrix.Diag 
                         Data.Matrix.Perm
-                        
                         Data.Matrix.Herm
-                            Data.Matrix.Herm.Banded
-                            Data.Matrix.Herm.Dense
-                        
                         Data.Matrix.Tri
-                            Data.Matrix.Tri.Banded
-                            Data.Matrix.Tri.Dense
-                        
+
                         Data.Vector.Dense
                             Data.Vector.Dense.IO
-                            Data.Vector.Dense.Internal
-                            Data.Vector.Dense.Operations
-                        
-                        Test.QuickCheck.Complex
-                        Test.QuickCheck.Permutation
-                        Test.QuickCheck.Vector
-                        Test.QuickCheck.Vector.Dense
-                        Test.QuickCheck.Matrix
-                        Test.QuickCheck.Matrix.Banded
-                        Test.QuickCheck.Matrix.Dense
-                        Test.QuickCheck.Matrix.Diag
-                        Test.QuickCheck.Matrix.Perm
-                        Test.QuickCheck.Matrix.Herm.Banded
-                        Test.QuickCheck.Matrix.Herm.Dense
-                        Test.QuickCheck.Matrix.Tri.Banded
-                        Test.QuickCheck.Matrix.Tri.Dense
-                        
+                            Data.Vector.Dense.ST
+                            Data.Vector.Dense.Class
+
+
     other-modules:      BLAS.C.Double
-                        BLAS.C.Zomplex    
+                        BLAS.C.Zomplex
                         
-    ghc-options:        -Wall                   
-    extensions:         BangPatterns, EmptyDataDecls, FlexibleContexts, 
+                        Data.Vector.Dense.Internal
+                        Data.Vector.Dense.Class.Internal
+                        Data.Vector.Dense.Class.Internal.Base
+                        Data.Vector.Dense.Class.Creating
+                        Data.Vector.Dense.Class.Elements
+                        Data.Vector.Dense.Class.Special
+                        Data.Vector.Dense.Class.Views
+                        Data.Vector.Dense.Class.Copying
+                        Data.Vector.Dense.Class.Properties
+                        Data.Vector.Dense.Class.Operations
+                        
+                        Data.Matrix.Banded.Internal
+                        Data.Matrix.Banded.Class.Internal
+                        Data.Matrix.Banded.Class.Creating
+                        Data.Matrix.Banded.Class.Elements
+                        Data.Matrix.Banded.Class.Special
+                        Data.Matrix.Banded.Class.Views
+                        Data.Matrix.Banded.Class.Copying
+                        
+                        Data.Matrix.Dense.Internal
+                        Data.Matrix.Dense.Class.Internal
+                        Data.Matrix.Dense.Class.Creating
+                        Data.Matrix.Dense.Class.Elements
+                        Data.Matrix.Dense.Class.Special
+                        Data.Matrix.Dense.Class.Views
+                        Data.Matrix.Dense.Class.Copying
+                        Data.Matrix.Dense.Class.Operations
+                        
+    ghc-options:        -Wall
+    extensions:         BangPatterns, FlexibleContexts, 
                         FlexibleInstances, ForeignFunctionInterface, 
                         FunctionalDependencies, MultiParamTypeClasses
-    build-depends:      base, ieee, permutation, storable-complex, QuickCheck
+    build-depends:      base, ieee, permutation, storable-complex
 
     
     if flag(atlas)
