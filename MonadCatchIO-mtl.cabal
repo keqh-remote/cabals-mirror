@@ -1,5 +1,5 @@
 name:                MonadCatchIO-mtl
-version:             0.3.0.2
+version:             0.3.0.3
 description:
         Provides a monad-transformer version of the @Control.Exception.catch@
         function. For this, it defines the @MonadCatchIO@ class, a subset of
@@ -9,6 +9,7 @@ description:
 synopsis:           Monad-transformer version of the Control.Exception module
 category:           Control
 license:            BSD3
+license-file:       LICENSE
 maintainer:         jcpetruzza@gmail.com
 homepage:           http://code.haskell.org/~jcpetruzza/MonadCatchIO-mtl
 
