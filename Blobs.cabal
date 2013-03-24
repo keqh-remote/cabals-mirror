@@ -1,5 +1,5 @@
 Name:            Blobs
-Version:         0.2
+Version:         0.3
 License:         LGPL
 License-file:    LICENCE-LGPL
 Author:          Arjan van IJzendoorn, Martijn Schrage, Malcolm Wallace
@@ -32,8 +32,14 @@ data-files:
   simple.blobpalette, wiring.blobs
 
 library
-  Build-Depends:   base >= 4 && < 5, haskell98, wx >= 0.9, wxcore >= 0.9, HaXml >= 1.14
-                   , polyparse, directory, pretty, containers
+  Build-Depends:   base >= 4 && < 5
+                   , wx >= 0.9
+                   , wxcore >= 0.9
+                   , HaXml >= 1.22.5
+                   , polyparse
+                   , directory
+                   , pretty
+                   , containers
   Hs-Source-Dirs:  src lib/DData
   exposed-modules: Graphics.Blobs.Colors
                  , Graphics.Blobs.Common
@@ -58,16 +64,15 @@ library
                  , Graphics.Blobs.Shape
                  , Graphics.Blobs.State
                  , Graphics.Blobs.StateUtil
-                 -- , Graphics.Blobs.XTC
   -- other-modules:   Graphics.Blobs
-  ghc-options:     -Wall
+  ghc-options:     -Wall -fno-warn-unused-do-bind
 
 executable blobs
   main-is: Main.hs
-  Build-Depends:   base >= 4 && < 5, haskell98, wx >= 0.9, wxcore >= 0.9, HaXml >= 1.14
+  Build-Depends:   base >= 4 && < 5, wx >= 0.9, wxcore >= 0.9, HaXml >= 1.14
                    , polyparse, directory, pretty, containers
   Hs-Source-Dirs:  src lib/DData
-  ghc-options:     -Wall
+  ghc-options:     -Wall -fno-warn-unused-do-bind
 
 source-repository head
   type:     git
