@@ -1,5 +1,5 @@
 Name:			tremulous-query
-Version:		1.0.3
+Version:		1.0.4
 Author:			Christoffer Öjeling
 Maintainer:		Christoffer Öjeling <christoffer@ojeling.net>
 License:		GPL-3
@@ -19,7 +19,7 @@ Source-Repository head
 
 Library
   Default-Language:     Haskell2010
-  Default-Extensions:   BangPatterns TupleSections NamedFieldPuns RecordWildCards
+  Default-Extensions:   BangPatterns TupleSections NamedFieldPuns RecordWildCards GADTs
                         ScopedTypeVariables OverloadedStrings DeriveDataTypeable
   Other-Extensions:     CPP StandaloneDeriving
   Exposed-Modules:      Network.Tremulous.Protocol
@@ -30,9 +30,10 @@ Library
                         Network.Tremulous.ByteStringUtils
                         Network.Tremulous.Scheduler
                         Network.Tremulous.MicroTime
-  Other-Modules:        Network.Tremulous.TupleReader
+                        Network.Tremulous.StrictMaybe
+                        Network.Tremulous.TupleReader
 
-  Build-Depends:        base>=4.3 && < 5, network, deepseq, containers, bytestring, attoparsec, mtl
+  Build-Depends:        base>=4.3 && < 5, network, containers, bytestring, attoparsec, mtl, deepseq
   if os(windows)
       Build-Depends:    Win32
   Ghc-Options:          -Wall -fno-warn-unused-do-bind -fno-warn-orphans -funbox-strict-fields
