@@ -1,5 +1,5 @@
 Name:            chp
-Version:         2.1.0
+Version:         2.1.0.1
 Synopsis:        An implementation of concurrency ideas from Communicating Sequential Processes
 License:         BSD3
 License-file:    LICENSE
