@@ -1,5 +1,5 @@
 name:                rss2irc
-version:             0.1
+version:             0.2
 homepage:            http://code.haskell.org/~dons/code/rss2irc
 license:             BSD3
 license-file:        LICENSE
