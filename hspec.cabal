@@ -1,5 +1,5 @@
 name:             hspec
-version:          1.4.3
+version:          1.4.4
 license:          BSD3
 license-file:     LICENSE
 copyright:        (c) 2011-2012 Trystan Spangler, (c) 2011-2012 Simon Hengel, (c) 2011 Greg Weber
@@ -51,7 +51,7 @@ Library
       base          == 4.*
     , setenv
     , silently      >= 1.1.1
-    , ansi-terminal == 0.5.*
+    , ansi-terminal >= 0.5
     , time
     , transformers  >= 0.2.2.0 && < 0.4.0
     , HUnit         >= 1.2.5
