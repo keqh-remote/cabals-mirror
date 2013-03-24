@@ -1,5 +1,5 @@
 name:           liboleg
-version:        2009.8.1
+version:        2009.9.1
 license:        BSD3
 license-file:   LICENSE
 author:         Oleg Kiselyov
@@ -26,6 +26,8 @@ library
             Data.Class2
 
             Control.CaughtMonadIO
+            Control.ShiftResetGenuine
+            Control.VarStateM
 
             Codec.Image.Tiff
 
