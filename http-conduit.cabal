@@ -1,5 +1,5 @@
 name:            http-conduit
-version:         1.8.5
+version:         1.8.5.1
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -108,7 +108,7 @@ test-suite test
                  , time
                  , network
                  , wai
-                 , warp >= 1.2.1
+                 , warp >= 1.3.6
                  , socks
                  , http-types
                  , cookie
