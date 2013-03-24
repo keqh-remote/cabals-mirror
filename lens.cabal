@@ -1,6 +1,6 @@
 name:          lens
 category:      Data, Lenses
-version:       2.3
+version:       2.4
 license:       BSD3
 cabal-version: >= 1.8
 license-file:  LICENSE
@@ -33,7 +33,7 @@ description:
   .
   The core of this hierarchy looks like:
   .
-  <<https://github.com/ekmett/lens/wiki/images/Hierarchy-2.3.png>>
+  <<https://github.com/ekmett/lens/wiki/images/Hierarchy-2.4.png>>
   .
   You can compose any two elements of the hierarchy above using (.) from the Prelude, and you can
   use any element of the hierarchy as any type it links to above it.
@@ -100,7 +100,7 @@ library
     base             >= 4.3   && < 5,
     containers       >= 0.4.2 && < 0.6,
     mtl              >= 2.1.1 && < 2.2,
-    template-haskell >= 2.4   && < 2.8,
+    template-haskell >= 2.4   && < 2.9,
     transformers     >= 0.3   && < 0.4
 
   exposed-modules: Control.Exception.Lens
@@ -116,11 +116,14 @@ library
                    Control.Lens.IndexedTraversal
                    Control.Lens.Internal
                    Control.Lens.Iso
+                   Control.Lens.Isomorphic
                    Control.Lens.Representable
                    Control.Lens.Setter
                    Control.Lens.TH
                    Control.Lens.Traversal
+                   Control.Lens.Tuple
                    Control.Lens.Type
+                   Control.Lens.Zoom
                    Data.Bits.Lens
                    Data.Complex.Lens
                    Data.Dynamic.Lens
@@ -140,7 +143,10 @@ library
   build-depends:   array >= 0.3.0.2 && < 0.5
   exposed-modules: Data.Array.Lens
 
-  build-depends:   bytestring >= 0.9.1.10 && < 0.10
+  build-depends:   filepath >= 1.2.0.0 && < 1.4
+  exposed-modules: System.FilePath.Lens
+
+  build-depends:   bytestring >= 0.9.1.10 && < 0.11
   exposed-modules: Data.ByteString.Lens Data.ByteString.Lazy.Lens
 
   build-depends:   text >= 0.11.1.5 && < 0.12
