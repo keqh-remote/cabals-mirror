@@ -1,5 +1,5 @@
 name:               MetaObject
-version:            0.0.2
+version:            0.0.3
 copyright:          2006 Caio Marcelo, 2008 Audrey Tang
 license:            BSD3
 license-file:       LICENSE
@@ -9,13 +9,9 @@ synopsis:           A meta-object system for Haskell based on Perl 6
 description:        A meta-object system for Haskell based on Perl 6
 stability:          experimental
 build-type:         Simple
-category:           Development
+category:           Development, Pugs
 exposed-modules:    MO.Base MO.Compile.Attribute MO.Compile.Class
                     MO.Compile.Role MO.Compile MO.Run MO.Util MO.Capture MO.Util.C3
 build-depends:      base, haskell98, stringtable-atom, containers
-extra-source-files: README
+extra-source-files: README, examples/si.hs, examples/old/mi.hs examples/old/roles.hs
 hs-source-dirs:     src
-
--- executable:         examples/si
--- main-is:            examples/si.hs
--- hs-source-dirs:     ., src
