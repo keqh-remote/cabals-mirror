@@ -1,5 +1,5 @@
 Name:                   io-choice
-Version:                0.0.0
+Version:                0.0.1
 Author:                 Kazu Yamamoto <kazu@iij.ad.jp>
 Maintainer:             Kazu Yamamoto <kazu@iij.ad.jp>
 License:                BSD3
@@ -25,4 +25,4 @@ Library
 
 Source-Repository head
   Type:                 git
-  Location:             git clone git://github.com/kazu-yamamoto/alternative-io
+  Location:             git clone git://github.com/kazu-yamamoto/io-choice
