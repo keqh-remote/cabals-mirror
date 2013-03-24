@@ -7,7 +7,7 @@ Name:                constructive-algebra
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1.4
+Version:             0.1.5
 
 Synopsis:            A library of constructive algebra.
 Description:         
@@ -53,12 +53,14 @@ Library
                        Algebra.Structures.IntegralDomain, 
                        Algebra.Structures.Field,
                        Algebra.Structures.BezoutDomain,
+                       Algebra.Structures.PruferDomain,
                        Algebra.Structures.EuclideanDomain,
                        Algebra.Structures.StronglyDiscrete,
                        Algebra.Structures.FieldOfFractions,
                        Algebra.Structures.GCDDomain, 
                        Algebra.Structures.Coherent,
                        Algebra.TypeChar.Char,
+                       Algebra.FieldOfRationalFunctions,
                        Algebra.Ideal,
                        Algebra.Matrix,
                        Algebra.PLM,
