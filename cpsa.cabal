@@ -1,5 +1,5 @@
 Name:			cpsa
-Version:		2.0.3
+Version:		2.0.4
 Maintainer:		ramsdell@mitre.org
 Cabal-Version:		>= 1.2
 License:		BSD3
@@ -93,7 +93,7 @@ Flag Old
 
 Executable cpsa
   Main-Is:		CPSA/Lib/Main.hs
-  Build-Depends:	base <= 4.2.0.0, containers
+  Build-Depends:	base >= 3 &&< 5, containers
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
@@ -113,7 +113,7 @@ Executable cpsa
 
 Executable cpsagraph
   Main-Is:		CPSA/Graph/Main.hs
-  Build-Depends:	base <= 4.2.0.0, containers
+  Build-Depends:	base >= 3 && < 5, containers
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
@@ -130,7 +130,7 @@ Executable cpsagraph
 
 Executable cpsashapes
   Main-Is:		CPSA/Shapes/Main.hs
-  Build-Depends:	base <= 4.2.0.0, containers
+  Build-Depends:	base >= 3 && < 5, containers
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
@@ -144,7 +144,7 @@ Executable cpsashapes
 
 Executable cpsaannotations
   Main-Is:		CPSA/Annotations/Main.hs
-  Build-Depends:	base <= 4.2.0.0, containers
+  Build-Depends:	base >= 3 && < 5, containers
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
@@ -160,7 +160,7 @@ Executable cpsaannotations
 
 Executable cpsaparameters
   Main-Is:		CPSA/Parameters/Main.hs
-  Build-Depends:	base <= 4.2.0.0, containers
+  Build-Depends:	base >= 3 && < 5, containers
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
@@ -174,7 +174,7 @@ Executable cpsaparameters
 
 Executable cpsapp
   Main-Is:		CPSA/Pretty/Main.hs
-  Build-Depends:	base <= 4.2.0.0, containers
+  Build-Depends:	base >= 3 && < 5, containers
   GHC-Options:
     -Wall -fno-warn-name-shadowing -fwarn-unused-imports
   Hs-Source-Dirs:	src
