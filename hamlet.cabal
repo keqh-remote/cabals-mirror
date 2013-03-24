@@ -1,5 +1,5 @@
 name:            hamlet
-version:         0.7.3
+version:         0.8.0
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -23,7 +23,7 @@ description:
     >                 Not married
 category:        Web, Yesod
 stability:       Stable
-cabal-version:   >= 1.6
+cabal-version:   >= 1.8
 build-type:      Simple
 homepage:        http://docs.yesodweb.com/
 
@@ -32,6 +32,8 @@ flag test
   default: False
 
 library
+    if flag(test)
+        Buildable: False
     build-depends:   base             >= 4       && < 5
                    , bytestring       >= 0.9     && < 0.10
                    , template-haskell
@@ -40,14 +42,15 @@ library
                    , failure          >= 0.1     && < 0.2
                    , text             >= 0.7     && < 0.12
                    , containers       >= 0.2     && < 0.5
-                   , json-types       >= 0.1     && < 0.2
-                   , json-enumerator  >= 0.0     && < 0.1
-                   , blaze-builder    >= 0.2     && < 0.3
+                   , blaze-builder    >= 0.2     && < 0.4
+                   , process          >= 1.0     && < 1.1
     exposed-modules: Text.Hamlet
                      Text.Hamlet.RT
                      Text.Cassius
                      Text.Lucius
                      Text.Julius
+                     Text.Coffee
+                     Text.Romeo
     other-modules:   Text.Hamlet.Parse
                      Text.Hamlet.Quasi
                      Text.Hamlet.Debug
@@ -56,17 +59,6 @@ library
                      Text.Css
     ghc-options:     -Wall
 
-executable             runtests
-    if flag(test)
-        Buildable: True
-        cpp-options:   -DTEST
-        build-depends: QuickCheck >= 2 && < 3,
-                       HUnit,
-                       test-framework-hunit,
-                       test-framework
-    else
-        Buildable: False
-    main-is:         runtests.hs
 
 source-repository head
   type:     git
