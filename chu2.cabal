@@ -1,5 +1,5 @@
 Name:                 chu2
-Version:              2012.11.18.1
+Version:              2012.11.18.2
 Build-type:           Simple
 Synopsis:             FFI for Chu2 Agda Web Server Interface
 Description:
@@ -18,7 +18,6 @@ data-files:           readme.md
                       Nemesis
                       Guardfile
                       src/Chu2.agda
-                      src/Chu2/ByteString.agda
                       src/Chu2/Handler/SnapServer.agda
                       src/Hello.agda
                       src/Hello2.agda
