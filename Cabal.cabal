@@ -1,5 +1,5 @@
 Name: Cabal
-Version: 1.16.0
+Version: 1.16.0.1
 Copyright: 2003-2006, Isaac Jones
            2005-2011, Duncan Coutts
 License: BSD3
@@ -8,7 +8,7 @@ Author: Isaac Jones <ijones@syntaxpolice.org>
         Duncan Coutts <duncan@community.haskell.org>
 Maintainer: cabal-devel@haskell.org
 Homepage: http://www.haskell.org/cabal/
-bug-reports: http://hackage.haskell.org/trac/hackage/
+bug-reports: https://github.com/haskell/cabal/issues
 Synopsis: A framework for packaging Haskell software
 Description:
         The Haskell Common Architecture for Building Applications and
@@ -150,6 +150,7 @@ test-suite unit-tests
                  PackageTests.TestStanza.Check,
                  PackageTests.TestSuiteExeV10.Check,
                  PackageTests.BenchmarkStanza.Check,
+                 PackageTests.TemplateHaskell.Check,
                  PackageTests.PackageTester
   hs-source-dirs: tests
   build-depends:
