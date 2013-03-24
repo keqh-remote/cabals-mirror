@@ -1,5 +1,5 @@
 Name:                executable-path
-Version:             0.0.2
+Version:             0.0.3
 Synopsis:            Finding out the full path of the executable.
 
 Description:         The documentation of "System.Environment.getProgName" says that
@@ -17,18 +17,16 @@ Maintainer:          bkomuves (plus) hackage (at) gmail (dot) com
 Homepage:            http://code.haskell.org/~bkomuves/
 Stability:           Experimental
 Category:            System
-Tested-With:         GHC == 6.10.1 
+Tested-With:         GHC == 6.12.3 
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 
-Flag splitBase
-  Description: Choose the new smaller, split-up base package.
-
 Library
-  if flag(splitBase)
-    Build-Depends:       base >= 3 && < 5 , filepath 
-  else
-    Build-Depends:       base >= 2 && < 3
+  Build-Depends:       base >= 3 && < 5 , filepath 
+  
+  if impl(ghc)
+    cpp-options:         -DWE_HAVE_GHC
+    build-depends:       directory
     
   Exposed-Modules:     System.Environment.Executable   
   Extensions:          ForeignFunctionInterface, CPP, EmptyDataDecls
