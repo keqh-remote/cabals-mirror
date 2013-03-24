@@ -7,7 +7,7 @@
 -- 5. Push branches and tags.
 
 name: reactive-thread
-version: 0.3.1.0
+version: 0.3.2.1
 
 author: Matt "strager" Glazar
 build-type: Simple
@@ -25,7 +25,12 @@ description:
 source-repository this
   type: git
   location: https://github.com/strager/reactive-thread.git
-  tag: 0.3.1.0
+  tag: 0.3.2.1
+
+flag profile
+  default: False
+  description:
+    Enables profiling (i.e. -fprof-auto).
 
 library
   exposed-modules:
@@ -43,11 +48,29 @@ library
     Reactive.Thread.Internal.VarSource
 
   build-depends:
-    base == 4.5.*,
+    base == 4.5.* || == 4.6.*,
     monad-parallel,
+    stm,
+    transformers
+
+  ghc-options:
+    -Wall
+
+  if flag(profile)
+    ghc-options:
+      -fprof-auto
+
+executable example-sdl
+  main-is: examples/sdl/Main.hs
+
+  build-depends:
+    base,
+    monad-parallel,
+    reactive-thread,
     SDL,
     stm,
     transformers
 
   ghc-options:
     -Wall
+    -rtsopts
