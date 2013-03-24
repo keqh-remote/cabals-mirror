@@ -1,5 +1,5 @@
 name:           scrypt
-version:        0.1
+version:        0.1.1
 license:        BSD3
 license-file:   LICENSE
 category:       Cryptography
@@ -15,14 +15,14 @@ build-type:     Simple
 synopsis:
     Stronger password hashing via sequential memory-hard functions.
 description:
-    scrypt provides bindings to Colin Percival's `scrypt` 
+    This package provides bindings to Colin Percival's `scrypt` 
     implementation (<http://www.tarsnap.com/scrypt.html>). Scrypt is a key
     derivation function designed to be far more secure against hardware
     brute-force attacks than alternative functions such as PBKDF2 or bcrypt.
     .
     Details of the scrypt key derivation function are given in a paper by
     Colin Percival, Stronger Key Derivation via Sequential Memory-Hard
-    Functions (<http://www.tarsnap.com/scrypt/scrypt-slides.pdf>).
+    Functions: <http://www.tarsnap.com/scrypt/scrypt.pdf>.
 
 extra-source-files:
     README.markdown,
