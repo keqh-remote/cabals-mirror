@@ -1,5 +1,5 @@
 Name:          ihttp
-Version:       0.2.1
+Version:       0.2.2
 Category:      Network
 Synopsis:      Incremental HTTP iteratee
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -37,6 +37,7 @@ Library
 
 -- Executable ihttp-test
 --   Build-depends:
---     base >= 4 && <= 5
+--     base >= 4 && <= 5,
+--     network >= 2.2.1.10
 --   Main-is: Test.hs
 --   GHC-Options: -W
