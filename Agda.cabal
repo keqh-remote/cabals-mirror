@@ -1,5 +1,5 @@
 name:            Agda
-version:         2.2.4
+version:         2.2.6
 cabal-version:   >= 1.6.0.3 && < 2
 build-type:      Simple
 license:         OtherLicense
@@ -21,9 +21,9 @@ description:
   Agda is also a proof assistant: It is an interactive system for
   writing and checking proofs. Agda is based on intuitionistic type
   theory, a foundational system for constructive mathematics developed
-  by the Swedish logician Per Martin-Löf. It has many similarities
-  with other proof assistants based on dependent types, such as Coq,
-  Epigram and NuPRL.
+  by the Swedish logician Per Martin-L&#xf6;f. It has many
+  similarities with other proof assistants based on dependent types,
+  such as Coq, Epigram and NuPRL.
   .
   Note that if you want to use the command-line program (agda), then
   you should also install the Agda-executable package. The Agda
@@ -34,7 +34,7 @@ description:
   Note also that this library does not follow the package versioning
   policy, because the library is only intended to be used by the Emacs
   mode and the Agda-executable package.
-tested-with:     GHC == 6.10.3
+tested-with:     GHC == 6.10.4 && == 6.12.1
 extra-source-files: src/full/Agda/undefined.h
                     README
                     doc/release-notes/*.txt
@@ -49,14 +49,23 @@ source-repository head
 source-repository this
   type:     darcs
   location: http://code.haskell.org/Agda/
-  tag:      2.2.4
+  tag:      2.2.6
+
+flag use-locale
+  description:
+    Try to use the character encoding specified by the locale for most
+    of the IO going to/from stdin and stdout. (Note that source files
+    must always be encoded using UTF8.)
 
 library
   hs-source-dirs:  src/full
-  build-depends:   base >= 4.1 && < 4.2,
-                   mtl >= 1.1 && < 2,
-                   QuickCheck == 2.1.0.1,
-                   haskell98 >= 1.0.1 && < 2,
+  if flag(use-locale)
+    build-depends: base == 4.2.*
+  else
+    build-depends: base == 4.1.*,
+                   utf8-string == 0.3.*
+  build-depends:   mtl >= 1.1 && < 2,
+                   QuickCheck >= 2.1.0.2 && < 2.2,
                    haskell-src >= 1.0.1.1 && < 2,
                    containers >= 0.1.0 && < 1,
                    pretty >= 1 && < 2,
@@ -69,13 +78,11 @@ library
                    filepath >= 1.1 && < 2,
                    process >= 1.0.1.0 && < 2,
                    haskeline >= 0.3 && < 0.7,
-                   utf8-string >= 0.3 && < 0.4,
-                   xhtml >= 3000.2 && < 3000.3,
-                   syb >= 0.1 && < 0.2
-  if impl(ghc >= 6.10)
-    build-depends: ghc-prim >= 0.1 && < 1
+                   xhtml == 3000.2.*,
+                   syb == 0.1.*
   build-tools:     happy >= 1.15 && < 2,
                    alex >= 2.0.1 && < 3
+  extensions:      CPP
   exposed-modules: Agda.Main
                    Agda.Interaction.BasicOps
                    Agda.Interaction.GhciTop
@@ -97,6 +104,7 @@ library
                    Agda.Compiler.MAlonzo.Primitives
                    Agda.Interaction.CommandLine.CommandLine
                    Agda.Interaction.Exceptions
+                   Agda.Interaction.FindFile
                    Agda.Interaction.Highlighting.Emacs
                    Agda.Interaction.Highlighting.Generate
                    Agda.Interaction.Highlighting.HTML
@@ -162,7 +170,9 @@ library
                    Agda.TypeChecking.Free
                    Agda.TypeChecking.Implicit
                    Agda.TypeChecking.Injectivity
+                   Agda.TypeChecking.Level
                    Agda.TypeChecking.MetaVars
+                   Agda.TypeChecking.MetaVars.Occurs
                    Agda.TypeChecking.Monad.Base
                    Agda.TypeChecking.Monad.Builtin
                    Agda.TypeChecking.Monad.Closure
@@ -218,11 +228,12 @@ library
                    Agda.Utils.Graph
                    Agda.Utils.Hash
                    Agda.Utils.Impossible
-                   Agda.Utils.IO
+                   Agda.Utils.IO.Binary
+                   Agda.Utils.IO.Locale
+                   Agda.Utils.IO.UTF8
                    Agda.Utils.List
                    Agda.Utils.Map
                    Agda.Utils.Maybe
-                   Agda.Utils.Monad.Undo
                    Agda.Utils.Monad
                    Agda.Utils.Permutation
                    Agda.Utils.Pointer
@@ -230,7 +241,6 @@ library
                    Agda.Utils.QuickCheck
                    Agda.Utils.ReadP
                    Agda.Utils.SemiRing
-                   Agda.Utils.Serialise
                    Agda.Utils.Size
                    Agda.Utils.String
                    Agda.Utils.Suffix
@@ -241,20 +251,38 @@ library
                    Agda.Utils.Unicode
                    Agda.Utils.Warshall
                    Agda.Version
+                   Agda.Auto.Auto
+                   Agda.Auto.Convert
+                   Agda.Auto.Typecheck
+                   Agda.Auto.NarrowingSearch
+                   Agda.Auto.Print
+                   Agda.Auto.Syntax
+                   Agda.Auto.SearchControl
   other-modules:   Paths_Agda
-  ghc-options:     -auto-all -w -Werror -fwarn-dodgy-imports
+  if impl(ghc < 6.12)
+    ghc-options:   -auto-all -w -Werror -fwarn-dodgy-imports
                    -fwarn-duplicate-exports -fwarn-hi-shadowing
                    -fwarn-incomplete-patterns -fwarn-missing-fields
                    -fwarn-missing-methods -fwarn-overlapping-patterns
-  if impl(ghc >= 6.10)
-    ghc-options:   -fwarn-warnings-deprecations -fwarn-deprecated-flags
+                   -fwarn-warnings-deprecations -fwarn-deprecated-flags
                    -fwarn-dodgy-foreign-imports
+  if impl(ghc >= 6.12)
+    ghc-options:   -auto-all -w -Werror -fwarn-dodgy-imports
+                   -fwarn-duplicate-exports -fwarn-hi-shadowing
+                   -fwarn-incomplete-patterns -fwarn-missing-fields
+                   -fwarn-missing-methods -fwarn-overlapping-patterns
+                   -fwarn-warnings-deprecations -fwarn-deprecated-flags
+                   -fwarn-dodgy-foreign-imports
+                   -fwarn-wrong-do-bind -fwarn-dodgy-exports
 
 executable agda-mode
   hs-source-dirs:  src/agda-mode
   main-is:         Main.hs
   other-modules:   Paths_Agda
-  build-depends:   base >= 4.1 && < 4.2,
-                   filepath >= 1.1 && < 2,
-                   process >= 1.0.1.0 && < 2,
-                   utf8-string >= 0.3 && < 0.4
+  if flag(use-locale)
+    build-depends: base == 4.2.*
+  else
+    build-depends: base == 4.1.*,
+                   utf8-string == 0.3.*
+  build-depends:   filepath >= 1.1 && < 2,
+                   process >= 1.0.1.0 && < 2
