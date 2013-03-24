@@ -1,5 +1,5 @@
 Name:                zipedit
-Version:             0.2.2
+Version:             0.2.3
 Stability:           experimental
 
 Author:              Brent Yorgey
@@ -16,7 +16,7 @@ Homepage:            http://code.haskell.org/~byorgey/code/zipedit
 
 data-files:          README
 
-Build-Depends:       base, mtl
+Build-Depends:       base, mtl, directory, process
 Build-Type:          Simple
 
 Exposed-Modules:     System.Console.ZipEdit
