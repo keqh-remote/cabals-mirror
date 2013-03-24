@@ -1,5 +1,5 @@
 Name:           roundtrip-xml
-Version:        0.1.0.0
+Version:        0.2.0.0
 Synopsis:       Bidirectional (de-)serialization for XML.
 Description:    Roundtrip allows the definition of bidirectional
                 (de-)serialization specifications. This package provides
@@ -16,12 +16,9 @@ Build-type:     Simple
 Cabal-version:  >=1.8
 
 Library
-  GHC-Prof-Options: -auto-all -caf-all
   Hs-Source-Dirs: src
   Exposed-modules:
       Text.Roundtrip.Xml
-    , Text.Roundtrip.Xml.Classes
-    , Text.Roundtrip.Xml.Combinators
     , Text.Roundtrip.Xml.Printer
     , Text.Roundtrip.Xml.Parser
     , Text.Roundtrip.Xml.Enumerator
@@ -43,5 +40,5 @@ Library
     , blaze-builder == 0.2.*
     , blaze-builder-enumerator == 0.2.*
     , pretty == 1.0.*
-    , parsec == 3.1.*
-    , roundtrip == 0.1.*
+    , roundtrip == 0.2.*
+    , roundtrip-string == 0.1.*
