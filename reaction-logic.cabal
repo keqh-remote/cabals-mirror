@@ -1,7 +1,7 @@
 
 
 name: reaction-logic
-version: 2010.11.14
+version: 2010.11.17
 license: BSD3
 license-file: LICENSE
 maintainer: Paolo Veronelli <paolo.veronelli@gmail.com> 
@@ -20,6 +20,10 @@ Library
   exposed-modules:
    Data.Reactor.MinimalGraph
    Data.Reactor.Pruned
+   Data.Reactor.Reaction
+   Data.Reactor.Operational
+   Data.Reactor.Serialization
+   Data.Reactor.Untypeds
    Data.Reactor
 
   ghc-options: -Wall 
