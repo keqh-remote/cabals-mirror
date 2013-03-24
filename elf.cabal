@@ -1,12 +1,12 @@
 Name:          elf
-Version:       0.26
+Version:       0.27
 License:       BSD3
 License-file:  LICENSE
 Category:      Data
 Author:        Erik Charlebois
 Copyright:     Erik Charlebois
 Maintainer:    Erik Charlebois <erikcharlebois@gmail.com>
-Stability:     unstable
+Stability:     stable
 Cabal-Version: >= 1.6
 Homepage:      http://github.com/erikcharlebois/elf
 Build-Depends: base
