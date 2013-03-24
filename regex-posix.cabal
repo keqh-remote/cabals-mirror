@@ -2,7 +2,7 @@
 -- To fix for cabal < 1.1.4 comment out the Extra-Source-Files line
 -- ****************************************************************
 Name:                   regex-posix
-Version:                0.72.0.2
+Version:                0.72.0.1
 -- Cabal-Version:       >=1.1.4
 License:                BSD3
 License-File:           LICENSE
@@ -20,8 +20,12 @@ Build-Type:             Configure
 Cabal-Version:          >=1.2
 
 Extra-Source-Files:     aclocal.m4 config.mk.in configure configure.ac
-                        include/HsRegexPosixConfig.h.in
                         regex-posix.buildinfo.in
+                        include/HsRegexPosixConfig.h.in include/regex/regex.h
+                        cbits/COPYRIGHT cbits/cclass.h cbits/cname.h
+                        cbits/regex2.h cbits/utils.h cbits/engine.c
+                        cbits/reallocf.c cbits/regcomp.c cbits/regerror.c
+                        cbits/regexec.c cbits/regfree.c
 
 Flag split-base
 
