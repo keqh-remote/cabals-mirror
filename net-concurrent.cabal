@@ -1,5 +1,5 @@
 name: net-concurrent
-version: 0.0.1
+version: 0.1.0
 cabal-version: -any
 build-type: Simple
 license: BSD3
@@ -31,7 +31,6 @@ data-dir: ""
 extra-source-files:
 extra-tmp-files:
 exposed-modules: Control.Concurrent.Network.NVar
-                 Control.Concurrent.Network.Protocol
                  Control.Concurrent.Network.Process
 				 Control.Concurrent.Network.Slave
                  Control.Concurrent.Network.Master
@@ -51,7 +50,7 @@ includes:
 install-includes:
 include-dirs:
 hs-source-dirs: src
-other-modules:
+other-modules: Control.Concurrent.Network.Protocol
 ghc-prof-options:
 ghc-shared-options:
 ghc-options:
