@@ -1,5 +1,5 @@
 Name:           hakyll
-Version:        1.0.1
+Version:        1.1
 
 Synopsis:       A simple static site generator library.
 Description:
@@ -36,6 +36,7 @@ library
                    time >= 1,
                    parallel >= 2
   exposed-modules: Text.Hakyll
+                   Text.Hakyll.Hakyll
                    Text.Hakyll.Render
                    Text.Hakyll.Renderable
                    Text.Hakyll.Renderables
