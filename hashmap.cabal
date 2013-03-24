@@ -1,5 +1,5 @@
 Name:                hashmap
-Version:             1.0.0.1
+Version:             1.0.0.2
 Synopsis:            Persistent containers HashMap and HashSet.
 Description:         An implementation of persistent 'HashMap' and 'HashSet' on
                      top of 'Data.IntMap.IntMap' and 'Data.IntSet.IntSet',
@@ -23,7 +23,7 @@ Stability:           Provisional
 Category:            Data
 Build-type:          Simple
 Cabal-version:       >= 1.2
-
+Extra-source-files:  CHANGES
 
 Library
   Exposed-modules:   Data.Hashable, Data.HashMap, Data.HashSet
