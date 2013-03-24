@@ -1,5 +1,5 @@
 name:               yeganesh
-version:            1.1
+version:            2.0
 cabal-version:      >=1.2
 build-type:         Simple
 license:            BSD3
@@ -20,5 +20,6 @@ Executable yeganesh
                     directory >= 1.0,
                     filepath >= 1.1,
                     process >= 1.0,
-                    strict >= 0.3
+                    strict >= 0.3,
+                    time >= 1.1
     ghc-options:    -Wall
