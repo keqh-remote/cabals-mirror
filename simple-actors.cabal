@@ -7,12 +7,12 @@ Name:                simple-actors
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3.0
+Version:             0.4.0
 
 -- A short (one-line) description of the package.
 Synopsis:            A library for more structured concurrent programming, based
                      on the Actor Model
-Homepage:            http://coder.bsimmons.name/blog/2011/05/simple-actors-a-simple-actor-model-concurrency-library/
+Homepage:            http://brandon.si/code/simple-actors-0-1-0-released/
 
 -- A longer description of the package
 Description:         simple-actors is an EDSL-style library for writing
@@ -21,15 +21,23 @@ Description:         simple-actors is an EDSL-style library for writing
                      single input value, perform some 'Action's, and return the
                      Behavior to process the next input message it receives.
                      .
-                     /CHANGES/ 0.2.1 - 0.3:
+                     We also extend the strict actor model in various elegant ways.
+                     See source for this type of discussion.
                      .
-                     - added (@\<-\>@) convenience operator, and strict @send'@
+                     /CHANGES/: 0.3.0 - 0.4
                      .
-                     - add composition\/transformation functions for Mailboxes
+                     - extend 'Control.Concurrent.Actors.spawn' to transparently support "joined
+                       mailboxes", i.e. join-patterns, supporting synchronization between actors.
+                       'Control.Concurrent.Actors.spawn' becomes polymorphic in new 'Control.Concurrent.Actors.Sources' class
                      .
-                     - drop support for older base and transformers, no more CPP
+                     - old @spawn_@ subsumed by polymorphic @spawn@, with @()@
                      .
-                     - depend on chan-split 0.4
+                     - @send@ and other send-like functions restricted to Mailboxes, use 'out' to convert arbitrary chans to Mailboxes
+                     .
+                     - productMb, faninMb, and fanoutMb renamed 'Control.Concurrent.Actors.contraProduct', 'Control.Concurrent.Actors.contraFanin', and 'Control.Concurrent.Actors.contraFanout', and given more general types
+                     .
+                     - old @spawnReading@ removed
+                     .
 
 
 -- The license under which the package is released.
@@ -73,9 +81,9 @@ Library
   -- Packages needed in order to build this package.
   Build-depends:       base >= 4.3 && < 5    
                      , chan-split >= 0.4.0
-                     , mtl >= 2
+                     , mtl >= 2.1.1
                      , transformers >= 0.3
-                     , contravariant
+                     , contravariant >= 0.2.0.1
                     
   
   ghc-options:        -Wall
