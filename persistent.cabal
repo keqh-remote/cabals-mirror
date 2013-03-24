@@ -1,5 +1,5 @@
 name:            persistent
-version:         0.0.0.1
+version:         0.1.0
 license:         BSD3
 license-file:    LICENSE
 author:          Michael Snoyman <michael@snoyman.com>
@@ -17,15 +17,19 @@ library
                      template-haskell >= 2.4 && < 2.5,
                      bytestring >= 0.9.1 && < 0.10,
                      MonadCatchIO-transformers >= 0.2.2 && < 0.3,
-                     time >= 1.1.4 && < 1.2,
+                     transformers >= 0.2.1 && < 0.3,
+                     time >= 1.1.4 && < 1.3,
                      utf8-string >= 0.3.4 && < 0.4,
                      text >= 0.7.1 && < 0.8,
-                     hamlet >= 0.3.1 && < 0.4,
-                     web-routes-quasi >= 0.4.0 && < 0.5
+                     blaze-html >= 0.1 && < 0.2,
+                     web-routes-quasi >= 0.5.0 && < 0.6,
+                     parsec >= 2.1 && < 4
     exposed-modules: Database.Persist
-                     Database.Persist.Helper
+                     Database.Persist.Base
+                     Database.Persist.TH
                      Database.Persist.Quasi
                      Database.Persist.GenericSql
+                     Database.Persist.Pool
     ghc-options:     -Wall
 
 source-repository head
