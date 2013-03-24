@@ -1,5 +1,5 @@
 name:			traypoweroff
-version:		0.9.0
+version:		1.0.0
 cabal-Version:		>= 1.6
 description:		PowerOff Tray Icon
 license:		BSD3
