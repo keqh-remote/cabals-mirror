@@ -1,5 +1,5 @@
 name:			manatee
-version:		0.2.0
+version:		0.2.1
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -63,7 +63,7 @@ description:    Manatee is Haskell integrated environment written in Haskell.
  .
  6) Install Manatee (same, don't use root permission):
  .
- > cabal install manatee-core manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee-curl manatee-terminal manatee
+ > cabal install manatee-core manatee-browser manatee-editor manatee-filemanager manatee-imageviewer manatee-ircclient manatee-mplayer manatee-pdfviewer manatee-processmanager manatee-reader manatee-curl manatee-terminal manatee-welcome manatee
  .
  That's all, then type command "manatee" to play it! :)
  .
