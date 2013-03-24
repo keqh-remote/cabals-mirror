@@ -1,5 +1,5 @@
 name:            mersenne-random-pure64
-version:         0.1
+version:         0.1.1
 homepage:        http://code.haskell.org/~dons/code/mt19937-random
 synopsis:        Generate high quality pseudorandom numbers purely using a Mersenne Twister
 description:
@@ -27,7 +27,6 @@ maintainer:      Don Stewart <dons@galois.com>
 cabal-version: >= 1.2.0
 build-type:      Configure
 tested-with:     GHC ==6.8.2
-build-type:      Configure
 
 flag small_base
   description: Build with new smaller base library
