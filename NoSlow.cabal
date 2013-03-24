@@ -1,11 +1,11 @@
 Name:           NoSlow
-Version:        0.1.1
+Version:        0.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
 Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
-Copyright:      Roman Leshchinskiy 2009
-Homepage:       http://www.cse.unsw.edu.au/~rl/code/darcs/NoSlow
+Copyright:      Roman Leshchinskiy 2009-10
+Homepage:       http://code.haskell.org/NoSlow
 Category:       Development, Profiling
 Synopsis:       Microbenchmarks for various array libraries
 Description:
@@ -14,29 +14,43 @@ Description:
         standard lists, primitive sequential arrays from the DPH project,
         uvector, vector (primitive, storable and boxed arrays) and
         storablevector. At the moment, it implements a bunch of fairly random
-        loop micro-kernels but will include many more benchmarks in the future.
+        loop micro-kernels and a couple of small array algorithms. It will
+        include many more benchmarks in the future.
         .
         In its present state, NoSlow /cannot/ be used to reliably compare the
         performance of the benchmarked libraries. It can be quite helpful for
         identifying cases where a closer inspection of the generated code
         might be warranted, however.
         .
-        The package builds two binaries.
+        The package builds two binaries: @noslow@ and @noslow-table@.
         .
-        [@noslow -u log@] runs the benchmarks and writes the results to 'log'
+        [@noslow -o log@] runs the benchmarks and writes the results to 'log'
         .
-        [@noslow-table log > table.html@] outputs the results as a HTML table.
-        It also supports the following options.
+        [@noslow-table log -o table.html --html@] outputs the results from
+        @log@ as a HTML table.
         .
-        [@noslow-table log --type=Double@] only outputs the results of 'Double'
-        benchmarks.
+        [@noslow-table log -o table.html --raw --csv@] outputs the results
+        from @log@ as a CSV file suitable for importing into spreadsheets.
         .
-        [@noslow-table --diff log1 log2@] produces a table comparing the
-        results from 'log1' and 'log2' (2 means the first run was 2x slower
-        than the second; 0.5 means 2x faster).
+        [@noslow-table --diff log1 log2@ -o table.html@] produces a table
+        comparing the results from 'log1' and 'log2' (2 means the first run was
+        2x slower than the second; 0.5 means 2x faster).
+        .
+        [@noslow-table --help@] lists additional options.
         .
         NoSlow is described in more detail here:
         <http://unlines.wordpress.com/2009/11/27/noslow/>.
+        .
+        Changes since version 0.1
+        .
+        * Renamed and reorganised loop kernels
+        .
+        * Several small array algorithms organised in the new
+          benchmark category @mini@
+        .
+        * More reliable benchmark execution
+        .
+        * Support for producing CSV files
         .
 
 Build-Type:     Simple
@@ -52,18 +66,20 @@ Executable noslow
 
   Build-Depends:
     base >= 3 && < 5,
+    array,
     template-haskell,
-    criterion >= 0.2 && < 0.3
+    criterion >= 0.4 && < 0.5
 
   Extensions:
-    MultiParamTypeClasses
+    MultiParamTypeClasses,
+    FlexibleInstances
 
   if flag(dph-prim-seq)
     build-depends: dph-prim-seq, dph-base
     cpp-options: -DUSE_DPH_PRIM_SEQ
 
   if flag(vector)
-    build-depends: vector >= 0.4
+    build-depends: vector >= 0.5
     cpp-options: -DUSE_VECTOR
 
   if flag(uvector)
@@ -86,13 +102,14 @@ Executable noslow
         NoSlow.Backend.Uvector
         NoSlow.Backend.Vector.Primitive
         NoSlow.Backend.Vector.Storable
+        NoSlow.Backend.Vector.Unboxed
         NoSlow.Backend.Vector
         NoSlow.Main.TH
         NoSlow.Main.Tree
         NoSlow.Main.Util
+        NoSlow.Micro.Kernels
         NoSlow.Micro.DPH.Prim.Seq.Double
         NoSlow.Micro.DPH.Prim.Seq
-        NoSlow.Micro.Kernels
         NoSlow.Micro.List.Double
         NoSlow.Micro.List
         NoSlow.Micro.StorableVector.Double
@@ -105,15 +122,44 @@ Executable noslow
         NoSlow.Micro.Vector.Primitive
         NoSlow.Micro.Vector.Storable.Double
         NoSlow.Micro.Vector.Storable
+        NoSlow.Micro.Vector.Unboxed
+        NoSlow.Micro.Vector.Unboxed.Double
+        NoSlow.Micro.Vector.Unsafe.Unboxed
+        NoSlow.Micro.Vector.Unsafe.Unboxed.Double
+        NoSlow.Micro.Vector.Unsafe.Primitive
+        NoSlow.Micro.Vector.Unsafe.Primitive.Double
+        NoSlow.Micro.Vector.Unsafe.Storable
+        NoSlow.Micro.Vector.Unsafe.Storable.Double
+        NoSlow.Micro.Vector.Unsafe.Boxed
+        NoSlow.Micro.Vector.Unsafe.Boxed.Double
+        NoSlow.Mini.Kernels
+        NoSlow.Mini.DPH.Prim.Seq
+        NoSlow.Mini.List
+        NoSlow.Mini.StorableVector
+        NoSlow.Mini.Uvector
+        NoSlow.Mini.Vector.Boxed
+        NoSlow.Mini.Vector.Primitive
+        NoSlow.Mini.Vector.Storable
+        NoSlow.Mini.Vector.Unboxed
+        NoSlow.Mini.Vector.Unsafe.Unboxed
+        NoSlow.Mini.Vector.Unsafe.Primitive
+        NoSlow.Mini.Vector.Unsafe.Storable
+        NoSlow.Mini.Vector.Unsafe.Boxed
         NoSlow.Util.Base
         NoSlow.Util.Computation
+        NoSlow.Util.Tag
+        NoSlow.Util.Opts
         
 
 Executable noslow-table
-  Main-Is: Table.hs
+  Main-Is: NoSlow/Analyse/Main.hs
 
   Build-Depends:
     base >= 3 && < 5,
     containers,
-    criterion >=0.2
+    criterion >=0.2,
+    statistics >= 0.3.5 && < 4
+
+  Other-Modules:
+        NoSlow.Analyse.Table
 
