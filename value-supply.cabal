@@ -1,9 +1,11 @@
 Name:           value-supply
-Version:        0.4
+Version:        0.5
+Homepage:       http://github.com/yav/value-supply
 License:        BSD3
 License-file:   LICENSE
 Author:         Iavor S. Diatchki
 Maintainer:     iavor.diatchki@gmail.com
+
 Category:       Data
 Synopsis: A library for generating values without having to thread state.
 Description:
