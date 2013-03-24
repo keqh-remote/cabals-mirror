@@ -1,11 +1,12 @@
 Name:                mathgenealogy
 
-Version:             1.2.0
+Version:             1.3.0
 
 Synopsis:            Discover your (academic) ancestors!
 
-Description:         A simple command line program for extracting data from the
+Description:         A command line program for extracting data from the
   Mathematics Genealogy Project (<http://genealogy.math.ndsu.nodak.edu/index.php>).
+  Note that this database also contains many entries of computer scientists.
   .
   Lookup your entry at <http://genealogy.math.ndsu.nodak.edu/index.php> and
   then use that URL as a command line argument.  
@@ -15,15 +16,34 @@ Description:         A simple command line program for extracting data from the
   > mathgenealogy http://genealogy.math.ndsu.nodak.edu/id.php?id=18231 
   .
   which produces the directed acyclic graph
-  <http://dl.dropbox.com/u/22490968/genealogy_of_gauss.png>. See 
+  <http://dl.dropbox.com/u/22490968/genealogy_of_gauss.svg>. See 
   .
   > mathgenealogy --help
   .
-  for more options. Requires GraphViz (in particular the /dot/ program) to run.
+  for the complete list of options. Requires the /dot/ program, which is
+  part of the GraphViz package (/version 2.28.0 or later!/) to run.
+  .
+  Feedback and bug reports are appreciated!
+  .
+  /Changes in 1.3.0:/
+  .
+  * Switched to HTML-like labels in GraphViz. This is required for the advanced
+    font formatting options. ATTENTION: this needs a recent
+    installation of GraphViz (Linux: 2.28.0; MacOS: 2.29) and will yield
+    best results for SVG output files. If you have an older version of GraphViz
+    or run into issues, try the '--oldtextlabels' option.
+  .
+  * Downloaded entries are stored locally. This avoids re-downloading the same
+    data if you want to generate multiple graphs of the same entry with
+    different formatting options.
+  .
+  * Added more options for fine-tuning the fonts and colors. (requested by users)
+  .
+  * Default output is now SVG, as this is the format best supported by GraphViz.
   .
   /Changes in 1.2.0:/
   .
-  * Correct handling of entries with multiple PhDs (reported by Dima Pasechnik)
+  * Fixed handling of entries that have multiple degrees. (reported by Dima Pasechnik)
   . 
   /Changes in 1.1.1:/
   .
@@ -39,7 +59,7 @@ Description:         A simple command line program for extracting data from the
   .
   /Changes in 0.0.2:/
   .
-  * Fixed bug regarding trailing commas (reported by Alexander Koessler) 
+  * Fixed handling of trailing commas (reported by Alexander Koessler) 
 
 -- Homepage:            http://darcs.monoid.at/mathgenealogy
 
@@ -69,7 +89,7 @@ Cabal-version:       >=1.4
 Executable mathgenealogy
       build-depends: base >= 4 && < 5
                    , text >= 0.11 && <0.13
-                   , directory >= 1.1 && <1.3
+                   , directory >= 1.2 && <1.3
 --                   , haskell98 >= 1.1 && <2.1
                    , process >= 1.1 && < 1.2
                    , bytestring >= 0.9 && <1.0
@@ -80,11 +100,15 @@ Executable mathgenealogy
                    , tagsoup >= 0.12.6 && <0.13
                    , HTTP >= 4000.1.2 && <5000
                    , safe >= 0.3.3 && <0.5
+                   , binary >= 0.6.4 && <0.7
+                   , filepath >= 1.3.0 && <1.4
       Main-Is: Main.hs
       Other-modules: Graph
                    , Extract 
                    , Entry
+                   , CmdParams
       extensions: ScopedTypeVariables
                 , DeriveDataTypeable
---      ghc-options:     -O
+                , DoAndIfThenElse
+      ghc-options:     -Wall
 --      ld-options: -static -pthread
