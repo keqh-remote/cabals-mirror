@@ -1,5 +1,5 @@
 name:		    monoids
-version:	    0.1.17
+version:	    0.1.19
 license:	    BSD3
 license-file:   LICENSE
 author:		    Edward A. Kmett
@@ -64,6 +64,7 @@ library
     Data.Ring.Module.AutomaticDifferentiation
     Data.Ring.Semi
     Data.Ring.Semi.Near
+    Data.Ring.Semi.Natural
     Data.Ring.Semi.Ord
     Data.Ring.Semi.Tropical
     Data.Ring.Sugar
