@@ -1,5 +1,5 @@
 name:           BiobaseInfernal
-version:        0.5.4.0
+version:        0.5.4.1
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 homepage:       http://www.tbi.univie.ac.at/~choener/
@@ -22,13 +22,11 @@ description:
                 .
                 .
                 .
-                With the BioHaskell library split, this package is officially
-                back! And the package is not feature-complete yet, take the
-                above as a will-include-soon list.
+                Changes in 0.5.4.1
                 .
-                The taxonomy importer makes use of Iteratee.zip, hence the
-                switch from Enumerator. (See the Biohaskell wiki pages for
-                discussion on Iteratee/Enumerator).
+                * fix-up for VH export
+                .
+                * half-baked CM type (not useful yet)
 
 extra-source-files:
 
@@ -42,12 +40,17 @@ library
     either-unwrap,
     iteratee,
     transformers,
-    tuple
+    tuple,
+    vector,
+    PrimitiveArray
 
   exposed-modules:
     Biobase.Infernal
     Biobase.Infernal.Clan
     Biobase.Infernal.Clan.Import
+    Biobase.Infernal.CM
+    Biobase.Infernal.CM.Export
+    Biobase.Infernal.CM.Import
     Biobase.Infernal.TabularHit
     Biobase.Infernal.TabularHit.Import
     Biobase.Infernal.Taxonomy
