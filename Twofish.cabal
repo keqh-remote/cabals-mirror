@@ -1,26 +1,26 @@
 Name:          Twofish
-Version:       0.1
+Version:       0.2
 Category:      Cryptography, Codec
 Stability:     experimental
 Synopsis:      An implementation of the Twofish Symmetric-key cipher.
 Description:   Implements the Twofish symmetric block cipher, designed by:
                Bruce Schneier, John Kelsey, Doug Whiting, David Wagner, Chris Hall,
                and Niels Ferguson.
-
+               .
                As well, this module includes some generic definitions for
-               ciphers and cipher-block-chaining mode, in the Data.Cipher
+               ciphers and cipher-block-chaining mode in the Data.Cipher
                module.  In the future, these should probably either be
                moved to their own package, or all of this should be merged
                into the Crypto package.
-
+               .
                Acknowledgments:
-
+               .
                Dominic Steinitz and Creighton Hogg for their work on the Crypto
                package, upon which this package depends (particularily for the
                Data.LargeWord module).
-
+               .
                Stephen Tetley for his advice and code examples provided on
-               the Haskell-Beginners mailing list, in response to a question
+               the Haskell-Beginners mailing list in response to a question
                I had, which helped me to create a transformer version of the Cbc monad.
 
 Author:        Ron Leisti
@@ -32,6 +32,8 @@ License:       BSD3
 License-File:  LICENSE
 Cabal-Version: >= 1.2
 Build-Type:    Simple
+
+Tested-With:   GHC == 6.12.1
 
 Library
   Build-Depends:   array >= 0.3
