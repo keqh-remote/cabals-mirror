@@ -1,5 +1,5 @@
 Name:          hskeleton
-Version:       0.1
+Version:       0.1.1
 Cabal-version: >= 1.6
 License:       BSD3
 License-file:  LICENSE
@@ -19,6 +19,6 @@ Source-repository head
     Location:  http://patch-tag.com/publicrepos/hskeleton
 
 Library
-    Build-depends:   base, Cabal >= 1.6
+    Build-depends:   base < 5, Cabal >= 1.6
     Exposed-modules: System.Console.GetOpt.Skeleton, System.Console.GetOpt.StandardOpts
     GHC-options:     -Wall
