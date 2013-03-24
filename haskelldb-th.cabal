@@ -1,8 +1,8 @@
 Name: haskelldb-th
-Version: 1.1
+Version: 1.2
 Cabal-version: >= 1.2
 Build-type: Simple
-Homepage: http://patch-tag.com/publicrepos/haskelldb-th
+Homepage: http://patch-tag.com/repo/haskelldb-th/browse
 Copyright: The authors
 Maintainer: jgbailey@gmail.com
 Category: Database
