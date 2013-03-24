@@ -1,5 +1,5 @@
 Name:                   TernaryTrees
-Version:                0.1.1.0
+Version:                0.1.1.1
 Category:               Data Structures
 Synopsis:               Efficient pure ternary tree Sets and Maps
 Description:            Ternary trees are an efficient structure often used for storing
