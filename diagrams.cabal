@@ -1,38 +1,18 @@
 Name:                diagrams
-Version:             0.2.2.3
-Stability:           unsupported
-Description:         An embedded domain-specific language (EDSL) for 
-                     creating simple diagrams, built on top of the Cairo
-                     rendering engine.  NOTE: This package is deprecated,
-                     see the diagrams-core, diagrams-lib, and diagrams-cairo
-                     packages instead.
-Homepage:            http://code.haskell.org/diagrams
-Synopsis:            An EDSL for creating simple diagrams
+Version:             0.3
+Synopsis:            Embedded domain-specific language for declarative vector graphics
+Description:         Diagrams is an embedded domain-specific langauge for
+                     declarative vector graphics.  This package is
+                     just a wrapper that depends on the diagrams-core,
+                     diagrams-lib, and diagrams-cairo packages.
+Homepage:            http://projects.haskell.org/diagrams
 License:             BSD3
 License-file:        LICENSE
-Extra-source-files:  README,CHANGES,example/*.hs
 Author:              Brent Yorgey
-Maintainer:          byorgey@gmail.com
+Maintainer:          byorgey@cis.upenn.edu
 Category:            Graphics
 Build-type:          Simple
-Cabal-version:       >= 1.6
-Tested-with:         GHC==6.12.1, GHC==6.10.4, GHC==7.0.1
+Cabal-version:       >=1.2
 
-flag testing
-  description: Testing mode
-  default: False
-
-library
-  ghc-options:       -Wall
-  if flag(testing)
-    ghc-options: -Werror
-  Build-Depends:     base >= 2 && < 5, mtl >= 2.0 && < 2.1,
-                     containers >= 0.2 && < 0.5,
-                     cairo >= 0.9 && < 0.13, colour >= 2.2.1 && < 2.4
-  Exposed-Modules:   Graphics.Rendering.Diagrams,
-                     Graphics.Rendering.Diagrams.Types,
-                     Graphics.Rendering.Diagrams.Paths,
-                     Graphics.Rendering.Diagrams.Shapes,
-                     Graphics.Rendering.Diagrams.Attributes,
-                     Graphics.Rendering.Diagrams.Layouts,
-                     Graphics.Rendering.Diagrams.Engine
+Library
+  Build-depends:     diagrams-core, diagrams-lib, diagrams-cairo
