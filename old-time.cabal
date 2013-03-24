@@ -1,9 +1,10 @@
 name:		old-time
-version:	1.0.0.0
+version:	1.0.0.2
 license:	BSD3
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
-synopsis:	Time library.
+synopsis:	Time library
+category:	System
 description:
 	This package provides the old time library.
     For new code, the new time library is recommended.
@@ -18,6 +19,10 @@ install-includes:	HsTime.h HsTimeConfig.h
 extensions:	CPP, ForeignFunctionInterface
 build-depends: base, old-locale
 nhc98-options: -K2M
+extra-source-files:
+        config.guess config.sub install-sh
+        configure.ac configure
+        include/HsTimeConfig.h.in
 extra-tmp-files:
         config.log config.status autom4te.cache
         include/HsTimeConfig.h
