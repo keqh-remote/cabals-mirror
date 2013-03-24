@@ -1,5 +1,5 @@
 Name:                json2
-Version:             0.3
+Version:             0.3.1
 Synopsis:            This library provides support for JSON. 
 Category:            Data, Text, JSON
 Description:         This library provides support for JSON.
@@ -13,14 +13,16 @@ Build-type:          Simple
 Cabal-version:       >= 1.6
 
 extra-source-files:
-  Examples/ExampleSqlite.hs
-  Examples/ExampleQuery.hs
+                    Examples/ExampleSqlite.hs
+                    Examples/ExampleQuery.hs
 
 library
-  Exposed-modules:     Data.JSON2
-                       Data.JSON2.FromSQL
-                       Data.JSON2.Query
+  Exposed-modules:
+                   Data.JSON2
+                   Data.JSON2.FromSQL
+                   Data.JSON2.Query
 
-  Build-Depends:       base       >= 4   && < 5,
-                       containers >= 0.2 && < 1
-		       
+  Build-Depends:   base       >= 4   && < 5,
+                   containers >= 0.2 && < 1,
+                   old-locale >= 1,
+                   time       >= 1.1
