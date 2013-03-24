@@ -1,5 +1,5 @@
 name:                mage
-version:             1.0.1
+version:             1.1.0
 Stability:           Alpa
 synopsis:            Rogue-like
 description:         A simple rogue-like; currently has a Curses interface
@@ -9,7 +9,7 @@ license:             BSD3
 -- dark says it's BSD somewhere in the #haskell logs
 license-file:        LICENSE
 author:              Richard Braakman <dark@xs.nl>
---maintainer:          none
+-- maintainer:
 homepage:            http://www.scannedinavian.com/~shae/mage-1.0pre35.tar.gz
 
 build-depends:       base>3, array, random, mtl, containers
@@ -31,7 +31,8 @@ other-modules:       Curses, Language.Dutch, Language.English, Language,
                      Monsters, BoxChar, Materials, Keymap,
                      Util, Test.Language, Test.Search, Landscape, World
 include-dirs:        src/
+includes:            curses.h
 extra-libraries:     curses
 Extensions:          ForeignFunctionInterface
-ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-options:         -Wall -optl-Wl,-s -fvia-c
 ghc-prof-options:    -prof -auto-all
