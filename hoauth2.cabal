@@ -1,6 +1,6 @@
 Name:                hoauth2
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy)
-Version:             0.2.4
+Version:             0.2.5
 
 Synopsis:            hoauth2
 Description:         
@@ -12,7 +12,7 @@ Description:
   .
   * weibo oauth2: <http://open.weibo.com/wiki/Oauth2>
 
-Homepage:            freizl.github.com
+Homepage:            https://github.com/freizl/hoauth2
 License:             BSD3
 License-file:        LICENSE
 Author:              Haisheng Wu
@@ -35,7 +35,7 @@ Cabal-version:       >=1.8
 
 Source-Repository head
   Type:     git
-  Location: https://github.com/freizl/hoauth2
+  Location: git://github.com/freizl/hoauth2.git
 
 
 Library
@@ -51,11 +51,12 @@ Library
     bytestring        >= 0.9    && < 0.10,
     bytestring-show   >= 0.3.5  && < 0.4,
     conduit           >= 0.5    && < 0.6,
-    http-conduit      >= 1.6    && < 1.7,
+    http-conduit      >= 1.8.3    && < 1.8.4,
     http-types        >= 0.7    && < 0.8,
     monad-control     >= 0.3    && < 0.4,
     mtl               >= 1      && < 2.2,
     transformers      >= 0.2    && < 0.4,
+    resourcet         >= 0.4.0.2 && < 0.4.1,
     random
       
   if impl(ghc >= 6.12.0)
@@ -64,4 +65,3 @@ Library
   else
       ghc-options: -Wall -fwarn-tabs -funbox-strict-fields
                    -fno-warn-orphans        
-
