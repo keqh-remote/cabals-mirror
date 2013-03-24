@@ -1,9 +1,10 @@
 name:           haskell-src
-version:        1.0.1.4
+version:        1.0.1.5
 license:        BSD3
 license-file:   LICENSE
 author:         Simon Marlow, Sven Panne and Noel Winstanley
-maintainer:     libraries@haskell.org
+-- Maintained through https://github.com/haskell-pkg-janitors. Join us!
+maintainer:         Conrad Parker <conrad@metadecks.org>
 category:       Language
 synopsis:       Support for manipulating Haskell source code
 description:
@@ -18,8 +19,8 @@ cabal-version:  >=1.6
 flag split-base
 
 source-repository head
-    type:     darcs
-    location: http://code.haskell.org/haskell-src
+    type:     git
+    location: git://github.com/haskell-pkg-janitors/haskell-src.git
 
 library
   exposed-modules:
@@ -33,8 +34,5 @@ library
     build-depends:      base >= 4 && < 5, syb, pretty, array
   else
     build-depends:      base < 3
-  build-depends: haskell98
-  -- The dependency on Haskell 98 is only because
-  -- Happy generates a parser that imports Array
   extensions:   CPP
   nhc98-options:        -K11M
