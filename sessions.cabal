@@ -1,5 +1,5 @@
 Name:               sessions
-Version:            2008.2.28
+Version:            2008.3.23
 Stability:          Beta
 Copyright:          Matthew Sackman
 Category:           Control
@@ -18,7 +18,7 @@ Description:
   violate said protocol.
 
 Library {
-        Build-depends:     base, mtl
+        Build-depends:     base, mtl, containers
         Exposed-modules:   Control.Concurrent.Session
                            Control.Concurrent.Session.Runtime
                            Control.Concurrent.Session.SessionType
@@ -27,6 +27,8 @@ Library {
                            Control.Concurrent.Session.Number
                            Control.Concurrent.Session.Map
                            Control.Concurrent.Session.Interleaving
+                           Control.Concurrent.Session.Pid
+                           Control.Concurrent.Session.Bool
         ghc-options:       -Wall -fno-warn-name-shadowing
 }
 
