@@ -1,6 +1,6 @@
 name:          CarneadesDSL
 category:      Argumentation, Embedded, AI
-version:       1.1
+version:       1.1.0.1
 license:       BSD3
 cabal-version: >= 1.2
 license-file:  LICENSE
@@ -28,5 +28,6 @@ Library
   exposed-modules:
     Language.Carneades.CarneadesDSL
     Language.Carneades.ExampleCAES
+    Language.Carneades.Cyclic
     
 
