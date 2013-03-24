@@ -1,22 +1,11 @@
 Name            : Pugs
-Version         : 6.2.13.2
+Version         : 6.2.13.3
 license         : BSD3
 license-file    : LICENSE
+cabal-version   : >= 1.2
 copyright       : 2005-2008, The Pugs Contributors
 maintainer      : Audrey Tang <audreyt@audreyt.org>
 category        : Language, Pugs
-build-depends   : base, haskell98, filepath, mtl, stm, parsec, network,
-                  pretty, time, random, process, containers, bytestring,
-                  array, directory, readline, utf8-string,
-
-                  MetaObject       >= 0.0.4,
-                  HsParrot         >= 0.0.2,
-                  pugs-compat      >= 0.0.3,
-                  pugs-DrIFT       >= 2.2.3.0,
-                  stringtable-atom >= 0.0.4,
-                  HsSyck           >= 0.44
-
-                  -- HsPerl5
 stability       : experimental
 build-type      : Simple
 homepage        : http://pugscode.org/
@@ -123,6 +112,35 @@ extra-source-files:
     src/Pugs/Val/Code.hs
     src/Pugs/Version.hs
 
-executable:         pugs
-main-is:            Main.hs
-hs-source-dirs:     src
+flag EnableReadLine
+    description: Indicates System.Console.Readline is available
+    default:     True
+
+flag Optimize
+    description: Enable optimizations
+    default:     False
+
+executable pugs
+    main-is:            Main.hs
+    hs-source-dirs:     src
+
+    build-depends:
+        base, haskell98, filepath, mtl, stm, parsec, network,
+        pretty, time, random, process, containers, bytestring,
+        array, directory, utf8-string,
+
+        MetaObject       >= 0.0.4,
+        HsParrot         >= 0.0.2,
+        pugs-compat      >= 0.0.4,
+        pugs-DrIFT       >= 2.2.3.0,
+        stringtable-atom >= 0.0.4,
+        HsSyck           >= 0.44
+        -- HsPerl5
+
+    if flag(EnableReadLine)
+        build-depends: readline
+        cpp-options: -DPUGS_HAVE_READLINE=1
+
+    if flag(Optimize)
+        ghc-options: -O2
+
