@@ -1,6 +1,6 @@
 name:          type-eq
 category:      Type System
-version:       0.1.1
+version:       0.1.2
 author:        Gábor Lehel
 maintainer:    Gábor Lehel <illissius@gmail.com>
 homepage:      http://github.com/glehel/type-eq
@@ -41,6 +41,8 @@ description:
         - <http://hackage.haskell.org/package/dependent-sum>
     .
         - <http://hackage.haskell.org/package/categories> (@Data.Category.Discrete@)
+
+extra-source-files: macros.h
 
 source-repository head
     type:      git
