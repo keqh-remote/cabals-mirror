@@ -1,5 +1,5 @@
 name:		Frank
-version:	0.0
+version:	0.1
 synopsis:	An experimental programming language with typed algebraic effects
 description:	An experimental programming language with typed algebraic effects
 license:	PublicDomain
@@ -17,6 +17,7 @@ executable frank
   build-depends:	base < 5, void, newtype, mtl, she
   extensions:		TypeOperators, KindSignatures, GADTs, TypeSynonymInstances, FlexibleInstances, GeneralizedNewtypeDeriving, TupleSections, FunctionalDependencies, PatternGuards
   ghc-options:		-F -pgmF she
+  other-modules:	Gubbins, Pa, Types, Template, Syntax, Check, ElabMonad, Unify, Elab, Run
 
 source-repository head
   type:		  darcs
