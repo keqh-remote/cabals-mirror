@@ -1,5 +1,5 @@
 name:               btree-concurrent
-version:            0.1.3
+version:            0.1.4
 homepage:           https://github.com/brinchj/btree-concurrent
 synopsis:           A backend agnostic, concurrent BTree
 description:        A backend agnostic, concurrent BTree
@@ -10,13 +10,14 @@ author:             Morten Brøns, Johan Brinch
 maintainer:         brinchj@gmail.com
 data-files:         README.md TODO.org
 cabal-version:      >= 1.8
+tested-with:        GHC == 7.6.1
 build-type:         Custom
 stability:          Experimental
 
 
 source-repository head
-  type: git
-  location: foo
+    type: git
+    location: https://github.com/brinchj/btree-concurrent.git
 
 
 Test-Suite quickcheck-highlevel
