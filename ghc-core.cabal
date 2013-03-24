@@ -1,5 +1,5 @@
 name:           ghc-core
-version:        0.2
+version:        0.3
 license:        BSD3
 license-file:   LICENSE
 author:         Don Stewart
@@ -9,7 +9,8 @@ category:       Development
 synopsis:       Display GHC's core and assembly output in a pager
 description:    A convenient command line wrapper for GHC that displays
                 GHC's optimised core and assembly output in a human
-                readable, colourised manner, in a pager.
+                readable, colourised manner, in a pager. Unix systems
+                only, currently.
                 .
                 Usage: 
                 .
