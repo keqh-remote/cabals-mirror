@@ -1,5 +1,5 @@
 name:            attoparsec
-version:         0.8.5.0
+version:         0.8.5.1
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Parsing
@@ -51,6 +51,8 @@ library
     cpp-options: -DAPPLICATIVE_IN_BASE
   else
     build-depends: base < 2.0
+
+  build-depends: deepseq
 
   extensions:      CPP
   exposed-modules: Data.Attoparsec
