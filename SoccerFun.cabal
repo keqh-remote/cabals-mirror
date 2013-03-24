@@ -1,5 +1,5 @@
 Name:           SoccerFun
-Version:        0.4.4
+Version:        0.5
 Copyright:      (c) 2010, Jan Rochel
 License:        BSD3
 License-File:   LICENSE
@@ -15,7 +15,7 @@ Category:       Game, Education, AI
 Cabal-Version:  >= 1.6
 Data-Files:
 	template/Main.hs template/Makefile template/Children/Child.hs template/Children/Team.hs
-	tournament/makeAll.sh tournament/makeLoop.sh tournament/Makefile
+	tournament/mkIndex.sh tournament/makeLoop.sh tournament/Makefile SoccerFun/Tape/Record/Template.hs
 
 Library
   Extensions:
@@ -32,7 +32,6 @@ Library
     mtl >= 1.1 && < 2.1,
     derive >= 2.4 && < 2.5,
     binary >= 0.5 && < 0.6,
-    plugins >= 1.5 && < 1.6,
     process >= 1.0 && < 1.1,
     directory >= 1.0 && < 1.1,
     zlib >= 0.5 && < 0.6
@@ -52,6 +51,7 @@ Library
     SoccerFun.Referee
     SoccerFun.Random
     SoccerFun.Prelude
+    Paths_SoccerFun
 
 Executable sfRecord
   Main-Is: SoccerFun/Tape/Record.hs
