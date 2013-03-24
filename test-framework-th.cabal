@@ -1,5 +1,5 @@
 name: test-framework-th
-version: 0.2.1
+version: 0.2.2
 cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
@@ -13,7 +13,7 @@ description:
    @defaultMainGenerator@ will extract all functions beginning with case_ or prop_ in the module and put them in a testGroup.
    .
    > -- file SomeModule.hs
-   > ( -# OPTIONS_GHC -fglasgow-exts -XTemplateHaskell #- )
+   > ( -# LANGUAGE TemplateHaskell #- )
    > module SomeModule where
    > import Test.Framework.TH
    > import Test.Framework
@@ -31,7 +31,7 @@ description:
    is the same as
    .
    > -- file SomeModule.hs
-   > ( -# OPTIONS_GHC -fglasgow-exts -XTemplateHaskell #- )
+   > ( -# LANGUAGE TemplateHaskell #- )
    > module SomeModule where
    > import Test.Framework.TH
    > import Test.Framework
@@ -57,10 +57,10 @@ author: Oscar Finnsson & Emil Nordling
 
 library
   exposed-modules: Test.Framework.TH 
-  build-depends: base >= 4 && < 5, test-framework, language-haskell-extract >= 0.2, haskell-src-exts, haskell98, regex-posix, template-haskell
+  build-depends: base >= 4 && < 5, test-framework, language-haskell-extract >= 0.2.1, haskell-src-exts, regex-posix, template-haskell
   hs-source-dirs: src
 
 
 source-repository head
   type:     git
-  location: https://github.com/finnsson/test-framework-th/
+  location: https://github.com/finnsson/test-generator.git
