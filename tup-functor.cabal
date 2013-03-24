@@ -1,6 +1,6 @@
 
 Name:                tup-functor
-Version:             0.2
+Version:             0.2.0.1
 Synopsis:            Homogeneous tuples
 Description:         Homogeneous tuples (also known as vectors), with various instances, most notably 'Functor' and 'Applicative'.
                      The primary goal of the library is to help functor-oriented programming  
