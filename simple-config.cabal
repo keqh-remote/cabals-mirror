@@ -1,5 +1,5 @@
 Name:                simple-config
-Version:             1.1.0
+Version:             1.1.1.0
 Synopsis:            Simple config file parser generator
 Description:         Simple config file parser generator
 Homepage:            https://github.com/yunomu/simple-config
@@ -18,7 +18,7 @@ Library
   Ghc-options:       -Wall
   Build-depends:     base >= 4 && < 5
                    , network
-                   , parsec3
+                   , parsec
                    , bytestring
                    , transformers
                    , data-default
