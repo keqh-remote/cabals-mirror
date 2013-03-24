@@ -1,5 +1,5 @@
 name:                patience
-version:             0.1
+version:             0.1.1
 license:             BSD3
 license-file:        LICENSE
 synopsis:            Patience diff and longest increasing subsequence
@@ -17,6 +17,9 @@ description:
   performance, nice output for humans, and implementation simplicity.  For more
   information, see <http://alfedenzo.livejournal.com/170301.html> and
   <http://bramcohen.livejournal.com/73318.html>.
+  .
+  New in version 0.1.1: relaxed @containers@ dependency, so it should build on
+  GHC 6.10.
 
 extra-source-files:
   test/test.hs
@@ -26,4 +29,4 @@ library
   ghc-options:      -Wall
   build-depends:
       base >= 3 && < 5
-    , containers >= 0.3
+    , containers >= 0.2
