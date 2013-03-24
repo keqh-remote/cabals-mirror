@@ -1,5 +1,5 @@
 Name:		HARM
-Version:	0.1.1
+Version:	0.1.2
 Cabal-Version:  >= 1.2
 License:	OtherLicense
 License-File:	LICENSE.txt
@@ -19,3 +19,8 @@ Executable runarm
 Executable dbgarm
   Main-Is:        dbgarm.hs
   Build-Depends:  base, array
+
+Library
+  Build-Depends:	base, array
+  Exposed-modules:
+    Arm.Arm, Arm.Assembler, Arm.BinaryNumber, Arm.CPU, Arm.Debugger, Arm.Decoder, Arm.Encoder, Arm.ExecutionUnit, Arm.Format, Arm.Instruction, Arm.Loader, Arm.Memory, Arm.Operand, Arm.ParseLib, Arm.Parser, Arm.Program, Arm.Register, Arm.RegisterName, Arm.Swi
