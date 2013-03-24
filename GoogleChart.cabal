@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.2
 Name: GoogleChart
-Version: 0.1
+Version: 0.2
 Synopsis: Generate web-based charts using the Google Chart API
 Category: Graphics
 License: BSD3
