@@ -1,11 +1,11 @@
 name:           kit
-version:        0.6
+version:        0.6.1
 cabal-version:  >=1.2
 build-type:     Simple
 license:        BSD3
 license-file:   LICENSE
 maintainer:     nkpart@gmail.com
-
+homepage:       http://github.com/nkpart/kit
 synopsis:       A dependency manager for Xcode (Objective-C) projects
 description:    A dependency manager for Xcode (Objective-C) projects
 category:       Development
@@ -16,7 +16,7 @@ Executable kit
   buildable:      True
   build-depends:  process -any, network -any, mtl -any, 
                   filepath -any, directory -any, containers -any, cmdargs >=0.3,
-                  bytestring -any, base >=3 && <5, QuickCheck -any,
+                  bytestring -any, base >=3 && <5,
                   HTTP >=4000.0.9, Glob >= 0.5, data-object -any, data-object-yaml -any
 
   hs-source-dirs: .
