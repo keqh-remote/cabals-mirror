@@ -1,5 +1,5 @@
 Name:                Semigroup
-Version:             0.0.4
+Version:             0.0.5
 License:             BSD3
 License-File:        LICENSE
 Synopsis:            A semigroup
@@ -13,14 +13,11 @@ build-type:          Simple
 cabal-version:       >= 1.2
 
 Flag small_base
-  Description:     Choose the new, split-up base package.
+  Description:       Choose the new, split-up base package.
 
 Library
-  if flag(small_base)
-    Build-Depends: base < 5 && >= 3
-  else
-    Build-Depends: base < 5 && >= 3
+  Build-Depends:     base < 5 && >= 3, mtl
 
-  GHC-Options:    -Wall
-  Exposed-Modules: Data.Semigroup
+  GHC-Options:       -Wall
+  Exposed-Modules:   Data.Semigroup
 
