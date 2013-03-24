@@ -1,5 +1,5 @@
 Name:                YamlReference
-Version:             0.7
+Version:             0.8
 Cabal-Version:       >= 1.2
 License:             LGPL
 License-File:        lgpl.txt
@@ -7,8 +7,8 @@ Copyright:           Oren Ben-Kiki 2007, 2008
 Author:              Oren Ben-Kiki
 Maintainer:          yaml-oren@ben-kiki.org
 Stability:           alpha
-Homepage:            www.ben-kiki.org/oren/YamlReference
-Package-Url:         www.ben-kiki.org/oren/YamlReference/YamlReference-0.7.tar.gz
+Homepage:            http://www.ben-kiki.org/oren/YamlReference
+Package-Url:         http://www.ben-kiki.org/oren/YamlReference/YamlReference-0.8.tar.gz
 Category:            Text
 Synopsis:            YAML reference implementation
 Description:         This package contains \"the\" reference YAML syntax parser
@@ -22,8 +22,7 @@ Description:         This package contains \"the\" reference YAML syntax parser
                      the @yeast2html@ YAML syntax visualizer (contained in this
                      package), pretty printers, etc. This is a streaming parser
                      that will \"immediately\" begin to generate output. Updated
-                     to lift the 1K key size limit inside flow mapping for
-                     complete JSON compatibility.
+                     to fix a greedy production for nested block mappings.
 Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/b-as-line-feed.input tests/b-as-line-feed.output
                      tests/b-carriage-return.input
@@ -1116,6 +1115,8 @@ Extra-Source-Files:  Text/Yaml/Reference.bnf yeast2html yaml2yeast.css
                      tests/s-l+block-node.n=-1.c=block-out.2.output
                      tests/s-l+block-node.n=-1.c=block-out.3.input
                      tests/s-l+block-node.n=-1.c=block-out.3.output
+                     tests/s-l+block-node.n=-1.c=block-out.invalid.input
+                     tests/s-l+block-node.n=-1.c=block-out.invalid.output
                      tests/s-l+block-node.n=2.c=block-out.block.input
                      tests/s-l+block-node.n=2.c=block-out.block.output
                      tests/s-l+block-node.n=2.c=block-out.flow.input
