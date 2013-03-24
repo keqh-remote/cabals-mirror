@@ -3,7 +3,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                bindings-cctools
-version:             3.6.1.0.1.0.0
+version:             3.6.1.0.1.0.0.1
 synopsis:            Bindings to the CCTools WorkQueue C library
 description:         Details can be found here: <http://www.nd.edu/~ccl/software/workqueue>
 license:             GPL-2
