@@ -2,6 +2,11 @@ Name:           persistent-map
 Synopsis:       A thread-safe interface for finite map types with optional persistency support.
 Description:
 
+    /Changes in 0.2.*:/
+    .
+    * Improved error handling. Backend lookup-exceptions are now rethrown in the
+      AdvSTM monad.
+    .
     /Changes in 0.1.*:/
     .
     * Added the binary serialization backend.
@@ -42,7 +47,7 @@ Description:
     to the list of retry-IO actions. (This is done using the 'retryWith' 
     IO hook of the stm-io-package.)
     .
-    If the value does not exist yet, function 'insert' adds the key-value mapping to the
+    If the value does not yet exist, function 'insert' adds the key-value mapping to the
     TMap and sends an insert-request to the backend using the
     'onCommit' hook of the stm-io-package. Note that 'onCommit' guarantees that
     the backend IO action is only executed iff the transaction commits. Any 
@@ -58,11 +63,11 @@ Description:
     /Warning:/ This package is very experimental and the interface will
     probably change.
 
-Author:         Peter Robinson
+Author:         Peter Robinson 2009
 Maintainer:     Peter Robinson <thaldyron@gmail.com>
 License:        LGPL
 License-file:   LICENSE
-Version:        0.1.1
+Version:        0.2.2
 Category:       Middleware, Concurrency
 Stability:      experimental
 Homepage:       http://darcs.monoid.at/persistent-map
