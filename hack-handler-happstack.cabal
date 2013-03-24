@@ -1,8 +1,8 @@
 Name:                 hack-handler-happstack
-Version:              2009.4.51.1
+Version:              2009.4.52
 Build-type:           Simple
-Synopsis:             Hyena Kibro handler
-Description:          Hyena Kibro handler
+Synopsis:             Hack Happstack server handler
+Description:          Hack Happstack server handler
 License:              GPL
 License-file:         LICENSE
 Author:               Wang, Jinjing
@@ -15,7 +15,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall
-  build-depends: base, cgi, network, bytestring, data-default >= 0.2, hack >= 2009.4.51, happstack-server, containers, mtl
+  build-depends: base, cgi, network, bytestring, data-default >= 0.2, hack >= 2009.4.52, happstack-server >= 0.2.1, containers, mtl
   hs-source-dirs: src/
   exposed-modules:  
                     Hack.Handler.Happstack
