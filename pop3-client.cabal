@@ -1,13 +1,13 @@
 Name:           pop3-client
-Version:        0.1.3
+Version:        0.1.4
 License:        BSD3
 License-File:   LICENSE
 Data-Files:     CHANGELOG
-Maintainer:     Peter van den Brand <peter@vdbrand.nl>
-Author:         Peter van den Brand
-Homepage:       http://patch-tag.com/r/pop3-client
+Maintainer:     Tom Rudick <tmrudick@gmail.com>
+Author:         Peter van den Brand, Tom Rudick (0.1.4)
+Homepage:       https://github.com/tmrudick/haskell-pop3-client/
 Stability:      Provisional
-Copyright:      Copyright (c) 2009 Peter van den Brand
+Copyright:      Copyright (c) 2009 Peter van den Brand, Copyright (c) 2011 Tom Rudick (0.1.4)
 Category:       Network
 Synopsis:       POP3 Client Library
 Description: pop3-client provides a Haskell library to implement a POP3 client.
