@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               cmdargs
-version:            0.10
+version:            0.10.1
 license:            BSD3
 license-file:       LICENSE
 category:           Console
@@ -38,7 +38,7 @@ source-repository head
     location: http://community.haskell.org/~ndm/darcs/cmdargs/
 
 flag testprog
-    default: True
+    default: False
     description: Build the test program
 
 flag quotation
