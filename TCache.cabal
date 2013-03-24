@@ -1,7 +1,12 @@
 name:                TCache
-version:             0.5.3
+version:             0.5.4
 synopsis:            A Transactional data cache with configurable persistence 
-description:         
+description: 
+        This version correct an error in the version 0.5.3. since 0.5 nothing in the code has changed except that
+        the  "&& <4" in the build dependencies added in the 0.5.3 the behaviour of getClocktime to be lazy, that indeed
+        makes the cache write algoritm not to work, with the result tha no file is written. 
+        This version force the strict evaluation and correct this error.
+           
         Data.Tcache is a transactional cache with configurable persistence. It tries to simulate Hibernate 
         for Java or Rails for Ruby. The main difference is that transactions are done in memory trough STM. 
         There are transactional cache implementations for some J2EE servers like JBOSS.
