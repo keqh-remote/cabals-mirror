@@ -1,9 +1,9 @@
 name: yoko
-version: 0.3
+version: 0.3.0.1
 synopsis: Generic Programming with Disbanded Data Types
 
 description:
-  Based off of the paper \"A Pattern for Almost Compositional Functions\" at <http://www.ittc.ku.edu/~nfrisby/papers/yoko.pdf>, submitted to ICFP 2012.
+  Based off of the paper \"A Pattern for Almost Homomorphic Functions\" at <http://www.ittc.ku.edu/~nfrisby/papers/yoko.pdf>, submitted to ICFP 2012.
   .
   @yoko@ views a nominal datatype as a /band/ of constructors, each
   a nominal type in its own right. Such datatypes can be disbanded via the
