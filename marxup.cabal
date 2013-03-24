@@ -1,5 +1,5 @@
 name:           marxup
-version:        1.0.0
+version:        1.0.0.1
 category:       Text
 synopsis:       Markup language preprocessor for Haskell
 description:
