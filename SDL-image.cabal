@@ -1,6 +1,6 @@
 Cabal-Version:      >= 1.6
 Name:               SDL-image
-Version:            0.6.0
+Version:            0.6.1
 Maintainer:         Lemmih (lemmih@gmail.com)
 Author:             Lemmih (lemmih@gmail.com)
 Copyright:          2004-2010, Lemmih
@@ -9,6 +9,11 @@ License:            BSD3
 Build-Type:         Custom
 Category:           Foreign binding
 Synopsis:           Binding to libSDL_image
+Description:
+  SDL_image is an image file loading library.
+  It loads images as SDL surfaces, and supports the
+  following formats: BMP, GIF, JPEG, LBM, PCX, PNG,
+                     PNM, TGA, TIFF, XCF, XPM, XV.
 Extra-Source-Files: configure, includes/HsSDLConfig.h.in, SDL-image.buildinfo.in, config.mk.in
 Data-Files:         MACOSX, README, TODO
 
