@@ -1,5 +1,5 @@
 name:             wumpus-basic
-version:          0.16.0
+version:          0.17.0
 license:          BSD3
 license-file:     LICENSE
 copyright:        Stephen Tetley <stephen.tetley@gmail.com>
@@ -29,6 +29,33 @@ description:
   .
   .
   Changelog:
+  . 
+  v0.16.0 to v0.17.0:
+  .
+  * Changed representation of ContextFuns - context funs are no 
+    longer an arity family of newtypes. The new representation 
+    is simpler, but some of the opportunities for overloading 
+    have been lost.
+  .
+  * Substantial round of renaming for the @DrawingContext@ types
+    an query and update functions.
+  .
+  * Re-worked the font metrics and font loader modules. The new
+    names should be more systematic. Removed the need for the 
+    GhostScript font modules to match PostScript names to 
+    GhostScript font files.    
+  .
+  * Superceded the PointSupplyM class by adding snapping grid 
+    scaling to the DrawingContext. 
+  . 
+  * Removed @ScalingContext@ module.
+  .
+  * Made text colour a distinct property in the DrawingContext. 
+    Text is now drawn with the text colour rather than the stroke 
+    colour.
+  .
+  * Added FontLoadLog to the DrawingContext - this allows access 
+    to the errors recorded during font loading.
   .
   v0.15.0 to v0.16.0:
   .
@@ -42,6 +69,8 @@ description:
   .
   * Added @PosImage@ object - this is a rectangle-framed object 
     that can be drawn from any of its corners or its center. 
+  .
+  * Added @CF3@, an arity three /ContextFunction/.
   .
   * Added @Displacement@ module. This defines the @PointDisplace@
     type and provides a library of @PointDisplace@ functions.
@@ -85,9 +114,10 @@ cabal-version:      >= 1.2
 extra-source-files:
   CHANGES,
   LICENSE,
+  demo/AltUnits.hs,
   demo/FontDeltaPic.hs,
   demo/SimpleAdvGraphic.hs,
-  demo/SimplePosImage.hs
+  demo/SimplePosObject.hs
 
 library
   hs-source-dirs:     src
@@ -96,42 +126,48 @@ library
                       directory       >= 1.0     && <  2.0, 
                       filepath        >= 1.1     && <  2.0,
                       vector-space    >= 0.6     && <  1.0,
-                      wumpus-core     >= 0.43.0  && <  0.44.0
+                      wumpus-core     >= 0.50.0  && <  0.51.0
 
   
   exposed-modules:
+    Wumpus.Basic.Geometry,
     Wumpus.Basic.Geometry.Base,
     Wumpus.Basic.Geometry.Intersection,
     Wumpus.Basic.Geometry.Paths,
     Wumpus.Basic.Geometry.Quadrant,
     Wumpus.Basic.Kernel,
-    Wumpus.Basic.Kernel.Base.Anchors,
     Wumpus.Basic.Kernel.Base.BaseDefs,
     Wumpus.Basic.Kernel.Base.ContextFun,
     Wumpus.Basic.Kernel.Base.DrawingContext,
-    Wumpus.Basic.Kernel.Base.GlyphMetrics,
+    Wumpus.Basic.Kernel.Base.FontSupport,
     Wumpus.Basic.Kernel.Base.QueryDC,
-    Wumpus.Basic.Kernel.Base.ScalingContext,
+    Wumpus.Basic.Kernel.Base.Units,
     Wumpus.Basic.Kernel.Base.UpdateDC,
     Wumpus.Basic.Kernel.Base.WrappedPrimitive,
-    Wumpus.Basic.Kernel.Objects.AdvanceGraphic,
-    Wumpus.Basic.Kernel.Objects.BaseObjects,
+    Wumpus.Basic.Kernel.Objects.AdvObject,
+    Wumpus.Basic.Kernel.Objects.Anchors,
+    Wumpus.Basic.Kernel.Objects.Basis,
     Wumpus.Basic.Kernel.Objects.Bounded,
+    Wumpus.Basic.Kernel.Objects.Chain,
+    Wumpus.Basic.Kernel.Objects.Concat,
     Wumpus.Basic.Kernel.Objects.Connector,
     Wumpus.Basic.Kernel.Objects.CtxPicture,
     Wumpus.Basic.Kernel.Objects.Displacement,
     Wumpus.Basic.Kernel.Objects.DrawingPrimitives,
-    Wumpus.Basic.Kernel.Objects.Graphic,
-    Wumpus.Basic.Kernel.Objects.PosImage,
+    Wumpus.Basic.Kernel.Objects.Image,
+    Wumpus.Basic.Kernel.Objects.LocImage,
+    Wumpus.Basic.Kernel.Objects.LocThetaImage,
+    Wumpus.Basic.Kernel.Objects.Orientation,
+    Wumpus.Basic.Kernel.Objects.PosObject,
     Wumpus.Basic.Kernel.Objects.TraceDrawing,
-    Wumpus.Basic.System.FontLoader.Afm,
-    Wumpus.Basic.System.FontLoader.GhostScript,
-    Wumpus.Basic.System.FontLoader.Base.AfmParserBase,
-    Wumpus.Basic.System.FontLoader.Base.AfmV2Parser,
-    Wumpus.Basic.System.FontLoader.Base.AfmV4Dot1Parser,
-    Wumpus.Basic.System.FontLoader.Base.Datatypes,
-    Wumpus.Basic.System.FontLoader.Base.FontLoadMonad,
-    Wumpus.Basic.System.FontLoader.Base.GSFontMap,
+    Wumpus.Basic.System.FontLoader,
+    Wumpus.Basic.System.FontLoader.AfmParserBase,
+    Wumpus.Basic.System.FontLoader.AfmTopLevel,
+    Wumpus.Basic.System.FontLoader.AfmV2Parser,
+    Wumpus.Basic.System.FontLoader.AfmV4Dot1Parser,
+    Wumpus.Basic.System.FontLoader.Datatypes,
+    Wumpus.Basic.System.FontLoader.FontLoadMonad,
+    Wumpus.Basic.System.FontLoader.GSTopLevel,
     Wumpus.Basic.Utils.HList,
     Wumpus.Basic.Utils.FormatCombinators,
     Wumpus.Basic.Utils.JoinList,
