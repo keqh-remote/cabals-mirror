@@ -1,5 +1,5 @@
 Name:                sink
-Version:             0.1.0.0
+Version:             0.1.0.1
 Synopsis:            An alternative to lazy I/O that doesn't conflate
                      execution with evaluation
 Description:         Lazy I/O conflates evaluation with execution; a
@@ -17,11 +17,12 @@ Author:              Jake McArthur
 Maintainer:          Jake McArthur <Jake.McArthur@gmail.com>
 Category:            Control, Data, System
 Build-type:          Simple
-Cabal-version:       >=1.6
+Cabal-version:       >=1.10
 
 Library
-  Build-depends:     base == 4.3.*
-  Extensions:        DeriveDataTypeable
+  Build-depends:     base == 4.3.* || == 4.4.*
+  Default-language:  Haskell2010
+  Other-extensions:  DeriveDataTypeable
   Exposed-modules:   Data.Sink
   GHC-options:       -Wall -fwarn-tabs
 
@@ -32,4 +33,4 @@ Source-repository head
 source-repository this
   type:     darcs
   location: http://patch-tag.com/r/jmcarthur/sink
-  tag:      v0.1.0.0
+  tag:      v0.1.0.1
