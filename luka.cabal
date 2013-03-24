@@ -1,5 +1,5 @@
 Name:                 luka
-Version:              2012.7.7.1
+Version:              2012.8.29
 Build-type:           Simple
 Synopsis:             Simple ObjectiveC runtime binding
 Description:          Simple ObjectiveC runtime binding
@@ -17,6 +17,7 @@ data-files:           readme.md
                     , Nemesis
                     , src/Main.hs
                     , src/Init.hs
+                    , src/Language/ObjectiveC/Luka/Extra.hs
 
 Library            
  
@@ -25,6 +26,7 @@ Library
   build-depends:      base < 99
                     , air
                     , libffi
+                    , bytestring
                       
   hs-source-dirs:     src
   exposed-modules:    Language.ObjectiveC.Luka.RunTime
