@@ -1,5 +1,5 @@
 Name:           type-digits
-Version:        0.1
+Version:        0.1.0.1
 License:        BSD3
 License-File:   LICENSE
 Author:         Nicolas Frisby <nicolas.frisby@gmail.com>
@@ -7,7 +7,7 @@ Maintainer:     Nicolas Frisby <nicolas.frisby@gmail.com>
 
 Category: Type System
 
-Synopsis:       /Arbitrary/ type-level digits
+Synopsis:       Arbitrary-base type-level digits
 
 Description: Arbitrary ype-level digits, for when the radix itself doesn't
   actually matter. It's currently base-128, because that seemed to best
