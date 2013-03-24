@@ -1,5 +1,5 @@
 name:                aws-sdk
-version:             0.11.0
+version:             0.11.1
 synopsis:            AWS SDK for Haskell
 description: AWS (Amazon Web Services) sdk for Haskell.
              .
@@ -137,6 +137,7 @@ library
                    , template-haskell
                    , parallel
                    , iproute >= 1.2.9
+                   , tls
 
 test-suite test
     type:              exitcode-stdio-1.0
