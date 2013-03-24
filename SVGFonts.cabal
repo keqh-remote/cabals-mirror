@@ -1,14 +1,14 @@
 Name:             SVGFonts
-Version:          1.1
+Version:          1.1.1
 Synopsis:         Fonts from the SVG-Font format
-Description:      Native font support for the Diagrams library. The SVG-Font format is easy to parse
-                  and was therefore chosen for a font library completely written in Haskell
+Description:      Native font support for the diagrams library. The SVG-Font format is easy to parse
+                  and was therefore chosen for a font library completely written in Haskell.
                   .
                   You can convert your own font to SVG with <http://fontforge.sourceforge.net/> or use the included LinLibertine, Bitstream
                   .
                   Features
                   .
-                  * Complete implementation of the features that fontforge produces (but not the complete SVG format):
+                  * Complete implementation of the features that Fontforge produces (but not the complete SVG format)
                   .
                   * Kerning (i.e. the two characters in \"VA\" have a shorter distance than in \"VV\")
                   .
@@ -16,7 +16,7 @@ Description:      Native font support for the Diagrams library. The SVG-Font for
                   .
                   * Ligatures
                   .
-                  XML speed issues can be solved by trimming the svg file to only those characters that are used (or maybe binary xml one day)
+                  XML speed issues can be solved by trimming the svg file to only those characters that are used (or maybe binary xml one day).
                   . 
                   Version 1.0 of this library supports texturing which would only make sense in a Diagrams Backend that does rasterization in Haskell.
                   .
@@ -26,7 +26,7 @@ Description:      Native font support for the Diagrams library. The SVG-Font for
                   >
                   > import Diagrams.Prelude
                   > import Diagrams.Backend.Cairo.CmdLine
-                  > import Graphics.SVGFonts.ReadFont (textSVG)
+                  > import Graphics.SVGFonts.ReadFont (textSVG,textSVG_)
                   >
                   >
                   > main = defaultMain ( (text' "Hello World") <> (rect 8 1) # alignBL )
@@ -52,7 +52,7 @@ Library
         base == 4.*,
         containers == 0.4.*,
         data-default,
-        diagrams-lib,
+        diagrams-lib >= 0.5,
         directory >= 1.0 && <1.2,
         parsec,
         split,
