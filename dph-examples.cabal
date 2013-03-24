@@ -1,7 +1,7 @@
 
 
 Name:                dph-examples
-Version:             0.6.1.1
+Version:             0.6.1.2
 License:             BSD3
 License-file:        LICENSE
 Author:              The DPH Team
@@ -73,7 +73,7 @@ Executable dph-smoke-rank
 Executable dph-smoke-reverse
   Build-depends:  base == 4.5.*, vector == 0.9.*, random == 1.0.*, old-time == 1.1.*, containers == 0.4.*, HUnit == 1.2.*, dph-base == 0.6.1.*, dph-prim-par == 0.6.1.*, dph-lifted-vseg == 0.6.1.*
   Main-is:        Main.hs
-  other-modules:  Vectorised Randomish
+  other-modules:  Vectorised Randomish Vector
   hs-source-dirs: examples/smoke/sharing/Reverse lib
   ghc-options:    -rtsopts -threaded -fllvm -Odph -package dph-lifted-vseg -fcpr-off -fno-liberate-case -fsimpl-tick-factor=1000
 
