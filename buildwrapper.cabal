@@ -1,5 +1,5 @@
 name:           buildwrapper
-version:        0.6.4
+version:        0.7.0
 cabal-version:  >= 1.8
 build-type:     Simple
 license:        BSD3
@@ -118,7 +118,9 @@ test-suite buildwrapper-test
                    Language.Haskell.BuildWrapper.APITest,
                    Language.Haskell.BuildWrapper.CMDTests,
                    Language.Haskell.BuildWrapper.GHCTests,
-                   Language.Haskell.BuildWrapper.UsagesTests
+                   Language.Haskell.BuildWrapper.UsagesTests,
+                   Language.Haskell.BuildWrapper.ImportsTests,
+                   Language.Haskell.BuildWrapper.CabalDevTests
   if impl(ghc >= 7.6)
     build-depends: 
                     time
