@@ -1,41 +1,22 @@
 Name:           primitive
-Version:        0.4.1
+Version:        0.5
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy <rl@cse.unsw.edu.au>
 Maintainer:     Roman Leshchinskiy <rl@cse.unsw.edu.au>
-Copyright:      (c) Roman Leshchinskiy 2009-2010
+Copyright:      (c) Roman Leshchinskiy 2009-2012
 Homepage:       http://code.haskell.org/primitive
 Category:       Data
-Synopsis:       Wrappers for primitive operations
+Synopsis:       Primitive memory-related operations
 Description:
         .
-        This package provides wrappers for primitive array operations from
-        GHC.Prim.
+        This package provides various primitive memory-related operations.
         .
-        Changes in version 0.4.1
+        Changes in version 0.5
         .
-        * New module "Data.Primitive.MutVar"
+        * New in "Data.Primitive.MutVar": @atomicModifyMutVar@
         .
-        Changes in version 0.4.0.1
-        .
-        * Critical bug fix in @fillByteArray@
-        .
-        Changes in version 0.4
-        .
-        * Support for GHC 7.2 array copying primitives
-        .
-        * New in "Data.Primitive.ByteArray": @copyByteArray@,
-          @copyMutableByteArray@, @moveByteArray@, @fillByteArray@
-        .
-        * Deprecated in "Data.Primitive.ByteArray": @memcpyByteArray@,
-          @memcpyByteArray'@, @memmoveByteArray@, @memsetByteArray@
-        .
-        * New in "Data.Primitive.Array": @copyArray@, @copyMutableByteArray@
-        .
-        * New in "Data.Primitive.Addr": @copyAddr@, @moveAddr@
-        .
-        * Deprecated in "Data.Primitive.Addr": @memcpyAddr@
+        * Efficient block fill operations: @setByteArray@, @setAddr@
         .
 
 Cabal-Version:  >= 1.2
@@ -55,6 +36,7 @@ Library
 
   Other-Modules:
         Data.Primitive.Internal.Compat
+        Data.Primitive.Internal.Operations
 
   Build-Depends: base >= 4 && < 5, ghc-prim
 
@@ -64,4 +46,8 @@ Library
   Install-Includes: primitive-memops.h
   includes: primitive-memops.h
   c-sources: cbits/primitive-memops.c
+  cc-options: -O3 -ftree-vectorize -fomit-frame-pointer
+  if arch(i386) || arch(x86_64) {
+    cc-options: -msse2
+  }
 
