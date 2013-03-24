@@ -1,5 +1,5 @@
 Name:             cabal-sort
-Version:          0.0.4.1
+Version:          0.0.4.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -20,6 +20,11 @@ Description:
   in the right order, you may run something like
   .
   > for dir in `find . -name "*.cabal" | fgrep -v _darcs | xargs cabal-sort --info=dir`; do (cd $dir && cabal install); done
+  .
+  Note that cabal-install does this automatically since version 0.10
+  when you call it will multiple directory names as arguments.
+  However, when the constraint solver in cabal-install fails
+  you may still use cabal-sort for an automated build.
   .
   For uploading a set of packages to Hackage in the right order
   you may run
@@ -82,7 +87,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/cabal-sort/
-  tag:      0.0.4.1
+  tag:      0.0.4.2
 
 
 Executable cabal-sort
