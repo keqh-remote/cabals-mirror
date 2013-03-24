@@ -1,5 +1,5 @@
 Name:           himerge
-Version:        0.18
+Version:        0.20
 License:        GPL
 License-File:	LICENSE
 Author:         Luis Francisco Araujo
@@ -43,6 +43,7 @@ Extra-Source-Files:
 	data/himerge/icons/search.png
 	data/himerge/icons/small-add.png
 	data/himerge/icons/small-remove.png
+	data/himerge/icons/small-clear.png
 	data/himerge/icons/sync.png
 	data/himerge/icons/system.png
 	data/himerge/icons/unmerge.png
@@ -52,7 +53,8 @@ Extra-Source-Files:
 Executable: 	himerge
 Main-Is:        Main.hs
 Hs-Source-Dirs: src
-Other-Modules:	
+Other-Modules:
+	Init,
 	Browser,
 	Components,
 	Emerge,
