@@ -1,6 +1,6 @@
 Name:           ipprint
 Category:       Text
-Version:        0.4
+Version:        0.4.1
 License:        BSD3
 License-file:   LICENSE
 Author:         Gleb Alexeyev
@@ -24,4 +24,5 @@ Description:    Tiny helper for pretty-printing values in ghci console
 Exposed-modules:
 	IPPrint
 Build-Type: Simple
-Build-Depends: base >= 2 && <= 5, Extra >= 1.33 && < 1.34
+Build-Depends: base >= 2 && <= 5, Extra >= 1.33 && < 1.43
+
