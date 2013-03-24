@@ -1,5 +1,5 @@
 Name:                caf
-Version:             0.0.1
+Version:             0.0.2
 Description:         This library contains implementations of several kinds of futures and concurrency abstractions.
 License:             BSD3
 License-file:        LICENSE
@@ -9,8 +9,17 @@ Build-Type:          Simple
 Stability:           experimental
 Synopsis:            A library of Concurrency Abstractions using Futures.
 Category:            Concurrency
+homepage:            http://sites.google.com/site/cafwiki/
 Cabal-Version:       >= 1.2
 Extra-Source-Files:  README
+                     Examples/Example01.hs
+                     Examples/Example02.hs
+                     Examples/Example03.hs
+                     Examples/Example04.hs
+                     Examples/Example05.hs
+                     Examples/Example06.hs
+                     Examples/Example07.hs
+                     Examples/Examples.hs
 library
   Exposed-Modules: Control.Concurrent.Futures
                    Control.Concurrent.Futures.Futures
