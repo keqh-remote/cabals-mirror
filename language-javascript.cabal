@@ -1,5 +1,5 @@
 Name:                language-javascript
-Version:             0.5.4
+Version:             0.5.5
 Synopsis:            Parser for JavaScript
 Description:         Parses Javascript into an Abstract Syntax Tree (AST).  Initially intended as frontend to hjsmin.
                      .
@@ -32,13 +32,14 @@ Library
   Build-depends:     base             >= 4       && < 5
                    , array            >= 0.3     && < 0.5
                    , mtl              >= 1.1     && < 2.9
-                   , containers       >= 0.2     && < 0.5
+                   , containers       >= 0.2     && < 0.6
                    , utf8-light       >= 0.4     && < 1.0
                    -- For the round trip output
                    , blaze-builder    >= 0.2     && < 1
                    , bytestring       >= 0.9.1   && < 1
                    , utf8-string      >= 0.3.7   && < 1
   build-tools:       happy >= 1.18.5
+                   , alex == 3.0.1
   hs-source-dirs: src
   Exposed-modules:     Language.JavaScript.Parser
                        Language.JavaScript.Parser.Parser
@@ -46,10 +47,10 @@ Library
                        Language.JavaScript.Parser.Grammar5
                        Language.JavaScript.Parser.AST
                        Language.JavaScript.Pretty.Printer
+                       Language.JavaScript.Parser.SrcLocation
   Other-modules:       Language.JavaScript.Parser.LexerUtils
                        Language.JavaScript.Parser.ParseError
                        Language.JavaScript.Parser.ParserMonad
-                       Language.JavaScript.Parser.SrcLocation
                        Language.JavaScript.Parser.StringEscape
                        Language.JavaScript.Parser.Token
   Build-tools:         happy
@@ -65,11 +66,13 @@ Test-Suite test-language-javascript
                  , test-framework
                  , array            >= 0.3     && < 0.5
                  , utf8-light       >= 0.4     && < 1.0
-                 , containers       >= 0.2     && < 0.5
+                 , containers       >= 0.2     && < 0.6
                  , mtl              >= 1.1     && < 2.9
                  , utf8-string      >= 0.3.7   && < 1
                  , bytestring       >= 0.9.1   && < 1
                  , blaze-builder    >= 0.2     && < 1
+                 -- need our own library for tests
+                 , language-javascript >= 0.5.5
   hs-source-dirs: . src ./dist/build
 
 
