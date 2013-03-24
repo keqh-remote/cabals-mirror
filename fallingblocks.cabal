@@ -1,5 +1,5 @@
 Name:                fallingblocks
-Version:             0.1
+Version:             0.1.1
 Synopsis:            A fun falling blocks game.
 Description:         A game where blocks of different shapes fall down the screen.  If you
 		     either fill an entire line or get four of the same color in a row,
