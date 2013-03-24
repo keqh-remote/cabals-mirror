@@ -1,9 +1,10 @@
 Name:		ehaskell
-Version:	0.1
+Version:	0.2
 Cabal-Version:	>= 1.2
 Build-Type:	Simple
 License:	GPL
 License-File:	LICENSE
+Stability:	experimental
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
 Maintainer:	PAF01143@nifty.ne.jp
 Category:	Code Generation
@@ -43,5 +44,5 @@ Description:	You can embed haskell in Text file.
 
 Executable ehs
   Main-Is:		Main.hs
-  Build-Depends:	base, mtlparse >= 0.0.1, yjtools >= 0.6, directory, regexpr >= 0.3.3, process
+  Build-Depends:	base, mtlparse >= 0.0.1, yjtools >= 0.7, directory, regexpr >= 0.3.3, process
   GHC-Options:		-Wall
