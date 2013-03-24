@@ -1,5 +1,5 @@
 name:        hslogger-template
-version:     1.1.1
+version:     1.1.2
 category:    Interfaces
 synopsis:    Automatic generation of hslogger functions
 description: Library for generating hslogger functions using Template Haskell.
@@ -24,7 +24,7 @@ library
     base             >= 3 && < 5,
     haskell98        == 1.*,
     hslogger         == 1.*,
-    mtl              == 1.*,
+    mtl              == 1.* || == 2.0.*,
     template-haskell == 2.*
 
   ghc-options: -Wall
