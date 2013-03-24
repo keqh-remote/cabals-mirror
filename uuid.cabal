@@ -1,5 +1,5 @@
 Name: uuid
-Version: 1.0.0
+Version: 1.0.1
 Copyright: (c) 2008 Antoine Latter
 Author: Antoine Latter
 Maintainer: aslatter@gmail.com
@@ -8,7 +8,7 @@ License-file: LICENSE
 
 Category: Data
 Build-Type: Simple
-Cabal-Version: >= 1.2
+Cabal-Version: >= 1.2.3
 
 Description:
  This library is useful for creating, comparing, parsing and
