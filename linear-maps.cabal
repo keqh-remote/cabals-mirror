@@ -1,5 +1,5 @@
 Name:           linear-maps
-Version:        0.6
+Version:        0.6.1
 Synopsis:       Finite maps for linear use
 Description:    
     Finite maps for linear use. 
@@ -99,7 +99,7 @@ Library
         Data.IdMap.Core.Fast
 
     Build-Depends:
-        base == 4.1.*,
+        base >= 3.0,
         containers == 0.2.*,
         HUnit == 1.2.* 
 --        random
