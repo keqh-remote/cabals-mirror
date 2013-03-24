@@ -1,5 +1,5 @@
 name:         mtl
-version:      2.1
+version:      2.1.1
 cabal-version: >= 1.6
 license:      BSD3
 license-file: LICENSE
@@ -47,3 +47,4 @@ Library
     MultiParamTypeClasses
     FunctionalDependencies
     FlexibleInstances
+  ghc-options: -Wall -fno-warn-unused-imports
