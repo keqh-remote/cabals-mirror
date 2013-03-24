@@ -1,5 +1,5 @@
 name:                   docidx
-version:                1.0.0
+version:                1.0.1
 license:                BSD3
 license-file:           LICENSE
 category:               Documentation
@@ -38,6 +38,9 @@ executable docidx
                         directory >= 1.0, filepath >= 1.1, html >= 1.0,
                         MissingH >= 1.1, mtl >= 2, old-locale, tagsoup >= 0.11,
                         time >= 1.1
+  other-modules:   Distribution.DocIdx.Common,
+                        Distribution.DocIdx.Config, Distribution.DocIdx.Html,
+                        Distribution.GhcPkgList
   ghc-options:          -fwarn-tabs -Wall
 
 source-repository head
