@@ -1,5 +1,5 @@
 Name:                CSPM-Interpreter
-Version:             0.5.1.0
+Version:             0.6.0.3
 
 Synopsis:            An interpreter for CSPM
 Description:
@@ -13,26 +13,28 @@ Description:
 License:             BSD3
 category:            Language,Formal Methods,Concurrency
 License-File:        LICENSE
-Author:              2010 - 2011 Marc Fontaine
+Author:              2010 - 2012 Marc Fontaine
 Maintainer:          Marc Fontaine <fontaine@cs.uni-duesseldorf.de>
 Stability:           experimental
-Tested-With:         GHC == 7.0.3
+Tested-With:         GHC == 7.4.1
 
 cabal-Version:       >= 1.10
 build-type: Simple
 Extra-source-files:
 Library
   Build-Depends:
-    CSPM-Frontend >= 0.7 && < 0.8
+    CSPM-Frontend >= 0.9 && < 0.10
     ,CSPM-CoreLanguage >= 0.3 && < 0.4
+    ,prettyclass >= 1.0 && < 1.1
     ,base >= 4.0 && < 5.0
     ,containers >= 0.4 && < 0.5
-    ,mtl (>= 2.0 && < 2.1 ) || (>= 1.1 && < 1.2)
-    ,array >= 0.3 && <0.4
+    ,mtl
+    ,array >= 0.4 && <0.5
     ,syb >= 0.3 && < 0.4
 
+
   Default-Language: Haskell2010
-  GHC-Options: -funbox-strict-fields -O2 -Wall
+  GHC-Options: -funbox-strict-fields -O2 -Wall  -fsimpl-tick-factor=400
   Other-Extensions: DeriveDataTypeable, GeneralizedNewtypeDeriving
   Hs-Source-Dirs:       src
   Exposed-modules:
@@ -43,6 +45,7 @@ Library
     CSPM.Interpreter.Hash
     CSPM.Interpreter.ClosureSet
     CSPM.Interpreter.Test.CLI
+    CSPM.Interpreter.Pretty
   Other-modules:
     CSPM.Interpreter.Renaming
     CSPM.Interpreter.PrepareAST
