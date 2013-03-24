@@ -1,14 +1,14 @@
 Cabal-Version:      >= 1.2
 Build-Type:         Simple
 Name:               uniplate
-Version:            1.5
+Version:            1.5.1
 Copyright:          2006-10, Neil Mitchell
 Maintainer:         ndmitchell@gmail.com
 Homepage:           http://community.haskell.org/~ndm/uniplate/
 License:            BSD3
 License-File:       LICENSE
 Author:             Neil Mitchell
-Synopsis:           Help writing simple, consise and fast generic operations.
+Synopsis:           Help writing simple, concise and fast generic operations.
 Category:           Generics
 Description:
     Uniplate is library for writing simple and concise generic operations.
