@@ -1,8 +1,8 @@
 -- vim:et
 Name:		ginsu
-Version:	0.8.0.2
+Version:	0.8.1
 Copyright:	2002-2009 John Meacham <john@repetae.net>
-		2011 Dylan Simon <dylan@dylex.net>
+		2011-2012 Dylan Simon <dylan@dylex.net>
 Author:		John Meacham <john@foo.net>
 		Dylan Simon <dylan@dylex.net>
 Maintainer:     dylan@dylex.net
@@ -14,7 +14,7 @@ Homepage:	http://repetae.net/computer/ginsu/
 Category:	Network,Console
 Build-Type:	Custom
 Cabal-Version:	>= 1.6
-tested-with:    GHC == 6.12.3, GHC == 7.0.2, GHC == 7.4.1
+tested-with:    GHC == 6.12.3, GHC == 7.6.1
 extra-source-files: 
                 configure
                 ginsu.buildinfo.in
@@ -34,7 +34,7 @@ data-files:     ginsu.config.sample
 
 Source-Repository head
     Type:	darcs
-    Location:	http://dylex.net/src/ginsu
+    Location:	http://hub.darcs.net/dylex/ginsu
 
 Executable ginsu
     Main-is:	Main.hs
@@ -52,7 +52,6 @@ Executable ginsu
                 EIO
                 ErrorLog
                 ExampleConf
-                Exception
                 Filter
                 Format
                 Gale.Gale
@@ -80,7 +79,7 @@ Executable ginsu
                 my_rsa.c
     Include-Dirs: .
     Build-Depends:	
-                base >= 3 && < 5,
+                base >= 4 && < 5,
                 bytestring,
                 old-locale,
                 containers,
