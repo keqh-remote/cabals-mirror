@@ -1,5 +1,5 @@
 Name:                highlighting-kate
-Version:             0.2.6.2
+Version:             0.2.7
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Category:            Text
@@ -23,6 +23,7 @@ Extra-Source-Files:  README
                      changelog
                      Highlight.hs
                      ParseSyntaxFiles.hs
+                     Text/Highlighting/Kate/Syntax.hs.in
                      css/hk-espresso.css
                      css/hk-kate.css
                      css/hk-pyg.css
@@ -67,6 +68,7 @@ Extra-Source-Files:  README
                      xml/nasm.xml
                      xml/objectivec.xml
                      xml/ocaml.xml
+                     xml/octave.xml
                      xml/pascal.xml
                      xml/perl.xml
                      xml/perl.xml.bkp
@@ -108,7 +110,7 @@ Library
     cpp-options:     -D_PCRE_LIGHT
   else
     Build-depends:   regex-pcre-builtin
-  Build-Depends:     parsec < 3, xhtml
+  Build-Depends:     parsec, xhtml
   Exposed-Modules:   Text.Highlighting.Kate
                      Text.Highlighting.Kate.Syntax
                      Text.Highlighting.Kate.Definitions
@@ -149,6 +151,7 @@ Library
                      Text.Highlighting.Kate.Syntax.Nasm
                      Text.Highlighting.Kate.Syntax.Objectivec
                      Text.Highlighting.Kate.Syntax.Ocaml
+                     Text.Highlighting.Kate.Syntax.Octave
                      Text.Highlighting.Kate.Syntax.Pascal
                      Text.Highlighting.Kate.Syntax.Perl
                      Text.Highlighting.Kate.Syntax.Php
