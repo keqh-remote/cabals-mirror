@@ -1,5 +1,5 @@
 name: BerkeleyDB
-version: 0.8.5
+version: 0.8.6
 license: BSD3
 license-file: LICENSE
 cabal-version: >= 1.4
@@ -30,7 +30,7 @@ description:
              0.8.5: Add db_sync.
              0.7.2: Fix on db4.7
     .
-    Contributors: Michael Stone
+    Contributors: Michael Stone, Balázs Jávorszky
 
 category: Database
 build-type: Simple
