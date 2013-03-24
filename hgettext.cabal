@@ -1,5 +1,5 @@
 Name:                   hgettext
-Version:                0.1.5
+Version:                0.1.6
 Cabal-Version:          >= 1.6
 
 License:                BSD3
@@ -19,7 +19,7 @@ Library
         Hs-Source-Dirs:         src
         Build-Depends:          base, process,
                                 directory, filepath,
-                                containers, Cabal
+                                containers, Cabal, setlocale
 
 Executable hgettext
         Main-Is:                hgettext.hs
