@@ -1,6 +1,6 @@
 -- arch-tag: Haskell XML Toolbox main description file
 name: hxt
-version: 7.4
+version: 7.5
 license: OtherLicense
 license-file: LICENCE
 maintainer: Uwe Schmidt <uwe@fh-wedel.de>
@@ -54,10 +54,11 @@ library
   Text.XML.HXT.Arrow.ProcessDocument,
   Text.XML.HXT.Arrow.ReadDocument,
   Text.XML.HXT.Arrow.WriteDocument,
+  Text.XML.HXT.Arrow.XPath,
+  Text.XML.HXT.Arrow.XPathSimple,
   Text.XML.HXT.Arrow.XmlArrow,
   Text.XML.HXT.Arrow.XmlIOStateArrow,
   Text.XML.HXT.Arrow.XmlNode,
-  Text.XML.HXT.Arrow.XmlNodeSet,
   Text.XML.HXT.DOM,
   Text.XML.HXT.DOM.EditFilters,
   Text.XML.HXT.DOM.FormatXmlTree,
@@ -65,6 +66,7 @@ library
   Text.XML.HXT.DOM.Namespace,
   Text.XML.HXT.DOM.NamespaceFilter,
   Text.XML.HXT.DOM.NamespacePredicates,
+  Text.XML.HXT.DOM.QualifiedName,
   Text.XML.HXT.DOM.TypeDefs,
   Text.XML.HXT.DOM.UTF8Decoding,
   Text.XML.HXT.DOM.Unicode,
@@ -91,6 +93,7 @@ library
   Text.XML.HXT.Parser.ProtocolHandlerHttpNative,
   Text.XML.HXT.Parser.ProtocolHandlerHttpNativeOrCurl,
   Text.XML.HXT.Parser.ProtocolHandlerUtil,
+  Text.XML.HXT.Parser.TagSoup,
   Text.XML.HXT.Parser.XhtmlEntities,
   Text.XML.HXT.Parser.XmlCharParser,
   Text.XML.HXT.Parser.XmlDTDParser,
@@ -149,7 +152,7 @@ library
  hs-source-dirs: src
  ghc-options: -Wall -fglasgow-exts
 
- build-depends: base, haskell98, parsec, HTTP, HUnit, network
+ build-depends: base, haskell98, parsec, HTTP, HUnit, network, tagsoup
  if flag(splitBase)
    build-depends: base >= 3, containers, directory, process
  else
