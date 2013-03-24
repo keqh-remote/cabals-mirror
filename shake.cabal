@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               shake
-version:            0.2.5
+version:            0.2.6
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -102,3 +102,4 @@ executable shake
         Examples.Test.FilePath
         Examples.Test.Files
         Examples.Test.Pool
+        Examples.Test.Resources
