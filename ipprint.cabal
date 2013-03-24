@@ -1,6 +1,6 @@
 Name:           ipprint
 Category:       Text
-Version:        0.3
+Version:        0.4
 License:        BSD3
 License-file:   LICENSE
 Author:         Gleb Alexeyev
@@ -18,6 +18,10 @@ Description:    Tiny helper for pretty-printing values in ghci console
                 >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],                
                 >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],                
                 >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],                
-                >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]]                
+                >    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]]
+                .
+                Terminal width support added by Jean-Marie Gaillourdet. 
 Exposed-modules:
 	IPPrint
+Build-Type: Simple
+Build-Depends: base >= 2 && <= 5, Extra >= 1.33 && < 1.34
