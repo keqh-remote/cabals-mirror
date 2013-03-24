@@ -1,5 +1,5 @@
 Name:                listlike-instances
-Version:             0.2.2.1
+Version:             0.2.3
 Synopsis:            Extra instances of the ListLike class
 Description:         Provides ListLike instances for Vector and Text types
 Homepage:            http://jwlato.webfactional.com/haskell/listlike-instances
