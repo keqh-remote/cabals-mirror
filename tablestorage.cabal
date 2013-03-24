@@ -1,5 +1,5 @@
 name:           tablestorage
-version:        0.1.0.1
+version:        0.1.0.2
 cabal-version:  >= 1.2
 build-type:     Simple
 author:         Phil Freeman <paf31-at-cantab.net>
@@ -39,6 +39,7 @@ library
                    Network.TableStorage.API,
                    Network.TableStorage.Auth,
                    Network.TableStorage.Development,
+                   Network.TableStorage.Query,
                    Network.TableStorage.Types
   other-modules:   
                    Network.TableStorage.Atom,
