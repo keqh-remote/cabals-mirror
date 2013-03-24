@@ -1,14 +1,14 @@
 name:                   palindromes
-version:                0.2.2
+version:                0.2.2.1
 synopsis:               Finding palindromes in strings
-homepage:               http://www.jeuring.net/Palindromes
+homepage:               http://www.jeuring.net/homepage/palindromes/index.html
 description:
 
   palindromes is an executable and a library which takes a file name, and 
   returns information about palindromes in the file.
 
 category:               Algorithms
-copyright:              (c) 2007 - 2011 Johan Jeuring
+copyright:              (c) 2007 - 2012 Johan Jeuring
 license:                BSD3
 license-file:           LICENSE
 author:                 Johan Jeuring
@@ -20,7 +20,7 @@ extra-source-files:     README,
                         tests/Main.hs
 build-type:             Simple
 cabal-version:          >= 1.2.1
-tested-with:            GHC == 6.10.1
+tested-with:            GHC == 7.0.4
 
 --------------------------------------------------------------------------------
 
