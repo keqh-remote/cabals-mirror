@@ -1,5 +1,5 @@
 name:               haskell-src-meta
-version:            0.0.3.1
+version:            0.0.4
 cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
@@ -14,7 +14,7 @@ description:        The translation from haskell-src-exts abstract syntax
                     to template-haskell abstract syntax isn't 100% complete yet.
 
 library
-  build-Depends:      base == 4.*, containers, haskell-src-exts == 0.4.*,
+  build-Depends:      base == 4.*, containers, haskell-src-exts == 1.0.*,
                       packedstring, template-haskell, pretty, syb
   extensions:         TemplateHaskell, QuasiQuotes,
                       RankNTypes, StandaloneDeriving,
@@ -32,4 +32,7 @@ library
                       Language.Haskell.Meta.Utils,
                       Language.Haskell.Meta.QQ.Hs,
                       Language.Haskell.Meta.QQ.Here,
-                      Language.Haskell.Meta.QQ.Vixey
+                      Language.Haskell.Meta.QQ.HsHere,
+                      Language.Haskell.Meta.QQ.Vixey,
+                      Language.Haskell.Meta.QQ.BF,
+                      Language.Haskell.Meta.QQ.SKI
