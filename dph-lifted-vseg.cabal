@@ -1,5 +1,5 @@
 Name:           dph-lifted-vseg
-Version:        0.6.0.2
+Version:        0.6.1.1
 License:        BSD3
 License-File:   LICENSE
 Author:         The DPH Team
@@ -23,22 +23,6 @@ Library
         Data.Array.Parallel.Lifted.Closure
         Data.Array.Parallel.Lifted.Combinators
         Data.Array.Parallel.Lifted
-        Data.Array.Parallel.PArray.PData
-        Data.Array.Parallel.PArray.PRepr
-        Data.Array.Parallel.PArray.Scalar
-        Data.Array.Parallel.PArray
-        Data.Array.Parallel.Prelude.Base
-        Data.Array.Parallel.Prelude.Bool
-        Data.Array.Parallel.Prelude.Double
-        Data.Array.Parallel.Prelude.Int
-        Data.Array.Parallel.Prelude.Word8
-        Data.Array.Parallel.Prelude.Tuple
-        Data.Array.Parallel.Prelude.Ordering
-        Data.Array.Parallel.Prelude
-        Data.Array.Parallel
-        Data.Array.Parallel.Prim
-        
-  Other-modules:
         Data.Array.Parallel.PArray.PData.Base
         Data.Array.Parallel.PArray.PData.Double
         Data.Array.Parallel.PArray.PData.Int
@@ -52,10 +36,24 @@ Library
         Data.Array.Parallel.PArray.PData.Unit
         Data.Array.Parallel.PArray.PData.Void
         Data.Array.Parallel.PArray.PData.Wrap
+        Data.Array.Parallel.PArray.PData
         Data.Array.Parallel.PArray.PRepr.Base
         Data.Array.Parallel.PArray.PRepr.Instances
         Data.Array.Parallel.PArray.PRepr.Nested
         Data.Array.Parallel.PArray.PRepr.Tuple
+        Data.Array.Parallel.PArray.PRepr
+        Data.Array.Parallel.PArray.Scalar
+        Data.Array.Parallel.PArray
+        Data.Array.Parallel.Prelude.Base
+        Data.Array.Parallel.Prelude.Bool
+        Data.Array.Parallel.Prelude.Double
+        Data.Array.Parallel.Prelude.Int
+        Data.Array.Parallel.Prelude.Word8
+        Data.Array.Parallel.Prelude.Tuple
+        Data.Array.Parallel.Prelude.Ordering
+        Data.Array.Parallel.Prelude
+        Data.Array.Parallel
+        Data.Array.Parallel.Prim
         
   Exposed:
         False
@@ -97,9 +95,9 @@ Library
         array                   == 0.4.*,
         random                  == 1.0.*,
         template-haskell        == 2.7.*,
-        dph-base                == 0.6.*,
-        dph-prim-par            == 0.6.*,
-        dph-lifted-base         == 0.6.*,
         vector                  == 0.9.*,
         pretty                  == 1.1.*,
-        containers              == 0.4.*
+        containers              == 0.4.*,
+        dph-base                == 0.6.1.*,
+        dph-prim-par            == 0.6.1.*,
+        dph-lifted-base         == 0.6.1.*
