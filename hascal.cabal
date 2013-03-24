@@ -1,10 +1,16 @@
 name:          hascal
-version:       1.4.1
+version:       1.4.2
 synopsis:      A minimalistic but extensible and precise calculator
-description:   Hascal is a minimalistic calculator with infix-operations
-               supporting addition, subtraction, division, multiplication,
-               exponentiation and logarithming.
-               Futhermore, it's easy to add custom operators.
+description:   Hascal is both a simple but extendable calculator library for
+               Haskell as well as a command-line program using this library.
+               .
+               Hascal supports addition, subtraction, multiplication, division,
+               exponentiation, and logarithm, while it's easy to add custom
+               operators.
+               .
+               Hascal also supports complex numbers. Hascal can work at an
+               arbitrary precision. However, Hascal does not support
+               parenthesis.
 stability:     provisional
 category:      Math, Console, Tools, Utility, Utils, Parsing
 homepage:      http://darcsden.com/mekeor/hascal
@@ -26,7 +32,7 @@ source-repository head
 
 source-repository head
   type:     git
-  location: git://github.com/MekeorMelire/hascal.git
+  location: git://github.com/mekeor/hascal.git
 
 
 test-suite test
