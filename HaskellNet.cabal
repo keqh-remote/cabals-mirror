@@ -1,9 +1,10 @@
 Name:           HaskellNet
-Version:        0.2.2
+Version:        0.2.3
 Author:         Jun Mukai
 Maintainer:	Robert Wills <wrwills@gmail.com>
 License:        BSD3
 Category:       Network
+Homepage:       https://patch-tag.com/r/wrwills/HaskellNet/home
 Description:	Originally written for Google SOC, provides network related libraries such as POP3, SMTP, IMAP.  
 		All I have done is get the project to compile using cabal and check that these libraries basically 
 		work.  
