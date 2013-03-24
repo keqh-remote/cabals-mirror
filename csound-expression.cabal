@@ -1,5 +1,5 @@
 Name:          csound-expression
-Version:       0.3.0
+Version:       0.3.1
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
@@ -8,9 +8,9 @@ Maintainer:    <anton.kholomiov@gmail.com>
 Synopsis:      Csound combinator library
 Description:   Csound code generator. See root module "CsoundExpr" 
                for introduction guides. Score module is no longer 
-               availible inside 'csound-expression' package, consider 
+               available inside 'csound-expression' package, consider 
                using 'temporal-media' or 'temporal-music-notation'
-               packages.
+               packages. See source directory for examples.
 
 Category:      Sound, Music
 Stability:     Experimental
@@ -19,11 +19,18 @@ Build-Type:    Simple
 
 Extra-Source-Files : 
               Changelog
+              examples/Readme.hs       
+              examples/dm.hs       
+              examples/arpeggi.hs        
+              examples/choral.hs        
+              examples/teardrop.hs        
+              examples/Orchestra.hs        
+              examples/tmp/new.csd        
 
 Library
   Build-Depends:
         base >= 4, base < 5, containers, mtl >= 2.0, pretty, 
-        filepath, directory, haskell98, Boolean, temporal-media >= 0.2
+        filepath, directory, haskell98, Boolean, temporal-media >= 0.2.1
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         CsoundExpr
