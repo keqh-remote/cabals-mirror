@@ -1,5 +1,5 @@
 name:             base-compat
-version:          0.2.0.1
+version:          0.2.0.2
 license:          MIT
 license-file:     LICENSE
 copyright:        (c) 2012 Simon Hengel
@@ -10,7 +10,7 @@ cabal-version:    >= 1.8
 category:         System
 synopsis:         A compatibility layer for base
 description:      Ban CPP from your code.  See the README for what is covered:
-                  https://github.com/sol/base-compat#readme
+                  <https://github.com/sol/base-compat#readme>
 
 source-repository head
   type: git
