@@ -1,5 +1,5 @@
 Name: hs-dotnet
-Version: 0.3.0
+Version: 0.3.1
 Synopsis: Pragmatic .NET interop for Haskell
 Description:
    This package provides a way for Haskell code (via GHC) to interact with .NET
@@ -21,6 +21,7 @@ Cabal-version :  >= 1.2
 Build-type    : Simple
 Extra-source-files: README 
                     CHANGES
+		    ChangeLog
                     HsInvoker.dll
                     HsInvoker.dll.manifest
                     invoker.snk
@@ -107,13 +108,14 @@ library
 
  C-Sources:       cbits/HsInvoke.c
  Include-dirs:    include
- build-depends:   base, ghc-prim
  extra-libraries: ole32, oleaut32
 
--- if flag(old-base)
---   Build-Depends: base < 3
--- else
---   Build-Depends: base >= 4
+ if flag(old-base)
+   Build-Depends: base < 3
+ else
+   Build-Depends: base >= 4
+
+ Build-depends:   ghc-prim
 
 
 
