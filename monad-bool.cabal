@@ -2,8 +2,8 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                monad-bool
-version:             0.1.0.0
-synopsis:            Short-circuiting boolean monads
+version:             0.1.1
+synopsis:            Short-circuiting, value-returning boolean monoids and monads
 -- description:         
 homepage:            http://github.com/jwiegley/monad-bool
 license:             BSD3
