@@ -7,7 +7,7 @@ Name:                stringsearch
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.3.3
+Version:             0.3.4
 
 -- A short (one-line) description of the package.
 Synopsis:            Fast searching, splitting and replacing of ByteStrings
@@ -38,7 +38,7 @@ Author:              Daniel Fischer, Chris Kuklewicz, Justin Bailey
 Maintainer:          daniel.is.fischer@googlemail.com
 
 -- A copyright notice.
-Copyright:           (c) 2007-2010
+Copyright:           (c) 2007-2011
                      Daniel Fischer, Chris Kuklewicz, Justin Bailey
 
 Category:            Text, Search
@@ -49,8 +49,8 @@ Build-type:          Simple
 -- a README.
 Extra-source-files:  CHANGES
 
-Tested-with:         GHC == 6.8.3, GHC == 6.10.1, GHC == 6.10.3, GHC == 6.12.1,
-                     GHC == 6.12.2, GHC == 6.12.3
+Tested-with:         GHC == 6.8.3, GHC == 6.12.1, GHC == 6.12.2,
+                     GHC == 6.12.3, GHC == 7.0.3
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.2
@@ -89,13 +89,17 @@ Library
       Build-depends: base >= 2 && < 3
 
   Extensions:        BangPatterns
-  ghc-options:       -O2 -Wall
-  ghc-prof-options:  -auto-all
+  if flag(base4)
+    ghc-options:     -O2 -fspec-constr-count=4 -Wall
+  else
+    ghc-options:     -O2 -Wall
+  ghc-prof-options:  -auto
 
   -- Modules not exported by this package.
   Other-modules:     Data.ByteString.Search.Internal.BoyerMoore
                      Data.ByteString.Search.Internal.KnuthMorrisPratt
                      Data.ByteString.Search.Internal.Utils
+                     Data.ByteString.Lazy.Search.Internal.BoyerMoore
 
   -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
   -- Build-tools:
