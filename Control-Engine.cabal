@@ -1,5 +1,5 @@
 name:		Control-Engine
-version:	0.0.4
+version:	0.0.6
 license:	BSD3
 license-file:	LICENSE
 author:		Thomas DuBuisson <thomas.dubuisson@gmail.com>
@@ -8,6 +8,7 @@ description:	A parallel producer/consumer engine (thread pool).  There are lots
 		of features in the Engine, to include dynamically adjustable hooks,
 		managed state, and injection points.
 synopsis:	A parallel producer/consumer engine (thread pool)
+homepage:	http://www.haskell.org/haskellwiki/Control-Engine
 category:	Control
 stability:	stable
 build-type:	Simple
