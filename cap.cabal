@@ -1,6 +1,6 @@
 Name:                cap
 Cabal-Version:       >= 1.2
-Version:             1.0
+Version:             1.0.1
 Synopsis:            Interprets and debug the cap language.
 Description:         An interpreter and debugger for the cap language.
 License:             BSD3
@@ -8,7 +8,7 @@ License-file:        LICENSE
 Author:              Thomas Davie
 Maintainer:          Thomas Davie (tom.davie@gmail.com)
 Data-Files:          README
-Category:            Distribution
+Category:            Language
 build-type:          Simple
 Extra-source-files:  examples/add.cap
                      examples/allOdd.cap
