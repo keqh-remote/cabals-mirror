@@ -1,5 +1,5 @@
 Name:		HROOT
-Version:	0.6.2
+Version:	0.6.3
 Synopsis:	Wrapper for ROOT
 Description: 	Haskell FFI binding for ROOT  
 Homepage:       http://ianwookim.org/HROOT
@@ -35,6 +35,7 @@ Library
                        HROOT.Class.Interface
                        HROOT.Class.Implementation
                        HROOT.Class.FFI
+                       HROOT.Class.Existential
                        HROOT.AddOn
                        HROOT.AddOnFunction
                        HROOT.Class.TObject
