@@ -1,5 +1,5 @@
 Name:                dingo-core
-Version:             0.0.3
+Version:             0.0.3.1
 Synopsis:            Dingo is a Rich Internet Application platform based on the Warp web server.
 Description:         Dingo is a Rich Internet Application platform based on the Warp web server. It allows you to write code which looks very much like regular GUI code and have it work in the browser. 
 
@@ -44,7 +44,8 @@ Library
                , wai-extra == 0.4.*
                , warp == 0.4.*
                , web-css == 0.1.*
-  Extensions:          DeriveDataTypeable
+  Extensions:          CPP
+                       DeriveDataTypeable
                        ExistentialQuantification
                        FunctionalDependencies
                        GeneralizedNewtypeDeriving
@@ -78,6 +79,7 @@ Library
                        Dingo.Internal.Server.Wai
                        Dingo.Internal.Session
                        Dingo.Internal.SessionTypes
+                       Dingo.Internal.TypeableShim
                        Dingo.Internal.Widget
                        Dingo.Internal.WidgetSet
                        Dingo.Internal.WidgetTypes
