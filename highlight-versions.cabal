@@ -1,5 +1,5 @@
 name:                highlight-versions
-version:             0.1.2.2
+version:             0.1.2.3
 synopsis:            Highlight package versions which differ from the latest
                      version on Hackage
 description:         This package provides an executable which reads from
@@ -37,6 +37,6 @@ executable highlight-versions
                        containers >= 0.4 && < 0.6,
                        hackage-db >= 1.4 && < 1.5,
                        Cabal >= 1.14 && < 1.17,
-                       ansi-terminal ==0.5.*
+                       ansi-terminal >= 0.5 && < 0.7
   hs-source-dirs:      src
   default-language:    Haskell2010
