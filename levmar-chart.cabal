@@ -1,5 +1,5 @@
 name:          levmar-chart
-version:       0.1
+version:       0.2
 cabal-version: >= 1.6
 build-type:    Simple
 stability:     experimental
@@ -28,7 +28,7 @@ library
                , Chart         == 0.11.*
                , colour        == 2.3.*
                , data-accessor == 0.2.*
-               , levmar        == 0.1.*
+               , levmar        == 0.2.*
   exposed-modules: LevMar.Chart
   ghc-options: -Wall -O2
 
@@ -37,7 +37,7 @@ executable example
                , Chart         == 0.11.*
                , colour        == 2.3.*
                , data-accessor == 0.2.*
-               , levmar        == 0.1.*
+               , levmar        == 0.2.*
                , random        == 1.0.*
   other-modules: LevMar.Chart
   ghc-options: -Wall -O2
