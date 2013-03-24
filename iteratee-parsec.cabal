@@ -1,5 +1,5 @@
 Name:                     iteratee-parsec
-Version:                  0.0.1
+Version:                  0.0.2
 Synopsis:                 Package allowing parsec parser initeratee
 Description:              Package providing instances of Stream in
                           IterateeG monad.
