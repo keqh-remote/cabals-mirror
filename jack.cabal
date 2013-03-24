@@ -1,5 +1,5 @@
 Name:               jack
-Version:            0.6
+Version:            0.6.1
 License:            GPL
 License-File:       LICENSE
 Author:             Soenke Hahn, Henning Thielemann
@@ -22,7 +22,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/jack/
-  tag:      0.6
+  tag:      0.6.1
 
 Flag buildExamples
   description: Build example executables
@@ -30,12 +30,12 @@ Flag buildExamples
 
 Library
   Build-Depends:
-    midi >=0.1.5.2 && <0.2,
+    midi >=0.1.5.2 && <0.3,
     bytestring >=0.9.1.4 && <0.10,
     explicit-exception >=0.1.5 && <0.2,
-    transformers >=0.2 && <0.3,
+    transformers >=0.2 && <0.4,
     enumset >=0.0 && <0.1,
-    array >=0.2 && <0.4,
+    array >=0.2 && <0.5,
     unix >=2.3 && <2.6,
     base >=4.0 && <5.0
   Exposed-Modules:
