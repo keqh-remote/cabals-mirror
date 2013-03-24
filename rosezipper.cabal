@@ -1,23 +1,16 @@
-name:                rosezipper
-version:             0.1
-synopsis:            Generic zipper implementation for Data.Tree
-description:         Generic zipper implementation for Data.Tree
-category:            Data
-license:             BSD3
-license-file:        LICENSE
-author:              Krasimir Angelov and Iavor S. Diatchki
-maintainer:          Eric Kow <E.Y.Kow@brighton.ac.uk>
-build-Depends:       base >= 3, containers
-build-type:          Simple
+Name:           rosezipper
+Version:        0.2
+License:        BSD3
+License-file:   LICENSE
+Author:         Krasimir Angelov, Iavor S. Diatchki
+Maintainer:     Iavor S. Diatchki <iavor.diatchki@gmail.com>
+Category:       Data Structures
+Synopsis:       Generic zipper implementation for Data.Tree
+Description:    A Haskell datastructure for working with locations in
+                trees or forests.
+Build-Depends:  base < 5, containers
+Build-type:     Simple
+Extra-source-files: LICENSE
+Exposed-modules: Data.Tree.Zipper
+GHC-options:    -O2 -Wall
 
-cabal-version:       >=1.2
-
-Flag splitBase
-  description: Choose the new smaller, split-up base package.
-
-Library
-  Exposed-modules:     Data.Tree.Zipper
-  if flag(splitBase)
-    Build-depends: base >= 3, containers
-  else
-    Build-Depends: base < 3
