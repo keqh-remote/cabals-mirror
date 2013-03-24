@@ -1,5 +1,5 @@
 Name:                scc
-Version:             0.6
+Version:             0.6.1
 Cabal-Version:       >= 1.2
 Build-Type:          Simple
 Synopsis:            Streaming component combinators
@@ -29,8 +29,7 @@ Extra-source-files:  grammar.bnf Makefile LICENSE.txt Test.hs
 Executable shsh
   Main-is:           Shell.hs
   Other-Modules:     Control.Concurrent.SCC.Streams, Control.Concurrent.SCC.Types, Control.Concurrent.SCC.Coercions,
-                     Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives,
-                     Control.Concurrent.SCC.XML,
+                     Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives, Control.Concurrent.SCC.XML,
                      Control.Concurrent.Configuration, Control.Concurrent.SCC.Configurable
   Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, monad-parallel,
                      monad-coroutine >= 0.6 && < 0.7, bytestring < 1.0, text < 1.0,
@@ -38,11 +37,12 @@ Executable shsh
   GHC-options:       -threaded
 
 Library
-  Exposed-Modules:   Control.Concurrent.SCC.Streams, Control.Concurrent.SCC.Types, Control.Concurrent.SCC.Coercions,
-                     Control.Concurrent.SCC.Combinators.Parallel, Control.Concurrent.SCC.Combinators.Sequential,
-                     Control.Concurrent.SCC.Primitives, Control.Concurrent.SCC.XML,
-                     Control.Concurrent.Configuration, Control.Concurrent.SCC.Configurable,
+  Exposed-Modules:   Control.Concurrent.Configuration, Control.Concurrent.SCC.Configurable,
                      Control.Concurrent.SCC.Parallel, Control.Concurrent.SCC.Sequential
+  Other-Modules:     Control.Concurrent.SCC.Streams, Control.Concurrent.SCC.Types, Control.Concurrent.SCC.Coercions,
+                     Control.Concurrent.SCC.Combinators.Parallel, Control.Concurrent.SCC.Combinators.Sequential,
+                     Control.Concurrent.SCC.Combinators, Control.Concurrent.SCC.Primitives, Control.Concurrent.SCC.XML
+                     
   Build-Depends:     base < 5, containers, transformers >= 0.2 && < 0.3, monad-parallel,
                      monad-coroutine >= 0.6 && < 0.7, bytestring < 1.0, text < 1.0
   GHC-prof-options:  -auto-all
