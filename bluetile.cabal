@@ -1,5 +1,5 @@
 Name:                bluetile
-Version:             0.4.3
+Version:             0.5
 homepage:            http://www.bluetile.org/
 synopsis:            full-featured tiling for the GNOME desktop environment
 description:
@@ -16,6 +16,7 @@ License-file:        LICENSE
 Author:              Jan Vornberger
 Maintainer:          jan.vornberger@informatik.uni-oldenburg.de
 extra-source-files:  src/Config.hs,
+                     src/ConfigParser.hs,
                      src/BluetileDock.hs,
                      src/XMonad/Actions/BluetileCommands.hs,
                      src/XMonad/Actions/WindowMenu.hs,
@@ -51,7 +52,9 @@ data-files:          bluetiledock/bluetiledock.glade,
                      bluetiledock/fullscreen.svg,
                      bluetilegreet/bluetilegreet.glade,
                      logo/bluetile-icon-48x48.png,
-                     logo/bluetile-icon.svg
+                     logo/bluetile-icon.svg,
+                     etc/bluetilerc,
+                     etc/bluetilerc_user_template
 Build-Type:          Custom
 Cabal-Version:       >=1.2
 
@@ -59,7 +62,8 @@ Executable bluetile
   Main-is:           Main.hs
   Hs-Source-Dirs:    src
   Build-Depends:     base>=3, base<5, containers, process, filepath,
-                     random, utf8-string,
+                     random, utf8-string, unix, regex-compat, mtl,
+                     ConfigFile, directory,
                      xmonad>=0.9.1, xmonad-contrib>=0.9.1
   if true
     Ghc-Options:       -Wall
@@ -67,6 +71,7 @@ Executable bluetile
     Ghc-Options:       -fno-warn-unused-do-bind
 
 Executable gnome-bluetile-session
+  Buildable:         False
   Hs-Source-Dirs:    gnome-bluetile-session
   Main-is:           GnomeBluetileSession.hs
   Build-Depends:     base>=3, base<5, filepath, unix
