@@ -1,5 +1,5 @@
 Name:          grapefruit-records
-Version:       0.1.0.2
+Version:       0.1.0.3
 Cabal-Version: >= 1.6
 Build-Type:    Simple
 License:       BSD3
@@ -19,7 +19,7 @@ Description:   Grapefruit is a library for Functional Reactive Programming (FRP)
                .
                This package provides a record system for use with FRP.
 Category:      Data, FRP, Reactivity
-Tested-With:   GHC == 7.4.1
+Tested-With:   GHC == 7.6.1
 
 Source-Repository this
     type:     darcs
