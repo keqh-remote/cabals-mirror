@@ -1,11 +1,12 @@
 name:           peano-inf
-version:        0.6.1
+version:        0.6.2
 synopsis:       Lazy Peano numbers including observable infinity value.
 description:    
     Lazy Peano numbers including observable infinity value.
     .
-    This data type is ideal for lazy list length computation (the infinite value is not needed in this case).
-    For a comparison with other Peano number implementation, see <http://people.inf.elte.hu/divip/peano/>
+    This data type is ideal for lazy list length computation and for serveral graph algroithms.
+    .
+    For a comparison with other Peano number implementations, see <http://people.inf.elte.hu/divip/peano/>
 category:       Data
 author:         Péter Diviánszky <divip@aszt.inf.elte.hu>
 maintainer:     Péter Diviánszky <divip@aszt.inf.elte.hu>
@@ -20,6 +21,7 @@ library
     ghc-options:    -Wall -fno-warn-overlapping-patterns -fno-warn-incomplete-patterns
     build-depends:
         base,
+        containers,
         lazysmallcheck
 
     exposed-modules:
