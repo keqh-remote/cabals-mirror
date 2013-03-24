@@ -3,8 +3,9 @@
 --   http://haskell.org/cabal/release/cabal-latest/doc/users-guide/
 
 name: hello
-version: 1.0
+version: 1.0.0.1
 license: BSD3
+license-file: LICENSE
 copyright: (c) Simon Marlow
 author: Simon Marlow
 maintainer: Simon Marlow <marlowsd@gmail.com>
@@ -15,6 +16,12 @@ synopsis: Hello World, an example package
 category: Console, Text
 cabal-version: >= 1.6
 build-type: Simple
+
+Description:
+  This is an implementation of the classic "Hello World" program in
+  Haskell, as an example of how to create a minimal Haskell
+  application using Cabal and Hackage.  Please submit any suggestions and
+  improvements.
 
 source-repository head
   type:     darcs
