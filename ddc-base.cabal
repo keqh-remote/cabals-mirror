@@ -1,5 +1,5 @@
 Name:           ddc-base
-Version:        0.2.1.2
+Version:        0.3.1.1
 License:        MIT
 License-file:   LICENSE
 Author:         The Disciplined Disciple Compiler Strike Force
@@ -10,10 +10,11 @@ Stability:      experimental
 Category:       Compilers/Interpreters
 Homepage:       http://disciple.ouroborus.net
 Bug-reports:    disciple@ouroborus.net
-Synopsis:       Disciple Core language common utilities.    
+Synopsis:       Disciplined Disciple Compiler common utilities.    
 Description:
         This package re-exports the main external dependencies of 
-        the Disciplined Disciple Compiler project.
+        the Disciplined Disciple Compiler project, and provides some
+        common utilities.
 
 Library
   Build-Depends: 
@@ -24,9 +25,15 @@ Library
         parsec          == 3.1.*
 
   Exposed-modules:
-        DDC.Base.Lexer
         DDC.Base.Parser
         DDC.Base.Pretty
+
+        DDC.Control.Monad.Check
+
+        DDC.Data.Canned
+        DDC.Data.SourcePos
+        DDC.Data.Token
+        DDC.Data.ListUtils
         
   GHC-options:
         -Wall
@@ -38,3 +45,4 @@ Library
         RankNTypes
         FlexibleContexts
         KindSignatures
+        BangPatterns
