@@ -1,5 +1,5 @@
 Name:             data-accessor-monads-tf
-Version:          0.2.1.1
+Version:          0.2.1.2
 License:          BSD3
 License-File:     LICENSE
 Author:           Stephan Friedrichs
@@ -16,6 +16,7 @@ Build-Depends:
 Synopsis:         Use Accessor to access state in monads-tf State monad type family
 Description:      Use Accessor to access state in monads-tf State monad type family
 GHC-Options:      -Wall
+Tested-With:      GHC==6.8.2, GHC==6.10.4
 Hs-Source-Dirs:   src
 Exposed-Modules:
   Data.Accessor.Monad.TF.State
