@@ -1,8 +1,8 @@
 Name:                hecc
-Version:             0.1
+Version:             0.2
 Synopsis:	     Elliptic Curve Cryptography for Haskell
 Description:         Pure math & algorithms for Elliptic Curve Cryptography in Haskell
-License:             OtherLicense
+License:             BSD3
 License-file:        COPYING
 Copyright:	     (c) Marcel Fourné, 2009
 Author:              Marcel Fourné
@@ -12,9 +12,12 @@ Stability:	     alpha
 Build-Type:          Simple
 Cabal-Version:       >=1.2
 Data-Files:	     README
-Extra-Source-Files:  src/test.hs
+Extra-Source-Files:  src/bench.hs
 		     src/Examples.hs
 hs-source-dirs:	     src
-Build-Depends:	     base >= 3 && < 5
+Build-Depends:	     base >= 3 && < 5,
+		     MonadRandom,
+		     haskell98
 Exposed-modules:     Codec.Encryption.ECC.Base
-ghc-options:	     -Wall
+		     Codec.Encryption.ECC.StandardCurves
+ghc-options:	     -Wall -O2
