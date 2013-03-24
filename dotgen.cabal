@@ -1,5 +1,5 @@
 Name:                dotgen
-Version:             0.3
+Version:             0.4
 Synopsis:            A simple interface for building .dot graph files.
 Description:         This package provides a simple interface for building .dot graph files,
 		     for input into the dot and graphviz tools. 
@@ -9,7 +9,7 @@ License:             BSD3
 License-file:        LICENSE
 Author:              Andy Gill
 Maintainer:          Andy Gill <andygill@ku.edu>
-Build-Depends:       base, containers
+Build-Depends:       base >=3 && <5, containers
 Exposed-Modules:     Text.Dot
 Stability:	     alpha
 build-type: 	     Simple
@@ -19,4 +19,5 @@ Executable:          dotgen-test
 hs-source-dirs:	     test, .
 Main-is:             DotTest.hs
 buildable: False
+
 
