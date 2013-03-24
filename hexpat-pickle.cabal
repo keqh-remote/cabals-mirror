@@ -1,16 +1,16 @@
 Cabal-Version: >= 1.2
 Name: hexpat-pickle
-Version: 0.2
+Version: 0.3
 Synopsis: XML picklers based on hexpat, source-code-similar to those of the HXT package
 Description:
   A library of combinators that allows Haskell data structures to be pickled
   (serialized) to/from XML via the Tree datatype defined in the hexpat package.
   It is source-code-similar to the pickling functionality of the HXT package,
   to ease the transition between the two libraries. This implementation is
-  faster but less complete than HXT. This package does not depend on HXT.
+  faster but less complete than HXT.  Unlike some other picklers, it also supports
+  /lazy unpickling/.
   .
-  Note that hexpat-pickle is still under development, so it is fairly likely
-  that there will be some API changes coming.
+  This package does not depend on HXT.
   .
   DARCS repository:
   <http://code.haskell.org/hexpat-pickle/>
@@ -23,12 +23,24 @@ Copyright:
   (c) 2009 Stephen Blackheath <http://blacksapphire.com/antispam/>,
   (c) 2009 Matthew Pocock <matthew.pocock@ncl.ac.uk>
 Homepage: http://code.haskell.org/hexpat-pickle/
-Extra-Source-Files: test/test.hs, test/example.hs
+Extra-Source-Files:
+  test/tests.hs,
+  test/test.hs,
+  test/test.xml,
+  test/example.hs,
+  test/lazyUnpickle.hs,
+  test/lazyUnpickleThrow.hs
 Build-Type: Simple
-Stability: alpha
+Stability: beta
 
 Library
-  Build-Depends: base, hexpat >= 0.4, utf8-string >= 0.3.3, bytestring >= 0.9,
-      text >= 0.1
+  Build-Depends:
+    base,
+    hexpat >= 0.5,
+    utf8-string >= 0.3.3,
+    bytestring >= 0.9,
+    text >= 0.1,
+    containers,
+    extensible-exceptions >= 0.1 && < 0.2
   Exposed-Modules: Text.XML.Expat.Pickle
 
