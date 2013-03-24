@@ -1,5 +1,5 @@
 name:			manatee-pdfviewer
-version:		0.0.2
+version:		0.0.3
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -14,6 +14,15 @@ description:    manatee-pdfviewer is PDF viewer extension for Manatee (Haskell/G
  > sudo aptitude install poppler-data -y
  .
  And replace Chinese font string in file `/etc/fonts/conf.d/49-sansserif.conf'
+ .
+ Manual look <http://haskell.org/haskellwiki/Manatee>
+ .
+ Screenshot at <http://goo.gl/MkVw>
+ .
+ IRC channel: 
+ .
+ irc.freenode.net 6667 <##manatee>
+ .
 author:			Andy Stewart
 maintainer:		Andy Stewart <lazycat.manatee@gmail.com>
 stability:		provisional
@@ -27,7 +36,7 @@ Source-Repository head
   location:     http://patch-tag.com/r/AndyStewart/manatee-pdfviewer
   
 Library
-     build-depends: base >= 4 && < 5, manatee-core >= 0.0.2, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
+     build-depends: base >= 4 && < 5, manatee-core >= 0.0.3, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
                     containers >= 0.3.0.0, gtk-serialized-event >= 0.12.0, poppler >= 0.12.1, gtk >= 0.12.0,
                     cairo >= 0.12.0, text >= 0.7.1.0, mtl >= 1.1.0.2, utf8-string
      exposed-modules:
