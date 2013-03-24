@@ -1,5 +1,5 @@
 Name:                wai-extra
-Version:             1.2.0.4
+Version:             1.2.0.5
 Synopsis:            Provides some basic WAI handlers and middleware.
 Description:         The goal here is to provide common features without many dependencies.
 License:             MIT
@@ -39,6 +39,7 @@ Library
                    , blaze-builder-conduit     >= 0.4      && < 0.5
                    , ansi-terminal
                    , resourcet                 >= 0.3      && < 0.4
+                   , stringsearch              >= 0.3      && < 0.4
 
   Exposed-modules:   Network.Wai.Handler.CGI
                      Network.Wai.Middleware.AcceptOverride
@@ -72,7 +73,7 @@ test-suite tests
                    , zlib
                    , text
                    , bytestring
-                   , directory 
+                   , directory
                    , zlib-bindings
                    , blaze-builder             >= 0.2.1.4  && < 0.4
                    , data-default
