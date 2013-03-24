@@ -1,5 +1,5 @@
 name:                split-channel
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:
     Control.Concurrent.Chan split into sending and receiving halves.
 license:             MIT
@@ -17,6 +17,7 @@ library
                        Control.Concurrent.Chan.Split.Internal
   other-modules:       Control.Concurrent.Chan.Split.Implementation
   build-depends:       base >= 4.3 && < 5
+  ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-unused-do-bind
 
 source-repository head
   type:     git
@@ -25,4 +26,4 @@ source-repository head
 source-repository this
   type:     git
   location: http://github.com/lpsmith/split-channel
-  tag:      v0.1.0.0
+  tag:      v0.1.1.0
