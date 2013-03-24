@@ -1,5 +1,5 @@
 Name:		hoodle-types
-Version:	0.1.1
+Version:	0.2
 Synopsis:	Data types for programs for hoodle file format
 Description: 	Hoodle file format data type including generic interface
 License: 	BSD3
@@ -12,7 +12,7 @@ Cabal-Version:  >= 1.8
 data-files:     CHANGES
 Source-repository head
   type: git
-  location: https://www.github.com/wavewave/hhoodle
+  location: https://www.github.com/wavewave/hoodle-types
 
 
 Library
@@ -22,18 +22,22 @@ Library
   Build-Depends: 
                    base == 4.*, 
                    bytestring >= 0.9, 
+                   mtl > 2, 
                    strict == 0.3.*, 
                    containers >= 0.4, 
                    lens >= 2.5,
-                   TypeCompose == 0.9.*, 
-                   cereal == 0.3.* 
+                   cereal == 0.3.*, 
+                   uuid >= 1.2.6
   Exposed-Modules: 
                    Data.Hoodle.BBox
                    Data.Hoodle.Generic
                    Data.Hoodle.Generic.Simple
                    Data.Hoodle.Predefined 
-                   Data.Hoodle.Simple
+                   Data.Hoodle.Primitive 
                    Data.Hoodle.Select
+                   Data.Hoodle.Simple
+                   Data.Hoodle.Simple.V0_1_1
+                   -- Data.Hoodle.Simple.V0_1_999
                    Data.Hoodle.Util
                    Data.Hoodle.Zipper 
 
