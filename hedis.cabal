@@ -1,5 +1,5 @@
 name:               hedis
-version:            0.5
+version:            0.5.1
 synopsis:
     Client library for the Redis datastore: supports full command set,  
     pipelining.
@@ -13,7 +13,7 @@ Description:
     [Complete Redis 2.6 command set:] All Redis commands
         (<http://redis.io/commands>) are available as haskell functions, except
         for the MONITOR and SYNC commands. Additionally, a low-level API is
-        exposed that  makes it easy for the library user to implement additional
+        exposed that  makes it easy for the library user to implement further
         commands, such as new commands from an experimental Redis version.
     .
     [Automatic Optimal Pipelining:] Commands are pipelined
@@ -34,12 +34,23 @@ Description:
     .
     For detailed documentation, see the "Database.Redis" module.
     .
+    [Changes since version 0.5]
+    .
+    * New commands: DUMP, RESTORE, BITOP, BITCOUNT.
+    .
+    * Removed the dependency on stm.
+    .
+    * Improved performance of Queued in long transactions.
+    .
+    * Minor documentation updates.
+    .
     [Changes since version 0.4.1]
     .
     * Added new Redis 2.6 commands, including Lua scripting support.
     .
     * A transaction context is now created by using the 'multiExec' function.
-      The functions 'multi' and 'exec' are no longer available individually.
+      The functions 'multi', 'exec' and 'discard' are no longer available
+      individually.
     .
     * Inside of a transaction, commands return their results wrapped in a
       composable /future/, called 'Queued'.
@@ -74,10 +85,7 @@ flag test
 
 library
   hs-source-dirs:   src
-  if flag(test)
-      ghc-options:  -Wall
-  else
-      ghc-options:  -Wall
+  ghc-options:      -Wall
   ghc-prof-options: -auto-all
   exposed-modules:  Database.Redis
   build-depends:    attoparsec == 0.10.*,
@@ -88,10 +96,11 @@ library
                     mtl == 2.*,
                     network == 2.*,
                     resource-pool == 0.2.1.*,
-                    stm >= 2.2 && < 2.4,
-                    time
+                    time,
+                    vector == 0.9.*
 
   other-modules:    Database.Redis.Core,
+                    Database.Redis.ProtocolPipelining,
                     Database.Redis.Protocol,
                     Database.Redis.PubSub,
                     Database.Redis.Transactions,
@@ -99,31 +108,29 @@ library
                     Database.Redis.Commands,
                     Database.Redis.ManualCommands
 
-executable hedis-benchmark
+benchmark hedis-benchmark
+    type: exitcode-stdio-1.0
     main-is: benchmark/Benchmark.hs
-    if flag(benchmark)
-        build-depends:
-            base == 4.*,
-            mtl == 2.*,
-            hedis,
-            time >= 1.2
-    else
-        buildable: False
-    ghc-options: -Wall -rtsopts
+    build-depends:
+        base == 4.*,
+        mtl == 2.*,
+        hedis,
+        time >= 1.2
+    ghc-options: -O2 -Wall -rtsopts
     ghc-prof-options: -auto-all
 
-executable hedis-test
+test-suite hedis-test
+    type: exitcode-stdio-1.0
     main-is: test/Test.hs
-    if flag(test)
-        build-depends:
-            base == 4.*,
-            bytestring == 0.9.*,
-            hedis,
-            HUnit == 1.2.*,
-            mtl == 2.*,
-            time
-    else
-        buildable: False
+    build-depends:
+        base == 4.*,
+        bytestring == 0.9.*,
+        hedis,
+        HUnit == 1.2.*,
+        mtl == 2.*,
+        test-framework,
+        test-framework-hunit,
+        time
     -- We use -O0 here, since GHC takes *very* long to compile so many constants
     ghc-options: -O0 -Wall -rtsopts -fno-warn-unused-do-bind
     ghc-prof-options: -auto-all
