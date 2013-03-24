@@ -1,5 +1,5 @@
 name:          regions
-version:       0.1
+version:       0.1.0.1
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -8,7 +8,7 @@ copyright:     2009 Bas van Dijk
 author:        Bas van Dijk
 maintainer:    Bas van Dijk <v.dijk.bas@gmail.com>
 stability:     experimental
-category:      Control
+category:      Control, Monadic Regions
 synopsis:      Provides the region monad for safely opening and working with
                scarce resources.
 description:
@@ -59,8 +59,8 @@ source-repository head
 
 Library
   GHC-Options: -O2 -Wall
-  build-depends: base                      >= 4 && < 4.2
-               , unicode-symbols           == 0.1.*
+  build-depends: base                      >= 4 && < 4.3
+               , base-unicode-symbols      >= 0.1.1 && < 0.2
                , transformers              >= 0.1.4 && < 0.2
                , MonadCatchIO-transformers == 0.0.2.*
   exposed-modules: Control.Monad.Trans.Region
