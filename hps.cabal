@@ -1,16 +1,16 @@
 Name:              hps
-Version:           0.1
+Version:           0.2
 Synopsis:          Haskell Postscript
 Description:       Haskell library partially implementing the
                    postscript drawing model.
 License:           GPL
 Category:          Graphics
-Copyright:         Rohan Drape, 2006-2009
+Copyright:         Rohan Drape, 2006-2010
 Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
-Homepage:          http://www.slavepianos.org/rd/f/972048/
-Tested-With:       GHC == 6.8.2
+Homepage:          http://slavepianos.org/rd/?t=hps
+Tested-With:       GHC == 6.10.3
 Build-Type:	   Simple
 Cabal-Version:     >= 1.6
 
@@ -21,7 +21,7 @@ Data-files:        README
                    Help/Screen.hs
 
 Library
-  Build-Depends:   base == 3.*
+  Build-Depends:   base == 4.*
   GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Graphics.PS
                    Graphics.PS.Pt
@@ -38,3 +38,7 @@ Library
                    Graphics.PS.Paper
                    Graphics.PS.PS
                    Graphics.PS.Unit
+
+Source-Repository  head
+  Type:            darcs
+  Location:        http://slavepianos.org/rd/sw/hps
