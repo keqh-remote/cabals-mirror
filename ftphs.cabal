@@ -1,12 +1,14 @@
 Name: ftphs
-Version: 1.0.5
+Version: 1.0.6
 License: LGPL
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
 Stability: Stable
-Copyright: Copyright (c) 2004-2008 John Goerzen
+Copyright: Copyright (c) 2004-2010 John Goerzen
 license-file: COPYRIGHT
-extra-source-files: COPYING
+extra-source-files: COPYING,
+                    Makefile,
+                    examples/ftptest.hs
 Homepage: http://software.complete.org/ftphs
 Category: Network
 Synopsis: FTP Client and Server Library
@@ -36,7 +38,7 @@ Library
     Network.FTP.Server.Parser
   Extensions: ExistentialQuantification, OverlappingInstances, 
    UndecidableInstances, CPP
-  Build-Depends: network, parsec, base,
+  Build-Depends: network, parsec, base >= 3 && < 5,
                haskell98, mtl, regex-compat, 
                hslogger, MissingH>=1.0.0
   GHC-Options: -O2
@@ -48,6 +50,7 @@ Executable runtests
   else
     Buildable: False
   Main-Is: runtests.hs
+  Other-Modules: Tests, Network.FTP.Parsertest
   HS-Source-Dirs: testsrc, src, .
   Extensions: ExistentialQuantification, OverlappingInstances,
     UndecidableInstances, CPP
