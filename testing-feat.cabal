@@ -1,5 +1,5 @@
 Name:                testing-feat
-Version:             0.3.0.1
+Version:             0.4
 Synopsis:            Functional Enumeration of Abstract Types
 Description:         Feat (Functional Enumeration of Abstract Types) provides
                      enumerations as functions from natural numbers to values 
@@ -13,7 +13,7 @@ Description:         Feat (Functional Enumeration of Abstract Types) provides
                      "Test.Feat" contain a subset of the other modules that 
                      should be sufficient for most test usage. There 
                      are some small and large example in the tar 
-                     ball.
+                     ball. Builds with haskell-platform-2012-2.0.0 and with ghc-7.6.1.
                                           
 License:             BSD3
 License-file:        LICENSE
