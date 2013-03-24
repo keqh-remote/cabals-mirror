@@ -1,5 +1,5 @@
 name:           couchdb-enumerator
-version:        0.3.5
+version:        0.3.6
 cabal-version:  >= 1.8
 license:        BSD3
 license-file:   LICENSE
@@ -12,6 +12,8 @@ description:    This package is a thin wrapper around http-enumerator to access 
     attoparsec fit togther so well that this package is mostly just a direct combination
     of these packages.  The single additional feature in this package is an attoparsec parser
     for views, which allows constant memory processing of view returns.
+
+    This package is deprecated by <http://hackage.haskell.org/package/couchdb-conduit>
 build-type:     Simple
 stability:      Experimental
 homepage:       http://bitbucket.org/wuzzeb/couchdb-enumerator
@@ -33,7 +35,7 @@ library
   hs-source-dirs:   src
   build-depends:
         base >= 4 && < 5,
-        aeson >= 0.5 && < 0.6,
+        aeson >= 0.5 && < 0.7,
         attoparsec >= 0.8 && < 0.11,
         attoparsec-enumerator >= 0.2 && < 0.4,
         bytestring >= 0.9 && < 0.10,
@@ -59,7 +61,7 @@ test-suite test
   build-depends:   
         couchdb-enumerator,
         base >= 4 && < 5,
-        aeson >= 0.5 && < 0.6,
+        aeson >= 0.5 && < 0.7,
         attoparsec >= 0.8 && < 0.11,
         attoparsec-enumerator >= 0.2 && < 0.4,
         bytestring >= 0.9 && < 0.10,
