@@ -1,5 +1,5 @@
 Name:		ivor
-Version:	0.1.8
+Version:	0.1.9
 Author:		Edwin Brady
 License:	BSD3
 License-file:	LICENSE
@@ -58,7 +58,7 @@ Extra-source-files: emacs/ivor-mode.el, examplett/staged.tt, examplett/test.c, e
 
 
 
-Build-depends:  base, parsec, mtl, directory
+Build-depends:  base >=3 && <5, parsec, mtl, directory
 Build-type:     Simple
 
 Extensions:     MultiParamTypeClasses, FunctionalDependencies,
@@ -76,5 +76,5 @@ Other-modules:	Ivor.Nobby, Ivor.TTCore, Ivor.State,
 		Ivor.CodegenC, Ivor.Datatype, Ivor.Display,
 		Ivor.ICompile, Ivor.MakeData, Ivor.Unify,
 		Ivor.Grouper, Ivor.ShellParser, Ivor.Constant,
-		Ivor.RunTT, Ivor.Compiler, Ivor.Prefix,
+		Ivor.RunTT, Ivor.Compiler, Ivor.Prefix, Ivor.Errors,
 		Ivor.PatternDefs,  Ivor.ShellState, Ivor.Scopecheck
