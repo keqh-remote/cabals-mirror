@@ -1,5 +1,5 @@
 name: hinstaller
-version: 2007.4.21
+version: 2007.4.23
 stability: Alpha
 copyright: Matthew Sackman
 category: System
@@ -17,10 +17,15 @@ description:
   files when run. Thus this can be considered in the same model as Java .jar
   files or executable zip or other file archives.
   .
-  Note that the current implementation is very inefficient, converting the
-  included files as Strings. On any non-trivial sized file, you'll need to
-  increase GHC's stack with +RTS -K32M -RTS to avoid stack overflows.
+  Note that the current implementation is now reasonably efficient. However,
+  either use -fvia-C which will take care of all compilation for you (but
+  will be slow) or use -fasm which will probably fail at the linking stage.
+  Compile the generated .c files and manually link together to complete the
+  installation. On any non-trivial sized file, you may need to increase GHC's
+  stack with +RTS -K32M -RTS to avoid stack overflows.
 exposed-modules: System.Installer
-other-modules: System.Installer.TH
+other-modules: System.Installer.TH, System.Installer.Foreign
 ghc-options: -O2 -Wall -fno-warn-name-shadowing
-hs-source-dirs: src
+hs-source-dirs: src, examples
+extra-source-files: examples/Example01.hs, examples/file01.txt, examples/file02.txt
+
