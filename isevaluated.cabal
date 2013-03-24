@@ -1,8 +1,8 @@
 Name:          isevaluated
-Version:       0.3.0.1
+Version:       0.3.0.2
 Category:      Data, GHC
 Stability:     experimental
-Copyright:     (c) 2009, 2010 Svein Ove Aas and Bertram Felgenhauer
+Copyright:     (c) 2009-2012 Svein Ove Aas and Bertram Felgenhauer
 Maintainer:    Bertram Felgenhauer <int-e@gmx.de>
 License:       MIT
 License-File:  LICENSE
