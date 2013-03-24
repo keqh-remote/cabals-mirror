@@ -1,5 +1,5 @@
 name:                MonadCatchIO-mtl
-version:             0.2.0.0
+version:             0.3.0.0
 description:
         Provides a monad-transformer version of the @Control.Exception.catch@
         function. For this, it defines the @MonadCatchIO@ class, a subset of
@@ -17,7 +17,7 @@ build-type:         Simple
 tested-with:        GHC==6.10
 
 Library
-  build-depends:    base, mtl, extensible-exceptions
+  build-depends:    base < 5, mtl, extensible-exceptions
   ghc-options:      -Wall
   extensions:       ExistentialQuantification,
                     ScopedTypeVariables
