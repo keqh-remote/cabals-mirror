@@ -1,6 +1,6 @@
 name:          CarneadesDSL
 category:      Argumentation, Embedded, AI
-version:       0.9
+version:       1.0
 license:       BSD3
 cabal-version: >= 1.2
 license-file:  LICENSE
@@ -14,7 +14,7 @@ description:   An implementation and domain specific language for the Carneades
                argumentation model. See Haskell Gets Argumentative in the 
                Proceedings of Symposium on Trends in Functional Programming 
                (TFP 2012) by Bas van Gijzel and Henrik Nilsson or the 
-               maintainer's website. 
+               package's homepage. 
 build-type:    Simple
 
 Library
