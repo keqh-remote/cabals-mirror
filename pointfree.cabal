@@ -1,7 +1,7 @@
 Cabal-Version: >= 1.6
 
 Name:     pointfree
-Version:  1.0.4
+Version:  1.0.4.1
 Category: Tool
 Synopsis: Tool for refactoring expressions into pointfree form
 
@@ -19,7 +19,7 @@ Extra-source-files: README test/Makefile test/Test.hs
 
 Source-repository head
   type:     git
-  location: git://github.com/benmachine/stepeval.git
+  location: git://github.com/benmachine/pointfree.git
 
 Executable pointfree
   Main-is:       Main.hs
