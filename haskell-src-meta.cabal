@@ -1,6 +1,6 @@
 name:               haskell-src-meta
-version:            0.0.3
-cabal-version:      >= 1.5
+version:            0.0.3.1
+cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
 license-file:       LICENSE
@@ -14,16 +14,22 @@ description:        The translation from haskell-src-exts abstract syntax
                     to template-haskell abstract syntax isn't 100% complete yet.
 
 library
-  build-tools:
-  build-Depends:      base, containers, haskell-src-exts,
-                      packedstring, template-haskell >= 2.3, syb
-  extensions:         CPP, TemplateHaskell
-  ghc-options:        -O2 -fglasgow-exts
-  ghc-prof-options:
+  build-Depends:      base == 4.*, containers, haskell-src-exts == 0.4.*,
+                      packedstring, template-haskell, pretty, syb
+  extensions:         TemplateHaskell, QuasiQuotes,
+                      RankNTypes, StandaloneDeriving,
+                      FlexibleInstances, FlexibleContexts,
+                      TypeSynonymInstances, PatternGuards
+                      DeriveDataTypeable
+  ghc-options:        -O2
   hs-source-dirs:     src
   exposed-modules:    Language.Haskell.Meta,
                       Language.Haskell.Meta.Parse,
                       Language.Haskell.Meta.Syntax,
                       Language.Haskell.Meta.Syntax.Vars,
                       Language.Haskell.Meta.Syntax.Translate,
-                      Language.Haskell.TH.Instances.Lift
+                      Language.Haskell.TH.Instances.Lift,
+                      Language.Haskell.Meta.Utils,
+                      Language.Haskell.Meta.QQ.Hs,
+                      Language.Haskell.Meta.QQ.Here,
+                      Language.Haskell.Meta.QQ.Vixey
