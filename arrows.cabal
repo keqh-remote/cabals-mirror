@@ -1,5 +1,5 @@
 Name:           arrows
-Version:        0.4.2.0
+Version:        0.4.3.0
 Build-Depends:  base >= 4.0 && < 6, Stream
 Build-Type:     Simple
 License:        BSD3
