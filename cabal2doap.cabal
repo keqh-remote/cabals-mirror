@@ -1,5 +1,5 @@
 Name:           cabal2doap
-Version:        0.1
+Version:        0.2
 License:        BSD3
 License-file:   LICENSE
 Cabal-Version: >= 1.6
@@ -21,5 +21,5 @@ source-repository head
   location: http://gregheartsfield.com/repos/cabal2doap/
 
 Executable     cabal2doap
-  build-depends:  base, hxt, Cabal >= 1.6, parsec, hsemail >= 1.1, process
+  build-depends:  base >= 3 && < 4, hxt, Cabal >= 1.6, parsec, hsemail >= 1.1, process
   main-is:        cabal2doap.hs
