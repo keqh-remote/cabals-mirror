@@ -1,9 +1,9 @@
 Name:                full-sessions
-Version:             0.4.181
+Version:             0.4.187
 Description:
   This library defines a @Session@ monad, which provides static checking of
   safe and consistent use of communication channels according to protocols.
-  It requires almost no type- and term- annotations.
+  It requires almost no type- or term- annotations.
   Alternatives are: the simple-sessions package
   (<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/simple-sessions>) and the sessions
   package  (<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/sessions>).
