@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
---- $Id: xilinx-lava.cabal#7 2010/09/22 23:04:24 REDMOND\\satnams $
+--- $Id: xilinx-lava.cabal#10 2010/09/24 18:06:13 REDMOND\\satnams $
 -------------------------------------------------------------------------------
 Name:            xilinx-lava
-Version:         5.0.0.3
+Version:         5.0.0.4
 License:         BSD3
 License-file:    LICENSE
 Author:          Satnam Singh
@@ -17,8 +17,13 @@ Category:        Hardware
 Build-Type:      Simple
 Package-URL:     http://www.raintown.org/lava
 cabal-version:    >= 1.8
-Build-Depends:	 array, base >= 4 && < 5, mtl, directory, old-time
-Exposed-modules: Lava
+Build-Depends:	 array, base >= 4 && < 5, mtl, directory, haskell98, old-time, process
+Exposed-modules: Lava,
+                 Lava.ISE,
+                 Lava.Virtex2,
+                 Lava.Virtex4,
+                 Lava.Virtex5,
+                 Lava.Virtex6
 Other-modules:	 Lava.ApplyLayout, 
                  Lava.Combinators, 
                  Lava.Components,
