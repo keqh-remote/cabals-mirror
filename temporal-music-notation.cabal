@@ -1,5 +1,5 @@
 Name:          temporal-music-notation
-Version:       0.1.2
+Version:       0.1.3
 Cabal-Version: >= 1.2
 License-file:  LICENSE
 License:       BSD3
@@ -12,20 +12,11 @@ Stability:     Experimental
 Tested-With:   GHC==6.12.3
 Build-Type:    Simple
 
-Extra-Source-Files:
-        examples/Readme.hs       
-        examples/dm.hs       
-        examples/arpeggi.hs        
-        examples/choral.hs        
-        examples/teardrop.hs        
-        examples/Orchestra.hs        
-
 Library
   Build-Depends:
         base >= 4, base < 5,
         vector >= 0.7, 
-        temporal-media >= 0.2.1,
-        type-level-natural-number-decimal 
+        temporal-media >= 0.2.1
   Hs-Source-Dirs:      src/
   Exposed-Modules:
         Temporal.Music.Notation
