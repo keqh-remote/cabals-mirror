@@ -1,14 +1,14 @@
 Name:           lostcities
-Version:        0.1
+Version:        0.2
 Cabal-Version:  >= 1.2
 License:        GPL
 License-file:	LICENSE
 Author:         Pedro Vasconcelos
-Maintainer:     pbv@dcc.fc.up.pt
-Homepage:	http://www.dcc.fc.up.pt/~pbv/stuff/lostcities
+Maintainer:     pbv@ncc.up.pt
+Homepage:	http://www.ncc.up.pt/~pbv/stuff/lostcities
 Copyright:	(c) 2009 Pedro Vasconcelos
 Synopsis:       An implementation of an adictive two-player card game
-Description:    Game originally designed by Reiner Knizia
+Description:    Based on the card game designed by Reiner Knizia.
 		In this implementation you play against the computer. 
 Build-Type:     Simple
 Category:	Game
