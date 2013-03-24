@@ -1,12 +1,12 @@
 name:           text
-version:        0.7.2.1
+version:        0.8.0.0
 synopsis:       An efficient packed Unicode text type
 description:    An efficient packed Unicode text type.
 license:        BSD3
 license-file:   LICENSE
-author:         Tom Harper <rtharper@aftereternity.co.uk>
+author:         Tom Harper <rtomharper@googlemail.com>
 maintainer:     Bryan O'Sullivan <bos@serpentine.com>
-                Tom Harper <rtharper@aftereternity.co.uk>
+                Tom Harper <rrtomharper@googlemail.com>
                 Duncan Coutts <duncan@haskell.org>
 copyright:      2008-2009 Tom Harper, 2009-2010 Bryan O'Sullivan
 category:       Data, Text
@@ -40,6 +40,7 @@ library
     Data.Text.Foreign
     Data.Text.IO
     Data.Text.Lazy
+    Data.Text.Lazy.Builder
     Data.Text.Lazy.Encoding
     Data.Text.Lazy.IO
   other-modules:
@@ -56,7 +57,6 @@ library
     Data.Text.Fusion.Size
     Data.Text.IO.Internal
     Data.Text.Internal
-    Data.Text.Lazy.Builder
     Data.Text.Lazy.Encoding.Fusion
     Data.Text.Lazy.Fusion
     Data.Text.Lazy.Internal
@@ -85,3 +85,4 @@ library
     ghc-options: -fwarn-tabs
   if flag(developer)
     ghc-options: -Werror
+    cpp-options: -DASSERTS
