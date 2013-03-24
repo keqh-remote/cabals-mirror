@@ -1,5 +1,5 @@
 Name:                mutable-iter
-Version:             0.3
+Version:             0.4
 Synopsis:            iteratees based upon mutable buffers
 Description:         Provides iteratees backed by mutable buffers.  This enables iteratees to run without any extra memory allocations.
 Homepage:            http://tanimoto.us/~jwlato/haskell/mutable-iter
@@ -9,7 +9,7 @@ Author:              John W. Lato
 Maintainer:          jwlato@gmail.com
 Copyright:           John W. Lato, 2010
 Stability:           Experimental
-Tested-with:         GHC == 6.12.1
+Tested-with:         GHC == 6.12.3
 Category:            Data
 Build-type:          Simple
 
@@ -28,7 +28,7 @@ Library
                       ,Data.MutableIter.IOBuffer
   Build-depends:
     base                      >= 4         && < 6,
-    iteratee                  >= 0.5       && < 0.6,
+    iteratee                  >= 0.5       && < 0.7,
     MonadCatchIO-transformers >= 0.2       && < 0.3,
     transformers              >= 0.2       && < 0.3,
-    vector                    >= 0.4       && < 0.8
+    vector                    >= 0.4       && < 0.9
