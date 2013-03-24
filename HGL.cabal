@@ -1,5 +1,5 @@
 name:		HGL
-version:	3.2.0.1
+version:	3.2.0.2
 license:	BSD3
 license-file:	LICENSE
 author: 	Alastair Reid
@@ -50,6 +50,7 @@ library
         Graphics.HGL.Internals.Flag,
         Graphics.HGL.Internals.Utilities
   if os(windows)
+    build-depends: Win32
     cpp-options: -DX_DISPLAY_MISSING
     other-modules:
         Graphics.HGL.Win32.Bitmap,
