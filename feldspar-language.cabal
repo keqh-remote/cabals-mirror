@@ -1,5 +1,5 @@
 name:           feldspar-language
-version:        0.3.2
+version:        0.3.3
 synopsis:       A functional embedded language for DSP and parallelism
 description:    Feldspar (Functional Embedded Language for DSP and PARallelism)
                 is an embedded DSL for describing digital signal processing
@@ -46,7 +46,7 @@ library
     containers,
     mtl,
     random,
-    QuickCheck >= 2 && < 3
+    QuickCheck >= 2.3 && < 3
 
   extensions:
     FlexibleInstances
