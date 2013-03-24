@@ -1,5 +1,5 @@
 Name:                reactive-glut
-Version:             0.1.1
+Version:             0.1.2
 Cabal-Version:       >= 1.2
 Synopsis:            Connects Reactive and GLUT
 Category:            FRP, graphics
@@ -10,6 +10,10 @@ Description:
   Project wiki page: <http://haskell.org/haskellwiki/reactive-glut>
   .
   &#169; 2008 by Conal Elliott; BSD3 license.
+  .
+  With contributions from Andy Gill, David Sankel, Eyal Lotem, Claus Reinke,
+  and ksf.
+
 Author:              Conal Elliott 
 Maintainer:          conal@conal.net
 Homepage:            http://haskell.org/haskellwiki/reactive-glut
