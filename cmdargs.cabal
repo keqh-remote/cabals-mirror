@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               cmdargs
-version:            0.9.6
+version:            0.9.7
 license:            BSD3
 license-file:       LICENSE
 category:           Console
@@ -88,8 +88,6 @@ library
 
 executable cmdargs
     main-is: Main.hs
-    if flag(quotation)
-        extensions: TemplateHaskell
     if flag(testprog) && flag(quotation)
         buildable: True
     else
