@@ -1,5 +1,5 @@
 Name:           GenI
-Version:        0.17.3
+Version:        0.17.4
 License:        GPL
 License-file:   LICENSE
 Author:         Carlos Areces and Eric Kow
@@ -60,9 +60,14 @@ extra-source-files: src/EnableGUI.hs
 
 Flag gui
   description: Build with a graphical user interface
+  default: False
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
+
+Flag static
+  Description: Build a static binary
+  Default:     False
 
 Library
   Build-depends: parsec >= 2 && < 3,
@@ -77,6 +82,9 @@ Library
 
   if !flag(gui)
     cpp-options:      -DDISABLE_GUI
+
+  if flag(static)
+    ghc-options: -static -optl-static
 
   Exposed-Modules:
                 NLP.GenI.Btypes,
@@ -119,3 +127,5 @@ Executable     geni
  else
     cpp-options:      -DDISABLE_GUI
 
+ if flag(static)
+    ghc-options: -static -optl-static
