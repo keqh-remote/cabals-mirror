@@ -1,6 +1,6 @@
 Name:                containers-deepseq
-Version:             0.1
-Synopsis:            Provide orphan NFData instances for containers as needed.
+Version:             0.1.0.1
+Synopsis:            Provide orphan NFData instances for containers as needed. (deprecated)
 License:             BSD3
 License-file:        LICENSE
 Author:              Michael Snoyman
