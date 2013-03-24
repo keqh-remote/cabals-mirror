@@ -1,9 +1,10 @@
 -- ****************************************************************
 -- To fix for cabal < 1.1.4 comment out the Extra-Source-Files line
--- You may need to edit the Extra-Lib-Dirs entry near the bottom
+-- You may need to edit the Extra-Lib-Dirs entry near the bottom to find libpcre
+-- You may need to edit the Include-Dirs entry at the bottom to find regex.h
 -- ****************************************************************
 Name:                   regex-pcre
-Version:                0.81
+Version:                0.82
 -- Cabal-Version:       >=1.1.4
 License:                BSD3
 License-File:           LICENSE
@@ -18,8 +19,8 @@ Description:            The PCRE backend to accompany regex-base
 Category:               Text
 Tested-With:            GHC
 -- The base >=0 2.0 is for the upcoming GHC 6.6
--- Build-Depends:        base >= 2.0, regex-base
-Build-Depends:          regex-base, base, fps >= 0.7
+Build-Depends:        base >= 2.0, regex-base
+-- Build-Depends:          regex-base, base, fps >= 0.7
 -- Data-Files:
 -- Extra-Source-Files:
 -- Extra-Tmp-Files:
@@ -35,14 +36,14 @@ Extensions:             MultiParamTypeClasses, FunctionalDependencies
 -- GHC-Options:            -Wall -Werror
 GHC-Options:            -Wall -Werror -O2
 -- GHC-Options:            -Wall -ddump-minimal-imports
--- GHC-Prog-Options: 
+-- GHC-Prog-Options:
 -- Hugs-Options:
 -- NHC-Options:
 -- Includes:
--- Include-Dirs:
 -- C-Sources:
-Extra-Libraries:        pcre
--- Extra-Lib-Dirs:         /opt/local/lib
-CC-Options:             -DHAVE_PCRE_H
 -- LD-Options:
 -- Frameworks:
+CC-Options:             -DHAVE_PCRE_H
+Extra-Libraries:        pcre
+--Extra-Lib-Dirs:         /opt/local/lib
+--Include-Dirs:           /opt/local/include
