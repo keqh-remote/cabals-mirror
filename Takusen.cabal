@@ -6,15 +6,15 @@
 -- setup build
 -- setup install
 Name:           Takusen
-Version:        0.8.5
+Version:        0.8.6
 License:        BSD3
 License-file:   LICENSE
 Author:         Alistair Bayley, Oleg Kiselyov
 Copyright:      2003-2009, Alistair Bayley, Oleg Kiselyov
 Maintainer:     alistair@abayley.org, oleg@pobox.com
 Stability:      experimental
-Homepage:       http://darcs.haskell.org/takusen
-Package-url:    http://darcs.haskell.org/takusen
+Homepage:       http://code.haskell.org/takusen
+Package-url:    http://code.haskell.org/takusen
 Category:       Database
 Build-type:     Custom
 Cabal-Version:  >= 1.6
@@ -98,7 +98,7 @@ Executable takusen_tests
       , Foreign.C.UTF8
       , Foreign.C.Test.UTF8
       , Test.MiniUnit
-  Build-Depends:  base, mtl, time, QuickCheck
+  Build-Depends:  base, mtl, time, QuickCheck==1.*, random
   -- ghc-6.6 has System.Time in base.
   -- Later versions has it in a separate package.
   if impl(ghc >= 6.8)
