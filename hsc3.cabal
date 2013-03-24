@@ -1,5 +1,5 @@
 Name:              hsc3
-Version:           0.5
+Version:           0.6
 Synopsis:          Haskell SuperCollider
 Description:       hsc3 provides Sound.SC3, a haskell module that 
                    facilitates using haskell as a client to the 
@@ -237,6 +237,8 @@ Data-files:        README
                    Help/UGen/Demand/dwhite.help.lhs
                    Help/UGen/Demand/dxrand.help.lhs
                    Help/UGen/Demand/tDuty.help.lhs
+                   Help/UGen/DiskIO/diskIn.help.lhs
+                   Help/UGen/DiskIO/vDiskIn.help.lhs
                    Help/UGen/Envelope/detectSilence.help.lhs
                    Help/UGen/Envelope/done.help.lhs
                    Help/UGen/Envelope/envGen.help.lhs
@@ -470,7 +472,7 @@ Data-files:        README
                    Help/UGen/Trigger/trig.help.lhs
 
 Library
-  Build-Depends:   base, binary, bytestring, containers, hosc == 0.5,
+  Build-Depends:   base, binary, bytestring, containers, hosc == 0.6,
                    network, process, random
   GHC-Options:     -Wall -fwarn-tabs
   Exposed-modules: Sound.SC3
@@ -478,7 +480,6 @@ Library
                    Sound.SC3.Server.Command
                    Sound.SC3.Server.NRT
                    Sound.SC3.Server.Play
-                   Sound.SC3.Server.Process
                    Sound.SC3.Server.Status
                    Sound.SC3.Server.Synthdef
                    Sound.SC3.UGen
@@ -491,6 +492,7 @@ Library
                    Sound.SC3.UGen.Demand
                    Sound.SC3.UGen.Demand.Base
                    Sound.SC3.UGen.Demand.Monadic
+                   Sound.SC3.UGen.DiskIO
                    Sound.SC3.UGen.Enum
                    Sound.SC3.UGen.Envelope
                    Sound.SC3.UGen.Envelope.Construct
@@ -513,7 +515,6 @@ Library
                    Sound.SC3.UGen.Oscillator
                    Sound.SC3.UGen.Panner
                    Sound.SC3.UGen.Rate
-                   Sound.SC3.UGen.Record.Pitch
                    Sound.SC3.UGen.UGen
                    Sound.SC3.UGen.UGen.Lift
                    Sound.SC3.UGen.UId
