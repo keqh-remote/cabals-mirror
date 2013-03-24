@@ -1,5 +1,5 @@
 Name: Cabal
-Version: 1.10.2.0
+Version: 1.12.0
 Copyright: 2003-2006, Isaac Jones
            2005-2011, Duncan Coutts
 License: BSD3
@@ -18,7 +18,7 @@ Description:
         The Haskell Cabal is part of a larger infrastructure for distributing,
         organizing, and cataloging Haskell libraries and tools.
 Category: Distribution
-cabal-version: >=1.6
+cabal-version: >=1.10
 Build-Type: Custom
 -- Even though we do use the default Setup.lhs it's vital to bootstrapping
 -- that we build Setup.lhs using our own local Cabal source code.
@@ -43,14 +43,14 @@ Library
   if flag(base3) { build-depends: base >= 3 } else { build-depends: base < 3 }
   if flag(base3)
     Build-Depends: directory  >= 1   && < 1.2,
-                   process    >= 1   && < 1.1,
+                   process    >= 1   && < 1.2,
                    old-time   >= 1   && < 1.1,
                    containers >= 0.1 && < 0.5,
                    array      >= 0.1 && < 0.4,
-                   pretty     >= 1   && < 1.1
+                   pretty     >= 1   && < 1.2
 
   if !os(windows)
-    Build-Depends: unix       >= 2.0 && < 2.5
+    Build-Depends: unix       >= 2.0 && < 2.6
 
   ghc-options: -Wall -fno-ignore-asserts
   if impl(ghc >= 6.8)
@@ -68,6 +68,7 @@ Library
         Distribution.PackageDescription.Configuration,
         Distribution.PackageDescription.Parse,
         Distribution.PackageDescription.Check,
+        Distribution.PackageDescription.PrettyPrint,
         Distribution.ParseUtils,
         Distribution.ReadE,
         Distribution.Simple,
@@ -81,6 +82,7 @@ Library
         Distribution.Simple.GHC,
         Distribution.Simple.LHC,
         Distribution.Simple.Haddock,
+        Distribution.Simple.Hpc,
         Distribution.Simple.Hugs,
         Distribution.Simple.Install,
         Distribution.Simple.InstallDirs,
@@ -123,4 +125,39 @@ Library
         Distribution.Simple.GHC.IPI642,
         Paths_Cabal
 
-  Extensions: CPP
+  Default-Language: Haskell98
+  Default-Extensions: CPP
+
+test-suite unit-tests
+  type: exitcode-stdio-1.0
+  main-is: suite.hs
+  other-modules: PackageTests.BuildDeps.GlobalBuildDepsNotAdditive1.Check,
+                 PackageTests.BuildDeps.GlobalBuildDepsNotAdditive2.Check,
+                 PackageTests.BuildDeps.InternalLibrary0.Check,
+                 PackageTests.BuildDeps.InternalLibrary1.Check,
+                 PackageTests.BuildDeps.InternalLibrary2.Check,
+                 PackageTests.BuildDeps.InternalLibrary3.Check,
+                 PackageTests.BuildDeps.InternalLibrary4.Check,
+                 PackageTests.BuildDeps.TargetSpecificDeps1.Check,
+                 PackageTests.BuildDeps.TargetSpecificDeps2.Check,
+                 PackageTests.BuildDeps.TargetSpecificDeps3.Check,
+                 PackageTests.BuildDeps.SameDepsAllRound.Check,
+                 PackageTests.TestStanza.Check,
+                 PackageTests.TestSuiteExeV10.Check,
+                 PackageTests.PackageTester
+  hs-source-dirs: tests
+  build-depends:
+        base,
+        test-framework,
+        test-framework-quickcheck2,
+        test-framework-hunit,
+        HUnit,
+        QuickCheck >= 2.1.0.1,
+        Cabal,
+        process,
+        directory,
+        filepath,
+        extensible-exceptions,
+        bytestring,
+        unix
+  Default-Language: Haskell98
