@@ -1,5 +1,5 @@
 Name:          LibZip
-Version:       0.0.1
+Version:       0.0.2
 License:       BSD3
 License-File:  LICENSE
 Author:        Sergey Astanin
@@ -12,7 +12,8 @@ Synopsis:      Partial bindings to libzip to read zip archives.
 Description:
   This package provides basic read-only access to zip-archives.
   It is produced with @c2hs@ for @libzip@ ver. 0.9.
-Exposed-modules: Codec.Archive.LibZip, C2HS
+Exposed-modules: Codec.Archive.LibZip
+Other-modules:   C2HS
 
 Build-Type:     Simple
 Cabal-Version:  >= 1.2.3
