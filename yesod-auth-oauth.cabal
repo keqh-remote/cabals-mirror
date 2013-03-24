@@ -7,7 +7,7 @@ Name:                yesod-auth-oauth
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.4
+Version:             0.4.1
 
 -- A short (one-line) description of the package.
 Synopsis:            OAuth wrapper for yesod-auth
@@ -53,8 +53,11 @@ Library
   
   -- Packages needed in order to build this package.
   Build-depends: base >= 4 && < 5, yesod-auth >= 0.3 && < 0.4,
-                 yesod >= 0.7 && < 0.8, bytestring >= 0.9 && < 1.0, http-enumerator >= 0.3 && <0.4,
-                 utf8-string >= 0.3 && < 0.4
+                 bytestring >= 0.9 && < 1.0, http-enumerator >= 0.3 && <0.4,
+                 utf8-string >= 0.3 && < 0.4, hamlet >= 0.7 && < 0.8,
+                 yesod-core >= 0.7 && < 0.8, yesod-form >= 0.0 && < 0.1,
+                 transformers >= 0.2 && < 0.3
+
   if flag(oauth-not-supported)
     Build-depends: authenticate-oauth >= 0.1 && < 0.2
   else
