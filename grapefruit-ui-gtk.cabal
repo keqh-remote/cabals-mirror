@@ -1,15 +1,16 @@
 Name:          grapefruit-ui-gtk
-Version:       0.1.0.0
+Version:       0.1.0.1
 Cabal-Version: >= 1.6
 Build-Type:    Simple
 License:       BSD3
 License-File:  LICENSE
-Copyright:     © 2007–2009 Brandenburgische Technische Universität Cottbus; © 2011 Wolfgang Jeltsch
+Copyright:     © 2007–2009 Brandenburgische Technische Universität Cottbus
+               © 2011–2012 Wolfgang Jeltsch
 Author:        Wolfgang Jeltsch
 Maintainer:    wolfgang@cs.ioc.ee
 Stability:     provisional
 Homepage:      http://grapefruit-project.org/
-Package-URL:   http://hackage.haskell.org/packages/archive/grapefruit-ui-gtk/0.1.0.0/grapefruit-ui-gtk-0.1.0.0.tar.gz
+Package-URL:   http://hackage.haskell.org/packages/archive/grapefruit-ui-gtk/0.1.0.1/grapefruit-ui-gtk-0.1.0.1.tar.gz
 Synopsis:      GTK+-based backend for declarative user interface programming
 Description:   Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on
                user interfaces. FRP makes it possible to implement reactive and interactive systems
@@ -18,7 +19,7 @@ Description:   Grapefruit is a library for Functional Reactive Programming (FRP)
                .
                This package contains the GTK+-based user interface backend.
 Category:      FRP, Reactivity, GUI, User Interfaces
-Tested-With:   GHC == 7.0.4
+Tested-With:   GHC == 7.4.1
 
 Source-Repository head
     type:     darcs
@@ -26,11 +27,11 @@ Source-Repository head
 
 Source-Repository this
     type:     darcs
-    location: http://darcs.grapefruit-project.org/main
-    tag:      grapefruit-0.1.0.0
+    location: http://darcs.grapefruit-project.org/0.1
+    tag:      grapefruit-0.1.0.1
 
 Library
-    Build-Depends:   base               >= 3.0    && < 4.4,
+    Build-Depends:   base               >= 3.0    && < 5,
                      colour             >= 1.0    && < 2.4,
                      containers         >= 0.1    && < 0.5,
                      fraction           >= 0.0.1  && < 0.2,
