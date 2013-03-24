@@ -1,5 +1,5 @@
 Name:		lambdacube
-Version:	2008.12.24
+Version:	2008.12.25
 License:	BSD3
 License-file:	LICENSE
 Author:		Lennart Augustsson <lennart@augustsson.net>
@@ -10,6 +10,8 @@ Description:	A simple interactive lambda cube type checker and evaluator.
 Build-Depends:	base, pretty, mtl, editline
 Build-Type:	Simple
 Extra-source-files:
+		Makefile
+		test.ok
 		bool.cube
 		char.cube
 		either.cube
@@ -28,5 +30,5 @@ Extra-source-files:
 
 Executable:	cube
 Main-Is:	Cube.hs
-Other-modules:	CubeExpr
+Other-modules:	CubeExpr REPL
 
