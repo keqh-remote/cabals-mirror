@@ -1,5 +1,5 @@
 Name:               hstatistics
-Version:            0.1.0.2
+Version:            0.1.0.3
 License:            GPL
 License-file:       LICENSE
 Copyright:          (c) A.V.H. McPhail 2010
@@ -10,7 +10,7 @@ Homepage:           http://code.haskell.org/hstatistics
 Synopsis:           Statistics
 Description:        Purely functional interface for statistics based on hmatrix and GSL
 Category:           Math
-tested-with:        GHC ==6.10.4
+tested-with:        GHC ==6.12.1
 
 cabal-version:      >=1.2
 
@@ -35,12 +35,14 @@ library
                         Numeric.GSL.Distribution.Continuous
                         Numeric.GSL.Distribution.Discrete
                         Numeric.GSL.Distribution.Common
+                        Numeric.GSL.Fitting.Linear
     other-modules:      
     C-sources:          lib/Numeric/GSL/statistics-aux.c
                         lib/Numeric/GSL/sort-aux.c
                         lib/Numeric/GSL/histogram-aux.c
                         lib/Numeric/GSL/permutation-aux.c
                         lib/Numeric/GSL/distribution-aux.c
+                        lib/Numeric/GSL/fitting-aux.c
 
     ghc-prof-options:   -auto
 
