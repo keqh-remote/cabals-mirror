@@ -1,5 +1,5 @@
 name: yoko
-version: 0.3.0.1
+version: 0.3.1
 synopsis: Generic Programming with Disbanded Data Types
 
 description:
@@ -81,28 +81,39 @@ extra-source-files: README, CHANGES, Examples/*.hs
 
 
 library
-  build-depends: base >= 4 && < 5, template-haskell
+  build-depends: base >= 4 && < 5,
+                 template-haskell > 2.7 && < 2.8,
+                 containers >= 0.4 && < 0.5,
+                 mtl >= 2.0 && < 2.1
   build-depends: type-equality < 0.2
 
   build-depends:
+    kinds >= 0.0.1.5 && < 0.1,
+    type-functions >= 0.2.0.3 && < 0.3,
+    records >= 0.1.1.6 && < 0.2
+
+  build-depends:
+    th-sccs < 0.1,
     type-booleans < 0.2,
-    type-spine < 0.2,
+    type-spine >= 0.1.1 && < 0.2,
     tagged-th < 0.2,
     type-digits < 0.2,
-    type-cereal < 0.2,
+    type-cereal >= 0.1.1 && < 0.2,
     type-ord < 0.2,
     type-ord-spine-cereal < 0.2
 
   exposed-modules:
-    Data.Yoko, Data.Yoko.HCompos,
+    Data.Yoko, Data.Yoko.HCompos, Data.Yoko.TH
 
     Data.Yoko.TypeBasics, Data.Yoko.Each
 
   other-modules:
+    Data.Yoko.View,
     Data.Yoko.MaybeKind,
     Data.Yoko.Representation,
     Data.Yoko.TypeSums,
-    Data.Yoko.TypeSumsAux
+    Data.Yoko.TypeSumsAux,
+    Data.Yoko.TH.Internal
 
     -- under development
 --    Data.Yoko.Fold,
