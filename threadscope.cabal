@@ -1,5 +1,5 @@
 Name:                threadscope
-Version:             0.1.2
+Version:             0.1.3
 Description:         A graphical viewer for GHC eventlog traces.
 License:             BSD3
 License-file:        LICENSE
@@ -19,9 +19,10 @@ Executable threadscope
   Build-Depends:     base >= 4.0 && < 5, 
                      gtk, cairo, glade,
                      binary, array, mtl, filepath,
-                     ghc-events >= 0.2 && < 0.3,
-                     containers >= 0.2 && < 0.4
-  extensions:        RecordWildCards, BangPatterns, PatternGuards
+                     ghc-events >= 0.2,
+                     containers >= 0.2 && < 0.5
+  extensions:        RecordWildCards, BangPatterns, PatternGuards,
+                     CPP
   Other-Modules:     About, 
                      CairoDrawing, 
                      EventDuration, 
@@ -51,16 +52,18 @@ Executable threadscope
                      Timeline.WithViewScale,
                      Timeline.Render.Constants
 
+  ghc-options:  -Wall -fno-warn-type-defaults -fno-warn-name-shadowing
+
+  if impl(ghc >= 7.0)
+     -- GHC 7.0 and later require a flag to enable the options in ghcrts.c
+     ghc-options:  -rtsopts -fno-warn-unused-do-bind
+
   if impl(ghc < 6.12)
      -- GHC before 6.12 gave spurious warnings for RecordWildCards
-     ghc-options:  -Wall -fno-warn-unused-matches
-  else
-     ghc-options:  -Wall
+     ghc-options:  -fno-warn-unused-matches
 
   if !os(windows)
      build-depends: unix >= 2.3 && < 2.5
-
-  ghc-options:  -fno-warn-type-defaults -fno-warn-name-shadowing
 
 -- Not yet: gtk2hs doesn't support -threaded at the moment.
 --  ghc-options: -threaded 
