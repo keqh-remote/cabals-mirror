@@ -1,5 +1,5 @@
 name:           derivation-trees
-version:        0.7.2
+version:        0.7.3
 category:       Graphics, Math
 synopsis:       Typeset Derivation Trees via MetaPost
 description:
