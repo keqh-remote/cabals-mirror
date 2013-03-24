@@ -1,10 +1,10 @@
 name:            zlib
-version:         0.5.2.0
+version:         0.5.3.1
 copyright:       (c) 2006-2008 Duncan Coutts
 license:         BSD3
 license-file:    LICENSE
-author:          Duncan Coutts <duncan@haskell.org>
-maintainer:      Duncan Coutts <duncan@haskell.org>
+author:          Duncan Coutts <duncan@community.haskell.org>
+maintainer:      Duncan Coutts <duncan@community.haskell.org>
 category:        Codec
 synopsis:        Compression and decompression in the gzip and zlib formats
 description:     This package provides a pure interface for compressing and 
@@ -16,18 +16,17 @@ description:     This package provides a pure interface for compressing and
                  It provides a convenient high level API suitable for most
                  tasks and for the few cases where more control is needed it
                  provides access to the full zlib feature set.
-stability:       provisional
 build-type:      Simple
-cabal-version:   >= 1.2.1
+cabal-version:   >= 1.6
 extra-source-files: cbits/crc32.h cbits/inffast.h cbits/inflate.h
                     cbits/trees.h cbits/deflate.h cbits/inffixed.h
                     cbits/inftrees.h cbits/zutil.h
                     -- demo programs:
                     examples/gzip.hs examples/gunzip.hs
 
-flag bytestring-in-base
-  description: In the ghc-6.6 era the bytestring modules were
-               included in the base package.
+source-repository head
+  type: darcs
+  location: http://code.haskell.org/zlib/
 
 library
   exposed-modules: Codec.Compression.GZip,
@@ -36,13 +35,8 @@ library
                    Codec.Compression.Zlib.Internal
   other-modules:   Codec.Compression.Zlib.Stream
   extensions:      CPP, ForeignFunctionInterface
-  build-depends: base < 5
-  if flag(bytestring-in-base)
-    -- bytestring was in base-2.0 and 2.1.1
-    build-depends: base >= 2.0 && < 2.2
-    cpp-options: -DBYTESTRING_IN_BASE
-  else
-    build-depends: base < 2.0 || >= 2.2, bytestring >= 0.9
+  build-depends:   base >= 3 && < 5,
+                   bytestring == 0.9.*
   includes:        zlib.h
   ghc-options:     -Wall
   if !os(windows)
