@@ -1,5 +1,5 @@
 name:               xmobar
-version:            0.15
+version:            0.16
 homepage:           http://projects.haskell.org/xmobar/
 bug-reports:        http://code.google.com/p/xmobar/issues
 synopsis:           A Minimalistic Text Based Status Bar
@@ -10,7 +10,7 @@ description: 	    Xmobar is a minimalistic text based status bar.
                     and extensibility through plugins.
 category:           System
 license:            BSD3
-license-file:       LICENSE
+license-file:       license
 author:             Andrea Rossato
 maintainer:         Jose A. Ortega Ruiz <jao@gnu.org>
 cabal-version:      >= 1.6
@@ -25,9 +25,6 @@ source-repository head
   type:      git
   location:  git://github.com/jaor/xmobar.git
   branch:    master
-
-flag small_base
-  description: Choose the new smaller, split-up base package.
 
 flag with_xft
   description: Use Xft to render text. UTF-8 support included.
@@ -58,25 +55,31 @@ flag with_alsa
   default: False
 
 flag with_datezone
-  description: Enables localized date support
+  description: Enables localized date support.
   default: False
 
 flag with_mpris
-  description: MPRIS v1, v2 support
+  description: MPRIS v1, v2 support.
+  default: False
+
+flag with_dbus
+  description: Publish a service on the session bus for controlling xmobar.
   default: False
 
 flag with_threaded
-  description: Use threaded runtime
+  description: Use threaded runtime.
   default: False
 
 executable xmobar
     hs-source-dirs:     src
     main-is:            Main.hs
     other-modules:
-      Xmobar, Config, Parsers, Commands, Localize, XUtil, StatFS, Runnable,
-      Plugins, Plugins.CommandReader, Plugins.Date, Plugins.EWMH,
+      Xmobar, Config, Parsers, Commands, Localize,
+      XUtil, StatFS, Runnable, ColorCache, Window, Signal,
+      Plugins, Plugins.BufferedPipeReader,
+      Plugins.CommandReader, Plugins.Date, Plugins.EWMH,
       Plugins.PipeReader, Plugins.StdinReader, Plugins.XMonadLog,
-      Plugins.Utils, Plugins.Kbd, Plugins.Monitors,
+      Plugins.Utils, Plugins.Kbd, Plugins.Locks, Plugins.Monitors,
       Plugins.Monitors.Batt, Plugins.Monitors.Common,
       Plugins.Monitors.CoreCommon, Plugins.Monitors.CoreTemp,
       Plugins.Monitors.CpuFreq, Plugins.Monitors.Cpu,
@@ -88,47 +91,37 @@ executable xmobar
       Plugins.Monitors.Bright
 
     ghc-prof-options:   -prof -auto-all
-
-    if true
-       ghc-options: -funbox-strict-fields -Wall
-       extra-libraries: Xrandr
-
-    if flag(with_threaded)
-       -- -threaded is a workaround 100% CPU busy loop
-       -- (http://hackage.haskell.org/trac/ghc/ticket/4934)
-       -- See also comments in https://github.com/jaor/xmobar/pull/36
-       ghc-options: -threaded
-       cpp-options: -DTHREADED_RUNTIME
-
-    if impl (ghc >= 6.12.1)
-       ghc-options: -fno-warn-unused-do-bind
-
-    --  for instance declaration in src/Plugins/Monitors/CoreCommon.hs
-    if impl (ghc < 7)
-       cpp-options: -DGHC6
+    ghc-options: -funbox-strict-fields -Wall -fno-warn-unused-do-bind
+    extra-libraries: Xrandr
 
     build-depends:
+      base == 4.*,
+      containers,
+      process,
+      old-locale,
+      bytestring,
+      directory,
       unix,
       time,
       filepath,
       X11 == 1.6.*,
-      mtl == 2.0.*,
+      mtl >= 2.0 && < 2.2,
       parsec == 3.1.*,
-      stm == 2.3.*
+      stm >= 2.3 && < 2.5
 
-    if flag(small_base)
-       build-depends:
-         base == 4.*,
-         containers,
-         process,
-         old-locale,
-         bytestring,
-         directory
-    else
-       build-depends: base < 3
+    if flag(with_threaded)
+       -- -threaded is a workaround for 100% CPU busy loop
+       -- (http://hackage.haskell.org/trac/ghc/ticket/4934).
+       -- See also comments in https://github.com/jaor/xmobar/pull/36
+       ghc-options: -threaded
+       cpp-options: -DTHREADED_RUNTIME
+
+    if impl (ghc < 7)
+       cpp-options: -DGHC6
 
     if flag(with_xft) || flag(all_extensions)
        build-depends: utf8-string == 0.3.*, X11-xft >= 0.2 && < 0.4
+       other-modules: MinXft
        cpp-options: -DXFT
 
     if flag(with_utf8) || flag(all_extensions)
@@ -146,7 +139,7 @@ executable xmobar
        cpp-options: -DIWLIB
 
     if flag(with_mpd) || flag(all_extensions)
-       build-depends: libmpd == 0.7.*
+       build-depends: libmpd == 0.8.*
        other-modules: Plugins.Monitors.MPD
        cpp-options: -DLIBMPD
 
@@ -162,6 +155,11 @@ executable xmobar
        cpp-options: -DDATEZONE
 
     if flag(with_mpris) || flag(all_extensions)
-       build-depends: dbus-core >= 0.9.2.1, text >= 0.11.1.5 && < 0.12
+       build-depends: dbus >= 0.10
        other-modules: Plugins.Monitors.Mpris
        cpp-options: -DMPRIS
+
+    if flag(with_dbus) || flag(all_extensions)
+       build-depends: dbus >= 0.10
+       other-modules: IPC.DBus
+       cpp-options: -DDBUS
