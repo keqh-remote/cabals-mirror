@@ -1,6 +1,6 @@
 cabal-version:       >= 1.2
 name:                make-hard-links
-version:             0.1
+version:             0.2
 synopsis:            Change duplicated files into hard-links.
 category:            System
 license:             GPL
@@ -35,3 +35,6 @@ executable make-hard-links
   main-is:           MakeHardLinks.hs
   ghc-options:       -threaded -Wall
   extensions:        ScopedTypeVariables
+  other-modules:
+    Keys,
+    FindFiles
