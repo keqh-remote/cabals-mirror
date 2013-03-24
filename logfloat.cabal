@@ -1,12 +1,12 @@
 ----------------------------------------------------------------
--- wren ng thornton <wren@community.haskell.org>    ~ 2008.10.12
+-- wren ng thornton <wren@community.haskell.org>    ~ 2008.10.16
 ----------------------------------------------------------------
 
 Name:           logfloat
-Version:        0.9.1.2
+Version:        0.9.1.3
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
-Stability:      provisional
+Stability:      experimental
 Copyright:      Copyright (c) 2007--2008 wren ng thornton
 License:        BSD3
 License-File:   LICENSE
