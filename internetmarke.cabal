@@ -1,10 +1,10 @@
 Name:           internetmarke
-Version:        0.0.2
+Version:        0.0.3
 License:        GPL
 License-File:   LICENSE
 Author:         Henning Thielemann <haskell@henning-thielemann.de>
 Maintainer:     Henning Thielemann <haskell@henning-thielemann.de>
-Homepage:       http://code.haskell.org/~thielema/internetmarke
+Homepage:       http://code.haskell.org/~thielema/internetmarke/
 Category:       Console, Graphics
 Synopsis:       Shell command for constructing custom stamps for German Post
 Description:
@@ -47,18 +47,19 @@ Flag splitBase
 
 Executable internetmarke
   Build-Depends:
-    explicit-exception >= 0.0.2 && < 0.1,
-    mtl >= 1.1 && < 1.2,
-    process >= 1.0 && < 1.1,
-    parsec >= 2.1 && < 2.2,
-    HPDF >= 1.4 && < 1.5
+    explicit-exception >=0.1 && <0.2,
+    transformers >=0.2 && <0.4,
+    utility-ht >=0.0.1 && <0.1,
+    process >=1.0 && <1.2,
+    parsec >=2.1 && <3.2,
+    HPDF >=1.4 && <1.5
 
   If flag(splitBase)
     Build-Depends:
-      base >= 3
+      base >=3 && <5
   Else
     Build-Depends:
-      base >= 1.0 && < 2
+      base >=1.0 && <2
 
   GHC-Options:    -Wall
   Hs-source-dirs: src
