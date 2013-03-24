@@ -1,17 +1,19 @@
 name:                type-settheory
-version:             0.1.2
+version:             0.1.3
 synopsis:            
- Type-level sets and functions expressed as types
+ Sets and functions-as-relations in the type system
 description:         
- Type classes can express sets and functions on the type level, but they are not first-class citizens. Here we take the approach of expressing type-level sets and functions as /types/. The instance system is replaced by value-level proofs which can be directly manipulated. In this way the Haskell type level can support a quite expressive constructive set theory; for example, we have:
+ Type classes can express sets and functions on the type level, but they are not first-class. This package expresses type-level sets and functions as /types/ instead. 
+ . 
+ Instances are replaced by value-level proofs which can be directly manipulated; this makes quite a bit of (constructive) set theory expressible; for example, we have:
  .
  * Subsets and extensional set equality
  .
- * Unions (binary or of sets of sets), intersections, cartesian products, powersets, and a kind of dependent sum and product 
+ * Unions (binary or of sets of sets), intersections, cartesian products, powersets, and a sort of dependent sum and product
  .
  * Functions and their composition, images, preimages, injectivity
  .
- The meaning of the proposition-types here is /not/ purely by convention; it is actually grounded in GHC \"reality\": A proof of @A :=: B@ gives us a safe coercion operator @A -> B@ (while the logic is inconsistent /at compile-time/ due to the fact that Haskell has general recursion, we still have that proofs of falsities are 'undefined' or non-terminating programs, so for example if 'Refl' is successfully pattern-matched, the proof must have been correct). 
+ The proposition-types (derived from the ':=:' equality type) aren't meaningful purely by convention; they relate to the rest of Haskell as follows: A proof of @A :=: B@ gives us a safe coercion operator @A -> B@ (while the logic is inevitably inconsistent /at compile-time/ since 'undefined' proves anything, I think that we still have the property that if the 'Refl' value is successfully pattern-matched, then the two parameters in its type are actually equal). 
  
 category:            Math, Language
 license:             BSD3
@@ -27,7 +29,7 @@ source-repository head
  location: http://code.haskell.org/~daniels/type-settheory
 
 Library
- build-depends:       base >= 4, base < 5
+ build-depends:        base >= 4, base < 5
                      , syb
                      , type-equality
                      , template-haskell
@@ -39,8 +41,6 @@ Library
                      Type.Function
                      Type.Dummies
                      Type.Nat
-                     Data.Category
                      Data.Typeable.Extras
-                     Control.SMonad
  other-modules:       Helper, Defs
  ghc-options:         
