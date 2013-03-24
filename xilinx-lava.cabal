@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
---- $Id: xilinx-lava.cabal#11 2010/09/27 12:57:20 REDMOND\\satnams $
+--- $Id: xilinx-lava.cabal#13 2010/09/28 17:03:48 REDMOND\\satnams $
 -------------------------------------------------------------------------------
 Name:            xilinx-lava
-Version:         5.0.0.5
+Version:         5.0.0.6
 License:         BSD3
 License-file:    LICENSE
 Author:          Satnam Singh
@@ -20,6 +20,7 @@ cabal-version:    >= 1.8
 Library 
   Build-Depends:	 array, base >= 4 && < 5, mtl, directory, haskell98, old-time, process
   Exposed-modules: Lava,
+                   Lava.Diagnostics,
                    Lava.ISE,
                    Lava.Virtex2,
                    Lava.Virtex4,
@@ -33,6 +34,7 @@ Library
                    Lava.CircuitGraphToVHDL, 
                    Lava.LUTGates,
                    Lava.Netlist,
+                   Lava.OverlayTile,
                    Lava.PortRange,
                    Lava.Ports,
                    Lava.PrimitiveGates,
