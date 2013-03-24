@@ -1,5 +1,5 @@
 name:          darcs-benchmark
-version:       0.1
+version:       0.1.1
 synopsis:      Comparative benchmark suite for darcs.
 
 description: A simple tool to compare performance of different Darcs 2.x
