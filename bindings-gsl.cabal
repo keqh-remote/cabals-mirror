@@ -3,7 +3,7 @@ name: bindings-gsl
 homepage: http://bitbucket.org/mauricio/bindings-gsl
 synopsis:
   Low level bindings to GNU GSL.
-version: 0.1.1
+version: 0.1.1.5
 license: BSD3
 license-file: LICENSE
 maintainer: Maurício C. Antunes <mauricio.antunes@gmail.com>
