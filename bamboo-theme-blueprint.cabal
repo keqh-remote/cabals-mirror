@@ -1,5 +1,5 @@
 Name:                 bamboo-theme-blueprint
-Version:              2009.6.8
+Version:              2009.6.9
 Build-type:           Simple
 Synopsis:             bamboo blueprint theme
 Description:          bamboo blueprint theme
@@ -22,8 +22,8 @@ library
     , xhtml, utf8-string >= 0.3.3, parsec >= 2, gravatar >= 0.3
     , data-default >= 0.2
     , mps >= 2009.5.13, hcheat >= 2009.5.13
-    , hack >= 2009.5.19, hack-contrib >= 2009.5.19
-    , bamboo >= 2009.6.8
+    , hack >= 2009.5.19, hack-contrib >= 2009.6.9
+    , bamboo >= 2009.6.9
   hs-source-dirs: src/
   exposed-modules:  
                     Bamboo.Theme.Blueprint
