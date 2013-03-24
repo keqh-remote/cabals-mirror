@@ -1,5 +1,5 @@
 Name:                dimensional
-Version:             0.7.2
+Version:             0.7.3
 License:             BSD3
 License-File:        LICENSE
 Copyright:           Bjorn Buckwalter 2006-2008
@@ -18,8 +18,9 @@ Description:
     far as is practical, enforce/encourage best practices of unit usage.
     Requires GHC 6.6.1 or later.
 Category:            Math
-Build-Depends:       base,
-                     time
+Build-Type:          Simple
+Build-Depends:       base, time
+                     -- , fad
 Exposed-Modules:     Numeric.NumType, 
                      Numeric.Units.Dimensional, 
                      Numeric.Units.Dimensional.Prelude,
@@ -28,5 +29,14 @@ Exposed-Modules:     Numeric.NumType,
                      Numeric.Units.Dimensional.NonSI,
                      Numeric.Units.Dimensional.Extensible,
                      Numeric.Units.Dimensional.CGS
-ghc-options:         -O
+                     -- , Numeric.Units.Dimensional.ForwardAD
+Extra-source-files:  README,
+                     -- Fad.hs,
+                     Test.hs
+                     Numeric/Units/Dimensional/Test.hs,
+                     Numeric/Units/Dimensional/QuantitiesTest.hs,
+                     Numeric/Units/Dimensional/ExtensibleTest.lhs,
+                     -- , Numeric/Units/Dimensional/ForwardADTest.lhs
+                     examples/README,
+                     examples/GM.lhs
  
