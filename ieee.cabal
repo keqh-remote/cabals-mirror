@@ -1,5 +1,5 @@
 name:            ieee
-version:         0.6
+version:         0.6.1
 homepage:        http://github.com/patperry/hs-ieee
 synopsis:        Approximate comparisons for IEEE floating point numbers
 description:
@@ -11,14 +11,14 @@ description:
 category:        Math
 license:         BSD3
 license-file:    LICENSE
-copyright:       (c) 2009. Patrick Perry <patperry@gmail.com>
+copyright:       (c) 2010. Patrick Perry <patperry@gmail.com>
 author:          Patrick Perry
 maintainer:      Patrick Perry <patperry@gmail.com>
 cabal-version: >= 1.2.0
 build-type:      Custom
-tested-with:     GHC ==6.10.1
+tested-with:     GHC ==6.12.2
 
-extra-source-files: tests/Properties.hs
+extra-source-files: NEWS tests/Properties.hs
 
 library
     exposed-modules: Data.AEq
@@ -27,3 +27,5 @@ library
     build-depends:   base >= 3 && < 5
 
     ghc-options:     -Wall
+
+    extensions:      CPP
