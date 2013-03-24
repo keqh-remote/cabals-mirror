@@ -1,6 +1,6 @@
 name: direct-sqlite
-version: 1.0
-cabal-version: >= 1.2
+version: 1.1
+cabal-version: >= 1.6
 build-type: Simple
 license: BSD3
 license-file: LICENSE
@@ -17,7 +17,16 @@ description:
   but is slightly higher-level, in that it supports marshalling of data values to and
   from the database.  In particular, it supports strings encoded as UTF8, and BLOBs
   represented as ByteStrings.
+  
+  Version 1.1 adds the SQLite amalgamation file (version 3.7.5) to the project, so that
+  there are no external dependencies.
+
+Source-Repository head
+  type: darcs
+  location: http://dankna.com/software/darcs/direct-sqlite/
 
 Library
   exposed-modules: Database.SQLite3
+  c-sources: sqlite3.c
   build-depends: bytestring, base >= 4.1 && < 5, utf8-string >= 0.3.5
+
