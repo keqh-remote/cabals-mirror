@@ -1,6 +1,6 @@
 name:          data-nat
 category:      Data, Math
-version:       0.1
+version:       0.1.1
 author:        Gábor Lehel
 maintainer:    Gábor Lehel <illissius@gmail.com>
 homepage:      http://github.com/glehel/data-nat
@@ -30,18 +30,21 @@ library
     exposed-modules:
         Data.Nat
 
-    -- not sure how or if to constrain base...
     build-depends:
-        base       >= 4   && < 5,
+        base       >= 3   && < 5,
         semigroups >= 0.7 && < 0.9
 
-    -- here either
+    -- not sure what version constraints to use here
     if impl(ghc)
-        build-depends: ghc-prim == 0.2.*
-        cpp-options:   -DHAVE_TYPEABLE
+        cpp-options:      -DHAVE_TYPEABLE
+        other-extensions: DeriveDataTypeable
 
     if impl(ghc >= 7.2)
-        cpp-options: -DHAVE_GENERIC
+        cpp-options:      -DHAVE_GENERIC
+--        other-extensions: DeriveGeneric
+
+    if impl(ghc == 7.4)
+        build-depends:    ghc-prim == 0.2.*
 
     ghc-options:
         -Wall
