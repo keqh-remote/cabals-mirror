@@ -8,7 +8,7 @@ Description:
         messing around FastCGI. It is also intended to be run behind a
         reverse-proxy so it doesn't have some facilities like logging,
         client filtering or such like.
-Version: 0.5
+Version: 0.6
 License: PublicDomain
 License-File: COPYING
 Author: PHO <pho at cielonegro dot org>
@@ -43,9 +43,22 @@ Flag build-lucu-implant-file
 
 Library
     Build-Depends:
-        HsOpenSSL, base >= 4 && < 5, bytestring, containers, dataenc,
-        filepath, directory, haskell-src, hxt, mtl, network, stm,
-        time, unix, zlib
+        HsOpenSSL   == 0.8.*,
+        base        == 4.2.*,
+        bytestring  == 0.9.*,
+        containers  == 0.3.*,
+        dataenc     == 0.13.*,
+        filepath    == 1.1.*,
+        directory   == 1.0.*,
+        haskell-src == 1.0.*,
+        hxt         == 8.5.*,
+        mtl         == 1.1.*,
+        network     == 2.2.*,
+        stm         == 2.1.*,
+        time        == 1.1.*,
+        time-http   == 0.1.*,
+        unix        == 2.4.*,
+        zlib        == 0.5.*
 
     Exposed-Modules:
         Network.HTTP.Lucu
@@ -60,7 +73,6 @@ Library
         Network.HTTP.Lucu.MIMEType.Guess
         Network.HTTP.Lucu.Parser
         Network.HTTP.Lucu.Parser.Http
-        Network.HTTP.Lucu.RFC1123DateTime
         Network.HTTP.Lucu.Request
         Network.HTTP.Lucu.Resource
         Network.HTTP.Lucu.Resource.Tree
