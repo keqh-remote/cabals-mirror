@@ -1,6 +1,6 @@
 name:         wxcore
-version:      0.12.1.7
-license:      LGPL
+version:      0.13.2
+license:      OtherLicense
 license-file: LICENSE
 author:       Daan Leijen
 maintainer:   wxhaskell-devel@lists.sourceforge.net
@@ -11,6 +11,11 @@ description:
   built on top of wxWidgets, a comprehensive C++ library that is
   portable across all major GUI platforms, including GTK, Windows,
   X11, and MacOS X. This version works with wxWidgets 2.8 only.
+
+  Distributed under the WXWINDOWS LIBRARY LICENSE. Please see
+  LICENSE file, but note that this is essentially LGPL with an
+  exception allowing binary distribution of proprietary software.
+  This is the same license as wxWidgets itself uses.
 homepage:     http://haskell.org/haskellwiki/WxHaskell
 
 cabal-version: >= 1.2
@@ -29,11 +34,11 @@ extra-source-files:
   src/eiffel/wx_defs.e
   src/eiffel/wxc_defs.e
   src/eiffel/stc.e
-  src/include/db.h
   src/include/dragimage.h
   src/include/eljgrid.h
   src/include/ewxw_def.h
   src/include/graphicscontext.h
+  src/include/glcanvas.h
   src/include/managed.h
   src/include/mediactrl.h
   src/include/previewframe.h
@@ -60,7 +65,6 @@ library
   
   c-sources:
     src/cpp/apppath.cpp
-    src/cpp/db.cpp
     src/cpp/dragimage.cpp
     src/cpp/eljaccelerator.cpp
     src/cpp/eljartprov.cpp
@@ -152,6 +156,7 @@ library
     src/cpp/ewxw_main.cpp
     src/cpp/extra.cpp
     src/cpp/graphicscontext.cpp
+    src/cpp/glcanvas.cpp
     src/cpp/image.cpp
     src/cpp/managed.cpp
     src/cpp/mediactrl.cpp
@@ -170,7 +175,6 @@ library
   exposed-modules:
     Graphics.UI.WXCore
     Graphics.UI.WXCore.Controls
-    Graphics.UI.WXCore.Db
     Graphics.UI.WXCore.Defines
     Graphics.UI.WXCore.Dialogs
     Graphics.UI.WXCore.DragAndDrop
@@ -179,6 +183,7 @@ library
     Graphics.UI.WXCore.Frame
     Graphics.UI.WXCore.Image
     Graphics.UI.WXCore.Layout
+    Graphics.UI.WXCore.OpenGL
     Graphics.UI.WXCore.Print
     Graphics.UI.WXCore.Process
     Graphics.UI.WXCore.Types
@@ -196,7 +201,7 @@ library
     filepath,
     parsec,
     stm,
-    wxdirect >= 0.12.1.3,
+    wxdirect > 0.12.1.2,
     directory,
     old-time,
     time
