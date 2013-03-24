@@ -1,5 +1,5 @@
 Name:               hmatrix
-Version:            0.5.2.1
+Version:            0.5.2.2
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
@@ -41,8 +41,7 @@ extra-source-files: examples/tests.hs
                     examples/devel/functions.hs
 
 extra-source-files: lib/Numeric/LinearAlgebra/LAPACK/lapack-aux.h,
-                    lib/Numeric/LinearAlgebra/LAPACK/clapack.h,
-                    lib/Numeric/GSL/gsl-aux.h
+                    lib/Numeric/LinearAlgebra/LAPACK/clapack.h
 
 extra-source-files: lib/Numeric/GSL/Special/auto.hs,
                     lib/Numeric/GSL/Special/autoall.sh,
@@ -98,19 +97,21 @@ library
                         Numeric.GSL.Special.Dilog,
                         Numeric.GSL.Special.Elementary,
                         Numeric.GSL.Special.Ellint,
+                        Numeric.GSL.Special.Elljac,
                         Numeric.GSL.Special.Expint,
                         Numeric.GSL.Special.Fermi_dirac,
                         Numeric.GSL.Special.Gegenbauer,
                         Numeric.GSL.Special.Hyperg,
                         Numeric.GSL.Special.Laguerre,
                         Numeric.GSL.Special.Lambert,
+                        Numeric.GSL.Special.Legendre,
+                        Numeric.GSL.Special.Log,
                         Numeric.GSL.Special.Pow_int,
                         Numeric.GSL.Special.Psi,
                         Numeric.GSL.Special.Synchrotron,
+                        Numeric.GSL.Special.Transport,
                         Numeric.GSL.Special.Trig,
                         Numeric.GSL.Special.Zeta,
-                        Numeric.GSL.Special.Log,
-                        Numeric.GSL.Special.Legendre,
                         Numeric.GSL,
                         Numeric.LinearAlgebra,
                         Numeric.LinearAlgebra.LAPACK,
