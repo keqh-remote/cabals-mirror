@@ -1,5 +1,5 @@
 Name:		hake
-Version:	0.2
+Version:	0.3
 License:	GPL
 License-file:	LICENSE
 Author:		Yoshikuni Jujo
@@ -30,7 +30,23 @@ Description:	Like ruby's rake, hake have Hakefile which is Haskell source.
 		>  ,
 		>  task	( "clean" , [ "rm -f *.o greeting greeting.log" ] )
 		>  ,
-		>  mkfl ( "script.sh", [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ] )
+		>  mkfl	( "script.sh", [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ] )
+		>  ,
+		>  mkfl2  ( "script.sh", [ "script.sh.gen" ], \[s] ->
+		>             do gen <- readFile s
+		>                return $ [ "#!/bin/sh", "echo This is script", "echo made by Hakefile" ]
+		>                         ++ gen )
+		>  ,
+		>  ruleSS ( "", ".o", \t s -> [ (".c",  [ "gcc " ++ s ++ " -o " ++ t ] ) ,
+		>                               (".cc", [ "g++ " ++ s ++ " -o " ++ t ] ) ] )
+		>  ,
+		>  rule   ( ".o", ".c",  \_ s -> [ "gcc -c " ++ s ] )
+		>  ,
+		>  rule   ( ".o", ".cc", \_ s -> [ "g++ -c " ++ s ] )
+		>  ,
+		>  ( [ (=="foo") ], const [ "foo.gen", "Hakefile" ], \t [s] -> [ do
+		>         gen <- readFile s
+		>         writeFile t $ unlines $ [ "#!/bin/sh", "echo This is script" ] ++ lines gen ] )
 		>
 		>  ]
 		>
