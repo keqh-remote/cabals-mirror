@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Vector
-Version:       2.1.1
+Version:       2.2.0
 Stability:     Experimental
 Synopsis:      Efficient geometric vectors and transformations.
 
@@ -14,8 +14,7 @@ Description:
   just contains data structures that are useful for graphics
   work.)
 
-  Now includes @points_bounds@ functions, for finding the bounds
-  of a list of points.
+  Removed gather modules. Some name changes for bounding boxes.
 
 Category:      Data, Math, Numerical, Graphics
 License:       BSD3
@@ -27,13 +26,11 @@ Tested-With:   GHC == 6.10.3
 
 Library
   Exposed-modules:
-    Data.Vector,
     Data.Vector.Class,
     Data.Vector.V1,
     Data.Vector.V2,
     Data.Vector.V3,
     Data.Vector.V4,
-    Data.Vector.Transform,
     Data.Vector.Transform.T1,
     Data.Vector.Transform.T2,
     Data.Vector.Transform.T3,
