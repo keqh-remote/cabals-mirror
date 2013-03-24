@@ -1,9 +1,11 @@
 Name:		regexpr
-Version:	0.2.5
+Version:	0.2.6
 License:	GPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
 Maintainer:	PAF01143@nifty.ne.jp
+Stability:	experimental
+Homepage:	http://homepage3.nifty.com/salamander/regexpr
 Synopsis:	regular expression like Perl/Ruby in Haskell
 Description:
   Regular expression library like Perl/Ruby's regular expressions.
