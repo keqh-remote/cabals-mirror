@@ -1,6 +1,6 @@
 Name:            MonadCatchIO-transformers
-Version:         0.1.0.0
-Cabal-Version:   >= 1.2
+Version:         0.1.0.1
+Cabal-Version:   >= 1.6
 License:         PublicDomain
 Description:
   Provides functions to throw and catch exceptions. Unlike the functions from
@@ -15,9 +15,9 @@ Build-Type:      Simple
 
 Library
   Build-Depends:
-    base >= 4 && < 5,
-    extensible-exceptions,
-    transformers
+    base == 4.*,
+    extensible-exceptions == 0.1.*,
+    transformers == 0.1.*
   Exposed-Modules:
     Control.Monad.CatchIO
   Hs-Source-Dirs:  src
