@@ -1,5 +1,5 @@
 name:            factual-api
-version:         0.2.0
+version:         0.3.0
 license:         BSD3
 license-file:    LICENSE.txt
 category:        API, Web
@@ -7,7 +7,7 @@ copyright:       (c) 2011 Rudiger Lippert
 author:          Rudiger Lippert <rudy@factual.com>
 maintainer:      Rudiger Lippert <rudy@factual.com>
 stability:       stable
-tested-with:     GHC == 7.0.4
+tested-with:     GHC == 7.4.1
 synopsis:        A driver for the Factual API
 cabal-version:   >= 1.8
 homepage:        https://github.com/rudyl313/factual-haskell-driver
@@ -50,7 +50,10 @@ library
     aeson >= 0.6.0.0,
     attoparsec >= 0.10.1.0,
     base == 4.*,
+    bytestring,
+    containers,
     hoauth >= 0.3.0,
+    HTTP,
     text >= 0.11.1.5,
     unordered-containers >= 0.1.4.6,
     vector >= 0.9.1
