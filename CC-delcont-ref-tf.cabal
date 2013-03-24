@@ -1,5 +1,5 @@
 name:               CC-delcont-ref-tf
-version:            0.1.0.0
+version:            0.1.0.1
 author:             Oleg Kiselyov
 maintainer:         shelarcy <shelarcy@gmail.com>
 license:            BSD3
@@ -34,7 +34,7 @@ extra-source-files:
    Bench_nondet.hs
 
 library
- build-depends:      base >= 3 && < 5, mtl, ref-tf
+ build-depends:      base >= 3 && < 5, transformers >= 0.2, ref-tf
  exposed-modules:
     Control.Monad.CC.CCRef
  other-modules:
