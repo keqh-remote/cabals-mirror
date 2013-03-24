@@ -1,16 +1,15 @@
 name:          bindings-levmar
-version:       0.1.1.1
+version:       0.2.0.1
 cabal-version: >= 1.6
 build-type:    Simple
 stability:     experimental
-tested-with:   GHC ==6.10.4
 author:        Roel van Dijk & Bas van Dijk
 maintainer:    vandijk.roel@gmail.com, v.dijk.bas@gmail.com
 copyright:     (c) 2009 Roel van Dijk & Bas van Dijk
 license:       OtherLicense
 license-file:  LICENSE
-category:      numerical, FFI
-synopsis:      A binding to the C levmar (Levenberg-Marquardt) library
+category:      Numerical, FFI
+synopsis:      Low level bindings to the C levmar (Levenberg-Marquardt) library
 description:   The Levenberg-Marquardt algorithm is an iterative
                technique that finds a local minimum of a function that
                is expressed as the sum of squares of nonlinear
@@ -32,7 +31,7 @@ description:   The Levenberg-Marquardt algorithm is an iterative
                .
 	       Note that the included C library is lightly patched to
 	       make it pure. This way the functions can be used inside
-	       unsafePerformIO.
+	       @unsafePerformIO@.
 	       .
                A note regarding the license:
                .
@@ -72,10 +71,10 @@ source-repository head
   location: http://code.haskell.org/bindings-levmar
 
 library
-  build-depends: base >= 3 && < 4.2
+  build-depends: base         >= 3     && < 4.4
+               , bindings-DSL >= 1.0.2 && < 1.1
   exposed-modules: Bindings.LevMar
-                 , Bindings.LevMar.CurryFriendly
-  ghc-options: -Wall -O2
+  ghc-options: -Wall
   cc-options: -D_OPENMP
   include-dirs: levmar-2.4
   c-sources:
