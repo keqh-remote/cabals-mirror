@@ -1,5 +1,5 @@
 Name:           AERN-Net
-Version:        0.2.0
+Version:        0.2.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -10,7 +10,7 @@ Maintainer:     mik@konecny.aow.cz
 Stability:      experimental
 Category:       Math, Distributed Computing
 Synopsis:       Compositional lazy dataflow networks for exact real number computation
-Tested-with:    GHC ==6.8.3
+Tested-with:    GHC ==6.10.1
 Description:
     AERN-Net provides
     datatypes and abstractions for defining and executing
@@ -41,33 +41,26 @@ Extra-source-files:
 Data-files:
     ChangeLog
 
-Flag containers-in-base
-    Default: False
-
 Library
   hs-source-dirs:  src
-  if flag(containers-in-base)
-    Build-Depends:
-      base < 3, binary >= 0.4, html, time, stm, AERN-Real >= 0.9.8, AERN-RnToRm >= 0.4.2
-  else
-    Build-Depends:
-      base >= 3, containers, binary >= 0.4, html, time, stm, AERN-Real >= 0.9.8, AERN-RnToRm >= 0.4.2
+  Build-Depends:
+      base >= 3, base < 4, containers, binary >= 0.4, html, time, stm, AERN-Real >= 0.9.9, AERN-RnToRm >= 0.4.9
   Exposed-modules:
-    Control.ERNet.Blocks.Basic
-    Control.ERNet.Blocks.Control.Basic
-    Control.ERNet.Blocks.Real.Basic
-    Control.ERNet.Blocks.Real.Protocols
-    Control.ERNet.Blocks.RnToRm.Basic
-    Control.ERNet.Blocks.RnToRm.Protocols
-    Control.ERNet.Foundations.Event.Logger
-    Control.ERNet.Foundations.Event.JavaScript
-    Control.ERNet.Foundations.Channel
-    Control.ERNet.Foundations.Protocol.StandardCombinators
-    Control.ERNet.Foundations.Manager
-    Control.ERNet.Foundations.Process
-    Control.ERNet.Foundations.Event
+    Control.ERNet.Deployment.Local.Manager,
+    Control.ERNet.Deployment.Local.Logger,
+    Control.ERNet.Deployment.Local.Channel,
+    Control.ERNet.Blocks.Basic,
+    Control.ERNet.Blocks.Control.Basic,
+    Control.ERNet.Blocks.RnToRm.Basic,
+    Control.ERNet.Blocks.RnToRm.Protocols,
+    Control.ERNet.Blocks.Real.Basic,
+    Control.ERNet.Blocks.Real.LFT,
+    Control.ERNet.Blocks.Real.Protocols,
+    Control.ERNet.Foundations.Protocol.StandardCombinators,
+    Control.ERNet.Foundations.Manager,
+    Control.ERNet.Foundations.Event,
+    Control.ERNet.Foundations.Event.JavaScript,
+    Control.ERNet.Foundations.Event.Logger,
+    Control.ERNet.Foundations.Channel,
+    Control.ERNet.Foundations.Process,
     Control.ERNet.Foundations.Protocol
-    Control.ERNet.Deployment.Local.Channel
-    Control.ERNet.Deployment.Local.Manager
-    Control.ERNet.Deployment.Local.Logger
-
