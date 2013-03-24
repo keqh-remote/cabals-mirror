@@ -1,8 +1,8 @@
 
 Name:		regexpr-symbolic
-Synopsis:	Equality, containment, intersection among regular expressions via symbolic manipulation
+Synopsis:	Regular expressions via symbolic manipulation
 Category:       Text
-Version:	0.2
+Version:	0.3
 Stability:      experimental
 Cabal-Version:  >= 1.2
 License:	BSD3
