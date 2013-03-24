@@ -1,5 +1,5 @@
 name:		TrieMap
-version:	0.0.1.0
+version:	0.0.1.1
 license:	BSD3
 license-file:	LICENSE
 maintainer:	wasserman.louis@gmail.com
@@ -21,7 +21,7 @@ description:	Generalized trie implementation that automatically infers map types
  
 build-type:	Simple
 build-depends:
-	base >= 4 && <= 5, containers
+	base >= 4 && <= 5, containers == 0.2.0.1
 exposed-modules:
 	TrieMap
 	TrieMap.Algebraic
