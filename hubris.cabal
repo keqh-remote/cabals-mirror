@@ -1,5 +1,5 @@
 Name:                hubris
-Version:             0.0.2
+Version:             0.0.3
 Author:              Mark Wotton
 Maintainer:          mwotton@gmail.com
 Build-Type:          Simple
@@ -17,17 +17,13 @@ Synopsis:       Support library for Hubris, the Ruby <=> Haskell bridge
 Description:    Support library for Hubris, the Ruby to Haskell bridge
                 more info at <http://github.com/mwotton/Hubris-Haskell>
                 .
-                short version: ./Setup configure --enable-shared --ghc-options=-dynamic --extra-include-dirs=... --extra-lib-dirs=...
-                .
-                If you omit any of those flags, it will seem to work then blow up at runtime.
-                .
                 Anyway, this version strips the boilerplate that used to be necessary, and is intended to be used in conjunction with <http://github.com/mwotton/Hubris>.
 
 Library
--- the ordering is critical, because Cabal doesn't do dependency analysis.
+        -- the ordering is critical, because Cabal doesn't do dependency analysis.
         Exposed-Modules: Language.Ruby.Hubris.Binding, Language.Ruby.Hubris, Language.Ruby.Hubris.LibraryBuilder, Language.Ruby.Hubris.ZCode, Language.Ruby.Hubris.GHCBuild, Includes
         c-sources: cbits/rshim.c
-        includes:  cbits/rshim.h
+        -- includes:  cbits/rshim.h
         install-includes:  cbits/rshim.h
         include-dirs: cbits
         -- a proper fix for this would involve autoconf and I'm not feeling up to it.
@@ -43,9 +39,4 @@ Executable Hubrify
   Other-Modules:     Language.Ruby.Hubris.Binding
   c-sources: cbits/rshim.c 
   include-dirs: cbits 
-  extra-libraries: ruby
-  -- This is bad form, apparently, and if i include it, ./Setup dist cries big fat tears,
-  --  but you _really_ want a dynamic lib with Hubrify, or you'll get a truly
-  -- huge binary (may not even link, I had problems with the iconv dependency from HSbase)
-  -- anyway, pass "--ghc-options=-dynamic" to ./Setup configure, and you should be apples.
-  -- ghc-options: -dynamic
+  extra-libraries: ruby1.8
