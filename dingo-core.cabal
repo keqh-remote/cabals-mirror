@@ -1,5 +1,5 @@
 Name:                dingo-core
-Version:             0.0.3.5
+Version:             0.1.0
 Synopsis:            Dingo is a Rich Internet Application platform based on the Warp web server.
 Description:         Dingo is a Rich Internet Application platform based on the Warp web server. It allows you to write code which looks very much like regular GUI code and have it work in the browser. 
 
@@ -17,17 +17,17 @@ Extra-source-files:  bundles/_bootstrap/bootstrap.js
 
 Library
   Build-Depends: base == 4.*
-               , aeson >= 0.3.2.12 && <0.4
-               , attoparsec >= 0.9.0.0 && < 0.10
+               , aeson >= 0.5 && <0.6
+               , attoparsec >= 0.10 && < 0.11
                , base64-bytestring >= 0.1 && < 0.2
                , bytestring >= 0.9.0.1
                , blaze-builder >= 0.3 && <0.4
                , blaze-html >= 0.4.1.6 && < 0.5
                , blaze-textual >= 0.2.0.5 && < 0.3
+               , conduit >= 0.1 && < 0.2
                , containers >= 0.4
                , cookie >= 0.3.0 && < 0.4
                , deepseq >= 1.1 && < 1.2
-               , enumerator >= 0.4 && < 0.5
                , file-embed >= 0.0.4 && < 0.1
                , fclabels == 1.0.*
                , hashable >= 1.1.0.0 && < 1.2
@@ -40,9 +40,10 @@ Library
                , text == 0.11.*
                , transformers >= 0.2.2 && < 0.3
                , unordered-containers >= 0.1.4 && < 0.2
-               , wai == 0.4.*
-               , wai-extra == 0.4.*
-               , warp == 0.4.*
+               , wai == 1.0.*
+               , wai-eventsource == 1.0.*
+               , wai-extra == 1.0.*
+               , warp == 1.0.*
                , web-css == 0.1.*
   Extensions:          CPP
                        DeriveDataTypeable
@@ -72,7 +73,6 @@ Library
                        Dingo.Internal.EventTypes
                        Dingo.Internal.Html
                        Dingo.Internal.JavaScript
-                       Dingo.Internal.Queue
                        Dingo.Internal.ResourceBundle.Internal
                        Dingo.Internal.ResourceBundle.Boot
                        Dingo.Internal.Server.State
