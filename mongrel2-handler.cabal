@@ -1,5 +1,5 @@
 Name:                mongrel2-handler
-Version:             0.1.0
+Version:             0.1.1
 Synopsis:            Mongrel2 Handler Library
 Description:         Mongrel2 Handler Library.
 License:             MIT
@@ -25,6 +25,7 @@ Library
   Extensions:          OverloadedStrings
   Ghc-options:         -Wall -fno-warn-unused-matches
   Hs-source-dirs:      src
-  Exposed-modules:     Mongrel2.Parser
+  Exposed-modules:     Mongrel2
+                       Mongrel2.Parser
                        Mongrel2.Response
                        Mongrel2.Types
