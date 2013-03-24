@@ -1,5 +1,5 @@
 name:                pugs-DrIFT
-version:             2.2.3.0
+version:             2.2.3.1
 synopsis:            DrIFT with pugs-specific rules.
 description:         DrIFT is a type sensitive preprocessor for Haskell. It extracts type declarations
                      and directives from modules. The directives cause rules to be fired on the parsed
@@ -11,6 +11,7 @@ description:         DrIFT is a type sensitive preprocessor for Haskell. It extr
                      This allows instances to be derived for a type after the original module has been compiled.
                      As a bonus, simple utility functions can also be produced from a type.
 category:            Pugs
+cabal-version:       >= 1.2.3
 license:             BSD3
 license-file:        LICENSE
 -- For contributors & what they did, see AUTHORS
@@ -22,7 +23,7 @@ exposed-modules:     DrIFT.JSON
                      DrIFT.Perl6Class
                      DrIFT.YAML
 hs-source-dirs:      src
-build-depends:       base, haskell98, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
+build-depends:       base < 4, haskell98, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
 build-type:          Simple
 data-files:          AUTHORS, ChangeLog, README, README.old
 extensions:          ParallelListComp, ScopedTypeVariables,
