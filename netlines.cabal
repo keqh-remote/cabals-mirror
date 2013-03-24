@@ -1,5 +1,5 @@
 Name:          netlines
-Version:       0.4.0
+Version:       0.4.3
 Category:      Network
 Synopsis:      Enumerator tools for text-based network protocols
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -22,7 +22,7 @@ Library
         base >= 4 && < 5,
         bytestring >= 0.9.1.7,
         contstuff >= 1.2.4,
-        enumerator >= 0.4.7,
+        enumerator >= 0.4.9.1,
         time >= 1.2.0.3
     GHC-Options: -W
     Exposed-modules:
