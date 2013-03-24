@@ -1,5 +1,5 @@
 Name:                 moe
-Version:              2010.9.29
+Version:              2010.9.29.1
 Build-type:           Simple
 Synopsis:             html with style
 Description:
@@ -30,5 +30,15 @@ library
                       Text.HTML.Moe.Type
                       Text.HTML.Moe.Utils
                       Text.HTML.Moe.Backend.ByteString
+                      
+                      Text.HTML.Moe2   
+                      Text.HTML.Moe2.Attribute
+                      Text.HTML.Moe2.Element
+                      Text.HTML.Moe2.DSL.Markdown
+                      Text.HTML.Moe2.DSL.Kawaii
+                      Text.HTML.Moe2.DSL.HTML5
+                      Text.HTML.Moe2.Type
+                      Text.HTML.Moe2.Utils
+                      
   other-modules:
                       Text.HTML.Moe.Backend.DList
