@@ -1,5 +1,5 @@
 name:                nymphaea
-version:             0.1
+version:             0.2
 synopsis:            An interactive GUI for manipulating L-systems
 description:         An L-system is a small grammar specifying fractal functions, famous
                      for their uncanny resemblance to plants and other lifeforms.
