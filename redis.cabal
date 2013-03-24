@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.4
+Version:             0.5
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -16,11 +16,11 @@ Description:
 	protocol. Most of the functions will work correctly with stable version
 	but not all.
 	.
-	Changes from v0.3:
+	Changes from v0.4:
 	.
-	- Updated for Redis v1.3.7
-	- new sorted sets commands added: zrevrank, zremrangebyrank, zunion, zinter
-	- new hash commands added: hset, hdel, hexists, hlen, hkeys, hvals, hgetall
+	- new hash commands added: hmset, hmget, hincrby
+	.
+	- initial support for subscribe\/unsubscribe\/publish
 
 Stability:           beta
 Build-Type:          Simple
@@ -28,10 +28,11 @@ Cabal-Version: >= 1.4
 
 Library
     Build-Depends:       base < 5, bytestring, utf8-string,
-                         network, mtl, old-time
+                         network, mtl, old-time, MonadCatchIO-mtl
     Exposed-modules:     Database.Redis.Redis
                          Database.Redis.Monad
                          Database.Redis.ByteStringClass
                          Database.Redis.Monad.State
                          Database.Redis.Utils.Lock
                          Database.Redis.Utils.Monad.Lock
+    Other-modules:       Database.Redis.Internal
