@@ -1,5 +1,5 @@
 Name:                Grempa
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Embedded grammar DSL and LALR parser generator
 Description:
     A library for expressing programming language grammars in a form similar
