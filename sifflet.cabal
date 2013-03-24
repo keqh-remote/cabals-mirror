@@ -1,5 +1,5 @@
 name: sifflet
-version: 1.2
+version: 1.2.1
 cabal-version: >= 1.8
 build-type: Simple
 license: BSD3
@@ -17,6 +17,7 @@ description: Sifflet is a visual, functional programming language.
   Sifflet show the intermediate steps of the computation
   on the diagram, and can expand function calls to show further details.
   It is intended as an aid for learning about recursion.
+  Version 1.2.1: updated for compatibility with gtk-0.12.
 category: 
   Language 
   , Visual Programming
@@ -37,9 +38,9 @@ executable sifflet
   build-depends: 
     base >= 4.0 && < 4.3,
     -- begin GTK stuff, no longer needing exactly the same version numbers
-    cairo == 0.11.*,
-    glib == 0.11.*,
-    gtk == 0.11.*,
+    cairo >= 0.11 && < 0.13,
+    glib >= 0.11 && < 0.13,
+    gtk >= 0.11 && < 0.13,
     -- end
     containers >= 0.2 && < 0.4,
     fgl >= 5.4 && < 5.5,
@@ -47,7 +48,7 @@ executable sifflet
     hxt >= 9 && < 9.1,
     mtl >= 1.1 && < 1.2,
     process >= 1.0 && < 1.1,
-    sifflet-lib >= 1.2
+    sifflet-lib >= 1.2.1
 
   if !os(windows)
     build-depends: unix >= 2.3 && < 2.5
