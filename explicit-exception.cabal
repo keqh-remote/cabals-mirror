@@ -1,5 +1,5 @@
 Name:             explicit-exception
-Version:          0.1.6
+Version:          0.1.7
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -46,7 +46,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/explicit-exception/
-  tag:      0.1.6
+  tag:      0.1.7
 
 Flag buildTests
   description: Build test suite
@@ -57,7 +57,7 @@ Flag splitBase
 
 
 Library
-  Build-Depends: transformers >=0.2 && <0.3
+  Build-Depends: transformers >=0.2 && <0.4
   If impl(jhc)
     Build-Depends:
       applicative >=1.0 && <1.1,
@@ -74,6 +74,8 @@ Library
   Hs-Source-Dirs:   src
   Exposed-Modules:
     Control.Monad.Exception.Asynchronous
+    Control.Monad.Exception.Asynchronous.Lazy
+    Control.Monad.Exception.Asynchronous.Strict
     Control.Monad.Exception.Synchronous
   If !impl(jhc)
     Other-Modules:
