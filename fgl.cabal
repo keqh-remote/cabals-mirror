@@ -1,7 +1,8 @@
 name:		fgl
-version:	5.3
+version:	5.4.1.1
 license:	BSD3
 license-file:	LICENSE
+author:	        Martin Erwig
 maintainer:	Martin Erwig
 homepage:	http://web.engr.oregonstate.edu/~erwig/fgl/haskell
 category:	Data Structures
@@ -35,5 +36,5 @@ exposed-modules:
 	Data.Graph.Inductive.Query.SP,
 	Data.Graph.Inductive.Query.TransClos,
 	Data.Graph.Inductive
-build-depends:	base, mtl
-extensions: MultiParamTypeClasses, OverlappingInstances
+build-depends:	base, mtl, containers, array
+extensions: MultiParamTypeClasses, OverlappingInstances, FlexibleInstances
