@@ -1,5 +1,5 @@
 Name:          records
-Version:       0.0.0.1
+Version:       0.1.0.0
 Cabal-Version: >= 1.2.3
 Build-Type:    Simple
 License:       BSD3
@@ -26,9 +26,9 @@ Category:      Data, Records
 Tested-With:   GHC == 6.10.4
 
 Library
-    Build-Depends:   base           >= 3.0 && < 4.1,
-                     kinds          >= 0.0 && < 0.1,
-                     type-functions >= 0.0 && < 0.1
+    Build-Depends:   base           >= 3.0   && < 4.1,
+                     kinds          >= 0.0.1 && < 0.1,
+                     type-functions >= 0.1   && < 0.2
     Extensions:      EmptyDataDecls
                      FlexibleContexts
                      FlexibleInstances
