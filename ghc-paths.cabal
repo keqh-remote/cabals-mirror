@@ -1,5 +1,5 @@
 name: ghc-paths
-version: 0.1.0.5
+version: 0.1.0.6
 license: BSD3
 license-file: LICENSE
 copyright: (c) Simon Marlow
@@ -10,7 +10,7 @@ synopsis: Knowledge of GHC's installation directories
 description: Knowledge of GHC's installation directories
 category: Development
 cabal-version: >= 1.4
-build-depends: base
+build-depends: base >= 3 && < 5
 build-type: Custom
 
 exposed-modules: GHC.Paths
