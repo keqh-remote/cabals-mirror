@@ -1,5 +1,5 @@
 Name:          mtree
-Version:       0.0
+Version:       0.1
 Cabal-Version: >=1.6
 Synopsis:   Tree with Meta and Content parameters
 Description:
