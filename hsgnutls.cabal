@@ -1,5 +1,5 @@
 Name:           hsgnutls
-Version:        0.2.3-barracuda
+Version:        0.2.3.1-barracuda
 License:        LGPL
 License-File:   LICENSE
 Author:         Einar Kartunen <ekarttun@cs.helsinki.fi>,
@@ -15,7 +15,8 @@ Description:    hsgnutls is a wrapper to the GNU TLS Library.
                 hsgnutls uses the attribute implementation borrowed from Gtk2Hs.
                 .
                 Note this is not the official hsgnutls, but rather a fork updated for the needs
-                of the Barracuda ad-hoc chat client.
+                of the Barracuda ad-hoc chat client, which repo can be found at
+                <http://repos.mroot.net/sep07-adhoc>.
 Homepage:       http://www.cs.helsinki.fi/u/ekarttun/hsgnutls
 
 Build-Type:     Simple
@@ -49,4 +50,3 @@ Extensions:      FunctionalDependencies,
                  FlexibleContexts,
                  EmptyDataDecls,
                  PatternSignatures
-
