@@ -1,5 +1,5 @@
 Name:                cipher-aes
-Version:             0.1.0
+Version:             0.1.1
 Description:         Fast AES cipher implementation with advanced mode of operations
 License:             BSD3
 License-file:        LICENSE
@@ -21,11 +21,6 @@ Flag benchmark
 Library
   Build-Depends:     base >= 4 && < 5
                    , bytestring
-                   , ghc-prim
-                   , primitive
-                   , crypto-api >= 0.5
-                   , tagged
-                   , cereal
   Exposed-modules:   Crypto.Cipher.AES
   ghc-options:       -Wall
   C-sources:         cbits/aes_generic.c
