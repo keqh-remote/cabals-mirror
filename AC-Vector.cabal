@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Vector
-Version:       2.2.0
+Version:       2.3.0
 Stability:     Experimental
 Synopsis:      Efficient geometric vectors and transformations.
 
@@ -14,7 +14,9 @@ Description:
   just contains data structures that are useful for graphics
   work.)
 
-  Removed gather modules. Some name changes for bounding boxes.
+  The @Vector@ class now implies @Num@ and @Fractional@.
+  Hopefully this will be the last breaking change for a while.
+  Also added @vpromote@, @(\/|)@ and @(|\/)@.
 
 Category:      Data, Math, Numerical, Graphics
 License:       BSD3
