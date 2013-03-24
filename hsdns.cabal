@@ -1,9 +1,10 @@
 Name:                   hsdns
-Version:                1.4.2
+Version:                1.4.3
 Copyright:              (c) 2004-2010 Peter Simons
 License:                LGPL
 License-File:           COPYING.LESSER
-Author:                 Peter Simons <simons@cryp.to>, Lutz Donnerhacke <lutz@iks-jena.de>, Григорий Холомьёв <omever@gmail.com>
+Author:                 Peter Simons <simons@cryp.to>, Lutz Donnerhacke <lutz@iks-jena.de>,
+                        Григорий Холомьёв <omever@gmail.com>, Evan Rinehart <ebr@sciresearch.com>
 Maintainer:             Peter Simons <simons@cryp.to>
 Homepage:               http://gitorious.org/hsdns
 Category:               Foreign, Network
@@ -24,11 +25,10 @@ Description:            This library provides an asynchronous DNS resolver on to
                         output is printed in the order in which the DNS responses
                         arrive:
                         .
-                        > $ ./adns-reverse-lookup xyz.example.org ecrc.de www.example.com www.cryp.to
-                        > OK: www.example.com <-> 208.77.188.166
-                        > ERR: xyz.example.org: cannot resolve A
-                        > FAIL: www.cryp.to -> 195.234.152.69 -> ["research.cryp.to"]
-                        > FAIL: ecrc.de -> 127.0.0.1 -> ["localhost"]
+                        > $ ./adns-reverse-lookup cryp.to localhost www.example.com
+                        > OK: localhost <-> 127.0.0.1
+                        > FAIL: cryp.to -> 217.19.183.102 -> ["zuse.cryp.to"]
+                        > OK: www.example.com <-> 192.0.32.10
 Cabal-Version:          >= 1.6
 Build-Type:             Simple
 Tested-With:            GHC == 6.12.1
@@ -36,11 +36,6 @@ Tested-With:            GHC == 6.12.1
 Extra-Source-Files:     example/adns-reverse-lookup.hs
                         example/adns-srv-test.hs
                         example/adns-test-and-traverse.hs
-
-Source-Repository this
-  Tag:                  v1.4.2
-  Type:                 git
-  Location:             git://gitorious.org/hsdns/mainline.git
 
 Source-Repository head
   Type:                 git
