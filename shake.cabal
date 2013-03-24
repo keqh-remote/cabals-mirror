@@ -1,7 +1,7 @@
 cabal-version:      >= 1.8
 build-type:         Simple
 name:               shake
-version:            0.10
+version:            0.10.1
 license:            BSD3
 license-file:       LICENSE
 category:           Development
@@ -124,6 +124,7 @@ library
 
 executable shake
     main-is: Development/Make/Main.hs
+    ghc-options: -main-is Development.Make.Main
     build-depends:
         base == 4.*,
         old-time,
