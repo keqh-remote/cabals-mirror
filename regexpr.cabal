@@ -1,5 +1,5 @@
 Name:		regexpr
-Version:	0.1.3
+Version:	0.1.5
 License:	GPL
 License-File:	LICENSE
 Author:		Yoshikuni Jujo <PAF01143@nifty.ne.jp>
@@ -18,6 +18,7 @@ Description:
   Regular expression library like Perl/Ruby's regular expression.
   This package has a module RegexPR.
   And RegexPR export function matchRegexPR and gsubRegexPR.
+  | some
   matchRegexPR :: String -> Maybe ((String, (String, String)), [(Int, String)]),
   gsubRegexPR :: String -> String -> String.
   Examples: matchRegexPR "ab(cde)f\\1" "kkkabcdefcdefgh" =>
