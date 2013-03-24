@@ -1,5 +1,5 @@
 name: network-protocol-xmpp
-version: 0.2
+version: 0.2.1
 synopsis: Client <-> Server communication over XMPP
 license: GPL
 license-file: License.txt
@@ -14,13 +14,24 @@ bug-reports: mailto:jmillikin@gmail.com
 
 source-repository head
   type: darcs
-  location: http://patch-tag.com/r/jmillikin/network-protocol-xmpp/pullrepo
+  location: http://ianen.org/haskell/xmpp/
 
 library
-  build-depends: base >=3 && < 5, hxt, libxml-sax >= 0.2, hsgnutls, gsasl, network, bytestring, SHA
+  build-depends:
+    base >=3 && < 5,
+    hxt >= 8.5 && < 8.6,
+    libxml-sax >= 0.3 && < 0.4,
+    hsgnutls >= 0.2 && < 0.3,
+    gsasl >= 0.2 && < 0.3,
+    network >= 2.2 && < 2.3,
+    bytestring >= 0.9 && < 1.0,
+    SHA >= 1.4 && < 1.5
+
   exposed-modules:
     Network.Protocol.XMPP
     Network.Protocol.XMPP.Client
+    Network.Protocol.XMPP.Component
+    Network.Protocol.XMPP.Connection
     Network.Protocol.XMPP.JID
     Network.Protocol.XMPP.SASL
     Network.Protocol.XMPP.Stanzas
