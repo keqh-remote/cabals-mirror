@@ -1,5 +1,5 @@
 Name:           haskell-src-exts-qq
-Version:        0.3.0
+Version:        0.4.0
 Author:         Mathieu Boespflug
 Maintainer:     Mathieu Boespflug <mboes@tweag.net>
 Synopsis:       A quasiquoter for haskell-src-exts.
@@ -18,9 +18,9 @@ Description:
 Category:       Language
 License:        BSD3
 License-File:   LICENSE
-Cabal-Version:  >= 1.8.0
+Cabal-Version:  >= 1.10.0
 Build-Type:     Simple
-Tested-With:    GHC == 6.12
+Tested-With:    GHC == 7.0.1
 
 source-repository head
   type:     git
@@ -28,9 +28,8 @@ source-repository head
 
 library
   Build-Depends:  base >= 4 && < 5, syb, template-haskell,
-                  -- xxx awaiting cabal fix.
-                  haskell-src-exts == 1.9.0
-  Extensions:      PatternGuards, TypeSynonymInstances, TemplateHaskell, CPP
-  Exposed-Modules: Language.Haskell.Exts.QQ
-                   Language.Haskell.Exts.Translate
-  cpp-options:    -DVERSION_haskell_src_exts="1.9.0"
+                  haskell-src-exts >= 1.9.0,
+                  haskell-src-meta >= 0.3
+  Default-Language:     Haskell2010
+  Default-Extensions:   TemplateHaskell, CPP
+  Exposed-Modules:      Language.Haskell.Exts.QQ
