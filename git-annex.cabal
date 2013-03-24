@@ -1,5 +1,5 @@
 Name: git-annex
-Version: 4.20130227
+Version: 4.20130314
 Cabal-Version: >= 1.8
 License: GPL
 Maintainer: Joey Hess <joey@kitenet.net>
@@ -65,24 +65,25 @@ Flag TestSuite
 Executable git-annex
   Main-Is: git-annex.hs
   Build-Depends: MissingH, hslogger, directory, filepath,
-   unix, containers, utf8-string, network (>= 2.0), mtl (>= 2.1.1),
+   unix, containers, utf8-string, network (>= 2.0), mtl (>= 2),
    bytestring, old-locale, time,
    extensible-exceptions, dataenc, SHA, process, json,
    base (>= 4.5 && < 4.8), monad-control, transformers-base, lifted-base,
    IfElse, text, QuickCheck >= 2.1, bloomfilter, edit-distance, process,
-   SafeSemaphore, uuid, random, regex-compat
+   SafeSemaphore, uuid, random, regex-tdfa
   -- Need to list these because they're generated from .hsc files.
   Other-Modules: Utility.Touch Utility.Mounts
   Include-Dirs: Utility
   C-Sources: Utility/libdiskfree.c Utility/libmounts.c
   CC-Options: -Wall
   GHC-Options: -threaded -Wall
+  CPP-Options: -DWITH_CLIBS
 
   if flag(Production)
     GHC-Options: -O2
 
   if flag(TestSuite)
-    Build-Depends: testpack, HUnit
+    Build-Depends: HUnit
     CPP-Options: -DWITH_TESTSUITE
 
   if flag(S3)
@@ -111,6 +112,7 @@ Executable git-annex
       if (! os(windows) && ! os(solaris) && ! os(linux))
         CPP-Options: -DWITH_KQUEUE
         C-Sources: Utility/libkqueue.c
+        Includes: sys/event.h
 
   if os(linux) && flag(Dbus)
     Build-Depends: dbus (>= 0.10.3)
