@@ -1,5 +1,5 @@
 Name:          KiCS
-Version:       0.8.9
+Version:       0.9.0
 Cabal-Version: >= 1.6
 Author:        Bernd Braßel
 Maintainer:    Bernd Braßel
@@ -133,6 +133,7 @@ Library
     Paths_KiCS
     Curry.RunTimeSystem.Store
     Curry.RunTimeSystem.BaseCurry
+
 
 
 
