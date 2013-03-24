@@ -1,5 +1,5 @@
 name: direct-plugins
-version: 1.0
+version: 1.1
 cabal-version: >= 1.2
 build-type: Simple
 license: BSD3
@@ -7,14 +7,15 @@ license-file: LICENSE
 copyright: Copyright (c) 2009 Dan Knapp
 author: Dan Knapp
 maintainer: dankna@gmail.com
-homepage: http://www.dankna.com/software/
-bug-reports: http://www.dankna.com/issues/create/
+homepage: http://dankna.com/software/
+bug-reports: http://dankna.com/issues/create/
 category: System
 synopsis: Lightweight replacement for Plugins, specific to GHC
 description:
   The Plugins package unfortunately does not work on GHC 6.12, and is at any rate
   rather poorly documented.  This package uses the same general strategy but without
-  quite as many options, aiming to be simple and useful rather than complete.
+  quite as many options, aiming to be simple and useful rather than complete.  This
+  release renames load to unsafeLoad and adds loadDynamic, which is type-safe.
 
 Library
   exposed-modules: System.Plugins
