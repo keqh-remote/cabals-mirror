@@ -1,5 +1,5 @@
 Name: haskelldb-th
-Version: 2.0
+Version: 2.1.0
 Cabal-version: >= 1.6
 Build-type: Simple
 Homepage: http://trac.haskell.org/haskelldb-th
@@ -15,8 +15,8 @@ Description:
   HaskellDB simpler.
   
 Library
-  Build-depends: mtl
-  Build-depends: base >= 4 && < 5, haskelldb >= 2.0 && < 3, template-haskell >= 2.2.0.0 && < 3
+  Build-depends: mtl >= 1 && < 2.1
+  Build-depends: base >= 4 && < 5, haskelldb >= 2 && < 3, template-haskell >= 2.2.0.0 && < 3
   Extensions:
     TemplateHaskell
   Exposed-Modules:
