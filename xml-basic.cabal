@@ -1,5 +1,5 @@
 Name:             xml-basic
-Version:          0.1.1
+Version:          0.1.1.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -15,7 +15,7 @@ Description:
   like self-closing tags.
   This package provides common functionality
   that is both needed in list (tagsoup-ht) and tree (wraxml) representations of XML.
-Tested-With:       GHC==6.8.2
+Tested-With:       GHC==6.8.2, GHC==6.10.4, JHC==0.7.3
 Cabal-Version:     >=1.6
 Build-Type:        Simple
 Source-Repository head
@@ -25,7 +25,7 @@ Source-Repository head
 Source-Repository this
   type:     darcs
   location: http://code.haskell.org/~thielema/xml-basic/
-  tag:      0.1.1
+  tag:      0.1.1.1
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
@@ -33,16 +33,22 @@ Flag splitBase
 Library
   Build-Depends:
     explicit-exception >=0.1.3 && <0.2,
-    data-accessor >=0.2 && <0.3,
+    data-accessor >=0.2 && <0.4,
     utility-ht >=0.0.4 && <0.1
   If flag(splitBase)
     Build-Depends:
-      containers >=0.1 && <0.3,
+      containers >=0.1 && <0.4,
       base >= 2 && <5
   Else
     Build-Depends:
-      special-functors >=1.0 && <1.1,
       base >= 1.0 && < 2
+    If impl(jhc)
+      Build-Depends:
+        containers >=0.1 && <0.4,
+        applicative >=1.0 && <1.1
+    Else
+      Build-Depends:
+        special-functors >=1.0 && <1.1
 
   GHC-Options:      -Wall
   Hs-Source-Dirs:   src
