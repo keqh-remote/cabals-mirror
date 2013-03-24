@@ -1,5 +1,5 @@
 Name:                ConfigFileTH
-Version:             0.1
+Version:             0.2
 Synopsis:            Template haskell for reading ConfigFiles.
 Category:            Parsing, Template Haskell
 Description:
@@ -33,4 +33,7 @@ Cabal-Version:       >= 1.2
 
 Library
     Exposed-Modules:     Data.ConfigFile.TH
-    Build-Depends:       base >= 4.2 && <4.3 ,ConfigFile == 1.0.6, template-haskell, parsec == 3.1.0
+    Build-Depends:       base >= 4.3 && < 5
+                         ,ConfigFile >= 1.0.6 && < 2
+                         ,template-haskell
+                         ,parsec >= 3.1.0 && <4
