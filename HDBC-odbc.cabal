@@ -1,18 +1,17 @@
 Name: HDBC-odbc
-Version: 2.3.1.0
+Version: 2.3.1.1
 Cabal-Version: >=1.2.3
 Build-type: Simple
 License: BSD3
-Maintainer: Nicolas Wu <nick@well-typed.com>
+Maintainer: Nicolas Wu <nicolas.wu@gmail.com>
 Author: John Goerzen
 Copyright: Copyright (c) 2005-2011 John Goerzen
 license-file: LICENSE
 extra-source-files: LICENSE, hdbc-odbc-helper.h,
                     Makefile,
-                    README.txt,
-                    TODO,
+                    README.md,
                     testsrc/TestTime.hs
-homepage: http://software.complete.org/hdbc-odbc
+homepage: https://github.com/hdbc/hdbc-odbc
 Category: Database
 synopsis: ODBC driver for HDBC
 Description: This package provides an ODBC database backend for HDBC.
@@ -20,10 +19,15 @@ Description: This package provides an ODBC database backend for HDBC.
  and Microsoft ODBC on Windows.  It is also the preferred way to access
  MySQL databases from Haskell.
 Stability: Beta
+Cabal-Version: >=1.6
 
 Flag buildtests
   description: Build the executable to run unit tests
   default: False
+
+source-repository head
+  type:     git
+  location: https://github.com/hdbc/hdbc-odbc.git
 
 Library
   Exposed-Modules: Database.HDBC.ODBC
