@@ -1,5 +1,5 @@
 Name:             bibtex
-Version:          0.1
+Version:          0.1.0.1
 License:          BSD3
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -76,7 +76,7 @@ Source-Repository head
   location: http://code.haskell.org/~thielema/bibtex/
 
 Source-Repository this
-  tag:      0.1
+  tag:      0.1.0.1
   type:     darcs
   location: http://code.haskell.org/~thielema/bibtex/
 
@@ -123,7 +123,7 @@ Executable       hackage-bibtex
       Cabal >=1.6 && <1.16,
       tar >=0.3 && <0.5,
       utf8-string >=0.3.4 && <0.4,
-      bytestring >=0.9 && <0.10
+      bytestring >=0.9 && <0.11
   Else
     Buildable:      False
 
