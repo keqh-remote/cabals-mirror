@@ -1,11 +1,11 @@
 Name:                idiii
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Reading and writing of ID3v2 tags
 Description:         Reading and writing of ID3v2 tags
 Category:            Text, Sound
 License:             BSD3
 License-file:        LICENSE
-Author:              laughedelic
+Author:              laughedelic, Chris Wagner
 Maintainer:          christopher.t.wagner@gmail.com
 Build-Depends:       base < 5, haskell98, bytestring, polyparse, text, data-accessor, utf8-string, containers, MissingH
 Build-Type:          Simple
