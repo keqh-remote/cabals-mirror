@@ -1,5 +1,5 @@
 name:                carray
-version:             0.1.1
+version:             0.1.2
 synopsis:            A C-compatible array library.
 description:
 		     A C-compatible array library.
@@ -14,10 +14,23 @@ license-file:        LICENSE
 author:              Jed Brown
 maintainer:          Jed Brown <jed@59A2.org>
 stability:	     experimental
-build-depends:       base, array
+cabal-version:       >=1.2
 build-type:	     Simple
-exposed-modules:     Data.Array.CArray
-		     Data.Array.IOCArray
-		     Data.Array.CArray.Base
-extensions:
-ghc-options:
+
+flag splitBase
+flag bytestringInBase
+
+library
+  if flag(bytestringInBase)
+    build-depends: base >= 2.0 && < 2.2, binary
+  else
+    build-depends: base < 2.0 || >= 3, bytestring, binary
+
+  if flag(splitBase)
+    build-depends: base >= 3, array, binary
+  else
+    build-depends: base < 3, binary
+
+  exposed-modules:   Data.Array.CArray
+                     Data.Array.IOCArray
+                     Data.Array.CArray.Base
