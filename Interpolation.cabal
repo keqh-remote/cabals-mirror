@@ -1,5 +1,5 @@
 Name:                  Interpolation
-Version:             0.2.4
+Version:             0.2.5
 Description:         This package adds quasiquoter for multiline 
                      strings, interpolation and simple templating.
                      It can handle repetition templates which makes it
@@ -15,6 +15,6 @@ Build-Type:          Simple
 Cabal-Version:       >=1.2
 
 Library
-  Build-Depends:     base >= 4, syb, template-haskell, haskell-src-meta
+  Build-Depends:     base >= 3 && <=4, syb, template-haskell, haskell-src-meta
   Exposed-modules:   Data.String.Interpolation
   ghc-options:       -Wall 
