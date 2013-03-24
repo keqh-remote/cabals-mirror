@@ -1,6 +1,6 @@
 name:          intern
 category:      Data, Data Structures
-version:       0.9.0.1
+version:       0.9.1
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -10,6 +10,7 @@ stability:     experimental
 homepage:      http://github.com/ekmett/intern/
 bug-reports:   http://github.com/ekmett/intern/issues
 copyright:     Copyright (C) 2011 Edward A. Kmett
+build-type:    Simple
 synopsis:      Efficient hash-consing for arbitrary data types
 description:
     Changes from 0.8 to 0.9
@@ -35,7 +36,6 @@ description:
     .
     * Added Data.Interned.IntSet
 
-build-type:    Simple
 extra-source-files: examples/Term.hs .travis.yml
 
 source-repository head
@@ -45,11 +45,11 @@ source-repository head
 library
   build-depends:
     base                 >= 4 && < 5,
-    bytestring           == 0.9.*,
+    bytestring           >= 0.9 && < 0.11,
     text                 == 0.11.*,
     hashable             == 1.1.*,
     unordered-containers >= 0.2.1 && < 0.3,
-    array                >= 0.4 && < 0.5
+    array                >= 0.3 && < 0.5
 
   exposed-modules:
     Data.Interned
