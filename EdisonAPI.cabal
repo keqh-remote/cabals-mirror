@@ -1,15 +1,25 @@
+Build-type:     Simple
 Name:           EdisonAPI
-Version:        1.2.1
+Version:        1.2.2
 License:        OtherLicense
 License-File:   COPYRIGHT
 Author:         Chris Okasaki
 Maintainer:     robdockins AT fastmail DOT fm
-Synopsis:       A library of efficient, purely-functional data structures (API)
+Synopsis:       A library of efficent, purely-functional data structures (API)
 Category:       Data Structures
-Stability:      stable
+Homepage:	http://www.cs.princeton.edu/~rdockins/edison/home/
+Stability:      Stable
 Description:
-   This package provides the typeclasses that form the Edison
-   API and other common utility modules.
+   Edison is a library of purely functional data structures written by
+   Chris Okasaki.  It is named after Thomas Alva Edison and for the
+   mnemonic value EDiSon (Efficent Data Structures).
+   Edison provides several families of abstractions, each with
+   multiple implementations.  The main abstractions provided by Edison are:
+   Sequences such as stacks, queues, and dequeues;
+   Collections such as sets, bags and heaps; and
+   Associative Collections such as finite maps and priority queues
+    where the priority and element are distinct.
+
 Hs-Source-Dirs: src
 Exposed-modules:
      Data.Edison
@@ -21,11 +31,10 @@ Exposed-modules:
      Data.Edison.Seq
      Data.Edison.Seq.ListSeq
 Build-Depends:
-     base >= 1.0,
-     haskell98 >= 1.0,
+     base >= 2.0 && < 5,
      mtl >= 1.0
 Extensions:
      MultiParamTypeClasses
      FunctionalDependencies
      UndecidableInstances
-Ghc-Options: -funbox-strict-fields -fwarn-incomplete-patterns -O2
+Ghc-Options: -funbox-strict-fields -fwarn-incomplete-patterns
