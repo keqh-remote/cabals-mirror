@@ -1,5 +1,5 @@
 name: silently
-version: 1.2.3
+version: 1.2.4
 cabal-version: >= 1.8
 build-type: Simple
 license: BSD3
@@ -26,8 +26,6 @@ Library
     , directory
     , deepseq
   exposed-modules: System.IO.Silently
-  exposed: True
-  buildable: True
 
   hs-source-dirs:
       src
@@ -53,15 +51,11 @@ test-suite spec-specific
       -Wall -threaded
   hs-source-dirs:
       test
-
-  cpp-options: -DUSE_NANOSPEC
-
   build-depends:
       base
     , silently
-    , HUnit
     , directory
-    , transformers
+    , nanospec
 
 -- This tests the generic implementation, that should work on all platforms.
 test-suite spec-generic
@@ -77,5 +71,6 @@ test-suite spec-generic
 
   build-depends:
       base
-    , directory
     , deepseq
+    , directory
+    , nanospec
