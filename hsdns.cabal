@@ -1,5 +1,5 @@
 Name:            hsdns
-Version:         0.0-2006-04-08
+Version:         1.1
 Author:          Peter Simons <simons@cryp.to>
 License:         GPL
 License-File:    LICENSE
@@ -24,4 +24,4 @@ Exposed-Modules:
 Extensions:      ForeignFunctionInterface, PatternSignatures, EmptyDataDecls
 Build-Type:      Simple
 Tested-With:     GHC==6.8.2
-ghc-options:    -Wall -O2
+ghc-options:     -Wall -O2
