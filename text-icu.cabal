@@ -1,5 +1,5 @@
 name:           text-icu
-version:        0.4.0.1
+version:        0.5.0.0
 synopsis:       Bindings to the ICU library
 description:    Haskell bindings to the International Components for
                 Unicode (ICU) libraries.  These libraries provide
@@ -16,12 +16,13 @@ extra-source-files:
   README include/hs_text_icu.h
 
 library
-  build-depends:     base < 5, bytestring, text
+  build-depends:     base < 5, bytestring, text == 0.8.*
   if impl(ghc >= 6.10)
     build-depends:   base >= 4
 
   exposed-modules:
       Data.Text.ICU
+      Data.Text.ICU.Char
       Data.Text.ICU.Collate
       Data.Text.ICU.Convert
       Data.Text.ICU.Error
@@ -35,6 +36,7 @@ library
       Data.Text.ICU.Error.Internal
       Data.Text.ICU.Internal
       Data.Text.ICU.Iterator
+      Data.Text.ICU.Normalize.Internal
       Data.Text.ICU.Text
   c-sources: cbits/text_icu.c
   include-dirs: include
