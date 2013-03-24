@@ -1,5 +1,5 @@
 Name:                QuickAnnotate
-Version:             0.3
+Version:             0.4
 Synopsis:            Annotation Framework
 Homepage:            http://code.haskell.org/QuickAnnotate/
 License:             BSD3 
@@ -17,10 +17,10 @@ Source-repository head
 
 Executable qapp
     Main-is: QuickAnnotate/Preprocessor.hs             
-    Build-depends: base >= 4 && < 4.5,       
+    Build-depends: base >= 4 && < 4.6,       
                    haskell-src-exts >= 1.11.1 &&  < 1.12	
     Other-modules: Examples.TestPP       
    
 Library 
   Exposed-modules: QuickAnnotate  
-  Build-depends: base >= 4 && < 4.5       
+  Build-depends: base >= 4 && < 4.6       
