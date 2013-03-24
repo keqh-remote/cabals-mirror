@@ -1,7 +1,7 @@
-Build-Type: Custom
+Build-Type: Simple
 Name: dequeue
 Category: Data Structures
-Version: 0.1.4
+Version: 0.1.5
 Cabal-Version: >= 1.2
 Synopsis: A typeclass and an implementation for double-ended queues.
 Description:
@@ -10,13 +10,20 @@ Description:
     Structures.
 License: BSD3
 License-File: LICENSE
-Copyright: (c) 2009 Henry Bucklow
+Copyright: (c) 2009-2010 Henry Bucklow
 Author: Henry Bucklow
 Maintainer: Henry Bucklow <henry@elsie.org.uk>
-Tested-With: GHC==6.10
-Build-Depends: base < 5, safe, QuickCheck
-Exposed-Modules: Data.Dequeue
-Hs-Source-Dirs: src
-Extra-Source-Files: src/Tests.hs
-GHC-Options: -Wall
-Extensions: CPP
+Tested-With: GHC==6.12
+
+Library
+    Exposed-Modules: Data.Dequeue, Data.Dequeue.Show
+    Build-Depends: base < 5, safe, QuickCheck
+    Hs-Source-Dirs: src
+    GHC-Options: -Wall
+
+Executable dequeue-test
+    Buildable: False
+    Main-Is: Tests.hs
+    Hs-Source-Dirs: src
+    Build-Depends: base < 5, QuickCheck
+
