@@ -1,5 +1,5 @@
 Name:           GrowlNotify
-Version:        0.1
+Version:        0.2
 Author:         Nick Burlett
 Maintainer:     nickburlett@mac.com
 Description:    Notification utility for Growl.
@@ -9,7 +9,8 @@ License-file:   LICENSE
 Category:       Network
 Build-Depends:   
         base, network, haskell98, Crypto, binary
-
+Exposed-modules:
+        Network.GrowlNotify
 Executable:     growlnotify
 Main-Is:        growlnotify.hs
 Extra-libraries: 
