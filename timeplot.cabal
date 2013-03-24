@@ -1,5 +1,5 @@
 Name: timeplot
-Version: 0.1.4
+Version: 0.1.5
 License: BSD3
 License-file: LICENSE
 Copyright: Eugene Kirpichov, 2009
@@ -23,7 +23,7 @@ flag splitbase
 
 executable tplot
   if flag(splitbase)
-    Build-Depends: base >= 3 && < 4
+    Build-Depends: base >= 3 && < 5
   else
     Build-Depends: base < 3
 
