@@ -1,5 +1,5 @@
 Name:                repa
-Version:             2.0.2.1
+Version:             2.1.0.1
 License:             BSD3
 License-file:        LICENSE
 Author:              The DPH Team
@@ -50,6 +50,7 @@ Library
         Data.Array.Repa.Operators.Traverse
         Data.Array.Repa.Operators.Interleave
         Data.Array.Repa.Operators.Mapping
+        Data.Array.Repa.Operators.Modify
         Data.Array.Repa.Operators.Reduction
         Data.Array.Repa.Operators.Select
         Data.Array.Repa.Internals.Elt
@@ -58,6 +59,7 @@ Library
         Data.Array.Repa.Internals.EvalChunked
         Data.Array.Repa.Internals.EvalBlockwise
         Data.Array.Repa.Internals.EvalCursored
+        Data.Array.Repa.Internals.EvalReduction
         Data.Array.Repa.Internals.Forcing
         Data.Array.Repa.Internals.Select
         Data.Array.Repa.Stencil.Base
