@@ -1,5 +1,5 @@
 name: xml-types
-version: 0.2
+version: 0.3
 synopsis: Basic types for representing XML
 license: MIT
 license-file: license.txt
@@ -21,7 +21,6 @@ library
   build-depends:
       base >=3 && < 5
     , text
-    , containers
 
   exposed-modules:
     Data.XML.Types
