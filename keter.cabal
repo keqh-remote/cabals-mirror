@@ -1,5 +1,5 @@
 Name:                keter
-Version:             0.3.5
+Version:             0.3.5.1
 Synopsis:            Web application deployment manager, focusing on Haskell web frameworks
 Description:
     Handles deployment of web apps, providing a reverse proxy to achieve zero downtime deployments. For more information, please see the README on Github: <https://github.com/snoyberg/keter#readme>
@@ -28,9 +28,9 @@ Library
                      , data-default
                      , filepath
                      , zlib
-                     , tar
                      , network
                      , time
+                     , tar                       >= 0.4
                      , template-haskell
                      , blaze-builder             >= 0.3           && < 0.4
                      , yaml                      >= 0.7           && < 0.9
