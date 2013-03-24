@@ -1,5 +1,5 @@
 Name:                montage-client
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Riak Resolution Proxy Client
 Homepage:            http://github.com/bumptech/montage-haskell-client
 License:             BSD3
