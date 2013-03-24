@@ -1,7 +1,7 @@
 Cabal-Version: >= 1.6
 
 Name:     pointfree
-Version:  1.0.4.1
+Version:  1.0.4.3
 Category: Tool
 Synopsis: Tool for refactoring expressions into pointfree form
 
@@ -29,11 +29,11 @@ Executable pointfree
                  ImplicitParams,
                  PatternGuards,
                  ScopedTypeVariables
-  Build-depends: base >= 3 && < 4.4,
-                 array >= 0.3 && < 0.4,
+  Build-depends: base >= 3 && < 4.6,
+                 array >= 0.3 && < 0.5,
                  containers >= 0.3 && < 0.5,
                  parsec >= 2 && < 3.2,
-                 mtl >= 2 && < 2.1
+                 mtl >= 2 && < 2.2
   Other-modules: Plugin.Pl.Common
                  Plugin.Pl.Parser
                  Plugin.Pl.PrettyPrinter
