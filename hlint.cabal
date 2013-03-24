@@ -1,13 +1,13 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               hlint
-version:            1.8.39
+version:            1.8.40
 license:            BSD3
 license-file:       LICENSE
 category:           Development
 author:             Neil Mitchell <ndmitchell@gmail.com>
 maintainer:         Neil Mitchell <ndmitchell@gmail.com>
-copyright:          Neil Mitchell 2006-2012
+copyright:          Neil Mitchell 2006-2013
 synopsis:           Source code suggestions
 description:
     HLint gives suggestions on how to improve your source code.
