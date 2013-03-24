@@ -1,5 +1,5 @@
 Name:                eddie
-Version:             0.2
+Version:             0.5
 Synopsis:	     Command line file filtering with haskell
 Description:	     A tool to let you use short haskell expressions to filter
 		     files at the command line.
@@ -12,7 +12,7 @@ Maintainer:          mwm@mired.org
 Build-type:          Simple
 Homepage:	     http://eddie.googlecode.com/
 Cabal-version:       >=1.8
-Extra-source-files:  test.sh eddie.1
+Extra-source-files:  eddie.1 tests/*.test tests/*.data
 
 Executable eddie
     Main-is:         eddie.hs
