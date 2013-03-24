@@ -1,5 +1,5 @@
 name:            aeson
-version:         0.3.2.1
+version:         0.3.2.2
 license:         BSD3
 license-file:    LICENSE
 category:        Text, Web, JSON
@@ -75,6 +75,8 @@ extra-source-files:
     benchmarks/json-data/twitter20.json
     benchmarks/json-data/twitter50.json
     benchmarks/json-data/twitter100.json
+    tests/Makefile
+    tests/Properties.hs
 
 flag developer
   description: operate in developer mode
@@ -99,13 +101,12 @@ library
     base == 4.*,
     blaze-builder >= 0.2.1.4,
     bytestring,
-    bytestring-show,
     containers,
     deepseq,
     ghc-prim,
     hashable,
     integer-gmp,
-    monads-fd,
+    mtl,
     old-locale,
     syb,
     text >= 0.11.0.2,
