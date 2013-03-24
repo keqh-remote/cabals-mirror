@@ -1,5 +1,5 @@
 name:            treemap-html-tools
-version:         0.1
+version:         0.2
 license:         BSD3
 license-file:    LICENSE
 author:          Radoslav Dorcik <radoslav.dorcik@gmail.com>
@@ -30,6 +30,7 @@ library
                    regex-posix,          
                    treemap-html,
                    directory,
+                   xml,
                    filepath,
                    containers,
                    Cabal        >= 1.5 && < 1.9
@@ -41,3 +42,7 @@ executable dirmap
   hs-source-dirs:  src
   extensions:      CPP, PatternGuards, DeriveDataTypeable 
 
+executable xml2treemap
+  main-is: xml2treemap.hs
+  hs-source-dirs:  src
+  extensions:      CPP, PatternGuards, DeriveDataTypeable 
