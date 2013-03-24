@@ -2,9 +2,10 @@
 -- CHANGELOG:
 -- version 0.0.1: initial release
 -- version 0.0.2: switched to HashMap
+-- version 0.0.3: Added -l and -a options.
 
 Name:           wordsetdiff
-Version:        0.0.2
+Version:        0.0.3
 License: BSD3
 License-file:   LICENSE
 Stability: Beta
@@ -14,7 +15,7 @@ Maintainer:		Ryan Newton <rrnewton@gmail.com>
 homepage: http://people.csail.mit.edu/newton/wordsetdiff
 
 -- Copyright: Copyright (c) 2009-2010 Ryan Newton
-Synopsis: Compare two files as sets of words or sets of N-tuples of words.
+Synopsis: Compare two files as sets of N-tuples of words.
 
 Description: This utility is useful for finding out if some old,
              misplaced version of a file (say from your old laptop)
