@@ -1,5 +1,5 @@
 Name:              hmeap
-Version:           0.9
+Version:           0.10
 Synopsis:          Haskell Meapsoft Parser
 Description:       Parser for the anaylsis files produced by the
                    Meapsoft feature extractor.
@@ -14,9 +14,6 @@ Tested-With:       GHC == 6.12.1
 Build-Type:        Simple
 Cabal-Version:     >= 1.8
 
-Data-files:        README
-                   sh/extract.sh
-
 Library
   Build-Depends:   array,
                    base == 4.*,
@@ -29,26 +26,6 @@ Library
                    Sound.Analysis.Meapsoft.Measure
                    Sound.Analysis.Meapsoft.Header
                    Sound.Analysis.Meapsoft.Data
-
-Executable         hmeap-browse
- Main-Is:          cmd/browse.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.9,parsec
-
-Executable         hmeap-parser
- Main-Is:          cmd/parser.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.9,parsec
-
-Executable         hmeap-play
- Main-Is:          cmd/play.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmeap==0.9,hosc==0.9,hsc3==0.9,parsec
-
-Executable         hmeap-plot
- Main-Is:          cmd/plot.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,gnuplot,hmatrix,hmeap==0.9,parsec
-
-Executable         hmeap-stat
- Main-Is:          cmd/stat.hs
- Build-Depends:    array,base==4.*,bytestring,bytestring-lexing,delimited-text >= 0.1.0,hmatrix,hmeap==0.9,parsec
 
 Source-Repository  head
   Type:            darcs
