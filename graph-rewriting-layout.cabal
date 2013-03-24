@@ -1,5 +1,5 @@
 Name:          graph-rewriting-layout
-Version:       0.5.0
+Version:       0.5.1
 Copyright:     (c) 2010, Jan Rochel
 License:       BSD3
 License-File:  LICENSE
@@ -9,7 +9,7 @@ Homepage:      http://rochel.info/#graph-rewriting
 Stability:     beta
 Build-Type:    Simple
 Synopsis:      Force-directed node placement intended for incremental graph drawing
-Description:   Defines basic methods for force-directed node displacement that can be combined into an incremental graph-drawing procedure.
+Description:   Defines basic methods for force-directed node displacement that can be combined into an incremental graph-drawing procedure. See graph-rewriting-ski package for an example.
 Category:      Graphs, Graphics
 Cabal-Version: >= 1.6
 
@@ -17,7 +17,7 @@ Library
   Build-Depends:
     base >= 4 && < 4.6,
     base-unicode-symbols >= 0.2 && < 0.3,
-    graph-rewriting >= 0.5 && < 0.7,
+    graph-rewriting >= 0.5 && < 0.8,
     AC-Vector >= 2.3 && < 2.4
   Exposed-Modules:
     GraphRewriting.Layout.Position
@@ -38,4 +38,4 @@ Library
     MultiParamTypeClasses
     TypeSynonymInstances
     OverlappingInstances
-  GHC-Options: -fno-warn-duplicate-exports
+  GHC-Options:    -fno-warn-duplicate-exports -fwarn-unused-binds -fwarn-unused-imports -fwarn-unused-do-bind -fwarn-wrong-do-bind -fwarn-unrecognised-pragmas
