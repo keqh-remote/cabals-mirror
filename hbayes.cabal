@@ -7,7 +7,7 @@ Name:                hbayes
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.1
+Version:             0.2
 
 -- A short (one-line) description of the package.
 Synopsis:            Inference with Discrete Bayesian Networks
@@ -15,9 +15,7 @@ Synopsis:            Inference with Discrete Bayesian Networks
 -- A longer description of the package.
 Description:  Algorithms for inference with Discrete Bayesian Networks.  
  It is a very preliminary version. It has only been tested on very simple
- examples where it worked. On bigger networks, imported from Hugin files, it was very very very slow.
- So, you can use this software as a toy. Much more work is needed to validate
- and optimize it.     
+ examples where it worked. This 0.2 version is using new faster and cleaner algorithms.
 
 -- URL for the project homepage or repository.
 Homepage:            http://www.alpheccar.org
@@ -48,6 +46,15 @@ Cabal-version:       >=1.8
 
 data-files: cancer.net
 
+Flag local {
+  Description: Enable local tests by the author. They can only be run with some test patterns not distributed with this package.
+  Default:     False
+}
+
+Flag profile {
+  Description: Build profiling version of the library too.
+  Default:     False
+}
 
 Library
   -- Modules exported by the library.
@@ -61,11 +68,19 @@ Library
     Bayes.Test.CompareEliminations
     Bayes.Examples
     Bayes.Examples.Tutorial
+    Bayes.Test.ReferencePatterns
   other-modules:
     Paths_hbayes
     Bayes.ImportExport.HuginNet.Splitting
+    Bayes.PrivateTypes
+    Bayes.FactorElimination.JTree
 
   GHC-Options: -O2 -funbox-strict-fields
+  Extensions: CPP
+  if flag(local)
+    cpp-options: -DLOCAL
+  if flag(profile)
+    ghc-options: -auto-all
 
   
   -- Packages needed in order to build this package.
