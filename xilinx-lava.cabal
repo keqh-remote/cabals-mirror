@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
---- $Id: xilinx-lava.cabal#18 2010/10/01 12:28:01 REDMOND\\satnams $
+--- $Id: xilinx-lava.cabal#19 2010/10/01 19:17:36 REDMOND\\satnams $
 -------------------------------------------------------------------------------
 Name:            xilinx-lava
-Version:         5.0.0.9
+Version:         5.0.1.0
 License:         BSD3
 License-file:    LICENSE
 Author:          Satnam Singh
@@ -35,6 +35,7 @@ Library
                    Lava.Col,
                    Lava.Combinators, 
                    Lava.Components,
+                   Lava.ComputeNetDrivers,
                    Lava.ComputeNetlist, 
                    Lava.Gates, 
                    Lava.CircuitGraphToVHDL, 
@@ -42,6 +43,7 @@ Library
                    Lava.LUTGates,
                    Lava.Middle,
                    Lava.Netlist,
+                   Lava.NetlistToEDIF,
                    Lava.OverlayTile,
                    Lava.PortRange,
                    Lava.Ports,
