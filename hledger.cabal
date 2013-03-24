@@ -1,13 +1,14 @@
 name:           hledger
-version: 0.14
+version: 0.15
 category:       Finance
-synopsis:       A robust command-line accounting tool with a simple human-editable data format, similar to ledger.
+synopsis:       The main command-line interface for the hledger accounting tool.
 description:
-                hledger is a haskell port and friendly fork of John Wiegley's ledger accounting tool.
-                This package provides the main hledger command-line tool; see the other hledger-* packages for web and curses interfaces and chart generation.
-                hledger aims to be a reliable, practical financial reporting tool for day-to-day use, and also a useful library for building financial apps in haskell.
-                Given a plain text file describing transactions, of money or any other commodity, hledger will print the chart of accounts, account balances, or transactions you're interested in.
-                It can also help you add transactions to the journal file, or convert CSV data from your bank.
+                hledger is a library and set of user tools for working
+                with financial data (or anything that can be tracked in a
+                double-entry accounting ledger.) It is a haskell port and
+                friendly fork of John Wiegley's Ledger. hledger provides
+                command-line, curses and web interfaces, and aims to be a
+                reliable, practical tool for daily use.
 
 license:        GPL
 license-file:   LICENSE
@@ -16,30 +17,37 @@ maintainer:     Simon Michael <simon@joyful.com>
 homepage:       http://hledger.org
 bug-reports:    http://code.google.com/p/hledger/issues
 stability:      beta
-tested-with:    GHC==6.10, GHC==6.12
-cabal-version:  >= 1.6
-build-type:     Custom
+tested-with:    GHC==6.12, GHC==7.0
+cabal-version:  >= 1.8
+build-type:     Simple
 -- data-dir:       data
 -- data-files:
 extra-tmp-files:
 extra-source-files:
 
+-- Cabal-Version:  >= 1.9.2
+-- Test-Suite test-hledger
+--     type:       exitcode-stdio-1.0
+--     main-is:    test-hledger.hs
+--     build-depends: base
+
 source-repository head
   type:     darcs
   location: http://joyful.com/repos/hledger
 
-executable hledger
-  main-is:        hledger.hs
-  -- XXX set patchlevel here as in Makefile
+library
+  -- XXX should set patchlevel here as in Makefile
   cpp-options:    -DPATCHLEVEL=0
-  ghc-options:    -threaded -W
-  other-modules:
+  ghc-options:    -W
+  -- should be the same as below
+  exposed-modules:
+                  Hledger.Cli
                   Hledger.Cli.Main
+                  Hledger.Cli.Format
                   Hledger.Cli.Options
                   Hledger.Cli.Tests
                   Hledger.Cli.Utils
                   Hledger.Cli.Version
-                  Hledger.Cli
                   Hledger.Cli.Add
                   Hledger.Cli.Balance
                   Hledger.Cli.Convert
@@ -47,14 +55,17 @@ executable hledger
                   Hledger.Cli.Print
                   Hledger.Cli.Register
                   Hledger.Cli.Stats
+  -- should be the same as below
   build-depends:
-                  hledger-lib == 0.14
-                 ,HUnit
+                  hledger-lib == 0.15
                  ,base >= 3 && < 5
                  ,containers
+                 ,cmdargs >= 0.8   && < 0.9
                  ,csv
                  ,directory
                  ,filepath
+                 ,haskeline == 0.6.*
+                 ,HUnit
                  ,mtl
                  ,old-locale
                  ,old-time
@@ -65,20 +76,25 @@ executable hledger
                  ,split == 0.1.*
                  ,time
                  ,utf8-string >= 0.3.5 && < 0.4
-                 ,haskeline == 0.6.*
 
--- modules and dependencies below should be as above
-library
-  -- should set patchlevel here as in Makefile
-  cpp-options:    -DPATCHLEVEL=0
-  ghc-options:    -W
-  exposed-modules:
+-- should depend on the above to avoid double compilation but this is
+-- still too complicated as of 2011/6/1 because:
+-- - breaks haddock, http://hackage.haskell.org/trac/hackage/ticket/656
+-- - library and executable must have different hs-source-dirs
+-- - the exe may need to list all the lib's dependencies
+-- - how it works seems ghc version dependent
+-- leksah is reported to have this working, http://hackage.haskell.org/packages/archive/leksah/0.10.0.4/leksah.cabal
+executable hledger
+  main-is:        hledger-cli.hs
+  -- should be the same as above
+  other-modules:
+                  Hledger.Cli
                   Hledger.Cli.Main
+                  Hledger.Cli.Format
                   Hledger.Cli.Options
                   Hledger.Cli.Tests
                   Hledger.Cli.Utils
                   Hledger.Cli.Version
-                  Hledger.Cli
                   Hledger.Cli.Add
                   Hledger.Cli.Balance
                   Hledger.Cli.Convert
@@ -86,14 +102,20 @@ library
                   Hledger.Cli.Print
                   Hledger.Cli.Register
                   Hledger.Cli.Stats
+  -- XXX should set patchlevel here as in Makefile
+  cpp-options:    -DPATCHLEVEL=0
+  ghc-options:    -threaded -W
+  -- should be the same as above
   build-depends:
-                  hledger-lib == 0.14
-                 ,HUnit
+                  hledger-lib == 0.15
                  ,base >= 3 && < 5
                  ,containers
+                 ,cmdargs >= 0.8   && < 0.9
                  ,csv
                  ,directory
                  ,filepath
+                 ,haskeline == 0.6.*
+                 ,HUnit
                  ,mtl
                  ,old-locale
                  ,old-time
