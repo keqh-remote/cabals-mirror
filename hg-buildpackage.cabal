@@ -1,5 +1,5 @@
 Name: hg-buildpackage
-Version: 1.0.1
+Version: 1.0.4
 License: GPL
 license-file: COPYRIGHT
 extra-source-files: COPYING
@@ -9,8 +9,8 @@ Category: System
 Synopsis: Tools to help manage Debian packages with Mercurial
 Stability: Alpha
 Copyright: Copyright (c) 2003 - 2007 John Goerzen
-Build-Depends: base, network, unix, parsec, MissingH>=0.18.0,
- regex-compat, regex-posix, hslogger, HSH>=1.2.0
+Build-Depends: base, network, unix, parsec, MissingH>=1.0.0,
+ regex-compat, regex-posix, hslogger, HSH>=1.2.0, directory
 
 Executable: hg-importorig
 Extensions: ExistentialQuantification, OverlappingInstances,
