@@ -1,5 +1,5 @@
 Name:                SourceGraph
-Version:             0.5.5.0
+Version:             0.6.0.0
 Synopsis:            Static code analysis using graph-theoretic techniques.
 Description: {
 Statically analyse Haskell source code using graph-theoretic
@@ -41,8 +41,6 @@ Cabal-Version:       >= 1.6
 Build-Type:          Simple
 Extra-Source-Files: TODO
                     ChangeLog
-                    KnownProblems.txt
-                    ParsingProblems.txt
 
 Source-Repository head
     Type:         darcs
@@ -52,12 +50,16 @@ Source-Repository head
 Executable SourceGraph {
 
     Main-Is:            Main.hs
-    Other-Modules:      Parsing,
+    Other-Modules:      CabalInfo,
+                        Parsing,
                         Parsing.ParseModule,
                         Parsing.State,
                         Parsing.Types,
                         Analyse,
                         Analyse.Utils,
+                        Analyse.Colors,
+                        Analyse.GraphRepr,
+                        Analyse.Visualise,
                         Analyse.Module,
                         Analyse.Imports,
                         Analyse.Everything,
@@ -72,9 +74,10 @@ Executable SourceGraph {
                         filepath,
                         random,
                         directory,
+                        mtl,
                         fgl,
-                        Graphalyze >= 0.8.0.0 && < 0.9.0.0,
-                        graphviz >= 2999.6.0.0 && < 2999.7.0.0,
-                        Cabal >= 1.6 && < 1.7,
-                        haskell-src-exts >= 1.1.0 && < 1.2.0
+                        Graphalyze >= 0.9.0.0 && < 0.10.0.0,
+                        graphviz >= 2999.8.0.0 && < 2999.9.0.0,
+                        Cabal >= 1.8 && < 1.9,
+                        haskell-src-exts >= 1.5.0 && < 1.6.0
 }
