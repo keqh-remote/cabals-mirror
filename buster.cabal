@@ -1,12 +1,12 @@
 name: buster
-version: 2.5
+version: 2.51
 cabal-version: -any
 build-type: Simple
 license: BSD3
 license-file: ""
 copyright: 2009 Renaissance Computing Institute
 maintainer: Jeff Heard <jeff@renci.org>
-build-depends: base <=4.0.0, binary -any, bytestring -any,
+build-depends: base <=4.1.0.0, binary -any, bytestring -any,
                containers -any, dataenc -any, mtl -any, old-locale -any,
                parsec >=3.0.0, pretty -any, time -any
 stability: Experimental
