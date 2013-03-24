@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.2.1
+Version:        0.2.2
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -378,7 +378,7 @@ Flag buildTests
   default:     False
 
 Source-Repository this
-  Tag:         0.2.1
+  Tag:         0.2.2
   Type:        darcs
   Location:    http://code.haskell.org/numeric-prelude/
 
