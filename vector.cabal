@@ -1,5 +1,5 @@
 Name:           vector
-Version:        0.1
+Version:        0.2
 License:        BSD3
 License-File:   LICENSE
 Author:         Roman Leshchinskiy
@@ -22,11 +22,12 @@ Build-Type:     Simple
 Library
   Extensions: CPP
   Exposed-Modules:
-        Data.Vector.Stream.Size
-        Data.Vector.Stream
+        Data.Vector.Fusion.Stream.Size
+        Data.Vector.Fusion.Stream.Monadic
+        Data.Vector.Fusion.Stream
 
         Data.Vector.MVector
-        Data.Vector.MVector.Mut
+        Data.Vector.MVector.New
         Data.Vector.IVector
 
         Data.Vector.Unboxed.Unbox
