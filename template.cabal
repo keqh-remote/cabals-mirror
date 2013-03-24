@@ -1,5 +1,5 @@
 name:                template
-version:             0.2
+version:             0.2.0.1
 description:
   Simple string substitution library that supports \"$\"-based
   substitution.  Meant to be used when Text.Printf or string
@@ -19,9 +19,9 @@ library
   exposed-modules:  Data.Text.Template
 
   build-depends:
-    base       < 5,
-    mtl,
-    text == 0.7.*
+    base < 5,
+    mtl < 1.2,
+    text >= 0.7.2 && < 0.11
 
   ghc-options: -funbox-strict-fields -Wall
   if impl(ghc >= 6.8)
