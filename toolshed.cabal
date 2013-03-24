@@ -1,6 +1,6 @@
 --Package-properties
 Name:			toolshed
-Version:		0.12.0.0
+Version:		0.13.0.0
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2010 Dr. Alistair Ward
 License:		GPL
@@ -30,19 +30,37 @@ Library
     hs-source-dirs:	src
 
     Exposed-modules:
+        ToolShed.Arbitrary.Array
+        ToolShed.Arbitrary.ArrayElem
+        ToolShed.Arbitrary.Map
+        ToolShed.Arbitrary.Set
+        ToolShed.Data.List
+        ToolShed.Data.List.Runlength
+        ToolShed.Data.List.Splits
+        ToolShed.Data.Pair
         ToolShed.Defaultable
-        ToolShed.ListPlus
         ToolShed.Options
-        ToolShed.Pair
         ToolShed.SelfValidate
-        ToolShed.TimeAction
-        ToolShed.TimePure
-        ToolShed.Unsafe 
+        ToolShed.System.File
+        ToolShed.System.Random
+        ToolShed.System.TimeAction
+        ToolShed.System.TimePure
 
-    Build-depends:	base == 4.*
+    Build-depends:
+        array,
+        base == 4.*,
+        containers,
+        directory,
+        filepath,
+        QuickCheck >= 2.2,
+        random
 
     GHC-options:	-Wall -O2
-    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if impl(ghc >= 7.4.1)
+        GHC-prof-options:	-prof -fprof-auto -fprof-cafs
+    else
+        GHC-prof-options:	-prof -auto-all -caf-all
 
     if flag(haveDeepSeq)
         Build-depends:	deepseq >= 1.1
@@ -50,4 +68,18 @@ Library
 
     if impl(ghc >= 7.0) && flag(llvm)
         GHC-options:	-fllvm
+
+Executable toolshed
+    hs-source-dirs:	src
+
+    Main-Is:		Main.hs
+
+    Other-modules:
+        ToolShed.Test.QuickChecks
+        ToolShed.Test.Data.List
+        ToolShed.Test.Data.List.Runlength
+        ToolShed.Test.Data.List.Splits
+
+    Build-depends:
+        Cabal >= 1.6 && < 2
 
