@@ -1,5 +1,5 @@
 name:               cedict
-version:            0.2.1
+version:            0.2.2
 category:           Text
 description:        Convenient Chinese character lookup.
 synopsis:           Convenient Chinese character lookup.
@@ -12,6 +12,7 @@ build-type:         Simple
 extra-tmp-files:    c/data.h
 extra-source-files: d/cedict_readme.txt
                     d/utf8-cedict
+                    Data/Char/CEDICT/GenerateCode.hs
 
 library
   build-depends:    base, containers, parsec, utf8-string, bytestring, mtl
