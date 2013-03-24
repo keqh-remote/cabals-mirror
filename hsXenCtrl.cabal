@@ -1,5 +1,5 @@
 name:                hsXenCtrl
-version:             0.1.1
+version:             0.2.0
 synopsis:            FFI bindings to the Xen Control library.
 description:         FFI bindings to xenctrl.h and perhaps more.
                      The System.Xen.CBindings should provide direct access
