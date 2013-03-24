@@ -1,5 +1,5 @@
 name:            route-generator
-version:         0.1
+version:         0.2
 cabal-version:   >= 1.8
 license:         OtherLicense
 license-file:    COPYING
@@ -59,4 +59,4 @@ executable routeGenerator
 
 source-repository head
         type:     git
-        location: git://github.com/route-generator/BitBrawl.git
+        location: git://github.com/singpolyma/route-generator.git
