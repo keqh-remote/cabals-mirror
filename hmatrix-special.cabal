@@ -1,17 +1,17 @@
 Name:               hmatrix-special
-Version:            0.1.1
+Version:            0.2.0
 License:            GPL
 License-file:       LICENSE
 Author:             Alberto Ruiz
 Maintainer:         Alberto Ruiz <aruiz@um.es>
 Stability:          experimental
-Homepage:           http://code.haskell.org/hmatrix
+Homepage:           http://perception.inf.um.es/hmatrix
 Synopsis:           Interface to GSL special functions
 Description:
  Interface to GSL special functions.
 
 Category:           Math
-tested-with:        GHC ==6.12.3
+tested-with:        GHC ==7.4
 
 cabal-version:      >=1.6
 build-type:         Simple
@@ -66,14 +66,14 @@ library
 
     other-modules:      Numeric.GSL.Special.Internal
 
-    ghc-options:        -Wall -fno-warn-unused-binds
-
+    ghc-options:  -Wall -fno-warn-unused-binds
+                            
     if flag(safe-cheap)
         cpp-options: -DSAFE_CHEAP=safe
     else
         cpp-options: -DSAFE_CHEAP=unsafe
 
 source-repository head
-    type:     darcs
-    location: http://code.haskell.org/hmatrix
+    type:     git
+    location: https://github.com/AlbertoRuiz/hmatrix
 
