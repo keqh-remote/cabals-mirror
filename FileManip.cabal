@@ -1,14 +1,13 @@
 Name:               FileManip
-Version:            0.3.3
+Version:            0.3.3.1
 License:            BSD3
 License-File:       LICENSE
 Author:             Bryan O'Sullivan <bos@serpentine.com>
 Maintainer:         Bryan O'Sullivan
 Synopsis:           Expressive file and directory manipulation for Haskell.
 Category:           System
-Description:        A Haskell library for working with files and directories.
-                    Includes code for pattern matching, finding files,
-                    modifying file contents, and more.
+Description:        /DEPRECATED/.  Use the @filemanip@ package (all lowercase)
+                    instead.
 Cabal-version:      >= 1.2
 Build-type:         Simple
 
