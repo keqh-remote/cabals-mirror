@@ -1,6 +1,6 @@
 Name:                simpleprelude
 
-Version:             1.0.0.3
+Version:             1.0.1.0
 
 Synopsis:            A simplified Haskell prelude for teaching
 
@@ -8,7 +8,7 @@ Description:         simpleprelude provides an alternative Prelude
                      module for teaching as well as wrappers for ghc,
                      and ghci to use them.
                      .
-		     The simplified Prelude omits the type classes
+                     The simplified Prelude omits the type classes
                      Num, Integral, and Ord. Instead it provides
                      monomorphically typed arithmetic operators on
                      Integer.
@@ -18,6 +18,12 @@ Description:         simpleprelude provides an alternative Prelude
                      ghci. They are pre-configured to use the Prelude
                      module of this library instead of base's Prelude
                      module.
+                     .
+                     Release History:
+                     .
+                     - 1.0.1.0: Add a Haskell pre-processor to restore
+                     the feel of an implicityly imported Prelude although
+                     we use -XNoImplicitPrelude.
 
 License:             BSD3
 
@@ -31,26 +37,26 @@ Category:            Teaching
 
 Build-type:          Simple
 
-Extra-source-files:  LICENSE, README, src/Common.hs
+Extra-source-files:  LICENSE, README, src-exec/Common.hs
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.6
 
 
 Library
-  Exposed-modules:     Prelude      
-  exposed:	       False
-  
+  Exposed-modules:     Prelude
+  exposed:             False
+
   Build-depends:       base > 3 && <5
   Hs-Source-Dirs:      src
-  
-  
+
+
 Executable simple-ghc
   Main-Is:              SimpleGHC.hs
   Build-depends:        base,
                         process >= 1.0 && < 1.2,
                         ghc-paths >= 0.1 && < 0.2
-  Hs-Source-Dirs:       src
+  Hs-Source-Dirs:       src-exec
 
 
 Executable simple-ghci
@@ -58,7 +64,15 @@ Executable simple-ghci
   Build-depends:        base,
                         process >= 1.0 && < 1.2,
                         ghc-paths >= 0.1 && < 0.2
-  Hs-Source-Dirs:       src
+  Hs-Source-Dirs:       src-exec
+
+Executable simple-pp
+  Main-Is:              PP.hs
+  Build-depends:        base,
+                        haskell-src-exts >= 1.11 && < 1.12,
+                        uniplate >= 1.6 && < 1.7
+  Hs-Source-Dirs:       src-exec
+
 
 Source-Repository head
   Type:     Mercurial
