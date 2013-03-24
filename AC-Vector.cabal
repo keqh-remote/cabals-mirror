@@ -1,6 +1,6 @@
 Cabal-Version: >= 1.6
 Name:          AC-Vector
-Version:       1.2.1
+Version:       1.2.2
 Stability:     Experimental
 Synopsis:      Efficient geometric vectors.
 
@@ -12,10 +12,9 @@ Description:
 
   Changes:
 
-  * Operator '*<>' has been renamed '|*' (and there's a
-    matching '*|' operator now too).
-
-  * There is now a 'vnormalise' function.
+  * /All prior versions/ of this library have a faulty
+    implementation of 'vcross'. Specifically, the sign of
+    the Y-coordinate is inverted. Oops!
 
 Category:      Data, Math, Numerical
 License:       BSD3
