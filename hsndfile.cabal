@@ -1,5 +1,5 @@
 name:                   hsndfile
-version:                0.3.2
+version:                0.3.3
 category:               Sound
 license:                GPL
 license-file:           COPYING
@@ -22,11 +22,16 @@ build-type:             Simple
 cabal-version:          >= 1.2
 
 extra-source-files:
+                        ChangeLog.md
+                        README.md
                         libsndfile/sndfile.h
 
 library
   build-depends:        array, base >= 4.0.0.0, carray >= 0.1.2, haskell98
   build-tools:          c2hs >= 0.15
+  extensions:           DeriveDataTypeable
+                        ForeignFunctionInterface
+                        MultiParamTypeClasses
   exposed-modules:      Sound.File.Sndfile
   other-modules:        C2HS
                         Sound.File.Sndfile.Buffer
