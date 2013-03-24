@@ -1,6 +1,6 @@
 Name:           haskeline
 Cabal-Version:  >=1.6
-Version:        0.6.4.0
+Version:        0.6.4.1
 Category:       User Interfaces
 License:        BSD3
 License-File:   LICENSE
@@ -50,7 +50,7 @@ Library
     }
     else {
         if impl(ghc>=6.11) {
-            Build-depends: base >=4.1 && < 4.4, containers>=0.1 && < 0.5, directory>=1.0 && < 1.2,
+            Build-depends: base >=4.1 && < 4.5, containers>=0.1 && < 0.5, directory>=1.0 && < 1.2,
                            bytestring==0.9.*
         }
         else {
@@ -67,7 +67,7 @@ Library
                 ScopedTypeVariables, GeneralizedNewtypeDeriving
                 MultiParamTypeClasses, OverlappingInstances
                 UndecidableInstances
-                PatternSignatures, CPP, DeriveDataTypeable,
+                ScopedTypeVariables, CPP, DeriveDataTypeable,
                 PatternGuards
     Exposed-Modules:
                 System.Console.Haskeline
@@ -102,7 +102,7 @@ Library
         install-includes: win_console.h
         cpp-options: -DMINGW
     } else {
-        Build-depends: unix>=2.0 && < 2.5
+        Build-depends: unix>=2.0 && < 2.6
                         -- unix-2.3 doesn't build on ghc-6.8.1 or earlier
         c-sources: cbits/h_iconv.c
                    cbits/h_wcwidth.c
