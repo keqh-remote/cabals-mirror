@@ -1,5 +1,5 @@
 name:          case-insensitive
-version:       0.4
+version:       0.4.0.1
 cabal-version: >=1.6
 build-type:    Simple
 license:       BSD3
@@ -25,7 +25,7 @@ source-repository head
 
 Library
   GHC-Options: -Wall
-  build-depends: base       >= 3   && < 4.5
+  build-depends: base       >= 3   && < 4.6
                , bytestring >= 0.9 && < 0.10
                , text       >= 0.3 && < 0.12
                , hashable   >= 1.0 && < 1.2
