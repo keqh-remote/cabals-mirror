@@ -1,15 +1,15 @@
 --Package-properties
 Name:			regexchar
-Version:		0.9.0.7
+Version:		0.9.0.8
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2010 Dr. Alistair Ward
 License:		GPL
 License-file:		LICENSE
 Author:			Dr. Alistair Ward
 Stability:		Stable interface, incomplete features.
-Synopsis:		A POSIX extended regular-expression engine.
+Synopsis:		A POSIX, extended regex-engine.
 Build-Type:		Simple
-Description:		Provides a POSIX, extended regex-engine, specialised from the underlying polymorphic engine /regexdot/, to merely process character-lists, as is typically required.
+Description:		Provides a POSIX, extended regex-engine, specialised from the underlying /polymorphic/ package /regexdot/, to merely process the traditional character-lists.
 Category:		Regex, Text
 Tested-With:		GHC == 6.10, GHC == 6.12, GHC == 7.0
 Homepage:		http://functionalley.eu
@@ -23,7 +23,7 @@ flag threaded
     default:		True
 
 flag llvm
-    Description:	Whether the 'llvm' backend has been installed and is required for code-generation.
+    Description:	Whether the 'llvm' compiler-backend has been installed and is required for code-generation.
     manual:		True
     default:		False
 
@@ -41,7 +41,7 @@ Library
         haskell98,
         parsec == 3.*,
         regexdot == 0.10.*,
-        toolshed == 0.11.*
+        toolshed >= 0.12
 
     GHC-options:	-Wall
     GHC-prof-options:	-prof -auto-all -caf-all
@@ -53,17 +53,17 @@ Executable grecce
     hs-source-dirs:	src
     Main-Is:		Main.hs
     Other-modules:
-        Grecce.Assert.RegExOptsChar
         Grecce.CommandOptions
         Grecce.Grep
-        Grecce.Performance.ExtendedRegEx
-        Grecce.Performance.ExtendedRegExTest
-        Grecce.Performance.ExtendedRegExTestsNegative
-        Grecce.Performance.ExtendedRegExTestsPositive
-        Grecce.QC.ExtendedRegExChar
-        Grecce.QC.MetaChar
-        Grecce.QC.QuickChecks
-        Grecce.QC.RepeatableMetaChar
+        Grecce.Test.Assert.RegExOptsChar
+        Grecce.Test.Performance.ExtendedRegEx
+        Grecce.Test.Performance.ExtendedRegExTest
+        Grecce.Test.Performance.ExtendedRegExTestsNegative
+        Grecce.Test.Performance.ExtendedRegExTestsPositive
+        Grecce.Test.QC.ExtendedRegExChar
+        Grecce.Test.QC.MetaChar
+        Grecce.Test.QC.QuickChecks
+        Grecce.Test.QC.RepeatableMetaChar
 
     Build-depends:
         array,
@@ -77,7 +77,10 @@ Executable grecce
 
     if flag(threaded)
         Build-depends:	parallel >= 3.0
-        GHC-options:	-threaded -feager-blackholing
+        GHC-options:	-threaded
+
+        if impl(ghc >= 6.12)
+            GHC-options:	-feager-blackholing
     else
         Build-depends:	parallel
 
