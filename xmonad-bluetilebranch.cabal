@@ -1,5 +1,5 @@
 name:               xmonad-bluetilebranch
-version:            0.8.1
+version:            0.8.1.3
 homepage:           http://xmonad.org
 synopsis:           A tiling window manager
 description:        This is a modified version of xmonad used by Bluetile.
@@ -34,7 +34,7 @@ library
     exposed:            False
 
     if flag(small_base)
-        build-depends: base < 4 && >=3, containers, directory, process
+        build-depends: base < 4 && >=3, containers, directory, process, filepath
     else
         build-depends: base < 3
     build-depends: X11>=1.4.3, mtl, unix, random
