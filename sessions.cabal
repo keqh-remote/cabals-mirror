@@ -1,5 +1,5 @@
 Name:               sessions
-Version:            2008.5.6
+Version:            2008.5.12
 Stability:          Beta
 Copyright:          Matthew Sackman
 Category:           Control
@@ -11,7 +11,7 @@ License-File:       LICENSE
 Cabal-Version:      >= 1.2
 Build-Type:         Simple
 Synopsis:           Session Types for Haskell
-Extra-Source-Files: Control/Concurrent/Session/Tests.hs, Control/Concurrent/Session/Queens.hs, ChangeLog.txt
+Extra-Source-Files: ChangeLog.txt, Tests/Tests.hs, Tests/Queens.hs, Tests/TestNetwork.hs
 Description:
   Session Types for Haskell. Allows the specification of communication
   protocols and then validation that an implementation does not
@@ -21,18 +21,20 @@ Description:
   rubbish.
 
 Library {
-        Build-depends:     base, mtl, containers
+        Build-depends:     base, mtl, containers, network, bytestring, binary
         Exposed-modules:   Control.Concurrent.Session
+                           Control.Concurrent.Session.Network.Socket
+                           Control.Concurrent.Session.Interleaving
+                           Control.Concurrent.Session.Pid
                            Control.Concurrent.Session.Runtime
                            Control.Concurrent.Session.SessionType
                            Control.Concurrent.Session.SessionTypeMonad
-                           Control.Concurrent.Session.SMonad
-                           Control.Concurrent.Session.List
-                           Control.Concurrent.Session.Number
-                           Control.Concurrent.Session.Map
-                           Control.Concurrent.Session.Interleaving
-                           Control.Concurrent.Session.Pid
-                           Control.Concurrent.Session.Bool
-        ghc-options:       -Wall -fno-warn-name-shadowing -fno-warn-orphans
+                           Control.Concurrent.Session.Types
+                           Control.Concurrent.Session.Base.SMonad
+                           Control.Concurrent.Session.Base.Bool
+                           Control.Concurrent.Session.Base.Number
+                           Control.Concurrent.Session.Base.List
+                           Control.Concurrent.Session.Base.Map
+        ghc-options:       -Wall -fno-warn-name-shadowing -fno-warn-orphans -fno-warn-missing-signatures
 }
 
