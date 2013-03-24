@@ -1,5 +1,5 @@
 name:    hstzaar
-version: 0.1
+version: 0.2
 
 category: Game
 
@@ -30,7 +30,7 @@ extra-source-files:
 executable hstzaar
   hs-source-dirs:   src
   main-is:          Main.hs
-  other-modules:    GUI Board AI.Utils AI.Lame AI.Minimax
+  other-modules:    GUI Board AI AI.Utils AI.Lame AI.Minimax
   build-depends:
     base       >= 4       && < 5,
     containers,
