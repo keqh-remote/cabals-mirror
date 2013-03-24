@@ -1,5 +1,5 @@
 Name:                thrist
-Version:             0.0
+Version:             0.1
 Synopsis:            Type-threaded list
 
 Description:
@@ -30,7 +30,7 @@ Homepage:            http://heisenbug.blogspot.com/search/label/thrist
 
 Stability:           experimental
 Build-Depends:       base
-Extensions:          GADTs
+Extensions:          GADTs, RankNTypes, KindSignatures, FlexibleInstances
 
 Exposed-Modules:     Data.Thrist
 Ghc-Options:         -Wall
