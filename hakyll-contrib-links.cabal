@@ -1,5 +1,5 @@
 name: hakyll-contrib-links
-version: 0.1.0.0
+version: 0.2.0.0
 synopsis: A hakyll library that helps maintain a separate links database.
 
 description: Often when building packages we would like to collect all
@@ -40,4 +40,4 @@ test-Suite tests
 Source-repository this
   type: darcs
   location: http://patch-tag.com/r/ppk/hakyll-contrib-links
-  tag: 0.1.0.0-RELEASE
+  tag: 0.2.0.0-RELEASE
