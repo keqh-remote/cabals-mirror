@@ -1,5 +1,5 @@
 Name:           AERN-Real
-Version:        0.9.4
+Version:        0.9.5
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -9,7 +9,7 @@ Copyright:      (c) 2007-2008 Michal Konecny, Amin Farjudian, Jan Duracz
 Maintainer:     mik@konecny.aow.cz
 Stability:      experimental
 Category:       Data, Math
-Synopsis:       datatypes and abstractions for approximating exact real numbers
+Synopsis:       arbitrary precision interval arithmetic for approximating exact real numbers
 Tested-with:    GHC ==6.8.2
 Description:
     Datatypes and abstractions for approximating exact real numbers
@@ -56,10 +56,10 @@ Library
   hs-source-dirs:  src
   if flag(containers-in-base)
     Build-Depends:
-      base < 3, binary >= 0.4, haskell98
+      base < 3, binary >= 0.4
   else
     Build-Depends:
-      base >= 3, containers, binary >= 0.4, haskell98
+      base >= 3, containers, binary >= 0.4
   Exposed-modules:
     Data.Number.ER,
     Data.Number.ER.Real,
@@ -78,9 +78,11 @@ Library
     Data.Number.ER.Real.Approx.Elementary,
     Data.Number.ER.Real.Approx.Interval,
     Data.Number.ER.Real.Approx,
+    Data.Number.ER.Real.DomainBox,
+    Data.Number.ER.Real.DomainBox.IntMap,
     Data.Number.ER.PlusMinus,
     Data.Number.ER.BasicTypes,
     Data.Number.ER.Misc,
     Data.Number.ER.ExtendedInteger
-  Extensions: DeriveDataTypeable, ForeignFunctionInterface, ScopedTypeVariables
+  Extensions: DeriveDataTypeable, ForeignFunctionInterface, ScopedTypeVariables, MultiParamTypeClasses, FunctionalDependencies, TypeSynonymInstances, FlexibleInstances
   
