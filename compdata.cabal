@@ -1,5 +1,5 @@
 Name:			compdata
-Version:		0.5.3
+Version:		0.6
 Synopsis:            	Compositional Data Types
 Description:
 
@@ -98,6 +98,9 @@ extra-source-files:
   testsuite/tests/Data_Test.hs,
   testsuite/tests/Data/Comp_Test.hs,
   testsuite/tests/Data/Comp/Equality_Test.hs,
+  testsuite/tests/Data/Comp/Variables_Test.hs,
+  testsuite/tests/Data/Comp/Multi_Test.hs,
+  testsuite/tests/Data/Comp/Multi/Variables_Test.hs,
   testsuite/tests/Data/Comp/Examples_Test.hs,
   testsuite/tests/Data/Comp/Examples/Comp.hs,
   testsuite/tests/Data/Comp/Examples/Multi.hs,
@@ -171,6 +174,7 @@ library
                         Data.Comp.Automata.Product,
                         Data.Comp.Number,
                         Data.Comp.Thunk,
+                        Data.Comp.Ops,
 
                         Data.Comp.Multi,
                         Data.Comp.Multi.Term,
@@ -185,7 +189,7 @@ library
                         Data.Comp.Multi.Ordering,
                         Data.Comp.Multi.Variables,
                         Data.Comp.Multi.Ops,
-                        Data.Comp.Ops,
+                        Data.Comp.Multi.Number,
                         Data.Comp.Multi.Derive
                         Data.Comp.Multi.Generic,
                         Data.Comp.Multi.Desugar,
@@ -281,7 +285,7 @@ Test-Suite test
   Type:                 exitcode-stdio-1.0
   Main-is:		Data_Test.hs
   hs-source-dirs:	src testsuite/tests examples
-  Build-Depends:        base == 4.*, template-haskell, containers, mtl, QuickCheck >= 2, test-framework, test-framework-quickcheck2, derive, th-expand-syns, deepseq, transformers
+  Build-Depends:        base == 4.*, template-haskell, containers, mtl, QuickCheck >= 2, HUnit, test-framework, test-framework-hunit, test-framework-quickcheck2, derive, th-expand-syns, deepseq, transformers
 
 Executable benchmark
   Main-is:		Benchmark.hs
