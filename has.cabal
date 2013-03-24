@@ -1,11 +1,13 @@
 Name:                has
-Version:             0.2.1
-Synopsis:            Pliant data types and functions
-Description:         In other words, weak extensible records.
+Version:             0.3
+Synopsis:            Entity based records
+Description:         Usage: <http://github.com/nonowarn/has/blob/master/README.md>
                      .
-                     Usage: <http://github.com/nonowarn/has/blob/master/README.md>
+                     And its examples and test would be helpful:
                      .
-                     And its test would be helpful: <http://github.com/nonowarn/has/blob/master/test/Main.hs>
+                     * <http://github.com/nonowarn/has/tree/master/examples/>
+                     .
+                     * <http://github.com/nonowarn/has/blob/master/test/Main.hs>
 Homepage:            http://github.com/nonowarn/has
 License:             BSD3
 License-file:        LICENSE
@@ -16,7 +18,11 @@ Stability:           Experimental
 Category:            Data
 Build-type:          Custom
 Cabal-version:       >=1.6
+
 Extra-source-files:  README.md
+                     examples/DefaultParameter.hs
+                     examples/Points.hs
+                     examples/Time.hs
 
 Library
   Hs-source-dirs:    src
@@ -26,6 +32,7 @@ Library
   Exposed-modules:   Data.Has
 
   Other-modules:     Data.Has.Engine
+                     Data.Has.TypeList
 
 Flag test
   Description:       Build test program.
