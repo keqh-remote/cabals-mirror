@@ -2,14 +2,13 @@ Extra-Libraries: magic
 -- End detected settings section.  Everything below here should not
 -- need editing.
 Name: magic
-Version: 1.0.5
-License: GPL
+Version: 1.0.7
+license: BSD3
 Maintainer: John Goerzen <jgoerzen@complete.org>
 Author: John Goerzen
 Stability: Alpha
-Copyright: Copyright (c) 2005-2006 John Goerzen
-license-file: COPYRIGHT
-extra-source-files: COPYING
+Copyright: Copyright (c) 2005-2008 John Goerzen
+license-file: COPYING
 Category: Text
 Synopsis: Interface to C file/magic library
 Description:  This package provides a Haskell interface to the C libmagic library.
@@ -27,4 +26,5 @@ Other-Modules: Magic.Utils,
 Build-Depends: base
 GHC-Options: -O2
 -- CC-Options: -Iglue
-Extensions: ForeignFunctionInterface, TypeSynonymInstances
+Extensions: ForeignFunctionInterface, TypeSynonymInstances,
+            EmptyDataDecls
