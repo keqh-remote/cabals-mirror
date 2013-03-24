@@ -16,7 +16,7 @@ Description:
     into a configuration file in the future.
 
 Synopsis:           3D Yampa/GLUT Puzzle Game 
-Version:            0.1
+Version:            0.11
 License:            MIT
 License-file:       LICENSE
 Copyright:          (C) 2010 Pedro Martins
@@ -28,5 +28,6 @@ Cabal-Version:      >= 1.4
 
 Executable cuboid 
     Main-Is:        Main.hs
+    Other-Modules:  Game, GameLogic, Graphics, Input
     Build-Depends:  base >= 3 && < 5, Yampa, GLUT
 
