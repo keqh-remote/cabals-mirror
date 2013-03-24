@@ -10,7 +10,7 @@ name:                plat
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.1.0.0
+version:             0.1.0.1
 
 -- A short (one-line) description of the package.
 synopsis:            Simple templating library
@@ -58,9 +58,9 @@ library
                        Plat.Utils
   
   -- Other library packages from which modules are imported.
-  build-depends:       base == 4.5.*,
-                       mtl == 2.1.*,
-                       bytestring == 0.9.*,
-                       utf8-string == 0.3.*,
+  build-depends:       base >= 4 && < 5,
+                       mtl >= 2,
+                       bytestring >= 0.9,
+                       utf8-string >= 0.3.1,
                        containers >= 0.2
   
