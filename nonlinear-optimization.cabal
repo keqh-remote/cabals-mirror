@@ -1,9 +1,9 @@
-Cabal-Version:       >= 1.2.3
+Cabal-Version:       >= 1.6
 Build-Type:          Simple
 Tested-With:         GHC
 Category:            Math
 Name:                nonlinear-optimization
-Version:             0.3.5
+Version:             0.3.5.1
 Stability:           experimental
 License:             GPL
 License-File:        LICENSE
@@ -38,10 +38,15 @@ Flag Debug
   Description: Enable some debug statements.
   Default:     False
 
+Source-repository head
+  type: darcs
+  location: http://patch-tag.com/r/felipe/nonlinear-optimization
+
 Library
   Build-Depends:
-    base >= 3 && < 5, vector >= 0.5 && < 0.8,
-    primitive >= 0.2 && < 0.4
+      base      >= 3   && < 5
+    , primitive >= 0.2 && < 0.5
+    , vector    >= 0.5 && < 0.10
   Exposed-Modules:
     Numeric.Optimization.Algorithms.HagerZhang05
   Include-Dirs:
