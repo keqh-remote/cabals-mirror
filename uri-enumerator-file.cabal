@@ -1,6 +1,6 @@
 Name:                uri-enumerator-file
-Version:             0.1.1
-Synopsis:            uri-enumerator backend for the file scheme
+Version:             0.1.1.1
+Synopsis:            uri-enumerator backend for the file scheme (deprecated)
 Homepage:            http://github.com/snoyberg/xml
 License:             BSD3
 License-file:        LICENSE
