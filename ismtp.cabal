@@ -1,5 +1,5 @@
 Name:          ismtp
-Version:       4.0.1
+Version:       4.0.2
 Category:      Network
 Synopsis:      Advanced ESMTP library
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -17,16 +17,19 @@ Description:
 
 Library
     Build-depends:
-        base >= 4 && <= 5,
-        bytestring >= 0.9.1.7,
-        containers >= 0.3.0.0,
+        base >= 4 && < 5,
+        bytestring >= 0.9.1,
+        containers >= 0.4.0,
         contstuff >= 1.2.6,
-        dnscache >= 1.0.1,
-        enumerator >= 0.4.7,
-        monad-peel >= 0.1,
+        dnscache >= 1.1.0,
+        enumerator >= 0.4.16,
+        lifted-base >= 0.1.0,
+        monad-control >= 0.3.0,
         netlines >= 1.0.0,
-        network >= 2.2.1.7,
-        vector >= 0.7.0.1
+        network >= 2.2.1,
+        vector >= 0.9
+    Extensions:
+        FlexibleContexts
     GHC-Options: -W
     Exposed-modules:
         Network.Smtp
