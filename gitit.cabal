@@ -1,5 +1,5 @@
 name:                gitit
-version:             0.10.1
+version:             0.10.1.1
 Cabal-version:       >= 1.6
 build-type:          Simple
 synopsis:            Wiki using happstack, git or darcs, and pandoc.
@@ -138,7 +138,7 @@ Executable           gitit
                      pandoc-types >= 1.9.0.2 && < 1.10,
                      process,
                      filepath,
-                     directory >= 1.2,
+                     directory,
                      mtl,
                      cgi,
                      old-time,
