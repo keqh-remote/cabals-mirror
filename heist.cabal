@@ -1,5 +1,5 @@
 name:           heist
-version:        0.2.3
+version:        0.2.4
 synopsis:       An xhtml templating system
 license:        BSD3
 license-file:   LICENSE
@@ -88,14 +88,14 @@ Library
     Text.Templating.Heist.Types
 
   build-depends:
-    attoparsec >= 0.8.0.2 && < 0.9,
+    attoparsec >= 0.8.1 && < 0.9,
     base >= 4 && < 5,
     bytestring,
     containers,
     directory,
     directory-tree,
     filepath,
-    hexpat >= 0.18.2 && <0.19,
+    hexpat >= 0.19 && <0.20,
     MonadCatchIO-transformers >= 0.2.1 && < 0.3,
     monads-fd,
     process,
