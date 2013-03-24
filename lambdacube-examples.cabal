@@ -1,13 +1,14 @@
 Name:          lambdacube-examples
-Version:       0.1.1
+Version:       0.1.2
 Cabal-Version: >= 1.2
 Synopsis:      Examples for LambdaCube
 Category:      Graphics
 Description:   Examples for LambdaCube
-Author:        Csaba Hruska
+Author:        Csaba Hruska, Gergely Patai
 Maintainer:    csaba (dot) hruska (at) gmail (dot) com
-Copyright:     (c) 2009, Csaba Hruska
+Copyright:     (c) 2009-2011, Csaba Hruska
 Homepage:      http://www.haskell.org/haskellwiki/LambdaCubeEngine
+Bug-Reports:   http://code.google.com/p/lambdacube/issues
 License:       BSD3
 License-File:  LICENSE
 Stability:     experimental
@@ -17,6 +18,8 @@ Extra-Source-Files:
   src/Utils.hs
 
 Data-Files:
+  media/MRAMOR6X6.jpg
+  media/RustySteel.jpg
   media/01.png
   media/02.png
   media/03.png
@@ -49,15 +52,15 @@ Data-Files:
   media/WeirdEye.png
 
 Executable lambdacube-basic
-  Executable:     lambdacube-basic
+  main-is:     lambdacube-basic
   HS-Source-Dirs: src
   Main-IS:        lambdacube-basic.hs
-  Build-Depends:  base >= 4 && < 5, lambdacube-engine, elerea, GLFW, OpenGL, containers, hslogger
-  GHC-Options:    -Wall -O2
+  Build-Depends:  base >= 4 && < 5, mtl, lambdacube-engine, elerea, GLFW-b, hslogger
+  GHC-Options:    -Wall -O2 -fno-warn-unused-do-bind -fno-warn-name-shadowing
 
 Executable lambdacube-cameratrack
-  Executable:     lambdacube-cameratrack
+  main-is:     lambdacube-cameratrack
   HS-Source-Dirs: src
   Main-IS:        lambdacube-cameratrack.hs
-  Build-Depends:  base >= 4 && < 5, lambdacube-engine, elerea, GLFW, OpenGL, containers, hslogger
-  GHC-Options:    -Wall -O2
+  Build-Depends:  base >= 4 && < 5, lambdacube-engine, elerea, GLFW-b, hslogger
+  GHC-Options:    -Wall -O2 -fno-warn-unused-do-bind -fno-warn-name-shadowing
