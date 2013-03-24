@@ -1,5 +1,5 @@
 Name:          kinds
-Version:       0.0.0.0
+Version:       0.0.1.0
 Cabal-Version: >= 1.2.3
 Build-Type:    Simple
 License:       BSD3
@@ -27,7 +27,8 @@ Tested-With:   GHC == 6.10.4
 
 Library
     Build-Depends:   base >= 3.0 && < 4.1
-    Extensions:      MultiParamTypeClasses
+    Extensions:      FlexibleInstances
+                     MultiParamTypeClasses
                      Rank2Types
                      TypeFamilies
     Exposed-Modules: Data.Kind
