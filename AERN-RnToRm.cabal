@@ -1,5 +1,5 @@
 Name:           AERN-RnToRm
-Version:        0.5
+Version:        0.5.0.1
 Cabal-Version:  >= 1.2
 Build-Type:     Simple
 License:        BSD3
@@ -33,11 +33,11 @@ Description:
     with Taylor Models is included in the
     paper <http://www-users.aston.ac.uk/~konecnym/papers/cfv08.html>.
     .
-    Simple examples of usage can be found in folder @demos@
+    Simple examples of usage can be found in folder @examples@
     and a test suite can be run via the module in the folder @tests@.
 
 Extra-source-files:
-    demos/Demo.hs demos/ISin3.hs
+    examples/Demo.hs examples/ISin3.hs
     tests/RunPolynomTests.hs
     ChangeLog
 
