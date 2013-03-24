@@ -1,5 +1,5 @@
 name:            blas
-version:         0.4.1
+version:         0.5
 homepage:        http://stat.stanford.edu/~patperry/code/blas
 synopsis:        Bindings to the BLAS library
 description:
@@ -25,9 +25,15 @@ build-type:      Custom
 tested-with:     GHC == 6.8.2
 
 extra-source-files:     INSTALL
+                        NEWS
                         tests/Makefile
+                        tests/Banded.hs
+                        tests/Diag.hs
                         tests/Matrix.hs
+                        tests/Perm.hs
                         tests/HermMatrix.hs
+                        tests/HermBanded.hs
+                        tests/TriBanded.hs
                         tests/TriMatrix.hs
                         tests/Vector.hs
 
@@ -87,17 +93,26 @@ library
                         BLAS.Types
                         BLAS.Vector
                         
-                        Data.Matrix.Banded.Internal
+                        Data.Matrix.Banded
+                            Data.Matrix.Banded.IO
+                            Data.Matrix.Banded.Internal
+                            Data.Matrix.Banded.Operations
+                        
+                        Data.Matrix.Diag
                         
                         Data.Matrix.Dense
                             Data.Matrix.Dense.IO
                             Data.Matrix.Dense.Internal
                             Data.Matrix.Dense.Operations
                         
+                        Data.Matrix.Perm
+                        
                         Data.Matrix.Herm
+                            Data.Matrix.Herm.Banded
                             Data.Matrix.Herm.Dense
                         
                         Data.Matrix.Tri
+                            Data.Matrix.Tri.Banded
                             Data.Matrix.Tri.Dense
                         
                         Data.Vector.Dense
@@ -106,11 +121,17 @@ library
                             Data.Vector.Dense.Operations
                         
                         Test.QuickCheck.Complex
+                        Test.QuickCheck.Permutation
                         Test.QuickCheck.Vector
                         Test.QuickCheck.Vector.Dense
                         Test.QuickCheck.Matrix
+                        Test.QuickCheck.Matrix.Banded
                         Test.QuickCheck.Matrix.Dense
+                        Test.QuickCheck.Matrix.Diag
+                        Test.QuickCheck.Matrix.Perm
+                        Test.QuickCheck.Matrix.Herm.Banded
                         Test.QuickCheck.Matrix.Herm.Dense
+                        Test.QuickCheck.Matrix.Tri.Banded
                         Test.QuickCheck.Matrix.Tri.Dense
                         
     other-modules:      BLAS.C.Double
@@ -120,7 +141,7 @@ library
     extensions:         BangPatterns, EmptyDataDecls, FlexibleContexts, 
                         FlexibleInstances, ForeignFunctionInterface, 
                         FunctionalDependencies, MultiParamTypeClasses
-    build-depends:      base, ieee, storable-complex, QuickCheck
+    build-depends:      base, ieee, permutation, storable-complex, QuickCheck
 
     
     if flag(atlas)
