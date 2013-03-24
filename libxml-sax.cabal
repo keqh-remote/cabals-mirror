@@ -1,37 +1,47 @@
 name: libxml-sax
-version: 0.7.2
-synopsis: Bindings for the libXML2 SAX interface
+version: 0.7.3
 license: MIT
 license-file: license.txt
 author: John Millikin
 maintainer: jmillikin@gmail.com
-copyright: Copyright (c) John Millikin 2010
 build-type: Simple
-cabal-version: >=1.6
+cabal-version: >= 1.6
 category: Foreign, Text, XML, Parsing
 stability: experimental
-homepage: http://john-millikin.com/software/bindings/libxml-sax/
-tested-with: GHC==6.12.1
-extra-source-files: hslibxml-shim.h
+homepage: https://john-millikin.com/software/haskell-libxml/
+bug-reports: mailto:jmillikin@gmail.com
+
+synopsis: Bindings for the libXML2 SAX interface
+description:
+
+extra-source-files:
+  cbits/hslibxml-shim.c
+  cbits/hslibxml-shim.h
 
 source-repository head
   type: bazaar
-  location: http://john-millikin.com/software/bindings/libxml-sax/
+  location: https://john-millikin.com/branches/haskell-libxml-sax/0.7/
+
+source-repository this
+  type: bazaar
+  location: https://john-millikin.com/branches/haskell-libxml-sax/0.7/
+  tag: haskell-libxml-sax_0.7.3
 
 library
+  hs-source-dirs: lib
   ghc-options: -Wall -O2
   cc-options: -Wall
 
   build-depends:
-      base >= 4 && < 5
-    , bytestring >= 0.9 && < 0.10
+      base >= 4.1 && < 5.0
+    , bytestring >= 0.9
     , text >= 0.7 && < 0.12
     , xml-types >= 0.3 && < 0.4
 
   exposed-modules:
     Text.XML.LibXML.SAX
 
-  c-sources: hslibxml-shim.c
+  c-sources: cbits/hslibxml-shim.c
 
   extra-libraries: xml2
   pkgconfig-depends: libxml-2.0
