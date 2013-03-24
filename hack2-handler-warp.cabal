@@ -1,5 +1,5 @@
 Name:                 hack2-handler-warp
-Version:              2011.6.21
+Version:              2011.10.12
 Build-type:           Simple
 Synopsis:             Hack2 warp handler
 Description:          Hack2 warp handler
@@ -16,19 +16,19 @@ data-files:           readme.md, changelog.md, Nemesis
 library
 
   build-depends: 
-                      base >= 4.0 && < 5
+                      base >= 4.0 && <= 100
                     , network
                     , bytestring
                     , data-default >= 0.2
                     , hack2 >= 2011.6.20
                     , containers
                     , mtl
-                    , enumerator < 5
-                    , wai < 0.5
-                    , warp < 0.5
-                    , blaze-builder < 0.4
-                    , http-types < 0.7
-                    , case-insensitive < 0.3
+                    , enumerator
+                    , wai
+                    , warp
+                    , blaze-builder
+                    , http-types
+                    , case-insensitive
                     , air
                     , safe
                     
