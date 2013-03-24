@@ -1,5 +1,5 @@
 Name:                reactive
-Version:             0.0
+Version:             0.2
 Synopsis: 	     Simple foundation for functional reactive programming
 Category:            reactivity, FRP
 Description:
@@ -9,9 +9,6 @@ Description:
   The main difference between Reactive and DataDriven is that Reactive
   builds on functional \"futures\" (using threading), while DataDriven
   builds on continuation-based computations.
-  .
-  Warning: executables using this library must be built with
-  @-threaded@.  Otherwise, reactions will be delayed significantly.
   .
   Please see the project wiki page: <http://haskell.org/haskellwiki/reactive>
   .
@@ -23,7 +20,7 @@ Author:              Conal Elliott
 Maintainer:          conal@conal.net
 Homepage:            http://haskell.org/haskellwiki/reactive
 Package-Url:	     http://darcs.haskell.org/packages/reactive
-Copyright:           (c) 2007 by Conal Elliott
+Copyright:           (c) 2007-2008 by Conal Elliott
 License:             BSD3
 Stability:           provisional
 Hs-Source-Dirs:      src
