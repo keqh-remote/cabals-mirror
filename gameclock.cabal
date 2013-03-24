@@ -1,5 +1,5 @@
 name:                gameclock
-version:             1.0
+version:             1.0.1
 --homepage:            http://haskell.org/gtk2hs/archives/2006/01/26/cairo-eye-candy/
 license:             GPL
 license-file:        LICENSE
