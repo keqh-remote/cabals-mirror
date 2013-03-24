@@ -1,5 +1,5 @@
 name:           unix-compat
-version:        0.2.2
+version:        0.2.2.1
 synopsis:       Portable POSIX-compatibility layer.
 description:    This package provides portable implementations of parts
                 of the unix package. This package re-exports the unix
@@ -9,7 +9,7 @@ description:    This package provides portable implementations of parts
 homepage:       http://github.com/jystic/unix-compat
 license:        BSD3
 license-file:   LICENSE
-author:         Björn Bringert, Duncan Coutts, Jacob Stanley
+author:         Björn Bringert, Duncan Coutts, Jacob Stanley, Bryan O'Sullivan
 maintainer:     Jacob Stanley <jacob@stanley.io>
 category:       System
 build-type:     Simple
@@ -52,7 +52,7 @@ Library
       cpp-options: -DMISSING_POSIX_TYPES
       c-sources: cbits/HsUname.c
   else
-    build-depends: unix == 2.4.*
+    build-depends: unix >= 2.4 && < 2.6
     extensions: ForeignFunctionInterface
     cpp-options: -DUNIX_IMPL
     include-dirs: include
