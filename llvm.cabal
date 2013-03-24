@@ -1,12 +1,12 @@
 name: llvm
-version: 0.4.2.0
+version: 0.4.4.1
 license: BSD3
 license-file: LICENSE
 synopsis: Bindings to the LLVM compiler toolkit
 description: Bindings to the LLVM compiler toolkit
 author: Bryan O'Sullivan, Lennart Augustsson
 maintainer: Bryan O'Sullivan <bos@serpentine.com>, Lennart Augustsson <lennart@augustsson.net>
-homepage: http://www.serpentine.com/llvm/
+homepage: http://darcs.serpentine.com/llvm/
 stability: experimental
 category: Compilers/Interpreters, Code Generation
 tested-with: GHC == 6.8.2, GHC == 6.10.1
@@ -20,10 +20,15 @@ extra-source-files:
     README.txt
     configure
     configure.ac
+    examples/Array.hs
     examples/BrainF.hs
+    examples/DotProd.hs
     examples/Fibonacci.hs
     examples/HelloJIT.hs
+    examples/Loop.hs
+    examples/Vector.hs
     examples/Makefile
+    examples/mainfib.c
     tests/Makefile
     tests/TestValue.hs
     tools/Makefile
@@ -51,6 +56,7 @@ library
     build-depends: base < 2.0 || >= 2.2, bytestring >= 0.9, mtl
 
   ghc-options: -Wall
+--  cpp-options: -DHAS_GETPOINTERTOGLOBAL=1
 
   exposed-modules:
       Data.TypeNumbers
@@ -71,4 +77,5 @@ library
       LLVM.Core.Instructions
       LLVM.Core.Type
       LLVM.Core.Util
+      LLVM.Core.Vector
       LLVM.ExecutionEngine.Engine
