@@ -1,5 +1,5 @@
 Name:                ottparse-pretty
-Version:             0.1.2.2
+Version:             0.1.2.3
 Synopsis:            Pretty-printer for Ott parse trees
 Description:         Ott (<http://www.cl.cam.ac.uk/~pes20/ott/>) is a tool for
 		     writing formal definitions of programming
@@ -36,3 +36,4 @@ Executable ottparse-pretty
                      parsec >= 3.0 && < 3.2,
                      containers >= 0.3 && < 0.6,
                      uniplate >= 1.6 && < 1.7
+  Other-modules:     Text.Ott.Pretty
