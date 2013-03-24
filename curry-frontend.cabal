@@ -1,5 +1,5 @@
 Name:          curry-frontend
-Version:       0.2.5
+Version:       0.2.6
 Cabal-Version: >= 1.6
 Synopsis:      Compile the functional logic language Curry to several intermediate formats
 Description:   The Curry Frontend consists of the executable program "cymake".
@@ -25,7 +25,9 @@ Data-Files:    src/currydoc.css
 Executable cymake
   hs-source-dirs:   src
   Main-is:          cymake.hs
-  Build-Depends:    base >= 3 && < 4, curry-base >= 0.2.2, mtl, old-time, containers, pretty
+  Build-Depends:    base >= 3 && < 4, 
+                    curry-base >= 0.2.5, 
+                    mtl, old-time, containers, pretty
   ghc-options:      -fwarn-unused-binds -fwarn-unused-imports  -auto-all 
   Other-Modules:    Curry.Syntax.Lexer, Curry.Syntax.LexComb
                     Curry.Syntax.Parser, Curry.Syntax.LLParseComb
@@ -53,4 +55,8 @@ Executable cymake
 
 Library
   hs-source-dirs:  src
-  Exposed-Modules: Curry.Syntax.Frontend
+  Build-Depends:   filepath
+  Exposed-Modules: 
+    Curry.Files.CymakePath
+  Other-Modules:
+    Paths_curry_frontend
