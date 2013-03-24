@@ -1,5 +1,5 @@
 Name:             non-negative
-Version:          0.0.3
+Version:          0.0.4
 License:          GPL
 License-File:     LICENSE
 Author:           Henning Thielemann <haskell@henning-thielemann.de>
@@ -25,10 +25,11 @@ Flag buildTests
   default:     False
 
 Library
+  Build-Depends: QuickCheck >= 1.0 && <2
   If flag(splitBase)
-    Build-Depends: base >= 2, QuickCheck
+    Build-Depends: base >= 2
   Else
-    Build-Depends: base >= 1.0 && < 2, QuickCheck
+    Build-Depends: base >= 1.0 && < 2
 
   GHC-Options:      -Wall
   Hs-Source-Dirs:   src
