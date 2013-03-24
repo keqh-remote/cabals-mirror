@@ -1,5 +1,5 @@
 name:            binary-strict
-version:         0.2.3
+version:         0.2.4
 license:         BSD3
 license-file:    LICENSE
 author:          Lennart Kolmodin <kolmodin@dtek.chalmers.se>
@@ -17,9 +17,10 @@ stability:       provisional
 tested-with:     GHC == 6.8.2
 exposed-modules: Data.Binary.Strict.Get,
                  Data.Binary.Strict.IncrementalGet,
-                 Data.Binary.Strict.BitGet
+                 Data.Binary.Strict.BitGet,
+                 Data.Binary.Strict.Util
 extensions:      CPP, FlexibleContexts
 hs-source-dirs:  src
 extra-source-files: tests/BitGetTest.hs, src/Data/Binary/Strict/Common.h
-ghc-options:     -Wall
+ghc-options:     -Wall -fno-warn-name-shadowing
 build-type:      Simple
