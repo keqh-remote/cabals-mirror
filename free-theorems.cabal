@@ -1,5 +1,5 @@
 name:           free-theorems
-version:        0.2.1
+version:        0.3
 license:        PublicDomain
 license-file:   LICENSE
 author:         Sascha Boehme
@@ -47,6 +47,7 @@ other-modules:
     Language.Haskell.FreeTheorems.PrettyBase
     Language.Haskell.FreeTheorems.PrettyTypes
     Language.Haskell.FreeTheorems.PrettyTheorems
+    Language.Haskell.FreeTheorems.Theorems.Simplify
 hs-source-dirs: src
 extensions:     Generics, DeriveDataTypeable, Rank2Types, PatternSignatures
 extra-source-files:
