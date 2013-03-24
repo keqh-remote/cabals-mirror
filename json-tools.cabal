@@ -1,6 +1,6 @@
 Name:           json-tools
 Cabal-Version:  >=1.6
-Version:        0.1.0
+Version:        0.2.0
 License:        BSD3
 License-File:   LICENSE
 Copyright:      (c) Nicolas Pouillard
@@ -19,6 +19,11 @@ executable json-concat
 
 executable json-deep-select-key
     main-is: json-deep-select-key.hs
+    Build-depends: base>=3&&<5, AttoJson, bytestring, containers
+    ghc-options: -Wall -Odph
+
+executable json-select
+    main-is: json-select.hs
     Build-depends: base>=3&&<5, AttoJson, bytestring, containers
     ghc-options: -Wall -Odph
 
