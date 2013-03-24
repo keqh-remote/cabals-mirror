@@ -1,6 +1,5 @@
 name:           hledger
--- Version is set by the makefile
-version:        0.8
+version:        0.9
 category:       Finance
 synopsis:       A command-line (or curses or web-based) double-entry accounting tool.
 description:
@@ -19,7 +18,7 @@ maintainer:     Simon Michael <simon@joyful.com>
 homepage:       http://hledger.org
 bug-reports:    http://code.google.com/p/hledger/issues
 stability:      experimental
-tested-with:    GHC==6.8, GHC==6.10
+tested-with:    GHC==6.10
 cabal-version:  >= 1.2
 build-type:     Custom
 data-dir:       data
@@ -36,45 +35,41 @@ flag vty
   default:     False
 
 flag web
-  description: enable the web ui
+  description: enable the web ui (using simpleserver)
+  default:     False
+
+flag webhappstack
+  description: enable the web ui (using happstack)
   default:     False
 
 flag chart
   description: enable the pie chart generation
   default:     False
 
+-- minimal library so cabal list and ghc-pkg list will show this package
 library
   exposed-modules:
-                  Ledger
-                  Ledger.Account
-                  Ledger.AccountName
-                  Ledger.Amount
-                  Ledger.Commodity
-                  Ledger.Dates
-                  Ledger.IO
-                  Ledger.Transaction
-                  Ledger.Journal
-                  Ledger.Ledger
-                  Ledger.Posting
-                  Ledger.Parse
-                  Ledger.TimeLog
-                  Ledger.Types
-                  Ledger.Utils
-  Build-Depends:
-                  base >= 3 && < 5
-                 ,containers
-                 ,directory
-                 ,filepath
-                 ,haskell98
-                 ,old-time
-                 ,parsec
-                 ,time
-                 ,utf8-string >= 0.3
-                 ,HUnit
+                  Version
+--   Build-Depends:
+--                   base >= 3 && < 5
+--                  ,containers
+--                  ,directory
+--                  ,filepath
+--                  ,old-time
+--                  ,parsec
+--                  ,time
+--                  ,utf8-string >= 0.3
+--                  ,HUnit
 
 executable hledger
   main-is:        hledger.hs
   other-modules:
+                  HledgerMain
+                  Options
+                  Paths_hledger
+                  Tests
+                  Utils
+                  Version
                   Commands.Add
                   Commands.All
                   Commands.Balance
@@ -83,45 +78,24 @@ executable hledger
                   Commands.Print
                   Commands.Register
                   Commands.Stats
-                  Ledger
-                  Ledger.Account
-                  Ledger.AccountName
-                  Ledger.Amount
-                  Ledger.Commodity
-                  Ledger.Dates
-                  Ledger.IO
-                  Ledger.Transaction
-                  Ledger.Ledger
-                  Ledger.Parse
-                  Ledger.Journal
-                  Ledger.Posting
-                  Ledger.TimeLog
-                  Ledger.Types
-                  Ledger.Utils
-                  Options
-                  Paths_hledger
-                  Tests
-                  Utils
-                  Version
   build-depends:
-                  base >= 3 && < 5
-                 ,bytestring
+                  hledger-lib == 0.9
+                 ,HUnit
+                 ,base >= 3 && < 5
                  ,containers
                  ,csv
                  ,directory
                  ,filepath
-                 ,haskell98
                  ,mtl
+                 ,old-locale
                  ,old-time
                  ,parsec
                  ,process
                  ,regexpr >= 0.5.1
-                 ,split
+                 ,safe >= 0.2
                  ,testpack
                  ,time
                  ,utf8-string >= 0.3
-                 ,HUnit
-                 ,safe >= 0.2
 
   -- should set patchlevel here as in Makefile
   cpp-options:    -DPATCHLEVEL=0
@@ -134,6 +108,21 @@ executable hledger
 
   if flag(web)
     cpp-options: -DWEB
+    other-modules:Commands.Web
+    build-depends:
+                  hsp
+                 ,hsx
+                 ,xhtml >= 3000.2
+                 ,loli
+                 ,io-storage
+                 ,hack-contrib
+                 ,hack
+                 ,hack-handler-simpleserver
+                 ,HTTP >= 4000.0
+                 ,applicative-extras
+
+  if flag(webhappstack)
+    cpp-options: -DWEBHAPPSTACK
     other-modules:Commands.Web
     build-depends:
                   hsp
