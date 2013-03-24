@@ -1,5 +1,5 @@
 name:		haskell98
-version:	1.0
+version:	1.0.1.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	libraries@haskell.org
@@ -11,7 +11,8 @@ description:
 	However Prelude, Numeric and Foreign are provided directly by
 	the base package.
 homepage:	http://www.haskell.org/definition/
-build-depends:	base
+build-type:     Simple
+build-depends:	base, directory, random, old-time, old-locale, process, array
 exposed-modules:
 	-- Haskell 98 (Prelude and Numeric are in the base package)
 	Array, CPUTime, Char, Complex, Directory, IO, Ix, List, Locale,
@@ -20,3 +21,6 @@ exposed-modules:
 	Bits, CError, CForeign, CString, CTypes, ForeignPtr, Int,
 	MarshalAlloc, MarshalArray, MarshalError, MarshalUtils, Ptr,
 	StablePtr, Storable, Word
+-- We need to set the package name to haskell98 (without a version number)
+-- as it's magic.
+ghc-options: -package-name haskell98
