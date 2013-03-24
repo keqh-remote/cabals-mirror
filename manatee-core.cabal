@@ -1,5 +1,5 @@
 name:			manatee-core
-version:		0.0.6
+version:		0.0.7
 Cabal-Version:	>= 1.6
 license:		GPL-3
 license-file:	LICENSE
@@ -7,9 +7,9 @@ copyright:		(c) 2009 ~ 2010 Andy Stewart
 synopsis:		The core of Manatee.
 description:    manatee-core is core package of Manatee (Haskell/Gtk+ Integrated Live Environment) 
  .
- Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
- .
  To provide basic communication protocol and toolkit.
+ .
+ Video at (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://www.youtube.com/watch?v=A3DgKDVkyeM> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>
  .
  Screenshots at : <http://goo.gl/MkVw>
  .
@@ -39,10 +39,11 @@ Library
                     filepath >= 1.1.0.3, unix >= 2.4.0.0, process >= 1.0.1.2, array >= 0.3.0.0,
                     old-time >= 1.0.0.3, glib >= 0.12.0, time >= 1.1.4, gtksourceview2 >= 0.12.0,
                     Cabal >= 1.8.0.2, old-locale >= 1.0.0.2, datetime >= 0.2, bytestring, split, dataenc,
-                    derive, gconf >= 0.12.0, binary, directory, haskell-src-exts
+                    derive, gconf >= 0.12.0, binary, directory, haskell-src-exts, ghc, ghc-paths
      exposed-modules:
          Manatee.Core.DBus
          Manatee.Core.Debug
+         Manatee.Core.Dynload
          Manatee.Core.Interactive
          Manatee.Core.FileOpenRule
          Manatee.Core.Page
