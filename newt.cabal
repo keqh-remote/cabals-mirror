@@ -1,5 +1,5 @@
 name:                newt
-version:             0.0.1.0
+version:             0.0.3.0
 synopsis:            A trivially simple app to create things from simple templates.
 description:         Instantiates text things from templates.
 category:            Tools
@@ -11,21 +11,24 @@ Cabal-Version:       >=1.8.0.6
 build-type:          Simple
 
 Extra-source-files:
-                     tests/src/Integration.hs
-                     tests/src/Main.hs
-                     tests/src/ReplaceTests.hs
-                     tests/testFiles/dirTemplates/cabalProject/<<<projName>>>.cabal
-                     tests/testFiles/dirTemplates/cabalProject/LICENSE
-                     tests/testFiles/dirTemplates/cabalProject/Setup.hs
-                     tests/testFiles/dirTemplates/cabalProject/appsrc/Main.hs
-                     tests/testFiles/dirTemplates/cabalProject/src/<<<projName>>>.hs
-                     tests/testFiles/dirTemplates/cabalProject/tests/src/Main.hs
+                     tests/testFiles/dirTemplates/templateWithImages/<<<name>>>.txt
+                     tests/testFiles/dirTemplates/templateWithImages/<<<name>>>.png
                      tests/testFiles/dirTemplates/template2/<<<projName>>>/in.cabal
-                     tests/testFiles/simpleTest/alternate1.txt
-                     tests/testFiles/simpleTest/in.cabal
+                     tests/testFiles/dirTemplates/template3/<<<projName>>>/.gitignore
+                     tests/testFiles/dirTemplates/template3/<<<projName>>>/<<<projName2>>>/.gitignore
+                     tests/testFiles/dirTemplates/cabalProject/LICENSE
+                     tests/testFiles/dirTemplates/cabalProject/tests/src/Main.hs
+                     tests/testFiles/dirTemplates/cabalProject/src/<<<projName>>>.hs
+                     tests/testFiles/dirTemplates/cabalProject/Setup.hs
+                     tests/testFiles/dirTemplates/cabalProject/<<<projName>>>.cabal
+                     tests/testFiles/dirTemplates/cabalProject/appsrc/Main.hs
+                     tests/testFiles/dirTemplates/template1/<<<projName>>>/.gitignore
                      tests/testFiles/simpleTest/in.cabal.oracle.1
                      tests/testFiles/simpleTest/in.cabal.oracle.2
+                     tests/testFiles/simpleTest/alternate1.txt
+                     tests/testFiles/simpleTest/in.cabal
                      tests/testFiles/simpleTest/simple1.txt
+                     tests/testFiles/sampleImage.png
 
 Flag tests
    Description:    Build the tests
@@ -37,15 +40,18 @@ Library
    Exposed-modules:  Newt.Newt,
                      Newt.Inputs,
                      Newt.Outputs,
-                     Newt.Utilities
+                     Newt.Utilities,
+                     Newt.CmdParsing
 
    Build-depends:    base       >= 4       && < 6,
                      filemanip  >= 0.3.5.2 && < 0.3.6,
                      mtl        >= 2.0.1.0 && < 2.0.2,
-                     regex-base >= 0.93.2  && < 0.94,
-                     regex-pcre >= 0.94.2  && < 0.95,
                      array      >= 0.3.0.0 && < 0.4.1,
-                     Unixutils  >= 1.36    && < 1.37
+                     Unixutils  >= 1.36    && < 1.37,
+                     safe       >= 0.3     && < 0.4,
+                     cmdargs    >= 0.6.9   && < 0.6.10,
+                     bytestring >= 0.9.1.10 && < 0.9.2,
+                     text
    if impl(ghc < 7)
      Build-depends:
                      containers >= 0.3.0.0 && < 0.5,
@@ -96,7 +102,9 @@ Executable test-newt
                      test-framework-quickcheck2 >= 0.2.9   && < 0.3,
                      test-framework-hunit       >= 0.2.6   && < 0.3,
                      QuickCheck                 >= 2.4.1.1 && < 2.4.2,
-                     uuid                       >= 1.2.2   && < 1.2.3
+                     uuid                       >= 1.2.2   && < 1.2.3,
+                     Unixutils  >= 1.36    && < 1.37,
+                     safe       >= 0.3     && < 0.4
 
    if impl(ghc < 7)
      Build-depends:
