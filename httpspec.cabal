@@ -1,9 +1,9 @@
 Name:                httpspec
-Version:             0.1
+Version:             0.3.0.1
 Synopsis:            Specification of HTTP request/response generators and parsers
 License:             LGPL
 License-file:        LICENSE
-Author:              David Leuschner
+Author:              David Leuschner, Stefan Wehr
 Maintainer:          David Leuschner <leuschner@openfactis.org>
 Category:            Data, Web
 Description:
@@ -55,10 +55,13 @@ Cabal-Version:       >= 1.2
 Library
   Hs-Source-Dirs:    src
   GHC-Options: -Wall
+               -fno-warn-name-shadowing
+               -fno-warn-orphans
+               -fno-warn-overlapping-patterns
   Build-Depends:     base >= 4 && < 5, bytestring, bidispec, mtl,
-                     tagsoup == 0.6, hxt > 8.3 && < 8.4, pretty,
-                     Safe, cgi, network, HTTP, filepath, containers,
-                     encoding >= 0.6
+                     hxt > 8.3, pretty, MissingH,
+                     safe, cgi, network, HTTP, filepath, containers,
+                     encoding >= 0.6, hxthelper
   Exposed-Modules:   Data.HttpSpec,Data.HttpSpec.HttpTypes
-                     Data.HttpSpec.Pretty, Data.HttpSpec.MiscHelper
-                     Data.HttpSpec.XmlHelper, Data.HttpSpec.EncodingHelper
+                     Data.HttpSpec.Pretty
+                     Data.HttpSpec.EncodingHelper
