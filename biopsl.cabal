@@ -1,5 +1,5 @@
 Name:                biopsl
-Version:             0.3
+Version:             0.4
 Synopsis:            Library and executables for working with PSL files
 Description:         The library contains the functionality for reading and writing
 		     PSL files (alignment data, e.g. from BLAT output). It duplicates
@@ -23,6 +23,12 @@ Library
   Build-depends:   base >= 3 && < 5, biocore >= 0.1, bytestring
   Hs-Source-Dirs:  src
   Ghc-Options:     -Wall
+
+Executable pslstats
+  Main-Is:        PslStats.hs
+  Hs-Source-Dirs: src, examples
+  Build-depends:  unordered-containers
+  Ghc-Options:    -Wall
 
 Executable psluniq
   Main-Is:        PslUniq.hs
