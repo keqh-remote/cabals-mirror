@@ -1,5 +1,5 @@
 Name:                sexpr
-Version:             0.1.1
+Version:             0.1.2
 Cabal-Version:	     >= 1.2
 Synopsis:            S-expression printer and parser 
 Description:         Parser and printer for S-expressions, including Ron 
@@ -14,6 +14,6 @@ Maintainer:          bts@evenmere.org
 Build-type: 	     Simple
 
 Library
-    Build-Depends: base, base64-string, pretty
+    Build-Depends: base, base64-string, pretty, bytestring, binary
     Exposed-modules: Codec.Sexpr, Codec.Sexpr.Parser, Codec.Sexpr.Printer
 
