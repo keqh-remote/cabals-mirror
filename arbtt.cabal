@@ -1,5 +1,5 @@
 name:               arbtt
-version:            0.2.0
+version:            0.3.0
 license:            GPL
 license-file:       LICENSE
 category:           Desktop
@@ -29,12 +29,13 @@ executable arbtt-capture
     hs-source-dirs:     src
     build-depends:
         base == 4.*, filepath, directory, mtl, time, unix,
-        X11 > 1.4.4
+        X11 > 1.4.4, bytestring, binary
     extra-libraries: Xss
     other-modules:
         Data
         Capture
         TimeLog
+        UpgradeLog1
         Graphics.X11.XScreenSaver
 
 executable arbtt-stats
@@ -47,6 +48,15 @@ executable arbtt-stats
         Categorize
         TimeLog
         Stats
+
+executable arbtt-dump
+    main-is:            dump-main.hs
+    hs-source-dirs:     src
+    build-depends:
+        base == 4.*, parsec == 2.*, containers, setlocale
+    other-modules:
+        Data
+        TimeLog
 
 source-repository head
     type:     darcs
