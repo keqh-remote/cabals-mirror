@@ -1,7 +1,30 @@
 name:           text
-version:        0.8.0.0
-synopsis:       An efficient packed Unicode text type
-description:    An efficient packed Unicode text type.
+version:        0.8.1.0
+homepage:       http://code.haskell.org/text
+synopsis:       An efficient packed Unicode text type.
+description:    
+    .
+    An efficient packed, immutable Unicode text type (both strict and
+    lazy), with a powerful loop fusion optimization framework.
+    .
+    The 'Text' type represents Unicode character strings, in a time and
+    space-efficient manner. This package provides text processing
+    capabilities that are optimized for performance critical use, both
+    in terms of large data quantities and high speed.
+    .
+    The 'Text' type provides character-encoding, type-safe case
+    conversion via whole-string case conversion functions. It also
+    provides a range of functions for converting Text values to and from
+    'ByteStrings', using several standard encodings (see the 'text-icu'
+    package for a much larger variety of encoding functions).
+    .
+    Efficient locale-sensitive support for text IO is also supported.
+    .
+    This module is intended to be imported qualified, to avoid name
+    clashes with Prelude functions, e.g.
+    .
+    > import qualified Data.Text as T
+    .
 license:        BSD3
 license-file:   LICENSE
 author:         Tom Harper <rtomharper@googlemail.com>
@@ -11,22 +34,34 @@ maintainer:     Bryan O'Sullivan <bos@serpentine.com>
 copyright:      2008-2009 Tom Harper, 2009-2010 Bryan O'Sullivan
 category:       Data, Text
 build-type:     Simple
-cabal-version:  >= 1.2.3
+cabal-version:  >= 1.6
 extra-source-files:
     README
     TODO
+    -- scripts/CaseFolding.txt
+    -- scripts/SpecialCasing.txt
     scripts/ApiCompare.hs
     scripts/Arsec.hs
     scripts/CaseFolding.hs
-    -- scripts/CaseFolding.txt
     scripts/CaseMapping.hs
     scripts/SpecialCasing.hs
-    -- scripts/SpecialCasing.txt
-    tests/Makefile
     tests/Benchmarks.hs
+    tests/Makefile
     tests/Properties.hs
     tests/QuickCheckUtils.hs
     tests/SlowFunctions.hs
+    tests/StdioCoverage.hs
+    tests/TestUtils.hs
+    tests/benchmarks/Cut.hs
+    tests/benchmarks/FileIndices.hs
+    tests/benchmarks/FileRead.hs
+    tests/benchmarks/FoldLines.hs
+    tests/benchmarks/HtmlCombinator.hs
+    tests/benchmarks/Makefile
+    tests/benchmarks/Replace.hs
+    tests/benchmarks/fileread.py
+    tests/benchmarks/fileread_c.c
+    tests/cover-stdio.sh
 
 flag developer
   description: operate in developer mode
@@ -65,6 +100,7 @@ library
     Data.Text.Unsafe
     Data.Text.UnsafeChar
     Data.Text.UnsafeShift
+    Data.Text.Util
 
   build-depends:
     base       < 5,
@@ -86,3 +122,7 @@ library
   if flag(developer)
     ghc-options: -Werror
     cpp-options: -DASSERTS
+
+source-repository head
+  type:     darcs
+  location: http://code.haskell.org/text/
