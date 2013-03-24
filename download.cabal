@@ -1,11 +1,13 @@
 name:            download
-version:         0.1
+version:         0.2
 homepage:        http://code.haskell.org/~dons/code/download
 synopsis:        High-level file download based on URLs
-description:     High-level File download based on URLs
+description:     High-level file download based on URLs
                  .
-                 Download content as bytestrings, strings or parsed
-                 tags, via ftp, http or file protocols.
+                 Download web content as strict bytestring, strings,
+                 HTML tags, XML, RSS or Atom feeds or JSON, via HTTP,
+                 FTP or file protocols, using a URL interface.
+                 .                 
 category:        Network
 license:         BSD3
 license-file:    LICENSE
@@ -20,16 +22,24 @@ tested-with:     GHC ==6.8.2
 --  description: Build with an external libdownload
 --  default:     False
 
--- flag small_base
---  description: Build with new smaller base library
+flag small_base
+  description: Build with new smaller base library
 
 library
     exposed-modules: Network.Download
     extensions:      CPP,
                      ForeignFunctionInterface,
+                     EmptyDataDecls,
                      GeneralizedNewtypeDeriving
+
     ghc-options:     -Wall -fvia-C
-    build-depends:   base, bytestring, tagsoup
+
+    if flag(small_base)
+        build-depends:   base >= 3, bytestring
+    else
+        build-depends:   base > 3
+
+    build-depends: tagsoup, feed, xml
 
     ------------------------------------------------------------------------
     -- Building libdownload
@@ -45,17 +55,9 @@ library
 --    else
 
     cc-options:         -O2
-                        -pipe
                         -DINET6
                         -D_GNU_SOURCE
                         -D_FILE_OFFSET_BITS=64
-                        -Wall
-                        -Wstrict-prototypes
-                        -Wsign-compare
-                        -Wchar-subscripts
-                        -Wpointer-arith
-                        -Wcast-align
-                        -Wsign-compare
                         -UDEBUG
 
     c-sources:          cbits/download.c
