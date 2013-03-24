@@ -1,6 +1,6 @@
 name:               lens-family
 category:           Data
-version:            0.0.0
+version:            0.0.1
 license:            BSD3
 cabal-version:      >= 1.6
 license-file:       LICENSE
@@ -12,7 +12,7 @@ synopsis:           Lens Families
 description:        Lens Families
 build-type:         Simple
 extra-source-files: CHANGELOG
-description:        This package provide optimal first class functional references
+description:        This package provides optimal first class functional references
                     In addition to the usual operations of getting, setting and composition, plus integration with monad state, lens families provide some unique features:
                     .
                     * Polymorphic updating
@@ -29,9 +29,9 @@ library
   extensions:       Rank2Types
   build-depends:
     base                 >= 4       && < 5,
-    containers           >= 0.3     && < 0.5,
+    containers           >= 0.3     && < 0.6,
     transformers         >= 0.2.0   && < 0.4,
-    mtl                  >= 2.0.1   && < 2.2,
+    mtl                  >= 2.1     && < 2.2,
     lens-family-core     >= 0.0.0   && < 0.1
 
   exposed-modules:
