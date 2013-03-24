@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.5.3
+version:       0.5.4
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -97,7 +97,7 @@ executable hashed-storage-test
       build-depends: test-framework,
                      test-framework-hunit,
                      test-framework-quickcheck2,
-                     QuickCheck >= 2, HUnit, process >= 1.0.1, zip-archive
+                     QuickCheck >= 2.3, HUnit, process >= 1.0.1, zip-archive
     else
       buildable: False
 
