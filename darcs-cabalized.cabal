@@ -1,5 +1,5 @@
 Name:           darcs-cabalized
-version:        2.0.2.1
+version:        2.0.2.2
 License:        GPL
 License-file:   COPYING
 Author:         David Roundy <droundy@darcs.net>, <darcs-devel@darcs.net>, et al.
@@ -44,7 +44,7 @@ extra-source-files:
                  src/umask.c, src/umask.h,
                  -- Build files; we include the autoconf files just in case
                  -- the user wishes to re-autoconf on her system.
-                 darcs.buildinfo, darcs.buildinfo.in, configure, configure.ac,
+                 darcs-cabalized.buildinfo, darcs-cabalized.buildinfo.in, configure, configure.ac,
                  autoconf.mk, autoconf.mk.in, aclocal.m4, src/Autoconf.lhs.in,
                  src/ThisVersion.lhs.in, install-sh,
                  -- Windows files
@@ -69,9 +69,8 @@ extra-tmp-files: darcs.buildinfo, autoconf.mk, configure
 flag small_base
     description: Choose the new smaller, split-up base package. Defaults to True.
 
-flag no_curses
-     description: Disable curses support. Defaults to False.
-     default:     False
+flag curses
+     description: Enables curses and curl support. Defaults to True
 
 Executable          darcs
     main-is:        darcs.lhs
@@ -148,7 +147,6 @@ Executable          darcs
     include-dirs:   src
 
     -- zlib is mandatory; we need extra-libraries to fix FFI link errors
-    if flag(no_curses)
-       extra-libraries: z
-    else
-       extra-libraries: z, curses
+    extra-libraries: z
+    if flag(curses)
+       extra-libraries: curses, curl
