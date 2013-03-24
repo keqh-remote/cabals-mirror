@@ -1,7 +1,7 @@
 Cabal-Version: >= 1.2
 
 Name:        Glob
-Version:     0.2
+Version:     0.3
 Homepage:    http://iki.fi/matti.niemenmaa/glob/
 Synopsis:    Globbing library
 Category:    System
@@ -16,7 +16,8 @@ License-File: LICENSE.txt
 
 Build-Type: Simple
 
-Extra-Source-Files: tests/README.txt
+Extra-Source-Files: CHANGELOG.txt
+                    tests/README.txt
                     tests/*.hs
                     tests/Tests/*.hs
 
@@ -27,6 +28,9 @@ Library
                 , dlist      == 0.*
                 , filepath   == 1.*
                 , mtl        == 1.*
+
+   if os(windows)
+      Build-Depends: Win32 == 2.*
 
    Exposed-Modules: System.FilePath.Glob
    Other-Modules:   System.FilePath.Glob.Base
