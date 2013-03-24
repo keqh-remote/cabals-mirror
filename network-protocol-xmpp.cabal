@@ -1,5 +1,5 @@
 name: network-protocol-xmpp
-version: 0.3.2.5
+version: 0.3.3
 synopsis: Client->Server XMPP
 license: GPL-3
 license-file: License.txt
@@ -11,12 +11,12 @@ cabal-version: >=1.6
 category: Network
 stability: experimental
 bug-reports: mailto:jmillikin@gmail.com
-homepage: http://john-millikin.com/software/network-protocol-xmpp/
+homepage: https://john-millikin.com/software/hs-xmpp/
 tested-with: GHC==6.12.1
 
 source-repository head
   type: bazaar
-  location: http://john-millikin.com/software/network-protocol-xmpp/
+  location: https://john-millikin.com/software/hs-xmpp/
 
 library
   ghc-options: -Wall
@@ -24,7 +24,7 @@ library
   build-depends:
       base >= 3 && < 5
     , text >= 0.10 && < 0.12
-    , gnuidn >= 0.1 && < 0.2
+    , gnuidn >= 0.2 && < 0.3
     , gnutls >= 0.1 && < 0.3
     , bytestring >= 0.9 && < 0.10
     , gsasl >= 0.3 && < 0.4
