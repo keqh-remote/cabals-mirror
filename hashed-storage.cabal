@@ -1,5 +1,5 @@
 name:          hashed-storage
-version:       0.4.2
+version:       0.4.3
 synopsis:      Hashed file storage support code.
 
 description:   Support code for reading and manipulating hashed file storage
@@ -77,7 +77,7 @@ library
 
     c-sources: Bundled/sha2.c
 
-    extensions: ScopedTypeVariables, NoMonomorphismRestriction
+    extensions: PatternSignatures, NoMonomorphismRestriction
 
 executable hashed-storage-test
     if impl(ghc >= 6.8)
