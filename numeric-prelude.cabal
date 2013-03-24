@@ -1,5 +1,5 @@
 Name:           numeric-prelude
-Version:        0.0.2
+Version:        0.0.4
 License:        GPL
 License-File:   LICENSE
 Author:         Dylan Thurston <dpt@math.harvard.edu>, Henning Thielemann <numericprelude@henning-thielemann.de>, Mikael Johansson
@@ -120,12 +120,18 @@ Extra-Source-Files:
   Makefile
   docs/NOTES
   docs/README
+  src/Algebra/GenerateRules.hs
 
 Flag splitBase
   description: Choose the new smaller, split-up base package.
 
+Flag buildTests
+  description: Build test executables
+  default:     False
+
 Library
-  Build-Depends: parsec >= 1, HUnit >=1 && <2, QuickCheck >=1 && <2, non-negative >=0.0.1 && <0.1
+  Build-Depends: parsec >= 1, HUnit >=1 && <2, QuickCheck >=1 && <2
+  Build-Depends: non-negative>=0.0.2 && <0.1
   If flag(splitBase)
     Build-Depends: base >= 2, array, containers, random
   Else
@@ -190,6 +196,7 @@ Library
     Number.FixedPoint
     Number.FixedPoint.Check
     Number.NonNegative
+    Number.NonNegativeChunky
     Number.PartiallyTranscendental
     Number.Peano
     Number.Positional
@@ -214,11 +221,14 @@ Library
     NumericPrelude.List
     NumericPrelude.Monad
     NumericPrelude.Text
+    NumericPrelude.Tuple
     PreludeBase
 
 Executable test
   Hs-Source-Dirs: src, test
   Main-Is: Test.hs
+  If !flag(buildTests)
+    Buildable:         False
 
 Executable testsuite
   Hs-Source-Dirs: src, test
@@ -230,3 +240,5 @@ Executable testsuite
     Test.MathObj.Polynomial
     Test.MathObj.PowerSeries
   Main-Is: Test/Run.hs
+  If !flag(buildTests)
+    Buildable:         False
