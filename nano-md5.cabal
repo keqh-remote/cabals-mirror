@@ -1,5 +1,5 @@
 name:                nano-md5
-version:             0.1
+version:             0.1.1
 description:         Efficient, ByteString bindings to OpenSSL.
 synopsis:            Efficient, ByteString bindings to OpenSSL.
 license:             BSD3
