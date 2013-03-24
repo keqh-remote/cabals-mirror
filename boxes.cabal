@@ -1,5 +1,5 @@
 name:                boxes
-version:             0.1.1
+version:             0.1.2
 synopsis:            2D text pretty-printing library
 description:         A pretty-printing library for laying out text in
                      two dimensions, using a simple box model.
@@ -8,8 +8,14 @@ license:             BSD3
 license-file:        LICENSE
 extra-source-files:  CHANGES
 author:              Brent Yorgey
-maintainer:          byorgey@cis.upenn.edu
-homepage:            http://code.haskell.org/~byorgey/code/boxes
-build-Depends:       base >= 3 && < 5, split >=0.1 && <0.2
+maintainer:          Eelis van der Weegen <boxes@contacts.eelis.net>
 build-type:          Simple
-exposed-modules:     Text.PrettyPrint.Boxes
+cabal-version:       >= 1.6
+
+library
+  build-depends:     base >= 3 && < 5, split >=0.1 && <0.2
+  exposed-modules:   Text.PrettyPrint.Boxes
+
+source-repository head
+  type: git
+  location: git://github.com/Eelis/boxes.git
