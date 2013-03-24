@@ -1,5 +1,5 @@
 Name:                   cuda
-Version:                0.4.1.0
+Version:                0.4.1.1
 Synopsis:               FFI binding to the CUDA interface for programming NVIDIA GPUs
 Description:
     The CUDA library provides a direct, general purpose C-like SPMD programming
@@ -13,7 +13,7 @@ Description:
     The configure script will look for your CUDA installation in the standard
     places, and if the nvcc compiler is found in your PATH, relative to that.
     .
-    This release is for version 4.0 of the CUDA toolkit.
+    This release is for version 4.1 of the CUDA toolkit.
 
 License:                BSD3
 License-file:           LICENSE
