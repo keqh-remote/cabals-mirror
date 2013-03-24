@@ -1,5 +1,5 @@
 Name:                redis
-Version:             0.8
+Version:             0.8.1
 License:             MIT
 Maintainer:          Alexander Bogdanov <andorn@gmail.com>
 Author:              Alexander Bogdanov <andorn@gmail.com>
@@ -23,6 +23,8 @@ Description:
 	- zrangebyscore now supports LIMIT argument. Warning! Backward incompatible change!
 	.
 	- fixed behaviour of sort with multiple GET keys
+	.
+	- exceptions handled in run_multi and run_cas blocks leads to abort transaction explicitly
 	.
 
 Stability:           beta
