@@ -1,5 +1,5 @@
 Name:           	ReviewBoard
-Version:        	0.2.1
+Version:        	0.2.2
 Synopsis:			Haskell bindings to ReviewBoard
 Description:    	Haskell bindings to ReviewBoard (<http://code.google.com/p/reviewboard/>).
 Author:         	Adam Smyczek
@@ -9,7 +9,8 @@ License:        	BSD3
 License-file:   	LICENSE
 Cabal-Version:  	>= 1.2
 Build-type: 		Simple
-extra-source-files: README Tests/Tests.hs Tests/TestsWithServer.hs example/mkrr.hs
+extra-source-files: README Tests/Tests.hs Tests/TestsWithServer.hs 
+                    example/mkrr.hs example/rbpatch.hs
 
 Library
   Exposed-modules: 
@@ -34,3 +35,17 @@ Executable mkrr
   Build-Depends:
                 base, mtl, random, directory,
                 network, HTTP, json
+
+Executable rbpatch
+  main-is:
+                example/rbpatch.hs
+  other-modules:
+                ReviewBoard.Api
+                ReviewBoard.Core
+                ReviewBoard.Browser
+                ReviewBoard.Response
+                ReviewBoard.Request
+  Build-Depends:
+                base, mtl, random, directory, process,
+                network, HTTP, json
+
