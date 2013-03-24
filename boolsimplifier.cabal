@@ -1,5 +1,5 @@
 Name:                boolsimplifier
-Version:             0.1.6
+Version:             0.1.7
 Synopsis:            Simplification tools for simple propositional formulas.
 
 Description:         Normal form representation for boolean expressions. Typically simplifies such expressions, but is not guaranteed to produce the absolute simplest form.
