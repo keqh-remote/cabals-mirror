@@ -1,6 +1,6 @@
 --Package-properties
 Name:			factory
-Version:		0.2.0.1
+Version:		0.2.0.2
 Cabal-Version:		>= 1.6
 Copyright:		(C) 2011 Dr. Alistair Ward
 License:		GPL
@@ -95,7 +95,7 @@ Library
         containers,
         primes >= 0.1,
         random,
-        toolshed >= 0.12
+        toolshed == 0.13.*
 
     if flag(threaded)
         Build-depends:	parallel >= 3.0
@@ -103,7 +103,11 @@ Library
         Build-depends:	parallel
 
     GHC-options:	-Wall -O2
-    GHC-prof-options:	-prof -auto-all -caf-all
+
+    if impl(ghc >= 7.4.1)
+        GHC-prof-options:	-prof -fprof-auto -fprof-cafs
+    else
+        GHC-prof-options:	-prof -auto-all -caf-all
 
     if impl(ghc >= 7.0) && flag(llvm)
         GHC-options:	-fllvm
