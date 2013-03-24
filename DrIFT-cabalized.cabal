@@ -1,5 +1,5 @@
 name:                DrIFT-cabalized
-version:             2.2.3.1
+version:             2.2.3.2
 synopsis:            Program to derive type class instances
 description:         DrIFT is a type sensitive preprocessor for Haskell. It extracts type declarations
                      and directives from modules. The directives cause rules to be fired on the parsed
@@ -34,9 +34,16 @@ source-repository head
   location: http://repetae.net/repos/DrIFT
 
 executable DrIFT-cabalized
-    build-depends:  base<4, haskell98
+    build-depends:  base<4, old-time, random
     main-is:        DrIFT.hs
-    hs-source-dirs: src
+    hs-source-dirs: src, ./
+    other-modules: CommandP, Version, GenUtil, Rules, Rules.Binary,
+                   Rules.GhcBinary, Rules.Arbitrary,
+                   Rules.Monoid, Rules.BitsBinary, Rules.Xml,
+                   Rules.Utility, Rules.Generic, Rules.Standard,
+                   Rules.FunctorM, PreludData, ParseLib2,
+                   DataP, ChaseImports, Pretty, RuleUtils,
+                   Unlit, GetOpt
     ghc-options:    -Wall
 
 executable DrIFT-cabalized-ghc
