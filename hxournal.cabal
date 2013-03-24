@@ -1,5 +1,5 @@
 Name:		hxournal
-Version:	0.6.1.0
+Version:	0.6.2
 Synopsis:	A pen notetaking program written in haskell 
 Description: 	notetaking program written in haskell and gtk2hs
 Homepage:       http://ianwookim.org/hxournal
@@ -26,7 +26,7 @@ Flag Poppler
 Executable hxournal
   Main-is: hxournal.hs
   hs-source-dirs: exe
-  ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind
+  ghc-options: 	-Wall -threaded -funbox-strict-fields -fno-warn-unused-do-bind
   ghc-prof-options: -caf-all -auto-all
   Build-Depends: 
                  base>4, 
@@ -35,7 +35,7 @@ Executable hxournal
 
 Library
   hs-source-dirs: lib
-  ghc-options: 	-Wall -O2 -threaded -funbox-strict-fields -fno-warn-unused-do-bind
+  ghc-options: 	-Wall -funbox-strict-fields -fno-warn-unused-do-bind
   ghc-prof-options: -caf-all -auto-all
 
   if flag(poppler) 
@@ -48,9 +48,9 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types == 0.2.*,
-                     xournal-parser == 0.3.*,
-                     xournal-render >= 0.4.0.0 && < 0.5,
+                     xournal-types == 0.3.*,
+                     xournal-parser >= 0.3.0.1 && < 0.4,
+                     xournal-render == 0.5.*,
                      xournal-builder == 0.1.*,
                      containers == 0.4.*,
                      template-haskell == 2.*,
@@ -58,8 +58,18 @@ Library
                      double-conversion == 0.2.*,
                      fclabels == 1.0.*,
                      cmdargs >= 0.7 && <= 0.10,
-                     configurator == 0.1.*, 
-                     poppler == 0.12.*
+                     configurator == 0.2.*,
+                     poppler == 0.12.*, 
+                     time == 1.2.*, 
+                     TypeCompose == 0.9.*
+                     -- attoparsec == 0.10.*,
+                     -- uuid == 1.2.*, 
+                     -- hxournalclip-type == 0.0.*, 
+                     -- http-enumerator == 0.7.*, 
+                     -- http-types == 0.6.*, 
+                     -- aeson == 0.4.*, 
+                     -- hxournalclip-client == 0.0.*
+
   else 
     Build-Depends:   base == 4.*, 
                      mtl == 2.*,
@@ -70,9 +80,9 @@ Library
                      cairo == 0.12.*,
                      monad-coroutine == 0.7.*, 
                      transformers == 0.2.*,
-                     xournal-types == 0.2.*,
-                     xournal-parser == 0.3.*,
-                     xournal-render >= 0.4.0.0 && < 0.5,
+                     xournal-types == 0.3.*,
+                     xournal-parser >= 0.3.0.1 && < 0.4,
+                     xournal-render == 0.5,
                      xournal-builder == 0.1.*,
                      containers == 0.4.*,
                      template-haskell == 2.*,
@@ -80,7 +90,17 @@ Library
                      double-conversion == 0.2.*,
                      fclabels == 1.0.*,
                      cmdargs >= 0.7 && <= 0.10,
-                     configurator == 0.1.*
+                     configurator == 0.2.*, 
+                     time == 1.2.*, 
+                     TypeCompose == 0.9.*
+                     -- attoparsec == 0.10.*,
+                     -- uuid == 1.2.*, 
+                     -- http-enumerator == 0.7.*, 
+                     -- http-types == 0.6.*, 
+                     -- aeson == 0.4.*, 
+                     -- hxournalclip-type == 0.0.*,
+                     -- hxournalclip-client == 0.0.*, 
+
 
   Exposed-Modules: 
                    Application.HXournal.ProgType
@@ -102,6 +122,8 @@ Library
                    Application.HXournal.ModelAction.Select
                    Application.HXournal.ModelAction.File
                    Application.HXournal.ModelAction.Window
+                   -- Application.HXournal.ModelAction.Network
+                   Application.HXournal.ModelAction.Layer
                    Application.HXournal.Coroutine.Callback
                    Application.HXournal.GUI
                    Application.HXournal.GUI.Menu
@@ -119,6 +141,8 @@ Library
                    Application.HXournal.Coroutine.Mode
                    Application.HXournal.Coroutine.Window
                    Application.HXournal.Coroutine.Commit
+                   -- Application.HXournal.Coroutine.Network
+                   Application.HXournal.Coroutine.Layer
                    Application.HXournal.Util
                    Application.HXournal.Util.Verbatim 
                    Application.HXournal.Draw
