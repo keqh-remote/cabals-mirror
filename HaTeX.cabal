@@ -1,15 +1,17 @@
 Name:           HaTeX
-Version:        2.1.1
+Version:        2.1.2
 Author:         Daniel Diaz
 Homepage:       http://ddiaz.asofilak.es/packages/HaTeX
 License:        BSD3
 License-file:   license
 Maintainer:     danieldiaz@asofilak.es
 Category:       Text
-Synopsis:       Library for write LaTeX code.
+Synopsis:       Monadic tool for write LaTeX files.
 Description:    
-         You can write LaTeX files using this package.
-         See Text.LaTeX for a brief introduction.
+         See <http://www.haskell.org/haskellwiki/HaTeX> for a brief introduction.
+         Also included in Text.LaTeX module API documentation.
+         .
+         More information in /HaTeX, a monadic perspective of LaTeX/, available in the package homepage.
          .
          Report any bug or suggestion to the author:
          .
@@ -19,9 +21,13 @@ Description:
          .
          Changes from last version:
          .
-         * Now, Text.LaTeX module re-export Data.String.
+         * Fixed a bug in @lnbk@ and @lnbk_@ functions. They need no more adding an extra space after their use.
          .
-         * Fixed some documentation.
+         * Modified some documentation.
+         .
+         * Added some documentation.
+         .
+         * Removed an unnecesary import from Text.LaTeX.Result.
 Extensions:     OverloadedStrings , FlexibleInstances , TypeSynonymInstances
 Build-type:     Simple
 Build-depends:  base == 4.*
