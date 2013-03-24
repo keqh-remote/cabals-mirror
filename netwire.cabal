@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       2.0.0
+Version:       2.0.1
 Category:      Control, FRP
 Synopsis:      Generic automaton arrow transformer and useful tools
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
