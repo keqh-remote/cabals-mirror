@@ -1,9 +1,9 @@
 Name:             logic-classes
-Version:          0.44
+Version:          0.45
 License:          BSD3
 Author:           David Fox <dsf@seereason.com>
 Maintainer:       SeeReason Partners <partners@seereason.com>
-Synopsis:         Symbolic logic support - a class framework, example instances, polymorphic implementations
+Synopsis:         Support for propositional and first order logic, normal forms, and a resolution theorem prover.
 Description:      Package to support Propositional and First Order Logic.  It includes classes
                   representing the different types of formulas and terms, some instances of
                   those classes for types used in other logic libraries, and implementations of
