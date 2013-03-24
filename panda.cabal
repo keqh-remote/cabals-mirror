@@ -1,5 +1,5 @@
 Name:                 panda
-Version:              2008.9.19.1
+Version:              2008.9.19.2
 Build-type:           Simple
 Synopsis:             Simple Static Blog Engine
 Description:          Simple Static Blog Engine
@@ -28,6 +28,7 @@ library
                     Panda.Type.Pager
                     Panda.Type.Reader
                     Panda.Type.State
+                    Panda.Type.Sidebar
                     Panda.View.RSS
                     Panda.View.Theme.BluePrint.Helper
                     Panda.View.Theme.BluePrint.Post
@@ -40,5 +41,6 @@ library
                     Panda.View.Theme.BluePrint.Template.Header
                     Panda.View.Theme.BluePrint.Template.Sidebar
                     Panda.View.Theme.BluePrint.Template.Template
+                    
  
                     
