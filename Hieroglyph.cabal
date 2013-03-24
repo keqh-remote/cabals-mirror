@@ -1,14 +1,14 @@
 name: Hieroglyph
-version: 3.8
+version: 3.85
 cabal-version: >=1.2
 build-type: Simple
 license: BSD3
 license-file: LICENSE
 copyright:
 maintainer: J.R. Heard
-build-depends: IfElse -any, OpenGL -any, array -any, base == 4.1.0.0,
-               buster >=2.0, buster-gtk -any, bytestring -any, cairo -any,
-               colour -any, containers -any, glib -any, gtk -any, gtkglext -any,
+build-depends: IfElse -any, OpenGL <= 2.2.3.0, array -any, base == 4.1.0.0,
+               buster ==2.51, buster-gtk -any, bytestring -any, cairo -any,
+               colour -any, containers -any, glib -any, gtk >= 0.10.0, gtkglext -any,
                mtl -any, parallel -any, pretty -any, random -any
 stability:
 homepage: http://vis.renci.org/jeff/hieroglyph
