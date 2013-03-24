@@ -1,5 +1,5 @@
 name:           heist
-version:        0.8.0
+version:        0.8.1
 synopsis:       An (x)html templating system
 description:    An (x)html templating system
 license:        BSD3
@@ -88,20 +88,20 @@ Library
     attoparsec                >= 0.10  && < 0.11,
     base                      >= 4     && < 5,
     blaze-builder             >= 0.2   && < 0.4,
-    blaze-html                >= 0.4   && < 0.5,
+    blaze-html                >= 0.4   && < 0.6,
     bytestring,
     containers                >= 0.2   && < 0.5,
     directory,
     directory-tree,
     filepath,
-    MonadCatchIO-transformers >= 0.2.1 && < 0.3,
-    mtl                       >= 2.0   && < 2.1,
+    MonadCatchIO-transformers >= 0.2.1 && < 0.4,
+    mtl                       >= 2.0   && < 2.2,
     process,
     random,
     text                      >= 0.10  && < 0.12,
     time                      >= 1.1   && < 1.5,
     transformers,
-    xmlhtml                   >= 0.1.6 && < 0.2,
+    xmlhtml                   >= 0.1.6 && < 0.3,
     unordered-containers      >= 0.1.4 && < 0.3,
     vector                    >= 0.9   && < 0.10
 
