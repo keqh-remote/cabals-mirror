@@ -1,5 +1,5 @@
 Name:          RJson
-Version:       0.3.2
+Version:       0.3.3
 Cabal-Version: >= 1.2
 License:       BSD3
 License-File:  LICENSE
@@ -8,8 +8,11 @@ Maintainer:    a.d.drummond@gmail.com
 Category:      Text
 Synopsis:      A reflective JSON serializer/parser.
 Stability:     experimental
+Extra-Source-Files:   README
+Build-Type:    Simple
 
 Description:
+  See included README for some examples.
   This package uses the Scrap Your Boilerplate With Class approach
   to generics to implement a reflective Json serializer and deserializer.
   Nested record types can be automatically converted to corresponding
