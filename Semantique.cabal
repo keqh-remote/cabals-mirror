@@ -2,9 +2,9 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                Semantique
-version:             0.2.0
+version:             0.2.1
 synopsis:            Command-line tool for maintaining the Semantique database.
-description:         Command-line tool for maintaining the Semantique database. See http://semantik.tv/
+description:         Command-line tool for maintaining the Semantique database. See <http://semantik.tv/>
 license:             PublicDomain
 license-file:        LICENSE
 author:              Lemmih
