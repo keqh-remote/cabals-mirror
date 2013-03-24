@@ -1,5 +1,5 @@
 Name:                test-framework
-Version:             0.2.3
+Version:             0.2.4
 Cabal-Version:       >= 1.2.3
 Category:            Testing
 Synopsis:            Framework for running and organising tests, with HUnit and QuickCheck support
@@ -44,7 +44,8 @@ Library
                                 Test.Framework.Runners.TimedConsumption
                                 Test.Framework.Utilities
         
-        Build-Depends:          ansi-terminal >= 0.4.0, ansi-wl-pprint >= 0.4.0, regex-posix >= 0.72
+        Build-Depends:          ansi-terminal >= 0.4.0, ansi-wl-pprint >= 0.4.0,
+                                regex-posix >= 0.72, extensible-exceptions >= 0.1.1
         if flag(splitBase)
                 Build-Depends:          base >= 3 && < 5, random >= 1.0, containers >= 0.1
         else
