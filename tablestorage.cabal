@@ -1,14 +1,14 @@
 name:           tablestorage
-version:        0.1.0.3
+version:        0.2.1.0
 cabal-version:  >= 1.2
 build-type:     Simple
-author:         Phil Freeman <paf31-at-cantab.net>
+author:         Phil Freeman, Aaron Friel
 stability:      experimental
 maintainer:     Phil Freeman <paf31@cantab.net>
 homepage:       http://github.com/paf31/tablestorage
 category:       Web, Database, API
 license:        BSD3
-copyright:      (c) Phil Freeman 2012
+copyright:      (c) Phil Freeman, Aaron Friel 2012
 data-files:     
                 LICENSE, 
                 tablestorage.cabal
@@ -21,6 +21,7 @@ description:
                 Pagination and projections are currently not supported.
 
 library
+  ghc-options:     -W -Wall
   hs-source-dirs:  src
   build-depends:   
                    base >= 4 && < 5,
@@ -28,12 +29,19 @@ library
                    bytestring,
                    utf8-string,
                    base64-bytestring,
-                   HTTP,
+                   http-conduit >= 1.8.5,
+                   conduit,
+                   http-types,
                    network,
                    time,
                    xml,
                    old-locale,
-                   mtl
+                   mtl,
+                   transformers,
+                   crypto-api,
+                   cryptohash,
+                   HTTP,
+                   resourcet
   ghc-options:     -Wall
   exposed-modules: 
                    Network.TableStorage,
