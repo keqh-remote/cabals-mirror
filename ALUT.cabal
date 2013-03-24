@@ -1,5 +1,5 @@
 name:		ALUT
-version:	2.0
+version:	2.1.0.0
 license:	BSD3
 license-file:	LICENSE
 maintainer:	Sven Panne <sven.panne@aedion.de>
@@ -12,6 +12,7 @@ description:
 	and creating waveforms very easy. For more information about the
 	C library on which this binding is based, please see:
 	<http://www.openal.org/openal_webstf/specs/alut.html>.
+build-type:     Configure
 extra-source-files:
 	config.guess config.sub install-sh
 	configure.ac configure config.mk.in ALUT.buildinfo.in
@@ -30,6 +31,7 @@ other-modules:
 	Sound.ALUT.Constants,
 	Sound.ALUT.Errors
 include-dirs:	include
+includes: HsALUT.h
 install-includes: HsALUT.h
 build-depends:	base, OpenGL, OpenAL
 extensions:	CPP, ForeignFunctionInterface
