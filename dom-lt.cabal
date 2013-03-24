@@ -1,5 +1,5 @@
 name:               dom-lt
-version:            0.1.1
+version:            0.1.2
 cabal-version:      >= 1.6
 build-type:         Simple
 license:            BSD3
@@ -19,5 +19,5 @@ library
   hs-source-dirs:   .
   ghc-options:      -O2
   extensions:       RankNTypes
-  build-depends:    base==4.*, containers
+  build-depends:    base==4.*, array, containers
   exposed-modules:  Data.Graph.Dom
