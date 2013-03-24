@@ -1,5 +1,5 @@
 Name:                reform-happstack
-Version:             0.1
+Version:             0.1.1
 Synopsis:            Happstack support for reform.
 Description:         Reform is a library for building and validating forms using applicative functors. This package add support for using reform with Happstack.
 Homepage:            http://www.happstack.com/
@@ -14,8 +14,8 @@ Cabal-version:       >=1.6
 
 source-repository head
     type:     darcs
-    subdir:   reform
-    location: http://patch-tag.com/r/stepcut/reform-happstack
+    subdir:   reform-happstack
+    location: http://patch-tag.com/r/stepcut/reform
 
 Library
   Exposed-modules:     Text.Reform.Happstack
