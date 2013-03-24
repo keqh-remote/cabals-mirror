@@ -1,5 +1,5 @@
 name:           Biobase
-version:        0.3.1.0
+version:        0.3.1.1
 author:         Christian Hoener zu Siederdissen
 maintainer:     choener@tbi.univie.ac.at
 homepage:       http://www.tbi.univie.ac.at/~choener/
@@ -129,8 +129,9 @@ library
     Biobase.RNA.NucBounds
     Biobase.RNA.Pairs
     Biobase.RNA.ViennaPair
+    Biobase.ScoreTypes
     Biobase.Structure
-    Biobase.Structure.DotBracket
+    Biobase.Structure.Constraint
     Biobase.Structure.Shapes
     Biobase.Types.Convert
     Biobase.Types.Energy
