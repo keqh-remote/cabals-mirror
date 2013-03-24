@@ -1,5 +1,5 @@
 Name:                wai-extra
-Version:             0.4.1.2
+Version:             0.4.2
 Synopsis:            Provides some basic WAI handlers and middleware.
 Description:         The goal here is to provide common features without many dependencies.
 License:             BSD3
@@ -51,8 +51,7 @@ test-suite runtests
     build-depends:   base                      >= 4        && < 5
                    , wai-extra
                    , wai-test
-                   , test-framework
-                   , test-framework-hunit
+                   , hspec >= 0.6.1 && < 0.7
                    , HUnit
 
                    , wai
