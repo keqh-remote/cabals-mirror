@@ -1,5 +1,5 @@
 Name:               groom
-Version:            0.1
+Version:            0.1.1
 Synopsis:           Slightly prettier printing for well-behaved Show
                     instances.
 Description:        Automatically derived Show instances are an easy way
@@ -33,5 +33,5 @@ Cabal-version:      >=1.2
 
 Library
   Exposed-modules:      Text.Groom
-  Build-depends:        haskell-src-exts >= 1.0.0 && < 1.10,
+  Build-depends:        haskell-src-exts >= 1.0.0,
                         base >= 3 && < 5
