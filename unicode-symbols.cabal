@@ -1,5 +1,5 @@
 name:          unicode-symbols
-version:       0.1
+version:       0.1.1
 cabal-version: >=1.6
 build-type:    Simple
 stability:     experimental
@@ -46,3 +46,4 @@ Library
                    , Data.Map.Unicode
                    , Data.Set.Unicode
                    , Data.Sequence.Unicode
+    build-depends: containers >= 0.2.0.1 && < 0.3
