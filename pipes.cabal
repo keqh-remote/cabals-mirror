@@ -1,5 +1,5 @@
 Name: pipes
-Version: 1.0.1
+Version: 1.0.2
 Cabal-Version: >=1.10.1
 Build-Type: Simple
 License: BSD3
@@ -60,7 +60,7 @@ Source-Repository head
     Location: https://github.com/Gabriel439/Haskell-Pipes-Library
 
 Library
-    Build-Depends: base >= 4 && < 5, mtl
+    Build-Depends: base >= 4 && < 5, mtl, void
     Exposed-Modules: Control.Pipe, Control.Pipe.Common
     GHC-Options: -O2
     Default-Language: Haskell2010
