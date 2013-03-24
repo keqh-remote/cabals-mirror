@@ -8,7 +8,7 @@ Name:                edge
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
 
-Version:             0.8.20
+Version:             0.9.0.1
 
 -- A short (one-line) description of the package.
 Synopsis:            Top view space combat arcade game
@@ -48,7 +48,7 @@ Build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or
 -- a README.
-Extra-source-files:  DONATE
+Extra-source-files:  DONATE, edge.svg, AUTHORS
 
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.10
@@ -111,6 +111,7 @@ Executable edge
                      , Unit.Smart.ATank
                      , Unit.Smart.STank
                      , Unit.Smart.Death
+                     , Unit.Smart.DeathII
                      , Unit.Smart.Master
                      , Unit.Smart.Ninja
                      , Unit.Smart.Saucer
