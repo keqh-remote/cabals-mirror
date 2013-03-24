@@ -1,5 +1,5 @@
 Name:              hsc3-lang
-Version:           0.9
+Version:           0.11
 Synopsis:          Haskell SuperCollider Language
 Description:       Haskell library defining operations from the
                    SuperCollider language class library
@@ -10,29 +10,41 @@ Author:            Rohan Drape
 Maintainer:        rd@slavepianos.org
 Stability:         Experimental
 Homepage:          http://slavepianos.org/rd/?t=hsc3-lang
-Tested-With:       GHC == 6.12.1
+Tested-With:       GHC == 7.2.2
 Build-Type:        Simple
-Cabal-Version:     >= 1.6
+Cabal-Version:     >= 1.8
 
 Data-files:        README
-                   Help/Collection/*.help.lhs
-                   Help/Math/*.help.lhs
-                   Help/Pattern/List/*.help.lhs
-                   Help/Pattern/Step/*.help.lhs
 
 Library
   Build-Depends:   array,
                    base == 4.*,
                    containers,
+                   data-default,
+                   hosc == 0.11.*,
+                   hsc3 == 0.11.*,
+                   MonadRandom,
                    split,
-                   random
+                   random,
+                   random-shuffle
   GHC-Options:     -Wall -fwarn-tabs
-  Exposed-modules: Sound.SC3.Lang.Collection.Collection
-                   Sound.SC3.Lang.Collection.Numerical
-                   Sound.SC3.Lang.Collection.SequenceableCollection
-                   Sound.SC3.Lang.Math.Pitch
+  Exposed-modules: Sound.SC3.Lang.Collection
+                   Sound.SC3.Lang.Collection.Extension
+                   Sound.SC3.Lang.Collection.Numerical.Extending
+                   Sound.SC3.Lang.Collection.Numerical.Truncating
+                   Sound.SC3.Lang.Collection.Universal.Datum
+                   Sound.SC3.Lang.Control.Duration
+                   Sound.SC3.Lang.Control.Event
+                   Sound.SC3.Lang.Control.Instrument
+                   Sound.SC3.Lang.Control.Pitch
+                   Sound.SC3.Lang.Control.OverlapTexture
+                   Sound.SC3.Lang.Data.Vowel
+                   Sound.SC3.Lang.Math
+                   Sound.SC3.Lang.Pattern.ID
                    Sound.SC3.Lang.Pattern.List
-                   Sound.SC3.Lang.Pattern.Step
+                   Sound.SC3.Lang.Random.Gen
+                   Sound.SC3.Lang.Random.IO
+                   Sound.SC3.Lang.Random.Monad
 
 Source-Repository  head
   Type:            darcs
