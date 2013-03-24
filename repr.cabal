@@ -1,5 +1,5 @@
 name:          repr
-version:       0.4.1
+version:       0.4.1.1
 cabal-version: >= 1.6
 build-type:    Simple
 stability:     experimental
@@ -8,6 +8,8 @@ maintainer:    v.dijk.bas@gmail.com
 copyright:     (c) 2009-2011 Bas van Dijk
 license:       BSD3
 license-file:  LICENSE
+homepage:      https://github.com/basvandijk/repr/
+bug-reports:   https://github.com/basvandijk/repr/issues
 category:      Numeric, Text
 synopsis:      Render overloaded expressions to their textual representation.
 description:   This library allows you to render overloaded expressions to their
@@ -21,12 +23,14 @@ description:   This library allows you to render overloaded expressions to their
                \"1.5 + 2.0 + (3.0 + negate 4.0 * (5.0 - pi / sqrt 6.0))\"
                @
 
+extra-source-files: README.markdown
+
 source-repository head
-  Type: darcs
-  Location: http://code.haskell.org/~basvandijk/code/repr
+  Type: git
+  Location: git://github.com/basvandijk/repr.git
 
 library
-  build-depends: base                 >= 3       && < 4.4
+  build-depends: base                 >= 3       && < 4.5
                , base-unicode-symbols >= 0.1.1   && < 0.3
                , random               >= 1.0     && < 1.1
                , string-combinators   >= 0.6     && < 0.7
