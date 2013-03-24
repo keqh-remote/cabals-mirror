@@ -1,5 +1,5 @@
 name:                highlighter
-version:             0.2
+version:             0.2.1
 synopsis:            source code highlighting
 description:
     Processes source code using tons of lexers, tokenizing it and formatting it as e.g. HTML.
@@ -147,7 +147,7 @@ library
 
   build-depends:
     { base >= 4 && < 5
-    , blaze-html
+    , blaze-html < 0.5
     , bytestring
     , filepath
     , mtl
@@ -168,7 +168,7 @@ executable highlighter
 
   build-depends:
     { base >= 4 && < 5
-    , blaze-html
+    , blaze-html < 0.5
     , bytestring
     , filepath
     , mtl
