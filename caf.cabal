@@ -1,5 +1,5 @@
 Name:                caf
-Version:             0.0.2
+Version:             0.0.3
 Description:         This library contains implementations of several kinds of futures and concurrency abstractions.
 License:             BSD3
 License-file:        LICENSE
@@ -28,6 +28,7 @@ library
                    Control.Concurrent.Futures.QSem
                    Control.Concurrent.Futures.BChan
                    Control.Concurrent.Futures.HQSem
+                   Control.Concurrent.Futures.Barrier
   Build-Depends:   base >= 2.0
 
 
