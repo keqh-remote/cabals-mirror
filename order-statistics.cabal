@@ -1,6 +1,6 @@
 name:          order-statistics
 category:      Statistics
-version:       0.1.0.2
+version:       0.1.0.4
 license:       BSD3
 cabal-version: >= 1.6
 license-file:  LICENSE
@@ -13,6 +13,7 @@ copyright:     Copyright (C) 2012 Edward A. Kmett
 synopsis:      L-Estimators for robust statistics
 description:   L-Estimators for robust statistics
 build-type:    Simple
+
 extra-source-files: .travis.yml
 
 source-repository head
@@ -25,11 +26,11 @@ library
 
   build-depends:
     base           >= 4      && < 5,
-    statistics     >= 0.10.1 && < 0.11,
-    math-functions >= 0.1.1  && < 0.2,
-    vector         >= 0.9.1  && < 0.10,
-    vector-space   >= 0.8    && < 0.9,
-    containers     >= 0.3    && < 0.6
+    statistics     == 0.10.*,
+    math-functions == 0.1.*,
+    vector         == 0.9.*,
+    vector-space   == 0.8.*,
+    containers     >= 0.4.2 && < 0.6
 
   exposed-modules:
     Statistics.Distribution.Beta
