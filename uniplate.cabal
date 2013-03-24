@@ -1,7 +1,7 @@
 cabal-version:      >= 1.6
 build-type:         Simple
 name:               uniplate
-version:            1.6.3
+version:            1.6.4
 author:             Neil Mitchell <ndmitchell@gmail.com>
 maintainer:         Neil Mitchell <ndmitchell@gmail.com>
 copyright:          Neil Mitchell 2006-2011
@@ -13,7 +13,8 @@ category:           Generics
 description:
     Uniplate is library for writing simple and concise generic operations.
     Uniplate has similar goals to the original Scrap Your Boilerplate work,
-    but is substantially simpler and faster.
+    but is substantially simpler and faster. The Uniplate manual is available at
+    <http://community.haskell.org/~ndm/darcs/uniplate/uniplate.htm>.
     .
     To get started with Uniplate you should import one of the three following
     modules:
@@ -68,6 +69,7 @@ library
         Data.Generics.Compos
         Data.Generics.SYB
         Data.Generics.Uniplate.Data
+        Data.Generics.Uniplate.Data.Instances
         Data.Generics.Uniplate.DataOnly
         Data.Generics.Uniplate.Direct
         Data.Generics.Uniplate.Operations
