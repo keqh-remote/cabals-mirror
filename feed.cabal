@@ -1,12 +1,12 @@
 Name:               feed
-Version:            0.3.2.1
+Version:            0.3.4
 License:            BSD3
 License-file:       LICENSE
 Category:           Text
 Synopsis:           Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds.
 Description:        Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds.
-Author:             Sigbjorn Finne
-Maintainer:         Isaac Jones <ijones@galois.com>
+Author:             Sigbjorn Finne <sof@galois.com>
+Maintainer:         Sigbjorn Finne <sof@galois.com>
 Extra-Source-Files: tests/Main.hs tests/rss20.xml
 Cabal-version:   >= 1.2
 build-type: Simple
@@ -37,5 +37,7 @@ library
                      Text.Feed.Query
                      Text.Feed.Constructor
                      Text.Feed.Translate
+                     Text.Feed.Util
     Ghc-Options:     -Wall
-    Build-Depends:   base, xml >= 1.2.6
+    Build-Depends:   base, haskell98, xml >= 1.2.6, utf8-string
+
