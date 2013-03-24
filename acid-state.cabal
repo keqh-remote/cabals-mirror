@@ -7,7 +7,7 @@ Name:                acid-state
 -- The package version. See the Haskell package versioning policy
 -- (http://www.haskell.org/haskellwiki/Package_versioning_policy) for
 -- standards guiding when and how versions should be incremented.
-Version:             0.6.2
+Version:             0.6.3
 
 -- A short (one-line) description of the package.
 Synopsis:            Add ACID guarantees to any serializable Haskell data structure.
@@ -42,6 +42,10 @@ Extra-source-files:  examples/*.hs, examples/errors/*.hs, src-win32/*.hs, src-un
 -- Constraint on the version of Cabal needed to build this package.
 Cabal-version:       >=1.6
 
+Source-repository head
+  type:          darcs
+  location:      http://mirror.seize.it/acid-state/
+
 
 Library
   -- Modules exported by the library.
@@ -57,7 +61,9 @@ Library
                        Data.Acid.Abstract, Data.Acid.Core
   
   -- Packages needed in order to build this package.
-  Build-depends:       base >= 4 && < 5, cereal >= 0.3.2.0, safecopy >= 0.6, bytestring, stm,
+  -- We need hGetSome from bytestring, added in 0.9.1.8
+  Build-depends:       base >= 4 && < 5, cereal >= 0.3.2.0, safecopy >= 0.6,
+                       bytestring >= 0.9.1.8, stm,
                        filepath, directory, mtl, array, containers, template-haskell, network
 
   if os(windows)
