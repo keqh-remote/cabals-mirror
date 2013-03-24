@@ -1,5 +1,5 @@
 Name:           roundtrip-xml
-Version:        0.2.0.1
+Version:        0.3.0.0
 Synopsis:       Bidirectional (de-)serialization for XML.
 Description:    Roundtrip allows the definition of bidirectional
                 (de-)serialization specifications. This package provides
@@ -18,6 +18,29 @@ Cabal-version:  >=1.8
 Source-repository head
   Type:     darcs
   location: http://darcs.factisresearch.com/pub/roundtrip-xml
+
+Flag tests
+  description: Build test suite
+  default:     False
+
+Executable tests
+  If flag(tests)
+    Build-Depends:
+        base == 4.*
+      , HTF == 0.7.*
+      , filepath == 1.2.*
+      , text == 0.11.*
+      , bytestring == 0.9.*
+      , roundtrip == 0.2.*
+      , roundtrip-string == 0.1.*
+      , roundtrip-xml
+      , enumerator >= 0.4.8 && < 0.5
+      , xml-enumerator == 0.3.*
+      , reference == 0.1.*
+  Else
+    Buildable: False
+  Hs-Source-Dirs: tests
+  Main-Is:        Tests.hs
 
 Library
   Hs-Source-Dirs: src
@@ -44,5 +67,6 @@ Library
     , blaze-builder == 0.3.*
     , blaze-builder-enumerator == 0.2.*
     , pretty == 1.0.*
+    , reference == 0.1.*
     , roundtrip == 0.2.*
     , roundtrip-string == 0.1.*
