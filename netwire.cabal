@@ -1,5 +1,5 @@
 Name:          netwire
-Version:       3.0.1
+Version:       3.1.0
 Category:      Control, FRP
 Synopsis:      Fast generic automaton arrow transformer for AFRP
 Maintainer:    Ertugrul Söylemez <es@ertes.de>
@@ -21,9 +21,8 @@ Library
         base >= 4 && < 5,
         containers >= 0.4.0,
         deepseq >= 1.1.0,
-        forkable-monad >= 0.1.1,
-        monad-control >= 0.2.0,
-        MonadRandom >= 0.1.6,
+        lifted-base >= 0.1.0,
+        monad-control >= 0.3.0,
         random >= 1.0.0,
         time >= 1.2.0,
         mtl >= 2.0.1,
@@ -81,7 +80,6 @@ Library
 --         base >= 4 && < 5,
 --         containers,
 --         logict,
---         MonadRandom,
 --         mtl,
 --         netwire,
 --         random,
